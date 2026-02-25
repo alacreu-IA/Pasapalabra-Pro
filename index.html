@@ -31,28 +31,16 @@ h1{
 .card{
   width:90%;
   max-width:520px;
-  min-height:300px;
+  min-height:360px;
   margin-top:40px;
   background:#14192b;
   border-radius:20px;
   padding:30px;
   box-shadow:0 0 20px rgba(0,0,0,0.4);
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  cursor:pointer;
 }
 
-.definition{
-  font-size:20px;
-  line-height:1.6;
-}
-
-.word{
-  font-size:42px;
-  font-weight:bold;
-  color:#f5c84c;
-  margin-bottom:20px;
+#cardFront, #cardBack{
+  min-height:250px;
 }
 
 .buttons{
@@ -70,13 +58,15 @@ button{
   cursor:pointer;
 }
 
-.fail{background:#3a1212;color:#ff5a5a;}
-.again{background:#3a3212;color:#f5c84c;}
+.primary{background:#1e88e5;color:white;}
+.secondary{background:#444;color:white;}
 .ok{background:#103a1c;color:#4cff8d;}
+.fail{background:#3a1212;color:#ff5a5a;}
 
-.loading{
-  font-size:18px;
-  opacity:0.7;
+#status{
+  margin-top:15px;
+  opacity:.7;
+  font-size:13px;
 }
 </style>
 </head>
@@ -85,76 +75,29 @@ button{
 
 <h1>PasaPalabra PRO</h1>
 
-<div class="card" id="card">
-  <div id="content" class="loading">Cargando...</div>
+<div class="card">
+  <div id="cardFront"></div>
+  <div id="cardBack" style="display:none;"></div>
 </div>
 
 <div class="buttons">
-  <button class="fail" id="btnFail">No la sé</button>
-  <button class="again" id="btnAgain">Repasar</button>
-  <button class="ok" id="btnOk">La sé</button>
+  <button class="primary" onclick="startVocabSession()">Iniciar vocabulario</button>
+  <button class="secondary" onclick="flipCard()">Girar</button>
+  <button class="secondary" onclick="nextCard()">Siguiente</button>
 </div>
 
-<!-- Motores -->
+<div id="status">Listo.</div>
+
 <script src="js/db.js"></script>
 <script src="js/vocabEngine.js"></script>
 <script src="js/srsEngine.js"></script>
 
 <script>
-let showingAnswer = false;
-
-/* Inicializar */
-async function initApp(){
-  try{
-    await initDB();
-    await loadNext();
-  }catch(err){
-    document.getElementById("content").innerHTML="Error cargando base de datos.";
-    console.error(err);
-  }
+async function init(){
+  await initDB();
 }
+init();
 
-/* Cargar siguiente tarjeta */
-async function loadNext(){
-  showingAnswer=false;
-  await getNextCard();   // currentCard vive en vocabEngine
-  renderFront();
-}
-
-/* Mostrar definición */
-function renderFront(){
-  const content=document.getElementById("content");
-  content.classList.remove("loading");
-  content.innerHTML=`<div class="definition">${currentCard.definition}</div>`;
-}
-
-/* Mostrar respuesta */
-function renderBack(){
-  if(showingAnswer) return;
-  showingAnswer=true;
-
-  const content=document.getElementById("content");
-  content.innerHTML=`
-    <div class="word">${currentCard.word}</div>
-    <div class="definition">${currentCard.fullDefinition}</div>
-  `;
-}
-
-/* Botones */
-document.getElementById("card").addEventListener("click",renderBack);
-
-document.getElementById("btnFail").addEventListener("click",()=>rate(0));
-document.getElementById("btnAgain").addEventListener("click",()=>rate(1));
-document.getElementById("btnOk").addEventListener("click",()=>rate(2));
-
-async function rate(score){
-  await updateCardScore(currentCard.id,score);
-  await loadNext();
-}
-
-initApp();
-
-/* Service Worker */
 if("serviceWorker" in navigator){
   navigator.serviceWorker.register("./sw.js");
 }
