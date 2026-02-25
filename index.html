@@ -21,6 +21,8 @@
   --gold:#f5c842;
   --green:#3ecf72;
   --red:#ff5555;
+  --blue:#4a9eff;
+  --purple:#a78bfa;
   --r:18px;
 }
 
@@ -66,6 +68,7 @@ body{
 .card{
   width:92%;
   max-width:420px;
+  height:420px;
   background:var(--card);
   border:1px solid var(--border);
   border-radius:var(--r);
@@ -74,55 +77,56 @@ body{
   display:flex;
   flex-direction:column;
   gap:12px;
-  min-height:260px;
+  overflow:hidden;
   cursor:pointer;
-  transition:.2s;
 }
 
-.card:active{ transform:scale(.98); }
-
-.qlbl{
-  font-size:10px;
-  text-transform:uppercase;
-  letter-spacing:.8px;
-  color:var(--text2);
+.meta{
+  font-size:11px;
   font-family:'Syne',sans-serif;
+  text-transform:uppercase;
+  letter-spacing:.5px;
 }
 
-.definition{ font-size:18px; line-height:1.6; }
+.meta.adj{color:var(--gold);}
+.meta.sust{color:var(--blue);}
+.meta.verb{color:var(--green);}
+.meta.adv{color:var(--purple);}
+.meta.other{color:var(--text2);}
+
+.definition{
+  font-size:18px;
+  line-height:1.6;
+}
+
+.revealed-layout{
+  display:flex;
+  flex-direction:column;
+  gap:8px;
+  font-size:14px;
+}
 
 .word{
   font-family:'Syne',sans-serif;
-  font-size:30px;
+  font-size:28px;
   font-weight:800;
   color:var(--gold);
-  margin-top:6px;
-  display:none;
 }
 
-.block{
-  background:var(--card2);
-  border:1px solid var(--border);
-  border-radius:14px;
-  padding:12px;
-  display:none;
-}
-
-.block-title{
-  font-size:10px;
+.pos{
+  font-size:11px;
   text-transform:uppercase;
   color:var(--text2);
-  margin-bottom:6px;
-  font-family:'Syne',sans-serif;
 }
 
-.block-content{ font-size:14px; line-height:1.6; }
-
-.list{
-  margin:0;
-  padding-left:18px;
+.compact-block{
+  background:var(--card2);
+  border:1px solid var(--border);
+  border-radius:12px;
+  padding:10px;
+  font-size:13px;
+  line-height:1.4;
 }
-.list li{ margin:6px 0; }
 
 /* BOTONES */
 .buttons{
@@ -142,10 +146,7 @@ body{
   font-size:13px;
   font-weight:700;
   cursor:pointer;
-  transition:.15s;
 }
-
-.btn:active{ transform:scale(.96); }
 
 .btn-red{background:rgba(255,85,85,0.15);color:var(--red);border:1px solid rgba(255,85,85,0.4);}
 .btn-yellow{background:rgba(245,200,66,0.15);color:var(--gold);border:1px solid rgba(245,200,66,0.4);}
@@ -156,12 +157,9 @@ body{
   max-width:420px;
   display:flex;
   justify-content:space-between;
-  align-items:center;
-  gap:10px;
   margin-bottom:14px;
 }
 
-.status{ font-size:11px; color:var(--text2); }
 .link{
   font-size:11px;
   color:var(--text2);
@@ -171,7 +169,8 @@ body{
   border-radius:12px;
   display:none;
 }
-.link:active{ transform:scale(.98); }
+
+.status{ font-size:11px; color:var(--text2); }
 </style>
 </head>
 
@@ -185,32 +184,7 @@ body{
 </div>
 
 <div class="card" onclick="revealAnswer()">
-
-  <div class="qlbl">Definición</div>
-  <div class="definition" id="definition">Cargando...</div>
-
-  <div class="word" id="word"></div>
-
-  <div class="block" id="sensesBlock">
-    <div class="block-title">Acepciones</div>
-    <div class="block-content" id="senses"></div>
-  </div>
-
-  <div class="block" id="synBlock">
-    <div class="block-title">Sinónimos</div>
-    <div class="block-content" id="synonyms"></div>
-  </div>
-
-  <div class="block" id="exBlock">
-    <div class="block-title">Ejemplo</div>
-    <div class="block-content" id="example"></div>
-  </div>
-
-  <div class="block" id="etymBlock">
-    <div class="block-title">Etimología / Para memorizar</div>
-    <div class="block-content" id="etym"></div>
-  </div>
-
+  Cargando...
 </div>
 
 <div class="buttons">
@@ -221,7 +195,7 @@ body{
 
 <div class="row">
   <div class="status" id="status">Inicializando…</div>
-  <a class="link" id="raeLink" target="_blank" rel="noopener">Ver en RAE</a>
+  <a class="link" id="raeLink" target="_blank">Ver en RAE</a>
 </div>
 
 <script src="db.js"></script>
@@ -229,215 +203,108 @@ body{
 <script src="srsEngine.js"></script>
 
 <script>
-let revealed = false;
-let currentIndex = 0;
-let sessionWords = [];
-let currentWordData = null;
-
-// Config de sesión
-const SESSION_SIZE = 20;
-const MIX_DUE_RATIO = 0.7; // 70% debidas, 30% nuevas
+let revealed=false;
+let currentIndex=0;
+let sessionWords=[];
+let currentWordData=null;
+const SESSION_SIZE=20;
 
 window.addEventListener("load", async function(){
-  try{
-    await initDB();
-    await seedTestWordsIfEmpty();
-    await startSession();
-    document.getElementById("status").innerText = "Lista ✔ (toca la tarjeta)";
-  }catch(e){
-    console.error(e);
-    document.getElementById("status").innerText = "Error inicializando ❌";
-  }
+  await initDB();
+  await seedTestWordsIfEmpty();
+  await startSession();
 });
 
 async function startSession(){
-  const ids = await getAllWordIds();
-  if(!ids.length){
-    setStatus("No hay palabras en base.");
-    return;
-  }
-
-  // Clasificamos: NUEVAS (nunca repasadas), DEBIDAS (due<=hoy), FUTURAS
-  const now = Date.now();
-  const newIds = [];
-  const dueIds = [];
-
-  // Nota: con diccionario enorme optimizaremos esto; ahora es perfecto para validar flujo.
-  for(const id of ids){
-    const st = await SRS.getOrCreateProgress(id);
-    const isNew = (st.reps === 0 && st.lapses === 0 && (st.interval === 0 || st.interval == null));
-    if(isNew){
-      newIds.push(id);
-    } else if(st.due <= now){
-      dueIds.push(id);
-    }
-  }
-
-  shuffleInPlace(dueIds);
-  shuffleInPlace(newIds);
-
-  const dueTarget = Math.round(SESSION_SIZE * MIX_DUE_RATIO);
-  const newTarget = SESSION_SIZE - dueTarget;
-
-  const pick = [];
-
-  // 1) Metemos debidas
-  pick.push(...dueIds.slice(0, dueTarget));
-
-  // 2) Metemos nuevas
-  pick.push(...newIds.slice(0, newTarget));
-
-  // 3) Si faltan, rellenamos con lo que haya
-  if(pick.length < SESSION_SIZE){
-    const remainDue = dueIds.slice(dueTarget);
-    const remainNew = newIds.slice(newTarget);
-    const filler = [...remainDue, ...remainNew];
-    shuffleInPlace(filler);
-    pick.push(...filler.slice(0, SESSION_SIZE - pick.length));
-  }
-
-  // Si aún así no llega (pocas palabras), nos quedamos con lo que hay.
-  sessionWords = pick.slice(0, Math.min(SESSION_SIZE, pick.length));
-  shuffleInPlace(sessionWords);
-
-  currentIndex = 0;
+  const ids=await getAllWordIds();
+  sessionWords=ids.sort(()=>Math.random()-0.5).slice(0,SESSION_SIZE);
+  currentIndex=0;
   await loadCard();
 }
 
-async function loadCard(){
-  revealed = false;
+function getPosClass(pos){
+  if(!pos) return "other";
+  pos=pos.toLowerCase();
+  if(pos.includes("adj")) return "adj";
+  if(pos.includes("sust")||pos.includes("m.")||pos.includes("f.")) return "sust";
+  if(pos.includes("verb")) return "verb";
+  if(pos.includes("adv")) return "adv";
+  return "other";
+}
 
-  if(currentIndex >= sessionWords.length){
-    document.getElementById("definition").innerText = "Sesión terminada ✅";
-    hideRevealBlocks();
-    document.getElementById("word").style.display = "none";
-    document.getElementById("raeLink").style.display = "none";
-    updateProgress(true);
-    setStatus("Sesión terminada. Vuelve a abrir para nueva tanda.");
-    currentWordData = null;
+async function loadCard(){
+  revealed=false;
+
+  if(currentIndex>=sessionWords.length){
+    document.querySelector(".card").innerHTML="Sesión terminada ✅";
     return;
   }
 
-  const id = sessionWords[currentIndex];
-  const w = await getWord(id);
-  currentWordData = w;
+  const id=sessionWords[currentIndex];
+  const w=await getWord(id);
+  currentWordData=w;
 
-  // FRONTAL: solo 1 acepción
-  const first = (w?.senses && w.senses[0]) ? w.senses[0] : "Sin definición.";
-  document.getElementById("definition").innerText = first;
+  const first=w.senses?.[0]||"Sin definición.";
+  const posClass=getPosClass(w.pos);
 
-  document.getElementById("word").style.display = "none";
-  hideRevealBlocks();
-  document.getElementById("raeLink").style.display = "none";
+  document.querySelector(".card").innerHTML=`
+    <div class="meta ${posClass}">
+      ${escapeHtml(w.pos||"")}
+      ${w.field?" · "+escapeHtml(w.field):""}
+    </div>
+    <div class="definition">${escapeHtml(first)}</div>
+  `;
 
-  updateProgress(false);
+  updateProgress();
 }
 
 function revealAnswer(){
-  if(revealed || !currentWordData) return;
-  revealed = true;
+  if(revealed||!currentWordData)return;
+  revealed=true;
 
-  const w = currentWordData;
+  const w=currentWordData;
 
-  // Palabra grande
-  document.getElementById("word").innerText = w.word || "—";
-  document.getElementById("word").style.display = "block";
+  document.querySelector(".card").innerHTML=`
+    <div class="revealed-layout">
+      <div class="word">${escapeHtml(w.word)}</div>
+      <div class="pos">${escapeHtml(w.pos||"")} ${w.field?" · "+escapeHtml(w.field):""}</div>
 
-  // Acepciones completas (incluida la primera)
-  const senses = (w.senses || []);
-  document.getElementById("senses").innerHTML =
-    senses.length
-      ? `<ol class="list">${senses.map(s=>`<li>${escapeHtml(s)}</li>`).join("")}</ol>`
-      : "—";
-  document.getElementById("sensesBlock").style.display = "block";
+      <div class="compact-block">
+        ${(w.senses||[]).map((s,i)=>`${i+1}. ${escapeHtml(s)}`).join("<br><br>")}
+      </div>
 
-  // Sinónimos
-  const syn = (w.synonyms || []);
-  document.getElementById("synonyms").innerText = syn.length ? syn.join(", ") : "—";
-  document.getElementById("synBlock").style.display = "block";
+      <div class="compact-block">
+        📜 ${escapeHtml(w.etym||"—")}
+        ${w.tip?`<br><br>💡 ${escapeHtml(w.tip)}`:""}
+      </div>
+    </div>
+  `;
 
-  // Ejemplos
-  const ex = (w.examples || []);
-  document.getElementById("example").innerHTML =
-    ex.length
-      ? `<ul class="list">${ex.map(e=>`<li>${escapeHtml(e)}</li>`).join("")}</ul>`
-      : "—";
-  document.getElementById("exBlock").style.display = "block";
-
-  // Etimología / Tip
-  const et = w.etym || "—";
-  const tip = w.tip ? `\n\n💡 ${w.tip}` : "";
-  document.getElementById("etym").innerText = `${et}${tip}`;
-  document.getElementById("etymBlock").style.display = "block";
-
-  // Link RAE (no copiamos definiciones; solo consulta)
-  const rae = document.getElementById("raeLink");
-  const q = encodeURIComponent((w.word || "").trim());
-  rae.href = `https://dle.rae.es/${q}`;
-  rae.style.display = q ? "inline-block" : "none";
+  const rae=document.getElementById("raeLink");
+  rae.href=`https://dle.rae.es/${encodeURIComponent(w.word)}`;
+  rae.style.display="inline-block";
 }
 
-async function rateWord(gradeKey, ev){
-  // Para que el click del botón no “revele” la tarjeta por bubbling
-  if(ev) ev.stopPropagation();
+async function rateWord(type,e){
+  e.stopPropagation();
+  if(!revealed)return;
 
-  if(!currentWordData){
-    return;
-  }
-
-  // Recomendación: obligar a revelar antes de calificar (aprendizaje activo)
-  if(!revealed){
-    setStatus("Primero intenta y toca la tarjeta para revelar 👆");
-    return;
-  }
-
-  try{
-    // SM-2: programamos próxima revisión
-    await SRS.gradeWord(currentWordData.id, gradeKey);
-
-    // Siguiente tarjeta
-    currentIndex++;
-    await loadCard();
-    setStatus("Guardado ✔");
-  }catch(e){
-    console.error(e);
-    setStatus("Error guardando ❌");
-  }
+  await SRS.gradeWord(currentWordData.id,type);
+  currentIndex++;
+  await loadCard();
 }
 
-function updateProgress(done){
-  const total = sessionWords.length || SESSION_SIZE;
-  const cur = Math.min(currentIndex + (done ? 0 : 1), total);
-  const pct = total ? (cur / total) * 100 : 0;
-  document.getElementById("progressFill").style.width = pct + "%";
-  document.getElementById("progressText").innerText = `${cur} / ${total}`;
-}
-
-function hideRevealBlocks(){
-  document.getElementById("sensesBlock").style.display = "none";
-  document.getElementById("synBlock").style.display = "none";
-  document.getElementById("exBlock").style.display = "none";
-  document.getElementById("etymBlock").style.display = "none";
-}
-
-function setStatus(msg){
-  document.getElementById("status").innerText = msg;
+function updateProgress(){
+  const pct=((currentIndex+1)/SESSION_SIZE)*100;
+  document.getElementById("progressFill").style.width=pct+"%";
+  document.getElementById("progressText").innerText=`${currentIndex+1} / ${SESSION_SIZE}`;
 }
 
 function escapeHtml(str){
   return String(str)
     .replaceAll("&","&amp;")
     .replaceAll("<","&lt;")
-    .replaceAll(">","&gt;")
-    .replaceAll('"',"&quot;")
-    .replaceAll("'","&#039;");
-}
-
-function shuffleInPlace(arr){
-  for(let i=arr.length-1;i>0;i--){
-    const j=Math.floor(Math.random()*(i+1));
-    [arr[i],arr[j]]=[arr[j],arr[i]];
-  }
+    .replaceAll(">","&gt;");
 }
 </script>
 
