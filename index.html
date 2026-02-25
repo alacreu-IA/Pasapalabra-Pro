@@ -1,124 +1,165 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>PasaPalabra PRO</title>
 
-<link rel="manifest" href="manifest.json" />
-<meta name="theme-color" content="#0b1220" />
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#0f111a">
+
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;800&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
 
 <style>
-body {
-  margin: 0;
-  font-family: system-ui, -apple-system, sans-serif;
-  background: #0b1220;
-  color: white;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+:root{
+  --bg:#0f111a;
+  --card:#171923;
+  --card2:#1f2230;
+  --border:#2a2d3c;
+  --text:#f0f0f5;
+  --text2:#8e92a7;
+  --gold:#f5c842;
+  --green:#3ecf72;
+  --red:#ff5555;
+  --r:18px;
 }
 
-/* HEADER */
-.header {
-  width: 100%;
-  max-width: 420px;
-  padding: 15px 20px 0;
+body{
+  margin:0;
+  font-family:'DM Sans',system-ui,sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  display:flex;
+  flex-direction:column;
+  align-items:center;
 }
 
-.progress-bar {
-  height: 6px;
-  background: #1f2937;
-  border-radius: 6px;
-  overflow: hidden;
+/* PROGRESO */
+.header{
+  width:100%;
+  max-width:420px;
+  padding:18px 20px 0;
 }
 
-.progress-fill {
-  height: 100%;
-  width: 10%;
-  background: linear-gradient(90deg, #facc15, #f59e0b);
-  transition: width 0.3s;
+.progress-bar{
+  height:6px;
+  background:var(--card2);
+  border-radius:6px;
+  overflow:hidden;
 }
 
-.progress-text {
-  font-size: 12px;
-  opacity: 0.7;
-  margin-top: 5px;
+.progress-fill{
+  height:100%;
+  width:0%;
+  background:var(--gold);
+  transition:.3s;
 }
 
-/* CARD */
-.card {
-  width: 92%;
-  max-width: 420px;
-  background: #111827;
-  border-radius: 20px;
-  padding: 20px;
-  margin-top: 20px;
-  box-shadow: 0 15px 35px rgba(0,0,0,0.5);
+.progress-text{
+  font-size:11px;
+  color:var(--text2);
+  margin-top:6px;
+  font-family:'Syne',sans-serif;
 }
 
-.word {
-  font-size: 30px;
-  font-weight: 900;
-  color: #facc15;
-  margin-bottom: 10px;
+/* TARJETA */
+.card{
+  width:92%;
+  max-width:420px;
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:var(--r);
+  padding:22px;
+  margin-top:18px;
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+  min-height:260px;
+  cursor:pointer;
+  transition:.2s;
 }
 
-.definition {
-  font-size: 15px;
-  line-height: 1.6;
-  margin-bottom: 15px;
+.card:active{
+  transform:scale(.98);
 }
 
-.block {
-  background: #0f172a;
-  border: 1px solid #1f2937;
-  border-radius: 12px;
-  padding: 10px;
-  margin-top: 10px;
+.qlbl{
+  font-size:10px;
+  text-transform:uppercase;
+  letter-spacing:.8px;
+  color:var(--text2);
+  font-family:'Syne',sans-serif;
 }
 
-.block-title {
-  font-size: 11px;
-  text-transform: uppercase;
-  opacity: 0.6;
-  margin-bottom: 4px;
-  letter-spacing: 0.5px;
+.definition{
+  font-size:18px;
+  line-height:1.6;
 }
 
-.block-content {
-  font-size: 14px;
-  line-height: 1.5;
+.word{
+  font-family:'Syne',sans-serif;
+  font-size:30px;
+  font-weight:800;
+  color:var(--gold);
+  margin-top:6px;
+  display:none;
+}
+
+.block{
+  background:var(--card2);
+  border:1px solid var(--border);
+  border-radius:14px;
+  padding:12px;
+  display:none;
+}
+
+.block-title{
+  font-size:10px;
+  text-transform:uppercase;
+  color:var(--text2);
+  margin-bottom:5px;
+  font-family:'Syne',sans-serif;
+}
+
+.block-content{
+  font-size:14px;
+  line-height:1.6;
 }
 
 /* BOTONES */
-.buttons {
-  width: 92%;
-  max-width: 420px;
-  display: flex;
-  justify-content: space-between;
-  margin: 20px 0;
+.buttons{
+  width:92%;
+  max-width:420px;
+  display:flex;
+  gap:8px;
+  margin:20px 0;
 }
 
-.btn {
-  flex: 1;
-  margin: 5px;
-  padding: 12px;
-  border-radius: 10px;
-  border: none;
-  font-size: 14px;
-  font-weight: 600;
-  cursor: pointer;
+.btn{
+  flex:1;
+  border:none;
+  border-radius:14px;
+  padding:12px 6px;
+  font-family:'Syne',sans-serif;
+  font-size:13px;
+  font-weight:700;
+  cursor:pointer;
+  transition:.15s;
 }
 
-.btn-red { background: #991b1b; }
-.btn-yellow { background: #92400e; }
-.btn-green { background: #065f46; }
+.btn:active{
+  transform:scale(.96);
+}
 
-.status {
-  font-size: 12px;
-  opacity: 0.5;
-  margin-bottom: 10px;
+.btn-red{background:rgba(255,85,85,0.15);color:var(--red);border:1px solid rgba(255,85,85,0.4);}
+.btn-yellow{background:rgba(245,200,66,0.15);color:var(--gold);border:1px solid rgba(245,200,66,0.4);}
+.btn-green{background:rgba(62,207,114,0.15);color:var(--green);border:1px solid rgba(62,207,114,0.4);}
+
+.status{
+  font-size:11px;
+  color:var(--text2);
+  margin-bottom:14px;
 }
 </style>
 </head>
@@ -132,27 +173,28 @@ body {
   <div class="progress-text" id="progressText">1 / 20</div>
 </div>
 
-<div class="card">
-  <div class="word" id="word">Pulsa iniciar</div>
+<div class="card" onclick="revealAnswer()">
 
-  <div class="definition" id="definition">
-    Definición aparecerá aquí
-  </div>
+  <div class="qlbl">Definición</div>
+  <div class="definition" id="definition">Pulsa para empezar</div>
 
-  <div class="block">
+  <div class="word" id="word"></div>
+
+  <div class="block" id="synBlock">
     <div class="block-title">Sinónimos</div>
-    <div class="block-content" id="synonyms">—</div>
+    <div class="block-content" id="synonyms"></div>
   </div>
 
-  <div class="block">
+  <div class="block" id="exBlock">
     <div class="block-title">Ejemplo</div>
-    <div class="block-content" id="example">—</div>
+    <div class="block-content" id="example"></div>
   </div>
 
-  <div class="block">
+  <div class="block" id="etymBlock">
     <div class="block-title">Etimología / Para memorizar</div>
-    <div class="block-content" id="etym">—</div>
+    <div class="block-content" id="etym"></div>
   </div>
+
 </div>
 
 <div class="buttons">
@@ -167,16 +209,65 @@ body {
 <script src="vocabEngine.js"></script>
 
 <script>
-window.addEventListener("load", async function () {
+let revealed=false;
+let currentIndex=0;
+let sessionWords=[];
+let currentWordData=null;
+
+window.addEventListener("load",async function(){
   await initDB();
   await seedTestWordsIfEmpty();
-  startVocabSession();
-  document.getElementById("status").innerText = "Lista ✔";
+  startSession();
+  document.getElementById("status").innerText="Lista ✔";
 });
+
+async function startSession(){
+  const ids=await getAllWordIds();
+  sessionWords=ids.slice(0,20);
+  currentIndex=0;
+  loadCard();
+}
+
+async function loadCard(){
+  revealed=false;
+  const id=sessionWords[currentIndex];
+  const w=await getWord(id);
+  currentWordData=w;
+
+  document.getElementById("definition").innerText=w.senses[0];
+  document.getElementById("word").style.display="none";
+  document.getElementById("synBlock").style.display="none";
+  document.getElementById("exBlock").style.display="none";
+  document.getElementById("etymBlock").style.display="none";
+
+  updateProgress();
+}
+
+function revealAnswer(){
+  if(revealed||!currentWordData)return;
+  revealed=true;
+
+  document.getElementById("word").innerText=currentWordData.word;
+  document.getElementById("word").style.display="block";
+
+  document.getElementById("synonyms").innerText=currentWordData.synonyms.join(", ");
+  document.getElementById("example").innerText=currentWordData.examples.join(" ");
+  document.getElementById("etym").innerText=currentWordData.etym;
+
+  document.getElementById("synBlock").style.display="block";
+  document.getElementById("exBlock").style.display="block";
+  document.getElementById("etymBlock").style.display="block";
+}
+
+function updateProgress(){
+  const percent=((currentIndex+1)/sessionWords.length)*100;
+  document.getElementById("progressFill").style.width=percent+"%";
+  document.getElementById("progressText").innerText=(currentIndex+1)+" / "+sessionWords.length;
+}
 </script>
 
 <script>
-if ("serviceWorker" in navigator) {
+if("serviceWorker" in navigator){
   navigator.serviceWorker.register("./sw.js");
 }
 </script>
