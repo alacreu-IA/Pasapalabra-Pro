@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>PasaPalabra PRO</title>
 
-  <!-- Manifest -->
   <link rel="manifest" href="manifest.json" />
   <meta name="theme-color" content="#111827" />
 
@@ -16,59 +15,81 @@
       background: #111827;
       color: white;
       display: flex;
-      justify-content: center;
+      flex-direction: column;
       align-items: center;
-      height: 100vh;
-    }
-
-    .container {
-      text-align: center;
+      min-height: 100vh;
     }
 
     h1 {
-      margin-bottom: 10px;
+      margin-top: 20px;
     }
 
-    p {
-      opacity: 0.8;
+    .controls {
+      margin: 20px 0;
     }
 
     button {
-      padding: 12px 20px;
-      font-size: 16px;
+      padding: 10px 16px;
+      margin: 5px;
       border-radius: 8px;
       border: none;
       cursor: pointer;
       background: #2563eb;
       color: white;
-      margin-top: 15px;
+      font-size: 14px;
     }
 
     button:hover {
       background: #1d4ed8;
     }
 
-    .status {
+    .card {
+      width: 90%;
+      max-width: 420px;
+      background: #1f2937;
+      border-radius: 16px;
+      padding: 20px;
       margin-top: 20px;
-      font-size: 14px;
+      min-height: 250px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+    }
+
+    .status {
+      margin-top: 15px;
+      font-size: 13px;
       opacity: 0.7;
     }
   </style>
 </head>
 
 <body>
-  <div class="container">
-    <h1>PasaPalabra PRO</h1>
-    <p>Base estructural instalada correctamente</p>
-    <button onclick="testDB()">Probar base de datos</button>
-    <div class="status" id="status">Inicializando...</div>
+
+  <h1>PasaPalabra PRO</h1>
+
+  <div class="controls">
+    <button onclick="startVocabSession()">Iniciar vocabulario</button>
+    <button onclick="flipCard()">Girar</button>
+    <button onclick="nextCard()">Siguiente</button>
+  </div>
+
+  <div class="card">
+    <div id="cardFront">
+      Pulsa "Iniciar vocabulario"
+    </div>
+    <div id="cardBack" style="display:none;"></div>
+  </div>
+
+  <div class="status" id="status">
+    Base estructural lista
   </div>
 
   <!-- Base de datos -->
   <script src="db.js"></script>
 
+  <!-- Motor vocabulario -->
+  <script src="vocabEngine.js"></script>
+
   <script>
-    // Inicializar base de datos al cargar
     window.addEventListener("load", async function () {
       try {
         await initDB();
@@ -78,23 +99,13 @@
         console.error(error);
       }
     });
-
-    function testDB() {
-      alert("IndexedDB funcionando correctamente");
-    }
   </script>
 
   <!-- Service Worker -->
   <script>
     if ("serviceWorker" in navigator) {
       window.addEventListener("load", function () {
-        navigator.serviceWorker.register("./sw.js")
-          .then(function () {
-            console.log("Service Worker registrado correctamente");
-          })
-          .catch(function (error) {
-            console.error("Error registrando el Service Worker:", error);
-          });
+        navigator.serviceWorker.register("./sw.js");
       });
     }
   </script>
