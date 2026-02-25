@@ -112,18 +112,25 @@ body{
   font-size:10px;
   text-transform:uppercase;
   color:var(--text2);
-  margin-bottom:5px;
+  margin-bottom:6px;
   font-family:'Syne',sans-serif;
 }
 
 .block-content{ font-size:14px; line-height:1.6; }
 
+.list{
+  margin:0;
+  padding-left:18px;
+}
+.list li{ margin:6px 0; }
+
+/* BOTONES */
 .buttons{
   width:92%;
   max-width:420px;
   display:flex;
   gap:8px;
-  margin:20px 0;
+  margin:20px 0 10px;
 }
 
 .btn{
@@ -144,7 +151,27 @@ body{
 .btn-yellow{background:rgba(245,200,66,0.15);color:var(--gold);border:1px solid rgba(245,200,66,0.4);}
 .btn-green{background:rgba(62,207,114,0.15);color:var(--green);border:1px solid rgba(62,207,114,0.4);}
 
-.status{ font-size:11px; color:var(--text2); margin-bottom:14px; }
+.row{
+  width:92%;
+  max-width:420px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:10px;
+  margin-bottom:14px;
+}
+
+.status{ font-size:11px; color:var(--text2); }
+.link{
+  font-size:11px;
+  color:var(--text2);
+  text-decoration:none;
+  border:1px solid var(--border);
+  padding:8px 10px;
+  border-radius:12px;
+  display:none;
+}
+.link:active{ transform:scale(.98); }
 </style>
 </head>
 
@@ -154,7 +181,7 @@ body{
   <div class="progress-bar">
     <div class="progress-fill" id="progressFill"></div>
   </div>
-  <div class="progress-text" id="progressText">1 / 20</div>
+  <div class="progress-text" id="progressText">0 / 20</div>
 </div>
 
 <div class="card" onclick="revealAnswer()">
@@ -163,6 +190,11 @@ body{
   <div class="definition" id="definition">Cargando...</div>
 
   <div class="word" id="word"></div>
+
+  <div class="block" id="sensesBlock">
+    <div class="block-title">Acepciones</div>
+    <div class="block-content" id="senses"></div>
+  </div>
 
   <div class="block" id="synBlock">
     <div class="block-title">Sinónimos</div>
@@ -182,85 +214,230 @@ body{
 </div>
 
 <div class="buttons">
-  <button class="btn btn-red" onclick="rateWord('bad')">No la sé</button>
-  <button class="btn btn-yellow" onclick="rateWord('review')">Repasar</button>
-  <button class="btn btn-green" onclick="rateWord('easy')">La sé</button>
+  <button class="btn btn-red" onclick="rateWord('bad', event)">No la sé</button>
+  <button class="btn btn-yellow" onclick="rateWord('review', event)">Repasar</button>
+  <button class="btn btn-green" onclick="rateWord('easy', event)">La sé</button>
 </div>
 
-<div class="status" id="status">Inicializando...</div>
+<div class="row">
+  <div class="status" id="status">Inicializando…</div>
+  <a class="link" id="raeLink" target="_blank" rel="noopener">Ver en RAE</a>
+</div>
 
 <script src="db.js"></script>
 <script src="vocabEngine.js"></script>
+<script src="srsEngine.js"></script>
 
 <script>
-let revealed=false;
-let currentIndex=0;
-let sessionWords=[];
-let currentWordData=null;
+let revealed = false;
+let currentIndex = 0;
+let sessionWords = [];
+let currentWordData = null;
 
-window.addEventListener("load",async function(){
-  await initDB();
-  await seedTestWordsIfEmpty();
-  startSession();
-  document.getElementById("status").innerText="Lista ✔";
+// Config de sesión
+const SESSION_SIZE = 20;
+const MIX_DUE_RATIO = 0.7; // 70% debidas, 30% nuevas
+
+window.addEventListener("load", async function(){
+  try{
+    await initDB();
+    await seedTestWordsIfEmpty();
+    await startSession();
+    document.getElementById("status").innerText = "Lista ✔ (toca la tarjeta)";
+  }catch(e){
+    console.error(e);
+    document.getElementById("status").innerText = "Error inicializando ❌";
+  }
 });
 
 async function startSession(){
-  const ids=await getAllWordIds();
-  sessionWords=shuffle(ids).slice(0,20);
-  currentIndex=0;
-  loadCard();
-}
-
-async function loadCard(){
-  revealed=false;
-  if(currentIndex>=sessionWords.length){
-    document.getElementById("definition").innerText="Sesión terminada 🎉";
+  const ids = await getAllWordIds();
+  if(!ids.length){
+    setStatus("No hay palabras en base.");
     return;
   }
 
-  const id=sessionWords[currentIndex];
-  const w=await getWord(id);
-  currentWordData=w;
+  // Clasificamos: NUEVAS (nunca repasadas), DEBIDAS (due<=hoy), FUTURAS
+  const now = Date.now();
+  const newIds = [];
+  const dueIds = [];
 
-  document.getElementById("definition").innerText=w.senses.join("\n\n");
-  document.getElementById("word").style.display="none";
-  document.getElementById("synBlock").style.display="none";
-  document.getElementById("exBlock").style.display="none";
-  document.getElementById("etymBlock").style.display="none";
+  // Nota: con diccionario enorme optimizaremos esto; ahora es perfecto para validar flujo.
+  for(const id of ids){
+    const st = await SRS.getOrCreateProgress(id);
+    const isNew = (st.reps === 0 && st.lapses === 0 && (st.interval === 0 || st.interval == null));
+    if(isNew){
+      newIds.push(id);
+    } else if(st.due <= now){
+      dueIds.push(id);
+    }
+  }
 
-  updateProgress();
+  shuffleInPlace(dueIds);
+  shuffleInPlace(newIds);
+
+  const dueTarget = Math.round(SESSION_SIZE * MIX_DUE_RATIO);
+  const newTarget = SESSION_SIZE - dueTarget;
+
+  const pick = [];
+
+  // 1) Metemos debidas
+  pick.push(...dueIds.slice(0, dueTarget));
+
+  // 2) Metemos nuevas
+  pick.push(...newIds.slice(0, newTarget));
+
+  // 3) Si faltan, rellenamos con lo que haya
+  if(pick.length < SESSION_SIZE){
+    const remainDue = dueIds.slice(dueTarget);
+    const remainNew = newIds.slice(newTarget);
+    const filler = [...remainDue, ...remainNew];
+    shuffleInPlace(filler);
+    pick.push(...filler.slice(0, SESSION_SIZE - pick.length));
+  }
+
+  // Si aún así no llega (pocas palabras), nos quedamos con lo que hay.
+  sessionWords = pick.slice(0, Math.min(SESSION_SIZE, pick.length));
+  shuffleInPlace(sessionWords);
+
+  currentIndex = 0;
+  await loadCard();
+}
+
+async function loadCard(){
+  revealed = false;
+
+  if(currentIndex >= sessionWords.length){
+    document.getElementById("definition").innerText = "Sesión terminada ✅";
+    hideRevealBlocks();
+    document.getElementById("word").style.display = "none";
+    document.getElementById("raeLink").style.display = "none";
+    updateProgress(true);
+    setStatus("Sesión terminada. Vuelve a abrir para nueva tanda.");
+    currentWordData = null;
+    return;
+  }
+
+  const id = sessionWords[currentIndex];
+  const w = await getWord(id);
+  currentWordData = w;
+
+  // FRONTAL: solo 1 acepción
+  const first = (w?.senses && w.senses[0]) ? w.senses[0] : "Sin definición.";
+  document.getElementById("definition").innerText = first;
+
+  document.getElementById("word").style.display = "none";
+  hideRevealBlocks();
+  document.getElementById("raeLink").style.display = "none";
+
+  updateProgress(false);
 }
 
 function revealAnswer(){
-  if(revealed||!currentWordData)return;
-  revealed=true;
+  if(revealed || !currentWordData) return;
+  revealed = true;
 
-  document.getElementById("word").innerText=currentWordData.word;
-  document.getElementById("word").style.display="block";
+  const w = currentWordData;
 
-  document.getElementById("synonyms").innerText=currentWordData.synonyms.join(", ");
-  document.getElementById("example").innerText=currentWordData.examples.join(" ");
-  document.getElementById("etym").innerText=currentWordData.etym;
+  // Palabra grande
+  document.getElementById("word").innerText = w.word || "—";
+  document.getElementById("word").style.display = "block";
 
-  document.getElementById("synBlock").style.display="block";
-  document.getElementById("exBlock").style.display="block";
-  document.getElementById("etymBlock").style.display="block";
+  // Acepciones completas (incluida la primera)
+  const senses = (w.senses || []);
+  document.getElementById("senses").innerHTML =
+    senses.length
+      ? `<ol class="list">${senses.map(s=>`<li>${escapeHtml(s)}</li>`).join("")}</ol>`
+      : "—";
+  document.getElementById("sensesBlock").style.display = "block";
+
+  // Sinónimos
+  const syn = (w.synonyms || []);
+  document.getElementById("synonyms").innerText = syn.length ? syn.join(", ") : "—";
+  document.getElementById("synBlock").style.display = "block";
+
+  // Ejemplos
+  const ex = (w.examples || []);
+  document.getElementById("example").innerHTML =
+    ex.length
+      ? `<ul class="list">${ex.map(e=>`<li>${escapeHtml(e)}</li>`).join("")}</ul>`
+      : "—";
+  document.getElementById("exBlock").style.display = "block";
+
+  // Etimología / Tip
+  const et = w.etym || "—";
+  const tip = w.tip ? `\n\n💡 ${w.tip}` : "";
+  document.getElementById("etym").innerText = `${et}${tip}`;
+  document.getElementById("etymBlock").style.display = "block";
+
+  // Link RAE (no copiamos definiciones; solo consulta)
+  const rae = document.getElementById("raeLink");
+  const q = encodeURIComponent((w.word || "").trim());
+  rae.href = `https://dle.rae.es/${q}`;
+  rae.style.display = q ? "inline-block" : "none";
 }
 
-function rateWord(level){
-  currentIndex++;
-  loadCard();
+async function rateWord(gradeKey, ev){
+  // Para que el click del botón no “revele” la tarjeta por bubbling
+  if(ev) ev.stopPropagation();
+
+  if(!currentWordData){
+    return;
+  }
+
+  // Recomendación: obligar a revelar antes de calificar (aprendizaje activo)
+  if(!revealed){
+    setStatus("Primero intenta y toca la tarjeta para revelar 👆");
+    return;
+  }
+
+  try{
+    // SM-2: programamos próxima revisión
+    await SRS.gradeWord(currentWordData.id, gradeKey);
+
+    // Siguiente tarjeta
+    currentIndex++;
+    await loadCard();
+    setStatus("Guardado ✔");
+  }catch(e){
+    console.error(e);
+    setStatus("Error guardando ❌");
+  }
 }
 
-function updateProgress(){
-  const percent=((currentIndex+1)/sessionWords.length)*100;
-  document.getElementById("progressFill").style.width=percent+"%";
-  document.getElementById("progressText").innerText=(currentIndex+1)+" / "+sessionWords.length;
+function updateProgress(done){
+  const total = sessionWords.length || SESSION_SIZE;
+  const cur = Math.min(currentIndex + (done ? 0 : 1), total);
+  const pct = total ? (cur / total) * 100 : 0;
+  document.getElementById("progressFill").style.width = pct + "%";
+  document.getElementById("progressText").innerText = `${cur} / ${total}`;
 }
 
-function shuffle(array){
-  return array.sort(()=>Math.random()-0.5);
+function hideRevealBlocks(){
+  document.getElementById("sensesBlock").style.display = "none";
+  document.getElementById("synBlock").style.display = "none";
+  document.getElementById("exBlock").style.display = "none";
+  document.getElementById("etymBlock").style.display = "none";
+}
+
+function setStatus(msg){
+  document.getElementById("status").innerText = msg;
+}
+
+function escapeHtml(str){
+  return String(str)
+    .replaceAll("&","&amp;")
+    .replaceAll("<","&lt;")
+    .replaceAll(">","&gt;")
+    .replaceAll('"',"&quot;")
+    .replaceAll("'","&#039;");
+}
+
+function shuffleInPlace(arr){
+  for(let i=arr.length-1;i>0;i--){
+    const j=Math.floor(Math.random()*(i+1));
+    [arr[i],arr[j]]=[arr[j],arr[i]];
+  }
 }
 </script>
 
