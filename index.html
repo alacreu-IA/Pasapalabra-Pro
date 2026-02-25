@@ -5,112 +5,168 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>PasaPalabra PRO</title>
 
-<link rel="manifest" href="manifest.json">
-
 <style>
 body {
   margin: 0;
-  font-family: system-ui, -apple-system, sans-serif;
-  background: radial-gradient(circle at top, #0b1630, #050b18 70%);
-  color: #fff;
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+  background: radial-gradient(circle at top, #0d1b34, #050b18 70%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.app {
+  width: 390px;
+  height: 780px;
+  background: #0f1a2e;
+  border-radius: 40px;
+  box-shadow: 0 0 60px rgba(0,0,0,0.6);
+  padding: 24px;
   display: flex;
   flex-direction: column;
-  align-items: center;
-}
-
-h1 {
-  margin-top: 40px;
-  font-size: 34px;
-  font-weight: 800;
-}
-
-h1 span {
-  color: #f5c84c;
-}
-
-.card-container {
-  width: 90%;
-  max-width: 520px;
-  margin-top: 40px;
+  justify-content: space-between;
+  color: white;
 }
 
 .card {
-  background: #111b2f;
-  border-radius: 22px;
-  padding: 28px;
-  min-height: 260px;
-  box-shadow: 0 0 40px rgba(0,0,0,0.4);
+  background: #111c32;
+  border-radius: 24px;
+  padding: 22px;
+  flex-grow: 1;
+  overflow-y: auto;
+  cursor: pointer;
+  box-shadow: inset 0 0 30px rgba(255,255,255,0.02);
+  transition: transform 0.4s ease;
+}
+
+.word {
+  font-size: 32px;
+  font-weight: 800;
+  color: #f4c542;
+  margin-bottom: 10px;
+}
+
+.section {
+  background: #16233f;
+  border-radius: 14px;
+  padding: 12px;
+  margin-top: 10px;
+}
+
+.section-title {
+  font-size: 12px;
+  opacity: .7;
+  margin-bottom: 6px;
+}
+
+.buttons {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  gap: 10px;
+  margin-top: 20px;
 }
 
 button {
-  border: none;
-  padding: 12px 18px;
+  flex: 1;
+  padding: 12px;
   border-radius: 14px;
+  border: none;
   font-weight: 700;
-  cursor: pointer;
   font-size: 14px;
 }
 
-.btn-start {
-  background: #f5c84c;
-  color: #000;
+.btn-no {
+  background: #7b1e1e;
+  color: #ff9d9d;
 }
 
-.btn-flip {
-  background: #2c3e70;
-  color: white;
+.btn-review {
+  background: #6e5612;
+  color: #f4c542;
 }
 
-.btn-next {
-  background: #2e7d32;
-  color: white;
-}
-
-.controls {
-  margin-top: 20px;
-  display: flex;
-  gap: 10px;
-  justify-content: center;
-}
-
-.status {
-  margin-top: 16px;
-  opacity: .7;
-  font-size: 13px;
+.btn-yes {
+  background: #145c2d;
+  color: #7fffb0;
 }
 </style>
 </head>
 
 <body>
 
-<h1><span>PasaPalabra</span> PRO</h1>
+<div class="app">
 
-<div class="card-container">
-  <div class="card">
-    <div id="cardFront">Pulsa “Iniciar vocabulario”</div>
-    <div id="cardBack" style="display:none;"></div>
+  <div class="card" id="card" onclick="flipCard()">
+    <div id="front">
+      <div class="section-title">Definición</div>
+      <div id="definition"></div>
+    </div>
+
+    <div id="back" style="display:none;">
+      <div class="word" id="word"></div>
+
+      <div class="section">
+        <div class="section-title">Acepciones</div>
+        <div id="senses"></div>
+      </div>
+
+      <div class="section">
+        <div class="section-title">Sinónimos</div>
+        <div id="synonyms"></div>
+      </div>
+
+      <div class="section">
+        <div class="section-title">Ejemplo</div>
+        <div id="example"></div>
+      </div>
+
+      <div class="section">
+        <div class="section-title">💡 Para memorizar</div>
+        <div id="tip"></div>
+      </div>
+    </div>
   </div>
 
-  <div class="controls">
-    <button class="btn-start" onclick="startVocabSession()">Iniciar</button>
-    <button class="btn-flip" onclick="flipCard()">Girar</button>
-    <button class="btn-next" onclick="nextCard()">Siguiente</button>
+  <div class="buttons">
+    <button class="btn-no">❌ No la sé</button>
+    <button class="btn-review">🔄 Repasar</button>
+    <button class="btn-yes">✅ La sé</button>
   </div>
 
-  <div id="status" class="status"></div>
 </div>
 
-<script src="js/db.js"></script>
-<script src="js/srsEngine.js"></script>
-<script src="js/vocabEngine.js"></script>
-
 <script>
-if ("serviceWorker" in navigator) {
-  navigator.serviceWorker.register("./sw.js");
+const words = [
+  {
+    word: "Paroxismo",
+    definition: "Exaltación extrema de los afectos y pasiones.",
+    senses: "1. Exaltación extrema.<br>2. Exacerbación brusca de una enfermedad.",
+    synonyms: "exaltación, frenesí, arrebato",
+    example: "El paroxismo de alegría fue desbordante.",
+    tip: "Para + oxys (agudo). El punto más agudo."
+  }
+];
+
+let current = 0;
+let flipped = false;
+
+function loadCard() {
+  const w = words[current];
+  document.getElementById("definition").innerHTML = w.definition;
+  document.getElementById("word").innerHTML = w.word;
+  document.getElementById("senses").innerHTML = w.senses;
+  document.getElementById("synonyms").innerHTML = w.synonyms;
+  document.getElementById("example").innerHTML = w.example;
+  document.getElementById("tip").innerHTML = w.tip;
 }
+
+function flipCard() {
+  flipped = !flipped;
+  document.getElementById("front").style.display = flipped ? "none" : "block";
+  document.getElementById("back").style.display = flipped ? "block" : "none";
+}
+
+loadCard();
 </script>
 
 </body>
