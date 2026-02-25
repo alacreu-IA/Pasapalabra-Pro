@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>PasaPalabra PRO</title>
 
-  <link rel="manifest" href="manifest.json" />
-  <meta name="theme-color" content="#0b0f1c" />
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#0b0f1c">
 
   <style>
     body {
@@ -83,81 +83,80 @@
 
 <body>
 
-  <h1>PasaPalabra PRO</h1>
+<h1>PasaPalabra PRO</h1>
 
-  <div class="card" id="card">
-    <div id="content" class="loading">Cargando...</div>
-  </div>
+<div class="card" id="card">
+  <div id="content" class="loading">Cargando...</div>
+</div>
 
-  <div class="buttons">
-    <button class="fail" onclick="rateCard(0)">No la sé</button>
-    <button class="again" onclick="rateCard(1)">Repasar</button>
-    <button class="ok" onclick="rateCard(2)">La sé</button>
-  </div>
+<div class="buttons">
+  <button class="fail" onclick="rateCard(0)">No la sé</button>
+  <button class="again" onclick="rateCard(1)">Repasar</button>
+  <button class="ok" onclick="rateCard(2)">La sé</button>
+</div>
 
-  <!-- 🔥 IMPORTANTE: RUTAS CORRECTAS -->
-  <script src="js/db.js"></script>
-  <script src="js/vocabEngine.js"></script>
-  <script src="js/srsEngine.js"></script>
+<!-- JS desde carpeta -->
+<script src="js/db.js"></script>
+<script src="js/vocabEngine.js"></script>
+<script src="js/srsEngine.js"></script>
 
-  <script>
-    let currentCard = null;
-    let showingAnswer = false;
+<script>
+let currentCard = null;
+let showingAnswer = false;
 
-    async function initApp() {
-      try {
-        await initDB();
-        currentCard = await getNextCard();
-        renderFront();
-      } catch (err) {
-        document.getElementById("content").innerHTML =
-          "Error cargando base de datos.";
-        console.error(err);
-      }
-    }
+async function initApp() {
+  try {
+    await initDB();
+    currentCard = await getNextCard();
+    renderFront();
+  } catch (err) {
+    document.getElementById("content").innerHTML =
+      "Error cargando base de datos.";
+    console.error(err);
+  }
+}
 
-    function renderFront() {
-      showingAnswer = false;
-      const content = document.getElementById("content");
-      content.classList.remove("loading");
+function renderFront() {
+  showingAnswer = false;
+  const content = document.getElementById("content");
+  content.classList.remove("loading");
 
-      content.innerHTML = `
-        <div class="definition">
-          ${currentCard.definition}
-        </div>
-      `;
-    }
+  content.innerHTML = `
+    <div class="definition">
+      ${currentCard.definition}
+    </div>
+  `;
+}
 
-    function renderBack() {
-      if (showingAnswer) return;
-      showingAnswer = true;
+function renderBack() {
+  if (showingAnswer) return;
+  showingAnswer = true;
 
-      const content = document.getElementById("content");
+  const content = document.getElementById("content");
 
-      content.innerHTML = `
-        <div class="word">${currentCard.word}</div>
-        <div class="definition">
-          ${currentCard.fullDefinition}
-        </div>
-      `;
-    }
+  content.innerHTML = `
+    <div class="word">${currentCard.word}</div>
+    <div class="definition">
+      ${currentCard.fullDefinition}
+    </div>
+  `;
+}
 
-    document.getElementById("card").addEventListener("click", renderBack);
+document.getElementById("card").addEventListener("click", renderBack);
 
-    async function rateCard(score) {
-      if (!currentCard) return;
+async function rateCard(score) {
+  if (!currentCard) return;
+  await updateCardScore(currentCard.id, score);
+  currentCard = await getNextCard();
+  renderFront();
+}
 
-      await updateCardScore(currentCard.id, score);
-      currentCard = await getNextCard();
-      renderFront();
-    }
+initApp();
 
-    initApp();
-
-    if ("serviceWorker" in navigator) {
-      navigator.serviceWorker.register("./sw.js");
-    }
-  </script>
+if ("serviceWorker" in navigator) {
+  navigator.serviceWorker.register("./sw.js");
+}
+</script>
 
 </body>
 </html>
