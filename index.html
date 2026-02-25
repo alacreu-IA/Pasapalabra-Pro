@@ -22,13 +22,13 @@
 
     h1 {
       margin-top: 20px;
-      font-size: 22px;
+      font-size: 20px;
       font-weight: 600;
       opacity: 0.8;
     }
 
     .controls {
-      margin: 15px 0;
+      margin: 12px 0;
     }
 
     button {
@@ -50,12 +50,12 @@
       perspective: 1200px;
       width: 92%;
       max-width: 420px;
-      margin-top: 20px;
+      margin-top: 15px;
     }
 
     .card {
       width: 100%;
-      min-height: 320px;
+      height: 440px;
       position: relative;
       transform-style: preserve-3d;
       transition: transform 0.6s;
@@ -82,32 +82,38 @@
     }
 
     .word-big {
-      font-size: 28px;
-      font-weight: 800;
-      margin-bottom: 8px;
+      font-size: 32px;
+      font-weight: 900;
+      margin-bottom: 6px;
+      text-align: center;
     }
 
     .pos {
       font-size: 12px;
       opacity: 0.6;
-      margin-bottom: 12px;
+      text-align: center;
+      margin-bottom: 15px;
     }
 
     .section {
       margin-top: 14px;
+      padding: 10px;
+      background: #0f172a;
+      border-radius: 10px;
     }
 
     .section-title {
       font-weight: 700;
-      font-size: 13px;
-      margin-bottom: 4px;
-      opacity: 0.8;
+      font-size: 12px;
+      margin-bottom: 6px;
+      opacity: 0.7;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
     }
 
     .section-content {
       font-size: 14px;
-      line-height: 1.5;
-      opacity: 0.95;
+      line-height: 1.6;
     }
 
     .etym-highlight {
@@ -115,11 +121,10 @@
       padding: 8px;
       border-radius: 8px;
       font-size: 13px;
-      margin-top: 6px;
     }
 
     .status {
-      margin-top: 15px;
+      margin-top: 12px;
       font-size: 12px;
       opacity: 0.6;
     }
@@ -145,10 +150,13 @@
   </div>
 
   <div class="status" id="status">
-    Base estructural lista
+    Inicializando...
   </div>
 
+  <!-- Base de datos -->
   <script src="db.js"></script>
+
+  <!-- Motor vocabulario -->
   <script src="vocabEngine.js"></script>
 
   <script>
@@ -158,6 +166,7 @@
         document.getElementById("status").innerText = "Base de datos lista ✔";
       } catch (error) {
         document.getElementById("status").innerText = "Error en base de datos ❌";
+        console.error(error);
       }
     });
 
