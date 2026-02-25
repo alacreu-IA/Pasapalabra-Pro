@@ -68,15 +68,15 @@ body{
 .card{
   width:92%;
   max-width:420px;
-  height:420px;
+  height:440px;
   background:var(--card);
   border:1px solid var(--border);
   border-radius:var(--r);
-  padding:22px;
+  padding:20px;
   margin-top:18px;
   display:flex;
   flex-direction:column;
-  gap:12px;
+  gap:10px;
   overflow:hidden;
   cursor:pointer;
 }
@@ -183,14 +183,12 @@ body{
   <div class="progress-text" id="progressText">0 / 20</div>
 </div>
 
-<div class="card" onclick="revealAnswer()">
-  Cargando...
-</div>
+<div class="card" onclick="revealAnswer()">Cargando...</div>
 
 <div class="buttons">
-  <button class="btn btn-red" onclick="rateWord('bad', event)">No la sé</button>
-  <button class="btn btn-yellow" onclick="rateWord('review', event)">Repasar</button>
-  <button class="btn btn-green" onclick="rateWord('easy', event)">La sé</button>
+  <button class="btn btn-red" onclick="rateWord('bad',event)">No la sé</button>
+  <button class="btn btn-yellow" onclick="rateWord('review',event)">Repasar</button>
+  <button class="btn btn-green" onclick="rateWord('easy',event)">La sé</button>
 </div>
 
 <div class="row">
@@ -226,7 +224,7 @@ function getPosClass(pos){
   if(!pos) return "other";
   pos=pos.toLowerCase();
   if(pos.includes("adj")) return "adj";
-  if(pos.includes("sust")||pos.includes("m.")||pos.includes("f.")) return "sust";
+  if(pos.includes("m.")||pos.includes("f.")||pos.includes("sust")) return "sust";
   if(pos.includes("verb")) return "verb";
   if(pos.includes("adv")) return "adv";
   return "other";
@@ -264,14 +262,27 @@ function revealAnswer(){
 
   const w=currentWordData;
 
+  const sensesHtml=(w.senses||[]).map((s,i)=>`
+    <div style="margin-bottom:6px;">
+      <strong>${i+1}.</strong> ${escapeHtml(s)}
+      ${w.examples?.[i]?`<div style="opacity:.8;font-style:italic;margin-top:3px;">${escapeHtml(w.examples[i])}</div>`:""}
+    </div>
+  `).join("");
+
   document.querySelector(".card").innerHTML=`
     <div class="revealed-layout">
       <div class="word">${escapeHtml(w.word)}</div>
       <div class="pos">${escapeHtml(w.pos||"")} ${w.field?" · "+escapeHtml(w.field):""}</div>
 
       <div class="compact-block">
-        ${(w.senses||[]).map((s,i)=>`${i+1}. ${escapeHtml(s)}`).join("<br><br>")}
+        ${sensesHtml}
       </div>
+
+      ${w.synonyms?.length?`
+        <div class="compact-block"><strong>Sin.:</strong> ${w.synonyms.map(s=>escapeHtml(s)).join(", ")}</div>`:""}
+
+      ${w.antonyms?.length?`
+        <div class="compact-block"><strong>Ant.:</strong> ${w.antonyms.map(a=>escapeHtml(a)).join(", ")}</div>`:""}
 
       <div class="compact-block">
         📜 ${escapeHtml(w.etym||"—")}
@@ -288,7 +299,6 @@ function revealAnswer(){
 async function rateWord(type,e){
   e.stopPropagation();
   if(!revealed)return;
-
   await SRS.gradeWord(currentWordData.id,type);
   currentIndex++;
   await loadCard();
