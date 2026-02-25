@@ -6,13 +6,13 @@
   <title>PasaPalabra PRO</title>
 
   <link rel="manifest" href="manifest.json" />
-  <meta name="theme-color" content="#111827" />
+  <meta name="theme-color" content="#0f172a" />
 
   <style>
     body {
       margin: 0;
       font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-      background: #111827;
+      background: linear-gradient(160deg, #0f172a, #1e293b);
       color: white;
       display: flex;
       flex-direction: column;
@@ -22,42 +22,106 @@
 
     h1 {
       margin-top: 20px;
+      font-size: 22px;
+      font-weight: 600;
+      opacity: 0.8;
     }
 
     .controls {
-      margin: 20px 0;
+      margin: 15px 0;
     }
 
     button {
-      padding: 10px 16px;
+      padding: 8px 14px;
       margin: 5px;
       border-radius: 8px;
       border: none;
       cursor: pointer;
-      background: #2563eb;
+      background: #3b82f6;
       color: white;
-      font-size: 14px;
+      font-size: 13px;
     }
 
     button:hover {
-      background: #1d4ed8;
+      background: #2563eb;
+    }
+
+    .card-wrapper {
+      perspective: 1200px;
+      width: 92%;
+      max-width: 420px;
+      margin-top: 20px;
     }
 
     .card {
-      width: 90%;
-      max-width: 420px;
-      background: #1f2937;
-      border-radius: 16px;
+      width: 100%;
+      min-height: 320px;
+      position: relative;
+      transform-style: preserve-3d;
+      transition: transform 0.6s;
+    }
+
+    .card.flipped {
+      transform: rotateY(180deg);
+    }
+
+    .card-face {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+      background: #1e293b;
+      border-radius: 18px;
       padding: 20px;
-      margin-top: 20px;
-      min-height: 250px;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+      box-shadow: 0 12px 30px rgba(0,0,0,0.5);
+      overflow-y: auto;
+    }
+
+    .card-back {
+      transform: rotateY(180deg);
+    }
+
+    .word-big {
+      font-size: 28px;
+      font-weight: 800;
+      margin-bottom: 8px;
+    }
+
+    .pos {
+      font-size: 12px;
+      opacity: 0.6;
+      margin-bottom: 12px;
+    }
+
+    .section {
+      margin-top: 14px;
+    }
+
+    .section-title {
+      font-weight: 700;
+      font-size: 13px;
+      margin-bottom: 4px;
+      opacity: 0.8;
+    }
+
+    .section-content {
+      font-size: 14px;
+      line-height: 1.5;
+      opacity: 0.95;
+    }
+
+    .etym-highlight {
+      background: #0ea5e9;
+      padding: 8px;
+      border-radius: 8px;
+      font-size: 13px;
+      margin-top: 6px;
     }
 
     .status {
       margin-top: 15px;
-      font-size: 13px;
-      opacity: 0.7;
+      font-size: 12px;
+      opacity: 0.6;
     }
   </style>
 </head>
@@ -68,25 +132,23 @@
 
   <div class="controls">
     <button onclick="startVocabSession()">Iniciar vocabulario</button>
-    <button onclick="flipCard()">Girar</button>
     <button onclick="nextCard()">Siguiente</button>
   </div>
 
-  <div class="card">
-    <div id="cardFront">
-      Pulsa "Iniciar vocabulario"
+  <div class="card-wrapper">
+    <div class="card" id="flashcard" onclick="flipCardUI()">
+      <div class="card-face card-front" id="cardFront">
+        Pulsa "Iniciar vocabulario"
+      </div>
+      <div class="card-face card-back" id="cardBack"></div>
     </div>
-    <div id="cardBack" style="display:none;"></div>
   </div>
 
   <div class="status" id="status">
     Base estructural lista
   </div>
 
-  <!-- Base de datos -->
   <script src="db.js"></script>
-
-  <!-- Motor vocabulario -->
   <script src="vocabEngine.js"></script>
 
   <script>
@@ -96,17 +158,18 @@
         document.getElementById("status").innerText = "Base de datos lista ✔";
       } catch (error) {
         document.getElementById("status").innerText = "Error en base de datos ❌";
-        console.error(error);
       }
     });
+
+    function flipCardUI() {
+      document.getElementById("flashcard").classList.toggle("flipped");
+      flipCard();
+    }
   </script>
 
-  <!-- Service Worker -->
   <script>
     if ("serviceWorker" in navigator) {
-      window.addEventListener("load", function () {
-        navigator.serviceWorker.register("./sw.js");
-      });
+      navigator.serviceWorker.register("./sw.js");
     }
   </script>
 
