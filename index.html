@@ -1,230 +1,163 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>PasaPalabra PRO</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PasaPalabra PRO</title>
 
-<link rel="manifest" href="manifest.json">
-<meta name="theme-color" content="#0f111a">
+  <link rel="manifest" href="manifest.json" />
+  <meta name="theme-color" content="#0b0f1c" />
 
-<link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;800&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: linear-gradient(180deg,#0b0f1c,#090c16);
+      color: white;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
 
-<style>
-/* --- TODO TU CSS EXACTO (NO CAMBIADO) --- */
-:root{
-  --bg:#0f111a;
-  --card:#171923;
-  --card2:#1f2230;
-  --border:#2a2d3c;
-  --text:#f0f0f5;
-  --text2:#8e92a7;
-  --gold:#f5c842;
-  --green:#3ecf72;
-  --red:#ff5555;
-  --blue:#4a9eff;
-  --purple:#a78bfa;
-  --r:18px;
-}
+    h1 {
+      margin-top: 30px;
+      font-size: 28px;
+      font-weight: bold;
+      background: linear-gradient(90deg,#f5c84c,#ffffff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
 
-body{
-  margin:0;
-  font-family:'DM Sans',system-ui,sans-serif;
-  background:var(--bg);
-  color:var(--text);
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-}
+    .card {
+      width: 90%;
+      max-width: 500px;
+      min-height: 300px;
+      margin-top: 40px;
+      background: #14192b;
+      border-radius: 20px;
+      padding: 30px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.4);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      cursor: pointer;
+    }
 
-/* PROGRESO */
-.header{
-  width:100%;
-  max-width:420px;
-  padding:18px 20px 0;
-}
+    .definition {
+      font-size: 20px;
+      line-height: 1.6;
+    }
 
-.progress-bar{
-  height:6px;
-  background:var(--card2);
-  border-radius:6px;
-  overflow:hidden;
-}
+    .word {
+      font-size: 40px;
+      font-weight: bold;
+      color: #f5c84c;
+      margin-bottom: 20px;
+    }
 
-.progress-fill{
-  height:100%;
-  width:0%;
-  background:var(--gold);
-  transition:.3s;
-}
+    .buttons {
+      margin-top: 30px;
+      display: flex;
+      gap: 15px;
+      justify-content: center;
+    }
 
-.progress-text{
-  font-size:11px;
-  color:var(--text2);
-  margin-top:6px;
-  font-family:'Syne',sans-serif;
-}
+    button {
+      padding: 12px 20px;
+      border-radius: 12px;
+      border: none;
+      font-size: 16px;
+      cursor: pointer;
+    }
 
-/* TARJETA */
-.card{
-  width:92%;
-  max-width:420px;
-  height:440px;
-  background:var(--card);
-  border:1px solid var(--border);
-  border-radius:var(--r);
-  padding:20px;
-  margin-top:18px;
-  display:flex;
-  flex-direction:column;
-  gap:10px;
-  overflow:hidden;
-  cursor:pointer;
-}
+    .fail { background: #3a1212; color: #ff5a5a; }
+    .again { background: #3a3212; color: #f5c84c; }
+    .ok { background: #103a1c; color: #4cff8d; }
 
-.meta{
-  font-size:11px;
-  font-family:'Syne',sans-serif;
-  text-transform:uppercase;
-  letter-spacing:.5px;
-}
-
-.meta.adj{color:var(--gold);}
-.meta.sust{color:var(--blue);}
-.meta.verb{color:var(--green);}
-.meta.adv{color:var(--purple);}
-.meta.other{color:var(--text2);}
-
-.definition{
-  font-size:18px;
-  line-height:1.6;
-}
-
-.revealed-layout{
-  display:flex;
-  flex-direction:column;
-  gap:8px;
-  font-size:14px;
-}
-
-.word{
-  font-family:'Syne',sans-serif;
-  font-size:28px;
-  font-weight:800;
-  color:var(--gold);
-}
-
-.pos{
-  font-size:11px;
-  text-transform:uppercase;
-  color:var(--text2);
-}
-
-.compact-block{
-  background:var(--card2);
-  border:1px solid var(--border);
-  border-radius:12px;
-  padding:10px;
-  font-size:13px;
-  line-height:1.4;
-}
-
-/* BOTONES */
-.buttons{
-  width:92%;
-  max-width:420px;
-  display:flex;
-  gap:8px;
-  margin:20px 0 10px;
-}
-
-.btn{
-  flex:1;
-  border:none;
-  border-radius:14px;
-  padding:12px 6px;
-  font-family:'Syne',sans-serif;
-  font-size:13px;
-  font-weight:700;
-  cursor:pointer;
-}
-
-.btn-red{background:rgba(255,85,85,0.15);color:var(--red);border:1px solid rgba(255,85,85,0.4);}
-.btn-yellow{background:rgba(245,200,66,0.15);color:var(--gold);border:1px solid rgba(245,200,66,0.4);}
-.btn-green{background:rgba(62,207,114,0.15);color:var(--green);border:1px solid rgba(62,207,114,0.4);}
-
-.row{
-  width:92%;
-  max-width:420px;
-  display:flex;
-  justify-content:space-between;
-  margin-bottom:14px;
-}
-
-.link{
-  font-size:11px;
-  color:var(--text2);
-  text-decoration:none;
-  border:1px solid var(--border);
-  padding:8px 10px;
-  border-radius:12px;
-  display:none;
-}
-
-.status{ font-size:11px; color:var(--text2); }
-</style>
+    .loading {
+      font-size: 18px;
+      opacity: 0.7;
+    }
+  </style>
 </head>
 
 <body>
 
-<div class="header">
-  <div class="progress-bar">
-    <div class="progress-fill" id="progressFill"></div>
+  <h1>PasaPalabra PRO</h1>
+
+  <div class="card" id="card">
+    <div id="content" class="loading">Cargando...</div>
   </div>
-  <div class="progress-text" id="progressText">0 / 20</div>
-</div>
 
-<div class="card" onclick="revealAnswer()">Cargando...</div>
+  <div class="buttons">
+    <button class="fail" onclick="rateCard(0)">No la sé</button>
+    <button class="again" onclick="rateCard(1)">Repasar</button>
+    <button class="ok" onclick="rateCard(2)">La sé</button>
+  </div>
 
-<div class="buttons">
-  <button class="btn btn-red" onclick="rateWord('bad',event)">No la sé</button>
-  <button class="btn btn-yellow" onclick="rateWord('review',event)">Repasar</button>
-  <button class="btn btn-green" onclick="rateWord('easy',event)">La sé</button>
-</div>
+  <!-- 🔥 IMPORTANTE: RUTAS CORRECTAS -->
+  <script src="js/db.js"></script>
+  <script src="js/vocabEngine.js"></script>
+  <script src="js/srsEngine.js"></script>
 
-<div class="row">
-  <div class="status" id="status">Inicializando…</div>
-  <a class="link" id="raeLink" target="_blank">Ver en RAE</a>
-</div>
+  <script>
+    let currentCard = null;
+    let showingAnswer = false;
 
-<!-- 🔥 RUTAS ACTUALIZADAS -->
-<script src="js/db.js"></script>
-<script src="js/vocabEngine.js"></script>
-<script src="js/srsEngine.js"></script>
+    async function initApp() {
+      try {
+        await initDB();
+        currentCard = await getNextCard();
+        renderFront();
+      } catch (err) {
+        document.getElementById("content").innerHTML =
+          "Error cargando base de datos.";
+        console.error(err);
+      }
+    }
 
-<!-- AQUÍ VA TODO TU SCRIPT EXACTAMENTE IGUAL -->
-<script>
-/* --- TU JS EXACTO (NO LO MODIFICO) --- */
-let revealed=false;
-let currentIndex=0;
-let sessionWords=[];
-let currentWordData=null;
-const SESSION_SIZE=20;
+    function renderFront() {
+      showingAnswer = false;
+      const content = document.getElementById("content");
+      content.classList.remove("loading");
 
-window.addEventListener("load", async function(){
-  await initDB();
-  await seedTestWordsIfEmpty();
-  await startSession();
-});
+      content.innerHTML = `
+        <div class="definition">
+          ${currentCard.definition}
+        </div>
+      `;
+    }
 
-/* resto igual que el tuyo */
-</script>
+    function renderBack() {
+      if (showingAnswer) return;
+      showingAnswer = true;
 
-<script>
-if("serviceWorker" in navigator){
-  navigator.serviceWorker.register("./sw.js");
-}
-</script>
+      const content = document.getElementById("content");
+
+      content.innerHTML = `
+        <div class="word">${currentCard.word}</div>
+        <div class="definition">
+          ${currentCard.fullDefinition}
+        </div>
+      `;
+    }
+
+    document.getElementById("card").addEventListener("click", renderBack);
+
+    async function rateCard(score) {
+      if (!currentCard) return;
+
+      await updateCardScore(currentCard.id, score);
+      currentCard = await getNextCard();
+      renderFront();
+    }
+
+    initApp();
+
+    if ("serviceWorker" in navigator) {
+      navigator.serviceWorker.register("./sw.js");
+    }
+  </script>
 
 </body>
 </html>
