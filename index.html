@@ -6,99 +6,109 @@
 <title>PasaPalabra PRO</title>
 
 <link rel="manifest" href="manifest.json">
-<meta name="theme-color" content="#0b0f1c">
 
 <style>
-body{
-  margin:0;
-  font-family:Arial, Helvetica, sans-serif;
-  background:linear-gradient(180deg,#0b0f1c,#090c16);
-  color:white;
-  display:flex;
-  flex-direction:column;
-  align-items:center;
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, sans-serif;
+  background: radial-gradient(circle at top, #0b1630, #050b18 70%);
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-h1{
-  margin-top:30px;
-  font-size:28px;
-  font-weight:bold;
-  background:linear-gradient(90deg,#f5c84c,#ffffff);
-  -webkit-background-clip:text;
-  -webkit-text-fill-color:transparent;
+h1 {
+  margin-top: 40px;
+  font-size: 34px;
+  font-weight: 800;
 }
 
-.card{
-  width:90%;
-  max-width:520px;
-  min-height:360px;
-  margin-top:40px;
-  background:#14192b;
-  border-radius:20px;
-  padding:30px;
-  box-shadow:0 0 20px rgba(0,0,0,0.4);
+h1 span {
+  color: #f5c84c;
 }
 
-#cardFront, #cardBack{
-  min-height:250px;
+.card-container {
+  width: 90%;
+  max-width: 520px;
+  margin-top: 40px;
 }
 
-.buttons{
-  margin-top:30px;
-  display:flex;
-  gap:15px;
-  justify-content:center;
+.card {
+  background: #111b2f;
+  border-radius: 22px;
+  padding: 28px;
+  min-height: 260px;
+  box-shadow: 0 0 40px rgba(0,0,0,0.4);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
-button{
-  padding:12px 20px;
-  border-radius:12px;
-  border:none;
-  font-size:16px;
-  cursor:pointer;
+button {
+  border: none;
+  padding: 12px 18px;
+  border-radius: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  font-size: 14px;
 }
 
-.primary{background:#1e88e5;color:white;}
-.secondary{background:#444;color:white;}
-.ok{background:#103a1c;color:#4cff8d;}
-.fail{background:#3a1212;color:#ff5a5a;}
+.btn-start {
+  background: #f5c84c;
+  color: #000;
+}
 
-#status{
-  margin-top:15px;
-  opacity:.7;
-  font-size:13px;
+.btn-flip {
+  background: #2c3e70;
+  color: white;
+}
+
+.btn-next {
+  background: #2e7d32;
+  color: white;
+}
+
+.controls {
+  margin-top: 20px;
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+
+.status {
+  margin-top: 16px;
+  opacity: .7;
+  font-size: 13px;
 }
 </style>
 </head>
 
 <body>
 
-<h1>PasaPalabra PRO</h1>
+<h1><span>PasaPalabra</span> PRO</h1>
 
-<div class="card">
-  <div id="cardFront"></div>
-  <div id="cardBack" style="display:none;"></div>
+<div class="card-container">
+  <div class="card">
+    <div id="cardFront">Pulsa “Iniciar vocabulario”</div>
+    <div id="cardBack" style="display:none;"></div>
+  </div>
+
+  <div class="controls">
+    <button class="btn-start" onclick="startVocabSession()">Iniciar</button>
+    <button class="btn-flip" onclick="flipCard()">Girar</button>
+    <button class="btn-next" onclick="nextCard()">Siguiente</button>
+  </div>
+
+  <div id="status" class="status"></div>
 </div>
-
-<div class="buttons">
-  <button class="primary" onclick="startVocabSession()">Iniciar vocabulario</button>
-  <button class="secondary" onclick="flipCard()">Girar</button>
-  <button class="secondary" onclick="nextCard()">Siguiente</button>
-</div>
-
-<div id="status">Listo.</div>
 
 <script src="js/db.js"></script>
-<script src="js/vocabEngine.js"></script>
 <script src="js/srsEngine.js"></script>
+<script src="js/vocabEngine.js"></script>
 
 <script>
-async function init(){
-  await initDB();
-}
-init();
-
-if("serviceWorker" in navigator){
+if ("serviceWorker" in navigator) {
   navigator.serviceWorker.register("./sw.js");
 }
 </script>
