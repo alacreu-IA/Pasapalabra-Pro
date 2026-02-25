@@ -1,186 +1,185 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>PasaPalabra PRO</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>PasaPalabra PRO</title>
 
-  <link rel="manifest" href="manifest.json" />
-  <meta name="theme-color" content="#0f172a" />
+<link rel="manifest" href="manifest.json" />
+<meta name="theme-color" content="#0b1220" />
 
-  <style>
-    body {
-      margin: 0;
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-      background: linear-gradient(160deg, #0f172a, #1e293b);
-      color: white;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      min-height: 100vh;
-    }
+<style>
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, sans-serif;
+  background: #0b1220;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
-    h1 {
-      margin-top: 20px;
-      font-size: 20px;
-      font-weight: 600;
-      opacity: 0.8;
-    }
+/* HEADER */
+.header {
+  width: 100%;
+  max-width: 420px;
+  padding: 15px 20px 0;
+}
 
-    .controls {
-      margin: 12px 0;
-    }
+.progress-bar {
+  height: 6px;
+  background: #1f2937;
+  border-radius: 6px;
+  overflow: hidden;
+}
 
-    button {
-      padding: 8px 14px;
-      margin: 5px;
-      border-radius: 8px;
-      border: none;
-      cursor: pointer;
-      background: #3b82f6;
-      color: white;
-      font-size: 13px;
-    }
+.progress-fill {
+  height: 100%;
+  width: 10%;
+  background: linear-gradient(90deg, #facc15, #f59e0b);
+  transition: width 0.3s;
+}
 
-    button:hover {
-      background: #2563eb;
-    }
+.progress-text {
+  font-size: 12px;
+  opacity: 0.7;
+  margin-top: 5px;
+}
 
-    .card-wrapper {
-      perspective: 1200px;
-      width: 92%;
-      max-width: 420px;
-      margin-top: 15px;
-    }
+/* CARD */
+.card {
+  width: 92%;
+  max-width: 420px;
+  background: #111827;
+  border-radius: 20px;
+  padding: 20px;
+  margin-top: 20px;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.5);
+}
 
-    .card {
-      width: 100%;
-      height: 440px;
-      position: relative;
-      transform-style: preserve-3d;
-      transition: transform 0.6s;
-    }
+.word {
+  font-size: 30px;
+  font-weight: 900;
+  color: #facc15;
+  margin-bottom: 10px;
+}
 
-    .card.flipped {
-      transform: rotateY(180deg);
-    }
+.definition {
+  font-size: 15px;
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
 
-    .card-face {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      backface-visibility: hidden;
-      background: #1e293b;
-      border-radius: 18px;
-      padding: 20px;
-      box-shadow: 0 12px 30px rgba(0,0,0,0.5);
-      overflow-y: auto;
-    }
+.block {
+  background: #0f172a;
+  border: 1px solid #1f2937;
+  border-radius: 12px;
+  padding: 10px;
+  margin-top: 10px;
+}
 
-    .card-back {
-      transform: rotateY(180deg);
-    }
+.block-title {
+  font-size: 11px;
+  text-transform: uppercase;
+  opacity: 0.6;
+  margin-bottom: 4px;
+  letter-spacing: 0.5px;
+}
 
-    .word-big {
-      font-size: 32px;
-      font-weight: 900;
-      margin-bottom: 6px;
-      text-align: center;
-    }
+.block-content {
+  font-size: 14px;
+  line-height: 1.5;
+}
 
-    .pos {
-      font-size: 12px;
-      opacity: 0.6;
-      text-align: center;
-      margin-bottom: 15px;
-    }
+/* BOTONES */
+.buttons {
+  width: 92%;
+  max-width: 420px;
+  display: flex;
+  justify-content: space-between;
+  margin: 20px 0;
+}
 
-    .section {
-      margin-top: 14px;
-      padding: 10px;
-      background: #0f172a;
-      border-radius: 10px;
-    }
+.btn {
+  flex: 1;
+  margin: 5px;
+  padding: 12px;
+  border-radius: 10px;
+  border: none;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
 
-    .section-title {
-      font-weight: 700;
-      font-size: 12px;
-      margin-bottom: 6px;
-      opacity: 0.7;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-    }
+.btn-red { background: #991b1b; }
+.btn-yellow { background: #92400e; }
+.btn-green { background: #065f46; }
 
-    .section-content {
-      font-size: 14px;
-      line-height: 1.6;
-    }
-
-    .etym-highlight {
-      background: #0ea5e9;
-      padding: 8px;
-      border-radius: 8px;
-      font-size: 13px;
-    }
-
-    .status {
-      margin-top: 12px;
-      font-size: 12px;
-      opacity: 0.6;
-    }
-  </style>
+.status {
+  font-size: 12px;
+  opacity: 0.5;
+  margin-bottom: 10px;
+}
+</style>
 </head>
 
 <body>
 
-  <h1>PasaPalabra PRO</h1>
+<div class="header">
+  <div class="progress-bar">
+    <div class="progress-fill" id="progressFill"></div>
+  </div>
+  <div class="progress-text" id="progressText">1 / 20</div>
+</div>
 
-  <div class="controls">
-    <button onclick="startVocabSession()">Iniciar vocabulario</button>
-    <button onclick="nextCard()">Siguiente</button>
+<div class="card">
+  <div class="word" id="word">Pulsa iniciar</div>
+
+  <div class="definition" id="definition">
+    Definición aparecerá aquí
   </div>
 
-  <div class="card-wrapper">
-    <div class="card" id="flashcard" onclick="flipCardUI()">
-      <div class="card-face card-front" id="cardFront">
-        Pulsa "Iniciar vocabulario"
-      </div>
-      <div class="card-face card-back" id="cardBack"></div>
-    </div>
+  <div class="block">
+    <div class="block-title">Sinónimos</div>
+    <div class="block-content" id="synonyms">—</div>
   </div>
 
-  <div class="status" id="status">
-    Inicializando...
+  <div class="block">
+    <div class="block-title">Ejemplo</div>
+    <div class="block-content" id="example">—</div>
   </div>
 
-  <!-- Base de datos -->
-  <script src="db.js"></script>
+  <div class="block">
+    <div class="block-title">Etimología / Para memorizar</div>
+    <div class="block-content" id="etym">—</div>
+  </div>
+</div>
 
-  <!-- Motor vocabulario -->
-  <script src="vocabEngine.js"></script>
+<div class="buttons">
+  <button class="btn btn-red">No la sé</button>
+  <button class="btn btn-yellow">Repasar</button>
+  <button class="btn btn-green">La sé</button>
+</div>
 
-  <script>
-    window.addEventListener("load", async function () {
-      try {
-        await initDB();
-        document.getElementById("status").innerText = "Base de datos lista ✔";
-      } catch (error) {
-        document.getElementById("status").innerText = "Error en base de datos ❌";
-        console.error(error);
-      }
-    });
+<div class="status" id="status">Inicializando...</div>
 
-    function flipCardUI() {
-      document.getElementById("flashcard").classList.toggle("flipped");
-      flipCard();
-    }
-  </script>
+<script src="db.js"></script>
+<script src="vocabEngine.js"></script>
 
-  <script>
-    if ("serviceWorker" in navigator) {
-      navigator.serviceWorker.register("./sw.js");
-    }
-  </script>
+<script>
+window.addEventListener("load", async function () {
+  await initDB();
+  await seedTestWordsIfEmpty();
+  startVocabSession();
+  document.getElementById("status").innerText = "Lista ✔";
+});
+</script>
+
+<script>
+if ("serviceWorker" in navigator) {
+  navigator.serviceWorker.register("./sw.js");
+}
+</script>
 
 </body>
 </html>
