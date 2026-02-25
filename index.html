@@ -8,7 +8,6 @@
 <link rel="manifest" href="manifest.json">
 <meta name="theme-color" content="#0f111a">
 
-<!-- Google Fonts -->
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;800&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
 
 <style>
@@ -80,9 +79,7 @@ body{
   transition:.2s;
 }
 
-.card:active{
-  transform:scale(.98);
-}
+.card:active{ transform:scale(.98); }
 
 .qlbl{
   font-size:10px;
@@ -92,10 +89,7 @@ body{
   font-family:'Syne',sans-serif;
 }
 
-.definition{
-  font-size:18px;
-  line-height:1.6;
-}
+.definition{ font-size:18px; line-height:1.6; }
 
 .word{
   font-family:'Syne',sans-serif;
@@ -122,12 +116,8 @@ body{
   font-family:'Syne',sans-serif;
 }
 
-.block-content{
-  font-size:14px;
-  line-height:1.6;
-}
+.block-content{ font-size:14px; line-height:1.6; }
 
-/* BOTONES */
 .buttons{
   width:92%;
   max-width:420px;
@@ -148,19 +138,13 @@ body{
   transition:.15s;
 }
 
-.btn:active{
-  transform:scale(.96);
-}
+.btn:active{ transform:scale(.96); }
 
 .btn-red{background:rgba(255,85,85,0.15);color:var(--red);border:1px solid rgba(255,85,85,0.4);}
 .btn-yellow{background:rgba(245,200,66,0.15);color:var(--gold);border:1px solid rgba(245,200,66,0.4);}
 .btn-green{background:rgba(62,207,114,0.15);color:var(--green);border:1px solid rgba(62,207,114,0.4);}
 
-.status{
-  font-size:11px;
-  color:var(--text2);
-  margin-bottom:14px;
-}
+.status{ font-size:11px; color:var(--text2); margin-bottom:14px; }
 </style>
 </head>
 
@@ -176,7 +160,7 @@ body{
 <div class="card" onclick="revealAnswer()">
 
   <div class="qlbl">Definición</div>
-  <div class="definition" id="definition">Pulsa para empezar</div>
+  <div class="definition" id="definition">Cargando...</div>
 
   <div class="word" id="word"></div>
 
@@ -198,9 +182,9 @@ body{
 </div>
 
 <div class="buttons">
-  <button class="btn btn-red">No la sé</button>
-  <button class="btn btn-yellow">Repasar</button>
-  <button class="btn btn-green">La sé</button>
+  <button class="btn btn-red" onclick="rateWord('bad')">No la sé</button>
+  <button class="btn btn-yellow" onclick="rateWord('review')">Repasar</button>
+  <button class="btn btn-green" onclick="rateWord('easy')">La sé</button>
 </div>
 
 <div class="status" id="status">Inicializando...</div>
@@ -223,18 +207,23 @@ window.addEventListener("load",async function(){
 
 async function startSession(){
   const ids=await getAllWordIds();
-  sessionWords=ids.slice(0,20);
+  sessionWords=shuffle(ids).slice(0,20);
   currentIndex=0;
   loadCard();
 }
 
 async function loadCard(){
   revealed=false;
+  if(currentIndex>=sessionWords.length){
+    document.getElementById("definition").innerText="Sesión terminada 🎉";
+    return;
+  }
+
   const id=sessionWords[currentIndex];
   const w=await getWord(id);
   currentWordData=w;
 
-  document.getElementById("definition").innerText=w.senses[0];
+  document.getElementById("definition").innerText=w.senses.join("\n\n");
   document.getElementById("word").style.display="none";
   document.getElementById("synBlock").style.display="none";
   document.getElementById("exBlock").style.display="none";
@@ -259,10 +248,19 @@ function revealAnswer(){
   document.getElementById("etymBlock").style.display="block";
 }
 
+function rateWord(level){
+  currentIndex++;
+  loadCard();
+}
+
 function updateProgress(){
   const percent=((currentIndex+1)/sessionWords.length)*100;
   document.getElementById("progressFill").style.width=percent+"%";
   document.getElementById("progressText").innerText=(currentIndex+1)+" / "+sessionWords.length;
+}
+
+function shuffle(array){
+  return array.sort(()=>Math.random()-0.5);
 }
 </script>
 
