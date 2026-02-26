@@ -12,6 +12,8 @@ window.iniciarMazo = async function(nombre) {
 
     while(count < 20 && intentos < 800) {
         intentos++;
+        if (!window.getRandomWord) break;
+        
         const wordData = await window.getRandomWord();
         if(!wordData) break;
         
@@ -21,7 +23,7 @@ window.iniciarMazo = async function(nombre) {
         const key = `repaso_${palabraText}`;
         const lock = localStorage.getItem(key);
         
-        // Comprueba si la palabra le toca repaso
+        // Comprueba si a la palabra le toca repaso
         if(!lock || new Date().getTime() > parseInt(lock)) {
             // FILTRO ANTI-DUPLICADOS: Evita que salga la misma palabra 2 veces en la misma tanda
             const yaEsta = window.__vocabSession.some(w => (w.word || w.palabra) === palabraText);
@@ -57,7 +59,7 @@ function mostrarTarjeta() {
     
     const palabra = data.word || data.palabra || "Desconocida";
     
-    // Extractor robusto de definición (cubre múltiples nombres de columna)
+    // Extractor robusto de definición
     let defRaw = data.definition || data.definicion || data.def || "Definición no encontrada en el archivo.";
     const defs = Array.isArray(defRaw) ? defRaw : [defRaw];
     const defPrincipal = limpiar(defs[0]);
@@ -136,7 +138,7 @@ window.calificar = function(puntos) {
     if(window.__vocabIndex < window.__vocabSession.length) {
         mostrarTarjeta();
     } else { 
-        alert("¡Tanda completada! 🚀"); 
+        alert("¡Tanda completada! 🚀 Las palabras han sido programadas para otro día."); 
         goTo('home'); 
     }
 };
