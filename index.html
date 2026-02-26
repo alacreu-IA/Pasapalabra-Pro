@@ -2,273 +2,150 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
-    <title>PasaPalabra PRO</title>
-    <meta name="theme-color" content="#0b1326">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+    <title>PasaPalabra Pro</title>
+    <meta name="theme-color" content="#0a0a0f">
     <link rel="manifest" href="./manifest.json">
-    <link rel="icon" href="./icon.png">
-
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Sans:wght@400;500;700&display=swap');
 
+        * { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
+        
         :root {
-            --bg1: #0c1426;
-            --bg2: #060b18;
-            --card-front: #121b32;
-            --card-back: #0f172b;
-            --gold: #f4c542;
-            --text-main: #ffffff;
-            --text-muted: rgba(255, 255, 255, 0.65);
-            --btn-blue: #0e5ca8;
-            --btn-red: #d32f2f;
-            --btn-orange: #f57c00;
-            --btn-green: #388e3c;
+            --bg: #0a0a0f; --card: #13131a; --border: #2a2a38;
+            --gold: #f5c842; --text-main: #f0f0f5; --text-muted: #8888a8;
+            --btn-blue: #4a9eff; --btn-red: #ff5555; --btn-green: #3ecf72; --btn-orange: #f5a623;
         }
 
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            font-family: 'DM Sans', sans-serif;
-            -webkit-tap-highlight-color: transparent;
-        }
+        body { background: var(--bg); color: var(--text-main); font-family: 'DM Sans', sans-serif; overflow: hidden; height: 100vh; }
 
-        body {
-            background: linear-gradient(135deg, var(--bg1), var(--bg2));
-            color: var(--text-main);
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-            overflow: hidden;
+        /* Pantallas SPA */
+        .screen {
+            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+            display: flex; flex-direction: column; opacity: 0; pointer-events: none;
+            transition: opacity 0.3s ease, transform 0.3s ease; transform: translateX(20px); overflow-y: auto;
         }
+        .screen.active { opacity: 1; pointer-events: auto; transform: translateX(0); }
 
-        /* Cabecera */
-        header {
-            padding: 20px;
-            text-align: center;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-        }
-        header h1 {
-            color: var(--gold);
-            font-size: 1.5rem;
-            letter-spacing: 1px;
-        }
-        #status-bar {
-            font-size: 0.9rem;
-            color: var(--text-muted);
-            margin-top: 5px;
-        }
+        /* Inicio */
+        #home header { padding: 30px 20px 10px; text-align: center; }
+        #home header h1 { font-family: 'Syne', sans-serif; color: var(--gold); font-size: 2rem; }
+        #home header p { color: var(--text-muted); font-size: 0.9rem; margin-top: 5px; }
 
-        /* Contenedor de la Tarjeta */
-        .card-container {
-            flex: 1;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 20px;
-            perspective: 1000px;
-        }
+        .deck-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 15px; padding: 20px; padding-bottom: 50px; }
+        .deck-btn { background: var(--card); border: 1px solid var(--border); border-radius: 16px; padding: 20px 15px; text-align: center; cursor: pointer; transition: transform 0.1s; }
+        .deck-btn:active { transform: scale(0.96); }
+        .deck-btn h3 { font-size: 1rem; margin-bottom: 5px; color: var(--text-main); }
+        .deck-btn p { font-size: 0.8rem; color: var(--gold); }
+        .deck-special { border-color: var(--gold); background: rgba(245, 200, 66, 0.05); }
 
-        .card {
-            width: 100%;
-            max-width: 400px;
-            height: 60vh; /* Altura adaptable */
-            position: relative;
-            transform-style: preserve-3d;
-            transition: none;
-        }
+        /* Juego */
+        #game header { display: flex; justify-content: space-between; align-items: center; padding: 15px 20px; border-bottom: 1px solid var(--border); }
+        .btn-back { background: none; border: none; color: var(--gold); font-size: 1rem; font-weight: bold; cursor: pointer; }
 
-        .card.flipped {
-            transform: rotateY(180deg);
-        }
+        .card-container { flex: 1; display: flex; justify-content: center; align-items: center; padding: 20px; perspective: 1000px; }
+        .flashcard { width: 100%; max-width: 400px; height: 60vh; position: relative; transform-style: preserve-3d; cursor: pointer; }
+        .flashcard.flipped .card-front { display: none; }
+        .flashcard.flipped .card-back { display: flex; transform: rotateY(0deg); }
 
         .card-face {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            backface-visibility: hidden;
-            border-radius: 20px;
-            padding: 30px 20px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-            display: flex;
-            flex-direction: column;
-            
-            /* SOLUCIÓN AL CORTE EN EL MÓVIL */
-            overflow-y: auto; 
+            position: absolute; width: 100%; height: 100%; border-radius: 20px; padding: 30px 20px;
+            display: flex; flex-direction: column; overflow-y: auto; background: var(--card); border: 1px solid var(--border);
         }
+        .card-front { justify-content: center; align-items: center; text-align: center; }
+        .card-back { display: none; align-items: flex-start; border-color: rgba(245, 200, 66, 0.3); }
 
-        .card-front {
-            background: var(--card-front);
-            border: 2px solid rgba(255, 255, 255, 0.05);
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-        }
-
-        .card-back {
-            background: var(--card-back);
-            border: 2px solid rgba(244, 197, 66, 0.3);
-            transform: rotateY(180deg);
-            align-items: flex-start;
-        }
-
-        /* Tipografía de la Tarjeta */
-        .tip-text {
-            font-size: 1.5rem;
-            color: var(--gold);
-            font-weight: 700;
-        }
-        .word-title {
-            font-size: 2rem;
-            color: var(--gold);
-            margin-bottom: 5px;
-            text-transform: capitalize;
-        }
-        .word-pos {
-            font-size: 0.9rem;
-            color: var(--text-muted);
-            margin-bottom: 20px;
-            background: rgba(255, 255, 255, 0.1);
-            padding: 3px 10px;
-            border-radius: 10px;
-        }
-        .word-def {
-            font-size: 1.1rem;
-            line-height: 1.5;
-            color: var(--text-main);
-            text-align: left;
-        }
-
-        /* Zona de Botones */
-        .controls {
-            padding: 20px;
-            display: flex;
-            gap: 10px;
-            justify-content: center;
-            min-height: 100px;
-        }
-
-        button {
-            border: none;
-            border-radius: 12px;
-            padding: 15px 20px;
-            font-size: 1rem;
-            font-weight: 700;
-            color: white;
-            cursor: pointer;
-            transition: transform 0.1s, filter 0.2s;
-            flex: 1;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-        }
-        button:active {
-            transform: scale(0.95);
-        }
-
-        .btn-main { background: var(--btn-blue); width: 100%; flex: none; }
-        .btn-bad { background: var(--btn-red); display: none; }
-        .btn-mid { background: var(--btn-orange); display: none; }
-        .btn-good { background: var(--btn-green); display: none; }
-
+        .word-title { font-size: 2rem; color: var(--gold); margin-bottom: 5px; font-family: 'Syne', sans-serif; text-transform: capitalize; align-self: center; margin-top: 20px;}
+        
+        .controls { padding: 20px; display: flex; gap: 10px; min-height: 90px; }
+        .controls button { flex: 1; border: none; border-radius: 12px; padding: 15px; font-size: 1rem; font-weight: bold; color: white; cursor: pointer; display: none; }
+        #btn-bad { background: var(--btn-red); } #btn-mid { background: var(--btn-orange); } #btn-good { background: var(--btn-green); }
     </style>
 </head>
 <body>
 
-    <header>
-        <h1>PASAPALABRA PRO</h1>
-        <div id="status-bar">Iniciando base de datos...</div>
-    </header>
+    <div id="home" class="screen active">
+        <header>
+            <h1>PP PRO</h1>
+            <p id="db-status">Cargando base de datos...</p>
+        </header>
 
-    <div class="card-container">
-        <div class="card" id="flashcard">
-            <div class="card-face card-front">
-                <div class="tip-text" id="front-tip">Cargando...</div>
+        <div class="deck-grid">
+            <div class="deck-btn deck-special" onclick="iniciarMazo('Modo Hardcore RAE')">
+                <h3>🔥 Modo Hardcore RAE</h3>
+                <p>66.970 palabras a pelo</p>
             </div>
-
-            <div class="card-face card-back">
-                <div class="word-title" id="back-word">Palabra</div>
-                <div class="word-pos" id="back-pos">Categoría</div>
-                <ul class="word-def" id="back-def">
-                    <li>Definición aquí.</li>
-                </ul>
+            <div class="deck-btn" onclick="iniciarMazo('Cultura General')"><h3>Cultura General</h3><p>Modo VIP</p></div>
+            <div class="deck-btn" onclick="iniciarMazo('Literatura')"><h3>Literatura</h3><p>Modo VIP</p></div>
+            <div class="deck-btn" onclick="iniciarMazo('Geografía')"><h3>Geografía</h3><p>Modo VIP</p></div>
+            <div class="deck-btn" onclick="iniciarMazo('Historia')"><h3>Historia</h3><p>Modo VIP</p></div>
+            <div class="deck-btn" onclick="iniciarMazo('Historia del Arte')"><h3>Historia del Arte</h3><p>Modo VIP</p></div>
+            <div class="deck-btn" onclick="iniciarMazo('Ciencia y Nat.')"><h3>Ciencia y Nat.</h3><p>Modo VIP</p></div>
+            <div class="deck-btn" onclick="iniciarMazo('Cine y TV')"><h3>Cine y TV</h3><p>Modo VIP</p></div>
+            <div class="deck-btn" onclick="iniciarMazo('Deportes')"><h3>Deportes</h3><p>Modo VIP</p></div>
+            <div class="deck-btn" onclick="iniciarMazo('Mitología')"><h3>Mitología</h3><p>Modo VIP</p></div>
+            <div class="deck-btn deck-special" style="border-style: dashed;" onclick="alert('En la Fase 3 podrás subir tu Excel aquí.')">
+                <h3>+ Crear Mazo</h3>
+                <p>Añadir Excel</p>
             </div>
         </div>
     </div>
 
-    <div class="controls">
-        <button class="btn-main" id="btn-flip">Girar Tarjeta</button>
-        <button class="btn-bad" id="btn-bad">No la sé</button>
-        <button class="btn-mid" id="btn-mid">Dudo</button>
-        <button class="btn-good" id="btn-good">La sé</button>
+    <div id="game" class="screen">
+        <header>
+            <button class="btn-back" onclick="goTo('home')">← Volver</button>
+            <span id="game-title" style="font-weight: bold;">Mazo</span>
+            <span id="status-bar" style="color: var(--text-muted); font-size: 0.9rem;">0/20</span>
+        </header>
+
+        <div class="card-container">
+            <div class="flashcard" id="flashcard">
+                <div class="card-face card-front" id="front-content">
+                    <div style="font-size: 1.5rem; color: var(--gold);">Toca para empezar</div>
+                </div>
+                <div class="card-face card-back">
+                    <div class="word-title" id="back-word">Palabra</div>
+                    <div id="back-extra" style="width: 100%;"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="controls">
+            <button id="btn-bad">No la sé</button>
+            <button id="btn-mid">Dudo</button>
+            <button id="btn-good">La sé</button>
+        </div>
     </div>
 
     <script src="db.js"></script>
-    <script src="srsEngine.js"></script>
     <script src="vocabEngine.js"></script>
-
+    
     <script>
-        // ----------------------------------------------------
-        // PUENTE ENTRE LA INTERFAZ HTML Y LA LÓGICA DEL JUEGO
-        // ----------------------------------------------------
+        function goTo(screenId) {
+            document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+            document.getElementById(screenId).classList.add('active');
+        }
 
-        // Elementos del DOM
-        const card = document.getElementById('flashcard');
-        const frontTip = document.getElementById('front-tip');
-        const backWord = document.getElementById('back-word');
-        const backPos = document.getElementById('back-pos');
-        const backDef = document.getElementById('back-def');
-        const statusBar = document.getElementById('status-bar');
-
-        const btnFlip = document.getElementById('btn-flip');
-        const btnBad = document.getElementById('btn-bad');
-        const btnMid = document.getElementById('btn-mid');
-        const btnGood = document.getElementById('btn-good');
-
-        // Función global para actualizar la tarjeta desde vocabEngine.js
-        window.renderFront = function(cardData) {
-            frontTip.textContent = cardData.tip;
-            backWord.textContent = cardData.word;
-            backPos.textContent = cardData.pos;
-            backDef.innerHTML = cardData.senses[0]; // Ya viene formateado en <li>
-            
-            // Asegurar que la tarjeta está boca abajo
-            card.classList.remove('flipped');
-            
-            // Mostrar botón girar, ocultar botones de calificación
-            btnFlip.style.display = 'block';
-            btnBad.style.display = 'none';
-            btnMid.style.display = 'none';
-            btnGood.style.display = 'none';
-        };
-
-        // Girar la tarjeta (animación y cambio de botones)
-        window.flipCard = function() {
-            card.classList.add('flipped');
-            
-            btnFlip.style.display = 'none';
-            btnBad.style.display = 'block';
-            btnMid.style.display = 'block';
-            btnGood.style.display = 'block';
-        };
-
-        // ----------------------------------------------------
-        // INICIALIZACIÓN DE LA APP (ARRANQUE)
-        // ----------------------------------------------------
         window.onload = async function() {
+            const statusText = document.getElementById('db-status');
             try {
-                // 1. Iniciar Base de datos (está en db.js)
-                await window.initDB();
-                
-                // 2. Iniciar la sesión de juego (está en vocabEngine.js)
-                if(typeof window.startVocabSession === "function") {
-                    await window.startVocabSession();
-                    statusBar.textContent = "¡A jugar! Tarjeta 1 de 20";
-                }
-            } catch (error) {
-                console.error("Error arrancando la app:", error);
-                statusBar.textContent = "Error al cargar la base de datos.";
+                if(window.initDB) await window.initDB();
+                statusText.textContent = "¡Base de datos conectada!";
+                statusText.style.color = "var(--btn-green)";
+            } catch (e) {
+                statusText.textContent = "Falta la carpeta data en GitHub.";
+                statusText.style.color = "var(--btn-red)";
             }
         };
 
+        document.getElementById('flashcard').addEventListener('click', function() {
+            if (!this.classList.contains('flipped') && window.__vocabSession && window.__vocabSession.length > 0) {
+                this.classList.add('flipped');
+                document.getElementById('btn-bad').style.display = 'block';
+                document.getElementById('btn-mid').style.display = 'block';
+                document.getElementById('btn-good').style.display = 'block';
+            }
+        });
     </script>
 </body>
 </html>
