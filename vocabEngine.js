@@ -153,6 +153,7 @@ function mostrarTarjeta() {
 
     const urlRAE = `https://dle.rae.es/${encodeURIComponent(palabra)}`;
     
+    // AQUI EL CAMBIO CLAVE: target="_self" para que abra en la misma pestaña y puedas volver atrás.
     document.getElementById('back-content').innerHTML = `
         <div style="display:flex; flex-direction:column; height:100%;">
             <p style="color:var(--text-muted); font-size:0.75rem; text-transform:uppercase; margin-bottom:5px; font-weight:bold; letter-spacing:1px; flex-shrink:0;">Respuesta</p>
@@ -161,7 +162,7 @@ function mostrarTarjeta() {
             ${sinosHTML}
             ${tipHTML}
             <div style="margin-top:auto; padding-top:10px; flex-shrink:0;">
-                <a href="${urlRAE}" target="_blank" onclick="event.stopPropagation();" style="display:block; background:#005bb5; color:white; text-align:center; padding:14px; border-radius:8px; text-decoration:none; font-weight:bold; font-size:0.95rem;">📖 Ver en la RAE</a>
+                <a href="${urlRAE}" target="_self" onclick="event.stopPropagation();" style="display:block; background:#005bb5; color:white; text-align:center; padding:14px; border-radius:8px; text-decoration:none; font-weight:bold; font-size:0.95rem;">📖 Ver en la RAE</a>
             </div>
         </div>
     `;
