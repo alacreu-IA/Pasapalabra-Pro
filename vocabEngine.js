@@ -8,34 +8,43 @@ window.iniciarMazo = async function(nombreMazo) {
             frontContent.innerHTML = "<div style='color:var(--gold); display:flex; justify-content:center; align-items:center; height:100%; font-size: 1.2rem; font-weight: bold;'>Barajando tarjetas...</div>";
         }
         
-        // Bucle inteligente: busca hasta 20 palabras que NO estén bloqueadas por fecha
         let palabrasEncontradas = 0;
         let intentos = 0; 
         
-        while (palabrasEncontradas < 20 && intentos < 200) {
+        while (palabrasEncontradas < 20 && intentos < 300) {
             intentos++;
             if (window.getRandomWord) {
-                const word = await window.getRandomWord();
-                if (word) {
-                    // Miramos en la memoria del móvil si esta palabra tiene fecha de repaso
-                    const fechaBloqueo = localStorage.getItem(`repaso_${word.word || word.palabra}`);
+                const wordData = await window.getRandomWord();
+                if (wordData) {
+                    // RED ANTI-BUCLES: Buscamos el nombre exacto de la palabra
+                    const textoPalabra = wordData.word || wordData.palabra || wordData.lema || wordData.termino || "Desconocida";
+                    
+                    const fechaBloqueo = localStorage.getItem(`repaso_${textoPalabra}`);
                     const ahora = new Date().getTime();
                     
                     if (!fechaBloqueo || ahora >= parseInt(fechaBloqueo)) {
-                        const yaEsta = window.__vocabSession.some(w => (w.word || w.palabra) === (word.word || word.palabra));
+                        // Comprobamos que no haya entrado ya en esta tanda de 20
+                        const yaEsta = window.__vocabSession.some(w => {
+                            const textoGuardada = w.word || w.palabra || w.lema || w.termino || "Desconocida";
+                            return textoGuardada === textoPalabra;
+                        });
+                        
                         if (!yaEsta) {
-                            window.__vocabSession.push(word);
+                            window.__vocabSession.push(wordData);
                             palabrasEncontradas++;
                         }
                     }
                 }
             } else {
-                window.__vocabSession.push({ 
-                    word: "Error", 
-                    definition: "Base de datos no conectada. Revisa db.js" 
-                });
+                window.__vocabSession.push({ word: "Error", definition: "Base de datos no conectada." });
                 break;
             }
+        }
+
+        if (palabrasEncontradas === 0) {
+            alert("¡No quedan palabras nuevas por repasar! Has bloqueado todas las que había en la base de datos.");
+            goTo('home');
+            return;
         }
         
         window.__vocabIndex = 0;
@@ -44,7 +53,6 @@ window.iniciarMazo = async function(nombreMazo) {
 
     } catch (error) {
         alert("¡Ups! Hubo un problema al arrancar el mazo: " + error.message);
-        console.error(error);
     }
 };
 
@@ -59,21 +67,19 @@ async function mostrarTarjetaActual() {
     document.getElementById('btn-good').style.display = 'none';
 
     // LA RED BILINGÜE: Buscamos la información sea cual sea su nombre
-    const palabra = wordData.word || wordData.palabra || 'Indefinida';
+    const palabra = wordData.word || wordData.palabra || wordData.lema || wordData.termino || 'Indefinida';
     const etiqueta = wordData.pos || wordData.category || wordData.categoria || 'término';
     
-    // Extracción a prueba de bombas de la definición
-    let defRaw = wordData.definition || wordData.definicion || wordData.def || wordData.acepciones || wordData.significado || 'Definición no disponible en este momento.';
+    // Extracción de definición
+    let defRaw = wordData.definition || wordData.definicion || wordData.def || wordData.acepciones || wordData.significado || 'Definición no disponible.';
     
     let definicionFrontal = "";
     let todasLasAcepciones = "";
     
-    // Si la definición viene como una lista [1. m. Cosa, 2. f. Otra cosa]
     if (Array.isArray(defRaw)) {
         definicionFrontal = defRaw[0];
         todasLasAcepciones = defRaw.map((def, idx) => `<div style="margin-bottom: 8px;"><strong>${idx+1}.</strong> ${def}</div>`).join('');
     } else {
-        // Si viene como texto normal
         definicionFrontal = defRaw;
         todasLasAcepciones = `<div style="margin-bottom: 8px;">${defRaw}</div>`;
     }
@@ -112,7 +118,7 @@ async function mostrarTarjetaActual() {
             </div>
     `;
 
-    // Casilla de Sinónimos (Inglés o Español)
+    // Sinónimos
     const sinonimos = wordData.synonyms || wordData.sinonimos;
     if (sinonimos) {
         contenidoTrasero += `
@@ -123,7 +129,7 @@ async function mostrarTarjetaActual() {
         `;
     }
 
-    // Casilla Ejemplo (Inglés o Español)
+    // Ejemplo
     const ejemplo = wordData.example || wordData.ejemplo;
     if (ejemplo) {
         contenidoTrasero += `
@@ -134,10 +140,9 @@ async function mostrarTarjetaActual() {
         `;
     }
 
-    // Casilla Tip y Etimología unificadas en "PARA MEMORIZAR"
+    // Para memorizar
     const origen = wordData.etymology || wordData.etimologia || wordData.origen;
     const truco = wordData.tip || wordData.truco || wordData.pista;
-    
     let infoMemoria = "";
     if (origen) infoMemoria += `<div style="margin-bottom: 8px;"><strong>🌍 Origen:</strong> ${origen}</div>`;
     if (truco) infoMemoria += `<div><strong>🧠 Tip:</strong> ${truco}</div>`;
@@ -169,18 +174,14 @@ async function mostrarTarjetaActual() {
 }
 
 function conectarBotones() {
-    const btnBad = document.getElementById('btn-bad');
-    const btnMid = document.getElementById('btn-mid');
-    const btnGood = document.getElementById('btn-good');
-
-    btnBad.onclick = () => calificarPalabra(1); 
-    btnMid.onclick = () => calificarPalabra(3); 
-    btnGood.onclick = () => calificarPalabra(5); 
+    document.getElementById('btn-bad').onclick = () => calificarPalabra(1); 
+    document.getElementById('btn-mid').onclick = () => calificarPalabra(3); 
+    document.getElementById('btn-good').onclick = () => calificarPalabra(5); 
 }
 
 async function calificarPalabra(puntuacion) {
     const wordData = window.__vocabSession[window.__vocabIndex];
-    const palabra = wordData.word || wordData.palabra;
+    const palabra = wordData.word || wordData.palabra || wordData.lema || wordData.termino;
 
     // 1. Calculamos días
     let diasParaRepaso = 0;
@@ -200,7 +201,7 @@ async function calificarPalabra(puntuacion) {
     if (window.__vocabIndex < window.__vocabSession.length) {
         mostrarTarjetaActual();
     } else {
-        alert("¡Tanda de 20 completada, Noemi! 🚀");
+        alert("¡Tanda completada! 🚀 Las palabras que has acertado no saldrán hasta que te toque repasarlas.");
         goTo('home'); 
     }
 }
