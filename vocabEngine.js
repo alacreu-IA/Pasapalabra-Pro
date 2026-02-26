@@ -94,7 +94,7 @@ async function calificarPalabra(puntuacion) {
             "¡Tanda terminada, Noe! Has superado esto con la paciencia de una guardia en la UCI. 🏥💪",
             "¡20 palabras al bote! Como filóloga sabes que las palabras tienen poder, pero como madre sabes que el verdadero poder es dormir 8 horas. 😴📚",
             "¡Nivel superado! Recuerda que Andrea (la superprogramadora que te ha montado esto) se lleva el 5% del bote y una cena de lujo. ¡Está en el contrato! 👩‍💻🥂",
-            "Sobrevivir a la UCI, criar a la peque y encima clavarlas todas... Eres de otro planeta, Fol. 🚀"
+            "Sobrevivir a la UCI, criar a los peques y encima clavarlas todas... Eres de otro planeta, Noe. 🚀"
         ];
         alert(mensajesNoemi[Math.floor(Math.random() * mensajesNoemi.length)]);
         goTo('home'); 
