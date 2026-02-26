@@ -3,49 +3,88 @@ window.iniciarMazo = async function(nombre) {
     window.__vocabIndex = 0;
     goTo('game');
 
-    // Mensaje de carga mientras baraja
     const front = document.getElementById('front-content');
-    if(front) front.innerHTML = "<div style='display:flex; height:100%; justify-content:center; align-items:center; color:var(--gold); font-size:1.2rem; font-weight:bold;'>Barajando tarjetas...</div>";
+    const back = document.getElementById('back-content');
+    
+    // Pantalla de carga animada
+    if(front) front.innerHTML = "<div style='display:flex; flex-direction:column; height:100%; justify-content:center; align-items:center; color:var(--gold); font-size:1.2rem; font-weight:bold; text-align:center;'>⏳<br><br>Barajando tarjetas...<br><span style='font-size:0.8rem; color:var(--text-muted); margin-top:10px;'>Preparando tu sesión</span></div>";
+    if(back) back.innerHTML = "";
+    
+    const fc = document.getElementById('flashcard');
+    fc.classList.remove('flipped');
+    fc.style.pointerEvents = 'none'; // Bloqueamos la carta para que no gire por accidente
+
+    document.getElementById('btn-bad').style.display = 'none';
+    document.getElementById('btn-mid').style.display = 'none';
+    document.getElementById('btn-good').style.display = 'none';
 
     let count = 0;
-    let intentos = 0; // Límite de seguridad anti-bucles infinitos
+    let intentos = 0; 
+    let backupWords = []; // Reservorio por si ya jugó todas hoy
 
-    while(count < 20 && intentos < 800) {
+    while(count < 20 && intentos < 300) {
         intentos++;
         if (!window.getRandomWord) break;
         
-        const wordData = await window.getRandomWord();
-        if(!wordData) break;
-        
-        const palabraText = wordData.word || wordData.palabra || "";
-        if (!palabraText) continue;
+        try {
+            const wordData = await window.getRandomWord();
+            if(!wordData) continue;
+            
+            const palabraText = wordData.word || wordData.palabra || wordData.lema || "";
+            if (!palabraText) continue;
 
-        const key = `repaso_${palabraText}`;
-        const lock = localStorage.getItem(key);
-        
-        // Comprueba si a la palabra le toca repaso
-        if(!lock || new Date().getTime() > parseInt(lock)) {
-            // FILTRO ANTI-DUPLICADOS: Evita que salga la misma palabra 2 veces en la misma tanda
-            const yaEsta = window.__vocabSession.some(w => (w.word || w.palabra) === palabraText);
-            if (!yaEsta) {
+            // Evitamos que salga repetida en los 20 huecos
+            const yaEsta = window.__vocabSession.some(w => (w.word || w.palabra || w.lema) === palabraText);
+            if (yaEsta) continue;
+
+            const key = `repaso_${palabraText}`;
+            const lock = localStorage.getItem(key);
+            
+            // Si le toca repaso (o es nueva), la metemos
+            if(!lock || new Date().getTime() > parseInt(lock)) {
                 window.__vocabSession.push(wordData);
                 count++;
+            } else {
+                // Si la jugó hace poco, la guardamos en la reserva
+                if (backupWords.length < 20 && !backupWords.some(w => (w.word || w.palabra || w.lema) === palabraText)) {
+                    backupWords.push(wordData);
+                }
             }
-        }
+        } catch(e) { console.error("Error al buscar palabra", e); }
     }
     
+    // SISTEMA INFINITO: Si no logramos 20 palabras nuevas, rellenamos con las de reserva
+    if (window.__vocabSession.length < 20) {
+        for (let w of backupWords) {
+            if (window.__vocabSession.length >= 20) break;
+            window.__vocabSession.push(w);
+        }
+    }
+
+    // Seguro por si el archivo fallase
     if (window.__vocabSession.length === 0) {
-        alert("¡No quedan palabras nuevas! Todas están programadas para otro día.");
+        alert("⚠️ No se han podido cargar palabras. Revisa el archivo de texto.");
         goTo('home');
+        fc.style.pointerEvents = 'auto';
         return;
     }
 
+    fc.style.pointerEvents = 'auto';
     mostrarTarjeta();
+};
+
+window.voltearTarjeta = function() {
+    const fc = document.getElementById('flashcard');
+    if (!fc.classList.contains('flipped') && window.__vocabSession && window.__vocabSession.length > 0) {
+        fc.classList.add('flipped');
+        document.getElementById('btn-bad').style.display = 'block';
+        document.getElementById('btn-mid').style.display = 'block';
+        document.getElementById('btn-good').style.display = 'block';
+    }
 };
 
 function limpiar(t) {
     if(!t) return "";
-    // Limpia basura de Wikipedia, barras verticales, dos puntos y guiones iniciales
     return t.toString().replace(/^[:\s,\-]+/, '').replace(/\[\[Archivo:.*?\]\]/g, '').replace(/\|/g, ' ').trim();
 }
 
@@ -53,34 +92,45 @@ function mostrarTarjeta() {
     const data = window.__vocabSession[window.__vocabIndex];
     if(!data) return;
 
-    // Reset de la tarjeta visual
-    document.getElementById('flashcard').classList.remove('flipped');
-    document.querySelectorAll('.controls button').forEach(b => b.style.display = 'none');
+    const fc = document.getElementById('flashcard');
+    fc.classList.remove('flipped');
     
-    const palabra = data.word || data.palabra || "Desconocida";
+    document.getElementById('btn-bad').style.display = 'none';
+    document.getElementById('btn-mid').style.display = 'none';
+    document.getElementById('btn-good').style.display = 'none';
     
-    // Extractor robusto de definición
-    let defRaw = data.definition || data.definicion || data.def || "Definición no encontrada en el archivo.";
+    const palabra = data.word || data.palabra || data.lema || "???";
+    
+    // CAZADOR DE DEFINICIONES EXTREMO (Por si la palabra viene rara del Excel)
+    let defRaw = data.definition || data.definicion || data.def || data.significado || "";
+    if (!defRaw) {
+        for(let key in data) {
+            if (key !== 'id' && key !== 'word' && key !== 'initial' && key !== 'pos' && typeof data[key] === 'string' && data[key].length > 15) {
+                defRaw = data[key];
+                break;
+            }
+        }
+    }
+
     const defs = Array.isArray(defRaw) ? defRaw : [defRaw];
-    const defPrincipal = limpiar(defs[0]);
-    
+    const defPrincipal = limpiar(defs[0]) || "Pulsa la tarjeta para ver la palabra.";
     const etiqueta = data.pos || data.category || "término";
 
-    // --- CARA FRONTAL ---
+    // PINTAR FRONTAL
     document.getElementById('front-content').innerHTML = `
         <div style="display:flex; flex-direction:column; height:100%;">
-            <p style="color:var(--text-muted); font-size:0.75rem; text-transform:uppercase; margin-bottom:15px; font-weight:bold; letter-spacing:1px;">Definición — ¿Qué palabra es?</p>
-            <p style="font-size:1.2rem; line-height:1.5; color:#fff;">${defPrincipal}</p>
-            <div style="margin-top:auto;">
+            <p style="color:var(--text-muted); font-size:0.75rem; text-transform:uppercase; margin-bottom:15px; font-weight:bold; letter-spacing:1px; flex-shrink:0;">Definición — ¿Qué palabra es?</p>
+            <p style="font-size:1.2rem; line-height:1.5; color:#fff; overflow-y:auto; padding-right:5px;">${defPrincipal}</p>
+            <div style="margin-top:auto; padding-top:15px; display:flex; justify-content:space-between; align-items:flex-end; flex-shrink:0;">
                 <span style="background:rgba(255,255,255,0.06); padding:5px 14px; border-radius:12px; font-size:0.8rem; color:var(--text-muted); border:1px solid var(--border);">${etiqueta}</span>
+                <span style="font-size:0.75rem; color:var(--text-muted);">Toca para girar ↺</span>
             </div>
         </div>
     `;
 
-    // --- CARA TRASERA ---
+    // PINTAR TRASERA
     let acepcionesHTML = defs.map((d, i) => `<div style="margin-bottom:8px;"><strong>${i+1}.</strong> ${limpiar(d)}</div>`).join('');
     
-    // Bloque Sinónimos
     let sinosHTML = "";
     const sinos = data.synonyms || data.sinonimos;
     if (sinos) {
@@ -91,7 +141,6 @@ function mostrarTarjeta() {
             </div>`;
     }
 
-    // Bloque Memorizar
     let tipHTML = "";
     const truco = data.tip || data.etymology || data.pista;
     if (truco) {
@@ -102,17 +151,16 @@ function mostrarTarjeta() {
             </div>`;
     }
 
-    // ARREGLO BOTÓN RAE: event.stopPropagation() impide que la carta se gire al pulsar el enlace
     const urlRAE = `https://dle.rae.es/${encodeURIComponent(palabra)}`;
     
     document.getElementById('back-content').innerHTML = `
         <div style="display:flex; flex-direction:column; height:100%;">
-            <p style="color:var(--text-muted); font-size:0.75rem; text-transform:uppercase; margin-bottom:5px; font-weight:bold; letter-spacing:1px;">Respuesta</p>
-            <h2 style="font-family:'Syne', sans-serif; color:var(--gold); font-size:2.2rem; margin-bottom:15px; text-transform:capitalize; line-height:1.1;">${palabra}</h2>
+            <p style="color:var(--text-muted); font-size:0.75rem; text-transform:uppercase; margin-bottom:5px; font-weight:bold; letter-spacing:1px; flex-shrink:0;">Respuesta</p>
+            <h2 style="font-family:'Syne', sans-serif; color:var(--gold); font-size:2.2rem; margin-bottom:15px; text-transform:capitalize; line-height:1.1; flex-shrink:0;">${palabra}</h2>
             <div style="font-size:0.95rem; line-height:1.4; color:#f0f0f5; margin-bottom:15px;">${acepcionesHTML}</div>
             ${sinosHTML}
             ${tipHTML}
-            <div style="margin-top:auto; padding-top:10px;">
+            <div style="margin-top:auto; padding-top:10px; flex-shrink:0;">
                 <a href="${urlRAE}" target="_blank" onclick="event.stopPropagation();" style="display:block; background:#005bb5; color:white; text-align:center; padding:14px; border-radius:8px; text-decoration:none; font-weight:bold; font-size:0.95rem;">📖 Ver en la RAE</a>
             </div>
         </div>
@@ -124,7 +172,7 @@ function mostrarTarjeta() {
 
 window.calificar = function(puntos) {
     const data = window.__vocabSession[window.__vocabIndex];
-    const palabraText = data.word || data.palabra;
+    const palabraText = data.word || data.palabra || data.lema;
     
     let dias = puntos === 1 ? 2 : (puntos === 3 ? 7 : 30);
     const v = new Date(); 
@@ -138,7 +186,7 @@ window.calificar = function(puntos) {
     if(window.__vocabIndex < window.__vocabSession.length) {
         mostrarTarjeta();
     } else { 
-        alert("¡Tanda completada! 🚀 Las palabras han sido programadas para otro día."); 
+        alert("¡Tanda completada! 🚀 Puedes hacer clic en cualquier mazo para jugar 20 más."); 
         goTo('home'); 
     }
 };

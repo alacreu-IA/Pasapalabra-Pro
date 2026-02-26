@@ -41,7 +41,7 @@
         .deck-row { background: var(--card); border: 1px solid var(--border); border-radius: 14px; padding: 16px; display: flex; justify-content: space-between; align-items: center; cursor: pointer; }
         .check-circle { width: 22px; height: 22px; background: var(--gold); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #000; font-size: 0.7rem; }
 
-        /* PANTALLA JUEGO (FIX CARTAS GRANDES Y RESPONSIVAS) */
+        /* PANTALLA JUEGO */
         #game { height: 100dvh; display: flex; flex-direction: column; overflow: hidden; }
         #game header { display: flex; justify-content: space-between; align-items: center; padding: 10px 20px; border-bottom: 1px solid var(--border); flex-shrink: 0; }
         
@@ -56,7 +56,7 @@
         .card-back { transform: rotateY(180deg); }
 
         .controls { padding: 10px 20px 30px; display: flex; gap: 10px; flex-shrink: 0; }
-        .controls button { flex: 1; border-radius: 12px; padding: 16px 0; font-size: 0.95rem; font-weight: bold; display: none; border: none; }
+        .controls button { flex: 1; border-radius: 12px; padding: 16px 0; font-size: 0.95rem; font-weight: bold; display: none; border: none; cursor: pointer;}
         #btn-bad { background: rgba(255, 71, 71, 0.1); border: 1px solid var(--btn-red); color: var(--btn-red); }
         #btn-mid { background: rgba(245, 200, 66, 0.1); border: 1px solid var(--gold); color: var(--gold); }
         #btn-good { background: rgba(41, 184, 93, 0.1); border: 1px solid var(--btn-green); color: var(--btn-green); }
@@ -75,7 +75,7 @@
 
         <div class="section-title">Modo de estudio</div>
         <div class="study-grid">
-            <div class="study-card" onclick="alert('Algoritmo SRS activado')"><div class="smart-badge">SMART</div><h3>🧠 Repaso SRS</h3><p style="font-size:0.7rem; color:var(--text-muted);">Solo lo urgente</p></div>
+            <div class="study-card" onclick="alert('Algoritmo de repaso espaciado activado')"><div class="smart-badge">SMART</div><h3>🧠 Repaso SRS</h3><p style="font-size:0.7rem; color:var(--text-muted);">Solo lo urgente</p></div>
             <div class="study-card" onclick="iniciarMazo('General')"><h3>⚡ Rápido</h3><p style="font-size:0.7rem; color:var(--text-muted);">20 preguntas</p></div>
             <div class="study-card" onclick="iniciarMazo('Modo Hardcore RAE')"><h3>🔥 Hardcore</h3><p style="font-size:0.7rem; color:var(--text-muted);">66.970 palabras</p></div>
             <div class="study-card" onclick="alert('Próximamente')"><h3>🟡 El Rosco</h3><p style="font-size:0.7rem; color:var(--text-muted);">Simulación final</p></div>
@@ -103,7 +103,7 @@
         </header>
         
         <div class="card-container">
-            <div class="flashcard" id="flashcard" onclick="this.classList.toggle('flipped'); mostrarBotones();">
+            <div class="flashcard" id="flashcard" onclick="voltearTarjeta()">
                 <div class="card-face card-front" id="front-content"></div>
                 <div class="card-face card-back" id="back-content"></div>
             </div>
@@ -117,16 +117,11 @@
     </div>
 
     <script src="db.js"></script>
-    <script src="vocabEngine.js"></script>
+    <script src="vocabEngine.js?v=3"></script>
     <script>
         function goTo(s) { 
             document.querySelectorAll('.screen').forEach(x => x.classList.remove('active'));
             document.getElementById(s).classList.add('active');
-        }
-        function mostrarBotones() {
-            if(document.getElementById('flashcard').classList.contains('flipped')) {
-                document.querySelectorAll('.controls button').forEach(b => b.style.display = 'block');
-            }
         }
         window.onload = async () => { 
             if(window.initDB) await window.initDB(); 
