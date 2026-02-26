@@ -17,17 +17,18 @@
             --btn-blue: #005bb5; --btn-red: #ff4747; --btn-green: #29b85d; --btn-dark: #1a1a24;
         }
 
-        body { background: var(--bg); color: var(--text-main); font-family: 'DM Sans', sans-serif; overflow: hidden; height: 100vh; }
+        /* Usamos 100dvh para que encaje perfecto en móviles sin empujar hacia abajo */
+        body { background: var(--bg); color: var(--text-main); font-family: 'DM Sans', sans-serif; overflow: hidden; height: 100dvh; }
 
         .screen {
             position: absolute; top: 0; left: 0; width: 100%; height: 100%;
             display: flex; flex-direction: column; opacity: 0; pointer-events: none;
-            transition: opacity 0.3s ease, transform 0.3s ease; transform: translateX(20px); overflow-y: auto;
+            transition: opacity 0.3s ease, transform 0.3s ease; transform: translateX(20px);
         }
         .screen.active { opacity: 1; pointer-events: auto; transform: translateX(0); }
 
-        /* PANTALLA INICIO */
-        #home { padding: 20px; padding-top: 30px; }
+        /* PANTALLA INICIO (Con scroll interno) */
+        #home { overflow-y: auto; padding: 20px; padding-top: 30px; }
         
         header.app-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 25px; }
         .header-titles { display: flex; flex-direction: column; }
@@ -54,23 +55,26 @@
         .check-circle { width: 22px; height: 22px; background: var(--gold); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #000; font-size: 0.7rem; }
 
         /* PANTALLA JUEGO */
-        #game { background: var(--bg); }
-        #game header { display: flex; justify-content: space-between; align-items: center; padding: 15px 20px; border-bottom: 1px solid var(--border); margin-bottom: 0; }
+        #game { background: var(--bg); display: flex; flex-direction: column; height: 100dvh; overflow: hidden; }
+        
+        #game header { display: flex; justify-content: space-between; align-items: center; padding: 10px 20px; border-bottom: 1px solid var(--border); flex-shrink: 0; }
         .btn-back-circle { width: 36px; height: 36px; border-radius: 50%; background: var(--card-light); border: none; color: var(--text-muted); font-size: 1.2rem; display: flex; align-items: center; justify-content: center; cursor: pointer; }
         
         .progress-container { flex: 1; margin: 0 15px; height: 4px; background: var(--card-light); border-radius: 2px; position: relative; }
-        .progress-bar { position: absolute; left: 0; top: 0; height: 100%; background: var(--gold); width: 5%; border-radius: 2px; }
+        .progress-bar { position: absolute; left: 0; top: 0; height: 100%; background: var(--gold); width: 5%; border-radius: 2px; transition: width 0.3s ease; }
 
-        .card-container { flex: 1; display: flex; justify-content: center; align-items: center; padding: 20px; perspective: 1000px; }
-        .flashcard { width: 100%; max-width: 450px; height: 70vh; position: relative; transform-style: preserve-3d; transition: transform 0.4s ease; cursor: pointer; }
+        /* El contenedor de la tarjeta ocupa justo el espacio libre */
+        .card-container { flex: 1; min-height: 0; display: flex; justify-content: center; align-items: stretch; padding: 15px 20px; perspective: 1000px; }
+        .flashcard { width: 100%; max-width: 450px; height: 100%; position: relative; transform-style: preserve-3d; transition: transform 0.4s ease; cursor: pointer; }
         .flashcard.flipped .card-front { display: none; }
         .flashcard.flipped .card-back { display: flex; transform: rotateY(0deg); }
 
-        .card-face { position: absolute; width: 100%; height: 100%; border-radius: 16px; padding: 24px; display: flex; flex-direction: column; overflow-y: auto; background: var(--card); border: 1px solid var(--border); }
+        /* overflow-y: auto permite hacer scroll SOLO DENTRO de la carta si hay mucho texto */
+        .card-face { position: absolute; width: 100%; height: 100%; border-radius: 16px; padding: 20px; display: flex; flex-direction: column; overflow-y: auto; background: var(--card); border: 1px solid var(--border); }
         .card-front { justify-content: flex-start; }
         .card-back { display: none; align-items: flex-start; }
 
-        .controls { padding: 20px; display: flex; gap: 10px; padding-bottom: 30px; }
+        .controls { padding: 10px 20px 25px 20px; display: flex; gap: 10px; flex-shrink: 0; }
         .controls button { flex: 1; border-radius: 12px; padding: 16px 0; font-size: 0.95rem; font-weight: bold; cursor: pointer; display: none; transition: transform 0.1s; display: flex; justify-content: center; align-items: center; gap: 8px; }
         .controls button:active { transform: scale(0.95); }
         
@@ -114,10 +118,7 @@
         <div class="section-title">Mazos Activos</div>
         <div class="deck-list">
             <div class="deck-row locked" onclick="alert('Necesitas jugar más para desbloquear el Nivel Bote.')">
-                <div class="deck-info">
-                    <h4>🔒 Nivel Bote 🔥</h4>
-                    <p>25 preguntas · Dificultad máxima</p>
-                </div>
+                <div class="deck-info"><h4>🔒 Nivel Bote 🔥</h4><p>25 preguntas · Dificultad máxima</p></div>
                 <div class="check-circle">✓</div>
             </div>
             <div class="deck-row" onclick="iniciarMazo('Cultura General')">
