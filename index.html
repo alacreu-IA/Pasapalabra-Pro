@@ -12,9 +12,9 @@
         * { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
         
         :root {
-            --bg: #0a0a0f; --card: #13131a; --border: #2a2a38;
+            --bg: #0d0d12; --card: #15151c; --card-light: #1c1c26; --border: #2a2a38;
             --gold: #f5c842; --text-main: #f0f0f5; --text-muted: #8888a8;
-            --btn-blue: #4a9eff; --btn-red: #ff5555; --btn-green: #3ecf72; --btn-orange: #f5a623;
+            --btn-blue: #005bb5; --btn-red: #ff4747; --btn-green: #29b85d; --btn-dark: #1a1a24;
         }
 
         body { background: var(--bg); color: var(--text-main); font-family: 'DM Sans', sans-serif; overflow: hidden; height: 100vh; }
@@ -27,125 +27,60 @@
         }
         .screen.active { opacity: 1; pointer-events: auto; transform: translateX(0); }
 
-        /* Inicio */
-        #home header { padding: 30px 20px 10px; text-align: center; }
-        #home header h1 { font-family: 'Syne', sans-serif; color: var(--gold); font-size: 2rem; }
-        #home header p { color: var(--text-muted); font-size: 0.9rem; margin-top: 5px; }
+        /* PANTALLA INICIO (Calcada a tu diseño) */
+        #home { padding: 20px; padding-top: 40px; }
+        
+        .racha-badge { display: inline-flex; align-items: center; background: rgba(245, 200, 66, 0.05); border: 1px solid rgba(245, 200, 66, 0.3); color: var(--gold); padding: 6px 16px; border-radius: 20px; font-size: 0.9rem; font-weight: bold; margin-bottom: 30px; }
+        
+        .section-title { font-size: 0.8rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 15px; font-weight: bold; }
 
-        .deck-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 15px; padding: 20px; padding-bottom: 50px; }
-        .deck-btn { background: var(--card); border: 1px solid var(--border); border-radius: 16px; padding: 20px 15px; text-align: center; cursor: pointer; transition: transform 0.1s; }
-        .deck-btn:active { transform: scale(0.96); }
-        .deck-btn h3 { font-size: 1rem; margin-bottom: 5px; color: var(--text-main); }
-        .deck-btn p { font-size: 0.8rem; color: var(--gold); }
-        .deck-special { border-color: var(--gold); background: rgba(245, 200, 66, 0.05); }
+        .study-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 30px; }
+        .study-card { background: var(--card); border-radius: 16px; padding: 18px; position: relative; cursor: pointer; border: 1px solid transparent; transition: border-color 0.2s; }
+        .study-card:active { transform: scale(0.98); }
+        .study-card h3 { font-size: 1.05rem; margin: 10px 0 4px; display: flex; align-items: center; gap: 8px; }
+        .study-card p { font-size: 0.75rem; color: var(--text-muted); line-height: 1.3; }
+        .smart-badge { position: absolute; top: 15px; right: 15px; background: var(--gold); color: #000; font-size: 0.65rem; font-weight: bold; padding: 2px 6px; border-radius: 6px; }
 
-        /* Juego */
+        .deck-list { display: flex; flex-direction: column; gap: 10px; padding-bottom: 40px; }
+        .deck-row { background: var(--card); border: 1px solid rgba(245, 200, 66, 0.2); border-radius: 14px; padding: 16px; display: flex; justify-content: space-between; align-items: center; cursor: pointer; }
+        .deck-row:active { transform: scale(0.98); }
+        .deck-row.locked { border-color: rgba(255, 71, 71, 0.3); }
+        .deck-info h4 { font-size: 1rem; display: flex; align-items: center; gap: 8px; margin-bottom: 4px; }
+        .deck-info p { font-size: 0.8rem; color: var(--text-muted); }
+        .check-circle { width: 22px; height: 22px; background: var(--gold); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #000; font-size: 0.7rem; }
+
+        /* PANTALLA JUEGO */
+        #game { background: var(--bg); }
         #game header { display: flex; justify-content: space-between; align-items: center; padding: 15px 20px; border-bottom: 1px solid var(--border); }
-        .btn-back { background: none; border: none; color: var(--gold); font-size: 1rem; font-weight: bold; cursor: pointer; }
+        .btn-back-circle { width: 36px; height: 36px; border-radius: 50%; background: var(--card-light); border: none; color: var(--text-muted); font-size: 1.2rem; display: flex; align-items: center; justify-content: center; cursor: pointer; }
+        
+        .progress-container { flex: 1; margin: 0 15px; height: 4px; background: var(--card-light); border-radius: 2px; position: relative; }
+        .progress-bar { position: absolute; left: 0; top: 0; height: 100%; background: var(--gold); width: 5%; border-radius: 2px; }
 
         .card-container { flex: 1; display: flex; justify-content: center; align-items: center; padding: 20px; perspective: 1000px; }
-        .flashcard { width: 100%; max-width: 400px; height: 60vh; position: relative; transform-style: preserve-3d; cursor: pointer; }
+        .flashcard { width: 100%; max-width: 450px; height: 70vh; position: relative; transform-style: preserve-3d; transition: transform 0.4s ease; cursor: pointer; }
         .flashcard.flipped .card-front { display: none; }
         .flashcard.flipped .card-back { display: flex; transform: rotateY(0deg); }
 
-        .card-face {
-            position: absolute; width: 100%; height: 100%; border-radius: 20px; padding: 30px 20px;
-            display: flex; flex-direction: column; overflow-y: auto; background: var(--card); border: 1px solid var(--border);
-        }
-        .card-front { justify-content: center; align-items: center; text-align: center; }
-        .card-back { display: none; align-items: flex-start; border-color: rgba(245, 200, 66, 0.3); }
+        .card-face { position: absolute; width: 100%; height: 100%; border-radius: 16px; padding: 24px; display: flex; flex-direction: column; overflow-y: auto; background: var(--card); border: 1px solid var(--border); }
+        .card-front { justify-content: flex-start; }
+        .card-back { display: none; align-items: flex-start; }
 
-        .word-title { font-size: 2rem; color: var(--gold); margin-bottom: 5px; font-family: 'Syne', sans-serif; text-transform: capitalize; align-self: center; margin-top: 20px;}
+        /* Controles inferiores calcados */
+        .controls { padding: 20px; display: flex; gap: 10px; padding-bottom: 30px; }
+        .controls button { flex: 1; border-radius: 12px; padding: 16px 0; font-size: 0.95rem; font-weight: bold; cursor: pointer; display: none; transition: transform 0.1s; display: flex; justify-content: center; align-items: center; gap: 8px; }
+        .controls button:active { transform: scale(0.95); }
         
-        .controls { padding: 20px; display: flex; gap: 10px; min-height: 90px; }
-        .controls button { flex: 1; border: none; border-radius: 12px; padding: 15px; font-size: 1rem; font-weight: bold; color: white; cursor: pointer; display: none; }
-        #btn-bad { background: var(--btn-red); } #btn-mid { background: var(--btn-orange); } #btn-good { background: var(--btn-green); }
+        #btn-bad { background: rgba(255, 71, 71, 0.08); border: 1px solid rgba(255, 71, 71, 0.4); color: var(--btn-red); }
+        #btn-mid { background: rgba(245, 200, 66, 0.08); border: 1px solid rgba(245, 200, 66, 0.4); color: var(--gold); }
+        #btn-good { background: rgba(41, 184, 93, 0.08); border: 1px solid rgba(41, 184, 93, 0.4); color: var(--btn-green); }
+
     </style>
 </head>
 <body>
 
     <div id="home" class="screen active">
-        <header>
-            <h1>PP PRO</h1>
-            <p id="db-status">Cargando base de datos...</p>
-        </header>
+        <div class="racha-badge">🔥 Racha: 1 días</div>
 
-        <div class="deck-grid">
-            <div class="deck-btn deck-special" onclick="iniciarMazo('Modo Hardcore RAE')">
-                <h3>🔥 Modo Hardcore RAE</h3>
-                <p>66.970 palabras a pelo</p>
-            </div>
-            <div class="deck-btn" onclick="iniciarMazo('Cultura General')"><h3>Cultura General</h3><p>Modo VIP</p></div>
-            <div class="deck-btn" onclick="iniciarMazo('Literatura')"><h3>Literatura</h3><p>Modo VIP</p></div>
-            <div class="deck-btn" onclick="iniciarMazo('Geografía')"><h3>Geografía</h3><p>Modo VIP</p></div>
-            <div class="deck-btn" onclick="iniciarMazo('Historia')"><h3>Historia</h3><p>Modo VIP</p></div>
-            <div class="deck-btn" onclick="iniciarMazo('Historia del Arte')"><h3>Historia del Arte</h3><p>Modo VIP</p></div>
-            <div class="deck-btn" onclick="iniciarMazo('Ciencia y Nat.')"><h3>Ciencia y Nat.</h3><p>Modo VIP</p></div>
-            <div class="deck-btn" onclick="iniciarMazo('Cine y TV')"><h3>Cine y TV</h3><p>Modo VIP</p></div>
-            <div class="deck-btn" onclick="iniciarMazo('Deportes')"><h3>Deportes</h3><p>Modo VIP</p></div>
-            <div class="deck-btn" onclick="iniciarMazo('Mitología')"><h3>Mitología</h3><p>Modo VIP</p></div>
-            <div class="deck-btn deck-special" style="border-style: dashed;" onclick="alert('En la Fase 3 podrás subir tu Excel aquí.')">
-                <h3>+ Crear Mazo</h3>
-                <p>Añadir Excel</p>
-            </div>
-        </div>
-    </div>
-
-    <div id="game" class="screen">
-        <header>
-            <button class="btn-back" onclick="goTo('home')">← Volver</button>
-            <span id="game-title" style="font-weight: bold;">Mazo</span>
-            <span id="status-bar" style="color: var(--text-muted); font-size: 0.9rem;">0/20</span>
-        </header>
-
-        <div class="card-container">
-            <div class="flashcard" id="flashcard">
-                <div class="card-face card-front" id="front-content">
-                    <div style="font-size: 1.5rem; color: var(--gold);">Toca para empezar</div>
-                </div>
-                <div class="card-face card-back">
-                    <div class="word-title" id="back-word">Palabra</div>
-                    <div id="back-extra" style="width: 100%;"></div>
-                </div>
-            </div>
-        </div>
-
-        <div class="controls">
-            <button id="btn-bad">No la sé</button>
-            <button id="btn-mid">Dudo</button>
-            <button id="btn-good">La sé</button>
-        </div>
-    </div>
-
-    <script src="db.js"></script>
-    <script src="vocabEngine.js"></script>
-    
-    <script>
-        function goTo(screenId) {
-            document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
-            document.getElementById(screenId).classList.add('active');
-        }
-
-        window.onload = async function() {
-            const statusText = document.getElementById('db-status');
-            try {
-                if(window.initDB) await window.initDB();
-                statusText.textContent = "¡Base de datos conectada!";
-                statusText.style.color = "var(--btn-green)";
-            } catch (e) {
-                statusText.textContent = "Falta la carpeta data en GitHub.";
-                statusText.style.color = "var(--btn-red)";
-            }
-        };
-
-        document.getElementById('flashcard').addEventListener('click', function() {
-            if (!this.classList.contains('flipped') && window.__vocabSession && window.__vocabSession.length > 0) {
-                this.classList.add('flipped');
-                document.getElementById('btn-bad').style.display = 'block';
-                document.getElementById('btn-mid').style.display = 'block';
-                document.getElementById('btn-good').style.display = 'block';
-            }
-        });
-    </script>
-</body>
-</html>
+        <div class="section-title">Modo de estudio</div>
+        <div class="study
