@@ -19,7 +19,6 @@
 
         body { background: var(--bg); color: var(--text-main); font-family: 'DM Sans', sans-serif; overflow: hidden; height: 100vh; }
 
-        /* Pantallas SPA */
         .screen {
             position: absolute; top: 0; left: 0; width: 100%; height: 100%;
             display: flex; flex-direction: column; opacity: 0; pointer-events: none;
@@ -27,7 +26,7 @@
         }
         .screen.active { opacity: 1; pointer-events: auto; transform: translateX(0); }
 
-        /* PANTALLA INICIO (Calcada a tu diseño) */
+        /* PANTALLA INICIO */
         #home { padding: 20px; padding-top: 40px; }
         
         .racha-badge { display: inline-flex; align-items: center; background: rgba(245, 200, 66, 0.05); border: 1px solid rgba(245, 200, 66, 0.3); color: var(--gold); padding: 6px 16px; border-radius: 20px; font-size: 0.9rem; font-weight: bold; margin-bottom: 30px; }
@@ -66,7 +65,6 @@
         .card-front { justify-content: flex-start; }
         .card-back { display: none; align-items: flex-start; }
 
-        /* Controles inferiores calcados */
         .controls { padding: 20px; display: flex; gap: 10px; padding-bottom: 30px; }
         .controls button { flex: 1; border-radius: 12px; padding: 16px 0; font-size: 0.95rem; font-weight: bold; cursor: pointer; display: none; transition: transform 0.1s; display: flex; justify-content: center; align-items: center; gap: 8px; }
         .controls button:active { transform: scale(0.95); }
@@ -74,7 +72,6 @@
         #btn-bad { background: rgba(255, 71, 71, 0.08); border: 1px solid rgba(255, 71, 71, 0.4); color: var(--btn-red); }
         #btn-mid { background: rgba(245, 200, 66, 0.08); border: 1px solid rgba(245, 200, 66, 0.4); color: var(--gold); }
         #btn-good { background: rgba(41, 184, 93, 0.08); border: 1px solid rgba(41, 184, 93, 0.4); color: var(--btn-green); }
-
     </style>
 </head>
 <body>
@@ -83,4 +80,113 @@
         <div class="racha-badge">🔥 Racha: 1 días</div>
 
         <div class="section-title">Modo de estudio</div>
-        <div class="study
+        <div class="study-grid">
+            <div class="study-card" onclick="alert('El algoritmo SRS calculará qué palabras debes repasar hoy.')">
+                <div class="smart-badge">SMART</div>
+                <h3>🧠 Repaso SRS</h3>
+                <p>Algoritmo Anki — solo lo urgente</p>
+            </div>
+            <div class="study-card" onclick="iniciarMazo('General')">
+                <h3>⚡ Rápido</h3>
+                <p>20 preguntas de tus mazos</p>
+            </div>
+            <div class="study-card" onclick="iniciarMazo('Vocabulario RAE')">
+                <h3>📖 Vocabulario RAE</h3>
+                <p>Definiciones exactas del DLE</p>
+            </div>
+            <div class="study-card" onclick="alert('¡El rosco final se desbloqueará cuando domines los mazos!')">
+                <h3>🟡 El Rosco</h3>
+                <p>Simula la prueba final</p>
+            </div>
+        </div>
+
+        <div class="section-title">Mazos Activos</div>
+        <div class="deck-list">
+            <div class="deck-row locked" onclick="alert('Necesitas jugar más para desbloquear el Nivel Bote.')">
+                <div class="deck-info">
+                    <h4>🔒 Nivel Bote 🔥</h4>
+                    <p>25 preguntas · Dificultad máxima</p>
+                </div>
+                <div class="check-circle">✓</div>
+            </div>
+            <div class="deck-row" onclick="iniciarMazo('Cultura General')">
+                <div class="deck-info"><h4>🌎 Cultura General</h4><p>47 preguntas</p></div>
+                <div class="check-circle">✓</div>
+            </div>
+            <div class="deck-row" onclick="iniciarMazo('Literatura')">
+                <div class="deck-info"><h4>📚 Literatura</h4><p>41 preguntas</p></div>
+                <div class="check-circle">✓</div>
+            </div>
+            <div class="deck-row" onclick="iniciarMazo('Geografía')">
+                <div class="deck-info"><h4>🗺️ Geografía</h4><p>41 preguntas</p></div>
+                <div class="check-circle">✓</div>
+            </div>
+            <div class="deck-row" onclick="iniciarMazo('Historia')">
+                <div class="deck-info"><h4>⚔️ Historia</h4><p>39 preguntas</p></div>
+                <div class="check-circle">✓</div>
+            </div>
+            <div class="deck-row" onclick="iniciarMazo('Historia del Arte')">
+                <div class="deck-info"><h4>🖼️ Historia del Arte</h4><p>36 preguntas</p></div>
+                <div class="check-circle">✓</div>
+            </div>
+            <div class="deck-row" onclick="iniciarMazo('Mitología')">
+                <div class="deck-info"><h4>⚡ Mitología</h4><p>15 preguntas</p></div>
+                <div class="check-circle">✓</div>
+            </div>
+            <div class="deck-row" onclick="iniciarMazo('Microbiología')">
+                <div class="deck-info"><h4>🦠 Microbiología</h4><p>Preguntas generales</p></div>
+                <div class="check-circle">✓</div>
+            </div>
+        </div>
+    </div>
+
+    <div id="game" class="screen">
+        <header>
+            <button class="btn-back-circle" onclick="goTo('home')">←</button>
+            <div class="progress-container"><div class="progress-bar" id="progress-bar-fill"></div></div>
+            <span id="status-bar" style="color: var(--text-muted); font-size: 0.85rem; font-weight: bold;">1/20</span>
+        </header>
+
+        <div class="card-container">
+            <div class="flashcard" id="flashcard">
+                <div class="card-face card-front" id="front-content"></div>
+                <div class="card-face card-back" id="back-extra"></div>
+            </div>
+        </div>
+
+        <div class="controls">
+            <button id="btn-bad">✖ No la sé</button>
+            <button id="btn-mid">🔄 Repasar</button>
+            <button id="btn-good">✔ La sé</button>
+        </div>
+    </div>
+
+    <script src="db.js"></script>
+    <script src="vocabEngine.js"></script>
+    
+    <script>
+        function goTo(screenId) {
+            document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+            document.getElementById(screenId).classList.add('active');
+        }
+
+        window.onload = async function() {
+            try {
+                if(window.initDB) await window.initDB();
+                console.log("DB Iniciada");
+            } catch (e) {
+                console.error("Error cargando DB", e);
+            }
+        };
+
+        document.getElementById('flashcard').addEventListener('click', function() {
+            if (!this.classList.contains('flipped') && window.__vocabSession && window.__vocabSession.length > 0) {
+                this.classList.add('flipped');
+                document.getElementById('btn-bad').style.display = 'flex';
+                document.getElementById('btn-mid').style.display = 'flex';
+                document.getElementById('btn-good').style.display = 'flex';
+            }
+        });
+    </script>
+</body>
+</html>
