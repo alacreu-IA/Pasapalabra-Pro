@@ -10,7 +10,7 @@ window.iniciarMazo = async function(nombreMazo) {
         
         // Bucle inteligente: busca hasta 20 palabras que NO estén bloqueadas por fecha
         let palabrasEncontradas = 0;
-        let intentos = 0; // Límite de seguridad por si no quedan palabras nuevas
+        let intentos = 0; 
         
         while (palabrasEncontradas < 20 && intentos < 200) {
             intentos++;
@@ -18,13 +18,11 @@ window.iniciarMazo = async function(nombreMazo) {
                 const word = await window.getRandomWord();
                 if (word) {
                     // Miramos en la memoria del móvil si esta palabra tiene fecha de repaso
-                    const fechaBloqueo = localStorage.getItem(`repaso_${word.word}`);
+                    const fechaBloqueo = localStorage.getItem(`repaso_${word.word || word.palabra}`);
                     const ahora = new Date().getTime();
                     
-                    // Si NO tiene fecha de bloqueo, o la fecha de bloqueo YA HA PASADO, la metemos en la sesión
                     if (!fechaBloqueo || ahora >= parseInt(fechaBloqueo)) {
-                        // Evitar duplicados en la misma tanda de 20
-                        const yaEsta = window.__vocabSession.some(w => w.word === word.word);
+                        const yaEsta = window.__vocabSession.some(w => (w.word || w.palabra) === (word.word || word.palabra));
                         if (!yaEsta) {
                             window.__vocabSession.push(word);
                             palabrasEncontradas++;
@@ -60,21 +58,25 @@ async function mostrarTarjetaActual() {
     document.getElementById('btn-mid').style.display = 'none';
     document.getElementById('btn-good').style.display = 'none';
 
-    // Extracción segura de la definición
-    let defRaw = wordData.definition || wordData.def || 'Definición no disponible en este momento.';
+    // LA RED BILINGÜE: Buscamos la información sea cual sea su nombre
+    const palabra = wordData.word || wordData.palabra || 'Indefinida';
+    const etiqueta = wordData.pos || wordData.category || wordData.categoria || 'término';
+    
+    // Extracción a prueba de bombas de la definición
+    let defRaw = wordData.definition || wordData.definicion || wordData.def || wordData.acepciones || wordData.significado || 'Definición no disponible en este momento.';
+    
     let definicionFrontal = "";
     let todasLasAcepciones = "";
     
-    // Construimos la lista de acepciones
+    // Si la definición viene como una lista [1. m. Cosa, 2. f. Otra cosa]
     if (Array.isArray(defRaw)) {
         definicionFrontal = defRaw[0];
         todasLasAcepciones = defRaw.map((def, idx) => `<div style="margin-bottom: 8px;"><strong>${idx+1}.</strong> ${def}</div>`).join('');
     } else {
+        // Si viene como texto normal
         definicionFrontal = defRaw;
         todasLasAcepciones = `<div style="margin-bottom: 8px;">${defRaw}</div>`;
     }
-
-    const etiqueta = wordData.pos || wordData.category || 'término';
 
     // --- CARA FRONTAL ---
     document.getElementById('front-content').innerHTML = `
@@ -103,14 +105,14 @@ async function mostrarTarjetaActual() {
                 RESPUESTA
             </div>
             <div style="font-size: 2.5rem; color: #f5c842; font-family: 'Syne', sans-serif; font-weight: 800; margin-bottom: 15px; line-height: 1.1; text-transform: capitalize; letter-spacing: -1px;">
-                ${wordData.word || 'Indefinida'}
+                ${palabra}
             </div>
             <div style="font-size: 0.95rem; color: #f0f0f5; line-height: 1.4; margin-bottom: 20px;">
                 ${todasLasAcepciones}
             </div>
     `;
 
-    // Casilla de Sinónimos
+    // Casilla de Sinónimos (Inglés o Español)
     const sinonimos = wordData.synonyms || wordData.sinonimos;
     if (sinonimos) {
         contenidoTrasero += `
@@ -121,20 +123,24 @@ async function mostrarTarjetaActual() {
         `;
     }
 
-    // Casilla Ejemplo
-    if (wordData.example) {
+    // Casilla Ejemplo (Inglés o Español)
+    const ejemplo = wordData.example || wordData.ejemplo;
+    if (ejemplo) {
         contenidoTrasero += `
             <div style="width: 100%; background: #1a1a24; border: 1px solid #2a2a38; border-radius: 10px; padding: 14px; margin-bottom: 12px;">
                 <div style="font-size: 0.65rem; color: #8888a8; text-transform: uppercase; margin-bottom: 6px; letter-spacing: 0.5px;">EJEMPLO</div>
-                <div style="font-size: 0.95rem; color: #d0d0d8; font-style: italic;">"${wordData.example}"</div>
+                <div style="font-size: 0.95rem; color: #d0d0d8; font-style: italic;">"${ejemplo}"</div>
             </div>
         `;
     }
 
     // Casilla Tip y Etimología unificadas en "PARA MEMORIZAR"
+    const origen = wordData.etymology || wordData.etimologia || wordData.origen;
+    const truco = wordData.tip || wordData.truco || wordData.pista;
+    
     let infoMemoria = "";
-    if (wordData.etymology) infoMemoria += `<div style="margin-bottom: 8px;"><strong>🌍 Origen:</strong> ${wordData.etymology}</div>`;
-    if (wordData.tip) infoMemoria += `<div><strong>🧠 Tip:</strong> ${wordData.tip}</div>`;
+    if (origen) infoMemoria += `<div style="margin-bottom: 8px;"><strong>🌍 Origen:</strong> ${origen}</div>`;
+    if (truco) infoMemoria += `<div><strong>🧠 Tip:</strong> ${truco}</div>`;
 
     if (infoMemoria !== "") {
         contenidoTrasero += `
@@ -146,7 +152,7 @@ async function mostrarTarjetaActual() {
     }
 
     // Enlace RAE
-    const enlaceRAE = `https://dle.rae.es/${encodeURIComponent(wordData.word || '')}`;
+    const enlaceRAE = `https://dle.rae.es/${encodeURIComponent(palabra)}`;
     contenidoTrasero += `
             <a href="${enlaceRAE}" target="_blank" style="display: flex; justify-content: center; align-items: center; gap: 8px; width: 100%; background: #005bb5; color: white; padding: 15px; border-radius: 8px; text-decoration: none; font-weight: bold; font-size: 0.95rem; margin-top: auto; flex-shrink: 0;">
                 📖 Ver definición completa en la RAE
@@ -163,7 +169,6 @@ async function mostrarTarjetaActual() {
 }
 
 function conectarBotones() {
-    // Nos aseguramos de limpiar eventos previos para que no haya doble clic
     const btnBad = document.getElementById('btn-bad');
     const btnMid = document.getElementById('btn-mid');
     const btnGood = document.getElementById('btn-good');
@@ -175,28 +180,27 @@ function conectarBotones() {
 
 async function calificarPalabra(puntuacion) {
     const wordData = window.__vocabSession[window.__vocabIndex];
+    const palabra = wordData.word || wordData.palabra;
 
-    // 1. Calculamos los días de "castigo/premio" según el botón
+    // 1. Calculamos días
     let diasParaRepaso = 0;
-    if (puntuacion === 1) diasParaRepaso = 2;  // ❌ No la sé
-    if (puntuacion === 3) diasParaRepaso = 7;  // 🔄 Repasar
-    if (puntuacion === 5) diasParaRepaso = 30; // ✅ La sé
+    if (puntuacion === 1) diasParaRepaso = 2;  
+    if (puntuacion === 3) diasParaRepaso = 7;  
+    if (puntuacion === 5) diasParaRepaso = 30; 
 
-    // 2. Calculamos la fecha matemática exacta en milisegundos
-    const fechaProximoRepaso = new Date();
-    fechaProximoRepaso.setDate(fechaProximoRepaso.getDate() + diasParaRepaso);
-
-    // 3. Guardamos la "etiqueta de bloqueo" en la memoria interna del móvil
-    if (wordData && wordData.word) {
-        localStorage.setItem(`repaso_${wordData.word}`, fechaProximoRepaso.getTime());
+    // 2. Guardamos bloqueo en memoria
+    if (palabra) {
+        const fechaProximoRepaso = new Date();
+        fechaProximoRepaso.setDate(fechaProximoRepaso.getDate() + diasParaRepaso);
+        localStorage.setItem(`repaso_${palabra}`, fechaProximoRepaso.getTime());
     }
 
-    // 4. Pasamos a la siguiente tarjeta
+    // 3. Siguiente tarjeta
     window.__vocabIndex++;
     if (window.__vocabIndex < window.__vocabSession.length) {
         mostrarTarjetaActual();
     } else {
-        alert("¡Tanda de 20 completada, Noemi! 🚀 Las palabras que has acertado no volverán a salirte hasta que te toque repasarlas.");
+        alert("¡Tanda de 20 completada, Noemi! 🚀");
         goTo('home'); 
     }
 }
