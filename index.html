@@ -1,640 +1,274 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
-  <title>PasaPalabra PRO</title>
-  <meta name="theme-color" content="#0b1326" />
-  <link rel="manifest" href="./manifest.json" />
-  <link rel="icon" href="./icon.png" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+    <title>PasaPalabra PRO</title>
+    <meta name="theme-color" content="#0b1326">
+    <link rel="manifest" href="./manifest.json">
+    <link rel="icon" href="./icon.png">
 
-  <style>
-    :root{
-      --bg1:#0c1426;
-      --bg2:#060b18;
-      --card1:#121b32;
-      --card2:#0f172b;
-      --gold:#f4c542;
-      --muted:rgba(255,255,255,.65);
-      --muted2:rgba(255,255,255,.45);
-      --line:rgba(86,128,255,.22);
-      --line2:rgba(86,128,255,.16);
-      --chipBg:rgba(255,255,255,.06);
-      --chipBd:rgba(255,255,255,.10);
-      --blueBtn:#0e5ca8;
-      --blueBtn2:#0a4c8c;
-      --red:rgba(120,20,20,.55);
-      --yellow:rgba(120,90,20,.55);
-      --green:rgba(20,120,60,.55);
-    }
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap');
 
-    *{box-sizing:border-box}
-    html,body{height:100%}
-    body{
-      margin:0;
-      font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Roboto,Helvetica,Arial,sans-serif;
-      color:#fff;
-      background: radial-gradient(1200px 700px at 50% -10%, rgba(60,120,255,.18), transparent 55%),
-                  linear-gradient(180deg,var(--bg1),var(--bg2));
-      display:flex;
-      justify-content:center;
-      align-items:center;
-      padding:16px;
-    }
+        :root {
+            --bg1: #0c1426;
+            --bg2: #060b18;
+            --card-front: #121b32;
+            --card-back: #0f172b;
+            --gold: #f4c542;
+            --text-main: #ffffff;
+            --text-muted: rgba(255, 255, 255, 0.65);
+            --btn-blue: #0e5ca8;
+            --btn-red: #d32f2f;
+            --btn-orange: #f57c00;
+            --btn-green: #388e3c;
+        }
 
-    /* "frame" móvil */
-    .app{
-      width:min(430px, 100%);
-      height:100dvh;
-      display:flex;
-      flex-direction:column;
-      gap:14px;
-    }
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'DM Sans', sans-serif;
+            -webkit-tap-highlight-color: transparent;
+        }
 
-    .topbar{
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:10px;
-      padding:6px 4px;
-    }
+        body {
+            background: linear-gradient(135deg, var(--bg1), var(--bg2));
+            color: var(--text-main);
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
 
-    .backBtn{
-      width:44px;height:44px;border-radius:999px;
-      background:rgba(255,255,255,.06);
-      border:1px solid rgba(255,255,255,.10);
-      display:flex;align-items:center;justify-content:center;
-      user-select:none;
-    }
+        /* Cabecera */
+        header {
+            padding: 20px;
+            text-align: center;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        header h1 {
+            color: var(--gold);
+            font-size: 1.5rem;
+            letter-spacing: 1px;
+        }
+        #status-bar {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            margin-top: 5px;
+        }
 
-    .progressWrap{
-      flex:1;
-      display:flex;
-      flex-direction:column;
-      gap:6px;
-      padding:0 6px;
-    }
+        /* Contenedor de la Tarjeta */
+        .card-container {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            perspective: 1000px;
+        }
 
-    .progressBar{
-      height:8px;
-      border-radius:999px;
-      background:rgba(255,255,255,.08);
-      overflow:hidden;
-    }
-    .progressFill{
-      height:100%;
-      width:0%;
-      background:linear-gradient(90deg, rgba(244,197,66,.95), rgba(244,197,66,.35));
-      border-radius:999px;
-      transition:width .25s ease;
-    }
+        .card {
+            width: 100%;
+            max-width: 400px;
+            height: 60vh; /* Altura adaptable */
+            position: relative;
+            transform-style: preserve-3d;
+            transition: transform 0.6s cubic-bezier(0.4, 0.2, 0.2, 1);
+        }
 
-    .progressMeta{
-      display:flex;
-      justify-content:space-between;
-      font-size:12px;
-      color:var(--muted2);
-      padding:0 2px;
-    }
+        .card.flipped {
+            transform: rotateY(180deg);
+        }
 
-    .screenTitle{
-      text-align:center;
-      font-weight:800;
-      letter-spacing:.2px;
-      margin-top:4px;
-      margin-bottom:2px;
-    }
-    .screenTitle span{color:var(--gold)}
+        .card-face {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            border-radius: 20px;
+            padding: 30px 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+            
+            /* SOLUCIÓN AL CORTE EN EL MÓVIL */
+            overflow-y: auto; 
+        }
 
-    .chipRow{
-      display:flex;
-      gap:8px;
-      flex-wrap:wrap;
-      padding:0 4px;
-      min-height:28px;
-    }
-    .chip{
-      display:inline-flex;
-      align-items:center;
-      gap:8px;
-      padding:8px 12px;
-      border-radius:999px;
-      background:var(--chipBg);
-      border:1px solid var(--chipBd);
-      color:rgba(255,255,255,.75);
-      font-size:13px;
-      user-select:none;
-    }
+        .card-front {
+            background: var(--card-front);
+            border: 2px solid rgba(255, 255, 255, 0.05);
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
 
-    /* Card 3D */
-    .card3d{
-      position:relative;
-      flex:1;
-      perspective:1200px;
-      padding:0 4px;
-    }
+        .card-back {
+            background: var(--card-back);
+            border: 2px solid rgba(244, 197, 66, 0.3);
+            transform: rotateY(180deg);
+            align-items: flex-start;
+        }
 
-    .cardInner{
-      height:100%;
-      border-radius:26px;
-      transform-style:preserve-3d;
-      transition:transform .55s cubic-bezier(.2,.9,.2,1);
-      cursor:pointer;
-    }
-    .cardInner.isFlipped{ transform: rotateY(180deg); }
+        /* Tipografía de la Tarjeta */
+        .tip-text {
+            font-size: 1.5rem;
+            color: var(--gold);
+            font-weight: 700;
+        }
+        .word-title {
+            font-size: 2rem;
+            color: var(--gold);
+            margin-bottom: 5px;
+            text-transform: capitalize;
+        }
+        .word-pos {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 3px 10px;
+            border-radius: 10px;
+        }
+        .word-def {
+            font-size: 1.1rem;
+            line-height: 1.5;
+            color: var(--text-main);
+            text-align: left;
+        }
 
-    .face{
-      position:absolute;
-      inset:0;
-      border-radius:26px;
-      padding:22px;
-      background: linear-gradient(180deg,var(--card1),var(--card2));
-      box-shadow: 0 18px 60px rgba(0,0,0,.55),
-                  inset 0 0 40px rgba(255,255,255,.02);
-      backface-visibility:hidden;
-      overflow:hidden;
-      display:flex;
-      flex-direction:column;
-    }
+        /* Zona de Botones */
+        .controls {
+            padding: 20px;
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            min-height: 100px;
+        }
 
-    .faceScroll{
-      overflow:hidden;
-      padding-right:4px;
-    }
+        button {
+            border: none;
+            border-radius: 12px;
+            padding: 15px 20px;
+            font-size: 1rem;
+            font-weight: 700;
+            color: white;
+            cursor: pointer;
+            transition: transform 0.1s, filter 0.2s;
+            flex: 1;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        }
+        button:active {
+            transform: scale(0.95);
+        }
 
-    .front .kicker{
-      font-size:12px;
-      letter-spacing:.9px;
-      text-transform:uppercase;
-      color:var(--muted2);
-      margin-bottom:12px;
-    }
-    .front .def{
-      font-size:22px;
-      line-height:1.35;
-      color:rgba(255,255,255,.92);
-    }
-    .front .hint{
-      margin-top:auto;
-      font-size:12px;
-      color:var(--muted2);
-      padding-top:14px;
-    }
+        .btn-main { background: var(--btn-blue); width: 100%; flex: none; }
+        .btn-bad { background: var(--btn-red); display: none; }
+        .btn-mid { background: var(--btn-orange); display: none; }
+        .btn-good { background: var(--btn-green); display: none; }
 
-    .back{ transform:rotateY(180deg); }
-
-    .back .kicker{
-      font-size:12px;
-      letter-spacing:.9px;
-      text-transform:uppercase;
-      color:var(--muted2);
-      margin-bottom:10px;
-    }
-
-    .word{
-      font-size:38px;
-      font-weight:900;
-      color:var(--gold);
-      line-height:1;
-      margin-bottom:10px;
-      word-break:break-word;
-    }
-    .posLine{
-      font-size:14px;
-      color:var(--muted2);
-      margin-bottom:14px;
-    }
-
-    .senseList{
-      margin:0;
-      padding-left:18px;
-      color:rgba(255,255,255,.90);
-      font-size:16px;
-      line-height:1.35;
-    }
-    .senseList li{ margin-bottom:8px; }
-
-    .block{
-      border:1px solid var(--line);
-      background:rgba(255,255,255,.02);
-      border-radius:14px;
-      padding:12px 12px;
-      margin-top:8px;
-    }
-    .blockTitle{
-      font-size:11px;
-      text-transform:uppercase;
-      letter-spacing:.9px;
-      color:var(--muted2);
-      margin-bottom:8px;
-    }
-    .blockBody{
-      font-size:16px;
-      line-height:1.35;
-      color:rgba(255,255,255,.88);
-      word-break:break-word;
-    }
-
-    .tipBlock{
-      border-color: rgba(244,197,66,.28);
-      background: rgba(244,197,66,.05);
-    }
-
-    .raeBtn{
-      margin-top:14px;
-      border-radius:16px;
-      padding:14px 14px;
-      background: linear-gradient(180deg,var(--blueBtn),var(--blueBtn2));
-      border:1px solid rgba(255,255,255,.10);
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      gap:10px;
-      font-weight:800;
-      user-select:none;
-    }
-
-    .bottomBtns{
-      display:flex;
-      gap:12px;
-      padding:0 4px;
-    }
-    .bbtn{
-      flex:1;
-      padding:14px 12px;
-      border-radius:18px;
-      border:1px solid rgba(255,255,255,.10);
-      font-weight:900;
-      font-size:16px;
-      user-select:none;
-    }
-    .bbtn.red{ background:var(--red); color:#ff9a9a; }
-    .bbtn.yellow{ background:var(--yellow); color:#ffd96a; }
-    .bbtn.green{ background:var(--green); color:#7dffb2; }
-
-    .status{
-      padding:0 6px;
-      font-size:12px;
-      color:var(--muted2);
-      min-height:18px;
-    }
-
-    /* scrollbar discreto */
-    .faceScroll::-webkit-scrollbar{ width:6px; }
-    .faceScroll::-webkit-scrollbar-thumb{ background:rgba(255,255,255,.10); border-radius:999px; }
-
-    /* En pantallas grandes centramos como móvil */
-    @media (min-width: 900px){
-      body{ padding:24px; }
-      .app{ height:860px; }
-    }
-  </style>
+    </style>
 </head>
-
 <body>
-  <div class="app">
 
-    <div class="screenTitle" style="font-size:28px;">
-      Pasa<span>Palabra</span> PRO
-    </div>
+    <header>
+        <h1>PASAPALABRA PRO</h1>
+        <div id="status-bar">Iniciando base de datos...</div>
+    </header>
 
-    <div class="topbar">
-      <div class="backBtn" id="btnBack" title="Volver">←</div>
+    <div class="card-container">
+        <div class="card" id="flashcard">
+            <div class="card-face card-front">
+                <div class="tip-text" id="front-tip">Cargando...</div>
+            </div>
 
-      <div class="progressWrap">
-        <div class="progressBar"><div class="progressFill" id="progressFill"></div></div>
-        <div class="progressMeta">
-          <div id="progressLeft">0/20</div>
-          <div id="progressRight"></div>
+            <div class="card-face card-back">
+                <div class="word-title" id="back-word">Palabra</div>
+                <div class="word-pos" id="back-pos">Categoría</div>
+                <ul class="word-def" id="back-def">
+                    <li>Definición aquí.</li>
+                </ul>
+            </div>
         </div>
-      </div>
-
-      <div style="width:44px;"></div>
     </div>
 
-    <div class="chipRow" id="chipRow">
-      <!-- chips tema / rama -->
+    <div class="controls">
+        <button class="btn-main" id="btn-flip">Girar Tarjeta</button>
+        <button class="btn-bad" id="btn-bad">No la sé</button>
+        <button class="btn-mid" id="btn-mid">Dudo</button>
+        <button class="btn-good" id="btn-good">La sé</button>
     </div>
 
-    <div class="card3d">
-      <div class="cardInner" id="cardInner">
-        <!-- FRONT -->
-        <div class="face front">
-          <div class="kicker">Definición — ¿qué palabra es?</div>
-          <div class="faceScroll">
-            <div class="def" id="frontDef">Cargando…</div>
-          </div>
-          <div class="hint">Toca la tarjeta para ver respuesta</div>
-        </div>
+    <script src="db.js"></script>
+    <script src="srsEngine.js"></script>
+    <script src="vocabEngine.js"></script>
 
-        <!-- BACK -->
-        <div class="face back">
-          <div class="kicker">Respuesta</div>
-          <div class="faceScroll">
-            <div class="word" id="backWord">—</div>
-            <div class="posLine" id="backPos">—</div>
+    <script>
+        // ----------------------------------------------------
+        // PUENTE ENTRE LA INTERFAZ HTML Y LA LÓGICA DEL JUEGO
+        // ----------------------------------------------------
 
-            <ol class="senseList" id="backSenses"></ol>
+        // Elementos del DOM
+        const card = document.getElementById('flashcard');
+        const frontTip = document.getElementById('front-tip');
+        const backWord = document.getElementById('back-word');
+        const backPos = document.getElementById('back-pos');
+        const backDef = document.getElementById('back-def');
+        const statusBar = document.getElementById('status-bar');
 
-            <div class="block" id="blkSyn" style="display:none;">
-              <div class="blockTitle">Sinónimos</div>
-              <div class="blockBody" id="backSyn"></div>
-            </div>
+        const btnFlip = document.getElementById('btn-flip');
+        const btnBad = document.getElementById('btn-bad');
+        const btnMid = document.getElementById('btn-mid');
+        const btnGood = document.getElementById('btn-good');
 
-            <div class="block" id="blkEx" style="display:none;">
-              <div class="blockTitle">Ejemplo</div>
-              <div class="blockBody" id="backEx"></div>
-            </div>
+        // Función global para actualizar la tarjeta desde vocabEngine.js
+        window.renderFront = function(cardData) {
+            frontTip.textContent = cardData.tip;
+            backWord.textContent = cardData.word;
+            backPos.textContent = cardData.pos;
+            backDef.innerHTML = cardData.senses[0]; // Ya viene formateado en <li>
+            
+            // Asegurar que la tarjeta está boca abajo
+            card.classList.remove('flipped');
+            
+            // Mostrar botón girar, ocultar botones de calificación
+            btnFlip.style.display = 'block';
+            btnBad.style.display = 'none';
+            btnMid.style.display = 'none';
+            btnGood.style.display = 'none';
+        };
 
-            <div class="block tipBlock" id="blkTip" style="display:none;">
-              <div class="blockTitle">💡 Para memorizar</div>
-              <div class="blockBody" id="backTip"></div>
-            </div>
+        // Girar la tarjeta (animación y cambio de botones)
+        window.flipCard = function() {
+            card.classList.add('flipped');
+            
+            btnFlip.style.display = 'none';
+            btnBad.style.display = 'block';
+            btnMid.style.display = 'block';
+            btnGood.style.display = 'block';
+        };
 
-            <div class="block" id="blkEtym" style="display:none;">
-              <div class="blockTitle">Etimología</div>
-              <div class="blockBody" id="backEtym"></div>
-            </div>
-
-            <div class="raeBtn" id="btnRAE" style="display:none;">
-              📖 Ver definición completa en la RAE
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="bottomBtns">
-      <button class="bbtn red" id="btnNo">❌ No la sé</button>
-      <button class="bbtn yellow" id="btnReview">🔄 Repasar</button>
-      <button class="bbtn green" id="btnYes">✅ La sé</button>
-    </div>
-
-    <div class="status" id="status">Inicializando…</div>
-  </div>
-
-  <!-- SCRIPTS: ojo al orden -->
-  <script src="./js/db.js"></script>
-  <script src="./js/srsEngine.js"></script>
-  <script src="./js/vocabEngine.js"></script>
-
-  <script>
-    // -----------------------------
-    // Helpers UI (sin romper nada)
-    // -----------------------------
-    const $ = (id) => document.getElementById(id);
-
-    function setStatus(msg){
-      const el = $("status");
-      if(el) el.textContent = msg || "";
-    }
-
-    function setChips(tags){
-      const row = $("chipRow");
-      row.innerHTML = "";
-      (tags || []).forEach(t=>{
-        const chip = document.createElement("div");
-        chip.className = "chip";
-        chip.textContent = t;
-        row.appendChild(chip);
-      });
-    }
-
-    function setProgress(i, total){
-      const left = $("progressLeft");
-      const fill = $("progressFill");
-      const pct = total ? Math.round((i/total)*100) : 0;
-      if(left) left.textContent = `${i}/${total}`;
-      if(fill) fill.style.width = `${pct}%`;
-    }
-
-    // --------------------------------
-    // Puente entre vocabEngine y la UI
-    // --------------------------------
-    // vocabEngine actual pinta con cardFront/cardBack en su versión "cutre".
-    // Aquí NO queremos eso: queremos que vocabEngine solo gestione "currentCard"
-    // y nosotros renderizamos bonito.
-    //
-    // Así que: interceptamos "render" desde aquí. Si no existe, no pasa nada.
-    // --------------------------------
-
-    // Estado local UI
-    let __isFlipped = false;
-    let __sessionTotal = 20;
-    let __sessionIndex = 0;
-
-    function escapeHtml(str){
-      return String(str ?? "")
-        .replaceAll("&","&amp;")
-        .replaceAll("<","&lt;")
-        .replaceAll(">","&gt;")
-        .replaceAll('"',"&quot;")
-        .replaceAll("'","&#039;");
-    }
-
-    // Render FRONT (1ª acepción + pos + tags)
-    function renderFront(card){
-      __isFlipped = false;
-      $("cardInner").classList.remove("isFlipped");
-
-      const firstSense = (card?.senses?.[0]) ? card.senses[0] : "Sin definición.";
-      $("frontDef").innerHTML = escapeHtml(firstSense);
-
-      // chips: tema/ramas si existen
-      const tags = [];
-      if(card?.domain) tags.push(card.domain);
-      if(card?.topic) tags.push(card.topic);
-      // fallback por si quieres chips fijos
-      if(!tags.length && card?.pos) tags.push("lengua");
-      setChips(tags);
-
-      // progress
-      setProgress(__sessionIndex+1, __sessionTotal);
-
-      // back pre-render (para que al girar esté listo)
-      renderBack(card);
-    }
-
-    function renderBack(card){
-      $("backWord").textContent = card?.word || "—";
-      $("backPos").textContent = card?.pos ? `Categoría: ${card.pos}` : "Categoría: —";
-
-      // Acepciones (todas)
-      const senses = Array.isArray(card?.senses) ? card.senses : [];
-      const ol = $("backSenses");
-      ol.innerHTML = senses.length
-        ? senses.map(s=>`<li>${escapeHtml(s)}</li>`).join("")
-        : `<li>—</li>`;
-
-      // Sinónimos
-      const syn = Array.isArray(card?.synonyms) ? card.synonyms : [];
-      $("blkSyn").style.display = syn.length ? "block" : "none";
-      $("backSyn").textContent = syn.join(", ");
-
-      // Ejemplos
-      const ex = Array.isArray(card?.examples) ? card.examples : [];
-      $("blkEx").style.display = ex.length ? "block" : "none";
-      $("backEx").textContent = ex[0] || "";
-
-      // Tip
-      $("blkTip").style.display = card?.tip ? "block" : "none";
-      $("backTip").textContent = card?.tip || "";
-
-      // Etimología
-      $("blkEtym").style.display = card?.etym ? "block" : "none";
-      $("backEtym").textContent = card?.etym || "";
-
-      // Botón RAE
-      const w = (card?.word || "").trim();
-      $("btnRAE").style.display = w ? "flex" : "none";
-      $("btnRAE").onclick = (e)=>{
-        e.stopPropagation();
-        if(!w) return;
-        const url = `https://dle.rae.es/${encodeURIComponent(w)}`;
-        window.open(url, "_blank", "noopener,noreferrer");
-      };
-    }
-
-    // flip al tocar tarjeta
-    function flip(){
-      __isFlipped = !__isFlipped;
-      $("cardInner").classList.toggle("isFlipped", __isFlipped);
-    }
-
-    // -----------------------------
-    // Integración con vocabEngine.js
-    // -----------------------------
-    // 1) Si vocabEngine expone currentCard en window, lo usamos.
-    // 2) Si no, creamos un fallback para que nunca se quede en "Cargando".
-    // -----------------------------
-    function getCurrentCardSafe(){
-      // vocabEngine usa variable interna "currentCard". No es global.
-      // Pero podemos pedirle que renderice llamando a su showCurrentCard (si existe),
-      // o simplemente tirar de un fallback.
-      if(window.__getCurrentCard && typeof window.__getCurrentCard === "function"){
-        try{ return window.__getCurrentCard(); }catch(e){}
-      }
-      return null;
-    }
-
-    // Fallback de seguridad (por si db/engine no arrancan)
-    const FALLBACK_CARD = {
-      word: "Paroxismo",
-      pos: "m.",
-      senses: [
-        "1. Exaltación extrema de los afectos y pasiones.",
-        "2. Med. Exacerbación brusca de una enfermedad."
-      ],
-      synonyms: ["exaltación", "frenesí", "arrebato"],
-      examples: ["El paroxismo de alegría fue desbordante."],
-      etym: "Del gr. paroxysmós.",
-      tip: "Para + oxys (agudo): el punto más agudo."
-    };
-
-    // Botones: por ahora avanzan. Luego conectamos SRS real.
-    async function advance(kind){
-      // Intento 1: si existe rateCard (srsEngine), úsalo.
-      if(typeof window.rateCard === "function"){
-        try{
-          await window.rateCard(kind); // si tu srsEngine lo implementa
-        }catch(e){}
-      }
-
-      // Intento 2: si vocabEngine tiene nextCard, úsalo.
-      if(typeof window.nextCard === "function"){
-        try{
-          __sessionIndex = (window.__vocabIndex ?? __sessionIndex) || __sessionIndex;
-          await window.nextCard();
-          __sessionIndex = (window.__vocabIndex ?? (__sessionIndex+1)) || (__sessionIndex+1);
-        }catch(e){}
-      }
-
-      // Intento 3: refrescar UI con lo que haya
-      // vocabEngine no expone currentCard, así que: forzamos a leer de IndexedDB
-      // mediante getWord del db.js si existe y si hay sesión.
-      const sess = window.__vocabSession;
-      const idx = window.__vocabIndex ?? __sessionIndex;
-      if(sess && Array.isArray(sess) && typeof window.getWord === "function"){
-        const id = sess[idx];
-        if(id){
-          try{
-            const card = await window.getWord(id);
-            if(card) return renderFront(card);
-          }catch(e){}
-        }
-      }
-
-      // Último recurso: fallback
-      renderFront(FALLBACK_CARD);
-      setStatus("Modo demo (fallback). Revisa que la DB y la sesión estén OK.");
-    }
-
-    // Init
-    async function init(){
-      setStatus("Inicializando…");
-
-      // eventos
-      $("cardInner").addEventListener("click", flip);
-      $("btnNo").addEventListener("click", (e)=>{ e.stopPropagation(); advance("no"); });
-      $("btnReview").addEventListener("click", (e)=>{ e.stopPropagation(); advance("review"); });
-      $("btnYes").addEventListener("click", (e)=>{ e.stopPropagation(); advance("yes"); });
-
-      $("btnBack").addEventListener("click", ()=>{
-        // por ahora: reinicia sesión
-        if(typeof window.startVocabSession === "function"){
-          window.startVocabSession().catch(()=>{});
-        }else{
-          renderFront(FALLBACK_CARD);
-        }
-      });
-
-      // Service worker
-      if("serviceWorker" in navigator){
-        try{ await navigator.serviceWorker.register("./sw.js"); }catch(e){}
-      }
-
-      // initDB si existe
-      if(typeof window.initDB === "function"){
-        try{
-          await window.initDB();
-          setStatus("Base de datos lista ✅");
-        }catch(e){
-          setStatus("DB no disponible (seguimos en demo).");
-        }
-      }else{
-        setStatus("DB no detectada (demo).");
-      }
-
-      // iniciar vocab si existe
-      if(typeof window.startVocabSession === "function"){
-        try{
-          await window.startVocabSession();
-          // pinta primera tarjeta desde DB/sesión
-          const sess = window.__vocabSession;
-          __sessionTotal = Array.isArray(sess) ? sess.length : 20;
-          __sessionIndex = window.__vocabIndex ?? 0;
-
-          if(sess && typeof window.getWord === "function"){
-            const card = await window.getWord(sess[__sessionIndex]);
-            if(card){
-              renderFront(card);
-              setStatus(`Sesión lista: ${__sessionTotal} tarjetas`);
-              return;
+        // ----------------------------------------------------
+        // INICIALIZACIÓN DE LA APP (ARRANQUE)
+        // ----------------------------------------------------
+        window.onload = async function() {
+            try {
+                // 1. Iniciar Base de datos (está en db.js)
+                await window.initDB();
+                
+                // 2. Iniciar la sesión de juego (está en vocabEngine.js)
+                if(typeof window.startVocabSession === "function") {
+                    await window.startVocabSession();
+                    statusBar.textContent = "¡A jugar! Tarjeta 1 de 20";
+                }
+            } catch (error) {
+                console.error("Error arrancando la app:", error);
+                statusBar.textContent = "Error al cargar la base de datos.";
             }
-          }
-        }catch(e){
-          // cae a demo
-        }
-      }
+        };
 
-      // demo si algo falla
-      __sessionTotal = 20;
-      __sessionIndex = 0;
-      renderFront(FALLBACK_CARD);
-      setStatus("Modo demo: UI OK. Luego conectamos datos reales.");
-    }
-
-    window.addEventListener("load", init);
-  </script>
+    </script>
 </body>
 </html>
