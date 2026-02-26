@@ -27,9 +27,14 @@
         .screen.active { opacity: 1; pointer-events: auto; transform: translateX(0); }
 
         /* PANTALLA INICIO */
-        #home { padding: 20px; padding-top: 40px; }
+        #home { padding: 20px; padding-top: 30px; }
         
-        .racha-badge { display: inline-flex; align-items: center; background: rgba(245, 200, 66, 0.05); border: 1px solid rgba(245, 200, 66, 0.3); color: var(--gold); padding: 6px 16px; border-radius: 20px; font-size: 0.9rem; font-weight: bold; margin-bottom: 30px; }
+        header.app-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 25px; }
+        .header-titles { display: flex; flex-direction: column; }
+        header.app-header h1 { font-family: 'Syne', sans-serif; color: var(--gold); font-size: 1.6rem; letter-spacing: -0.5px; margin: 0; line-height: 1; }
+        header.app-header p.subtitle { font-size: 0.85rem; color: var(--text-muted); margin-top: 4px; font-weight: 500; }
+        
+        .racha-badge { display: inline-flex; align-items: center; background: rgba(245, 200, 66, 0.05); border: 1px solid rgba(245, 200, 66, 0.3); color: var(--gold); padding: 6px 14px; border-radius: 20px; font-size: 0.85rem; font-weight: bold; }
         
         .section-title { font-size: 0.8rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 15px; font-weight: bold; }
 
@@ -50,7 +55,7 @@
 
         /* PANTALLA JUEGO */
         #game { background: var(--bg); }
-        #game header { display: flex; justify-content: space-between; align-items: center; padding: 15px 20px; border-bottom: 1px solid var(--border); }
+        #game header { display: flex; justify-content: space-between; align-items: center; padding: 15px 20px; border-bottom: 1px solid var(--border); margin-bottom: 0; }
         .btn-back-circle { width: 36px; height: 36px; border-radius: 50%; background: var(--card-light); border: none; color: var(--text-muted); font-size: 1.2rem; display: flex; align-items: center; justify-content: center; cursor: pointer; }
         
         .progress-container { flex: 1; margin: 0 15px; height: 4px; background: var(--card-light); border-radius: 2px; position: relative; }
@@ -77,7 +82,13 @@
 <body>
 
     <div id="home" class="screen active">
-        <div class="racha-badge">🔥 Racha: 1 días</div>
+        <header class="app-header">
+            <div class="header-titles">
+                <h1>PasaPalabra Pro</h1>
+                <p class="subtitle">¡A darle caña, Noemi! 💪</p>
+            </div>
+            <div class="racha-badge">🔥 Racha: 1 días</div>
+        </header>
 
         <div class="section-title">Modo de estudio</div>
         <div class="study-grid">
@@ -90,12 +101,10 @@
                 <h3>⚡ Rápido</h3>
                 <p>20 preguntas de tus mazos</p>
             </div>
-            
             <div class="study-card" onclick="iniciarMazo('Modo Hardcore RAE')">
                 <h3>🔥 Modo Hardcore RAE</h3>
                 <p>66.970 palabras a pelo</p>
             </div>
-            
             <div class="study-card" onclick="alert('¡El rosco final se desbloqueará cuando domines los mazos!')">
                 <h3>🟡 El Rosco</h3>
                 <p>Simula la prueba final</p>
@@ -112,31 +121,43 @@
                 <div class="check-circle">✓</div>
             </div>
             <div class="deck-row" onclick="iniciarMazo('Cultura General')">
-                <div class="deck-info"><h4>🌎 Cultura General</h4><p>47 preguntas</p></div>
+                <div class="deck-info"><h4>🌎 Cultura General</h4><p>Modo VIP</p></div>
                 <div class="check-circle">✓</div>
             </div>
             <div class="deck-row" onclick="iniciarMazo('Literatura')">
-                <div class="deck-info"><h4>📚 Literatura</h4><p>41 preguntas</p></div>
+                <div class="deck-info"><h4>📚 Literatura</h4><p>Modo VIP</p></div>
                 <div class="check-circle">✓</div>
             </div>
             <div class="deck-row" onclick="iniciarMazo('Geografía')">
-                <div class="deck-info"><h4>🗺️ Geografía</h4><p>41 preguntas</p></div>
+                <div class="deck-info"><h4>🗺️ Geografía</h4><p>Modo VIP</p></div>
                 <div class="check-circle">✓</div>
             </div>
             <div class="deck-row" onclick="iniciarMazo('Historia')">
-                <div class="deck-info"><h4>⚔️ Historia</h4><p>39 preguntas</p></div>
+                <div class="deck-info"><h4>⚔️ Historia</h4><p>Modo VIP</p></div>
                 <div class="check-circle">✓</div>
             </div>
             <div class="deck-row" onclick="iniciarMazo('Historia del Arte')">
-                <div class="deck-info"><h4>🖼️ Historia del Arte</h4><p>36 preguntas</p></div>
+                <div class="deck-info"><h4>🖼️ Historia del Arte</h4><p>Modo VIP</p></div>
+                <div class="check-circle">✓</div>
+            </div>
+            <div class="deck-row" onclick="iniciarMazo('Ciencia y Nat.')">
+                <div class="deck-info"><h4>🔬 Ciencia y Nat.</h4><p>Modo VIP</p></div>
+                <div class="check-circle">✓</div>
+            </div>
+            <div class="deck-row" onclick="iniciarMazo('Cine y TV')">
+                <div class="deck-info"><h4>🎬 Cine y TV</h4><p>Modo VIP</p></div>
+                <div class="check-circle">✓</div>
+            </div>
+            <div class="deck-row" onclick="iniciarMazo('Deportes')">
+                <div class="deck-info"><h4>⚽ Deportes</h4><p>Modo VIP</p></div>
                 <div class="check-circle">✓</div>
             </div>
             <div class="deck-row" onclick="iniciarMazo('Mitología')">
-                <div class="deck-info"><h4>⚡ Mitología</h4><p>15 preguntas</p></div>
+                <div class="deck-info"><h4>⚡ Mitología</h4><p>Modo VIP</p></div>
                 <div class="check-circle">✓</div>
             </div>
             <div class="deck-row" onclick="iniciarMazo('Microbiología')">
-                <div class="deck-info"><h4>🦠 Microbiología</h4><p>Preguntas generales</p></div>
+                <div class="deck-info"><h4>🦠 Microbiología</h4><p>Modo VIP</p></div>
                 <div class="check-circle">✓</div>
             </div>
         </div>

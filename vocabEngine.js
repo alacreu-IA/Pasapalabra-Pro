@@ -1,19 +1,37 @@
 window.iniciarMazo = async function(nombreMazo) {
-    // Hemos quitado el bloqueo. Ahora arranca cualquier mazo que pulses.
-    goTo('game');
-    
-    window.__vocabSession = [];
-    document.getElementById('front-content').innerHTML = "<div style='color:var(--text-muted); display:flex; justify-content:center; align-items:center; height:100%;'>Generando sesión...</div>";
-    
-    // Aquí el sistema debería filtrar por mazo, pero por ahora cogerá 20 aleatorias de lo que haya cargado.
-    for (let i = 0; i < 20; i++) {
-        const word = await window.getRandomWord();
-        if (word) window.__vocabSession.push(word);
+    try {
+        goTo('game');
+        
+        window.__vocabSession = [];
+        const frontContent = document.getElementById('front-content');
+        if (frontContent) {
+            frontContent.innerHTML = "<div style='color:var(--gold); display:flex; justify-content:center; align-items:center; height:100%; font-size: 1.2rem;'>Barajando tarjetas...</div>";
+        }
+        
+        // Carga 20 palabras de la base de datos
+        for (let i = 0; i < 20; i++) {
+            if (window.getRandomWord) {
+                const word = await window.getRandomWord();
+                if (word) window.__vocabSession.push(word);
+            } else {
+                // Si la base de datos no está conectada, muestra este error en la tarjeta
+                window.__vocabSession.push({
+                    word: "Error",
+                    initial: "E",
+                    definition: "No se pudo conectar con la base de datos. Comprueba que db.js funciona.",
+                    pos: "Error técnico"
+                });
+            }
+        }
+        window.__vocabIndex = 0;
+        
+        conectarBotones();
+        mostrarTarjetaActual();
+
+    } catch (error) {
+        alert("¡Ups! Hubo un problema al arrancar el mazo: " + error.message);
+        console.error(error);
     }
-    window.__vocabIndex = 0;
-    
-    conectarBotones();
-    mostrarTarjetaActual();
 };
 
 async function mostrarTarjetaActual() {
@@ -31,16 +49,16 @@ async function mostrarTarjetaActual() {
     let todasLasAcepciones = "";
     
     if (Array.isArray(wordData.definition)) {
-        definicionFrontal = `1. m. ${wordData.definition[0]}`; // Simulamos formato RAE
-        todasLasAcepciones = wordData.definition.map((def, idx) => `<div style="margin-bottom: 6px;">${idx+1}. m. ${def}</div>`).join('');
+        definicionFrontal = `1. m. ${wordData.definition[0]}`;
+        todasLasAcepciones = wordData.definition.map((def, idx) => `<div style="margin-bottom: 6px;">${idx+1}. ${def}</div>`).join('');
     } else {
         definicionFrontal = `1. m. ${wordData.definition || 'Sin definición'}`;
-        todasLasAcepciones = `<div style="margin-bottom: 6px;">1. m. ${wordData.definition || ''}</div>`;
+        todasLasAcepciones = `<div style="margin-bottom: 6px;">1. ${wordData.definition || ''}</div>`;
     }
 
-    const etiqueta = wordData.pos || 'filosofía';
+    const etiqueta = wordData.pos || 'término';
 
-    // --- CARA FRONTAL (Calcada a IMG_2516) ---
+    // --- CARA FRONTAL ---
     document.getElementById('front-content').innerHTML = `
         <div style="display: flex; flex-direction: column; height: 100%; width: 100%;">
             <div style="font-size: 0.75rem; color: #8888a8; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 15px;">
@@ -60,7 +78,7 @@ async function mostrarTarjetaActual() {
         </div>
     `;
 
-    // --- CARA TRASERA (Calcada a IMG_2517) ---
+    // --- CARA TRASERA ---
     let contenidoTrasero = `
         <div style="width: 100%; display: flex; flex-direction: column; height: 100%;">
             <div style="font-size: 0.75rem; color: #8888a8; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 5px;">
@@ -74,8 +92,53 @@ async function mostrarTarjetaActual() {
             </div>
     `;
 
-    // Casilla Ejemplo
     if (wordData.example) {
         contenidoTrasero += `
             <div style="width: 100%; background: #1a1a24; border: 1px solid #2a2a38; border-radius: 10px; padding: 14px; margin-bottom: 12px;">
-                <div style="font-size: 0.65rem; color: #8888a8; text-transform: uppercase; margin-bottom: 6px;
+                <div style="font-size: 0.65rem; color: #8888a8; text-transform: uppercase; margin-bottom: 6px; letter-spacing: 0.5px;">EJEMPLO</div>
+                <div style="font-size: 0.95rem; color: #d0d0d8;">${wordData.example}</div>
+            </div>
+        `;
+    }
+
+    if (wordData.tip || wordData.etymology) {
+        const textoTip = wordData.tip || wordData.etymology;
+        contenidoTrasero += `
+            <div style="width: 100%; background: #1a1a24; border: 1px solid #f5c842; border-radius: 10px; padding: 14px; margin-bottom: 20px;">
+                <div style="font-size: 0.65rem; color: #8888a8; text-transform: uppercase; margin-bottom: 6px; letter-spacing: 0.5px;">💡 PARA MEMORIZAR</div>
+                <div style="font-size: 0.95rem; color: #f5c842;">${textoTip}</div>
+            </div>
+        `;
+    }
+
+    const enlaceRAE = `https://dle.rae.es/${encodeURIComponent(wordData.word || '')}`;
+    contenidoTrasero += `
+            <a href="${enlaceRAE}" target="_blank" style="display: flex; justify-content: center; align-items: center; gap: 8px; width: 100%; background: #005bb5; color: white; padding: 14px; border-radius: 8px; text-decoration: none; font-weight: bold; font-size: 0.95rem; margin-top: auto;">
+                📖 Ver definición completa en la RAE
+            </a>
+        </div>
+    `;
+
+    document.getElementById('back-extra').innerHTML = contenidoTrasero;
+
+    // Progreso
+    document.getElementById('status-bar').textContent = `${window.__vocabIndex + 1}/20`;
+    const porcentaje = ((window.__vocabIndex + 1) / 20) * 100;
+    document.getElementById('progress-bar-fill').style.width = `${porcentaje}%`;
+}
+
+function conectarBotones() {
+    document.getElementById('btn-bad').onclick = () => calificarPalabra(1); 
+    document.getElementById('btn-mid').onclick = () => calificarPalabra(3); 
+    document.getElementById('btn-good').onclick = () => calificarPalabra(5); 
+}
+
+async function calificarPalabra(puntuacion) {
+    window.__vocabIndex++;
+    if (window.__vocabIndex < window.__vocabSession.length) {
+        mostrarTarjetaActual();
+    } else {
+        alert("¡Tanda de 20 completada, Noemi! 🚀");
+        goTo('home'); 
+    }
+}
