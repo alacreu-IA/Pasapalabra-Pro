@@ -65,9 +65,16 @@ body{background:var(--bg);color:var(--txt);font-family:'DM Sans',sans-serif;over
 .ans-inp::placeholder{color:var(--muted)}
 .ans-sub{width:50px;height:50px;background:var(--gold);border:none;border-radius:12px;color:#000;font-size:1.2rem;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0}
 .skip-btn{background:none;border:none;color:var(--muted);font-size:.88rem;cursor:pointer;display:flex;align-items:center;gap:5px;justify-content:center;padding:6px}
-.fb-card{border-radius:13px;padding:14px 16px;font-size:.92rem;line-height:1.4;display:none}
+.fb-card{border-radius:13px;padding:14px 16px;font-size:.92rem;line-height:1.4;display:none; text-align:center;}
 .fb-ok{background:rgba(41,184,93,.1);border:1px solid var(--green);color:#a8f0c0}
 .fb-ko{background:rgba(255,71,71,.1);border:1px solid var(--red);color:#ffaaaa}
+
+/* BOTONES SRS Y FLASHCARD */
+.fc-btns{padding:10px 0;display:flex;gap:10px;flex-shrink:0;width:100%}
+.fc-btn{flex:1;border-radius:12px;padding:15px 5px;font-size:.85rem;font-weight:700;cursor:pointer}
+.fc-bad{background:rgba(255,71,71,.1);border:1px solid var(--red)!important;color:var(--red)}
+.fc-mid{background:rgba(245,200,66,.1);border:1px solid var(--gold)!important;color:var(--gold)}
+.fc-ok{background:rgba(41,184,93,.1);border:1px solid var(--green)!important;color:var(--green)}
 
 /* FLASHCARD (MODO VOCABULARIO RAE) */
 #game{height:100dvh;overflow:hidden}
@@ -77,10 +84,6 @@ body{background:var(--bg);color:var(--txt);font-family:'DM Sans',sans-serif;over
 .cface{position:absolute;width:100%;height:100%;backface-visibility:hidden;border-radius:20px;padding:22px;display:flex;flex-direction:column;overflow-y:auto;background:var(--card);border:1px solid var(--border)}
 .cfront{justify-content:center;text-align:center;}
 .cback{transform:rotateY(180deg); border-color:var(--gold); align-items:center; text-align:left;}
-.fc-btns{padding:10px 20px 28px;display:flex;gap:10px;flex-shrink:0}
-.fc-btn{flex:1;border-radius:12px;padding:15px 0;font-size:.92rem;font-weight:700;cursor:pointer}
-.fc-bad{background:rgba(255,71,71,.1);border:1px solid var(--red)!important;color:var(--red)}
-.fc-ok{background:rgba(41,184,93,.1);border:1px solid var(--green)!important;color:var(--green)}
 
 /* ROSCO */
 #rosco{height:100dvh;overflow:hidden;background:var(--bg)}
@@ -178,12 +181,22 @@ body{background:var(--bg);color:var(--txt);font-family:'DM Sans',sans-serif;over
       <div class="q-lbl" id="qlbl">PREGUNTA 1/20</div>
       <div class="q-txt" id="qtxt">Cargando...</div>
     </div>
-    <div class="ans-row">
-      <input type="text" class="ans-inp" id="qinp" placeholder="Tu respuesta..." autocomplete="off" autocorrect="off" autocapitalize="off" onkeydown="if(event.key==='Enter')submitQ()">
+    
+    <div class="ans-row" id="q-input-row">
+      <input type="text" class="ans-inp" id="qinp" name="fake-answer-field" placeholder="Tu respuesta..." autocomplete="new-password" autocorrect="off" autocapitalize="none" spellcheck="false" data-lpignore="true" onkeydown="if(event.key==='Enter')submitQ()">
       <button class="ans-sub" onclick="submitQ()">→</button>
     </div>
-    <button class="skip-btn" onclick="skipQ()">⏭ No la sé</button>
+    
+    <button class="skip-btn" id="q-skip-btn" onclick="skipQ()">⏭ No la sé</button>
+    
     <div class="fb-card" id="qfb"></div>
+    
+    <div class="fc-btns" id="srs-btns" style="display:none; margin-top:10px;">
+      <button class="fc-btn fc-bad" onclick="calificarSRS(0)">✖ No la sé<br><span style="font-size:0.6rem;font-weight:normal">Repetir ahora</span></button>
+      <button class="fc-btn fc-mid" onclick="calificarSRS(10)">🔄 Costó<br><span style="font-size:0.6rem;font-weight:normal">10 días</span></button>
+      <button class="fc-btn fc-ok" onclick="calificarSRS(120)">✔ La sé<br><span style="font-size:0.6rem;font-weight:normal">4 meses</span></button>
+    </div>
+
   </div>
 </div>
 
@@ -206,9 +219,8 @@ body{background:var(--bg);color:var(--txt);font-family:'DM Sans',sans-serif;over
       </div>
     </div>
   </div>
-  <div class="fc-btns" id="fcbtns" style="display:none">
-    <button class="fc-btn fc-bad" onclick="calificar(1)">✖ No la sé</button>
-    <button class="fc-btn fc-ok" onclick="calificar(5)">✔ La sé</button>
+  <div class="fc-btns" id="fcbtns" style="display:none; padding: 10px 20px 28px;">
+    <button class="fc-btn fc-bad" onclick="avanzarVocab()">Siguiente ➔</button>
   </div>
 </div>
 
@@ -224,7 +236,7 @@ body{background:var(--bg);color:var(--txt);font-family:'DM Sans',sans-serif;over
   <div class="ros-wheel"><canvas id="rcanvas" width="272" height="272"></canvas></div>
   <div class="ros-clue" id="rclue">Con la A: ...</div>
   <div class="ros-inp-row">
-    <input type="text" class="ans-inp" id="rinp" placeholder="..." autocomplete="off" autocorrect="off" autocapitalize="off" style="flex:1" onkeydown="if(event.key==='Enter')submitR()">
+    <input type="text" class="ans-inp" id="rinp" name="fake-rosco-field" placeholder="..." autocomplete="new-password" autocorrect="off" autocapitalize="none" spellcheck="false" data-lpignore="true" style="flex:1" onkeydown="if(event.key==='Enter')submitR()">
     <button class="ans-sub" onclick="submitR()">→</button>
   </div>
   <button class="ros-pasa" onclick="pasarR()">⏭ PASA</button>
@@ -357,7 +369,7 @@ function actualizarEstadisticasHome() {
   document.getElementById('sp').textContent = pendientesHoy;
 }
 
-// ════════ MODO REPASO SRS (ESCRIBIR) ════════
+// ════════ MODO REPASO SRS (ESCRIBIR + ANKI) ════════
 
 function iniciarSRS() {
   currentMode = 'SRS';
@@ -394,10 +406,15 @@ function cargarPregunta() {
   document.getElementById('qlbl').textContent = `PREGUNTA ${qIndex + 1}`;
   document.getElementById('qtxt').textContent = q.q;
   
+  // Reseteamos el panel a modo "Escritura"
+  document.getElementById('q-input-row').style.display = 'flex';
+  document.getElementById('q-skip-btn').style.display = 'flex';
+  document.getElementById('srs-btns').style.display = 'none';
+  document.getElementById('qfb').style.display = 'none';
+  
   const inp = document.getElementById('qinp');
   inp.value = '';
   inp.focus();
-  document.getElementById('qfb').style.display = 'none';
 }
 
 function submitQ() {
@@ -406,60 +423,60 @@ function submitQ() {
   const q = sessionQs[qIndex];
   const isCorrect = limpiarTexto(inp) === limpiarTexto(q.a);
   const fb = document.getElementById('qfb');
+  
   fb.style.display = 'block';
   
   if(isCorrect) {
     qOk++;
-    showFlash("¡Correcto!", true);
-    if (currentMode === 'SRS') actualizarSRS(q.a, true);
+    fb.className = 'fb-card fb-ok';
+    fb.innerHTML = `<strong>✅ ¡Bien escrito!</strong><br><span style="font-size:1.2rem; font-weight:bold">${q.a.toUpperCase()}</span>`;
   } else {
     qFail++;
     fb.className = 'fb-card fb-ko';
-    fb.innerHTML = `<strong>❌ Incorrecto</strong><br>La respuesta era: <span style="color:#fff; font-weight:bold">${q.a.toUpperCase()}</span>`;
-    
-    if (currentMode === 'SRS') {
-      actualizarSRS(q.a, false);
-      sessionQs.push(q); 
-    }
+    fb.innerHTML = `<strong>❌ Incorrecto</strong><br>Era: <span style="font-size:1.2rem; font-weight:bold">${q.a.toUpperCase()}</span>`;
   }
-  
-  setTimeout(() => {
-    qIndex++;
-    cargarPregunta();
-  }, isCorrect ? 800 : 2500); // 2.5 seg para leer la correcta
+
+  // AL RESPONDER, QUITAMOS EL INPUT Y MOSTRAMOS LOS BOTONES ANKI
+  document.getElementById('q-input-row').style.display = 'none';
+  document.getElementById('q-skip-btn').style.display = 'none';
+  document.getElementById('srs-btns').style.display = 'flex';
 }
 
 function skipQ() {
   const q = sessionQs[qIndex];
   const fb = document.getElementById('qfb');
+  
   fb.style.display = 'block';
   fb.className = 'fb-card fb-ko';
-  fb.innerHTML = `<strong>⏭ No la sé</strong><br>La respuesta era: <span style="color:#fff; font-weight:bold">${q.a.toUpperCase()}</span>`;
+  fb.innerHTML = `<strong>⏭ Pasada</strong><br>Era: <span style="font-size:1.2rem; font-weight:bold">${q.a.toUpperCase()}</span>`;
 
   qFail++;
   
-  if (currentMode === 'SRS') {
-    actualizarSRS(q.a, false);
-    sessionQs.push(q); // A la cola para repetirla
-  }
-  
-  setTimeout(() => {
-    qIndex++;
-    cargarPregunta();
-  }, 2500); // Le damos tiempo para que lea y aprenda la palabra
+  // IGUAL QUE ARRIBA, MOSTRAMOS LOS BOTONES PARA QUE CLASIFIQUE
+  document.getElementById('q-input-row').style.display = 'none';
+  document.getElementById('q-skip-btn').style.display = 'none';
+  document.getElementById('srs-btns').style.display = 'flex';
 }
 
-function actualizarSRS(palabra, acertada) {
-  let record = srsData[palabra] || { interval: 0 };
-  if (acertada) {
-    record.interval = record.interval === 0 ? 1 : record.interval * 2.5; 
-    record.nextReview = Date.now() + (record.interval * 24 * 60 * 60 * 1000); 
+function calificarSRS(dias) {
+  const q = sessionQs[qIndex];
+  let record = srsData[q.a] || {};
+
+  if (dias === 0) {
+    record.nextReview = Date.now(); // Hoy mismo
+    sessionQs.push(q); // Al final de la cola para repetir
+    showFlash("A la cola", false);
   } else {
-    record.interval = 0;
-    record.nextReview = Date.now();
+    record.nextReview = Date.now() + (dias * 24 * 60 * 60 * 1000);
+    if(dias === 10) showFlash("En 10 días", true);
+    if(dias === 120) showFlash("Archivada (4m)", true);
   }
-  srsData[palabra] = record;
+
+  srsData[q.a] = record;
   localStorage.setItem('srsProgress', JSON.stringify(srsData));
+
+  qIndex++;
+  cargarPregunta();
 }
 
 // ════════ MODO VOCABULARIO (TARJETAS GIRATORIAS RAE) ════════
@@ -479,7 +496,7 @@ function iniciarVocabRAE() {
 
 function cargarFlashcard() {
   if(qIndex >= sessionQs.length) {
-    showFlash("¡Sesión completada!", true);
+    showFlash("¡Fin de vocabulario!", true);
     return goTo('home');
   }
   
@@ -517,7 +534,7 @@ function cargarFlashcard() {
     detailsBox.innerHTML = html;
   } else {
     // Texto por defecto para los mazos normales sin extras de la RAE
-    detailsBox.innerHTML = `<div style="color:var(--muted); text-align:center; margin-top:30px;">(Aquí aparecerán las definiciones completas y sinónimos cuando descarguemos el diccionario de la RAE)</div>`;
+    detailsBox.innerHTML = `<div style="color:var(--muted); text-align:center; margin-top:30px;">(Aquí aparecerán las definiciones completas, origen y sinónimos cuando insertemos el diccionario de la RAE)</div>`;
   }
 }
 
@@ -526,10 +543,7 @@ function flipCard() {
   document.getElementById('fcbtns').style.display = 'flex';
 }
 
-function calificar(score) {
-  if (score === 5) showFlash("¡Bien!", true);
-  else showFlash("A repasar", false);
-  
+function avanzarVocab() {
   qIndex++;
   cargarFlashcard();
 }
