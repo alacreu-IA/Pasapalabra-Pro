@@ -592,10 +592,10 @@ html, body {
         <h3>📋 Términos y Condiciones</h3>
         <p>Esta aplicación proporciona a la Usuaria (Noemi Folgado Molina) un sistema de estudio basado en tarjetas de memoria, el diccionario de la RAE, el rosco interactivo y otros módulos de entrenamiento, con el único propósito de que <strong>la Usuaria gane el bote</strong>.</p>
         <h3>📚 Artículo 1 — Uso Permitido</h3>
-        <p>La Usuaria podrá estudiar hasta el agotamiento intelectual. La desarrolladora (Andrea Alacreu fernández) no se responsabiliza de brotes de pedantería lingüística en cenas familiares.</p>
+        <p>La Usuaria podrá estudiar hasta el agotamiento intelectual. El desarrollador no se responsabiliza de brotes de pedantería lingüística en cenas familiares.</p>
         <h3>⚖️ Artículo 2 — Propiedad Intelectual</h3>
-        <p>Todo el contenido, código, preguntas y sistema de puntuación son propiedad del desarrollador. Queda prohibida su reproducción sin autorización, aunque ya sería mala leche denunciar a alguien que solo quiere estudiar vocabulario.</p>
-        <div class="legal-highlight">⚖️ CLÁUSULA 3.1 (IRRENUNCIABLE): La Usuaria se compromete, de manera solemne e irrevocable, a abonar a la desarrolladora un importe equivalente al CINCO POR CIENTO (5%) del importe BRUTO de cualquier premio económico obtenido en el programa Pasapalabra, en un plazo no superior a 72 horas tras el ingreso en cuenta. Sí, es peor que una hipoteca, si no, te denuncio. (Lo del viaje a Marruecos va a parte)</div>
+        <p>Todo el contenido, código, preguntas y sistema de puntuación son propiedad de la desarrolladora (Andrea Alacreu Fernández). Queda prohibida su reproducción sin autorización, aunque ya sería mala leche denunciar a alguien que solo quiere estudiar vocabulario.</p>
+        <div class="legal-highlight">⚖️ CLÁUSULA 3.1 (IRRENUNCIABLE): La Usuaria se compromete, de manera solemne e irrevocable, a abonar al desarrollador un importe equivalente al CINCO POR CIENTO (5%) del importe BRUTO de cualquier premio económico obtenido en el programa Pasapalabra, en un plazo no superior a 72 horas tras el ingreso en cuenta. (El viaje a Marruecos también)</div>
         <h3>🔒 Artículo 4 — Privacidad</h3>
         <p>Todo el progreso se guarda localmente en tu dispositivo. No se envía ningún dato a servidores externos.</p>
         <h3>💪 Artículo 5 — Espíritu del Juego</h3>
@@ -1034,6 +1034,10 @@ function acceptTerms() {
     document.getElementById('terms-overlay').classList.add('hidden');
     updateStreak();
     loadDeckInfo();
+    updateDifHomeCount();
+    // Show home screen
+    document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+    document.getElementById('home').classList.add('active');
 }
 function showTermsAgain() {
     document.getElementById('terms-overlay').classList.remove('hidden');
@@ -1043,8 +1047,12 @@ function showTermsAgain() {
 //  INIT
 // ============================================================
 window.onload = function () {
+    // Always activate home screen first
+    document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+    document.getElementById('home').classList.add('active');
+
     if (!localStorage.getItem('terms_accepted')) {
-        // terms overlay is visible by default (no hidden class)
+        // Show terms overlay (home is behind it)
     } else {
         document.getElementById('terms-overlay').classList.add('hidden');
     }
