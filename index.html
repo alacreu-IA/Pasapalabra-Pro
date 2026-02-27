@@ -1,131 +1,1019 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
-    <title>PasaPalabra Pro</title>
-    <meta name="theme-color" content="#0a0a0f">
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Sans:wght@400;500;700&display=swap');
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<title>PasaPalabra Pro</title>
+<meta name="theme-color" content="#0a0a0f">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+:root{--bg:#0d0d12;--card:#15151c;--card2:#1c1c26;--border:#2a2a38;--gold:#f5c842;--txt:#f0f0f5;--muted:#8888a8;--red:#ff4747;--green:#29b85d;--blue:#005bb5}
+body{background:var(--bg);color:var(--txt);font-family:'DM Sans',sans-serif;overflow:hidden;height:100dvh}
+.screen{position:absolute;top:0;left:0;width:100%;height:100%;display:flex;flex-direction:column;opacity:0;pointer-events:none;transition:opacity .3s}
+.screen.active{opacity:1;pointer-events:auto}
 
-        * { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
-        
-        :root {
-            --bg: #0d0d12; --card: #15151c; --card-light: #1c1c26; --border: #2a2a38;
-            --gold: #f5c842; --text-main: #f0f0f5; --text-muted: #8888a8;
-            --btn-blue: #005bb5; --btn-red: #ff4747; --btn-green: #29b85d;
-        }
+/* HOME */
+#home{overflow-y:auto;padding-bottom:80px}
+.home-top{padding:40px 20px 16px}
+.home-title{font-family:'Syne',sans-serif;font-size:2rem;font-weight:800;line-height:1.1}
+.home-title span{color:var(--gold)}
+.home-sub{color:var(--muted);font-size:.88rem;margin-top:4px}
+.stats-row{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin:12px 20px}
+.stat-card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:14px 8px;text-align:center}
+.stat-val{font-family:'Syne',sans-serif;font-size:1.6rem;font-weight:800;color:var(--gold)}
+.stat-lbl{font-size:.62rem;color:var(--muted);text-transform:uppercase;letter-spacing:1px;margin-top:2px}
+.racha-badge{display:inline-block;background:rgba(245,200,66,.07);border:1px solid var(--gold);color:var(--gold);padding:6px 14px;border-radius:20px;font-size:.85rem;font-weight:700;margin:4px 20px 0}
+.sec-title{font-size:.72rem;color:var(--muted);text-transform:uppercase;letter-spacing:2px;margin:18px 20px 10px;font-weight:700}
+.study-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:0 20px}
+.s-card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:16px;cursor:pointer;position:relative;transition:transform .1s}
+.s-card:active{transform:scale(.97)}
+.smart-badge{position:absolute;top:10px;right:10px;background:var(--gold);color:#000;font-size:.58rem;font-weight:700;padding:2px 7px;border-radius:6px}
+.s-card h3{font-size:.98rem;margin-bottom:3px}
+.s-card p{font-size:.7rem;color:var(--muted)}
+.deck-list{display:flex;flex-direction:column;gap:8px;padding:0 20px 20px}
+.deck-row{background:var(--card);border:1px solid rgba(245,200,66,.22);border-radius:14px;padding:13px 16px;display:flex;justify-content:space-between;align-items:center;cursor:pointer;transition:transform .1s}
+.deck-row.bote{border-color:rgba(255,71,71,.35);background:rgba(255,71,71,.04)}
+.deck-row:active{transform:scale(.98)}
+.deck-info{display:flex;align-items:center;gap:12px}
+.deck-icon{font-size:1.2rem}
+.deck-name{font-size:.92rem;font-weight:700}
+.deck-ct{font-size:.72rem;color:var(--muted);margin-top:1px}
+.chk{width:24px;height:24px;background:var(--gold);border-radius:50%;display:flex;align-items:center;justify-content:center;color:#000;font-size:.7rem;flex-shrink:0}
+.chk.locked{background:var(--card2);border:1px solid var(--border);color:var(--muted)}
 
-        body { background: var(--bg); color: var(--text-main); font-family: 'DM Sans', sans-serif; overflow: hidden; height: 100dvh; }
+/* BOTTOM NAV */
+.bnav{position:fixed;bottom:0;left:0;right:0;height:68px;background:var(--card);border-top:1px solid var(--border);display:flex;justify-content:space-around;align-items:center;z-index:100;padding-bottom:env(safe-area-inset-bottom,0)}
+.nbtn{display:flex;flex-direction:column;align-items:center;gap:3px;background:none;border:none;color:var(--muted);font-size:.62rem;cursor:pointer;padding:8px 16px;border-radius:10px}
+.nbtn.active{color:var(--gold)}
+.nbtn span:first-child{font-size:1.2rem}
 
-        .screen {
-            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-            display: flex; flex-direction: column; opacity: 0; pointer-events: none;
-            transition: opacity 0.3s ease;
-        }
-        .screen.active { opacity: 1; pointer-events: auto; }
+/* QUIZ */
+#quiz{height:100dvh;overflow:hidden}
+.ghdr{display:flex;align-items:center;padding:12px 20px;gap:12px;border-bottom:1px solid var(--border);flex-shrink:0}
+.bk-btn{width:36px;height:36px;background:var(--card2);border:none;border-radius:50%;color:var(--txt);font-size:1rem;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.prw{flex:1;height:4px;background:var(--card2);border-radius:2px;position:relative;overflow:hidden}
+.prf{position:absolute;left:0;top:0;height:100%;background:var(--gold);border-radius:2px;transition:width .3s}
+.prtxt{font-size:.8rem;font-weight:700;flex-shrink:0}
+.quiz-body{flex:1;padding:18px 20px;display:flex;flex-direction:column;gap:14px;overflow:hidden}
+.cat-pill{display:inline-flex;align-items:center;gap:6px;background:var(--card);border:1px solid var(--border);border-radius:20px;padding:5px 13px;font-size:.78rem;align-self:flex-start}
+.q-card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:18px 20px}
+.q-lbl{font-size:.68rem;color:var(--muted);text-transform:uppercase;letter-spacing:1px;margin-bottom:8px}
+.q-txt{font-size:1.1rem;line-height:1.5}
+.ans-row{display:flex;gap:10px}
+.ans-inp{flex:1;background:var(--card);border:2px solid var(--gold);border-radius:12px;padding:13px 15px;color:var(--txt);font-size:1rem;font-family:'DM Sans',sans-serif;outline:none}
+.ans-inp::placeholder{color:var(--muted)}
+.ans-sub{width:50px;height:50px;background:var(--gold);border:none;border-radius:12px;color:#000;font-size:1.2rem;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.skip-btn{background:none;border:none;color:var(--muted);font-size:.88rem;cursor:pointer;display:flex;align-items:center;gap:5px;justify-content:center;padding:6px}
+.fb-card{border-radius:13px;padding:14px 16px;font-size:.92rem;line-height:1.4;display:none}
+.fb-ok{background:rgba(41,184,93,.1);border:1px solid var(--green);color:#a8f0c0}
+.fb-ko{background:rgba(255,71,71,.1);border:1px solid var(--red);color:#ffaaaa}
 
-        /* PANTALLA INICIO */
-        #home { overflow-y: auto; padding: 20px; padding-top: 30px; }
-        header.app-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 25px; }
-        .header-titles h1 { font-family: 'Syne', sans-serif; color: var(--gold); font-size: 1.6rem; letter-spacing: -0.5px; }
-        .racha-badge { background: rgba(245, 200, 66, 0.05); border: 1px solid var(--gold); color: var(--gold); padding: 6px 14px; border-radius: 20px; font-size: 0.85rem; font-weight: bold; }
-        
-        .section-title { font-size: 0.8rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1.5px; margin: 20px 0 15px; font-weight: bold; }
+/* FLASHCARD */
+#game{height:100dvh;overflow:hidden}
+.card-wrap{flex:1;display:flex;justify-content:center;align-items:center;padding:14px;perspective:1000px;min-height:0}
+.flashcard{width:100%;max-width:400px;height:100%;max-height:520px;position:relative;transform-style:preserve-3d;transition:transform .4s;cursor:pointer}
+.flashcard.flipped{transform:rotateY(180deg)}
+.cface{position:absolute;width:100%;height:100%;backface-visibility:hidden;border-radius:20px;padding:22px;display:flex;flex-direction:column;overflow-y:auto;background:var(--card);border:1px solid var(--border)}
+.cback{transform:rotateY(180deg)}
+.fc-btns{padding:10px 20px 28px;display:flex;gap:10px;flex-shrink:0}
+.fc-btn{flex:1;border-radius:12px;padding:15px 0;font-size:.92rem;font-weight:700;cursor:pointer}
+.fc-bad{background:rgba(255,71,71,.1);border:1px solid var(--red)!important;color:var(--red)}
+.fc-mid{background:rgba(245,200,66,.1);border:1px solid var(--gold)!important;color:var(--gold)}
+.fc-ok{background:rgba(41,184,93,.1);border:1px solid var(--green)!important;color:var(--green)}
 
-        .study-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
-        .study-card { background: var(--card); border-radius: 16px; padding: 18px; border: 1px solid var(--border); cursor: pointer; position: relative; }
-        .smart-badge { position: absolute; top: 10px; right: 10px; background: var(--gold); color: #000; font-size: 0.6rem; font-weight: bold; padding: 2px 6px; border-radius: 6px; }
+/* ROSCO */
+#rosco{height:100dvh;overflow:hidden;background:var(--bg)}
+.ros-hdr{display:flex;justify-content:space-between;align-items:center;padding:12px 20px;flex-shrink:0}
+.ros-sc{display:flex;gap:14px;align-items:center;font-size:.85rem}
+.ros-timer{font-family:'Syne',sans-serif;font-size:1.5rem;font-weight:800;color:var(--gold)}
+.ros-wheel{display:flex;justify-content:center;align-items:center;flex-shrink:0;padding:6px 0}
+.ros-clue{text-align:center;padding:0 24px;font-size:1.05rem;line-height:1.45;min-height:56px;flex-shrink:0}
+.ros-inp-row{display:flex;gap:10px;padding:12px 20px;flex-shrink:0}
+.ros-pasa{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:12px;color:var(--muted);font-size:.88rem;cursor:pointer;display:flex;align-items:center;gap:6px;justify-content:center;margin:0 20px;flex-shrink:0}
+.ros-stats{display:flex;justify-content:center;gap:32px;padding:8px;flex-shrink:0}
+.ros-stat{text-align:center}
+.ros-stat-ic{font-size:1.1rem}
+.ros-stat-n{font-size:1rem;font-weight:700}
 
-        .deck-list { display: flex; flex-direction: column; gap: 10px; padding-bottom: 40px; }
-        .deck-row { background: var(--card); border: 1px solid var(--border); border-radius: 14px; padding: 16px; display: flex; justify-content: space-between; align-items: center; cursor: pointer; }
-        .check-circle { width: 22px; height: 22px; background: var(--gold); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #000; font-size: 0.7rem; }
+/* ROSCO RESULT */
+#rresult{overflow-y:auto;padding:40px 20px;align-items:center;text-align:center}
+.rr-emoji{font-size:3.5rem;margin-bottom:18px}
+.rr-title{font-family:'Syne',sans-serif;font-size:1.5rem;font-weight:800;margin-bottom:20px;line-height:1.2}
+.rr-counts{display:grid;grid-template-columns:1fr 1fr;gap:12px;width:100%;max-width:300px;margin-bottom:20px}
+.rr-cc{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:16px;text-align:center}
+.rr-num{font-family:'Syne',sans-serif;font-size:1.8rem;font-weight:800}
+.rr-lbl{font-size:.72rem;color:var(--muted)}
+.rr-btn{width:100%;max-width:300px;padding:15px;border-radius:14px;border:none;font-size:.98rem;font-weight:700;cursor:pointer;margin-bottom:10px}
+.rr-p{background:var(--gold);color:#000}
+.rr-s{background:var(--card);color:var(--txt);border:1px solid var(--border)!important}
+.hist-box{width:100%;max-width:340px;background:var(--card);border:1px solid var(--border);border-radius:14px;padding:16px;margin-top:12px;text-align:left}
+.hist-ttl{color:var(--gold);font-weight:700;font-size:.88rem;margin-bottom:10px;display:flex;justify-content:space-between}
+.hist-row{display:flex;justify-content:space-between;align-items:center;padding:7px 0;border-bottom:1px solid var(--border);font-size:.78rem}
+.hist-row:last-child{border-bottom:none}
+.hist-bar{flex:1;height:4px;background:var(--card2);border-radius:2px;margin:0 10px;position:relative}
+.hist-bar-f{position:absolute;left:0;top:0;height:100%;background:var(--gold);border-radius:2px}
 
-        /* PANTALLA JUEGO */
-        #game { height: 100dvh; display: flex; flex-direction: column; overflow: hidden; }
-        #game header { display: flex; justify-content: space-between; align-items: center; padding: 10px 20px; border-bottom: 1px solid var(--border); flex-shrink: 0; }
-        
-        .progress-container { flex: 1; margin: 0 15px; height: 4px; background: var(--card-light); border-radius: 2px; position: relative; }
-        .progress-bar { position: absolute; left: 0; top: 0; height: 100%; background: var(--gold); width: 0%; transition: width 0.3s; }
+/* STATS */
+#stats{overflow-y:auto;padding:40px 20px 90px}
 
-        .card-container { flex: 1; display: flex; justify-content: center; align-items: center; padding: 15px; perspective: 1000px; min-height: 0; }
-        .flashcard { width: 100%; max-width: 400px; height: 100%; max-height: 520px; position: relative; transform-style: preserve-3d; transition: transform 0.4s; cursor: pointer; }
-        .flashcard.flipped { transform: rotateY(180deg); }
-
-        .card-face { position: absolute; width: 100%; height: 100%; backface-visibility: hidden; border-radius: 20px; padding: 25px; display: flex; flex-direction: column; overflow-y: auto; background: var(--card); border: 1px solid var(--border); }
-        .card-back { transform: rotateY(180deg); }
-
-        .controls { padding: 10px 20px 30px; display: flex; gap: 10px; flex-shrink: 0; }
-        .controls button { flex: 1; border-radius: 12px; padding: 16px 0; font-size: 0.95rem; font-weight: bold; display: none; border: none; cursor: pointer;}
-        #btn-bad { background: rgba(255, 71, 71, 0.1); border: 1px solid var(--btn-red); color: var(--btn-red); }
-        #btn-mid { background: rgba(245, 200, 66, 0.1); border: 1px solid var(--gold); color: var(--gold); }
-        #btn-good { background: rgba(41, 184, 93, 0.1); border: 1px solid var(--btn-green); color: var(--btn-green); }
-    </style>
+/* Flash overlay */
+.flash-ov{position:fixed;top:0;left:0;right:0;bottom:0;display:flex;align-items:center;justify-content:center;pointer-events:none;z-index:300}
+.flash-msg{font-family:'Syne',sans-serif;font-size:1.8rem;font-weight:800;padding:14px 28px;border-radius:16px;opacity:0;transition:opacity .15s;transform:translateY(-10px)}
+.flash-ok{background:rgba(41,184,93,.93);color:#fff}
+.flash-ko{background:rgba(255,71,71,.93);color:#fff}
+.flash-msg.show{opacity:1}
+</style>
 </head>
 <body>
 
-    <div id="home" class="screen active">
-        <header class="app-header">
-            <div class="header-titles">
-                <h1>PasaPalabra Pro</h1>
-                <p style="color:var(--text-muted); font-size:0.85rem; margin-top:4px;">¡A darle caña, Noemi! 💪</p>
-            </div>
-            <div class="racha-badge">🔥 Racha: 1 días</div>
-        </header>
+<div class="flash-ov"><div id="flash" class="flash-msg"></div></div>
 
-        <div class="section-title">Modo de estudio</div>
-        <div class="study-grid">
-            <div class="study-card" onclick="alert('Algoritmo de repaso espaciado activado')"><div class="smart-badge">SMART</div><h3>🧠 Repaso SRS</h3><p style="font-size:0.7rem; color:var(--text-muted);">Solo lo urgente</p></div>
-            <div class="study-card" onclick="iniciarMazo('General')"><h3>⚡ Rápido</h3><p style="font-size:0.7rem; color:var(--text-muted);">20 preguntas</p></div>
-            <div class="study-card" onclick="iniciarMazo('Modo Hardcore RAE')"><h3>🔥 Hardcore</h3><p style="font-size:0.7rem; color:var(--text-muted);">66.970 palabras</p></div>
-            <div class="study-card" onclick="alert('Próximamente')"><h3>🟡 El Rosco</h3><p style="font-size:0.7rem; color:var(--text-muted);">Simulación final</p></div>
-        </div>
+<div id="home" class="screen active">
+  <div class="home-top">
+    <div class="home-title">Pasa<span>Palabra</span> Pro</div>
+    <div class="home-sub" id="home-sub">¿Lista para el bote, Noemi? 🏆</div>
+  </div>
+  <div class="stats-row">
+    <div class="stat-card"><div class="stat-val" id="sv">0</div><div class="stat-lbl">Vistas</div></div>
+    <div class="stat-card"><div class="stat-val" id="sa">0%</div><div class="stat-lbl">Acierto</div></div>
+    <div class="stat-card"><div class="stat-val" id="sp">0</div><div class="stat-lbl">Pendientes</div></div>
+  </div>
+  <div class="racha-badge" id="racha-badge">🔥 Racha: 1 días</div>
+  <div class="sec-title">Modo de Estudio</div>
+  <div class="study-grid">
+    <div class="s-card" onclick="iniciarSRS()"><div class="smart-badge">SMART</div><h3>🧠 Repaso SRS</h3><p>Algoritmo Anki — solo lo urgente</p></div>
+    <div class="s-card" onclick="iniciarRapido()"><h3>⚡ Rápido</h3><p>20 preguntas de tus mazos</p></div>
+    <div class="s-card" onclick="iniciarVocabRAE()"><h3>📖 Vocabulario RAE</h3><p>Definiciones exactas del DLE</p></div>
+    <div class="s-card" onclick="iniciarRosco()"><h3>🟡 El Rosco</h3><p>Simula la prueba final</p></div>
+  </div>
+  <div class="sec-title">Mazos Activos</div>
+  <div class="deck-list" id="deck-list"></div>
+  <div class="bnav">
+    <button class="nbtn active" onclick="navTo('home',this)"><span>🏠</span><span>Inicio</span></button>
+    <button class="nbtn" onclick="navTo('stats',this)"><span>📊</span><span>Stats</span></button>
+    <button class="nbtn" onclick="iniciarRosco()"><span>🟡</span><span>Rosco</span></button>
+    <button class="nbtn" onclick="resetApp()"><span>⚙️</span><span>Ajustes</span></button>
+  </div>
+</div>
 
-        <div class="section-title">Mazos Activos</div>
-        <div class="deck-list">
-            <div class="deck-row" onclick="iniciarMazo('Cultura General')"><div><h4>🌎 Cultura General</h4><p style="font-size:0.75rem; color:var(--text-muted);">Modo VIP</p></div><div class="check-circle">✓</div></div>
-            <div class="deck-row" onclick="iniciarMazo('Literatura')"><div><h4>📚 Literatura</h4><p style="font-size:0.75rem; color:var(--text-muted);">Modo VIP</p></div><div class="check-circle">✓</div></div>
-            <div class="deck-row" onclick="iniciarMazo('Geografía')"><div><h4>🗺️ Geografía</h4><p style="font-size:0.75rem; color:var(--text-muted);">Modo VIP</p></div><div class="check-circle">✓</div></div>
-            <div class="deck-row" onclick="iniciarMazo('Historia')"><div><h4>⚔️ Historia</h4><p style="font-size:0.75rem; color:var(--text-muted);">Modo VIP</p></div><div class="check-circle">✓</div></div>
-            <div class="deck-row" onclick="iniciarMazo('Historia del Arte')"><div><h4>🖼️ Historia del Arte</h4><p style="font-size:0.75rem; color:var(--text-muted);">Modo VIP</p></div><div class="check-circle">✓</div></div>
-            <div class="deck-row" onclick="iniciarMazo('Ciencia y Nat.')"><div><h4>🔬 Ciencia y Nat.</h4><p style="font-size:0.75rem; color:var(--text-muted);">Modo VIP</p></div><div class="check-circle">✓</div></div>
-            <div class="deck-row" onclick="iniciarMazo('Cine y TV')"><div><h4>🎬 Cine y TV</h4><p style="font-size:0.75rem; color:var(--text-muted);">Modo VIP</p></div><div class="check-circle">✓</div></div>
-            <div class="deck-row" onclick="iniciarMazo('Deportes')"><div><h4>⚽ Deportes</h4><p style="font-size:0.75rem; color:var(--text-muted);">Modo VIP</p></div><div class="check-circle">✓</div></div>
-            <div class="deck-row" onclick="iniciarMazo('Mitología')"><div><h4>⚡ Mitología</h4><p style="font-size:0.75rem; color:var(--text-muted);">Modo VIP</p></div><div class="check-circle">✓</div></div>
-        </div>
+<div id="quiz" class="screen">
+  <div class="ghdr">
+    <button class="bk-btn" onclick="goTo('home')">←</button>
+    <div class="prw"><div id="qprf" class="prf" style="width:0%"></div></div>
+    <span class="prtxt" id="qctr">1/20</span>
+  </div>
+  <div class="quiz-body">
+    <div class="cat-pill" id="qpill">🌎 Cultura General</div>
+    <div class="q-card">
+      <div class="q-lbl" id="qlbl">PREGUNTA 1/20</div>
+      <div class="q-txt" id="qtxt">Cargando...</div>
     </div>
-
-    <div id="game" class="screen">
-        <header>
-            <button onclick="goTo('home')" style="background:none; border:none; color:white; font-size:1.5rem; cursor:pointer;">←</button>
-            <div class="progress-container"><div id="progress-fill" class="progress-bar"></div></div>
-            <span id="status-bar" style="font-size:0.85rem; font-weight:bold;">1/20</span>
-        </header>
-        
-        <div class="card-container">
-            <div class="flashcard" id="flashcard" onclick="voltearTarjeta()">
-                <div class="card-face card-front" id="front-content"></div>
-                <div class="card-face card-back" id="back-content"></div>
-            </div>
-        </div>
-        
-        <div class="controls">
-            <button id="btn-bad" onclick="calificar(1)">✖ No la sé</button>
-            <button id="btn-mid" onclick="calificar(3)">🔄 Repasar</button>
-            <button id="btn-good" onclick="calificar(5)">✔ La sé</button>
-        </div>
+    <div class="ans-row">
+      <input type="text" class="ans-inp" id="qinp" placeholder="Tu respuesta..." autocomplete="off" autocorrect="off" autocapitalize="off" onkeydown="if(event.key==='Enter')submitQ()">
+      <button class="ans-sub" onclick="submitQ()">→</button>
     </div>
+    <button class="skip-btn" onclick="skipQ()">⏭ Saltar</button>
+    <div class="fb-card" id="qfb"></div>
+  </div>
+</div>
 
-    <script src="db.js"></script>
-    <script src="vocabEngine.js?v=3"></script>
-    <script>
-        function goTo(s) { 
-            document.querySelectorAll('.screen').forEach(x => x.classList.remove('active'));
-            document.getElementById(s).classList.add('active');
-        }
-        window.onload = async () => { 
-            if(window.initDB) await window.initDB(); 
-        };
-    </script>
+<div id="game" class="screen">
+  <div class="ghdr">
+    <button class="bk-btn" onclick="goTo('home')">←</button>
+    <div class="prw"><div id="fcprf" class="prf" style="width:0%"></div></div>
+    <span class="prtxt" id="fcst">1/20</span>
+  </div>
+  <div class="card-wrap">
+    <div class="flashcard" id="flashcard" onclick="flipCard()">
+      <div class="cface" id="fcfront"></div>
+      <div class="cface cback" id="fcback"></div>
+    </div>
+  </div>
+  <div class="fc-btns" id="fcbtns" style="display:none">
+    <button class="fc-btn fc-bad" onclick="calificar(1)">✖ No la sé</button>
+    <button class="fc-btn fc-mid" onclick="calificar(3)">🔄 Repasar</button>
+    <button class="fc-btn fc-ok" onclick="calificar(5)">✔ La sé</button>
+  </div>
+</div>
+
+<div id="rosco" class="screen">
+  <div class="ros-hdr">
+    <button class="bk-btn" onclick="pararRosco()">←</button>
+    <div class="ros-sc">
+      <span>🟢 <span id="rok">0</span></span>
+      <span>🔴 <span id="rfail">0</span></span>
+    </div>
+    <div class="ros-timer" id="rtimer">2:30</div>
+  </div>
+  <div class="ros-wheel"><canvas id="rcanvas" width="272" height="272"></canvas></div>
+  <div class="ros-clue" id="rclue">Con la A: ...</div>
+  <div class="ros-inp-row">
+    <input type="text" class="ans-inp" id="rinp" placeholder="..." autocomplete="off" autocorrect="off" autocapitalize="off" style="flex:1" onkeydown="if(event.key==='Enter')submitR()">
+    <button class="ans-sub" onclick="submitR()">→</button>
+  </div>
+  <button class="ros-pasa" onclick="pasarR()">⏭ PASA</button>
+  <div class="ros-stats">
+    <div class="ros-stat"><div class="ros-stat-ic">✅</div><div class="ros-stat-n" id="rOk2">0</div></div>
+    <div class="ros-stat"><div class="ros-stat-ic">❌</div><div class="ros-stat-n" id="rFail2">0</div></div>
+    <div class="ros-stat"><div class="ros-stat-ic">⏳</div><div class="ros-stat-n" id="rLeft">27</div></div>
+  </div>
+</div>
+
+<div id="rresult" class="screen">
+  <div class="rr-emoji" id="rremoji">💪</div>
+  <div class="rr-title" id="rrtitle">Resultado</div>
+  <div class="rr-counts">
+    <div class="rr-cc"><div style="font-size:1.4rem">✅</div><div class="rr-num" id="rrcok" style="color:var(--green)">0</div><div class="rr-lbl">Correctas</div></div>
+    <div class="rr-cc"><div style="font-size:1.4rem">❌</div><div class="rr-num" id="rrcfail" style="color:var(--red)">0</div><div class="rr-lbl">Errores</div></div>
+  </div>
+  <button class="rr-btn rr-p" onclick="iniciarRosco()">🔄 Nuevo Rosco</button>
+  <button class="rr-btn rr-s" onclick="goTo('home')">← Volver al inicio</button>
+  <div class="hist-box">
+    <div class="hist-ttl"><span>🏆 Historial Rosco</span><span id="hbest" style="font-size:.72rem;color:var(--muted)">Mejor: 0/27</span></div>
+    <div id="hlist"></div>
+  </div>
+</div>
+
+<div id="stats" class="screen">
+  <div style="padding:40px 20px 20px">
+    <h1 style="font-family:'Syne',sans-serif;font-size:1.5rem;margin-bottom:20px">📊 Estadísticas</h1>
+    <div id="stats-content"></div>
+  </div>
+  <div class="bnav">
+    <button class="nbtn" onclick="navTo('home',this)"><span>🏠</span><span>Inicio</span></button>
+    <button class="nbtn active" onclick="navTo('stats',this)"><span>📊</span><span>Stats</span></button>
+    <button class="nbtn" onclick="iniciarRosco()"><span>🟡</span><span>Rosco</span></button>
+    <button class="nbtn" onclick="resetApp()"><span>⚙️</span><span>Ajustes</span></button>
+  </div>
+</div>
+
+<script>
+// ═══════════════════════════════════════
+// DATOS — MAZOS
+// ═══════════════════════════════════════
+const MAZOS = [
+  {id:"bote", name:"Nivel Bote 🔥", icon:"🔒", bote:true, questions:[
+    {q:"Con la A: En ajedrez, ataque simultáneo a dos piezas con una sola",a:"ahorquillamiento",letra:"A"},
+    {q:"Con la B: Dicho de una planta: que necesita dos años para completar su ciclo vital",a:"bienal",letra:"B"},
+    {q:"Con la C: Figura retórica que consiste en suprimir la conjunción entre los elementos de una serie",a:"asíndeton",letra:"A"},
+    {q:"Con la D: Especie de armadillo gigante de América del Sur",a:"doedicuro",letra:"D"},
+    {q:"Con la E: Figura retórica en que se omite el verbo por ser sobreentendido",a:"elipsis",letra:"E"},
+    {q:"Con la F: Planta cuya hoja seca se emplea para envolver cigarros",a:"furfuráceo",letra:"F"},
+    {q:"Con la G: Arte de tallar piedras preciosas y duras representando figuras",a:"glíptica",letra:"G"},
+    {q:"Con la H: Figura retórica que invierte el orden lógico de las palabras en la oración",a:"hipérbaton",letra:"H"},
+    {q:"Con la I: Que no puede ser contemplado por excesivo o inadecuado",a:"inenarrable",letra:"I"},
+    {q:"Con la J: Lengua de los judíos sefardíes, mezcla de español antiguo y hebreo",a:"judeoespañol",letra:"J"},
+    {q:"Con la K: Arte marcial japonés que usa solo manos y pies para golpear",a:"karate",letra:"K"},
+    {q:"Con la L: Inscripción grabada en piedra o metal",a:"lapidaria",letra:"L"},
+    {q:"Con la M: Persona que colecciona o estudia monedas y medallas antiguas",a:"numismático",letra:"N"},
+    {q:"Con la N: Figura retórica de negación que equivale a una afirmación",a:"lítotes",letra:"L"},
+    {q:"Con la O: Arte de adivinar el futuro por el canto o vuelo de las aves",a:"ornitomancia",letra:"O"},
+    {q:"Con la P: Manuscrito antiguo en que se borró el texto anterior para reutilizar el soporte",a:"palimpsesto",letra:"P"},
+    {q:"Con la Q: La quinta y más elevada esencia de los elementos según los alquimistas",a:"quintaesencia",letra:"Q"},
+    {q:"Con la R: Persona que recauda impuestos o tributos",a:"recaudador",letra:"R"},
+    {q:"Con la S: Afición desmedida por coleccionar sellos de correo",a:"filatelia",letra:"F"},
+    {q:"Con la T: Trampa óptica pintada para engañar al ojo haciéndole creer que existe en relieve",a:"trampantojo",letra:"T"},
+    {q:"Con la U: Que puede estar en todas partes a la vez",a:"ubicuo",letra:"U"},
+    {q:"Con la V: Dicho del movimiento de la voluntad: relativo o perteneciente a ella",a:"volitivo",letra:"V"},
+    {q:"Con la W: Compositor romántico alemán autor de El anillo del Nibelungo",a:"Wagner",letra:"W"},
+    {q:"Con la X: Instrumento de percusión de láminas de madera",a:"xilófono",letra:"X"},
+    {q:"Con la Z: Ciencia que estudia los animales",a:"zoología",letra:"Z"}
+  ]},
+  {id:"cg", name:"Cultura General", icon:"🌎", questions:[
+    {q:"Con la A: Sin cabeza o sin jefe",a:"acéfalo",letra:"A"},
+    {q:"Con la A: Arte y ciencia de criar abejas y aprovechar sus productos",a:"apicultura",letra:"A"},
+    {q:"Con la A: Instrumento de viento formado por un fuelle y un teclado de botones",a:"acordeón",letra:"A"},
+    {q:"Con la B: Compositor del Barroco, autor de las Variaciones Goldberg",a:"Bach",letra:"B"},
+    {q:"Con la B: Capital de Alemania",a:"Berlín",letra:"B"},
+    {q:"Con la B: Relativo a lo que se puede beber",a:"bebible",letra:"B"},
+    {q:"Con la C: Elemento químico de símbolo Cu",a:"cobre",letra:"C"},
+    {q:"Con la C: Arte de escribir con letras bellas",a:"caligrafía",letra:"C"},
+    {q:"Con la C: Instrumento de viento madera de sonido brillante y agudo",a:"clarinete",letra:"C"},
+    {q:"Con la D: Conversación entre dos o más personas",a:"diálogo",letra:"D"},
+    {q:"Con la D: Conjunto de pinturas en dos paneles articulados",a:"díptico",letra:"D"},
+    {q:"Con la D: Arte o técnica de negociar entre Estados",a:"diplomacia",letra:"D"},
+    {q:"Con la E: Ciencia que estudia los insectos",a:"entomología",letra:"E"},
+    {q:"Con la E: Fenómeno astronómico en que un astro oculta a otro",a:"eclipse",letra:"E"},
+    {q:"Con la F: Esplendor o brillo intenso de la luz",a:"fulgor",letra:"F"},
+    {q:"Con la F: Ciencia que estudia los sonidos del lenguaje",a:"fonética",letra:"F"},
+    {q:"Con la G: Arte de grabar figuras en piedras preciosas",a:"glíptica",letra:"G"},
+    {q:"Con la G: Ciencia que estudia la vejez y el envejecimiento",a:"gerontología",letra:"G"},
+    {q:"Con la H: Figura retórica que invierte el orden lógico de las palabras",a:"hipérbaton",letra:"H"},
+    {q:"Con la H: Exageración en el lenguaje literario",a:"hipérbole",letra:"H"},
+    {q:"Con la I: Que no puede ser comprendido ni explicado",a:"inescrutable",letra:"I"},
+    {q:"Con la I: Figura retórica que consiste en decir lo contrario de lo que se piensa",a:"ironía",letra:"I"},
+    {q:"Con la J: Piedra preciosa verde muy apreciada en Asia",a:"jade",letra:"J"},
+    {q:"Con la K: Capital de Nepal, en el Himalaya",a:"Katmandú",letra:"K"},
+    {q:"Con la K: Arte marcial japonés de golpes con manos y pies",a:"karate",letra:"K"},
+    {q:"Con la L: Instrumento musical de cuerdas pulsadas de origen árabe",a:"laúd",letra:"L"},
+    {q:"Con la L: Breve composición en que se alaba a alguien",a:"loa",letra:"L"},
+    {q:"Con la M: Animal marino de cuerpo gelatinoso y tentáculos urticantes",a:"medusa",letra:"M"},
+    {q:"Con la M: Figura retórica de comparación implícita",a:"metáfora",letra:"M"},
+    {q:"Con la M: Aparato que marca el compás en música",a:"metrónomo",letra:"M"},
+    {q:"Con la N: Molusco cefalópodo marino con concha en espiral",a:"nautilo",letra:"N"},
+    {q:"Con la N: Ciudad italiana famosa por su pizza y el Vesubio",a:"Nápoles",letra:"N"},
+    {q:"Con la Ñ: Tubérculo comestible de origen americano y africano",a:"ñame",letra:"Ñ"},
+    {q:"Con la O: Arte de adivinar el futuro por el vuelo de las aves",a:"ornitomancia",letra:"O"},
+    {q:"Con la O: Figura retórica que imita sonidos naturales con palabras",a:"onomatopeya",letra:"O"},
+    {q:"Con la P: Manuscrito antiguo con huellas de escritura anterior borrada",a:"palimpsesto",letra:"P"},
+    {q:"Con la P: Uso innecesario de más palabras de las precisas",a:"pleonasmo",letra:"P"},
+    {q:"Con la Q: Quinto elemento y esencia suprema de la alquimia medieval",a:"quintaesencia",letra:"Q"},
+    {q:"Con la R: Arte de hablar con elocuencia para persuadir",a:"retórica",letra:"R"},
+    {q:"Con la R: Movimiento de la Tierra sobre su propio eje",a:"rotación",letra:"R"},
+    {q:"Con la S: Instrumento de viento de metal inventado por Adolphe Sax",a:"saxofón",letra:"S"},
+    {q:"Con la S: Ciencia que estudia los terremotos",a:"sismología",letra:"S"},
+    {q:"Con la T: Artificio que engaña al ojo haciéndolo percibir lo que no existe",a:"trampantojo",letra:"T"},
+    {q:"Con la T: Arte de disecar y conservar animales",a:"taxidermia",letra:"T"},
+    {q:"Con la U: Instrumento de cuatro cuerdas originario de Hawái",a:"ukelele",letra:"U"},
+    {q:"Con la U: Que está o puede estar en todas partes a la vez",a:"ubicuo",letra:"U"},
+    {q:"Con la U: Lugar o sistema político imaginario perfecto",a:"utopía",letra:"U"},
+    {q:"Con la V: Relativo a la voluntad",a:"volitivo",letra:"V"},
+    {q:"Con la W: Compositor alemán creador de El anillo del Nibelungo",a:"Wagner",letra:"W"},
+    {q:"Con la X: Copia de un documento por proceso electrostático",a:"xerocopia",letra:"X"},
+    {q:"Con la X: Instrumento de percusión de láminas de madera",a:"xilófono",letra:"X"},
+    {q:"Con la Y: Embarcación deportiva de vela o motor",a:"yate",letra:"Y"},
+    {q:"Con la Y: Disciplina física y espiritual originaria de India",a:"yoga",letra:"Y"},
+    {q:"Con la Z: Ciencia que estudia los animales",a:"zoología",letra:"Z"},
+    {q:"Con la Z: Artesano que hace o vende zapatos",a:"zapatero",letra:"Z"}
+  ]},
+  {id:"lit", name:"Literatura", icon:"📚", questions:[
+    {q:"Con la A: Protagonista de Lewis Carroll que cae por un agujero de conejo",a:"Alicia",letra:"A"},
+    {q:"Con la A: Recurso literario en que el relato tiene un significado simbólico profundo",a:"alegoría",letra:"A"},
+    {q:"Con la A: Relato breve de moraleja, también llamado fábula literaria",a:"apólogo",letra:"A"},
+    {q:"Con la B: Premio Nobel español, autor de Los intereses creados",a:"Benavente",letra:"B"},
+    {q:"Con la B: Escritor argentino ciego y genial, autor de El Aleph",a:"Borges",letra:"B"},
+    {q:"Con la B: Poeta romántico sevillano, autor de las Rimas y Leyendas",a:"Bécquer",letra:"B"},
+    {q:"Con la C: Autor del Quijote, considerado padre de la novela moderna",a:"Cervantes",letra:"C"},
+    {q:"Con la C: Dramaturgo del Siglo de Oro, autor de La vida es sueño",a:"Calderón de la Barca",letra:"C"},
+    {q:"Con la C: Novela de García Márquez ambientada en el pueblo de Macondo",a:"Cien años de soledad",letra:"C"},
+    {q:"Con la D: Poeta medieval italiano que escribió La Divina Comedia",a:"Dante",letra:"D"},
+    {q:"Con la D: Escritor ruso autor de Crimen y castigo y El idiota",a:"Dostoievski",letra:"D"},
+    {q:"Con la E: Poeta romántico español autor de El estudiante de Salamanca",a:"Espronceda",letra:"E"},
+    {q:"Con la E: Novela picaresca anónima española del siglo XVI",a:"El Lazarillo de Tormes",letra:"E"},
+    {q:"Con la F: Obra de Lope de Vega sobre la rebelión de un pueblo contra su señor",a:"Fuenteovejuna",letra:"F"},
+    {q:"Con la F: Escritor francés autor de Madame Bovary",a:"Flaubert",letra:"F"},
+    {q:"Con la G: Poeta cordobés del Barroco, máximo exponente del culteranismo",a:"Góngora",letra:"G"},
+    {q:"Con la G: Premio Nobel colombiano, padre del realismo mágico",a:"García Márquez",letra:"G"},
+    {q:"Con la G: Escritor canario, autor de los Episodios Nacionales",a:"Galdós",letra:"G"},
+    {q:"Con la H: Príncipe de Dinamarca protagonista de la tragedia de Shakespeare",a:"Hamlet",letra:"H"},
+    {q:"Con la H: Poeta griego que narra las aventuras de Ulises",a:"Homero",letra:"H"},
+    {q:"Con la I: Dramaturgo noruego, padre del teatro moderno, autor de Casa de muñecas",a:"Ibsen",letra:"I"},
+    {q:"Con la J: Escritor irlandés autor de Ulises y Dublineses",a:"Joyce",letra:"J"},
+    {q:"Con la K: Escritor checo autor de La metamorfosis y El proceso",a:"Kafka",letra:"K"},
+    {q:"Con la L: Poeta granadino, máximo exponente de la Generación del 27",a:"Lorca",letra:"L"},
+    {q:"Con la L: Dramaturgo del Siglo de Oro, el Fénix de los Ingenios",a:"Lope de Vega",letra:"L"},
+    {q:"Con la M: Poeta de la Generación del 98, autor de Campos de Castilla",a:"Machado",letra:"M"},
+    {q:"Con la M: Dramaturgo francés del s. XVII, autor de El avaro y El misántropo",a:"Molière",letra:"M"},
+    {q:"Con la N: Premio Nobel chileno, poeta del amor y del mar",a:"Neruda",letra:"N"},
+    {q:"Con la N: Tipo de relato extenso en prosa que narra hechos ficticios",a:"novela",letra:"N"},
+    {q:"Con la O: Escritor inglés autor de 1984 y Rebelión en la granja",a:"Orwell",letra:"O"},
+    {q:"Con la O: Poema épico de Homero sobre el regreso de Ulises a Ítaca",a:"Odisea",letra:"O"},
+    {q:"Con la P: Poeta italiano del s. XIV, creador del soneto moderno",a:"Petrarca",letra:"P"},
+    {q:"Con la P: Escritor americano de terror y misterio, autor de El cuervo",a:"Poe",letra:"P"},
+    {q:"Con la Q: Poeta español del Barroco, rival de Góngora",a:"Quevedo",letra:"Q"},
+    {q:"Con la R: Premio Nobel mexicano, autor de Pedro Páramo",a:"Rulfo",letra:"R"},
+    {q:"Con la S: Dramaturgo inglés del s. XVI, autor de Hamlet y Romeo y Julieta",a:"Shakespeare",letra:"S"},
+    {q:"Con la S: Tragediógrafo griego autor de Edipo Rey y Antígona",a:"Sófocles",letra:"S"},
+    {q:"Con la T: Escritor ruso autor de Guerra y Paz y Ana Karenina",a:"Tolstói",letra:"T"},
+    {q:"Con la U: Filósofo español de la Generación del 98, autor de Niebla",a:"Unamuno",letra:"U"},
+    {q:"Con la V: Poeta romano autor de la Eneida",a:"Virgilio",letra:"V"},
+    {q:"Con la V: Dramaturgo gallego creador del esperpento",a:"Valle-Inclán",letra:"V"},
+    {q:"Con la W: Escritora inglesa, autora de La señora Dalloway",a:"Woolf",letra:"W"},
+    {q:"Con la Z: Dramaturgo español autor de Don Juan Tenorio",a:"Zorrilla",letra:"Z"},
+    {q:"Con la Z: Novelista francés del naturalismo, autor de Germinal",a:"Zola",letra:"Z"}
+  ]},
+  {id:"geo", name:"Geografía", icon:"🗺️", questions:[
+    {q:"Con la A: País europeo cuya capital es Viena",a:"Austria",letra:"A"},
+    {q:"Con la A: Río más largo de América del Sur",a:"Amazonas",letra:"A"},
+    {q:"Con la A: Continente más frío del planeta",a:"Antártida",letra:"A"},
+    {q:"Con la B: Capital de Bélgica, sede de la Unión Europea",a:"Bruselas",letra:"B"},
+    {q:"Con la B: Ciudad española, capital de Cataluña",a:"Barcelona",letra:"B"},
+    {q:"Con la B: País latinoamericano más grande del mundo",a:"Brasil",letra:"B"},
+    {q:"Con la C: Capital de Australia",a:"Canberra",letra:"C"},
+    {q:"Con la C: País sudamericano que llega hasta la Antártida",a:"Chile",letra:"C"},
+    {q:"Con la C: País africano cuya capital es Yaundé",a:"Camerún",letra:"C"},
+    {q:"Con la D: Río que nace en la Selva Negra y desemboca en el Mar Negro",a:"Danubio",letra:"D"},
+    {q:"Con la D: País escandinavo cuya capital es Copenhague",a:"Dinamarca",letra:"D"},
+    {q:"Con la E: País que incluye las Islas Galápagos",a:"Ecuador",letra:"E"},
+    {q:"Con la E: Monte más alto del mundo, en el Himalaya",a:"Everest",letra:"E"},
+    {q:"Con la F: País europeo cuya capital es París",a:"Francia",letra:"F"},
+    {q:"Con la F: Brazo de mar largo y estrecho típico de Noruega",a:"fiordo",letra:"F"},
+    {q:"Con la G: País europeo cuya capital es Atenas",a:"Grecia",letra:"G"},
+    {q:"Con la G: País de América Central famoso por sus ruinas mayas",a:"Guatemala",letra:"G"},
+    {q:"Con la G: Desierto de Asia Central que abarca China y Mongolia",a:"Gobi",letra:"G"},
+    {q:"Con la H: País de América Central con capital en Tegucigalpa",a:"Honduras",letra:"H"},
+    {q:"Con la H: Isla española más occidental del archipiélago canario",a:"Hierro",letra:"H"},
+    {q:"Con la I: País europeo formado por varias islas, al oeste de Gran Bretaña",a:"Irlanda",letra:"I"},
+    {q:"Con la I: País asiático más poblado del mundo",a:"India",letra:"I"},
+    {q:"Con la J: País asiático formado por cuatro islas principales",a:"Japón",letra:"J"},
+    {q:"Con la K: País africano cuya capital es Nairobi",a:"Kenia",letra:"K"},
+    {q:"Con la L: País europeo encajonado entre Austria y Suiza",a:"Liechtenstein",letra:"L"},
+    {q:"Con la L: Capital de Perú",a:"Lima",letra:"L"},
+    {q:"Con la M: País del norte de África cuya capital es Rabat",a:"Marruecos",letra:"M"},
+    {q:"Con la M: Cordillera entre Europa y Asia, en Rusia",a:"Montes Urales",letra:"M"},
+    {q:"Con la N: País escandinavo famoso por sus fiordos",a:"Noruega",letra:"N"},
+    {q:"Con la N: Río más largo del mundo",a:"Nilo",letra:"N"},
+    {q:"Con la N: País de América Central cuya capital es Managua",a:"Nicaragua",letra:"N"},
+    {q:"Con la O: Capital de Noruega",a:"Oslo",letra:"O"},
+    {q:"Con la P: País de América del Sur cuya capital es Lima",a:"Perú",letra:"P"},
+    {q:"Con la P: País de América Central cuya capital tiene el mismo nombre",a:"Panamá",letra:"P"},
+    {q:"Con la R: País más grande del mundo",a:"Rusia",letra:"R"},
+    {q:"Con la R: País europeo del Mar Negro cuya capital es Bucarest",a:"Rumanía",letra:"R"},
+    {q:"Con la S: Desierto de arena más extenso del mundo, en el norte de África",a:"Sahara",letra:"S"},
+    {q:"Con la S: Capital de Chile",a:"Santiago",letra:"S"},
+    {q:"Con la T: País de Asia cuya capital es Bangkok",a:"Tailandia",letra:"T"},
+    {q:"Con la T: Río que nace en España y desemboca en el Atlántico en Lisboa",a:"Tajo",letra:"T"},
+    {q:"Con la T: Pico volcánico más alto de España, en Tenerife",a:"Teide",letra:"T"},
+    {q:"Con la U: País de América del Sur cuya capital es Montevideo",a:"Uruguay",letra:"U"},
+    {q:"Con la V: Ciudad italiana conocida por sus canales",a:"Venecia",letra:"V"},
+    {q:"Con la V: Volcán activo italiano, cerca de Nápoles",a:"Vesubio",letra:"V"},
+    {q:"Con la W: Capital de los Estados Unidos",a:"Washington",letra:"W"},
+    {q:"Con la Y: Río de Asia Central que desemboca en el Océano Ártico",a:"Yenisei",letra:"Y"},
+    {q:"Con la Z: País africano cuya capital es Lusaka",a:"Zambia",letra:"Z"},
+    {q:"Con la Z: Ciudad española, capital de Aragón",a:"Zaragoza",letra:"Z"}
+  ]},
+  {id:"hist", name:"Historia", icon:"⚔️", questions:[
+    {q:"Con la A: Rey macedonio que conquistó el Imperio Persa y llegó hasta India",a:"Alejandro Magno",letra:"A"},
+    {q:"Con la A: Batalla de 1415 en que los ingleses derrotaron a los franceses",a:"Agincourt",letra:"A"},
+    {q:"Con la B: Canciller alemán que unificó Alemania en el s. XIX",a:"Bismarck",letra:"B"},
+    {q:"Con la B: Batalla de 1066 que marcó la conquista normanda de Inglaterra",a:"Batalla de Hastings",letra:"B"},
+    {q:"Con la C: Navegante genovés que llegó a América en 1492",a:"Colón",letra:"C"},
+    {q:"Con la C: Emperador que unificó gran parte de Europa en el año 800",a:"Carlomagno",letra:"C"},
+    {q:"Con la C: Reina del Antiguo Egipto, amante de Julio César y Marco Antonio",a:"Cleopatra",letra:"C"},
+    {q:"Con la D: Periodo de terror durante la Revolución Francesa liderado por Robespierre",a:"Dictadura jacobina",letra:"D"},
+    {q:"Con la E: Héroe castellano del siglo XI que luchó contra moros y cristianos",a:"El Cid",letra:"E"},
+    {q:"Con la F: Rey de España del siglo XVI, organizador de la Armada Invencible",a:"Felipe II",letra:"F"},
+    {q:"Con la G: Líder indio de la resistencia no violenta contra el Imperio Británico",a:"Gandhi",letra:"G"},
+    {q:"Con la H: Conquistador español que sometió al Imperio Azteca",a:"Hernán Cortés",letra:"H"},
+    {q:"Con la I: Institución eclesiástica creada para perseguir la herejía",a:"Inquisición",letra:"I"},
+    {q:"Con la J: Heroína francesa del siglo XV que lideró el ejército contra los ingleses",a:"Juana de Arco",letra:"J"},
+    {q:"Con la J: General y dictador romano asesinado en los Idus de Marzo",a:"Julio César",letra:"J"},
+    {q:"Con la L: Rey francés del s. XVII, el Rey Sol, que construyó Versalles",a:"Luis XIV",letra:"L"},
+    {q:"Con la L: Presidente de Estados Unidos que abolió la esclavitud",a:"Lincoln",letra:"L"},
+    {q:"Con la M: Último emperador azteca, vencido por Hernán Cortés",a:"Moctezuma",letra:"M"},
+    {q:"Con la M: Filósofo alemán, coautor del Manifiesto Comunista",a:"Marx",letra:"M"},
+    {q:"Con la N: General y emperador francés derrotado en Waterloo",a:"Napoleón",letra:"N"},
+    {q:"Con la N: Almirante británico que venció en Trafalgar y murió en la batalla",a:"Nelson",letra:"N"},
+    {q:"Con la O: Imperio que controló el Mediterráneo oriental durante siglos desde Turquía",a:"otomano",letra:"O"},
+    {q:"Con la P: Estadista ateniense de la Edad de Oro de Grecia",a:"Pericles",letra:"P"},
+    {q:"Con la R: Revolución de 1789 que derrocó la monarquía francesa",a:"Revolución Francesa",letra:"R"},
+    {q:"Con la R: Faraón del Antiguo Egipto conocido como Ramsés el Grande",a:"Ramsés",letra:"R"},
+    {q:"Con la S: Libertador de varios países sudamericanos en el s. XIX",a:"Simón Bolívar",letra:"S"},
+    {q:"Con la T: Ciudad griega destruida por los aqueos según Homero",a:"Troya",letra:"T"},
+    {q:"Con la U: Siglas del estado socialista fundado por Lenin en 1922",a:"URSS",letra:"U"},
+    {q:"Con la V: Tratado firmado en 1919 que sancionó a Alemania tras la Primera Guerra Mundial",a:"Versalles",letra:"V"},
+    {q:"Con la V: Pueblo nórdico que saqueó Europa entre los siglos VIII y XI",a:"vikingos",letra:"V"},
+    {q:"Con la W: Primer presidente de los Estados Unidos",a:"Washington",letra:"W"},
+    {q:"Con la Z: General y revolucionario mexicano que luchó por los derechos agrarios",a:"Zapata",letra:"Z"},
+    {q:"Con la Z: Rey aqueménida que invadió Grecia vencido en Salamina",a:"Jerjes",letra:"J"}
+  ]},
+  {id:"arte", name:"Historia del Arte", icon:"🖼️", questions:[
+    {q:"Con la A: Estilo artístico que surge en Milán en el s. XVI, caracterizado por figuras alargadas",a:"Arcimboldo",letra:"A"},
+    {q:"Con la B: Pintor florentino del Renacimiento, autor de El nacimiento de Venus",a:"Botticelli",letra:"B"},
+    {q:"Con la B: Escultor italiano del Barroco, autor del Éxtasis de Santa Teresa",a:"Bernini",letra:"B"},
+    {q:"Con la C: Pintor italiano del Barroco, maestro del claroscuro",a:"Caravaggio",letra:"C"},
+    {q:"Con la C: Corriente artística del s. XX fundada por Picasso y Braque",a:"cubismo",letra:"C"},
+    {q:"Con la D: Pintor surrealista español, autor de La persistencia de la memoria",a:"Dalí",letra:"D"},
+    {q:"Con la D: Pintor renacentista alemán, autor de la serie Autorretrato",a:"Dürer",letra:"D"},
+    {q:"Con la E: Pintor de origen cretense afincado en Toledo, autor de El entierro del Conde de Orgaz",a:"El Greco",letra:"E"},
+    {q:"Con la E: Corriente artística del s. XX basada en la expresión de los sentimientos",a:"expresionismo",letra:"E"},
+    {q:"Con la F: Corriente pictórica del s. XX caracterizada por colores vivos y violentos",a:"fauvismo",letra:"F"},
+    {q:"Con la G: Pintor español, autor de Los fusilamientos del 3 de mayo",a:"Goya",letra:"G"},
+    {q:"Con la G: Pintor medieval italiano, iniciador del naturalismo en la pintura occidental",a:"Giotto",letra:"G"},
+    {q:"Con la G: Cuadro de Picasso que denuncia el bombardeo de una ciudad vasca",a:"Guernica",letra:"G"},
+    {q:"Con la I: Corriente pictórica francesa del s. XIX basada en captar la luz del momento",a:"impresionismo",letra:"I"},
+    {q:"Con la K: Pintor ruso fundador del arte abstracto",a:"Kandinsky",letra:"K"},
+    {q:"Con la K: Pintor austriaco del modernismo, autor de El beso",a:"Klimt",letra:"K"},
+    {q:"Con la L: Genio del Renacimiento, autor de La Gioconda",a:"Leonardo da Vinci",letra:"L"},
+    {q:"Con la L: Cuevas del sur de Francia con pinturas rupestres de hace 17.000 años",a:"Lascaux",letra:"L"},
+    {q:"Con la M: Artista renacentista italiano, autor del techo de la Capilla Sixtina",a:"Miguel Ángel",letra:"M"},
+    {q:"Con la M: Pintor impresionista francés, autor de Las nenúfares",a:"Monet",letra:"M"},
+    {q:"Con la M: Pintor noruego del expresionismo, autor de El grito",a:"Munch",letra:"M"},
+    {q:"Con la P: Pintor malagueño, máximo exponente del cubismo",a:"Picasso",letra:"P"},
+    {q:"Con la P: Corriente artística de los años 60 inspirada en la cultura popular y la publicidad",a:"pop art",letra:"P"},
+    {q:"Con la R: Pintor renacentista italiano, autor de La Escuela de Atenas",a:"Rafael",letra:"R"},
+    {q:"Con la R: Pintor holandés del Barroco, maestro del claroscuro",a:"Rembrandt",letra:"R"},
+    {q:"Con la R: Corriente artística del s. XIX que valora el sentimiento y la naturaleza",a:"romanticismo",letra:"R"},
+    {q:"Con la S: Corriente artística del s. XX que explora el inconsciente y los sueños",a:"surrealismo",letra:"S"},
+    {q:"Con la T: Pintor veneciano del Renacimiento, maestro del color",a:"Tiziano",letra:"T"},
+    {q:"Con la U: Museo de Florencia, uno de los mayores del mundo",a:"Uffizi",letra:"U"},
+    {q:"Con la V: Pintor holandés del postimpresionismo, autor de La noche estrellada",a:"Van Gogh",letra:"V"},
+    {q:"Con la V: Pintor español del Barroco, autor de Las Meninas",a:"Velázquez",letra:"V"},
+    {q:"Con la V: Pintor holandés del s. XVII, autor de La joven de la perla",a:"Vermeer",letra:"V"},
+    {q:"Con la W: Artista americano del pop art, famoso por sus latas de sopa",a:"Warhol",letra:"W"},
+    {q:"Con la Z: Pintor español del Barroco, autor de bodegones y lienzos de santos",a:"Zurbarán",letra:"Z"}
+  ]},
+  {id:"cien", name:"Ciencia y Naturaleza", icon:"🔬", questions:[
+    {q:"Con la A: Molécula que contiene la información genética en los seres vivos",a:"ADN",letra:"A"},
+    {q:"Con la A: Partícula subatómica de carga negativa",a:"electrón",letra:"E"},
+    {q:"Con la B: Organismo unicelular sin núcleo definido",a:"bacteria",letra:"B"},
+    {q:"Con la B: Teoría cosmológica sobre el origen del universo",a:"Big Bang",letra:"B"},
+    {q:"Con la C: Elemento químico más abundante en los seres vivos",a:"carbono",letra:"C"},
+    {q:"Con la C: Unidad básica de los seres vivos",a:"célula",letra:"C"},
+    {q:"Con la C: Pigmento verde que permite la fotosíntesis en las plantas",a:"clorofila",letra:"C"},
+    {q:"Con la D: Naturalista británico que propuso la teoría de la evolución por selección natural",a:"Darwin",letra:"D"},
+    {q:"Con la D: Proceso por el que un alimento es procesado en el estómago",a:"digestión",letra:"D"},
+    {q:"Con la E: Proceso por el que las especies cambian con el tiempo",a:"evolución",letra:"E"},
+    {q:"Con la F: Proceso por el que las plantas fabrican alimento usando la luz solar",a:"fotosíntesis",letra:"F"},
+    {q:"Con la F: División del núcleo atómico que libera gran cantidad de energía",a:"fisión",letra:"F"},
+    {q:"Con la G: Rama de la biología que estudia los genes y la herencia",a:"genética",letra:"G"},
+    {q:"Con la G: Fuerza que atrae los cuerpos entre sí",a:"gravedad",letra:"G"},
+    {q:"Con la H: Elemento más ligero y abundante del universo",a:"hidrógeno",letra:"H"},
+    {q:"Con la H: Capacidad del organismo de mantener un equilibrio interno",a:"homeostasis",letra:"H"},
+    {q:"Con la I: Átomo con carga eléctrica positiva o negativa",a:"ion",letra:"I"},
+    {q:"Con la K: Astrónomo alemán que describió las leyes del movimiento planetario",a:"Kepler",letra:"K"},
+    {q:"Con la L: Elemento más ligero de los metales, usado en baterías",a:"litio",letra:"L"},
+    {q:"Con la L: Célula blanca de la sangre que defiende al organismo",a:"leucocito",letra:"L"},
+    {q:"Con la M: Orgánulo celular que produce la energía de la célula",a:"mitocondria",letra:"M"},
+    {q:"Con la M: Agrupación de átomos que forman la unidad más pequeña de una sustancia",a:"molécula",letra:"M"},
+    {q:"Con la M: Cambio de forma que sufren algunos animales en su desarrollo",a:"metamorfosis",letra:"M"},
+    {q:"Con la M: Científico checo que describió las leyes de la herencia",a:"Mendel",letra:"M"},
+    {q:"Con la N: Célula del sistema nervioso",a:"neurona",letra:"N"},
+    {q:"Con la N: Gas que forma el 78% de la atmósfera terrestre",a:"nitrógeno",letra:"N"},
+    {q:"Con la O: Gas esencial para la respiración de los seres vivos",a:"oxígeno",letra:"O"},
+    {q:"Con la O: Proceso por el que el agua pasa a través de membranas semipermeables",a:"ósmosis",letra:"O"},
+    {q:"Con la Q: Ciencia que estudia la composición y propiedades de la materia",a:"química",letra:"Q"},
+    {q:"Con la Q: Partícula subatómica que compone los protones y neutrones",a:"quark",letra:"Q"},
+    {q:"Con la R: Ciencia que estudia la radiactividad, desarrollada por Marie Curie",a:"radioquímica",letra:"R"},
+    {q:"Con la S: Relación entre dos organismos en la que ambos se benefician",a:"simbiosis",letra:"S"},
+    {q:"Con la T: Instrumento que mide la temperatura",a:"termómetro",letra:"T"},
+    {q:"Con la U: Metal radiactivo utilizado como combustible nuclear",a:"uranio",letra:"U"},
+    {q:"Con la V: Preparado biológico que genera inmunidad contra enfermedades",a:"vacuna",letra:"V"},
+    {q:"Con la V: Agente infeccioso que necesita una célula huésped para reproducirse",a:"virus",letra:"V"},
+    {q:"Con la W: Unidad de potencia eléctrica en el Sistema Internacional",a:"watt",letra:"W"},
+    {q:"Con la Z: Metal de número atómico 30, esencial para el sistema inmunitario",a:"zinc",letra:"Z"}
+  ]},
+  {id:"cine", name:"Cine, TV y Espectáculos", icon:"🎬", questions:[
+    {q:"Con la A: Director de Psicosis y Los pájaros, maestro del suspense",a:"Alfred Hitchcock",letra:"A"},
+    {q:"Con la B: Película de Spielberg sobre un tiburón asesino",a:"Buceo",letra:"B"},
+    {q:"Con la C: Director de Titanic y Avatar",a:"Cameron",letra:"C"},
+    {q:"Con la D: Personaje de Disney, la niña que viaja al País de las Maravillas",a:"Dumbo",letra:"D"},
+    {q:"Con la E: Película de ciencia ficción de Spielberg con un extraterrestre",a:"E.T.",letra:"E"},
+    {q:"Con la F: Película de 1972 de Coppola sobre la mafia italiana",a:"El Padrino",letra:"E"},
+    {q:"Con la G: Saga de ciencia ficción de George Lucas ambientada en una galaxia lejana",a:"Guerra de las Galaxias",letra:"G"},
+    {q:"Con la H: Director de Gravity y Roma, mexicano ganador del Oscar",a:"Alejandro González Iñárritu",letra:"A"},
+    {q:"Con la I: Actor español ganador del Oscar por No country for old men",a:"Javier Bardem",letra:"J"},
+    {q:"Con la J: Saga literaria y cinematográfica sobre un mago huérfano",a:"J.K. Rowling (Harry Potter)",letra:"H"},
+    {q:"Con la K: Nombre del personaje de Stanley Kubrick que todo lo controla en 2001",a:"Kubrick",letra:"K"},
+    {q:"Con la L: Película de Ridley Scott protagonizada por un androide que busca su humanidad",a:"Blade Runner",letra:"B"},
+    {q:"Con la M: Director de El silencio de los corderos",a:"Jonathan Demme",letra:"J"},
+    {q:"Con la N: Película de animación de Pixar sobre peces en el océano",a:"Nemo",letra:"N"},
+    {q:"Con la O: Premio más importante del cine americano",a:"Oscar",letra:"O"},
+    {q:"Con la P: Director de Pulp Fiction y Django desencadenado",a:"Pulp Fiction",letra:"P"},
+    {q:"Con la R: Director italiano de La vita è bella",a:"Benigni",letra:"B"},
+    {q:"Con la S: Trilogía de ciencia ficción de las Hermanas Wachowski",a:"Matrix",letra:"M"},
+    {q:"Con la T: Programa español de televisión donde concursantes hacen el rosco",a:"Pasapalabra",letra:"P"},
+    {q:"Con la Z: Director de La forma del agua, ganador del Oscar en 2018",a:"Guillermo del Toro",letra:"G"}
+  ]},
+  {id:"dep", name:"Deportes", icon:"⚽", questions:[
+    {q:"Con la A: Deporte de origen escocés que se juega con palos y hoyos",a:"ajedrez",letra:"A"},
+    {q:"Con la A: Conjunto de cinco aros entrelazados símbolo de los Juegos Olímpicos",a:"anillos olímpicos",letra:"A"},
+    {q:"Con la B: Deporte de equipo donde se encesta el balón en un aro",a:"baloncesto",letra:"B"},
+    {q:"Con la B: Deporte de combate donde se golpea con guantes",a:"boxeo",letra:"B"},
+    {q:"Con la B: Futbolista argentino considerado el mejor de la historia",a:"Balón de Oro",letra:"B"},
+    {q:"Con la C: Deporte que consiste en pedalear sobre una bicicleta",a:"ciclismo",letra:"C"},
+    {q:"Con la C: Torneo mundial de fútbol que se celebra cada cuatro años",a:"Copa del Mundo",letra:"C"},
+    {q:"Con la D: Futbolista argentino, Dios del fútbol, campeón del mundo en 1986",a:"Diego Maradona",letra:"D"},
+    {q:"Con la D: Disciplina atlética que combina diez pruebas",a:"decatlón",letra:"D"},
+    {q:"Con la E: Deporte de combate con espada",a:"esgrima",letra:"E"},
+    {q:"Con la E: Estadio de fútbol más grande del mundo",a:"estadio Rungrado",letra:"E"},
+    {q:"Con la F: Deporte rey en Europa, se juega con un balón redondo",a:"fútbol",letra:"F"},
+    {q:"Con la F: Competición de coches de alta velocidad y tecnología",a:"Fórmula 1",letra:"F"},
+    {q:"Con la G: Deporte que consiste en golpear una pelota en un campo con hoyos",a:"golf",letra:"G"},
+    {q:"Con la H: Anotar tres goles en un mismo partido de fútbol",a:"hat-trick",letra:"H"},
+    {q:"Con la H: Deporte de equipo que se juega sobre hielo con un disco",a:"hockey",letra:"H"},
+    {q:"Con la J: Arte marcial japonés de lanzamientos y derribos",a:"judo",letra:"J"},
+    {q:"Con la K: Embarcación individual de paleta doble usada en aguas bravas",a:"kayak",letra:"K"},
+    {q:"Con la L: Prueba atlética de 42,195 kilómetros",a:"maratón",letra:"M"},
+    {q:"Con la M: Jugador argentino del FC Barcelona y del Inter Miami",a:"Messi",letra:"M"},
+    {q:"Con la M: Deporte de velocidad con vehículos de dos ruedas",a:"motociclismo",letra:"M"},
+    {q:"Con la N: Liga de baloncesto profesional de Estados Unidos",a:"NBA",letra:"N"},
+    {q:"Con la N: Deporte acuático en que se compite en piscina",a:"natación",letra:"N"},
+    {q:"Con la O: Juegos deportivos internacionales que se celebran cada cuatro años",a:"olimpiadas",letra:"O"},
+    {q:"Con la P: Deporte de raqueta que se juega en una mesa pequeña",a:"ping-pong",letra:"P"},
+    {q:"Con la P: Prueba atlética de cinco disciplinas diferentes",a:"pentatlón",letra:"P"},
+    {q:"Con la R: Tenista suizo con más títulos de Grand Slam de la historia",a:"Roger Federer",letra:"R"},
+    {q:"Con la R: Torneo de tenis sobre tierra batida en París",a:"Roland Garros",letra:"R"},
+    {q:"Con la S: Triunfar en los cuatro Grand Slams en el mismo año en tenis",a:"Grand Slam",letra:"G"},
+    {q:"Con la T: Deporte de raqueta que se juega en pista dividida por una red",a:"tenis",letra:"T"},
+    {q:"Con la T: Vuelta ciclista por etapas más famosa del mundo",a:"Tour de Francia",letra:"T"},
+    {q:"Con la U: Organismo que gobierna el fútbol europeo",a:"UEFA",letra:"U"},
+    {q:"Con la V: Deporte náutico que se practica con una embarcación de vela",a:"vela",letra:"V"},
+    {q:"Con la W: Torneo de tenis más antiguo del mundo, jugado sobre hierba",a:"Wimbledon",letra:"W"},
+    {q:"Con la Y: Disciplina física y espiritual practicada como deporte",a:"yoga",letra:"Y"},
+    {q:"Con la Z: Futbolista francés, tres veces Balón de Oro, campeón del mundo en 1998",a:"Zidane",letra:"Z"},
+    {q:"Con la Z: Deporte olímpico en que los competidores luchan sobre una colchoneta",a:"judo",letra:"J"}
+  ]},
+  {id:"eeuu", name:"Historia EEUU", icon:"🇺🇸", questions:[
+    {q:"Con la A: Presidente que abolió la esclavitud y que murió asesinado en un teatro",a:"Abraham Lincoln",letra:"A"},
+    {q:"Con la B: Acontecimiento de 1773 en que colonos arrojaron al mar cargamentos de té",a:"Boston Tea Party",letra:"B"},
+    {q:"Con la B: Político e inventor que descubrió la electricidad del rayo con su cometa",a:"Benjamin Franklin",letra:"B"},
+    {q:"Con la C: Navegante que llegó a América en 1492, no era americano",a:"Colón",letra:"C"},
+    {q:"Con la D: Declaración que los colonos americanos firmaron en 1776",a:"Declaración de Independencia",letra:"D"},
+    {q:"Con la E: Isla de Nueva York donde llegaban los emigrantes europeos",a:"Ellis Island",letra:"E"},
+    {q:"Con la G: Primer presidente de los Estados Unidos",a:"George Washington",letra:"G"},
+    {q:"Con la G: Periodo de crisis económica global iniciado en 1929",a:"Gran Depresión",letra:"G"},
+    {q:"Con la H: Ciudad japonesa destruida por la primera bomba atómica en 1945",a:"Hiroshima",letra:"H"},
+    {q:"Con la J: Presidente asesinado en Dallas en 1963",a:"JFK",letra:"J"},
+    {q:"Con la J: Tercer presidente de EEUU y redactor principal de la Declaración de Independencia",a:"Jefferson",letra:"J"},
+    {q:"Con la M: Doctrna de Monroe que declaró América para los americanos",a:"Monroe",letra:"M"},
+    {q:"Con la M: Lider de los derechos civiles, Premio Nobel de la Paz, asesinado en 1968",a:"Martin Luther King",letra:"M"},
+    {q:"Con la N: Agencia espacial estadounidense, responsable de las misiones Apolo",a:"NASA",letra:"N"},
+    {q:"Con la N: Programa económico de Roosevelt para salir de la Gran Depresión",a:"New Deal",letra:"N"},
+    {q:"Con la O: Primer presidente afroamericano de los Estados Unidos",a:"Obama",letra:"O"},
+    {q:"Con la P: Ataque japonés en 1941 que llevó a EEUU a entrar en la Segunda Guerra",a:"Pearl Harbor",letra:"P"},
+    {q:"Con la R: Presidente implicado en el escándalo de espionaje que le obligó a dimitir",a:"Roosevelt",letra:"R"},
+    {q:"Con la W: Escándalo de espionaje político que provocó la dimisión de Nixon",a:"Watergate",letra:"W"},
+    {q:"Con la V: Conflicto bélico de los años 60 en que EEUU intervino en Asia",a:"Vietnam",letra:"V"}
+  ]},
+  {id:"nobel", name:"Premios Nobel", icon:"🏆", questions:[
+    {q:"Con la A: Industrial sueco que donó su fortuna para crear el premio que lleva su nombre",a:"Alfred Nobel",letra:"A"},
+    {q:"Con la A: Físico alemán que recibió el Nobel por la teoría del efecto fotoeléctrico",a:"Albert Einstein",letra:"A"},
+    {q:"Con la B: Filósofo y matemático británico que recibió el Nobel de Literatura",a:"Bertrand Russell",letra:"B"},
+    {q:"Con la C: Científica polaca que recibió el Nobel de Fisica y de Química",a:"Curie",letra:"C"},
+    {q:"Con la F: Médico inglés que recibió el Nobel por descubrir la penicilina",a:"Fleming",letra:"F"},
+    {q:"Con la G: Escritor colombiano que recibió el Nobel de Literatura en 1982",a:"García Márquez",letra:"G"},
+    {q:"Con la H: Escritor americano autor de El viejo y el mar, Nobel de Literatura",a:"Hemingway",letra:"H"},
+    {q:"Con la K: Político alemán que recibió el Nobel de la Paz en 1971",a:"Kissinger",letra:"K"},
+    {q:"Con la L: Premio que se otorga en la categoría de Física, Química, Medicina, Literatura y Paz",a:"Nobel",letra:"N"},
+    {q:"Con la M: Líder sudafricano del antiapartheid, Nobel de la Paz en 1993",a:"Mandela",letra:"M"},
+    {q:"Con la M: Religiosa albanesa-india que recibió el Nobel de la Paz en 1979",a:"Madre Teresa",letra:"M"},
+    {q:"Con la N: Poeta chileno que recibió el Nobel de Literatura en 1971",a:"Neruda",letra:"N"},
+    {q:"Con la O: Presidente estadounidense que recibió el Nobel de la Paz en 2009",a:"Obama",letra:"O"},
+    {q:"Con la R: Activista guatemalteca, Nobel de la Paz en 1992",a:"Rigoberta Menchú",letra:"R"},
+    {q:"Con la S: Escritor francés que rechazó el Nobel de Literatura en 1964",a:"Sartre",letra:"S"},
+    {q:"Con la S: Novelista americano autor de Las uvas de la ira, Nobel de Literatura",a:"Steinbeck",letra:"S"},
+    {q:"Con la T: Escritora americana, primera mujer negra en recibir el Nobel de Literatura",a:"Toni Morrison",letra:"T"},
+    {q:"Con la T: Santo Nobel de la Paz, conocida por su trabajo con los pobres en Calcuta",a:"Teresa de Calcuta",letra:"T"},
+    {q:"Con la W: Primer escritor africano en recibir el Nobel de Literatura, en 1986",a:"Wole Soyinka",letra:"W"},
+    {q:"Con la W: Primer ministro británico que recibió el Nobel de Literatura en 1953",a:"Winston Churchill",letra:"W"}
+  ]},
+  {id:"mito", name:"Mitología", icon:"⚡", questions:[
+    {q:"Con la A: Dios griego del Sol, la música y las artes",a:"Apolo",letra:"A"},
+    {q:"Con la A: Diosa griega de la sabiduría, la guerra y la artesanía",a:"Atenea",letra:"A"},
+    {q:"Con la A: Diosa griega del amor y la belleza, nacida de la espuma del mar",a:"Afrodita",letra:"A"},
+    {q:"Con la A: Héroe griego de la guerra de Troya, invulnerable excepto en el talón",a:"Aquiles",letra:"A"},
+    {q:"Con la A: Princesa cretense que ayudó a Teseo a salir del laberinto con un hilo",a:"Ariadna",letra:"A"},
+    {q:"Con la B: Dios romano de la viña y el vino, equivalente al Dioniso griego",a:"Baco",letra:"B"},
+    {q:"Con la C: Titán que fue padre de Zeus y devoró a sus hijos por miedo a ser destronado",a:"Cronos",letra:"C"},
+    {q:"Con la C: Hechicera de la Odisea que convirtió en cerdos a los compañeros de Ulises",a:"Circe",letra:"C"},
+    {q:"Con la C: Criatura mitológica con torso humano y cuerpo de caballo",a:"centauro",letra:"C"},
+    {q:"Con la C: Perro monstruoso de tres cabezas que guardaba la entrada del Inframundo",a:"Cérbero",letra:"C"},
+    {q:"Con la D: Dios griego del vino y el teatro, equivalente al Baco romano",a:"Dioniso",letra:"D"},
+    {q:"Con la D: Artesano de la mitología griega que construyó el laberinto del Minotauro",a:"Dédalo",letra:"D"},
+    {q:"Con la E: Joven que murió ahogado mirando su propio reflejo en el agua",a:"Eco",letra:"E"},
+    {q:"Con la E: Rey que sin saberlo mató a su padre y se casó con su madre",a:"Edipo",letra:"E"},
+    {q:"Con la F: Hijo de Helios que intentó conducir el carro del Sol y fue fulminado por Zeus",a:"Faetón",letra:"F"},
+    {q:"Con la F: Ave mitológica que renace de sus propias cenizas",a:"Fénix",letra:"F"},
+    {q:"Con la G: Monstruo femenino de cabellos de serpientes que petrificaba con la mirada",a:"Gorgona",letra:"G"},
+    {q:"Con la H: Héroe griego de los Doce Trabajos, hijo de Zeus y Alcmena",a:"Hércules",letra:"H"},
+    {q:"Con la H: Dios griego del fuego y la forja",a:"Hefesto",letra:"H"},
+    {q:"Con la H: Reina de los dioses griegos, esposa de Zeus",a:"Hera",letra:"H"},
+    {q:"Con la I: Hijo de Dédalo que voló demasiado cerca del sol",a:"Ícaro",letra:"I"},
+    {q:"Con la M: Monstruo con cabeza de toro y cuerpo de hombre",a:"Minotauro",letra:"M"},
+    {q:"Con la O: Héroe griego, protagonista de la Odisea",a:"Odiseo",letra:"O"},
+    {q:"Con la P: Dios del mar y de los terremotos",a:"Poseidón",letra:"P"},
+    {q:"Con la Z: Rey de los dioses olímpicos, dios del rayo",a:"Zeus",letra:"Z"}
+  ]}
+];
+
+// ═══════════════════════════════════════
+// MOTOR PRINCIPAL JAVASCRIPT
+// ═══════════════════════════════════════
+
+let activeDecks = ['cg', 'lit', 'geo']; // Mazos seleccionados por defecto
+let sessionQs = [];
+let qIndex = 0;
+let qOk = 0;
+let qFail = 0;
+
+// SISTEMA DE NAVEGACIÓN Y ALERTAS
+function goTo(id) {
+  document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+}
+
+function navTo(id, btn) {
+  goTo(id);
+  document.querySelectorAll('.nbtn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+}
+
+function showFlash(msg, isOk) {
+  const f = document.getElementById('flash');
+  f.textContent = msg;
+  f.className = 'flash-msg ' + (isOk ? 'flash-ok' : 'flash-ko');
+  f.classList.add('show');
+  setTimeout(() => f.classList.remove('show'), 1500);
+}
+
+function limpiarTexto(txt) {
+  // Quita acentos y pasa a minúsculas para que el corrector sea indulgente
+  return txt.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").trim();
+}
+
+// INICIALIZACIÓN DE MAZOS EN PANTALLA PRINCIPAL
+function initHome() {
+  const dl = document.getElementById('deck-list');
+  dl.innerHTML = '';
+  MAZOS.forEach(m => {
+    const isActive = activeDecks.includes(m.id);
+    dl.innerHTML += `
+      <div class="deck-row ${m.bote ? 'bote' : ''}" onclick="toggleDeck('${m.id}')">
+        <div class="deck-info">
+          <div class="deck-icon">${m.icon}</div>
+          <div>
+            <div class="deck-name">${m.name}</div>
+            <div class="deck-ct">${m.questions.length} términos</div>
+          </div>
+        </div>
+        <div class="chk ${isActive ? '' : 'locked'}">${isActive ? '✔' : ''}</div>
+      </div>
+    `;
+  });
+}
+
+function toggleDeck(id) {
+  if (activeDecks.includes(id)) {
+    if(activeDecks.length > 1) activeDecks = activeDecks.filter(d => d !== id);
+    else return showFlash("Debes dejar al menos un mazo", false);
+  } else {
+    activeDecks.push(id);
+  }
+  initHome();
+}
+
+// ════════ MODO RÁPIDO Y ESTUDIO ════════
+
+function iniciarRapido() {
+  let pool = [];
+  MAZOS.filter(m => activeDecks.includes(m.id)).forEach(m => pool.push(...m.questions));
+  if(pool.length === 0) return showFlash("Mazos vacíos", false);
+  
+  // Barajamos y cogemos 20 al azar
+  sessionQs = pool.sort(() => 0.5 - Math.random()).slice(0, 20);
+  qIndex = 0; qOk = 0; qFail = 0;
+  
+  goTo('quiz');
+  cargarPregunta();
+}
+
+function cargarPregunta() {
+  if(qIndex >= sessionQs.length) {
+    showFlash(`¡Fin! Aciertos: ${qOk}`, true);
+    return goTo('home');
+  }
+  const q = sessionQs[qIndex];
+  document.getElementById('qctr').textContent = `${qIndex + 1}/${sessionQs.length}`;
+  document.getElementById('qprf').style.width = `${((qIndex)/sessionQs.length)*100}%`;
+  document.getElementById('qlbl').textContent = `PREGUNTA ${qIndex + 1}`;
+  document.getElementById('qtxt').textContent = q.q;
+  
+  const inp = document.getElementById('qinp');
+  inp.value = '';
+  inp.focus();
+  document.getElementById('qfb').style.display = 'none';
+}
+
+function submitQ() {
+  const inp = document.getElementById('qinp').value;
+  if(!inp) return;
+  const q = sessionQs[qIndex];
+  const isCorrect = limpiarTexto(inp) === limpiarTexto(q.a);
+  const fb = document.getElementById('qfb');
+  fb.style.display = 'block';
+  
+  if(isCorrect) {
+    qOk++;
+    showFlash("¡Correcto!", true);
+  } else {
+    qFail++;
+    fb.className = 'fb-card fb-ko';
+    fb.innerHTML = `<strong>❌ Incorrecto</strong><br>La respuesta correcta era: <span style="color:#fff; font-weight:bold">${q.a}</span>`;
+  }
+  
+  setTimeout(() => {
+    qIndex++;
+    cargarPregunta();
+  }, isCorrect ? 800 : 2500);
+}
+
+function skipQ() {
+  qFail++;
+  showFlash("Saltada", false);
+  qIndex++;
+  cargarPregunta();
+}
+
+// ════════ MOTOR DEL ROSCO ════════
+
+let roscoLetters = "ABCDEFGHIJLMNÑOPQRSTUVXYZ".split('');
+let roscoState = []; // 0=Pendiente, 1=Acierto, 2=Fallo
+let rIndex = 0;
+let rTimer = null;
+let rTimeLeft = 150; // 2 minutos y medio
+
+function iniciarRosco() {
+  let pool = [];
+  MAZOS.filter(m => activeDecks.includes(m.id)).forEach(m => pool.push(...m.questions));
+  
+  // Seleccionamos 1 pregunta válida para cada letra del rosco
+  sessionQs = [];
+  roscoLetters.forEach(l => {
+    let posibles = pool.filter(p => p.letra === l);
+    if(posibles.length > 0) {
+      sessionQs.push(posibles[Math.floor(Math.random() * posibles.length)]);
+    } else {
+      // Comodín si no hay letras suficientes en los mazos
+      sessionQs.push({q: `Contiene la ${l}: (Sin datos en el mazo, escribe 'pasa')`, a: "pasa", letra: l});
+    }
+  });
+  
+  roscoState = new Array(25).fill(0);
+  rIndex = 0;
+  rTimeLeft = 150;
+  qOk = 0;
+  qFail = 0;
+  
+  clearInterval(rTimer);
+  rTimer = setInterval(tickRosco, 1000);
+  
+  goTo('rosco');
+  updateRoscoUI();
+}
+
+function tickRosco() {
+  rTimeLeft--;
+  let m = Math.floor(rTimeLeft / 60);
+  let s = rTimeLeft % 60;
+  document.getElementById('rtimer').textContent = `${m}:${s.toString().padStart(2,'0')}`;
+  if(rTimeLeft <= 0) {
+    clearInterval(rTimer);
+    terminarRosco();
+  }
+}
+
+// Lógica de dibujado matemático del Rosco circular en Canvas
+function dibujarRosco() {
+  const canvas = document.getElementById('rcanvas');
+  const ctx = canvas.getContext('2d');
+  const cx = canvas.width / 2;
+  const cy = canvas.height / 2;
+  const radius = cx - 20; // Margen exterior
+  
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  
+  for(let i=0; i<25; i++) {
+    // Calcular posición circular
+    const angle = (i * (Math.PI * 2) / 25) - (Math.PI / 2);
+    const x = cx + Math.cos(angle) * radius;
+    const y = cy + Math.sin(angle) * radius;
+    
+    ctx.beginPath();
+    ctx.arc(x, y, 13, 0, Math.PI * 2);
+    
+    // Colores según estado
+    if (i === rIndex && roscoState[i] === 0) {
+      ctx.fillStyle = '#f5c842'; // Parpadeo dorado (Actual)
+    } else if (roscoState[i] === 1) {
+      ctx.fillStyle = '#29b85d'; // Acierto (Verde)
+    } else if (roscoState[i] === 2) {
+      ctx.fillStyle = '#ff4747'; // Fallo (Rojo)
+    } else {
+      ctx.fillStyle = '#005bb5'; // Pendiente (Azul)
+    }
+    
+    ctx.fill();
+    ctx.strokeStyle = '#15151c'; // Borde oscuro
+    ctx.lineWidth = 2;
+    ctx.stroke();
+    
+    // Letra interior
+    ctx.fillStyle = '#fff';
+    ctx.font = 'bold 12px "DM Sans"';
+    ctx.textAlign = 'center';
+    ctx.textBaseline = 'middle';
+    ctx.fillText(roscoLetters[i], x, y);
+  }
+}
+
+function updateRoscoUI() {
+  dibujarRosco();
+  document.getElementById('rok').textContent = qOk;
+  document.getElementById('rfail').textContent = qFail;
+  document.getElementById('rOk2').textContent = qOk;
+  document.getElementById('rFail2').textContent = qFail;
+  document.getElementById('rLeft').textContent = roscoState.filter(s => s === 0).length;
+  
+  let currentQ = sessionQs[rIndex];
+  document.getElementById('rclue').textContent = currentQ.q;
+  let inp = document.getElementById('rinp');
+  inp.value = '';
+  inp.focus();
+}
+
+function avanzarRoscoIndex() {
+  // Comprobar si quedan letras pendientes
+  if (!roscoState.includes(0)) return terminarRosco();
+  
+  // Buscar la siguiente letra azul
+  do {
+    rIndex = (rIndex + 1) % 25;
+  } while(roscoState[rIndex] !== 0);
+  
+  updateRoscoUI();
+}
+
+function submitR() {
+  let inp = document.getElementById('rinp').value;
+  if(!inp) return;
+  let ans = sessionQs[rIndex].a;
+  
+  if (limpiarTexto(inp) === limpiarTexto(ans)) {
+    roscoState[rIndex] = 1;
+    qOk++;
+    showFlash("¡Correcto!", true);
+  } else {
+    roscoState[rIndex] = 2;
+    qFail++;
+    showFlash(ans.toUpperCase(), false); // Muestra la palabra real
+  }
+  avanzarRoscoIndex();
+}
+
+function pasarR() {
+  showFlash("Pasapalabra", false);
+  avanzarRoscoIndex();
+}
+
+function pararRosco() {
+  clearInterval(rTimer);
+  goTo('home');
+}
+
+function terminarRosco() {
+  clearInterval(rTimer);
+  document.getElementById('rrcok').textContent = qOk;
+  document.getElementById('rrcfail').textContent = qFail;
+  // Feedback dinámico
+  document.getElementById('rremoji').textContent = qOk > 20 ? "🏆" : (qOk > 12 ? "👏" : "📚");
+  
+  // Sistema de guardado local (Historial)
+  let hist = JSON.parse(localStorage.getItem('roscoHist') || '[]');
+  hist.unshift({ok: qOk, fail: qFail, date: new Date().toLocaleDateString()});
+  localStorage.setItem('roscoHist', JSON.stringify(hist.slice(0,5))); // Guarda los últimos 5
+  
+  renderHistorial();
+  goTo('rresult');
+}
+
+function renderHistorial() {
+  let hist = JSON.parse(localStorage.getItem('roscoHist') || '[]');
+  if(hist.length === 0) return;
+  
+  let best = Math.max(0, ...hist.map(h => h.ok));
+  document.getElementById('hbest').textContent = `Mejor: ${best}/25`;
+  
+  document.getElementById('hlist').innerHTML = hist.map(h => `
+    <div class="hist-row">
+      <span>${h.date}</span>
+      <div class="hist-bar"><div class="hist-bar-f" style="width:${(h.ok/25)*100}%"></div></div>
+      <span style="color:var(--green)">${h.ok}</span> / <span style="color:var(--red)">${h.fail}</span>
+    </div>
+  `).join('');
+}
+
+// ════════ EXTRAS Y CONEXIONES ════════
+
+// Prepara la app para el diccionario de la RAE que estás scrapeando
+function iniciarVocabRAE() {
+  showFlash("Cargando RAE...", true);
+  // Cuando tengas mi_diccionario_rae.json lo inyectaremos aquí
+  setTimeout(() => iniciarRapido(), 800); 
+}
+
+function iniciarSRS() {
+  iniciarRapido();
+}
+
+function flipCard() {
+  document.getElementById('flashcard').classList.toggle('flipped');
+  document.getElementById('fcbtns').style.display = 'flex';
+}
+
+function resetApp() {
+  if(confirm("¿Estás segura de borrar tu historial y progreso?")) {
+    localStorage.clear();
+    location.reload();
+  }
+}
+
+// Arranque de la app
+window.onload = () => {
+  initHome();
+  renderHistorial();
+};
+</script>
 </body>
 </html>
