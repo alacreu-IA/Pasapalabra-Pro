@@ -48,13 +48,29 @@ body{background:var(--bg);color:var(--txt);font-family:'DM Sans',sans-serif;over
 .nbtn.active{color:var(--gold)}
 .nbtn span:first-child{font-size:1.2rem}
 
-/* FLASHCARD (MODO ANKI) */
-#game{height:100dvh;overflow:hidden}
+/* QUIZ (MODO ESCRIBIR: RÁPIDO Y SRS) */
+#quiz{height:100dvh;overflow:hidden}
 .ghdr{display:flex;align-items:center;padding:12px 20px;gap:12px;border-bottom:1px solid var(--border);flex-shrink:0}
 .bk-btn{width:36px;height:36px;background:var(--card2);border:none;border-radius:50%;color:var(--txt);font-size:1rem;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0}
 .prw{flex:1;height:4px;background:var(--card2);border-radius:2px;position:relative;overflow:hidden}
 .prf{position:absolute;left:0;top:0;height:100%;background:var(--gold);border-radius:2px;transition:width .3s}
 .prtxt{font-size:.8rem;font-weight:700;flex-shrink:0}
+.quiz-body{flex:1;padding:18px 20px;display:flex;flex-direction:column;gap:14px;overflow:hidden}
+.cat-pill{display:inline-flex;align-items:center;gap:6px;background:var(--card);border:1px solid var(--border);border-radius:20px;padding:5px 13px;font-size:.78rem;align-self:flex-start}
+.q-card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:18px 20px}
+.q-lbl{font-size:.68rem;color:var(--muted);text-transform:uppercase;letter-spacing:1px;margin-bottom:8px}
+.q-txt{font-size:1.1rem;line-height:1.5}
+.ans-row{display:flex;gap:10px}
+.ans-inp{flex:1;background:var(--card);border:2px solid var(--gold);border-radius:12px;padding:13px 15px;color:var(--txt);font-size:1rem;font-family:'DM Sans',sans-serif;outline:none}
+.ans-inp::placeholder{color:var(--muted)}
+.ans-sub{width:50px;height:50px;background:var(--gold);border:none;border-radius:12px;color:#000;font-size:1.2rem;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.skip-btn{background:none;border:none;color:var(--muted);font-size:.88rem;cursor:pointer;display:flex;align-items:center;gap:5px;justify-content:center;padding:6px}
+.fb-card{border-radius:13px;padding:14px 16px;font-size:.92rem;line-height:1.4;display:none}
+.fb-ok{background:rgba(41,184,93,.1);border:1px solid var(--green);color:#a8f0c0}
+.fb-ko{background:rgba(255,71,71,.1);border:1px solid var(--red);color:#ffaaaa}
+
+/* FLASHCARD (MODO VOCABULARIO RAE) */
+#game{height:100dvh;overflow:hidden}
 .card-wrap{flex:1;display:flex;justify-content:center;align-items:center;padding:14px;perspective:1000px;min-height:0}
 .flashcard{width:100%;max-width:400px;height:100%;max-height:520px;position:relative;transform-style:preserve-3d;transition:transform .4s;cursor:pointer}
 .flashcard.flipped{transform:rotateY(180deg)}
@@ -63,7 +79,6 @@ body{background:var(--bg);color:var(--txt);font-family:'DM Sans',sans-serif;over
 .fc-btns{padding:10px 20px 28px;display:flex;gap:10px;flex-shrink:0}
 .fc-btn{flex:1;border-radius:12px;padding:15px 0;font-size:.92rem;font-weight:700;cursor:pointer}
 .fc-bad{background:rgba(255,71,71,.1);border:1px solid var(--red)!important;color:var(--red)}
-.fc-mid{background:rgba(245,200,66,.1);border:1px solid var(--gold)!important;color:var(--gold)}
 .fc-ok{background:rgba(41,184,93,.1);border:1px solid var(--green)!important;color:var(--green)}
 
 /* ROSCO */
@@ -74,8 +89,6 @@ body{background:var(--bg);color:var(--txt);font-family:'DM Sans',sans-serif;over
 .ros-wheel{display:flex;justify-content:center;align-items:center;flex-shrink:0;padding:6px 0}
 .ros-clue{text-align:center;padding:0 24px;font-size:1.05rem;line-height:1.45;min-height:56px;flex-shrink:0}
 .ros-inp-row{display:flex;gap:10px;padding:12px 20px;flex-shrink:0}
-.ans-inp{flex:1;background:var(--card);border:2px solid var(--gold);border-radius:12px;padding:13px 15px;color:var(--txt);font-size:1rem;font-family:'DM Sans',sans-serif;outline:none}
-.ans-sub{width:50px;height:50px;background:var(--gold);border:none;border-radius:12px;color:#000;font-size:1.2rem;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0}
 .ros-pasa{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:12px;color:var(--muted);font-size:.88rem;cursor:pointer;display:flex;align-items:center;gap:6px;justify-content:center;margin:0 20px;flex-shrink:0}
 .ros-stats{display:flex;justify-content:center;gap:32px;padding:8px;flex-shrink:0}
 .ros-stat{text-align:center}
@@ -131,11 +144,11 @@ body{background:var(--bg);color:var(--txt);font-family:'DM Sans',sans-serif;over
     <div class="s-card" onclick="iniciarSRS()">
       <div class="smart-badge">SMART</div>
       <h3>🧠 Repaso SRS</h3>
-      <p>Algoritmo Anki (solo lo que fallas)</p>
+      <p>Acierta escribiendo (Algoritmo Anki)</p>
     </div>
     <div class="s-card" onclick="iniciarVocabRAE()">
       <h3>📖 Vocabulario RAE</h3>
-      <p>Tarjetas DLE (Próximamente)</p>
+      <p>Tarjetas giratorias de estudio</p>
     </div>
     <div class="s-card" style="grid-column: span 2;" onclick="iniciarRosco()">
       <h3 style="color:var(--gold)">🟡 El Rosco Final</h3>
@@ -149,6 +162,27 @@ body{background:var(--bg);color:var(--txt);font-family:'DM Sans',sans-serif;over
     <button class="nbtn" onclick="navTo('stats',this)"><span>📊</span><span>Stats</span></button>
     <button class="nbtn" onclick="iniciarRosco()"><span>🟡</span><span>Rosco</span></button>
     <button class="nbtn" onclick="resetApp()"><span>⚙️</span><span>Ajustes</span></button>
+  </div>
+</div>
+
+<div id="quiz" class="screen">
+  <div class="ghdr">
+    <button class="bk-btn" onclick="goTo('home')">←</button>
+    <div class="prw"><div id="qprf" class="prf" style="width:0%"></div></div>
+    <span class="prtxt" id="qctr">1/20</span>
+  </div>
+  <div class="quiz-body">
+    <div class="cat-pill" id="qpill">🌎 Cultura General</div>
+    <div class="q-card">
+      <div class="q-lbl" id="qlbl">PREGUNTA 1/20</div>
+      <div class="q-txt" id="qtxt">Cargando...</div>
+    </div>
+    <div class="ans-row">
+      <input type="text" class="ans-inp" id="qinp" placeholder="Tu respuesta..." autocomplete="off" autocorrect="off" autocapitalize="off" onkeydown="if(event.key==='Enter')submitQ()">
+      <button class="ans-sub" onclick="submitQ()">→</button>
+    </div>
+    <button class="skip-btn" onclick="skipQ()">⏭ No la sé</button>
+    <div class="fb-card" id="qfb"></div>
   </div>
 </div>
 
@@ -232,6 +266,7 @@ let sessionQs = [];
 let qIndex = 0;
 let qOk = 0;
 let qFail = 0;
+let currentMode = ''; // 'SRS' o 'VOCAB' o 'ROSCO'
 
 // Base de datos del Algoritmo Anki (SRS)
 let srsData = JSON.parse(localStorage.getItem('srsProgress')) || {};
@@ -259,6 +294,8 @@ function limpiarTexto(txt) {
   return txt.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").trim();
 }
 
+// ════════ INICIO Y MAZOS ════════
+
 function initHome() {
   const dl = document.getElementById('deck-list');
   dl.innerHTML = '';
@@ -268,7 +305,6 @@ function initHome() {
     return;
   }
 
-  // Activar el primer mazo por defecto si no hay ninguno activo
   if (activeDecks.length === 0) activeDecks.push(MAZOS[0].id);
 
   MAZOS.forEach(m => {
@@ -304,7 +340,6 @@ function actualizarEstadisticasHome() {
   let vistas = Object.keys(srsData).length;
   document.getElementById('sv').textContent = vistas;
   
-  // Contar cuántas quedan por aprender hoy
   let pool = [];
   if (typeof MAZOS !== 'undefined') {
       MAZOS.filter(m => activeDecks.includes(m.id)).forEach(m => pool.push(...m.questions));
@@ -317,17 +352,16 @@ function actualizarEstadisticasHome() {
   document.getElementById('sp').textContent = pendientesHoy;
 }
 
-// ════════ MODO REPASO SRS (ANKI LÓGICA) ════════
+// ════════ MODO REPASO SRS (ESCRIBIR) ════════
 
 function iniciarSRS() {
+  currentMode = 'SRS';
   let pool = [];
   MAZOS.filter(m => activeDecks.includes(m.id)).forEach(m => pool.push(...m.questions));
   if(pool.length === 0) return showFlash("Mazos vacíos", false);
   
-  // 1. Filtrar las preguntas: Solo coger las que nunca hemos visto o las que tocan hoy
   let pendientes = pool.filter(q => {
     let record = srsData[q.a];
-    // Si no tiene record (es nueva) o la fecha de repaso ya ha pasado, entra.
     return !record || record.nextReview <= Date.now();
   });
 
@@ -336,8 +370,93 @@ function iniciarSRS() {
     return;
   }
 
-  // Barajamos y cogemos un máximo de 20 para la sesión
   sessionQs = pendientes.sort(() => 0.5 - Math.random()).slice(0, 20);
+  qIndex = 0; qOk = 0; qFail = 0;
+  
+  goTo('quiz');
+  cargarPregunta();
+}
+
+function cargarPregunta() {
+  if(qIndex >= sessionQs.length) {
+    showFlash(`¡Fin del repaso!`, true);
+    actualizarEstadisticasHome();
+    return goTo('home');
+  }
+  const q = sessionQs[qIndex];
+  document.getElementById('qctr').textContent = `${qIndex + 1}/${sessionQs.length}`;
+  document.getElementById('qprf').style.width = `${((qIndex)/sessionQs.length)*100}%`;
+  document.getElementById('qlbl').textContent = `PREGUNTA ${qIndex + 1}`;
+  document.getElementById('qtxt').textContent = q.q;
+  
+  const inp = document.getElementById('qinp');
+  inp.value = '';
+  inp.focus();
+  document.getElementById('qfb').style.display = 'none';
+}
+
+function submitQ() {
+  const inp = document.getElementById('qinp').value;
+  if(!inp) return;
+  const q = sessionQs[qIndex];
+  const isCorrect = limpiarTexto(inp) === limpiarTexto(q.a);
+  const fb = document.getElementById('qfb');
+  fb.style.display = 'block';
+  
+  if(isCorrect) {
+    qOk++;
+    showFlash("¡Correcto!", true);
+    if (currentMode === 'SRS') actualizarSRS(q.a, true);
+  } else {
+    qFail++;
+    fb.className = 'fb-card fb-ko';
+    fb.innerHTML = `<strong>❌ Incorrecto</strong><br>Respuesta: <span style="color:#fff; font-weight:bold">${q.a.toUpperCase()}</span>`;
+    
+    if (currentMode === 'SRS') {
+      actualizarSRS(q.a, false);
+      sessionQs.push(q); // La mandamos al final de la cola
+    }
+  }
+  
+  setTimeout(() => {
+    qIndex++;
+    cargarPregunta();
+  }, isCorrect ? 800 : 2500);
+}
+
+function skipQ() {
+  qFail++;
+  showFlash("Saltada", false);
+  if (currentMode === 'SRS') {
+    actualizarSRS(sessionQs[qIndex].a, false);
+    sessionQs.push(sessionQs[qIndex]); // La mandamos al final de la cola
+  }
+  qIndex++;
+  cargarPregunta();
+}
+
+function actualizarSRS(palabra, acertada) {
+  let record = srsData[palabra] || { interval: 0 };
+  if (acertada) {
+    record.interval = record.interval === 0 ? 1 : record.interval * 2.5; 
+    record.nextReview = Date.now() + (record.interval * 24 * 60 * 60 * 1000); 
+  } else {
+    record.interval = 0;
+    record.nextReview = Date.now();
+  }
+  srsData[palabra] = record;
+  localStorage.setItem('srsProgress', JSON.stringify(srsData));
+}
+
+// ════════ MODO VOCABULARIO (TARJETAS GIRATORIAS) ════════
+
+function iniciarVocabRAE() {
+  currentMode = 'VOCAB';
+  let pool = [];
+  MAZOS.filter(m => activeDecks.includes(m.id)).forEach(m => pool.push(...m.questions));
+  if(pool.length === 0) return showFlash("Mazos vacíos", false);
+  
+  sessionQs = pool.sort(() => 0.5 - Math.random()).slice(0, 20);
   qIndex = 0;
   
   goTo('game');
@@ -347,7 +466,6 @@ function iniciarSRS() {
 function cargarFlashcard() {
   if(qIndex >= sessionQs.length) {
     showFlash("¡Sesión completada!", true);
-    actualizarEstadisticasHome();
     return goTo('home');
   }
   
@@ -355,12 +473,10 @@ function cargarFlashcard() {
   document.getElementById('fcst').textContent = `${qIndex + 1}/${sessionQs.length}`;
   document.getElementById('fcprf').style.width = `${((qIndex)/sessionQs.length)*100}%`;
   
-  // Reseteamos la carta
   const card = document.getElementById('flashcard');
   card.classList.remove('flipped');
   document.getElementById('fcbtns').style.display = 'none';
   
-  // Escribimos los datos
   document.getElementById('fcfront').textContent = q.q;
   document.getElementById('fcback-text').textContent = q.a.toUpperCase();
 }
@@ -371,32 +487,12 @@ function flipCard() {
 }
 
 function calificar(score) {
-  const q = sessionQs[qIndex];
-  let record = srsData[q.a] || { interval: 0 };
+  if (score === 5) showFlash("¡Bien!", true);
+  else showFlash("A repasar", false);
   
-  if (score === 5) {
-    // La sé: Aumentamos el intervalo (Algoritmo SM-2 ultra simplificado)
-    record.interval = record.interval === 0 ? 1 : record.interval * 2.5; 
-    record.nextReview = Date.now() + (record.interval * 24 * 60 * 60 * 1000); // Días en milisegundos
-    showFlash("¡Genial! Programada para el futuro.", true);
-  } else {
-    // No la sé: Reseteamos y la mandamos al final de la cola para repetirla hoy
-    record.interval = 0;
-    record.nextReview = Date.now();
-    sessionQs.push(q); // Añade un clon al final para volver a verla
-    showFlash("La repetiremos al final de la sesión.", false);
-  }
-  
-  // Guardamos en memoria
-  srsData[q.a] = record;
-  localStorage.setItem('srsProgress', JSON.stringify(srsData));
-  
+  // Como esto es modo vocabulario libre, simplemente avanzamos
   qIndex++;
   cargarFlashcard();
-}
-
-function iniciarVocabRAE() {
-  showFlash("Próximamente... 🚧", false);
 }
 
 // ════════ MOTOR DEL ROSCO ════════
@@ -408,6 +504,7 @@ let rTimer = null;
 let rTimeLeft = 150; 
 
 function iniciarRosco() {
+  currentMode = 'ROSCO';
   let pool = [];
   MAZOS.filter(m => activeDecks.includes(m.id)).forEach(m => pool.push(...m.questions));
   
