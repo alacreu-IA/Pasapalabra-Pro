@@ -1,0 +1,1539 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+    <title>PasaPalabra Pro — Noemi al Bote</title>
+    <meta name="theme-color" content="#0a0a12">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,700;1,400&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
+
+        :root {
+            --bg: #080810;
+            --bg2: #0f0f1a;
+            --card: #13131f;
+            --card2: #1a1a2a;
+            --border: #252535;
+            --border2: #303050;
+            --gold: #f0c040;
+            --gold2: #ffd86e;
+            --gold-dim: rgba(240,192,64,0.12);
+            --text: #eeeeff;
+            --muted: #7070a0;
+            --red: #ff5555;
+            --green: #44d490;
+            --blue: #4488ff;
+            --purple: #9966ff;
+            --radius: 16px;
+        }
+
+        html, body { 
+            height: 100%; height: 100dvh;
+            overflow: hidden;
+            background: var(--bg);
+            color: var(--text);
+            font-family: 'Space Grotesk', sans-serif;
+        }
+
+        /* ===== SCREENS ===== */
+        .screen {
+            position: fixed; inset: 0;
+            display: flex; flex-direction: column;
+            opacity: 0; pointer-events: none;
+            transition: opacity 0.25s ease;
+            overflow: hidden;
+        }
+        .screen.active { opacity: 1; pointer-events: all; }
+
+        /* ===== SCROLLABLE CONTENT ===== */
+        .scroll-body { flex: 1; overflow-y: auto; padding: 0 18px 80px; overscroll-behavior: contain; }
+        .scroll-body::-webkit-scrollbar { display: none; }
+
+        /* ===== TERMS MODAL ===== */
+        #terms-overlay {
+            position: fixed; inset: 0; z-index: 1000;
+            background: var(--bg);
+            display: flex; flex-direction: column;
+            padding: 30px 24px 24px;
+        }
+        #terms-overlay.hidden { display: none; }
+        .terms-logo { text-align: center; margin-bottom: 20px; }
+        .terms-logo .pp-icon { font-size: 3rem; }
+        .terms-logo h1 { font-family: 'Playfair Display', serif; font-size: 1.6rem; color: var(--gold); letter-spacing: -0.5px; }
+        .terms-logo p { color: var(--muted); font-size: 0.82rem; margin-top: 4px; }
+        .terms-box {
+            flex: 1; overflow-y: auto; background: var(--card);
+            border: 1px solid var(--border2); border-radius: var(--radius);
+            padding: 20px; font-size: 0.8rem; line-height: 1.7; color: var(--muted);
+        }
+        .terms-box::-webkit-scrollbar { display: none; }
+        .terms-box h3 { color: var(--text); font-size: 0.85rem; margin: 14px 0 6px; text-transform: uppercase; letter-spacing: 0.5px; }
+        .terms-box .legal-highlight { color: var(--gold); font-weight: 700; font-size: 0.85rem; border: 1px solid var(--gold); border-radius: 10px; padding: 10px 14px; margin: 14px 0; background: var(--gold-dim); }
+        .terms-accept { margin-top: 14px; background: var(--gold); color: #000; border: none; border-radius: 14px; width: 100%; padding: 16px; font-family: 'Space Grotesk', sans-serif; font-size: 1rem; font-weight: 700; cursor: pointer; }
+
+        /* ===== HOME ===== */
+        #home-header { padding: 18px 18px 0; display: flex; justify-content: space-between; align-items: flex-start; }
+        .app-brand h1 { font-family: 'Playfair Display', serif; font-size: 1.55rem; color: var(--gold); line-height: 1.1; }
+        .app-brand p { color: var(--muted); font-size: 0.78rem; margin-top: 3px; }
+        .streak-badge { background: var(--gold-dim); border: 1px solid var(--gold); color: var(--gold); padding: 7px 14px; border-radius: 20px; font-size: 0.82rem; font-weight: 700; white-space: nowrap; }
+
+        .section-label { font-size: 0.7rem; color: var(--muted); text-transform: uppercase; letter-spacing: 2px; font-weight: 600; margin: 22px 0 10px; }
+
+        /* Mode Grid */
+        .mode-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+        .mode-card {
+            background: var(--card); border: 1px solid var(--border2);
+            border-radius: var(--radius); padding: 16px 14px;
+            cursor: pointer; position: relative; overflow: hidden;
+            transition: transform 0.15s, border-color 0.15s;
+        }
+        .mode-card:active { transform: scale(0.97); }
+        .mode-card.gold-border { border-color: rgba(240,192,64,0.4); }
+        .mode-card .badge { position: absolute; top: 9px; right: 9px; background: var(--gold); color: #000; font-size: 0.55rem; font-weight: 800; padding: 2px 7px; border-radius: 8px; letter-spacing: 0.5px; }
+        .mode-card .mode-icon { font-size: 1.5rem; margin-bottom: 6px; }
+        .mode-card h3 { font-size: 0.9rem; font-weight: 700; }
+        .mode-card p { font-size: 0.7rem; color: var(--muted); margin-top: 3px; }
+
+        /* Deck list */
+        .deck-list { display: flex; flex-direction: column; gap: 9px; }
+        .deck-item {
+            background: var(--card); border: 1px solid var(--border);
+            border-radius: 14px; padding: 14px 16px;
+            display: flex; align-items: center; gap: 14px; cursor: pointer;
+            transition: transform 0.15s, border-color 0.15s;
+        }
+        .deck-item:active { transform: scale(0.97); }
+        .deck-item .deck-icon { font-size: 1.4rem; flex-shrink: 0; }
+        .deck-item .deck-info { flex: 1; min-width: 0; }
+        .deck-item .deck-info h4 { font-size: 0.9rem; font-weight: 600; }
+        .deck-item .deck-info p { font-size: 0.72rem; color: var(--muted); margin-top: 2px; }
+        .deck-check { width: 24px; height: 24px; background: var(--gold-dim); border: 1px solid var(--gold); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--gold); font-size: 0.7rem; flex-shrink: 0; }
+
+        /* AI button */
+        .ai-btn-wrap { padding: 16px 0 0; }
+        .ai-btn {
+            width: 100%; background: linear-gradient(135deg, #1a1a2e, #252540);
+            border: 1px solid #9966ff44; border-radius: 14px; padding: 14px 18px;
+            display: flex; align-items: center; gap: 14px; cursor: pointer;
+            color: var(--text);
+        }
+        .ai-robot { font-size: 2rem; animation: float 3s ease-in-out infinite; }
+        @keyframes float { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-4px)} }
+        .ai-btn-text h3 { font-size: 0.9rem; color: var(--purple); font-weight: 700; }
+        .ai-btn-text p { font-size: 0.72rem; color: var(--muted); margin-top: 2px; }
+
+        /* Footer links */
+        .footer-links { text-align: center; padding: 20px 0; }
+        .footer-links button { background: none; border: none; color: var(--muted); font-size: 0.72rem; cursor: pointer; text-decoration: underline; font-family: 'Space Grotesk', sans-serif; }
+
+        /* ===== TOP BAR (games) ===== */
+        .top-bar {
+            display: flex; align-items: center; gap: 12px;
+            padding: 12px 16px; border-bottom: 1px solid var(--border);
+            flex-shrink: 0;
+        }
+        .btn-back { background: none; border: none; color: var(--text); font-size: 1.4rem; cursor: pointer; padding: 4px 6px; line-height: 1; }
+        .top-bar-title { font-weight: 700; font-size: 0.95rem; flex: 1; }
+        .top-bar-right { font-size: 0.82rem; font-weight: 700; color: var(--gold); }
+        .progress-track { height: 3px; background: var(--border2); flex-shrink: 0; }
+        .progress-fill { height: 3px; background: var(--gold); transition: width 0.4s ease; }
+
+        /* ===== FLASHCARD GAME ===== */
+        #game { background: var(--bg); }
+        .card-area { flex: 1; display: flex; align-items: center; justify-content: center; padding: 14px; perspective: 1000px; min-height: 0; }
+        
+        .flashcard { width: 100%; max-width: 400px; height: 100%; max-height: 500px; position: relative; transform-style: preserve-3d; transition: transform 0.45s cubic-bezier(.4,0,.2,1); cursor: pointer; }
+        .flashcard.flipped { transform: rotateY(180deg); }
+        
+        .card-face {
+            position: absolute; inset: 0; backface-visibility: hidden;
+            border-radius: 20px; padding: 22px; display: flex; flex-direction: column;
+            overflow-y: auto; background: var(--card); border: 1px solid var(--border2);
+        }
+        .card-face::-webkit-scrollbar { display: none; }
+        .card-back { transform: rotateY(180deg); }
+
+        .card-tag { font-size: 0.68rem; color: var(--muted); text-transform: uppercase; letter-spacing: 1.5px; font-weight: 700; margin-bottom: 12px; flex-shrink: 0; }
+        .card-def { font-size: 1.1rem; line-height: 1.55; flex: 1; overflow-y: auto; }
+        .card-def::-webkit-scrollbar { display: none; }
+        .card-hint { margin-top: auto; padding-top: 14px; display: flex; justify-content: space-between; align-items: center; flex-shrink: 0; }
+        .card-cat { background: rgba(255,255,255,0.05); border: 1px solid var(--border); padding: 4px 12px; border-radius: 10px; font-size: 0.75rem; color: var(--muted); }
+        .card-flip-hint { font-size: 0.72rem; color: var(--muted); }
+
+        .card-word { font-family: 'Playfair Display', serif; color: var(--gold); font-size: 2.2rem; line-height: 1.1; margin-bottom: 14px; flex-shrink: 0; text-transform: capitalize; }
+        .card-defs { font-size: 0.9rem; line-height: 1.5; flex: 1; overflow-y: auto; }
+        .card-defs::-webkit-scrollbar { display: none; }
+        .card-defs .def-item { margin-bottom: 7px; }
+        .card-extra { margin-top: 10px; }
+        .extra-block { background: var(--bg2); border-radius: 10px; padding: 10px 12px; margin-top: 8px; border: 1px solid var(--border2); }
+        .extra-block .extra-label { font-size: 0.62rem; text-transform: uppercase; letter-spacing: 1px; font-weight: 700; color: var(--muted); margin-bottom: 4px; }
+        .extra-block.gold { border-color: rgba(240,192,64,0.3); }
+        .extra-block.gold .extra-label { color: var(--gold); }
+        .extra-block.purple { border-color: rgba(153,102,255,0.3); }
+        .extra-block.purple .extra-label { color: var(--purple); }
+        .extra-block.green { border-color: rgba(68,212,144,0.3); }
+        .extra-block.green .extra-label { color: var(--green); }
+        .rae-link { display: block; background: #003a80; color: #fff; text-align: center; padding: 13px; border-radius: 10px; text-decoration: none; font-weight: 700; font-size: 0.9rem; margin-top: 10px; flex-shrink: 0; }
+
+        .rating-btns { display: flex; gap: 8px; padding: 10px 16px 20px; flex-shrink: 0; }
+        .rating-btns button { flex: 1; border-radius: 12px; padding: 14px 0; font-size: 0.85rem; font-weight: 700; border: 1px solid; cursor: pointer; display: none; font-family: 'Space Grotesk', sans-serif; }
+        #btn-bad { background: rgba(255,85,85,0.08); border-color: var(--red); color: var(--red); }
+        #btn-mid { background: rgba(240,192,64,0.08); border-color: var(--gold); color: var(--gold); }
+        #btn-good { background: rgba(68,212,144,0.08); border-color: var(--green); color: var(--green); }
+
+        /* ===== ROSCO ===== */
+        #rosco { background: var(--bg); }
+        .rosco-wheel-wrap { flex-shrink: 0; display: flex; justify-content: center; padding: 10px 10px 6px; }
+        #rosco-svg { width: min(280px, 56vw); height: min(280px, 56vw); }
+        
+        .rosco-info { padding: 0 16px; flex-shrink: 0; }
+        .rosco-letter-display { text-align: center; margin-bottom: 8px; }
+        .rosco-letter-display .big-letter { font-family: 'Playfair Display', serif; font-size: 3rem; color: var(--gold); line-height: 1; }
+        .rosco-letter-display .letter-tip { font-size: 0.72rem; color: var(--muted); margin-top: 2px; }
+        
+        .rosco-question { background: var(--card); border: 1px solid var(--border2); border-radius: 14px; padding: 14px 16px; font-size: 0.95rem; line-height: 1.45; text-align: center; margin-bottom: 10px; min-height: 70px; display: flex; align-items: center; justify-content: center; }
+        
+        .rosco-input-wrap { display: flex; gap: 8px; margin-bottom: 8px; }
+        #rosco-answer { flex: 1; background: var(--card); border: 1px solid var(--border2); border-radius: 12px; padding: 13px 16px; color: var(--text); font-family: 'Space Grotesk', sans-serif; font-size: 1rem; font-weight: 600; text-transform: uppercase; outline: none; }
+        #rosco-answer:focus { border-color: var(--gold); }
+        #rosco-submit { background: var(--gold); color: #000; border: none; border-radius: 12px; padding: 13px 16px; font-family: 'Space Grotesk', sans-serif; font-size: 0.85rem; font-weight: 800; cursor: pointer; white-space: nowrap; }
+        
+        .rosco-skip-btn { background: none; border: 1px solid var(--border2); border-radius: 12px; padding: 10px; width: 100%; color: var(--muted); font-family: 'Space Grotesk', sans-serif; font-size: 0.82rem; cursor: pointer; margin-bottom: 6px; }
+        
+        .rosco-stats { display: flex; justify-content: center; gap: 20px; padding: 6px 0; flex-shrink: 0; }
+        .rosco-stat { text-align: center; }
+        .rosco-stat .stat-num { font-size: 1.3rem; font-weight: 800; line-height: 1; }
+        .rosco-stat .stat-lbl { font-size: 0.65rem; color: var(--muted); text-transform: uppercase; letter-spacing: 1px; }
+        .stat-green { color: var(--green); }
+        .stat-red { color: var(--red); }
+        .stat-muted { color: var(--muted); }
+        
+        .rosco-timer { text-align: center; font-size: 1.1rem; font-weight: 800; color: var(--gold); padding: 4px 0; flex-shrink: 0; }
+        .rosco-timer.danger { color: var(--red); animation: blink 0.5s ease-in-out infinite; }
+        @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.4} }
+
+        /* Voice toggle */
+        .voice-toggle { display: flex; align-items: center; gap: 8px; padding: 6px 0; }
+        .voice-toggle label { font-size: 0.78rem; color: var(--muted); }
+        .toggle-switch { width: 38px; height: 22px; background: var(--border2); border-radius: 11px; position: relative; cursor: pointer; transition: background 0.2s; flex-shrink: 0; }
+        .toggle-switch.on { background: var(--gold); }
+        .toggle-switch::after { content: ''; position: absolute; top: 3px; left: 3px; width: 16px; height: 16px; background: #fff; border-radius: 50%; transition: transform 0.2s; }
+        .toggle-switch.on::after { transform: translateX(16px); }
+
+        /* ===== RAE SCREEN ===== */
+        #rae { background: var(--bg); }
+
+        /* ===== DIFICILES SCREEN ===== */
+        #dificiles { background: var(--bg); }
+        .dificil-item { background: var(--card); border: 1px solid var(--border2); border-radius: 12px; padding: 14px 16px; margin-bottom: 8px; }
+        .dificil-word { font-family: 'Playfair Display', serif; color: var(--gold); font-size: 1.2rem; }
+        .dificil-def { font-size: 0.82rem; color: var(--muted); margin-top: 4px; line-height: 1.4; }
+
+        /* ===== CREATOR SCREEN ===== */
+        #creator { background: var(--bg); }
+        .creator-tabs { display: flex; gap: 8px; padding: 14px 18px; flex-shrink: 0; }
+        .creator-tab { flex: 1; padding: 10px; border-radius: 10px; border: 1px solid var(--border2); background: none; color: var(--muted); font-family: 'Space Grotesk', sans-serif; font-size: 0.82rem; font-weight: 600; cursor: pointer; }
+        .creator-tab.active { background: var(--gold-dim); border-color: var(--gold); color: var(--gold); }
+        
+        .creator-panel { display: none; }
+        .creator-panel.active { display: block; }
+        
+        .form-group { margin-bottom: 12px; }
+        .form-label { font-size: 0.75rem; color: var(--muted); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 6px; display: block; font-weight: 600; }
+        .form-input, .form-select, .form-textarea {
+            width: 100%; background: var(--card); border: 1px solid var(--border2);
+            border-radius: 10px; padding: 11px 14px; color: var(--text);
+            font-family: 'Space Grotesk', sans-serif; font-size: 0.9rem; outline: none;
+        }
+        .form-input:focus, .form-textarea:focus { border-color: var(--gold); }
+        .form-textarea { min-height: 80px; resize: vertical; }
+        .form-select { appearance: none; cursor: pointer; }
+        
+        .btn-primary { width: 100%; background: var(--gold); color: #000; border: none; border-radius: 12px; padding: 14px; font-family: 'Space Grotesk', sans-serif; font-size: 0.95rem; font-weight: 800; cursor: pointer; margin-top: 4px; }
+        .btn-secondary { width: 100%; background: none; border: 1px solid var(--border2); border-radius: 12px; padding: 12px; font-family: 'Space Grotesk', sans-serif; font-size: 0.9rem; color: var(--muted); cursor: pointer; margin-top: 8px; }
+        
+        .custom-cards-list { margin-top: 16px; }
+        .custom-card-item { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 12px 14px; display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; }
+        .custom-card-item .cci-word { font-weight: 700; font-size: 0.9rem; }
+        .custom-card-item .cci-def { font-size: 0.76rem; color: var(--muted); margin-top: 2px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px; }
+        .btn-del { background: none; border: none; color: var(--red); cursor: pointer; font-size: 1.1rem; padding: 4px; }
+
+        /* ===== RESULT / COMPLETION ===== */
+        .result-overlay {
+            position: fixed; inset: 0; z-index: 500;
+            background: rgba(8,8,16,0.95);
+            display: flex; flex-direction: column; align-items: center; justify-content: center;
+            padding: 30px; text-align: center;
+            opacity: 0; pointer-events: none; transition: opacity 0.3s;
+        }
+        .result-overlay.active { opacity: 1; pointer-events: all; }
+        .result-emoji { font-size: 4rem; margin-bottom: 16px; }
+        .result-title { font-family: 'Playfair Display', serif; font-size: 1.8rem; color: var(--gold); margin-bottom: 10px; line-height: 1.2; }
+        .result-msg { color: var(--muted); font-size: 0.9rem; line-height: 1.6; margin-bottom: 24px; }
+        .result-stats { display: flex; gap: 20px; justify-content: center; margin-bottom: 24px; }
+        .result-stat { text-align: center; }
+        .result-stat .rs-num { font-size: 2rem; font-weight: 800; line-height: 1; }
+        .result-stat .rs-lbl { font-size: 0.7rem; color: var(--muted); text-transform: uppercase; letter-spacing: 1px; margin-top: 2px; }
+        .result-btn { background: var(--gold); color: #000; border: none; border-radius: 14px; padding: 15px 35px; font-family: 'Space Grotesk', sans-serif; font-size: 1rem; font-weight: 800; cursor: pointer; margin: 4px; }
+        .result-btn-sec { background: var(--card); color: var(--text); border: 1px solid var(--border2); border-radius: 14px; padding: 13px 30px; font-family: 'Space Grotesk', sans-serif; font-size: 0.9rem; cursor: pointer; margin: 4px; }
+
+        /* ===== TOAST ===== */
+        .toast {
+            position: fixed; bottom: 80px; left: 50%; transform: translateX(-50%) translateY(20px);
+            background: var(--card2); border: 1px solid var(--border2); border-radius: 30px;
+            padding: 10px 20px; font-size: 0.85rem; font-weight: 600;
+            opacity: 0; transition: all 0.25s; z-index: 800; white-space: nowrap;
+        }
+        .toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+
+        /* Faded divider */
+        .divider { height: 1px; background: linear-gradient(90deg, transparent, var(--border2), transparent); margin: 6px 0; }
+    </style>
+</head>
+<body>
+
+<!-- ===== TERMS OVERLAY ===== -->
+<div id="terms-overlay">
+    <div class="terms-logo">
+        <div class="pp-icon">🏆</div>
+        <h1>PasaPalabra Pro</h1>
+        <p>El arma secreta de Noemi para el bote</p>
+    </div>
+    <div class="terms-box">
+        <h3>📄 CONTRATO DE LICENCIA DE USO</h3>
+        <p>La presente aplicación (<em>"PasaPalabra Pro"</em>) es un software educativo desarrollado con cariño, café y unas cuantas horas de sueño perdidas, destinado exclusivamente al uso personal de <strong>Doña Noemi Folgado Molina</strong> (en adelante, "la Usuaria") para la preparación del concurso de televisión <em>Pasapalabra</em>.</p>
+
+        <h3>ARTÍCULO 1 — OBJETO</h3>
+        <p>Esta aplicación proporciona a la Usuaria un sistema de estudio basado en tarjetas de memoria, el diccionario de la RAE, el rosco interactivo y otros módulos de entrenamiento, con el único propósito de que <strong>la Usuaria gane el bote</strong>.</p>
+
+        <h3>ARTÍCULO 2 — DERECHOS DE PROPIEDAD INTELECTUAL</h3>
+        <p>Todo el contenido, código, preguntas y sistema de puntuación son propiedad de la desarrolladora. Queda prohibida su reproducción sin autorización, aunque ya sería mala leche denunciar a alguien que solo quiere estudiar vocabulario.</p>
+
+        <h3>ARTÍCULO 3 — CLÁUSULA ECONÓMICA</h3>
+        <div class="legal-highlight">⚖️ CLÁUSULA 3.1 (IRRENUNCIABLE): La Usuaria se compromete, de manera solemne e irrevocable, a abonar a la desarrolladora, Andrea Alacreu Fernández, un importe equivalente al CINCO POR CIENTO (5%) del importe BRUTO de cualquier premio económico obtenido en el programa Pasapalabra (o cualquier sucedaneo), en un plazo no superior a 72 horas tras el ingreso en cuenta.</div>
+        <div class="legal-highlight">🍽️ CLÁUSULA 3.2 (TAMBIÉN IRRENUNCIABLE): Adicionalmente, la Usuaria se compromete a invitar a la desarrolladora a una cena en restaurante con al menos UNA (1) estrella Michelin (cutre). El menú degustación es una sugerencia, no una exigencia... pero tampoco se descarta.</div>
+
+        <h3>ARTÍCULO 4 — EXENCIÓN DE RESPONSABILIDAD</h3>
+        <p>La desarrolladora no se hace responsable de: euforia descontrolada al completar el rosco, pérdida de sueño por querer "solo una ronda más", ni de que la Usuaria empiece a usar términos como "jitanjáfora" y "nefelibata" en conversaciones cotidianas.</p>
+
+        <h3>ARTÍCULO 5 — JURISDICCIÓN</h3>
+        <p>Este contrato se rige por las leyes de la amistad, el buen rollo y esa birra que nos debemos. En caso de conflicto, se resolverá mediante un rosco de desempate.</p>
+
+        <p style="margin-top:16px; font-size:0.75rem;">Al pulsar "Acepto y empiezo a estudiar", la Usuaria confirma haber leído (o fingido leer) los presentes términos y acepta todas las cláusulas con plena conciencia de lo que está firmando. No hay abogados disponibles.</p>
+    </div>
+    <button class="terms-accept" onclick="acceptTerms()">✅ Acepto y empiezo a estudiar</button>
+</div>
+
+<!-- ===== HOME ===== -->
+<div id="home" class="screen">
+    <div id="home-header">
+        <div class="app-brand">
+            <h1>PasaPalabra Pro</h1>
+            <p id="home-sub">¡A darle caña, Noemi! Queremos el bote 💪</p>
+        </div>
+        <div class="streak-badge" id="streak-badge">🔥 Racha: 1d</div>
+    </div>
+    <div class="scroll-body">
+        <div class="section-label">Modo de estudio</div>
+        <div class="mode-grid">
+            <div class="mode-card gold-border" onclick="iniciarSRS()">
+                <div class="badge">SMART</div>
+                <div class="mode-icon">🧠</div>
+                <h3>Repaso SRS</h3>
+                <p>Lo que toca hoy</p>
+            </div>
+            <div class="mode-card" onclick="iniciarPartidaRapida()">
+                <div class="mode-icon">⚡</div>
+                <h3>Rápida</h3>
+                <p>20 mezcladas</p>
+            </div>
+            <div class="mode-card" onclick="goTo('rae')">
+                <div class="mode-icon">📖</div>
+                <h3>Diccionario RAE</h3>
+                <p>Vocabulario nivel</p>
+            </div>
+            <div class="mode-card" onclick="goTo('rosco')">
+                <div class="mode-icon">🟡</div>
+                <h3>El Rosco</h3>
+                <p>3 minutos. ¡A por él!</p>
+            </div>
+        </div>
+
+        <div class="section-label">Mazos Activos</div>
+        <div class="deck-list">
+            <div class="deck-item" onclick="iniciarMazo('cg')">
+                <div class="deck-icon">🧠</div>
+                <div class="deck-info"><h4>Cultura General</h4><p id="deck-info-cg">Cargando...</p></div>
+                <div class="deck-check">✓</div>
+            </div>
+            <div class="deck-item" onclick="iniciarMazo('hist')">
+                <div class="deck-icon">⚔️</div>
+                <div class="deck-info"><h4>Historia y Geografía</h4><p id="deck-info-hist">Cargando...</p></div>
+                <div class="deck-check">✓</div>
+            </div>
+            <div class="deck-item" onclick="iniciarMazo('literatura')">
+                <div class="deck-icon">📚</div>
+                <div class="deck-info"><h4>Literatura</h4><p id="deck-info-literatura">Cargando...</p></div>
+                <div class="deck-check">✓</div>
+            </div>
+            <div class="deck-item" onclick="iniciarMazo('arte')">
+                <div class="deck-icon">🎨</div>
+                <div class="deck-info"><h4>Arte, Música y Cine</h4><p id="deck-info-arte">Cargando...</p></div>
+                <div class="deck-check">✓</div>
+            </div>
+            <div class="deck-item" onclick="iniciarMazo('ciencia')">
+                <div class="deck-icon">🔬</div>
+                <div class="deck-info"><h4>Ciencia y Nat.</h4><p id="deck-info-ciencia">Cargando...</p></div>
+                <div class="deck-check">✓</div>
+            </div>
+            <div class="deck-item" onclick="iniciarMazoCustom()">
+                <div class="deck-icon">⭐</div>
+                <div class="deck-info"><h4>Mis mazos</h4><p id="deck-info-custom">Tus propias cartas</p></div>
+                <div class="deck-check">+</div>
+            </div>
+        </div>
+
+        <div class="section-label">Herramientas</div>
+        <div class="deck-list">
+            <div class="deck-item" onclick="goTo('dificiles')">
+                <div class="deck-icon">🔴</div>
+                <div class="deck-info"><h4>Difíciles</h4><p>Las que más te cuestan</p></div>
+                <div class="deck-check">→</div>
+            </div>
+            <div class="deck-item" onclick="goTo('creator')">
+                <div class="deck-icon">✏️</div>
+                <div class="deck-info"><h4>Crear / Editar mazos</h4><p>Tus propias preguntas</p></div>
+                <div class="deck-check">→</div>
+            </div>
+        </div>
+
+        <div class="ai-btn-wrap">
+            <div class="ai-btn" onclick="showAIModal()">
+                <div class="ai-robot">🤖</div>
+                <div class="ai-btn-text">
+                    <h3>Actualizar con IA</h3>
+                    <p>La IA soy yo, Andrea... mándame un WhatsApp 😅</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-links">
+            <button onclick="showTermsAgain()">Ver Términos y Condiciones</button>
+        </div>
+    </div>
+</div>
+
+<!-- ===== GAME (FLASHCARDS) ===== -->
+<div id="game" class="screen">
+    <div class="top-bar">
+        <button class="btn-back" onclick="goTo('home')">←</button>
+        <div class="top-bar-title" id="game-title">Cultura General</div>
+        <div class="top-bar-right" id="game-counter">1/20</div>
+    </div>
+    <div class="progress-track"><div class="progress-fill" id="game-progress" style="width:5%"></div></div>
+
+    <div class="card-area">
+        <div class="flashcard" id="flashcard" onclick="flipCard()">
+            <div class="card-face" id="card-front">
+                <div class="card-tag">Definición — ¿Cuál es la respuesta?</div>
+                <div class="card-def" id="card-def-text">Cargando...</div>
+                <div class="card-hint">
+                    <span class="card-cat" id="card-cat">–</span>
+                    <span class="card-flip-hint">Toca para girar ↺</span>
+                </div>
+            </div>
+            <div class="card-face card-back" id="card-back">
+                <div class="card-tag">Respuesta</div>
+                <div class="card-word" id="card-word">–</div>
+                <div class="card-defs" id="card-defs"></div>
+                <div class="card-extra" id="card-extra"></div>
+                <a class="rae-link" id="card-rae-link" href="#" target="_blank" onclick="event.stopPropagation()">📖 Ver en la RAE</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="rating-btns">
+        <button id="btn-bad" onclick="rate(1)">✖ No sé</button>
+        <button id="btn-mid" onclick="rate(3)">🔄 Regular</button>
+        <button id="btn-good" onclick="rate(5)">✔ ¡Lo sé!</button>
+    </div>
+</div>
+
+<!-- ===== RAE SCREEN ===== -->
+<div id="rae" class="screen">
+    <div class="top-bar">
+        <button class="btn-back" onclick="goTo('home')">←</button>
+        <div class="top-bar-title">RAE · Nivel Filología</div>
+        <div class="top-bar-right" id="rae-counter">1/20</div>
+    </div>
+    <div class="progress-track"><div class="progress-fill" id="rae-progress" style="width:5%"></div></div>
+
+    <div class="card-area">
+        <div class="flashcard" id="rae-flashcard" onclick="flipRaeCard()">
+            <div class="card-face" id="rae-card-front">
+                <div class="card-tag">📖 RAE · ¿Qué palabra es?</div>
+                <div class="card-def" id="rae-def-text">Cargando...</div>
+                <div class="card-hint">
+                    <span class="card-cat" id="rae-cat">–</span>
+                    <span class="card-flip-hint">Toca para girar ↺</span>
+                </div>
+            </div>
+            <div class="card-face card-back" id="rae-card-back">
+                <div class="card-tag">Respuesta RAE</div>
+                <div class="card-word" id="rae-word">–</div>
+                <div class="card-defs" id="rae-defs"></div>
+                <div class="card-extra" id="rae-extra"></div>
+                <a class="rae-link" id="rae-link" href="#" target="_blank" onclick="event.stopPropagation()">📖 Ver en la RAE</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="rating-btns">
+        <button id="rae-btn-bad" onclick="rateRae(1)">✖ Difícil</button>
+        <button id="rae-btn-mid" onclick="rateRae(3)">🔄 2 semanas</button>
+        <button id="rae-btn-good" onclick="rateRae(5)">✔ 1 mes</button>
+    </div>
+</div>
+
+<!-- ===== ROSCO SCREEN ===== -->
+<div id="rosco" class="screen">
+    <div class="top-bar">
+        <button class="btn-back" onclick="abandonarRosco()">←</button>
+        <div class="top-bar-title">El Rosco</div>
+        <div class="rosco-timer" id="rosco-timer">3:30</div>
+    </div>
+
+    <div class="rosco-wheel-wrap">
+        <svg id="rosco-svg" viewBox="-150 -150 300 300"></svg>
+    </div>
+
+    <div class="rosco-stats">
+        <div class="rosco-stat"><div class="stat-num stat-green" id="stat-ok">0</div><div class="stat-lbl">✓ Aciertos</div></div>
+        <div class="rosco-stat"><div class="stat-num stat-red" id="stat-fail">0</div><div class="stat-lbl">✗ Fallos</div></div>
+        <div class="rosco-stat"><div class="stat-num stat-muted" id="stat-pass">0</div><div class="stat-lbl">→ Pasadas</div></div>
+    </div>
+
+    <div class="rosco-info" style="flex:1; overflow-y:auto; padding-bottom:12px;">
+        <div class="rosco-letter-display">
+            <div class="big-letter" id="rosco-big-letter">A</div>
+            <div class="letter-tip" id="rosco-letter-tip">Con la A o contiene la A</div>
+        </div>
+        <div class="rosco-question" id="rosco-question">Cargando...</div>
+        <div class="rosco-input-wrap">
+            <input type="text" id="rosco-answer" placeholder="Tu respuesta..." autocomplete="off" autocorrect="off" spellcheck="false">
+            <button id="rosco-submit" onclick="submitRosco()">✓</button>
+        </div>
+        <button class="rosco-skip-btn" onclick="pasarRosco()">→ Pasapalabra</button>
+        <div class="voice-toggle">
+            <div class="toggle-switch" id="voice-toggle" onclick="toggleVoice()"></div>
+            <label>🎤 Respuesta por voz</label>
+        </div>
+    </div>
+</div>
+
+<!-- ===== DIFÍCILES SCREEN ===== -->
+<div id="dificiles" class="screen">
+    <div class="top-bar">
+        <button class="btn-back" onclick="goTo('home')">←</button>
+        <div class="top-bar-title">🔴 Preguntas Difíciles</div>
+        <div class="top-bar-right" id="dif-count">0</div>
+    </div>
+    <div class="scroll-body" style="padding-top:14px;">
+        <div id="dificiles-list">
+            <p style="color:var(--muted); text-align:center; margin-top:40px; font-size:0.9rem;">Las palabras que marques como "Difícil" aparecerán aquí para repasar solo esas. ¡Échate un pulso!</p>
+        </div>
+        <button class="btn-secondary" onclick="exportarDificiles()" style="margin-top:16px;">📤 Exportar como CSV</button>
+        <button class="btn-secondary" onclick="estudiarSoloDificiles()" style="margin-top:4px; border-color:var(--red); color:var(--red);">🔴 Estudiar solo difíciles</button>
+    </div>
+</div>
+
+<!-- ===== CREATOR SCREEN ===== -->
+<div id="creator" class="screen">
+    <div class="top-bar">
+        <button class="btn-back" onclick="goTo('home')">←</button>
+        <div class="top-bar-title">✏️ Mis Mazos</div>
+    </div>
+    <div class="creator-tabs">
+        <button class="creator-tab active" onclick="switchCreatorTab('add')">➕ Añadir</button>
+        <button class="creator-tab" onclick="switchCreatorTab('import')">📁 CSV</button>
+        <button class="creator-tab" onclick="switchCreatorTab('manage')">📋 Gestionar</button>
+    </div>
+    <div class="scroll-body" style="padding-top:6px;">
+        <!-- ADD PANEL -->
+        <div class="creator-panel active" id="panel-add">
+            <div class="form-group">
+                <label class="form-label">Pregunta / Definición</label>
+                <textarea class="form-textarea" id="new-q" placeholder="Con la A: Doctrina filosófica que..."></textarea>
+            </div>
+            <div class="form-group">
+                <label class="form-label">Respuesta</label>
+                <input class="form-input" id="new-a" type="text" placeholder="anarquismo">
+            </div>
+            <div class="form-group">
+                <label class="form-label">Letra del Rosco</label>
+                <select class="form-select" id="new-letra">
+                    <option value="">– Sin asignar –</option>
+                    <option>A</option><option>B</option><option>C</option><option>D</option><option>E</option>
+                    <option>F</option><option>G</option><option>H</option><option>I</option><option>J</option>
+                    <option>K</option><option>L</option><option>M</option><option>N</option><option>Ñ</option>
+                    <option>O</option><option>P</option><option>Q</option><option>R</option><option>S</option>
+                    <option>T</option><option>U</option><option>V</option><option>W</option><option>X</option>
+                    <option>Y</option><option>Z</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label class="form-label">Pista (opcional)</label>
+                <input class="form-input" id="new-tip" type="text" placeholder="Truco para recordarlo...">
+            </div>
+            <button class="btn-primary" onclick="addCustomCard()">➕ Añadir tarjeta</button>
+        </div>
+
+        <!-- IMPORT PANEL -->
+        <div class="creator-panel" id="panel-import">
+            <p style="font-size:0.82rem; color:var(--muted); margin-bottom:12px; line-height:1.6;">Importa un CSV con columnas: <strong>pregunta, respuesta, letra, pista</strong> (la pista es opcional). Una tarjeta por línea.</p>
+            <div class="form-group">
+                <label class="form-label">Archivo CSV</label>
+                <input type="file" id="csv-file" accept=".csv,.txt" style="color:var(--muted); font-size:0.85rem; width:100%;">
+            </div>
+            <button class="btn-primary" onclick="importCSV()">📁 Importar</button>
+            <button class="btn-secondary" onclick="descargarPlantilla()">⬇️ Descargar plantilla CSV</button>
+        </div>
+
+        <!-- MANAGE PANEL -->
+        <div class="creator-panel" id="panel-manage">
+            <div id="custom-cards-list">
+                <p style="color:var(--muted); font-size:0.85rem; text-align:center; margin-top:20px;">Aún no has creado tarjetas personalizadas.</p>
+            </div>
+            <button class="btn-secondary" style="margin-top:16px;" onclick="clearAllCustom()">🗑️ Borrar todas mis tarjetas</button>
+        </div>
+    </div>
+</div>
+
+<!-- ===== RESULT OVERLAY ===== -->
+<div class="result-overlay" id="result-overlay">
+    <div class="result-emoji" id="result-emoji">🎉</div>
+    <div class="result-title" id="result-title">¡Tanda completada!</div>
+    <div class="result-msg" id="result-msg">Sigue así y ese bote será tuyo.</div>
+    <div class="result-stats" id="result-stats"></div>
+    <button class="result-btn" onclick="closeResult()">🏠 Volver al inicio</button>
+    <button class="result-btn-sec" id="result-repeat-btn" onclick="repeatSession()">🔄 Repetir ronda</button>
+</div>
+
+<!-- TOAST -->
+<div class="toast" id="toast">✓ Guardado</div>
+
+<!-- AI Modal -->
+<div class="result-overlay" id="ai-modal" style="display:none;">
+    <div class="result-emoji">🤖</div>
+    <div class="result-title">¡Ey, tía!</div>
+    <div class="result-msg">La IA de esta app soy yo, Andrea. Si quieres que actualice los mazos con preguntas nuevas, <strong>mándame un WhatsApp</strong> y te lo dejo listo en nada. <br><br>...Cara me vas a salir 😂💸</div>
+    <button class="result-btn" onclick="document.getElementById('ai-modal').style.display='none'; document.getElementById('ai-modal').classList.remove('active')">😅 Entendido</button>
+</div>
+
+<!-- ===== MAZOS ===== -->
+<script src="mazos/mazo_cg.js"></script>
+<script src="mazos/mazo_hist.js"></script>
+<script src="mazos/mazo_lit.js"></script>
+<script src="mazos/mazo_arte.js"></script>
+<script src="mazos/mazo_ciencia.js"></script>
+<script src="mazos/mazo_rae.js"></script>
+
+<!-- ===== APP ENGINE ===== -->
+<script>
+// ============================================================
+//  NAVIGATION
+// ============================================================
+function goTo(id) {
+    document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+    document.getElementById(id).classList.add('active');
+    if(id === 'dificiles') renderDificiles();
+    if(id === 'creator') renderCustomList();
+}
+
+function showToast(msg, dur=2000) {
+    const t = document.getElementById('toast');
+    t.textContent = msg;
+    t.classList.add('show');
+    setTimeout(() => t.classList.remove('show'), dur);
+}
+
+// ============================================================
+//  TERMS
+// ============================================================
+function acceptTerms() {
+    localStorage.setItem('terms_accepted', '1');
+    document.getElementById('terms-overlay').classList.add('hidden');
+    updateStreak();
+    loadDeckInfo();
+}
+
+function showTermsAgain() {
+    document.getElementById('terms-overlay').classList.remove('hidden');
+}
+
+window.onload = function() {
+    if(!localStorage.getItem('terms_accepted')) {
+        // show terms
+    } else {
+        document.getElementById('terms-overlay').classList.add('hidden');
+    }
+    updateStreak();
+    loadDeckInfo();
+};
+
+// ============================================================
+//  STREAK
+// ============================================================
+function updateStreak() {
+    const today = new Date().toDateString();
+    const lastVisit = localStorage.getItem('last_visit');
+    let streak = parseInt(localStorage.getItem('streak') || '1');
+    
+    if(lastVisit !== today) {
+        const yesterday = new Date(); yesterday.setDate(yesterday.getDate()-1);
+        if(lastVisit === yesterday.toDateString()) {
+            streak++;
+        } else if(lastVisit && lastVisit !== today) {
+            streak = 1;
+        }
+        localStorage.setItem('last_visit', today);
+        localStorage.setItem('streak', streak);
+    }
+    document.getElementById('streak-badge').textContent = `🔥 Racha: ${streak}d`;
+}
+
+// ============================================================
+//  DECK INFO
+// ============================================================
+function loadDeckInfo() {
+    if(typeof MAZOS === 'undefined') return;
+    MAZOS.forEach(m => {
+        const el = document.getElementById(`deck-info-${m.id}`);
+        if(el) {
+            const total = m.questions.length;
+            const done = countDoneToday(m.id);
+            el.textContent = `${total} preguntas · ${done} hoy`;
+        }
+    });
+}
+
+function countDoneToday(deckId) {
+    const today = new Date().toDateString();
+    const key = `done_${deckId}_${today}`;
+    return parseInt(localStorage.getItem(key) || '0');
+}
+
+function incrementDone(deckId) {
+    const today = new Date().toDateString();
+    const key = `done_${deckId}_${today}`;
+    localStorage.setItem(key, (parseInt(localStorage.getItem(key)||'0')+1).toString());
+}
+
+// ============================================================
+//  GAME ENGINE (Flashcards)
+// ============================================================
+let gameSession = [];
+let gameIndex = 0;
+let gameTitle = '';
+let gameCorrect = 0;
+let gameDificil = 0;
+let gameMode = ''; // 'deck', 'srs', 'rapida', 'dificiles'
+
+function iniciarMazo(deckId) {
+    if(typeof MAZOS === 'undefined') { showToast('⚠️ Mazos no cargados'); return; }
+    const deck = MAZOS.find(m => m.id === deckId);
+    if(!deck) { showToast('Mazo no encontrado'); return; }
+    
+    gameMode = 'deck';
+    gameTitle = `${deck.icon || ''} ${deck.name}`;
+    const questions = deck.questions;
+    gameSession = pickRandom(questions, 20);
+    startGameSession();
+}
+
+function iniciarPartidaRapida() {
+    if(typeof MAZOS === 'undefined') return;
+    let all = [];
+    MAZOS.forEach(m => all = all.concat(m.questions.map(q => ({...q, _deckId: m.id}))));
+    gameMode = 'rapida';
+    gameTitle = '⚡ Partida Rápida';
+    gameSession = pickRandom(all, 20);
+    startGameSession();
+}
+
+function iniciarSRS() {
+    if(typeof MAZOS === 'undefined') return;
+    let pending = [];
+    const now = Date.now();
+    
+    MAZOS.forEach(m => {
+        m.questions.forEach(q => {
+            const k = `srs_${q.a}`;
+            const next = parseInt(localStorage.getItem(k) || '0');
+            if(next <= now) {
+                pending.push({...q, _deckId: m.id});
+            }
+        });
+    });
+    
+    if(pending.length === 0) {
+        showToast('🎉 ¡Todo al día! No hay pendientes de repaso.', 3000);
+        return;
+    }
+    
+    gameMode = 'srs';
+    gameTitle = '🧠 Repaso SRS';
+    gameSession = pickRandom(pending, Math.min(20, pending.length));
+    startGameSession();
+}
+
+function estudiarSoloDificiles() {
+    const dif = getDificiles();
+    if(dif.length === 0) { showToast('Aún no tienes difíciles guardadas'); return; }
+    // Convert to question format
+    const questions = dif.map(d => ({q: d.def, a: d.word, letra: d.letra}));
+    gameMode = 'dificiles';
+    gameTitle = '🔴 Solo Difíciles';
+    gameSession = pickRandom(questions, Math.min(20, questions.length));
+    goTo('home');
+    setTimeout(startGameSession, 100);
+}
+
+function iniciarMazoCustom() {
+    const custom = getCustomCards();
+    if(custom.length === 0) { goTo('creator'); return; }
+    const qs = custom.map(c => ({q: c.q, a: c.a, letra: c.letra, def: c.tip}));
+    gameMode = 'deck';
+    gameTitle = '⭐ Mis Mazos';
+    gameSession = pickRandom(qs, Math.min(20, qs.length));
+    startGameSession();
+}
+
+function pickRandom(arr, n) {
+    const shuffled = [...arr].sort(() => Math.random()-0.5);
+    return shuffled.slice(0, n);
+}
+
+function startGameSession() {
+    gameIndex = 0;
+    gameCorrect = 0;
+    gameDificil = 0;
+    document.getElementById('game-title').textContent = gameTitle;
+    hideRatingBtns();
+    goTo('game');
+    showCard();
+}
+
+function showCard() {
+    const data = gameSession[gameIndex];
+    if(!data) return;
+    
+    const fc = document.getElementById('flashcard');
+    fc.classList.remove('flipped');
+    hideRatingBtns();
+    
+    const total = gameSession.length;
+    document.getElementById('game-counter').textContent = `${gameIndex+1}/${total}`;
+    document.getElementById('game-progress').style.width = `${((gameIndex+1)/total)*100}%`;
+    
+    // Front
+    const q = data.q || data.def || data.definition || '???';
+    document.getElementById('card-def-text').textContent = q;
+    document.getElementById('card-cat').textContent = data.letra ? `Con la ${data.letra}` : (data.pos || data.category || '–');
+    
+    // Back
+    const word = data.a || data.word || data.palabra || '???';
+    document.getElementById('card-word').textContent = word;
+    
+    let defsHTML = '';
+    if(data.def && typeof data.def === 'string') {
+        data.def.split(/\d+\./).filter(d=>d.trim()).forEach((d,i) => {
+            defsHTML += `<div class="def-item"><strong>${i+1}.</strong> ${d.trim()}</div>`;
+        });
+    } else {
+        defsHTML = `<div class="def-item">${q}</div>`;
+    }
+    document.getElementById('card-defs').innerHTML = defsHTML || `<div class="def-item">${q}</div>`;
+    
+    let extraHTML = '';
+    if(data.syn || data.sinonimos) {
+        extraHTML += `<div class="extra-block purple"><div class="extra-label">🔄 Sinónimos</div><div>${data.syn || data.sinonimos}</div></div>`;
+    }
+    if(data.etym || data.etymology) {
+        extraHTML += `<div class="extra-block gold"><div class="extra-label">🏛️ Etimología</div><div>${data.etym || data.etymology}</div></div>`;
+    }
+    if(data.ex || data.tip) {
+        extraHTML += `<div class="extra-block green"><div class="extra-label">💡 ${data.ex ? 'Ejemplo' : 'Pista'}</div><div>${data.ex || data.tip}</div></div>`;
+    }
+    document.getElementById('card-extra').innerHTML = extraHTML;
+    document.getElementById('card-rae-link').href = `https://dle.rae.es/${encodeURIComponent(word)}`;
+}
+
+function flipCard() {
+    const fc = document.getElementById('flashcard');
+    if(!fc.classList.contains('flipped')) {
+        fc.classList.add('flipped');
+        showRatingBtns('game');
+    }
+}
+
+function showRatingBtns(prefix) {
+    if(prefix === 'game') {
+        document.getElementById('btn-bad').style.display = 'block';
+        document.getElementById('btn-mid').style.display = 'block';
+        document.getElementById('btn-good').style.display = 'block';
+    } else {
+        document.getElementById('rae-btn-bad').style.display = 'block';
+        document.getElementById('rae-btn-mid').style.display = 'block';
+        document.getElementById('rae-btn-good').style.display = 'block';
+    }
+}
+
+function hideRatingBtns() {
+    ['btn-bad','btn-mid','btn-good'].forEach(id => document.getElementById(id).style.display = 'none');
+}
+
+function rate(score) {
+    const data = gameSession[gameIndex];
+    const key = data.a || data.word || '';
+    
+    let days = score === 1 ? 7 : score === 3 ? 14 : 30;
+    if(key) {
+        const next = Date.now() + days*24*60*60*1000;
+        localStorage.setItem(`srs_${key}`, next.toString());
+    }
+    
+    if(score === 1) {
+        gameDificil++;
+        saveDificil(data);
+    } else if(score === 5) {
+        gameCorrect++;
+    }
+    
+    if(data._deckId) incrementDone(data._deckId);
+    
+    gameIndex++;
+    if(gameIndex < gameSession.length) {
+        showCard();
+    } else {
+        endGameSession();
+    }
+}
+
+function endGameSession() {
+    const msgs = [
+        "¡Con esta concentración de enfermera de UCI, el bote es tuyo! 💉",
+        "Filóloga y enfermera... ¡eso se llama tener dos cerebros! 🧠🧠",
+        "Tu hija va a ver a su madre en la tele ganando el bote. Sin presión 😄",
+        "¡Esta ronda fue de escándalo! Casi casi te sientas en el sillón.",
+        "La RAE te daría un doctorado honoris causa. Así de bien. 📜",
+        "Con este nivel, el otro concursante ya puede ir buscando trabajo. 😂"
+    ];
+    const msg = msgs[Math.floor(Math.random()*msgs.length)];
+    
+    document.getElementById('result-emoji').textContent = gameCorrect >= 15 ? '🏆' : gameCorrect >= 10 ? '🌟' : '💪';
+    document.getElementById('result-title').textContent = gameCorrect >= 15 ? '¡Impresionante, Noemi!' : '¡Tanda completada!';
+    document.getElementById('result-msg').textContent = msg;
+    document.getElementById('result-stats').innerHTML = `
+        <div class="result-stat"><div class="rs-num" style="color:var(--green)">${gameCorrect}</div><div class="rs-lbl">Sabidas</div></div>
+        <div class="result-stat"><div class="rs-num" style="color:var(--gold)">${gameSession.length - gameCorrect - gameDificil}</div><div class="rs-lbl">Regulares</div></div>
+        <div class="result-stat"><div class="rs-num" style="color:var(--red)">${gameDificil}</div><div class="rs-lbl">Difíciles</div></div>
+    `;
+    
+    document.getElementById('result-overlay').classList.add('active');
+    loadDeckInfo();
+}
+
+function closeResult() {
+    document.getElementById('result-overlay').classList.remove('active');
+    goTo('home');
+}
+
+function repeatSession() {
+    document.getElementById('result-overlay').classList.remove('active');
+    if(gameMode === 'rapida') { iniciarPartidaRapida(); return; }
+    startGameSession(); // same session data
+}
+
+// ============================================================
+//  RAE ENGINE
+// ============================================================
+let raeSession = [];
+let raeIndex = 0;
+
+document.addEventListener('DOMContentLoaded', () => {});
+
+// Called when screen is activated
+const origGoTo = goTo;
+window.goTo = function(id) {
+    origGoTo(id);
+    if(id === 'rae' && raeSession.length === 0) {
+        initRae();
+    }
+};
+
+function initRae() {
+    if(typeof MAZOS_VOCAB === 'undefined' || MAZOS_VOCAB.length === 0) return;
+    const deck = MAZOS_VOCAB[0];
+    const now = Date.now();
+    
+    let pending = deck.cards.filter(c => {
+        const k = `rae_${c.word}`;
+        const next = parseInt(localStorage.getItem(k) || '0');
+        return next <= now;
+    });
+    
+    if(pending.length === 0) pending = [...deck.cards];
+    raeSession = pickRandom(pending, Math.min(20, pending.length));
+    raeIndex = 0;
+    showRaeCard();
+}
+
+function showRaeCard() {
+    const data = raeSession[raeIndex];
+    if(!data) return;
+    
+    const fc = document.getElementById('rae-flashcard');
+    fc.classList.remove('flipped');
+    document.getElementById('rae-btn-bad').style.display = 'none';
+    document.getElementById('rae-btn-mid').style.display = 'none';
+    document.getElementById('rae-btn-good').style.display = 'none';
+    
+    const total = raeSession.length;
+    document.getElementById('rae-counter').textContent = `${raeIndex+1}/${total}`;
+    document.getElementById('rae-progress').style.width = `${((raeIndex+1)/total)*100}%`;
+    
+    // Show first acception only on front
+    const firstDef = data.def ? data.def.split(/^\d+\.|(?<!\d)(?=\d+\.)/).filter(d=>d.trim())[0] || data.def : '–';
+    document.getElementById('rae-def-text').textContent = firstDef.replace(/^\d+\.\s*/,'');
+    document.getElementById('rae-cat').textContent = data.pos || '–';
+    
+    // Back
+    document.getElementById('rae-word').textContent = data.word;
+    
+    let defsHTML = '';
+    if(data.def) {
+        const parts = data.def.split(/(?=\d+\.)/).filter(d=>d.trim());
+        if(parts.length) {
+            parts.forEach(d => { defsHTML += `<div class="def-item">${d.trim()}</div>`; });
+        } else {
+            defsHTML = `<div class="def-item">${data.def}</div>`;
+        }
+    }
+    document.getElementById('rae-defs').innerHTML = defsHTML;
+    
+    let extraHTML = '';
+    if(data.syn) extraHTML += `<div class="extra-block purple"><div class="extra-label">🔄 Sinónimos</div><div>${data.syn}</div></div>`;
+    if(data.etym) extraHTML += `<div class="extra-block gold"><div class="extra-label">🏛️ Etimología</div><div>${data.etym}</div></div>`;
+    if(data.ex) extraHTML += `<div class="extra-block green"><div class="extra-label">💡 Ejemplo</div><div>${data.ex}</div></div>`;
+    document.getElementById('rae-extra').innerHTML = extraHTML;
+    document.getElementById('rae-link').href = `https://dle.rae.es/${encodeURIComponent(data.word)}`;
+}
+
+function flipRaeCard() {
+    const fc = document.getElementById('rae-flashcard');
+    if(!fc.classList.contains('flipped')) {
+        fc.classList.add('flipped');
+        showRatingBtns('rae');
+    }
+}
+
+function rateRae(score) {
+    const data = raeSession[raeIndex];
+    const key = `rae_${data.word}`;
+    
+    let days = score === 1 ? 7 : score === 3 ? 14 : 30;
+    const next = Date.now() + days*24*60*60*1000;
+    localStorage.setItem(key, next.toString());
+    
+    if(score === 1) saveDificil({word: data.word, def: data.def, q: data.def, a: data.word});
+    
+    raeIndex++;
+    if(raeIndex < raeSession.length) {
+        showRaeCard();
+    } else {
+        // End RAE session
+        raeSession = [];
+        const msgs = ["🎓 ¡Nivel filóloga activado! Con este vocabulario, Lorca te pediría consejo.", 
+                      "📚 Eso sí que es amor al diccionario. Tu TFG lo habría flipado.",
+                      "🏆 20 palabras RAE. El jurado del programa ya está temblando."];
+        showToast(msgs[Math.floor(Math.random()*msgs.length)], 3500);
+        goTo('home');
+    }
+}
+
+// ============================================================
+//  DIFICILES
+// ============================================================
+function getDificiles() {
+    return JSON.parse(localStorage.getItem('dificiles') || '[]');
+}
+
+function saveDificil(data) {
+    const dif = getDificiles();
+    const word = data.a || data.word || '';
+    if(!word || dif.find(d=>d.word===word)) return;
+    dif.push({
+        word, 
+        def: data.q || data.def || '', 
+        letra: data.letra || ''
+    });
+    localStorage.setItem('dificiles', JSON.stringify(dif));
+}
+
+function renderDificiles() {
+    const dif = getDificiles();
+    document.getElementById('dif-count').textContent = dif.length;
+    const list = document.getElementById('dificiles-list');
+    if(dif.length === 0) {
+        list.innerHTML = '<p style="color:var(--muted); text-align:center; margin-top:40px; font-size:0.9rem;">¡Perfecto! No tienes palabras difíciles pendientes. 🎉</p>';
+        return;
+    }
+    list.innerHTML = dif.map((d,i) => `
+        <div class="dificil-item">
+            <div style="display:flex;justify-content:space-between;align-items:start;">
+                <div class="dificil-word">${d.word}</div>
+                <button class="btn-del" onclick="removeDificil(${i})">🗑</button>
+            </div>
+            <div class="dificil-def">${d.def || '–'}</div>
+        </div>
+    `).join('');
+}
+
+function removeDificil(i) {
+    const dif = getDificiles();
+    dif.splice(i, 1);
+    localStorage.setItem('dificiles', JSON.stringify(dif));
+    renderDificiles();
+}
+
+function exportarDificiles() {
+    const dif = getDificiles();
+    if(dif.length === 0) { showToast('No hay difíciles que exportar'); return; }
+    let csv = 'Palabra,Definicion,Letra\n';
+    dif.forEach(d => {
+        csv += `"${d.word}","${(d.def||'').replace(/"/g,'""')}","${d.letra||''}"\n`;
+    });
+    const blob = new Blob([csv], {type:'text/csv;charset=utf-8;'});
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url; a.download = 'dificiles_pasapalabra.csv';
+    a.click();
+    URL.revokeObjectURL(url);
+}
+
+// ============================================================
+//  CREATOR
+// ============================================================
+function switchCreatorTab(tab) {
+    document.querySelectorAll('.creator-tab').forEach((t,i) => {
+        const tabs = ['add','import','manage'];
+        t.classList.toggle('active', tabs[i] === tab);
+    });
+    document.querySelectorAll('.creator-panel').forEach(p => p.classList.remove('active'));
+    document.getElementById(`panel-${tab}`).classList.add('active');
+    if(tab === 'manage') renderCustomList();
+}
+
+function getCustomCards() {
+    return JSON.parse(localStorage.getItem('custom_cards') || '[]');
+}
+
+function saveCustomCards(cards) {
+    localStorage.setItem('custom_cards', JSON.stringify(cards));
+}
+
+function addCustomCard() {
+    const q = document.getElementById('new-q').value.trim();
+    const a = document.getElementById('new-a').value.trim();
+    const letra = document.getElementById('new-letra').value;
+    const tip = document.getElementById('new-tip').value.trim();
+    
+    if(!q || !a) { showToast('⚠️ Pregunta y respuesta son obligatorias'); return; }
+    
+    const cards = getCustomCards();
+    cards.push({q, a, letra, tip, id: Date.now()});
+    saveCustomCards(cards);
+    
+    document.getElementById('new-q').value = '';
+    document.getElementById('new-a').value = '';
+    document.getElementById('new-tip').value = '';
+    showToast(`✓ "${a}" añadida`);
+}
+
+function renderCustomList() {
+    const cards = getCustomCards();
+    const list = document.getElementById('custom-cards-list');
+    if(cards.length === 0) {
+        list.innerHTML = '<p style="color:var(--muted); font-size:0.85rem; text-align:center; margin-top:20px;">Aún no has creado tarjetas personalizadas.</p>';
+        return;
+    }
+    list.innerHTML = `<p style="font-size:0.8rem; color:var(--muted); margin-bottom:10px;">${cards.length} tarjetas personalizadas</p>` +
+        cards.map((c,i) => `
+        <div class="custom-card-item">
+            <div>
+                <div class="cci-word">${c.a} ${c.letra ? `<span style="color:var(--gold);font-size:0.75rem">[${c.letra}]</span>` : ''}</div>
+                <div class="cci-def">${c.q}</div>
+            </div>
+            <button class="btn-del" onclick="deleteCustomCard(${i})">🗑</button>
+        </div>
+    `).join('');
+}
+
+function deleteCustomCard(i) {
+    const cards = getCustomCards();
+    cards.splice(i, 1);
+    saveCustomCards(cards);
+    renderCustomList();
+    showToast('Tarjeta eliminada');
+}
+
+function clearAllCustom() {
+    if(!confirm('¿Eliminar todas tus tarjetas personalizadas?')) return;
+    localStorage.removeItem('custom_cards');
+    renderCustomList();
+    showToast('Tarjetas eliminadas');
+}
+
+function importCSV() {
+    const file = document.getElementById('csv-file').files[0];
+    if(!file) { showToast('⚠️ Selecciona un archivo CSV'); return; }
+    
+    const reader = new FileReader();
+    reader.onload = e => {
+        const lines = e.target.result.split('\n').filter(l=>l.trim());
+        const cards = getCustomCards();
+        let added = 0;
+        
+        lines.forEach((line, i) => {
+            if(i === 0 && line.toLowerCase().includes('pregunta')) return; // skip header
+            const parts = line.split(',').map(p => p.replace(/^"|"$/g,'').trim());
+            if(parts.length >= 2 && parts[0] && parts[1]) {
+                cards.push({q: parts[0], a: parts[1], letra: parts[2]||'', tip: parts[3]||'', id: Date.now()+i});
+                added++;
+            }
+        });
+        
+        saveCustomCards(cards);
+        showToast(`✓ ${added} tarjetas importadas`);
+        switchCreatorTab('manage');
+    };
+    reader.readAsText(file);
+}
+
+function descargarPlantilla() {
+    const csv = `pregunta,respuesta,letra,pista
+"Con la A: Doctrina filosófica que defiende la ausencia de gobierno","anarquismo","A","Piensa en 'sin arkhé' (sin gobierno) en griego"
+"Con la B: Alboroto grande de una multitud","batahola","B","Suena al ruido que hace: batahola, batahola..."`;
+    const blob = new Blob([csv], {type:'text/csv;charset=utf-8;'});
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a'); a.href = url; a.download = 'plantilla_mazo.csv';
+    a.click(); URL.revokeObjectURL(url);
+}
+
+// ============================================================
+//  ROSCO ENGINE
+// ============================================================
+const LETRAS = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','Ñ','O','P','Q','R','S','T','U','V','W','X','Y','Z'];
+let roscoData = {}; // {letra: {q, a, status: 'pending'|'ok'|'fail'|'pass'}}
+let roscoOrder = [];
+let roscoCurrentIdx = 0;
+let roscoTimerVal = 210; // 3:30
+let roscoTimerInterval = null;
+let roscoRounds = 0;
+let voiceEnabled = false;
+let recognition = null;
+
+function buildRosco() {
+    // Gather all questions by letter from all mazos
+    const byLetter = {};
+    LETRAS.forEach(l => byLetter[l] = []);
+    
+    if(typeof MAZOS !== 'undefined') {
+        MAZOS.forEach(m => {
+            m.questions.forEach(q => {
+                if(q.letra && byLetter[q.letra]) {
+                    byLetter[q.letra].push(q);
+                }
+            });
+        });
+    }
+    
+    // Add custom
+    getCustomCards().forEach(c => {
+        if(c.letra && byLetter[c.letra]) {
+            byLetter[c.letra].push({q: c.q, a: c.a, letra: c.letra});
+        }
+    });
+    
+    // Pick one random question per letter (avoid repeats using localStorage history)
+    const usedKey = `rosco_used_${new Date().toDateString()}`;
+    let usedToday = JSON.parse(localStorage.getItem(usedKey) || '{}');
+    
+    roscoData = {};
+    LETRAS.forEach(l => {
+        const pool = byLetter[l];
+        if(pool.length === 0) return;
+        
+        // Filter not used today
+        let fresh = pool.filter(q => !usedToday[l] || !usedToday[l].includes(q.a));
+        if(fresh.length === 0) { fresh = pool; usedToday[l] = []; } // Reset if exhausted
+        
+        const chosen = fresh[Math.floor(Math.random()*fresh.length)];
+        roscoData[l] = {q: chosen.q, a: chosen.a, status: 'pending'};
+        
+        if(!usedToday[l]) usedToday[l] = [];
+        usedToday[l].push(chosen.a);
+    });
+    
+    localStorage.setItem(usedKey, JSON.stringify(usedToday));
+    
+    roscoOrder = LETRAS.filter(l => roscoData[l]);
+    roscoCurrentIdx = 0;
+}
+
+window.goTo = function(id) {
+    document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+    document.getElementById(id).classList.add('active');
+    if(id === 'dificiles') renderDificiles();
+    if(id === 'creator') renderCustomList();
+    if(id === 'rosco') startRosco();
+    if(id === 'rae' && raeSession.length === 0) initRae();
+};
+
+function startRosco() {
+    clearInterval(roscoTimerInterval);
+    buildRosco();
+    roscoTimerVal = 210;
+    roscoRounds = 0;
+    drawRoscoWheel();
+    showRoscoQuestion();
+    roscoTimerInterval = setInterval(tickRosco, 1000);
+}
+
+function abandonarRosco() {
+    clearInterval(roscoTimerInterval);
+    stopVoice();
+    goTo('home');
+}
+
+function tickRosco() {
+    roscoTimerVal--;
+    updateRoscoTimer();
+    
+    if(roscoTimerVal <= 0) {
+        clearInterval(roscoTimerInterval);
+        finishRosco();
+    }
+}
+
+function updateRoscoTimer() {
+    const m = Math.floor(roscoTimerVal/60);
+    const s = roscoTimerVal % 60;
+    const el = document.getElementById('rosco-timer');
+    el.textContent = `${m}:${s.toString().padStart(2,'0')}`;
+    el.classList.toggle('danger', roscoTimerVal <= 30);
+}
+
+function showRoscoQuestion() {
+    if(!roscoOrder.length) return;
+    
+    // Find next pending or passed
+    let found = false;
+    for(let i=0; i<roscoOrder.length; i++) {
+        const idx = (roscoCurrentIdx + i) % roscoOrder.length;
+        const l = roscoOrder[idx];
+        if(roscoData[l].status === 'pending' || roscoData[l].status === 'pass') {
+            roscoCurrentIdx = idx;
+            found = true;
+            break;
+        }
+    }
+    
+    if(!found) { finishRosco(); return; }
+    
+    const l = roscoOrder[roscoCurrentIdx];
+    const d = roscoData[l];
+    
+    document.getElementById('rosco-big-letter').textContent = l;
+    document.getElementById('rosco-letter-tip').textContent = d.q.startsWith('Contiene') ? `Contiene la ${l}` : `Con la ${l}`;
+    document.getElementById('rosco-question').textContent = d.q;
+    document.getElementById('rosco-answer').value = '';
+    document.getElementById('rosco-answer').focus();
+    
+    updateRoscoStats();
+    drawRoscoWheel();
+}
+
+function submitRosco() {
+    const l = roscoOrder[roscoCurrentIdx];
+    const d = roscoData[l];
+    const answer = document.getElementById('rosco-answer').value.trim().toLowerCase();
+    const correct = d.a.toLowerCase();
+    
+    if(!answer) return;
+    
+    // Check answer (flexible: remove accents, check contains)
+    const normalize = s => s.normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase();
+    const isOk = normalize(answer) === normalize(correct) || 
+                 normalize(correct).startsWith(normalize(answer)) && answer.length >= 4;
+    
+    if(isOk) {
+        d.status = 'ok';
+        showToast(`✓ ¡Correcto! ${d.a}`, 1500);
+    } else {
+        d.status = 'fail';
+        showToast(`✗ Era: ${d.a}`, 2000);
+        saveDificil({a: d.a, q: d.q, def: d.q, letra: l});
+    }
+    
+    roscoCurrentIdx = (roscoCurrentIdx + 1) % roscoOrder.length;
+    updateRoscoStats();
+    drawRoscoWheel();
+    
+    setTimeout(() => {
+        const pending = roscoOrder.some(l => ['pending','pass'].includes(roscoData[l].status));
+        if(pending) showRoscoQuestion();
+        else finishRosco();
+    }, 400);
+}
+
+function pasarRosco() {
+    const l = roscoOrder[roscoCurrentIdx];
+    if(roscoData[l].status === 'pending') roscoData[l].status = 'pass';
+    roscoCurrentIdx = (roscoCurrentIdx + 1) % roscoOrder.length;
+    drawRoscoWheel();
+    showRoscoQuestion();
+}
+
+function updateRoscoStats() {
+    const ok = roscoOrder.filter(l=>roscoData[l].status==='ok').length;
+    const fail = roscoOrder.filter(l=>roscoData[l].status==='fail').length;
+    const pass = roscoOrder.filter(l=>roscoData[l].status==='pass').length;
+    document.getElementById('stat-ok').textContent = ok;
+    document.getElementById('stat-fail').textContent = fail;
+    document.getElementById('stat-pass').textContent = pass;
+}
+
+function finishRosco() {
+    clearInterval(roscoTimerInterval);
+    stopVoice();
+    
+    const ok = roscoOrder.filter(l=>roscoData[l].status==='ok').length;
+    const fail = roscoOrder.filter(l=>roscoData[l].status==='fail').length;
+    const total = roscoOrder.length;
+    
+    const gags = [
+        "¡Enfermeraza! Con esa memoria de UCI, ¿cuándo abres la consulta privada de cultura general?",
+        "Filóloga de pro. El siguiente rosco lo haces con los ojos cerrados mientras ausculas a alguien.",
+        "Tu hija va a poder decir que su madre ganó el bote. ¡A por él! 💪",
+        "Con este nivel, el otro concursante viene a perder dinero. Tú solo a ganar.",
+        "¡Ese sillón azul tiene nombre grabado: N-O-E-M-I! Solo hace falta llegar.",
+        "Si la RAE supiera lo que has estudiado hoy, te mandarían una carta de agradecimiento.",
+        "El presentador ya está ensayando cómo darte el cheque. Eso pinta bien. 🎉"
+    ];
+    
+    document.getElementById('result-emoji').textContent = ok >= total*0.8 ? '🏆' : ok >= total*0.5 ? '🌟' : '💪';
+    document.getElementById('result-title').textContent = ok === total ? '¡ROSCO PERFECTO!' : `Rosco terminado: ${ok}/${total}`;
+    document.getElementById('result-msg').textContent = gags[Math.floor(Math.random()*gags.length)];
+    document.getElementById('result-stats').innerHTML = `
+        <div class="result-stat"><div class="rs-num" style="color:var(--green)">${ok}</div><div class="rs-lbl">Correctas</div></div>
+        <div class="result-stat"><div class="rs-num" style="color:var(--red)">${fail}</div><div class="rs-lbl">Falladas</div></div>
+        <div class="result-stat"><div class="rs-num" style="color:var(--muted)">${total-ok-fail}</div><div class="rs-lbl">Sin resp.</div></div>
+    `;
+    document.getElementById('result-repeat-btn').onclick = () => { document.getElementById('result-overlay').classList.remove('active'); goTo('rosco'); };
+    document.getElementById('result-overlay').classList.add('active');
+}
+
+// ===== ROSCO WHEEL =====
+function drawRoscoWheel() {
+    const svg = document.getElementById('rosco-svg');
+    svg.innerHTML = '';
+    const R = 120, r = 24;
+    const currentL = roscoOrder[roscoCurrentIdx];
+    
+    LETRAS.forEach((l, i) => {
+        const angle = (i/LETRAS.length)*2*Math.PI - Math.PI/2;
+        const x = R*Math.cos(angle);
+        const y = R*Math.sin(angle);
+        const d = roscoData[l];
+        
+        let fill = '#252535'; // no question
+        let stroke = '#353550';
+        let textColor = '#555570';
+        
+        if(d) {
+            if(d.status === 'ok') { fill='#1a4a2a'; stroke='#44d490'; textColor='#44d490'; }
+            else if(d.status === 'fail') { fill='#4a1a1a'; stroke='#ff5555'; textColor='#ff5555'; }
+            else if(d.status === 'pass') { fill='#3a3a10'; stroke='#f0c040'; textColor='#f0c040'; }
+            else { fill='#1a1a2e'; stroke='#4040a0'; textColor='#aaaaee'; }
+            
+            if(l === currentL) { fill='#f0c040'; stroke='#fff'; textColor='#000'; }
+        }
+        
+        const circle = document.createElementNS('http://www.w3.org/2000/svg','circle');
+        circle.setAttribute('cx', x); circle.setAttribute('cy', y); circle.setAttribute('r', r);
+        circle.setAttribute('fill', fill); circle.setAttribute('stroke', stroke); circle.setAttribute('stroke-width', l===currentL?'3':'1.5');
+        svg.appendChild(circle);
+        
+        const text = document.createElementNS('http://www.w3.org/2000/svg','text');
+        text.setAttribute('x', x); text.setAttribute('y', y);
+        text.setAttribute('text-anchor','middle'); text.setAttribute('dominant-baseline','central');
+        text.setAttribute('fill', textColor); text.setAttribute('font-size', l.length>1?'9':'12');
+        text.setAttribute('font-weight','700'); text.setAttribute('font-family','Space Grotesk, sans-serif');
+        text.textContent = l;
+        svg.appendChild(text);
+    });
+}
+
+// ===== VOICE =====
+function toggleVoice() {
+    voiceEnabled = !voiceEnabled;
+    document.getElementById('voice-toggle').classList.toggle('on', voiceEnabled);
+    if(voiceEnabled) startVoice();
+    else stopVoice();
+}
+
+function startVoice() {
+    const SR = window.SpeechRecognition || window.webkitSpeechRecognition;
+    if(!SR) { showToast('⚠️ Tu navegador no soporta voz'); voiceEnabled = false; document.getElementById('voice-toggle').classList.remove('on'); return; }
+    recognition = new SR();
+    recognition.lang = 'es-ES';
+    recognition.continuous = true;
+    recognition.interimResults = false;
+    recognition.onresult = e => {
+        const result = e.results[e.results.length-1][0].transcript.trim();
+        document.getElementById('rosco-answer').value = result;
+        submitRosco();
+    };
+    recognition.onerror = () => {};
+    recognition.onend = () => { if(voiceEnabled) recognition.start(); };
+    recognition.start();
+}
+
+function stopVoice() {
+    if(recognition) { recognition.abort(); recognition = null; }
+}
+
+// ===== AI MODAL =====
+function showAIModal() {
+    const m = document.getElementById('ai-modal');
+    m.style.display = 'flex';
+    m.style.flexDirection = 'column';
+    m.style.alignItems = 'center';
+    m.style.justifyContent = 'center';
+    setTimeout(() => m.classList.add('active'), 10);
+}
+
+// Enter to submit rosco
+document.getElementById('rosco-answer').addEventListener('keydown', e => {
+    if(e.key === 'Enter') submitRosco();
+});
+
+</script>
+</body>
+</html>
