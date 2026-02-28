@@ -8981,7 +8981,7 @@ function showToast(msg, dur = 2000) {
 //  TERMS
 // ============================================================
 function acceptTerms() {
-    localStorage.setItem('terms_accepted', '1');
+    localStorage.setItem('terms_accepted_v2', '1');
     document.getElementById('terms-overlay').classList.add('hidden');
     updateStreak();
     loadDeckInfo();
@@ -8998,12 +8998,13 @@ function showTermsAgain() {
 //  INIT
 // ============================================================
 window.onload = function () {
-    // Always activate home screen first
+    // Activate home screen (always behind overlay if needed)
     document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
     document.getElementById('home').classList.add('active');
 
-    if (!localStorage.getItem('terms_accepted')) {
-        // Show terms overlay (home is behind it)
+    if (!localStorage.getItem('terms_accepted_v2')) {
+        // Show terms — remove hidden class so overlay is visible
+        document.getElementById('terms-overlay').classList.remove('hidden');
     } else {
         document.getElementById('terms-overlay').classList.add('hidden');
     }
