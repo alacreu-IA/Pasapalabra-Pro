@@ -690,6 +690,36 @@ html, body {
 .rae-rate-mid  { background: rgba(240,192,64,0.08); border-color: var(--gold);  color: var(--gold);  }
 .rae-rate-good { background: rgba(68,212,144,0.08); border-color: var(--green); color: var(--green); }
 
+
+/* ================================================================
+   ROSCO MODE SELECTOR
+================================================================ */
+.rosco-mode-card {
+    width: 100%; max-width: 360px;
+    background: var(--card); border: 1px solid var(--border2);
+    border-radius: 18px; padding: 18px 20px;
+    display: flex; align-items: center; gap: 16px;
+    cursor: pointer; transition: all 0.18s ease;
+    -webkit-tap-highlight-color: transparent;
+}
+.rosco-mode-card:active { transform: scale(0.97); background: var(--card2); }
+.rosco-mode-star {
+    border-color: var(--gold);
+    background: linear-gradient(135deg, var(--card) 0%, rgba(240,192,64,0.08) 100%);
+}
+.rmc-icon { font-size: 2rem; flex-shrink: 0; }
+.rmc-body { flex: 1; }
+.rmc-title { font-weight: 700; font-size: 1rem; color: var(--text); margin-bottom: 3px; }
+.rmc-desc  { font-size: 0.8rem; color: var(--muted); line-height: 1.4; }
+.rmc-badge {
+    display: inline-block; margin-top: 6px;
+    background: var(--gold); color: #000;
+    font-size: 0.65rem; font-weight: 800;
+    padding: 2px 10px; border-radius: 20px;
+    text-transform: uppercase; letter-spacing: 0.5px;
+}
+.rmc-arrow { color: var(--muted); font-size: 1.2rem; flex-shrink: 0; }
+
 </style>
 </head>
 <body>
@@ -776,7 +806,7 @@ html, body {
                 <h3>Partida Rápida</h3>
                 <p>20 preguntas mixtas</p>
             </div>
-            <div class="mode-card gold-border" onclick="goTo('rosco')">
+            <div class="mode-card gold-border" onclick="showRoscoModeSelector()">
                 <div class="badge">SIMULACRO</div>
                 <div class="mode-icon">🟡</div>
                 <h3>El Rosco</h3>
@@ -973,6 +1003,59 @@ html, body {
 <!-- ================================================================
      ROSCO SCREEN
 ================================================================ -->
+<!-- ================================================================
+     ROSCO MODE SELECTOR
+================================================================ -->
+<div id="rosco-mode" class="screen">
+    <div class="top-bar">
+        <button class="btn-back" onclick="goTo('home')">←</button>
+        <div class="top-bar-title">🟡 El Rosco</div>
+        <div class="top-bar-right"></div>
+    </div>
+    <div class="scroll-body" style="display:flex;flex-direction:column;justify-content:center;align-items:center;gap:20px;padding-top:40px;">
+        <div style="text-align:center;margin-bottom:10px;">
+            <div style="font-size:3rem;margin-bottom:8px;">🟡</div>
+            <h2 style="font-family:'Playfair Display',serif;color:var(--gold);font-size:1.6rem;">Elige tu modo</h2>
+            <p style="color:var(--muted);font-size:0.88rem;margin-top:6px;">¿Cómo quieres jugar hoy?</p>
+        </div>
+
+        <!-- MODO SILENCIOSO -->
+        <div class="rosco-mode-card" onclick="startRoscoMode('silent')">
+            <div class="rmc-icon">🔇</div>
+            <div class="rmc-body">
+                <div class="rmc-title">Rosco Silencioso</div>
+                <div class="rmc-desc">Lees y escribes. Sin voz.</div>
+            </div>
+            <div class="rmc-arrow">→</div>
+        </div>
+
+        <!-- MODO VOZ RESPUESTA -->
+        <div class="rosco-mode-card" onclick="startRoscoMode('voice')">
+            <div class="rmc-icon">🎤</div>
+            <div class="rmc-body">
+                <div class="rmc-title">Rosco con Voz</div>
+                <div class="rmc-desc">Lees la pregunta, respondes hablando. Di "pasapalabra" para pasar.</div>
+            </div>
+            <div class="rmc-arrow">→</div>
+        </div>
+
+        <!-- MODO REAL (lectura + voz) -->
+        <div class="rosco-mode-card rosco-mode-star" onclick="startRoscoMode('full')">
+            <div class="rmc-icon">⭐</div>
+            <div class="rmc-body">
+                <div class="rmc-title">Rosco Real</div>
+                <div class="rmc-desc">Como en el programa: la app lee la pregunta en voz alta y tú respondes hablando.</div>
+                <div class="rmc-badge">Modo Pasapalabra</div>
+            </div>
+            <div class="rmc-arrow">→</div>
+        </div>
+
+        <p style="color:var(--muted);font-size:0.75rem;text-align:center;padding:0 20px;margin-top:4px;">
+            ⚠️ Los modos de voz requieren HTTPS. Si no funciona, usa el modo silencioso.
+        </p>
+    </div>
+</div>
+
 <div id="rosco" class="screen">
     <div class="top-bar">
         <button class="btn-back" onclick="abandonarRosco()">←</button>
@@ -8966,7 +9049,7 @@ function goTo(id) {
     if (id === 'home')      { loadDeckInfo(); updateDifHomeCount(); }
     if (id === 'dificiles') { renderDificiles(); }
     if (id === 'creator')   { renderCustomList(); }
-    if (id === 'rosco')     { startRosco(); }
+    if (id === 'rosco')     { startRosco(); } // mode set before arriving
     if (id === 'rae')       { initRaeIfNeeded(); }
 }
 
@@ -9647,6 +9730,8 @@ function startRosco() {
 function abandonarRosco() {
     clearInterval(roscoTimerInterval);
     stopVoice();
+    stopSpeak();
+    roscoMode = 'silent';
     goTo('home');
 }
 
@@ -9691,10 +9776,14 @@ function showRoscoQuestion() {
     updateRoscoStats();
     drawRoscoWheel();
 
-    // Leer la pregunta en voz alta si la voz está activada
-    if (voiceEnabled) {
-        const texto = d.q.replace(/^Con la [A-ZÑ]: /i, '').replace(/^Contiene la [A-ZÑ]: /i, '');
-        speakText(texto);
+    // Leer la pregunta en voz alta según el modo
+    if (roscoMode === 'full') {
+        // Para el mic mientras lee, luego lo reactiva
+        var texto = d.q.replace(/^Con la [A-ZÑ]: /i, '').replace(/^Contiene la [A-ZÑ]: /i, '');
+        speakAndListen(texto);
+    } else if (roscoMode === 'voice') {
+        // Solo escuchar, no leer
+        if (recognition) { try { recognition.start(); } catch(e) {} }
     }
 }
 
@@ -9778,6 +9867,7 @@ function updateRoscoStats() {
 function finishRosco() {
     clearInterval(roscoTimerInterval);
     stopVoice();
+    stopSpeak();
 
     const ok    = roscoOrder.filter(l => roscoData[l].status === 'ok').length;
     const fail  = roscoOrder.filter(l => roscoData[l].status === 'fail').length;
@@ -9950,41 +10040,103 @@ function stopVoice() {
 }
 
 // ============================================================
+//  ROSCO MODES
+// ============================================================
+var roscoMode = 'silent'; // 'silent' | 'voice' | 'full'
+
+function showRoscoModeSelector() {
+    document.querySelectorAll('.screen').forEach(function(s){ s.classList.remove('active'); });
+    document.getElementById('rosco-mode').classList.add('active');
+}
+
+function startRoscoMode(mode) {
+    roscoMode = mode;
+    // Set up voice if needed
+    if (mode === 'voice' || mode === 'full') {
+        voiceEnabled = true;
+        document.getElementById('voice-toggle').classList.add('on');
+        startVoice();
+    } else {
+        voiceEnabled = false;
+        stopVoice();
+        stopSpeak();
+        document.getElementById('voice-toggle').classList.remove('on');
+    }
+    goTo('rosco');
+}
+
+// ============================================================
 //  TTS — Lee la pregunta del rosco en voz alta
 // ============================================================
-function speakText(text) {
-    if (!window.speechSynthesis) return;
-    window.speechSynthesis.cancel(); // cancela si ya estaba hablando
-    const utt = new SpeechSynthesisUtterance(text);
-    utt.lang  = 'es-ES';
-    utt.rate  = 0.88;   // ligeramente más lento que normal para entender bien
-    utt.pitch = 1.0;
+var ttsVoices = [];
+
+// Pre-cargar voces (iOS las carga de forma asíncrona)
+function loadVoices() {
+    ttsVoices = window.speechSynthesis ? window.speechSynthesis.getVoices() : [];
+}
+if (window.speechSynthesis) {
+    loadVoices();
+    window.speechSynthesis.onvoiceschanged = loadVoices;
+}
+
+function getBestSpanishVoice() {
+    if (ttsVoices.length === 0) loadVoices();
+    // Priority: Siri Spanish (iOS) > Google Spanish > any es-ES > any es
+    var priority = [
+        function(v){ return v.lang === 'es-ES' && v.name.includes('Siri'); },
+        function(v){ return v.lang === 'es-ES' && v.name.includes('Monica'); },
+        function(v){ return v.lang === 'es-ES' && v.name.includes('Google'); },
+        function(v){ return v.lang === 'es-ES' && !v.name.toLowerCase().includes('compact'); },
+        function(v){ return v.lang === 'es-ES'; },
+        function(v){ return v.lang.startsWith('es'); },
+    ];
+    for (var i = 0; i < priority.length; i++) {
+        var v = ttsVoices.find(priority[i]);
+        if (v) return v;
+    }
+    return null;
+}
+
+function stopSpeak() {
+    if (window.speechSynthesis) window.speechSynthesis.cancel();
+}
+
+function speakText(text, onDone) {
+    if (!window.speechSynthesis) { if (onDone) onDone(); return; }
+    window.speechSynthesis.cancel();
+
+    var utt = new SpeechSynthesisUtterance(text);
+    utt.lang   = 'es-ES';
+    utt.rate   = 0.82;   // más lento = más natural y entendible
+    utt.pitch  = 1.0;
     utt.volume = 1.0;
 
-    // Intentar usar voz española si está disponible
-    const voices = window.speechSynthesis.getVoices();
-    const esVoice = voices.find(function(v) {
-        return v.lang.startsWith('es') && !v.name.toLowerCase().includes('compact');
-    });
-    if (esVoice) utt.voice = esVoice;
+    var bestVoice = getBestSpanishVoice();
+    if (bestVoice) utt.voice = bestVoice;
 
-    // Mientras habla, pausar el reconocimiento de voz para evitar que se oiga a sí misma
-    if (recognition && voiceEnabled) {
-        try { recognition.stop(); } catch(e) {}
-        utt.onend = function() {
-            if (voiceEnabled) {
-                setTimeout(function() {
-                    try { recognition.start(); } catch(e) {}
-                }, 300);
-            }
-        };
-    }
+    utt.onend = function() {
+        if (onDone) onDone();
+    };
+    utt.onerror = function() {
+        if (onDone) onDone();
+    };
+
     window.speechSynthesis.speak(utt);
 }
 
-// Las voces pueden tardar en cargarse en iOS/Safari
-window.speechSynthesis && window.speechSynthesis.addEventListener &&
-    window.speechSynthesis.addEventListener('voiceschanged', function() {});
+function speakAndListen(text) {
+    // Parar reconocimiento mientras habla para no escucharse a sí misma
+    if (recognition) { try { recognition.stop(); } catch(e) {} }
+
+    speakText(text, function() {
+        // Cuando termina de leer, activar el micrófono
+        if (voiceEnabled) {
+            setTimeout(function() {
+                try { recognition.start(); } catch(e) {}
+            }, 400);
+        }
+    });
+}
 
 // ============================================================
 //  CONFETTI (resultados buenos)
