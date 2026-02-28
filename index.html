@@ -9690,6 +9690,12 @@ function showRoscoQuestion() {
     // NO auto-focus en móvil — evita que el teclado baje la pantalla
     updateRoscoStats();
     drawRoscoWheel();
+
+    // Leer la pregunta en voz alta si la voz está activada
+    if (voiceEnabled) {
+        const texto = d.q.replace(/^Con la [A-ZÑ]: /i, '').replace(/^Contiene la [A-ZÑ]: /i, '');
+        speakText(texto);
+    }
 }
 
 function submitRosco() {
@@ -9904,7 +9910,19 @@ function startVoice() {
     recognition.continuous = true;
     recognition.interimResults = false;
     recognition.onresult = e => {
-        document.getElementById('rosco-answer').value = e.results[e.results.length - 1][0].transcript.trim();
+        const transcript = e.results[e.results.length - 1][0].transcript.trim();
+        const normalized = transcript.toLowerCase()
+            .normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+
+        // "Pasapalabra" o variantes → pasar, no responder
+        const pasaVariants = ['pasapalabra', 'pasa palabra', 'paso', 'paso la palabra', 'siguiente'];
+        if (pasaVariants.some(function(v){ return normalized.includes(v); })) {
+            speakText('Pasapalabra');
+            pasarRosco();
+            return;
+        }
+
+        document.getElementById('rosco-answer').value = transcript;
         submitRosco();
     };
     recognition.onerror = (e) => {
@@ -9930,6 +9948,43 @@ function startVoice() {
 function stopVoice() {
     if (recognition) { recognition.abort(); recognition = null; }
 }
+
+// ============================================================
+//  TTS — Lee la pregunta del rosco en voz alta
+// ============================================================
+function speakText(text) {
+    if (!window.speechSynthesis) return;
+    window.speechSynthesis.cancel(); // cancela si ya estaba hablando
+    const utt = new SpeechSynthesisUtterance(text);
+    utt.lang  = 'es-ES';
+    utt.rate  = 0.88;   // ligeramente más lento que normal para entender bien
+    utt.pitch = 1.0;
+    utt.volume = 1.0;
+
+    // Intentar usar voz española si está disponible
+    const voices = window.speechSynthesis.getVoices();
+    const esVoice = voices.find(function(v) {
+        return v.lang.startsWith('es') && !v.name.toLowerCase().includes('compact');
+    });
+    if (esVoice) utt.voice = esVoice;
+
+    // Mientras habla, pausar el reconocimiento de voz para evitar que se oiga a sí misma
+    if (recognition && voiceEnabled) {
+        try { recognition.stop(); } catch(e) {}
+        utt.onend = function() {
+            if (voiceEnabled) {
+                setTimeout(function() {
+                    try { recognition.start(); } catch(e) {}
+                }, 300);
+            }
+        };
+    }
+    window.speechSynthesis.speak(utt);
+}
+
+// Las voces pueden tardar en cargarse en iOS/Safari
+window.speechSynthesis && window.speechSynthesis.addEventListener &&
+    window.speechSynthesis.addEventListener('voiceschanged', function() {});
 
 // ============================================================
 //  CONFETTI (resultados buenos)
