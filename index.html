@@ -720,6 +720,79 @@ html, body {
 }
 .rmc-arrow { color: var(--muted); font-size: 1.2rem; flex-shrink: 0; }
 
+
+/* ================================================================
+   GAME SCREEN — WRITE MODE
+================================================================ */
+.game-write-panel {
+    flex: 1; display: flex; flex-direction: column;
+    padding: 16px 18px; gap: 10px; overflow: hidden;
+}
+.gwp-tag {
+    font-size: 0.65rem; color: var(--muted);
+    text-transform: uppercase; letter-spacing: 2px; font-weight: 700;
+}
+.gwp-letter {
+    width: 52px; height: 52px; border-radius: 50%;
+    background: var(--gold); color: #000;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.6rem; font-weight: 800;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+}
+.gwp-question {
+    flex: 1; overflow-y: auto;
+    font-size: 1.08rem; line-height: 1.6; color: var(--text);
+    background: var(--card); border: 1px solid var(--border2);
+    border-radius: 16px; padding: 16px;
+    -webkit-overflow-scrolling: touch;
+    max-height: 45vh;
+}
+.gwp-sublabel {
+    font-size: 0.78rem; color: var(--muted); font-style: italic;
+}
+.gwp-input-row {
+    display: flex; gap: 10px; flex-shrink: 0;
+}
+.gwp-input {
+    flex: 1; background: var(--card2);
+    border: 2px solid var(--border2); border-radius: 14px;
+    padding: 14px 16px; font-size: 1.05rem;
+    color: var(--text); font-family: 'Space Grotesk', sans-serif;
+    outline: none; transition: border-color 0.2s;
+}
+.gwp-input:focus { border-color: var(--gold); }
+.gwp-submit-btn {
+    width: 52px; height: 52px; border-radius: 14px;
+    background: var(--gold); color: #000; border: none;
+    font-size: 1.3rem; font-weight: 800; cursor: pointer;
+    flex-shrink: 0;
+}
+
+/* Result phase */
+.game-result-panel {
+    flex: 1; display: flex; flex-direction: column;
+    padding: 16px 18px; gap: 10px; overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+}
+.grp-feedback {
+    font-size: 2.5rem; text-align: center; flex-shrink: 0;
+}
+.grp-answer {
+    font-family: 'Playfair Display', serif;
+    color: var(--gold); font-size: 1.8rem;
+    text-align: center; flex-shrink: 0;
+}
+.grp-user-answer {
+    text-align: center; font-size: 0.85rem;
+    color: var(--muted); flex-shrink: 0;
+}
+.grp-defs {
+    background: var(--card); border: 1px solid var(--border2);
+    border-radius: 14px; padding: 12px 14px; font-size: 0.88rem;
+    line-height: 1.5; flex-shrink: 0;
+}
+
 </style>
 </head>
 <body>
@@ -931,29 +1004,34 @@ html, body {
     </div>
     <div class="progress-track"><div class="progress-fill" id="game-progress" style="width:5%"></div></div>
 
-    <div class="card-area">
-        <div class="flashcard" id="flashcard" onclick="flipCard()">
-            <!-- FRONT -->
-            <div class="card-face" id="card-front">
-                <div class="card-tag" id="card-tag-text">Pregunta</div>
-                <div class="card-letter-badge" id="card-badge">A</div>
-                <div class="card-def" id="card-def-text">Cargando...</div>
-                <div class="card-hint">
-                    <span class="card-cat" id="card-cat">–</span>
-                    <span class="card-flip-hint">Toca para ver →</span>
-                </div>
-            </div>
-            <!-- BACK -->
-            <div class="card-face card-back" id="card-back">
-                <div class="card-tag">Respuesta</div>
-                <div class="card-word" id="card-word">–</div>
-                <div class="card-defs" id="card-defs"></div>
-                <div class="card-extra" id="card-extra"></div>
-                <a class="rae-link" id="card-rae-link" href="#" target="_blank" onclick="event.stopPropagation()">
-                    📖 Ver en la RAE
-                </a>
-            </div>
+    <!-- FASE 1: Escribir respuesta -->
+    <div id="game-write-phase" class="game-write-panel">
+        <div class="gwp-tag" id="card-tag-text">Pregunta</div>
+        <div class="gwp-letter" id="card-badge">A</div>
+        <div class="gwp-question" id="card-def-text">Cargando...</div>
+        <div class="gwp-sublabel" id="card-cat">–</div>
+        <div class="gwp-input-row">
+            <input type="text" id="game-answer-input" class="gwp-input"
+                placeholder="Tu respuesta..." autocomplete="off" autocorrect="off"
+                autocapitalize="off" spellcheck="false"
+                onkeydown="if(event.key==='Enter') checkGameAnswer()">
+            <button class="gwp-submit-btn" onclick="checkGameAnswer()">→</button>
         </div>
+    </div>
+
+    <!-- FASE 2: Resultado (se muestra tras responder) -->
+    <div id="game-result-phase" class="game-result-panel" style="display:none;">
+        <div class="grp-feedback" id="grp-feedback">✅</div>
+        <div class="grp-answer" id="card-word">–</div>
+        <div class="grp-user-answer" id="grp-user-answer"></div>
+        <div class="grp-defs" id="card-defs"></div>
+        <div id="card-extra"></div>
+        <a class="rae-link" id="card-rae-link" href="#" target="_blank">📖 Ver en la RAE</a>
+    </div>
+
+    <!-- fantasma para compatibilidad con flipCard() -->
+    <div style="display:none">
+        <div id="flashcard"><div id="card-front"></div><div id="card-back"></div></div>
     </div>
 
     <div class="rating-btns">
@@ -9249,56 +9327,101 @@ function startGameSession() {
 }
 
 function showCard() {
-    const data = gameSession[gameIndex];
+    var data = gameSession[gameIndex];
     if (!data) return;
 
-    const fc = document.getElementById('flashcard');
-    fc.classList.remove('flipped');
     hideRatingBtns();
 
-    const total = gameSession.length;
-    document.getElementById('game-counter').textContent   = `${gameIndex + 1}/${total}`;
-    document.getElementById('game-progress').style.width  = `${((gameIndex + 1) / total) * 100}%`;
+    var total = gameSession.length;
+    document.getElementById('game-counter').textContent  = (gameIndex + 1) + '/' + total;
+    document.getElementById('game-progress').style.width = Math.round(((gameIndex + 1) / total) * 100) + '%';
 
-    // Front
-    const q    = data.q || data.def || '???';
-    const letra = data.letra || '';
-    document.getElementById('card-def-text').textContent  = q;
-    document.getElementById('card-badge').textContent     = letra || '?';
-    document.getElementById('card-cat').textContent       = letra ? `Con la ${letra}` : (data.pos || data.category || '–');
+    var q     = data.q || data.def || '???';
+    var letra = data.letra || '';
+    var word  = data.a || data.word || '???';
 
-    // Back
-    const word = data.a || data.word || '???';
-    document.getElementById('card-word').textContent = word;
+    // ---- WRITE PHASE ----
+    document.getElementById('card-def-text').textContent = q;
+    document.getElementById('card-badge').textContent    = letra || '?';
+    document.getElementById('card-cat').textContent      = letra ? 'Con la ' + letra : (data.pos || data.category || '–');
+    document.getElementById('game-answer-input').value   = '';
 
-    let defsHTML = '';
+    // Show write phase, hide result
+    document.getElementById('game-write-phase').style.display  = 'flex';
+    document.getElementById('game-result-phase').style.display = 'none';
+
+    // Focus input (con pequeño delay para móvil)
+    setTimeout(function() {
+        document.getElementById('game-answer-input').focus();
+    }, 150);
+}
+
+function checkGameAnswer() {
+    var data   = gameSession[gameIndex];
+    var input  = document.getElementById('game-answer-input');
+    var userAnswer = input.value.trim();
+    if (!userAnswer) return;
+
+    var correct = data.a || data.word || '';
+
+    // Normalizar para comparar (sin tildes, minúsculas)
+    function norm(s) {
+        return s.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').trim();
+    }
+    var isCorrect = norm(userAnswer) === norm(correct);
+
+    // ---- Show result ----
+    document.getElementById('game-write-phase').style.display  = 'none';
+    document.getElementById('game-result-phase').style.display = 'flex';
+
+    document.getElementById('grp-feedback').textContent    = isCorrect ? '✅' : '❌';
+    document.getElementById('card-word').textContent       = correct;
+    document.getElementById('grp-user-answer').textContent = isCorrect
+        ? '¡Correcto!'
+        : 'Tú dijiste: "' + userAnswer + '"';
+
+    // Defs
+    var q = data.q || data.def || '';
+    var defsHTML = '';
     if (data.def && typeof data.def === 'string') {
-        data.def.split(/\d+\./).filter(d => d.trim()).forEach((d, i) => {
-            defsHTML += `<div class="def-item"><strong>${i + 1}.</strong> ${d.trim()}</div>`;
+        var parts = data.def.split(/(?=\d+\.\s)/).map(function(s){ return s.replace(/^\d+\.\s*/, '').trim(); }).filter(Boolean);
+        parts.forEach(function(d, i) {
+            defsHTML += '<div class="def-item">' + (parts.length > 1 ? '<strong>' + (i+1) + '.</strong> ' : '') + d + '</div>';
         });
     } else {
-        defsHTML = `<div class="def-item">${q}</div>`;
+        defsHTML = '<div class="def-item">' + q + '</div>';
     }
-    document.getElementById('card-defs').innerHTML = defsHTML || `<div class="def-item">${q}</div>`;
+    document.getElementById('card-defs').innerHTML = defsHTML;
 
-    let extraHTML = '';
-    if (data.syn || data.sinonimos)
-        extraHTML += `<div class="extra-block purple"><div class="extra-label">🔄 Sinónimos</div><div>${data.syn || data.sinonimos}</div></div>`;
-    if (data.etym || data.etymology)
-        extraHTML += `<div class="extra-block gold"><div class="extra-label">🏛️ Etimología</div><div>${data.etym || data.etymology}</div></div>`;
-    if (data.ex || data.tip)
-        extraHTML += `<div class="extra-block green"><div class="extra-label">💡 ${data.ex ? 'Ejemplo' : 'Pista'}</div><div>${data.ex || data.tip}</div></div>`;
+    // Extras
+    var extraHTML = '';
+    if (data.syn)  extraHTML += '<div class="extra-block purple"><div class="extra-label">🔄 Sinónimos</div><div>' + data.syn + '</div></div>';
+    if (data.etym) extraHTML += '<div class="extra-block gold"><div class="extra-label">🏛️ Etimología</div><div>' + data.etym + '</div></div>';
+    if (data.ex)   extraHTML += '<div class="extra-block green"><div class="extra-label">💡 Ejemplo</div><div>' + data.ex + '</div></div>';
+    if (data.tip)  extraHTML += '<div class="extra-block green"><div class="extra-label">💡 Pista</div><div>' + data.tip + '</div></div>';
     document.getElementById('card-extra').innerHTML = extraHTML;
 
-    document.getElementById('card-rae-link').href = `https://dle.rae.es/${encodeURIComponent(word)}`;
+    // RAE link solo vocabulario RAE
+    var raeLink = document.getElementById('card-rae-link');
+    var isVocab = data.word && (data.syn || data.etym);
+    raeLink.href = isVocab ? 'https://dle.rae.es/' + encodeURIComponent(correct) : '#';
+    raeLink.style.display = isVocab ? '' : 'none';
+
+    // Contabilizar como correcto o incorrecto para SRS (usando bien/mal automático si acertó)
+    // Los botones de valoración siguen apareciendo para que ella decida el intervalo
+    showRatingBtns('game');
+
+    // Si acertó, preseleccionar "bien" visualmente
+    if (isCorrect && typeof spawnConfetti === 'function') {
+        // mini celebración si acertó
+        setTimeout(function() { spawnConfetti(5); }, 100);
+    }
 }
 
 function flipCard() {
-    const fc = document.getElementById('flashcard');
-    if (!fc.classList.contains('flipped')) {
-        fc.classList.add('flipped');
-        showRatingBtns('game');
-    }
+    // En modo escritura flipCard no se usa — se usa checkGameAnswer()
+    // Mantenida por compatibilidad
+    showRatingBtns('game');
 }
 
 function hideRatingBtns() {
@@ -9346,61 +9469,61 @@ function endGameSession() {
 
     if (pct === 100) {
         emoji  = '🏆';
-        titulo = '¡RONDA PERFECTA!';
-        var o = [
-            '¡PERFECTA! ' + total + '/' + total + '. El otro concursante ya puede ir buscando trabajo.',
-            '¡Todo correcto! Con esta memoria de UCI, el bote es pan comido. ¡BRAVO, Noemi!',
-            'Impecable. Si la RAE te viera, te nombraban académica de honor en el acto.'
+        titulo = '¡RONDA PERFECTA, NOEMI!';
+        var opts = [
+            '¡' + total + '/' + total + '! El otro concursante ya puede ir buscando trabajo. TÚ eres el bote.',
+            'Perfecta. Si la RAE te viera, te nombraban académica de honor. Histórico.',
+            '¡Todo correcto! Está claro que alguien ha estado estudiando mucho... o es un genio. O las dos.',
+            '¡PLENO AL 15! Con esta memoria, el bote no se te escapa ni con cera en las manos.',
+            'Impecable. Roberto Leal debería estar nervioso. Muy nervioso.'
         ];
-        msg = o[Math.floor(Math.random() * o.length)];
+        msg = opts[Math.floor(Math.random() * opts.length)];
         spawnConfetti();
-    } else if (pct >= 75) {
+
+    } else if (pct >= 80) {
         emoji  = '🌟';
         titulo = '¡Noemi al poder!';
-        var o = [
-            '¡' + gameCorrect + '/' + total + '! Filóloga, enfermera y futura ganadora del bote.',
-            '¡Qué pasada! ' + gameCorrect + ' de ' + total + '. Ese sillón azul tiene tu nombre: N-O-E-M-I.',
-            'Brutal. Con este nivel, el rosco es un trámite. ¡A por el bote!',
-            gameCorrect + '/' + total + ' — tu hija va a ver a su madre en la tele recogiendo el cheque. 💸'
+        var opts = [
+            '¡' + gameCorrect + '/' + total + '! Filóloga, enfermera y futura millonaria. El pack completo.',
+            'Casi perfecta. Esas ' + (total - gameCorrect) + ' que se han escapado... las pillamos mañana.',
+            '¡Qué nivel! A este ritmo el otro concursante ni se va a enterar de lo que le viene encima.',
+            gameCorrect + ' de ' + total + '. Eso es talento más trabajo más Andrea-app. Combinación ganadora.',
+            '¡Brutal! Falta poco para que el presentador te lea el cheque. Sigue así.'
         ];
-        msg = o[Math.floor(Math.random() * o.length)];
-        spawnConfetti();
-    } else if (pct >= 50) {
+        msg = opts[Math.floor(Math.random() * opts.length)];
+
+    } else if (pct >= 55) {
         emoji  = '💪';
-        titulo = '¡Buena ronda!';
-        var o = [
-            gameCorrect + '/' + total + '. Buena base. Las ' + gameDificil + ' difíciles están guardadas para repasar.',
-            'Sólido. ' + gameCorrect + ' sabidas, ' + gameDificil + ' a repasar. Para eso está el SRS.',
-            gameCorrect + '/' + total + ' — con cada ronda, más cerca del bote. ¡Sigue así!'
+        titulo = '¡Buen trabajo!';
+        var opts = [
+            gameCorrect + '/' + total + '. No está mal, pero tú puedes más. ¡Dale otra vuelta!',
+            'Las ' + (total - gameCorrect) + ' que fallaste ya saben que volverás. Y esta vez no se van a librar.',
+            'Mitad y más. El bote está ahí, esperándote. Solo necesita un poco más de Noemi.',
+            'Bien, pero recuerda: en el programa no hay red. ¡Vamos a por el 100!',
+            '¡Cada repaso cuenta! La próxima vez vas a arrasar. Lo dice la app, que no miente.'
         ];
-        msg = o[Math.floor(Math.random() * o.length)];
+        msg = opts[Math.floor(Math.random() * opts.length)];
+
     } else {
         emoji  = '📚';
-        titulo = 'A seguir practicando';
-        var o = [
-            gameCorrect + '/' + total + ' hoy, pero las ' + gameDificil + ' difíciles ya están marcadas.',
-            'El rosco no se gana en un día. Las ' + gameDificil + ' que han costado, a repasar con el SRS.',
-            'Arranque de sesión — el cerebro necesita calentamiento. ¡A por la siguiente ronda!'
+        titulo = 'Hoy toca estudiar';
+        var opts = [
+            gameCorrect + '/' + total + '. El bote no se gana en un día. Pero tú tampoco aprendiste a sacar sangre en uno. ¡A por ello!',
+            'Mira, hasta la mejor tiene días flojos. Lo importante es volver. ¡Tú puedes!',
+            'Las ' + (total - gameCorrect) + ' que fallaste ya están guardadas en el SRS. Volverán. Y entonces sí.',
+            'Hoy han ganado las preguntas. Mañana ganas tú. Es matemático.',
+            '¡No pasa nada! Andrea diseñó esta app exactamente para estos momentos. ¡Vuelve a intentarlo!'
         ];
-        msg = o[Math.floor(Math.random() * o.length)];
+        msg = opts[Math.floor(Math.random() * opts.length)];
     }
 
-    document.getElementById('result-emoji').textContent = emoji;
-    document.getElementById('result-title').textContent = titulo;
-    document.getElementById('result-msg').textContent   = msg;
-    document.getElementById('result-stats').innerHTML =
-        '<div class="result-stat"><div class="rs-num" style="color:var(--green)">' + gameCorrect + '</div><div class="rs-lbl">Sabidas</div></div>' +
-        '<div class="result-stat"><div class="rs-num" style="color:var(--gold)">' + (total - gameCorrect - gameDificil) + '</div><div class="rs-lbl">Regulares</div></div>' +
-        '<div class="result-stat"><div class="rs-num" style="color:var(--red)">' + gameDificil + '</div><div class="rs-lbl">Difíciles</div></div>';
-
-    document.getElementById('result-repeat-btn').onclick = function() {
-        document.getElementById('result-overlay').classList.remove('active');
-        if (gameMode === 'rapida') iniciarPartidaRapida();
-        else { gameIndex = 0; gameCorrect = 0; gameDificil = 0; goTo('game'); showCard(); }
-    };
-    document.getElementById('result-overlay').classList.add('active');
-    loadDeckInfo();
+    document.getElementById('end-emoji').textContent  = emoji;
+    document.getElementById('end-title').textContent  = titulo;
+    document.getElementById('end-msg').textContent    = msg;
+    document.getElementById('end-score').textContent  = gameCorrect + '/' + total + ' (' + pct + '%)';
+    goTo('end');
 }
+
 
 function closeResult() {
     document.getElementById('result-overlay').classList.remove('active');
