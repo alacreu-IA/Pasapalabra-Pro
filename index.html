@@ -12724,14 +12724,14 @@ MAZOS_VOCAB.push({
 <script>
 // =====================================================================
 // AUTOCLASIFICADOR DE MAZOS (12 Categorías + Cultura General)
-// CON SUBTÍTULOS GRACIOSOS Y CÁLCULO AUTOMÁTICO DE RAE
+// CON SUBTÍTULOS GRACIOSOS, RAE Y GEOGRAFÍA MEJORADA
 // =====================================================================
 (function() {
     // 1. Recopilar todas las preguntas de los mazos originales
     let allQuestions = [];
     MAZOS.forEach(m => allQuestions = allQuestions.concat(m.questions));
 
-    // 2. Definir la nueva estructura con los subtítulos
+    // 2. Definir la nueva estructura exacta solicitada
     const newDecks = {
         "hist_esp": { id: "hist_esp", name: "Historia de España", icon: "🇪🇸", sub: "De los Reyes Católicos a “esto con Franco no pasaba”", questions: [] },
         "hist_uni": { id: "hist_uni", name: "Historia Universal", icon: "🌍", sub: "Guerras, imperios y humanos haciendo siempre lo mismo", questions: [] },
@@ -12748,7 +12748,7 @@ MAZOS_VOCAB.push({
         "cg":       { id: "cg", name: "Cultura General", icon: "🧠", sub: "El cajón de sastre donde acaba todo lo demás", questions: [] }
     };
 
-    // 3. Motor de clasificación
+    // 3. Motor de clasificación ajustado (con provincias y afluentes)
     allQuestions.forEach(p => {
         let t = (p.q + " " + p.a).toLowerCase();
 
@@ -12774,8 +12774,8 @@ MAZOS_VOCAB.push({
             } else {
                 newDecks["hist_uni"].questions.push(p);
             }
-        } else if (t.match(/\b(geografía|río|montaña|océano|mar|país|capital|continente|áfrica|asia|américa|europa|isla|lago|cordillera|provincia|comunidad autónoma)\b/)) {
-            if (t.match(/\b(españa|español|ibérica|madrid|barcelona|valencia|sevilla|pirineos|ebro|tajo|guadalquivir|andalucía|galicia|cantábrico)\b/)) {
+        } else if (t.match(/\b(geografía|río|afluente|montaña|monte|sierra|pico|océano|continente|áfrica|asia|américa|europa|cordillera|provincia|comunidad autónoma|archipiélago|península|relieve|clima|golfo|estrecho|latitud|longitud|meridiano|ecuador)\b/)) {
+            if (t.match(/\b(españa|español|ibérica|madrid|barcelona|valencia|sevilla|pirineos|ebro|tajo|guadalquivir|duero|guadiana|júcar|segura|miño|andalucía|galicia|cantábrico|asturias|canarias|baleares|cataluña|vasco|euskadi|guipúzcoa|vizcaya|álava|aragón|extremadura|murcia|navarra|rioja|castilla|mancha|león|alicante|málaga|zaragoza|bilbao)\b/)) {
                 newDecks["geo_esp"].questions.push(p);
             } else {
                 newDecks["geo_mund"].questions.push(p);
@@ -12822,7 +12822,6 @@ MAZOS_VOCAB.push({
     }
 
     // 6. ACTUALIZAR CONTADOR DE PALABRAS RAE AUTOMÁTICAMENTE
-    // Busca el texto de la tarjeta de RAE y pone la cantidad exacta
     setTimeout(() => {
         const raeCardText = document.querySelector('.mode-card[onclick="goTo(\'rae\')"] p');
         if (raeCardText && typeof MAZOS_VOCAB !== 'undefined' && MAZOS_VOCAB[0]) {
