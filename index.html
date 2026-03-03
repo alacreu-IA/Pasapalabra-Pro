@@ -357,7 +357,7 @@ html, body {
     flex-shrink: 0; display: flex; justify-content: center;
     padding: 10px 10px 6px;
 }
-#rosco-svg { width: min(280px, 56vw); height: min(280px, 56vw); }
+#rosco-svg { width: min(360px, 90vw); height: min(360px, 90vw); }
 
 .rosco-stats { display: flex; justify-content: center; gap: 20px; padding: 6px 0; flex-shrink: 0; }
 .rosco-stat { text-align: center; }
@@ -950,6 +950,7 @@ html, body {
             </div>
         </div>
 
+        <div style="display:flex;justify-content:flex-end;margin:14px 0 0;"><button onclick="goTo('dashboard')" style="background:var(--card2);border:1px solid var(--gold);border-radius:20px;padding:7px 16px;font-size:0.76rem;color:var(--gold);cursor:pointer;font-weight:700;display:flex;align-items:center;gap:6px;box-shadow:0 0 16px var(--gold-dim);">Mi progreso</button></div>
         <div class="section-label">Herramientas</div>
         <div class="deck-list">
             <div class="deck-item" onclick="goTo('dificiles')">
@@ -1268,6 +1269,58 @@ html, body {
     <button class="result-btn" onclick="closeResult()">🏠 Volver al inicio</button>
     <button class="result-btn-sec" id="result-repeat-btn">🔄 Repetir ronda</button>
 </div>
+
+<div id="exam-dificiles" class="screen">
+<div class="top-bar"><button class="btn-back" onclick="goTo('dificiles')">&#8592;</button>
+<div class="top-bar-title">&#x1F4DD; Examen Dif&#237;ciles</div>
+<span id="exam-top-prog" style="font-size:0.75rem;color:var(--muted);padding-right:4px;"></span></div>
+<div class="scroll-body" style="padding:16px 16px 40px;">
+<div id="exam-q-card" style="background:var(--card);border:1px solid var(--border2);border-radius:var(--radius);padding:22px;margin-bottom:14px;">
+<div id="exam-prog-txt" style="font-size:0.68rem;color:var(--muted);text-transform:uppercase;letter-spacing:0.8px;margin-bottom:12px;"></div>
+<div id="exam-letra" style="font-family:'Playfair Display',serif;font-size:4rem;color:var(--gold);line-height:1;text-align:center;margin-bottom:12px;text-shadow:0 0 30px rgba(240,192,64,0.35);">A</div>
+<div id="exam-question" style="font-size:0.93rem;line-height:1.6;margin-bottom:18px;padding:12px 14px;background:var(--card2);border-radius:10px;border-left:3px solid var(--gold);"></div>
+<div style="display:flex;gap:8px;">
+<input id="exam-answer" type="text" class="form-input" placeholder="Tu respuesta..." autocomplete="off" autocorrect="off" spellcheck="false" style="flex:1;" onkeydown="if(event.key==='Enter'){event.preventDefault();submitExam();}">
+<button class="btn-primary" onclick="submitExam()" style="padding:10px 20px;font-size:1.1rem;min-width:52px;">&#10003;</button>
+</div></div>
+<div id="exam-fb-card" style="display:none;background:var(--card);border:1px solid var(--border2);border-radius:var(--radius);padding:24px;text-align:center;">
+<div id="exam-fb-icon" style="font-size:3.2rem;margin-bottom:12px;"></div>
+<div id="exam-fb-text" style="font-size:0.92rem;line-height:1.65;margin-bottom:20px;"></div>
+<button id="exam-next-btn" class="btn-primary" onclick="nextExamQ()" style="width:100%;">Siguiente &#8594;</button>
+</div>
+<div id="exam-done-card" style="display:none;text-align:center;padding:28px 10px;">
+<div id="exam-done-emoji" style="font-size:4.5rem;margin-bottom:14px;"></div>
+<div id="exam-done-score" style="font-size:1.5rem;font-weight:900;color:var(--gold);margin-bottom:8px;font-family:'Syne',sans-serif;"></div>
+<div id="exam-done-msg" style="font-size:0.88rem;color:var(--muted);margin-bottom:26px;line-height:1.55;"></div>
+<button class="btn-primary" onclick="goTo('dificiles')" style="width:100%;">&#x1F3E0; Volver a Dif&#237;ciles</button>
+</div></div></div>
+
+<div id="dashboard" class="screen">
+<div class="top-bar"><button class="btn-back" onclick="goTo('home')">&#8592;</button>
+<div class="top-bar-title">&#x1F4CA; Mi Progreso</div>
+<button onclick="downloadBackup()" title="Backup" style="background:none;border:none;color:var(--muted);font-size:1.1rem;cursor:pointer;padding:4px 8px;">&#x1F4BE;</button></div>
+<div class="scroll-body" style="padding:14px 14px 44px;">
+<div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-bottom:12px;">
+<div style="background:var(--card);border:1px solid var(--border2);border-radius:var(--radius);padding:14px 6px;text-align:center;"><div id="db-total" style="font-size:1.7rem;font-weight:900;color:var(--gold);line-height:1;font-family:'Syne',sans-serif;">0</div><div style="font-size:0.58rem;color:var(--muted);margin-top:4px;text-transform:uppercase;letter-spacing:0.3px;line-height:1.4;">preguntas<br>respondidas</div></div>
+<div style="background:var(--card);border:1px solid var(--border2);border-radius:var(--radius);padding:14px 6px;text-align:center;"><div id="db-pct" style="font-size:1.7rem;font-weight:900;color:var(--green);line-height:1;font-family:'Syne',sans-serif;">0%</div><div style="font-size:0.58rem;color:var(--muted);margin-top:4px;text-transform:uppercase;letter-spacing:0.3px;line-height:1.4;">tasa de<br>acierto</div></div>
+<div style="background:var(--card);border:1px solid var(--border2);border-radius:var(--radius);padding:14px 6px;text-align:center;"><div id="db-streak" style="font-size:1.7rem;font-weight:900;color:var(--gold);line-height:1;font-family:'Syne',sans-serif;">0d</div><div style="font-size:0.58rem;color:var(--muted);margin-top:4px;text-transform:uppercase;letter-spacing:0.3px;line-height:1.4;">racha<br>actual</div></div>
+</div>
+<div style="background:var(--card);border:1px solid var(--border2);border-radius:var(--radius);padding:14px 16px;margin-bottom:12px;display:grid;grid-template-columns:1fr 1fr;gap:8px;text-align:center;"><div><div id="db-today" style="font-size:1.4rem;font-weight:900;color:var(--gold);font-family:'Syne',sans-serif;">0min</div><div style="font-size:0.6rem;color:var(--muted);margin-top:3px;text-transform:uppercase;letter-spacing:0.3px;">hoy</div></div><div><div id="db-total-time" style="font-size:1.4rem;font-weight:900;color:var(--gold);font-family:'Syne',sans-serif;">0h</div><div style="font-size:0.6rem;color:var(--muted);margin-top:3px;text-transform:uppercase;letter-spacing:0.3px;">total</div></div></div>
+<div style="background:var(--card);border:1px solid var(--border2);border-radius:var(--radius);padding:14px 16px;margin-bottom:12px;">
+<div style="font-size:0.66rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--muted);margin-bottom:10px;">&#x1F525; Actividad &mdash; 70 d&#237;as</div>
+<div id="db-heatmap" style="display:flex;flex-wrap:wrap;gap:3px;"></div>
+<div style="display:flex;justify-content:space-between;align-items:center;margin-top:8px;font-size:0.58rem;color:var(--muted);">
+<span>menos</span><div style="display:flex;gap:3px;"><div style="width:10px;height:10px;border-radius:2px;background:var(--border2)"></div><div style="width:10px;height:10px;border-radius:2px;background:rgba(240,192,64,.2)"></div><div style="width:10px;height:10px;border-radius:2px;background:rgba(240,192,64,.55)"></div><div style="width:10px;height:10px;border-radius:2px;background:rgba(240,192,64,1)"></div></div><span>m&#225;s</span>
+</div></div>
+<div style="background:var(--card);border:1px solid var(--border2);border-radius:var(--radius);padding:14px 16px;margin-bottom:12px;"><div style="font-size:0.66rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--muted);margin-bottom:12px;">&#x1F4DA; Por mazo</div><div id="db-by-deck"></div></div>
+<div style="background:var(--card);border:1px solid var(--border2);border-radius:var(--radius);padding:14px 16px;margin-bottom:12px;"><div style="font-size:0.66rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--muted);margin-bottom:10px;">&#9888;&#65039; Letras dif&#237;ciles</div><div id="db-hard-letters" style="display:flex;flex-wrap:wrap;gap:7px;"></div></div>
+<div style="background:var(--card);border:1px solid var(--border2);border-radius:var(--radius);padding:14px 16px;margin-bottom:12px;"><div style="font-size:0.66rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--muted);margin-bottom:10px;">&#x1F7E1; &#218;ltimos 8 roscos</div><div id="db-rosco-hist"></div></div>
+<div style="background:linear-gradient(135deg,#16100a,#0c0c18);border:1px solid var(--gold);border-radius:var(--radius);padding:16px;margin-bottom:12px;">
+<div style="font-size:0.66rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--gold);margin-bottom:8px;">&#x1F4E9; Informe para Andrea</div>
+<p style="font-size:0.78rem;color:var(--muted);margin:0 0 14px;line-height:1.55;">Le manda tus stats para que vea en qu&#233; &#225;reas a&#241;adirte m&#225;s preguntas. <em style="font-size:0.72rem;">Te vigila. Para bien &#x1F602;</em></p>
+<button class="btn-primary" onclick="sendProgressReport()" style="width:100%;margin-bottom:8px;">&#x1F4EC; Mandar informe a Andrea</button>
+<div id="db-report-status" style="font-size:0.72rem;color:var(--muted);text-align:center;min-height:14px;"></div>
+</div></div></div>
 
 <!-- TOAST -->
 <div class="toast" id="toast">✓ Guardado</div>
@@ -12834,8 +12887,8 @@ MAZOS_VOCAB.push({
                  <div id="study-a-text" style="color:var(--accent); font-size:1.6rem; font-weight:bold; line-height:1.4; margin-bottom: 30px; width:100%;">Respuesta</div>
                  
                  <div id="study-links" style="display:flex; gap:12px; flex-wrap:wrap; justify-content:center;">
-                     <a id="link-wiki" href="#" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()" style="text-decoration:none; background:rgba(255,255,255,0.1); color:var(--text); padding:10px 18px; border-radius:12px; font-size:0.9rem; display:flex; align-items:center; gap:8px; border:1px solid rgba(255,255,255,0.05);">📖 Wikipedia</a>
-                     <button id="link-map" onclick="openMapNow()" style="text-decoration:none; background:rgba(39, 174, 96, 0.2); color:#2ecc71; padding:10px 18px; border-radius:12px; font-size:0.9rem; display:none; align-items:center; gap:8px; border:1px solid rgba(39, 174, 96, 0.3); cursor:pointer;">🗺️ Ver Mapa</button>
+                     <a id="link-wiki" href="#" target="_blank" onclick="event.stopPropagation()" style="text-decoration:none; background:rgba(255,255,255,0.1); color:var(--text); padding:10px 18px; border-radius:12px; font-size:0.9rem; display:flex; align-items:center; gap:8px; border:1px solid rgba(255,255,255,0.05);">📖 Wikipedia</a>
+                     <a id="link-map" href="#" target="_blank" onclick="event.stopPropagation()" style="text-decoration:none; background:rgba(39, 174, 96, 0.2); color:#2ecc71; padding:10px 18px; border-radius:12px; font-size:0.9rem; display:none; align-items:center; gap:8px; border:1px solid rgba(39, 174, 96, 0.3);">🗺️ Ver Mapa</a>
                  </div>
              </div>
              
@@ -13030,26 +13083,19 @@ window.nextStudyCard = function() {
    document.getElementById('study-card').style.boxShadow = `0 15px 35px ${cardColor}33, inset 0 1px 0 rgba(255,255,255,0.05)`;
 
    const term = encodeURIComponent(currentStudyCard.a);
-   // Desambiguación: evita que "León" busque el mamífero
-   const _q2 = (currentStudyCard.q || '').toLowerCase();
-   const _geoKw = ['ciudad','capital','provincia','municipio','río','lago','cordillera','montaña','sierra','comunidad','comarca','cabo','golfo','isla','país','nación'];
-   const _isGeoCard = _geoKw.some(k => _q2.includes(k)) || currentStudyCard.deckId === 'geo_esp' || currentStudyCard.deckId === 'geo_mund';
-   let _wikiSearch = currentStudyCard.a;
-   if (_isGeoCard && /^[A-ZÁÉÍÓÚÑ]/.test(currentStudyCard.a) && currentStudyCard.a.length < 25)
-       _wikiSearch += currentStudyCard.deckId === 'geo_esp' ? ' España' : ' geografía';
-   const wikiBtn = document.getElementById('link-wiki');
-   wikiBtn.dataset.url = 'https://es.wikipedia.org/wiki/Special:Search?search=' + encodeURIComponent(_wikiSearch) + '&ns0=1';
-   wikiBtn.onclick = function(e) { e.preventDefault(); e.stopPropagation(); openExternalUrl(this.dataset.url); };
+   const _gkw=['ciudad','capital','provincia','municipio','rio','lago','sierra','cabo','golfo','isla','pais','nacion'];
+   const _isGeo=_gkw.some(k=>(currentStudyCard.q||'').toLowerCase().includes(k))||['geo_esp','geo_mund'].includes(currentStudyCard.deckId);
+   let _ws=currentStudyCard.a;
+   if(_isGeo&&/^[A-ZÁÉÍÓÚÑ]/.test(_ws)&&_ws.length<25) _ws+=currentStudyCard.deckId==='geo_esp'?' España':' geografía';
+   const wikiEl=document.getElementById('link-wiki');
+   wikiEl.href='https://es.wikipedia.org/wiki/Special:Search?search='+encodeURIComponent(_ws)+'&ns0=1';
+   wikiEl.onclick=function(e){e.preventDefault();e.stopPropagation();openExternalUrl(this.href);};
    
    const mapBtn = document.getElementById('link-map');
-   if (currentStudyCard.deckId === 'geo_esp' || currentStudyCard.deckId === 'geo_mund'
-       || currentStudyCard.deckId === 'hist' || currentStudyCard.deckId === 'hist_esp') {
+   if (['geo_esp','geo_mund','hist','hist_esp'].includes(currentStudyCard.deckId)) {
        mapBtn.style.display = 'flex';
-       const _mq = currentStudyCard.deckId === 'geo_esp'
-           ? encodeURIComponent(currentStudyCard.a + ', España')
-           : encodeURIComponent(currentStudyCard.a);
-       // Store in data attribute — avoid href since PWA blocks target=_blank
-       mapBtn.dataset.url = 'https://maps.google.com/maps?q=' + _mq;
+       const _mq = currentStudyCard.deckId==='geo_esp' ? encodeURIComponent(currentStudyCard.a+', España') : term;
+       mapBtn.dataset.url = 'https://maps.google.com/maps?q='+_mq;
    } else {
        mapBtn.style.display = 'none';
        mapBtn.dataset.url = '';
@@ -13144,12 +13190,15 @@ window.exitSmartStudy = function() {
 // ============================================================
 function goTo(id) {
     document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
-    document.getElementById(id).classList.add('active');
+    const _s=document.getElementById(id);
+    if(_s)_s.classList.add('active');
+    else{document.getElementById('home').classList.add('active');return;}
 
     // Efectos colaterales al cambiar de pantalla
     if (id === 'home') { loadDeckInfo(); updateDifHomeCount(); }
-    if (id === 'dificiles') { renderDificiles(); }
-    if (id === 'creator') { renderCustomList(); }
+    if (id === 'dificiles') { renderDificilesAlfa(); }
+    if (id === 'dashboard') { renderDashboard(); }
+    if (id === 'creator')   { renderCustomList(); }
     if (id === 'rosco') { startRosco(); } 
     if (id === 'rae') { initRaeIfNeeded(); }
 }
@@ -13195,6 +13244,8 @@ window.onload = function () {
     updateStreak();
     loadDeckInfo();
     updateDifHomeCount();
+    checkWeeklyBackup();
+    _ppSessStart=Date.now();
 };
 
 // ============================================================
@@ -14080,6 +14131,14 @@ function finishRosco() {
         goTo('rosco');
     };
     document.getElementById('result-overlay').classList.add('active');
+    try{
+        const _p=roscoOrder.filter(l=>roscoData[l].status==='pass').length;
+        const _h=JSON.parse(localStorage.getItem('ppro_rosco_hist')||'[]');
+        _h.push({date:new Date().toISOString().slice(0,10),ok,fail,pass:_p,total});
+        if(_h.length>60)_h.shift();localStorage.setItem('ppro_rosco_hist',JSON.stringify(_h));
+        roscoOrder.forEach(l=>_ppTrackLetter(l,roscoData[l].status==='ok'));
+        _ppRecordSession('rosco',total,ok);
+    }catch(x){}
 }
 
 // ============================================================
@@ -14143,24 +14202,32 @@ function startVoice() {
     }
     recognition = new SR();
     recognition.lang = 'es-ES';
-    recognition.continuous = true;
+    recognition.continuous = false;
+    recognition.maxAlternatives = 5;
     recognition.interimResults = false;
     recognition.onresult = e => {
-        const transcript = e.results[e.results.length - 1][0].transcript.trim();
-        const normalized = transcript.toLowerCase()
-            .normalize('NFD').replace(/[\u0300-\u036f]/g, '');
-
-        // "Pasapalabra" o variantes → pasar, no responder
-        const pasaVariants = ['pasapalabra', 'pasa palabra', 'paso', 'paso la palabra', 'siguiente'];
-        if (pasaVariants.some(function(v){ return normalized.includes(v); })) {
-            // Parar micro inmediatamente para que no se oiga el eco
-            try { recognition.stop(); } catch(e) {}
-            pasarRosco();
-            return;
+        const _nv = s => s.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'').trim();
+        const res = e.results[0];
+        const pasa = ['pasapalabra','pasa palabra','pasa','paso','siguiente','saltar','pasar'];
+        for (let i=0; i<res.length; i++) {
+            if (pasa.some(v => _nv(res[i].transcript).includes(v))) {
+                try { recognition.stop(); } catch(_) {}
+                setTimeout(() => pasarRosco(), 200); return;
+            }
         }
-
-        document.getElementById('rosco-answer').value = transcript;
-        submitRosco();
+        const letraActual = (typeof roscoOrder!=='undefined' && roscoOrder[roscoCurrentIdx])
+            ? _nv(roscoOrder[roscoCurrentIdx]) : '';
+        let best = res[0].transcript.trim();
+        for (let i=0; i<res.length; i++) {
+            if (letraActual && _nv(res[i].transcript).startsWith(letraActual)) {
+                best = res[i].transcript.trim(); break;
+            }
+        }
+        const inp = document.getElementById('rosco-answer');
+        inp.value = best;
+        inp.style.outline = '2px solid var(--gold)';
+        inp.style.boxShadow = '0 0 0 4px var(--gold-dim)';
+        setTimeout(() => { inp.style.outline=''; inp.style.boxShadow=''; }, 900);
     };
     recognition.onerror = (e) => {
         // 'no-speech' es normal, no mostrar error. Los demás sí.
@@ -14372,32 +14439,72 @@ document.getElementById('rosco-answer').addEventListener('focus', () => {
 });
 
 
-// ── Abrir URLs externas desde PWA sin bloquearse ─────────────────
-function openExternalUrl(url) {
-    if (!url) return;
-    // En PWA standalone, window.open() puede estar bloqueado.
-    // Secuencia de intentos:
-    try {
-        const a = document.createElement('a');
-        a.href = url;
-        a.target = '_blank';
-        a.rel = 'noopener noreferrer';
-        a.style.display = 'none';
-        document.body.appendChild(a);
-        a.click();
-        setTimeout(() => document.body.removeChild(a), 100);
-    } catch(e) {
-        // Fallback: navegar en la misma pestaña
-        window.location.href = url;
-    }
-}
+var _ppSessStart=Date.now();
+function _ppTrackLetter(letra,isOk){try{var d=JSON.parse(localStorage.getItem('ppro_letters')||'{}');if(!d[letra])d[letra]={ok:0,fail:0};if(isOk)d[letra].ok++;else d[letra].fail++;localStorage.setItem('ppro_letters',JSON.stringify(d));}catch(x){}}
+function _ppRecordSession(deckId,answered,correct){try{var u=JSON.parse(localStorage.getItem('ppro_usage')||'{"sessions":[],"byDeck":{},"daily":{}}');var today=new Date().toISOString().slice(0,10);var mins=Math.max(0,Math.round((Date.now()-_ppSessStart)/60000));u.sessions.push({date:today,deck:deckId,answered:answered,correct:correct,minutes:mins});if(u.sessions.length>500)u.sessions=u.sessions.slice(-500);if(!u.byDeck[deckId])u.byDeck[deckId]={answered:0,correct:0,minutes:0};u.byDeck[deckId].answered+=answered;u.byDeck[deckId].correct+=correct;u.byDeck[deckId].minutes+=mins;u.daily[today]=(u.daily[today]||0)+answered;localStorage.setItem('ppro_usage',JSON.stringify(u));_ppSessStart=Date.now();}catch(x){}}
 
-function openMapNow() {
-    const btn = document.getElementById('link-map');
-    const url = btn && btn.dataset.url;
-    if (!url) return;
-    openExternalUrl(url);
-}
+var _examList=[],_examIdx=0,_examResults=[];
+function startExamDificiles(){var dif=getDificiles();if(!dif.length){showToast('Sin dificiles todavia!');return;}_examList=[].concat(dif).sort(function(a,b){var la=(a.letra||a.word||'?')[0].toUpperCase(),lb=(b.letra||b.word||'?')[0].toUpperCase();return la!==lb?la.localeCompare(lb,'es'):(a.word||'').localeCompare(b.word||'','es');});_examIdx=0;_examResults=[];goTo('exam-dificiles');_showExamQ();}
+function _showExamQ(){var q=_examList[_examIdx];var prog=(_examIdx+1)+' / '+_examList.length;document.getElementById('exam-top-prog').textContent=prog;document.getElementById('exam-prog-txt').textContent='Pregunta '+prog;document.getElementById('exam-letra').textContent=(q.letra||q.word||'?')[0].toUpperCase();document.getElementById('exam-question').textContent=q.def||'';document.getElementById('exam-answer').value='';document.getElementById('exam-q-card').style.display='block';document.getElementById('exam-fb-card').style.display='none';document.getElementById('exam-done-card').style.display='none';setTimeout(function(){var i=document.getElementById('exam-answer');if(i)i.focus();},150);}
+function submitExam(){var q=_examList[_examIdx];var raw=(document.getElementById('exam-answer').value||'').trim();if(!raw)return;var nrm=function(s){return s.normalize('NFD').replace(/[̀-ͯ]/g,'').toLowerCase().trim();};var ans=q.word||'';var isOk=nrm(raw)===nrm(ans)||(nrm(ans).startsWith(nrm(raw))&&raw.length>=4);_examResults.push({ok:isOk});_ppTrackLetter((q.letra||q.word||'?')[0].toUpperCase(),isOk);document.getElementById('exam-q-card').style.display='none';document.getElementById('exam-fb-card').style.display='block';document.getElementById('exam-fb-icon').textContent=isOk?'\u2705':'\u274c';document.getElementById('exam-fb-text').innerHTML=isOk?'<strong style="color:var(--green);font-size:1.05rem">\u00a1Correcto!</strong><br><span style="color:var(--muted);font-size:0.83rem">'+ans+'</span>':'<strong style="color:var(--red)">Incorrecto</strong><br>Era: <strong style="font-size:1.05rem">'+ans+'</strong><br><span style="color:var(--muted);font-size:0.79rem">Dijiste: &ldquo;'+raw+'&rdquo;</span>';document.getElementById('exam-next-btn').textContent=_examIdx>=_examList.length-1?'Ver resultados':'Siguiente';}
+function nextExamQ(){_examIdx++;if(_examIdx>=_examList.length){var numOk=_examResults.filter(function(r){return r.ok;}).length;var total=_examResults.length;var pct=Math.round(100*numOk/total);document.getElementById('exam-q-card').style.display='none';document.getElementById('exam-fb-card').style.display='none';document.getElementById('exam-done-card').style.display='block';document.getElementById('exam-done-emoji').textContent=pct>=80?'\U0001f3c6':pct>=50?'\U0001f4aa':'\U0001f4d6';document.getElementById('exam-done-score').textContent=numOk+' / '+total+'  ('+pct+'%)';document.getElementById('exam-done-msg').textContent=pct>=80?'\u00a1Lista para el bote! Nivel concursante de verdad. \U0001f3af':pct>=50?'\u00a1Mejorando! Cada repaso cuenta. \U0001f4aa':'A repasar se ha dicho! Para eso est\u00e1n aqu\u00ed. \U0001f4da';_ppRecordSession('exam_dificiles',total,numOk);}else{document.getElementById('exam-fb-card').style.display='none';_showExamQ();}}
+
+function renderDashboard(){try{var u=JSON.parse(localStorage.getItem('ppro_usage')||'{"sessions":[],"byDeck":{},"daily":{}}');var letters=JSON.parse(localStorage.getItem('ppro_letters')||'{}');var roscoH=JSON.parse(localStorage.getItem('ppro_rosco_hist')||'[]');var sessions=u.sessions||[],byDeck=u.byDeck||{},daily=u.daily||{};var totalQ=sessions.reduce(function(s,x){return s+(x.answered||0);},0);var totalOk=sessions.reduce(function(s,x){return s+(x.correct||0);},0);var totalMin=sessions.reduce(function(s,x){return s+(x.minutes||0);},0);var pct=totalQ?Math.round(100*totalOk/totalQ):0;var today=new Date().toISOString().slice(0,10);var todayMin=sessions.filter(function(s){return s.date===today;}).reduce(function(s,x){return s+(x.minutes||0);},0);var streak=0;for(var i=0;i<365;i++){var dd=new Date();dd.setDate(dd.getDate()-i);if((daily[dd.toISOString().slice(0,10)]||0)>0)streak++;else if(i>0)break;}document.getElementById('db-total').textContent=totalQ.toLocaleString('es');document.getElementById('db-pct').textContent=pct+'%';document.getElementById('db-streak').textContent=streak+'d';document.getElementById('db-today').textContent=todayMin<60?todayMin+'min':Math.floor(todayMin/60)+'h '+(todayMin%60?todayMin%60+'m':'');document.getElementById('db-total-time').textContent=Math.round(totalMin/60)+'h';var heat=document.getElementById('db-heatmap');heat.innerHTML='';var vals=Object.values(daily).map(Number);var maxD=vals.length?Math.max.apply(null,[1].concat(vals)):1;for(var j=69;j>=0;j--){var dj=new Date();dj.setDate(dj.getDate()-j);var kj=dj.toISOString().slice(0,10);var vj=daily[kj]||0;var aj=vj?Math.max(0.15,vj/maxD):0;var cel=document.createElement('div');cel.style.cssText='width:11px;height:11px;border-radius:2px;background:'+(vj?'rgba(240,192,64,'+aj.toFixed(2)+')':'var(--border2)')+';';cel.title=kj+': '+vj+' preguntas';heat.appendChild(cel);}var deckEl=document.getElementById('db-by-deck');var entries=Object.entries(byDeck).sort(function(a,b){return b[1].answered-a[1].answered;});deckEl.innerHTML=entries.length?entries.map(function(e){var id=e[0],data=e[1];var p=data.answered?Math.round(100*data.correct/data.answered):0;var col=p>=70?'var(--green)':p>=40?'var(--gold)':'var(--red)';var nm=(typeof MAZOS!=='undefined')?((MAZOS.find(function(m){return m.id===id;})||{}).name||id):id;return '<div style="margin-bottom:10px;"><div style="display:flex;justify-content:space-between;font-size:0.74rem;margin-bottom:3px;"><span>'+nm+'</span><span style="color:'+col+'">'+p+'% ('+data.answered+')</span></div><div style="background:var(--border2);border-radius:5px;height:6px;"><div style="width:'+p+'%;background:'+col+';border-radius:5px;height:6px;"></div></div></div>';}).join(''):'<p style="color:var(--muted);font-size:0.8rem;text-align:center;padding:8px;">Practica para ver tus stats \U0001f4aa</p>';var hlEl=document.getElementById('db-hard-letters');var lArr=Object.entries(letters).map(function(e){var l=e[0],d=e[1];return{l:l,pct:(d.ok+d.fail)?Math.round(100*(d.ok||0)/(d.ok+d.fail)):100};}).sort(function(a,b){return a.pct-b.pct;}).slice(0,10);hlEl.innerHTML=lArr.length?lArr.map(function(x){var col=x.pct<50?'var(--red)':x.pct<70?'var(--gold)':'var(--green)';return '<div style="background:var(--card2);border:1px solid '+(x.pct<50?'var(--red)':'var(--border2)')+';border-radius:9px;padding:5px 11px;display:flex;align-items:center;gap:6px;font-size:0.8rem;"><strong style="font-size:1.05rem">'+x.l+'</strong><span style="color:'+col+'">'+x.pct+'%</span></div>';}).join(''):'<span style="color:var(--muted);font-size:0.8rem;">Sin datos a\u00fan, \u00a1haz el rosco!</span>';var rEl=document.getElementById('db-rosco-hist');rEl.innerHTML=roscoH.length?roscoH.slice(-8).reverse().map(function(r){var p=r.total?Math.round(100*r.ok/r.total):0;var col=p>=70?'var(--green)':p>=40?'var(--gold)':'var(--red)';return '<div style="display:flex;align-items:center;gap:8px;font-size:0.77rem;padding:7px 0;border-bottom:1px solid var(--border2);"><span style="color:var(--muted);min-width:68px;font-size:0.7rem;">'+r.date+'</span><span style="color:var(--green);">+'+r.ok+'</span><span style="color:var(--red);">\u2716'+r.fail+'</span><span style="color:var(--muted);">~'+(r.pass||0)+'</span><span style="font-weight:700;margin-left:auto;color:'+col+';">'+p+'%</span></div>';}).join(''):'<p style="color:var(--muted);font-size:0.8rem;text-align:center;padding:8px;">\u00a1Haz tu primer rosco!</p>';}catch(e){console.error('Dashboard:',e);}}
+
+function sendProgressReport(){try{var u=JSON.parse(localStorage.getItem('ppro_usage')||'{}');var letters=JSON.parse(localStorage.getItem('ppro_letters')||'{}');var roscoH=JSON.parse(localStorage.getItem('ppro_rosco_hist')||'[]');var difs=getDificiles();var sessions=(u.sessions||[]),byDeck=(u.byDeck||{});var totalQ=sessions.reduce(function(s,x){return s+(x.answered||0);},0);var totalOk=sessions.reduce(function(s,x){return s+(x.correct||0);},0);var totalMin=sessions.reduce(function(s,x){return s+(x.minutes||0);},0);var pct=totalQ?Math.round(100*totalOk/totalQ):0;var dl=Object.entries(byDeck).map(function(e){var id=e[0],d=e[1];var p=d.answered?Math.round(100*d.correct/d.answered):0;var nm=(typeof MAZOS!=='undefined')?((MAZOS.find(function(m){return m.id===id;})||{}).name||id):id;return '  - '+nm+': '+d.answered+' preguntas, '+p+'% acierto';}).join('\n');var hl=Object.entries(letters).map(function(e){var l=e[0],d=e[1];return{l:l,p:(d.ok+d.fail)?Math.round(100*(d.ok||0)/(d.ok+d.fail)):100};}).sort(function(a,b){return a.p-b.p;}).slice(0,8).map(function(x){return x.l+'('+x.p+'%)';}).join(', ');var lastR=roscoH.length?roscoH[roscoH.length-1]:null;var body=['INFORME PASAPALABRA PRO - NOEMI','='.repeat(38),'Fecha: '+new Date().toLocaleDateString('es-ES'),'Total respondidas: '+totalQ.toLocaleString('es'),'Acierto global: '+pct+'%','Tiempo total: '+Math.floor(totalMin/60)+'h '+(totalMin%60)+'min','Dificiles acumuladas: '+difs.length,'','POR MAZO:',(dl||'  (sin datos)'),'','LETRAS MAS DIFICILES: '+(hl||'sin datos'),'','ULTIMO ROSCO: '+(lastR?lastR.date+' - '+lastR.ok+' bien / '+lastR.fail+' mal':'Sin roscos todavia'),'','---','En que mazo quieres mas preguntas?'].join('\n');window.location.href='mailto:andrea.alacreu@gmail.com?subject='+encodeURIComponent('Informe PasaPalabra Pro - '+new Date().toLocaleDateString('es-ES'))+'&body='+encodeURIComponent(body);var el=document.getElementById('db-report-status');if(el){el.textContent='Abriendo correo...';setTimeout(function(){el.textContent='';},4000);}}catch(e){showToast('Error al generar informe');}}
+
+function downloadBackup(){try{var blob=new Blob([JSON.stringify({exported:new Date().toISOString(),dificiles:getDificiles(),usage:JSON.parse(localStorage.getItem('ppro_usage')||'{}'),rosco_hist:JSON.parse(localStorage.getItem('ppro_rosco_hist')||'[]'),letters:JSON.parse(localStorage.getItem('ppro_letters')||'{}')},null,2)],{type:'application/json'});var a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='noemi_ppro_'+new Date().toISOString().slice(0,10)+'.json';document.body.appendChild(a);a.click();setTimeout(function(){document.body.removeChild(a);},100);showToast('\U0001f4be Backup descargado');}catch(e){showToast('Error al descargar backup');}}
+
+function checkWeeklyBackup(){var last=localStorage.getItem('ppro_last_backup')||'2000-01-01';var today=new Date().toISOString().slice(0,10);if(Math.floor((new Date(today)-new Date(last))/86400000)>=7){localStorage.setItem('ppro_last_backup',today);setTimeout(downloadBackup,5000);}}
+
+/**
+     * HOSPITAL DE TARJETAS PARA NOEMI
+     */
+    function renderDificilesAlfa() {
+        const container = document.getElementById('dificiles-list');
+        if (!container) return;
+
+        let dificiles = [];
+        try {
+            dificiles = JSON.parse(localStorage.getItem('ppro_dificiles') || '[]');
+        } catch (e) { console.error(e); }
+
+        container.innerHTML = '';
+
+        if (dificiles.length === 0) {
+            container.innerHTML = '<div style="text-align:center; padding:40px; opacity:0.5;">El hospital está vacío. ¡Buen trabajo, Noemi!</div>';
+            return;
+        }
+
+        dificiles.sort((a, b) => a.a.localeCompare(b.a));
+
+        dificiles.forEach((item, index) => {
+            const div = document.createElement('div');
+            div.className = 'dificil-item'; 
+            div.style = "background:var(--card2); border:1px solid var(--border); padding:15px; border-radius:12px; margin-bottom:10px;";
+            div.innerHTML = `
+                <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
+                    <span style="background:var(--gold); color:black; padding:2px 8px; border-radius:4px; font-weight:bold; font-size:0.8rem;">${item.letra}</span>
+                    <button onclick="removeDificil(${index}); renderDificilesAlfa();" style="background:none; border:none; color:var(--red); cursor:pointer; font-size:1.2rem;">&times;</button>
+                </div>
+                <p style="font-size:0.95rem; line-height:1.4; margin-bottom:10px;">${item.q}</p>
+                <div style="color:var(--gold); font-weight:bold; text-transform:uppercase; font-size:0.9rem; border-top:1px solid var(--border); padding-top:8px;">${item.a}</div>
+            `;
+            container.appendChild(div);
+        });
+    }
+
+    window.renderDificilesAlfa = renderDificilesAlfa;
+
+    function checkWeeklyBackup(){
+        var last = localStorage.getItem('ppro_last_backup') || '2000-01-01';
+        var today = new Date().toISOString().slice(0,10);
+        if(Math.floor((new Date(today)-new Date(last))/86400000) >= 7){
+            localStorage.setItem('ppro_last_backup', today);
+            setTimeout(downloadBackup, 5000);
+        }
+    }
+    checkWeeklyBackup();
 
 </script>
 </body>
