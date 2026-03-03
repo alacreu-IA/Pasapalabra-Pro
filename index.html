@@ -13494,8 +13494,8 @@ MAZOS_VOCAB.push({
                  <div id="study-a-text" style="color:var(--accent); font-size:1.6rem; font-weight:bold; line-height:1.4; margin-bottom: 30px; width:100%;">Respuesta</div>
                  
                  <div id="study-links" style="display:flex; gap:12px; flex-wrap:wrap; justify-content:center;">
-                     <a id="link-wiki" href="#" target="_blank" onclick="event.stopPropagation()" style="text-decoration:none; background:rgba(255,255,255,0.1); color:var(--text); padding:10px 18px; border-radius:12px; font-size:0.9rem; display:flex; align-items:center; gap:8px; border:1px solid rgba(255,255,255,0.05);">📖 Wikipedia</a>
-                     <a id="link-map" href="#" target="_blank" onclick="event.stopPropagation()" style="text-decoration:none; background:rgba(39, 174, 96, 0.2); color:#2ecc71; padding:10px 18px; border-radius:12px; font-size:0.9rem; display:none; align-items:center; gap:8px; border:1px solid rgba(39, 174, 96, 0.3);">🗺️ Ver Mapa</a>
+                     <a id="link-wiki" href="#" style="text-decoration:none; background:rgba(255,255,255,0.1); color:var(--text); padding:10px 18px; border-radius:12px; font-size:0.9rem; display:flex; align-items:center; gap:8px; border:1px solid rgba(255,255,255,0.05);">📖 Wikipedia</a>
+                     <a id="link-map" href="#" onclick="openMapNow(this); return false;" style="text-decoration:none; background:rgba(39, 174, 96, 0.2); color:#2ecc71; padding:10px 18px; border-radius:12px; font-size:0.9rem; display:none; align-items:center; gap:8px; border:1px solid rgba(39, 174, 96, 0.3);">🗺️ Ver Mapa</a>
                  </div>
              </div>
              
@@ -15073,34 +15073,38 @@ function checkWeeklyBackup(){var last=localStorage.getItem('ppro_last_backup')||
         const container = document.getElementById('dificiles-list');
         if (!container) return;
 
-        let dificiles = [];
-        try {
-            dificiles = JSON.parse(localStorage.getItem('ppro_dificiles') || '[]');
-        } catch (e) { console.error(e); }
+        // Lee de la clave correcta (la misma que getDificiles/saveDificil)
+        const dificiles = getDificiles();
+        document.getElementById('dif-count') && (document.getElementById('dif-count').textContent = dificiles.length);
 
         container.innerHTML = '';
 
         if (dificiles.length === 0) {
-            container.innerHTML = '<div style="text-align:center; padding:40px; opacity:0.5;">El hospital está vacío. ¡Buen trabajo, Andrea!</div>';
+            container.innerHTML = '<p style="color:var(--muted);text-align:center;margin-top:48px;font-size:0.88rem;">\u00a1Sin dif\u00edciles! Las que falles en el rosco aparecer\u00e1n aqu\u00ed, A-Z.</p>';
             return;
         }
 
-        dificiles.sort((a, b) => (a.a || "").localeCompare(b.a || ""));
-
-        dificiles.forEach((item, index) => {
-            const div = document.createElement('div');
-            div.className = 'dificil-item'; 
-            div.style = "background:var(--card2); border:1px solid var(--border); padding:15px; border-radius:12px; margin-bottom:10px;";
-            div.innerHTML = `
-                <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
-                    <span style="background:var(--gold); color:black; padding:2px 8px; border-radius:4px; font-weight:bold; font-size:0.8rem;">${item.letra}</span>
-                    <button onclick="removeDificil(${index}); renderDificilesAlfa();" style="background:none; border:none; color:var(--red); cursor:pointer; font-size:1.2rem;">&times;</button>
-                </div>
-                <p style="font-size:0.95rem; line-height:1.4; margin-bottom:10px;">${item.q}</p>
-                <div style="color:var(--gold); font-weight:bold; text-transform:uppercase; font-size:0.9rem; border-top:1px solid var(--border); padding-top:8px;">${item.a}</div>
-            `;
-            container.appendChild(div);
+        // Ordenar A-Z por letra/word
+        const sorted = [...dificiles].sort((a, b) => {
+            const la = (a.letra || a.word || '?')[0].toUpperCase();
+            const lb = (b.letra || b.word || '?')[0].toUpperCase();
+            return la !== lb ? la.localeCompare(lb, 'es') : (a.word || '').localeCompare(b.word || '', 'es');
         });
+
+        let html = '', lastL = '';
+        sorted.forEach((d, i) => {
+            const letra = (d.letra || d.word || '?')[0].toUpperCase();
+            if (letra !== lastL) {
+                lastL = letra;
+                html += `<div style="font-family:'Playfair Display',serif;font-size:1.55rem;font-weight:900;color:var(--gold);padding:${i ? '14px' : '4px'} 2px 4px;border-bottom:1px solid rgba(240,192,64,0.25);margin-bottom:8px;text-shadow:0 0 18px rgba(240,192,64,0.3);">${letra}</div>`;
+            }
+            html += `<div style="background:var(--card);border:1px solid var(--border2);border-radius:12px;padding:11px 13px;margin-bottom:7px;position:relative;">
+                <div style="font-size:0.73rem;color:var(--muted);line-height:1.45;padding-right:24px;">${d.def || d.q || '\u2013'}</div>
+                <div style="font-weight:700;font-size:0.9rem;margin-top:3px;color:var(--gold);">${d.word || d.a || ''}</div>
+                <button onclick="removeDificil(${dificiles.indexOf(d)}); renderDificilesAlfa();" style="position:absolute;top:8px;right:9px;background:none;border:none;color:var(--muted);font-size:0.82rem;cursor:pointer;padding:2px 5px;border-radius:4px;">&#x2715;</button>
+            </div>`;
+        });
+        container.innerHTML = html;
     }
 
     window.renderDificilesAlfa = renderDificilesAlfa;
@@ -15138,6 +15142,73 @@ function checkWeeklyBackup(){var last=localStorage.getItem('ppro_last_backup')||
         // 3. Si existe el hospital, dibujarlo
         if (document.getElementById('dificiles-list')) renderDificilesAlfa();
     });
+
+
+// ── Utilidades PWA: abrir URLs externas sin que la PWA lo bloquee ──────────
+function openExternalUrl(url) {
+    if (!url || url === '#') return;
+    try {
+        const a = document.createElement('a');
+        a.href = url;
+        a.target = '_blank';
+        a.rel = 'noopener noreferrer';
+        a.style.display = 'none';
+        document.body.appendChild(a);
+        a.click();
+        setTimeout(() => document.body.removeChild(a), 100);
+    } catch(e) {
+        window.location.href = url;
+    }
+}
+
+function openMapNow(el) {
+    const url = (el && el.dataset && el.dataset.url) || (el && el.href);
+    if (url && url !== '#') openExternalUrl(url);
+}
+
+// ── Migración de datos: garantiza que los datos de Noemi sobreviven actualizaciones ──
+function _ppMigrateData() {
+    // Si hay datos en 'ppro_dificiles' (clave antigua) moverlos a 'dificiles'
+    try {
+        const old = localStorage.getItem('ppro_dificiles');
+        if (old) {
+            const oldData = JSON.parse(old);
+            if (oldData && oldData.length > 0) {
+                const current = JSON.parse(localStorage.getItem('dificiles') || '[]');
+                // Merge sin duplicados
+                oldData.forEach(item => {
+                    const word = item.a || item.word || '';
+                    if (word && !current.find(d => (d.word || d.a) === word)) {
+                        current.push({
+                            word: word,
+                            def: item.q || item.def || '',
+                            letra: item.letra || word[0] || ''
+                        });
+                    }
+                });
+                localStorage.setItem('dificiles', JSON.stringify(current));
+                localStorage.removeItem('ppro_dificiles');
+                console.log('Migración difíciles OK:', current.length, 'palabras');
+            }
+        }
+    } catch(e) { console.error('Migration error:', e); }
+
+    // Si hay datos en 'ppro_srs_*' moverlos al formato srs_* actual
+    try {
+        for (let i = 0; i < localStorage.length; i++) {
+            const key = localStorage.key(i);
+            if (key && key.startsWith('ppro_srs_')) {
+                const newKey = 'srs_' + key.slice(9);
+                if (!localStorage.getItem(newKey)) {
+                    localStorage.setItem(newKey, localStorage.getItem(key));
+                }
+            }
+        }
+    } catch(e) {}
+}
+
+// Ejecutar migración al arrancar
+_ppMigrateData();
 
 </script>
 </body>
