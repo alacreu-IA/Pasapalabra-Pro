@@ -357,7 +357,7 @@ html, body {
     flex-shrink: 0; display: flex; justify-content: center;
     padding: 10px 10px 6px;
 }
-#rosco-svg { width: min(280px, 56vw); height: min(280px, 56vw); }
+#rosco-svg { width: min(360px, 90vw); height: min(360px, 90vw); }
 
 .rosco-stats { display: flex; justify-content: center; gap: 20px; padding: 6px 0; flex-shrink: 0; }
 .rosco-stat { text-align: center; }
@@ -793,6 +793,19 @@ html, body {
     line-height: 1.5; flex-shrink: 0;
 }
 
+
+/* ── New features visual polish ─────────────────────────── */
+.screen.active { opacity: 1 !important; pointer-events: auto !important; }
+.deck-item { transition: transform 0.15s ease !important; }
+.deck-item:active { transform: scale(0.97) !important; }
+.mode-card { transition: transform 0.15s ease !important; }
+.mode-card:active { transform: scale(0.96) !important; }
+.btn-primary { transition: transform 0.12s ease, box-shadow 0.12s ease !important; }
+.btn-primary:active { transform: scale(0.97) !important; }
+.app-brand h1 { text-shadow: 0 0 24px rgba(240,192,64,0.22); }
+.top-bar-title { font-weight: 800 !important; }
+#rosco-answer { transition: outline 0.2s, box-shadow 0.2s !important; }
+
 </style>
 </head>
 <body>
@@ -950,6 +963,15 @@ html, body {
             </div>
         </div>
 
+        <div style="display:flex;justify-content:flex-end;margin:14px 0 0;">
+            <button onclick="goTo('dashboard')"
+                style="background:var(--card2);border:1px solid var(--gold);border-radius:20px;
+                       padding:7px 16px;font-size:0.76rem;color:var(--gold);cursor:pointer;
+                       font-weight:700;display:flex;align-items:center;gap:6px;
+                       box-shadow:0 0 16px var(--gold-dim);letter-spacing:0.2px;">
+                📊 Mi progreso
+            </button>
+        </div>
         <div class="section-label">Herramientas</div>
         <div class="deck-list">
             <div class="deck-item" onclick="goTo('dificiles')">
@@ -1187,12 +1209,26 @@ html, body {
         <div class="top-bar-title">🔴 Palabras Difíciles</div>
         <div class="top-bar-right" id="dif-count">0</div>
     </div>
-    <div class="scroll-body" style="padding-top:14px;">
+    <div style="padding:10px 14px 0;display:flex;gap:8px;">
+        <button class="btn-primary" onclick="startExamDificiles()"
+            style="flex:1;font-size:0.83rem;padding:9px 0;border-radius:12px;">
+            📝 Examinarse A-Z
+        </button>
+        <button onclick="exportarDificiles()"
+            style="background:var(--card2);border:1px solid var(--border2);border-radius:12px;
+                   padding:9px 13px;color:var(--muted);font-size:0.85rem;cursor:pointer;">
+            📤
+        </button>
+    </div>
+    <div class="scroll-body" style="padding-top:8px;">
         <div id="dificiles-list">
-            <p style="color:var(--muted); text-align:center; margin-top:40px; font-size:0.9rem;">Las palabras que marques como "No sé" aparecerán aquí para repasar.</p>
+            <p style="color:var(--muted);text-align:center;margin-top:48px;font-size:0.88rem;">
+                Las palabras que falles en el rosco aparecerán aquí, ordenadas A-Z.</p>
         </div>
-        <button class="btn-secondary" onclick="exportarDificiles()" style="margin-top:16px;">📤 Exportar como CSV</button>
-        <button class="btn-secondary" onclick="estudiarSoloDificiles()" style="margin-top:4px; border-color:var(--red); color:var(--red);">🔴 Estudiar solo difíciles</button>
+        <button class="btn-secondary" onclick="estudiarSoloDificiles()"
+            style="margin-top:4px;border-color:var(--red);color:var(--red);">
+            🔴 Estudiar solo difíciles
+        </button>
     </div>
 </div>
 
@@ -1268,6 +1304,116 @@ html, body {
     <button class="result-btn" onclick="closeResult()">🏠 Volver al inicio</button>
     <button class="result-btn-sec" id="result-repeat-btn">🔄 Repetir ronda</button>
 </div>
+
+<!-- ================================================================
+     EXAM DIFÍCILES
+================================================================ -->
+<div id="exam-dificiles" class="screen">
+    <div class="top-bar">
+        <button class="btn-back" onclick="goTo('dificiles')">←</button>
+        <div class="top-bar-title">📝 Examen Difíciles</div>
+        <span id="exam-top-prog" style="font-size:0.75rem;color:var(--muted);padding-right:4px;"></span>
+    </div>
+    <div class="scroll-body" style="padding:16px 16px 40px;">
+        <div id="exam-q-card" style="background:var(--card);border:1px solid var(--border2);border-radius:var(--radius);padding:22px;margin-bottom:14px;">
+            <div id="exam-prog-txt" style="font-size:0.68rem;color:var(--muted);text-transform:uppercase;letter-spacing:0.8px;margin-bottom:12px;"></div>
+            <div id="exam-letra" style="font-family:'Playfair Display',serif;font-size:4rem;color:var(--gold);line-height:1;text-align:center;margin-bottom:12px;text-shadow:0 0 30px rgba(240,192,64,0.35);">A</div>
+            <div id="exam-question" style="font-size:0.93rem;line-height:1.6;margin-bottom:18px;padding:12px 14px;background:var(--card2);border-radius:10px;border-left:3px solid var(--gold);"></div>
+            <div style="display:flex;gap:8px;">
+                <input id="exam-answer" type="text" class="form-input" placeholder="Tu respuesta..."
+                    autocomplete="off" autocorrect="off" spellcheck="false" style="flex:1;"
+                    onkeydown="if(event.key==='Enter'){event.preventDefault();submitExam();}">
+                <button class="btn-primary" onclick="submitExam()" style="padding:10px 20px;font-size:1.1rem;min-width:52px;">✓</button>
+            </div>
+        </div>
+        <div id="exam-fb-card" style="display:none;background:var(--card);border:1px solid var(--border2);border-radius:var(--radius);padding:24px;text-align:center;">
+            <div id="exam-fb-icon" style="font-size:3.2rem;margin-bottom:12px;"></div>
+            <div id="exam-fb-text" style="font-size:0.92rem;line-height:1.65;margin-bottom:20px;"></div>
+            <button id="exam-next-btn" class="btn-primary" onclick="nextExamQ()" style="width:100%;">Siguiente →</button>
+        </div>
+        <div id="exam-done-card" style="display:none;text-align:center;padding:28px 10px;">
+            <div id="exam-done-emoji" style="font-size:4.5rem;margin-bottom:14px;"></div>
+            <div id="exam-done-score" style="font-size:1.5rem;font-weight:900;color:var(--gold);margin-bottom:8px;font-family:'Syne',sans-serif;"></div>
+            <div id="exam-done-msg" style="font-size:0.88rem;color:var(--muted);margin-bottom:26px;line-height:1.55;"></div>
+            <button class="btn-primary" onclick="goTo('dificiles')" style="width:100%;">🏠 Volver a Difíciles</button>
+        </div>
+    </div>
+</div>
+
+<!-- ================================================================
+     DASHBOARD
+================================================================ -->
+<div id="dashboard" class="screen">
+    <div class="top-bar">
+        <button class="btn-back" onclick="goTo('home')">←</button>
+        <div class="top-bar-title">📊 Mi Progreso</div>
+        <button onclick="downloadBackup()" title="Descargar backup"
+            style="background:none;border:none;color:var(--muted);font-size:1.1rem;cursor:pointer;padding:4px 8px;">💾</button>
+    </div>
+    <div class="scroll-body" style="padding:14px 14px 44px;">
+        <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-bottom:12px;">
+            <div style="background:var(--card);border:1px solid var(--border2);border-radius:var(--radius);padding:14px 6px;text-align:center;">
+                <div id="db-total" style="font-size:1.7rem;font-weight:900;color:var(--gold);line-height:1;font-family:'Syne',sans-serif;">0</div>
+                <div style="font-size:0.58rem;color:var(--muted);margin-top:4px;text-transform:uppercase;letter-spacing:0.3px;line-height:1.4;">preguntas<br>respondidas</div>
+            </div>
+            <div style="background:var(--card);border:1px solid var(--border2);border-radius:var(--radius);padding:14px 6px;text-align:center;">
+                <div id="db-pct" style="font-size:1.7rem;font-weight:900;color:var(--green);line-height:1;font-family:'Syne',sans-serif;">0%</div>
+                <div style="font-size:0.58rem;color:var(--muted);margin-top:4px;text-transform:uppercase;letter-spacing:0.3px;line-height:1.4;">tasa de<br>acierto</div>
+            </div>
+            <div style="background:var(--card);border:1px solid var(--border2);border-radius:var(--radius);padding:14px 6px;text-align:center;">
+                <div id="db-streak" style="font-size:1.7rem;font-weight:900;color:var(--gold);line-height:1;font-family:'Syne',sans-serif;">0d</div>
+                <div style="font-size:0.58rem;color:var(--muted);margin-top:4px;text-transform:uppercase;letter-spacing:0.3px;line-height:1.4;">racha<br>actual</div>
+            </div>
+        </div>
+        <div style="background:var(--card);border:1px solid var(--border2);border-radius:var(--radius);padding:14px 16px;margin-bottom:12px;display:grid;grid-template-columns:1fr 1fr;gap:8px;text-align:center;">
+            <div>
+                <div id="db-today" style="font-size:1.4rem;font-weight:900;color:var(--gold);font-family:'Syne',sans-serif;">0min</div>
+                <div style="font-size:0.6rem;color:var(--muted);margin-top:3px;text-transform:uppercase;letter-spacing:0.3px;">hoy</div>
+            </div>
+            <div>
+                <div id="db-total-time" style="font-size:1.4rem;font-weight:900;color:var(--gold);font-family:'Syne',sans-serif;">0h</div>
+                <div style="font-size:0.6rem;color:var(--muted);margin-top:3px;text-transform:uppercase;letter-spacing:0.3px;">total</div>
+            </div>
+        </div>
+        <div style="background:var(--card);border:1px solid var(--border2);border-radius:var(--radius);padding:14px 16px;margin-bottom:12px;">
+            <div style="font-size:0.66rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--muted);margin-bottom:10px;">🔥 Actividad — últimos 70 días</div>
+            <div id="db-heatmap" style="display:flex;flex-wrap:wrap;gap:3px;"></div>
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-top:8px;font-size:0.58rem;color:var(--muted);">
+                <span>menos</span>
+                <div style="display:flex;gap:3px;">
+                    <div style="width:10px;height:10px;border-radius:2px;background:var(--border2)"></div>
+                    <div style="width:10px;height:10px;border-radius:2px;background:rgba(240,192,64,.2)"></div>
+                    <div style="width:10px;height:10px;border-radius:2px;background:rgba(240,192,64,.55)"></div>
+                    <div style="width:10px;height:10px;border-radius:2px;background:rgba(240,192,64,1)"></div>
+                </div>
+                <span>más</span>
+            </div>
+        </div>
+        <div style="background:var(--card);border:1px solid var(--border2);border-radius:var(--radius);padding:14px 16px;margin-bottom:12px;">
+            <div style="font-size:0.66rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--muted);margin-bottom:12px;">📚 Rendimiento por mazo</div>
+            <div id="db-by-deck"></div>
+        </div>
+        <div style="background:var(--card);border:1px solid var(--border2);border-radius:var(--radius);padding:14px 16px;margin-bottom:12px;">
+            <div style="font-size:0.66rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--muted);margin-bottom:10px;">⚠️ Letras que más te cuestan</div>
+            <div id="db-hard-letters" style="display:flex;flex-wrap:wrap;gap:7px;"></div>
+        </div>
+        <div style="background:var(--card);border:1px solid var(--border2);border-radius:var(--radius);padding:14px 16px;margin-bottom:12px;">
+            <div style="font-size:0.66rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--muted);margin-bottom:10px;">🟡 Últimos roscos</div>
+            <div id="db-rosco-hist"></div>
+        </div>
+        <div style="background:linear-gradient(135deg,#16100a,#0c0c18);border:1px solid var(--gold);border-radius:var(--radius);padding:16px;margin-bottom:12px;position:relative;overflow:hidden;">
+            <div style="position:absolute;top:-16px;right:-16px;font-size:5rem;opacity:0.06;pointer-events:none;">📩</div>
+            <div style="font-size:0.66rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--gold);margin-bottom:8px;">📩 Informe para Andrea</div>
+            <p style="font-size:0.78rem;color:var(--muted);margin:0 0 14px;line-height:1.55;">
+                Le mando tus stats para que sepa en qué áreas añadirte más preguntas.<br>
+                <em style="font-size:0.72rem;">Te vigila. Para bien. 😂</em>
+            </p>
+            <button class="btn-primary" onclick="sendProgressReport()" style="width:100%;margin-bottom:8px;">📬 Mandar informe a Andrea</button>
+            <div id="db-report-status" style="font-size:0.72rem;color:var(--muted);text-align:center;min-height:14px;"></div>
+        </div>
+    </div>
+</div>
+
 
 <!-- TOAST -->
 <div class="toast" id="toast">✓ Guardado</div>
@@ -13129,11 +13275,14 @@ window.exitSmartStudy = function() {
 // ============================================================
 function goTo(id) {
     document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
-    document.getElementById(id).classList.add('active');
+    const _el = document.getElementById(id);
+    if (_el) _el.classList.add('active');
+    else { document.getElementById('home').classList.add('active'); return; }
 
     // Efectos colaterales al cambiar de pantalla
     if (id === 'home') { loadDeckInfo(); updateDifHomeCount(); }
-    if (id === 'dificiles') { renderDificiles(); }
+    if (id === 'dificiles') { renderDificilesAlfa(); }
+    if (id === 'dashboard')  { renderDashboard(); }
     if (id === 'creator') { renderCustomList(); }
     if (id === 'rosco') { startRosco(); } 
     if (id === 'rae') { initRaeIfNeeded(); }
@@ -13180,6 +13329,8 @@ window.onload = function () {
     updateStreak();
     loadDeckInfo();
     updateDifHomeCount();
+    checkWeeklyBackup();
+    _ppSessStart = Date.now();
 };
 
 // ============================================================
@@ -13667,23 +13818,52 @@ function saveDificil(data) {
     dif.push({ word, def: data.q || data.def || '', letra: data.letra || '' });
     localStorage.setItem('dificiles', JSON.stringify(dif));
 }
-function renderDificiles() {
+function renderDificiles() { renderDificilesAlfa(); }
+
+function renderDificilesAlfa() {
     const dif = getDificiles();
     document.getElementById('dif-count').textContent = dif.length;
     const list = document.getElementById('dificiles-list');
-    if (dif.length === 0) {
-        list.innerHTML = '<p style="color:var(--muted);text-align:center;margin-top:40px;font-size:0.9rem;">¡Sin difíciles pendientes! 🎉 Así se hace.</p>';
+    if (!list) return;
+    if (!dif.length) {
+        list.innerHTML = '<p style="color:var(--muted);text-align:center;margin-top:48px;font-size:0.88rem;">¡Sin difíciles! 🎉<br><small style="font-size:0.76rem;opacity:.7;">Las palabras que falles en el rosco aparecerán aquí, ordenadas A-Z.</small></p>';
         return;
     }
-    list.innerHTML = dif.map((d, i) => `
-        <div class="dificil-item">
-            <div style="display:flex;justify-content:space-between;align-items:start;">
-                <div class="dificil-word">${d.word}</div>
-                <button class="btn-del" onclick="removeDificil(${i})">🗑</button>
-            </div>
-            <div class="dificil-def">${d.def || '–'}</div>
-        </div>
-    `).join('');
+    const sorted = [...dif].sort((a, b) => {
+        const la = (a.letra || a.word || '?')[0].toUpperCase();
+        const lb = (b.letra || b.word || '?')[0].toUpperCase();
+        return la !== lb ? la.localeCompare(lb, 'es') : (a.word||'').localeCompare(b.word||'', 'es');
+    });
+    window._ppDifSorted = sorted;
+    let html = '', lastL = '';
+    sorted.forEach((d, i) => {
+        const letra = (d.letra || d.word || '?')[0].toUpperCase();
+        if (letra !== lastL) {
+            lastL = letra;
+            html += `<div style="font-family:'Playfair Display',serif;font-size:1.55rem;font-weight:900;
+                color:var(--gold);padding:${i?'14px':'4px'} 2px 4px;
+                border-bottom:1px solid rgba(240,192,64,0.25);margin-bottom:8px;
+                text-shadow:0 0 18px rgba(240,192,64,0.3);">${letra}</div>`;
+        }
+        html += `<div style="background:var(--card);border:1px solid var(--border2);border-radius:12px;
+            padding:11px 13px;margin-bottom:7px;position:relative;">
+            <div style="font-size:0.73rem;color:var(--muted);line-height:1.45;padding-right:24px;">${d.def||'–'}</div>
+            <div style="font-weight:700;font-size:0.9rem;margin-top:3px;">${d.word||''}</div>
+            <button onclick="_ppRemoveDif(${i})" style="position:absolute;top:8px;right:9px;
+                background:none;border:none;color:var(--muted);font-size:0.82rem;
+                cursor:pointer;padding:2px 5px;border-radius:4px;">✕</button>
+        </div>`;
+    });
+    list.innerHTML = html;
+}
+
+function _ppRemoveDif(idx) {
+    const item = (window._ppDifSorted||[])[idx];
+    if (!item) return;
+    const all = getDificiles().filter(d => !(d.word === item.word && d.def === item.def));
+    localStorage.setItem('dificiles', JSON.stringify(all));
+    renderDificilesAlfa();
+    updateDifHomeCount();
 }
 function removeDificil(i) {
     const dif = getDificiles();
@@ -14065,6 +14245,17 @@ function finishRosco() {
         goTo('rosco');
     };
     document.getElementById('result-overlay').classList.add('active');
+
+    // Guardar historial rosco + tracking letras
+    try {
+        const _pass = roscoOrder.filter(l => roscoData[l].status === 'pass').length;
+        const _hist = JSON.parse(localStorage.getItem('ppro_rosco_hist') || '[]');
+        _hist.push({ date: new Date().toISOString().slice(0,10), ok, fail, pass: _pass, total });
+        if (_hist.length > 60) _hist.shift();
+        localStorage.setItem('ppro_rosco_hist', JSON.stringify(_hist));
+        roscoOrder.forEach(l => _ppTrackLetter(l, roscoData[l].status === 'ok'));
+        _ppRecordSession('rosco', total, ok);
+    } catch(_) {}
 }
 
 // ============================================================
@@ -14128,24 +14319,40 @@ function startVoice() {
     }
     recognition = new SR();
     recognition.lang = 'es-ES';
-    recognition.continuous = true;
+    recognition.continuous = false;      // false = 1 resultado limpio, mejor en Android
     recognition.interimResults = false;
-    recognition.onresult = e => {
-        const transcript = e.results[e.results.length - 1][0].transcript.trim();
-        const normalized = transcript.toLowerCase()
-            .normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+    recognition.maxAlternatives = 5;     // hasta 5 opciones para elegir la mejor
 
-        // "Pasapalabra" o variantes → pasar, no responder
-        const pasaVariants = ['pasapalabra', 'pasa palabra', 'paso', 'paso la palabra', 'siguiente'];
-        if (pasaVariants.some(function(v){ return normalized.includes(v); })) {
-            // Parar micro inmediatamente para que no se oiga el eco
-            try { recognition.stop(); } catch(e) {}
-            pasarRosco();
-            return;
+    recognition.onresult = e => {
+        const norm = s => s.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').trim();
+        const results  = e.results[0];
+        const pasaVars = ['pasapalabra','pasa palabra','pasa','paso','siguiente','saltar','pasar'];
+
+        // ¿Alguna alternativa es "pasapalabra"?
+        for (let i = 0; i < results.length; i++) {
+            if (pasaVars.some(v => norm(results[i].transcript).includes(v))) {
+                try { recognition.stop(); } catch(_) {}
+                setTimeout(() => pasarRosco(), 200);
+                return;
+            }
         }
 
-        document.getElementById('rosco-answer').value = transcript;
-        submitRosco();
+        // Elige la alternativa que empiece por la letra actual del rosco
+        const letraActual = (typeof roscoOrder !== 'undefined' && roscoOrder[roscoCurrentIdx])
+            ? norm(roscoOrder[roscoCurrentIdx]) : '';
+        let best = results[0].transcript.trim();
+        for (let i = 0; i < results.length; i++) {
+            if (letraActual && norm(results[i].transcript).startsWith(letraActual)) {
+                best = results[i].transcript.trim(); break;
+            }
+        }
+
+        // Rellena el campo SIN auto-enviar — Noemi confirma con Enter o ✓
+        const inp = document.getElementById('rosco-answer');
+        inp.value = best;
+        inp.style.outline = '2px solid var(--gold)';
+        inp.style.boxShadow = '0 0 0 4px var(--gold-dim)';
+        setTimeout(() => { inp.style.outline = ''; inp.style.boxShadow = ''; }, 900);
     };
     recognition.onerror = (e) => {
         // 'no-speech' es normal, no mostrar error. Los demás sí.
@@ -14162,7 +14369,7 @@ function startVoice() {
     recognition.onend = () => {
         if (voiceEnabled) {
             // Pequeña pausa antes de reiniciar para evitar bucles de error
-            setTimeout(() => { try { recognition.start(); } catch(e) {} }, 300);
+            setTimeout(() => { try { recognition.start(); } catch(e) {} }, 450);
         }
     };
     recognition.start();
@@ -14355,6 +14562,271 @@ document.getElementById('rosco-answer').addEventListener('focus', () => {
         document.getElementById('rosco-answer').scrollIntoView({ behavior: 'smooth', block: 'center' });
     }, 300);
 });
+
+
+
+// ════════════════════════════════════════════════════════════
+//  TRACKING — sesiones y letras para el dashboard
+// ════════════════════════════════════════════════════════════
+var _ppSessStart = Date.now();
+
+function _ppTrackLetter(letra, ok) {
+    try {
+        const d = JSON.parse(localStorage.getItem('ppro_letters') || '{}');
+        if (!d[letra]) d[letra] = { ok: 0, fail: 0 };
+        ok ? d[letra].ok++ : d[letra].fail++;
+        localStorage.setItem('ppro_letters', JSON.stringify(d));
+    } catch(_) {}
+}
+
+function _ppRecordSession(deckId, answered, correct) {
+    try {
+        const usage = JSON.parse(localStorage.getItem('ppro_usage') || '{"sessions":[],"byDeck":{},"daily":{}}');
+        const today = new Date().toISOString().slice(0, 10);
+        const mins  = Math.max(0, Math.round((Date.now() - _ppSessStart) / 60000));
+        usage.sessions.push({ date: today, deck: deckId, answered, correct, minutes: mins });
+        if (usage.sessions.length > 500) usage.sessions = usage.sessions.slice(-500);
+        if (!usage.byDeck[deckId]) usage.byDeck[deckId] = { answered: 0, correct: 0, minutes: 0 };
+        usage.byDeck[deckId].answered += answered;
+        usage.byDeck[deckId].correct  += correct;
+        usage.byDeck[deckId].minutes  += mins;
+        usage.daily[today] = (usage.daily[today] || 0) + answered;
+        localStorage.setItem('ppro_usage', JSON.stringify(usage));
+        _ppSessStart = Date.now();
+    } catch(_) {}
+}
+
+// ════════════════════════════════════════════════════════════
+//  EXAMEN DE DIFÍCILES
+// ════════════════════════════════════════════════════════════
+var _examList = [], _examIdx = 0, _examResults = [];
+
+function startExamDificiles() {
+    const dif = getDificiles();
+    if (!dif.length) { showToast('¡Sin difíciles todavía! 🎉'); return; }
+    _examList = [...dif].sort((a, b) => {
+        const la = (a.letra || a.word || '?')[0].toUpperCase();
+        const lb = (b.letra || b.word || '?')[0].toUpperCase();
+        return la !== lb ? la.localeCompare(lb, 'es') : (a.word||'').localeCompare(b.word||'', 'es');
+    });
+    _examIdx = 0; _examResults = [];
+    goTo('exam-dificiles');
+    _showExamQ();
+}
+
+function _showExamQ() {
+    const q    = _examList[_examIdx];
+    const prog = (_examIdx + 1) + ' / ' + _examList.length;
+    document.getElementById('exam-top-prog').textContent = prog;
+    document.getElementById('exam-prog-txt').textContent = 'Pregunta ' + prog;
+    document.getElementById('exam-letra').textContent    = (q.letra || q.word || '?')[0].toUpperCase();
+    document.getElementById('exam-question').textContent = q.def || '';
+    document.getElementById('exam-answer').value         = '';
+    document.getElementById('exam-q-card').style.display   = 'block';
+    document.getElementById('exam-fb-card').style.display  = 'none';
+    document.getElementById('exam-done-card').style.display = 'none';
+    setTimeout(() => { const i = document.getElementById('exam-answer'); if(i) i.focus(); }, 150);
+}
+
+function submitExam() {
+    const q   = _examList[_examIdx];
+    const raw = (document.getElementById('exam-answer').value || '').trim();
+    if (!raw) return;
+    const n   = s => s.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().trim();
+    const ans = q.word || '';
+    const ok  = n(raw) === n(ans) || (n(ans).startsWith(n(raw)) && raw.length >= 4);
+    _examResults.push({ ok });
+    _ppTrackLetter((q.letra || q.word || '?')[0].toUpperCase(), ok);
+    document.getElementById('exam-q-card').style.display  = 'none';
+    document.getElementById('exam-fb-card').style.display = 'block';
+    document.getElementById('exam-fb-icon').textContent   = ok ? '✅' : '❌';
+    document.getElementById('exam-fb-text').innerHTML = ok
+        ? `<strong style="color:var(--green);font-size:1.05rem">¡Correcto!</strong><br><span style="color:var(--muted);font-size:0.83rem">${ans}</span>`
+        : `<strong style="color:var(--red)">Incorrecto</strong><br>Era: <strong style="font-size:1.05rem">${ans}</strong><br><span style="color:var(--muted);font-size:0.79rem">Tu respuesta: "${raw}"</span>`;
+    const last = _examIdx >= _examList.length - 1;
+    document.getElementById('exam-next-btn').textContent = last ? '📊 Ver resultados' : 'Siguiente →';
+}
+
+function nextExamQ() {
+    _examIdx++;
+    if (_examIdx >= _examList.length) {
+        const ok    = _examResults.filter(r => r.ok).length;
+        const total = _examResults.length;
+        const pct   = Math.round(100 * ok / total);
+        document.getElementById('exam-q-card').style.display    = 'none';
+        document.getElementById('exam-fb-card').style.display   = 'none';
+        document.getElementById('exam-done-card').style.display = 'block';
+        document.getElementById('exam-done-emoji').textContent  = pct >= 80 ? '🏆' : pct >= 50 ? '💪' : '📖';
+        document.getElementById('exam-done-score').textContent  = ok + ' / ' + total + '  (' + pct + '%)';
+        document.getElementById('exam-done-msg').textContent    =
+            pct >= 80 ? '¡Lista para el bote! Nivel concursante de verdad. 🎯' :
+            pct >= 50 ? '¡Mejorando! Cada repaso deja menos difíciles de verdad. 💪' :
+                        '¡A repasar se ha dicho! Para eso están aquí. 📚';
+        _ppRecordSession('exam_dificiles', total, ok);
+    } else {
+        document.getElementById('exam-fb-card').style.display = 'none';
+        _showExamQ();
+    }
+}
+
+// ════════════════════════════════════════════════════════════
+//  DASHBOARD
+// ════════════════════════════════════════════════════════════
+function renderDashboard() {
+    try {
+        const usage   = JSON.parse(localStorage.getItem('ppro_usage')     || '{"sessions":[],"byDeck":{},"daily":{}}');
+        const letters = JSON.parse(localStorage.getItem('ppro_letters')   || '{}');
+        const roscoH  = JSON.parse(localStorage.getItem('ppro_rosco_hist')|| '[]');
+        const sessions = usage.sessions || [], byDeck = usage.byDeck || {}, daily = usage.daily || {};
+        const totalQ   = sessions.reduce((s,x) => s + (x.answered||0), 0);
+        const totalOk  = sessions.reduce((s,x) => s + (x.correct||0),  0);
+        const totalMin = sessions.reduce((s,x) => s + (x.minutes||0),  0);
+        const pct      = totalQ ? Math.round(100 * totalOk / totalQ) : 0;
+        const today    = new Date().toISOString().slice(0, 10);
+        const todayMin = sessions.filter(s => s.date === today).reduce((s,x) => s+(x.minutes||0), 0);
+
+        // Racha
+        let streak = 0;
+        for (let i = 0; i < 365; i++) {
+            const d = new Date(); d.setDate(d.getDate() - i);
+            if ((daily[d.toISOString().slice(0,10)] || 0) > 0) streak++;
+            else if (i > 0) break;
+        }
+
+        document.getElementById('db-total').textContent     = totalQ.toLocaleString('es');
+        document.getElementById('db-pct').textContent       = pct + '%';
+        document.getElementById('db-streak').textContent    = streak + 'd';
+        document.getElementById('db-today').textContent     = todayMin < 60 ? todayMin + 'min' : Math.floor(todayMin/60) + 'h ' + (todayMin%60 ? todayMin%60+'m' : '');
+        document.getElementById('db-total-time').textContent = Math.round(totalMin/60) + 'h';
+
+        // Heatmap
+        const heat = document.getElementById('db-heatmap'); heat.innerHTML = '';
+        const maxD = Math.max(1, ...Object.values(daily).map(Number));
+        for (let i = 69; i >= 0; i--) {
+            const d = new Date(); d.setDate(d.getDate() - i);
+            const k = d.toISOString().slice(0, 10), v = daily[k] || 0;
+            const a = v ? Math.max(0.15, v / maxD) : 0;
+            const c = document.createElement('div');
+            c.style.cssText = `width:11px;height:11px;border-radius:2px;background:${v?`rgba(240,192,64,${a})`:'var(--border2)'};`;
+            c.title = k + ': ' + v + ' preguntas';
+            heat.appendChild(c);
+        }
+
+        // Por mazo
+        const deckEl  = document.getElementById('db-by-deck');
+        const entries = Object.entries(byDeck).sort((a,b) => b[1].answered - a[1].answered);
+        deckEl.innerHTML = entries.length ? entries.map(([id, data]) => {
+            const p   = data.answered ? Math.round(100 * data.correct / data.answered) : 0;
+            const col = p >= 70 ? 'var(--green)' : p >= 40 ? 'var(--gold)' : 'var(--red)';
+            const nm  = (typeof MAZOS !== 'undefined') ? ((MAZOS.find(m=>m.id===id)||{}).name || id) : id;
+            return `<div style="margin-bottom:10px;">
+                <div style="display:flex;justify-content:space-between;font-size:0.74rem;margin-bottom:3px;">
+                    <span>${nm}</span>
+                    <span style="color:${col}">${p}% <span style="color:var(--muted);font-weight:400">(${data.answered})</span></span>
+                </div>
+                <div style="background:var(--border2);border-radius:5px;height:6px;">
+                    <div style="width:${p}%;background:${col};border-radius:5px;height:6px;transition:width .6s;"></div>
+                </div></div>`;
+        }).join('') : '<p style="color:var(--muted);font-size:0.8rem;text-align:center;padding:8px;">Practica para ver tus stats 💪</p>';
+
+        // Letras difíciles
+        const hlEl = document.getElementById('db-hard-letters');
+        const lSorted = Object.entries(letters)
+            .map(([l,d]) => ({ l, pct: (d.ok+d.fail) ? Math.round(100*(d.ok||0)/(d.ok+d.fail)) : 100 }))
+            .sort((a,b) => a.pct - b.pct).slice(0, 10);
+        hlEl.innerHTML = lSorted.length ? lSorted.map(({l,pct}) => {
+            const col = pct<50 ? 'var(--red)' : pct<70 ? 'var(--gold)' : 'var(--green)';
+            return `<div style="background:var(--card2);border:1px solid ${pct<50?'var(--red)':'var(--border2)'};
+                border-radius:9px;padding:5px 11px;display:flex;align-items:center;gap:6px;font-size:0.8rem;">
+                <strong style="font-size:1.05rem">${l}</strong><span style="color:${col}">${pct}%</span></div>`;
+        }).join('') : '<span style="color:var(--muted);font-size:0.8rem;">Sin datos aún — ¡haz el rosco!</span>';
+
+        // Historial rosco
+        const rEl = document.getElementById('db-rosco-hist');
+        rEl.innerHTML = roscoH.length ? roscoH.slice(-8).reverse().map(r => {
+            const p = r.total ? Math.round(100*r.ok/r.total) : 0;
+            const col = p>=70 ? 'var(--green)' : p>=40 ? 'var(--gold)' : 'var(--red)';
+            return `<div style="display:flex;align-items:center;gap:8px;font-size:0.77rem;padding:7px 0;border-bottom:1px solid var(--border2);">
+                <span style="color:var(--muted);min-width:68px;font-size:0.7rem;">${r.date}</span>
+                <span style="color:var(--green);">✓${r.ok}</span>
+                <span style="color:var(--red);">✗${r.fail}</span>
+                <span style="color:var(--muted);">→${r.pass||0}</span>
+                <span style="font-weight:700;margin-left:auto;color:${col};">${p}%</span>
+            </div>`;
+        }).join('') : '<p style="color:var(--muted);font-size:0.8rem;text-align:center;padding:8px;">¡Haz tu primer rosco!</p>';
+
+    } catch(e) { console.error('Dashboard:', e); }
+}
+
+// ════════════════════════════════════════════════════════════
+//  INFORME A ANDREA + BACKUP
+// ════════════════════════════════════════════════════════════
+function sendProgressReport() {
+    try {
+        const usage   = JSON.parse(localStorage.getItem('ppro_usage')     || '{}');
+        const letters = JSON.parse(localStorage.getItem('ppro_letters')   || '{}');
+        const roscoH  = JSON.parse(localStorage.getItem('ppro_rosco_hist')|| '[]');
+        const difs    = getDificiles();
+        const sessions= usage.sessions || [], byDeck = usage.byDeck || {};
+        const totalQ  = sessions.reduce((s,x)=>s+(x.answered||0),0);
+        const totalOk = sessions.reduce((s,x)=>s+(x.correct||0),0);
+        const totalMin= sessions.reduce((s,x)=>s+(x.minutes||0),0);
+        const pct     = totalQ ? Math.round(100*totalOk/totalQ) : 0;
+        const deckLines = Object.entries(byDeck).map(([id,d]) => {
+            const p  = d.answered ? Math.round(100*d.correct/d.answered) : 0;
+            const nm = (typeof MAZOS!=='undefined') ? ((MAZOS.find(m=>m.id===id)||{}).name||id) : id;
+            return `  - ${nm}: ${d.answered} preguntas, ${p}% acierto`;
+        }).join('\n');
+        const hardL = Object.entries(letters)
+            .map(([l,d])=>({l, pct:(d.ok+d.fail)?Math.round(100*(d.ok||0)/(d.ok+d.fail)):100}))
+            .sort((a,b)=>a.pct-b.pct).slice(0,8).map(x=>x.l+'('+x.pct+'%)').join(', ');
+        const lastR = roscoH.length ? roscoH[roscoH.length-1] : null;
+        const body = [
+            'INFORME PASAPALABRA PRO — NOEMI',
+            '='.repeat(38),
+            'Fecha: '+new Date().toLocaleDateString('es-ES'),
+            'Total respondidas: '+totalQ.toLocaleString('es'),
+            'Acierto global: '+pct+'%',
+            'Tiempo total: '+Math.floor(totalMin/60)+'h '+(totalMin%60)+'min',
+            'Difíciles acumuladas: '+difs.length,
+            '', 'POR MAZO:', deckLines||'  (sin datos)',
+            '', 'LETRAS MÁS DIFÍCILES: '+(hardL||'sin datos suficientes'),
+            '', 'ÚLTIMO ROSCO: '+(lastR ? lastR.date+' — '+lastR.ok+' bien / '+lastR.fail+' mal / '+(lastR.pass||0)+' pasa' : 'Sin roscos todavía'),
+            '', '——', '¿En qué mazo quieres más preguntas?'
+        ].join('\n');
+        window.location.href = 'mailto:andrea.alacreu@gmail.com?subject='
+            +encodeURIComponent('Informe PasaPalabra Pro — '+new Date().toLocaleDateString('es-ES'))
+            +'&body='+encodeURIComponent(body);
+        const el = document.getElementById('db-report-status');
+        if (el) { el.textContent='✅ Abriendo gestor de correo...'; setTimeout(()=>el.textContent='',4000); }
+    } catch(e) { showToast('Error al generar informe'); }
+}
+
+function downloadBackup() {
+    try {
+        const blob = new Blob([JSON.stringify({
+            exported:   new Date().toISOString(),
+            dificiles:  getDificiles(),
+            usage:      JSON.parse(localStorage.getItem('ppro_usage')     ||'{}'),
+            rosco_hist: JSON.parse(localStorage.getItem('ppro_rosco_hist')||'[]'),
+            letters:    JSON.parse(localStorage.getItem('ppro_letters')   ||'{}'),
+        },null,2)],{type:'application/json'});
+        const a = document.createElement('a');
+        a.href = URL.createObjectURL(blob);
+        a.download = 'noemi_ppro_'+new Date().toISOString().slice(0,10)+'.json';
+        a.click();
+        showToast('💾 Backup descargado');
+    } catch(e) { showToast('Error al descargar backup'); }
+}
+
+function checkWeeklyBackup() {
+    const last  = localStorage.getItem('ppro_last_backup') || '2000-01-01';
+    const today = new Date().toISOString().slice(0, 10);
+    if (Math.floor((new Date(today)-new Date(last))/86400000) >= 7) {
+        localStorage.setItem('ppro_last_backup', today);
+        setTimeout(downloadBackup, 5000);
+    }
+}
 
 </script>
 </body>
