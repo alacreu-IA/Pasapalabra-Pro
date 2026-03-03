@@ -12723,35 +12723,33 @@ MAZOS_VOCAB.push({
 
 <script>
 // =====================================================================
-// AUTOCLASIFICADOR DE MAZOS (12 Categorías + Cultura General)
-// CON SUBTÍTULOS GRACIOSOS, RAE Y GEOGRAFÍA MEJORADA
+// SISTEMA INTEGRAL: AUTOCLASIFICADOR + ESTUDIO SRS + HOSPITAL + PISTAS + DISEÑO PREMIUM
 // =====================================================================
 (function() {
-    // 1. Recopilar todas las preguntas de los mazos originales
+    // ---------------------------------------------------------
+    // 1. AUTOCLASIFICADOR DE MAZOS
+    // ---------------------------------------------------------
     let allQuestions = [];
-    MAZOS.forEach(m => allQuestions = allQuestions.concat(m.questions));
+    if(typeof MAZOS !== 'undefined') MAZOS.forEach(m => allQuestions = allQuestions.concat(m.questions));
 
-    // 2. Definir la nueva estructura exacta solicitada
     const newDecks = {
-        "hist_esp": { id: "hist_esp", name: "Historia de España", icon: "🇪🇸", sub: "De los Reyes Católicos a “esto con Franco no pasaba”", questions: [] },
-        "hist_uni": { id: "hist_uni", name: "Historia Universal", icon: "🌍", sub: "Guerras, imperios y humanos haciendo siempre lo mismo", questions: [] },
-        "geo_esp":  { id: "geo_esp", name: "Geografía de España", icon: "📍", sub: "Ríos que no recuerdas y provincias que confundes", questions: [] },
-        "geo_mund": { id: "geo_mund", name: "Geografía Mundial", icon: "🗺️", sub: "Países que ignorabas y capitales imposibles", questions: [] },
-        "politica": { id: "politica", name: "Política y Const.", icon: "🏛️", sub: "Artículos que nadie ha leído pero todos opinan", questions: [] },
-        "lit_esp":  { id: "lit_esp", name: "Literatura Española", icon: "📚", sub: "Señores tristes escribiendo cosas profundas", questions: [] },
-        "lit_uni":  { id: "lit_uni", name: "Lit. Universal", icon: "📖", sub: "Rusos con trauma y franceses intensitos", questions: [] },
-        "cine":     { id: "cine", name: "Cine", icon: "🎬", sub: "Oscars, Kubrick y esa película que “tienes que ver”", questions: [] },
-        "teatro":   { id: "teatro", name: "Teatro", icon: "🎭", sub: "Gente gritando sentimientos en voz alta", questions: [] },
-        "arte":     { id: "arte", name: "Arte", icon: "🎨", sub: "Cuadros que parecen fáciles hasta que te preguntan el autor", questions: [] },
-        "ciencia":  { id: "ciencia", name: "Ciencia", icon: "🔬", sub: "Premios Nobel y fórmulas que no entiendes", questions: [] },
-        "deporte":  { id: "deporte", name: "Deporte", icon: "⚽", sub: "Finales injustas y debates eternos", questions: [] },
-        "cg":       { id: "cg", name: "Cultura General", icon: "🧠", sub: "El cajón de sastre donde acaba todo lo demás", questions: [] }
+        "hist_esp": { id: "hist_esp", name: "Historia de España", icon: "🇪🇸", sub: "De los Reyes Católicos a “esto con Franco no pasaba”", color: "#ff7675", questions: [] },
+        "hist_uni": { id: "hist_uni", name: "Historia Universal", icon: "🌍", sub: "Guerras, imperios y humanos haciendo siempre lo mismo", color: "#fdcb6e", questions: [] },
+        "geo_esp":  { id: "geo_esp", name: "Geografía de España", icon: "📍", sub: "Ríos que no recuerdas y provincias que confundes", color: "#55efc4", questions: [] },
+        "geo_mund": { id: "geo_mund", name: "Geografía Mundial", icon: "🗺️", sub: "Países que ignorabas y capitales imposibles", color: "#00b894", questions: [] },
+        "politica": { id: "politica", name: "Política y Const.", icon: "🏛️", sub: "Artículos que nadie ha leído pero todos opinan", color: "#a29bfe", questions: [] },
+        "lit_esp":  { id: "lit_esp", name: "Literatura Española", icon: "📚", sub: "Señores tristes escribiendo cosas profundas", color: "#fab1a0", questions: [] },
+        "lit_uni":  { id: "lit_uni", name: "Lit. Universal", icon: "📖", sub: "Rusos con trauma y franceses intensitos", color: "#e17055", questions: [] },
+        "cine":     { id: "cine", name: "Cine", icon: "🎬", sub: "Oscars, Kubrick y esa película que “tienes que ver”", color: "#ffeaa7", questions: [] },
+        "teatro":   { id: "teatro", name: "Teatro", icon: "🎭", sub: "Gente gritando sentimientos en voz alta", color: "#fd79a8", questions: [] },
+        "arte":     { id: "arte", name: "Arte", icon: "🎨", sub: "Cuadros que parecen fáciles hasta que te preguntan el autor", color: "#81ecec", questions: [] },
+        "ciencia":  { id: "ciencia", name: "Ciencia", icon: "🔬", sub: "Premios Nobel y fórmulas que no entiendes", color: "#74b9ff", questions: [] },
+        "deporte":  { id: "deporte", name: "Deporte", icon: "⚽", sub: "Finales injustas y debates eternos", color: "#00cec9", questions: [] },
+        "cg":       { id: "cg", name: "Cultura General", icon: "🧠", sub: "El cajón de sastre donde acaba todo lo demás", color: "#dfe6e9", questions: [] }
     };
 
-    // 3. Motor de clasificación ajustado (con provincias y afluentes)
     allQuestions.forEach(p => {
         let t = (p.q + " " + p.a).toLowerCase();
-
         if (t.match(/\b(constitución|política|gobierno|ley|leyes|derecho|tribunal|ministro|parlamento|senado|congreso|alcalde|voto|elecciones|partido|sufragio|jurisdicción|república|monarquía parlamentaria)\b/)) {
             newDecks["politica"].questions.push(p);
         } else if (t.match(/\b(cine|película|director|actor|actriz|óscar|hollywood|almodóvar|amenábar|spielberg|tarantino|guion|cineasta|metraje|film)\b/)) {
@@ -12785,14 +12783,88 @@ MAZOS_VOCAB.push({
         }
     });
 
-    // 4. Sobrescribir los mazos originales eliminando los que queden vacíos
-    MAZOS = Object.values(newDecks).filter(m => m.questions.length > 0);
+    if(typeof MAZOS !== 'undefined') MAZOS = Object.values(newDecks).filter(m => m.questions.length > 0);
 
-    // 5. Inyectar los botones de los mazos en la interfaz
-    const deckLists = document.querySelectorAll('.deck-list');
-    if (deckLists.length > 0) {
+    // ---------------------------------------------------------
+    // 2. INYECTAR INTERFAZ (MENÚ PRINCIPAL Y MODO ESTUDIO)
+    // ---------------------------------------------------------
+    const studyHTML = `
+    <div id="view-study-selector" style="display:none; position:fixed; z-index:9998; top:0; left:0; width:100%; height:100%; background:var(--bg); overflow-y:auto; flex-direction:column;">
+       <div style="padding:20px; border-bottom:1px solid var(--border); background:var(--bg2); display:flex; align-items:center; position:sticky; top:0; z-index:10;">
+          <button onclick="document.getElementById('view-study-selector').style.display='none'" style="background:none; border:none; color:var(--text); font-size:1.8rem; margin-right:15px; cursor:pointer;">←</button>
+          <h2 style="color:var(--text); font-size:1.3rem;">Estudio Inteligente</h2>
+       </div>
+       <div style="padding:20px; padding-bottom:40px;">
+          
+          <div id="sos-deck-container" style="display:none; margin-bottom: 25px;">
+              <h3 style="color:#ff4757; font-size:1.1rem; margin-bottom:10px; display:flex; align-items:center; gap:8px;">🚨 Hospital de Tarjetas</h3>
+              <button onclick="startSmartStudy('sos')" style="background:rgba(255, 71, 87, 0.1); color:#ff4757; border:1px solid #ff4757; padding:18px; border-radius:12px; font-weight:bold; font-size:1.1rem; width:100%; cursor:pointer; display:flex; justify-content:space-between; align-items:center; box-shadow: 0 4px 15px rgba(255, 71, 87, 0.2);">
+                 <span>Repasar lo que llevo mal</span>
+                 <span id="sos-count" style="background:#ff4757; color:#fff; padding:4px 12px; border-radius:20px; font-size:0.9rem;">0</span>
+              </button>
+          </div>
+
+          <button onclick="startSmartStudy('mix')" style="background:var(--accent); color:var(--bg); padding:18px; border-radius:12px; border:none; font-weight:bold; font-size:1.1rem; margin-bottom:25px; width:100%; cursor:pointer; box-shadow:0 4px 15px rgba(255,255,255,0.1); display:flex; justify-content:center; align-items:center; gap:10px;">
+             🌪️ REPASO GLOBAL (50 tarjetas)
+          </button>
+          
+          <h3 style="color:var(--text); font-size:1.1rem; margin-bottom:15px; border-bottom:1px solid var(--border); padding-bottom:8px;">Por categorías</h3>
+          <div id="smart-study-topics" style="display:flex; flex-direction:column; gap:10px;"></div>
+       </div>
+    </div>
+
+    <div id="view-smart-study" style="display:none; position:fixed; z-index:9999; top:0; left:0; width:100%; height:100%; background:var(--bg); flex-direction:column;">
+       
+       <div style="padding:20px; text-align:center; border-bottom:1px solid var(--border); background:rgba(15, 15, 26, 0.8); backdrop-filter:blur(10px); position:relative; z-index:10;">
+          <button onclick="exitSmartStudy()" style="position:absolute; left:20px; top:50%; transform:translateY(-50%); background:none; border:none; color:var(--text); font-size:1.8rem; cursor:pointer;">←</button>
+          <h2 id="study-title" style="color:var(--text); font-size:1.2rem; margin-bottom:5px; font-weight:600;">Estudio</h2>
+          <p id="study-counter" style="color:var(--accent); font-weight:bold; font-size:0.85rem; letter-spacing:1px; text-transform:uppercase;">Faltan: 0</p>
+       </div>
+       
+       <div style="flex:1; display:flex; flex-direction:column; align-items:center; justify-content:center; padding:20px; overflow-y:auto; padding-bottom:120px;">
+          <div id="study-card" onclick="if(document.getElementById('study-show-btn').style.display !== 'none') flipStudyCard()" style="background: linear-gradient(145deg, var(--card), var(--card2)); padding:40px 30px; border-radius:24px; width:100%; max-width:500px; text-align:center; box-shadow:0 15px 35px rgba(0,0,0,0.8), inset 0 1px 0 rgba(255,255,255,0.05); min-height:420px; display:flex; flex-direction:column; justify-content:center; align-items:center; border:2px solid transparent; transition: all 0.3s ease; cursor:pointer; position:relative;">
+             
+             <h3 id="study-q" style="font-family:'Playfair Display', serif; font-size:1.7rem; font-weight:700; color:var(--text); margin-bottom:25px; line-height:1.3;">Pregunta</h3>
+             
+             <button id="btn-hint" onclick="event.stopPropagation(); showHint()" style="background:var(--bg); color:var(--text); border:1px solid var(--border); padding:10px 20px; border-radius:30px; font-size:0.85rem; margin-bottom:20px; cursor:pointer; display:flex; align-items:center; gap:8px; box-shadow:0 4px 10px rgba(0,0,0,0.3); transition:0.2s;">💡 Dame una pista</button>
+             <div id="study-hint" style="display:none; color:var(--accent); font-size:1.2rem; font-weight:bold; margin-bottom:20px; letter-spacing: 2px; background:var(--bg); padding:12px 20px; border-radius:15px; border:1px dashed var(--accent);"></div>
+
+             <div id="study-a" style="display:none; flex-direction:column; align-items:center; width:100%; animation: fadeIn 0.3s ease;">
+                 <div style="width: 50px; height: 2px; background: var(--accent); margin: 5px auto 25px auto; opacity: 0.5;"></div>
+                 <div id="study-a-text" style="color:var(--accent); font-size:1.6rem; font-weight:bold; line-height:1.4; margin-bottom: 30px; width:100%;">Respuesta</div>
+                 
+                 <div id="study-links" style="display:flex; gap:12px; flex-wrap:wrap; justify-content:center;">
+                     <a id="link-wiki" href="#" target="_blank" onclick="event.stopPropagation()" style="text-decoration:none; background:rgba(255,255,255,0.1); color:var(--text); padding:10px 18px; border-radius:12px; font-size:0.9rem; display:flex; align-items:center; gap:8px; border:1px solid rgba(255,255,255,0.05);">📖 Wikipedia</a>
+                     <a id="link-map" href="#" target="_blank" onclick="event.stopPropagation()" style="text-decoration:none; background:rgba(39, 174, 96, 0.2); color:#2ecc71; padding:10px 18px; border-radius:12px; font-size:0.9rem; display:none; align-items:center; gap:8px; border:1px solid rgba(39, 174, 96, 0.3);">🗺️ Ver Mapa</a>
+                 </div>
+             </div>
+             
+             <div id="study-show-btn" style="position:absolute; bottom:30px; left:0; width:100%; display:flex; justify-content:center;">
+                 <span style="background:var(--accent); color:var(--bg); padding:10px 25px; border-radius:30px; font-weight:bold; font-size:0.95rem; box-shadow:0 8px 20px rgba(0, 0, 0, 0.4); text-transform:uppercase; letter-spacing:1px;">Toca para girar</span>
+             </div>
+          </div>
+       </div>
+
+       <div id="study-actions" style="display:none; padding:20px; gap:15px; justify-content:center; padding-bottom:max(30px, env(safe-area-inset-bottom)); background:linear-gradient(to top, var(--bg) 70%, transparent); position:absolute; bottom:0; width:100%;">
+          <button onclick="scoreStudy(0)" style="flex:1; max-width:120px; background:rgba(255, 71, 87, 0.15); color:#ff4757; border:2px solid rgba(255,71,87,0.4); padding:15px 10px; border-radius:20px; font-weight:bold; font-size:1.05rem; display:flex; flex-direction:column; align-items:center; gap:8px; box-shadow:0 8px 20px rgba(0,0,0,0.3);">
+             <span style="font-size:1.6rem;">🔴</span> Mal
+          </button>
+          <button onclick="scoreStudy(1)" style="flex:1; max-width:120px; background:rgba(255, 165, 2, 0.15); color:#ffa502; border:2px solid rgba(255,165,2,0.4); padding:15px 10px; border-radius:20px; font-weight:bold; font-size:1.05rem; display:flex; flex-direction:column; align-items:center; gap:8px; box-shadow:0 8px 20px rgba(0,0,0,0.3);">
+             <span style="font-size:1.6rem;">🟡</span> Dudé
+          </button>
+          <button onclick="scoreStudy(2)" style="flex:1; max-width:120px; background:rgba(46, 213, 115, 0.15); color:#2ed573; border:2px solid rgba(46,213,115,0.4); padding:15px 10px; border-radius:20px; font-weight:bold; font-size:1.05rem; display:flex; flex-direction:column; align-items:center; gap:8px; box-shadow:0 8px 20px rgba(0,0,0,0.3);">
+             <span style="font-size:1.6rem;">🟢</span> Perfecta
+          </button>
+       </div>
+    </div>
+    `;
+
+    // INYECTAR HTML Y MODIFICAR DOM DE FORMA INSTANTÁNEA (SIN SETTIMEOUT)
+    document.body.insertAdjacentHTML('beforeend', studyHTML);
+
+    const deckContainer = document.querySelector('.deck-list');
+    if (deckContainer) {
         let html = '';
-        
         MAZOS.forEach(m => {
             html += `
             <div class="deck-item" onclick="iniciarMazo('${m.id}')">
@@ -12817,49 +12889,233 @@ MAZOS_VOCAB.push({
             </div>
             <div class="deck-arrow">›</div>
         </div>`;
-        
-        deckLists[0].innerHTML = html;
+        deckContainer.innerHTML = html;
+
+        const studyBanner = document.createElement('div');
+        studyBanner.innerHTML = `
+        <div onclick="openStudySelector()" style="background: linear-gradient(135deg, var(--card2), var(--card)); border:1px solid var(--accent); padding:20px; border-radius:15px; margin-bottom:20px; text-align:left; cursor:pointer; box-shadow: 0 4px 20px rgba(0,0,0,0.4); display:flex; justify-content:space-between; align-items:center;">
+            <div>
+                <h3 style="color:var(--text); margin-bottom:5px; font-size:1.2rem;">🧠 Estudio Inteligente</h3>
+                <p style="color:var(--muted); font-size:0.85rem;">Algoritmo Leitner a largo plazo</p>
+            </div>
+            <div style="font-size:1.5rem; color:var(--accent);">›</div>
+        </div>`;
+        deckContainer.parentNode.insertBefore(studyBanner, deckContainer);
     }
 
-    // 6. ACTUALIZAR CONTADOR DE PALABRAS RAE AUTOMÁTICAMENTE
-    setTimeout(() => {
-        const raeCardText = document.querySelector('.mode-card[onclick="goTo(\'rae\')"] p');
-        if (raeCardText && typeof MAZOS_VOCAB !== 'undefined' && MAZOS_VOCAB[0]) {
-            const numPalabras = MAZOS_VOCAB[0].cards.length;
-            raeCardText.textContent = numPalabras + " palabras de nivel";
-        }
-    }, 100);
+    const raeCardText = document.querySelector('.mode-card[onclick="goTo(\'rae\')"] p');
+    if (raeCardText && typeof MAZOS_VOCAB !== 'undefined' && MAZOS_VOCAB[0]) {
+        raeCardText.textContent = MAZOS_VOCAB[0].cards.length + " palabras de nivel";
+    }
 
 })();
+
+// =====================================================================
+// LÓGICA DEL ALGORITMO Y GUARDADO (LOCALSTORAGE)
+// =====================================================================
+let studyDeck = [];
+let currentStudyCard = null;
+
+const INTERVALS = [0, 1, 3, 7, 15, 30, 60]; 
+const MS_IN_DAY = 86400000;
+
+function loadStudyData() {
+    const data = localStorage.getItem('pasapalabra_srs');
+    return data ? JSON.parse(data) : {};
+}
+
+function saveStudyData(data) {
+    localStorage.setItem('pasapalabra_srs', JSON.stringify(data));
+}
+
+function getSosCards() {
+    const srsData = loadStudyData();
+    let sos = [];
+    MAZOS.forEach(m => {
+        m.questions.forEach(q => {
+            if (srsData[q.q] && srsData[q.q].level === 0) {
+                sos.push({ ...q, deckId: m.id, color: m.color }); 
+            }
+        });
+    });
+    return sos;
+}
+
+window.openStudySelector = function() {
+   const container = document.getElementById('smart-study-topics');
+   container.innerHTML = ''; 
+   const srsData = loadStudyData();
+   const now = Date.now();
+
+   const sosCards = getSosCards();
+   if (sosCards.length > 0) {
+       document.getElementById('sos-deck-container').style.display = 'block';
+       document.getElementById('sos-count').innerText = sosCards.length + " tarjetas";
+   } else {
+       document.getElementById('sos-deck-container').style.display = 'none';
+   }
+
+   MAZOS.forEach(m => {
+      const dueCount = m.questions.filter(q => !srsData[q.q] || srsData[q.q].nextReview <= now).length;
+      const isDone = dueCount === 0;
+      
+      container.innerHTML += `
+      <button onclick="${isDone ? '' : `startSmartStudy('${m.id}')`}" style="background:var(--card); color:${isDone ? 'var(--muted)' : 'var(--text)'}; border:1px solid ${isDone ? 'var(--border)' : m.color}; padding:15px; border-radius:10px; text-align:left; font-size:1rem; width:100%; display:flex; align-items:center; gap:12px; cursor:${isDone ? 'default' : 'pointer'}; opacity:${isDone ? '0.6' : '1'}; border-left: 4px solid ${isDone ? 'transparent' : m.color};">
+         <span style="font-size:1.4rem;">${m.icon}</span> 
+         <span style="flex:1; font-weight:bold;">${m.name}</span>
+         <span style="background:${isDone ? 'transparent' : m.color}; color:${isDone ? 'var(--muted)' : '#000'}; padding:4px 10px; border-radius:20px; font-size:0.8rem; font-weight:bold;">${isDone ? 'Al día ✓' : dueCount + ' hoy'}</span>
+      </button>`;
+   });
+   
+   document.getElementById('view-study-selector').style.display = 'flex';
+};
+
+window.startSmartStudy = function(deckId) {
+   const srsData = loadStudyData();
+   const now = Date.now();
+   studyDeck = [];
+
+   if (deckId === 'sos') {
+       studyDeck = getSosCards();
+       studyDeck.sort(() => Math.random() - 0.5);
+       studyDeck = studyDeck.slice(0, 30);
+       document.getElementById('study-title').innerText = "🚨 Hospital (Urgencias)";
+   } else if(deckId === 'mix') {
+       let allQuestions = [];
+       MAZOS.forEach(m => {
+           m.questions.forEach(q => allQuestions.push({...q, deckId: m.id, color: m.color}));
+       });
+       studyDeck = allQuestions.filter(q => !srsData[q.q] || srsData[q.q].nextReview <= now);
+       studyDeck.sort(() => Math.random() - 0.5); 
+       studyDeck = studyDeck.slice(0, 50); 
+       document.getElementById('study-title').innerText = "🌪️ Repaso Global";
+   } else {
+       const mazo = MAZOS.find(m => m.id === deckId);
+       let questionsWithContext = mazo.questions.map(q => ({...q, deckId: mazo.id, color: mazo.color}));
+       studyDeck = questionsWithContext.filter(q => !srsData[q.q] || srsData[q.q].nextReview <= now);
+       studyDeck.sort(() => Math.random() - 0.5); 
+       studyDeck = studyDeck.slice(0, 50); 
+       document.getElementById('study-title').innerText = mazo.icon + " " + mazo.name;
+   }
+
+   if (studyDeck.length === 0) return;
+   document.getElementById('view-smart-study').style.display = 'flex';
+   nextStudyCard();
+};
+
+window.nextStudyCard = function() {
+   if(studyDeck.length === 0) {
+       alert("¡Sesión terminada! Buen trabajo. 🎉");
+       exitSmartStudy();
+       openStudySelector();
+       return;
+   }
+   document.getElementById('study-counter').innerText = `Pendientes: ${studyDeck.length}`;
+   currentStudyCard = studyDeck[0];
+   
+   let cleanQ = currentStudyCard.q.replace(/^[a-zA-ZñÑáéíóúÁÉÍÓÚ]\s*-\s*/, '');
+   document.getElementById('study-q').innerText = cleanQ;
+   
+   document.getElementById('study-a-text').innerText = currentStudyCard.a;
+   
+   const cardColor = currentStudyCard.color || 'var(--border)';
+   document.getElementById('study-card').style.borderColor = cardColor;
+   document.getElementById('study-card').style.boxShadow = `0 15px 35px ${cardColor}33, inset 0 1px 0 rgba(255,255,255,0.05)`;
+
+   // Enlace de Wikipedia y Enlace corregido de Google Maps
+   const term = encodeURIComponent(currentStudyCard.a);
+   document.getElementById('link-wiki').href = `https://es.wikipedia.org/wiki/Special:Search?search=${term}`;
+   
+   const mapBtn = document.getElementById('link-map');
+   if (currentStudyCard.deckId === 'geo_esp' || currentStudyCard.deckId === 'geo_mund') {
+       mapBtn.style.display = 'flex';
+       mapBtn.href = `https://www.google.com/maps/search/?api=1&query=${term}`;
+   } else {
+       mapBtn.style.display = 'none';
+   }
+
+   document.getElementById('study-hint').style.display = 'none';
+   document.getElementById('btn-hint').style.display = 'flex';
+   document.getElementById('study-a').style.display = 'none';
+   document.getElementById('study-actions').style.display = 'none';
+   document.getElementById('study-show-btn').style.display = 'flex';
+};
+
+window.showHint = function() {
+    const answer = currentStudyCard.a.trim();
+    const words = answer.split(' ');
+    const isMultiWord = words.length > 1;
+    let hint = "";
+
+    const hintTypes = ['hangman', 'vowels', 'length', 'classic'];
+    if (isMultiWord) hintTypes.push('initials');
+
+    const type = hintTypes[Math.floor(Math.random() * hintTypes.length)];
+
+    if (type === 'initials') {
+        hint = "🔠 Iniciales: " + words.map(w => w.charAt(0).toUpperCase() + "_ ".repeat(Math.max(0, w.length - 1))).join('  ');
+    } else if (type === 'hangman') {
+        hint = "🧩 Pista: " + answer.split('').map((c, i) => {
+            if(c === ' ') return '  ';
+            if(i === 0) return c; 
+            return Math.random() > 0.5 ? '_' : c; 
+        }).join(' ');
+    } else if (type === 'vowels') {
+        const vocales = "aeiouáéíóúAEIOUÁÉÍÓÚüÜ";
+        hint = "🔤 Vocales: " + answer.split('').map(c => {
+            if(c === ' ') return '  ';
+            return vocales.includes(c) ? c : '_ ';
+        }).join('');
+    } else if (type === 'length') {
+        const letterCount = answer.replace(/\s/g, '').length;
+        hint = `🔢 Empieza por "${answer.charAt(0).toUpperCase()}" y tiene ${letterCount} letras.`;
+    } else {
+        hint = "✂️ Empieza por: " + answer.substring(0, Math.max(2, Math.floor(answer.length * 0.3))) + "...";
+    }
+
+    document.getElementById('study-hint').innerText = hint;
+    document.getElementById('study-hint').style.display = 'block';
+    document.getElementById('btn-hint').style.display = 'none';
+};
+
+window.flipStudyCard = function() {
+   document.getElementById('btn-hint').style.display = 'none';
+   document.getElementById('study-hint').style.display = 'none';
+   document.getElementById('study-a').style.display = 'flex';
+   document.getElementById('study-actions').style.display = 'flex';
+   document.getElementById('study-show-btn').style.display = 'none';
+};
+
+window.scoreStudy = function(score) {
+   const card = studyDeck.shift(); 
+   const id = card.q; 
+   const srsData = loadStudyData();
+   
+   if (!srsData[id]) { srsData[id] = { level: 0, nextReview: 0 }; }
+
+   if(score === 0) { 
+       srsData[id].level = 0;
+       srsData[id].nextReview = Date.now();
+       const pos = Math.min(3, studyDeck.length); 
+       studyDeck.splice(pos, 0, card); 
+   } else if (score === 1) { 
+       srsData[id].nextReview = Date.now() + MS_IN_DAY;
+   } else if (score === 2) { 
+       srsData[id].level = Math.min(srsData[id].level + 1, INTERVALS.length - 1);
+       const dias = INTERVALS[srsData[id].level];
+       srsData[id].nextReview = Date.now() + (dias * MS_IN_DAY);
+   }
+
+   saveStudyData(srsData); 
+   nextStudyCard();
+};
+
+window.exitSmartStudy = function() {
+   document.getElementById('view-smart-study').style.display = 'none';
+};
 </script>
-<!-- ================================================================
-     APP ENGINE — Un solo bloque, sin conflictos
-================================================================ -->
 <script>
 'use strict';
-
-// ============================================================
-//  NAVEGACIÓN — una sola definición definitiva
-// ============================================================
-function goTo(id) {
-    document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
-    document.getElementById(id).classList.add('active');
-
-    // Side effects por pantalla
-    if (id === 'home')      { loadDeckInfo(); updateDifHomeCount(); }
-    if (id === 'dificiles') { renderDificiles(); }
-    if (id === 'creator')   { renderCustomList(); }
-    if (id === 'rosco')     { startRosco(); } // mode set before arriving
-    if (id === 'rae')       { initRaeIfNeeded(); }
-}
-
-function showToast(msg, dur = 2000) {
-    const t = document.getElementById('toast');
-    t.textContent = msg;
-    t.classList.add('show');
-    setTimeout(() => t.classList.remove('show'), dur);
-}
-
 // ============================================================
 //  TERMS
 // ============================================================
