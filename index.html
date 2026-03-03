@@ -12721,7 +12721,118 @@ MAZOS_VOCAB.push({
 });
 </script>
 
+<script>
+// =====================================================================
+// AUTOCLASIFICADOR DE MAZOS (12 Categorías + Cultura General)
+// CON SUBTÍTULOS GRACIOSOS Y CÁLCULO AUTOMÁTICO DE RAE
+// =====================================================================
+(function() {
+    // 1. Recopilar todas las preguntas de los mazos originales
+    let allQuestions = [];
+    MAZOS.forEach(m => allQuestions = allQuestions.concat(m.questions));
 
+    // 2. Definir la nueva estructura con los subtítulos
+    const newDecks = {
+        "hist_esp": { id: "hist_esp", name: "Historia de España", icon: "🇪🇸", sub: "De los Reyes Católicos a “esto con Franco no pasaba”", questions: [] },
+        "hist_uni": { id: "hist_uni", name: "Historia Universal", icon: "🌍", sub: "Guerras, imperios y humanos haciendo siempre lo mismo", questions: [] },
+        "geo_esp":  { id: "geo_esp", name: "Geografía de España", icon: "📍", sub: "Ríos que no recuerdas y provincias que confundes", questions: [] },
+        "geo_mund": { id: "geo_mund", name: "Geografía Mundial", icon: "🗺️", sub: "Países que ignorabas y capitales imposibles", questions: [] },
+        "politica": { id: "politica", name: "Política y Const.", icon: "🏛️", sub: "Artículos que nadie ha leído pero todos opinan", questions: [] },
+        "lit_esp":  { id: "lit_esp", name: "Literatura Española", icon: "📚", sub: "Señores tristes escribiendo cosas profundas", questions: [] },
+        "lit_uni":  { id: "lit_uni", name: "Lit. Universal", icon: "📖", sub: "Rusos con trauma y franceses intensitos", questions: [] },
+        "cine":     { id: "cine", name: "Cine", icon: "🎬", sub: "Oscars, Kubrick y esa película que “tienes que ver”", questions: [] },
+        "teatro":   { id: "teatro", name: "Teatro", icon: "🎭", sub: "Gente gritando sentimientos en voz alta", questions: [] },
+        "arte":     { id: "arte", name: "Arte", icon: "🎨", sub: "Cuadros que parecen fáciles hasta que te preguntan el autor", questions: [] },
+        "ciencia":  { id: "ciencia", name: "Ciencia", icon: "🔬", sub: "Premios Nobel y fórmulas que no entiendes", questions: [] },
+        "deporte":  { id: "deporte", name: "Deporte", icon: "⚽", sub: "Finales injustas y debates eternos", questions: [] },
+        "cg":       { id: "cg", name: "Cultura General", icon: "🧠", sub: "El cajón de sastre donde acaba todo lo demás", questions: [] }
+    };
+
+    // 3. Motor de clasificación
+    allQuestions.forEach(p => {
+        let t = (p.q + " " + p.a).toLowerCase();
+
+        if (t.match(/\b(constitución|política|gobierno|ley|leyes|derecho|tribunal|ministro|parlamento|senado|congreso|alcalde|voto|elecciones|partido|sufragio|jurisdicción|república|monarquía parlamentaria)\b/)) {
+            newDecks["politica"].questions.push(p);
+        } else if (t.match(/\b(cine|película|director|actor|actriz|óscar|hollywood|almodóvar|amenábar|spielberg|tarantino|guion|cineasta|metraje|film)\b/)) {
+            newDecks["cine"].questions.push(p);
+        } else if (t.match(/\b(teatro|dramaturgo|escenario|comedia|tragedia|obra teatral|acto|telón|escena|esperpento|shakespeare|molière)\b/)) {
+            newDecks["teatro"].questions.push(p);
+        } else if (t.match(/\b(arte|pintura|escultura|pintor|cuadro|museo|picasso|goya|velázquez|dalí|impresionismo|barroco|renacimiento|arquitectura|gótico|lienzo|estatua)\b/)) {
+            newDecks["arte"].questions.push(p);
+        } else if (t.match(/\b(ciencia|física|química|biología|medicina|enfermedad|célula|átomo|planeta|espacio|gravedad|músculo|hueso|órgano|sangre|teorema|matemátic|algoritmo|zoología|botánica|meteorología|geología|neurona|médico|virus|bacteria)\b/)) {
+            newDecks["ciencia"].questions.push(p);
+        } else if (t.match(/\b(deporte|fútbol|baloncesto|olímpico|atletismo|tenis|nadador|medalla|campeonato|jugador|estadio)\b/)) {
+            newDecks["deporte"].questions.push(p);
+        } else if (t.match(/\b(cervantes|lorca|machado|quevedo|góngora|bécquer|galdós|cela|delibes|generación del|romancero|literatura española|autor español|escritor español|poeta español|lazarillo|unamuno|valle-inclán)\b/)) {
+            newDecks["lit_esp"].questions.push(p);
+        } else if (t.match(/\b(literatura|novela|poema|escritor|autor|libro|premio nobel|tolstói|dostoievski|hugo|poeta|literario)\b/)) {
+            newDecks["lit_uni"].questions.push(p);
+        } else if (t.match(/\b(historia|guerra|batalla|imperio|revolución|siglo|edad media|mundial|nazi|soviético|urss|azteca|maya|inca|antigüedad|rey|faraón)\b/)) {
+            if (t.match(/\b(españa|español|castilla|aragón|reyes católicos|franco|guerra civil|al ándalus|carlos v|felipe ii|borbón|habsburgo|reconquista|inquisición|armada invencible)\b/)) {
+                newDecks["hist_esp"].questions.push(p);
+            } else {
+                newDecks["hist_uni"].questions.push(p);
+            }
+        } else if (t.match(/\b(geografía|río|montaña|océano|mar|país|capital|continente|áfrica|asia|américa|europa|isla|lago|cordillera|provincia|comunidad autónoma)\b/)) {
+            if (t.match(/\b(españa|español|ibérica|madrid|barcelona|valencia|sevilla|pirineos|ebro|tajo|guadalquivir|andalucía|galicia|cantábrico)\b/)) {
+                newDecks["geo_esp"].questions.push(p);
+            } else {
+                newDecks["geo_mund"].questions.push(p);
+            }
+        } else {
+            newDecks["cg"].questions.push(p);
+        }
+    });
+
+    // 4. Sobrescribir los mazos originales eliminando los que queden vacíos
+    MAZOS = Object.values(newDecks).filter(m => m.questions.length > 0);
+
+    // 5. Inyectar los botones de los mazos en la interfaz
+    const deckLists = document.querySelectorAll('.deck-list');
+    if (deckLists.length > 0) {
+        let html = '';
+        
+        MAZOS.forEach(m => {
+            html += `
+            <div class="deck-item" onclick="iniciarMazo('${m.id}')">
+                <div class="deck-icon">${m.icon}</div>
+                <div class="deck-info">
+                    <h4>${m.name}</h4>
+                    <span style="font-size: 0.72rem; color: var(--muted); font-style: italic; display: block; margin-top: 2px; margin-bottom: 4px; line-height: 1.3;">${m.sub}</span>
+                    <p id="deck-info-${m.id}" style="font-size: 0.7rem; font-weight: bold; color: var(--text);">Cargando...</p>
+                    <div class="dom-bar"><div class="dom-fill" id="dom-${m.id}" style="width:0%"></div></div>
+                </div>
+                <div class="deck-arrow">›</div>
+            </div>`;
+        });
+        
+        html += `
+        <div class="deck-item" onclick="iniciarMazoCustom()">
+            <div class="deck-icon">⭐</div>
+            <div class="deck-info">
+                <h4>Mis mazos</h4>
+                <span style="font-size: 0.72rem; color: var(--muted); font-style: italic; display: block; margin-top: 2px; margin-bottom: 4px;">Las preguntas que tú mismo añades</span>
+                <p id="deck-info-custom" style="font-size: 0.7rem; font-weight: bold; color: var(--text);">Tus propias tarjetas</p>
+            </div>
+            <div class="deck-arrow">›</div>
+        </div>`;
+        
+        deckLists[0].innerHTML = html;
+    }
+
+    // 6. ACTUALIZAR CONTADOR DE PALABRAS RAE AUTOMÁTICAMENTE
+    // Busca el texto de la tarjeta de RAE y pone la cantidad exacta
+    setTimeout(() => {
+        const raeCardText = document.querySelector('.mode-card[onclick="goTo(\'rae\')"] p');
+        if (raeCardText && typeof MAZOS_VOCAB !== 'undefined' && MAZOS_VOCAB[0]) {
+            const numPalabras = MAZOS_VOCAB[0].cards.length;
+            raeCardText.textContent = numPalabras + " palabras de nivel";
+        }
+    }, 100);
+
+})();
+</script>
 <!-- ================================================================
      APP ENGINE — Un solo bloque, sin conflictos
 ================================================================ -->
