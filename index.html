@@ -12859,55 +12859,62 @@ MAZOS_VOCAB.push({
     </div>
     `;
 
-    // INYECTAR HTML Y MODIFICAR DOM DE FORMA INSTANTÁNEA (SIN SETTIMEOUT)
-    document.body.insertAdjacentHTML('beforeend', studyHTML);
+    // 3. Modificación del DOM robusta (Arregla lo de "Cargando..." y restaura subtítulos)
+    function inyectarInterfaz() {
+        document.body.insertAdjacentHTML('beforeend', studyHTML);
 
-    const deckContainer = document.querySelector('.deck-list');
-    if (deckContainer) {
-        let html = '';
-        MAZOS.forEach(m => {
+        const deckContainer = document.querySelector('.deck-list');
+        if (deckContainer) {
+            let html = '';
+            MAZOS.forEach(m => {
+                html += `
+                <div class="deck-item" onclick="iniciarMazo('${m.id}')">
+                    <div class="deck-icon">${m.icon}</div>
+                    <div class="deck-info">
+                        <h4>${m.name}</h4>
+                        <span style="font-size: 0.72rem; color: var(--muted); font-style: italic; display: block; margin-top: 2px; margin-bottom: 4px; line-height: 1.3;">${m.sub}</span>
+                        <p id="deck-info-${m.id}" style="font-size: 0.7rem; font-weight: bold; color: var(--text);">Cargando...</p>
+                        <div class="dom-bar"><div class="dom-fill" id="dom-${m.id}" style="width:0%"></div></div>
+                    </div>
+                    <div class="deck-arrow">›</div>
+                </div>`;
+            });
+            
             html += `
-            <div class="deck-item" onclick="iniciarMazo('${m.id}')">
-                <div class="deck-icon">${m.icon}</div>
+            <div class="deck-item" onclick="iniciarMazoCustom()">
+                <div class="deck-icon">⭐</div>
                 <div class="deck-info">
-                    <h4>${m.name}</h4>
-                    <span style="font-size: 0.72rem; color: var(--muted); font-style: italic; display: block; margin-top: 2px; margin-bottom: 4px; line-height: 1.3;">${m.sub}</span>
-                    <p id="deck-info-${m.id}" style="font-size: 0.7rem; font-weight: bold; color: var(--text);">Cargando...</p>
-                    <div class="dom-bar"><div class="dom-fill" id="dom-${m.id}" style="width:0%"></div></div>
+                    <h4>Mis mazos</h4>
+                    <span style="font-size: 0.72rem; color: var(--muted); font-style: italic; display: block; margin-top: 2px; margin-bottom: 4px;">Las preguntas que tú mismo añades</span>
+                    <p id="deck-info-custom" style="font-size: 0.7rem; font-weight: bold; color: var(--text);">Tus propias tarjetas</p>
                 </div>
                 <div class="deck-arrow">›</div>
             </div>`;
-        });
-        
-        html += `
-        <div class="deck-item" onclick="iniciarMazoCustom()">
-            <div class="deck-icon">⭐</div>
-            <div class="deck-info">
-                <h4>Mis mazos</h4>
-                <span style="font-size: 0.72rem; color: var(--muted); font-style: italic; display: block; margin-top: 2px; margin-bottom: 4px;">Las preguntas que tú mismo añades</span>
-                <p id="deck-info-custom" style="font-size: 0.7rem; font-weight: bold; color: var(--text);">Tus propias tarjetas</p>
-            </div>
-            <div class="deck-arrow">›</div>
-        </div>`;
-        deckContainer.innerHTML = html;
+            deckContainer.innerHTML = html;
 
-        const studyBanner = document.createElement('div');
-        studyBanner.innerHTML = `
-        <div onclick="openStudySelector()" style="background: linear-gradient(135deg, var(--card2), var(--card)); border:1px solid var(--accent); padding:20px; border-radius:15px; margin-bottom:20px; text-align:left; cursor:pointer; box-shadow: 0 4px 20px rgba(0,0,0,0.4); display:flex; justify-content:space-between; align-items:center;">
-            <div>
-                <h3 style="color:var(--text); margin-bottom:5px; font-size:1.2rem;">🧠 Estudio Inteligente</h3>
-                <p style="color:var(--muted); font-size:0.85rem;">Algoritmo Leitner a largo plazo</p>
-            </div>
-            <div style="font-size:1.5rem; color:var(--accent);">›</div>
-        </div>`;
-        deckContainer.parentNode.insertBefore(studyBanner, deckContainer);
+            const studyBanner = document.createElement('div');
+            studyBanner.innerHTML = `
+            <div onclick="openStudySelector()" style="background: linear-gradient(135deg, var(--card2), var(--card)); border:1px solid var(--accent); padding:20px; border-radius:15px; margin-bottom:20px; text-align:left; cursor:pointer; box-shadow: 0 4px 20px rgba(0,0,0,0.4); display:flex; justify-content:space-between; align-items:center;">
+                <div>
+                    <h3 style="color:var(--text); margin-bottom:5px; font-size:1.2rem;">🧠 Estudio Inteligente</h3>
+                    <p style="color:var(--muted); font-size:0.85rem;">Algoritmo Leitner a largo plazo</p>
+                </div>
+                <div style="font-size:1.5rem; color:var(--accent);">›</div>
+            </div>`;
+            deckContainer.parentNode.insertBefore(studyBanner, deckContainer);
+        }
+
+        const raeCardText = document.querySelector('.mode-card[onclick="goTo(\'rae\')"] p');
+        if (raeCardText && typeof MAZOS_VOCAB !== 'undefined' && MAZOS_VOCAB[0]) {
+            raeCardText.textContent = MAZOS_VOCAB[0].cards.length + " palabras de nivel";
+        }
     }
 
-    const raeCardText = document.querySelector('.mode-card[onclick="goTo(\'rae\')"] p');
-    if (raeCardText && typeof MAZOS_VOCAB !== 'undefined' && MAZOS_VOCAB[0]) {
-        raeCardText.textContent = MAZOS_VOCAB[0].cards.length + " palabras de nivel";
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', inyectarInterfaz);
+    } else {
+        inyectarInterfaz();
     }
-
 })();
 
 // =====================================================================
@@ -13022,14 +13029,13 @@ window.nextStudyCard = function() {
    document.getElementById('study-card').style.borderColor = cardColor;
    document.getElementById('study-card').style.boxShadow = `0 15px 35px ${cardColor}33, inset 0 1px 0 rgba(255,255,255,0.05)`;
 
-   // Enlace de Wikipedia y Enlace corregido de Google Maps
    const term = encodeURIComponent(currentStudyCard.a);
    document.getElementById('link-wiki').href = `https://es.wikipedia.org/wiki/Special:Search?search=${term}`;
    
    const mapBtn = document.getElementById('link-map');
    if (currentStudyCard.deckId === 'geo_esp' || currentStudyCard.deckId === 'geo_mund') {
        mapBtn.style.display = 'flex';
-       mapBtn.href = `https://www.google.com/maps/search/?api=1&query=${term}`;
+       mapBtn.href = `http://googleusercontent.com/maps.google.com/?q=${term}`;
    } else {
        mapBtn.style.display = 'none';
    }
@@ -13114,8 +13120,32 @@ window.exitSmartStudy = function() {
    document.getElementById('view-smart-study').style.display = 'none';
 };
 </script>
+
 <script>
 'use strict';
+
+// ============================================================
+// NAVEGACIÓN — RESTAURADA Y VITAL PARA QUE LOS BOTONES FUNCIONEN
+// ============================================================
+function goTo(id) {
+    document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+    document.getElementById(id).classList.add('active');
+
+    // Efectos colaterales al cambiar de pantalla
+    if (id === 'home') { loadDeckInfo(); updateDifHomeCount(); }
+    if (id === 'dificiles') { renderDificiles(); }
+    if (id === 'creator') { renderCustomList(); }
+    if (id === 'rosco') { startRosco(); } 
+    if (id === 'rae') { initRaeIfNeeded(); }
+}
+
+function showToast(msg, dur = 2000) {
+    const t = document.getElementById('toast');
+    t.textContent = msg;
+    t.classList.add('show');
+    setTimeout(() => t.classList.remove('show'), dur);
+}
+
 // ============================================================
 //  TERMS
 // ============================================================
