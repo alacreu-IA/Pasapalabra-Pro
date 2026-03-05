@@ -1,4 +1,4 @@
-const CACHE = 'ppro-v1';
+const CACHE = 'ppro-v2'; // <--- CAMBIA ESTO
 const ASSETS = [
   './',
   './index.html',
