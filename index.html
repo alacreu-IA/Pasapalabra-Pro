@@ -1755,7 +1755,6 @@ MAZOS.push({
     {q: "Con la Z: Grosería o falta de educación.", a: "zafiedad", letra: "Z"},
 
     // ROSCO 16 - NIVEL ALTO (REVISADO)
-const rosco = [
     {letra: "A", q: "Con la A: Privación total o parcial de la memoria.", a: "amnesia"},
     {letra: "B", q: "Con la B: Sustancia o agente que tiene la propiedad de matar bacterias.", a: "bactericida"},
     {letra: "C", q: "Con la C: Arte y técnica de trazar mapas geográficos.", a: "cartografía"},
@@ -1783,7 +1782,6 @@ const rosco = [
     {letra: "Y", q: "Contiene la Y: Ciencia que estudia la vida de los animales.", a: "zoología"},
 
     // ROSCO 17 - NIVEL BOTE (DEFINICIONES RAE)
-const rosco17 = [
     {letra: "A", q: "Con la A: Persona que niega la existencia de Dios.", a: "ateo"},
     {letra: "B", q: "Con la B: Dicho de un animal: Que anda o se sostiene sobre dos pies o patas.", a: "bípedo"},
     {letra: "C", q: "Con la C: Dicho de un animal: Que se alimenta de carne.", a: "carnívoro"},
@@ -1813,7 +1811,6 @@ const rosco17 = [
     {letra: "Z", q: "Contiene la Z: Persona que siente celos excesivos.", a: "celosoide"},
 
 // ROSCO 18 - NIVEL BOTE (HISTORIA Y ARTE) - VERSIÓN CORREGIDA
-const rosco18 = [
     {letra: "A", q: "Con la A: Periodo histórico que comienza con la aparición de la escritura y termina con la caída del Imperio romano.", a: "edad antigua"},
     {letra: "B", q: "Con la B: Estilo artístico del siglo XVII que utiliza el claroscuro y una ornamentación exuberante.", a: "barroco"},
     {letra: "C", q: "Con la C: Vanguardia que rompe con la perspectiva tradicional mediante el uso de formas geométricas.", a: "cubismo"},
@@ -2011,7 +2008,6 @@ const rosco18 = [
     {q: "Con la Z: Limpieza general de un barco. O trifulca o riña ruidosa.", a: "zafarrancho", letra: "Z"},
 
 // ROSCO 27 - NIVEL BOTE (TERMINOLOGÍA RAE Y CULTISMOS)
-const rosco27 = [
     {letra: "A", q: "Con la A: Dicho de un animal: Que carece de alas.", a: "áptero"},
     {letra: "B", q: "Con la B: Dicho de una persona: De lenguaje suave y halagador.", a: "blandilocuo"},
     {letra: "C", q: "Con la C: Ilustre, visible, sobresaliente.", a: "conspicuo"},
@@ -15337,6 +15333,76 @@ function _ppMigrateData() {
 
 // Ejecutar migración al arrancar
 _ppMigrateData();
+
+(function() {
+    var _PPDB = 'pasapalabra_pro_v1';
+    var _STORE = 'noemi';
+    var _KEYS = ['dificiles','streak','last_visit','terms_accepted_v2',
+                 'ppro_usage','ppro_rosco_hist','ppro_letters','ppro_progress',
+                 'ppro_last_backup','custom_cards','pasapalabra_srs'];
+    var _saveTimer = null;
+
+    function openDB(cb) {
+        try {
+            var req = indexedDB.open(_PPDB, 1);
+            req.onupgradeneeded = function(e) { e.target.result.createObjectStore(_STORE); };
+            req.onsuccess = function(e) { cb(null, e.target.result); };
+            req.onerror = function() { cb(req.error); };
+        } catch(e) { cb(e); }
+    }
+
+    function saveToIDB() {
+        openDB(function(err, db) {
+            if (err || !db) return;
+            try {
+                var data = {};
+                _KEYS.forEach(function(k) { var v = localStorage.getItem(k); if (v !== null) data[k] = v; });
+                for (var i = 0; i < localStorage.length; i++) {
+                    var k = localStorage.key(i);
+                    if (k && (k.startsWith('srs_') || k.startsWith('rae_'))) data[k] = localStorage.getItem(k);
+                }
+                data['_at'] = new Date().toISOString();
+                var tx = db.transaction(_STORE, 'readwrite');
+                tx.objectStore(_STORE).put(JSON.stringify(data), 'main');
+                tx.oncomplete = function() { db.close(); };
+            } catch(e) { console.warn('IDB save:', e); }
+        });
+    }
+
+    function restoreFromIDB() {
+        openDB(function(err, db) {
+            if (err || !db) return;
+            try {
+                var tx = db.transaction(_STORE, 'readonly');
+                var req = tx.objectStore(_STORE).get('main');
+                req.onsuccess = function() {
+                    db.close();
+                    if (!req.result) return;
+                    var data = JSON.parse(req.result);
+                    var hasData = localStorage.getItem('streak') || localStorage.getItem('ppro_usage') || localStorage.getItem('dificiles');
+                    if (!hasData) {
+                        Object.keys(data).forEach(function(k) { if (k !== '_at') localStorage.setItem(k, data[k]); });
+                        console.log('Datos restaurados desde IDB ✓', data['_at']);
+                        if (typeof updateStreak === 'function') updateStreak();
+                        if (typeof loadDeckInfo === 'function') loadDeckInfo();
+                        if (typeof showToast === 'function') showToast('Datos restaurados ✓');
+                    }
+                };
+            } catch(e) { console.warn('IDB restore:', e); }
+        });
+    }
+
+    var _orig = localStorage.setItem.bind(localStorage);
+    localStorage.setItem = function(key, value) {
+        _orig(key, value);
+        clearTimeout(_saveTimer);
+        _saveTimer = setTimeout(saveToIDB, 2000);
+    };
+
+    restoreFromIDB();
+    setTimeout(saveToIDB, 4000);
+})();
+
 
 </script>
 </body>
