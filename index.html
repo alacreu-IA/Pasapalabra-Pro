@@ -903,6 +903,7 @@ html, body {
 
         <div class="section-label">Mazos Activos</div>
         <div class="deck-list">
+            
             <div class="deck-item" onclick="iniciarMazo('cg')">
                 <div class="deck-icon">🧠</div>
                 <div class="deck-info">
@@ -912,6 +913,7 @@ html, body {
                 </div>
                 <div class="deck-arrow">›</div>
             </div>
+
             <div class="deck-item" onclick="iniciarMazo('hist')">
                 <div class="deck-icon">⚔️</div>
                 <div class="deck-info">
@@ -921,6 +923,7 @@ html, body {
                 </div>
                 <div class="deck-arrow">›</div>
             </div>
+
             <div class="deck-item" onclick="iniciarMazo('literatura')">
                 <div class="deck-icon">📚</div>
                 <div class="deck-info">
@@ -930,6 +933,7 @@ html, body {
                 </div>
                 <div class="deck-arrow">›</div>
             </div>
+
             <div class="deck-item" onclick="iniciarMazo('arte')">
                 <div class="deck-icon">🎨</div>
                 <div class="deck-info">
@@ -939,6 +943,7 @@ html, body {
                 </div>
                 <div class="deck-arrow">›</div>
             </div>
+
             <div class="deck-item" onclick="iniciarMazo('ciencia')">
                 <div class="deck-icon">🔬</div>
                 <div class="deck-info">
@@ -948,6 +953,27 @@ html, body {
                 </div>
                 <div class="deck-arrow">›</div>
             </div>
+
+            <div class="deck-item" onclick="iniciarMazo('mitologia')">
+                <div class="deck-icon">🏛️</div>
+                <div class="deck-info">
+                    <h4>Mitología</h4>
+                    <p id="deck-info-mitologia">Cargando...</p>
+                    <div class="dom-bar"><div class="dom-fill" id="dom-mitologia" style="width:0%"></div></div>
+                </div>
+                <div class="deck-arrow">›</div>
+            </div>
+
+            <div class="deck-item" onclick="iniciarMazo('deporte')">
+                <div class="deck-icon">🏆</div>
+                <div class="deck-info">
+                    <h4>Deporte</h4>
+                    <p id="deck-info-deporte">Cargando...</p>
+                    <div class="dom-bar"><div class="dom-fill" id="dom-deporte" style="width:0%"></div></div>
+                </div>
+                <div class="deck-arrow">›</div>
+            </div>
+
             <div class="deck-item" onclick="iniciarMazoCustom()">
                 <div class="deck-icon">⭐</div>
                 <div class="deck-info">
@@ -956,6 +982,7 @@ html, body {
                 </div>
                 <div class="deck-arrow">›</div>
             </div>
+
         </div>
 
         <div style="display:flex;justify-content:flex-end;margin:14px 0 0;"><button onclick="goTo('dashboard')" style="background:var(--card2);border:1px solid var(--gold);border-radius:20px;padding:7px 16px;font-size:0.76rem;color:var(--gold);cursor:pointer;font-weight:700;display:flex;align-items:center;gap:6px;box-shadow:0 0 16px var(--gold-dim);">Mi progreso</button></div>
@@ -5033,8 +5060,8 @@ MAZOS.push({
 {q:"Contiene la X: tenista español finalista de Roland Garros.", a:"Àlex", letra:"X"},
 {q:"Contiene la Y: comandante español que luchó en la Revolución Cubana.", a:"Menoyo", letra:"Y"},
 {q:"Contiene la Z: filólogo español miembro de la RAE.", a:"Zamora", letra:"Z"},
+
 // ROSCO-1 - FORMATO CORREGIDO CON COMAS
-[
   {q:"Con la A: Villa soriana donde Castilla y Aragón firmaron un tratado en 1162 para repartirse Navarra.", a:"Ágreda", letra:"A"}, 
   {q:"Con la B: Castillo de Gandía junto al cual Rodrigo Díaz de Vivar derrotó a los almorávides en 1097.", a:"Bairén", letra:"B"},
   {q:"Con la C: Municipio toledano donde el ejército de Alfonso VI fue derrotado por los almorávides, muriendo el hijo del Cid.", a:"Consuegra", letra:"C"}, 
@@ -5061,9 +5088,6 @@ MAZOS.push({
   {q:"Contiene la Y: Apellido del jesuita y educador español de nombre Ángel, fundador de la Asociación Católica de Propagandistas.", a:"Ayala", letra:"Y"},
   {q:"Contiene la Z: Apellido del legendario centrocampista del Athletic Club de nombre José Luis, apodado el interior de seda.", a:"Panizo", letra:"Z"}
 ]
-
-
-  ]
 });
 
 </script>
@@ -9181,54 +9205,504 @@ MAZOS.push({
 {q: "Contiene la X: Deportista que combate en un cuadrilátero vistiendo guantes.", a: "Boxeador", letra: "X"},
 {q: "Con la Y: Embarcación de recreo a vela o a motor con la que se celebran regatas marítimas.", a: "Yate", letra: "Y"},
 {q: "Con la Z: Calzado específico para proteger el pie y dar agarre durante la práctica deportiva.", a: "Zapatilla", letra: "Z"},
-
-//ROSCO 120 -mix
-{q:"Con la A: Apellido del piloto español bicampeón del mundo de Fórmula 1 y campeón del Mundial de Resistencia.", a:"Alonso", letra:"A"}, {q:"Con la B: Apellido de la gimnasta estadounidense considerada una de las mejores de todos los tiempos y ganadora de múltiples oros olímpicos.", a:"Biles", letra:"B"}, {q:"Con la C: Apellido del ciclista suizo apodado Espartaco que destacó como especialista en contrarreloj y clásicas.", a:"Cancellara", letra:"C"}, {q:"Con la D: Número que llevan los deportistas en la camiseta para ser identificados durante una competición.", a:"Dorsal", letra:"D"}, {q:"Con la E: Resultado en el que dos equipos o competidores obtienen la misma puntuación al finalizar el tiempo reglamentario.", a:"Empate", letra:"E"}, {q:"Con la F: Movimiento rápido que hace un jugador para engañar al adversario y esquivarlo.", a:"Finta", letra:"F"}, {q:"Con la G: Apellido de la tenista alemana que logró el Golden Slam al ganar los cuatro grandes torneos y el oro olímpico en 1988.", a:"Graf", letra:"G"}, {q:"Con la H: Apellido del piloto británico que ha igualado a Michael Schumacher con siete títulos mundiales de Fórmula 1.", a:"Hamilton", letra:"H"}, {q:"Con la I: Apellido del futbolista español que marcó el gol decisivo en la final del Mundial de Sudáfrica 2010.", a:"Iniesta", letra:"I"}, {q:"Con la J: Apellido del atleta cubano que ganó el oro en los 400 y 800 metros lisos en los Juegos Olímpicos de Montreal 1976.", a:"Juantorena", letra:"J"}, {q:"Con la L: Apellido del piloto austriaco de Fórmula 1 que sobrevivió a un grave accidente en Nürburgring en 1976 y ganó tres mundiales.", a:"Lauda", letra:"L"}, {q:"Con la M: Deporte de motor que se practica con motocicletas en circuitos de tierra con saltos y curvas cerradas.", a:"Motocross", letra:"M"}, {q:"Con la N: Nombre de pila de la gimnasta rumana de apellido Comaneci que logró el primer diez perfecto en unos Juegos Olímpicos.", a:"Nadia", letra:"N"}, {q:"Contiene la Ñ: Articulación del cuerpo humano fundamental para el agarre y movimiento de la raqueta en deportes como el tenis o el bádminton.", a:"Muñeca", letra:"Ñ"}, {q:"Con la O: Valla o barrera que los atletas deben saltar en determinadas carreras de atletismo en pista.", a:"Obstáculo", letra:"O"}, {q:"Con la P: Apellido del ciclista esloveno que ganó el Tour de Francia en los años 2020, 2021 y 2024.", a:"Pogacar", letra:"P"}, {q:"Con la Q: Término en inglés utilizado en el fútbol americano para designar al jugador que dirige la ofensiva y pasa el balón.", a:"Quarterback", letra:"Q"}, {q:"Con la R: Apellido del futbolista brasileño apodado El Fenómeno que ganó las Copas del Mundo de 1994 y 2002.", a:"Ronaldo", letra:"R"}, {q:"Con la S: Apellido del piloto alemán que ganó siete campeonatos mundiales de Fórmula 1, cinco de ellos con la escudería Ferrari.", a:"Schumacher", letra:"S"}, {q:"Con la T: Apellido del boxeador estadounidense de peso pesado que se convirtió en el campeón mundial más joven de la historia con veinte años.", a:"Tyson", letra:"T"}, {q:"Con la U: Carrera a pie de larga distancia cuyo recorrido es superior a los cuarenta y dos kilómetros tradicionales.", a:"Ultramaratón", letra:"U"}, {q:"Con la V: Apellido del piloto alemán que ganó cuatro campeonatos mundiales consecutivos de Fórmula 1 con la escudería Red Bull.", a:"Vettel", letra:"V"}, {q:"Contiene la X: Salto de patinaje artístico sobre hielo que se inicia patinando hacia adelante y requiere al menos una rotación y media en el aire.", a:"Axel", letra:"X"}, {q:"Contiene la Y: Apellido del futbolista neerlandés que revolucionó el fútbol total y ganó tres Balones de Oro en la década de los setenta.", a:"Cruyff", letra:"Y"}, {q:"Con la Z: Apellido del futbolista argentino que fue capitán del Inter de Milán durante casi dos décadas y ganó la Liga de Campeones en 2010.", a:"Zanetti", letra:"Z"},
-
-//ROSCO 111 - MIX
-{q:"Con la A: Ciudad europea que albergó los Juegos Olímpicos de verano en 1920, donde se izó por primera vez la bandera olímpica.", a:"Amberes", letra:"A"}, {q:"Con la B: Apellido del atleta etíope que ganó el maratón de los Juegos Olímpicos de Roma 1960 corriendo descalzo.", a:"Bikila", letra:"B"}, {q:"Con la C: Apellido del pedagogo e historiador francés que impulsó el renacimiento de los Juegos Olímpicos en la era moderna.", a:"Coubertin", letra:"C"}, {q:"Con la D: Uso de sustancias prohibidas en el deporte, cuyo control es una de las principales labores del Comité Olímpico Internacional.", a:"Dopaje", letra:"D"}, {q:"Con la E: Ciudad europea que albergó los Juegos Olímpicos de verano en 1912, donde se introdujo el cronometraje electrónico.", a:"Estocolmo", letra:"E"}, {q:"Con la F: Apellido del atleta británico que ganó el oro en los 5000 y 10000 metros en los Juegos Olímpicos de Londres 2012 y Río 2016.", a:"Farah", letra:"F"}, {q:"Con la G: País que encabeza tradicionalmente el desfile de las naciones en la ceremonia de apertura de los Juegos Olímpicos.", a:"Grecia", letra:"G"}, {q:"Con la H: Ciudad europea que albergó los Juegos Olímpicos de verano en 1952, donde debutó la Unión Soviética.", a:"Helsinki", letra:"H"}, {q:"Con la I: Ciudad austriaca que albergó los Juegos Olímpicos de invierno en 1964 y 1976.", a:"Innsbruck", letra:"I"}, {q:"Con la J: País asiático que albergó los Juegos Olímpicos de invierno en las ciudades de Sapporo y Nagano.", a:"Japón", letra:"J"}, {q:"Con la L: Única ciudad europea que ha albergado los Juegos Olímpicos de verano en tres ocasiones.", a:"Londres", letra:"L"}, {q:"Con la M: Ciudad canadiense que albergó los Juegos Olímpicos de verano en 1976, recordados por el diez perfecto de Nadia Comaneci.", a:"Montreal", letra:"M"}, {q:"Con la N: Apellido del atleta finlandés apodado El Finlandés Volador, ganador de nueve medallas de oro olímpicas en la década de 1920.", a:"Nurmi", letra:"N"}, {q:"Contiene la Ñ: Apellido del atleta español que ganó la medalla de plata en la prueba de decatlón en los Juegos Olímpicos de Barcelona 1992.", a:"Peñalver", letra:"Ñ"}, {q:"Con la O: Ciudad europea que albergó los Juegos Olímpicos de invierno en 1952, siendo la primera vez que se celebraban en una capital nacional.", a:"Oslo", letra:"O"}, {q:"Con la P: Ciudad europea que albergó los Juegos Olímpicos de verano en 1900, 1924 y 2024.", a:"París", letra:"P"}, {q:"Contiene la Q: Deporte olímpico en el que hombres y mujeres compiten juntos en igualdad de condiciones montando a caballo.", a:"Equitación", letra:"Q"}, {q:"Con la R: Ciudad europea que albergó los Juegos Olímpicos de verano en 1960, los primeros en ser transmitidos por televisión en directo.", a:"Roma", letra:"R"}, {q:"Con la S: Ciudad asiática que albergó los Juegos Olímpicos de verano en 1988, marcados por el escándalo de dopaje de Ben Johnson.", a:"Seúl", letra:"S"}, {q:"Con la T: Ciudad asiática que albergó los Juegos Olímpicos de verano en 1964 y 2020.", a:"Tokio", letra:"T"}, {q:"Con la U: Apellido del gimnasta japonés que ganó el oro en el concurso completo individual en los Juegos Olímpicos de Londres 2012 y Río 2016.", a:"Uchimura", letra:"U"}, {q:"Con la V: Ciudad canadiense que albergó los Juegos Olímpicos de invierno en 2010.", a:"Vancouver", letra:"V"}, {q:"Contiene la X: País cuya capital albergó los Juegos Olímpicos de verano en 1968, donde se introdujo el control antidopaje.", a:"México", letra:"X"}, {q:"Con la Y: País europeo, hoy desaparecido, que albergó los Juegos Olímpicos de invierno de 1984 en la ciudad de Sarajevo.", a:"Yugoslavia", letra:"Y"}, {q:"Con la Z: Apellido del atleta checo que ganó tres medallas de oro consecutivas en lanzamiento de jabalina entre 1992 y 2000.", a:"Zelezny", letra:"Z"},
-
-//ROSCO
-{q:"Con la A: Apellido del tenista español que ganó el torneo de Wimbledon en 2023 y 2024.", a:"Alcaraz", letra:"A"}, {q:"Con la B: Apellido del atleta jamaicano que ostenta el récord mundial de los 100 metros lisos.", a:"Bolt", letra:"B"}, {q:"Con la C: Apellido del portero español que levantó la Copa del Mundo como capitán en 2010.", a:"Casillas", letra:"C"}, {q:"Con la D: Apellido del piloto australiano que ganó cinco mundiales consecutivos de 500cc en la década de 1990.", a:"Doohan", letra:"D"}, {q:"Con la E: Apellido del ciclista belga que ganó la Vuelta a España en 2022 y el oro olímpico en ruta en 2024.", a:"Evenepoel", letra:"E"}, {q:"Con la F: Apellido del ciclista británico nacido en Kenia que ha ganado cuatro Tours de Francia.", a:"Froome", letra:"F"}, {q:"Con la G: Apellido del baloncestista español que ganó dos anillos de la NBA con Los Angeles Lakers.", a:"Gasol", letra:"G"}, {q:"Con la H: Apellido del futbolista noruego que ganó el Trofeo Gerd Müller al mejor goleador en 2023.", a:"Haaland", letra:"H"}, {q:"Con la I: Apellido del baloncestista que fue elegido MVP de las Finales de la NBA en 2015 con los Golden State Warriors.", a:"Iguodala", letra:"I"}, {q:"Con la J: Apellido del baloncestista estadounidense apodado Magic, ganador de cinco anillos con los Lakers.", a:"Johnson", letra:"J"}, {q:"Con la L: Trofeo anual otorgado a la personalidad deportiva más destacada del mundo, considerado el Oscar del deporte.", a:"Laureus", letra:"L"}, {q:"Con la M: Apellido del tenista británico que ganó dos oros olímpicos individuales consecutivos en 2012 y 2016.", a:"Murray", letra:"M"}, {q:"Con la N: Apellido del baloncestista alemán que lideró a los Dallas Mavericks al anillo de la NBA en 2011.", a:"Nowitzki", letra:"N"}, {q:"Contiene la Ñ: Apellido del futbolista argentino campeón del mundo en 2022 apodado el Huevo.", a:"Acuña", letra:"Ñ"}, {q:"Con la O: Apellido del pívot nigeriano que ganó dos anillos de la NBA con los Houston Rockets en los años noventa.", a:"Olajuwon", letra:"O"}, {q:"Con la P: Premio otorgado anualmente por la FIFA al autor del mejor gol del año.", a:"Puskas", letra:"P"}, {q:"Con la Q: Apodo del histórico delantero español que ganó cinco trofeos Pichichi en Primera División.", a:"Quini", letra:"Q"}, {q:"Con la R: Apellido del futbolista brasileño que ganó el Balón de Oro en 1999 y brilló en el FC Barcelona.", a:"Rivaldo", letra:"R"}, {q:"Con la S: Apellido del atleta cubano que ostenta el récord mundial de salto de altura.", a:"Sotomayor", letra:"S"}, {q:"Con la T: Apellido del nadador australiano apodado el Torpedo, ganador de cinco oros olímpicos.", a:"Thorpe", letra:"T"}, {q:"Con la U: Apellido del baloncestista que fue MVP y Novato del Año en la misma temporada de la NBA en 1969.", a:"Unseld", letra:"U"}, {q:"Con la V: Apellido de la esquiadora estadounidense que ganó cuatro clasificaciones generales de la Copa del Mundo de esquí alpino.", a:"Vonn", letra:"V"}, {q:"Con la X: Nombre de pila del futbolista español que ganó el premio al Mejor Constructor de Juego del Mundo de la IFFHS en cuatro ocasiones.", a:"Xavi", letra:"X"}, {q:"Con la Y: Nombre de pila de la atleta venezolana que ostenta el récord mundial de triple salto.", a:"Yulimar", letra:"Y"}, {q:"Con la Z: Apellido del portero español que da nombre al trofeo al guardameta menos goleado de La Liga.", a:"Zamora", letra:"Z"},
-
-//ROSCO
-{q:"Con la A: Apellido del baloncestista griego que ganó el premio MVP de la NBA en 2019 y 2020.", a:"Antetokounmpo", letra:"A"}, {q:"Con la B: Apellido del tenista sueco que ganó cinco veces consecutivas el torneo de Wimbledon entre 1976 y 1980.", a:"Borg", letra:"B"}, {q:"Con la C: Apellido del ajedrecista noruego que se proclamó campeón del mundo en 2013.", a:"Carlsen", letra:"C"}, {q:"Con la D: Apellido del baloncestista esloveno que fue elegido Novato del Año de la NBA en 2019.", a:"Doncic", letra:"D"}, {q:"Con la E: Apellido de la tenista estadounidense que ganó dieciocho títulos de Grand Slam individuales en su carrera.", a:"Evert", letra:"E"}, {q:"Con la F: Apellido del futbolista portugués que ganó el Balón de Oro en el año 2000.", a:"Figo", letra:"F"}, {q:"Con la G: Apellido del futbolista español que ostenta el récord de haber ganado seis Copas de Europa.", a:"Gento", letra:"G"}, {q:"Con la H: Apellido del ciclista francés que ganó cinco Tours de Francia, el último de ellos en 1985.", a:"Hinault", letra:"H"}, {q:"Con la I: Apellido del futbolista sueco que ganó el premio Puskas en 2013 por un gol de chilena desde fuera del área.", a:"Ibrahimovic", letra:"I"}, {q:"Con la J: Apellido del baloncestista serbio que fue elegido MVP de la NBA en 2021, 2022 y 2024.", a:"Jokic", letra:"J"}, {q:"Con la L: Apellido de la nadadora estadounidense que ha dominado las pruebas de estilo libre de larga distancia desde 2012.", a:"Ledecky", letra:"L"}, {q:"Con la M: Apellido del futbolista croata que ganó el Balón de Oro en 2018.", a:"Modric", letra:"M"}, {q:"Con la N: Apellido del tenista rumano que fue el primer número uno de la historia del ranking ATP en 1973.", a:"Nastase", letra:"N"}, {q:"Contiene la Ñ: Nombre de pila del futbolista del Athletic Club de apellido Williams que ostenta el récord de partidos consecutivos en La Liga.", a:"Iñaki", letra:"Ñ"}, {q:"Con la O: Apellido del jugador ruso de hockey sobre hielo que ha ganado tres veces el trofeo Hart al MVP de la NHL.", a:"Ovechkin", letra:"O"}, {q:"Con la P: Apellido del ciclista italiano apodado El Pirata que ganó el Giro de Italia y el Tour de Francia en 1998.", a:"Pantani", letra:"P"}, {q:"Contiene la Q: Nombre de pila del pívot estadounidense que dominó la NBA con los Lakers a principios de los años 2000.", a:"Shaquille", letra:"Q"}, {q:"Con la R: Apellido del piloto italiano de motociclismo que ganó nueve títulos mundiales en diferentes categorías.", a:"Rossi", letra:"R"}, {q:"Con la S: Apellido del tenista estadounidense que ganó catorce torneos de Grand Slam y dominó la década de 1990.", a:"Sampras", letra:"S"}, {q:"Con la T: Apellido del futbolista italiano que jugó toda su carrera en la AS Roma y ganó el Mundial en 2006.", a:"Totti", letra:"T"}, {q:"Con la U: Apellido del boxeador ucraniano que unificó los títulos mundiales de peso pesado en 2024.", a:"Usyk", letra:"U"}, {q:"Con la V: Apellido del piloto neerlandés que ganó su primer campeonato mundial de Fórmula 1 en 2021.", a:"Verstappen", letra:"V"}, {q:"Contiene la X: Nombre de pila de la futbolista estadounidense de apellido Morgan que ganó dos Mundiales femeninos.", a:"Alex", letra:"X"}, {q:"Con la Y: Apellido del boxeador francés que ganó la medalla de oro en peso superpesado en los Juegos Olímpicos de Río 2016.", a:"Yoka", letra:"Y"}, {q:"Con la Z: Apellido del tenista alemán que ganó la medalla de oro individual en los Juegos Olímpicos de Tokio 2020.", a:"Zverev", letra:"Z"},
-
-//ROSCO
-{q:"Con la A: Apellido del entrenador italiano que ha ganado la Liga de Campeones en cinco ocasiones.", a:"Ancelotti", letra:"A"}, {q:"Con la B: Apellido del baloncestista estadounidense que ganó cinco anillos con los Lakers y falleció trágicamente en 2020.", a:"Bryant", letra:"B"}, {q:"Con la C: Apellido del baloncestista estadounidense considerado el mejor tirador de triples de la historia de la NBA.", a:"Curry", letra:"C"}, {q:"Con la D: Apellido del futbolista marfileño que lideró al Chelsea a ganar la Liga de Campeones en 2012.", a:"Drogba", letra:"D"}, {q:"Con la E: Nombre de pila del futbolista portugués nacido en Mozambique que ganó el Balón de Oro en 1965.", a:"Eusebio", letra:"E"}, {q:"Con la F: Apellido del ajedrecista estadounidense que se coronó campeón del mundo en 1972 al derrotar a Boris Spassky.", a:"Fischer", letra:"F"}, {q:"Con la G: Apellido del futbolista francés que fue elegido mejor jugador de la Eurocopa 2016.", a:"Griezmann", letra:"G"}, {q:"Con la H: Apellido del piloto británico que ganó el campeonato mundial de Fórmula 1 en 1976.", a:"Hunt", letra:"H"}, {q:"Con la I: Apellido del baloncestista estadounidense que anotó el triple decisivo en las Finales de la NBA de 2016 para los Cavaliers.", a:"Irving", letra:"I"}, {q:"Con la J: Apellido del baloncestista estadounidense que se convirtió en el máximo anotador histórico de la NBA en 2023.", a:"James", letra:"J"}, {q:"Con la L: Apellido del futbolista polaco que ganó el premio The Best de la FIFA en 2020 y 2021.", a:"Lewandowski", letra:"L"}, {q:"Con la M: Apellido del tenista estadounidense que ganó siete torneos de Grand Slam y fue famoso por su temperamento en la pista.", a:"McEnroe", letra:"M"}, {q:"Con la N: Apellido del baloncestista español apodado La Bomba, que fue MVP del Eurobasket 2011.", a:"Navarro", letra:"N"}, {q:"Contiene la Ñ: Apellido del futbolista uruguayo que fichó por el Liverpool en 2022 procedente del Benfica.", a:"Núñez", letra:"Ñ"}, {q:"Con la O: Apellido del atleta británico que ganó el oro en los 800 metros lisos en los Juegos Olímpicos de Moscú 1980.", a:"Ovett", letra:"O"}, {q:"Con la P: Apellido del futbolista francés que ganó el Balón de Oro en tres ocasiones consecutivas en la década de 1980.", a:"Platini", letra:"P"}, {q:"Contiene la Q: Apellido del futbolista español que ganó el Mundial en 2010 y la Eurocopa en 2012.", a:"Piqué", letra:"Q"}, {q:"Con la R: Apellido del futbolista brasileño que ganó el Balón de Oro en 2005 y fue la estrella del FC Barcelona.", a:"Ronaldinho", letra:"R"}, {q:"Con la S: Apellido del esquiador sueco que ostenta el récord histórico masculino de victorias en la Copa del Mundo de esquí alpino.", a:"Stenmark", letra:"S"}, {q:"Con la T: Apellido de la baloncestista estadounidense que ha ganado seis medallas de oro olímpicas.", a:"Taurasi", letra:"T"}, {q:"Contiene la U: Apellido del defensa español que marcó el gol decisivo contra Alemania en las semifinales del Mundial 2010.", a:"Puyol", letra:"U"}, {q:"Con la V: Apellido del tenista argentino que ganó cuatro torneos de Grand Slam en la década de 1970.", a:"Vilas", letra:"V"}, {q:"Contiene la X: Nombre de pila del boxeador británico de apellido Lewis que fue campeón mundial indiscutido de peso pesado.", a:"Lennox", letra:"X"}, {q:"Contiene la Y: Apellido del futbolista inglés que es el máximo goleador histórico del Manchester United.", a:"Rooney", letra:"Y"}, {q:"Con la Z: Apellido del futbolista chileno apodado Bam Bam que fue pichichi de La Liga con el Real Madrid.", a:"Zamorano", letra:"Z"},
-
-//ROSCO-6
-{q:"Con la A: Apellido del tenista estadounidense que ganó el torneo de Wimbledon en 1975 y da nombre al estadio principal del US Open.", a:"Ashe", letra:"A"}, {q:"Con la B: Apellido del atleta estadounidense que batió el récord mundial de salto de longitud en los Juegos Olímpicos de 1968.", a:"Beamon", letra:"B"},
-{q:"Con la C: Apellido del ciclista británico que ostenta el récord absoluto de victorias de etapa en el Tour de Francia.", a:"Cavendish", letra:"C"}, {q:"Con la D: Apellido del baloncestista estadounidense que jugó toda su carrera en los San Antonio Spurs y ganó cinco anillos de la NBA.", a:"Duncan", letra:"D"},
-{q:"Con la E: Apellido del baloncestista estadounidense apodado el Doctor que popularizó el mate desde la línea de tiros libres.", a:"Erving", letra:"E"}, {q:"Con la F: Apellido del boxeador estadounidense que infligió la primera derrota profesional a Muhammad Ali en 1971.", a:"Frazier", letra:"F"},
-{q:"Con la G: Apellido del atleta etíope que ganó dos medallas de oro olímpicas en los diez mil metros en 1996 y 2000.", a:"Gebrselassie", letra:"G"}, {q:"Con la H: Apellido del piloto británico que ganó el campeonato mundial de Fórmula 1 en 1962 y 1968.", a:"Hill", letra:"H"},
-{q:"Con la I: Apellido del futbolista italiano que ganó el Mundial en 2006 y destacó como goleador en el AC Milan y la Juventus.", a:"Inzaghi", letra:"I"}, {q:"Con la J: Apellido del atleta estadounidense que ganó la medalla de oro en decatlón en los Juegos Olímpicos de Montreal 1976.", a:"Jenner", letra:"J"},
-{q:"Con la L: Apellido del piloto francés de rally que ostenta el récord de haber ganado nueve campeonatos mundiales consecutivos.", a:"Loeb", letra:"L"}, {q:"Con la M: Apellido del tenista español que ganó el torneo de Roland Garros en 1998 y llegó a ser número uno del mundo.", a:"Moyá", letra:"M"},
-{q:"Con la N: Apellido del gimnasta ruso que ganó cuatro medallas de oro olímpicas entre Atlanta 1996 y Sídney 2000.", a:"Nemov", letra:"N"}, {q:"Contiene la Ñ: Apellido del histórico delantero español que dio nombre a una famosa quinta de jugadores del Real Madrid.", a:"Butragueño", letra:"Ñ"},
-{q:"Con la O: Apellido del atleta estadounidense que ganó cuatro medallas de oro en los Juegos Olímpicos de Berlín 1936.", a:"Owens", letra:"O"}, {q:"Con la P: Apellido del futbolista francés que ganó el Mundial de 1998 y formó parte de los Invencibles del Arsenal.", a:"Pires", letra:"P"},
-{q:"Con la Q: Apellido del entrenador portugués que dirigió al Real Madrid en la temporada 2003-2004 y fue asistente en el Manchester United.", a:"Queiroz", letra:"Q"}, {q:"Con la R: Apellido del baloncestista estadounidense que ostenta el récord de haber ganado once anillos de la NBA como jugador.", a:"Russell", letra:"R"},
-{q:"Con la S: Apellido del piloto español que ha ganado el Rally Dakar en la categoría de coches en cuatro ocasiones.", a:"Sainz", letra:"S"}, {q:"Con la T: Apellido del tenista austriaco que ganó el Abierto de Estados Unidos en el año 2020.", a:"Thiem", letra:"T"},
-{q:"Con la U: Apellido del futbolista francés que juega como defensa central y fue subcampeón del mundo con su selección en 2022.", a:"Upamecano", letra:"U"}, {q:"Con la V: Apellido del ciclista danés que ganó la clasificación general del Tour de Francia en 2022 y 2023.", a:"Vingegaard", letra:"V"},
-{q:"Contiene la X: Apellido del baloncestista estadounidense apodado The Glide que ganó el anillo de la NBA con los Houston Rockets en 1995.", a:"Drexler", letra:"X"}, {q:"Con la Y: Apellido del gimnasta chino de nombre Wei que ganó la medalla de oro en el concurso completo individual en Pekín 2008.", a:"Yang", letra:"Y"},
-{q:"Con la Z: Apellido del portero italiano que capitaneó a su selección para ganar la Copa del Mundo de 1982 a los cuarenta años.", a:"Zoff", letra:"Z"},
-
-//ROSCO-7
-{q:"Con la A: Apellido del piloto estadounidense que ganó el campeonato mundial de Fórmula 1 en 1978 y las 500 Millas de Indianápolis en 1969.", a:"Andretti", letra:"A"}, {q:"Con la B: Apellido del atleta ucraniano que dominó el salto con pértiga en las décadas de 1980 y 1990, batiendo el récord mundial treinta y cinco veces.", a:"Bubka", letra:"B"},
-{q:"Con la C: Apodo del futbolista brasileño que jugaba como lateral derecho, ganó dos Mundiales y es considerado uno de los mejores en su posición.", a:"Cafú", letra:"C"}, {q:"Con la D: Apellido del boxeador panameño apodado Mano de Piedra, considerado uno de los mejores pesos ligeros de la historia.", a:"Durán", letra:"D"},
-{q:"Con la E: Apellido del atleta británico que batió el récord mundial de triple salto en 1995 con una marca de 18,29 metros.", a:"Edwards", letra:"E"}, {q:"Con la F: Apellido del piloto brasileño que ganó el campeonato mundial de Fórmula 1 en 1972 y 1974.", a:"Fittipaldi", letra:"F"},
-{q:"Con la G: Apellido del atleta estadounidense que ganó la medalla de oro en los cien metros lisos en los Juegos Olímpicos de Atenas 2004.", a:"Gatlin", letra:"G"}, {q:"Con la H: Apellido del futbolista francés que es el máximo goleador histórico del Arsenal y ganó el Mundial en 1998.", a:"Henry", letra:"H"},
-{q:"Con la I: Apellido del baloncestista lituano que jugó como pívot en los Cleveland Cavaliers y fue dos veces All-Star de la NBA.", a:"Ilgauskas", letra:"I"}, {q:"Con la J: Apodo del futbolista brasileño que ganó el Mundial de 1970 marcando goles en todos los partidos del torneo.", a:"Jairzinho", letra:"J"},
-{q:"Con la L: Apellido del tenista checoslovaco nacionalizado estadounidense que ganó ocho torneos de Grand Slam en la década de 1980.", a:"Lendl", letra:"L"}, {q:"Con la M: Apellido del piloto español de motociclismo que ha ganado seis campeonatos mundiales en la categoría de MotoGP.", a:"Márquez", letra:"M"},
-{q:"Con la N: Apellido del tenista japonés que alcanzó la final del Abierto de Estados Unidos en 2014.", a:"Nishikori", letra:"N"}, {q:"Contiene la Ñ: Apellido del baloncestista español que medía 2,21 metros y jugó gran parte de su carrera como pívot en el FC Barcelona.", a:"Dueñas", letra:"Ñ"},
-{q:"Con la O: Apellido del futbolista inglés que ganó el Balón de Oro en 2001 jugando para el Liverpool.", a:"Owen", letra:"O"}, {q:"Con la P: Apellido del baloncestista estadounidense que ganó seis anillos de la NBA formando una dupla histórica con Michael Jordan.", a:"Pippen", letra:"P"},
-{q:"Contiene la Q: Apellido del futbolista español que jugó como mediocentro defensivo y ganó el Mundial de 2010 y la Eurocopa de 2012.", a:"Busquets", letra:"Q"}, {q:"Con la R: Apellido del futbolista brasileño que fue la gran estrella de su selección para ganar el Mundial de 1994 en Estados Unidos.", a:"Romario", letra:"R"},
-{q:"Con la S: Apellido del futbolista búlgaro que ganó el Balón de Oro en 1994 y brilló en el Dream Team del FC Barcelona.", a:"Stoichkov", letra:"S"}, {q:"Con la T: Apellido del futbolista francés que jugaba como defensa y marcó dos goles en las semifinales del Mundial de 1998 contra Croacia.", a:"Thuram", letra:"T"},
-{q:"Con la U: Apellido del futbolista francés que juega como defensa central y marcó el gol de la victoria en las semifinales del Mundial de 2018.", a:"Umtiti", letra:"U"}, {q:"Con la V: Apellido del futbolista serbio que jugó como defensa central y fue capitán del Manchester United, ganando la Liga de Campeones en 2008.", a:"Vidic", letra:"V"},
-{q:"Contiene la X: Apellido del futbolista alemán que ganó el Mundial en 2014 y jugó en equipos como el Schalke 04 y el Paris Saint-Germain.", a:"Draxler", letra:"X"}, {q:"Contiene la Y: Apellido del atleta francés que batió el récord mundial de decatlón en 2018 con 9126 puntos.", a:"Mayer", letra:"Y"},
-{q:"Con la Z: Apellido del futbolista italiano que jugó en el Parma y en el Chelsea, siendo considerado uno de los mejores jugadores de la historia del club londinense.", a:"Zola", letra:"Z"}
-
   ]
 });
+
+// ==========================================
+// MAZO DE MITOLOGÍA
+// ==========================================
+if (typeof MAZOS === 'undefined') { var MAZOS = []; }
+
+MAZOS.push({
+  id: "mitologia",
+  name: "Mitología",
+  icon: "🏛️",
+  questions: [
+    
+    // AQUÍ PEGAREMOS LOS ROSCOS DE MITOLOGÍA QUE SALGAN DE LA IA
+// ROSCO 1
+  {q: "En la mitología griega: Dios y personificación del río más importante del inframundo, también conocido como el río de la aflicción.", a: "Aqueronte", letra: "A"},
+  {q: "En la mitología griega: Dios que encarna al frío viento del norte y que trae consigo el invierno.", a: "Bóreas", letra: "B"},
+  {q: "En la mitología griega: Monstruo marino femenino que tragaba enormes cantidades de agua para luego devolverlas, creando remolinos mortales.", a: "Caribdis", letra: "C"},
+  {q: "En la mitología griega: Hijo de Prometeo que, junto a su esposa Pirra, sobrevivió al gran diluvio enviado por Zeus para destruir a la humanidad.", a: "Deucalión", letra: "D"},
+  {q: "En la mitología griega: Divinidades infernales vengadoras de los crímenes de sangre en la familia, conocidas por los romanos como Furias.", a: "Erinias", letra: "E"},
+  {q: "En la mitología griega: Deidad primordial creadora del mundo y de la luz en la antigua tradición mística órfica.", a: "Fanes", letra: "F"},
+  {q: "En la mitología griega: Estatua femenina de marfil tallada por Pigmalión a la que la diosa Afrodita dotó de vida.", a: "Galatea", letra: "G"},
+  {q: "En la mitología griega: Gigantes primordiales de cien brazos y cincuenta cabezas, nacidos de la unión entre Urano y Gea.", a: "Hecatónquiros", letra: "H"},
+  {q: "En la mitología griega: Rey de Tesalia que, por asesinar a su suegro e intentar seducir a la diosa Hera, fue castigado a girar atado a una rueda en llamas.", a: "Ixión", letra: "I"},
+  {q: "En la mitología griega: Heroico líder que comandó la expedición naval a bordo de la nave Argo en busca del legendario vellocino de oro.", a: "Jasón", letra: "J"},
+  {q: "En la mitología griega: Espíritus femeninos oscuros que personificaban el destino fatal y la muerte violenta o cruel en el campo de batalla.", a: "Keres", letra: "K"},
+  {q: "En la mitología griega: Rey de Arcadia que fue transformado en lobo por Zeus tras intentar servirle carne humana en un banquete.", a: "Licaón", letra: "L"},
+  {q: "En la mitología griega: Titánide que personificaba la memoria y que, tras yacer con Zeus, fue la madre de las nueve Musas.", a: "Mnemósine", letra: "M"},
+  {q: "En la mitología griega: Temible diosa de la justicia retributiva, la solidaridad, la venganza y la fortuna.", a: "Némesis", letra: "N"},
+  {q: "Contiene la Ñ: En la mitología griega, planta acuática en la que fue transformada la ninfa Siringe para escapar del acoso del dios Pan.", a: "Caña", letra: "Ñ"},
+  {q: "En la mitología griega: Cada una de las ninfas protectoras que habitaban en las montañas, grutas y relieves escarpados.", a: "Oréade", letra: "O"},
+  {q: "En la mitología griega: Rey de Tebas que fue salvajemente descuartizado por su propia madre y sus tías debido a su estricta oposición al culto de Dioniso.", a: "Penteo", letra: "P"},
+  {q: "Contiene la Q: En la mitología griega, monstruosa ninfa que era mitad mujer y mitad serpiente, descrita en los mitos como la madre de todos los monstruos.", a: "Equidna", letra: "Q"},
+  {q: "En la mitología griega: Uno de los tres severos jueces del inframundo, famoso por su sabiduría y justicia, hermano del rey Minos.", a: "Radamantis", letra: "R"},
+  {q: "En la mitología griega: Astuto rey de Corinto castigado en el Tártaro a empujar eternamente una pesada roca hasta la cima de una escarpada montaña.", a: "Sísifo", letra: "S"},
+  {q: "En la mitología griega: Gigante autómata de bronce, obra de Hefesto, que protegía la isla de Creta arrojando enormes rocas a los barcos enemigos.", a: "Talos", letra: "T"},
+  {q: "En la mitología griega: Musa celestial que preside la astronomía, la poesía astrológica y las ciencias exactas.", a: "Urania", letra: "U"},
+  {q: "En la mitología griega: Piel mágica y dorada del carnero alado que salvó a Frixo y que fue el trofeo principal de la búsqueda de los Argonautas.", a: "Vellocino", letra: "V"},
+  {q: "Contiene la W: En el estudio de la mitología griega, nombre de pila del célebre filólogo y académico alemán de apellido Burkert, autor de la enciclopédica obra 'Religión griega'.", a: "Walter", letra: "W"},
+  {q: "Contiene la X: En la mitología griega, joven hijo de Héctor y Andrómaca, trágicamente arrojado desde las altas murallas de Troya durante el saqueo.", a: "Astianax", letra: "X"},
+  {q: "Contiene la Y: En la mitología griega, la mayor de las siete hermanas Pléyades y madre del veloz dios Hermes.", a: "Maya", letra: "Y"},
+  {q: "En la mitología griega: Héroe alado, hijo de Bóreas y hermano de Calais, que persiguió a las arpías durante el gran viaje de los Argonautas.", a: "Zetes", letra: "Z"},
+  
+  // ROSCO 2
+  {q: "En la mitología griega: Heroína, hija de Pelias, que aceptó morir en el lugar de su esposo Admeto para salvarlo, siendo luego rescatada por Heracles.", a: "Alcestis", letra: "A"},
+  {q: "En la mitología griega: Gran héroe que logró domar al caballo alado Pegaso y con su inestimable ayuda dio muerte a la temible Quimera.", a: "Belerofonte", letra: "B"},
+  {q: "En la mitología griega: Sacerdotisa y profetisa troyana maldecida por el dios Apolo para que nadie creyera jamás en sus verídicas visiones.", a: "Casandra", letra: "C"},
+  {q: "En la mitología griega: Famoso arquitecto y artesano de gran ingenio, creador de las alas de cera y constructor del laberinto de Creta.", a: "Dédalo", letra: "D"},
+  {q: "En la mitología griega: Hermoso pastor mortal del que se enamoró perdidamente la diosa lunar Selene, sumiéndolo en un sueño eterno para que no envejeciera.", a: "Endimión", letra: "E"},
+  {q: "En la mitología griega: Princesa ateniense que fue violada por Tereo y a la que le cortaron la lengua, terminando transformada por los dioses en un ruiseñor.", a: "Filomela", letra: "F"},
+  {q: "En la mitología griega: Episodio épico y legendario que relata la colosal guerra librada entre los dioses olímpicos y la destructiva raza de los Gigantes.", a: "Gigantomaquia", letra: "G"},
+  {q: "En la mitología griega: Ninfas del ocaso que custodiaban un maravilloso y remoto jardín que albergaba un árbol cargado de manzanas de oro.", a: "Hespérides", letra: "H"},
+  {q: "En la mitología griega: Doncella y sacerdotisa amada por Zeus que fue transformada en una hermosa ternera blanca para ocultarla de los celos de Hera.", a: "Ío", letra: "I"},
+  {q: "En la mitología griega: Titán de primera generación, hijo de Urano y Gea, famoso por ser el padre de Prometeo, Atlas y Epimeteo.", a: "Jápeto", letra: "J"},
+  {q: "En la mitología griega: Nombre alternativo y título reverencial que recibía la diosa Perséfone cuando representaba a la inocente doncella de la primavera.", a: "Kore", letra: "K"},
+  {q: "En la mitología griega: Sacerdote troyano que advirtió sobre el engaño del caballo de madera y fue asfixiado, junto a sus hijos, por dos enormes serpientes marinas.", a: "Laocoonte", letra: "L"},
+  {q: "En la mitología griega: Feroz monstruo con cabeza de toro y cuerpo humano que fue encerrado y alimentado con carne en el laberinto del rey Minos.", a: "Minotauro", letra: "M"},
+  {q: "En la mitología griega: Princesa de la isla de los feacios que, mientras lavaba la ropa, encontró a Odiseo exhausto y desnudo en la orilla del mar.", a: "Nausícaa", letra: "N"},
+  {q: "Contiene la Ñ: En la mitología griega, cono o fruto silvestre que coronaba el extremo superior del tirso, el báculo sagrado que portaba el dios Dioniso.", a: "Piña", letra: "Ñ"},
+  {q: "En la mitología griega: Príncipe micénico, hijo de Agamenón, que asesinó a su propia madre Clitemnestra para vengar la trágica muerte de su padre.", a: "Orestes", letra: "O"},
+  {q: "En la mitología griega: Legendario escultor y rey de la isla de Chipre que se enamoró obsesivamente de la estatua de mujer que él mismo había tallado.", a: "Pigmalión", letra: "P"},
+  {q: "Contiene la Q: En la mitología griega, el más grande, letal y veloz de los guerreros en la Guerra de Troya, invulnerable excepto en una pequeña parte de su pie.", a: "Aquiles", letra: "Q"},
+  {q: "En la mitología griega: Mítico rey de Tracia que acudió a defender Troya con unos caballos blancos más veloces que el viento, asesinado por Odiseo en la noche.", a: "Reso", letra: "R"},
+  {q: "En la mitología griega: Princesa tebana que murió consumida por el fuego celestial al pedirle a Zeus que se le mostrara en todo su esplendor, estando embarazada de Dioniso.", a: "Sémele", letra: "S"},
+  {q: "En la mitología griega: Profundo, sombrío y abismal foso del inframundo utilizado como prisión de máximo tormento para los Titanes derrotados.", a: "Tártaro", letra: "T"},
+  {q: "En la mitología griega: Dios primordial personificación del vasto cielo estrellado, que fue castrado y derrocado por su hijo Cronos con una hoz.", a: "Urano", letra: "U"},
+  {q: "En la mitología griega: Dios que personifica a la estrella de la tarde o lucero vespertino, hijo de Eos y hermano del dios Fósforo.", a: "Véspero", letra: "V"},
+  {q: "Contiene la W: En la arqueología clásica ligada a la mitología griega, apellido del explorador y arquitecto británico que en 1869 descubrió los restos del Templo de Artemisa en Éfeso.", a: "Wood", letra: "W"},
+  {q: "Contiene la X: En la mitología griega, princesa troyana, hija menor de los reyes Príamo y Hécuba, que fue sacrificada por los griegos en la tumba de Aquiles.", a: "Políxena", letra: "X"},
+  {q: "Contiene la Y: En la mitología griega, conjunto de siete ninfas hermanas, hijas del titán Atlas, que al huir del cazador Orión fueron transformadas en estrellas.", a: "Pléyades", letra: "Y"},
+  {q: "En la mitología griega: Deidad central venerada en los misterios órficos, a menudo identificado como el 'primer Dioniso', que fue descuartizado y devorado por los Titanes.", a: "Zagreo", letra: "Z"},
+  // ROSCO 3
+  {q: "En la mitología griega: Soberbia tejedora de Lidia que osó desafiar a la diosa Atenea a un concurso de tapices, sufriendo una aterradora metamorfosis como castigo.", a: "Aracne", letra: "A"},
+  {q: "En la mitología griega: Monstruoso y descomunal hecatónquiro, gigante de cien brazos y cincuenta cabezas que acudió en auxilio de Zeus contra los Titanes.", a: "Briareo", letra: "B"},
+  {q: "En la mitología griega: Diosa primordial de las profundidades oceánicas y de los monstruos marinos, nacida de la unión entre Ponto y Gea.", a: "Ceto", letra: "C"},
+  {q: "En la mitología griega: Hermosa ninfa náyade, sacerdotisa de la Madre Tierra, que suplicó ser transformada en un árbol de laurel para huir de la obsesión de Apolo.", a: "Dafne", letra: "D"},
+  {q: "En la mitología griega: Divinidad primordial que personifica la oscuridad profunda y las sombras, hermano de la Noche y nacido del Caos original.", a: "Érebo", letra: "E"},
+  {q: "En la mitología griega: Joven príncipe de Beocia que huyó del inminente sacrificio volando sobre el lomo de un espléndido carnero de vellón de oro.", a: "Frixo", letra: "F"},
+  {q: "En la mitología griega: Joven y apuesto príncipe troyano que fue raptado por Zeus bajo la forma de un águila gigante para servir como copero de los dioses en el Olimpo.", a: "Ganimedes", letra: "G"},
+  {q: "En la mitología griega: Diosa de la juventud eterna, hija de Zeus y Hera, encargada de escanciar el néctar divino y posteriormente esposa de Heracles.", a: "Hebe", letra: "H"},
+  {q: "En la mitología griega: Antigua y poderosa diosa de los alumbramientos y comadrona celestial, a menudo considerada hija de Hera y protectora de las parturientas.", a: "Ilitía", letra: "I"},
+  {q: "En la mitología griega: Monstruoso jabalí gigante de enorme ferocidad enviado por Artemisa para devastar la región de Calidón y destruido por una coalición de héroes.", a: "Jabalí", letra: "J"},
+  {q: "En la mitología griega: Oscura y persuasiva deidad o daemón que personificaba el vicio, la bajeza moral y la corrupción, famosa por intentar tentar a Heracles.", a: "Kakia", letra: "K"},
+  {q: "En la mitología griega: Uno de los grandes ríos del inframundo, cuyas aguas provocaban un amnésico y total olvido en las almas de los muertos que bebían de él.", a: "Lete", letra: "L"},
+  {q: "En la mitología griega: Temible hechicera, princesa de la Cólquida y sacerdotisa de Hécate, que traicionó a su familia por amor a Jasón y posteriormente asesinó a sus propios hijos.", a: "Medea", letra: "M"},
+  {q: "En la mitología griega: Anciano dios del mar, de carácter profético y benevolente, hijo de Ponto y padre de las cincuenta bellas ninfas marinas conocidas como Nereidas.", a: "Nereo", letra: "N"},
+  {q: "Contiene la Ñ: En la mitología griega, animal artrópodo de la familia de los arácnidos en el que fue metamorfoseada la mortal Aracne tras atreverse a desafiar a Atenea.", a: "Araña", letra: "Ñ"},
+  {q: "En la mitología griega: Temible reina que figura como la legendaria fundadora y primera monarca del pueblo guerrero de las Amazonas, a menudo considerada hija de Ares.", a: "Otrera", letra: "O"},
+  {q: "En la mitología griega: Titán de segunda generación que representaba la destrucción y la desolación en la guerra, hermano de Astreo y Palante.", a: "Perses", letra: "P"},
+  {q: "Contiene la Q: En la mitología griega, uno de los cinco fieros Espartos originales, que nacieron completamente armados de los dientes del dragón sembrados por Cadmo.", a: "Equión", letra: "Q"},
+  {q: "En la mitología griega: Titánide hermana y esposa de Cronos, que engañó a su esposo entregándole una piedra envuelta en pañales para salvar a su hijo Zeus.", a: "Rea", letra: "R"},
+  {q: "En la mitología griega: Soberbio rey de la Élide que exigió ser adorado como un dios olímpico, simulando truenos y relámpagos con carros y antorchas hasta ser fulminado por Zeus.", a: "Salmoneo", letra: "S"},
+  {q: "En la mitología griega: Venerable y célebre adivino ciego de Tebas que experimentó la vida como hombre y como mujer tras golpear a dos serpientes en un bosque.", a: "Tiresias", letra: "T"},
+  {q: "En la mitología griega: Símbolo alquímico, filosófico y mítico de un dragón o serpiente que engulle su propia cola, evocando la naturaleza cíclica del tiempo universal.", a: "Uróboros", letra: "U"},
+  {q: "En la mitología griega: Prestigiosa condición profética que ostentaban figuras como Calcas, Casandra o Héleno, capaces de vaticinar los designios de los dioses.", a: "Vidente", letra: "V"},
+  {q: "Contiene la W: En el estudio académico de la mitología helénica, apellido del influyente helenista y filólogo británico Martin Litchfield, autor de 'La filosofía griega arcaica y el Oriente'.", a: "West", letra: "W"},
+  {q: "Contiene la X: En la mitología griega, epíteto frecuentemente utilizado para referirse al dios Apolo en su complejo papel de profeta emisor de oráculos oscuros y ambiguos.", a: "Loxias", letra: "X"},
+  {q: "Contiene la Y: En la mitología griega, valeroso guerrero aqueo de imponente estatura, rey de Salamina y primo de Aquiles, famoso por su gigantesco escudo heráldico.", a: "Áyax", letra: "Y"},
+  {q: "En la mitología griega: Hijo de Zeus y Antíope, valiente cazador que, junto a su gemelo Anfión, logró conquistar el trono y construir las murallas de la ciudad de Tebas.", a: "Zeto", letra: "Z"},
+
+  // ROSCO 4
+  {q: "En la mitología griega: Ninfa, a menudo representada como una cabra divina, que alimentó y crió en secreto al infante Zeus en una cueva del monte Ida en Creta.", a: "Amaltea", letra: "A"},
+  {q: "En la mitología griega: Anciana sirvienta o sacerdotisa tracia de Deméter en Eleusis, que con sus bromas y gestos obscenos logró sacar a la diosa de su profunda depresión.", a: "Baubo", letra: "B"},
+  {q: "En la mitología griega: Héroe fenicio e inventor mítico del alfabeto, hermano de Europa, famoso por aniquilar a un dragón sagrado y fundar la legendaria ciudad de Tebas.", a: "Cadmo", letra: "C"},
+  {q: "En la mitología griega: Grupo de cincuenta bellas hermanas que, tras asesinar en masa a sus maridos en la noche de bodas, fueron condenadas a llenar cántaros agujereados en el Hades.", a: "Danaides", letra: "D"},
+  {q: "En la mitología griega: Divinidad fluvial suprema del inframundo y personificación del río del odio, sobre cuyas aguas los mismísimos dioses prestaban sus juramentos más inviolables.", a: "Estigia", letra: "E"},
+  {q: "En la mitología griega: Temerario e inexperto hijo de Helios que rogó conducir el flamante carro solar de su padre, perdiendo el control e incendiando vastas partes de la Tierra.", a: "Faetón", letra: "F"},
+  {q: "En la mitología griega: Humilde pescador mortal de Beocia que, tras masticar inadvertidamente una misteriosa hierba mágica, se metamorfoseó en una inmortal deidad marina con cola de pez.", a: "Glauco", letra: "G"},
+  {q: "En la mitología griega: Enigmática diosa vinculada a la magia, la hechicería, los fantasmas nocturnos y los oscuros cruces de caminos, a menudo representada con tres rostros.", a: "Hécate", letra: "H"},
+  {q: "En la mitología griega: Doncella micénica, hija primogénita del rey Agamenón, que fue cruelmente entregada como sacrificio a Artemisa para aplacar los vientos antes de zarpar a Troya.", a: "Ifigenia", letra: "I"},
+  {q: "En la mitología griega: Hermoso príncipe espartano de quien Apolo se enamoró profundamente, pero que murió trágicamente golpeado por un disco desviado por los celos de Céfiro.", a: "Jacinto", letra: "J"},
+  {q: "En la mitología griega: Implacable deidad alada que encarna y personifica a la fuerza bruta, la brutalidad y el poder, responsable de encadenar a Prometeo en el Cáucaso.", a: "Kratos", letra: "K"},
+  {q: "En la mitología griega: Maternidad divina acosada incesantemente por la celosa Hera, que tras vagar por el mundo encontró refugio en la isla flotante de Delos para dar a luz a Apolo y Artemisa.", a: "Leto", letra: "L"},
+  {q: "En la mitología griega: Tríada de sombrías diosas personificadoras del destino inevitable, que tejían, medían y cortaban inexorablemente el hilo de la vida de todos los seres mortales.", a: "Moiras", letra: "M"},
+  {q: "En la mitología griega: Anciano, sabio y elocuente rey de la ciudad de Pilos, que brindaba valiosos consejos a los irascibles caudillos aqueos durante los asedios de la guerra de Troya.", a: "Néstor", letra: "N"},
+  {q: "Contiene la Ñ: En la mitología griega, ardid, trampa o estratagema monumental y definitiva que ideó el astuto Odiseo al introducir a sus guerreros dentro de un gigantesco caballo de madera.", a: "Engaño", letra: "Ñ"},
+  {q: "En la mitología griega: Gigantesco e intrépido cazador de gran belleza, nacido de la tierra, que amenazó con matar a todas las bestias del planeta y fue castigado por Gea con un letal escorpión.", a: "Orión", letra: "O"},
+  {q: "En la mitología griega: Soberana absoluta del mundo de los muertos tras ser raptada por Hades, e hija protectora de la primavera, que pasaba parte del año con su madre Deméter.", a: "Perséfone", letra: "P"},
+  {q: "Contiene la Q: En la mitología griega, rica y utópica isla marítima habitada por los pacíficos feacios, que fue gobernada por el rey Alcínoo y dio un último refugio a Odiseo antes de llegar a Ítaca.", a: "Esqueria", letra: "Q"},
+  {q: "En la mitología griega: Delito mayúsculo o acto de sacrilegio cometido por el titán Prometeo al ocultar una brasa del carro solar en un tallo de hinojo para entregársela a la humanidad mortal.", a: "Robo", letra: "R"},
+  {q: "En la mitología griega: Titánide y radiante diosa lunar, hija de los titanes Hiperión y Tea, que surcaba los cielos nocturnos conduciendo un fulgurante carro tirado por dos caballos blancos.", a: "Selene", letra: "S"},
+  {q: "En la mitología griega: El más horrendo y mortal de todos los monstruos, una colosal criatura serpenteante engendrada por Gea y el Tártaro que casi logra aniquilar el Olimpo y deponer a Zeus.", a: "Tifón", letra: "T"},
+  {q: "En la mitología romana de herencia griega: Nombre latino alternativo por el que es universalmente conocido Odiseo, el ingenioso soberano de la rocosa y árida isla de Ítaca.", a: "Ulises", letra: "U"},
+  {q: "En la mitología griega: Conductos fisiológicos divinos por los que no corría la sangre mortal y corruptible, sino el resplandeciente e inmortal fluido dorado conocido como icor.", a: "Venas", letra: "V"},
+  {q: "Contiene la W: En el ámbito de la filología y el mito clásico, apellido del insigne académico británico de nombre Cecil Maurice, famoso estudioso helenista autor de la obra 'La experiencia griega'.", a: "Bowra", letra: "W"},
+  {q: "Contiene la X: En los albores de la filosofía conectada con el mito griego, célebre pensador presocrático que fue exiliado de Atenas por impiedad tras aseverar que el Sol no era un dios, sino un metal candente.", a: "Anaxágoras", letra: "X"},
+  {q: "Contiene la Y: En el desdichado ciclo tebano de la mitología griega, reina madre que, ignorando la horrible profecía, concluyó desposándose y engendrando descendencia con su propio hijo, Edipo.", a: "Yocasta", letra: "Y"},
+  {q: "En la mitología griega: Espíritu daemónico infernal que personificaba sin piedad la envidia, el fervor militante, la emulación y la amarga rivalidad, nacido como hijo de Palante y de la oceánide Estigia.", a: "Zelo", letra: "Z"},
+
+  // ROSCO 5
+  {q: "En la mitología griega: Majestuoso dios fluvial y patrón del mayor río de Grecia, que disputó encarnizadamente con Heracles por la mano de Deyanira transformándose en toro y serpiente.", a: "Aqueloo", letra: "A"},
+  {q: "En la mitología griega: Sanguinario rey mitológico de Egipto, hijo del dios Poseidón y de Lisianasa, que inmolaba a todos los forasteros en los altares hasta que fue derrotado por Heracles.", a: "Busiris", letra: "B"},
+  {q: "En la mitología griega: Lóbrego y anciano barquero de vestiduras andrajosas encargado de transportar eternamente a las almas de los difuntos a través de las oscuras aguas del río Aqueronte.", a: "Caronte", letra: "C"},
+  {q: "En la mitología griega: Valiente y fiero rey de la ciudad de Argos que destacó enormemente en la Guerra de Troya, llegando a herir en combate singular a los mismísimos dioses Ares y Afrodita.", a: "Diomedes", letra: "D"},
+  {q: "En la mitología griega: Ninfa parlanchina de las montañas que fue duramente castigada por la diosa Hera a repetir perpetuamente las últimas palabras que escuchara, tras distraerla con sus historias.", a: "Eco", letra: "E"},
+  {q: "En la mitología griega: Divinidad menor y personificación absoluta del miedo cerval y el terror, que acompañaba a su padre Ares en las batallas provocando el pánico entre los guerreros y mortales.", a: "Fobos", letra: "F"},
+  {q: "En la mitología griega: Gran diosa madre y absoluta personificación primordial de la Tierra de la que surgieron los inmensos cielos, los profundos mares y los abruptos montes en los albores del mundo.", a: "Gea", letra: "G"},
+  {q: "En la mitología griega: Reina soberana de las tribus de las Amazonas, a la que el héroe Heracles debía arrebatar su codiciado cinturón mágico como noveno trabajo encargado por Euristeo.", a: "Hipólita", letra: "H"},
+  {q: "En la mitología griega: Audaz y trágico joven, hijo de un insigne arquitecto, que halló la muerte precipitándose a las aguas del mar Egeo después de que el calor del sol derritiera sus alas de cera.", a: "Ícaro", letra: "I"},
+  {q: "En la mitología griega: Uno de los dos extraordinarios caballos inmortales del carro de Aquiles que, tras recibir efímeramente el don de la palabra por la diosa Hera, profetizó la fatal muerte de su amo.", a: "Janto", letra: "J"},
+  {q: "En la arqueología del arte y la mitología griega: Estatua monumental y solemne de la época arcaica que encarnaba a un varón joven, de pie y completamente desnudo, a menudo identificada con Apolo.", a: "Kouros", letra: "K"},
+  {q: "En la mitología griega: Princesa etolia y monarca consorte de Esparta que, tras ser seducida por un colosal cisne blanco que encubría a Zeus, depositó dos huevos de los que nacieron Helena y los Dioscuros.", a: "Leda", letra: "L"},
+  {q: "En la mitología griega: Valeroso príncipe etolio al frente de la famosa caza del letal jabalí de Calidón, cuya vida estaba trágicamente ligada por las Moiras a la duración de un tizón ardiente en la chimenea.", a: "Meleagro", letra: "M"},
+  {q: "En la mitología griega: Soberbia reina tebana, madre de catorce vástagos, cuya enorme arrogancia al burlarse de la diosa Leto provocó que Apolo y Artemisa aniquilaran a toda su estirpe con sus flechas.", a: "Níobe", letra: "N"},
+  {q: "Contiene la Ñ: En la mitología griega, plácido estado o dominio de inconsciencia nocturna sobre el cual reinaba y vigilaba el apacible dios Hypnos en el umbral de su cueva bañada por el Leteo.", a: "Sueño", letra: "Ñ"},
+  {q: "En la mitología griega: Sublime poeta tracio y virtuoso músico capaz de calmar a las fieras y doblegar a la mismísima naturaleza con las embriagadoras melodías que emanaban de su amada lira.", a: "Orfeo", letra: "O"},
+  {q: "En la mitología griega: Benévolo y compasivo titán benefactor de los desamparados humanos mortales, a los cuales moldeó a partir de arcilla y barro antes de entregarles el prohibido fuego del Olimpo.", a: "Prometeo", letra: "P"},
+  {q: "Contiene la Q: En la mitología de los grandes ciclos épicos, nombre que agrupa a todos los caudillos y tropas de los reinos griegos continentales que zarparon conjuntamente para cercar e incendiar Troya.", a: "Aqueos", letra: "Q"},
+  {q: "En la antigua Grecia: Recitador, cantor y transmisor profesional de los grandes poemas épicos y las legendarias hazañas de la mitología, que vagaba de ciudad en ciudad declamando con un bastón.", a: "Rapsoda", letra: "R"},
+  {q: "En la mitología griega: Castísima y asustadiza ninfa náyade originaria de Arcadia que, huyendo presurosamente del indeseado acoso sexual del dios Pan, imploró ayuda y fue convertida en un denso cañaveral.", a: "Siringe", letra: "S"},
+  {q: "En la mitología griega: Inmortal nereida de los mares que fue desposada contra su voluntad por el rey Peleo, y a cuyo hijo varón, el poderoso héroe Aquiles, intentó hacer invulnerable sumergiéndolo en la laguna Estigia.", a: "Tetis", letra: "T"},
+  {q: "En la mitología griega: Anciano estadista y sabio consejero del rey Príamo, cuya rica residencia fue completamente devastada e incinerada por los enfurecidos aqueos durante el sangriento saqueo de Troya.", a: "Ucalegón", letra: "U"},
+  {q: "En la mitología griega: Objeto o vasija de barro que contenía las calamidades y los crueles males del mundo desatados por Pandora y que posteriormente, por un error de traducción de Erasmo, fue denominado como una 'caja'.", a: "Vaso", letra: "V"},
+  {q: "Contiene la W: En el marco de la filología y la reconstrucción histórica del mito, apellido del reputado y fundamental erudito alemán Friedrich August, que en 1795 publicaría los influyentes 'Prolegómenos a Homero'.", a: "Wolf", letra: "W"},
+  {q: "Contiene la X: En la mitología griega, hijo inmortal e invencible, nacido dentro del esplendor del Olimpo fruto del matrimonio celestial entre el dios Heracles deificado y su resplandeciente esposa juvenil Hebe.", a: "Alexícares", letra: "X"},
+  {q: "Contiene la Y: En la mitología griega, poderosa pieza defensiva mágica que había sido especialmente forjada por los herreros cíclopes para otorgarle un camuflaje y una invisibilidad inquebrantable a Hades.", a: "Yelmo", letra: "Y"},
+  {q: "En la mitología griega: Una de las numerosas y hermosas hijas inmortales nacidas en las aguas del mundo tras el enlace del magno titán Océano con la deidad marina y titánide primordial conocida como Tetis.", a: "Zeuxo", letra: "Z"},
+  // ROSCO 6
+  {q: "En la mitología griega: Rey de la próspera ciudad de Micenas y monarca maldito, famoso por haber servido en un banquete a su propio hermano Tiestes la carne de sus hijos.", a: "Atreo", letra: "A"},
+  {q: "En la mitología griega: Uno de los valientes Argonautas que, al escuchar el embriagador y mortífero canto de las Sirenas, no pudo resistirse y saltó al mar, siendo salvado por Afrodita.", a: "Butes", letra: "B"},
+  {q: "En la mitología griega: Vengativa reina micénica que, junto a su amante Egisto, tramó y ejecutó el sangriento asesinato de su esposo Agamenón cuando este regresó de Troya.", a: "Clitemnestra", letra: "C"},
+  {q: "En la mitología griega: Princesa de Argos que fue trágicamente encerrada por su padre en una cámara subterránea de bronce, donde Zeus la fecundó transformándose en una lluvia de oro.", a: "Dánae", letra: "D"},
+  {q: "En la mitología griega: Feroz y sanguinaria diosa destructora de ciudades, compañera habitual y en ocasiones descrita como la hermana del mismísimo dios de la guerra Ares.", a: "Enio", letra: "E"},
+  {q: "En la mitología griega: Deidad primordial masculina de las profundidades marinas que representaba los peligros ocultos del mar, padre engendrador de monstruos como las Gorgonas.", a: "Forcis", letra: "F"},
+  {q: "En la mitología griega: Despiadado daemón y espíritu oscuro que personificaba la inevitable senectud y la decadencia de la vejez mortal, hijo de la diosa de la noche.", a: "Geras", letra: "G"},
+  {q: "En la mitología griega: Titán de primera generación asociado a la luz observadora del firmamento, que al unirse a su hermana Tea fue el glorioso padre del Sol, la Luna y la Aurora.", a: "Hiperión", letra: "H"},
+  {q: "En la mitología griega: Montaña sagrada y macizo boscoso situado en la isla de Creta, en cuya recóndita cueva la cabra Amaltea amamantó y ocultó al niño Zeus de la voracidad de su padre.", a: "Ida", letra: "I"},
+  {q: "En la mitología griega: Joven héroe cretense que, tras yacer apasionadamente con la diosa Deméter en un campo arado, fue fulminado por un relámpago a manos de un celoso Zeus.", a: "Jasión", letra: "J"},
+  {q: "En la mitología griega, transcrito a menudo con esta letra inicial en la erudición filológica: Supremo y tiránico líder de los Titanes que devoraba incesantemente a sus hijos recién nacidos para evitar ser destronado.", a: "Kronos", letra: "K"},
+  {q: "En la mitología griega: La segunda de las tres inquebrantables deidades del destino, encargada directamente de medir con su vara la longitud del hilo de la vida de cada hombre.", a: "Láquesis", letra: "L"},
+  {q: "En la mitología griega: Solemne deidad que figura como una de las nueve Musas, originalmente inspiradora del canto musical, y posteriormente patrona absoluta de la tragedia teatral.", a: "Melpómene", letra: "M"},
+  {q: "En la mitología griega: Antigua, velada y sombría deidad primordial que personificaba la inmensidad de la noche, pariendo a numerosas fuerzas oscuras en el inicio de la creación.", a: "Nix", letra: "N"},
+  {q: "Contiene la Ñ: En la mitología griega, gran accidente geográfico natural de alta elevación en cuyas escarpadas grutas y laderas habitaban y danzaban alegremente las ninfas oréades.", a: "Montaña", letra: "Ñ"},
+  {q: "En la mitología griega: Poderosa y altiva reina de Lidia que compró a Heracles como esclavo, obligándolo a realizar tareas femeninas vestido de mujer mientras ella portaba la piel del León de Nemea.", a: "Ónfale", letra: "O"},
+  {q: "En la mitología griega: Antigua e inmensa divinidad preolímpica y personificación primordial del mar abierto, engendrado solitariamente por Gea en el comienzo de los tiempos.", a: "Ponto", letra: "P"},
+  {q: "Contiene la Q: En la mitología griega, colosal y épico conflicto cósmico de diez largos años en el que los dioses olímpicos y sus aliados derrotaron definitivamente a la generación divina anterior.", a: "Titanomaquia", letra: "Q"},
+  {q: "En la mitología griega: Soleada y fértil isla del mar Egeo que emergió de las profundidades del mar como regalo exclusivo de Zeus para que el dios del sol Helios la gobernara.", a: "Rodas", letra: "R"},
+  {q: "En la mitología griega: Peligrosas y seductoras criaturas, con cuerpo de ave y cabeza de mujer, cuyo dulce e irresistible canto atraía a los navegantes marinos hacia una muerte segura contra las rocas.", a: "Sirenas", letra: "S"},
+  {q: "En la mitología griega: Imponente dios de las oscuras profundidades marinas, hijo de Poseidón y Anfitrite, característico por calmar las fuertes olas haciendo sonar una caracola.", a: "Tritón", letra: "T"},
+  {q: "En la mitología griega: Nombre falso y astuto, que significa literalmente 'Nadie' en griego antiguo, utilizado por el ingenioso héroe Odiseo para burlar y dejar sin auxilio al cegado cíclope Polifemo.", a: "Utis", letra: "U"},
+  {q: "En la mitología griega: Sagrada y embriagadora bebida divina, descubierta e introducida en la humanidad mortal por Dioniso, que provocaba en sus devotos un éxtasis místico o furor sagrado.", a: "Vino", letra: "V"},
+  {q: "Contiene la W: En la historiografía y filología de la mitología griega, eminente estudioso y clasicista alemán nacido en 1848, de nombre Ulrich von, célebre autor de la fundamental obra 'La fe de los helenos'.", a: "Wilamowitz", letra: "W"},
+  {q: "Contiene la X: En la mitología griega, valeroso héroe divino, el gemelo inmortal de Cástor, que renunció amorosamente a la mitad de su eternidad para que su hermano no pasara todos los días en el sombrío Hades.", a: "Pólux", letra: "X"},
+  {q: "Contiene la Y: En la mitología griega, princesa etolia y desdichada segunda esposa del héroe Heracles, al que envenenó accidentalmente y con fatal dolor entregándole una túnica impregnada con sangre de centauro.", a: "Deyanira", letra: "Y"},
+  {q: "En la mitología griega: Máximo y absoluto regente supremo del monte Olimpo, monarca de los dioses y señor del cielo, las tormentas y el relámpago, conocido por sus múltiples infidelidades.", a: "Zeus", letra: "Z"},
+
+  // ROSCO 7
+  {q: "En la mitología griega: Virtuoso y bondadoso dios de la medicina y la curación que, tras lograr la inaudita hazaña de resucitar a un humano muerto, fue fulminado por un castigador rayo de Zeus.", a: "Asclepio", letra: "A"},
+  {q: "En la mitología griega: Noble y bella doncella viuda de Lirneso que fue entregada a Aquiles como botín de guerra y posteriormente arrebatada injustamente por el vanidoso rey Agamenón.", a: "Briséida", letra: "B"},
+  {q: "En la mitología griega: La más joven y determinada de las tres inexorables Moiras, que sostenía en sus divinas manos la rueca con la que hilaba la delicada hebra de la vida de los hombres.", a: "Cloto", letra: "C"},
+  {q: "En la mitología griega: Exuberante y transgresor dios de la vendimia, el éxtasis orgiástico, la locura ritual y la fertilidad agraria, nacido inusualmente del propio muslo de Zeus.", a: "Dioniso", letra: "D"},
+  {q: "En la mitología griega: Heroico y noble caudillo troyano, hijo del mortal Anquises y la sublime diosa Afrodita, que tras la caída de Troya huyó portando a su anciano padre a los hombros.", a: "Eneas", letra: "E"},
+  {q: "En la mitología griega: Afamado arquero griego que heredó el infalible arco de Heracles y fue cruelmente abandonado por el ejército aqueo en Lemnos a causa de la hedionda herida de su pie.", a: "Filoctetes", letra: "F"},
+  {q: "En la mitología griega: Tres espantosas hermanas monstruosas, Esteno, Euríale y Medusa, que tenían serpientes venenosas en lugar de cabellos y colmillos semejantes a los de los jabalíes.", a: "Gorgonas", letra: "G"},
+  {q: "En la mitología griega: Cojo y talentoso dios artesano del fuego, la forja y la metalurgia que, a causa de su fealdad, fue arrojado sin piedad desde la cima del Olimpo por su propia madre Hera.", a: "Hefesto", letra: "H"},
+  {q: "En la mitología griega: Rápida y luminosa diosa que personifica el colorido arcoíris, a menudo representada con alas doradas y ejerciendo el vital papel de recadera de los dioses olímpicos.", a: "Iris", letra: "I"},
+  {q: "En la mitología griega: Evento crucial desencadenante de la contienda troyana en el que el príncipe Paris debió entregar una codiciada manzana dorada a la diosa que considerara más hermosa.", a: "Juicio", letra: "J"},
+  {q: "En el argot de la mitología griega, transcrito con K en los estudios helénicos: Arriesgado descenso físico y espiritual de un héroe vivo, como Heracles o Orfeo, al sombrío inframundo.", a: "Katábasis", letra: "K"},
+  {q: "En la mitología griega: Enorme y brutal tribu de salvajes gigantes antropófagos liderados por Antífates, que destrozaron y devoraron a los tripulantes de once de las doce embarcaciones de Odiseo.", a: "Lestrigones", letra: "L"},
+  {q: "En la mitología griega: Soberano legislador de Creta e hijo de Europa a quien el airado dios Poseidón castigó provocando que su esposa Pasífae se enamorara antinaturalmente de un hermoso toro.", a: "Minos", letra: "M"},
+  {q: "En la mitología griega: Delicadas ninfas acuáticas de agua dulce que personificaban, cuidaban y habitaban alegremente en el interior de fuentes, manantiales, arroyos y tranquilos pozos.", a: "Náyades", letra: "N"},
+  {q: "Contiene la Ñ: En la mitología griega, estación del año terrestre que comenzó a producirse con la progresiva caída de las hojas cuando Deméter se entristecía al bajar su hija Perséfone al inframundo.", a: "Otoño", letra: "Ñ"},
+  {q: "En la mitología griega: Montaña de altísimos picos, envuelta siempre en espesas nubes, considerada la inexpugnable morada celestial y el deslumbrante palacio palaciego de las doce deidades principales.", a: "Olimpo", letra: "O"},
+  {q: "En la mitología griega: La primera y bellísima mujer de la humanidad, modelada exquisitamente en arcilla por el dios Hefesto, que por su insaciable curiosidad desató todos los males sobre la tierra.", a: "Pandora", letra: "P"},
+  {q: "Contiene la Q: En la mitología griega, fastuoso festín o comida solemne en la que el rey Tántalo intentó engañar atrozmente a los dioses sirviéndoles como manjar la carne asada de su propio hijo.", a: "Banquete", letra: "Q"},
+  {q: "En la mitología griega: Fenómeno meteorológico matutino de condensación que era personificado divinamente por la pacífica diosa Ersa, reverenciada como hija de la titánide Selene y de Zeus.", a: "Rocío", letra: "R"},
+  {q: "En la mitología griega: Anciano, regordete y muy sabio sátiro, a menudo representado montando un asno debido a su embriaguez, que fue el preceptor y leal compañero de juergas del dios Dioniso.", a: "Sileno", letra: "S"},
+  {q: "En la mitología griega: Valeroso e ingenioso héroe fundador de Atenas que, ayudado por un ovillo de hilo, penetró valerosamente en el laberinto de Creta para asesinar al monstruoso Minotauro.", a: "Teseo", letra: "T"},
+  {q: "En la mitología griega: Espacio de entrada, paso o pavorosa puerta de acceso al lúgubre inframundo de Hades, que era celosamente custodiada para que nadie saliera por el terrible perro Cerbero.", a: "Umbral", letra: "U"},
+  {q: "En la mitología griega: Agitado elemento atmosférico y meteorológico del cual cada una de las aladas deidades agrupadas bajo el nombre de Anemoi personificaba una destructiva o benéfica dirección cardinal.", a: "Viento", letra: "V"},
+  {q: "Contiene la W: En el ámbito de las modernas recopilaciones de la mitología griega, apellido del romántico poeta e historiador alemán de nombre Gustav, autor en 1838 de la antología 'Dioses y héroes de la antigua Grecia'.", a: "Schwab", letra: "W"},
+  {q: "Contiene la X: En las representaciones escénicas de los antiguos mitos griegos, escena coral o canción de salida con la que se marcaba el trágico final de una obra y la retirada solemne de los actores.", a: "Éxodo", letra: "X"},
+  {q: "Contiene la Y: En la literatura clásica que recoge la mitología griega, género poético y narrativo de gran extensión, como la Ilíada o la Odisea, que relata gestas heroicas y fundacionales en noble verso hexámetro.", a: "Epopeya", letra: "Y"},
+  {q: "En la antigua astronomía y mitología griega: Círculo del firmamento dividido en doce regiones de constelaciones que fueron eternamente asociadas a maravillosas figuras míticas como el león de Nemea o los gemelos Cástor y Pólux.", a: "Zodíaco", letra: "Z"},
+
+  // ROSCO 8
+  {q: "En la mitología griega: Augusta y virgen diosa de la inteligencia, la artesanía y la guerra estratégica, que nació completamente adulta y blindada con armas directamente de la hendida cabeza de Zeus.", a: "Atenea", letra: "A"},
+  {q: "En la mitología griega: Atormentado y feo hijo del rey Tántalo, famoso escultor de la estatua más antigua de la Madre de los Dioses, que presa de la locura se arrojó al fuego creyendo que no ardería.", a: "Broteas", letra: "B"},
+  {q: "En la mitología griega: Entidad incomprensible, abismal y primigenia, descrita a menudo como un espacio vacío y oscuro, del cual surgieron sin intervención externa los primeros dioses de la creación.", a: "Caos", letra: "C"},
+  {q: "En la mitología griega: Venerada diosa madre de la tierra cultivada, protectora de los grandes campos de trigo, la agricultura y los sagrados ciclos de las cosechas que alimentaban a la humanidad.", a: "Deméter", letra: "D"},
+  {q: "En la mitología griega: Señor, guardián y regidor supremo de los tempestuosos vientos, que albergó a Odiseo en su isla flotante y le regaló un odre cerrado que contenía todas las letales ráfagas contrarias.", a: "Eolo", letra: "E"},
+  {q: "En la mitología griega: Maravillosa y longeva ave de hermoso plumaje rojizo y dorado que, cada quinientos años, construía un nido de ricas especias para perecer entre llamas y renacer gloriosamente de sus cenizas.", a: "Fénix", letra: "F"},
+  {q: "En la mitología griega: Criatura mítica híbrida y feroz con imponente cuerpo de león y garras, alas y cabeza de águila gigante, famosa por vigilar tenazmente los fabulosos tesoros y el oro sagrado de Apolo.", a: "Grifo", letra: "G"},
+  {q: "En la mitología griega: Hermano mayor de Zeus e impasible dios de los muertos, soberano absoluto del mundo subterráneo que secuestró a la doncella Perséfone emergiendo de una grieta en la tierra con su negro carro.", a: "Hades", letra: "H"},
+  {q: "En la mitología griega: Epopeya homérica fundacional de la cultura helénica que, en veinticuatro cantos, narra detalladamente la mortífera cólera de Aquiles durante el último y sangriento año del asedio a Troya.", a: "Ilíada", letra: "I"},
+  {q: "En la mitología griega: Promesa sagrada, solemne e inquebrantable que los mismísimos dioses del Olimpo realizaban invocando y derramando en sus copas las lúgubres aguas de la fétida laguna Estigia.", a: "Juramento", letra: "J"},
+  {q: "En la mitología y tragedia griega, transcrita con esta letra inicial por los filólogos: Proceso extremo de limpieza moral, purificación espiritual o expiación ritual tras haber cometido un impío crimen de sangre.", a: "Kátharsis", letra: "K"},
+  {q: "En la mitología griega: Intricada, compleja e inescrutable estructura arquitectónica de innumerables y retorcidos pasillos diseñada magistralmente por Dédalo para encerrar a una criatura antinatural en la isla de Creta.", a: "Laberinto", letra: "L"},
+  {q: "En la mitología griega: Grupo de nueve deidades femeninas protectoras de las ciencias liberales, inspiradoras de la memoria, la lírica y todas las sublimes artes de los hombres, presidiendo los coros en el monte Helicón.", a: "Musas", letra: "M"},
+  {q: "En la mitología griega: Deliciosa, dulce y fragante bebida que, junto con la suntuosa comida llamada ambrosía, consumían habitualmente los dioses olímpicos para preservar su eterna juventud e inmortalidad.", a: "Néctar", letra: "N"},
+  {q: "Contiene la Ñ: En la mitología griega, rústico trozo de madera o tizón ardiente que la Moira Átropos sentenció verbalmente como el objeto físico que determinaría la esperanza de vida del gran héroe Meleagro.", a: "Leño", letra: "Ñ"},
+  {q: "En la mitología griega: Cauteloso, hábil y legendario monarca de la escarpada isla de Ítaca, mundialmente famoso por su excepcional elocuencia y por sufrir diez infernales años de errante regreso marino tras la guerra.", a: "Odiseo", letra: "O"},
+  {q: "En la mitología griega: Majestuoso y mitológico caballo equino, dotado de inmensas alas y color blanco nieve, que brotó mágicamente de la sangre derramada por la monstruosa Medusa al ser decapitada.", a: "Pegaso", letra: "P"},
+  {q: "Contiene la Q: En el ciclo de los mitos troyanos de la mitología griega, violento asalto, destrucción general, incendio y pillaje definitivo perpetrado por los ejércitos aqueos tras penetrar las inconquistables murallas de Troya.", a: "Saqueo", letra: "Q"},
+  {q: "En la mitología griega: Objeto o mecanismo circular ardiendo eternamente en los cielos al cual fue atado sin escapatoria el sacrílego rey Ixión como su cruel y perpetuo castigo por intentar seducir a la diosa Hera.", a: "Rueda", letra: "R"},
+  {q: "En la mitología griega: Lujuriosas y salvajes criaturas masculinas del bosque y las montañas, poseedoras de orejas puntiagudas y patas y cuernos de cabra, célebres compañeras del cortejo frenético de Dioniso.", a: "Sátiros", letra: "S"},
+  {q: "En la mitología griega: Opulenta y legendaria ciudad amurallada en la costa de Asia Menor, gobernada por el sabio rey Príamo, que fue brutalmente asediada durante diez largos años por la furiosa coalición aquea.", a: "Troya", letra: "T"},
+  {q: "En la mitología griega: Delicioso y jugoso fruto primordial sagrado, originario de los apretados racimos de la vid de Dioniso, del cual se pisaba y extraía ritualmente la embriagadora bebida consumida en las bacanales.", a: "Uvas", letra: "U"},
+  {q: "En la mitología griega: Animal mamífero y bovino de inmaculado color blanco en el que el astuto dios Zeus transformó rápidamente a su bella amante y sacerdotisa Ío para protegerla físicamente de los celos de Hera.", a: "Vaca", letra: "V"},
+  {q: "Contiene la W: En la recreación literaria moderna de la mitología clásica, apellido del aclamado novelista estadounidense de nombre Nathaniel, que adaptó excelentemente las leyendas helénicas para el público juvenil en 'Tanglewood Tales'.", a: "Hawthorne", letra: "W"},
+  {q: "Contiene la X: En la mitología griega, fluido venenoso o elemento mortífero y nocivo, como la corrosiva bilis que exudaba la sangre de la Hidra de Lerna, con la que el héroe Heracles impregnaba siempre sus flechas.", a: "Tóxico", letra: "X"},
+  {q: "Contiene la Y: En el estudio tradicional de la mitología griega, narración popular y de histórica transmisión oral que mezcla una tenue base humana y verídica con múltiples e increíbles elementos maravillosos o sobrenaturales.", a: "Leyenda", letra: "Y"},
+  {q: "En la geografía mítica ligada a la antigua Grecia: Nombre fundacional e histórico de la actual Mesina, en Sicilia, ciudad nombrada así debido a que su puerto adoptó la forma de la hoz ensangrentada que cayó al mar cuando Cronos castró a Urano.", a: "Zancle", letra: "Z"},
+  // ROSCO 9
+  {q: "En la mitología griega: Reina mortal de Tirinto que, engañada por Zeus bajo la apariencia de su esposo Anfitrión, concibió al formidable héroe Heracles.", a: "Alcmena", letra: "A"},
+  {q: "En la mitología griega: Implacable deidad alada que personificaba la fuerza y la violencia brutal, hermana de Cratos y encargada de encadenar fuertemente a Prometeo.", a: "Bia", letra: "B"},
+  {q: "En la mitología griega: Venerable adivino griego que acompañó a los aqueos a Troya, célebre por predecir la duración del asedio observando a una serpiente devorar pajarillos.", a: "Calcas", letra: "C"},
+  {q: "En la mitología griega: Oceánide de hermosos cabellos que, al unirse en matrimonio con el anciano dios Nereo, fue la fecunda madre de las cincuenta ninfas marinas.", a: "Doris", letra: "D"},
+  {q: "En la mitología griega: Amante de Clitemnestra que usurpó el trono de Micenas y asesinó cobardemente y a traición al rey Agamenón a su triunfal regreso de la guerra.", a: "Egisto", letra: "E"},
+  {q: "En la mitología griega: Sabio y hospitalario centauro que acogió calurosamente a Heracles en su cueva y murió trágicamente al caerle en el pie una flecha envenenada con la sangre de la Hidra.", a: "Folo", letra: "F"},
+  {q: "En la mitología griega: Monstruoso y descomunal gigante hecatónquiro de cien brazos y cincuenta cabezas, hermano de Briareo y Coto, que ayudó a custodiar a los titanes derrotados en el Tártaro.", a: "Giges", letra: "G"},
+  {q: "En la mitología griega: Doliente y trágica reina consorte de Troya, amada esposa del anciano rey Príamo y madre de diecinueve de sus nobles hijos, entre ellos Héctor y Paris.", a: "Hécuba", letra: "H"},
+  {q: "En la mitología griega: Valeroso monarca de la pacífica Creta y destacado caudillo aqueo en la cruenta guerra de Troya, nieto directo del legendario y sabio rey Minos.", a: "Idomeneo", letra: "I"},
+  {q: "En la mitología griega: Certámenes atléticos e hípicos de carácter fúnebre y sagrado que fueron organizados magnánimamente por Aquiles para honrar la memoria de su difunto y llorado amigo Patroclo.", a: "Juegos", letra: "J"},
+  {q: "En la mitología griega, escrito con K en la transcripción clásica: Monstruoso y feroz perro de tres cabezas y cola de serpiente que custodiaba implacablemente las puertas del oscuro reino de Hades.", a: "Kerberos", letra: "K"},
+  {q: "En la mitología griega: Antiguo monarca de la ciudad de Tebas que ignoró la profecía de Delfos y terminó siendo asesinado en un cruce de caminos por su propio hijo al que no reconoció.", a: "Layo", letra: "L"},
+  {q: "En la mitología griega: Majestuoso monarca de los guerreros etíopes e hijo de la espléndida diosa de la aurora, que acudió en defensa de Troya y fue abatido heroicamente por la lanza de Aquiles.", a: "Memnón", letra: "M"},
+  {q: "En la mitología griega: Acogedora y verde isla del mar Egeo en cuyas playas el dios Dioniso encontró y rescató a la hermosa princesa Ariadna tras ser cruelmente abandonada por Teseo.", a: "Naxos", letra: "N"},
+  {q: "Contiene la Ñ: En la mitología griega, relato legendario o episodio épico de inmenso valor, proeza y esfuerzo sobrehumano, como las admiradas acciones bélicas que encumbraron a los grandes caudillos mortales.", a: "Hazaña", letra: "Ñ"},
+  {q: "En la mitología griega: Monstruo canino de dos cabezas y cola de serpiente, fiero vástago engendrado por Tifón y Equidna, que custodiaba los rojizos y divinos rebaños del gigante Gerión.", a: "Ortro", letra: "O"},
+  {q: "En la mitología griega: Joven y leal compañero de armas de Aquiles, cuya trágica muerte vistiendo la armadura de su amigo desencadenó la furia más implacable y destructiva del héroe tesalio.", a: "Patroclo", letra: "P"},
+  {q: "Contiene la Q: En la mitología griega, tupido ecosistema de árboles y vasta vegetación densa donde solían morar libremente las inmortales dríades y cazar incansablemente la diosa Artemisa junto a sus ninfas.", a: "Bosque", letra: "Q"},
+  {q: "En la mitología griega: Delito o rápido acto violento que comete sorpresivamente el dios Hades al apoderarse de la doncella Perséfone emergiendo de la tierra para llevarla a gobernar el sombrío inframundo.", a: "Rapto", letra: "R"},
+  {q: "En la mitología griega: Apasionada ninfa de un límpido manantial en Caria que, abrasada de incontrolable deseo, se abrazó y fusionó físicamente para toda la eternidad con el hermoso joven Hermafrodito.", a: "Salmacis", letra: "S"},
+  {q: "En la mitología griega: Musa celestial y festiva que preside la comedia, la poesía bucólica y el canto gozoso, a menudo representada portando una peculiar máscara cómica y un cayado de pastor.", a: "Talía", letra: "T"},
+  {q: "En la mitología griega: Recipiente cinerario, frecuentemente fabricado en oro macizo u otros metales preciosos, en el que se depositaron piadosa y reverencialmente las cenizas fúnebres del héroe Patroclo.", a: "Urna", letra: "U"},
+  {q: "En la mitología griega: Cólera y furia retributiva que encarnaban de forma implacable las temibles Erinias al perseguir hasta la locura y sin descanso a quienes derramaban la sagrada sangre de su propia familia.", a: "Venganza", letra: "V"},
+  {q: "Contiene la W: En el ámbito de la filología y las traducciones de la épica de la mitología griega, apellido del famoso oficial británico, apodado 'de Arabia', que realizó una elogiada y clásica traducción en prosa de la Odisea.", a: "Lawrence", letra: "W"},
+  {q: "Contiene la X: En la mitología griega, exiliado de origen etolio que, montado curiosamente a lomos de un caballo tuerto, sirvió de vital y providencial guía a los Heráclidas para invadir victoriosamente el Peloponeso.", a: "Oxilo", letra: "X"},
+  {q: "Contiene la Y: En la mitología griega, arma celestial destructiva por excelencia, forjada en las ardientes fraguas de los Cíclopes, que el iracundo dios Zeus lanzaba desde la cumbre del Olimpo para fulminar a sus oponentes.", a: "Rayo", letra: "Y"},
+  {q: "En la mitología griega: Agrestes y molestos arbustos espinosos sobre los que el desdichado héroe Belerofonte cayó tras ser duramente arrojado del lomo de Pegaso, quedando ciego y maldito por el resto de su vida.", a: "Zarzas", letra: "Z"},
+
+  // ROSCO 10
+  {q: "En la mitología griega: Bella princesa cretense que, perdidamente enamorada del héroe Teseo, le entregó a escondidas el salvador ovillo de hilo para ayudarle a escapar sano y salvo del sombrío Laberinto.", a: "Ariadna", letra: "A"},
+  {q: "En la mitología griega: Sobrenombre ritual y popular epíteto latino frecuentemente utilizado para referirse al jubiloso dios Dioniso en alusión a sus ruidosos ritos y los exaltados e irreverentes cantos en su honor.", a: "Baco", letra: "B"},
+  {q: "En la mitología griega: Heroico y fuerte mortal, hermano gemelo del inmortal Pólux y experto en la doma de caballos, con el que compartía una inquebrantable, fraterna e indestructible lealtad afectiva.", a: "Cástor", letra: "C"},
+  {q: "En la mitología griega: Hermosas y huidizas ninfas protectoras de los árboles y los densos bosques, cuyas misteriosas y mágicas vidas estaban intrínseca e indisolublemente unidas a la existencia de la madera.", a: "Dríades", letra: "D"},
+  {q: "En la mitología griega: Divinidad primordial alada y personificación absoluta del amor pasional, el deseo incontrolable y la fertilidad, que en la tradición posterior era un joven hijo de la diosa Afrodita.", a: "Eros", letra: "E"},
+  {q: "En la mitología griega: Monarca ciego de la región de Tracia y adivino castigado por los dioses con un hambre perpetua, pues las asquerosas arpías descendían volando para arrebatarle y ensuciar todos sus manjares.", a: "Fineo", letra: "F"},
+  {q: "En la mitología griega: Monstruoso, formidable y temible gigante con tres cuerpos y tres cabezas, dueño de fabulosos y bellos rebaños de pelaje rojo que le fueron arrebatados a la fuerza por Heracles.", a: "Gerión", letra: "G"},
+  {q: "En la mitología griega: Famoso, apuesto y poderoso héroe, el más venerado de la antigua Hélade e hijo de Zeus, célebre por su sobrehumana fuerza y por superar brillantemente doce imposibles trabajos.", a: "Heracles", letra: "H"},
+  {q: "En la mitología griega: Pequeña, rocosa y escarpada isla del mar Jónico que era gobernada sabiamente por Odiseo, patria largamente anhelada que el héroe intentó alcanzar incansablemente durante diez tortuosos años.", a: "Ítaca", letra: "I"},
+  {q: "En la geografía de la antigua Grecia fuertemente ligada a su mitología: Histórica región costera del centro de Anatolia, poblada tempranamente por los helenos, cuyo nombre mítico proviene de su valeroso héroe epónimo Ion.", a: "Jonia", letra: "J"},
+  {q: "En la mitología griega, escrita su inicial con K bajo la transcripción académica y filológica germánica: La mayor y más noble de todas las nueve Musas, protectora absoluta de la elocuencia y de la gran poesía épica.", a: "Kallíope", letra: "K"},
+  {q: "En la mitología griega: Precioso y sonoro instrumento musical de cuerda inventado en su divina infancia por el dios Hermes usando muy hábilmente el caparazón de una tortuga y los cuernos de un animal.", a: "Lira", letra: "L"},
+  {q: "En la mitología griega: Formidable monstruo ctónico femenino con cabellos de serpientes vivas cuya espantosa, maldita y petrificante mirada convertía irremediablemente en roca sólida a todo aquel que la contemplara.", a: "Medusa", letra: "M"},
+  {q: "En la mitología griega: Numerosas y sumamente bellas divinidades femeninas menores y espíritus vivificadores de la naturaleza, que poblaban y protegían mágicamente los manantiales, arboledas, mares y montañas.", a: "Ninfas", letra: "N"},
+  {q: "Contiene la Ñ: En la mitología griega, solemne título reverencial, absoluto y temible otorgado a Hades, quien gobernaba y controlaba con puño de hierro y sin piedad alguna las siniestras y oscuras profundidades del inframundo.", a: "Señor", letra: "Ñ"},
+  {q: "En la mitología griega: Centro sagrado de adivinación del mundo helénico, especialmente el venerado santuario situado en el monte Parnaso donde la sacerdotisa en trance revelaba y transmitía los enigmáticos designios de Apolo.", a: "Oráculo", letra: "O"},
+  {q: "En la mitología griega: Majestuoso dios soberano de las tempestades marinas y perturbador de la tierra con sus terremotos, el cual empuñaba su poderoso tridente siendo un temido y respetado hermano del mismísimo Zeus.", a: "Poseidón", letra: "P"},
+  {q: "Contiene la Q: En la mitología griega, título, letal habilidad o temible condición del divino dios Apolo, poseedor de un infalible arco de plata con el cual propagaba severas plagas mortales o abatía a monstruos como Pitón.", a: "Arquero", letra: "Q"},
+  {q: "En la mitología griega: Corrientes acuáticas y caudales dulces que eran reverenciados como respetables, robustas y fecundas deidades masculinas divinas, destacando entre ellos el sagrado y purificador Alfeo o el colérico Escamandro.", a: "Ríos", letra: "R"},
+  {q: "En la mitología griega y su posterior adaptación latina: Poderosa profetisa y clarividente sacerdotisa de Apolo en la ciudad de Cumas, la cual guió y aconsejó sabiamente al héroe Eneas durante su oscuro y aterrador viaje al inframundo.", a: "Sibila", letra: "S"},
+  {q: "En la mitología griega: Monstruoso y legendario rey de Lidia, hijo del dios Zeus, que fue severamente castigado en el Hades a sufrir una espantosa sed y un hambre eterna al tener el agua y unas deliciosas frutas siempre fuera de su alcance.", a: "Tántalo", letra: "T"},
+  {q: "En la mitología griega: Sustancia balsámica, untuosa y protectora que fue mágicamente preparada por la insigne hechicera Medea para proteger de manera infalible la piel de Jasón contra las ardientes llamaradas de los feroces toros de la Cólquida.", a: "Ungüento", letra: "U"},
+  {q: "En la mitología griega: Preciada, divina y resplandeciente piel mágica de oro puro proveniente de un carnero alado sagrado que se conservaba celosamente en el lejano reino de la Cólquida colgando de un árbol bajo la estrecha vigilancia de un dragón.", a: "Vellón", letra: "V"},
+  {q: "Contiene la W: En el marco filológico y arqueológico moderno sobre los orígenes de la Grecia micénica y su lengua, apellido del criptógrafo y clasicista británico John, que colaboró de forma decisiva para descifrar la arcaica y enigmática escritura Lineal B.", a: "Chadwick", letra: "W"},
+  {q: "Contiene la X: En el ilustre arte estatuario que representaba fidedignamente la mitología griega, eximio y genial escultor ateniense de la época clásica universalmente famoso por tallar con supremo realismo e idealización a la desnuda y hermosa Afrodita de Cnido.", a: "Praxíteles", letra: "X"},
+  {q: "Contiene la Y: En la épica de la mitología griega, gentilicio o pertenencia heroica del hermoso príncipe y diestro arquero Paris, quien certeramente y con la inestimable ayuda del dios Apolo atravesó con su flecha mortal el invulnerable talón de Aquiles.", a: "Troyano", letra: "Y"},
+  {q: "En la mitología griega: Precioso cíngulo, faja o ceñidor mágico y bellamente bordado en oro de la diosa Afrodita, que en su interior albergaba el asombroso poder de otorgar irresistibilidad y atracción sexual absoluta a cualquier mujer que lo llevara puesto.", a: "Zona", letra: "Z"},
+  // ROSCO 11
+  {q: "En la mitología romana: Diosa del silencio y protectora de Roma que aliviaba mágicamente las penas.", a: "Angerona", letra: "A"},
+  {q: "Temible diosa sanguinaria de la guerra en el panteón romano, frecuentemente asociada al destructivo dios Marte.", a: "Belona", letra: "B"},
+  {q: "En la mitología romana: Dios agrario protector de los cereales almacenados en silos subterráneos y graneros.", a: "Consus", letra: "C"},
+  {q: "En la mitología romana: Diosa protectora que barría el umbral de las casas para alejar malos espíritus.", a: "Deverra", letra: "D"},
+  {q: "Sabia diosa o ninfa de las aguas que dictó leyes sagradas según la antigua leyenda romana.", a: "Egeria", letra: "E"},
+  {q: "En la mitología romana: Dios tutelar de los manantiales y fuentes, engendrado por Jano y Juturna.", a: "Fontus", letra: "F"},
+  {q: "En el panteón romano: Dios tutelar o espíritu guardián protector que acompañaba a cada hombre individual.", a: "Genio", letra: "G"},
+  {q: "En la mitología romana: Dios que personifica el honor militar y la valentía caballeresca del ciudadano.", a: "Honos", letra: "H"},
+  {q: "En la mitología romana: Nombre colectivo del antiguo panteón de dioses autóctonos protectores del Estado romano.", a: "Indígetes", letra: "I"},
+  {q: "Arcaico dios romano de los portales, los inicios y los finales, representado divinamente con dos rostros.", a: "Jano", letra: "J"},
+  {q: "En la mitología romana: Arcaica diosa profética de los partos y madre del ilustre héroe Evandro.", a: "Karmenta", letra: "K"},
+  {q: "Oscura diosa romana de los ladrones, impostores y el fraude, protectora de las sombras del inframundo.", a: "Laverna", letra: "L"},
+  {q: "En el panteón romano: Diosa tutelar protectora de las abejas y de la dulzura de la miel.", a: "Mellona", letra: "M"},
+  {q: "Antigua diosa sabina y romana de la guerra, consorte original del fiero y belicoso dios Marte.", a: "Nerio", letra: "N"},
+  {q: "Contiene la Ñ: Etapa mortal que protegían múltiples dioses menores romanos como las deidades Cunina o Edusa.", a: "Niño", letra: "Ñ"},
+  {q: "Antigua diosa romana de la abundancia y la tierra fértil, equivalente estricto a la Rea griega.", a: "Ops", letra: "O"},
+  {q: "En la mitología romana: Diosa protectora de los pastos, los grandes rebaños y los pastores rústicos.", a: "Pales", letra: "P"},
+  {q: "Contiene la Q: Arcaico dios romano del Estado, a menudo identificado con Rómulo tras ser deificado.", a: "Quirino", letra: "Q"},
+  {q: "En la mitología romana: Dios protector de los cultivos contra las devastadoras y letales plagas fúngicas.", a: "Robigo", letra: "R"},
+  {q: "En el panteón romano: Temido dios del cielo nocturno y de los relámpagos que caen de noche.", a: "Sumano", letra: "S"},
+  {q: "Sagrado dios romano protector de los límites, las fronteras y los antiguos e inamovibles hitos de piedra.", a: "Término", letra: "T"},
+  {q: "En la mitología romana: Epíteto o título menor de la diosa Juno como protectora estrictamente conyugal.", a: "Unxia", letra: "U"},
+  {q: "En la mitología romana: Arcaico dios del viento del este y de las aguas fluviales agitadas.", a: "Volturno", letra: "V"},
+  {q: "Contiene la X: Pacífica diosa romana del orden y la tranquilidad, celebrada monumentalmente en un famoso altar.", a: "Pax", letra: "X"},
+  {q: "Contiene la Y: Antigua diosa romana de la primavera y la fertilidad que dio origen a un mes.", a: "Maya", letra: "Y"},
+  {q: "En la mitología romana: Pórtico o entrada de la casa celosamente guardada por el dios Jano.", a: "Zaguán", letra: "Z"},
+
+  // ROSCO 12
+  {q: "Protectora diosa romana que amparaba a los infantes en el preciso instante en que abandonaban su hogar.", a: "Abeona", letra: "A"},
+  {q: "En el panteón romano: Diosa tutelar dedicada exclusivamente a la protección de toros, bueyes y vacas.", a: "Bubona", letra: "B"},
+  {q: "En la mitología romana: Diosa protectora de los goznes de las puertas y de la vitalidad doméstica.", a: "Cardea", letra: "C"},
+  {q: "Temible diosa romana del caos y las disputas, equivalente exacto a la Eris del panteón griego.", a: "Discordia", letra: "D"},
+  {q: "Menor pero vital diosa romana que enseñaba y bendecía el alimento de los niños al destetarlos.", a: "Edusa", letra: "E"},
+  {q: "Arcaica diosa romana de los bosques, la salud y patrona absoluta de los esclavos liberados pacíficamente.", a: "Feronia", letra: "F"},
+  {q: "Conflicto armado y destructivo del cual el poderoso dios Marte era el máximo y soberano patrón.", a: "Guerra", letra: "G"},
+  {q: "Espacio central sagrado de la domus romana, custodiado fielmente por la virginal diosa del fuego Vesta.", a: "Hogar", letra: "H"},
+  {q: "En la mitología romana: Diosa que personificaba los oscuros celos, la retribución maliciosa y la envidia.", a: "Invidia", letra: "I"},
+  {q: "Sabia ninfa y diosa romana de las fuentes, amada por Júpiter y hermana del gran héroe Turno.", a: "Juturna", letra: "J"},
+  {q: "En el calendario ligado a la mitología romana: Primer día del mes, consagrado ritualmente a Juno.", a: "Kalendas", letra: "K"},
+  {q: "Sombría diosa romana de los funerales, los cadáveres y el oscuro equipamiento para los ritos sepulcrales.", a: "Libitina", letra: "L"},
+  {q: "En la mitología romana: Antigua deidad del amanecer y de los recién nacidos, reverenciada como Mater Matuta.", a: "Matuta", letra: "M"},
+  {q: "Arcaica diosa romana de los lúgubres cantos fúnebres que presidía compasiva las lamentaciones por los muertos.", a: "Nenia", letra: "N"},
+  {q: "Contiene la Ñ: Expedición militar de las legiones romanas amparada fuertemente por las bendiciones del dios Marte.", a: "Campaña", letra: "Ñ"},
+  {q: "Implacable dios romano del inframundo, castigador de los juramentos rotos y equivalente exacto al sombrío Hades.", a: "Orco", letra: "O"},
+  {q: "Arcaicos dioses romanos del hogar y la despensa, venerados diariamente junto a Vesta y los Lares.", a: "Penates", letra: "P"},
+  {q: "Contiene la Q: Diosa romana que personificaba el descanso pacífico, la ansiada quietud y el reposo necesario.", a: "Quies", letra: "Q"},
+  {q: "En el panteón romano: Diosa protectora de las madres lactantes y de la crianza del ganado animal.", a: "Rumina", letra: "R"},
+  {q: "Venerable diosa romana de la seguridad, el bienestar social, la salud pública y la prosperidad del Estado.", a: "Salus", letra: "S"},
+  {q: "Diosa romana de las encrucijadas y los tres caminos, estrechamente identificada con la oscura magia de Hécate.", a: "Trivia", letra: "T"},
+  {q: "En la mitología romana: Sombra o espíritu etéreo de los muertos que descendía ineludiblemente al lúgubre inframundo.", a: "Umbra", letra: "U"},
+  {q: "Arcaico dios romano protector de los infantes que les otorgaba el vital poder del llanto al nacer.", a: "Vaticano", letra: "V"},
+  {q: "Contiene la X: Título del sumo sacerdote en Roma, encargado de gobernar la religión y el panteón.", a: "Máximo", letra: "X"},
+  {q: "Contiene la Y: Herramienta agrícola de los bueyes sobre la que ejercía sagrada protección el dios Consus.", a: "Yugo", letra: "Y"},
+  {q: "En la mitología de Roma: Trinchera o fosa fundacional que el mítico héroe Rómulo excavó como límite.", a: "Zanja", letra: "Z"},
+  // ROSCO 13
+  {q: "En la mitología romana: Diosa tutelar de la actividad, la laboriosidad y el impulso hacia la acción.", a: "Agenoria", letra: "A"},
+  {q: "En la mitología romana: Diosa de la fertilidad y castidad femenina honrada en secreto en el panteón.", a: "Bona", letra: "B"},
+  {q: "En la mitología romana: Antigua diosa o ninfa de las aguas, vinculada a las musas del panteón.", a: "Camena", letra: "C"},
+  {q: "En la mitología romana: Diosa menor que protegía y escoltaba a la nueva novia hasta su hogar.", a: "Domiduca", letra: "D"},
+  {q: "En la mitología romana: Legendario héroe arcadio que fundó el sagrado asentamiento del monte Palatino en Roma.", a: "Evandro", letra: "E"},
+  {q: "En la mitología romana: Dios rústico que enseñaba milagrosamente a hablar a los infantes del antiguo panteón.", a: "Fabulino", letra: "F"},
+  {q: "En el antiguo panteón romano: Renombrado y temible epíteto bélico con el que se invocaba al dios Marte.", a: "Gradivo", letra: "G"},
+  {q: "En la mitología romana: Heroína sabina que pacificó a su pueblo y fue deificada como diosa Hora.", a: "Hersilia", letra: "H"},
+  {q: "En la mitología romana: Diosa protectora que defendía a las madres golpeando las puertas con un hacha.", a: "Intercidona", letra: "I"},
+  {q: "En la mitología romana: Joven diosa que personificaba a la juventud, equivalente estricto a la Hebe del Olimpo.", a: "Juventas", letra: "J"},
+  {q: "En la mitología romana: Antigua diosa protectora del corazón, los órganos vitales y la salud del panteón.", a: "Karna", letra: "K"},
+  {q: "En la mitología romana: Sombríos y vengativos espíritus de los muertos que vagaban aterrorizando a cualquier héroe.", a: "Lémures", letra: "L"},
+  {q: "En la mitología romana: Fálico y rústico dios asociado a la fertilidad agraria, similar al Príapo griego.", a: "Mutuno", letra: "M"},
+  {q: "En la mitología romana: Rey de Alba Longa, abuelo del héroe Rómulo, que fue depuesto por Amulio.", a: "Numitor", letra: "N"},
+  {q: "Contiene la Ñ: Estado físico femenino y proceso gestacional sobre el que velaba la diosa romana Alemona.", a: "Preñez", letra: "Ñ"},
+  {q: "En la mitología agraria romana: Dios menor invocado sagradamente para proteger las arduas labores de arado del panteón.", a: "Obarator", letra: "O"},
+  {q: "En la mitología romana: Diosa exclusiva de los frutos, los árboles y la exuberante abundancia de huertos.", a: "Pomona", letra: "P"},
+  {q: "Contiene la Q: Diosa romana de la justicia, la equidad civil y el comercio honrado del panteón.", a: "Aequitas", letra: "Q"},
+  {q: "En la mitología romana: Legendario héroe fundador amamantado por una loba, quien trágicamente asesinó a su hermano.", a: "Rómulo", letra: "R"},
+  {q: "En la mitología romana: Antigua diosa de la esperanza y la próspera expectación, honrada en el panteón.", a: "Spes", letra: "S"},
+  {q: "En la mitología romana: Majestuoso dios fluvial que encarna al principal y más sagrado río de la urbe.", a: "Tiberino", letra: "T"},
+  {q: "En la mitología romana: Dios y personificación de un caudaloso río del Lacio que apoyó al héroe Turno.", a: "Ufens", letra: "U"},
+  {q: "En la mitología romana: Casta diosa del hogar terrenal y mantenedora del fuego sagrado de la antigua ciudad.", a: "Vesta", letra: "V"},
+  {q: "Contiene la X: Sacerdote o adivino romano experto en interpretar el oráculo sagrado al observar diversas vísceras.", a: "Extíspice", letra: "X"},
+  {q: "Contiene la Y: Objeto pesado de hierro, como el sagrado yunque, forjado ágilmente por el poderoso dios Vulcano.", a: "Yunque", letra: "Y"},
+  {q: "Contiene la Z: Dulce fruto otoñal cuyo exuberante crecimiento tutelaba la bella diosa romana Pomona en sus huertos.", a: "Manzana", letra: "Z"},
+
+  // ROSCO 14
+  {q: "En la mitología romana: Ambicioso rey usurpador de Alba Longa que ordenó ahogar al infante héroe Rómulo.", a: "Amulio", letra: "A"},
+  {q: "En la mitología romana: Sacrificio sagrado de un animal de dos dientes ofrecido ritualmente a los dioses celestiales.", a: "Bidente", letra: "B"},
+  {q: "En la mitología romana: Monstruoso y terrible gigante que robó el ganado de un divino héroe legendario.", a: "Caco", letra: "C"},
+  {q: "En la mitología romana: Una de las tres inquebrantables Parcas, encargada de medir el vital hilo del panteón.", a: "Décima", letra: "D"},
+  {q: "En la leyenda y mitología romana: Piadoso héroe troyano considerado el verdadero antepasado y progenitor de Roma.", a: "Eneas", letra: "E"},
+  {q: "En la mitología romana: Sagrada deidad protectora de los rústicos hornos de pan, honrada anualmente en el panteón.", a: "Fornax", letra: "F"},
+  {q: "En el antiguo panteón romano: Sacerdote eunuco castrado en honor a la suprema diosa Cibeles o Magna Mater.", a: "Galo", letra: "G"},
+  {q: "En la mitología romana: Invicto y forzudo dios de la victoria comercial, equivalente latino de un célebre héroe.", a: "Hércules", letra: "H"},
+  {q: "En la mitología romana: Dios menor invocado exclusivamente para asegurar el correcto trazado de los surcos agrarios.", a: "Imporcitor", letra: "I"},
+  {q: "En la mitología romana: Augusta reina de los cielos, protectora del matrimonio y suprema diosa del Estado.", a: "Juno", letra: "J"},
+  {q: "En la mitología romana: Sagrada festividad invernal celebrada en enero para honrar a la profética diosa Karmenta.", a: "Karmentalia", letra: "K"},
+  {q: "En la mitología romana: Temida diosa a la cual los soldados consagraban las armas ensangrentadas del enemigo capturado.", a: "Lua", letra: "L"},
+  {q: "En la arcaica mitología etrusca y romana: Oscuro dios del lúgubre inframundo y temible consorte de la diosa Mania.", a: "Mantus", letra: "M"},
+  {q: "En la mitología romana: La primera de las inexorables Parcas, poderosa diosa que hilaba la vida del mortal.", a: "Nona", letra: "N"},
+  {q: "Contiene la Ñ: Conjunto de ganado pastoril cuya buena salud garantizaba el rústico dios Fauno en la mitología.", a: "Rebaño", letra: "Ñ"},
+  {q: "En la mitología romana: Jubilosa festividad agraria celebrada en diciembre para rendir devoto culto a la diosa Ops.", a: "Opalia", letra: "O"},
+  {q: "En la antigua leyenda romana: Arcaico rey del Lacio que fue convertido trágicamente en pájaro hechicero.", a: "Pico", letra: "P"},
+  {q: "Contiene la Q: Histórica y sagrada colina de Roma que albergaba el arcaico templo del dios Quirino.", a: "Quirinal", letra: "Q"},
+  {q: "En la mitología romana: Virgen vestal y princesa de Alba Longa que engendró héroes gemelos del dios Marte.", a: "Rea", letra: "R"},
+  {q: "En la mitología romana: Arcaico dios tutelar de los densos bosques, los campos y las fronteras de fincas.", a: "Silvano", letra: "S"},
+  {q: "En la mitología romana: Majestuosa diosa que encarnaba a la Madre Tierra y protegía los sembrados del panteón.", a: "Tellus", letra: "T"},
+  {q: "En la mitología romana: Nombre latino del ingenioso y errante héroe épico que concibió el letal caballo maderero.", a: "Ulises", letra: "U"},
+  {q: "En la mitología romana: Poderoso dios del fuego destructivo y herrero oficial del espléndido panteón olímpico y terrenal.", a: "Vulcano", letra: "V"},
+  {q: "Contiene la X: Adivino y experto sacerdote que descifraba el sagrado oráculo celestial observando aves en vuelo.", a: "Auspex", letra: "X"},
+  {q: "Contiene la Y: Brillante collar o precioso ornamento que embellecía habitualmente a cualquier altiva diosa del panteón romano.", a: "Joya", letra: "Y"},
+  {q: "Contiene la Z: Cérvido veloz y salvaje de los densos bosques celosamente protegido y cazado por la diosa Diana.", a: "Corzo", letra: "Z"},
+
+  // ROSCO 15
+  {q: "En la mitología romana: Hijo directo del gran héroe Eneas que fundó Alba Longa tras huir del desastre troyano.", a: "Ascanio", letra: "A"},
+  {q: "En la mitología romana: Famoso dios del vino, la locura y el éxtasis orgiástico, asimilado tempranamente al panteón.", a: "Baco", letra: "B"},
+  {q: "En la mitología romana: Alado dios del amor pasional y el ardiente deseo, hijo fiel de la diosa Venus.", a: "Cupido", letra: "C"},
+  {q: "En la mitología romana: Virginal diosa de la luna y la caza, soberana indiscutible de los umbríos bosques.", a: "Diana", letra: "D"},
+  {q: "En la mitología romana: Prestigioso dios de la curación y la medicina importado directamente del resplandeciente panteón helénico.", a: "Esculapio", letra: "E"},
+  {q: "En la mitología romana: Sacerdote de alto rango consagrado al culto solemne y exclusivo de un dios del panteón.", a: "Flamen", letra: "F"},
+  {q: "En la mitología agraria romana: Semilla cosechada y guardada que era fervientemente protegida por la antigua diosa Ceres.", a: "Grano", letra: "G"},
+  {q: "En la mitología romana: Inexorable destino cósmico superior que controlaba rígidamente la vida de un dios o mortal.", a: "Hado", letra: "H"},
+  {q: "En la mitología romana: Austera diosa de la moral y la ley, frecuentemente asimilada a la titánide Temis.", a: "Iustitia", letra: "I"},
+  {q: "En la mitología romana: Soberano absoluto del cielo y del resplandeciente Olimpo, venerable portador del águila y el rayo.", a: "Júpiter", letra: "J"},
+  {q: "Transcrito con esta letra, supremo dios griego que en Roma fue asimilado y adorado como el patriarca Saturno.", a: "Kronos", letra: "K"},
+  {q: "En la mitología romana: Antigua diosa y personificación del astro nocturno, habitualmente asimilada a la sagrada cazadora Diana.", a: "Luna", letra: "L"},
+  {q: "En la mitología romana: Dios del comercio civil, los ágiles viajeros y veloz mensajero oficial del vasto panteón.", a: "Mercurio", letra: "M"},
+  {q: "En la mitología romana: Dios y soberano ineludible de los vastos mares y agitados terremotos, dueño del pesado tridente.", a: "Neptuno", letra: "N"},
+  {q: "Contiene la Ñ: Fina leña o madera sagrada utilizada para alimentar el fuego perpetuo del templo de la diosa Vesta.", a: "Leña", letra: "Ñ"},
+  {q: "En la mitología romana: Profunda tiniebla que dominaba sin interrupción el lúgubre inframundo del temido dios Plutón.", a: "Oscuridad", letra: "O"},
+  {q: "En la mitología romana: Regente absoluto del sombrío inframundo y las riquezas subterráneas, esposo de la diosa Proserpina.", a: "Plutón", letra: "P"},
+  {q: "Contiene la Q: Nombre civil histórico de los ciudadanos romanos pacíficos amparados por el soberano dios Quirino.", a: "Quirites", letra: "Q"},
+  {q: "En la mitología romana: Famoso gemelo amamantado por una loba, trágicamente asesinado al desafiar a su hermano héroe.", a: "Remo", letra: "R"},
+  {q: "En la mitología romana: Misterioso dios y personificación del sueño profundo, capaz de adormecer velozmente a un héroe.", a: "Somnus", letra: "S"},
+  {q: "En la arcaica leyenda romana: Traidora virgen vestal que entregó la gran ciudadela y fue fatalmente aplastada.", a: "Tarpeya", letra: "T"},
+  {q: "En la mitología romana: Vasto conjunto de la inmensa creación que el antiguo dios Jano afirmaba sostener y ordenar.", a: "Universo", letra: "U"},
+  {q: "En la mitología romana: Bella diosa alada que entregaba la ansiada corona de laurel al valiente héroe vencedor.", a: "Victoria", letra: "V"},
+  {q: "Contiene la X: Dura piedra sagrada que, bajo el título de Lapis, personificaba la inamovible voluntad del dios Júpiter.", a: "Sílex", letra: "X"},
+  {q: "Contiene la Y: Hembra del caballo que competía velozmente en las arcaicas carreras consagradas para honrar al dios Marte.", a: "Yegua", letra: "Y"},
+  {q: "Contiene la Z: Pieza de cuero o sandalia que calzaba habitualmente un fiero guerrero al servicio del dios Marte.", a: "Calzado", letra: "Z"},
+
+// ROSCO 16
+  {q: "Enano de leyenda que, bajo forma de lucio, custodiaba un inmenso tesoro y maldijo un anillo.", a: "Andvari", letra: "A"},
+  {q: "Sabio dios nórdico de la poesía y la elocuencia, venerado esposo de la divina Idunn.", a: "Bragi", letra: "B"},
+  {q: "Atributo físico del dios Hodr, quien fue engañado por Loki para asesinar trágicamente a su hermano.", a: "Ciego", letra: "C"},
+  {q: "Precioso anillo de oro del dios Odín que mágicamente se multiplicaba cada nueve noches en el panteón.", a: "Draupnir", letra: "D"},
+  {q: "Cada uno de los dos compendios islandeses que recopilan los textos clásicos de la mitología nórdica.", a: "Edda", letra: "E"},
+  {q: "Codicioso enano de leyenda que, cegado por el oro, terminó transformándose en un letal dragón venenoso.", a: "Fafnir", letra: "F"},
+  {q: "Lanza mágica e infalible del dios Odín, hábilmente forjada por los astutos enanos hijos de Ivaldi.", a: "Gungnir", letra: "G"},
+  {q: "Vigilante dios nórdico de dientes de oro que custodiaba firmemente el arcoíris ardiente llamado Bifrost.", a: "Heimdall", letra: "H"},
+  {q: "Hermosa diosa guardiana de las jugosas manzanas que otorgaban la eterna juventud al panteón nórdico.", a: "Idunn", letra: "I"},
+  {q: "Nombre genérico de cada colosal titán o gigante de escarcha que habitaba en las tierras nórdicas.", a: "Jotun", letra: "J"},
+  {q: "Sabio supremo de la mitología nórdica, prodigiosamente nacido de la saliva mezclada de Aesir y Vanir.", a: "Kvasir", letra: "K"},
+  {q: "Astuto dios del engaño y las travesuras que provocó directamente la dolorosa muerte del luminoso Balder.", a: "Loki", letra: "L"},
+  {q: "Pesado martillo triturador empuñado por el dios Thor, capaz de invocar relámpagos y destrozar enormes montañas.", a: "Mjolnir", letra: "M"},
+  {q: "Feroz dragón de la leyenda nórdica que roía incesantemente las profundas raíces del gran fresno Yggdrasil.", a: "Nidhogg", letra: "N"},
+  {q: "Contiene la Ñ: Trozo de madera marina del cual el panteón nórdico creó al primer hombre mortal.", a: "Leño", letra: "Ñ"},
+  {q: "Tétrico final apocalíptico de los dioses, traducido comúnmente en la mitología nórdica como el temido Ragnarok.", a: "Ocaso", letra: "O"},
+  {q: "Estructura mágica y ardiente, llamada Bifrost en el panteón nórdico, que conectaba el cielo y la tierra.", a: "Puente", letra: "P"},
+  {q: "Contiene la Q: Doncella guerrera de la mitología nórdica encargada de elegir a los caídos en batalla.", a: "Valquiria", letra: "Q"},
+  {q: "Chismosa ardilla de leyenda que correteaba por el fresno Yggdrasil sembrando discordia entre águila y dragón.", a: "Ratatosk", letra: "R"},
+  {q: "Fiel corcel chamánico de ocho patas montado por el dios Odín durante sus arriesgados viajes dimensionales.", a: "Sleipnir", letra: "S"},
+  {q: "Valiente dios manco de la guerra justa que sacrificó su mano para encadenar al temible Fenrir.", a: "Tyr", letra: "T"},
+  {q: "Una de las tres sabias Nornas de la mitología, tejedora implacable que representaba el destino pasado.", a: "Urd", letra: "U"},
+  {q: "Majestuoso salón dorado del olimpo nórdico gobernado por Odín, cuyo techo estaba cubierto por brillantes escudos.", a: "Valhalla", letra: "V"},
+  {q: "Contiene la X: Castigo de destierro impuesto a un héroe o deidad que quebrantaba las leyes germánicas.", a: "Exilio", letra: "X"},
+  {q: "Colosal gigante primordial hermafrodita cuyo inmenso cuerpo fue despedazado por un dios para forjar el mundo.", a: "Ymir", letra: "Y"},
+  {q: "Isla danesa formada cuando la diosa Gefjon aró violentamente un enorme pedazo de tierra desde Suecia.", a: "Zelanda", letra: "Z"},
+
+  // ROSCO 17
+  {q: "Inexpugnable fortaleza celestial y morada fortificada donde habitaba el panteón principal de deidades nórdicas guerreras.", a: "Asgard", letra: "A"},
+  {q: "Resplandeciente dios de la luz y la pureza, trágicamente asesinado mediante un dardo de muérdago engañoso.", a: "Balder", letra: "B"},
+  {q: "Aves oscuras llamadas Huginn y Muninn que volaban por Midgard recopilando valiosa información para el dios Odín.", a: "Cuervos", letra: "C"},
+  {q: "Ilustre y hábil enano de la mitología que forjó maravillosas reliquias doradas para los poderosos asgardianos.", a: "Dvalin", letra: "D"},
+  {q: "Majestuoso ciervo de leyenda que pastaba sobre el Valhalla y cuyos cuernos goteaban formando los grandes ríos.", a: "Eikthyrnir", letra: "E"},
+  {q: "Benévolo dios Vanir asociado a la virilidad, el sol brillante y el clima próspero en las cosechas.", a: "Freyr", letra: "F"},
+  {q: "Monstruoso e infernal sabueso ensangrentado que custodiaba las puertas del inframundo helado en el panteón nórdico.", a: "Garm", letra: "G"},
+  {q: "Despiadada diosa nórdica, mitad viva y mitad cadáver putrefacto, que gobernaba el lúgubre reino de los enfermos.", a: "Hel", letra: "H"},
+  {q: "Patriarca de un clan de artesanos enanos que elaboraron mágicamente el cabello de oro para la diosa Sif.", a: "Ivaldi", letra: "I"},
+  {q: "Gélido y rocoso reino montañoso donde habitaba cada titán nórdico considerado enemigo jurado de los asgardianos.", a: "Jotunheim", letra: "J"},
+  {q: "Nombre falso que adoptó la heroína Aslaug, hija de Sigfrido, para ocultar su identidad en la leyenda.", a: "Kraka", letra: "K"},
+  {q: "Humano sobreviviente del fiero apocalipsis nórdico que repoblaría la verde tierra tras ocultarse en un bosque de leyenda.", a: "Líf", letra: "L"},
+  {q: "Reino central rodeado por un inmenso océano, forjado con las cejas de Ymir para el héroe mortal.", a: "Midgard", letra: "M"},
+  {q: "Soberano dios Vanir de los mares tranquilos, la pesca abundante y las riquezas costeras, padre de Freyja.", a: "Njord", letra: "N"},
+  {q: "Contiene la Ñ: Mentira o ilusión mágica que el gigante Utgarda-Loki utilizó para humillar al dios Thor.", a: "Engaño", letra: "Ñ"},
+  {q: "Supremo dios nórdico de un solo ojo, señor del conocimiento mágico, las runas y el frenesí bélico.", a: "Odín", letra: "O"},
+  {q: "Arte verbal sagrado cuyo hidromiel inspirador fue robado por Odín bajo forma de águila en la mitología.", a: "Poesía", letra: "P"},
+  {q: "Contiene la Q: Arremetida o golpe letal final que el valeroso héroe Vidar propinó al lobo gigante Fenrir.", a: "Ataque", letra: "Q"},
+  {q: "Símbolos arcaicos de inmenso poder mágico que el dios supremo descubrió tras colgar del árbol cósmico.", a: "Runas", letra: "R"},
+  {q: "Destructivo titán de fuego empuñando una espada ardiente que incinerará el cosmos durante la batalla del fin.", a: "Surt", letra: "S"},
+  {q: "Impetuoso dios nórdico del trueno, incansable protector de la humanidad y feroz exterminador de los gigantes helados.", a: "Thor", letra: "T"},
+  {q: "Excelente y hermoso dios esquiador, maestro absoluto del arco y la flecha, habitante del frío valle Ydalir.", a: "Ull", letra: "U"},
+  {q: "Segundo gran grupo del panteón germánico, integrado por deidades asociadas a la paz, la fertilidad y la magia.", a: "Vanir", letra: "V"},
+  {q: "Contiene la X: Fluido letal y corrosivo que goteaba tortuosamente sobre el rostro del dios Loki encadenado.", a: "Tóxico", letra: "X"},
+  {q: "Sagrado valle boscoso de tejos donde el dios cazador Ull construyó su pacífica e inquebrantable morada celestial.", a: "Ydalir", letra: "Y"},
+  {q: "Contiene la Z: Órgano vital del gigante Hrungnir, hecho de piedra pura en los relatos de la mitología nórdica.", a: "Corazón", letra: "Z"}
+]
+});
+
 </script>
 <script>
 // mazos/mazo_vocabulario.js
@@ -13490,17 +13964,24 @@ MAZOS_VOCAB.push({
 // =====================================================================
 (function() {
 // ---------------------------------------------------------
-    // 1. AUTOCLASIFICADOR DE MAZOS (VERSIÓN MEJORADA)
+    // 1. AUTOCLASIFICADOR DE MAZOS (VERSIÓN MEJORADA Y SEGURA)
     // ---------------------------------------------------------
     let allQuestions = [];
-    if(typeof MAZOS !== 'undefined') MAZOS.forEach(m => allQuestions = allQuestions.concat(m.questions));
+    if(typeof MAZOS !== 'undefined') {
+        MAZOS.forEach(m => {
+            // Le ponemos una etiqueta invisible a cada pregunta para saber de dónde viene
+            m.questions.forEach(q => q.deckId = m.id);
+            allQuestions = allQuestions.concat(m.questions);
+        });
+    }
 
     const newDecks = {
         "hist_esp": { id: "hist_esp", name: "Historia de España", icon: "🇪🇸", sub: "De los Reyes Católicos a “esto con Franco no pasaba”", color: "#ff7675", questions: [] },
         "hist_uni": { id: "hist_uni", name: "Historia Universal", icon: "🌍", sub: "Guerras, imperios y humanos haciendo siempre lo mismo", color: "#fdcb6e", questions: [] },
         "geo_esp": { id: "geo_esp", name: "Geografía de España", icon: "📍", sub: "Ríos que no sabes que existen y provincias que confundes", color: "#55efc4", questions: [] },
         "geo_mund": { id: "geo_mund", name: "Geografía Mundial", icon: "🗺️", sub: "Países que ignorabas y capitales imposibles", color: "#00b894", questions: [] },
-        "politica": { id: "politica", name: "Política y Const.", icon: "🏛️", sub: "Artículos que nadie ha leído pero todos opinan", color: "#a29bfe", questions: [] },
+        "politica": { id: "politica", name: "Política y Const.", icon: "🗳️", sub: "Artículos que nadie ha leído pero todos opinan", color: "#a29bfe", questions: [] },
+        "mitologia": { id: "mitologia", name: "Mitología", icon: "🏛️", sub: "Sálvame Deluxe en el Monte Olimpo", color: "#ffeaa7", questions: [] },
         "lit_esp": { id: "lit_esp", name: "Literatura Española", icon: "📚", sub: "Señores tristes escribiendo cosas profundas", color: "#fab1a0", questions: [] },
         "lit_uni": { id: "lit_uni", name: "Lit. Universal", icon: "📖", sub: "Rusos con trauma y franceses intensitos", color: "#e17055", questions: [] },
         "cine": { id: "cine", name: "Cine", icon: "🎬", sub: "Oscars, Kubrick y te gusta 'Chicas malas', no hablemos de cine.", color: "#ffeaa7", questions: [] },
@@ -13514,7 +13995,17 @@ MAZOS_VOCAB.push({
     allQuestions.forEach(p => {
         let t = (p.q + " " + p.a).toLowerCase();
         
-        // 1. HISTORIA (Lo ponemos el PRIMERO para que Política o Geografía no le roben las preguntas)
+        // 0. MAZOS VIP (Los que ya vienen con su tema preasignado)
+        if (p.deckId === "deporte") {
+            newDecks["deporte"].questions.push(p);
+            return; // Cortamos aquí para que no se duplique abajo
+        }
+        if (p.deckId === "mitologia") {
+            newDecks["mitologia"].questions.push(p);
+            return; // Cortamos aquí
+        }
+
+        // 1. HISTORIA 
         if (t.match(/\b(historia|guerra|batalla|imperio|revolución|siglo|edad media|mundial|nazi|soviético|urss|azteca|maya|inca|antigüedad|rey|reina|faraón|tratado|tropas|coronel|general|sublevación|alzamiento|dictador|dictadura|miliciano|carlista|desamortización|inquisición|monarca|visigodo|romano|romana|napoleón|napoleónico|franceses|invasión|caudillo|monarquía|bando|califato|emirato)\b/)) {
             // ¿Es historia de España o Universal?
             if (t.match(/\b(españa|español|española|españoles|castilla|castillo|aragón|aragones|reyes católicos|franco|franquista|guerra civil|al ándalus|andalus|carlos i|carlos ii|carlos iii|carlos iv|felipe ii|felipe iii|felipe iv|felipe v|borbón|habsburgo|austria|reconquista|inquisición|armada invencible|isabel|isabel ii|fernando|fernando vii|navarra|asturias|bética|lusitania|tarraconense|numancia|cádiz|madrid|sevilla|toledo|barcelona|zaragoza|valencia|salamanca|granada|córdoba|hispánico|hispania|iberos|ibérico|ibérica|celtíbero|visigodo|visigodos|visigótico|andalucía|taifa|nazarí|nasrid|emirato|califato|almohade|almorávide|mozárabe|mudéjar|morisco|judería|sefardí|expulsión judíos|conquista américa|virreinato|conquistador|hernán cortés|pizarro|primo de rivera|república española|segunda república|transición|constitución española|borbones|austrias|corona de castilla|corona de aragón|reino de navarra|reino de granada|edad media española|siglo de oro|cervantes|velázquez|goya|lope de vega|quevedo|calderón|lepanto|trafalgar|dos de mayo|peninnsular|peninsular|hispanorromano|celtíberos|tartesos|fenicios en españa|griegos en españa|cartagineses|sagunto|viriato|sertorio|pompeyanos|hispanovisigodo|Toledo visigoda|recaredo|leovigildo|pelayo|covadonga|umayyad|omeya|abderramán|almanzor|averroes|maimónides|mozárabes|repoblación|fueros|cortes de cádiz|afrancesado|carlismo|carlista|pronunciamiento|caciquismo|restauración borbónica|desastre del 98|generación del 98|catalanismo|vasquismo|regionalismo|mancomunidad|dictadura|falange|nacional catolicismo|desarrollismo|opus dei|aperturismo|tejero|otan|felipe gonzález|aznar|zapatero|rajoy|podemos|ciudadanos|15m|indignados)\b/)) {
@@ -13555,18 +14046,13 @@ MAZOS_VOCAB.push({
         else if (t.match(/\b(ciencia|física|química|biología|medicina|enfermedad|célula|átomo|planeta|espacio|gravedad|músculo|hueso|órgano|sangre|teorema|matemátic|algoritmo|zoología|botánica|meteorología|geología|neurona|médico|virus|bacteria)\b/)) {
             newDecks["ciencia"].questions.push(p);
         } 
-       // 9. CULTURA GENERAL
+        // 8. CULTURA GENERAL
         else {
             newDecks["cg"].questions.push(p);
         }
     });
 
-    // 8. DEPORTE - carga desde mazo_deporte.js (fuera del bucle)
-    const mazoDeporte = MAZOS.find(m => m.id === "deporte");
-    if (mazoDeporte && mazoDeporte.questions) {
-        newDecks["deporte"].questions.push(...mazoDeporte.questions);
-    }
-
+    // Actualizamos el array global de MAZOS, filtrando los que se hayan quedado vacíos
     if(typeof MAZOS !== 'undefined') MAZOS = Object.values(newDecks).filter(m => m.questions.length > 0);
 
     // ---------------------------------------------------------
