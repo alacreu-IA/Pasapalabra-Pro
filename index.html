@@ -56,10 +56,12 @@ html, body {
 ================================================================ */
 .screen {
     position: fixed; inset: 0;
-    display: none; flex-direction: column;
+    display: flex; flex-direction: column;
+    opacity: 0; pointer-events: none;
+    transition: opacity 0.25s ease;
     overflow: hidden;
 }
-.screen.active { display: flex; }
+.screen.active { opacity: 1; pointer-events: all; }
 
 /* ================================================================
    SCROLLABLE BODY
@@ -850,7 +852,7 @@ html, body {
 <!-- ================================================================
      HOME SCREEN
 ================================================================ -->
-<div id="home" class="screen active">
+<div id="home" class="screen">
     <div id="home-header">
         <div class="app-brand">
             <h1>PasaPalabra Pro</h1>
@@ -902,7 +904,7 @@ html, body {
         <div class="section-label">Mazos Activos</div>
 <div class="deck-list">
 
-    <div class="deck-item" onclick="iniciarMazo('hist_esp')">
+    <div class="deck-item" onclick="startSmartStudyAll('hist_esp')">
         <div class="deck-icon">🇪🇸</div>
         <div class="deck-info">
             <h4>Historia de España</h4>
@@ -913,7 +915,7 @@ html, body {
         <div class="deck-arrow">›</div>
     </div>
 
-    <div class="deck-item" onclick="iniciarMazo('hist_uni')">
+    <div class="deck-item" onclick="startSmartStudyAll('hist_uni')">
         <div class="deck-icon">🌍</div>
         <div class="deck-info">
             <h4>Historia Universal</h4>
@@ -924,7 +926,7 @@ html, body {
         <div class="deck-arrow">›</div>
     </div>
 
-    <div class="deck-item" onclick="iniciarMazo('geo_esp')">
+    <div class="deck-item" onclick="startSmartStudyAll('geo_esp')">
         <div class="deck-icon">📍</div>
         <div class="deck-info">
             <h4>Geografía de España</h4>
@@ -935,7 +937,7 @@ html, body {
         <div class="deck-arrow">›</div>
     </div>
 
-    <div class="deck-item" onclick="iniciarMazo('geo_mund')">
+    <div class="deck-item" onclick="startSmartStudyAll('geo_mund')">
         <div class="deck-icon">🗺️</div>
         <div class="deck-info">
             <h4>Geografía Mundial</h4>
@@ -946,7 +948,7 @@ html, body {
         <div class="deck-arrow">›</div>
     </div>
 
-    <div class="deck-item" onclick="iniciarMazo('capitales')">
+    <div class="deck-item" onclick="startSmartStudyAll('capitales')">
         <div class="deck-icon">✈️</div>
         <div class="deck-info">
             <h4>Capitales</h4>
@@ -957,7 +959,7 @@ html, body {
         <div class="deck-arrow">›</div>
     </div>
 
-    <div class="deck-item" onclick="iniciarMazo('politica')">
+    <div class="deck-item" onclick="startSmartStudyAll('politica')">
         <div class="deck-icon">🗳️</div>
         <div class="deck-info">
             <h4>Política y Const.</h4>
@@ -968,7 +970,7 @@ html, body {
         <div class="deck-arrow">›</div>
     </div>
 
-    <div class="deck-item" onclick="iniciarMazo('mitologia')">
+    <div class="deck-item" onclick="startSmartStudyAll('mitologia')">
         <div class="deck-icon">🏛️</div>
         <div class="deck-info">
             <h4>Mitología</h4>
@@ -979,7 +981,7 @@ html, body {
         <div class="deck-arrow">›</div>
     </div>
 
-    <div class="deck-item" onclick="iniciarMazo('lit_esp')">
+    <div class="deck-item" onclick="startSmartStudyAll('lit_esp')">
         <div class="deck-icon">📚</div>
         <div class="deck-info">
             <h4>Literatura Española</h4>
@@ -990,7 +992,7 @@ html, body {
         <div class="deck-arrow">›</div>
     </div>
 
-    <div class="deck-item" onclick="iniciarMazo('lit_uni')">
+    <div class="deck-item" onclick="startSmartStudyAll('lit_uni')">
         <div class="deck-icon">📖</div>
         <div class="deck-info">
             <h4>Lit. Universal</h4>
@@ -1001,7 +1003,7 @@ html, body {
         <div class="deck-arrow">›</div>
     </div>
 
-    <div class="deck-item" onclick="iniciarMazo('cine')">
+    <div class="deck-item" onclick="startSmartStudyAll('cine')">
         <div class="deck-icon">🎬</div>
         <div class="deck-info">
             <h4>Cine</h4>
@@ -1012,7 +1014,7 @@ html, body {
         <div class="deck-arrow">›</div>
     </div>
 
-    <div class="deck-item" onclick="iniciarMazo('teatro')">
+    <div class="deck-item" onclick="startSmartStudyAll('teatro')">
         <div class="deck-icon">🎭</div>
         <div class="deck-info">
             <h4>Teatro</h4>
@@ -1023,7 +1025,7 @@ html, body {
         <div class="deck-arrow">›</div>
     </div>
 
-    <div class="deck-item" onclick="iniciarMazo('arte')">
+    <div class="deck-item" onclick="startSmartStudyAll('arte')">
         <div class="deck-icon">🎨</div>
         <div class="deck-info">
             <h4>Arte</h4>
@@ -1034,7 +1036,7 @@ html, body {
         <div class="deck-arrow">›</div>
     </div>
 
-    <div class="deck-item" onclick="iniciarMazo('ciencia')">
+    <div class="deck-item" onclick="startSmartStudyAll('ciencia')">
         <div class="deck-icon">🔬</div>
         <div class="deck-info">
             <h4>Ciencia</h4>
@@ -1045,7 +1047,7 @@ html, body {
         <div class="deck-arrow">›</div>
     </div>
 
-    <div class="deck-item" onclick="iniciarMazo('naturaleza')">
+    <div class="deck-item" onclick="startSmartStudyAll('naturaleza')">
         <div class="deck-icon">🌿</div>
         <div class="deck-info">
             <h4>Naturaleza</h4>
@@ -1056,7 +1058,7 @@ html, body {
         <div class="deck-arrow">›</div>
     </div>
 
-    <div class="deck-item" onclick="iniciarMazo('tecnologia')">
+    <div class="deck-item" onclick="startSmartStudyAll('tecnologia')">
         <div class="deck-icon">💻</div>
         <div class="deck-info">
             <h4>Tecnología</h4>
@@ -1067,7 +1069,7 @@ html, body {
         <div class="deck-arrow">›</div>
     </div>
 
-    <div class="deck-item" onclick="iniciarMazo('deporte')">
+    <div class="deck-item" onclick="startSmartStudyAll('deporte')">
         <div class="deck-icon">⚽</div>
         <div class="deck-info">
             <h4>Deporte</h4>
@@ -1078,7 +1080,7 @@ html, body {
         <div class="deck-arrow">›</div>
     </div>
 
-    <div class="deck-item" onclick="iniciarMazo('cg')">
+    <div class="deck-item" onclick="startSmartStudyAll('cg')">
         <div class="deck-icon">🧠</div>
         <div class="deck-info">
             <h4>Cultura General</h4>
@@ -14598,6 +14600,28 @@ window.startSmartStudy = function(deckId) {
    if (studyDeck.length === 0) return;
    document.getElementById('view-smart-study').style.display = 'flex';
    nextStudyCard();
+
+// Lanza el estudio de un mazo completo sin filtro SRS - usa el UI de estudio que funciona
+window.startSmartStudyAll = function(deckId) {
+    var mazo = (typeof MAZOS !== 'undefined') ? MAZOS.find(function(m){ return m.id === deckId; }) : null;
+    if (!mazo) { 
+        if (typeof showToast === 'function') showToast('Mazo no encontrado: ' + deckId);
+        return; 
+    }
+    studyDeck = mazo.questions
+        .map(function(q){ return Object.assign({}, q, { deckId: mazo.id, color: mazo.color || 'var(--accent)' }); })
+        .sort(function(){ return Math.random() - 0.5; })
+        .slice(0, 20);
+    if (studyDeck.length === 0) { 
+        if (typeof showToast === 'function') showToast('Sin preguntas en este mazo');
+        return; 
+    }
+    document.getElementById('study-title').innerText = (mazo.icon || '') + ' ' + mazo.name;
+    var sel = document.getElementById('view-study-selector');
+    if (sel) sel.style.display = 'none';
+    document.getElementById('view-smart-study').style.display = 'flex';
+    nextStudyCard();
+};
 };
 
 window.nextStudyCard = function() {
