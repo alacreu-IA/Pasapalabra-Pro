@@ -14750,17 +14750,21 @@ window.exitSmartStudy = function() {
 // NAVEGACIÓN — RESTAURADA Y VITAL PARA QUE LOS BOTONES FUNCIONEN
 // ============================================================
 function goTo(id) {
-    document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
-    const _s=document.getElementById(id);
-    if(_s)_s.classList.add('active');
-    else{document.getElementById('home').classList.add('active');return;}
+    // Usar style.display directamente - evita problemas con transiciones CSS
+    document.querySelectorAll('.screen').forEach(function(s) {
+        s.style.display = 'none';
+        s.classList.remove('active');
+    });
+    var _s = document.getElementById(id) || document.getElementById('home');
+    _s.style.display = 'flex';
+    _s.classList.add('active');
 
     // Efectos colaterales al cambiar de pantalla
     if (id === 'home') { loadDeckInfo(); updateDifHomeCount(); }
     if (id === 'dificiles') { renderDificilesAlfa(); }
     if (id === 'dashboard') { renderDashboard(); }
     if (id === 'creator')   { renderCustomList(); }
-    if (id === 'rosco') { startRosco(); } 
+    if (id === 'rosco') { startRosco(); }
     if (id === 'rae') { initRaeIfNeeded(); }
 }
 
@@ -14781,8 +14785,8 @@ function acceptTerms() {
     loadDeckInfo();
     updateDifHomeCount();
     // Show home screen
-    document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
-    document.getElementById('home').classList.add('active');
+    document.querySelectorAll('.screen').forEach(function(s) { s.style.display='none'; s.classList.remove('active'); });
+    var _h = document.getElementById('home'); _h.style.display='flex'; _h.classList.add('active');
 }
 function showTermsAgain() {
     document.getElementById('terms-overlay').classList.remove('hidden');
@@ -14792,10 +14796,12 @@ function showTermsAgain() {
 //  INIT
 // ============================================================
 window.onload = function () {
-    // Activate home screen only if no other screen is already active
-    const anyActive = document.querySelector('.screen.active');
-    if (!anyActive) {
-        document.getElementById('home').classList.add('active');
+    // Mostrar home con inline style para garantizar visibilidad
+    var anyVisible = document.querySelector('.screen[style*="display: flex"]');
+    if (!anyVisible) {
+        var home = document.getElementById('home');
+        home.style.display = 'flex';
+        home.classList.add('active');
     }
 
     if (!localStorage.getItem('terms_accepted_v2')) {
@@ -14931,12 +14937,11 @@ function iniciarSRS() {
 function estudiarSoloDificiles() {
     const dif = getDificiles();
     if (dif.length === 0) { showToast('Aún no tienes difíciles guardadas'); return; }
-    const questions = dif.map(d => ({ q: d.def, a: d.word, letra: d.letra }));
+    const questions = dif.map(d => ({ q: d.def || d.q, a: d.word || d.a, letra: d.letra }));
     gameMode    = 'dificiles';
     gameTitle   = '🔴 Solo Difíciles';
     gameSession = pickRandom(questions, Math.min(20, questions.length));
-    goTo('home');
-    setTimeout(startGameSession, 100);
+    startGameSession();
 }
 
 function iniciarMazoCustom() {
@@ -15822,8 +15827,13 @@ function stopVoice() {
 var roscoMode = 'silent'; // 'silent' | 'voice' | 'full'
 
 function showRoscoModeSelector() {
-    document.querySelectorAll('.screen').forEach(function(s){ s.classList.remove('active'); });
-    document.getElementById('rosco-mode').classList.add('active');
+    document.querySelectorAll('.screen').forEach(function(s) {
+        s.style.display = 'none';
+        s.classList.remove('active');
+    });
+    var rm = document.getElementById('rosco-mode');
+    rm.style.display = 'flex';
+    rm.classList.add('active');
 }
 
 function startRoscoMode(mode) {
