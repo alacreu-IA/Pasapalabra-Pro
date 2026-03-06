@@ -903,33 +903,124 @@ html, body {
 
         <div class="section-label">Mazos Activos</div>
 <div class="deck-list">
-    
-    <div class="deck-item" onclick="iniciarMazo('cg')">
-        <div class="deck-icon">🧠</div>
+
+    <div class="deck-item" onclick="iniciarMazo('hist_esp')">
+        <div class="deck-icon">🇪🇸</div>
         <div class="deck-info">
-            <h4>Cultura General</h4>
-            <p id="deck-info-cg">Cargando...</p>
-            <div class="dom-bar"><div class="dom-fill" id="dom-cg" style="width:0%"></div></div>
+            <h4>Historia de España</h4>
+            <span style="font-size:0.65rem; color:var(--muted); font-style:italic; display:block; margin-bottom:2px;">De los Reyes Católicos a "esto con Franco no pasaba"</span>
+            <p id="deck-info-hist_esp">Cargando...</p>
+            <div class="dom-bar"><div class="dom-fill" id="dom-hist_esp" style="width:0%"></div></div>
         </div>
         <div class="deck-arrow">›</div>
     </div>
 
-    <div class="deck-item" onclick="iniciarMazo('hist')">
-        <div class="deck-icon">⚔️</div>
+    <div class="deck-item" onclick="iniciarMazo('hist_uni')">
+        <div class="deck-icon">🌍</div>
         <div class="deck-info">
-            <h4>Historia y Geografía</h4>
-            <p id="deck-info-hist">Cargando...</p>
-            <div class="dom-bar"><div class="dom-fill" id="dom-hist" style="width:0%"></div></div>
+            <h4>Historia Universal</h4>
+            <span style="font-size:0.65rem; color:var(--muted); font-style:italic; display:block; margin-bottom:2px;">Guerras, imperios y humanos haciendo siempre lo mismo</span>
+            <p id="deck-info-hist_uni">Cargando...</p>
+            <div class="dom-bar"><div class="dom-fill" id="dom-hist_uni" style="width:0%"></div></div>
         </div>
         <div class="deck-arrow">›</div>
     </div>
 
-    <div class="deck-item" onclick="iniciarMazo('literatura')">
+    <div class="deck-item" onclick="iniciarMazo('geo_esp')">
+        <div class="deck-icon">📍</div>
+        <div class="deck-info">
+            <h4>Geografía de España</h4>
+            <span style="font-size:0.65rem; color:var(--muted); font-style:italic; display:block; margin-bottom:2px;">Ríos que no sabes que existen y provincias que confundes</span>
+            <p id="deck-info-geo_esp">Cargando...</p>
+            <div class="dom-bar"><div class="dom-fill" id="dom-geo_esp" style="width:0%"></div></div>
+        </div>
+        <div class="deck-arrow">›</div>
+    </div>
+
+    <div class="deck-item" onclick="iniciarMazo('geo_mund')">
+        <div class="deck-icon">🗺️</div>
+        <div class="deck-info">
+            <h4>Geografía Mundial</h4>
+            <span style="font-size:0.65rem; color:var(--muted); font-style:italic; display:block; margin-bottom:2px;">Países que ignorabas y capitales imposibles</span>
+            <p id="deck-info-geo_mund">Cargando...</p>
+            <div class="dom-bar"><div class="dom-fill" id="dom-geo_mund" style="width:0%"></div></div>
+        </div>
+        <div class="deck-arrow">›</div>
+    </div>
+
+    <div class="deck-item" onclick="iniciarMazo('capitales')">
+        <div class="deck-icon">✈️</div>
+        <div class="deck-info">
+            <h4>Capitales</h4>
+            <span style="font-size:0.65rem; color:var(--muted); font-style:italic; display:block; margin-bottom:2px;">Porque Sídney no es la capital de Australia y lo sabes</span>
+            <p id="deck-info-capitales">Cargando...</p>
+            <div class="dom-bar"><div class="dom-fill" id="dom-capitales" style="width:0%"></div></div>
+        </div>
+        <div class="deck-arrow">›</div>
+    </div>
+
+    <div class="deck-item" onclick="iniciarMazo('politica')">
+        <div class="deck-icon">🗳️</div>
+        <div class="deck-info">
+            <h4>Política y Const.</h4>
+            <span style="font-size:0.65rem; color:var(--muted); font-style:italic; display:block; margin-bottom:2px;">Artículos que nadie ha leído pero todos opinan</span>
+            <p id="deck-info-politica">Cargando...</p>
+            <div class="dom-bar"><div class="dom-fill" id="dom-politica" style="width:0%"></div></div>
+        </div>
+        <div class="deck-arrow">›</div>
+    </div>
+
+    <div class="deck-item" onclick="iniciarMazo('mitologia')">
+        <div class="deck-icon">🏛️</div>
+        <div class="deck-info">
+            <h4>Mitología</h4>
+            <span style="font-size:0.65rem; color:var(--muted); font-style:italic; display:block; margin-bottom:2px;">Sálvame Deluxe en el Monte Olimpo</span>
+            <p id="deck-info-mitologia">Cargando...</p>
+            <div class="dom-bar"><div class="dom-fill" id="dom-mitologia" style="width:0%"></div></div>
+        </div>
+        <div class="deck-arrow">›</div>
+    </div>
+
+    <div class="deck-item" onclick="iniciarMazo('lit_esp')">
         <div class="deck-icon">📚</div>
         <div class="deck-info">
-            <h4>Literatura</h4>
-            <p id="deck-info-literatura">Cargando...</p>
-            <div class="dom-bar"><div class="dom-fill" id="dom-literatura" style="width:0%"></div></div>
+            <h4>Literatura Española</h4>
+            <span style="font-size:0.65rem; color:var(--muted); font-style:italic; display:block; margin-bottom:2px;">Señores tristes escribiendo cosas profundas</span>
+            <p id="deck-info-lit_esp">Cargando...</p>
+            <div class="dom-bar"><div class="dom-fill" id="dom-lit_esp" style="width:0%"></div></div>
+        </div>
+        <div class="deck-arrow">›</div>
+    </div>
+
+    <div class="deck-item" onclick="iniciarMazo('lit_uni')">
+        <div class="deck-icon">📖</div>
+        <div class="deck-info">
+            <h4>Lit. Universal</h4>
+            <span style="font-size:0.65rem; color:var(--muted); font-style:italic; display:block; margin-bottom:2px;">Rusos con trauma y franceses intensitos</span>
+            <p id="deck-info-lit_uni">Cargando...</p>
+            <div class="dom-bar"><div class="dom-fill" id="dom-lit_uni" style="width:0%"></div></div>
+        </div>
+        <div class="deck-arrow">›</div>
+    </div>
+
+    <div class="deck-item" onclick="iniciarMazo('cine')">
+        <div class="deck-icon">🎬</div>
+        <div class="deck-info">
+            <h4>Cine</h4>
+            <span style="font-size:0.65rem; color:var(--muted); font-style:italic; display:block; margin-bottom:2px;">Oscars, Kubrick y te gusta 'Chicas malas'...</span>
+            <p id="deck-info-cine">Cargando...</p>
+            <div class="dom-bar"><div class="dom-fill" id="dom-cine" style="width:0%"></div></div>
+        </div>
+        <div class="deck-arrow">›</div>
+    </div>
+
+    <div class="deck-item" onclick="iniciarMazo('teatro')">
+        <div class="deck-icon">🎭</div>
+        <div class="deck-info">
+            <h4>Teatro</h4>
+            <span style="font-size:0.65rem; color:var(--muted); font-style:italic; display:block; margin-bottom:2px;">Gente gritando sentimientos en voz alta</span>
+            <p id="deck-info-teatro">Cargando...</p>
+            <div class="dom-bar"><div class="dom-fill" id="dom-teatro" style="width:0%"></div></div>
         </div>
         <div class="deck-arrow">›</div>
     </div>
@@ -937,7 +1028,8 @@ html, body {
     <div class="deck-item" onclick="iniciarMazo('arte')">
         <div class="deck-icon">🎨</div>
         <div class="deck-info">
-            <h4>Arte, Música y Cine</h4>
+            <h4>Arte</h4>
+            <span style="font-size:0.65rem; color:var(--muted); font-style:italic; display:block; margin-bottom:2px;">Cuadros que parecen fáciles hasta que te preguntan el autor</span>
             <p id="deck-info-arte">Cargando...</p>
             <div class="dom-bar"><div class="dom-fill" id="dom-arte" style="width:0%"></div></div>
         </div>
@@ -948,6 +1040,7 @@ html, body {
         <div class="deck-icon">🔬</div>
         <div class="deck-info">
             <h4>Ciencia</h4>
+            <span style="font-size:0.65rem; color:var(--muted); font-style:italic; display:block; margin-bottom:2px;">Premios Nobel y fórmulas que no entiendes</span>
             <p id="deck-info-ciencia">Cargando...</p>
             <div class="dom-bar"><div class="dom-fill" id="dom-ciencia" style="width:0%"></div></div>
         </div>
@@ -958,6 +1051,7 @@ html, body {
         <div class="deck-icon">🌿</div>
         <div class="deck-info">
             <h4>Naturaleza</h4>
+            <span style="font-size:0.65rem; color:var(--muted); font-style:italic; display:block; margin-bottom:2px;">Documentales de La 2 y alergia al polen</span>
             <p id="deck-info-naturaleza">Cargando...</p>
             <div class="dom-bar"><div class="dom-fill" id="dom-naturaleza" style="width:0%"></div></div>
         </div>
@@ -968,38 +1062,31 @@ html, body {
         <div class="deck-icon">💻</div>
         <div class="deck-info">
             <h4>Tecnología</h4>
+            <span style="font-size:0.65rem; color:var(--muted); font-style:italic; display:block; margin-bottom:2px;">Apagar y encender el router</span>
             <p id="deck-info-tecnologia">Cargando...</p>
             <div class="dom-bar"><div class="dom-fill" id="dom-tecnologia" style="width:0%"></div></div>
         </div>
         <div class="deck-arrow">›</div>
     </div>
 
-    <div class="deck-item" onclick="iniciarMazo('capitales')">
-        <div class="deck-icon">✈️</div>
-        <div class="deck-info">
-            <h4>Capitales</h4>
-            <p id="deck-info-capitales">Cargando...</p>
-            <div class="dom-bar"><div class="dom-fill" id="dom-capitales" style="width:0%"></div></div>
-        </div>
-        <div class="deck-arrow">›</div>
-    </div>
-
-    <div class="deck-item" onclick="iniciarMazo('mitologia')">
-        <div class="deck-icon">🏛️</div>
-        <div class="deck-info">
-            <h4>Mitología</h4>
-            <p id="deck-info-mitologia">Cargando...</p>
-            <div class="dom-bar"><div class="dom-fill" id="dom-mitologia" style="width:0%"></div></div>
-        </div>
-        <div class="deck-arrow">›</div>
-    </div>
-
     <div class="deck-item" onclick="iniciarMazo('deporte')">
-        <div class="deck-icon">🏆</div>
+        <div class="deck-icon">⚽</div>
         <div class="deck-info">
             <h4>Deporte</h4>
+            <span style="font-size:0.65rem; color:var(--muted); font-style:italic; display:block; margin-bottom:2px;">Finales injustas y debates eternos</span>
             <p id="deck-info-deporte">Cargando...</p>
             <div class="dom-bar"><div class="dom-fill" id="dom-deporte" style="width:0%"></div></div>
+        </div>
+        <div class="deck-arrow">›</div>
+    </div>
+
+    <div class="deck-item" onclick="iniciarMazo('cg')">
+        <div class="deck-icon">🧠</div>
+        <div class="deck-info">
+            <h4>Cultura General</h4>
+            <span style="font-size:0.65rem; color:var(--muted); font-style:italic; display:block; margin-bottom:2px;">El cajón de sastre donde acaba todo lo demás</span>
+            <p id="deck-info-cg">Cargando...</p>
+            <div class="dom-bar"><div class="dom-fill" id="dom-cg" style="width:0%"></div></div>
         </div>
         <div class="deck-arrow">›</div>
     </div>
@@ -1008,12 +1095,12 @@ html, body {
         <div class="deck-icon">⭐</div>
         <div class="deck-info">
             <h4>Mis mazos</h4>
-            <p id="deck-info-custom">Tus propias tarjetas</p>
+            <p id="deck-info-custom" style="margin-top:0;">Tus propias tarjetas</p>
         </div>
         <div class="deck-arrow">›</div>
     </div>
-</div>
 
+</div>
 <div style="display:flex;justify-content:flex-end;margin:14px 0 0;">
     <button onclick="goTo('dashboard')" style="background:var(--card2);border:1px solid var(--gold);border-radius:20px;padding:7px 16px;font-size:0.76rem;color:var(--gold);cursor:pointer;font-weight:700;display:flex;align-items:center;gap:6px;box-shadow:0 0 16px var(--gold-dim);">Mi progreso</button>
 </div>
@@ -1107,6 +1194,23 @@ html, body {
     </div>
 </div>
 
+
+<!-- ================================================================
+     END SCREEN
+================================================================ -->
+<div id="end" class="screen">
+    <div class="top-bar">
+        <button class="btn-back" onclick="goTo('home')">← Inicio</button>
+        <div class="top-bar-title">Resultado</div>
+    </div>
+    <div style="flex:1; display:flex; flex-direction:column; align-items:center; justify-content:center; padding:30px; gap:20px; text-align:center;">
+        <div id="end-emoji" style="font-size:4rem;">🏆</div>
+        <div id="end-title" style="font-size:1.5rem; font-weight:800; color:var(--text);"></div>
+        <div id="end-score" style="font-size:2rem; font-weight:900; color:var(--gold);"></div>
+        <div id="end-msg" style="color:var(--muted); font-size:0.9rem; line-height:1.5; max-width:320px;"></div>
+        <button onclick="goTo('home')" style="margin-top:20px; background:var(--accent); color:#fff; border:none; border-radius:24px; padding:14px 40px; font-size:1rem; font-weight:700; cursor:pointer;">Volver al inicio</button>
+    </div>
+</div>
 <!-- ================================================================
      RAE SCREEN
 ================================================================ -->
@@ -14265,7 +14369,21 @@ MAZOS_VOCAB.push({
     });
 
     // Actualizamos el array global de MAZOS, filtrando los que se hayan quedado vacíos
-    if(typeof MAZOS !== 'undefined') MAZOS = Object.values(newDecks).filter(m => m.questions.length > 0);
+    // Repoblar MAZOS originales preservando IDs, nombres y subtítulos
+    if(typeof MAZOS !== 'undefined') {
+        MAZOS.forEach(function(m) {
+            if (m.id === 'hist') {
+                m.questions = ['hist_esp','hist_uni','geo_esp','geo_mund','politica']
+                    .reduce(function(a,id){ return newDecks[id] ? a.concat(newDecks[id].questions) : a; }, []);
+            } else if (m.id === 'literatura') {
+                m.questions = ['lit_esp','lit_uni','teatro','cine']
+                    .reduce(function(a,id){ return newDecks[id] ? a.concat(newDecks[id].questions) : a; }, []);
+            } else if (newDecks[m.id]) {
+                m.questions = newDecks[m.id].questions;
+            }
+        });
+        MAZOS = MAZOS.filter(function(m){ return m.questions.length > 0; });
+    }
 
     // ---------------------------------------------------------
     // 2. INYECTAR INTERFAZ (MENÚ PRINCIPAL Y MODO ESTUDIO)
@@ -14661,9 +14779,11 @@ function showTermsAgain() {
 //  INIT
 // ============================================================
 window.onload = function () {
-    // Activate home screen (always behind overlay if needed)
-    document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
-    document.getElementById('home').classList.add('active');
+    // Activate home screen only if no other screen is already active
+    const anyActive = document.querySelector('.screen.active');
+    if (!anyActive) {
+        document.getElementById('home').classList.add('active');
+    }
 
     if (!localStorage.getItem('terms_accepted_v2')) {
         // Show terms — remove hidden class so overlay is visible
