@@ -902,131 +902,161 @@ html, body {
         </div>
 
         <div class="section-label">Mazos Activos</div>
-        <div class="deck-list">
-            
-            <div class="deck-item" onclick="iniciarMazo('cg')">
-                <div class="deck-icon">🧠</div>
-                <div class="deck-info">
-                    <h4>Cultura General</h4>
-                    <p id="deck-info-cg">Cargando...</p>
-                    <div class="dom-bar"><div class="dom-fill" id="dom-cg" style="width:0%"></div></div>
-                </div>
-                <div class="deck-arrow">›</div>
-            </div>
-
-            <div class="deck-item" onclick="iniciarMazo('hist')">
-                <div class="deck-icon">⚔️</div>
-                <div class="deck-info">
-                    <h4>Historia y Geografía</h4>
-                    <p id="deck-info-hist">Cargando...</p>
-                    <div class="dom-bar"><div class="dom-fill" id="dom-hist" style="width:0%"></div></div>
-                </div>
-                <div class="deck-arrow">›</div>
-            </div>
-
-            <div class="deck-item" onclick="iniciarMazo('literatura')">
-                <div class="deck-icon">📚</div>
-                <div class="deck-info">
-                    <h4>Literatura</h4>
-                    <p id="deck-info-literatura">Cargando...</p>
-                    <div class="dom-bar"><div class="dom-fill" id="dom-literatura" style="width:0%"></div></div>
-                </div>
-                <div class="deck-arrow">›</div>
-            </div>
-
-            <div class="deck-item" onclick="iniciarMazo('arte')">
-                <div class="deck-icon">🎨</div>
-                <div class="deck-info">
-                    <h4>Arte, Música y Cine</h4>
-                    <p id="deck-info-arte">Cargando...</p>
-                    <div class="dom-bar"><div class="dom-fill" id="dom-arte" style="width:0%"></div></div>
-                </div>
-                <div class="deck-arrow">›</div>
-            </div>
-
-            <div class="deck-item" onclick="iniciarMazo('ciencia')">
-                <div class="deck-icon">🔬</div>
-                <div class="deck-info">
-                    <h4>Ciencia y Nat.</h4>
-                    <p id="deck-info-ciencia">Cargando...</p>
-                    <div class="dom-bar"><div class="dom-fill" id="dom-ciencia" style="width:0%"></div></div>
-                </div>
-                <div class="deck-arrow">›</div>
-            </div>
-
-            <div class="deck-item" onclick="iniciarMazo('mitologia')">
-                <div class="deck-icon">🏛️</div>
-                <div class="deck-info">
-                    <h4>Mitología</h4>
-                    <p id="deck-info-mitologia">Cargando...</p>
-                    <div class="dom-bar"><div class="dom-fill" id="dom-mitologia" style="width:0%"></div></div>
-                </div>
-                <div class="deck-arrow">›</div>
-            </div>
-
-            <div class="deck-item" onclick="iniciarMazo('deporte')">
-                <div class="deck-icon">🏆</div>
-                <div class="deck-info">
-                    <h4>Deporte</h4>
-                    <p id="deck-info-deporte">Cargando...</p>
-                    <div class="dom-bar"><div class="dom-fill" id="dom-deporte" style="width:0%"></div></div>
-                </div>
-                <div class="deck-arrow">›</div>
-            </div>
-
-            <div class="deck-item" onclick="iniciarMazoCustom()">
-                <div class="deck-icon">⭐</div>
-                <div class="deck-info">
-                    <h4>Mis mazos</h4>
-                    <p id="deck-info-custom">Tus propias tarjetas</p>
-                </div>
-                <div class="deck-arrow">›</div>
-            </div>
-
+<div class="deck-list">
+    
+    <div class="deck-item" onclick="iniciarMazo('cg')">
+        <div class="deck-icon">🧠</div>
+        <div class="deck-info">
+            <h4>Cultura General</h4>
+            <p id="deck-info-cg">Cargando...</p>
+            <div class="dom-bar"><div class="dom-fill" id="dom-cg" style="width:0%"></div></div>
         </div>
-
-        <div style="display:flex;justify-content:flex-end;margin:14px 0 0;"><button onclick="goTo('dashboard')" style="background:var(--card2);border:1px solid var(--gold);border-radius:20px;padding:7px 16px;font-size:0.76rem;color:var(--gold);cursor:pointer;font-weight:700;display:flex;align-items:center;gap:6px;box-shadow:0 0 16px var(--gold-dim);">Mi progreso</button></div>
-        <div class="section-label">Herramientas</div>
-        <div class="deck-list">
-            <div class="deck-item" onclick="goTo('dificiles')">
-                <div class="deck-icon">🔴</div>
-                <div class="deck-info">
-                    <h4>Palabras Difíciles</h4>
-                    <p id="dif-home-count">Las que más te cuestan</p>
-                </div>
-                <div class="deck-arrow">›</div>
-            </div>
-            <div class="deck-item" onclick="estudiarSoloDificiles()">
-                <div class="deck-icon">🎯</div>
-                <div class="deck-info">
-                    <h4>Estudiar Solo Difíciles</h4>
-                    <p>Ataca tus puntos débiles</p>
-                </div>
-                <div class="deck-arrow">›</div>
-            </div>
-            <div class="deck-item" onclick="goTo('creator')">
-                <div class="deck-icon">✏️</div>
-                <div class="deck-info">
-                    <h4>Crear / Importar Mazos</h4>
-                    <p>Añade tus propias preguntas</p>
-                </div>
-                <div class="deck-arrow">›</div>
-            </div>
-        </div>
-
-        <div class="section-label">Generador IA</div>
-        <div class="ai-strip" onclick="showAIModal()">
-            <div class="ai-robot">🤖</div>
-            <div class="ai-btn-text">
-                <h3>¿Más preguntas?</h3>
-                <p>El desarrollador las genera por ti</p>
-            </div>
-        </div>
-
-        <div class="footer-links">
-            <button onclick="showTermsAgain()">Términos y Condiciones</button>
-        </div>
+        <div class="deck-arrow">›</div>
     </div>
+
+    <div class="deck-item" onclick="iniciarMazo('hist')">
+        <div class="deck-icon">⚔️</div>
+        <div class="deck-info">
+            <h4>Historia y Geografía</h4>
+            <p id="deck-info-hist">Cargando...</p>
+            <div class="dom-bar"><div class="dom-fill" id="dom-hist" style="width:0%"></div></div>
+        </div>
+        <div class="deck-arrow">›</div>
+    </div>
+
+    <div class="deck-item" onclick="iniciarMazo('literatura')">
+        <div class="deck-icon">📚</div>
+        <div class="deck-info">
+            <h4>Literatura</h4>
+            <p id="deck-info-literatura">Cargando...</p>
+            <div class="dom-bar"><div class="dom-fill" id="dom-literatura" style="width:0%"></div></div>
+        </div>
+        <div class="deck-arrow">›</div>
+    </div>
+
+    <div class="deck-item" onclick="iniciarMazo('arte')">
+        <div class="deck-icon">🎨</div>
+        <div class="deck-info">
+            <h4>Arte, Música y Cine</h4>
+            <p id="deck-info-arte">Cargando...</p>
+            <div class="dom-bar"><div class="dom-fill" id="dom-arte" style="width:0%"></div></div>
+        </div>
+        <div class="deck-arrow">›</div>
+    </div>
+
+    <div class="deck-item" onclick="iniciarMazo('ciencia')">
+        <div class="deck-icon">🔬</div>
+        <div class="deck-info">
+            <h4>Ciencia</h4>
+            <p id="deck-info-ciencia">Cargando...</p>
+            <div class="dom-bar"><div class="dom-fill" id="dom-ciencia" style="width:0%"></div></div>
+        </div>
+        <div class="deck-arrow">›</div>
+    </div>
+
+    <div class="deck-item" onclick="iniciarMazo('naturaleza')">
+        <div class="deck-icon">🌿</div>
+        <div class="deck-info">
+            <h4>Naturaleza</h4>
+            <p id="deck-info-naturaleza">Cargando...</p>
+            <div class="dom-bar"><div class="dom-fill" id="dom-naturaleza" style="width:0%"></div></div>
+        </div>
+        <div class="deck-arrow">›</div>
+    </div>
+
+    <div class="deck-item" onclick="iniciarMazo('tecnologia')">
+        <div class="deck-icon">💻</div>
+        <div class="deck-info">
+            <h4>Tecnología</h4>
+            <p id="deck-info-tecnologia">Cargando...</p>
+            <div class="dom-bar"><div class="dom-fill" id="dom-tecnologia" style="width:0%"></div></div>
+        </div>
+        <div class="deck-arrow">›</div>
+    </div>
+
+    <div class="deck-item" onclick="iniciarMazo('capitales')">
+        <div class="deck-icon">✈️</div>
+        <div class="deck-info">
+            <h4>Capitales</h4>
+            <p id="deck-info-capitales">Cargando...</p>
+            <div class="dom-bar"><div class="dom-fill" id="dom-capitales" style="width:0%"></div></div>
+        </div>
+        <div class="deck-arrow">›</div>
+    </div>
+
+    <div class="deck-item" onclick="iniciarMazo('mitologia')">
+        <div class="deck-icon">🏛️</div>
+        <div class="deck-info">
+            <h4>Mitología</h4>
+            <p id="deck-info-mitologia">Cargando...</p>
+            <div class="dom-bar"><div class="dom-fill" id="dom-mitologia" style="width:0%"></div></div>
+        </div>
+        <div class="deck-arrow">›</div>
+    </div>
+
+    <div class="deck-item" onclick="iniciarMazo('deporte')">
+        <div class="deck-icon">🏆</div>
+        <div class="deck-info">
+            <h4>Deporte</h4>
+            <p id="deck-info-deporte">Cargando...</p>
+            <div class="dom-bar"><div class="dom-fill" id="dom-deporte" style="width:0%"></div></div>
+        </div>
+        <div class="deck-arrow">›</div>
+    </div>
+
+    <div class="deck-item" onclick="iniciarMazoCustom()">
+        <div class="deck-icon">⭐</div>
+        <div class="deck-info">
+            <h4>Mis mazos</h4>
+            <p id="deck-info-custom">Tus propias tarjetas</p>
+        </div>
+        <div class="deck-arrow">›</div>
+    </div>
+</div>
+
+<div style="display:flex;justify-content:flex-end;margin:14px 0 0;">
+    <button onclick="goTo('dashboard')" style="background:var(--card2);border:1px solid var(--gold);border-radius:20px;padding:7px 16px;font-size:0.76rem;color:var(--gold);cursor:pointer;font-weight:700;display:flex;align-items:center;gap:6px;box-shadow:0 0 16px var(--gold-dim);">Mi progreso</button>
+</div>
+
+<div class="section-label">Herramientas</div>
+<div class="deck-list">
+    <div class="deck-item" onclick="goTo('dificiles')">
+        <div class="deck-icon">🔴</div>
+        <div class="deck-info">
+            <h4>Palabras Difíciles</h4>
+            <p id="dif-home-count">Las que más te cuestan</p>
+        </div>
+        <div class="deck-arrow">›</div>
+    </div>
+    <div class="deck-item" onclick="estudiarSoloDificiles()">
+        <div class="deck-icon">🎯</div>
+        <div class="deck-info">
+            <h4>Estudiar Solo Difíciles</h4>
+            <p>Ataca tus puntos débiles</p>
+        </div>
+        <div class="deck-arrow">›</div>
+    </div>
+    <div class="deck-item" onclick="goTo('creator')">
+        <div class="deck-icon">✏️</div>
+        <div class="deck-info">
+            <h4>Crear / Importar Mazos</h4>
+            <p>Añade tus propias preguntas</p>
+        </div>
+        <div class="deck-arrow">›</div>
+    </div>
+</div>
+
+<div class="section-label">Generador IA</div>
+<div class="ai-strip" onclick="showAIModal()">
+    <div class="ai-robot">🤖</div>
+    <div class="ai-btn-text">
+        <h3>¿Más preguntas?</h3>
+        <p>El desarrollador las genera por ti</p>
+    </div>
+</div>
+
+<div class="footer-links">
+    <button onclick="showTermsAgain()">Términos y Condiciones</button>
 </div>
 
 <!-- ================================================================
@@ -1859,7 +1889,7 @@ MAZOS.push({
     {letra: "R", q: "Con la R: Movimiento que surge tras la Edad Media y recupera los valores de la Antigüedad clásica.", a: "renacimiento"},
     {letra: "S", q: "Con la S: Corriente que explora el mundo de los sueños y el automatismo psíquico.", a: "surrealismo"},
     {letra: "V", q: "Con la V: Piel de animal, generalmente ternera, muy fina y pulida que se usaba para manuscritos ilustrados.", a: "vellum"},
-    {q: "Contiene la W: Pintor impresionista estadounidense conocido por sus escenas marinas y su técnica de acuarela.", a: "Winslow", letra: "W"}
+    {q: "Contiene la W: Pintor impresionista estadounidense conocido por sus escenas marinas y su técnica de acuarela.", a: "Winslow", letra: "W"},
     {letra: "X", q: "Contiene la X: Tendencia que deforma la realidad para potenciar la expresión de la angustia y el sentimiento.", a: "expresionismo"},
     {letra: "Y", q: "Contiene la Y: Institución municipal de origen medieval encargada del gobierno de una villa o ciudad.", a: "ayuntamiento"},
     {letra: "Z", q: "Con la Z: Torre escalonada de base cuadrada típica de la arquitectura religiosa mesopotámica.", a: "zigurat"},
@@ -7632,7 +7662,7 @@ if (typeof MAZOS === 'undefined') { var MAZOS = []; }
 
 MAZOS.push({
   id: "ciencia", 
-  name: "Ciencia y Tecnología", 
+  name: "Ciencia", 
   icon: "🔬", 
   questions: [
     // ROSCO 1 - BIOLOGÍA Y CUERPO HUMANO
@@ -7716,33 +7746,7 @@ MAZOS.push({
     {q: "Contiene la Y: Unidad de información en computación que, por lo general, está compuesta por 8 bits.", a: "byte", letra: "Y"},
     {q: "Con la Z: Franja del firmamento por la que aparentemente transitan el Sol y los planetas, dividida en doce constelaciones.", a: "zodíaco", letra: "Z"},
 
-    // ROSCO 4 - NATURALEZA, ANIMALES Y BOTÁNICA
-    {q: "Con la A: Clase de vertebrados de sangre fría que pasan una fase de su vida en el agua respirando por branquias y otra en la tierra con pulmones.", a: "anfibios", letra: "A"},
-    {q: "Con la B: Rama de la biología que estudia las plantas.", a: "botánica", letra: "B"},
-    {q: "Con la C: Pigmento de color verde que se halla presente en las hojas y tallos de muchos vegetales.", a: "clorofila", letra: "C"},
-    {q: "Con la D: Animal que caza a otros de distinta especie para su subsistencia.", a: "depredador", letra: "D"},
-    {q: "Con la E: Comunidad de los seres vivos cuyos procesos vitales se relacionan entre sí y se desarrollan en función de los factores físicos de un mismo ambiente.", a: "ecosistema", letra: "E"},
-    {q: "Con la F: Resto o molde natural de un organismo de épocas geológicas pasadas, conservado en las rocas sedimentarias.", a: "fósil", letra: "F"},
-    {q: "Con la G: Planta cuyas semillas están al descubierto, no encerradas en el interior de un fruto, como los pinos.", a: "gimnosperma", letra: "G"},
-    {q: "Con la H: Medio ambiente físico o lugar adecuado para que vivan y se reproduzcan determinadas especies animales o vegetales.", a: "hábitat", letra: "H"},
-    {q: "Con la I: Animal que carece de columna vertebral o esqueleto interno articulado.", a: "invertebrado", letra: "I"},
-    {q: "Con la J: Pequeño pájaro cantor muy apreciado por su plumaje de colores y su canto melodioso.", a: "jilguero", letra: "J"},
-    {q: "Con la L: Organismo resultante de la simbiosis entre un hongo y un alga, que suele crecer en rocas y cortezas de árboles.", a: "liquen", letra: "L"},
-    {q: "Con la M: Clase de vertebrados de temperatura constante que, en su mayoría, se desarrollan dentro del claustro materno y alimentan a sus crías con leche.", a: "mamífero", letra: "M"},
-    {q: "Con la N: Líquido azucarado que producen ciertas glándulas de las flores y que atrae a los insectos polinizadores.", a: "néctar", letra: "N"},
-    {q: "Contiene la Ñ: Animal artrópodo con ocho patas que segrega un hilo sedoso con el que teje su tela.", a: "araña", letra: "Ñ"},
-    {q: "Con la O: Animal que se alimenta de toda clase de sustancias orgánicas, tanto vegetales como animales.", a: "omnívoro", letra: "O"},
-    {q: "Con la P: Conjunto de organismos microscópicos, tanto animales como vegetales, que flotan en aguas dulces y saladas.", a: "plancton", letra: "P"},
-    {q: "Con la Q: Hidrato de carbono que forma el caparazón de los artrópodos y la pared celular de los hongos.", a: "quitina", letra: "Q"},
-    {q: "Con la R: Clase de vertebrados de sangre fría que están recubiertos de escamas y, en su mayoría, se reproducen por huevos.", a: "reptil", letra: "R"},
-    {q: "Con la S: Asociación íntima de organismos de especies diferentes para beneficiarse mutuamente en su desarrollo vital.", a: "simbiosis", letra: "S"},
-    {q: "Con la T: Terreno abierto y llano, de clima subglacial y subsuelo helado, con vegetación de musgos y líquenes.", a: "tundra", letra: "T"},
-    {q: "Con la U: Animal mamífero que tiene las patas terminadas en pezuñas, como el caballo o el ciervo.", a: "ungulado", letra: "U"},
-    {q: "Con la V: Animal que tiene esqueleto con columna vertebral y cráneo.", a: "vertebrado", letra: "V"},
-    {q: "Con la X: Tejido vegetal leñoso de las plantas que transporta el agua y las sales minerales desde las raíces.", a: "xilema", letra: "X"},
-    {q: "Con la Y: Hembra del caballo.", a: "yegua", letra: "Y"},
-    {q: "Con la Z: Rama de la biología que se encarga del estudio de los animales.", a: "zoología", letra: "Z"},
-// ROSCO 5 - MEDICINA, ENFERMEDADES Y ANATOMÍA
+  // ROSCO 5 - MEDICINA, ENFERMEDADES Y ANATOMÍA
     {q: "Con la A: Enfermedad crónica del sistema respiratorio caracterizada por dificultad para respirar, tos y sensación de ahogo.", a: "asma", letra: "A"},
     {q: "Con la B: Inflamación de los conductos que llevan el aire a los pulmones, acompañada de tos y expectoración.", a: "bronquitis", letra: "B"},
     {q: "Con la C: Médico especialista en el estudio, diagnóstico y tratamiento de las enfermedades del corazón.", a: "cardiólogo", letra: "C"},
@@ -7796,61 +7800,7 @@ MAZOS.push({
     {q: "Contiene la Y: Apellido del científico español que, junto con Cajal, es el padre de la neurociencia moderna (Ramón ___ Cajal).", a: "y", letra: "Y"}, // Truco clásico de "contiene".
     {q: "Contiene la Z: Apellido del físico alemán que demostró la existencia de las ondas electromagnéticas, dando nombre a la unidad de frecuencia.", a: "Hertz", letra: "Z"},
 
-    // ROSCO 7 - ZOOLOGÍA, BOTÁNICA Y MEDIO AMBIENTE
-    {q: "Con la A: Invertebrado artrópodo con ocho patas y sin antenas, que pertenece a la familia de los arácnidos.", a: "araña", letra: "A"},
-    {q: "Con la B: Variedad y variabilidad de los seres vivos y de los ecosistemas en la Tierra.", a: "biodiversidad", letra: "B"},
-    {q: "Con la C: Animal que se alimenta fundamentalmente o exclusivamente de carne.", a: "carnívoro", letra: "C"},
-    {q: "Con la D: Destrucción indiscriminada de la cubierta forestal de un territorio, a menudo provocada por la acción humana.", a: "deforestación", letra: "D"},
-    {q: "Con la E: Ciencia que estudia las relaciones de los seres vivos entre sí y con su entorno.", a: "ecología", letra: "E"},
-    {q: "Con la F: Técnica de microfabricación basada en el uso de luz para transferir patrones a un sustrato.", a: "fotolitografía", letra: "F"},
-    {q: "Con la G: Mamífero felino considerado el animal terrestre más rápido del mundo.", a: "guepardo", letra: "G"},
-    {q: "Con la H: Animal que basa su dieta de forma exclusiva o principal en plantas, hierbas y vegetales.", a: "herbívoro", letra: "H"},
-    {q: "Con la I: Animal artrópodo que tiene el cuerpo dividido en cabeza, tórax y abdomen, tres pares de patas y, generalmente, alas.", a: "insecto", letra: "I"},
-    {q: "Con la J: Mamífero rumiante africano, el animal más alto del mundo gracias a su larguísimo cuello.", a: "jirafa", letra: "J"},
-    {q: "Con la L: Felino ibérico en peligro de extinción, caracterizado por sus orejas con pinceles de pelo negro.", a: "lince", letra: "L"},
-    {q: "Con la M: Cambio permanente en la secuencia de ADN que puede ser transmitido a la descendencia.", a: "mutación", letra: "M"},
-    {q: "Con la N: Unidad básica de empaquetamiento del ADN formada por ADN enrollado en histonas.", a: "nucleosoma", letra: "N"},
-    {q: "Con la Ñ: Ave no voladora, de gran tamaño y similar al avestruz, originaria de Sudamérica.", a: "ñandú", letra: "Ñ"},
-    {q: "Con la O: Gas compuesto por tres átomos de oxígeno cuya capa en la estratosfera nos protege de la radiación ultravioleta.", a: "ozono", letra: "O"},
-    {q: "Con la P: Proceso mediante el cual el polen se transfiere desde el estambre hasta el estigma de las flores.", a: "polinización", letra: "P"},
-    {q: "Contiene la Q: Partícula hipotética que se desplazaría a velocidad superior a la de la luz.", a: "taquión", letra: "Q"}, // Error, Tundra no tiene Q. Let's fix.
-    {q: "Con la Q: Sustancia dura que forma el exoesqueleto de los insectos y crustáceos.", a: "quitina", letra: "Q"},
-    {q: "Con la R: Proceso de recolección y transformación de materiales usados para convertirlos en nuevos productos.", a: "reciclaje", letra: "R"},
-    {q: "Con la S: Ecosistema tropical o subtropical caracterizado por una llanura cubierta de hierba con árboles dispersos, como en África.", a: "sabana", letra: "S"},
-    {q: "Con la T: Ciencia que se encarga de dar nombre, describir y clasificar a los seres vivos.", a: "taxonomía", letra: "T"},
-    {q: "Con la U: Pájaro de la familia de los córvidos, de plumaje negro y blanco, conocido por su costumbre de esconder objetos brillantes.", a: "urraca", letra: "U"},
-    {q: "Con la V: Conjunto de virus presentes en un organismo o ecosistema.", a: "viroma", letra: "V"},
-    {q: "Contiene la X: Desaparición definitiva de todos los miembros de una especie o familia de seres vivos.", a: "extinción", letra: "X"},
-    {q: "Con la Y: Arbusto de América tropical cuya raíz tuberosa es rica en almidón y muy consumida en la gastronomía (También llamada mandioca).", a: "yuca", letra: "Y"},
-    {q: "Con la Z: Dicho de un diodo: destinado a trabajar en la región de ruptura para estabilizar tensión.", a: "zener", letra: "Z"},
-
-    // ROSCO 8 - TECNOLOGÍA, INFORMÁTICA Y FÍSICA APLICADA
-    {q: "Con la A: Conjunto de instrucciones matemáticas definidas y ordenadas que permiten resolver un problema informático o tomar una decisión.", a: "algoritmo", letra: "A"},
-    {q: "Con la B: Protocolo de comunicaciones inalámbricas a corta distancia utilizado en móviles y auriculares.", a: "bluetooth", letra: "B"},
-    {q: "Con la C: Pequeña pieza de material semiconductor que contiene múltiples circuitos integrados (También llamado microprocesador).", a: "chip", letra: "C"},
-    {q: "Con la D: Vehículo aéreo no tripulado, que se controla a distancia o de forma autónoma mediante software.", a: "dron", letra: "D"},
-    {q: "Con la E: Forma de energía que produce efectos luminosos, mecánicos o caloríficos, debida a la separación o movimiento de los electrones.", a: "electricidad", letra: "E"},
-    {q: "Con la F: Filamento de vidrio o plástico muy fino que se emplea para transmitir datos a gran velocidad mediante pulsos de luz (___ óptica).", a: "fibra", letra: "F"},
-    {q: "Con la G: Unidad de medida de almacenamiento de información informática que equivale a 1024 megabytes.", a: "gigabyte", letra: "G"},
-    {q: "Con la H: Formación y maduración de las células sanguíneas.", a: "hematopoyesis", letra: "H"},
-    {q: "Con la I: Disciplina informática encargada de crear sistemas capaces de aprender, razonar y resolver problemas como humanos (___ artificial).", a: "inteligencia", letra: "I"},
-    {q: "Con la J: Lenguaje de programación muy popular, creado por Sun Microsystems, cuyo logotipo es una taza de café humeante.", a: "Java", letra: "J"},
-    {q: "Con la L: Retardo entre una solicitud y su respuesta en un sistema.", a: "latencia", letra: "L"},
-    {q: "Con la M: Software malicioso diseñado para infiltrarse en un sistema informático y dañarlo o robar datos.", a: "malware", letra: "M"},
-    {q: "Con la N: Tecnología que se dedica al diseño y manipulación de la materia a escala atómica y molecular.", a: "nanotecnología", letra: "N"},
-    {q: "Contiene la Ñ: Palabra, frase o código secreto que sirve para proteger el acceso a un ordenador, móvil o cuenta web.", a: "contraseña", letra: "Ñ"},
-    {q: "Con la O: Rama de la física que estudia las propiedades de la luz y su interacción con la materia.", a: "óptica", letra: "O"},
-    {q: "Con la P: Punto de la órbita de un astro en el que está más próximo al Sol.", a: "perihelio", letra: "P"},
-    {q: "Con la Q: Unidad básica de información cuántica.", a: "qubit", letra: "Q"}, // Error: "Física cuántica" uses C. Let's fix -> Con la Q: Partícula elemental indivisible que compone los protones y neutrones. -> quark
-    {q: "Con la Q: Partícula elemental indivisible en la física estándar que, al unirse, forma protones y neutrones.", a: "quark", letra: "Q"},
-    {q: "Con la R: Dispositivo de red informático que envía o 'enruta' los paquetes de datos entre nuestra casa e internet.", a: "router", letra: "R"},
-    {q: "Con la S: Conjunto de programas, aplicaciones y sistemas operativos que permiten que un ordenador funcione (Parte no física).", a: "software", letra: "S"},
-    {q: "Con la T: Componente electrónico clave que revolucionó la tecnología en el siglo XX, usado para amplificar o cambiar señales eléctricas y de potencia.", a: "transistor", letra: "T"},
-    {q: "Con la U: Tipo de conexión estándar y puerto muy común usado para conectar ratones, teclados y memorias al ordenador (Siglas).", a: "USB", letra: "U"},
-    {q: "Con la V: Estado de un espacio donde no hay materia, absolutamente nada.", a: "vacío", letra: "V"},
-    {q: "Contiene la X: Acción de enlazar o vincular dos dispositivos a internet, o un ordenador a una red.", a: "conexión", letra: "X"},
-    {q: "Contiene la Y: Unidad de medida de almacenamiento de datos en informática que equivale a un billón de terabytes (Empieza por Y).", a: "yottabyte", letra: "Y"},
-    {q: "Con la Z: Pieza de plástico cuadrada en la placa base de un ordenador donde se encaja o conecta el microprocesador.", a: "zócalo", letra: "Z"},
+        
 // ROSCO 9 - QUÍMICA, FÍSICA Y MATERIALES (NIVEL BOTE)
     {q: "Con la A: Mezcla sólida homogénea de dos o más metales, o de uno o más metales con algunos elementos no metálicos.", a: "aleación", letra: "A"},
     {q: "Con la B: Elemento químico metaloide de número atómico 5, muy usado para fabricar vidrio resistente al calor y esmaltes.", a: "boro", letra: "B"},
@@ -7910,7 +7860,7 @@ MAZOS.push({
     {q: "Con la A: Capa gaseosa y envolvente que rodea un planeta o cuerpo celeste.", a: "atmósfera", letra: "A"},
     {q: "Con la B: Roca ígnea volcánica de color oscuro o negro, la más abundante en la corteza oceánica de la Tierra.", a: "basalto", letra: "B"},
     {q: "Con la C: Agrupación convencional de estrellas que forma figuras imaginarias en el cielo nocturno.", a: "constelación", letra: "C"},
-    {q: "Con la D: Teoría geológica que explica el desplazamiento lento y continuo de las masas continentales de la Tierra (___ continental).", a: "deriva", letra: "D"},
+    {q: "Con la D: Teoría geológica que explica el desplazamiento lento y continuo de las masas continentales de la Tierra.", a: "deriva", letra: "D"},
     {q: "Con la E: Capa de la atmósfera terrestre que se encuentra por encima de la troposfera y en la cual se localiza la vital capa de ozono.", a: "estratosfera", letra: "E"},
     {q: "Con la F: Fractura geológica de la corteza terrestre en la que se produce el desplazamiento de un bloque rocoso respecto a otro.", a: "falla", letra: "F"},
     {q: "Con la G: Tipo de fuente termal volcánica que expulsa periódicamente columnas de agua caliente y vapor al aire.", a: "géiser", letra: "G"},
@@ -7920,7 +7870,7 @@ MAZOS.push({
     {q: "Con la L: Capa sólida superficial de la Tierra, formada por la corteza terrestre y la parte más externa del manto.", a: "litosfera", letra: "L"},
     {q: "Con la M: Proteína muscular que almacena oxígeno.", a: "mioglobina", letra: "M"},
     {q: "Con la N: Explosión termonuclear estelar que causa un aumento súbito y espectacular del brillo de la estrella.", a: "nova", letra: "N"},
-    {q: "Contiene la Ñ: Fenómeno climático global originado en el océano Pacífico que provoca alteraciones extremas de temperatura (El ___).", a: "Niño", letra: "Ñ"},
+    {q: "Contiene la Ñ: Fenómeno climático global originado en el océano Pacífico que provoca alteraciones extremas de temperatura.", a: "Niño", letra: "Ñ"},
     {q: "Con la O: Proceso geológico por el cual la corteza terrestre se pliega y deforma, dando lugar a la formación de montañas.", a: "orogénesis", letra: "O"},
     {q: "Con la P: Supercontinente primitivo que existió al final de la era Paleozoica y agrupaba la mayor parte de las tierras emergidas.", a: "Pangea", letra: "P"},
     {q: "Contiene la Q: Momento del año en que el Sol incide directamente sobre el ecuador y el día tiene la misma duración que la noche.", a: "equinoccio", letra: "Q"},
@@ -7933,32 +7883,7 @@ MAZOS.push({
     {q: "Con la Y: Concentración natural de minerales o fósiles explotable.", a: "yacimiento", letra: "Y"},
     {q: "Con la Z: Variedad del mineral corindón, una de las cuatro grandes gemas, famosa por su espectacular color azul.", a: "zafiro", letra: "Z"},
 
-    // ROSCO 12 - INFORMÁTICA Y TECNOLOGÍA (NIVEL GEEK)
-    {q: "Con la A: Programa informático diseñado para detectar, bloquear y eliminar software malicioso de un sistema.", a: "antivirus", letra: "A"},
-    {q: "Con la B: Acrónimo de 'Binary Digit', es la unidad mínima de información en la computación y las comunicaciones digitales.", a: "bit", letra: "B"},
-    {q: "Con la C: Técnica de escribir con procedimientos o claves secretas, usada para proteger los mensajes y contraseñas en internet.", a: "criptografía", letra: "C"},
-    {q: "Con la D: Prolongación neuronal que recibe señales sinápticas.", a: "dendrita", letra: "D"},
-    {q: "Con la E: Proceso de ocultar datos o información de un archivo alterándolos mediante una clave algorítmica.", a: "encriptación", letra: "E"},
-    {q: "Con la F: Sistema de seguridad de una red, también llamado cortafuegos, que bloquea el tráfico de datos no autorizado.", a: "firewall", letra: "F"},
-    {q: "Con la G: Siglas del Sistema de Posicionamiento Global mediante satélites que permite la navegación y geolocalización.", a: "GPS", letra: "G"},
-    {q: "Con la H: Término inglés para referirse a una persona con altos conocimientos informáticos que detecta e investiga fallos de seguridad.", a: "hacker", letra: "H"},
-    {q: "Con la I: Siglas de 'Internet Protocol', el código numérico único que identifica a un dispositivo conectado a una red.", a: "IP", letra: "I"},
-    {q: "Con la J: Palanca de mando utilizada originalmente en la aviación y hoy en día imprescindible como periférico para videojuegos.", a: "joystick", letra: "J"},
-    {q: "Con la L: Sistema operativo libre y de código abierto desarrollado originalmente por Torvalds, cuyo emblema es un pingüino.", a: "Linux", letra: "L"},
-    {q: "Con la M: Dispositivo que modula y demodula las señales analógicas a digitales, permitiendo a un ordenador conectarse a internet.", a: "módem", letra: "M"},
-    {q: "Con la N: Oxidación biológica del amonio a nitrito y nitrato.", a: "nitrificación", letra: "N"},
-    {q: "Con la O: Conjunto de técnicas, aplicaciones y herramientas informáticas que se utilizan en funciones de oficina para optimizar tareas.", a: "ofimática", letra: "O"},
-    {q: "Con la P: Microchip principal y cerebro de un ordenador, encargado de ejecutar las instrucciones de los programas (Micro___).", a: "procesador", letra: "P"},
-    {q: "Con la Q: Nombre que recibe el modelo de teclado más común en occidente, formado por las primeras seis letras de su fila superior.", a: "QWERTY", letra: "Q"},
-    {q: "Con la R: Memoria principal y volátil de un ordenador donde residen temporalmente los programas y datos en ejecución (Siglas).", a: "RAM", letra: "R"},
-    {q: "Con la S: Hormona del crecimiento secretada por la hipófisis anterior.", a: "somatotropina", letra: "S"},
-    {q: "Con la T: Tipo de software malicioso o virus que se presenta al usuario como un programa inofensivo y legítimo para poder instalarse (Caballo de ___).", a: "troyano", letra: "T"},
-    {q: "Con la U: Siglas en inglés de 'Localizador Uniforme de Recursos', la dirección específica que se escribe en el navegador web.", a: "URL", letra: "U"},
-    {q: "Con la V: Entorno de escenas u objetos simulados de apariencia real, creado por tecnología informática para gafas o cascos (Realidad ___).", a: "virtual", letra: "V"},
-    {q: "Contiene la X: Lenguaje de marcas utilizado en la web para estructurar y transferir datos, primo hermano del HTML, pero más estricto (Siglas).", a: "XML", letra: "X"},
-    {q: "Con la Y: La plataforma web de alojamiento y transmisión de videos más popular del mundo, propiedad de Google.", a: "YouTube", letra: "Y"},
-    {q: "Con la Z: Formato de compresión de archivos digitales muy popular, cuyo nombre significa en inglés 'cremallera'.", a: "zip", letra: "Z"},
-// ROSCO 13 - MEZCLADILLO CIENTÍFICO I
+    // ROSCO 13 - MEZCLADILLO CIENTÍFICO I
     {q: "Con la A: Rama de la física que estudia las propiedades y el comportamiento de los astros.", a: "astrofísica", letra: "A"},
     {q: "Con la B: Aparato capaz de acumular energía eléctrica y suministrarla, muy común en móviles y coches.", a: "batería", letra: "B"},
     {q: "Con la C: Cada uno de los pequeños cuerpos en forma de bastoncillo en que se organiza la cromatina del núcleo celular durante la división celular.", a: "cromosoma", letra: "C"},
@@ -8069,32 +7994,6 @@ MAZOS.push({
     {q: "Contiene la X: Parte del cuerpo humano debajo de la unión del brazo con el tronco, donde se encuentran los ganglios linfáticos.", a: "axila", letra: "X"},
     {q: "Con la Y: Vena principal, situada a cada lado del cuello, que recoge la sangre de la cabeza y el cerebro.", a: "yugular", letra: "Y"},
     {q: "Con la Z: Marsupial omnívoro nativo de América, de hocico puntiagudo y cola prensil, famoso por hacerse el muerto.", a: "zarigüeya", letra: "Z"},
-// ROSCO 17 - BOTÁNICA Y VEGETACIÓN ALTA DIFICULTAD
-    {q: "Con la A: Organismo acuático, unicelular o pluricelular, que realiza la fotosíntesis y carece de verdaderas raíces o tallos.", a: "alga", letra: "A"},
-    {q: "Con la B: Órgano vegetal subterráneo que almacena nutrientes, formado por hojas carnosas, como el de la cebolla o el tulipán.", a: "bulbo", letra: "B"},
-    {q: "Con la C: Orgánulo de las células vegetales donde se encuentra la clorofila y se realiza la fotosíntesis.", a: "cloroplasto", letra: "C"},
-    {q: "Con la D: Clase de plantas angiospermas cuyos embriones tienen dos cotiledones.", a: "dicotiledónea", letra: "D"},
-    {q: "Con la E: Órgano reproductor masculino de la flor, formado por el filamento y la antera, donde se produce el polen.", a: "estambre", letra: "E"},
-    {q: "Con la F: Órgano de las plantas angiospermas que contiene las semillas y que se desarrolla a partir del ovario fecundado.", a: "fruto", letra: "F"},
-    {q: "Con la G: Planta cuyas semillas están al descubierto, como ocurre en los pinos y abetos.", a: "gimnosperma", letra: "G"},
-    {q: "Con la H: Planta vascular sin semillas que se reproduce mediante esporas, muy común en zonas húmedas.", a: "helecho", letra: "H"},
-    {q: "Con la I: Fragmento de una planta que se une a otra para que crezcan juntas como un solo organismo.", a: "injerto", letra: "I"},
-    {q: "Con la J: Planta herbácea de tallos rectos y flexibles que crece en lugares húmedos, muy usada en cestería.", a: "junco", letra: "J"},
-    {q: "Con la L: Familia de plantas angiospermas cuyos frutos son vainas que albergan semillas, como las lentejas o los garbanzos.", a: "leguminosa", letra: "L"},
-    {q: "Con la M: Conjunto de filamentos o hifas que forman la parte vegetativa del cuerpo de un hongo.", a: "micelio", letra: "M"},
-    {q: "Con la N: Zona engrosada del tallo de una planta de la cual nacen las hojas y las ramas.", a: "nudo", letra: "N"},
-    {q: "Contiene la Ñ: Árbol caducifolio de la familia de las fagáceas cuyo fruto comestible está protegido por una cúpula espinosa.", a: "castaño", letra: "Ñ"},
-    {q: "Con la O: Parte inferior y abultada del pistilo de la flor, que contiene los óvulos.", a: "ovario", letra: "O"},
-    {q: "Con la P: Órgano reproductor femenino de la flor, que suele tener forma de botella y está situado en su centro.", a: "pistilo", letra: "P"},
-    {q: "Con la Q: Género de árboles de madera dura al que pertenecen especies como el roble, la encina o el alcornoque.", a: "Quercus", letra: "Q"},
-    {q: "Con la R: Tallo subterráneo horizontal de algunas plantas que crece emitiendo raíces y brotes herbáceos, como el jengibre.", a: "rizoma", letra: "R"},
-    {q: "Con la S: Líquido que circula por los vasos conductores de las plantas transportando agua y nutrientes.", a: "savia", letra: "S"},
-    {q: "Con la T: Tallo subterráneo engrosado en el que la planta almacena nutrientes de reserva, como la patata.", a: "tubérculo", letra: "T"},
-    {q: "Con la U: Tipo de inflorescencia en la que todos los pedicelos florales parten de un mismo punto, recordando a un paraguas.", a: "umbela", letra: "U"},
-    {q: "Con la V: Orgánulo celular, muy grande en las células vegetales, que almacena agua, sales y otras sustancias.", a: "vacuola", letra: "V"},
-    {q: "Con la X: Tejido vegetal leñoso que transporta la savia bruta (agua y minerales) desde las raíces hasta las hojas.", a: "xilema", letra: "X"},
-    {q: "Con la Y: Brote embrionario de un vegetal del que nacerán nuevas hojas, flores o ramas.", a: "yema", letra: "Y"},
-    {q: "Con la Z: Órgano trepador de algunas plantas, en forma de hilo que se enrosca alrededor de un soporte para sostenerse.", a: "zarcillo", letra: "Z"},
 
     // ROSCO 18 - QUÍMICA DE LABORATORIO Y TABLA PERIÓDICA
     {q: "Con la A: Grupo de metales de la tabla periódica muy reactivos, como el litio, el sodio y el potasio.", a: "alcalinos", letra: "A"},
@@ -8109,14 +8008,14 @@ MAZOS.push({
     {q: "Con la J: Sal soluble en agua resultante de la reacción química de saponificación entre una grasa y un álcali, usada para lavar.", a: "jabón", letra: "J"},
     {q: "Con la L: Grupo de elementos químicos de tierras raras situados en la parte inferior de la tabla periódica junto a los actínidos.", a: "lantánidos", letra: "L"},
     {q: "Con la M: Elemento químico que posee propiedades intermedias entre los metales y los no metales, como el silicio.", a: "metaloide", letra: "M"},
-    {q: "Con la N: Identificador principal de un elemento químico que indica el número de protones en el núcleo de sus átomos (___ atómico).", a: "número", letra: "N"},
+    {q: "Con la N: Identificador principal de un elemento químico que indica el número de protones en el núcleo de sus átomos.", a: "número", letra: "N"},
     {q: "Contiene la Ñ: Metal de transición de símbolo Sn, que aleado con el cobre forma el bronce.", a: "estaño", letra: "Ñ"},
-    {q: "Con la O: Número que indica la cantidad de electrones que un átomo cede, gana o comparte cuando forma un compuesto (Estado de ___).", a: "oxidación", letra: "O"},
+    {q: "Con la O: Número que indica la cantidad de electrones que un átomo cede, gana o comparte cuando forma un compuesto ", a: "oxidación", letra: "O"},
     {q: "Con la P: Macromolécula formada por la unión repetitiva de moléculas más pequeñas llamadas monómeros, como los plásticos.", a: "polímero", letra: "P"},
     {q: "Con la Q: Ciencia que estudia la composición, estructura y propiedades de la materia y de sus transformaciones.", a: "química", letra: "Q"},
     {q: "Con la R: Elemento químico sumamente inestable descubierto por Marie Curie, de símbolo Ra.", a: "radio", letra: "R"},
     {q: "Con la S: Metal alcalino de símbolo Na, esencial para la vida y componente principal de la sal de mesa.", a: "sodio", letra: "S"},
-    {q: "Con la T: Disposición de los elementos químicos ordenados por su número atómico y configuración electrónica (___ periódica).", a: "tabla", letra: "T"},
+    {q: "Con la T: Disposición de los elementos químicos ordenados por su número atómico y configuración electrónica.", a: "tabla", letra: "T"},
     {q: "Con la U: El elemento químico más pesado que se encuentra en la naturaleza, fundamental en la energía nuclear.", a: "uranio", letra: "U"},
     {q: "Con la V: Número de electrones que tiene un átomo en su último nivel de energía, fundamentales para formar enlaces químicos.", a: "valencia", letra: "V"},
     {q: "Con la X: Gas noble de número atómico 54, incoloro e inodoro, usado en la fabricación de lámparas destellantes.", a: "xenón", letra: "X"},
@@ -8134,7 +8033,7 @@ MAZOS.push({
     {q: "Con la H: Unidad de frecuencia del Sistema Internacional que equivale a un ciclo por segundo.", a: "hercio", letra: "H"},
     {q: "Con la I: Propiedad física de los cuerpos de mantener su estado de reposo o de movimiento si no interviene una fuerza.", a: "inercia", letra: "I"},
     {q: "Con la J: Unidad del Sistema Internacional equivalente al trabajo que produce una fuerza de un newton cuyo punto de aplicación se desplaza un metro.", a: "julio", letra: "J"},
-    {q: "Con la L: Unidad del Sistema Internacional empleada para medir la intensidad luminosa (Candela o ___). Falso, es Candela. (Pregunta sustituta) Pieza de vidrio curvado que refracta la luz, usada en gafas y telescopios.", a: "lente", letra: "L"},
+    {q: "Con la L: Pieza de vidrio curvado que refracta la luz, usada en gafas y telescopios.", a: "lente", letra: "L"},
     {q: "Con la M: Cantidad de materia que posee un cuerpo, invariable independientemente de la gravedad.", a: "masa", letra: "M"},
     {q: "Con la N: Unidad de fuerza del Sistema Internacional, nombrada en honor al descubridor de la gravedad.", a: "newton", letra: "N"},
     {q: "Contiene la Ñ: Máquina simple consistente en una pieza de madera o metal terminada en ángulo agudo, utilizada para hender cuerpos sólidos.", a: "cuña", letra: "Ñ"},
@@ -8176,33 +8075,6 @@ MAZOS.push({
     {q: "Contiene la X: Prolongación filiforme y larga de la neurona a través de la cual se transmite el impulso nervioso.", a: "axón", letra: "X"},
     {q: "Con la Y: Vena principal del cuello que recoge la sangre del cerebro, la cara y el cuello para devolverla al corazón.", a: "yugular", letra: "Y"},
     {q: "Con la Z: Conjunto de diminutos organismos animales que flotan a la deriva en las aguas marinas y dulces, base de la red trófica.", a: "zooplancton", letra: "Z"},
-// ROSCO 21 - INVENTOS Y CURIOSIDADES (VERSIÓN RÁPIDA)
-    {q: "Con la A: Medicamento analgésico derivado de la corteza del sauce.", a: "aspirina", letra: "A"},
-    {q: "Con la B: Sistema de lectura y escritura táctil para personas ciegas.", a: "braille", letra: "B"},
-    {q: "Con la C: Temperatura teórica más baja posible, el ___ absoluto.", a: "cero", letra: "C"},
-    {q: "Con la D: Potente explosivo inventado por Alfred Nobel.", a: "dinamita", letra: "D"},
-    {q: "Con la E: Instrumento médico usado para auscultar el pecho, inventado por Laennec.", a: "estetoscopio", letra: "E"},
-    {q: "Con la F: Elemento químico descubierto al hervir orina humana para buscar oro.", a: "fósforo", letra: "F"},
-    {q: "Con la G: Animal protagonista del famoso experimento cuántico de Schrödinger.", a: "gato", letra: "G"},
-    {q: "Con la H: Surcos en las yemas de los dedos, únicos en cada persona (___ dactilares).", a: "huellas", letra: "H"},
-    {q: "Con la I: Hormona vital para diabéticos descubierta por Banting y Best.", a: "insulina", letra: "I"},
-    {q: "Con la J: Instrumento médico desechable inventado por el español Manuel Jalón.", a: "jeringuilla", letra: "J"},
-    {q: "Con la L: Radiación que viaja a casi 300.000 kilómetros por segundo.", a: "luz", letra: "L"},
-    {q: "Con la M: Electrodoméstico inventado por accidente al derretirse un chocolate en un laboratorio.", a: "microondas", letra: "M"},
-    {q: "Con la N: Primer polímero sintético que revolucionó el mercado textil y de medias.", a: "nailon", letra: "N"},
-    {q: "Contiene la Ñ: Artrópodo que teje una red de seda extremadamente resistente.", a: "araña", letra: "Ñ"},
-    {q: "Con la O: Mamífero australiano con pico de pato que pone huevos.", a: "ornitorrinco", letra: "O"},
-    {q: "Con la P: Primer antibiótico, descubierto por Alexander Fleming gracias a un hongo.", a: "penicilina", letra: "P"},
-    {q: "Con la Q: Disciplina científica por la que Marie Curie ganó su segundo premio Nobel.", a: "química", letra: "Q"},
-    {q: "Con la R: Descomposición química causada por radiación ionizante.", a: "radiólisis", letra: "R"}, // Wait, the answer is X, starts with R? Let's fix this internally!
-    {q: "Con la R: Radiación descubierta por Roentgen capaz de atravesar cuerpos opacos (___ X).", a: "rayos", letra: "R"},
-    {q: "Con la S: Fase del descanso humano en la que ocurren los sueños más vívidos (Fase de ___).", a: "sueño", letra: "S"},
-    {q: "Con la T: Plástico antiadherente descubierto por accidente, muy usado en sartenes.", a: "teflón", letra: "T"},
-    {q: "Con la U: Conjunto de toda la materia y energía que está en constante expansión.", a: "universo", letra: "U"},
-    {q: "Con la V: Sistema de cierre con ganchos inspirado en los cardos del campo.", a: "velcro", letra: "V"},
-    {q: "Contiene la X: Gas vital para la respiración humana y la combustión.", a: "oxígeno", letra: "X"},
-    {q: "Con la Y: Elemento halógeno descubierto al limpiar algas marinas con ácido.", a: "yodo", letra: "Y"},
-    {q: "Con la Z: Persona que tiene tendencia natural a usar el lado izquierdo de su cuerpo.", a: "zurdo", letra: "Z"},
 
     // ROSCO 22 - EL CUERPO HUMANO AL LÍMITE (VERSIÓN RÁPIDA)
     {q: "Con la A: Órgano intestinal pequeño que sirve de refugio a bacterias beneficiosas.", a: "apéndice", letra: "A"},
@@ -8213,8 +8085,8 @@ MAZOS.push({
     {q: "Con la F: El hueso más largo y fuerte del esqueleto humano, en el muslo.", a: "fémur", letra: "F"},
     {q: "Con la G: El músculo más grande y voluminoso del cuerpo humano.", a: "glúteo", letra: "G"},
     {q: "Con la H: Único órgano interno capaz de regenerarse por completo tras una amputación.", a: "hígado", letra: "H"},
-    {q: "Con la I: Órgano digestivo tubular que puede llegar a medir hasta 7 metros (___ delgado).", a: "intestino", letra: "I"},
-    {q: "Con la J: Ácido del estómago tan potente que podría disolver metales (___ gástrico).", a: "jugo", letra: "J"},
+    {q: "Con la I: Órgano digestivo tubular que puede llegar a medir hasta 7 metros).", a: "intestino", letra: "I"},
+    {q: "Con la J: Ácido del estómago tan potente que podría disolver metales.", a: "jugo", letra: "J"},
     {q: "Con la L: Órgano muscular de la boca cuya huella es única en cada persona.", a: "lengua", letra: "L"},
     {q: "Con la M: El músculo más fuerte del cuerpo humano en relación a su tamaño.", a: "masetero", letra: "M"},
     {q: "Con la N: Órgano del olfato capaz de recordar hasta 50.000 olores diferentes.", a: "nariz", letra: "N"},
@@ -8231,34 +8103,7 @@ MAZOS.push({
     {q: "Con la Y: Parte media del intestino delgado situada entre el duodeno y el íleon.", a: "yeyuno", letra: "Y"},
     {q: "Contiene la Z: Órgano central que puede seguir latiendo fuera del cuerpo si tiene oxígeno.", a: "corazón", letra: "Z"},
 
-    // ROSCO 23 - ANIMALES Y RÉCORDS (VERSIÓN RÁPIDA)
-    {q: "Con la A: Anfibio endémico de México capaz de regenerar su cerebro y corazón.", a: "ajolote", letra: "A"},
-    {q: "Con la B: El animal más grande que ha existido jamás en la Tierra (___ azul).", a: "ballena", letra: "B"},
-    {q: "Con la C: Único pájaro del mundo capaz de volar hacia atrás.", a: "colibrí", letra: "C"},
-    {q: "Con la D: Famosa ave no voladora extinguida en la isla Mauricio en el siglo XVII.", a: "dodo", letra: "D"},
-    {q: "Con la E: Sistema de radar biológico que usan los murciélagos para orientarse.", a: "ecolocalización", letra: "E"},
-    {q: "Con la F: Ave zancuda que nace blanca y se vuelve rosa por su dieta.", a: "flamenco", letra: "F"},
-    {q: "Con la G: El animal terrestre más rápido del mundo. Curiosamente, no ruge, maúlla.", a: "guepardo", letra: "G"},
-    {q: "Con la H: Mamífero africano que segrega un sudor rojo como protector solar.", a: "hipopótamo", letra: "H"},
-    {q: "Con la I: Artrópodo con seis patas famoso por su gran camuflaje (___ palo).", a: "insecto", letra: "I"},
-    {q: "Con la J: Coeficiente de similitud entre conjuntos, usado en análisis de datos.", a: "jaccard", letra: "J"},
-    {q: "Con la L: Insecto coleóptero nocturno que emite luz intermitente por el abdomen.", a: "luciérnaga", letra: "L"},
-    {q: "Con la M: El único mamífero del mundo capaz de volar.", a: "murciélago", letra: "M"},
-    {q: "Con la N: Cetáceo ártico con un larguísimo colmillo frontal parecido a un unicornio.", a: "narval", letra: "N"},
-    {q: "Contiene la Ñ: Ave no voladora sudamericana, la más rápida de su continente.", a: "ñandú", letra: "Ñ"},
-    {q: "Con la O: Animal microscópico casi indestructible, el tardígrado (___ de agua).", a: "oso", letra: "O"},
-    {q: "Con la P: Mamífero arborícola sudamericano de metabolismo extremadamente lento.", a: "perezoso", letra: "P"},
-    {q: "Con la Q: Pequeño marsupial australiano conocido como 'el animal más feliz del mundo'.", a: "quokka", letra: "Q"},
-    {q: "Con la R: Mamífero africano muy territorial con gruesos cuernos de queratina.", a: "rinoceronte", letra: "R"},
-    {q: "Con la S: Pequeño mamífero africano que adopta postura de centinela sobre dos patas.", a: "suricata", letra: "S"},
-    {q: "Con la T: Microanimal extremófilo famoso por su resistencia, llamado oso de agua.", a: "tardígrado", letra: "T"},
-    {q: "Con la U: Ave de plumaje blanco y negro capaz de reconocerse en un espejo.", a: "urraca", letra: "U"},
-    {q: "Con la V: Sustancia tóxica inyectada por animales como serpientes o escorpiones.", a: "veneno", letra: "V"},
-    {q: "Contiene la X: Sustancia química venenosa producida por organismos vivos.", a: "toxina", letra: "X"},
-    {q: "Con la Y: Nombre de la hembra del caballo.", a: "yegua", letra: "Y"},
-    {q: "Contiene la Z: Marsupial americano famoso por hacerse el muerto ante el peligro.", a: "zarigüeya", letra: "Z"},
-
-    // ROSCO 24 - ESPACIO Y FENÓMENOS (VERSIÓN RÁPIDA)
+       // ROSCO 24 - ESPACIO Y FENÓMENOS (VERSIÓN RÁPIDA)
     {q: "Con la A: La sustancia más cara e inestable del mundo, formada por antipartículas.", a: "antimateria", letra: "A"},
     {q: "Con la B: Restos de satélites inactivos que orbitan peligrosamente la Tierra (___ espacial).", a: "basura", letra: "B"},
     {q: "Con la C: El objeto más brillante y energético del universo conocido.", a: "cuásar", letra: "C"},
@@ -8311,141 +8156,7 @@ MAZOS.push({
     {q: "Contiene la Y: Apellido del matemático del teorema fundamental de la inferencia bayesiana.", a: "Bayes", letra: "Y"},
     {q: "Con la Z: Enfermedad infecciosa que transmiten los animales al ser humano.", a: "zoonosis", letra: "Z"},
 
-    // ROSCO 26 - QUÍMICA Y ELEMENTOS (A CONTRARRELOJ)
-    {q: "Con la A: Metal muy ligero y abundante usado en latas de refresco.", a: "aluminio", letra: "A"},
-    {q: "Con la B: Único elemento no metálico que es líquido a temperatura ambiente.", a: "bromo", letra: "B"},
-    {q: "Con la C: Elemento fundamental de la química orgánica y base de la vida.", a: "carbono", letra: "C"},
-    {q: "Con la D: Sustancia de carbono puro, la más dura de la naturaleza.", a: "diamante", letra: "D"},
-    {q: "Con la E: Partícula atómica con carga eléctrica negativa.", a: "electrón", letra: "E"},
-    {q: "Con la F: Cambio de estado de la materia de sólido a líquido por calor.", a: "fusión", letra: "F"},
-    {q: "Con la G: Estado de la materia que no tiene forma ni volumen fijo.", a: "gas", letra: "G"},
-    {q: "Con la H: El elemento más ligero y abundante de todo el universo.", a: "hidrógeno", letra: "H"},
-    {q: "Con la I: Átomo o grupo de átomos que ha ganado o perdido electrones.", a: "ion", letra: "I"},
-    {q: "Con la J: Unidad de medida de energía y trabajo en el Sistema Internacional.", a: "julio", letra: "J"},
-    {q: "Con la L: Metal alcalino muy ligero usado en las baterías de los móviles.", a: "litio", letra: "L"},
-    {q: "Con la M: Magnitud física que indica la cantidad de materia de un cuerpo.", a: "masa", letra: "M"},
-    {q: "Con la N: Gas incoloro que compone el 78% del aire que respiramos.", a: "nitrógeno", letra: "N"},
-    {q: "Contiene la Ñ: Metal blando de símbolo Sn, usado a menudo para soldar.", a: "estaño", letra: "Ñ"},
-    {q: "Con la O: Gas fundamental para la respiración y la combustión.", a: "oxígeno", letra: "O"},
-    {q: "Con la P: Partícula atómica con carga eléctrica positiva.", a: "protón", letra: "P"},
-    {q: "Con la Q: Rama de la ciencia que estudia la materia y sus reacciones.", a: "química", letra: "Q"},
-    {q: "Con la R: Emisión de energía o partículas por desintegración del núcleo atómico.", a: "radiactividad", letra: "R"},
-    {q: "Con la S: Sustancia que se disuelve en un disolvente para crear una mezcla.", a: "soluto", letra: "S"},
-    {q: "Con la T: Documento que ordena los elementos químicos (___ periódica).", a: "tabla", letra: "T"},
-    {q: "Con la U: Elemento radiactivo usado como combustible en reactores nucleares.", a: "uranio", letra: "U"},
-    {q: "Con la V: Número de enlaces que puede formar un átomo con otros átomos.", a: "valencia", letra: "V"},
-    {q: "Con la X: Gas noble incoloro utilizado en los faros de algunos coches.", a: "xenón", letra: "X"},
-    {q: "Con la Y: Elemento halógeno muy usado en medicina como desinfectante de heridas.", a: "yodo", letra: "Y"},
-    {q: "Con la Z: Metal usado para recubrir y proteger el acero de la oxidación.", a: "zinc", letra: "Z"},
-
-    // ROSCO 27 - ANIMALES Y NATURALEZA (A CONTRARRELOJ)
-    {q: "Con la A: Insecto polinizador que vive en colmenas y produce miel.", a: "abeja", letra: "A"},
-    {q: "Con la B: Planta de tallos muy altos y huecos, alimento principal del panda.", a: "bambú", letra: "B"},
-    {q: "Con la C: Reptil famoso por cambiar de color para camuflarse.", a: "camaleón", letra: "C"},
-    {q: "Con la D: Mamífero rumiante de zonas áridas que tiene una sola joroba.", a: "dromedario", letra: "D"},
-    {q: "Con la E: El mamífero terrestre más grande del mundo.", a: "elefante", letra: "E"},
-    {q: "Con la F: Mamífero marino carnívoro de cuerpo alargado y aletas, excelente nadador.", a: "foca", letra: "F"},
-    {q: "Con la G: Ave de corral criada mundialmente por su carne y sus huevos.", a: "gallina", letra: "G"},
-    {q: "Con la H: Insecto muy laborioso que vive en grandes colonias bajo tierra.", a: "hormiga", letra: "H"},
-    {q: "Con la I: Reptil escamoso de América parecido al lagarto, con una gran papada.", a: "iguana", letra: "I"},
-    {q: "Con la J: Mamífero africano, el animal más alto del mundo.", a: "jirafa", letra: "J"},
-    {q: "Con la L: Mamífero carnívoro salvaje de la familia de los perros que aúlla.", a: "lobo", letra: "L"},
-    {q: "Con la M: Insecto volador parásito que chupa la sangre y transmite enfermedades.", a: "mosquito", letra: "M"},
-    {q: "Con la N: Formación de núcleos atómicos en estrellas o en el Big Bang.", a: "nucleosíntesis", letra: "N"},
-    {q: "Contiene la Ñ: Gran antílope africano famoso por sus migraciones masivas.", a: "ñu", letra: "Ñ"},
-    {q: "Con la O: Gran mamífero marino depredador, también llamado ballena asesina.", a: "orca", letra: "O"},
-    {q: "Con la P: Ave marina no voladora, de andar torpe, que vive en el hemisferio sur.", a: "pingüino", letra: "P"},
-    {q: "Con la Q: Pájaro centroamericano de brillante plumaje, símbolo patrio de Guatemala.", a: "quetzal", letra: "Q"},
-    {q: "Con la R: Anfibio saltador sin cola que emite un sonido llamado croar.", a: "rana", letra: "R"},
-    {q: "Con la S: Reptil de cuerpo largo y sin patas que se desplaza reptando.", a: "serpiente", letra: "S"},
-    {q: "Con la T: Fiero felino asiático de pelaje amarillo con rayas negras.", a: "tigre", letra: "T"},
-    {q: "Con la U: Pájaro de plumaje negro y blanco famoso por robar objetos brillantes.", a: "urraca", letra: "U"},
-    {q: "Con la V: Hembra del toro, criada para la producción de leche y carne.", a: "vaca", letra: "V"},
-    {q: "Contiene la X: Desaparición total de los miembros de una especie biológica.", a: "extinción", letra: "X"},
-    {q: "Con la Y: Planta aromática empleada por su aceite esencial (menos ciencia).", a: "ylang", letra: "Y"},
-    {q: "Con la Z: Distribución de organismos o procesos en bandas según gradientes ambientales.", a: "zonación", letra: "Z"},
-
-    // ROSCO 28 - TECNOLOGÍA Y ASTRONOMÍA (A CONTRARRELOJ)
-    {q: "Con la A: Cuerpo celeste rocoso, más pequeño que un planeta, que orbita el Sol.", a: "asteroide", letra: "A"},
-    {q: "Con la B: Gran explosión original que dio lugar al nacimiento del universo (___ Bang).", a: "Big", letra: "B"},
-    {q: "Con la C: Astro formado por hielo y polvo que deja una estela al acercarse al Sol.", a: "cometa", letra: "C"},
-    {q: "Con la D: Aeronave sin tripulación que se pilota a través de control remoto.", a: "dron", letra: "D"},
-    {q: "Con la E: Ocultación temporal de un astro por la interposición de otro.", a: "eclipse", letra: "E"},
-    {q: "Con la F: Hilo de vidrio muy fino usado para enviar internet a alta velocidad (___ óptica).", a: "fibra", letra: "F"},
-    {q: "Con la G: Agrupación masiva de estrellas, planetas, polvo y gas cósmico.", a: "galaxia", letra: "G"},
-    {q: "Con la H: Sistema de determinación sexual con machos haploides y hembras diploides.", a: "haplodiploidía", letra: "H"},
-    {q: "Con la I: Técnica que emplea interferencia de ondas para realizar mediciones de alta precisión.", a: "interferometría", letra: "I"},
-    {q: "Con la J: El planeta más grande y masivo de todo el sistema solar.", a: "Júpiter", letra: "J"},
-    {q: "Con la L: Partícula elemental que no experimenta interacción fuerte.", a: "leptón", letra: "L"},
-    {q: "Con la M: Proceso por el que se inducen mutaciones en el material genético.", a: "mutagénesis", letra: "M"},
-    {q: "Con la N: Nube interestelar de polvo y gas donde suelen nacer las estrellas.", a: "nebulosa", letra: "N"},
-    {q: "Contiene la Ñ: Código secreto usado para acceder de forma segura a una cuenta digital.", a: "contraseña", letra: "Ñ"},
-    {q: "Con la O: Proceso por el que se marca un patógeno para facilitar su fagocitosis.", a: "opsonización", letra: "O"},
-    {q: "Con la P: Separación del protoplasto de la pared celular por pérdida de agua en un medio hipertónico.", a: "plasmólisis", letra: "P"},
-    {q: "Con la Q: Objeto astronómico lejano, muy compacto y extremadamente luminoso.", a: "quásar", letra: "Q"},
-    {q: "Con la R: Memoria principal y temporal de un ordenador (Siglas).", a: "RAM", letra: "R"},
-    {q: "Con la S: Programas y aplicaciones que hacen funcionar a un ordenador.", a: "software", letra: "S"},
-    {q: "Con la T: Instrumento óptico que permite observar astros lejanos desde la Tierra.", a: "telescopio", letra: "T"},
-    {q: "Con la U: Conjunto de todas las cosas creadas, el espacio y el tiempo.", a: "universo", letra: "U"},
-    {q: "Con la V: Galaxia espiral en la que se encuentra nuestro sistema solar (___ Láctea).", a: "Vía", letra: "V"},
-    {q: "Contiene la X: Radiación electromagnética de alta energía empleada en diagnóstico y análisis estructural.", a: "rayos X", letra: "X"},
-    {q: "Con la Y: La plataforma de publicación de vídeos de Google más famosa del mundo.", a: "YouTube", letra: "Y"},
-    {q: "Con la Z: Formato de compresión de carpetas y archivos informáticos muy popular.", a: "zip", letra: "Z"},
-// ROSCO 29 - ANIMALES Y OCÉANOS (A CONTRARRELOJ)
-    {q: "Con la A: Ave marina de gran tamaño, largas alas y excelente planeadora.", a: "albatros", letra: "A"},
-    {q: "Con la B: Ave rapaz nocturna de grandes ojos y cabeza redondeada.", a: "búho", letra: "B"},
-    {q: "Con la C: Crustáceo marino de caparazón duro y grandes pinzas.", a: "cangrejo", letra: "C"},
-    {q: "Con la D: Lagarto de gran tamaño y mordedura letal nativo de Indonesia (___ de Komodo).", a: "dragón", letra: "D"},
-    {q: "Con la E: Animal marino esférico cubierto de púas o espinas.", a: "erizo", letra: "E"},
-    {q: "Con la F: Ave galliforme de hermoso plumaje y larguísima cola.", a: "faisán", letra: "F"},
-    {q: "Con la G: Ave marina de plumaje blanco y gris, muy voraz.", a: "gaviota", letra: "G"},
-    {q: "Con la H: Ave rapaz diurna conocida por ser el animal más rápido en picado.", a: "halcón", letra: "H"},
-    {q: "Con la I: Antílope africano famoso por sus saltos altos y ágiles.", a: "impala", letra: "I"},
-    {q: "Con la J: Pequeño roedor del desierto adaptado para dar grandes saltos.", a: "jerbo", letra: "J"},
-    {q: "Con la L: Primate endémico de Madagascar, famoso por su cola anillada.", a: "lémur", letra: "L"},
-    {q: "Con la M: Invertebrado marino transparente y gelatinoso con tentáculos urticantes.", a: "medusa", letra: "M"},
-    {q: "Con la N: Mamífero carnívoro semiacuático de pelaje muy espeso.", a: "nutria", letra: "N"},
-    {q: "Contiene la Ñ: Pájaro nocturno de colores pardos, famoso por su canto melodioso.", a: "ruiseñor", letra: "Ñ"},
-    {q: "Con la O: Molusco marino bivalvo capaz de producir perlas.", a: "ostra", letra: "O"},
-    {q: "Con la P: Ave marina que posee una enorme bolsa membranosa en su pico.", a: "pelícano", letra: "P"},
-    {q: "Contiene la Q: Pez pequeño plateado, muy común en las freidurías españolas.", a: "boquerón", letra: "Q"},
-    {q: "Con la R: Pez marino plano y cartilaginoso con cola en forma de látigo.", a: "raya", letra: "R"},
-    {q: "Con la S: Pez que nace en el río, vive en el mar y vuelve al río a desovar.", a: "salmón", letra: "S"},
-    {q: "Con la T: Gran pez depredador marino de esqueleto cartilaginoso.", a: "tiburón", letra: "T"},
-    {q: "Con la U: Ave galliforme de los bosques europeos en peligro de extinción.", a: "urogallo", letra: "U"},
-    {q: "Con la V: Serpiente venenosa de cabeza triangular y colmillos huecos.", a: "víbora", letra: "V"},
-    {q: "Con la X: Insecto que se alimenta de madera, como la termita o la carcoma.", a: "xilófago", letra: "X"},
-    {q: "Con la Y: Bóvido de largo y espeso pelaje oscuro nativo del Tíbet.", a: "yak", letra: "Y"},
-    {q: "Con la Z: Mamífero americano famoso por expulsar un líquido de olor fétido.", a: "zorrillo", letra: "Z"},
-
-    // ROSCO 30 - REDES, INTERNET E INFORMÁTICA (A CONTRARRELOJ)
-    {q: "Con la A: Imagen gráfica que representa a un usuario en internet o en un juego.", a: "avatar", letra: "A"},
-    {q: "Con la B: Página web a modo de diario personal actualizado frecuentemente.", a: "blog", letra: "B"},
-    {q: "Con la C: Memoria auxiliar rápida que guarda datos temporalmente en un ordenador.", a: "caché", letra: "C"},
-    {q: "Con la D: Soporte magnético principal donde se almacenan datos (___ duro).", a: "disco", letra: "D"},
-    {q: "Con la E: Estándar para conectar dispositivos en una red de área local con cable.", a: "ethernet", letra: "E"},
-    {q: "Con la F: Sitio web donde los usuarios debaten escribiendo mensajes públicamente.", a: "foro", letra: "F"},
-    {q: "Con la G: Unidad que mide la frecuencia y velocidad de un procesador informático.", a: "gigahercio", letra: "G"},
-    {q: "Con la H: Lenguaje de marcado estándar utilizado para crear páginas web.", a: "HTML", letra: "H"},
-    {q: "Con la I: Pequeño símbolo gráfico que representa un archivo, programa o función.", a: "icono", letra: "I"},
-    {q: "Con la J: Formato de compresión de imágenes y fotografías muy usado en internet.", a: "JPG", letra: "J"},
-    {q: "Con la L: Pantalla plana de cristal líquido usada en monitores y televisores.", a: "LCD", letra: "L"},
-    {q: "Con la M: Unidad de almacenamiento de información que equivale a 1024 kilobytes.", a: "megabyte", letra: "M"},
-    {q: "Con la N: Programa informático utilizado para visitar y explorar páginas web.", a: "navegador", letra: "N"},
-    {q: "Contiene la Ñ: Diseño de punto o símbolo usado para marcar elementos en una lista de texto.", a: "viñeta", letra: "Ñ"},
-    {q: "Con la O: Término inglés para indicar que un usuario está conectado a internet.", a: "online", letra: "O"},
-    {q: "Con la P: Conector de un ordenador donde se enchufan periféricos como impresoras.", a: "puerto", letra: "P"},
-    {q: "Contiene la Q: Antiguo soporte de almacenamiento magnético cuadrado y portátil.", a: "disquete", letra: "Q"},
-    {q: "Con la R: Periférico de mano utilizado para mover el cursor por la pantalla.", a: "ratón", letra: "R"},
-    {q: "Con la S: Correo electrónico masivo, publicitario o no deseado.", a: "spam", letra: "S"},
-    {q: "Con la T: Periférico de entrada formado por letras, números y botones de comando.", a: "teclado", letra: "T"},
-    {q: "Con la U: Persona que utiliza un sistema informático o servicio web.", a: "usuario", letra: "U"},
-    {q: "Con la V: Blog o bitácora publicado exclusivamente en formato de vídeo.", a: "vlog", letra: "V"},
-    {q: "Contiene la X: Famoso programa informático de hojas de cálculo de Microsoft.", a: "Excel", letra: "X"},
-    {q: "Con la Y: Famoso buscador web y servicio de correo electrónico fundado en los 90.", a: "Yahoo", letra: "Y"},
-    {q: "Con la Z: Acción de acercar o alejar virtualmente la imagen de una pantalla o lente.", a: "zoom", letra: "Z"},
-
-    // ROSCO 31 - MINERALES Y QUÍMICA PURA (A CONTRARRELOJ)
+        // ROSCO 31 - MINERALES Y QUÍMICA PURA (A CONTRARRELOJ)
     {q: "Con la A: Gas noble incoloro muy abundante en la atmósfera terrestre.", a: "argón", letra: "A"},
     {q: "Con la B: Metal pesado de aspecto iridiscente con número atómico 83.", a: "bismuto", letra: "B"},
     {q: "Con la C: Elemento químico vital para la formación y endurecimiento de los huesos.", a: "calcio", letra: "C"},
@@ -8498,6 +8209,7 @@ MAZOS.push({
     {q: "Contiene la X: Movimiento de doblar un músculo o una articulación del cuerpo.", a: "flexión", letra: "X"},
     {q: "Contiene la Y: Acción de introducir a presión un medicamento en el cuerpo con una aguja.", a: "inyección", letra: "Y"},
     {q: "Contiene la Z: Órgano de las hembras de los mamíferos donde se desarrolla el feto, sinónimo de útero.", a: "matriz", letra: "Z"},
+
 // ROSCO 33 - MUJERES DE LA CIENCIA I (VERSIÓN RÁPIDA)
     {q: "Con la A: Primera programadora de la historia, de apellido Lovelace.", a: "Ada", letra: "A"},
     {q: "Con la B: Astrofísica descubridora de los púlsares, de nombre Jocelyn.", a: "Bell", letra: "B"},
@@ -8582,33 +8294,34 @@ MAZOS.push({
     {q: "Con la Y: Monstruo de las nieves que la ciencia ha demostrado que no existe.", a: "yeti", letra: "Y"},
     {q: "Con la Z: Constelaciones usadas por la astrología para inventar horóscopos.", a: "zodíaco", letra: "Z"},
 
-    // ROSCO 36 - EL ROSCO DEL LABORATORIO (ESPECIAL IA Y MICROBIOLOGÍA)
-    {q: "Con la A: Fármaco inútil contra la gripe porque combate bacterias, no virus.", a: "antibiótico", letra: "A"},
-    {q: "Con la B: Medio de cultivo selectivo indispensable para aislar la Legionella.", a: "BCYE", letra: "B"},
-    {q: "Con la C: Método de la norma ISO 11731 por filtración para contar colonias.", a: "cultivo", letra: "C"},
-    {q: "Con la D: Conjunto de imágenes necesario para entrenar una inteligencia artificial.", a: "dataset", letra: "D"},
-    {q: "Con la E: Entidad española que audita y acredita a los laboratorios de ensayo.", a: "ENAC", letra: "E"},
-    {q: "Con la F: Método de paso por membrana usado para concentrar bacterias del agua.", a: "filtración", letra: "F"},
-    {q: "Con la G: Medio de cultivo selectivo que inhibe la flora acompañante de la Legionella.", a: "GVPC", letra: "G"},
-    {q: "Con la H: Mitad del cerebro. Es falso que usemos una para el arte y otra para las mates.", a: "hemisferio", letra: "H"},
-    {q: "Con la I: Acción por la cual la Legionella entra al cuerpo a través de aerosoles.", a: "inhalar", letra: "I"},
-    {q: "Con la J: Producto de lavado que rompe la capa lipídica de los virus en las manos.", a: "jabón", letra: "J"},
-    {q: "Con la K: Salsa roja que en el siglo XIX se vendía falsamente como medicina.", a: "kétchup", letra: "K"},
-    {q: "Con la L: Bacteria acuática que requiere una incubación a 36 grados.", a: "Legionella", letra: "L"},
-    {q: "Con la M: Electrodoméstico que NO vuelve radiactiva la comida, solo calienta el agua.", a: "microondas", letra: "M"},
-    {q: "Con la N: Tipo de red de inteligencia artificial de reconocimiento que imita al cerebro.", a: "neuronal", letra: "N"},
-    {q: "Contiene la Ñ: Acción del ojo. Es falso que se te salgan al estornudar sin hacerlo.", a: "pestañear", letra: "Ñ"},
-    {q: "Con la O: Término inglés para el peligroso sobreajuste de un modelo de IA.", a: "overfitting", letra: "O"},
-    {q: "Con la P: Métrica de IA clave para evitar falsos positivos en el conteo de colonias.", a: "precisión", letra: "P"},
-    {q: "Con la Q: Lesión térmica en la piel que JAMÁS se debe tratar con pasta de dientes.", a: "quemadura", letra: "Q"},
-    {q: "Con la R: Infección viral leve que NO se cura más rápido por sudar en la cama.", a: "resfriado", letra: "R"},
-    {q: "Con la S: Error en una Inteligencia Artificial causado por falta de balance en sus clases.", a: "sesgo", letra: "S"},
-    {q: "Con la T: Infección por bacterias de la tierra, no exclusiva del óxido como se cree.", a: "tétanos", letra: "T"},
-    {q: "Con la U: Estructuras de queratina que NO siguen creciendo tras la muerte.", a: "uñas", letra: "U"},
-    {q: "Con la V: Capacidad de un sistema o población de presentar diferencias entre sus elementos.", a: "variabilidad", letra: "V"},
-    {q: "Contiene la X: Sustancia dañina eliminada por el riñón, no sudando en una sauna.", a: "toxina", letra: "X"},
-    {q: "Con la Y: Famosa y rápida arquitectura de inteligencia artificial para visión artificial.", a: "YOLO", letra: "Y"},
-    {q: "Con la Z: Hortaliza que, por un falso mito británico, daba visión nocturna.", a: "zanahoria", letra: "Z"},
+    // ROSCO 36 - CIENCIA GENERAL (NIVEL BOTE)
+    {q: "Materia compuesta por partículas con la misma masa pero carga eléctrica opuesta a las normales.", a: "antimateria", letra: "A"},
+    {q: "Partícula subatómica portadora de las fuerzas fundamentales de la naturaleza, como el famoso de Higgs.", a: "bosón", letra: "B"},
+    {q: "Estructura celular altamente organizada que contiene el material genético del interior del núcleo.", a: "cromosoma", letra: "C"},
+    {q: "Neurotransmisor del sistema nervioso central fuertemente asociado con las sensaciones de placer y la recompensa.", a: "dopamina", letra: "D"},
+    {q: "Cuerpo celeste rocoso o gaseoso que orbita alrededor de una estrella diferente a nuestro Sol.", a: "exoplaneta", letra: "E"},
+    {q: "Proceso celular mediante el cual un glóbulo blanco envuelve y destruye partículas sólidas o patógenos.", a: "fagocitosis", letra: "F"},
+    {q: "Conjunto completo de secuencias de ADN que contiene toda la información genética de un organismo.", a: "genoma", letra: "G"},
+    {q: "Capacidad de los organismos vivos para mantener una condición interna estable frente a cambios ambientales.", a: "homeostasis", letra: "H"},
+    {q: "Átomo de un mismo elemento químico que tiene igual número de protones pero distinto de neutrones.", a: "isótopo", letra: "I"},
+    {q: "Segundo período geológico de la era Mesozoica, famoso por la hegemonía de los grandes dinosaurios.", a: "jurásico", letra: "J"},
+    {q: "Unidad de temperatura del Sistema Internacional que establece su punto cero en el cero absoluto.", a: "kelvin", letra: "K"},
+    {q: "Capa sólida y superficial del planeta Tierra, formada por la corteza y el manto superior.", a: "litosfera", letra: "L"},
+    {q: "Orgánulo celular encargado de suministrar la mayor parte de la energía necesaria para la respiración.", a: "mitocondria", letra: "M"},
+    {q: "Nube gigante de polvo y gas en el espacio interestelar donde nacen y mueren las estrellas.", a: "nebulosa", letra: "N"},
+    {q: "Contiene la Ñ: Elemento químico metálico de símbolo Sn muy empleado para soldar circuitos eléctricos.", a: "estaño", letra: "Ñ"},
+    {q: "Fenómeno físico de difusión pasiva de un disolvente a través de una membrana semipermeable.", a: "ósmosis", letra: "O"},
+    {q: "Estrella de neutrones muy compacta y magnetizada que emite radiación electromagnética de forma periódica.", a: "púlsar", letra: "P"},
+    {q: "Partícula elemental indivisible que se combina mediante la fuerza fuerte para formar protones y neutrones.", a: "quark", letra: "Q"},
+    {q: "Estructura celular libre o adosada al retículo endoplasmático donde se sintetizan las proteínas biológicas.", a: "ribosoma", letra: "R"},
+    {q: "Región de comunicación especializada donde se transmite el impulso nervioso entre dos neuronas contiguas.", a: "sinapsis", letra: "S"},
+    {q: "Rama de la física que estudia las relaciones entre el calor, el trabajo y la energía.", a: "termodinámica", letra: "T"},
+    {q: "Elemento químico radiactivo de símbolo U utilizado como combustible principal en los reactores nucleares.", a: "uranio", letra: "U"},
+    {q: "En biología, organismo vivo que transmite un agente infeccioso desde un animal infectado al ser humano.", a: "vector", letra: "V"},
+    {q: "Contiene la X: Prolongación filiforme de la neurona por donde viaja el impulso nervioso hacia otras células.", a: "axón", letra: "X"},
+    {q: "Elemento químico halógeno esencial para el correcto funcionamiento de la glándula tiroides humana.", a: "yodo", letra: "Y"},
+    {q: "Abeja macho cuya única función biológica en la colmena es fecundar a la abeja reina.", a: "zángano", letra: "Z"},
+
 // ROSCO 37 - GENIOS DE LA CIENCIA I (VERSIÓN RÁPIDA)
     {q: "Con la A: Matemático griego que descubrió el principio de flotación de los cuerpos.", a: "Arquímedes", letra: "A"},
     {q: "Con la B: Apellido del físico danés (Niels) que propuso el modelo atómico de órbitas.", a: "Bohr", letra: "B"},
@@ -8665,34 +8378,7 @@ MAZOS.push({
     {q: "Contiene la Y: Prueba, test o análisis de laboratorio sometido a estrictos criterios de calidad.", a: "ensayo", letra: "Y"},
     {q: "Contiene la Z: Estructura matemática de filas y columnas, fundamental en el cálculo de Deep Learning.", a: "matriz", letra: "Z"},
 
-    // ROSCO 39 - MEDIOAMBIENTE Y CLIMA (VERSIÓN RÁPIDA)
-    {q: "Con la A: Capa de gases vital que rodea la Tierra y la protege del sol.", a: "atmósfera", letra: "A"},
-    {q: "Con la B: Material que puede ser descompuesto de forma natural por microorganismos.", a: "biodegradable", letra: "B"},
-    {q: "Con la C: Tormenta tropical muy intensa caracterizada por vientos huracanados destructivos.", a: "ciclón", letra: "C"},
-    {q: "Con la D: Eliminación masiva de los árboles de un bosque por acción humana.", a: "deforestación", letra: "D"},
-    {q: "Con la E: Ciencia biológica que estudia las relaciones de los seres vivos y su entorno.", a: "ecología", letra: "E"},
-    {q: "Con la F: Resto petrificado de un organismo del pasado conservado en rocas sedimentarias.", a: "fósil", letra: "F"},
-    {q: "Con la G: Enorme masa de hielo acumulada en zonas altas que se mueve lentamente.", a: "glaciar", letra: "G"},
-    {q: "Con la H: Medio geográfico o entorno físico natural donde vive una especie animal.", a: "hábitat", letra: "H"},
-    {q: "Con la I: Efecto por el que los gases de la atmósfera retienen el calor solar.", a: "invernadero", letra: "I"},
-    {q: "Contiene la J: Ilusión óptica producida por la refracción de la luz en el aire caliente.", a: "espejismo", letra: "J"},
-    {q: "Con la K: Escala de temperatura científica cuyo punto cero es el cero absoluto.", a: "Kelvin", letra: "K"},
-    {q: "Con la L: Capa exterior sólida de la Tierra, compuesta por la corteza y el manto.", a: "litosfera", letra: "L"},
-    {q: "Con la M: Violento terremoto cuyo epicentro se localiza en el fondo del mar.", a: "maremoto", letra: "M"},
-    {q: "Con la N: Sustancia azucarada que segregan las flores para atraer a los insectos polinizadores.", a: "néctar", letra: "N"},
-    {q: "Contiene la Ñ: Animal que se alimenta de los cadáveres en descomposición de otros animales.", a: "carroñero", letra: "Ñ"},
-    {q: "Con la O: Animal que basa su dieta alimenticia tanto en carne como en vegetales.", a: "omnívoro", letra: "O"},
-    {q: "Con la P: Conjunto de microorganismos animales y vegetales que flotan a la deriva en el océano.", a: "plancton", letra: "P"},
-    {q: "Contiene la Q: Falta prolongada y anómala de lluvias en un territorio determinado.", a: "sequía", letra: "Q"},
-    {q: "Con la R: Proceso industrial para transformar residuos y basura en nuevos materiales útiles.", a: "reciclaje", letra: "R"},
-    {q: "Con la S: Instrumento utilizado por los geólogos para registrar y medir terremotos.", a: "sismógrafo", letra: "S"},
-    {q: "Con la T: Gran ola destructiva provocada generalmente por un maremoto submarino.", a: "tsunami", letra: "T"},
-    {q: "Contiene la U: Ciclón tropical muy violento con vientos devastadores y fuertes lluvias.", a: "huracán", letra: "U"},
-    {q: "Con la V: Gran abertura en la corteza terrestre por la que emerge lava y magma.", a: "volcán", letra: "V"},
-    {q: "Contiene la X: Gas vital para los animales que producen las plantas mediante la fotosíntesis.", a: "oxígeno", letra: "X"},
-    {q: "Contiene la Y: Corriente natural de agua de escaso caudal, más pequeña que un río.", a: "arroyo", letra: "Y"},
-    {q: "Con la Z: Fracción del plancton marino constituida por pequeños organismos animales.", a: "zooplancton", letra: "Z"},
-
+    
     // ROSCO 40 - EL GRAN BOTE FINAL DE CIENCIAS
     {q: "Con la A: La unidad constituyente más pequeña y fundamental de la materia ordinaria.", a: "átomo", letra: "A"},
     {q: "Con la B: Conjunto de todos los ecosistemas y zonas habitadas por seres vivos en la Tierra.", a: "biosfera", letra: "B"},
@@ -8720,6 +8406,7 @@ MAZOS.push({
     {q: "Contiene la X: Rebote o cambio de dirección de un rayo de luz al chocar contra un espejo.", a: "reflexión", letra: "X"},
     {q: "Contiene la Y: Cuerpo físico arrojado al aire que describe una trayectoria parabólica por la gravedad.", a: "proyectil", letra: "Y"},
     {q: "Contiene la Z: Órgano vegetal subterráneo que absorbe agua y nutrientes anclando la planta al suelo.", a: "raíz", letra: "Z"},
+
 // ROSCO 72 - MICROBIOLOGÍA Y LABORATORIO
 {q: "Con la A: Polisacárido complejo extraído de algas rojas usado como agente solidificante.", a: "Agar", letra: "A"},
 {q: "Con la B: Género de bacterias de morfología cilíndrica al que pertenecen especies como anthracis.", a: "Bacillus", letra: "B"},
@@ -8747,6 +8434,7 @@ MAZOS.push({
 {q: "Contiene la X: Sustancia química extraña a un sistema biológico que no se produce de forma natural.", a: "Xenobiotico", letra: "X"},
 {q: "Contiene la Y: Prueba analítica realizada en condiciones controladas para determinar la cantidad de una sustancia.", a: "Ensayo", letra: "Y"},
 {q: "Con la Z: Enfermedad que se transmite de forma natural de los animales vertebrados a los humanos.", a: "Zoonosis", letra: "Z"},
+
 // ROSCO 73 - QUÍMICA Y FÍSICA
 {q: "Con la A: Partícula más pequeña de un elemento que conserva sus propiedades químicas.", a: "Atomo", letra: "A"},
 {q: "Con la B: Elemento químico de número atómico cinco usado en vidrios de borosilicato.", a: "Boro", letra: "B"},
@@ -8802,6 +8490,7 @@ MAZOS.push({
 {q: "Contiene la X: Tejido vascular de las plantas traqueofitas especializado en el transporte de savia bruta.", a: "Xilema", letra: "X"},
 {q: "Contiene la Y: Apellido del médico que identificó el agente etiológico de la peste bubónica en mil ochocientos noventa y cuatro.", a: "Yersin", letra: "Y"},
 {q: "Con la Z: Rama de la biología que se ocupa del estudio sistemático, fisiológico y etológico de los animales.", a: "Zoologia", letra: "Z"},
+
 // ROSCO 77 - PREMIOS NOBEL DE CIENCIAS
 {q: "Con la A: Apellido del científico sueco galardonado con el premio de Química en mil novecientos tres por su teoría de la disociación electrolítica.", a: "Arrhenius", letra: "A"},
 {q: "Con la B: Apellido del físico danés galardonado en mil novecientos veintidós por sus investigaciones sobre la estructura de los átomos.", a: "Bohr", letra: "B"},
@@ -8829,6 +8518,7 @@ MAZOS.push({
 {q: "Contiene la X: Nombre de la radiación electromagnética descubierta por el primer premio Nobel de Física de la historia.", a: "Rayos X", letra: "X"},
 {q: "Con la Y: Apellido de la física médica estadounidense galardonada en mil novecientos setenta y siete por el desarrollo del radioinmunoensayo.", a: "Yalow", letra: "Y"},
 {q: "Con la Z: Apellido del inmunólogo suizo galardonado en mil novecientos noventa y seis por descubrir cómo el sistema inmunitario reconoce las células infectadas por virus.", a: "Zinkernagel", letra: "Z"},
+
 // ROSCO 78 - PREMIOS NOBEL Y GENIOS DE LA CIENCIA
 {q: "Con la A: Apellido del físico que propuso que volúmenes iguales de gases distintos, a la misma presión y temperatura, contienen el mismo número de moléculas.", a: "Avogadro", letra: "A"},
 {q: "Con la B: Apellido del físico galardonado en mil novecientos tres por el descubrimiento de la radiactividad espontánea.", a: "Becquerel", letra: "B"},
@@ -8856,61 +8546,7 @@ MAZOS.push({
 {q: "Contiene la X: Elemento químico gaseoso con número atómico ocho, esencial para la respiración de los organismos aeróbicos.", a: "Oxigeno", letra: "X"},
 {q: "Con la Y: Elemento químico metálico de número atómico treinta y nueve perteneciente al grupo de las tierras raras.", a: "Ytrio", letra: "Y"},
 {q: "Con la Z: Apellido del químico egipcio galardonado en mil novecientos noventa y nueve por sus estudios de las reacciones químicas mediante espectroscopia de femtosegundos.", a: "Zewail", letra: "Z"},
-// ROSCO 79 - TECNOLOGÍA E INTELIGENCIA ARTIFICIAL
-{q: "Con la A: Conjunto de instrucciones ordenadas y finitas que permiten realizar un cómputo o resolver un problema.", a: "Algoritmo", letra: "A"},
-{q: "Con la B: Unidad mínima de información en computación que solo puede tener dos valores, cero o uno.", a: "Bit", letra: "B"},
-{q: "Con la C: Rama de la Inteligencia Artificial que permite a las computadoras obtener información significativa a partir de imágenes digitales o videos.", a: "Computer Vision", letra: "C"},
-{q: "Con la D: Tipo de aprendizaje automático basado en redes neuronales artificiales con múltiples capas de procesamiento.", a: "Deep Learning", letra: "D"},
-{q: "Con la E: Método de protección de datos que utiliza algoritmos para transformar la información en un formato ilegible para usuarios no autorizados.", a: "Encriptacion", letra: "E"},
-{q: "Con la F: Componente físico de un sistema informático, en contraposición a los componentes lógicos.", a: "Hardware", letra: "F"}, // Error H. Ajustado a F:
-{q: "Con la F: Capacidad de una tecnología para permitir que múltiples sistemas se comuniquen y compartan datos sin restricciones.", a: "Federacion", letra: "F"},
-{q: "Con la G: Unidad de procesamiento especializada en el cálculo de operaciones en paralelo, fundamental para el entrenamiento de redes neuronales.", a: "GPU", letra: "G"},
-{q: "Con la H: Lenguaje de marcado utilizado para la creación y estructuración de páginas web.", a: "HTML", letra: "H"},
-{q: "Con la I: Campo de la informática que se enfoca en crear sistemas capaces de realizar tareas que normalmente requieren inteligencia humana.", a: "IA", letra: "I"},
-{q: "Con la J: Lenguaje de programación interpretado, orientado a objetos y utilizado principalmente para dar interactividad a las páginas web.", a: "Javascript", letra: "J"},
-{q: "Con la K: Unidad de medida de la memoria de una computadora equivalente a mil veinticuatro bytes.", a: "Kilobyte", letra: "K"},
-{q: "Con la L: Tecnología de detección y medición de distancias mediante la emisión de pulsos de luz láser.", a: "Lidar", letra: "L"},
-{q: "Con la M: Subcampo de la inteligencia artificial que se centra en el desarrollo de sistemas que aprenden de los datos.", a: "Machine Learning", letra: "M"},
-{q: "Con la N: Punto de conexión en una red o unidad básica de procesamiento en una red neuronal artificial.", a: "Nodo", letra: "N"},
-{q: "Contiene la Ñ: En procesamiento de señales para IA, estudio de ondas sonoras o datos temporales.", a: "Señal", letra: "Ñ"},
-{q: "Con la O: Modelo de desarrollo de software cuyo código fuente está disponible públicamente para que cualquiera pueda inspeccionarlo o modificarlo.", a: "Open Source", letra: "O"},
-{q: "Con la P: Lenguaje de programación de alto nivel muy utilizado en ciencia de datos e inteligencia artificial por su sintaxis clara.", a: "Python", letra: "P"},
-{q: "Con la Q: Tipo de computación que utiliza las leyes de la mecánica cuántica para procesar información mediante cúbits.", a: "Quántica", letra: "Q"},
-{q: "Con la R: Sistema informático que utiliza sensores y actuadores para realizar tareas físicas de forma automática o programada.", a: "Robot", letra: "R"},
-{q: "Con la S: Conjunto de programas y rutinas que permiten a la computadora realizar determinadas tareas.", a: "Software", letra: "S"},
-{q: "Con la T: Unidad de medida de capacidad de almacenamiento equivalente a mil gigabytes.", a: "Terabyte", letra: "T"},
-{q: "Con la U: Interfaz que permite la comunicación entre el hombre y la máquina a través de elementos visuales.", a: "Usuario", letra: "U"},
-{q: "Con la V: Simulación de un entorno tridimensional con el que el usuario puede interactuar de forma inmersiva mediante dispositivos ópticos.", a: "Virtual", letra: "V"},
-{q: "Contiene la X: Estructura de datos utilizada para organizar información de manera jerárquica, común en el desarrollo web y configuración de sistemas.", a: "XML", letra: "X"},
-{q: "Contiene la Y: Formato de representación de datos basado en texto, frecuentemente utilizado para archivos de configuración en programación e inteligencia artificial.", a: "YAML", letra: "Y"},
-{q: "Con la Z: Proceso de reducción del tamaño de un archivo informático sin perder información o con una pérdida mínima.", a: "Zip", letra: "Z"},
-// ROSCO 80 - TECNOLOGÍA AVANZADA Y SISTEMAS
-{q: "Con la A: Interfaz de programación que permite la comunicación entre diferentes aplicaciones de software.", a: "API", letra: "A"},
-{q: "Con la B: Tecnología de registro distribuido que asegura la integridad y descentralización de los datos mediante bloques.", a: "Blockchain", letra: "B"},
-{q: "Con la C: Disciplina que utiliza técnicas matemáticas para cifrar y garantizar la confidencialidad de la información.", a: "Criptografia", letra: "C"},
-{q: "Con la D: Colección estructurada de información que se utiliza como base para entrenar y evaluar algoritmos.", a: "Dataset", letra: "D"},
-{q: "Con la E: Estándar de transmisión de datos en redes de área local mediante conexión física por cable.", a: "Ethernet", letra: "E"},
-{q: "Con la F: Sistema de seguridad encargado de supervisar y filtrar el tráfico de red según reglas establecidas.", a: "Firewall", letra: "F"},
-{q: "Con la G: Rama de la inteligencia artificial enfocada en la creación de nuevos datos u objetos a partir de modelos existentes.", a: "Generativa", letra: "G"},
-{q: "Con la H: Elemento de un documento electrónico que hace referencia a otro recurso al ser pulsado.", a: "Hipervinculo", letra: "H"},
-{q: "Con la I: Punto de conexión y comunicación entre un usuario y un sistema informático.", a: "Interfaz", letra: "I"},
-{q: "Con la J: Formato de texto sencillo utilizado para el intercambio de datos entre servidores y aplicaciones.", a: "JSON", letra: "J"},
-{q: "Con la K: Sistema de código abierto para la orquestación y gestión de contenedores de aplicaciones.", a: "Kubernetes", letra: "K"},
-{q: "Con la L: Medida de tiempo que tarda un paquete de datos en viajar desde el origen hasta su destino en una red.", a: "Latencia", letra: "L"},
-{q: "Con la M: Computadora de gran potencia y capacidad de procesamiento destinada a tareas críticas y grandes volúmenes de información.", a: "Mainframe", letra: "M"},
-{q: "Con la N: Tecnología que trabaja a escala de nanómetros para manipular estructuras moleculares.", a: "Nanotecnologia", letra: "N"},
-{q: "Contiene la Ñ: Variación de una magnitud física que sirve para transmitir información en un sistema de telecomunicaciones.", a: "Señal", letra: "Ñ"},
-{q: "Con la O: Error de modelado que ocurre cuando un algoritmo se ajusta en exceso a los datos de entrenamiento y falla al generalizar.", a: "Overfitting", letra: "O"},
-{q: "Con la P: Ejecución simultánea de múltiples tareas o procesos para aumentar la velocidad de cómputo.", a: "Paralelismo", letra: "P"},
-{q: "Con la Q: Instrucción o consulta escrita para solicitar información de una base de datos.", a: "Query", letra: "Q"},
-{q: "Con la R: Espacio de almacenamiento donde se aloja y gestiona el historial de versiones de un proyecto informático.", a: "Repositorio", letra: "R"},
-{q: "Con la S: Dispositivo o programa que atiende las peticiones de otros computadores y les devuelve una respuesta.", a: "Servidor", letra: "S"},
-{q: "Con la T: Capacidad de identificar el origen y las etapas de un proceso o producto a través de su registro documentado.", a: "Trazabilidad", letra: "T"},
-{q: "Con la U: Dirección única que identifica la ubicación de un recurso en la red.", a: "URL", letra: "U"},
-{q: "Con la V: Proceso de comprobación técnica de que un sistema o modelo cumple con sus especificaciones de diseño.", a: "Validacion", letra: "V"},
-{q: "Contiene la X: Sistema operativo multiusuario y multitarea que sirve de base para la arquitectura de muchos sistemas modernos.", a: "Unix", letra: "X"},
-{q: "Con la Y: Unidad de almacenamiento de información equivalente a diez a la veinticuatro bytes.", a: "Yottabyte", letra: "Y"},
-{q: "Con la Z: Estándar de comunicación inalámbrica para redes de área personal con bajo consumo de energía.", a: "Zigbee", letra: "Z"}
+
   ]
 });
 
@@ -9701,6 +9337,558 @@ MAZOS.push({
   {q: "Sagrado valle boscoso de tejos donde el dios cazador Ull construyó su pacífica e inquebrantable morada celestial.", a: "Ydalir", letra: "Y"},
   {q: "Contiene la Z: Órgano vital del gigante Hrungnir, hecho de piedra pura en los relatos de la mitología nórdica.", a: "Corazón", letra: "Z"}
 ]
+});
+MAZOS.push({
+    id: "naturaleza", 
+    name: "Naturaleza", 
+    icon: "🌿", 
+    questions: [
+        // PEGA AQUÍ TUS ROSCOS DE NATURALEZA
+     // ROSCO 1 - NATURALEZA
+    {q: "Con la A: Invertebrado artrópodo con ocho patas y sin antenas, que pertenece a la familia de los arácnidos.", a: "araña", letra: "A"},
+    {q: "Con la B: Variedad y variabilidad de los seres vivos y de los ecosistemas en la Tierra.", a: "biodiversidad", letra: "B"},
+    {q: "Con la C: Animal que se alimenta fundamentalmente o exclusivamente de carne.", a: "carnívoro", letra: "C"},
+    {q: "Con la D: Destrucción indiscriminada de la cubierta forestal de un territorio, a menudo provocada por la acción humana.", a: "deforestación", letra: "D"},
+    {q: "Con la E: Ciencia que estudia las relaciones de los seres vivos entre sí y con su entorno.", a: "ecología", letra: "E"},
+    {q: "Con la F: Técnica de microfabricación basada en el uso de luz para transferir patrones a un sustrato.", a: "fotolitografía", letra: "F"},
+    {q: "Con la G: Mamífero felino considerado el animal terrestre más rápido del mundo.", a: "guepardo", letra: "G"},
+    {q: "Con la H: Animal que basa su dieta de forma exclusiva o principal en plantas, hierbas y vegetales.", a: "herbívoro", letra: "H"},
+    {q: "Con la I: Animal artrópodo que tiene el cuerpo dividido en cabeza, tórax y abdomen, tres pares de patas y, generalmente, alas.", a: "insecto", letra: "I"},
+    {q: "Con la J: Mamífero rumiante africano, el animal más alto del mundo gracias a su larguísimo cuello.", a: "jirafa", letra: "J"},
+    {q: "Con la L: Felino ibérico en peligro de extinción, caracterizado por sus orejas con pinceles de pelo negro.", a: "lince", letra: "L"},
+    {q: "Con la M: Cambio permanente en la secuencia de ADN que puede ser transmitido a la descendencia.", a: "mutación", letra: "M"},
+    {q: "Con la N: Unidad básica de empaquetamiento del ADN formada por ADN enrollado en histonas.", a: "nucleosoma", letra: "N"},
+    {q: "Con la Ñ: Ave no voladora, de gran tamaño y similar al avestruz, originaria de Sudamérica.", a: "ñandú", letra: "Ñ"},
+    {q: "Con la O: Gas compuesto por tres átomos de oxígeno cuya capa en la estratosfera nos protege de la radiación ultravioleta.", a: "ozono", letra: "O"},
+    {q: "Con la P: Proceso mediante el cual el polen se transfiere desde el estambre hasta el estigma de las flores.", a: "polinización", letra: "P"},
+    {q: "Contiene la Q: Partícula hipotética que se desplazaría a velocidad superior a la de la luz.", a: "taquión", letra: "Q"}, // Error, Tundra no tiene Q. Let's fix.
+    {q: "Con la Q: Sustancia dura que forma el exoesqueleto de los insectos y crustáceos.", a: "quitina", letra: "Q"},
+    {q: "Con la R: Proceso de recolección y transformación de materiales usados para convertirlos en nuevos productos.", a: "reciclaje", letra: "R"},
+    {q: "Con la S: Ecosistema tropical o subtropical caracterizado por una llanura cubierta de hierba con árboles dispersos, como en África.", a: "sabana", letra: "S"},
+    {q: "Con la T: Ciencia que se encarga de dar nombre, describir y clasificar a los seres vivos.", a: "taxonomía", letra: "T"},
+    {q: "Con la U: Pájaro de la familia de los córvidos, de plumaje negro y blanco, conocido por su costumbre de esconder objetos brillantes.", a: "urraca", letra: "U"},
+    {q: "Con la V: Conjunto de virus presentes en un organismo o ecosistema.", a: "viroma", letra: "V"},
+    {q: "Contiene la X: Desaparición definitiva de todos los miembros de una especie o familia de seres vivos.", a: "extinción", letra: "X"},
+    {q: "Con la Y: Arbusto de América tropical cuya raíz tuberosa es rica en almidón y muy consumida en la gastronomía (También llamada mandioca).", a: "yuca", letra: "Y"},
+    {q: "Con la Z: Dicho de un diodo: destinado a trabajar en la región de ruptura para estabilizar tensión.", a: "zener", letra: "Z"},
+// ROSCO 17 - BOTÁNICA Y VEGETACIÓN ALTA DIFICULTAD
+    {q: "Con la A: Organismo acuático, unicelular o pluricelular, que realiza la fotosíntesis y carece de verdaderas raíces o tallos.", a: "alga", letra: "A"},
+    {q: "Con la B: Órgano vegetal subterráneo que almacena nutrientes, formado por hojas carnosas, como el de la cebolla o el tulipán.", a: "bulbo", letra: "B"},
+    {q: "Con la C: Orgánulo de las células vegetales donde se encuentra la clorofila y se realiza la fotosíntesis.", a: "cloroplasto", letra: "C"},
+    {q: "Con la D: Clase de plantas angiospermas cuyos embriones tienen dos cotiledones.", a: "dicotiledónea", letra: "D"},
+    {q: "Con la E: Órgano reproductor masculino de la flor, formado por el filamento y la antera, donde se produce el polen.", a: "estambre", letra: "E"},
+    {q: "Con la F: Órgano de las plantas angiospermas que contiene las semillas y que se desarrolla a partir del ovario fecundado.", a: "fruto", letra: "F"},
+    {q: "Con la G: Planta cuyas semillas están al descubierto, como ocurre en los pinos y abetos.", a: "gimnosperma", letra: "G"},
+    {q: "Con la H: Planta vascular sin semillas que se reproduce mediante esporas, muy común en zonas húmedas.", a: "helecho", letra: "H"},
+    {q: "Con la I: Fragmento de una planta que se une a otra para que crezcan juntas como un solo organismo.", a: "injerto", letra: "I"},
+    {q: "Con la J: Planta herbácea de tallos rectos y flexibles que crece en lugares húmedos, muy usada en cestería.", a: "junco", letra: "J"},
+    {q: "Con la L: Familia de plantas angiospermas cuyos frutos son vainas que albergan semillas, como las lentejas o los garbanzos.", a: "leguminosa", letra: "L"},
+    {q: "Con la M: Conjunto de filamentos o hifas que forman la parte vegetativa del cuerpo de un hongo.", a: "micelio", letra: "M"},
+    {q: "Con la N: Zona engrosada del tallo de una planta de la cual nacen las hojas y las ramas.", a: "nudo", letra: "N"},
+    {q: "Contiene la Ñ: Árbol caducifolio de la familia de las fagáceas cuyo fruto comestible está protegido por una cúpula espinosa.", a: "castaño", letra: "Ñ"},
+    {q: "Con la O: Parte inferior y abultada del pistilo de la flor, que contiene los óvulos.", a: "ovario", letra: "O"},
+    {q: "Con la P: Órgano reproductor femenino de la flor, que suele tener forma de botella y está situado en su centro.", a: "pistilo", letra: "P"},
+    {q: "Con la Q: Género de árboles de madera dura al que pertenecen especies como el roble, la encina o el alcornoque.", a: "Quercus", letra: "Q"},
+    {q: "Con la R: Tallo subterráneo horizontal de algunas plantas que crece emitiendo raíces y brotes herbáceos, como el jengibre.", a: "rizoma", letra: "R"},
+    {q: "Con la S: Líquido que circula por los vasos conductores de las plantas transportando agua y nutrientes.", a: "savia", letra: "S"},
+    {q: "Con la T: Tallo subterráneo engrosado en el que la planta almacena nutrientes de reserva, como la patata.", a: "tubérculo", letra: "T"},
+    {q: "Con la U: Tipo de inflorescencia en la que todos los pedicelos florales parten de un mismo punto, recordando a un paraguas.", a: "umbela", letra: "U"},
+    {q: "Con la V: Orgánulo celular, muy grande en las células vegetales, que almacena agua, sales y otras sustancias.", a: "vacuola", letra: "V"},
+    {q: "Con la X: Tejido vegetal leñoso que transporta la savia bruta (agua y minerales) desde las raíces hasta las hojas.", a: "xilema", letra: "X"},
+    {q: "Con la Y: Brote embrionario de un vegetal del que nacerán nuevas hojas, flores o ramas.", a: "yema", letra: "Y"},
+    {q: "Con la Z: Órgano trepador de algunas plantas, en forma de hilo que se enrosca alrededor de un soporte para sostenerse.", a: "zarcillo", letra: "Z"},
+// ROSCO 23 - ANIMALES Y ZOOLOGÍA (NIVEL BOTE)
+    {q: "Ave marina pelágica con la mayor envergadura alar del mundo, capaz de volar sin aletear.", a: "albatros", letra: "A"},
+    {q: "Cetáceo odontoceto ártico completamente blanco, conocido como canario del mar por sus vocalizaciones.", a: "beluga", letra: "B"},
+    {q: "Ave no voladora de Oceanía equipada con un casquete óseo y una garra letal.", a: "casuario", letra: "C"},
+    {q: "Mamífero marino herbívoro del orden de los sirénidos, pariente del manatí presente en el Índico.", a: "dugongo", letra: "D"},
+    {q: "Mamífero monotrema de Oceanía, semejante a un erizo, que pone huevos en lugar de parir.", a: "equidna", letra: "E"},
+    {q: "El mayor mamífero carnívoro endémico de Madagascar, principal depredador natural de los lémures.", a: "fosa", letra: "F"},
+    {q: "Reptil crocodiliano endémico de la India caracterizado por un hocico extremadamente largo y estrecho.", a: "gavial", letra: "G"},
+    {q: "Ave amazónica folívora cuyos polluelos desarrollan garras temporales en las alas para trepar árboles.", a: "hoatzín", letra: "H"},
+    {q: "Especie de primate estrepsirrino, considerado el lémur de mayor tamaño que sobrevive actualmente en Madagascar.", a: "indri", letra: "I"},
+    {q: "Ave acuática tropical provista de dedos extremadamente alargados que le permiten caminar sobre hojas de nenúfares.", a: "jacana", letra: "J"},
+    {q: "Orden taxonómico de insectos holometábolos que comprende a todas las especies de mariposas y polillas.", a: "lepidóptero", letra: "L"},
+    {q: "Orden biológico de mamíferos primitivos ovíparos al que pertenecen el ornitorrinco y las distintas especies de equidnas.", a: "monotrema", letra: "M"},
+    {q: "Molusco cefalópodo dotado de concha externa tabicada, considerado un auténtico fósil viviente del océano profundo.", a: "nautilo", letra: "N"},
+    {q: "Contiene la Ñ: Camélido sudamericano silvestre adaptado a la puna, poseedor de la fibra animal más fina.", a: "vicuña", letra: "Ñ"},
+    {q: "Artiodáctilo africano de los bosques del Congo, único pariente vivo estrechamente emparentado con la jirafa.", a: "okapi", letra: "O"},
+    {q: "Mamífero folidoto asiático y africano, caracterizado por estar cubierto de grandes escamas imbricadas de queratina.", a: "pangolín", letra: "P"},
+    {q: "Biopolímero estructural rígido y muy resistente que compone el exoesqueleto de artrópodos y la pared celular de hongos.", a: "quitina", letra: "Q"},
+    {q: "Pez marino osteíctio que se adhiere a tiburones y mantas mediante una fuerte ventosa craneal.", a: "rémora", letra: "R"},
+    {q: "Antílope euroasiático en peligro crítico, fácilmente reconocible por su inusual hocico tubular y abultado.", a: "saiga", letra: "S"},
+    {q: "Reptil endémico de Nueva Zelanda, último linaje vivo del antiguo orden biológico de los esfenodontos.", a: "tuátara", letra: "T"},
+    {q: "Término taxonómico genérico empleado para aquellos mamíferos placentarios que caminan apoyados sobre pezuñas.", a: "ungulado", letra: "U"},
+    {q: "Ave apodiforme sumamente aerodinámica, capaz de volar ininterrumpidamente durante diez meses sin posarse en tierra.", a: "vencejo", letra: "V"},
+    {q: "Adjetivo biológico que define a los organismos, como las termitas, cuya dieta se basa en la madera.", a: "xilófago", letra: "X"},
+    {q: "Felino silvestre americano de tamaño mediano, pelaje uniforme oscuro y aspecto similar al de una nutria.", a: "yaguarundí", letra: "Y"},
+    {q: "Cetáceo odontoceto de hocico prominente, poseedor del récord mundial absoluto del buceo más profundo registrado.", a: "zifio", letra: "Z"},
+ // ROSCO 27 - ANIMALES Y NATURALEZA (A CONTRARRELOJ)
+    {q: "Con la A: Insecto polinizador que vive en colmenas y produce miel.", a: "abeja", letra: "A"},
+    {q: "Con la B: Planta de tallos muy altos y huecos, alimento principal del panda.", a: "bambú", letra: "B"},
+    {q: "Con la C: Reptil famoso por cambiar de color para camuflarse.", a: "camaleón", letra: "C"},
+    {q: "Con la D: Mamífero rumiante de zonas áridas que tiene una sola joroba.", a: "dromedario", letra: "D"},
+    {q: "Con la E: El mamífero terrestre más grande del mundo.", a: "elefante", letra: "E"},
+    {q: "Con la F: Mamífero marino carnívoro de cuerpo alargado y aletas, excelente nadador.", a: "foca", letra: "F"},
+    {q: "Con la G: Ave de corral criada mundialmente por su carne y sus huevos.", a: "gallina", letra: "G"},
+    {q: "Con la H: Insecto muy laborioso que vive en grandes colonias bajo tierra.", a: "hormiga", letra: "H"},
+    {q: "Con la I: Reptil escamoso de América parecido al lagarto, con una gran papada.", a: "iguana", letra: "I"},
+    {q: "Con la J: Mamífero africano, el animal más alto del mundo.", a: "jirafa", letra: "J"},
+    {q: "Con la L: Mamífero carnívoro salvaje de la familia de los perros que aúlla.", a: "lobo", letra: "L"},
+    {q: "Con la M: Insecto volador parásito que chupa la sangre y transmite enfermedades.", a: "mosquito", letra: "M"},
+    {q: "Con la N: Formación de núcleos atómicos en estrellas o en el Big Bang.", a: "nucleosíntesis", letra: "N"},
+    {q: "Contiene la Ñ: Gran antílope africano famoso por sus migraciones masivas.", a: "ñu", letra: "Ñ"},
+    {q: "Con la O: Gran mamífero marino depredador, también llamado ballena asesina.", a: "orca", letra: "O"},
+    {q: "Con la P: Ave marina no voladora, de andar torpe, que vive en el hemisferio sur.", a: "pingüino", letra: "P"},
+    {q: "Con la Q: Pájaro centroamericano de brillante plumaje, símbolo patrio de Guatemala.", a: "quetzal", letra: "Q"},
+    {q: "Con la R: Anfibio saltador sin cola que emite un sonido llamado croar.", a: "rana", letra: "R"},
+    {q: "Con la S: Reptil de cuerpo largo y sin patas que se desplaza reptando.", a: "serpiente", letra: "S"},
+    {q: "Con la T: Fiero felino asiático de pelaje amarillo con rayas negras.", a: "tigre", letra: "T"},
+    {q: "Con la U: Pájaro de plumaje negro y blanco famoso por robar objetos brillantes.", a: "urraca", letra: "U"},
+    {q: "Con la V: Hembra del toro, criada para la producción de leche y carne.", a: "vaca", letra: "V"},
+    {q: "Contiene la X: Desaparición total de los miembros de una especie biológica.", a: "extinción", letra: "X"},
+    {q: "Con la Y: Planta aromática empleada por su aceite esencial (menos ciencia).", a: "ylang", letra: "Y"},
+    {q: "Con la Z: Distribución de organismos o procesos en bandas según gradientes ambientales.", a: "zonación", letra: "Z"},
+// ROSCO 29 - ANIMALES Y OCÉANOS (LA GRAN FINAL)
+    {q: "Pólipo marino sésil de tentáculos urticantes que vive en estrecha simbiosis con el pez payaso.", a: "anémona", letra: "A"},
+    {q: "Clase de molusco acuático cuyo cuerpo blando está protegido por dos valvas articuladas.", a: "bivalvo", letra: "B"},
+    {q: "Pez sarcopterigio considerado un fósil viviente, redescubierto en el siglo XX en aguas de Sudáfrica.", a: "celacanto", letra: "C"},
+    {q: "Orden de crustáceos que incluye a las langostas y cangrejos, caracterizados por tener diez patas.", a: "decápodo", letra: "D"},
+    {q: "Filo de animales marinos bentónicos con simetría radial, al que pertenecen las estrellas de mar.", a: "equinodermo", letra: "E"},
+    {q: "Conjunto de organismos microscópicos acuáticos con capacidad fotosintética que habitan la columna de agua oceánica.", a: "fitoplancton", letra: "F"},
+    {q: "Clase de molusco provisto de un pie carnoso ventral y, generalmente, una concha dorsal asimétrica.", a: "gasterópodo", letra: "G"},
+    {q: "Clase de animales marinos cnidarios que alternan fases de pólipo bentónico y de medusa pelágica.", a: "hidrozoo", letra: "H"},
+    {q: "Orden de crustáceos peracáridos que incluye especies marinas gigantes que habitan en las zonas abisales.", a: "isópodo", letra: "I"},
+    {q: "Molusco cefalópodo marino, similar al calamar, provisto de una concha interna calcárea conocida como sepión.", a: "jibia", letra: "J"},
+    {q: "Pez agnato primitivo sin mandíbulas, hematófago, de boca circular provista de hileras de dientes córneos.", a: "lamprea", letra: "L"},
+    {q: "Suborden de cetáceos filtradores que carecen de dientes y poseen láminas de queratina en sus mandíbulas.", a: "misticeto", letra: "M"},
+    {q: "Suborden de moluscos gasterópodos marinos sin concha, famosos por sus llamativas y tóxicas coloraciones aposemáticas.", a: "nudibranquio", letra: "N"},
+    {q: "Contiene la Ñ: Pez omnívoro de agua dulce sudamericano, temido por sus fuertes mandíbulas y dientes afilados.", a: "piraña", letra: "Ñ"},
+    {q: "Mamífero pinnípedo marino que, a diferencia de las focas comunes, posee pabellones auditivos externos visibles.", a: "otario", letra: "O"},
+    {q: "Clado de mamíferos carnívoros semiacuáticos con extremidades transformadas en aletas, grupo al que pertenecen las morsas.", a: "pinnípedo", letra: "P"},
+    {q: "Molusco marino primitivo cuya concha ovalada está formada por ocho placas articuladas sobre el dorso.", a: "quitón", letra: "Q"},
+    {q: "Familia de cetáceos misticetos que presentan pliegues longitudinales en la garganta para expandir la cavidad oral.", a: "rorcual", letra: "R"},
+    {q: "Orden de mamíferos placentarios marinos herbívoros al que pertenecen los actuales manatíes y dugongos.", a: "sirenio", letra: "S"},
+    {q: "Infraclase de peces con esqueleto completamente osificado, que agrupa a la inmensa mayoría de especies actuales.", a: "teleósteo", letra: "T"},
+    {q: "Subfilo de animales marinos filtradores, también llamados tunicados, que en fase larvaria poseen notocorda dorsal.", a: "urocordado", letra: "U"},
+    {q: "Subfilo de cordados provistos de espina dorsal o columna vertebral compuesta por numerosas piezas articuladas.", a: "vertebrado", letra: "V"},
+    {q: "Orden de artrópodos quelicerados marinos considerados fósiles vivientes, cuyo representante más conocido es la cacerola de mar.", a: "xifosuro", letra: "X"},
+    {q: "Especie de cetáceo misticeto marino, célebre por sus complejos cantos y larguísimas aletas pectorales.", a: "yubarta", letra: "Y"},
+    {q: "Fracción animal heterótrofa de los organismos microscópicos que viven suspendidos en la columna de agua oceánica.", a: "zooplancton", letra: "Z"},
+// ROSCO 39 - MEDIOAMBIENTE Y CLIMA (VERSIÓN RÁPIDA)
+    {q: "Con la A: Capa de gases vital que rodea la Tierra y la protege del sol.", a: "atmósfera", letra: "A"},
+    {q: "Con la B: Material que puede ser descompuesto de forma natural por microorganismos.", a: "biodegradable", letra: "B"},
+    {q: "Con la C: Tormenta tropical muy intensa caracterizada por vientos huracanados destructivos.", a: "ciclón", letra: "C"},
+    {q: "Con la D: Eliminación masiva de los árboles de un bosque por acción humana.", a: "deforestación", letra: "D"},
+    {q: "Con la E: Ciencia biológica que estudia las relaciones de los seres vivos y su entorno.", a: "ecología", letra: "E"},
+    {q: "Con la F: Resto petrificado de un organismo del pasado conservado en rocas sedimentarias.", a: "fósil", letra: "F"},
+    {q: "Con la G: Enorme masa de hielo acumulada en zonas altas que se mueve lentamente.", a: "glaciar", letra: "G"},
+    {q: "Con la H: Medio geográfico o entorno físico natural donde vive una especie animal.", a: "hábitat", letra: "H"},
+    {q: "Con la I: Efecto por el que los gases de la atmósfera retienen el calor solar.", a: "invernadero", letra: "I"},
+    {q: "Contiene la J: Ilusión óptica producida por la refracción de la luz en el aire caliente.", a: "espejismo", letra: "J"},
+    {q: "Con la K: Escala de temperatura científica cuyo punto cero es el cero absoluto.", a: "Kelvin", letra: "K"},
+    {q: "Con la L: Capa exterior sólida de la Tierra, compuesta por la corteza y el manto.", a: "litosfera", letra: "L"},
+    {q: "Con la M: Violento terremoto cuyo epicentro se localiza en el fondo del mar.", a: "maremoto", letra: "M"},
+    {q: "Con la N: Sustancia azucarada que segregan las flores para atraer a los insectos polinizadores.", a: "néctar", letra: "N"},
+    {q: "Contiene la Ñ: Animal que se alimenta de los cadáveres en descomposición de otros animales.", a: "carroñero", letra: "Ñ"},
+    {q: "Con la O: Animal que basa su dieta alimenticia tanto en carne como en vegetales.", a: "omnívoro", letra: "O"},
+    {q: "Con la P: Conjunto de microorganismos animales y vegetales que flotan a la deriva en el océano.", a: "plancton", letra: "P"},
+    {q: "Contiene la Q: Falta prolongada y anómala de lluvias en un territorio determinado.", a: "sequía", letra: "Q"},
+    {q: "Con la R: Proceso industrial para transformar residuos y basura en nuevos materiales útiles.", a: "reciclaje", letra: "R"},
+    {q: "Con la S: Instrumento utilizado por los geólogos para registrar y medir terremotos.", a: "sismógrafo", letra: "S"},
+    {q: "Con la T: Gran ola destructiva provocada generalmente por un maremoto submarino.", a: "tsunami", letra: "T"},
+    {q: "Contiene la U: Ciclón tropical muy violento con vientos devastadores y fuertes lluvias.", a: "huracán", letra: "U"},
+    {q: "Con la V: Gran abertura en la corteza terrestre por la que emerge lava y magma.", a: "volcán", letra: "V"},
+    {q: "Contiene la X: Gas vital para los animales que producen las plantas mediante la fotosíntesis.", a: "oxígeno", letra: "X"},
+    {q: "Contiene la Y: Corriente natural de agua de escaso caudal, más pequeña que un río.", a: "arroyo", letra: "Y"},
+    {q: "Con la Z: Fracción del plancton marino constituida por pequeños organismos animales.", a: "zooplancton", letra: "Z"}   
+    ]
+});
+MAZOS.push({
+    id: "tecnologia", 
+    name: "Tecnología", 
+    icon: "💻", 
+    questions: [
+        // PEGA AQUÍ TUS ROSCOS DE TECNOLOGÍA E INFORMÁTICA
+       // ROSCO 1 - TECNOLOGÍA, INFORMÁTICA Y FÍSICA APLICADA
+    {q: "Con la A: Conjunto de instrucciones matemáticas definidas y ordenadas que permiten resolver un problema informático o tomar una decisión.", a: "algoritmo", letra: "A"},
+    {q: "Con la B: Protocolo de comunicaciones inalámbricas a corta distancia utilizado en móviles y auriculares.", a: "bluetooth", letra: "B"},
+    {q: "Con la C: Pequeña pieza de material semiconductor que contiene múltiples circuitos integrados (También llamado microprocesador).", a: "chip", letra: "C"},
+    {q: "Con la D: Vehículo aéreo no tripulado, que se controla a distancia o de forma autónoma mediante software.", a: "dron", letra: "D"},
+    {q: "Con la E: Forma de energía que produce efectos luminosos, mecánicos o caloríficos, debida a la separación o movimiento de los electrones.", a: "electricidad", letra: "E"},
+    {q: "Con la F: Filamento de vidrio o plástico muy fino que se emplea para transmitir datos a gran velocidad mediante pulsos de luz.", a: "fibra", letra: "F"},
+    {q: "Con la G: Unidad de medida de almacenamiento de información informática que equivale a 1024 megabytes.", a: "gigabyte", letra: "G"},
+    {q: "Con la H: Formación y maduración de las células sanguíneas.", a: "hematopoyesis", letra: "H"},
+    {q: "Con la I: Disciplina informática encargada de crear sistemas capaces de aprender, razonar y resolver problemas como humanos.", a: "inteligencia", letra: "I"},
+    {q: "Con la J: Lenguaje de programación muy popular, creado por Sun Microsystems, cuyo logotipo es una taza de café humeante.", a: "Java", letra: "J"},
+    {q: "Con la L: Retardo entre una solicitud y su respuesta en un sistema.", a: "latencia", letra: "L"},
+    {q: "Con la M: Software malicioso diseñado para infiltrarse en un sistema informático y dañarlo o robar datos.", a: "malware", letra: "M"},
+    {q: "Con la N: Tecnología que se dedica al diseño y manipulación de la materia a escala atómica y molecular.", a: "nanotecnología", letra: "N"},
+    {q: "Contiene la Ñ: Palabra, frase o código secreto que sirve para proteger el acceso a un ordenador, móvil o cuenta web.", a: "contraseña", letra: "Ñ"},
+    {q: "Con la O: Rama de la física que estudia las propiedades de la luz y su interacción con la materia.", a: "óptica", letra: "O"},
+    {q: "Con la P: Punto de la órbita de un astro en el que está más próximo al Sol.", a: "perihelio", letra: "P"},
+    {q: "Con la Q: Unidad básica de información cuántica.", a: "qubit", letra: "Q"}, // Error: "Física cuántica" uses C. Let's fix -> Con la Q: Partícula elemental indivisible que compone los protones y neutrones. -> quark
+    {q: "Con la Q: Partícula elemental indivisible en la física estándar que, al unirse, forma protones y neutrones.", a: "quark", letra: "Q"},
+    {q: "Con la R: Dispositivo de red informático que envía o 'enruta' los paquetes de datos entre nuestra casa e internet.", a: "router", letra: "R"},
+    {q: "Con la S: Conjunto de programas, aplicaciones y sistemas operativos que permiten que un ordenador funcione (Parte no física).", a: "software", letra: "S"},
+    {q: "Con la T: Componente electrónico clave que revolucionó la tecnología en el siglo XX, usado para amplificar o cambiar señales eléctricas y de potencia.", a: "transistor", letra: "T"},
+    {q: "Con la U: Tipo de conexión estándar y puerto muy común usado para conectar ratones, teclados y memorias al ordenador (Siglas).", a: "USB", letra: "U"},
+    {q: "Con la V: Estado de un espacio donde no hay materia, absolutamente nada.", a: "vacío", letra: "V"},
+    {q: "Contiene la X: Acción de enlazar o vincular dos dispositivos a internet, o un ordenador a una red.", a: "conexión", letra: "X"},
+    {q: "Contiene la Y: Unidad de medida de almacenamiento de datos en informática que equivale a un billón de terabytes (Empieza por Y).", a: "yottabyte", letra: "Y"},
+    {q: "Con la Z: Pieza de plástico cuadrada en la placa base de un ordenador donde se encaja o conecta el microprocesador.", a: "zócalo", letra: "Z"},
+
+// ROSCO 12 - INFORMÁTICA Y TECNOLOGÍA (NIVEL GEEK)
+    {q: "Con la A: Programa informático diseñado para detectar, bloquear y eliminar software malicioso de un sistema.", a: "antivirus", letra: "A"},
+    {q: "Con la B: Acrónimo de 'Binary Digit', es la unidad mínima de información en la computación y las comunicaciones digitales.", a: "bit", letra: "B"},
+    {q: "Con la C: Técnica de escribir con procedimientos o claves secretas, usada para proteger los mensajes y contraseñas en internet.", a: "criptografía", letra: "C"},
+    {q: "Con la D: Prolongación neuronal que recibe señales sinápticas.", a: "dendrita", letra: "D"},
+    {q: "Con la E: Proceso de ocultar datos o información de un archivo alterándolos mediante una clave algorítmica.", a: "encriptación", letra: "E"},
+    {q: "Con la F: Sistema de seguridad de una red, también llamado cortafuegos, que bloquea el tráfico de datos no autorizado.", a: "firewall", letra: "F"},
+    {q: "Con la G: Siglas del Sistema de Posicionamiento Global mediante satélites que permite la navegación y geolocalización.", a: "GPS", letra: "G"},
+    {q: "Con la H: Término inglés para referirse a una persona con altos conocimientos informáticos que detecta e investiga fallos de seguridad.", a: "hacker", letra: "H"},
+    {q: "Con la I: Siglas de 'Internet Protocol', el código numérico único que identifica a un dispositivo conectado a una red.", a: "IP", letra: "I"},
+    {q: "Con la J: Palanca de mando utilizada originalmente en la aviación y hoy en día imprescindible como periférico para videojuegos.", a: "joystick", letra: "J"},
+    {q: "Con la L: Sistema operativo libre y de código abierto desarrollado originalmente por Torvalds, cuyo emblema es un pingüino.", a: "Linux", letra: "L"},
+    {q: "Con la M: Dispositivo que modula y demodula las señales analógicas a digitales, permitiendo a un ordenador conectarse a internet.", a: "módem", letra: "M"},
+    {q: "Con la N: Oxidación biológica del amonio a nitrito y nitrato.", a: "nitrificación", letra: "N"},
+    {q: "Con la O: Conjunto de técnicas, aplicaciones y herramientas informáticas que se utilizan en funciones de oficina para optimizar tareas.", a: "ofimática", letra: "O"},
+    {q: "Con la P: Microchip principal y cerebro de un ordenador, encargado de ejecutar las instrucciones de los programas.", a: "procesador", letra: "P"},
+    {q: "Con la Q: Nombre que recibe el modelo de teclado más común en occidente, formado por las primeras seis letras de su fila superior.", a: "QWERTY", letra: "Q"},
+    {q: "Con la R: Memoria principal y volátil de un ordenador donde residen temporalmente los programas y datos en ejecución (Siglas).", a: "RAM", letra: "R"},
+    {q: "Con la S: Hormona del crecimiento secretada por la hipófisis anterior.", a: "somatotropina", letra: "S"},
+    {q: "Con la T: Tipo de software malicioso o virus que se presenta al usuario como un programa inofensivo y legítimo para poder instalarse.", a: "troyano", letra: "T"},
+    {q: "Con la U: Siglas en inglés de 'Localizador Uniforme de Recursos', la dirección específica que se escribe en el navegador web.", a: "URL", letra: "U"},
+    {q: "Con la V: Entorno de escenas u objetos simulados de apariencia real, creado por tecnología informática para gafas o cascos.", a: "virtual", letra: "V"},
+    {q: "Contiene la X: Lenguaje de marcas utilizado en la web para estructurar y transferir datos, primo hermano del HTML, pero más estricto (Siglas).", a: "XML", letra: "X"},
+    {q: "Con la Y: La plataforma web de alojamiento y transmisión de videos más popular del mundo, propiedad de Google.", a: "YouTube", letra: "Y"},
+    {q: "Con la Z: Formato de compresión de archivos digitales muy popular, cuyo nombre significa en inglés 'cremallera'.", a: "zip", letra: "Z"},
+// ROSCO 12 - INFORMÁTICA Y TECNOLOGÍA (NIVEL GEEK)
+{q: "Con la A: Programa informático diseñado para detectar, bloquear y eliminar software malicioso de un sistema.", a: "antivirus", letra: "A"},
+{q: "Con la B: Acrónimo de 'Binary Digit', es la unidad mínima de información en la computación y las comunicaciones digitales.", a: "bit", letra: "B"},
+{q: "Con la C: Técnica de escribir con procedimientos o claves secretas, usada para proteger los mensajes y contraseñas en internet.", a: "criptografía", letra: "C"},
+{q: "Con la D: Prolongación neuronal que recibe señales sinápticas.", a: "dendrita", letra: "D"},
+{q: "Con la E: Proceso de ocultar datos o información de un archivo alterándolos mediante una clave algorítmica.", a: "encriptación", letra: "E"},
+{q: "Con la F: Sistema de seguridad de una red, también llamado cortafuegos, que bloquea el tráfico de datos no autorizado.", a: "firewall", letra: "F"},
+{q: "Con la G: Siglas del sistema de posicionamiento global mediante satélites que permite la navegación y geolocalización.", a: "GPS", letra: "G"},
+{q: "Con la H: Protocolo de transferencia que se utiliza para cargar páginas web en el navegador (siglas).", a: "HTTP", letra: "H"},
+{q: "Con la I: Siglas de 'Internet Protocol', el código numérico único que identifica a un dispositivo conectado a una red.", a: "IP", letra: "I"},
+{q: "Con la J: Palanca de mando utilizada originalmente en la aviación y hoy en día imprescindible como periférico para videojuegos.", a: "joystick", letra: "J"},
+{q: "Con la L: Sistema operativo libre y de código abierto desarrollado originalmente por Torvalds, cuyo emblema es un pingüino.", a: "Linux", letra: "L"},
+{q: "Con la M: Dispositivo que modula y demodula las señales analógicas a digitales, permitiendo a un ordenador conectarse a internet.", a: "módem", letra: "M"},
+{q: "Con la N: Red de ordenadores y dispositivos interconectados que comparten recursos y datos entre sí.", a: "nube", letra: "N"},
+{q: "Con la O: Conjunto de técnicas, aplicaciones y herramientas informáticas que se utilizan en funciones de oficina para optimizar tareas.", a: "ofimática", letra: "O"},
+{q: "Con la P: Microchip principal y cerebro de un ordenador, encargado de ejecutar las instrucciones de los programas.", a: "procesador", letra: "P"},
+{q: "Con la Q: Nombre que recibe el modelo de teclado más común en occidente, formado por las primeras seis letras de su fila superior.", a: "QWERTY", letra: "Q"},
+{q: "Con la R: Memoria principal y volátil de un ordenador donde residen temporalmente los programas y datos en ejecución (siglas).", a: "RAM", letra: "R"},
+{q: "Con la S: Sistema en el que el proveedor ofrece servidores y servicios de computación a través de internet, en lugar de hardware propio.", a: "SaaS", letra: "S"},
+{q: "Con la T: Tipo de software malicioso o virus que se presenta al usuario como un programa inofensivo y legítimo para poder instalarse.", a: "troyano", letra: "T"},
+{q: "Con la U: Siglas en inglés de 'Localizador Uniforme de Recursos', la dirección específica que se escribe en el navegador web.", a: "URL", letra: "U"},
+{q: "Con la V: Entorno de escenas o objetos simulados de apariencia real, creado por tecnología informática para gafas o cascos.", a: "virtual", letra: "V"},
+{q: "Contiene la X: Lenguaje de marcas utilizado en la web para estructurar y transferir datos, primo hermano del HTML, pero más estricto (siglas).", a: "XML", letra: "X"}, 
+{q: "Con la Y: La plataforma web de alojamiento y transmisión de videos más popular del mundo, propiedad de Google.", a: "YouTube", letra: "Y"},
+{q: "Con la Z: Formato de compresión de archivos digitales muy popular, cuyo nombre significa en inglés 'cremallera'.", a: "zip", letra: "Z"},
+
+// ROSCO 30 - REDES, INTERNET E INFORMÁTICA AVANZADA
+    {q: "Conjunto ordenado de operaciones sistemáticas que permite hacer un cálculo y hallar una solución informática.", a: "algoritmo", letra: "A"},
+    {q: "Estructura matemática de datos en bloques descentralizados que garantiza la seguridad en transacciones criptográficas.", a: "blockchain", letra: "B"},
+    {q: "Técnica de protección de documentos y datos informáticos mediante el uso de cifras o códigos.", a: "criptografía", letra: "C"},
+    {q: "Conjunto de datos estructurados utilizado masivamente para el entrenamiento y validación de modelos de aprendizaje automático.", a: "dataset", letra: "D"},
+    {q: "Dispositivo informático final conectado a una red corporativa que se comunica con el nodo central.", a: "endpoint", letra: "E"},
+    {q: "Sistema de seguridad de red diseñado para bloquear accesos no autorizados permitiendo las comunicaciones legítimas.", a: "firewall", letra: "F"},
+    {q: "Pasarela o puerta de enlace que permite interconectar redes con protocolos y arquitecturas diferentes.", a: "gateway", letra: "G"},
+    {q: "Función criptográfica que transforma datos de longitud variable en una cadena alfanumérica de longitud fija.", a: "hash", letra: "H"},
+    {q: "Red informática interna de una corporación basada en los estándares de internet para compartir información.", a: "intranet", letra: "I"},
+    {q: "Formato de texto ligero para el intercambio de datos estructurado mediante pares de clave y valor.", a: "json", letra: "J"},
+    {q: "Tiempo exacto de retraso que tarda un paquete de datos en viajar por una red.", a: "latencia", letra: "L"},
+    {q: "Programa informático malicioso diseñado para infiltrarse en un sistema o dañar dispositivos sin conocimiento previo.", a: "malware", letra: "M"},
+    {q: "Punto de intersección o conexión física en una red de ordenadores donde convergen múltiples enlaces.", a: "nodo", letra: "N"},
+    {q: "Contiene la Ñ: Bot informático que rastrea páginas web de forma metódica y automatizada para indexar su contenido.", a: "araña", letra: "Ñ"},
+    {q: "Acción de forzar un componente de hardware para que trabaje a mayor velocidad de la diseñada.", a: "overclocking", letra: "O"},
+    {q: "Técnica de ciberdelincuencia que utiliza el engaño para robar datos confidenciales suplantando identidades de confianza.", a: "phishing", letra: "P"},
+    {q: "Contiene la Q: Estructura lógica y física de un sistema informático o de una red neuronal.", a: "arquitectura", letra: "Q"},
+    {q: "Software malicioso que cifra y bloquea el acceso a los datos de un sistema pidiendo un rescate.", a: "ransomware", letra: "R"},
+    {q: "Punto final de un enlace de comunicación bidireccional entre dos programas en una red informática.", a: "socket", letra: "S"},
+    {q: "Unidad de valor digital emitida por una entidad privada utilizando la tecnología de cadena de bloques.", a: "token", letra: "T"},
+    {q: "Sistema operativo de código abierto para ordenadores basado en la popular distribución Debian de GNU/Linux.", a: "ubuntu", letra: "U"},
+    {q: "Creación a través de software de una versión simulada de un recurso tecnológico o de hardware.", a: "virtualización", letra: "V"},
+    {q: "Contiene la X: Servidor de red informática que actúa como intermediario en las peticiones de un cliente.", a: "proxy", letra: "X"},
+    {q: "Contiene la Y: Famosa arquitectura de red neuronal convolucional muy rápida usada habitualmente en visión artificial.", a: "yolo", letra: "Y"},
+    {q: "Unidad de almacenamiento de información informática que equivale aproximadamente a mil trillones de bytes.", a: "zettabyte", letra: "Z"},
+// ROSCO 79 - TECNOLOGÍA E INTELIGENCIA ARTIFICIAL
+{q: "Con la A: Conjunto de instrucciones ordenadas y finitas que permiten realizar un cómputo o resolver un problema.", a: "Algoritmo", letra: "A"},
+{q: "Con la B: Unidad mínima de información en computación que solo puede tener dos valores, cero o uno.", a: "Bit", letra: "B"},
+{q: "Con la C: Rama de la Inteligencia Artificial que permite a las computadoras obtener información significativa a partir de imágenes digitales o videos.", a: "Computer Vision", letra: "C"},
+{q: "Con la D: Tipo de aprendizaje automático basado en redes neuronales artificiales con múltiples capas de procesamiento.", a: "Deep Learning", letra: "D"},
+{q: "Con la E: Método de protección de datos que utiliza algoritmos para transformar la información en un formato ilegible para usuarios no autorizados.", a: "Encriptacion", letra: "E"},
+{q: "Con la F: Componente físico de un sistema informático, en contraposición a los componentes lógicos.", a: "Hardware", letra: "F"}, // Error H. Ajustado a F:
+{q: "Con la F: Capacidad de una tecnología para permitir que múltiples sistemas se comuniquen y compartan datos sin restricciones.", a: "Federacion", letra: "F"},
+{q: "Con la G: Unidad de procesamiento especializada en el cálculo de operaciones en paralelo, fundamental para el entrenamiento de redes neuronales.", a: "GPU", letra: "G"},
+{q: "Con la H: Lenguaje de marcado utilizado para la creación y estructuración de páginas web.", a: "HTML", letra: "H"},
+{q: "Con la I: Campo de la informática que se enfoca en crear sistemas capaces de realizar tareas que normalmente requieren inteligencia humana.", a: "IA", letra: "I"},
+{q: "Con la J: Lenguaje de programación interpretado, orientado a objetos y utilizado principalmente para dar interactividad a las páginas web.", a: "Javascript", letra: "J"},
+{q: "Con la K: Unidad de medida de la memoria de una computadora equivalente a mil veinticuatro bytes.", a: "Kilobyte", letra: "K"},
+{q: "Con la L: Tecnología de detección y medición de distancias mediante la emisión de pulsos de luz láser.", a: "Lidar", letra: "L"},
+{q: "Con la M: Subcampo de la inteligencia artificial que se centra en el desarrollo de sistemas que aprenden de los datos.", a: "Machine Learning", letra: "M"},
+{q: "Con la N: Punto de conexión en una red o unidad básica de procesamiento en una red neuronal artificial.", a: "Nodo", letra: "N"},
+{q: "Contiene la Ñ: En procesamiento de señales para IA, estudio de ondas sonoras o datos temporales.", a: "Señal", letra: "Ñ"},
+{q: "Con la O: Modelo de desarrollo de software cuyo código fuente está disponible públicamente para que cualquiera pueda inspeccionarlo o modificarlo.", a: "Open Source", letra: "O"},
+{q: "Con la P: Lenguaje de programación de alto nivel muy utilizado en ciencia de datos e inteligencia artificial por su sintaxis clara.", a: "Python", letra: "P"},
+{q: "Con la Q: Tipo de computación que utiliza las leyes de la mecánica cuántica para procesar información mediante cúbits.", a: "Quántica", letra: "Q"},
+{q: "Con la R: Sistema informático que utiliza sensores y actuadores para realizar tareas físicas de forma automática o programada.", a: "Robot", letra: "R"},
+{q: "Con la S: Conjunto de programas y rutinas que permiten a la computadora realizar determinadas tareas.", a: "Software", letra: "S"},
+{q: "Con la T: Unidad de medida de capacidad de almacenamiento equivalente a mil gigabytes.", a: "Terabyte", letra: "T"},
+{q: "Con la U: Interfaz que permite la comunicación entre el hombre y la máquina a través de elementos visuales.", a: "Usuario", letra: "U"},
+{q: "Con la V: Simulación de un entorno tridimensional con el que el usuario puede interactuar de forma inmersiva mediante dispositivos ópticos.", a: "Virtual", letra: "V"},
+{q: "Contiene la X: Estructura de datos utilizada para organizar información de manera jerárquica, común en el desarrollo web y configuración de sistemas.", a: "XML", letra: "X"},
+{q: "Contiene la Y: Formato de representación de datos basado en texto, frecuentemente utilizado para archivos de configuración en programación e inteligencia artificial.", a: "YAML", letra: "Y"},
+{q: "Con la Z: Proceso de reducción del tamaño de un archivo informático sin perder información o con una pérdida mínima.", a: "Zip", letra: "Z"},
+
+// ROSCO 80 - TECNOLOGÍA AVANZADA Y SISTEMAS
+{q: "Con la A: Interfaz de programación que permite la comunicación entre diferentes aplicaciones de software.", a: "API", letra: "A"},
+{q: "Con la B: Tecnología de registro distribuido que asegura la integridad y descentralización de los datos mediante bloques.", a: "Blockchain", letra: "B"},
+{q: "Con la C: Disciplina que utiliza técnicas matemáticas para cifrar y garantizar la confidencialidad de la información.", a: "Criptografia", letra: "C"},
+{q: "Con la D: Colección estructurada de información que se utiliza como base para entrenar y evaluar algoritmos.", a: "Dataset", letra: "D"},
+{q: "Con la E: Estándar de transmisión de datos en redes de área local mediante conexión física por cable.", a: "Ethernet", letra: "E"},
+{q: "Con la F: Sistema de seguridad encargado de supervisar y filtrar el tráfico de red según reglas establecidas.", a: "Firewall", letra: "F"},
+{q: "Con la G: Rama de la inteligencia artificial enfocada en la creación de nuevos datos u objetos a partir de modelos existentes.", a: "Generativa", letra: "G"},
+{q: "Con la H: Elemento de un documento electrónico que hace referencia a otro recurso al ser pulsado.", a: "Hipervinculo", letra: "H"},
+{q: "Con la I: Punto de conexión y comunicación entre un usuario y un sistema informático.", a: "Interfaz", letra: "I"},
+{q: "Con la J: Formato de texto sencillo utilizado para el intercambio de datos entre servidores y aplicaciones.", a: "JSON", letra: "J"},
+{q: "Con la K: Sistema de código abierto para la orquestación y gestión de contenedores de aplicaciones.", a: "Kubernetes", letra: "K"},
+{q: "Con la L: Medida de tiempo que tarda un paquete de datos en viajar desde el origen hasta su destino en una red.", a: "Latencia", letra: "L"},
+{q: "Con la M: Computadora de gran potencia y capacidad de procesamiento destinada a tareas críticas y grandes volúmenes de información.", a: "Mainframe", letra: "M"},
+{q: "Con la N: Tecnología que trabaja a escala de nanómetros para manipular estructuras moleculares.", a: "Nanotecnologia", letra: "N"},
+{q: "Contiene la Ñ: Variación de una magnitud física que sirve para transmitir información en un sistema de telecomunicaciones.", a: "Señal", letra: "Ñ"},
+{q: "Con la O: Error de modelado que ocurre cuando un algoritmo se ajusta en exceso a los datos de entrenamiento y falla al generalizar.", a: "Overfitting", letra: "O"},
+{q: "Con la P: Ejecución simultánea de múltiples tareas o procesos para aumentar la velocidad de cómputo.", a: "Paralelismo", letra: "P"},
+{q: "Con la Q: Instrucción o consulta escrita para solicitar información de una base de datos.", a: "Query", letra: "Q"},
+{q: "Con la R: Espacio de almacenamiento donde se aloja y gestiona el historial de versiones de un proyecto informático.", a: "Repositorio", letra: "R"},
+{q: "Con la S: Dispositivo o programa que atiende las peticiones de otros computadores y les devuelve una respuesta.", a: "Servidor", letra: "S"},
+{q: "Con la T: Capacidad de identificar el origen y las etapas de un proceso o producto a través de su registro documentado.", a: "Trazabilidad", letra: "T"},
+{q: "Con la U: Dirección única que identifica la ubicación de un recurso en la red.", a: "URL", letra: "U"},
+{q: "Con la V: Proceso de comprobación técnica de que un sistema o modelo cumple con sus especificaciones de diseño.", a: "Validacion", letra: "V"},
+{q: "Contiene la X: Sistema operativo multiusuario y multitarea que sirve de base para la arquitectura de muchos sistemas modernos.", a: "Unix", letra: "X"},
+{q: "Con la Y: Unidad de almacenamiento de información equivalente a diez a la veinticuatro bytes.", a: "Yottabyte", letra: "Y"},
+{q: "Con la Z: Estándar de comunicación inalámbrica para redes de área personal con bajo consumo de energía.", a: "Zigbee", letra: "Z"} 
+    ]
+});
+
+MAZOS.push({
+    id: "capitales", 
+    name: "Capitales", 
+    icon: "✈️", 
+    questions: [
+        // PEGA AQUÍ TUS ROSCOS DE CAPITALES
+      // ROSCO 1 - CAPITALES
+  {q: "Con la A. Capital europea famosa por la Acrópolis y por ser cuna de la civilización occidental.", a: "Atenas", letra: "A"},
+  {q: "Con la B. Ciudad sudamericana, capital de la nación cafetera donde se encuentra el cerro de Monserrate.", a: "Bogotá", letra: "B"},
+  {q: "Con la C. Capital del país sudamericano que posee las mayores reservas de petróleo del mundo.", a: "Caracas", letra: "C"},
+  {q: "Con la D. Capital africana situada en la península de Cabo Verde, famosa por un histórico rally.", a: "Dakar", letra: "D"},
+  {q: "Con la E. Capital escandinava construida sobre catorce islas, donde se entregan la mayoría de los Premios Nobel.", a: "Estocolmo", letra: "E"},
+  {q: "Con la F. Capital africana cuyo nombre en inglés significa ciudad libre, fundada por antiguos esclavos.", a: "Freetown", letra: "F"},
+  {q: "Con la G. Capital sudamericana cuyo nombre honra a un rey británico, situada en la desembocadura del río Demerara.", a: "Georgetown", letra: "G"},
+  {q: "Con la H. Capital europea situada a orillas del golfo de Finlandia, conocida por su diseño y arquitectura.", a: "Helsinki", letra: "H"},
+  {q: "Con la I. Capital asiática construida en la década de los sesenta para reemplazar a Karachi como centro político.", a: "Islamabad", letra: "I"},
+  {q: "Con la J. Ciudad de Oriente Próximo, considerada sagrada por las tres principales religiones monoteístas del mundo.", a: "Jerusalén", letra: "J"},
+  {q: "Con la L. Metrópolis europea atravesada por el río Támesis, que alberga el famoso reloj Big Ben.", a: "Londres", letra: "L"},
+  {q: "Con la M. Capital europea que alberga el Museo del Prado y es la sede del gobierno español.", a: "Madrid", letra: "M"},
+  {q: "Con la N. Capital africana conocida como la ciudad verde en el sol, famosa por su parque nacional homónimo.", a: "Nairobi", letra: "N"},
+  {q: "Contiene la Ñ. Capital del territorio no incorporado de Guam, situada en el archipiélago de las islas Marianas.", a: "Hagåtña", letra: "Ñ"},
+  {q: "Con la O. Capital europea donde se entrega anualmente el prestigioso Premio Nobel de la Paz.", a: "Oslo", letra: "O"},
+  {q: "Con la P. Megalópolis asiática que alberga en su centro la Ciudad Prohibida y la enorme plaza de Tiananmén.", a: "Pekín", letra: "P"},
+  {q: "Con la Q. Capital sudamericana situada en las faldas del volcán Pichincha, a casi tres mil metros de altitud.", a: "Quito", letra: "Q"},
+  {q: "Con la R. Capital europea conocida como la Ciudad Eterna, que alberga en su interior al Estado del Vaticano.", a: "Roma", letra: "R"},
+  {q: "Con la S. Capital europea que debe su nombre a una imponente iglesia ortodoxa que domina su centro histórico.", a: "Sofía", letra: "S"},
+  {q: "Con la T. Megalópolis asiática, sede de los Juegos Olímpicos de dos mil veinte y capital del país del sol naciente.", a: "Tokio", letra: "T"},
+  {q: "Con la U. Capital africana, centro político de Burkina Faso y sede del famoso festival de cine FESPACO.", a: "Uagadugú", letra: "U"},
+  {q: "Con la V. Capital europea atravesada por el Danubio, famosa por su ópera y su legado musical clásico.", a: "Viena", letra: "V"},
+  {q: "Contiene la X. Megalópolis norteamericana construida sobre las ruinas de la antigua Tenochtitlán.", a: "Ciudad de México", letra: "X"},
+  {q: "Con la Y. Capital africana de la República del Chad, situada en la confluencia de los ríos Chari y Logone.", a: "Yamena", letra: "Y"},
+  {q: "Con la Z. Capital europea atravesada por el río Sava, centro político, económico y cultural de Croacia.", a: "Zagreb", letra: "Z"},
+
+
+// ROSCO 2 - CAPITALES
+  {q: "Con la A. Capital sudamericana situada a orillas del río homónimo, conocida tradicionalmente como Madre de Ciudades.", a: "Asunción", letra: "A"},
+  {q: "Con la B. Capital europea que estuvo dividida por un famoso muro durante gran parte de la Guerra Fría.", a: "Berlín", letra: "B"},
+  {q: "Con la C. Capital europea famosa por albergar la emblemática escultura de La Sirenita en su puerto.", a: "Copenhague", letra: "C"},
+  {q: "Con la D. Capital europea atravesada por el río Liffey, cuna de importantes escritores como James Joyce.", a: "Dublín", letra: "D"},
+  {q: "Con la E. Capital asiática situada a la sombra del monte Ararat, centro político y económico de Armenia.", a: "Ereván", letra: "E"},
+  {q: "Contiene la F. Capital constituyente de Irlanda del Norte, ciudad donde fue construido el famoso transatlántico Titanic.", a: "Belfast", letra: "F"},
+  {q: "Con la G. Capital africana de Botsuana, sede oficial de la Comunidad para el Desarrollo del África Meridional.", a: "Gaborone", letra: "G"},
+  {q: "Con la H. Capital africana de Zimbabue, conocida históricamente como Salisbury hasta su cambio oficial de nombre.", a: "Harare", letra: "H"},
+  {q: "Contiene la I. Capital europea mundialmente famosa por su Torre Eiffel y por albergar el museo del Louvre.", a: "París", letra: "I"},
+  {q: "Con la J. Capital africana estratégicamente situada en la confluencia de las aguas del Nilo Blanco y el Nilo Azul.", a: "Jartum", letra: "J"},
+  {q: "Con la L. Capital europea situada en la desembocadura del río Tajo, famosa por su histórica torre de Belém.", a: "Lisboa", letra: "L"},
+  {q: "Con la M. Capital europea de enorme extensión que alberga la fortaleza del Kremlin y la icónica Plaza Roja.", a: "Moscú", letra: "M"},
+  {q: "Con la N. Metrópolis asiática que sirve como centro político de la India, cuyo trazado fue diseñado por Edwin Lutyens.", a: "Nueva Delhi", letra: "N"},
+  {q: "Contiene la Ñ. Variante gráfica hispanizada que se utiliza en ocasiones para nombrar a la capital de Camboya.", a: "Pnom Peñ", letra: "Ñ"},
+  {q: "Con la O. Capital norteamericana situada en la provincia de Ontario, atravesada por un río homónimo y el canal Rideau.", a: "Ottawa", letra: "O"},
+  {q: "Con la P. Capital africana de Sudáfrica que funciona exclusivamente como sede del poder ejecutivo del país.", a: "Pretoria", letra: "P"},
+  {q: "Contiene la Q. Antigua y populosa ciudad asiática que funcionó como capital oficial de Filipinas entre 1948 y 1976.", a: "Ciudad Quezón", letra: "Q"},
+  {q: "Con la R. Capital africana que es una de las cuatro históricas ciudades imperiales de Marruecos, sede del palacio real.", a: "Rabat", letra: "R"},
+  {q: "Con la S. Megalópolis asiática dividida por el río Han, que ejerce como sede del gobierno de Corea del Sur.", a: "Seúl", letra: "S"},
+  {q: "Con la T. Capital asiática situada en las estribaciones de los montes Elburz, principal centro político de Irán.", a: "Teherán", letra: "T"},
+  {q: "Con la U. Capital asiática cuyo nombre significa Héroe Rojo, mundialmente conocida por ser la más fría del mundo.", a: "Ulán Bator", letra: "U"},
+  {q: "Con la V. Capital europea atravesada por el río Vístula, cuyo casco antiguo fue meticulosamente reconstruido tras la guerra.", a: "Varsovia", letra: "V"},
+  {q: "Contiene la X. Capital europea de un pequeño Gran Ducado homónimo, clave en la fundación de la Unión Europea.", a: "Luxemburgo", letra: "X"},
+  {q: "Con la Y. Capital africana ubicada en el estratégico Cuerno de África, que comparte exactamente el mismo nombre que su país.", a: "Yibuti", letra: "Y"},
+  {q: "Contiene la Z. Capital africana situada en la orilla derecha del río Congo, justo frente a la metrópolis de Kinsasa.", a: "Brazzaville", letra: "Z"},
+
+// ROSCO 3 - CAPITALES
+  {q: "Con la A. Capital asiática de un emirato rico en petróleo, sede de la imponente gran mezquita Sheikh Zayed.", a: "Abu Dabi", letra: "A"},
+  {q: "Con la B. Capital africana de Malí, situada a orillas del río Níger y principal centro comercial del país.", a: "Bamako", letra: "B"},
+  {q: "Con la C. Capital oceánica diseñada en el siglo veinte como compromiso territorial entre Sídney y Melbourne.", a: "Canberra", letra: "C"},
+  {q: "Con la D. Capital asiática considerada la ciudad habitada ininterrumpidamente más antigua del mundo, centro político de Siria.", a: "Damasco", letra: "D"},
+  {q: "Con la E. Nombre en español de la capital de Macedonia del Norte, ciudad natal de la Madre Teresa de Calcuta.", a: "Escopie", letra: "E"},
+  {q: "Con la F. Capital oceánica formada casi íntegramente por un atolón, que es la sede del gobierno de Tuvalu.", a: "Funafuti", letra: "F"},
+  {q: "Contiene la G. Capital africana de Ruanda, tristemente célebre a nivel internacional por los dolorosos sucesos de mil novecientos noventa y cuatro.", a: "Kigali", letra: "G"},
+  {q: "Con la H. Capital asiática famosa por su céntrico lago Hoan Kiem y por ser el centro político de Vietnam.", a: "Hanói", letra: "H"},
+  {q: "Contiene la I. Capital sudamericana conocida históricamente como la Ciudad de los Reyes, antiguo centro del virreinato español.", a: "Lima", letra: "I"},
+  {q: "Contiene la J. Capital europea de los Balcanes tristemente recordada por sufrir el asedio más largo de la historia moderna.", a: "Sarajevo", letra: "J"},
+  {q: "Con la L. Capital africana de habla portuguesa, fuertemente enriquecida y transformada por la industria del petróleo en Angola.", a: "Luanda", letra: "L"},
+  {q: "Con la M. Capital asiática de Filipinas, situada en la isla de Luzón e histórica y estratégica posesión española.", a: "Manila", letra: "M"},
+  {q: "Con la N. Capital africana de Níger, situada a orillas del cauce del principal río de toda África occidental.", a: "Niamey", letra: "N"},
+  {q: "Contiene la Ñ. Escritura fonética hispanizada ocasional de la ciudad asiática que sirve como capital de Corea del Norte.", a: "Pioñang", letra: "Ñ"},
+  {q: "Contiene la O. Capital norteamericana bautizada expresamente en honor al primer presidente en la historia de los Estados Unidos.", a: "Washington", letra: "O"},
+  {q: "Con la P. Capital europea mundialmente conocida por el histórico Puente de Carlos y la plaza de la Ciudad Vieja.", a: "Praga", letra: "P"},
+  {q: "Contiene la Q. Grafía internacional francesa con la que se conoce y escribe la capital de Mauritania en África.", a: "Nouakchott", letra: "Q"},
+  {q: "Con la R. Capital asiática de Arabia Saudí, cuyo nombre original significa textualmente los jardines en lengua árabe.", a: "Riad", letra: "R"},
+  {q: "Con la S. Capital sudamericana enmarcada visualmente por la imponente cordillera de los Andes, principal núcleo de Chile.", a: "Santiago", letra: "S"},
+  {q: "Con la T. Capital europea de Albania, conocida por su amplia plaza Skanderbeg y sus antiguos búnkeres comunistas.", a: "Tirana", letra: "T"},
+  {q: "Contiene la U. Capital europea atravesada por el Danubio, nacida de la unión de dos ciudades históricas en mil ochocientos setenta y tres.", a: "Budapest", letra: "U"},
+  {q: "Con la V. Capital asiática de Laos, situada en la orilla del río Mekong muy cerca de la frontera tailandesa.", a: "Vientián", letra: "V"},
+  {q: "Con la X. Antigua capital imperial de China, mundialmente famosa hoy por albergar el espectacular mausoleo de los guerreros de terracota.", a: "Xi'an", letra: "X"},
+  {q: "Con la Y. Capital política de Costa de Marfil, que ostenta el récord de albergar la gigantesca basílica de Nuestra Señora de la Paz.", a: "Yamusukro", letra: "Y"},
+  {q: "Contiene la Z. Capital sudamericana más alta del mundo, principal sede de gobierno aunque no ostente el título de capital constitucional.", a: "La Paz", letra: "Z"},
+  
+  // ROSCO 4 - CAPITALES
+  {q: "Con la A. Capital europea famosa por sus canales, la casa de Ana Frank y el museo Van Gogh.", a: "Ámsterdam", letra: "A"},
+  {q: "Con la B. Capital sudamericana a orillas del Río de la Plata, conocida por el tango y su Obelisco.", a: "Buenos Aires", letra: "B"},
+  {q: "Con la C. Capital centroamericana donde se ubica el canal interoceánico que conecta el Atlántico con el Pacífico.", a: "Ciudad de Panamá", letra: "C"},
+  {q: "Con la D. Capital asiática situada en el golfo Pérsico, principal centro económico y político de Qatar.", a: "Doha", letra: "D"},
+  {q: "Con la E. Nombre en español de la metrópolis africana situada a orillas del río Nilo, capital de Egipto.", a: "El Cairo", letra: "E"},
+  {q: "Contiene la F. Capital oceánica del reino de Tonga, situada en la costa norte de la isla Tongatapu.", a: "Nukualofa", letra: "F"},
+  {q: "Contiene la G. Capital europea de Serbia, situada en la confluencia de los ríos Danubio y Sava.", a: "Belgrado", letra: "G"},
+  {q: "Con la H. Capital oceánica de las Islas Salomón, situada en la costa noroccidental de la isla de Guadalcanal.", a: "Honiara", letra: "H"},
+  {q: "Contiene la I. Capital africana situada en la costa del mar Mediterráneo, principal centro político de Libia.", a: "Trípoli", letra: "I"},
+  {q: "Contiene la J. Capital africana de Gambia, situada en una isla donde el río homónimo desemboca en el Atlántico.", a: "Banjul", letra: "J"},
+  {q: "Con la L. Capital europea conocida por sus puentes sobre el río Ljubljanica y su símbolo del dragón.", a: "Liubliana", letra: "L"},
+  {q: "Con la M. Capital sudamericana bañada por las aguas del Río de la Plata, centro político de Uruguay.", a: "Montevideo", letra: "M"},
+  {q: "Con la N. Capital europea dividida en dos zonas separadas por la Línea Verde, núcleo principal de Chipre.", a: "Nicosia", letra: "N"},
+  {q: "Contiene la O. Megalópolis asiática famosa por sus ornamentados santuarios y por ser la vibrante capital de Tailandia.", a: "Bangkok", letra: "O"},
+  {q: "Con la P. Capital sudamericana situada a orillas del río homónimo, centro histórico de la antigua Guayana Neerlandesa.", a: "Paramaribo", letra: "P"},
+  {q: "Con la R. Capital europea situada más al norte de todo el mundo, famosa por su uso de energía geotérmica.", a: "Reikiavik", letra: "R"},
+  {q: "Con la S. Ciudad-Estado asiática, uno de los grandes centros financieros mundiales y capital de su propio país.", a: "Singapur", letra: "S"},
+  {q: "Con la T. Capital centroamericana situada en un valle rodeado de montañas, centro político e histórico de Honduras.", a: "Tegucigalpa", letra: "T"},
+  {q: "Contiene la U. Capital asiática enclavada en un estrecho valle de la cordillera del Hindu Kush, centro de Afganistán.", a: "Kabul", letra: "U"},
+  {q: "Con la V. Capital europea de un pequeño principado alpino, situada a orillas del histórico río Rin.", a: "Vaduz", letra: "V"},
+  {q: "Con la Y. Megalópolis asiática situada en la isla de Java, centro económico, cultural y político de Indonesia.", a: "Yakarta", letra: "Y"},
+  {q: "Contiene la Z. Capital africana situada en la costa mediterránea, cercana a las antiguas ruinas de Cartago.", a: "Túnez", letra: "Z"},
+
+
+// ROSCO 5 - CAPITALES[
+  {q: "Con la A. Capital asiática de Anatolia, centro del poder político de Turquía desde los tiempos de Atatürk.", a: "Ankara", letra: "A"},
+  {q: "Con la B. Capital europea que alberga el colosal Palacio del Parlamento, encargada por Nicolae Ceaușescu.", a: "Bucarest", letra: "B"},
+  {q: "Con la C. Ciudad asiática que fue históricamente la capital de Sri Lanka y sigue siendo su núcleo comercial.", a: "Colombo", letra: "C"},
+  {q: "Con la D. Megalópolis asiática conocida como la ciudad de las mezquitas, principal núcleo textil de Bangladés.", a: "Daca", letra: "D"},
+  {q: "Contiene la E. Capital europea oriental surcada por el río Dniéper, famosa por sus monasterios de cúpulas doradas.", a: "Kiev", letra: "E"},
+  {q: "Contiene la F. Ciudad sudafricana que sirve como sede de la Corte Suprema de Apelaciones y ejerce como capital judicial.", a: "Bloemfontein", letra: "F"},
+  {q: "Con la G. Ciudad africana establecida recientemente como la capital política oficial de Burundi, sustituyendo a Bujumbura.", a: "Gitega", letra: "G"},
+  {q: "Contiene la H. Capital africana de Namibia, conocida por su herencia arquitectónica colonial de estilo alemán.", a: "Windhoek", letra: "H"},
+  {q: "Contiene la I. Capital africana situada en las Tierras Altas centrales, principal núcleo y sede de gobierno de Madagascar.", a: "Antananarivo", letra: "I"},
+  {q: "Contiene la J. Capital centroamericana ubicada en el Valle Central, que destaca por su proximidad a diversos volcanes.", a: "San José", letra: "J"},
+  {q: "Con la L. Ciudad africana francófona situada en el golfo de Guinea, importante puerto comercial y capital de Togo.", a: "Lomé", letra: "L"},
+  {q: "Con la M. Capital de Nicaragua, situada en la ribera suroccidental de un gran lago homónimo.", a: "Managua", letra: "M"},
+  {q: "Con la N. Capital caribeña situada en la isla de Nueva Providencia, principal centro político de las Bahamas.", a: "Nassau", letra: "N"},
+  {q: "Contiene la O. Capital caribeña, la primera ciudad europea permanente en las Américas, núcleo de la República Dominicana.", a: "Santo Domingo", letra: "O"},
+  {q: "Con la P. Capital oceánica situada en el golfo homónimo, principal núcleo demográfico y político de Papúa Nueva Guinea.", a: "Puerto Moresby", letra: "P"},
+  {q: "Con la R. Capital europea atravesada por el río Daugava, históricamente considerada la ciudad más grande de los Estados bálticos.", a: "Riga", letra: "R"},
+  {q: "Con la S. Capital centroamericana situada al pie del volcán Quezaltepeque, principal urbe de El Salvador.", a: "San Salvador", letra: "S"},
+  {q: "Con la T. Capital europea situada en la costa del mar Báltico, cuyo casco antiguo medieval está excepcionalmente conservado.", a: "Tallin", letra: "T"},
+  {q: "Contiene la U. Capital africana costera y puerto principal en el océano Índico que sirve y gobierna a Mozambique.", a: "Maputo", letra: "U"},
+  {q: "Con la V. Capital europea situada en la confluencia de los ríos Neris y Vilnia, famosa por su arquitectura barroca.", a: "Vilna", letra: "V"},
+  {q: "Con la Y. Capital africana de Camerún, situada en el centro del país sobre un terreno accidentado y montañoso.", a: "Yaundé", letra: "Y"},
+  {q: "Con la Z. Capital de una región semiautónoma insular de Tanzania, famosa por su histórica Ciudad de Piedra.", a: "Zanzíbar", letra: "Z"},
+
+// ROSCO 6 - CAPITALES
+  {q: "Con la A. Capital africana conocida como la ciudad blanca, situada en la costa mediterránea y principal puerto de su país.", a: "Argel", letra: "A"},
+  {q: "Con la B. Capital asiática en la costa del Mediterráneo, tristemente marcada por una enorme y letal explosión portuaria en dos mil veinte.", a: "Beirut", letra: "B"},
+  {q: "Con la C. Capital caribeña de la isla de Santa Lucía, importante puerto turístico que lleva el nombre de un ministro francés.", a: "Castries", letra: "C"},
+  {q: "Con la D. Capital asiática de Tayikistán, cuyo nombre significa literalmente lunes en su idioma nacional.", a: "Dusambé", letra: "D"},
+  {q: "Contiene la E. Capital europea cuyo pintoresco casco antiguo medieval es Patrimonio de la Humanidad, centro político de Suiza.", a: "Berna", letra: "E"},
+  {q: "Con la F. Capital caribeña del departamento de ultramar francés de Martinica, hogar histórico del intelectual Aimé Césaire.", a: "Fort-de-France", letra: "F"},
+  {q: "Contiene la G. Capital africana situada en el Cuerno de África, a orillas del océano Índico, históricamente asolada por múltiples conflictos.", a: "Mogadiscio", letra: "G"},
+  {q: "Contiene la H. Metrópolis africana, tercera ciudad más grande del continente y capital de la República Democrática del Congo.", a: "Kinshasa", letra: "H"},
+  {q: "Contiene la I. Capital europea reconstruida casi por completo tras la Segunda Guerra Mundial, centro de gobierno de Bielorrusia.", a: "Minsk", letra: "I"},
+  {q: "Contiene la J. Capital de Turkmenistán, mundialmente conocida por sus espectaculares y ostentosos edificios revestidos de mármol blanco.", a: "Asjabad", letra: "J"},
+  {q: "Con la L. Capital africana y mayor ciudad de Zambia, situada en la parte central del sur del país.", a: "Lusaka", letra: "L"},
+  {q: "Con la M. Capital asiática en la costa del golfo de Omán, importante puerto comercial histórico de la península arábiga.", a: "Mascate", letra: "M"},
+  {q: "Con la N. Capital asiática de reciente creación, construida desde cero y oficializada como sede del gobierno de Birmania.", a: "Naipyidó", letra: "N"},
+  {q: "Contiene la O. Capital insular africana situada en la isla de Bioko, sede gubernamental y administrativa de Guinea Ecuatorial.", a: "Malabo", letra: "O"},
+  {q: "Con la P. Capital europea de Montenegro, conocida oficialmente como Titogrado durante la existencia de la antigua Yugoslavia.", a: "Podgorica", letra: "P"},
+  {q: "Con la R. Capital caribeña de la frondosa isla de Dominica, rodeada por el mar Caribe y atravesada por el río homónimo.", a: "Roseau", letra: "R"},
+  {q: "Con la S. Ciudad sudamericana que ostenta el título de capital constitucional y es la principal sede del poder judicial de Bolivia.", a: "Sucre", letra: "S"},
+  {q: "Con la T. Capital asiática de Uzbekistán, cuyo nombre se traduce históricamente de forma literal como la ciudad de piedra.", a: "Taskent", letra: "T"},
+  {q: "Contiene la U. Capital euroasiática de Azerbaiyán, situada en la rica península de Absheron a orillas del mar Caspio.", a: "Bakú", letra: "U"},
+  {q: "Contiene la V. Capital oceánica de Fiyi, principal puerto, centro comercial y político del Pacífico Sur insular.", a: "Suva", letra: "V"},
+  {q: "Con la Y. Capital africana de Sudán del Sur, convertida en la sede nacional más joven del mundo tras lograr su independencia.", a: "Yuba", letra: "Y"},
+  {q: "Con la Z. Ciudad africana que sirvió como la primera y antigua capital nacional de la República de Malaui hasta su traslado definitivo.", a: "Zomba", letra: "Z"},
+
+  // ROSCO 7 - CAPITALES
+  {q: "Con la A. Capital africana que reemplazó a Lagos como centro político de Nigeria en los años noventa.", a: "Abuya", letra: "A"},
+  {q: "Con la B. Capital europea considerada la sede principal de las instituciones de la Unión Europea.", a: "Bruselas", letra: "B"},
+  {q: "Con la C. Capital africana y principal puerto de Guinea, situada en la península de Kaloum.", a: "Conakry", letra: "C"},
+  {q: "Con la D. Capital asiática y principal puerto de Timor Oriental, situada en la costa norte insular.", a: "Dili", letra: "D"},
+  {q: "Con la E. Capital histórica de Escocia, mundialmente famosa por su imponente castillo y su festival.", a: "Edimburgo", letra: "E"},
+  {q: "Contiene la F. Capital de Niue, una pequeña nación insular en el Pacífico Sur asociada a Nueva Zelanda.", a: "Alofi", letra: "F"},
+  {q: "Con la G. Ciudad centroamericana que comparte nombre con su país, siendo su núcleo político y económico.", a: "Guatemala", letra: "G"},
+  {q: "Con la H. Capital caribeña conocida por su malecón, su arquitectura colonial y sus vehículos clásicos.", a: "Habana", letra: "H"},
+  {q: "Contiene la I. Capital sudamericana diseñada desde cero por Oscar Niemeyer y Lúcio Costa en el siglo veinte.", a: "Brasilia", letra: "I"},
+  {q: "Contiene la J. Atolón de coral y capital oceánica que sirve como sede de gobierno de las Islas Marshall.", a: "Majuro", letra: "J"},
+  {q: "Con la L. Capital africana de Gabón, fundada en el siglo diecinueve por esclavos liberados en el estuario.", a: "Libreville", letra: "L"},
+  {q: "Con la M. Capital africana de Liberia, nombrada en honor a un presidente estadounidense que apoyó su fundación.", a: "Monrovia", letra: "M"},
+  {q: "Con la N. Pequeña capital oceánica de Palaos, situada en el estado de Melekeok, que reemplazó a Koror.", a: "Ngerulmud", letra: "N"},
+  {q: "Contiene la Ñ. Capital caribeña situada en la isla de Trinidad, principal centro político de su nación insular.", a: "Puerto España", letra: "Ñ"},
+  {q: "Con la O. Capital caribeña de la isla de Aruba, famosa por su colorida arquitectura colonial neerlandesa.", a: "Oranjestad", letra: "O"},
+  {q: "Con la P. Capital caribeña de Haití, situada en el golfo de la Gonâve y afectada por sismos.", a: "Puerto Príncipe", letra: "P"},
+  {q: "Con la Q. Antigua capital asiática del vasto Imperio mongol, situada históricamente en el valle del río Orjón.", a: "Qaraqorum", letra: "Q"},
+  {q: "Con la R. Ciudad asiática en Cisjordania que funciona como la capital administrativa y sede de Palestina.", a: "Ramala", letra: "R"},
+  {q: "Con la S. Capital europea del microestado homónimo, situada en las laderas del escarpado monte Titano.", a: "San Marino", letra: "S"},
+  {q: "Con la T. Atolón oceánico que funciona como la capital y principal centro demográfico de Kiribati.", a: "Tarawa", letra: "T"},
+  {q: "Contiene la U. Megalópolis asiática y capital nacional famosa por albergar las imponentes Torres Petronas en su centro.", a: "Kuala Lumpur", letra: "U"},
+  {q: "Con la V. Capital insular africana situada en la isla de Mahé, centro político de las Seychelles.", a: "Victoria", letra: "V"},
+  {q: "Con la X. Ciudad mexicana capital del estado de Veracruz, conocida tradicionalmente como la Atenas Veracruzana.", a: "Xalapa", letra: "X"},
+  {q: "Con la Y. Distrito oceánico que actúa como la capital de facto de la pequeña república insular de Nauru.", a: "Yaren", letra: "Y"},
+  {q: "Contiene la Z. Capital euroasiática de la República de Chechenia, reconstruida tras severos conflictos a finales del siglo.", a: "Grozni", letra: "Z"},
+
+// ROSCO 8 - CAPITALES
+  {q: "Con la A. Capital asiática de Jordania, construida originalmente sobre siete colinas al igual que Roma.", a: "Ammán", letra: "A"},
+  {q: "Con la B. Capital asiática atravesada por el río Tigris, centro histórico del antiguo califato abasí.", a: "Bagdad", letra: "B"},
+  {q: "Con la C. Capital europea oriental de Moldavia, situada a orillas del río Bîc y conocida por sus parques.", a: "Chisináu", letra: "C"},
+  {q: "Con la D. Capital africana que reemplazó a Dar es Salaam como la sede oficial del gobierno de Tanzania.", a: "Dodoma", letra: "D"},
+  {q: "Con la E. Capital declarada de la República Árabe Saharaui Democrática, situada en el norte de África.", a: "El Aaiún", letra: "E"},
+  {q: "Contiene la F. Capital nominal y atolón principal del territorio oceánico de Tokelau en el Pacífico Sur.", a: "Atafu", letra: "F"},
+  {q: "Contiene la G. Capital oceánica situada en el extremo sur de la Isla Norte de Nueva Zelanda.", a: "Wellington", letra: "G"},
+  {q: "Con la H. Capital de Somalilandia, un estado autodeclarado en el Cuerno de África no reconocido internacionalmente.", a: "Hargeisa", letra: "H"},
+  {q: "Contiene la I. Capital oceánica de Samoa, situada en la costa norte de la frondosa isla de Upolu.", a: "Apia", letra: "I"},
+  {q: "Contiene la J. Capital caribeña de Puerto Rico, famosa por la histórica fortaleza del Morro en su bahía.", a: "San Juan", letra: "J"},
+  {q: "Con la L. Capital europea fortificada del estado insular de Malta, declarada Patrimonio de la Humanidad por Unesco.", a: "La Valeta", letra: "L"},
+  {q: "Con la M. Capital y ciudad-estado europea famosa por su casino y su circuito de Fórmula Uno callejero.", a: "Mónaco", letra: "M"},
+  {q: "Con la N. Capital del territorio de Groenlandia, cuyo nombre significa textualmente el cabo en idioma inuit.", a: "Nuuk", letra: "N"},
+  {q: "Contiene la Ñ. Nombre en euskera de la ciudad que fue sede y capital del histórico Reino de Navarra.", a: "Iruña", letra: "Ñ"},
+  {q: "Contiene la O. Capital oficial de Benín, situada en la costa del golfo de Guinea en África Occidental.", a: "Porto-Novo", letra: "O"},
+  {q: "Con la P. Capital insular africana y principal puerto comercial de la nación oceánica de Mauricio.", a: "Port Louis", letra: "P"},
+  {q: "Contiene la Q. Ciudad europea que funcionó históricamente como la capital principal del Imperio carolingio bajo Carlomagno.", a: "Aquisgrán", letra: "Q"},
+  {q: "Contiene la R. Capital africana de Eritrea, famosa internacionalmente por su excepcional arquitectura modernista de estilo italiano.", a: "Asmara", letra: "R"},
+  {q: "Con la S. Capital insular africana situada en el golfo de Guinea, centro del país del mismo nombre.", a: "Santo Tomé", letra: "S"},
+  {q: "Con la T. Capital asiática de la isla de Taiwán, dominada por su famoso rascacielos Ciento Uno.", a: "Taipéi", letra: "T"},
+  {q: "Contiene la U. Antigua capital y actual principal centro económico e industrial de la república de Burundi.", a: "Bujumbura", letra: "U"},
+  {q: "Contiene la V. Capital europea a orillas del Danubio, que hace frontera directa con Austria y Hungría.", a: "Bratislava", letra: "V"},
+  {q: "Contiene la X. Capital del estado de Arizona en los Estados Unidos, situada en el desierto de Sonora.", a: "Phoenix", letra: "X"},
+  {q: "Contiene la Y. Capital y principal puerto del territorio británico de ultramar de las Islas Malvinas.", a: "Stanley", letra: "Y"},
+  {q: "Con la Z. Antigua capital del Reino de Aragón, actualmente capital de la comunidad autónoma aragonesa en España.", a: "Zaragoza", letra: "Z"}
+    ]
 });
 
 </script>
@@ -13980,6 +14168,7 @@ MAZOS_VOCAB.push({
         "hist_uni": { id: "hist_uni", name: "Historia Universal", icon: "🌍", sub: "Guerras, imperios y humanos haciendo siempre lo mismo", color: "#fdcb6e", questions: [] },
         "geo_esp": { id: "geo_esp", name: "Geografía de España", icon: "📍", sub: "Ríos que no sabes que existen y provincias que confundes", color: "#55efc4", questions: [] },
         "geo_mund": { id: "geo_mund", name: "Geografía Mundial", icon: "🗺️", sub: "Países que ignorabas y capitales imposibles", color: "#00b894", questions: [] },
+        "capitales": { id: "capitales", name: "Capitales", icon: "✈️", sub: "Porque Sídney no es la capital de Australia y lo sabes", color: "#feca57", questions: [] },
         "politica": { id: "politica", name: "Política y Const.", icon: "🗳️", sub: "Artículos que nadie ha leído pero todos opinan", color: "#a29bfe", questions: [] },
         "mitologia": { id: "mitologia", name: "Mitología", icon: "🏛️", sub: "Sálvame Deluxe en el Monte Olimpo", color: "#ffeaa7", questions: [] },
         "lit_esp": { id: "lit_esp", name: "Literatura Española", icon: "📚", sub: "Señores tristes escribiendo cosas profundas", color: "#fab1a0", questions: [] },
@@ -13988,14 +14177,21 @@ MAZOS_VOCAB.push({
         "teatro": { id: "teatro", name: "Teatro", icon: "🎭", sub: "Gente gritando sentimientos en voz alta", color: "#fd79a8", questions: [] },
         "arte": { id: "arte", name: "Arte", icon: "🎨", sub: "Cuadros que parecen fáciles hasta que te preguntan el autor", color: "#81ecec", questions: [] },
         "ciencia": { id: "ciencia", name: "Ciencia", icon: "🔬", sub: "Premios Nobel y fórmulas que no entiendes", color: "#74b9ff", questions: [] },
+        "naturaleza": { id: "naturaleza", name: "Naturaleza", icon: "🌿", sub: "Documentales de La 2 y alergia al polen", color: "#b8e994", questions: [] },
+        "tecnologia": { id: "tecnologia", name: "Tecnología", icon: "💻", sub: "Apagar y encender el router", color: "#9c88ff", questions: [] },
         "deporte": { id: "deporte", name: "Deporte", icon: "⚽", sub: "Finales injustas y debates eternos", color: "#00cec9", questions: [] },
         "cg": { id: "cg", name: "Cultura General", icon: "🧠", sub: "El cajón de sastre donde acaba todo lo demás", color: "#dfe6e9", questions: [] }
-    };
+};
+
 
     allQuestions.forEach(p => {
         let t = (p.q + " " + p.a).toLowerCase();
         
         // 0. MAZOS VIP (Los que ya vienen con su tema preasignado)
+        if (p.deckId === "cg") {
+            newDecks["cg"].questions.push(p);
+            return;
+        }
         if (p.deckId === "deporte") {
             newDecks["deporte"].questions.push(p);
             return; // Cortamos aquí para que no se duplique abajo
@@ -14004,6 +14200,24 @@ MAZOS_VOCAB.push({
             newDecks["mitologia"].questions.push(p);
             return; // Cortamos aquí
         }
+        if (p.deckId === "ciencia") {
+            newDecks["ciencia"].questions.push(p);
+            return; // Cortamos aquí
+        }
+        // 👇 NUEVOS MAZOS VIP 👇
+        if (p.deckId === "naturaleza") {
+            newDecks["naturaleza"].questions.push(p);
+            return; // Cortamos aquí
+        }
+        if (p.deckId === "tecnologia") {
+            newDecks["tecnologia"].questions.push(p);
+            return; // Cortamos aquí
+        } // <--- CIERRE DEL PISO DE TECNOLOGÍA
+
+        if (p.deckId === "capitales") {
+            newDecks["capitales"].questions.push(p);
+            return; // Cortamos aquí
+        } // <--- CIERRE DEL PISO DE CAPITALES
 
         // 1. HISTORIA 
         if (t.match(/\b(historia|guerra|batalla|imperio|revolución|siglo|edad media|mundial|nazi|soviético|urss|azteca|maya|inca|antigüedad|rey|reina|faraón|tratado|tropas|coronel|general|sublevación|alzamiento|dictador|dictadura|miliciano|carlista|desamortización|inquisición|monarca|visigodo|romano|romana|napoleón|napoleónico|franceses|invasión|caudillo|monarquía|bando|califato|emirato)\b/)) {
@@ -14042,13 +14256,12 @@ MAZOS_VOCAB.push({
         } else if (t.match(/\b(teatro|dramaturgo|escenario|comedia|tragedia|obra teatral|acto|telón|escena|esperpento|shakespeare|molière)\b/)) {
             newDecks["teatro"].questions.push(p);
         } 
-        // 7. CIENCIA
-        else if (t.match(/\b(ciencia|física|química|biología|medicina|enfermedad|célula|átomo|planeta|espacio|gravedad|músculo|hueso|órgano|sangre|teorema|matemátic|algoritmo|zoología|botánica|meteorología|geología|neurona|médico|virus|bacteria)\b/)) {
-            newDecks["ciencia"].questions.push(p);
-        } 
-        // 8. CULTURA GENERAL
+                // 8. CAJÓN DESASTRE (Para cualquier pregunta "huérfana")
         else {
+            // Si la pregunta no ha entrado en ningún filtro anterior, 
+            // la mandamos aquí para que no se pierda.
             newDecks["cg"].questions.push(p);
+        }
         }
     });
 
@@ -14178,6 +14391,7 @@ MAZOS_VOCAB.push({
         if (raeCardText && typeof MAZOS_VOCAB !== 'undefined' && MAZOS_VOCAB[0]) {
             raeCardText.textContent = MAZOS_VOCAB[0].cards.length + " palabras de nivel";
         }
+        setTimeout(function(){ if (typeof loadDeckInfo === 'function') loadDeckInfo(); }, 50);
     }
 
     if (document.readyState === 'loading') {
