@@ -56,12 +56,10 @@ html, body {
 ================================================================ */
 .screen {
     position: fixed; inset: 0;
-    display: flex; flex-direction: column;
-    opacity: 0; pointer-events: none;
-    transition: opacity 0.25s ease;
+    display: none; flex-direction: column;
     overflow: hidden;
 }
-.screen.active { opacity: 1; pointer-events: all; }
+.screen.active { display: flex; }
 
 /* ================================================================
    SCROLLABLE BODY
@@ -852,7 +850,7 @@ html, body {
 <!-- ================================================================
      HOME SCREEN
 ================================================================ -->
-<div id="home" class="screen">
+<div id="home" class="screen active">
     <div id="home-header">
         <div class="app-brand">
             <h1>PasaPalabra Pro</h1>
@@ -14368,22 +14366,13 @@ MAZOS_VOCAB.push({
         }
     });
 
-    // Actualizamos el array global de MAZOS, filtrando los que se hayan quedado vacíos
-    // Repoblar MAZOS originales preservando IDs, nombres y subtítulos
-    if(typeof MAZOS !== 'undefined') {
-        MAZOS.forEach(function(m) {
-            if (m.id === 'hist') {
-                m.questions = ['hist_esp','hist_uni','geo_esp','geo_mund','politica']
-                    .reduce(function(a,id){ return newDecks[id] ? a.concat(newDecks[id].questions) : a; }, []);
-            } else if (m.id === 'literatura') {
-                m.questions = ['lit_esp','lit_uni','teatro','cine']
-                    .reduce(function(a,id){ return newDecks[id] ? a.concat(newDecks[id].questions) : a; }, []);
-            } else if (newDecks[m.id]) {
-                m.questions = newDecks[m.id].questions;
-            }
-        });
-        MAZOS = MAZOS.filter(function(m){ return m.questions.length > 0; });
-    }
+    // Usar los 17 mazos clasificados como los mazos principales del menú
+    var _orden = ['hist_esp','hist_uni','geo_esp','geo_mund','capitales','politica',
+                  'lit_esp','lit_uni','teatro','cine',
+                  'arte','ciencia','naturaleza','tecnologia','deporte','mitologia','cg'];
+    MAZOS = _orden
+        .filter(function(id){ return newDecks[id] && newDecks[id].questions.length > 0; })
+        .map(function(id){ return newDecks[id]; });
 
     // ---------------------------------------------------------
     // 2. INYECTAR INTERFAZ (MENÚ PRINCIPAL Y MODO ESTUDIO)
