@@ -14784,6 +14784,8 @@ window.exitSmartStudy = function() {
 //  NAVEGACIÓN — una sola definición definitiva
 // ============================================================
 function goTo(id) {
+    console.warn('🧭 goTo: ' + id);
+    console.trace();
     document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
     document.getElementById(id).classList.add('active');
 
@@ -15847,6 +15849,8 @@ function stopVoice() {
 var roscoMode = 'silent'; // 'silent' | 'voice' | 'full'
 
 function showRoscoModeSelector() {
+    console.warn('🧭 showRoscoModeSelector llamado');
+    console.trace();
     document.querySelectorAll('.screen').forEach(function(s){ s.classList.remove('active'); });
     document.getElementById('rosco-mode').classList.add('active');
 }
