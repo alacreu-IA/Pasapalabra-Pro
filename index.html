@@ -1149,7 +1149,7 @@ html, body {
 <!-- ================================================================
      GAME (FLASHCARD) SCREEN
 ================================================================ -->
-<div id="game" class="screen">
+<div id="game" style="display:none; position:fixed; inset:0; z-index:200; background:var(--bg); flex-direction:column; overflow:hidden;">
     <div class="top-bar">
         <button class="btn-back" onclick="goTo('home')">←</button>
         <div class="top-bar-title" id="game-title">Cultura General</div>
@@ -1198,7 +1198,7 @@ html, body {
 <!-- ================================================================
      END SCREEN
 ================================================================ -->
-<div id="end" class="screen">
+<div id="end" style="display:none; position:fixed; inset:0; z-index:200; background:var(--bg); flex-direction:column; overflow:hidden;">
     <div class="top-bar">
         <button class="btn-back" onclick="goTo('home')">← Inicio</button>
         <div class="top-bar-title">Resultado</div>
@@ -14784,12 +14784,16 @@ window.exitSmartStudy = function() {
 // ============================================================
 function goTo(id) {
     document.querySelectorAll('.screen').forEach(function(s) { s.classList.remove('active'); });
+    // Ocultar overlays manuales al cambiar pantalla
+    ['game','end'].forEach(function(oid) {
+        var el = document.getElementById(oid); if (el) el.style.display = 'none';
+    });
     var target = document.getElementById(id) || document.getElementById('home');
     target.classList.add('active');
-    if (id === 'home')      { 
+    if (id === 'home')      {
         var h = document.getElementById('home');
         h.style.opacity = ''; h.style.pointerEvents = '';
-        loadDeckInfo(); updateDifHomeCount(); 
+        loadDeckInfo(); updateDifHomeCount();
     }
     if (id === 'dificiles') { renderDificilesAlfa(); }
     if (id === 'dashboard') { renderDashboard(); }
@@ -15011,7 +15015,9 @@ function startGameSession() {
     try {
         document.getElementById('game-title').textContent = gameTitle ?? '';
         hideRatingBtns();
-        goTo('game');
+        document.querySelectorAll('.screen').forEach(function(s) { s.classList.remove('active'); });
+        var gameEl = document.getElementById('game');
+        gameEl.style.display = 'flex';
         showCard();
     } catch (e) { console.error('startGameSession:', e); showToast('Error al iniciar la partida'); }
 }
@@ -15212,7 +15218,8 @@ function endGameSession() {
     document.getElementById('end-title').textContent  = titulo;
     document.getElementById('end-msg').textContent    = msg;
     document.getElementById('end-score').textContent  = gameCorrect + '/' + total + ' (' + pct + '%)';
-    goTo('end');
+    document.getElementById('game').style.display = 'none';
+    document.getElementById('end').style.display = 'flex';
 }
 
 
