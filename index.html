@@ -14459,7 +14459,7 @@ MAZOS_VOCAB.push({
             let html = '';
             MAZOS.forEach(m => {
                 html += `
-                <div class="deck-item" onclick="iniciarMazo('${m.id}')">
+                <div class="deck-item" onclick="startSmartStudyAll('${m.id}')">
                     <div class="deck-icon">${m.icon}</div>
                     <div class="deck-info">
                         <h4>${m.name}</h4>
@@ -14531,9 +14531,10 @@ function getSosCards() {
     const srsData = loadStudyData();
     let sos = [];
     MAZOS.forEach(m => {
-        m.questions.forEach(q => {
-            if (srsData[q.q] && srsData[q.q].level === 0) {
-                sos.push({ ...q, deckId: m.id, color: m.color }); 
+        (m?.questions ?? []).forEach(q => {
+            const id = q?.q ?? q?.def ?? '';
+            if (id && srsData[id] && srsData[id].level === 0) {
+                sos.push({ ...q, deckId: m?.id, color: m?.color }); 
             }
         });
     });
@@ -14555,7 +14556,10 @@ window.openStudySelector = function() {
    }
 
    MAZOS.forEach(m => {
-      const dueCount = m.questions.filter(q => !srsData[q.q] || srsData[q.q].nextReview <= now).length;
+      const dueCount = (m?.questions ?? []).filter(q => {
+          const id = q?.q ?? q?.def ?? '';
+          return !id || !srsData[id] || srsData[id].nextReview <= now;
+      }).length;
       const isDone = dueCount === 0;
       
       container.innerHTML += `
@@ -14582,19 +14586,21 @@ window.startSmartStudy = function(deckId) {
    } else if(deckId === 'mix') {
        let allQuestions = [];
        MAZOS.forEach(m => {
-           m.questions.forEach(q => allQuestions.push({...q, deckId: m.id, color: m.color}));
+           (m?.questions ?? []).forEach(q => allQuestions.push({...q, deckId: m?.id, color: m?.color}));
        });
-       studyDeck = allQuestions.filter(q => !srsData[q.q] || srsData[q.q].nextReview <= now);
+       studyDeck = allQuestions.filter(q => { const id = q?.q ?? q?.def ?? ''; return !id || !srsData[id] || srsData[id].nextReview <= now; });
        studyDeck.sort(() => Math.random() - 0.5); 
        studyDeck = studyDeck.slice(0, 50); 
        document.getElementById('study-title').innerText = "🌪️ Repaso Global";
    } else {
        const mazo = MAZOS.find(m => m.id === deckId);
-       let questionsWithContext = mazo.questions.map(q => ({...q, deckId: mazo.id, color: mazo.color}));
-       studyDeck = questionsWithContext.filter(q => !srsData[q.q] || srsData[q.q].nextReview <= now);
+       if (!mazo) return;
+       const questions = mazo?.questions ?? [];
+       let questionsWithContext = questions.map(q => ({...q, deckId: mazo?.id, color: mazo?.color}));
+       studyDeck = questionsWithContext.filter(q => { const id = q?.q ?? q?.def ?? ''; return !id || !srsData[id] || srsData[id].nextReview <= now; });
        studyDeck.sort(() => Math.random() - 0.5); 
        studyDeck = studyDeck.slice(0, 50); 
-       document.getElementById('study-title').innerText = mazo.icon + " " + mazo.name;
+       document.getElementById('study-title').innerText = (mazo?.icon ?? '') + " " + (mazo?.name ?? '');
    }
 
    if (studyDeck.length === 0) return;
@@ -14608,8 +14614,8 @@ window.startSmartStudyAll = function(deckId) {
         if (typeof showToast === 'function') showToast('Mazo no encontrado: ' + deckId);
         return; 
     }
-    studyDeck = mazo.questions
-        .map(function(q){ return Object.assign({}, q, { deckId: mazo.id, color: mazo.color || 'var(--accent)' }); })
+    studyDeck = (mazo?.questions ?? [])
+        .map(function(q){ return Object.assign({}, q, { deckId: mazo?.id, color: mazo?.color || 'var(--accent)' }); })
         .sort(function(){ return Math.random() - 0.5; })
         .slice(0, 20);
     if (studyDeck.length === 0) { 
@@ -14633,34 +14639,39 @@ window.nextStudyCard = function() {
    }
    document.getElementById('study-counter').innerText = `Pendientes: ${studyDeck.length}`;
    currentStudyCard = studyDeck[0];
+   if (!currentStudyCard) return;
+
+   const qText = currentStudyCard?.q ?? currentStudyCard?.def ?? '???';
+   const aText = currentStudyCard?.a ?? currentStudyCard?.word ?? '???';
    
-   let cleanQ = currentStudyCard.q.replace(/^[a-zA-ZñÑáéíóúÁÉÍÓÚ]\s*-\s*/, '');
+   let cleanQ = (qText || '').replace(/^[a-zA-ZñÑáéíóúÁÉÍÓÚ]\s*-\s*/, '');
    document.getElementById('study-q').innerText = cleanQ;
+   document.getElementById('study-a-text').innerText = aText;
    
-   document.getElementById('study-a-text').innerText = currentStudyCard.a;
-   
-   const cardColor = currentStudyCard.color || 'var(--border)';
+   const cardColor = currentStudyCard?.color || 'var(--border)';
    document.getElementById('study-card').style.borderColor = cardColor;
    document.getElementById('study-card').style.boxShadow = `0 15px 35px ${cardColor}33, inset 0 1px 0 rgba(255,255,255,0.05)`;
 
-   const term = encodeURIComponent(currentStudyCard.a);
-   const _gkw=['ciudad','capital','provincia','municipio','rio','lago','sierra','cabo','golfo','isla','pais','nacion'];
-   const _isGeo=_gkw.some(k=>(currentStudyCard.q||'').toLowerCase().includes(k))||['geo_esp','geo_mund'].includes(currentStudyCard.deckId);
-   let _ws=currentStudyCard.a;
-   if(_isGeo&&/^[A-ZÁÉÍÓÚÑ]/.test(_ws)&&_ws.length<25) _ws+=currentStudyCard.deckId==='geo_esp'?' España':' geografía';
-   const wikiEl=document.getElementById('link-wiki');
-   wikiEl.href='https://es.wikipedia.org/wiki/Special:Search?search='+encodeURIComponent(_ws)+'&ns0=1';
-   wikiEl.onclick=function(e){e.preventDefault();e.stopPropagation();openExternalUrl(this.href);};
-   
-   const mapBtn = document.getElementById('link-map');
-   if (['geo_esp','geo_mund','hist','hist_esp'].includes(currentStudyCard.deckId)) {
-       mapBtn.style.display = 'flex';
-       const _mq = currentStudyCard.deckId==='geo_esp' ? encodeURIComponent(currentStudyCard.a+', España') : term;
-       mapBtn.dataset.url = 'https://maps.google.com/maps?q='+_mq;
-   } else {
-       mapBtn.style.display = 'none';
-       mapBtn.dataset.url = '';
-   }
+   try {
+       const term = encodeURIComponent(aText);
+       const _gkw=['ciudad','capital','provincia','municipio','rio','lago','sierra','cabo','golfo','isla','pais','nacion'];
+       const _isGeo=_gkw.some(k=>(qText||'').toLowerCase().includes(k))||['geo_esp','geo_mund'].includes(currentStudyCard?.deckId);
+       let _ws=aText;
+       if(_isGeo&&/^[A-ZÁÉÍÓÚÑ]/.test(_ws)&&_ws.length<25) _ws+=currentStudyCard?.deckId==='geo_esp'?' España':' geografía';
+       const wikiEl=document.getElementById('link-wiki');
+       wikiEl.href='https://es.wikipedia.org/wiki/Special:Search?search='+encodeURIComponent(_ws)+'&ns0=1';
+       wikiEl.onclick=function(e){e.preventDefault();e.stopPropagation();openExternalUrl(this.href);};
+       
+       const mapBtn = document.getElementById('link-map');
+       if (['geo_esp','geo_mund','hist','hist_esp'].includes(currentStudyCard?.deckId)) {
+           mapBtn.style.display = 'flex';
+           const _mq = currentStudyCard?.deckId==='geo_esp' ? encodeURIComponent(aText+', España') : term;
+           mapBtn.dataset.url = 'https://maps.google.com/maps?q='+_mq;
+       } else {
+           mapBtn.style.display = 'none';
+           mapBtn.dataset.url = '';
+       }
+   } catch (e) { console.error('nextStudyCard links:', e); }
 
    document.getElementById('study-hint').style.display = 'none';
    document.getElementById('btn-hint').style.display = 'flex';
@@ -14670,7 +14681,7 @@ window.nextStudyCard = function() {
 };
 
 window.showHint = function() {
-    const answer = currentStudyCard.a.trim();
+    const answer = (currentStudyCard?.a ?? currentStudyCard?.word ?? '').trim();
     const words = answer.split(' ');
     const isMultiWord = words.length > 1;
     let hint = "";
@@ -14716,7 +14727,9 @@ window.flipStudyCard = function() {
 
 window.scoreStudy = function(score) {
    const card = studyDeck.shift(); 
-   const id = card.q; 
+   if (!card) return;
+   const id = card?.q ?? card?.def ?? ''; 
+   if (!id) { nextStudyCard(); return; }
    const srsData = loadStudyData();
    
    if (!srsData[id]) { srsData[id] = { level: 0, nextReview: 0 }; }
@@ -14750,22 +14763,15 @@ window.exitSmartStudy = function() {
 // NAVEGACIÓN — RESTAURADA Y VITAL PARA QUE LOS BOTONES FUNCIONEN
 // ============================================================
 function goTo(id) {
-    // Usar style.display directamente - evita problemas con transiciones CSS
-    document.querySelectorAll('.screen').forEach(function(s) {
-        s.style.display = 'none';
-        s.classList.remove('active');
-    });
-    var _s = document.getElementById(id) || document.getElementById('home');
-    _s.style.display = 'flex';
-    _s.classList.add('active');
-
-    // Efectos colaterales al cambiar de pantalla
-    if (id === 'home') { loadDeckInfo(); updateDifHomeCount(); }
+    document.querySelectorAll('.screen').forEach(function(s) { s.classList.remove('active'); });
+    var target = document.getElementById(id) || document.getElementById('home');
+    target.classList.add('active');
+    if (id === 'home')      { loadDeckInfo(); updateDifHomeCount(); }
     if (id === 'dificiles') { renderDificilesAlfa(); }
     if (id === 'dashboard') { renderDashboard(); }
     if (id === 'creator')   { renderCustomList(); }
-    if (id === 'rosco') { startRosco(); }
-    if (id === 'rae') { initRaeIfNeeded(); }
+    if (id === 'rosco')     { startRosco(); }
+    if (id === 'rae')       { initRaeIfNeeded(); }
 }
 
 function showToast(msg, dur = 2000) {
@@ -14785,8 +14791,8 @@ function acceptTerms() {
     loadDeckInfo();
     updateDifHomeCount();
     // Show home screen
-    document.querySelectorAll('.screen').forEach(function(s) { s.style.display='none'; s.classList.remove('active'); });
-    var _h = document.getElementById('home'); _h.style.display='flex'; _h.classList.add('active');
+    document.querySelectorAll('.screen').forEach(function(s) { s.classList.remove('active'); });
+    document.getElementById('home').classList.add('active');
 }
 function showTermsAgain() {
     document.getElementById('terms-overlay').classList.remove('hidden');
@@ -14796,26 +14802,21 @@ function showTermsAgain() {
 //  INIT
 // ============================================================
 window.onload = function () {
-    // Mostrar home con inline style para garantizar visibilidad
-    var anyVisible = document.querySelector('.screen[style*="display: flex"]');
-    if (!anyVisible) {
-        var home = document.getElementById('home');
-        home.style.display = 'flex';
-        home.classList.add('active');
-    }
-
+    document.querySelectorAll('.screen').forEach(function(s) { s.classList.remove('active'); });
+    document.getElementById('home').classList.add('active');
     if (!localStorage.getItem('terms_accepted_v2')) {
-        // Show terms — remove hidden class so overlay is visible
         document.getElementById('terms-overlay').classList.remove('hidden');
     } else {
-        document.getElementById('terms-overlay').classList.add('hidden');
+        var to = document.getElementById('terms-overlay');
+        if (to) to.classList.add('hidden');
     }
-    updateStreak();
-    loadDeckInfo();
-    updateDifHomeCount();
-    checkWeeklyBackup();
-    _ppSessStart=Date.now();
+    if (typeof updateStreak       === 'function') updateStreak();
+    if (typeof loadDeckInfo       === 'function') loadDeckInfo();
+    if (typeof updateDifHomeCount === 'function') updateDifHomeCount();
+    if (typeof checkWeeklyBackup  === 'function') checkWeeklyBackup();
+    _ppSessStart = Date.now();
 };
+
 
 // ============================================================
 //  STREAK
@@ -14844,35 +14845,42 @@ function updateStreak() {
 // ============================================================
 function loadDeckInfo() {
     if (typeof MAZOS === 'undefined') return;
-    const now = Date.now();
-    let totalAll = 0, masteredAll = 0;
+    try {
+        const now = Date.now();
+        let totalAll = 0, masteredAll = 0;
 
-    MAZOS.forEach(m => {
-        const el  = document.getElementById(`deck-info-${m.id}`);
-        const dom = document.getElementById(`dom-${m.id}`);
-        if (!el) return;
+        MAZOS.forEach(m => {
+            const el  = document.getElementById(`deck-info-${m?.id}`);
+            const dom = document.getElementById(`dom-${m?.id}`);
+            if (!el) return;
 
-        const total    = m.questions.length;
-        const doneToday = countDoneToday(m.id);
+            const questions = m?.questions ?? [];
+            const total    = questions.length;
+            const doneToday = countDoneToday(m?.id ?? '');
 
-        // "Dominada" = próximo repaso > 25 días
-        const mastered = m.questions.filter(q => {
-            const next = parseInt(localStorage.getItem(`srs_${q.a}`) || '0');
-            return next > now + 25 * 86400000;
-        }).length;
+            // "Dominada" = próximo repaso > 25 días
+            const mastered = questions.filter(q => {
+                const key = q?.a ?? q?.word ?? '';
+                if (!key) return false;
+                const next = parseInt(localStorage.getItem(`srs_${key}`) || '0');
+                return next > now + 25 * 86400000;
+            }).length;
 
-        const pct = total > 0 ? Math.round((mastered / total) * 100) : 0;
-        el.textContent  = `${total} preguntas · ${doneToday} hoy · ${pct}% dominadas`;
-        if (dom) dom.style.width = pct + '%';
+            const pct = total > 0 ? Math.round((mastered / total) * 100) : 0;
+            el.textContent  = `${total} preguntas · ${doneToday} hoy · ${pct}% dominadas`;
+            if (dom) dom.style.width = pct + '%';
 
-        totalAll   += total;
-        masteredAll += mastered;
-    });
+            totalAll   += total;
+            masteredAll += mastered;
+        });
 
-    // Global bar
-    const globalPct = totalAll > 0 ? Math.round((masteredAll / totalAll) * 100) : 0;
-    document.getElementById('global-pct').textContent = globalPct + '%';
-    document.getElementById('global-bar-fill').style.width = globalPct + '%';
+        // Global bar
+        const globalPct = totalAll > 0 ? Math.round((masteredAll / totalAll) * 100) : 0;
+        const gp = document.getElementById('global-pct');
+        const gb = document.getElementById('global-bar-fill');
+        if (gp) gp.textContent = globalPct + '%';
+        if (gb) gb.style.width = globalPct + '%';
+    } catch (e) { console.error('loadDeckInfo:', e); }
 }
 
 function countDoneToday(deckId) {
@@ -14898,16 +14906,22 @@ function iniciarMazo(deckId) {
     if (typeof MAZOS === 'undefined') { showToast('⚠️ Mazos no cargados'); return; }
     const deck = MAZOS.find(m => m.id === deckId);
     if (!deck) { showToast('Mazo no encontrado: ' + deckId); return; }
+    const questions = deck?.questions ?? [];
+    if (!questions.length) { showToast('Este mazo no tiene preguntas'); return; }
     gameMode    = 'deck';
-    gameTitle   = `${deck.icon || ''} ${deck.name}`;
-    gameSession = pickRandom(deck.questions, 20);
+    gameTitle   = `${deck?.icon ?? ''} ${deck?.name ?? ''}`.trim() || 'Mazo';
+    gameSession = pickRandom(questions, 20);
     startGameSession();
 }
 
 function iniciarPartidaRapida() {
     if (typeof MAZOS === 'undefined') return;
     let all = [];
-    MAZOS.forEach(m => all = all.concat(m.questions.map(q => ({ ...q, _deckId: m.id }))));
+    MAZOS.forEach(m => {
+        const qs = m?.questions ?? [];
+        all = all.concat(qs.map(q => ({ ...q, _deckId: m?.id })));
+    });
+    if (!all.length) { showToast('No hay preguntas disponibles'); return; }
     gameMode    = 'rapida';
     gameTitle   = '⚡ Partida Rápida';
     gameSession = pickRandom(all, 20);
@@ -14919,9 +14933,11 @@ function iniciarSRS() {
     const now = Date.now();
     let pending = [];
     MAZOS.forEach(m => {
-        m.questions.forEach(q => {
-            const next = parseInt(localStorage.getItem(`srs_${q.a}`) || '0');
-            if (next <= now) pending.push({ ...q, _deckId: m.id });
+        (m?.questions ?? []).forEach(q => {
+            const key = q?.a ?? q?.word ?? '';
+            if (!key) return;
+            const next = parseInt(localStorage.getItem(`srs_${key}`) || '0');
+            if (next <= now) pending.push({ ...q, _deckId: m?.id });
         });
     });
     if (pending.length === 0) {
@@ -14962,57 +14978,63 @@ function startGameSession() {
     gameIndex   = 0;
     gameCorrect = 0;
     gameDificil = 0;
-    document.getElementById('game-title').textContent = gameTitle;
-    hideRatingBtns();
-    goTo('game');
-    showCard();
+    try {
+        document.getElementById('game-title').textContent = gameTitle ?? '';
+        hideRatingBtns();
+        goTo('game');
+        showCard();
+    } catch (e) { console.error('startGameSession:', e); showToast('Error al iniciar la partida'); }
 }
 
 function showCard() {
-    var data = gameSession[gameIndex];
+    var data = (gameSession ?? [])[gameIndex];
     if (!data) return;
 
-    hideRatingBtns();
+    try {
+        hideRatingBtns();
 
-    var total = gameSession.length;
-    document.getElementById('game-counter').textContent  = (gameIndex + 1) + '/' + total;
-    document.getElementById('game-progress').style.width = Math.round(((gameIndex + 1) / total) * 100) + '%';
+        var q     = data?.q ?? data?.def ?? '???';
+        var letra = data?.letra ?? '';
+        var word  = data?.a ?? data?.word ?? '???';
 
-    var q     = data.q || data.def || '???';
-    var letra = data.letra || '';
-    var word  = data.a || data.word || '???';
+        // ---- WRITE PHASE (crítico: pintar la tarjeta primero) ----
+        document.getElementById('card-def-text').textContent = q;
+        document.getElementById('card-badge').textContent    = letra || '?';
+        document.getElementById('card-cat').textContent      = letra ? 'Con la ' + letra : (data?.pos ?? data?.category ?? '–');
+        document.getElementById('game-answer-input').value   = '';
 
-    // ---- WRITE PHASE ----
-    document.getElementById('card-def-text').textContent = q;
-    document.getElementById('card-badge').textContent    = letra || '?';
-    document.getElementById('card-cat').textContent      = letra ? 'Con la ' + letra : (data.pos || data.category || '–');
-    document.getElementById('game-answer-input').value   = '';
+        // Show write phase, hide result
+        document.getElementById('game-write-phase').style.display  = 'flex';
+        document.getElementById('game-result-phase').style.display = 'none';
 
-    // Show write phase, hide result
-    document.getElementById('game-write-phase').style.display  = 'flex';
-    document.getElementById('game-result-phase').style.display = 'none';
+        // Actualización secundaria (barras, contador)
+        var total = gameSession?.length ?? 0;
+        document.getElementById('game-counter').textContent  = (gameIndex + 1) + '/' + total;
+        document.getElementById('game-progress').style.width = total ? Math.round(((gameIndex + 1) / total) * 100) + '%' : '0%';
 
-    // Focus input (con pequeño delay para móvil)
-    setTimeout(function() {
-        document.getElementById('game-answer-input').focus();
-    }, 150);
+        // Focus input (con pequeño delay para móvil)
+        setTimeout(function() {
+            try { document.getElementById('game-answer-input').focus(); } catch (e) {}
+        }, 150);
+    } catch (e) { console.error('showCard:', e); }
 }
 
 function checkGameAnswer() {
-    var data   = gameSession[gameIndex];
+    var data   = (gameSession ?? [])[gameIndex];
+    if (!data) return;
     var input  = document.getElementById('game-answer-input');
-    var userAnswer = input.value.trim();
+    var userAnswer = input?.value?.trim?.() ?? '';
     if (!userAnswer) return;
 
-    var correct = data.a || data.word || '';
+    var correct = data?.a ?? data?.word ?? '';
 
     // Normalizar para comparar (sin tildes, minúsculas)
     function norm(s) {
-        return s.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').trim();
+        return (s || '').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').trim();
     }
     var isCorrect = norm(userAnswer) === norm(correct);
 
-    // ---- Show result ----
+    // ---- Show result (crítico: pintar la tarjeta) ----
     document.getElementById('game-write-phase').style.display  = 'none';
     document.getElementById('game-result-phase').style.display = 'flex';
 
@@ -15022,10 +15044,9 @@ function checkGameAnswer() {
         ? '¡Correcto!'
         : 'Tú dijiste: "' + userAnswer + '"';
 
-    // Defs
-    var q = data.q || data.def || '';
+    var q = data?.q ?? data?.def ?? '';
     var defsHTML = '';
-    if (data.def && typeof data.def === 'string') {
+    if (data?.def && typeof data.def === 'string') {
         var parts = data.def.split(/(?=\d+\.\s)/).map(function(s){ return s.replace(/^\d+\.\s*/, '').trim(); }).filter(Boolean);
         parts.forEach(function(d, i) {
             defsHTML += '<div class="def-item">' + (parts.length > 1 ? '<strong>' + (i+1) + '.</strong> ' : '') + d + '</div>';
@@ -15035,27 +15056,24 @@ function checkGameAnswer() {
     }
     document.getElementById('card-defs').innerHTML = defsHTML;
 
-    // Extras
-    var extraHTML = '';
-    if (data.syn)  extraHTML += '<div class="extra-block purple"><div class="extra-label">🔄 Sinónimos</div><div>' + data.syn + '</div></div>';
-    if (data.etym) extraHTML += '<div class="extra-block gold"><div class="extra-label">🏛️ Etimología</div><div>' + data.etym + '</div></div>';
-    if (data.ex)   extraHTML += '<div class="extra-block green"><div class="extra-label">💡 Ejemplo</div><div>' + data.ex + '</div></div>';
-    if (data.tip)  extraHTML += '<div class="extra-block green"><div class="extra-label">💡 Pista</div><div>' + data.tip + '</div></div>';
-    document.getElementById('card-extra').innerHTML = extraHTML;
+    // Extras y RAE (secundario: envolver en try-catch)
+    try {
+        var extraHTML = '';
+        if (data?.syn)  extraHTML += '<div class="extra-block purple"><div class="extra-label">🔄 Sinónimos</div><div>' + data.syn + '</div></div>';
+        if (data?.etym) extraHTML += '<div class="extra-block gold"><div class="extra-label">🏛️ Etimología</div><div>' + data.etym + '</div></div>';
+        if (data?.ex)   extraHTML += '<div class="extra-block green"><div class="extra-label">💡 Ejemplo</div><div>' + data.ex + '</div></div>';
+        if (data?.tip)  extraHTML += '<div class="extra-block green"><div class="extra-label">💡 Pista</div><div>' + data.tip + '</div></div>';
+        document.getElementById('card-extra').innerHTML = extraHTML;
 
-    // RAE link solo vocabulario RAE
-    var raeLink = document.getElementById('card-rae-link');
-    var isVocab = data.word && (data.syn || data.etym);
-    raeLink.href = isVocab ? 'https://dle.rae.es/' + encodeURIComponent(correct) : '#';
-    raeLink.style.display = isVocab ? '' : 'none';
+        var raeLink = document.getElementById('card-rae-link');
+        var isVocab = (data?.word ?? data?.a) && (data?.syn || data?.etym);
+        raeLink.href = isVocab ? 'https://dle.rae.es/' + encodeURIComponent(correct) : '#';
+        raeLink.style.display = isVocab ? '' : 'none';
+    } catch (e) { console.error('checkGameAnswer extras:', e); }
 
-    // Contabilizar como correcto o incorrecto para SRS (usando bien/mal automático si acertó)
-    // Los botones de valoración siguen apareciendo para que ella decida el intervalo
     showRatingBtns('game');
 
-    // Si acertó, preseleccionar "bien" visualmente
     if (isCorrect && typeof spawnConfetti === 'function') {
-        // mini celebración si acertó
         setTimeout(function() { spawnConfetti(5); }, 100);
     }
 }
@@ -15086,18 +15104,19 @@ function showRatingBtns(type) {
 
 function rate(score) {
     const data = gameSession[gameIndex];
-    const key  = data.a || data.word || '';
+    if (!data) return;
+    const key  = data?.a ?? data?.word ?? '';
 
     const days = score === 1 ? 7 : score === 3 ? 14 : 30;
     if (key) localStorage.setItem(`srs_${key}`, (Date.now() + days * 86400000).toString());
 
-    if (score === 1) { gameDificil++; saveDificil(data); }
+    if (score === 1) { gameDificil++; try { saveDificil(data); } catch (e) { console.error('rate saveDificil:', e); } }
     else if (score === 5) gameCorrect++;
 
-    if (data._deckId) incrementDone(data._deckId);
+    if (data?._deckId) try { incrementDone(data._deckId); } catch (e) {}
 
     gameIndex++;
-    if (gameIndex < gameSession.length) {
+    if (gameIndex < (gameSession?.length ?? 0)) {
         showCard();
     } else {
         endGameSession();
@@ -15450,13 +15469,14 @@ function buildRosco() {
 
     if (typeof MAZOS !== 'undefined') {
         MAZOS.forEach(m => {
-            m.questions.forEach(q => {
-                if (q.letra && byLetter[q.letra]) byLetter[q.letra].push(q);
+            (m?.questions ?? []).forEach(q => {
+                const letra = q?.letra;
+                if (letra && byLetter[letra]) byLetter[letra].push(q);
             });
         });
     }
     getCustomCards().forEach(c => {
-        if (c.letra && byLetter[c.letra]) byLetter[c.letra].push({ q: c.q, a: c.a, letra: c.letra });
+        if (c?.letra && byLetter[c.letra]) byLetter[c.letra].push({ q: c.q, a: c.a, letra: c.letra });
     });
 
     // Anti-repeat: skip already used today
@@ -15468,13 +15488,16 @@ function buildRosco() {
         const pool = byLetter[l];
         if (!pool || pool.length === 0) return;
 
-        let fresh = pool.filter(q => !usedToday[l] || !usedToday[l].includes(q.a));
+        const ansKey = q => q?.a ?? q?.word ?? '';
+        let fresh = pool.filter(q => !usedToday[l] || !usedToday[l].includes(ansKey(q)));
         if (fresh.length === 0) { fresh = pool; usedToday[l] = []; }
 
         const chosen    = fresh[Math.floor(Math.random() * fresh.length)];
-        roscoData[l]    = { q: chosen.q, a: chosen.a, status: 'pending' };
+        const qText = chosen?.q ?? chosen?.def ?? '???';
+        const aText = chosen?.a ?? chosen?.word ?? '???';
+        roscoData[l]    = { q: qText, a: aText, status: 'pending' };
         if (!usedToday[l]) usedToday[l] = [];
-        usedToday[l].push(chosen.a);
+        usedToday[l].push(aText);
     });
 
     localStorage.setItem(usedKey, JSON.stringify(usedToday));
@@ -15484,12 +15507,15 @@ function buildRosco() {
 
 function startRosco() {
     clearInterval(roscoTimerInterval);
-    buildRosco();
-    roscoTimerVal = 230;
-    document.getElementById('rosco-fail-btn').style.display = 'none';
-    drawRoscoWheel();
-    showRoscoQuestion();
-    roscoTimerInterval = setInterval(tickRosco, 1000);
+    try {
+        buildRosco();
+        if (!roscoOrder.length) { showToast('No hay preguntas disponibles para el rosco'); return; }
+        roscoTimerVal = 230;
+        document.getElementById('rosco-fail-btn').style.display = 'none';
+        drawRoscoWheel();
+        showRoscoQuestion();
+        roscoTimerInterval = setInterval(tickRosco, 1000);
+    } catch (e) { console.error('startRosco:', e); showToast('Error al cargar el rosco'); }
 }
 
 function abandonarRosco() {
@@ -15517,86 +15543,95 @@ function updateRoscoTimer() {
 function showRoscoQuestion() {
     if (!roscoOrder.length) return;
 
-    // Find next pending or passed
-    let found = false;
-    for (let i = 0; i < roscoOrder.length; i++) {
-        const idx = (roscoCurrentIdx + i) % roscoOrder.length;
-        const l   = roscoOrder[idx];
-        if (['pending', 'pass'].includes(roscoData[l].status)) {
-            roscoCurrentIdx = idx;
-            found = true;
-            break;
+    try {
+        // Find next pending or passed
+        let found = false;
+        for (let i = 0; i < roscoOrder.length; i++) {
+            const idx = (roscoCurrentIdx + i) % roscoOrder.length;
+            const l   = roscoOrder[idx];
+            const d = roscoData?.[l];
+            if (d && ['pending', 'pass'].includes(d.status)) {
+                roscoCurrentIdx = idx;
+                found = true;
+                break;
+            }
         }
-    }
-    if (!found) { finishRosco(); return; }
+        if (!found) { finishRosco(); return; }
 
-    const l = roscoOrder[roscoCurrentIdx];
-    const d = roscoData[l];
+        const l = roscoOrder[roscoCurrentIdx];
+        const d = roscoData?.[l];
+        if (!d) { finishRosco(); return; }
 
-    document.getElementById('rosco-big-letter').textContent  = l;
-    document.getElementById('rosco-letter-tip').textContent  = d.q.startsWith('Contiene') ? `Contiene la ${l}` : `Con la ${l}`;
-    document.getElementById('rosco-question').textContent    = d.q;
-    document.getElementById('rosco-answer').value = '';
-    // NO auto-focus en móvil — evita que el teclado baje la pantalla
-    updateRoscoStats();
-    drawRoscoWheel();
+        const qText = d?.q ?? d?.def ?? '???';
 
-    // Leer la pregunta en voz alta según el modo
-    if (roscoMode === 'full') {
-        // Para el mic mientras lee, luego lo reactiva
-        var texto = d.q.replace(/^Con la [A-ZÑ]: /i, '').replace(/^Contiene la [A-ZÑ]: /i, '');
-        speakAndListen(texto);
-    } else if (roscoMode === 'voice') {
-        // Solo escuchar, no leer
-        if (recognition) { try { recognition.start(); } catch(e) {} }
-    }
+        document.getElementById('rosco-big-letter').textContent  = l;
+        document.getElementById('rosco-letter-tip').textContent  = (qText || '').startsWith('Contiene') ? `Contiene la ${l}` : `Con la ${l}`;
+        document.getElementById('rosco-question').textContent    = qText;
+        document.getElementById('rosco-answer').value = '';
+        // NO auto-focus en móvil — evita que el teclado baje la pantalla
+        updateRoscoStats();
+        drawRoscoWheel();
+
+        // Leer la pregunta en voz alta según el modo
+        if (roscoMode === 'full') {
+            var texto = (qText || '').replace(/^Con la [A-ZÑ]: /i, '').replace(/^Contiene la [A-ZÑ]: /i, '');
+            speakAndListen(texto);
+        } else if (roscoMode === 'voice') {
+            if (recognition) { try { recognition.start(); } catch(e) {} }
+        }
+    } catch (e) { console.error('showRoscoQuestion:', e); }
 }
 
 function submitRosco() {
     const l      = roscoOrder[roscoCurrentIdx];
-    const d      = roscoData[l];
+    const d      = roscoData?.[l];
+    if (!d) return;
     const answer = document.getElementById('rosco-answer').value.trim().toLowerCase();
     if (!answer) return;
 
-    const normalize = s => s.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
-    const isOk = normalize(answer) === normalize(d.a) ||
-                 (normalize(d.a).startsWith(normalize(answer)) && answer.length >= 4);
+    const aText = d?.a ?? d?.word ?? '';
+    const qText = d?.q ?? d?.def ?? '';
+    const normalize = s => (s || '').normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
+    const isOk = normalize(answer) === normalize(aText) ||
+                 (normalize(aText).startsWith(normalize(answer)) && answer.length >= 4);
 
     if (isOk) {
         d.status = 'ok';
-        showToast(`✓ ¡Correcto! ${d.a}`, 1500);
+        showToast(`✓ ¡Correcto! ${aText}`, 1500);
         roscoCurrentIdx = (roscoCurrentIdx + 1) % roscoOrder.length;
-        updateRoscoStats();
-        drawRoscoWheel();
+        try { updateRoscoStats(); drawRoscoWheel(); } catch (e) { console.error('submitRosco stats:', e); }
         setTimeout(() => {
-            const pending = roscoOrder.some(l2 => ['pending', 'pass'].includes(roscoData[l2].status));
+            const pending = roscoOrder.some(l2 => ['pending', 'pass'].includes(roscoData?.[l2]?.status));
             if (pending) showRoscoQuestion(); else finishRosco();
         }, 400);
     } else {
         d.status = 'fail';
-        saveDificil({ a: d.a, q: d.q, def: d.q, letra: l });
-        showRoscoAnswerReveal(d.a, d.q);
+        saveDificil({ a: aText, q: qText, def: qText, letra: l });
+        showRoscoAnswerReveal(aText, qText);
     }
 }
 
 function showRoscoAnswerReveal(word, def) {
-    document.getElementById('ar-word').textContent = word;
-    document.getElementById('ar-def').textContent  = def.replace(/^Con la [A-ZÑ]: |^Contiene la [A-ZÑ]: /i, '');
-    document.getElementById('answer-reveal').classList.add('show');
-    updateRoscoStats();
-    drawRoscoWheel();
+    try {
+        document.getElementById('ar-word').textContent = word ?? '';
+        document.getElementById('ar-def').textContent  = (def ?? '').replace(/^Con la [A-ZÑ]: |^Contiene la [A-ZÑ]: /i, '');
+        document.getElementById('answer-reveal').classList.add('show');
+        updateRoscoStats();
+        drawRoscoWheel();
+    } catch (e) { console.error('showRoscoAnswerReveal:', e); }
 }
 
 function hideRoscoAnswerReveal() {
     document.getElementById('answer-reveal').classList.remove('show');
     roscoCurrentIdx = (roscoCurrentIdx + 1) % roscoOrder.length;
-    const pending   = roscoOrder.some(l => ['pending', 'pass'].includes(roscoData[l].status));
+    const pending   = roscoOrder.some(l => ['pending', 'pass'].includes(roscoData?.[l]?.status));
     if (pending) showRoscoQuestion(); else finishRosco();
 }
 
 function pasarRosco() {
     const l = roscoOrder[roscoCurrentIdx];
-    if (roscoData[l].status === 'pending') roscoData[l].status = 'pass';
+    const d = roscoData?.[l];
+    if (d && d.status === 'pending') d.status = 'pass';
     roscoCurrentIdx = (roscoCurrentIdx + 1) % roscoOrder.length;
     drawRoscoWheel();
     showRoscoQuestion();
@@ -15605,15 +15640,16 @@ function pasarRosco() {
 function repetirFallos() {
     let hasFails = false;
     LETRAS.forEach(l => {
-        if (roscoData[l] && roscoData[l].status === 'fail') {
-            roscoData[l].status = 'pending'; hasFails = true;
+        const d = roscoData?.[l];
+        if (d && d.status === 'fail') {
+            d.status = 'pending'; hasFails = true;
         }
-        if (roscoData[l] && roscoData[l].status === 'pass') {
-            roscoData[l].status = 'pending';
+        if (d && d.status === 'pass') {
+            d.status = 'pending';
         }
     });
     if (!hasFails) { showToast('¡Sin fallos que repetir! 🏆'); return; }
-    roscoOrder      = LETRAS.filter(l => roscoData[l] && roscoData[l].status === 'pending');
+    roscoOrder      = LETRAS.filter(l => roscoData?.[l] && roscoData[l].status === 'pending');
     roscoCurrentIdx = 0;
     document.getElementById('rosco-fail-btn').style.display = 'none';
     clearInterval(roscoTimerInterval);
@@ -15624,9 +15660,11 @@ function repetirFallos() {
 }
 
 function updateRoscoStats() {
-    document.getElementById('stat-ok').textContent   = roscoOrder.filter(l => roscoData[l].status === 'ok').length;
-    document.getElementById('stat-fail').textContent = roscoOrder.filter(l => roscoData[l].status === 'fail').length;
-    document.getElementById('stat-pass').textContent = roscoOrder.filter(l => roscoData[l].status === 'pass').length;
+    try {
+        document.getElementById('stat-ok').textContent   = roscoOrder.filter(l => roscoData?.[l]?.status === 'ok').length;
+        document.getElementById('stat-fail').textContent = roscoOrder.filter(l => roscoData?.[l]?.status === 'fail').length;
+        document.getElementById('stat-pass').textContent = roscoOrder.filter(l => roscoData?.[l]?.status === 'pass').length;
+    } catch (e) { console.error('updateRoscoStats:', e); }
 }
 
 function finishRosco() {
@@ -15634,8 +15672,8 @@ function finishRosco() {
     stopVoice();
     stopSpeak();
 
-    const ok    = roscoOrder.filter(l => roscoData[l].status === 'ok').length;
-    const fail  = roscoOrder.filter(l => roscoData[l].status === 'fail').length;
+    const ok    = roscoOrder.filter(l => roscoData?.[l]?.status === 'ok').length;
+    const fail  = roscoOrder.filter(l => roscoData?.[l]?.status === 'fail').length;
     const total = roscoOrder.length;
 
     if (fail > 0) document.getElementById('rosco-fail-btn').style.display = 'block';
@@ -15700,11 +15738,11 @@ function finishRosco() {
     };
     document.getElementById('result-overlay').classList.add('active');
     try{
-        const _p=roscoOrder.filter(l=>roscoData[l].status==='pass').length;
+        const _p=roscoOrder.filter(l=>roscoData?.[l]?.status==='pass').length;
         const _h=JSON.parse(localStorage.getItem('ppro_rosco_hist')||'[]');
         _h.push({date:new Date().toISOString().slice(0,10),ok,fail,pass:_p,total});
         if(_h.length>60)_h.shift();localStorage.setItem('ppro_rosco_hist',JSON.stringify(_h));
-        roscoOrder.forEach(l=>_ppTrackLetter(l,roscoData[l].status==='ok'));
+        roscoOrder.forEach(l=>_ppTrackLetter(l,roscoData?.[l]?.status==='ok'));
         _ppRecordSession('rosco',total,ok);
     }catch(x){}
 }
@@ -15827,13 +15865,8 @@ function stopVoice() {
 var roscoMode = 'silent'; // 'silent' | 'voice' | 'full'
 
 function showRoscoModeSelector() {
-    document.querySelectorAll('.screen').forEach(function(s) {
-        s.style.display = 'none';
-        s.classList.remove('active');
-    });
-    var rm = document.getElementById('rosco-mode');
-    rm.style.display = 'flex';
-    rm.classList.add('active');
+    document.querySelectorAll('.screen').forEach(function(s) { s.classList.remove('active'); });
+    document.getElementById('rosco-mode').classList.add('active');
 }
 
 function startRoscoMode(mode) {
