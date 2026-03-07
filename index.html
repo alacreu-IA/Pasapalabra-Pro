@@ -14784,7 +14784,6 @@ window.exitSmartStudy = function() {
 //  NAVEGACIÓN — una sola definición definitiva
 // ============================================================
 function goTo(id) {
-    console.warn('🧭 goTo: ' + id); console.trace();
     document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
     document.getElementById(id).classList.add('active');
 
@@ -14985,20 +14984,16 @@ function pickRandom(arr, n) {
 }
 
 function startGameSession() {
-    try {
-        gameIndex   = 0; gameCorrect = 0; gameDificil = 0;
-        document.getElementById('game-title').textContent = gameTitle;
-        hideRatingBtns();
-        goTo('game');
-        showCard();
-    } catch(e) {
-        console.error('💥 startGameSession ERROR:', e.message, e.stack);
-        showToast('ERROR SGS: ' + e.message, 8000);
-    }
+    gameIndex   = 0;
+    gameCorrect = 0;
+    gameDificil = 0;
+    document.getElementById('game-title').textContent = gameTitle;
+    hideRatingBtns();
+    goTo('game');
+    showCard();
 }
 
 function showCard() {
-  try {
 
     if (!gameSession || gameSession.length === 0) {
         showToast('No hay preguntas disponibles');
@@ -15037,8 +15032,6 @@ function showCard() {
     const input = document.getElementById('game-answer-input');
     if (input) input.focus();
 }, 150);
-
-  } catch(e) { console.error('💥 showCard ERROR:', e.message, e.stack); showToast('ERROR SC: ' + e.message, 8000); }
 }
 
 function checkGameAnswer() {
