@@ -11,14 +11,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,700;1,400&display=swap" rel="stylesheet">
     <script>
-      // Desregistrar SWs viejos y limpiar cachés fantasma
-if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.getRegistrations().then(regs => {
-        regs.forEach(r => r.unregister());
-    });
-}
-caches.keys().then(keys => keys.forEach(k => caches.delete(k)));
-    </script>
+// app ready</script>
 <style>
 /* ================================================================
    RESET & TOKENS
@@ -14611,7 +14604,12 @@ window.startSmartStudy = function(deckId) {
 
 // Lanza el estudio de un mazo completo sin filtro SRS - usa el UI de estudio que funciona
 window.startSmartStudyAll = function(deckId) {
-    var mazo = (typeof MAZOS !== 'undefined') ? MAZOS.find(function(m){ return m.id === deckId; }) : null;
+    // Guard: si MAZOS no está listo (race condition en carga), reintentar
+    if (typeof MAZOS === 'undefined' || MAZOS.length === 0) {
+        setTimeout(function(){ window.startSmartStudyAll(deckId); }, 150);
+        return;
+    }
+    var mazo = MAZOS.find(function(m){ return m.id === deckId; });
     if (!mazo) { 
         if (typeof showToast === 'function') showToast('Mazo no encontrado: ' + deckId);
         return; 
@@ -14798,21 +14796,20 @@ function showTermsAgain() {
 // ============================================================
 //  INIT
 // ============================================================
-window.onload = function () {
-    // Activate home screen (always behind overlay if needed)
-    document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
-    document.getElementById('home').classList.add('active');
+window.addEventListener('load', function () {
+    // Inicialización segura: garantiza que solo home esté activo
+    goTo('home');
 
     if (!localStorage.getItem('terms_accepted_v2')) {
-        // Show terms — remove hidden class so overlay is visible
         document.getElementById('terms-overlay').classList.remove('hidden');
     } else {
-        document.getElementById('terms-overlay').classList.add('hidden');
+        var to = document.getElementById('terms-overlay');
+        if (to) to.classList.add('hidden');
     }
-    updateStreak();
+    if (typeof updateStreak === 'function') updateStreak();
     loadDeckInfo();
     updateDifHomeCount();
-};
+});
 
 // ============================================================
 //  STREAK
