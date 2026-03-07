@@ -56,7 +56,10 @@ html, body {
     transition: opacity 0.25s ease;
     overflow: hidden;
 }
-.screen.active { opacity: 1; pointer-events: all; z-index: 10; }
+.screen.active {
+    opacity: 1;
+    pointer-events: all;
+}
 
 /* ================================================================
    SCROLLABLE BODY
@@ -14778,16 +14781,17 @@ window.exitSmartStudy = function() {
 'use strict';
 
 // ============================================================
-// NAVEGACIÓN — RESTAURADA Y VITAL PARA QUE LOS BOTONES FUNCIONEN
+//  NAVEGACIÓN — una sola definición definitiva
 // ============================================================
 function goTo(id) {
-    document.querySelectorAll('.screen').forEach(function(s) { s.classList.remove('active'); });
+    document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
     document.getElementById(id).classList.add('active');
+
+    // Side effects por pantalla
     if (id === 'home')      { loadDeckInfo(); updateDifHomeCount(); }
-    if (id === 'dificiles') { renderDificilesAlfa(); }
-    if (id === 'dashboard') { renderDashboard(); }
+    if (id === 'dificiles') { renderDificiles(); }
     if (id === 'creator')   { renderCustomList(); }
-    if (id === 'rosco')     { startRosco(); }
+    if (id === 'rosco')     { startRosco(); } // mode set before arriving
     if (id === 'rae')       { initRaeIfNeeded(); }
 }
 
@@ -14805,7 +14809,11 @@ function acceptTerms() {
     localStorage.setItem('terms_accepted_v2', '1');
     document.getElementById('terms-overlay').classList.add('hidden');
     updateStreak();
-    goTo('home');
+    loadDeckInfo();
+    updateDifHomeCount();
+    // Show home screen
+    document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+    document.getElementById('home').classList.add('active');
 }
 function showTermsAgain() {
     document.getElementById('terms-overlay').classList.remove('hidden');
@@ -14814,20 +14822,21 @@ function showTermsAgain() {
 // ============================================================
 //  INIT
 // ============================================================
-window.addEventListener('load', function () {
-    // Inicialización segura: garantiza que solo home esté activo
-    goTo('home');
+window.onload = function () {
+    // Activate home screen (always behind overlay if needed)
+    document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+    document.getElementById('home').classList.add('active');
 
     if (!localStorage.getItem('terms_accepted_v2')) {
+        // Show terms — remove hidden class so overlay is visible
         document.getElementById('terms-overlay').classList.remove('hidden');
     } else {
-        var to = document.getElementById('terms-overlay');
-        if (to) to.classList.add('hidden');
+        document.getElementById('terms-overlay').classList.add('hidden');
     }
-    if (typeof updateStreak === 'function') updateStreak();
+    updateStreak();
     loadDeckInfo();
     updateDifHomeCount();
-});
+};
 
 // ============================================================
 //  STREAK
@@ -14856,42 +14865,35 @@ function updateStreak() {
 // ============================================================
 function loadDeckInfo() {
     if (typeof MAZOS === 'undefined') return;
-    try {
-        const now = Date.now();
-        let totalAll = 0, masteredAll = 0;
+    const now = Date.now();
+    let totalAll = 0, masteredAll = 0;
 
-        MAZOS.forEach(m => {
-            const el  = document.getElementById(`deck-info-${m?.id}`);
-            const dom = document.getElementById(`dom-${m?.id}`);
-            if (!el) return;
+    MAZOS.forEach(m => {
+        const el  = document.getElementById(`deck-info-${m.id}`);
+        const dom = document.getElementById(`dom-${m.id}`);
+        if (!el) return;
 
-            const questions = m?.questions ?? [];
-            const total    = questions.length;
-            const doneToday = countDoneToday(m?.id ?? '');
+        const total    = m.questions.length;
+        const doneToday = countDoneToday(m.id);
 
-            // "Dominada" = próximo repaso > 25 días
-            const mastered = questions.filter(q => {
-                const key = q?.a ?? q?.word ?? '';
-                if (!key) return false;
-                const next = parseInt(localStorage.getItem(`srs_${key}`) || '0');
-                return next > now + 25 * 86400000;
-            }).length;
+        // "Dominada" = próximo repaso > 25 días
+        const mastered = m.questions.filter(q => {
+            const next = parseInt(localStorage.getItem(`srs_${q.a}`) || '0');
+            return next > now + 25 * 86400000;
+        }).length;
 
-            const pct = total > 0 ? Math.round((mastered / total) * 100) : 0;
-            el.textContent  = `${total} preguntas · ${doneToday} hoy · ${pct}% dominadas`;
-            if (dom) dom.style.width = pct + '%';
+        const pct = total > 0 ? Math.round((mastered / total) * 100) : 0;
+        el.textContent  = `${total} preguntas · ${doneToday} hoy · ${pct}% dominadas`;
+        if (dom) dom.style.width = pct + '%';
 
-            totalAll   += total;
-            masteredAll += mastered;
-        });
+        totalAll   += total;
+        masteredAll += mastered;
+    });
 
-        // Global bar
-        const globalPct = totalAll > 0 ? Math.round((masteredAll / totalAll) * 100) : 0;
-        const gp = document.getElementById('global-pct');
-        const gb = document.getElementById('global-bar-fill');
-        if (gp) gp.textContent = globalPct + '%';
-        if (gb) gb.style.width = globalPct + '%';
-    } catch (e) { console.error('loadDeckInfo:', e); }
+    // Global bar
+    const globalPct = totalAll > 0 ? Math.round((masteredAll / totalAll) * 100) : 0;
+    document.getElementById('global-pct').textContent = globalPct + '%';
+    document.getElementById('global-bar-fill').style.width = globalPct + '%';
 }
 
 function countDoneToday(deckId) {
@@ -14917,25 +14919,26 @@ function iniciarMazo(deckId) {
     if (typeof MAZOS === 'undefined') { showToast('⚠️ Mazos no cargados'); return; }
     const deck = MAZOS.find(m => m.id === deckId);
     if (!deck) { showToast('Mazo no encontrado: ' + deckId); return; }
-    const questions = deck?.questions ?? [];
-    if (!questions.length) { showToast('Este mazo no tiene preguntas'); return; }
     gameMode    = 'deck';
-    gameTitle   = `${deck?.icon ?? ''} ${deck?.name ?? ''}`.trim() || 'Mazo';
-    gameSession = pickRandom(questions, 20);
+    gameTitle   = `${deck.icon || ''} ${deck.name}`;
+    gameSession = pickRandom(deck.questions, 20);
     startGameSession();
 }
 
 function iniciarPartidaRapida() {
     if (typeof MAZOS === 'undefined') return;
+
     let all = [];
-    MAZOS.forEach(m => {
-        const qs = m?.questions ?? [];
-        all = all.concat(qs.map(q => ({ ...q, _deckId: m?.id })));
-    });
-    if (!all.length) { showToast('No hay preguntas disponibles'); return; }
+    MAZOS.forEach(m => 
+        all = all.concat(m.questions.map(q => ({ ...q, _deckId: m.id })))
+    );
+
     gameMode    = 'rapida';
     gameTitle   = '⚡ Partida Rápida';
     gameSession = pickRandom(all, 20);
+
+    goTo('game');   // ← línea necesaria
+
     startGameSession();
 }
 
@@ -14944,11 +14947,9 @@ function iniciarSRS() {
     const now = Date.now();
     let pending = [];
     MAZOS.forEach(m => {
-        (m?.questions ?? []).forEach(q => {
-            const key = q?.a ?? q?.word ?? '';
-            if (!key) return;
-            const next = parseInt(localStorage.getItem(`srs_${key}`) || '0');
-            if (next <= now) pending.push({ ...q, _deckId: m?.id });
+        m.questions.forEach(q => {
+            const next = parseInt(localStorage.getItem(`srs_${q.a}`) || '0');
+            if (next <= now) pending.push({ ...q, _deckId: m.id });
         });
     });
     if (pending.length === 0) {
@@ -14958,17 +14959,19 @@ function iniciarSRS() {
     gameMode    = 'srs';
     gameTitle   = '🧠 Repaso SRS';
     gameSession = pickRandom(pending, Math.min(20, pending.length));
+     goTo('game');
     startGameSession();
 }
 
 function estudiarSoloDificiles() {
     const dif = getDificiles();
     if (dif.length === 0) { showToast('Aún no tienes difíciles guardadas'); return; }
-    const questions = dif.map(d => ({ q: d.def || d.q, a: d.word || d.a, letra: d.letra }));
+    const questions = dif.map(d => ({ q: d.def, a: d.word, letra: d.letra }));
     gameMode    = 'dificiles';
     gameTitle   = '🔴 Solo Difíciles';
     gameSession = pickRandom(questions, Math.min(20, questions.length));
-    startGameSession();
+    goTo('home');
+    setTimeout(startGameSession, 100);
 }
 
 function iniciarMazoCustom() {
@@ -14989,61 +14992,67 @@ function startGameSession() {
     gameIndex   = 0;
     gameCorrect = 0;
     gameDificil = 0;
-    document.getElementById('game-title').textContent = gameTitle ?? '';
+    document.getElementById('game-title').textContent = gameTitle;
     hideRatingBtns();
     goTo('game');
     showCard();
 }
 
 function showCard() {
-    var data = (gameSession ?? [])[gameIndex];
-    if (!data) return;
 
-    try {
-        hideRatingBtns();
+    if (!gameSession || gameSession.length === 0) {
+        showToast('No hay preguntas disponibles');
+        goTo('home');
+        return;
+    }
 
-        var q     = data?.q ?? data?.def ?? '???';
-        var letra = data?.letra ?? '';
-        var word  = data?.a ?? data?.word ?? '???';
+    var data = gameSession[gameIndex];
+    if (!data) {
+        goTo('home');
+        return;
+    }
 
-        // ---- WRITE PHASE (crítico: pintar la tarjeta primero) ----
-        document.getElementById('card-def-text').textContent = q;
-        document.getElementById('card-badge').textContent    = letra || '?';
-        document.getElementById('card-cat').textContent      = letra ? 'Con la ' + letra : (data?.pos ?? data?.category ?? '–');
-        document.getElementById('game-answer-input').value   = '';
+    hideRatingBtns();
 
-        // Show write phase, hide result
-        document.getElementById('game-write-phase').style.display  = 'flex';
-        document.getElementById('game-result-phase').style.display = 'none';
+    var total = gameSession.length;
+    document.getElementById('game-counter').textContent  = (gameIndex + 1) + '/' + total;
+    document.getElementById('game-progress').style.width = Math.round(((gameIndex + 1) / total) * 100) + '%';
 
-        // Actualización secundaria (barras, contador)
-        var total = gameSession?.length ?? 0;
-        document.getElementById('game-counter').textContent  = (gameIndex + 1) + '/' + total;
-        document.getElementById('game-progress').style.width = total ? Math.round(((gameIndex + 1) / total) * 100) + '%' : '0%';
+    var q     = data.q || data.def || '???';
+    var letra = data.letra || '';
+    var word  = data.a || data.word || '???';
 
-        // Focus input (con pequeño delay para móvil)
-        setTimeout(function() {
-            try { document.getElementById('game-answer-input').focus(); } catch (e) {}
-        }, 150);
-    } catch (e) { console.error('showCard:', e); }
+    // ---- WRITE PHASE ----
+    document.getElementById('card-def-text').textContent = q;
+    document.getElementById('card-badge').textContent    = letra || '?';
+    document.getElementById('card-cat').textContent      = letra ? 'Con la ' + letra : (data.pos || data.category || '–');
+    document.getElementById('game-answer-input').value   = '';
+
+    // Show write phase, hide result
+    document.getElementById('game-write-phase').style.display  = 'flex';
+    document.getElementById('game-result-phase').style.display = 'none';
+
+    // Focus input (con pequeño delay para móvil)
+    setTimeout(function() {
+        document.getElementById('game-answer-input').focus();
+    }, 150);
 }
 
 function checkGameAnswer() {
-    var data   = (gameSession ?? [])[gameIndex];
-    if (!data) return;
+    var data   = gameSession[gameIndex];
     var input  = document.getElementById('game-answer-input');
-    var userAnswer = input?.value?.trim?.() ?? '';
+    var userAnswer = input.value.trim();
     if (!userAnswer) return;
 
-    var correct = data?.a ?? data?.word ?? '';
+    var correct = data.a || data.word || '';
 
     // Normalizar para comparar (sin tildes, minúsculas)
     function norm(s) {
-        return (s || '').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').trim();
+        return s.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').trim();
     }
     var isCorrect = norm(userAnswer) === norm(correct);
 
-    // ---- Show result (crítico: pintar la tarjeta) ----
+    // ---- Show result ----
     document.getElementById('game-write-phase').style.display  = 'none';
     document.getElementById('game-result-phase').style.display = 'flex';
 
@@ -15053,9 +15062,10 @@ function checkGameAnswer() {
         ? '¡Correcto!'
         : 'Tú dijiste: "' + userAnswer + '"';
 
-    var q = data?.q ?? data?.def ?? '';
+    // Defs
+    var q = data.q || data.def || '';
     var defsHTML = '';
-    if (data?.def && typeof data.def === 'string') {
+    if (data.def && typeof data.def === 'string') {
         var parts = data.def.split(/(?=\d+\.\s)/).map(function(s){ return s.replace(/^\d+\.\s*/, '').trim(); }).filter(Boolean);
         parts.forEach(function(d, i) {
             defsHTML += '<div class="def-item">' + (parts.length > 1 ? '<strong>' + (i+1) + '.</strong> ' : '') + d + '</div>';
@@ -15065,24 +15075,27 @@ function checkGameAnswer() {
     }
     document.getElementById('card-defs').innerHTML = defsHTML;
 
-    // Extras y RAE (secundario: envolver en try-catch)
-    try {
-        var extraHTML = '';
-        if (data?.syn)  extraHTML += '<div class="extra-block purple"><div class="extra-label">🔄 Sinónimos</div><div>' + data.syn + '</div></div>';
-        if (data?.etym) extraHTML += '<div class="extra-block gold"><div class="extra-label">🏛️ Etimología</div><div>' + data.etym + '</div></div>';
-        if (data?.ex)   extraHTML += '<div class="extra-block green"><div class="extra-label">💡 Ejemplo</div><div>' + data.ex + '</div></div>';
-        if (data?.tip)  extraHTML += '<div class="extra-block green"><div class="extra-label">💡 Pista</div><div>' + data.tip + '</div></div>';
-        document.getElementById('card-extra').innerHTML = extraHTML;
+    // Extras
+    var extraHTML = '';
+    if (data.syn)  extraHTML += '<div class="extra-block purple"><div class="extra-label">🔄 Sinónimos</div><div>' + data.syn + '</div></div>';
+    if (data.etym) extraHTML += '<div class="extra-block gold"><div class="extra-label">🏛️ Etimología</div><div>' + data.etym + '</div></div>';
+    if (data.ex)   extraHTML += '<div class="extra-block green"><div class="extra-label">💡 Ejemplo</div><div>' + data.ex + '</div></div>';
+    if (data.tip)  extraHTML += '<div class="extra-block green"><div class="extra-label">💡 Pista</div><div>' + data.tip + '</div></div>';
+    document.getElementById('card-extra').innerHTML = extraHTML;
 
-        var raeLink = document.getElementById('card-rae-link');
-        var isVocab = (data?.word ?? data?.a) && (data?.syn || data?.etym);
-        raeLink.href = isVocab ? 'https://dle.rae.es/' + encodeURIComponent(correct) : '#';
-        raeLink.style.display = isVocab ? '' : 'none';
-    } catch (e) { console.error('checkGameAnswer extras:', e); }
+    // RAE link solo vocabulario RAE
+    var raeLink = document.getElementById('card-rae-link');
+    var isVocab = data.word && (data.syn || data.etym);
+    raeLink.href = isVocab ? 'https://dle.rae.es/' + encodeURIComponent(correct) : '#';
+    raeLink.style.display = isVocab ? '' : 'none';
 
+    // Contabilizar como correcto o incorrecto para SRS (usando bien/mal automático si acertó)
+    // Los botones de valoración siguen apareciendo para que ella decida el intervalo
     showRatingBtns('game');
 
+    // Si acertó, preseleccionar "bien" visualmente
     if (isCorrect && typeof spawnConfetti === 'function') {
+        // mini celebración si acertó
         setTimeout(function() { spawnConfetti(5); }, 100);
     }
 }
@@ -15113,19 +15126,18 @@ function showRatingBtns(type) {
 
 function rate(score) {
     const data = gameSession[gameIndex];
-    if (!data) return;
-    const key  = data?.a ?? data?.word ?? '';
+    const key  = data.a || data.word || '';
 
     const days = score === 1 ? 7 : score === 3 ? 14 : 30;
     if (key) localStorage.setItem(`srs_${key}`, (Date.now() + days * 86400000).toString());
 
-    if (score === 1) { gameDificil++; try { saveDificil(data); } catch (e) { console.error('rate saveDificil:', e); } }
+    if (score === 1) { gameDificil++; saveDificil(data); }
     else if (score === 5) gameCorrect++;
 
-    if (data?._deckId) try { incrementDone(data._deckId); } catch (e) {}
+    if (data._deckId) incrementDone(data._deckId);
 
     gameIndex++;
-    if (gameIndex < (gameSession?.length ?? 0)) {
+    if (gameIndex < gameSession.length) {
         showCard();
     } else {
         endGameSession();
@@ -15478,14 +15490,13 @@ function buildRosco() {
 
     if (typeof MAZOS !== 'undefined') {
         MAZOS.forEach(m => {
-            (m?.questions ?? []).forEach(q => {
-                const letra = q?.letra;
-                if (letra && byLetter[letra]) byLetter[letra].push(q);
+            m.questions.forEach(q => {
+                if (q.letra && byLetter[q.letra]) byLetter[q.letra].push(q);
             });
         });
     }
     getCustomCards().forEach(c => {
-        if (c?.letra && byLetter[c.letra]) byLetter[c.letra].push({ q: c.q, a: c.a, letra: c.letra });
+        if (c.letra && byLetter[c.letra]) byLetter[c.letra].push({ q: c.q, a: c.a, letra: c.letra });
     });
 
     // Anti-repeat: skip already used today
@@ -15497,16 +15508,13 @@ function buildRosco() {
         const pool = byLetter[l];
         if (!pool || pool.length === 0) return;
 
-        const ansKey = q => q?.a ?? q?.word ?? '';
-        let fresh = pool.filter(q => !usedToday[l] || !usedToday[l].includes(ansKey(q)));
+        let fresh = pool.filter(q => !usedToday[l] || !usedToday[l].includes(q.a));
         if (fresh.length === 0) { fresh = pool; usedToday[l] = []; }
 
         const chosen    = fresh[Math.floor(Math.random() * fresh.length)];
-        const qText = chosen?.q ?? chosen?.def ?? '???';
-        const aText = chosen?.a ?? chosen?.word ?? '???';
-        roscoData[l]    = { q: qText, a: aText, status: 'pending' };
+        roscoData[l]    = { q: chosen.q, a: chosen.a, status: 'pending' };
         if (!usedToday[l]) usedToday[l] = [];
-        usedToday[l].push(aText);
+        usedToday[l].push(chosen.a);
     });
 
     localStorage.setItem(usedKey, JSON.stringify(usedToday));
@@ -15516,15 +15524,12 @@ function buildRosco() {
 
 function startRosco() {
     clearInterval(roscoTimerInterval);
-    try {
-        buildRosco();
-        if (!roscoOrder.length) { showToast('No hay preguntas disponibles para el rosco'); return; }
-        roscoTimerVal = 230;
-        document.getElementById('rosco-fail-btn').style.display = 'none';
-        drawRoscoWheel();
-        showRoscoQuestion();
-        roscoTimerInterval = setInterval(tickRosco, 1000);
-    } catch (e) { console.error('startRosco:', e); showToast('Error al cargar el rosco'); }
+    buildRosco();
+    roscoTimerVal = 230;
+    document.getElementById('rosco-fail-btn').style.display = 'none';
+    drawRoscoWheel();
+    showRoscoQuestion();
+    roscoTimerInterval = setInterval(tickRosco, 1000);
 }
 
 function abandonarRosco() {
@@ -15552,95 +15557,86 @@ function updateRoscoTimer() {
 function showRoscoQuestion() {
     if (!roscoOrder.length) return;
 
-    try {
-        // Find next pending or passed
-        let found = false;
-        for (let i = 0; i < roscoOrder.length; i++) {
-            const idx = (roscoCurrentIdx + i) % roscoOrder.length;
-            const l   = roscoOrder[idx];
-            const d = roscoData?.[l];
-            if (d && ['pending', 'pass'].includes(d.status)) {
-                roscoCurrentIdx = idx;
-                found = true;
-                break;
-            }
+    // Find next pending or passed
+    let found = false;
+    for (let i = 0; i < roscoOrder.length; i++) {
+        const idx = (roscoCurrentIdx + i) % roscoOrder.length;
+        const l   = roscoOrder[idx];
+        if (['pending', 'pass'].includes(roscoData[l].status)) {
+            roscoCurrentIdx = idx;
+            found = true;
+            break;
         }
-        if (!found) { finishRosco(); return; }
+    }
+    if (!found) { finishRosco(); return; }
 
-        const l = roscoOrder[roscoCurrentIdx];
-        const d = roscoData?.[l];
-        if (!d) { finishRosco(); return; }
+    const l = roscoOrder[roscoCurrentIdx];
+    const d = roscoData[l];
 
-        const qText = d?.q ?? d?.def ?? '???';
+    document.getElementById('rosco-big-letter').textContent  = l;
+    document.getElementById('rosco-letter-tip').textContent  = d.q.startsWith('Contiene') ? `Contiene la ${l}` : `Con la ${l}`;
+    document.getElementById('rosco-question').textContent    = d.q;
+    document.getElementById('rosco-answer').value = '';
+    // NO auto-focus en móvil — evita que el teclado baje la pantalla
+    updateRoscoStats();
+    drawRoscoWheel();
 
-        document.getElementById('rosco-big-letter').textContent  = l;
-        document.getElementById('rosco-letter-tip').textContent  = (qText || '').startsWith('Contiene') ? `Contiene la ${l}` : `Con la ${l}`;
-        document.getElementById('rosco-question').textContent    = qText;
-        document.getElementById('rosco-answer').value = '';
-        // NO auto-focus en móvil — evita que el teclado baje la pantalla
-        updateRoscoStats();
-        drawRoscoWheel();
-
-        // Leer la pregunta en voz alta según el modo
-        if (roscoMode === 'full') {
-            var texto = (qText || '').replace(/^Con la [A-ZÑ]: /i, '').replace(/^Contiene la [A-ZÑ]: /i, '');
-            speakAndListen(texto);
-        } else if (roscoMode === 'voice') {
-            if (recognition) { try { recognition.start(); } catch(e) {} }
-        }
-    } catch (e) { console.error('showRoscoQuestion:', e); }
+    // Leer la pregunta en voz alta según el modo
+    if (roscoMode === 'full') {
+        // Para el mic mientras lee, luego lo reactiva
+        var texto = d.q.replace(/^Con la [A-ZÑ]: /i, '').replace(/^Contiene la [A-ZÑ]: /i, '');
+        speakAndListen(texto);
+    } else if (roscoMode === 'voice') {
+        // Solo escuchar, no leer
+        if (recognition) { try { recognition.start(); } catch(e) {} }
+    }
 }
 
 function submitRosco() {
     const l      = roscoOrder[roscoCurrentIdx];
-    const d      = roscoData?.[l];
-    if (!d) return;
+    const d      = roscoData[l];
     const answer = document.getElementById('rosco-answer').value.trim().toLowerCase();
     if (!answer) return;
 
-    const aText = d?.a ?? d?.word ?? '';
-    const qText = d?.q ?? d?.def ?? '';
-    const normalize = s => (s || '').normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
-    const isOk = normalize(answer) === normalize(aText) ||
-                 (normalize(aText).startsWith(normalize(answer)) && answer.length >= 4);
+    const normalize = s => s.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
+    const isOk = normalize(answer) === normalize(d.a) ||
+                 (normalize(d.a).startsWith(normalize(answer)) && answer.length >= 4);
 
     if (isOk) {
         d.status = 'ok';
-        showToast(`✓ ¡Correcto! ${aText}`, 1500);
+        showToast(`✓ ¡Correcto! ${d.a}`, 1500);
         roscoCurrentIdx = (roscoCurrentIdx + 1) % roscoOrder.length;
-        try { updateRoscoStats(); drawRoscoWheel(); } catch (e) { console.error('submitRosco stats:', e); }
+        updateRoscoStats();
+        drawRoscoWheel();
         setTimeout(() => {
-            const pending = roscoOrder.some(l2 => ['pending', 'pass'].includes(roscoData?.[l2]?.status));
+            const pending = roscoOrder.some(l2 => ['pending', 'pass'].includes(roscoData[l2].status));
             if (pending) showRoscoQuestion(); else finishRosco();
         }, 400);
     } else {
         d.status = 'fail';
-        saveDificil({ a: aText, q: qText, def: qText, letra: l });
-        showRoscoAnswerReveal(aText, qText);
+        saveDificil({ a: d.a, q: d.q, def: d.q, letra: l });
+        showRoscoAnswerReveal(d.a, d.q);
     }
 }
 
 function showRoscoAnswerReveal(word, def) {
-    try {
-        document.getElementById('ar-word').textContent = word ?? '';
-        document.getElementById('ar-def').textContent  = (def ?? '').replace(/^Con la [A-ZÑ]: |^Contiene la [A-ZÑ]: /i, '');
-        document.getElementById('answer-reveal').classList.add('show');
-        updateRoscoStats();
-        drawRoscoWheel();
-    } catch (e) { console.error('showRoscoAnswerReveal:', e); }
+    document.getElementById('ar-word').textContent = word;
+    document.getElementById('ar-def').textContent  = def.replace(/^Con la [A-ZÑ]: |^Contiene la [A-ZÑ]: /i, '');
+    document.getElementById('answer-reveal').classList.add('show');
+    updateRoscoStats();
+    drawRoscoWheel();
 }
 
 function hideRoscoAnswerReveal() {
     document.getElementById('answer-reveal').classList.remove('show');
     roscoCurrentIdx = (roscoCurrentIdx + 1) % roscoOrder.length;
-    const pending   = roscoOrder.some(l => ['pending', 'pass'].includes(roscoData?.[l]?.status));
+    const pending   = roscoOrder.some(l => ['pending', 'pass'].includes(roscoData[l].status));
     if (pending) showRoscoQuestion(); else finishRosco();
 }
 
 function pasarRosco() {
     const l = roscoOrder[roscoCurrentIdx];
-    const d = roscoData?.[l];
-    if (d && d.status === 'pending') d.status = 'pass';
+    if (roscoData[l].status === 'pending') roscoData[l].status = 'pass';
     roscoCurrentIdx = (roscoCurrentIdx + 1) % roscoOrder.length;
     drawRoscoWheel();
     showRoscoQuestion();
@@ -15649,16 +15645,15 @@ function pasarRosco() {
 function repetirFallos() {
     let hasFails = false;
     LETRAS.forEach(l => {
-        const d = roscoData?.[l];
-        if (d && d.status === 'fail') {
-            d.status = 'pending'; hasFails = true;
+        if (roscoData[l] && roscoData[l].status === 'fail') {
+            roscoData[l].status = 'pending'; hasFails = true;
         }
-        if (d && d.status === 'pass') {
-            d.status = 'pending';
+        if (roscoData[l] && roscoData[l].status === 'pass') {
+            roscoData[l].status = 'pending';
         }
     });
     if (!hasFails) { showToast('¡Sin fallos que repetir! 🏆'); return; }
-    roscoOrder      = LETRAS.filter(l => roscoData?.[l] && roscoData[l].status === 'pending');
+    roscoOrder      = LETRAS.filter(l => roscoData[l] && roscoData[l].status === 'pending');
     roscoCurrentIdx = 0;
     document.getElementById('rosco-fail-btn').style.display = 'none';
     clearInterval(roscoTimerInterval);
@@ -15669,11 +15664,9 @@ function repetirFallos() {
 }
 
 function updateRoscoStats() {
-    try {
-        document.getElementById('stat-ok').textContent   = roscoOrder.filter(l => roscoData?.[l]?.status === 'ok').length;
-        document.getElementById('stat-fail').textContent = roscoOrder.filter(l => roscoData?.[l]?.status === 'fail').length;
-        document.getElementById('stat-pass').textContent = roscoOrder.filter(l => roscoData?.[l]?.status === 'pass').length;
-    } catch (e) { console.error('updateRoscoStats:', e); }
+    document.getElementById('stat-ok').textContent   = roscoOrder.filter(l => roscoData[l].status === 'ok').length;
+    document.getElementById('stat-fail').textContent = roscoOrder.filter(l => roscoData[l].status === 'fail').length;
+    document.getElementById('stat-pass').textContent = roscoOrder.filter(l => roscoData[l].status === 'pass').length;
 }
 
 function finishRosco() {
@@ -15681,8 +15674,8 @@ function finishRosco() {
     stopVoice();
     stopSpeak();
 
-    const ok    = roscoOrder.filter(l => roscoData?.[l]?.status === 'ok').length;
-    const fail  = roscoOrder.filter(l => roscoData?.[l]?.status === 'fail').length;
+    const ok    = roscoOrder.filter(l => roscoData[l].status === 'ok').length;
+    const fail  = roscoOrder.filter(l => roscoData[l].status === 'fail').length;
     const total = roscoOrder.length;
 
     if (fail > 0) document.getElementById('rosco-fail-btn').style.display = 'block';
@@ -15746,14 +15739,6 @@ function finishRosco() {
         goTo('rosco');
     };
     document.getElementById('result-overlay').classList.add('active');
-    try{
-        const _p=roscoOrder.filter(l=>roscoData?.[l]?.status==='pass').length;
-        const _h=JSON.parse(localStorage.getItem('ppro_rosco_hist')||'[]');
-        _h.push({date:new Date().toISOString().slice(0,10),ok,fail,pass:_p,total});
-        if(_h.length>60)_h.shift();localStorage.setItem('ppro_rosco_hist',JSON.stringify(_h));
-        roscoOrder.forEach(l=>_ppTrackLetter(l,roscoData?.[l]?.status==='ok'));
-        _ppRecordSession('rosco',total,ok);
-    }catch(x){}
 }
 
 // ============================================================
@@ -15817,32 +15802,24 @@ function startVoice() {
     }
     recognition = new SR();
     recognition.lang = 'es-ES';
-    recognition.continuous = false;
-    recognition.maxAlternatives = 5;
+    recognition.continuous = true;
     recognition.interimResults = false;
     recognition.onresult = e => {
-        const _nv = s => s.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'').trim();
-        const res = e.results[0];
-        const pasa = ['pasapalabra','pasa palabra','pasa','paso','siguiente','saltar','pasar'];
-        for (let i=0; i<res.length; i++) {
-            if (pasa.some(v => _nv(res[i].transcript).includes(v))) {
-                try { recognition.stop(); } catch(_) {}
-                setTimeout(() => pasarRosco(), 200); return;
-            }
+        const transcript = e.results[e.results.length - 1][0].transcript.trim();
+        const normalized = transcript.toLowerCase()
+            .normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+
+        // "Pasapalabra" o variantes → pasar, no responder
+        const pasaVariants = ['pasapalabra', 'pasa palabra', 'paso', 'paso la palabra', 'siguiente'];
+        if (pasaVariants.some(function(v){ return normalized.includes(v); })) {
+            // Parar micro inmediatamente para que no se oiga el eco
+            try { recognition.stop(); } catch(e) {}
+            pasarRosco();
+            return;
         }
-        const letraActual = (typeof roscoOrder!=='undefined' && roscoOrder[roscoCurrentIdx])
-            ? _nv(roscoOrder[roscoCurrentIdx]) : '';
-        let best = res[0].transcript.trim();
-        for (let i=0; i<res.length; i++) {
-            if (letraActual && _nv(res[i].transcript).startsWith(letraActual)) {
-                best = res[i].transcript.trim(); break;
-            }
-        }
-        const inp = document.getElementById('rosco-answer');
-        inp.value = best;
-        inp.style.outline = '2px solid var(--gold)';
-        inp.style.boxShadow = '0 0 0 4px var(--gold-dim)';
-        setTimeout(() => { inp.style.outline=''; inp.style.boxShadow=''; }, 900);
+
+        document.getElementById('rosco-answer').value = transcript;
+        submitRosco();
     };
     recognition.onerror = (e) => {
         // 'no-speech' es normal, no mostrar error. Los demás sí.
@@ -15874,7 +15851,8 @@ function stopVoice() {
 var roscoMode = 'silent'; // 'silent' | 'voice' | 'full'
 
 function showRoscoModeSelector() {
-    goTo('rosco-mode');
+    document.querySelectorAll('.screen').forEach(function(s){ s.classList.remove('active'); });
+    document.getElementById('rosco-mode').classList.add('active');
 }
 
 function startRoscoMode(mode) {
@@ -16052,8 +16030,161 @@ document.getElementById('rosco-answer').addEventListener('focus', () => {
     }, 300);
 });
 
+// extra functions
 
-var _ppSessStart=Date.now();
+function _ppMigrateData() {
+    // Si hay datos en 'ppro_dificiles' (clave antigua) moverlos a 'dificiles'
+    try {
+        const old = localStorage.getItem('ppro_dificiles');
+        if (old) {
+            const oldData = JSON.parse(old);
+            if (oldData && oldData.length > 0) {
+                const current = JSON.parse(localStorage.getItem('dificiles') || '[]');
+                // Merge sin duplicados
+                oldData.forEach(item => {
+                    const word = item.a || item.word || '';
+                    if (word && !current.find(d => (d.word || d.a) === word)) {
+                        current.push({
+                            word: word,
+                            def: item.q || item.def || '',
+                            letra: item.letra || word[0] || ''
+                        });
+                    }
+                });
+                localStorage.setItem('dificiles', JSON.stringify(current));
+                localStorage.removeItem('ppro_dificiles');
+                console.log('Migración difíciles OK:', current.length, 'palabras');
+            }
+        }
+    } catch(e) { console.error('Migration error:', e); }
+
+    // Si hay datos en 'ppro_srs_*' moverlos al formato srs_* actual
+    try {
+        for (let i = 0; i < localStorage.length; i++) {
+            const key = localStorage.key(i);
+            if (key && key.startsWith('ppro_srs_')) {
+                const newKey = 'srs_' + key.slice(9);
+                if (!localStorage.getItem(newKey)) {
+                    localStorage.setItem(newKey, localStorage.getItem(key));
+                }
+            }
+        }
+    } catch(e) {}
+}
+
+function _ppRecordSession(deckId,answered,correct){try{var u=JSON.parse(localStorage.getItem('ppro_usage')||'{"sessions":[],"byDeck":{},"daily":{}}');var today=new Date().toISOString().slice(0,10);var mins=Math.max(0,Math.round((Date.now()-_ppSessStart)/60000));u.sessions.push({date:today,deck:deckId,answered:answered,correct:correct,minutes:mins});if(u.sessions.length>500)u.sessions=u.sessions.slice(-500);if(!u.byDeck[deckId])u.byDeck[deckId]={answered:0,correct:0,minutes:0};u.byDeck[deckId].answered+=answered;u.byDeck[deckId].correct+=correct;u.byDeck[deckId].minutes+=mins;u.daily[today]=(u.daily[today]||0)+answered;localStorage.setItem('ppro_usage',JSON.stringify(u));_ppSessStart=Date.now();}catch(x){}}
+
+var _examList=[],_examIdx=0,_examResults=[];
+function startExamDificiles(){var dif=getDificiles();if(!dif.length){showToast('Sin dificiles todavia!');return;}_examList=[].concat(dif).sort(function(a,b){var la=(a.letra||a.word||'?')[0].toUpperCase(),lb=(b.letra||b.word||'?')[0].toUpperCase();return la!==lb?la.localeCompare(lb,'es'):(a.word||'').localeCompare(b.word||'','es');});_examIdx=0;_examResults=[];goTo('exam-dificiles');_showExamQ();}
+function _showExamQ(){var q=_examList[_examIdx];var prog=(_examIdx+1)+' / '+_examList.length;document.getElementById('exam-top-prog').textContent=prog;document.getElementById('exam-prog-txt').textContent='Pregunta '+prog;document.getElementById('exam-letra').textContent=(q.letra||q.word||'?')[0].toUpperCase();document.getElementById('exam-question').textContent=q.def||'';document.getElementById('exam-answer').value='';document.getElementById('exam-q-card').style.display='block';document.getElementById('exam-fb-card').style.display='none';document.getElementById('exam-done-card').style.display='none';setTimeout(function(){var i=document.getElementById('exam-answer');if(i)i.focus();},150);}
+function submitExam(){var q=_examList[_examIdx];var raw=(document.getElementById('exam-answer').value||'').trim();if(!raw)return;var nrm=function(s){return s.normalize('NFD').replace(/[̀-ͯ]/g,'').toLowerCase().trim();};var ans=q.word||'';var isOk=nrm(raw)===nrm(ans)||(nrm(ans).startsWith(nrm(raw))&&raw.length>=4);_examResults.push({ok:isOk});_ppTrackLetter((q.letra||q.word||'?')[0].toUpperCase(),isOk);document.getElementById('exam-q-card').style.display='none';document.getElementById('exam-fb-card').style.display='block';document.getElementById('exam-fb-icon').textContent=isOk?'\u2705':'\u274c';document.getElementById('exam-fb-text').innerHTML=isOk?'<strong style="color:var(--green);font-size:1.05rem">\u00a1Correcto!</strong><br><span style="color:var(--muted);font-size:0.83rem">'+ans+'</span>':'<strong style="color:var(--red)">Incorrecto</strong><br>Era: <strong style="font-size:1.05rem">'+ans+'</strong><br><span style="color:var(--muted);font-size:0.79rem">Dijiste: &ldquo;'+raw+'&rdquo;</span>';document.getElementById('exam-next-btn').textContent=_examIdx>=_examList.length-1?'Ver resultados':'Siguiente';}
+function nextExamQ(){_examIdx++;if(_examIdx>=_examList.length){var numOk=_examResults.filter(function(r){return r.ok;}).length;var total=_examResults.length;var pct=Math.round(100*numOk/total);document.getElementById('exam-q-card').style.display='none';document.getElementById('exam-fb-card').style.display='none';document.getElementById('exam-done-card').style.display='block';document.getElementById('exam-done-emoji').textContent=pct>=80?'\U0001f3c6':pct>=50?'\U0001f4aa':'\U0001f4d6';document.getElementById('exam-done-score').textContent=numOk+' / '+total+'  ('+pct+'%)';document.getElementById('exam-done-msg').textContent=pct>=80?'\u00a1Lista para el bote! Nivel concursante de verdad. \U0001f3af':pct>=50?'\u00a1Mejorando! Cada repaso cuenta. \U0001f4aa':'A repasar se ha dicho! Para eso est\u00e1n aqu\u00ed. \U0001f4da';_ppRecordSession('exam_dificiles',total,numOk);}else{document.getElementById('exam-fb-card').style.display='none';_showExamQ();}}
+
+function renderDashboard(){try{var u=JSON.parse(localStorage.getItem('ppro_usage')||'{"sessions":[],"byDeck":{},"daily":{}}');var letters=JSON.parse(localStorage.getItem('ppro_letters')||'{}');var roscoH=JSON.parse(localStorage.getItem('ppro_rosco_hist')||'[]');var sessions=u.sessions||[],byDeck=u.byDeck||{},daily=u.daily||{};var totalQ=sessions.reduce(function(s,x){return s+(x.answered||0);},0);var totalOk=sessions.reduce(function(s,x){return s+(x.correct||0);},0);var totalMin=sessions.reduce(function(s,x){return s+(x.minutes||0);},0);var pct=totalQ?Math.round(100*totalOk/totalQ):0;var today=new Date().toISOString().slice(0,10);var todayMin=sessions.filter(function(s){return s.date===today;}).reduce(function(s,x){return s+(x.minutes||0);},0);var streak=0;for(var i=0;i<365;i++){var dd=new Date();dd.setDate(dd.getDate()-i);if((daily[dd.toISOString().slice(0,10)]||0)>0)streak++;else if(i>0)break;}document.getElementById('db-total').textContent=totalQ.toLocaleString('es');document.getElementById('db-pct').textContent=pct+'%';document.getElementById('db-streak').textContent=streak+'d';document.getElementById('db-today').textContent=todayMin<60?todayMin+'min':Math.floor(todayMin/60)+'h '+(todayMin%60?todayMin%60+'m':'');document.getElementById('db-total-time').textContent=Math.round(totalMin/60)+'h';var heat=document.getElementById('db-heatmap');heat.innerHTML='';var vals=Object.values(daily).map(Number);var maxD=vals.length?Math.max.apply(null,[1].concat(vals)):1;for(var j=69;j>=0;j--){var dj=new Date();dj.setDate(dj.getDate()-j);var kj=dj.toISOString().slice(0,10);var vj=daily[kj]||0;var aj=vj?Math.max(0.15,vj/maxD):0;var cel=document.createElement('div');cel.style.cssText='width:11px;height:11px;border-radius:2px;background:'+(vj?'rgba(240,192,64,'+aj.toFixed(2)+')':'var(--border2)')+';';cel.title=kj+': '+vj+' preguntas';heat.appendChild(cel);}var deckEl=document.getElementById('db-by-deck');var entries=Object.entries(byDeck).sort(function(a,b){return b[1].answered-a[1].answered;});deckEl.innerHTML=entries.length?entries.map(function(e){var id=e[0],data=e[1];var p=data.answered?Math.round(100*data.correct/data.answered):0;var col=p>=70?'var(--green)':p>=40?'var(--gold)':'var(--red)';var nm=(typeof MAZOS!=='undefined')?((MAZOS.find(function(m){return m.id===id;})||{}).name||id):id;return '<div style="margin-bottom:10px;"><div style="display:flex;justify-content:space-between;font-size:0.74rem;margin-bottom:3px;"><span>'+nm+'</span><span style="color:'+col+'">'+p+'% ('+data.answered+')</span></div><div style="background:var(--border2);border-radius:5px;height:6px;"><div style="width:'+p+'%;background:'+col+';border-radius:5px;height:6px;"></div></div></div>';}).join(''):'<p style="color:var(--muted);font-size:0.8rem;text-align:center;padding:8px;">Practica para ver tus stats \U0001f4aa</p>';var hlEl=document.getElementById('db-hard-letters');var lArr=Object.entries(letters).map(function(e){var l=e[0],d=e[1];return{l:l,pct:(d.ok+d.fail)?Math.round(100*(d.ok||0)/(d.ok+d.fail)):100};}).sort(function(a,b){return a.pct-b.pct;}).slice(0,10);hlEl.innerHTML=lArr.length?lArr.map(function(x){var col=x.pct<50?'var(--red)':x.pct<70?'var(--gold)':'var(--green)';return '<div style="background:var(--card2);border:1px solid '+(x.pct<50?'var(--red)':'var(--border2)')+';border-radius:9px;padding:5px 11px;display:flex;align-items:center;gap:6px;font-size:0.8rem;"><strong style="font-size:1.05rem">'+x.l+'</strong><span style="color:'+col+'">'+x.pct+'%</span></div>';}).join(''):'<span style="color:var(--muted);font-size:0.8rem;">Sin datos a\u00fan, \u00a1haz el rosco!</span>';var rEl=document.getElementById('db-rosco-hist');rEl.innerHTML=roscoH.length?roscoH.slice(-8).reverse().map(function(r){var p=r.total?Math.round(100*r.ok/r.total):0;var col=p>=70?'var(--green)':p>=40?'var(--gold)':'var(--red)';return '<div style="display:flex;align-items:center;gap:8px;font-size:0.77rem;padding:7px 0;border-bottom:1px solid var(--border2);"><span style="color:var(--muted);min-width:68px;font-size:0.7rem;">'+r.date+'</span><span style="color:var(--green);">+'+r.ok+'</span><span style="color:var(--red);">\u2716'+r.fail+'</span><span style="color:var(--muted);">~'+(r.pass||0)+'</span><span style="font-weight:700;margin-left:auto;color:'+col+';">'+p+'%</span></div>';}).join(''):'<p style="color:var(--muted);font-size:0.8rem;text-align:center;padding:8px;">\u00a1Haz tu primer rosco!</p>';}catch(e){console.error('Dashboard:',e);}}
+
+function sendProgressReport(){try{var u=JSON.parse(localStorage.getItem('ppro_usage')||'{}');var letters=JSON.parse(localStorage.getItem('ppro_letters')||'{}');var roscoH=JSON.parse(localStorage.getItem('ppro_rosco_hist')||'[]');var difs=getDificiles();var sessions=(u.sessions||[]),byDeck=(u.byDeck||{});var totalQ=sessions.reduce(function(s,x){return s+(x.answered||0);},0);var totalOk=sessions.reduce(function(s,x){return s+(x.correct||0);},0);var totalMin=sessions.reduce(function(s,x){return s+(x.minutes||0);},0);var pct=totalQ?Math.round(100*totalOk/totalQ):0;var dl=Object.entries(byDeck).map(function(e){var id=e[0],d=e[1];var p=d.answered?Math.round(100*d.correct/d.answered):0;var nm=(typeof MAZOS!=='undefined')?((MAZOS.find(function(m){return m.id===id;})||{}).name||id):id;return '  - '+nm+': '+d.answered+' preguntas, '+p+'% acierto';}).join('\n');var hl=Object.entries(letters).map(function(e){var l=e[0],d=e[1];return{l:l,p:(d.ok+d.fail)?Math.round(100*(d.ok||0)/(d.ok+d.fail)):100};}).sort(function(a,b){return a.p-b.p;}).slice(0,8).map(function(x){return x.l+'('+x.p+'%)';}).join(', ');var lastR=roscoH.length?roscoH[roscoH.length-1]:null;var body=['INFORME PASAPALABRA PRO - NOEMI','='.repeat(38),'Fecha: '+new Date().toLocaleDateString('es-ES'),'Total respondidas: '+totalQ.toLocaleString('es'),'Acierto global: '+pct+'%','Tiempo total: '+Math.floor(totalMin/60)+'h '+(totalMin%60)+'min','Dificiles acumuladas: '+difs.length,'','POR MAZO:',(dl||'  (sin datos)'),'','LETRAS MAS DIFICILES: '+(hl||'sin datos'),'','ULTIMO ROSCO: '+(lastR?lastR.date+' - '+lastR.ok+' bien / '+lastR.fail+' mal':'Sin roscos todavia'),'','---','En que mazo quieres mas preguntas?'].join('\n');window.location.href='mailto:andrea.alacreu@gmail.com?subject='+encodeURIComponent('Informe PasaPalabra Pro - '+new Date().toLocaleDateString('es-ES'))+'&body='+encodeURIComponent(body);var el=document.getElementById('db-report-status');if(el){el.textContent='Abriendo correo...';setTimeout(function(){el.textContent='';},4000);}}catch(e){showToast('Error al generar informe');}}
+
+function downloadBackup(){try{var blob=new Blob([JSON.stringify({exported:new Date().toISOString(),dificiles:getDificiles(),usage:JSON.parse(localStorage.getItem('ppro_usage')||'{}'),rosco_hist:JSON.parse(localStorage.getItem('ppro_rosco_hist')||'[]'),letters:JSON.parse(localStorage.getItem('ppro_letters')||'{}')},null,2)],{type:'application/json'});var a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='noemi_ppro_'+new Date().toISOString().slice(0,10)+'.json';document.body.appendChild(a);a.click();setTimeout(function(){document.body.removeChild(a);},100);showToast('\U0001f4be Backup descargado');}catch(e){showToast('Error al descargar backup');}}
+
+function checkWeeklyBackup(){var last=localStorage.getItem('ppro_last_backup')||'2000-01-01';var today=new Date().toISOString().slice(0,10);if(Math.floor((new Date(today)-new Date(last))/86400000)>=7){localStorage.setItem('ppro_last_backup',today);setTimeout(downloadBackup,5000);}}
+
+//**
+   // ================================================================
+    // GESTIÓN DE DATOS Y HOSPITAL (EDICIÓN ANDREA)
+    // ================================================================
+
+    function renderDificilesAlfa() {
+        const container = document.getElementById('dificiles-list');
+        if (!container) return;
+
+        // Lee de la clave correcta (la misma que getDificiles/saveDificil)
+        const dificiles = getDificiles();
+        document.getElementById('dif-count') && (document.getElementById('dif-count').textContent = dificiles.length);
+
+        container.innerHTML = '';
+
+        if (dificiles.length === 0) {
+            container.innerHTML = '<p style="color:var(--muted);text-align:center;margin-top:48px;font-size:0.88rem;">\u00a1Sin dif\u00edciles! Las que falles en el rosco aparecer\u00e1n aqu\u00ed, A-Z.</p>';
+            return;
+        }
+
+        // Ordenar A-Z por letra/word
+        const sorted = [...dificiles].sort((a, b) => {
+            const la = (a.letra || a.word || '?')[0].toUpperCase();
+            const lb = (b.letra || b.word || '?')[0].toUpperCase();
+            return la !== lb ? la.localeCompare(lb, 'es') : (a.word || '').localeCompare(b.word || '', 'es');
+        });
+
+        let html = '', lastL = '';
+        sorted.forEach((d, i) => {
+            const letra = (d.letra || d.word || '?')[0].toUpperCase();
+            if (letra !== lastL) {
+                lastL = letra;
+                html += `<div style="font-family:'Playfair Display',serif;font-size:1.55rem;font-weight:900;color:var(--gold);padding:${i ? '14px' : '4px'} 2px 4px;border-bottom:1px solid rgba(240,192,64,0.25);margin-bottom:8px;text-shadow:0 0 18px rgba(240,192,64,0.3);">${letra}</div>`;
+            }
+            html += `<div style="background:var(--card);border:1px solid var(--border2);border-radius:12px;padding:11px 13px;margin-bottom:7px;position:relative;">
+                <div style="font-size:0.73rem;color:var(--muted);line-height:1.45;padding-right:24px;">${d.def || d.q || '\u2013'}</div>
+                <div style="font-weight:700;font-size:0.9rem;margin-top:3px;color:var(--gold);">${d.word || d.a || ''}</div>
+                <button onclick="removeDificil(${dificiles.indexOf(d)}); renderDificilesAlfa();" style="position:absolute;top:8px;right:9px;background:none;border:none;color:var(--muted);font-size:0.82rem;cursor:pointer;padding:2px 5px;border-radius:4px;">&#x2715;</button>
+            </div>`;
+        });
+        container.innerHTML = html;
+    }
+
+    window.renderDificilesAlfa = renderDificilesAlfa;
+
+    // Función para grabar el progreso en la memoria del navegador
+    function saveCurrentProgress() {
+        if (typeof userProgress !== 'undefined') {
+            localStorage.setItem('ppro_progress', JSON.stringify(userProgress));
+        }
+    }
+
+    // Backup semanal automático
+    function checkWeeklyBackup(){
+        var last = localStorage.getItem('ppro_last_backup') || '2000-01-01';
+        var today = new Date().toISOString().slice(0,10);
+        if(Math.floor((new Date(today)-new Date(last))/86400000) >= 7){
+            localStorage.setItem('ppro_last_backup', today);
+            if (typeof downloadBackup === 'function') setTimeout(downloadBackup, 5000);
+        }
+    }
+
+    // ARRANQUE DE LA APP: Restaura memoria y limpia duplicados
+    window.addEventListener('DOMContentLoaded', () => {
+        // 1. Restaurar progreso de Andrea
+        const savedProgress = localStorage.getItem('ppro_progress');
+        if (savedProgress) {
+            userProgress = JSON.parse(savedProgress);
+            console.log("Memoria de Andrea recuperada ✓");
+        }
+
+        // 2. Lanzar procesos visuales
+        if (typeof renderStats === 'function') renderStats();
+        checkWeeklyBackup();
+        
+        // 3. Si existe el hospital, dibujarlo
+        if (document.getElementById('dificiles-list')) renderDificilesAlfa();
+    });
+
+
+// ── Utilidades PWA: abrir URLs externas sin que la PWA lo bloquee ──────────
+function openExternalUrl(url) {
+    if (!url || url === '#') return;
+    try {
+        const a = document.createElement('a');
+        a.href = url;
+        a.target = '_blank';
+        a.rel = 'noopener noreferrer';
+        a.style.display = 'none';
+        document.body.appendChild(a);
+        a.click();
+        setTimeout(() => document.body.removeChild(a), 100);
+    } catch(e) {
+        window.location.href = url;
+    }
+}
+
 function _ppTrackLetter(letra,isOk){try{var d=JSON.parse(localStorage.getItem('ppro_letters')||'{}');if(!d[letra])d[letra]={ok:0,fail:0};if(isOk)d[letra].ok++;else d[letra].fail++;localStorage.setItem('ppro_letters',JSON.stringify(d));}catch(x){}}
 function _ppRecordSession(deckId,answered,correct){try{var u=JSON.parse(localStorage.getItem('ppro_usage')||'{"sessions":[],"byDeck":{},"daily":{}}');var today=new Date().toISOString().slice(0,10);var mins=Math.max(0,Math.round((Date.now()-_ppSessStart)/60000));u.sessions.push({date:today,deck:deckId,answered:answered,correct:correct,minutes:mins});if(u.sessions.length>500)u.sessions=u.sessions.slice(-500);if(!u.byDeck[deckId])u.byDeck[deckId]={answered:0,correct:0,minutes:0};u.byDeck[deckId].answered+=answered;u.byDeck[deckId].correct+=correct;u.byDeck[deckId].minutes+=mins;u.daily[today]=(u.daily[today]||0)+answered;localStorage.setItem('ppro_usage',JSON.stringify(u));_ppSessStart=Date.now();}catch(x){}}
 
@@ -16168,64 +16299,1015 @@ function openExternalUrl(url) {
     }
 }
 
+function _showExamQ(){var q=_examList[_examIdx];var prog=(_examIdx+1)+' / '+_examList.length;document.getElementById('exam-top-prog').textContent=prog;document.getElementById('exam-prog-txt').textContent='Pregunta '+prog;document.getElementById('exam-letra').textContent=(q.letra||q.word||'?')[0].toUpperCase();document.getElementById('exam-question').textContent=q.def||'';document.getElementById('exam-answer').value='';document.getElementById('exam-q-card').style.display='block';document.getElementById('exam-fb-card').style.display='none';document.getElementById('exam-done-card').style.display='none';setTimeout(function(){var i=document.getElementById('exam-answer');if(i)i.focus();},150);}
+function submitExam(){var q=_examList[_examIdx];var raw=(document.getElementById('exam-answer').value||'').trim();if(!raw)return;var nrm=function(s){return s.normalize('NFD').replace(/[̀-ͯ]/g,'').toLowerCase().trim();};var ans=q.word||'';var isOk=nrm(raw)===nrm(ans)||(nrm(ans).startsWith(nrm(raw))&&raw.length>=4);_examResults.push({ok:isOk});_ppTrackLetter((q.letra||q.word||'?')[0].toUpperCase(),isOk);document.getElementById('exam-q-card').style.display='none';document.getElementById('exam-fb-card').style.display='block';document.getElementById('exam-fb-icon').textContent=isOk?'\u2705':'\u274c';document.getElementById('exam-fb-text').innerHTML=isOk?'<strong style="color:var(--green);font-size:1.05rem">\u00a1Correcto!</strong><br><span style="color:var(--muted);font-size:0.83rem">'+ans+'</span>':'<strong style="color:var(--red)">Incorrecto</strong><br>Era: <strong style="font-size:1.05rem">'+ans+'</strong><br><span style="color:var(--muted);font-size:0.79rem">Dijiste: &ldquo;'+raw+'&rdquo;</span>';document.getElementById('exam-next-btn').textContent=_examIdx>=_examList.length-1?'Ver resultados':'Siguiente';}
+function nextExamQ(){_examIdx++;if(_examIdx>=_examList.length){var numOk=_examResults.filter(function(r){return r.ok;}).length;var total=_examResults.length;var pct=Math.round(100*numOk/total);document.getElementById('exam-q-card').style.display='none';document.getElementById('exam-fb-card').style.display='none';document.getElementById('exam-done-card').style.display='block';document.getElementById('exam-done-emoji').textContent=pct>=80?'\U0001f3c6':pct>=50?'\U0001f4aa':'\U0001f4d6';document.getElementById('exam-done-score').textContent=numOk+' / '+total+'  ('+pct+'%)';document.getElementById('exam-done-msg').textContent=pct>=80?'\u00a1Lista para el bote! Nivel concursante de verdad. \U0001f3af':pct>=50?'\u00a1Mejorando! Cada repaso cuenta. \U0001f4aa':'A repasar se ha dicho! Para eso est\u00e1n aqu\u00ed. \U0001f4da';_ppRecordSession('exam_dificiles',total,numOk);}else{document.getElementById('exam-fb-card').style.display='none';_showExamQ();}}
+
+function renderDashboard(){try{var u=JSON.parse(localStorage.getItem('ppro_usage')||'{"sessions":[],"byDeck":{},"daily":{}}');var letters=JSON.parse(localStorage.getItem('ppro_letters')||'{}');var roscoH=JSON.parse(localStorage.getItem('ppro_rosco_hist')||'[]');var sessions=u.sessions||[],byDeck=u.byDeck||{},daily=u.daily||{};var totalQ=sessions.reduce(function(s,x){return s+(x.answered||0);},0);var totalOk=sessions.reduce(function(s,x){return s+(x.correct||0);},0);var totalMin=sessions.reduce(function(s,x){return s+(x.minutes||0);},0);var pct=totalQ?Math.round(100*totalOk/totalQ):0;var today=new Date().toISOString().slice(0,10);var todayMin=sessions.filter(function(s){return s.date===today;}).reduce(function(s,x){return s+(x.minutes||0);},0);var streak=0;for(var i=0;i<365;i++){var dd=new Date();dd.setDate(dd.getDate()-i);if((daily[dd.toISOString().slice(0,10)]||0)>0)streak++;else if(i>0)break;}document.getElementById('db-total').textContent=totalQ.toLocaleString('es');document.getElementById('db-pct').textContent=pct+'%';document.getElementById('db-streak').textContent=streak+'d';document.getElementById('db-today').textContent=todayMin<60?todayMin+'min':Math.floor(todayMin/60)+'h '+(todayMin%60?todayMin%60+'m':'');document.getElementById('db-total-time').textContent=Math.round(totalMin/60)+'h';var heat=document.getElementById('db-heatmap');heat.innerHTML='';var vals=Object.values(daily).map(Number);var maxD=vals.length?Math.max.apply(null,[1].concat(vals)):1;for(var j=69;j>=0;j--){var dj=new Date();dj.setDate(dj.getDate()-j);var kj=dj.toISOString().slice(0,10);var vj=daily[kj]||0;var aj=vj?Math.max(0.15,vj/maxD):0;var cel=document.createElement('div');cel.style.cssText='width:11px;height:11px;border-radius:2px;background:'+(vj?'rgba(240,192,64,'+aj.toFixed(2)+')':'var(--border2)')+';';cel.title=kj+': '+vj+' preguntas';heat.appendChild(cel);}var deckEl=document.getElementById('db-by-deck');var entries=Object.entries(byDeck).sort(function(a,b){return b[1].answered-a[1].answered;});deckEl.innerHTML=entries.length?entries.map(function(e){var id=e[0],data=e[1];var p=data.answered?Math.round(100*data.correct/data.answered):0;var col=p>=70?'var(--green)':p>=40?'var(--gold)':'var(--red)';var nm=(typeof MAZOS!=='undefined')?((MAZOS.find(function(m){return m.id===id;})||{}).name||id):id;return '<div style="margin-bottom:10px;"><div style="display:flex;justify-content:space-between;font-size:0.74rem;margin-bottom:3px;"><span>'+nm+'</span><span style="color:'+col+'">'+p+'% ('+data.answered+')</span></div><div style="background:var(--border2);border-radius:5px;height:6px;"><div style="width:'+p+'%;background:'+col+';border-radius:5px;height:6px;"></div></div></div>';}).join(''):'<p style="color:var(--muted);font-size:0.8rem;text-align:center;padding:8px;">Practica para ver tus stats \U0001f4aa</p>';var hlEl=document.getElementById('db-hard-letters');var lArr=Object.entries(letters).map(function(e){var l=e[0],d=e[1];return{l:l,pct:(d.ok+d.fail)?Math.round(100*(d.ok||0)/(d.ok+d.fail)):100};}).sort(function(a,b){return a.pct-b.pct;}).slice(0,10);hlEl.innerHTML=lArr.length?lArr.map(function(x){var col=x.pct<50?'var(--red)':x.pct<70?'var(--gold)':'var(--green)';return '<div style="background:var(--card2);border:1px solid '+(x.pct<50?'var(--red)':'var(--border2)')+';border-radius:9px;padding:5px 11px;display:flex;align-items:center;gap:6px;font-size:0.8rem;"><strong style="font-size:1.05rem">'+x.l+'</strong><span style="color:'+col+'">'+x.pct+'%</span></div>';}).join(''):'<span style="color:var(--muted);font-size:0.8rem;">Sin datos a\u00fan, \u00a1haz el rosco!</span>';var rEl=document.getElementById('db-rosco-hist');rEl.innerHTML=roscoH.length?roscoH.slice(-8).reverse().map(function(r){var p=r.total?Math.round(100*r.ok/r.total):0;var col=p>=70?'var(--green)':p>=40?'var(--gold)':'var(--red)';return '<div style="display:flex;align-items:center;gap:8px;font-size:0.77rem;padding:7px 0;border-bottom:1px solid var(--border2);"><span style="color:var(--muted);min-width:68px;font-size:0.7rem;">'+r.date+'</span><span style="color:var(--green);">+'+r.ok+'</span><span style="color:var(--red);">\u2716'+r.fail+'</span><span style="color:var(--muted);">~'+(r.pass||0)+'</span><span style="font-weight:700;margin-left:auto;color:'+col+';">'+p+'%</span></div>';}).join(''):'<p style="color:var(--muted);font-size:0.8rem;text-align:center;padding:8px;">\u00a1Haz tu primer rosco!</p>';}catch(e){console.error('Dashboard:',e);}}
+
+function sendProgressReport(){try{var u=JSON.parse(localStorage.getItem('ppro_usage')||'{}');var letters=JSON.parse(localStorage.getItem('ppro_letters')||'{}');var roscoH=JSON.parse(localStorage.getItem('ppro_rosco_hist')||'[]');var difs=getDificiles();var sessions=(u.sessions||[]),byDeck=(u.byDeck||{});var totalQ=sessions.reduce(function(s,x){return s+(x.answered||0);},0);var totalOk=sessions.reduce(function(s,x){return s+(x.correct||0);},0);var totalMin=sessions.reduce(function(s,x){return s+(x.minutes||0);},0);var pct=totalQ?Math.round(100*totalOk/totalQ):0;var dl=Object.entries(byDeck).map(function(e){var id=e[0],d=e[1];var p=d.answered?Math.round(100*d.correct/d.answered):0;var nm=(typeof MAZOS!=='undefined')?((MAZOS.find(function(m){return m.id===id;})||{}).name||id):id;return '  - '+nm+': '+d.answered+' preguntas, '+p+'% acierto';}).join('\n');var hl=Object.entries(letters).map(function(e){var l=e[0],d=e[1];return{l:l,p:(d.ok+d.fail)?Math.round(100*(d.ok||0)/(d.ok+d.fail)):100};}).sort(function(a,b){return a.p-b.p;}).slice(0,8).map(function(x){return x.l+'('+x.p+'%)';}).join(', ');var lastR=roscoH.length?roscoH[roscoH.length-1]:null;var body=['INFORME PASAPALABRA PRO - NOEMI','='.repeat(38),'Fecha: '+new Date().toLocaleDateString('es-ES'),'Total respondidas: '+totalQ.toLocaleString('es'),'Acierto global: '+pct+'%','Tiempo total: '+Math.floor(totalMin/60)+'h '+(totalMin%60)+'min','Dificiles acumuladas: '+difs.length,'','POR MAZO:',(dl||'  (sin datos)'),'','LETRAS MAS DIFICILES: '+(hl||'sin datos'),'','ULTIMO ROSCO: '+(lastR?lastR.date+' - '+lastR.ok+' bien / '+lastR.fail+' mal':'Sin roscos todavia'),'','---','En que mazo quieres mas preguntas?'].join('\n');window.location.href='mailto:andrea.alacreu@gmail.com?subject='+encodeURIComponent('Informe PasaPalabra Pro - '+new Date().toLocaleDateString('es-ES'))+'&body='+encodeURIComponent(body);var el=document.getElementById('db-report-status');if(el){el.textContent='Abriendo correo...';setTimeout(function(){el.textContent='';},4000);}}catch(e){showToast('Error al generar informe');}}
+
+function downloadBackup(){try{var blob=new Blob([JSON.stringify({exported:new Date().toISOString(),dificiles:getDificiles(),usage:JSON.parse(localStorage.getItem('ppro_usage')||'{}'),rosco_hist:JSON.parse(localStorage.getItem('ppro_rosco_hist')||'[]'),letters:JSON.parse(localStorage.getItem('ppro_letters')||'{}')},null,2)],{type:'application/json'});var a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='noemi_ppro_'+new Date().toISOString().slice(0,10)+'.json';document.body.appendChild(a);a.click();setTimeout(function(){document.body.removeChild(a);},100);showToast('\U0001f4be Backup descargado');}catch(e){showToast('Error al descargar backup');}}
+
+function checkWeeklyBackup(){var last=localStorage.getItem('ppro_last_backup')||'2000-01-01';var today=new Date().toISOString().slice(0,10);if(Math.floor((new Date(today)-new Date(last))/86400000)>=7){localStorage.setItem('ppro_last_backup',today);setTimeout(downloadBackup,5000);}}
+
+//**
+   // ================================================================
+    // GESTIÓN DE DATOS Y HOSPITAL (EDICIÓN ANDREA)
+    // ================================================================
+
+    function renderDificilesAlfa() {
+        const container = document.getElementById('dificiles-list');
+        if (!container) return;
+
+        // Lee de la clave correcta (la misma que getDificiles/saveDificil)
+        const dificiles = getDificiles();
+        document.getElementById('dif-count') && (document.getElementById('dif-count').textContent = dificiles.length);
+
+        container.innerHTML = '';
+
+        if (dificiles.length === 0) {
+            container.innerHTML = '<p style="color:var(--muted);text-align:center;margin-top:48px;font-size:0.88rem;">\u00a1Sin dif\u00edciles! Las que falles en el rosco aparecer\u00e1n aqu\u00ed, A-Z.</p>';
+            return;
+        }
+
+        // Ordenar A-Z por letra/word
+        const sorted = [...dificiles].sort((a, b) => {
+            const la = (a.letra || a.word || '?')[0].toUpperCase();
+            const lb = (b.letra || b.word || '?')[0].toUpperCase();
+            return la !== lb ? la.localeCompare(lb, 'es') : (a.word || '').localeCompare(b.word || '', 'es');
+        });
+
+        let html = '', lastL = '';
+        sorted.forEach((d, i) => {
+            const letra = (d.letra || d.word || '?')[0].toUpperCase();
+            if (letra !== lastL) {
+                lastL = letra;
+                html += `<div style="font-family:'Playfair Display',serif;font-size:1.55rem;font-weight:900;color:var(--gold);padding:${i ? '14px' : '4px'} 2px 4px;border-bottom:1px solid rgba(240,192,64,0.25);margin-bottom:8px;text-shadow:0 0 18px rgba(240,192,64,0.3);">${letra}</div>`;
+            }
+            html += `<div style="background:var(--card);border:1px solid var(--border2);border-radius:12px;padding:11px 13px;margin-bottom:7px;position:relative;">
+                <div style="font-size:0.73rem;color:var(--muted);line-height:1.45;padding-right:24px;">${d.def || d.q || '\u2013'}</div>
+                <div style="font-weight:700;font-size:0.9rem;margin-top:3px;color:var(--gold);">${d.word || d.a || ''}</div>
+                <button onclick="removeDificil(${dificiles.indexOf(d)}); renderDificilesAlfa();" style="position:absolute;top:8px;right:9px;background:none;border:none;color:var(--muted);font-size:0.82rem;cursor:pointer;padding:2px 5px;border-radius:4px;">&#x2715;</button>
+            </div>`;
+        });
+        container.innerHTML = html;
+    }
+
+    window.renderDificilesAlfa = renderDificilesAlfa;
+
+    // Función para grabar el progreso en la memoria del navegador
+    function saveCurrentProgress() {
+        if (typeof userProgress !== 'undefined') {
+            localStorage.setItem('ppro_progress', JSON.stringify(userProgress));
+        }
+    }
+
+    // Backup semanal automático
+    function checkWeeklyBackup(){
+        var last = localStorage.getItem('ppro_last_backup') || '2000-01-01';
+        var today = new Date().toISOString().slice(0,10);
+        if(Math.floor((new Date(today)-new Date(last))/86400000) >= 7){
+            localStorage.setItem('ppro_last_backup', today);
+            if (typeof downloadBackup === 'function') setTimeout(downloadBackup, 5000);
+        }
+    }
+
+    // ARRANQUE DE LA APP: Restaura memoria y limpia duplicados
+    window.addEventListener('DOMContentLoaded', () => {
+        // 1. Restaurar progreso de Andrea
+        const savedProgress = localStorage.getItem('ppro_progress');
+        if (savedProgress) {
+            userProgress = JSON.parse(savedProgress);
+            console.log("Memoria de Andrea recuperada ✓");
+        }
+
+        // 2. Lanzar procesos visuales
+        if (typeof renderStats === 'function') renderStats();
+        checkWeeklyBackup();
+        
+        // 3. Si existe el hospital, dibujarlo
+        if (document.getElementById('dificiles-list')) renderDificilesAlfa();
+    });
+
+
+// ── Utilidades PWA: abrir URLs externas sin que la PWA lo bloquee ──────────
+function openExternalUrl(url) {
+    if (!url || url === '#') return;
+    try {
+        const a = document.createElement('a');
+        a.href = url;
+        a.target = '_blank';
+        a.rel = 'noopener noreferrer';
+        a.style.display = 'none';
+        document.body.appendChild(a);
+        a.click();
+        setTimeout(() => document.body.removeChild(a), 100);
+    } catch(e) {
+        window.location.href = url;
+    }
+}
+
+function checkWeeklyBackup(){var last=localStorage.getItem('ppro_last_backup')||'2000-01-01';var today=new Date().toISOString().slice(0,10);if(Math.floor((new Date(today)-new Date(last))/86400000)>=7){localStorage.setItem('ppro_last_backup',today);setTimeout(downloadBackup,5000);}}
+
+//**
+   // ================================================================
+    // GESTIÓN DE DATOS Y HOSPITAL (EDICIÓN ANDREA)
+    // ================================================================
+
+    function renderDificilesAlfa() {
+        const container = document.getElementById('dificiles-list');
+        if (!container) return;
+
+        // Lee de la clave correcta (la misma que getDificiles/saveDificil)
+        const dificiles = getDificiles();
+        document.getElementById('dif-count') && (document.getElementById('dif-count').textContent = dificiles.length);
+
+        container.innerHTML = '';
+
+        if (dificiles.length === 0) {
+            container.innerHTML = '<p style="color:var(--muted);text-align:center;margin-top:48px;font-size:0.88rem;">\u00a1Sin dif\u00edciles! Las que falles en el rosco aparecer\u00e1n aqu\u00ed, A-Z.</p>';
+            return;
+        }
+
+        // Ordenar A-Z por letra/word
+        const sorted = [...dificiles].sort((a, b) => {
+            const la = (a.letra || a.word || '?')[0].toUpperCase();
+            const lb = (b.letra || b.word || '?')[0].toUpperCase();
+            return la !== lb ? la.localeCompare(lb, 'es') : (a.word || '').localeCompare(b.word || '', 'es');
+        });
+
+        let html = '', lastL = '';
+        sorted.forEach((d, i) => {
+            const letra = (d.letra || d.word || '?')[0].toUpperCase();
+            if (letra !== lastL) {
+                lastL = letra;
+                html += `<div style="font-family:'Playfair Display',serif;font-size:1.55rem;font-weight:900;color:var(--gold);padding:${i ? '14px' : '4px'} 2px 4px;border-bottom:1px solid rgba(240,192,64,0.25);margin-bottom:8px;text-shadow:0 0 18px rgba(240,192,64,0.3);">${letra}</div>`;
+            }
+            html += `<div style="background:var(--card);border:1px solid var(--border2);border-radius:12px;padding:11px 13px;margin-bottom:7px;position:relative;">
+                <div style="font-size:0.73rem;color:var(--muted);line-height:1.45;padding-right:24px;">${d.def || d.q || '\u2013'}</div>
+                <div style="font-weight:700;font-size:0.9rem;margin-top:3px;color:var(--gold);">${d.word || d.a || ''}</div>
+                <button onclick="removeDificil(${dificiles.indexOf(d)}); renderDificilesAlfa();" style="position:absolute;top:8px;right:9px;background:none;border:none;color:var(--muted);font-size:0.82rem;cursor:pointer;padding:2px 5px;border-radius:4px;">&#x2715;</button>
+            </div>`;
+        });
+        container.innerHTML = html;
+    }
+
+    window.renderDificilesAlfa = renderDificilesAlfa;
+
+    // Función para grabar el progreso en la memoria del navegador
+    function saveCurrentProgress() {
+        if (typeof userProgress !== 'undefined') {
+            localStorage.setItem('ppro_progress', JSON.stringify(userProgress));
+        }
+    }
+
+    // Backup semanal automático
+    function checkWeeklyBackup(){
+        var last = localStorage.getItem('ppro_last_backup') || '2000-01-01';
+        var today = new Date().toISOString().slice(0,10);
+        if(Math.floor((new Date(today)-new Date(last))/86400000) >= 7){
+            localStorage.setItem('ppro_last_backup', today);
+            if (typeof downloadBackup === 'function') setTimeout(downloadBackup, 5000);
+        }
+    }
+
+    // ARRANQUE DE LA APP: Restaura memoria y limpia duplicados
+    window.addEventListener('DOMContentLoaded', () => {
+        // 1. Restaurar progreso de Andrea
+        const savedProgress = localStorage.getItem('ppro_progress');
+        if (savedProgress) {
+            userProgress = JSON.parse(savedProgress);
+            console.log("Memoria de Andrea recuperada ✓");
+        }
+
+        // 2. Lanzar procesos visuales
+        if (typeof renderStats === 'function') renderStats();
+        checkWeeklyBackup();
+        
+        // 3. Si existe el hospital, dibujarlo
+        if (document.getElementById('dificiles-list')) renderDificilesAlfa();
+    });
+
+
+// ── Utilidades PWA: abrir URLs externas sin que la PWA lo bloquee ──────────
+function openExternalUrl(url) {
+    if (!url || url === '#') return;
+    try {
+        const a = document.createElement('a');
+        a.href = url;
+        a.target = '_blank';
+        a.rel = 'noopener noreferrer';
+        a.style.display = 'none';
+        document.body.appendChild(a);
+        a.click();
+        setTimeout(() => document.body.removeChild(a), 100);
+    } catch(e) {
+        window.location.href = url;
+    }
+}
+
+function downloadBackup(){try{var blob=new Blob([JSON.stringify({exported:new Date().toISOString(),dificiles:getDificiles(),usage:JSON.parse(localStorage.getItem('ppro_usage')||'{}'),rosco_hist:JSON.parse(localStorage.getItem('ppro_rosco_hist')||'[]'),letters:JSON.parse(localStorage.getItem('ppro_letters')||'{}')},null,2)],{type:'application/json'});var a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='noemi_ppro_'+new Date().toISOString().slice(0,10)+'.json';document.body.appendChild(a);a.click();setTimeout(function(){document.body.removeChild(a);},100);showToast('\U0001f4be Backup descargado');}catch(e){showToast('Error al descargar backup');}}
+
+function checkWeeklyBackup(){var last=localStorage.getItem('ppro_last_backup')||'2000-01-01';var today=new Date().toISOString().slice(0,10);if(Math.floor((new Date(today)-new Date(last))/86400000)>=7){localStorage.setItem('ppro_last_backup',today);setTimeout(downloadBackup,5000);}}
+
+//**
+   // ================================================================
+    // GESTIÓN DE DATOS Y HOSPITAL (EDICIÓN ANDREA)
+    // ================================================================
+
+    function renderDificilesAlfa() {
+        const container = document.getElementById('dificiles-list');
+        if (!container) return;
+
+        // Lee de la clave correcta (la misma que getDificiles/saveDificil)
+        const dificiles = getDificiles();
+        document.getElementById('dif-count') && (document.getElementById('dif-count').textContent = dificiles.length);
+
+        container.innerHTML = '';
+
+        if (dificiles.length === 0) {
+            container.innerHTML = '<p style="color:var(--muted);text-align:center;margin-top:48px;font-size:0.88rem;">\u00a1Sin dif\u00edciles! Las que falles en el rosco aparecer\u00e1n aqu\u00ed, A-Z.</p>';
+            return;
+        }
+
+        // Ordenar A-Z por letra/word
+        const sorted = [...dificiles].sort((a, b) => {
+            const la = (a.letra || a.word || '?')[0].toUpperCase();
+            const lb = (b.letra || b.word || '?')[0].toUpperCase();
+            return la !== lb ? la.localeCompare(lb, 'es') : (a.word || '').localeCompare(b.word || '', 'es');
+        });
+
+        let html = '', lastL = '';
+        sorted.forEach((d, i) => {
+            const letra = (d.letra || d.word || '?')[0].toUpperCase();
+            if (letra !== lastL) {
+                lastL = letra;
+                html += `<div style="font-family:'Playfair Display',serif;font-size:1.55rem;font-weight:900;color:var(--gold);padding:${i ? '14px' : '4px'} 2px 4px;border-bottom:1px solid rgba(240,192,64,0.25);margin-bottom:8px;text-shadow:0 0 18px rgba(240,192,64,0.3);">${letra}</div>`;
+            }
+            html += `<div style="background:var(--card);border:1px solid var(--border2);border-radius:12px;padding:11px 13px;margin-bottom:7px;position:relative;">
+                <div style="font-size:0.73rem;color:var(--muted);line-height:1.45;padding-right:24px;">${d.def || d.q || '\u2013'}</div>
+                <div style="font-weight:700;font-size:0.9rem;margin-top:3px;color:var(--gold);">${d.word || d.a || ''}</div>
+                <button onclick="removeDificil(${dificiles.indexOf(d)}); renderDificilesAlfa();" style="position:absolute;top:8px;right:9px;background:none;border:none;color:var(--muted);font-size:0.82rem;cursor:pointer;padding:2px 5px;border-radius:4px;">&#x2715;</button>
+            </div>`;
+        });
+        container.innerHTML = html;
+    }
+
+    window.renderDificilesAlfa = renderDificilesAlfa;
+
+    // Función para grabar el progreso en la memoria del navegador
+    function saveCurrentProgress() {
+        if (typeof userProgress !== 'undefined') {
+            localStorage.setItem('ppro_progress', JSON.stringify(userProgress));
+        }
+    }
+
+    // Backup semanal automático
+    function checkWeeklyBackup(){
+        var last = localStorage.getItem('ppro_last_backup') || '2000-01-01';
+        var today = new Date().toISOString().slice(0,10);
+        if(Math.floor((new Date(today)-new Date(last))/86400000) >= 7){
+            localStorage.setItem('ppro_last_backup', today);
+            if (typeof downloadBackup === 'function') setTimeout(downloadBackup, 5000);
+        }
+    }
+
+    // ARRANQUE DE LA APP: Restaura memoria y limpia duplicados
+    window.addEventListener('DOMContentLoaded', () => {
+        // 1. Restaurar progreso de Andrea
+        const savedProgress = localStorage.getItem('ppro_progress');
+        if (savedProgress) {
+            userProgress = JSON.parse(savedProgress);
+            console.log("Memoria de Andrea recuperada ✓");
+        }
+
+        // 2. Lanzar procesos visuales
+        if (typeof renderStats === 'function') renderStats();
+        checkWeeklyBackup();
+        
+        // 3. Si existe el hospital, dibujarlo
+        if (document.getElementById('dificiles-list')) renderDificilesAlfa();
+    });
+
+
+// ── Utilidades PWA: abrir URLs externas sin que la PWA lo bloquee ──────────
+function openExternalUrl(url) {
+    if (!url || url === '#') return;
+    try {
+        const a = document.createElement('a');
+        a.href = url;
+        a.target = '_blank';
+        a.rel = 'noopener noreferrer';
+        a.style.display = 'none';
+        document.body.appendChild(a);
+        a.click();
+        setTimeout(() => document.body.removeChild(a), 100);
+    } catch(e) {
+        window.location.href = url;
+    }
+}
+
+function nextExamQ(){_examIdx++;if(_examIdx>=_examList.length){var numOk=_examResults.filter(function(r){return r.ok;}).length;var total=_examResults.length;var pct=Math.round(100*numOk/total);document.getElementById('exam-q-card').style.display='none';document.getElementById('exam-fb-card').style.display='none';document.getElementById('exam-done-card').style.display='block';document.getElementById('exam-done-emoji').textContent=pct>=80?'\U0001f3c6':pct>=50?'\U0001f4aa':'\U0001f4d6';document.getElementById('exam-done-score').textContent=numOk+' / '+total+'  ('+pct+'%)';document.getElementById('exam-done-msg').textContent=pct>=80?'\u00a1Lista para el bote! Nivel concursante de verdad. \U0001f3af':pct>=50?'\u00a1Mejorando! Cada repaso cuenta. \U0001f4aa':'A repasar se ha dicho! Para eso est\u00e1n aqu\u00ed. \U0001f4da';_ppRecordSession('exam_dificiles',total,numOk);}else{document.getElementById('exam-fb-card').style.display='none';_showExamQ();}}
+
+function renderDashboard(){try{var u=JSON.parse(localStorage.getItem('ppro_usage')||'{"sessions":[],"byDeck":{},"daily":{}}');var letters=JSON.parse(localStorage.getItem('ppro_letters')||'{}');var roscoH=JSON.parse(localStorage.getItem('ppro_rosco_hist')||'[]');var sessions=u.sessions||[],byDeck=u.byDeck||{},daily=u.daily||{};var totalQ=sessions.reduce(function(s,x){return s+(x.answered||0);},0);var totalOk=sessions.reduce(function(s,x){return s+(x.correct||0);},0);var totalMin=sessions.reduce(function(s,x){return s+(x.minutes||0);},0);var pct=totalQ?Math.round(100*totalOk/totalQ):0;var today=new Date().toISOString().slice(0,10);var todayMin=sessions.filter(function(s){return s.date===today;}).reduce(function(s,x){return s+(x.minutes||0);},0);var streak=0;for(var i=0;i<365;i++){var dd=new Date();dd.setDate(dd.getDate()-i);if((daily[dd.toISOString().slice(0,10)]||0)>0)streak++;else if(i>0)break;}document.getElementById('db-total').textContent=totalQ.toLocaleString('es');document.getElementById('db-pct').textContent=pct+'%';document.getElementById('db-streak').textContent=streak+'d';document.getElementById('db-today').textContent=todayMin<60?todayMin+'min':Math.floor(todayMin/60)+'h '+(todayMin%60?todayMin%60+'m':'');document.getElementById('db-total-time').textContent=Math.round(totalMin/60)+'h';var heat=document.getElementById('db-heatmap');heat.innerHTML='';var vals=Object.values(daily).map(Number);var maxD=vals.length?Math.max.apply(null,[1].concat(vals)):1;for(var j=69;j>=0;j--){var dj=new Date();dj.setDate(dj.getDate()-j);var kj=dj.toISOString().slice(0,10);var vj=daily[kj]||0;var aj=vj?Math.max(0.15,vj/maxD):0;var cel=document.createElement('div');cel.style.cssText='width:11px;height:11px;border-radius:2px;background:'+(vj?'rgba(240,192,64,'+aj.toFixed(2)+')':'var(--border2)')+';';cel.title=kj+': '+vj+' preguntas';heat.appendChild(cel);}var deckEl=document.getElementById('db-by-deck');var entries=Object.entries(byDeck).sort(function(a,b){return b[1].answered-a[1].answered;});deckEl.innerHTML=entries.length?entries.map(function(e){var id=e[0],data=e[1];var p=data.answered?Math.round(100*data.correct/data.answered):0;var col=p>=70?'var(--green)':p>=40?'var(--gold)':'var(--red)';var nm=(typeof MAZOS!=='undefined')?((MAZOS.find(function(m){return m.id===id;})||{}).name||id):id;return '<div style="margin-bottom:10px;"><div style="display:flex;justify-content:space-between;font-size:0.74rem;margin-bottom:3px;"><span>'+nm+'</span><span style="color:'+col+'">'+p+'% ('+data.answered+')</span></div><div style="background:var(--border2);border-radius:5px;height:6px;"><div style="width:'+p+'%;background:'+col+';border-radius:5px;height:6px;"></div></div></div>';}).join(''):'<p style="color:var(--muted);font-size:0.8rem;text-align:center;padding:8px;">Practica para ver tus stats \U0001f4aa</p>';var hlEl=document.getElementById('db-hard-letters');var lArr=Object.entries(letters).map(function(e){var l=e[0],d=e[1];return{l:l,pct:(d.ok+d.fail)?Math.round(100*(d.ok||0)/(d.ok+d.fail)):100};}).sort(function(a,b){return a.pct-b.pct;}).slice(0,10);hlEl.innerHTML=lArr.length?lArr.map(function(x){var col=x.pct<50?'var(--red)':x.pct<70?'var(--gold)':'var(--green)';return '<div style="background:var(--card2);border:1px solid '+(x.pct<50?'var(--red)':'var(--border2)')+';border-radius:9px;padding:5px 11px;display:flex;align-items:center;gap:6px;font-size:0.8rem;"><strong style="font-size:1.05rem">'+x.l+'</strong><span style="color:'+col+'">'+x.pct+'%</span></div>';}).join(''):'<span style="color:var(--muted);font-size:0.8rem;">Sin datos a\u00fan, \u00a1haz el rosco!</span>';var rEl=document.getElementById('db-rosco-hist');rEl.innerHTML=roscoH.length?roscoH.slice(-8).reverse().map(function(r){var p=r.total?Math.round(100*r.ok/r.total):0;var col=p>=70?'var(--green)':p>=40?'var(--gold)':'var(--red)';return '<div style="display:flex;align-items:center;gap:8px;font-size:0.77rem;padding:7px 0;border-bottom:1px solid var(--border2);"><span style="color:var(--muted);min-width:68px;font-size:0.7rem;">'+r.date+'</span><span style="color:var(--green);">+'+r.ok+'</span><span style="color:var(--red);">\u2716'+r.fail+'</span><span style="color:var(--muted);">~'+(r.pass||0)+'</span><span style="font-weight:700;margin-left:auto;color:'+col+';">'+p+'%</span></div>';}).join(''):'<p style="color:var(--muted);font-size:0.8rem;text-align:center;padding:8px;">\u00a1Haz tu primer rosco!</p>';}catch(e){console.error('Dashboard:',e);}}
+
+function sendProgressReport(){try{var u=JSON.parse(localStorage.getItem('ppro_usage')||'{}');var letters=JSON.parse(localStorage.getItem('ppro_letters')||'{}');var roscoH=JSON.parse(localStorage.getItem('ppro_rosco_hist')||'[]');var difs=getDificiles();var sessions=(u.sessions||[]),byDeck=(u.byDeck||{});var totalQ=sessions.reduce(function(s,x){return s+(x.answered||0);},0);var totalOk=sessions.reduce(function(s,x){return s+(x.correct||0);},0);var totalMin=sessions.reduce(function(s,x){return s+(x.minutes||0);},0);var pct=totalQ?Math.round(100*totalOk/totalQ):0;var dl=Object.entries(byDeck).map(function(e){var id=e[0],d=e[1];var p=d.answered?Math.round(100*d.correct/d.answered):0;var nm=(typeof MAZOS!=='undefined')?((MAZOS.find(function(m){return m.id===id;})||{}).name||id):id;return '  - '+nm+': '+d.answered+' preguntas, '+p+'% acierto';}).join('\n');var hl=Object.entries(letters).map(function(e){var l=e[0],d=e[1];return{l:l,p:(d.ok+d.fail)?Math.round(100*(d.ok||0)/(d.ok+d.fail)):100};}).sort(function(a,b){return a.p-b.p;}).slice(0,8).map(function(x){return x.l+'('+x.p+'%)';}).join(', ');var lastR=roscoH.length?roscoH[roscoH.length-1]:null;var body=['INFORME PASAPALABRA PRO - NOEMI','='.repeat(38),'Fecha: '+new Date().toLocaleDateString('es-ES'),'Total respondidas: '+totalQ.toLocaleString('es'),'Acierto global: '+pct+'%','Tiempo total: '+Math.floor(totalMin/60)+'h '+(totalMin%60)+'min','Dificiles acumuladas: '+difs.length,'','POR MAZO:',(dl||'  (sin datos)'),'','LETRAS MAS DIFICILES: '+(hl||'sin datos'),'','ULTIMO ROSCO: '+(lastR?lastR.date+' - '+lastR.ok+' bien / '+lastR.fail+' mal':'Sin roscos todavia'),'','---','En que mazo quieres mas preguntas?'].join('\n');window.location.href='mailto:andrea.alacreu@gmail.com?subject='+encodeURIComponent('Informe PasaPalabra Pro - '+new Date().toLocaleDateString('es-ES'))+'&body='+encodeURIComponent(body);var el=document.getElementById('db-report-status');if(el){el.textContent='Abriendo correo...';setTimeout(function(){el.textContent='';},4000);}}catch(e){showToast('Error al generar informe');}}
+
+function downloadBackup(){try{var blob=new Blob([JSON.stringify({exported:new Date().toISOString(),dificiles:getDificiles(),usage:JSON.parse(localStorage.getItem('ppro_usage')||'{}'),rosco_hist:JSON.parse(localStorage.getItem('ppro_rosco_hist')||'[]'),letters:JSON.parse(localStorage.getItem('ppro_letters')||'{}')},null,2)],{type:'application/json'});var a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='noemi_ppro_'+new Date().toISOString().slice(0,10)+'.json';document.body.appendChild(a);a.click();setTimeout(function(){document.body.removeChild(a);},100);showToast('\U0001f4be Backup descargado');}catch(e){showToast('Error al descargar backup');}}
+
+function checkWeeklyBackup(){var last=localStorage.getItem('ppro_last_backup')||'2000-01-01';var today=new Date().toISOString().slice(0,10);if(Math.floor((new Date(today)-new Date(last))/86400000)>=7){localStorage.setItem('ppro_last_backup',today);setTimeout(downloadBackup,5000);}}
+
+//**
+   // ================================================================
+    // GESTIÓN DE DATOS Y HOSPITAL (EDICIÓN ANDREA)
+    // ================================================================
+
+    function renderDificilesAlfa() {
+        const container = document.getElementById('dificiles-list');
+        if (!container) return;
+
+        // Lee de la clave correcta (la misma que getDificiles/saveDificil)
+        const dificiles = getDificiles();
+        document.getElementById('dif-count') && (document.getElementById('dif-count').textContent = dificiles.length);
+
+        container.innerHTML = '';
+
+        if (dificiles.length === 0) {
+            container.innerHTML = '<p style="color:var(--muted);text-align:center;margin-top:48px;font-size:0.88rem;">\u00a1Sin dif\u00edciles! Las que falles en el rosco aparecer\u00e1n aqu\u00ed, A-Z.</p>';
+            return;
+        }
+
+        // Ordenar A-Z por letra/word
+        const sorted = [...dificiles].sort((a, b) => {
+            const la = (a.letra || a.word || '?')[0].toUpperCase();
+            const lb = (b.letra || b.word || '?')[0].toUpperCase();
+            return la !== lb ? la.localeCompare(lb, 'es') : (a.word || '').localeCompare(b.word || '', 'es');
+        });
+
+        let html = '', lastL = '';
+        sorted.forEach((d, i) => {
+            const letra = (d.letra || d.word || '?')[0].toUpperCase();
+            if (letra !== lastL) {
+                lastL = letra;
+                html += `<div style="font-family:'Playfair Display',serif;font-size:1.55rem;font-weight:900;color:var(--gold);padding:${i ? '14px' : '4px'} 2px 4px;border-bottom:1px solid rgba(240,192,64,0.25);margin-bottom:8px;text-shadow:0 0 18px rgba(240,192,64,0.3);">${letra}</div>`;
+            }
+            html += `<div style="background:var(--card);border:1px solid var(--border2);border-radius:12px;padding:11px 13px;margin-bottom:7px;position:relative;">
+                <div style="font-size:0.73rem;color:var(--muted);line-height:1.45;padding-right:24px;">${d.def || d.q || '\u2013'}</div>
+                <div style="font-weight:700;font-size:0.9rem;margin-top:3px;color:var(--gold);">${d.word || d.a || ''}</div>
+                <button onclick="removeDificil(${dificiles.indexOf(d)}); renderDificilesAlfa();" style="position:absolute;top:8px;right:9px;background:none;border:none;color:var(--muted);font-size:0.82rem;cursor:pointer;padding:2px 5px;border-radius:4px;">&#x2715;</button>
+            </div>`;
+        });
+        container.innerHTML = html;
+    }
+
+    window.renderDificilesAlfa = renderDificilesAlfa;
+
+    // Función para grabar el progreso en la memoria del navegador
+    function saveCurrentProgress() {
+        if (typeof userProgress !== 'undefined') {
+            localStorage.setItem('ppro_progress', JSON.stringify(userProgress));
+        }
+    }
+
+    // Backup semanal automático
+    function checkWeeklyBackup(){
+        var last = localStorage.getItem('ppro_last_backup') || '2000-01-01';
+        var today = new Date().toISOString().slice(0,10);
+        if(Math.floor((new Date(today)-new Date(last))/86400000) >= 7){
+            localStorage.setItem('ppro_last_backup', today);
+            if (typeof downloadBackup === 'function') setTimeout(downloadBackup, 5000);
+        }
+    }
+
+    // ARRANQUE DE LA APP: Restaura memoria y limpia duplicados
+    window.addEventListener('DOMContentLoaded', () => {
+        // 1. Restaurar progreso de Andrea
+        const savedProgress = localStorage.getItem('ppro_progress');
+        if (savedProgress) {
+            userProgress = JSON.parse(savedProgress);
+            console.log("Memoria de Andrea recuperada ✓");
+        }
+
+        // 2. Lanzar procesos visuales
+        if (typeof renderStats === 'function') renderStats();
+        checkWeeklyBackup();
+        
+        // 3. Si existe el hospital, dibujarlo
+        if (document.getElementById('dificiles-list')) renderDificilesAlfa();
+    });
+
+
+// ── Utilidades PWA: abrir URLs externas sin que la PWA lo bloquee ──────────
+function openExternalUrl(url) {
+    if (!url || url === '#') return;
+    try {
+        const a = document.createElement('a');
+        a.href = url;
+        a.target = '_blank';
+        a.rel = 'noopener noreferrer';
+        a.style.display = 'none';
+        document.body.appendChild(a);
+        a.click();
+        setTimeout(() => document.body.removeChild(a), 100);
+    } catch(e) {
+        window.location.href = url;
+    }
+}
+
+function openExternalUrl(url) {
+    if (!url || url === '#') return;
+    try {
+        const a = document.createElement('a');
+        a.href = url;
+        a.target = '_blank';
+        a.rel = 'noopener noreferrer';
+        a.style.display = 'none';
+        document.body.appendChild(a);
+        a.click();
+        setTimeout(() => document.body.removeChild(a), 100);
+    } catch(e) {
+        window.location.href = url;
+    }
+}
+
 function openMapNow(el) {
     const url = (el && el.dataset && el.dataset.url) || (el && el.href);
     if (url && url !== '#') openExternalUrl(url);
 }
 
-// ── Migración de datos: garantiza que los datos de Noemi sobreviven actualizaciones ──
-function _ppMigrateData() {
-    // Si hay datos en 'ppro_dificiles' (clave antigua) moverlos a 'dificiles'
-    try {
-        const old = localStorage.getItem('ppro_dificiles');
-        if (old) {
-            const oldData = JSON.parse(old);
-            if (oldData && oldData.length > 0) {
-                const current = JSON.parse(localStorage.getItem('dificiles') || '[]');
-                // Merge sin duplicados
-                oldData.forEach(item => {
-                    const word = item.a || item.word || '';
-                    if (word && !current.find(d => (d.word || d.a) === word)) {
-                        current.push({
-                            word: word,
-                            def: item.q || item.def || '',
-                            letra: item.letra || word[0] || ''
-                        });
-                    }
-                });
-                localStorage.setItem('dificiles', JSON.stringify(current));
-                localStorage.removeItem('ppro_dificiles');
-                console.log('Migración difíciles OK:', current.length, 'palabras');
-            }
-        }
-    } catch(e) { console.error('Migration error:', e); }
+function renderDashboard(){try{var u=JSON.parse(localStorage.getItem('ppro_usage')||'{"sessions":[],"byDeck":{},"daily":{}}');var letters=JSON.parse(localStorage.getItem('ppro_letters')||'{}');var roscoH=JSON.parse(localStorage.getItem('ppro_rosco_hist')||'[]');var sessions=u.sessions||[],byDeck=u.byDeck||{},daily=u.daily||{};var totalQ=sessions.reduce(function(s,x){return s+(x.answered||0);},0);var totalOk=sessions.reduce(function(s,x){return s+(x.correct||0);},0);var totalMin=sessions.reduce(function(s,x){return s+(x.minutes||0);},0);var pct=totalQ?Math.round(100*totalOk/totalQ):0;var today=new Date().toISOString().slice(0,10);var todayMin=sessions.filter(function(s){return s.date===today;}).reduce(function(s,x){return s+(x.minutes||0);},0);var streak=0;for(var i=0;i<365;i++){var dd=new Date();dd.setDate(dd.getDate()-i);if((daily[dd.toISOString().slice(0,10)]||0)>0)streak++;else if(i>0)break;}document.getElementById('db-total').textContent=totalQ.toLocaleString('es');document.getElementById('db-pct').textContent=pct+'%';document.getElementById('db-streak').textContent=streak+'d';document.getElementById('db-today').textContent=todayMin<60?todayMin+'min':Math.floor(todayMin/60)+'h '+(todayMin%60?todayMin%60+'m':'');document.getElementById('db-total-time').textContent=Math.round(totalMin/60)+'h';var heat=document.getElementById('db-heatmap');heat.innerHTML='';var vals=Object.values(daily).map(Number);var maxD=vals.length?Math.max.apply(null,[1].concat(vals)):1;for(var j=69;j>=0;j--){var dj=new Date();dj.setDate(dj.getDate()-j);var kj=dj.toISOString().slice(0,10);var vj=daily[kj]||0;var aj=vj?Math.max(0.15,vj/maxD):0;var cel=document.createElement('div');cel.style.cssText='width:11px;height:11px;border-radius:2px;background:'+(vj?'rgba(240,192,64,'+aj.toFixed(2)+')':'var(--border2)')+';';cel.title=kj+': '+vj+' preguntas';heat.appendChild(cel);}var deckEl=document.getElementById('db-by-deck');var entries=Object.entries(byDeck).sort(function(a,b){return b[1].answered-a[1].answered;});deckEl.innerHTML=entries.length?entries.map(function(e){var id=e[0],data=e[1];var p=data.answered?Math.round(100*data.correct/data.answered):0;var col=p>=70?'var(--green)':p>=40?'var(--gold)':'var(--red)';var nm=(typeof MAZOS!=='undefined')?((MAZOS.find(function(m){return m.id===id;})||{}).name||id):id;return '<div style="margin-bottom:10px;"><div style="display:flex;justify-content:space-between;font-size:0.74rem;margin-bottom:3px;"><span>'+nm+'</span><span style="color:'+col+'">'+p+'% ('+data.answered+')</span></div><div style="background:var(--border2);border-radius:5px;height:6px;"><div style="width:'+p+'%;background:'+col+';border-radius:5px;height:6px;"></div></div></div>';}).join(''):'<p style="color:var(--muted);font-size:0.8rem;text-align:center;padding:8px;">Practica para ver tus stats \U0001f4aa</p>';var hlEl=document.getElementById('db-hard-letters');var lArr=Object.entries(letters).map(function(e){var l=e[0],d=e[1];return{l:l,pct:(d.ok+d.fail)?Math.round(100*(d.ok||0)/(d.ok+d.fail)):100};}).sort(function(a,b){return a.pct-b.pct;}).slice(0,10);hlEl.innerHTML=lArr.length?lArr.map(function(x){var col=x.pct<50?'var(--red)':x.pct<70?'var(--gold)':'var(--green)';return '<div style="background:var(--card2);border:1px solid '+(x.pct<50?'var(--red)':'var(--border2)')+';border-radius:9px;padding:5px 11px;display:flex;align-items:center;gap:6px;font-size:0.8rem;"><strong style="font-size:1.05rem">'+x.l+'</strong><span style="color:'+col+'">'+x.pct+'%</span></div>';}).join(''):'<span style="color:var(--muted);font-size:0.8rem;">Sin datos a\u00fan, \u00a1haz el rosco!</span>';var rEl=document.getElementById('db-rosco-hist');rEl.innerHTML=roscoH.length?roscoH.slice(-8).reverse().map(function(r){var p=r.total?Math.round(100*r.ok/r.total):0;var col=p>=70?'var(--green)':p>=40?'var(--gold)':'var(--red)';return '<div style="display:flex;align-items:center;gap:8px;font-size:0.77rem;padding:7px 0;border-bottom:1px solid var(--border2);"><span style="color:var(--muted);min-width:68px;font-size:0.7rem;">'+r.date+'</span><span style="color:var(--green);">+'+r.ok+'</span><span style="color:var(--red);">\u2716'+r.fail+'</span><span style="color:var(--muted);">~'+(r.pass||0)+'</span><span style="font-weight:700;margin-left:auto;color:'+col+';">'+p+'%</span></div>';}).join(''):'<p style="color:var(--muted);font-size:0.8rem;text-align:center;padding:8px;">\u00a1Haz tu primer rosco!</p>';}catch(e){console.error('Dashboard:',e);}}
 
-    // Si hay datos en 'ppro_srs_*' moverlos al formato srs_* actual
-    try {
-        for (let i = 0; i < localStorage.length; i++) {
-            const key = localStorage.key(i);
-            if (key && key.startsWith('ppro_srs_')) {
-                const newKey = 'srs_' + key.slice(9);
-                if (!localStorage.getItem(newKey)) {
-                    localStorage.setItem(newKey, localStorage.getItem(key));
-                }
-            }
+function sendProgressReport(){try{var u=JSON.parse(localStorage.getItem('ppro_usage')||'{}');var letters=JSON.parse(localStorage.getItem('ppro_letters')||'{}');var roscoH=JSON.parse(localStorage.getItem('ppro_rosco_hist')||'[]');var difs=getDificiles();var sessions=(u.sessions||[]),byDeck=(u.byDeck||{});var totalQ=sessions.reduce(function(s,x){return s+(x.answered||0);},0);var totalOk=sessions.reduce(function(s,x){return s+(x.correct||0);},0);var totalMin=sessions.reduce(function(s,x){return s+(x.minutes||0);},0);var pct=totalQ?Math.round(100*totalOk/totalQ):0;var dl=Object.entries(byDeck).map(function(e){var id=e[0],d=e[1];var p=d.answered?Math.round(100*d.correct/d.answered):0;var nm=(typeof MAZOS!=='undefined')?((MAZOS.find(function(m){return m.id===id;})||{}).name||id):id;return '  - '+nm+': '+d.answered+' preguntas, '+p+'% acierto';}).join('\n');var hl=Object.entries(letters).map(function(e){var l=e[0],d=e[1];return{l:l,p:(d.ok+d.fail)?Math.round(100*(d.ok||0)/(d.ok+d.fail)):100};}).sort(function(a,b){return a.p-b.p;}).slice(0,8).map(function(x){return x.l+'('+x.p+'%)';}).join(', ');var lastR=roscoH.length?roscoH[roscoH.length-1]:null;var body=['INFORME PASAPALABRA PRO - NOEMI','='.repeat(38),'Fecha: '+new Date().toLocaleDateString('es-ES'),'Total respondidas: '+totalQ.toLocaleString('es'),'Acierto global: '+pct+'%','Tiempo total: '+Math.floor(totalMin/60)+'h '+(totalMin%60)+'min','Dificiles acumuladas: '+difs.length,'','POR MAZO:',(dl||'  (sin datos)'),'','LETRAS MAS DIFICILES: '+(hl||'sin datos'),'','ULTIMO ROSCO: '+(lastR?lastR.date+' - '+lastR.ok+' bien / '+lastR.fail+' mal':'Sin roscos todavia'),'','---','En que mazo quieres mas preguntas?'].join('\n');window.location.href='mailto:andrea.alacreu@gmail.com?subject='+encodeURIComponent('Informe PasaPalabra Pro - '+new Date().toLocaleDateString('es-ES'))+'&body='+encodeURIComponent(body);var el=document.getElementById('db-report-status');if(el){el.textContent='Abriendo correo...';setTimeout(function(){el.textContent='';},4000);}}catch(e){showToast('Error al generar informe');}}
+
+function downloadBackup(){try{var blob=new Blob([JSON.stringify({exported:new Date().toISOString(),dificiles:getDificiles(),usage:JSON.parse(localStorage.getItem('ppro_usage')||'{}'),rosco_hist:JSON.parse(localStorage.getItem('ppro_rosco_hist')||'[]'),letters:JSON.parse(localStorage.getItem('ppro_letters')||'{}')},null,2)],{type:'application/json'});var a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='noemi_ppro_'+new Date().toISOString().slice(0,10)+'.json';document.body.appendChild(a);a.click();setTimeout(function(){document.body.removeChild(a);},100);showToast('\U0001f4be Backup descargado');}catch(e){showToast('Error al descargar backup');}}
+
+function checkWeeklyBackup(){var last=localStorage.getItem('ppro_last_backup')||'2000-01-01';var today=new Date().toISOString().slice(0,10);if(Math.floor((new Date(today)-new Date(last))/86400000)>=7){localStorage.setItem('ppro_last_backup',today);setTimeout(downloadBackup,5000);}}
+
+//**
+   // ================================================================
+    // GESTIÓN DE DATOS Y HOSPITAL (EDICIÓN ANDREA)
+    // ================================================================
+
+    function renderDificilesAlfa() {
+        const container = document.getElementById('dificiles-list');
+        if (!container) return;
+
+        // Lee de la clave correcta (la misma que getDificiles/saveDificil)
+        const dificiles = getDificiles();
+        document.getElementById('dif-count') && (document.getElementById('dif-count').textContent = dificiles.length);
+
+        container.innerHTML = '';
+
+        if (dificiles.length === 0) {
+            container.innerHTML = '<p style="color:var(--muted);text-align:center;margin-top:48px;font-size:0.88rem;">\u00a1Sin dif\u00edciles! Las que falles en el rosco aparecer\u00e1n aqu\u00ed, A-Z.</p>';
+            return;
         }
-    } catch(e) {}
+
+        // Ordenar A-Z por letra/word
+        const sorted = [...dificiles].sort((a, b) => {
+            const la = (a.letra || a.word || '?')[0].toUpperCase();
+            const lb = (b.letra || b.word || '?')[0].toUpperCase();
+            return la !== lb ? la.localeCompare(lb, 'es') : (a.word || '').localeCompare(b.word || '', 'es');
+        });
+
+        let html = '', lastL = '';
+        sorted.forEach((d, i) => {
+            const letra = (d.letra || d.word || '?')[0].toUpperCase();
+            if (letra !== lastL) {
+                lastL = letra;
+                html += `<div style="font-family:'Playfair Display',serif;font-size:1.55rem;font-weight:900;color:var(--gold);padding:${i ? '14px' : '4px'} 2px 4px;border-bottom:1px solid rgba(240,192,64,0.25);margin-bottom:8px;text-shadow:0 0 18px rgba(240,192,64,0.3);">${letra}</div>`;
+            }
+            html += `<div style="background:var(--card);border:1px solid var(--border2);border-radius:12px;padding:11px 13px;margin-bottom:7px;position:relative;">
+                <div style="font-size:0.73rem;color:var(--muted);line-height:1.45;padding-right:24px;">${d.def || d.q || '\u2013'}</div>
+                <div style="font-weight:700;font-size:0.9rem;margin-top:3px;color:var(--gold);">${d.word || d.a || ''}</div>
+                <button onclick="removeDificil(${dificiles.indexOf(d)}); renderDificilesAlfa();" style="position:absolute;top:8px;right:9px;background:none;border:none;color:var(--muted);font-size:0.82rem;cursor:pointer;padding:2px 5px;border-radius:4px;">&#x2715;</button>
+            </div>`;
+        });
+        container.innerHTML = html;
+    }
+
+    window.renderDificilesAlfa = renderDificilesAlfa;
+
+    // Función para grabar el progreso en la memoria del navegador
+    function saveCurrentProgress() {
+        if (typeof userProgress !== 'undefined') {
+            localStorage.setItem('ppro_progress', JSON.stringify(userProgress));
+        }
+    }
+
+    // Backup semanal automático
+    function checkWeeklyBackup(){
+        var last = localStorage.getItem('ppro_last_backup') || '2000-01-01';
+        var today = new Date().toISOString().slice(0,10);
+        if(Math.floor((new Date(today)-new Date(last))/86400000) >= 7){
+            localStorage.setItem('ppro_last_backup', today);
+            if (typeof downloadBackup === 'function') setTimeout(downloadBackup, 5000);
+        }
+    }
+
+    // ARRANQUE DE LA APP: Restaura memoria y limpia duplicados
+    window.addEventListener('DOMContentLoaded', () => {
+        // 1. Restaurar progreso de Andrea
+        const savedProgress = localStorage.getItem('ppro_progress');
+        if (savedProgress) {
+            userProgress = JSON.parse(savedProgress);
+            console.log("Memoria de Andrea recuperada ✓");
+        }
+
+        // 2. Lanzar procesos visuales
+        if (typeof renderStats === 'function') renderStats();
+        checkWeeklyBackup();
+        
+        // 3. Si existe el hospital, dibujarlo
+        if (document.getElementById('dificiles-list')) renderDificilesAlfa();
+    });
+
+
+// ── Utilidades PWA: abrir URLs externas sin que la PWA lo bloquee ──────────
+function openExternalUrl(url) {
+    if (!url || url === '#') return;
+    try {
+        const a = document.createElement('a');
+        a.href = url;
+        a.target = '_blank';
+        a.rel = 'noopener noreferrer';
+        a.style.display = 'none';
+        document.body.appendChild(a);
+        a.click();
+        setTimeout(() => document.body.removeChild(a), 100);
+    } catch(e) {
+        window.location.href = url;
+    }
 }
 
-// Ejecutar migración al arrancar
-_ppMigrateData();
+function renderDificilesAlfa() {
+        const container = document.getElementById('dificiles-list');
+        if (!container) return;
 
-(function() {
-    var _PPDB = 'pasapalabra_pro_v1';
-    var _STORE = 'noemi';
-    var _KEYS = ['dificiles','streak','last_visit','terms_accepted_v2',
-                 'ppro_usage','ppro_rosco_hist','ppro_letters','ppro_progress',
-                 'ppro_last_backup','custom_cards','pasapalabra_srs'];
-    var _saveTimer = null;
+        // Lee de la clave correcta (la misma que getDificiles/saveDificil)
+        const dificiles = getDificiles();
+        document.getElementById('dif-count') && (document.getElementById('dif-count').textContent = dificiles.length);
 
-    function openDB(cb) {
+        container.innerHTML = '';
+
+        if (dificiles.length === 0) {
+            container.innerHTML = '<p style="color:var(--muted);text-align:center;margin-top:48px;font-size:0.88rem;">\u00a1Sin dif\u00edciles! Las que falles en el rosco aparecer\u00e1n aqu\u00ed, A-Z.</p>';
+            return;
+        }
+
+        // Ordenar A-Z por letra/word
+        const sorted = [...dificiles].sort((a, b) => {
+            const la = (a.letra || a.word || '?')[0].toUpperCase();
+            const lb = (b.letra || b.word || '?')[0].toUpperCase();
+            return la !== lb ? la.localeCompare(lb, 'es') : (a.word || '').localeCompare(b.word || '', 'es');
+        });
+
+        let html = '', lastL = '';
+        sorted.forEach((d, i) => {
+            const letra = (d.letra || d.word || '?')[0].toUpperCase();
+            if (letra !== lastL) {
+                lastL = letra;
+                html += `<div style="font-family:'Playfair Display',serif;font-size:1.55rem;font-weight:900;color:var(--gold);padding:${i ? '14px' : '4px'} 2px 4px;border-bottom:1px solid rgba(240,192,64,0.25);margin-bottom:8px;text-shadow:0 0 18px rgba(240,192,64,0.3);">${letra}</div>`;
+            }
+            html += `<div style="background:var(--card);border:1px solid var(--border2);border-radius:12px;padding:11px 13px;margin-bottom:7px;position:relative;">
+                <div style="font-size:0.73rem;color:var(--muted);line-height:1.45;padding-right:24px;">${d.def || d.q || '\u2013'}</div>
+                <div style="font-weight:700;font-size:0.9rem;margin-top:3px;color:var(--gold);">${d.word || d.a || ''}</div>
+                <button onclick="removeDificil(${dificiles.indexOf(d)}); renderDificilesAlfa();" style="position:absolute;top:8px;right:9px;background:none;border:none;color:var(--muted);font-size:0.82rem;cursor:pointer;padding:2px 5px;border-radius:4px;">&#x2715;</button>
+            </div>`;
+        });
+        container.innerHTML = html;
+    }
+
+    window.renderDificilesAlfa = renderDificilesAlfa;
+
+    // Función para grabar el progreso en la memoria del navegador
+    function saveCurrentProgress() {
+        if (typeof userProgress !== 'undefined') {
+            localStorage.setItem('ppro_progress', JSON.stringify(userProgress));
+        }
+    }
+
+    // Backup semanal automático
+    function checkWeeklyBackup(){
+        var last = localStorage.getItem('ppro_last_backup') || '2000-01-01';
+        var today = new Date().toISOString().slice(0,10);
+        if(Math.floor((new Date(today)-new Date(last))/86400000) >= 7){
+            localStorage.setItem('ppro_last_backup', today);
+            if (typeof downloadBackup === 'function') setTimeout(downloadBackup, 5000);
+        }
+    }
+
+    // ARRANQUE DE LA APP: Restaura memoria y limpia duplicados
+    window.addEventListener('DOMContentLoaded', () => {
+        // 1. Restaurar progreso de Andrea
+        const savedProgress = localStorage.getItem('ppro_progress');
+        if (savedProgress) {
+            userProgress = JSON.parse(savedProgress);
+            console.log("Memoria de Andrea recuperada ✓");
+        }
+
+        // 2. Lanzar procesos visuales
+        if (typeof renderStats === 'function') renderStats();
+        checkWeeklyBackup();
+        
+        // 3. Si existe el hospital, dibujarlo
+        if (document.getElementById('dificiles-list')) renderDificilesAlfa();
+    });
+
+
+// ── Utilidades PWA: abrir URLs externas sin que la PWA lo bloquee ──────────
+function openExternalUrl(url) {
+    if (!url || url === '#') return;
+    try {
+        const a = document.createElement('a');
+        a.href = url;
+        a.target = '_blank';
+        a.rel = 'noopener noreferrer';
+        a.style.display = 'none';
+        document.body.appendChild(a);
+        a.click();
+        setTimeout(() => document.body.removeChild(a), 100);
+    } catch(e) {
+        window.location.href = url;
+    }
+}
+
+function saveCurrentProgress() {
+        if (typeof userProgress !== 'undefined') {
+            localStorage.setItem('ppro_progress', JSON.stringify(userProgress));
+        }
+    }
+
+    // Backup semanal automático
+    function checkWeeklyBackup(){
+        var last = localStorage.getItem('ppro_last_backup') || '2000-01-01';
+        var today = new Date().toISOString().slice(0,10);
+        if(Math.floor((new Date(today)-new Date(last))/86400000) >= 7){
+            localStorage.setItem('ppro_last_backup', today);
+            if (typeof downloadBackup === 'function') setTimeout(downloadBackup, 5000);
+        }
+    }
+
+    // ARRANQUE DE LA APP: Restaura memoria y limpia duplicados
+    window.addEventListener('DOMContentLoaded', () => {
+        // 1. Restaurar progreso de Andrea
+        const savedProgress = localStorage.getItem('ppro_progress');
+        if (savedProgress) {
+            userProgress = JSON.parse(savedProgress);
+            console.log("Memoria de Andrea recuperada ✓");
+        }
+
+        // 2. Lanzar procesos visuales
+        if (typeof renderStats === 'function') renderStats();
+        checkWeeklyBackup();
+        
+        // 3. Si existe el hospital, dibujarlo
+        if (document.getElementById('dificiles-list')) renderDificilesAlfa();
+    });
+
+
+// ── Utilidades PWA: abrir URLs externas sin que la PWA lo bloquee ──────────
+function openExternalUrl(url) {
+    if (!url || url === '#') return;
+    try {
+        const a = document.createElement('a');
+        a.href = url;
+        a.target = '_blank';
+        a.rel = 'noopener noreferrer';
+        a.style.display = 'none';
+        document.body.appendChild(a);
+        a.click();
+        setTimeout(() => document.body.removeChild(a), 100);
+    } catch(e) {
+        window.location.href = url;
+    }
+}
+
+function sendProgressReport(){try{var u=JSON.parse(localStorage.getItem('ppro_usage')||'{}');var letters=JSON.parse(localStorage.getItem('ppro_letters')||'{}');var roscoH=JSON.parse(localStorage.getItem('ppro_rosco_hist')||'[]');var difs=getDificiles();var sessions=(u.sessions||[]),byDeck=(u.byDeck||{});var totalQ=sessions.reduce(function(s,x){return s+(x.answered||0);},0);var totalOk=sessions.reduce(function(s,x){return s+(x.correct||0);},0);var totalMin=sessions.reduce(function(s,x){return s+(x.minutes||0);},0);var pct=totalQ?Math.round(100*totalOk/totalQ):0;var dl=Object.entries(byDeck).map(function(e){var id=e[0],d=e[1];var p=d.answered?Math.round(100*d.correct/d.answered):0;var nm=(typeof MAZOS!=='undefined')?((MAZOS.find(function(m){return m.id===id;})||{}).name||id):id;return '  - '+nm+': '+d.answered+' preguntas, '+p+'% acierto';}).join('\n');var hl=Object.entries(letters).map(function(e){var l=e[0],d=e[1];return{l:l,p:(d.ok+d.fail)?Math.round(100*(d.ok||0)/(d.ok+d.fail)):100};}).sort(function(a,b){return a.p-b.p;}).slice(0,8).map(function(x){return x.l+'('+x.p+'%)';}).join(', ');var lastR=roscoH.length?roscoH[roscoH.length-1]:null;var body=['INFORME PASAPALABRA PRO - NOEMI','='.repeat(38),'Fecha: '+new Date().toLocaleDateString('es-ES'),'Total respondidas: '+totalQ.toLocaleString('es'),'Acierto global: '+pct+'%','Tiempo total: '+Math.floor(totalMin/60)+'h '+(totalMin%60)+'min','Dificiles acumuladas: '+difs.length,'','POR MAZO:',(dl||'  (sin datos)'),'','LETRAS MAS DIFICILES: '+(hl||'sin datos'),'','ULTIMO ROSCO: '+(lastR?lastR.date+' - '+lastR.ok+' bien / '+lastR.fail+' mal':'Sin roscos todavia'),'','---','En que mazo quieres mas preguntas?'].join('\n');window.location.href='mailto:andrea.alacreu@gmail.com?subject='+encodeURIComponent('Informe PasaPalabra Pro - '+new Date().toLocaleDateString('es-ES'))+'&body='+encodeURIComponent(body);var el=document.getElementById('db-report-status');if(el){el.textContent='Abriendo correo...';setTimeout(function(){el.textContent='';},4000);}}catch(e){showToast('Error al generar informe');}}
+
+function downloadBackup(){try{var blob=new Blob([JSON.stringify({exported:new Date().toISOString(),dificiles:getDificiles(),usage:JSON.parse(localStorage.getItem('ppro_usage')||'{}'),rosco_hist:JSON.parse(localStorage.getItem('ppro_rosco_hist')||'[]'),letters:JSON.parse(localStorage.getItem('ppro_letters')||'{}')},null,2)],{type:'application/json'});var a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='noemi_ppro_'+new Date().toISOString().slice(0,10)+'.json';document.body.appendChild(a);a.click();setTimeout(function(){document.body.removeChild(a);},100);showToast('\U0001f4be Backup descargado');}catch(e){showToast('Error al descargar backup');}}
+
+function checkWeeklyBackup(){var last=localStorage.getItem('ppro_last_backup')||'2000-01-01';var today=new Date().toISOString().slice(0,10);if(Math.floor((new Date(today)-new Date(last))/86400000)>=7){localStorage.setItem('ppro_last_backup',today);setTimeout(downloadBackup,5000);}}
+
+//**
+   // ================================================================
+    // GESTIÓN DE DATOS Y HOSPITAL (EDICIÓN ANDREA)
+    // ================================================================
+
+    function renderDificilesAlfa() {
+        const container = document.getElementById('dificiles-list');
+        if (!container) return;
+
+        // Lee de la clave correcta (la misma que getDificiles/saveDificil)
+        const dificiles = getDificiles();
+        document.getElementById('dif-count') && (document.getElementById('dif-count').textContent = dificiles.length);
+
+        container.innerHTML = '';
+
+        if (dificiles.length === 0) {
+            container.innerHTML = '<p style="color:var(--muted);text-align:center;margin-top:48px;font-size:0.88rem;">\u00a1Sin dif\u00edciles! Las que falles en el rosco aparecer\u00e1n aqu\u00ed, A-Z.</p>';
+            return;
+        }
+
+        // Ordenar A-Z por letra/word
+        const sorted = [...dificiles].sort((a, b) => {
+            const la = (a.letra || a.word || '?')[0].toUpperCase();
+            const lb = (b.letra || b.word || '?')[0].toUpperCase();
+            return la !== lb ? la.localeCompare(lb, 'es') : (a.word || '').localeCompare(b.word || '', 'es');
+        });
+
+        let html = '', lastL = '';
+        sorted.forEach((d, i) => {
+            const letra = (d.letra || d.word || '?')[0].toUpperCase();
+            if (letra !== lastL) {
+                lastL = letra;
+                html += `<div style="font-family:'Playfair Display',serif;font-size:1.55rem;font-weight:900;color:var(--gold);padding:${i ? '14px' : '4px'} 2px 4px;border-bottom:1px solid rgba(240,192,64,0.25);margin-bottom:8px;text-shadow:0 0 18px rgba(240,192,64,0.3);">${letra}</div>`;
+            }
+            html += `<div style="background:var(--card);border:1px solid var(--border2);border-radius:12px;padding:11px 13px;margin-bottom:7px;position:relative;">
+                <div style="font-size:0.73rem;color:var(--muted);line-height:1.45;padding-right:24px;">${d.def || d.q || '\u2013'}</div>
+                <div style="font-weight:700;font-size:0.9rem;margin-top:3px;color:var(--gold);">${d.word || d.a || ''}</div>
+                <button onclick="removeDificil(${dificiles.indexOf(d)}); renderDificilesAlfa();" style="position:absolute;top:8px;right:9px;background:none;border:none;color:var(--muted);font-size:0.82rem;cursor:pointer;padding:2px 5px;border-radius:4px;">&#x2715;</button>
+            </div>`;
+        });
+        container.innerHTML = html;
+    }
+
+    window.renderDificilesAlfa = renderDificilesAlfa;
+
+    // Función para grabar el progreso en la memoria del navegador
+    function saveCurrentProgress() {
+        if (typeof userProgress !== 'undefined') {
+            localStorage.setItem('ppro_progress', JSON.stringify(userProgress));
+        }
+    }
+
+    // Backup semanal automático
+    function checkWeeklyBackup(){
+        var last = localStorage.getItem('ppro_last_backup') || '2000-01-01';
+        var today = new Date().toISOString().slice(0,10);
+        if(Math.floor((new Date(today)-new Date(last))/86400000) >= 7){
+            localStorage.setItem('ppro_last_backup', today);
+            if (typeof downloadBackup === 'function') setTimeout(downloadBackup, 5000);
+        }
+    }
+
+    // ARRANQUE DE LA APP: Restaura memoria y limpia duplicados
+    window.addEventListener('DOMContentLoaded', () => {
+        // 1. Restaurar progreso de Andrea
+        const savedProgress = localStorage.getItem('ppro_progress');
+        if (savedProgress) {
+            userProgress = JSON.parse(savedProgress);
+            console.log("Memoria de Andrea recuperada ✓");
+        }
+
+        // 2. Lanzar procesos visuales
+        if (typeof renderStats === 'function') renderStats();
+        checkWeeklyBackup();
+        
+        // 3. Si existe el hospital, dibujarlo
+        if (document.getElementById('dificiles-list')) renderDificilesAlfa();
+    });
+
+
+// ── Utilidades PWA: abrir URLs externas sin que la PWA lo bloquee ──────────
+function openExternalUrl(url) {
+    if (!url || url === '#') return;
+    try {
+        const a = document.createElement('a');
+        a.href = url;
+        a.target = '_blank';
+        a.rel = 'noopener noreferrer';
+        a.style.display = 'none';
+        document.body.appendChild(a);
+        a.click();
+        setTimeout(() => document.body.removeChild(a), 100);
+    } catch(e) {
+        window.location.href = url;
+    }
+}
+
+function startExamDificiles(){var dif=getDificiles();if(!dif.length){showToast('Sin dificiles todavia!');return;}_examList=[].concat(dif).sort(function(a,b){var la=(a.letra||a.word||'?')[0].toUpperCase(),lb=(b.letra||b.word||'?')[0].toUpperCase();return la!==lb?la.localeCompare(lb,'es'):(a.word||'').localeCompare(b.word||'','es');});_examIdx=0;_examResults=[];goTo('exam-dificiles');_showExamQ();}
+function _showExamQ(){var q=_examList[_examIdx];var prog=(_examIdx+1)+' / '+_examList.length;document.getElementById('exam-top-prog').textContent=prog;document.getElementById('exam-prog-txt').textContent='Pregunta '+prog;document.getElementById('exam-letra').textContent=(q.letra||q.word||'?')[0].toUpperCase();document.getElementById('exam-question').textContent=q.def||'';document.getElementById('exam-answer').value='';document.getElementById('exam-q-card').style.display='block';document.getElementById('exam-fb-card').style.display='none';document.getElementById('exam-done-card').style.display='none';setTimeout(function(){var i=document.getElementById('exam-answer');if(i)i.focus();},150);}
+function submitExam(){var q=_examList[_examIdx];var raw=(document.getElementById('exam-answer').value||'').trim();if(!raw)return;var nrm=function(s){return s.normalize('NFD').replace(/[̀-ͯ]/g,'').toLowerCase().trim();};var ans=q.word||'';var isOk=nrm(raw)===nrm(ans)||(nrm(ans).startsWith(nrm(raw))&&raw.length>=4);_examResults.push({ok:isOk});_ppTrackLetter((q.letra||q.word||'?')[0].toUpperCase(),isOk);document.getElementById('exam-q-card').style.display='none';document.getElementById('exam-fb-card').style.display='block';document.getElementById('exam-fb-icon').textContent=isOk?'\u2705':'\u274c';document.getElementById('exam-fb-text').innerHTML=isOk?'<strong style="color:var(--green);font-size:1.05rem">\u00a1Correcto!</strong><br><span style="color:var(--muted);font-size:0.83rem">'+ans+'</span>':'<strong style="color:var(--red)">Incorrecto</strong><br>Era: <strong style="font-size:1.05rem">'+ans+'</strong><br><span style="color:var(--muted);font-size:0.79rem">Dijiste: &ldquo;'+raw+'&rdquo;</span>';document.getElementById('exam-next-btn').textContent=_examIdx>=_examList.length-1?'Ver resultados':'Siguiente';}
+function nextExamQ(){_examIdx++;if(_examIdx>=_examList.length){var numOk=_examResults.filter(function(r){return r.ok;}).length;var total=_examResults.length;var pct=Math.round(100*numOk/total);document.getElementById('exam-q-card').style.display='none';document.getElementById('exam-fb-card').style.display='none';document.getElementById('exam-done-card').style.display='block';document.getElementById('exam-done-emoji').textContent=pct>=80?'\U0001f3c6':pct>=50?'\U0001f4aa':'\U0001f4d6';document.getElementById('exam-done-score').textContent=numOk+' / '+total+'  ('+pct+'%)';document.getElementById('exam-done-msg').textContent=pct>=80?'\u00a1Lista para el bote! Nivel concursante de verdad. \U0001f3af':pct>=50?'\u00a1Mejorando! Cada repaso cuenta. \U0001f4aa':'A repasar se ha dicho! Para eso est\u00e1n aqu\u00ed. \U0001f4da';_ppRecordSession('exam_dificiles',total,numOk);}else{document.getElementById('exam-fb-card').style.display='none';_showExamQ();}}
+
+function renderDashboard(){try{var u=JSON.parse(localStorage.getItem('ppro_usage')||'{"sessions":[],"byDeck":{},"daily":{}}');var letters=JSON.parse(localStorage.getItem('ppro_letters')||'{}');var roscoH=JSON.parse(localStorage.getItem('ppro_rosco_hist')||'[]');var sessions=u.sessions||[],byDeck=u.byDeck||{},daily=u.daily||{};var totalQ=sessions.reduce(function(s,x){return s+(x.answered||0);},0);var totalOk=sessions.reduce(function(s,x){return s+(x.correct||0);},0);var totalMin=sessions.reduce(function(s,x){return s+(x.minutes||0);},0);var pct=totalQ?Math.round(100*totalOk/totalQ):0;var today=new Date().toISOString().slice(0,10);var todayMin=sessions.filter(function(s){return s.date===today;}).reduce(function(s,x){return s+(x.minutes||0);},0);var streak=0;for(var i=0;i<365;i++){var dd=new Date();dd.setDate(dd.getDate()-i);if((daily[dd.toISOString().slice(0,10)]||0)>0)streak++;else if(i>0)break;}document.getElementById('db-total').textContent=totalQ.toLocaleString('es');document.getElementById('db-pct').textContent=pct+'%';document.getElementById('db-streak').textContent=streak+'d';document.getElementById('db-today').textContent=todayMin<60?todayMin+'min':Math.floor(todayMin/60)+'h '+(todayMin%60?todayMin%60+'m':'');document.getElementById('db-total-time').textContent=Math.round(totalMin/60)+'h';var heat=document.getElementById('db-heatmap');heat.innerHTML='';var vals=Object.values(daily).map(Number);var maxD=vals.length?Math.max.apply(null,[1].concat(vals)):1;for(var j=69;j>=0;j--){var dj=new Date();dj.setDate(dj.getDate()-j);var kj=dj.toISOString().slice(0,10);var vj=daily[kj]||0;var aj=vj?Math.max(0.15,vj/maxD):0;var cel=document.createElement('div');cel.style.cssText='width:11px;height:11px;border-radius:2px;background:'+(vj?'rgba(240,192,64,'+aj.toFixed(2)+')':'var(--border2)')+';';cel.title=kj+': '+vj+' preguntas';heat.appendChild(cel);}var deckEl=document.getElementById('db-by-deck');var entries=Object.entries(byDeck).sort(function(a,b){return b[1].answered-a[1].answered;});deckEl.innerHTML=entries.length?entries.map(function(e){var id=e[0],data=e[1];var p=data.answered?Math.round(100*data.correct/data.answered):0;var col=p>=70?'var(--green)':p>=40?'var(--gold)':'var(--red)';var nm=(typeof MAZOS!=='undefined')?((MAZOS.find(function(m){return m.id===id;})||{}).name||id):id;return '<div style="margin-bottom:10px;"><div style="display:flex;justify-content:space-between;font-size:0.74rem;margin-bottom:3px;"><span>'+nm+'</span><span style="color:'+col+'">'+p+'% ('+data.answered+')</span></div><div style="background:var(--border2);border-radius:5px;height:6px;"><div style="width:'+p+'%;background:'+col+';border-radius:5px;height:6px;"></div></div></div>';}).join(''):'<p style="color:var(--muted);font-size:0.8rem;text-align:center;padding:8px;">Practica para ver tus stats \U0001f4aa</p>';var hlEl=document.getElementById('db-hard-letters');var lArr=Object.entries(letters).map(function(e){var l=e[0],d=e[1];return{l:l,pct:(d.ok+d.fail)?Math.round(100*(d.ok||0)/(d.ok+d.fail)):100};}).sort(function(a,b){return a.pct-b.pct;}).slice(0,10);hlEl.innerHTML=lArr.length?lArr.map(function(x){var col=x.pct<50?'var(--red)':x.pct<70?'var(--gold)':'var(--green)';return '<div style="background:var(--card2);border:1px solid '+(x.pct<50?'var(--red)':'var(--border2)')+';border-radius:9px;padding:5px 11px;display:flex;align-items:center;gap:6px;font-size:0.8rem;"><strong style="font-size:1.05rem">'+x.l+'</strong><span style="color:'+col+'">'+x.pct+'%</span></div>';}).join(''):'<span style="color:var(--muted);font-size:0.8rem;">Sin datos a\u00fan, \u00a1haz el rosco!</span>';var rEl=document.getElementById('db-rosco-hist');rEl.innerHTML=roscoH.length?roscoH.slice(-8).reverse().map(function(r){var p=r.total?Math.round(100*r.ok/r.total):0;var col=p>=70?'var(--green)':p>=40?'var(--gold)':'var(--red)';return '<div style="display:flex;align-items:center;gap:8px;font-size:0.77rem;padding:7px 0;border-bottom:1px solid var(--border2);"><span style="color:var(--muted);min-width:68px;font-size:0.7rem;">'+r.date+'</span><span style="color:var(--green);">+'+r.ok+'</span><span style="color:var(--red);">\u2716'+r.fail+'</span><span style="color:var(--muted);">~'+(r.pass||0)+'</span><span style="font-weight:700;margin-left:auto;color:'+col+';">'+p+'%</span></div>';}).join(''):'<p style="color:var(--muted);font-size:0.8rem;text-align:center;padding:8px;">\u00a1Haz tu primer rosco!</p>';}catch(e){console.error('Dashboard:',e);}}
+
+function sendProgressReport(){try{var u=JSON.parse(localStorage.getItem('ppro_usage')||'{}');var letters=JSON.parse(localStorage.getItem('ppro_letters')||'{}');var roscoH=JSON.parse(localStorage.getItem('ppro_rosco_hist')||'[]');var difs=getDificiles();var sessions=(u.sessions||[]),byDeck=(u.byDeck||{});var totalQ=sessions.reduce(function(s,x){return s+(x.answered||0);},0);var totalOk=sessions.reduce(function(s,x){return s+(x.correct||0);},0);var totalMin=sessions.reduce(function(s,x){return s+(x.minutes||0);},0);var pct=totalQ?Math.round(100*totalOk/totalQ):0;var dl=Object.entries(byDeck).map(function(e){var id=e[0],d=e[1];var p=d.answered?Math.round(100*d.correct/d.answered):0;var nm=(typeof MAZOS!=='undefined')?((MAZOS.find(function(m){return m.id===id;})||{}).name||id):id;return '  - '+nm+': '+d.answered+' preguntas, '+p+'% acierto';}).join('\n');var hl=Object.entries(letters).map(function(e){var l=e[0],d=e[1];return{l:l,p:(d.ok+d.fail)?Math.round(100*(d.ok||0)/(d.ok+d.fail)):100};}).sort(function(a,b){return a.p-b.p;}).slice(0,8).map(function(x){return x.l+'('+x.p+'%)';}).join(', ');var lastR=roscoH.length?roscoH[roscoH.length-1]:null;var body=['INFORME PASAPALABRA PRO - NOEMI','='.repeat(38),'Fecha: '+new Date().toLocaleDateString('es-ES'),'Total respondidas: '+totalQ.toLocaleString('es'),'Acierto global: '+pct+'%','Tiempo total: '+Math.floor(totalMin/60)+'h '+(totalMin%60)+'min','Dificiles acumuladas: '+difs.length,'','POR MAZO:',(dl||'  (sin datos)'),'','LETRAS MAS DIFICILES: '+(hl||'sin datos'),'','ULTIMO ROSCO: '+(lastR?lastR.date+' - '+lastR.ok+' bien / '+lastR.fail+' mal':'Sin roscos todavia'),'','---','En que mazo quieres mas preguntas?'].join('\n');window.location.href='mailto:andrea.alacreu@gmail.com?subject='+encodeURIComponent('Informe PasaPalabra Pro - '+new Date().toLocaleDateString('es-ES'))+'&body='+encodeURIComponent(body);var el=document.getElementById('db-report-status');if(el){el.textContent='Abriendo correo...';setTimeout(function(){el.textContent='';},4000);}}catch(e){showToast('Error al generar informe');}}
+
+function downloadBackup(){try{var blob=new Blob([JSON.stringify({exported:new Date().toISOString(),dificiles:getDificiles(),usage:JSON.parse(localStorage.getItem('ppro_usage')||'{}'),rosco_hist:JSON.parse(localStorage.getItem('ppro_rosco_hist')||'[]'),letters:JSON.parse(localStorage.getItem('ppro_letters')||'{}')},null,2)],{type:'application/json'});var a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='noemi_ppro_'+new Date().toISOString().slice(0,10)+'.json';document.body.appendChild(a);a.click();setTimeout(function(){document.body.removeChild(a);},100);showToast('\U0001f4be Backup descargado');}catch(e){showToast('Error al descargar backup');}}
+
+function checkWeeklyBackup(){var last=localStorage.getItem('ppro_last_backup')||'2000-01-01';var today=new Date().toISOString().slice(0,10);if(Math.floor((new Date(today)-new Date(last))/86400000)>=7){localStorage.setItem('ppro_last_backup',today);setTimeout(downloadBackup,5000);}}
+
+//**
+   // ================================================================
+    // GESTIÓN DE DATOS Y HOSPITAL (EDICIÓN ANDREA)
+    // ================================================================
+
+    function renderDificilesAlfa() {
+        const container = document.getElementById('dificiles-list');
+        if (!container) return;
+
+        // Lee de la clave correcta (la misma que getDificiles/saveDificil)
+        const dificiles = getDificiles();
+        document.getElementById('dif-count') && (document.getElementById('dif-count').textContent = dificiles.length);
+
+        container.innerHTML = '';
+
+        if (dificiles.length === 0) {
+            container.innerHTML = '<p style="color:var(--muted);text-align:center;margin-top:48px;font-size:0.88rem;">\u00a1Sin dif\u00edciles! Las que falles en el rosco aparecer\u00e1n aqu\u00ed, A-Z.</p>';
+            return;
+        }
+
+        // Ordenar A-Z por letra/word
+        const sorted = [...dificiles].sort((a, b) => {
+            const la = (a.letra || a.word || '?')[0].toUpperCase();
+            const lb = (b.letra || b.word || '?')[0].toUpperCase();
+            return la !== lb ? la.localeCompare(lb, 'es') : (a.word || '').localeCompare(b.word || '', 'es');
+        });
+
+        let html = '', lastL = '';
+        sorted.forEach((d, i) => {
+            const letra = (d.letra || d.word || '?')[0].toUpperCase();
+            if (letra !== lastL) {
+                lastL = letra;
+                html += `<div style="font-family:'Playfair Display',serif;font-size:1.55rem;font-weight:900;color:var(--gold);padding:${i ? '14px' : '4px'} 2px 4px;border-bottom:1px solid rgba(240,192,64,0.25);margin-bottom:8px;text-shadow:0 0 18px rgba(240,192,64,0.3);">${letra}</div>`;
+            }
+            html += `<div style="background:var(--card);border:1px solid var(--border2);border-radius:12px;padding:11px 13px;margin-bottom:7px;position:relative;">
+                <div style="font-size:0.73rem;color:var(--muted);line-height:1.45;padding-right:24px;">${d.def || d.q || '\u2013'}</div>
+                <div style="font-weight:700;font-size:0.9rem;margin-top:3px;color:var(--gold);">${d.word || d.a || ''}</div>
+                <button onclick="removeDificil(${dificiles.indexOf(d)}); renderDificilesAlfa();" style="position:absolute;top:8px;right:9px;background:none;border:none;color:var(--muted);font-size:0.82rem;cursor:pointer;padding:2px 5px;border-radius:4px;">&#x2715;</button>
+            </div>`;
+        });
+        container.innerHTML = html;
+    }
+
+    window.renderDificilesAlfa = renderDificilesAlfa;
+
+    // Función para grabar el progreso en la memoria del navegador
+    function saveCurrentProgress() {
+        if (typeof userProgress !== 'undefined') {
+            localStorage.setItem('ppro_progress', JSON.stringify(userProgress));
+        }
+    }
+
+    // Backup semanal automático
+    function checkWeeklyBackup(){
+        var last = localStorage.getItem('ppro_last_backup') || '2000-01-01';
+        var today = new Date().toISOString().slice(0,10);
+        if(Math.floor((new Date(today)-new Date(last))/86400000) >= 7){
+            localStorage.setItem('ppro_last_backup', today);
+            if (typeof downloadBackup === 'function') setTimeout(downloadBackup, 5000);
+        }
+    }
+
+    // ARRANQUE DE LA APP: Restaura memoria y limpia duplicados
+    window.addEventListener('DOMContentLoaded', () => {
+        // 1. Restaurar progreso de Andrea
+        const savedProgress = localStorage.getItem('ppro_progress');
+        if (savedProgress) {
+            userProgress = JSON.parse(savedProgress);
+            console.log("Memoria de Andrea recuperada ✓");
+        }
+
+        // 2. Lanzar procesos visuales
+        if (typeof renderStats === 'function') renderStats();
+        checkWeeklyBackup();
+        
+        // 3. Si existe el hospital, dibujarlo
+        if (document.getElementById('dificiles-list')) renderDificilesAlfa();
+    });
+
+
+// ── Utilidades PWA: abrir URLs externas sin que la PWA lo bloquee ──────────
+function openExternalUrl(url) {
+    if (!url || url === '#') return;
+    try {
+        const a = document.createElement('a');
+        a.href = url;
+        a.target = '_blank';
+        a.rel = 'noopener noreferrer';
+        a.style.display = 'none';
+        document.body.appendChild(a);
+        a.click();
+        setTimeout(() => document.body.removeChild(a), 100);
+    } catch(e) {
+        window.location.href = url;
+    }
+}
+
+function submitExam(){var q=_examList[_examIdx];var raw=(document.getElementById('exam-answer').value||'').trim();if(!raw)return;var nrm=function(s){return s.normalize('NFD').replace(/[̀-ͯ]/g,'').toLowerCase().trim();};var ans=q.word||'';var isOk=nrm(raw)===nrm(ans)||(nrm(ans).startsWith(nrm(raw))&&raw.length>=4);_examResults.push({ok:isOk});_ppTrackLetter((q.letra||q.word||'?')[0].toUpperCase(),isOk);document.getElementById('exam-q-card').style.display='none';document.getElementById('exam-fb-card').style.display='block';document.getElementById('exam-fb-icon').textContent=isOk?'\u2705':'\u274c';document.getElementById('exam-fb-text').innerHTML=isOk?'<strong style="color:var(--green);font-size:1.05rem">\u00a1Correcto!</strong><br><span style="color:var(--muted);font-size:0.83rem">'+ans+'</span>':'<strong style="color:var(--red)">Incorrecto</strong><br>Era: <strong style="font-size:1.05rem">'+ans+'</strong><br><span style="color:var(--muted);font-size:0.79rem">Dijiste: &ldquo;'+raw+'&rdquo;</span>';document.getElementById('exam-next-btn').textContent=_examIdx>=_examList.length-1?'Ver resultados':'Siguiente';}
+function nextExamQ(){_examIdx++;if(_examIdx>=_examList.length){var numOk=_examResults.filter(function(r){return r.ok;}).length;var total=_examResults.length;var pct=Math.round(100*numOk/total);document.getElementById('exam-q-card').style.display='none';document.getElementById('exam-fb-card').style.display='none';document.getElementById('exam-done-card').style.display='block';document.getElementById('exam-done-emoji').textContent=pct>=80?'\U0001f3c6':pct>=50?'\U0001f4aa':'\U0001f4d6';document.getElementById('exam-done-score').textContent=numOk+' / '+total+'  ('+pct+'%)';document.getElementById('exam-done-msg').textContent=pct>=80?'\u00a1Lista para el bote! Nivel concursante de verdad. \U0001f3af':pct>=50?'\u00a1Mejorando! Cada repaso cuenta. \U0001f4aa':'A repasar se ha dicho! Para eso est\u00e1n aqu\u00ed. \U0001f4da';_ppRecordSession('exam_dificiles',total,numOk);}else{document.getElementById('exam-fb-card').style.display='none';_showExamQ();}}
+
+function renderDashboard(){try{var u=JSON.parse(localStorage.getItem('ppro_usage')||'{"sessions":[],"byDeck":{},"daily":{}}');var letters=JSON.parse(localStorage.getItem('ppro_letters')||'{}');var roscoH=JSON.parse(localStorage.getItem('ppro_rosco_hist')||'[]');var sessions=u.sessions||[],byDeck=u.byDeck||{},daily=u.daily||{};var totalQ=sessions.reduce(function(s,x){return s+(x.answered||0);},0);var totalOk=sessions.reduce(function(s,x){return s+(x.correct||0);},0);var totalMin=sessions.reduce(function(s,x){return s+(x.minutes||0);},0);var pct=totalQ?Math.round(100*totalOk/totalQ):0;var today=new Date().toISOString().slice(0,10);var todayMin=sessions.filter(function(s){return s.date===today;}).reduce(function(s,x){return s+(x.minutes||0);},0);var streak=0;for(var i=0;i<365;i++){var dd=new Date();dd.setDate(dd.getDate()-i);if((daily[dd.toISOString().slice(0,10)]||0)>0)streak++;else if(i>0)break;}document.getElementById('db-total').textContent=totalQ.toLocaleString('es');document.getElementById('db-pct').textContent=pct+'%';document.getElementById('db-streak').textContent=streak+'d';document.getElementById('db-today').textContent=todayMin<60?todayMin+'min':Math.floor(todayMin/60)+'h '+(todayMin%60?todayMin%60+'m':'');document.getElementById('db-total-time').textContent=Math.round(totalMin/60)+'h';var heat=document.getElementById('db-heatmap');heat.innerHTML='';var vals=Object.values(daily).map(Number);var maxD=vals.length?Math.max.apply(null,[1].concat(vals)):1;for(var j=69;j>=0;j--){var dj=new Date();dj.setDate(dj.getDate()-j);var kj=dj.toISOString().slice(0,10);var vj=daily[kj]||0;var aj=vj?Math.max(0.15,vj/maxD):0;var cel=document.createElement('div');cel.style.cssText='width:11px;height:11px;border-radius:2px;background:'+(vj?'rgba(240,192,64,'+aj.toFixed(2)+')':'var(--border2)')+';';cel.title=kj+': '+vj+' preguntas';heat.appendChild(cel);}var deckEl=document.getElementById('db-by-deck');var entries=Object.entries(byDeck).sort(function(a,b){return b[1].answered-a[1].answered;});deckEl.innerHTML=entries.length?entries.map(function(e){var id=e[0],data=e[1];var p=data.answered?Math.round(100*data.correct/data.answered):0;var col=p>=70?'var(--green)':p>=40?'var(--gold)':'var(--red)';var nm=(typeof MAZOS!=='undefined')?((MAZOS.find(function(m){return m.id===id;})||{}).name||id):id;return '<div style="margin-bottom:10px;"><div style="display:flex;justify-content:space-between;font-size:0.74rem;margin-bottom:3px;"><span>'+nm+'</span><span style="color:'+col+'">'+p+'% ('+data.answered+')</span></div><div style="background:var(--border2);border-radius:5px;height:6px;"><div style="width:'+p+'%;background:'+col+';border-radius:5px;height:6px;"></div></div></div>';}).join(''):'<p style="color:var(--muted);font-size:0.8rem;text-align:center;padding:8px;">Practica para ver tus stats \U0001f4aa</p>';var hlEl=document.getElementById('db-hard-letters');var lArr=Object.entries(letters).map(function(e){var l=e[0],d=e[1];return{l:l,pct:(d.ok+d.fail)?Math.round(100*(d.ok||0)/(d.ok+d.fail)):100};}).sort(function(a,b){return a.pct-b.pct;}).slice(0,10);hlEl.innerHTML=lArr.length?lArr.map(function(x){var col=x.pct<50?'var(--red)':x.pct<70?'var(--gold)':'var(--green)';return '<div style="background:var(--card2);border:1px solid '+(x.pct<50?'var(--red)':'var(--border2)')+';border-radius:9px;padding:5px 11px;display:flex;align-items:center;gap:6px;font-size:0.8rem;"><strong style="font-size:1.05rem">'+x.l+'</strong><span style="color:'+col+'">'+x.pct+'%</span></div>';}).join(''):'<span style="color:var(--muted);font-size:0.8rem;">Sin datos a\u00fan, \u00a1haz el rosco!</span>';var rEl=document.getElementById('db-rosco-hist');rEl.innerHTML=roscoH.length?roscoH.slice(-8).reverse().map(function(r){var p=r.total?Math.round(100*r.ok/r.total):0;var col=p>=70?'var(--green)':p>=40?'var(--gold)':'var(--red)';return '<div style="display:flex;align-items:center;gap:8px;font-size:0.77rem;padding:7px 0;border-bottom:1px solid var(--border2);"><span style="color:var(--muted);min-width:68px;font-size:0.7rem;">'+r.date+'</span><span style="color:var(--green);">+'+r.ok+'</span><span style="color:var(--red);">\u2716'+r.fail+'</span><span style="color:var(--muted);">~'+(r.pass||0)+'</span><span style="font-weight:700;margin-left:auto;color:'+col+';">'+p+'%</span></div>';}).join(''):'<p style="color:var(--muted);font-size:0.8rem;text-align:center;padding:8px;">\u00a1Haz tu primer rosco!</p>';}catch(e){console.error('Dashboard:',e);}}
+
+function sendProgressReport(){try{var u=JSON.parse(localStorage.getItem('ppro_usage')||'{}');var letters=JSON.parse(localStorage.getItem('ppro_letters')||'{}');var roscoH=JSON.parse(localStorage.getItem('ppro_rosco_hist')||'[]');var difs=getDificiles();var sessions=(u.sessions||[]),byDeck=(u.byDeck||{});var totalQ=sessions.reduce(function(s,x){return s+(x.answered||0);},0);var totalOk=sessions.reduce(function(s,x){return s+(x.correct||0);},0);var totalMin=sessions.reduce(function(s,x){return s+(x.minutes||0);},0);var pct=totalQ?Math.round(100*totalOk/totalQ):0;var dl=Object.entries(byDeck).map(function(e){var id=e[0],d=e[1];var p=d.answered?Math.round(100*d.correct/d.answered):0;var nm=(typeof MAZOS!=='undefined')?((MAZOS.find(function(m){return m.id===id;})||{}).name||id):id;return '  - '+nm+': '+d.answered+' preguntas, '+p+'% acierto';}).join('\n');var hl=Object.entries(letters).map(function(e){var l=e[0],d=e[1];return{l:l,p:(d.ok+d.fail)?Math.round(100*(d.ok||0)/(d.ok+d.fail)):100};}).sort(function(a,b){return a.p-b.p;}).slice(0,8).map(function(x){return x.l+'('+x.p+'%)';}).join(', ');var lastR=roscoH.length?roscoH[roscoH.length-1]:null;var body=['INFORME PASAPALABRA PRO - NOEMI','='.repeat(38),'Fecha: '+new Date().toLocaleDateString('es-ES'),'Total respondidas: '+totalQ.toLocaleString('es'),'Acierto global: '+pct+'%','Tiempo total: '+Math.floor(totalMin/60)+'h '+(totalMin%60)+'min','Dificiles acumuladas: '+difs.length,'','POR MAZO:',(dl||'  (sin datos)'),'','LETRAS MAS DIFICILES: '+(hl||'sin datos'),'','ULTIMO ROSCO: '+(lastR?lastR.date+' - '+lastR.ok+' bien / '+lastR.fail+' mal':'Sin roscos todavia'),'','---','En que mazo quieres mas preguntas?'].join('\n');window.location.href='mailto:andrea.alacreu@gmail.com?subject='+encodeURIComponent('Informe PasaPalabra Pro - '+new Date().toLocaleDateString('es-ES'))+'&body='+encodeURIComponent(body);var el=document.getElementById('db-report-status');if(el){el.textContent='Abriendo correo...';setTimeout(function(){el.textContent='';},4000);}}catch(e){showToast('Error al generar informe');}}
+
+function downloadBackup(){try{var blob=new Blob([JSON.stringify({exported:new Date().toISOString(),dificiles:getDificiles(),usage:JSON.parse(localStorage.getItem('ppro_usage')||'{}'),rosco_hist:JSON.parse(localStorage.getItem('ppro_rosco_hist')||'[]'),letters:JSON.parse(localStorage.getItem('ppro_letters')||'{}')},null,2)],{type:'application/json'});var a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='noemi_ppro_'+new Date().toISOString().slice(0,10)+'.json';document.body.appendChild(a);a.click();setTimeout(function(){document.body.removeChild(a);},100);showToast('\U0001f4be Backup descargado');}catch(e){showToast('Error al descargar backup');}}
+
+function checkWeeklyBackup(){var last=localStorage.getItem('ppro_last_backup')||'2000-01-01';var today=new Date().toISOString().slice(0,10);if(Math.floor((new Date(today)-new Date(last))/86400000)>=7){localStorage.setItem('ppro_last_backup',today);setTimeout(downloadBackup,5000);}}
+
+//**
+   // ================================================================
+    // GESTIÓN DE DATOS Y HOSPITAL (EDICIÓN ANDREA)
+    // ================================================================
+
+    function renderDificilesAlfa() {
+        const container = document.getElementById('dificiles-list');
+        if (!container) return;
+
+        // Lee de la clave correcta (la misma que getDificiles/saveDificil)
+        const dificiles = getDificiles();
+        document.getElementById('dif-count') && (document.getElementById('dif-count').textContent = dificiles.length);
+
+        container.innerHTML = '';
+
+        if (dificiles.length === 0) {
+            container.innerHTML = '<p style="color:var(--muted);text-align:center;margin-top:48px;font-size:0.88rem;">\u00a1Sin dif\u00edciles! Las que falles en el rosco aparecer\u00e1n aqu\u00ed, A-Z.</p>';
+            return;
+        }
+
+        // Ordenar A-Z por letra/word
+        const sorted = [...dificiles].sort((a, b) => {
+            const la = (a.letra || a.word || '?')[0].toUpperCase();
+            const lb = (b.letra || b.word || '?')[0].toUpperCase();
+            return la !== lb ? la.localeCompare(lb, 'es') : (a.word || '').localeCompare(b.word || '', 'es');
+        });
+
+        let html = '', lastL = '';
+        sorted.forEach((d, i) => {
+            const letra = (d.letra || d.word || '?')[0].toUpperCase();
+            if (letra !== lastL) {
+                lastL = letra;
+                html += `<div style="font-family:'Playfair Display',serif;font-size:1.55rem;font-weight:900;color:var(--gold);padding:${i ? '14px' : '4px'} 2px 4px;border-bottom:1px solid rgba(240,192,64,0.25);margin-bottom:8px;text-shadow:0 0 18px rgba(240,192,64,0.3);">${letra}</div>`;
+            }
+            html += `<div style="background:var(--card);border:1px solid var(--border2);border-radius:12px;padding:11px 13px;margin-bottom:7px;position:relative;">
+                <div style="font-size:0.73rem;color:var(--muted);line-height:1.45;padding-right:24px;">${d.def || d.q || '\u2013'}</div>
+                <div style="font-weight:700;font-size:0.9rem;margin-top:3px;color:var(--gold);">${d.word || d.a || ''}</div>
+                <button onclick="removeDificil(${dificiles.indexOf(d)}); renderDificilesAlfa();" style="position:absolute;top:8px;right:9px;background:none;border:none;color:var(--muted);font-size:0.82rem;cursor:pointer;padding:2px 5px;border-radius:4px;">&#x2715;</button>
+            </div>`;
+        });
+        container.innerHTML = html;
+    }
+
+    window.renderDificilesAlfa = renderDificilesAlfa;
+
+    // Función para grabar el progreso en la memoria del navegador
+    function saveCurrentProgress() {
+        if (typeof userProgress !== 'undefined') {
+            localStorage.setItem('ppro_progress', JSON.stringify(userProgress));
+        }
+    }
+
+    // Backup semanal automático
+    function checkWeeklyBackup(){
+        var last = localStorage.getItem('ppro_last_backup') || '2000-01-01';
+        var today = new Date().toISOString().slice(0,10);
+        if(Math.floor((new Date(today)-new Date(last))/86400000) >= 7){
+            localStorage.setItem('ppro_last_backup', today);
+            if (typeof downloadBackup === 'function') setTimeout(downloadBackup, 5000);
+        }
+    }
+
+    // ARRANQUE DE LA APP: Restaura memoria y limpia duplicados
+    window.addEventListener('DOMContentLoaded', () => {
+        // 1. Restaurar progreso de Andrea
+        const savedProgress = localStorage.getItem('ppro_progress');
+        if (savedProgress) {
+            userProgress = JSON.parse(savedProgress);
+            console.log("Memoria de Andrea recuperada ✓");
+        }
+
+        // 2. Lanzar procesos visuales
+        if (typeof renderStats === 'function') renderStats();
+        checkWeeklyBackup();
+        
+        // 3. Si existe el hospital, dibujarlo
+        if (document.getElementById('dificiles-list')) renderDificilesAlfa();
+    });
+
+
+// ── Utilidades PWA: abrir URLs externas sin que la PWA lo bloquee ──────────
+function openExternalUrl(url) {
+    if (!url || url === '#') return;
+    try {
+        const a = document.createElement('a');
+        a.href = url;
+        a.target = '_blank';
+        a.rel = 'noopener noreferrer';
+        a.style.display = 'none';
+        document.body.appendChild(a);
+        a.click();
+        setTimeout(() => document.body.removeChild(a), 100);
+    } catch(e) {
+        window.location.href = url;
+    }
+}
+
+window.renderDificilesAlfa = renderDificilesAlfa;
+
+function openDB(cb) {
         try {
             var req = indexedDB.open(_PPDB, 1);
             req.onupgradeneeded = function(e) { e.target.result.createObjectStore(_STORE); };
@@ -16234,25 +17316,7 @@ _ppMigrateData();
         } catch(e) { cb(e); }
     }
 
-    function saveToIDB() {
-        openDB(function(err, db) {
-            if (err || !db) return;
-            try {
-                var data = {};
-                _KEYS.forEach(function(k) { var v = localStorage.getItem(k); if (v !== null) data[k] = v; });
-                for (var i = 0; i < localStorage.length; i++) {
-                    var k = localStorage.key(i);
-                    if (k && (k.startsWith('srs_') || k.startsWith('rae_'))) data[k] = localStorage.getItem(k);
-                }
-                data['_at'] = new Date().toISOString();
-                var tx = db.transaction(_STORE, 'readwrite');
-                tx.objectStore(_STORE).put(JSON.stringify(data), 'main');
-                tx.oncomplete = function() { db.close(); };
-            } catch(e) { console.warn('IDB save:', e); }
-        });
-    }
-
-    function restoreFromIDB() {
+function restoreFromIDB() {
         openDB(function(err, db) {
             if (err || !db) return;
             try {
@@ -16275,17 +17339,23 @@ _ppMigrateData();
         });
     }
 
-    var _orig = localStorage.setItem.bind(localStorage);
-    localStorage.setItem = function(key, value) {
-        _orig(key, value);
-        clearTimeout(_saveTimer);
-        _saveTimer = setTimeout(saveToIDB, 2000);
-    };
-
-    restoreFromIDB();
-    setTimeout(saveToIDB, 4000);
-})();
-
+function saveToIDB() {
+        openDB(function(err, db) {
+            if (err || !db) return;
+            try {
+                var data = {};
+                _KEYS.forEach(function(k) { var v = localStorage.getItem(k); if (v !== null) data[k] = v; });
+                for (var i = 0; i < localStorage.length; i++) {
+                    var k = localStorage.key(i);
+                    if (k && (k.startsWith('srs_') || k.startsWith('rae_'))) data[k] = localStorage.getItem(k);
+                }
+                data['_at'] = new Date().toISOString();
+                var tx = db.transaction(_STORE, 'readwrite');
+                tx.objectStore(_STORE).put(JSON.stringify(data), 'main');
+                tx.oncomplete = function() { db.close(); };
+            } catch(e) { console.warn('IDB save:', e); }
+        });
+    }
 
 </script>
 </body>
