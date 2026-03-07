@@ -17,8 +17,7 @@ if ('serviceWorker' in navigator) {
         regs.forEach(r => r.unregister());
     });
 }
-caches.keys().then(keys => keys.forEach(k => caches.delete(k))););
-      }
+caches.keys().then(keys => keys.forEach(k => caches.delete(k)));
     </script>
 <style>
 /* ================================================================
@@ -14790,11 +14789,7 @@ function acceptTerms() {
     localStorage.setItem('terms_accepted_v2', '1');
     document.getElementById('terms-overlay').classList.add('hidden');
     updateStreak();
-    loadDeckInfo();
-    updateDifHomeCount();
-    // Show home screen
-    document.querySelectorAll('.screen').forEach(function(s) { s.style.display='none'; s.classList.remove('active'); });
-    var _h = document.getElementById('home'); _h.style.display='flex'; _h.classList.add('active');
+    goTo('home');
 }
 function showTermsAgain() {
     document.getElementById('terms-overlay').classList.remove('hidden');
