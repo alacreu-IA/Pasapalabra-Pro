@@ -14822,21 +14822,21 @@ function showTermsAgain() {
 // ============================================================
 //  INIT
 // ============================================================
-window.onload = function () {
-    // Activate home screen (always behind overlay if needed)
+document.addEventListener('DOMContentLoaded', function () {
+    // Activate home screen — DOMContentLoaded garantiza que no pisa clicks del usuario
     document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
     document.getElementById('home').classList.add('active');
 
     if (!localStorage.getItem('terms_accepted_v2')) {
-        // Show terms — remove hidden class so overlay is visible
         document.getElementById('terms-overlay').classList.remove('hidden');
     } else {
-        document.getElementById('terms-overlay').classList.add('hidden');
+        var to = document.getElementById('terms-overlay');
+        if (to) to.classList.add('hidden');
     }
     updateStreak();
     loadDeckInfo();
     updateDifHomeCount();
-};
+});
 
 // ============================================================
 //  STREAK
