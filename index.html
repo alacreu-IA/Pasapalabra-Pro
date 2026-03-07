@@ -64,7 +64,7 @@ html, body {
     transition: opacity 0.25s ease;
     overflow: hidden;
 }
-.screen.active { opacity: 1; pointer-events: all; }
+.screen.active { opacity: 1; pointer-events: all; z-index: 10; }
 
 /* ================================================================
    SCROLLABLE BODY
@@ -15864,8 +15864,7 @@ function stopVoice() {
 var roscoMode = 'silent'; // 'silent' | 'voice' | 'full'
 
 function showRoscoModeSelector() {
-    document.querySelectorAll('.screen').forEach(function(s) { s.classList.remove('active'); });
-    document.getElementById('rosco-mode').classList.add('active');
+    goTo('rosco-mode');
 }
 
 function startRoscoMode(mode) {
