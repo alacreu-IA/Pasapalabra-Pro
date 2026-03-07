@@ -14603,40 +14603,58 @@ window.startSmartStudy = function(deckId) {
    nextStudyCard();
 };
 
-// Lanza el estudio de un mazo completo sin filtro SRS - usa el UI de estudio que funciona
+// Lanza el estudio de un mazo completo sin filtro SRS
 window.startSmartStudyAll = function(deckId) {
-    // Guard: si MAZOS no está listo (race condition en carga), reintentar
-    if (typeof MAZOS === 'undefined' || MAZOS.length === 0) {
-        setTimeout(function(){ window.startSmartStudyAll(deckId); }, 150);
+
+    if (!window.MAZOS || !MAZOS.length) {
+        setTimeout(function(){ startSmartStudyAll(deckId); }, 150);
         return;
     }
+
     var mazo = MAZOS.find(function(m){ return m.id === deckId; });
-    if (!mazo) { 
-        if (typeof showToast === 'function') showToast('Mazo no encontrado: ' + deckId);
-        return; 
+    if (!mazo) {
+        if (typeof showToast === 'function') showToast('Mazo no encontrado');
+        return;
     }
-    studyDeck = (mazo?.questions ?? [])
-        .map(function(q){ return Object.assign({}, q, { deckId: mazo?.id, color: mazo?.color || 'var(--accent)' }); })
+
+    studyDeck = (mazo.questions || [])
+        .map(function(q){
+            return Object.assign({}, q, {
+                deckId: mazo.id,
+                color: mazo.color || 'var(--accent)'
+            });
+        })
         .sort(function(){ return Math.random() - 0.5; })
         .slice(0, 20);
-    if (studyDeck.length === 0) { 
+
+    if (!studyDeck.length) {
         if (typeof showToast === 'function') showToast('Sin preguntas en este mazo');
-        return; 
+        return;
     }
-    document.getElementById('study-title').innerText = (mazo.icon || '') + ' ' + mazo.name;
+
+    document.getElementById('study-title').innerText =
+        (mazo.icon || '') + ' ' + mazo.name;
+
+    // cerrar selector si está abierto
     var sel = document.getElementById('view-study-selector');
     if (sel) sel.style.display = 'none';
-    document.getElementById('view-smart-study').style.display = 'flex';
+
+    // abrir pantalla de estudio
+    var view = document.getElementById('view-smart-study');
+    if (view) view.style.display = 'flex';
+
     nextStudyCard();
 };
 
+
 window.nextStudyCard = function() {
-   if(studyDeck.length === 0) {
-       alert("¡Sesión terminada! Buen trabajo. 🎉");
-       exitSmartStudy();
-       openStudySelector();
-       return;
-   }
+
+    if (!studyDeck.length) {
+        alert("¡Sesión terminada! Buen trabajo. 🎉");
+        exitSmartStudy();
+        openStudySelector();
+        return;
+    }
    document.getElementById('study-counter').innerText = `Pendientes: ${studyDeck.length}`;
    currentStudyCard = studyDeck[0];
    if (!currentStudyCard) return;
