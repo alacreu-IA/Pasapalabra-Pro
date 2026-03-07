@@ -14521,6 +14521,9 @@ window.startSmartStudyAll = function(deckId) {
         setTimeout(function(){ if (typeof loadDeckInfo === 'function') loadDeckInfo(); }, 50);
     }
 
+    // Reemplazar MAZOS global con los mazos clasificados (IDs actualizados)
+    MAZOS = Object.values(newDecks);
+
     if (document.readyState === 'loading') {
         document.addEventListener('DOMContentLoaded', inyectarInterfaz);
     } else {
@@ -14787,6 +14790,12 @@ function goTo(id) {
     ['game','end'].forEach(function(oid) {
         var el = document.getElementById(oid); if (el) el.style.display = 'none';
     });
+    // Ocultar home inline si no vamos a home
+    var homeEl = document.getElementById('home');
+    if (homeEl && id !== 'home') {
+        homeEl.style.opacity = '0';
+        homeEl.style.pointerEvents = 'none';
+    }
     document.querySelectorAll('.screen').forEach(function(s) { s.classList.remove('active'); });
     var target = document.getElementById(id) || document.getElementById('home');
     target.classList.add('active');
@@ -15904,6 +15913,9 @@ var roscoMode = 'silent'; // 'silent' | 'voice' | 'full'
 
 function showRoscoModeSelector() {
     document.querySelectorAll('.screen').forEach(function(s) { s.classList.remove('active'); });
+    // Asegurarse de que home queda invisible (tiene opacity forzada inline)
+    var h = document.getElementById('home');
+    if (h) { h.style.opacity = '0'; h.style.pointerEvents = 'none'; }
     document.getElementById('rosco-mode').classList.add('active');
 }
 
