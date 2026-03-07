@@ -14251,6 +14251,25 @@ MAZOS_VOCAB.push({
 </script>
 
 <script>
+// Definición temprana de startSmartStudyAll para garantizar disponibilidad
+// antes de DOMContentLoaded. La definición completa está en Script 9.
+window.startSmartStudyAll = function(deckId) {
+    // Si el script 9 ya definió la versión completa, usarla
+    if (window._startSmartStudyAll_full) {
+        window._startSmartStudyAll_full(deckId);
+        return;
+    }
+    // Versión de espera: reintentar en 200ms
+    setTimeout(function() { 
+        if (typeof window._startSmartStudyAll_full === 'function') {
+            window._startSmartStudyAll_full(deckId);
+        } else {
+            window.startSmartStudyAll(deckId);
+        }
+    }, 200);
+};
+</script>
+<script>
 // =====================================================================
 // SISTEMA INTEGRAL: AUTOCLASIFICADOR + ESTUDIO SRS + HOSPITAL + PISTAS + DISEÑO PREMIUM
 // =====================================================================
@@ -14628,6 +14647,7 @@ window.startSmartStudyAll = function(deckId) {
     document.getElementById('view-smart-study').style.display = 'flex';
     nextStudyCard();
 };
+window._startSmartStudyAll_full = window.startSmartStudyAll;
 };
 
 window.nextStudyCard = function() {
