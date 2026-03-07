@@ -14936,9 +14936,6 @@ function iniciarPartidaRapida() {
     gameMode    = 'rapida';
     gameTitle   = '⚡ Partida Rápida';
     gameSession = pickRandom(all, 20);
-
-    goTo('game');   // ← línea necesaria
-
     startGameSession();
 }
 
@@ -14959,7 +14956,6 @@ function iniciarSRS() {
     gameMode    = 'srs';
     gameTitle   = '🧠 Repaso SRS';
     gameSession = pickRandom(pending, Math.min(20, pending.length));
-     goTo('game');
     startGameSession();
 }
 
@@ -14970,8 +14966,7 @@ function estudiarSoloDificiles() {
     gameMode    = 'dificiles';
     gameTitle   = '🔴 Solo Difíciles';
     gameSession = pickRandom(questions, Math.min(20, questions.length));
-    goTo('home');
-    setTimeout(startGameSession, 100);
+   startGameSession();
 }
 
 function iniciarMazoCustom() {
