@@ -11,15 +11,11 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,700;1,400&display=swap" rel="stylesheet">
     <script>
-      // Matar service worker viejo y limpiar caché para forzar versión nueva
-if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.getRegistrations().then(function(regs) {
-        regs.forEach(function(r) { r.unregister(); });
-    });
-    caches.keys().then(function(keys) {
-        keys.forEach(function(k) { caches.delete(k); });
-    });
-}
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('./sw.js');
+        });
+      }
     </script>
 <style>
 /* ================================================================
@@ -856,7 +852,7 @@ html, body {
 <!-- ================================================================
      HOME SCREEN
 ================================================================ -->
-<div id="home" class="screen">
+<div id="home" class="screen active">
     <div id="home-header">
         <div class="app-brand">
             <h1>PasaPalabra Pro</h1>
@@ -14790,7 +14786,11 @@ function goTo(id) {
     document.querySelectorAll('.screen').forEach(function(s) { s.classList.remove('active'); });
     var target = document.getElementById(id) || document.getElementById('home');
     target.classList.add('active');
-    if (id === 'home')      { loadDeckInfo(); updateDifHomeCount(); }
+    if (id === 'home')      { 
+        var h = document.getElementById('home');
+        h.style.opacity = ''; h.style.pointerEvents = '';
+        loadDeckInfo(); updateDifHomeCount(); 
+    }
     if (id === 'dificiles') { renderDificilesAlfa(); }
     if (id === 'dashboard') { renderDashboard(); }
     if (id === 'creator')   { renderCustomList(); }
@@ -14826,8 +14826,14 @@ function showTermsAgain() {
 //  INIT
 // ============================================================
 window.onload = function () {
-    document.querySelectorAll('.screen').forEach(function(s) { s.classList.remove('active'); });
+    // Quitar active de todo excepto home, que ya lo tiene desde el HTML
+    document.querySelectorAll('.screen').forEach(function(s) {
+        if (s.id !== 'home') s.classList.remove('active');
+    });
     document.getElementById('home').classList.add('active');
+    // Fallback: forzar visibilidad por si la transición CSS no arranca
+    document.getElementById('home').style.opacity = '1';
+    document.getElementById('home').style.pointerEvents = 'all';
     if (!localStorage.getItem('terms_accepted_v2')) {
         document.getElementById('terms-overlay').classList.remove('hidden');
     } else {
