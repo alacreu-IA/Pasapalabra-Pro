@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rescate Pasapalabra Pro</title>
+<style>
+  body { font-family: sans-serif; background: #1a1a2e; color: #eee; padding: 24px; text-align: center; }
+  h1 { color: #f0c040; margin-bottom: 8px; }
+  p { color: #aaa; margin-bottom: 24px; }
+  button { background: #f0c040; color: #1a1a2e; border: none; border-radius: 12px; padding: 16px 32px; font-size: 1.1rem; font-weight: 700; cursor: pointer; margin: 8px; display: block; width: 100%; }
+  button.sec { background: transparent; color: #f0c040; border: 2px solid #f0c040; }
+  #info { background: #2a2a4e; border-radius: 12px; padding: 16px; margin-top: 24px; text-align: left; font-size: 0.85rem; }
+  .ok { color: #4caf50; } .warn { color: #f0c040; } .err { color: #f44336; }
+</style>
+</head>
+<body>
+<h1>🔧 Rescate de Progreso</h1>
+<p>Esta página lee todo lo que hay guardado en tu móvil y lo descarga.</p>
+
+<button onclick="rescatar()">💾 Descargar TODO mi progreso</button>
+<button class="sec" onclick="mostrarInfo()">🔍 Ver qué tengo guardado</button>
+
+<div id="info"></div>
+
+<script>
+function rescatar() {
+    var datos = {};
+    var total = localStorage.length;
+    
+    for (var i = 0; i < localStorage.length; i++) {
+        var key = localStorage.key(i);
+        datos[key] = localStorage.getItem(key);
+    }
+    
+    var backup = {
+        exportado: new Date().toISOString(),
+        total_claves: total,
+        datos: datos
+    };
+    
+    var json = JSON.stringify(backup, null, 2);
+    var blob = new Blob([json], { type: 'application/json' });
+    var a = document.createElement('a');
+    a.href = URL.createObjectURL(blob);
+    a.download = 'rescate_noemi_' + new Date().toISOString().slice(0,10) + '.json';
+    document.body.appendChild(a);
+    a.click();
+    setTimeout(function() { document.body.removeChild(a); }, 500);
+    
+    document.getElementById('info').innerHTML = 
+        '<p class="ok">✅ Descargado! Total claves: ' + total + '</p>' +
+        '<p>Manda ese archivo a Andrea.</p>';
+}
+
+function mostrarInfo() {
+    var div = document.getElementById('info');
+    var total = localStorage.length;
+    
+    if (total === 0) {
+        div.innerHTML = '<p class="err">❌ No hay nada guardado en este dominio.</p>';
+        return;
+    }
+    
+    var html = '<p class="ok">✅ Encontradas ' + total + ' claves guardadas:</p><ul>';
+    var dificiles = [];
+    var srs_count = 0;
+    
+    for (var i = 0; i < localStorage.length; i++) {
+        var key = localStorage.key(i);
+        var val = localStorage.getItem(key);
+        
+        if (key === 'dificiles') {
+            try { dificiles = JSON.parse(val); } catch(e) {}
+            html += '<li class="ok"><strong>dificiles</strong>: ' + dificiles.length + ' palabras ✅</li>';
+        } else if (key.startsWith('srs_')) {
+            srs_count++;
+        } else if (key === 'ppro_usage') {
+            try {
+                var u = JSON.parse(val);
+                var sessions = (u.sessions || []).length;
+                html += '<li class="ok"><strong>ppro_usage</strong>: ' + sessions + ' sesiones ✅</li>';
+            } catch(e) {
+                html += '<li class="warn"><strong>' + key + '</strong>: ' + val.substring(0,50) + '</li>';
+            }
+        } else if (key === 'ppro_letters') {
+            try {
+                var l = JSON.parse(val);
+                html += '<li class="ok"><strong>ppro_letters</strong>: ' + Object.keys(l).length + ' letras ✅</li>';
+            } catch(e) {}
+        } else {
+            html += '<li><strong>' + key + '</strong>: ' + String(val).substring(0,60) + '</li>';
+        }
+    }
+    
+    if (srs_count > 0) {
+        html += '<li class="ok"><strong>srs_*</strong>: ' + srs_count + ' palabras en SRS ✅</li>';
+    }
+    
+    html += '</ul>';
+    
+    if (dificiles.length === 0 && srs_count === 0) {
+        html += '<p class="err">⚠️ No hay difíciles ni SRS guardados. Los datos se perdieron.</p>';
+    } else {
+        html += '<p class="ok">🎉 ¡Hay datos! Pulsa "Descargar TODO" para guardarlos.</p>';
+    }
+    
+    div.innerHTML = html;
+}
+
+// Mostrar info automáticamente al cargar
+window.onload = function() { mostrarInfo(); };
+</script>
+</body>
+</html>
