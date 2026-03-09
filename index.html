@@ -796,22 +796,6 @@ html, body {
 }
 
 </style>
-<script>
-if ('serviceWorker' in navigator) {
-    window.addEventListener('load', function() {
-        navigator.serviceWorker.register('./sw.js').then(function(reg) {
-            reg.addEventListener('updatefound', function() {
-                var nw = reg.installing;
-                nw.addEventListener('statechange', function() {
-                    if (nw.state === 'installed' && navigator.serviceWorker.controller) {
-                        window.location.reload();
-                    }
-                });
-            });
-        });
-    });
-}
-</script>
 </head>
 <body>
 
@@ -919,8 +903,123 @@ if ('serviceWorker' in navigator) {
         </div>
 
         <div class="section-label">Mazos Activos</div>
-        <div class="deck-list" id="deck-list-dynamic">
-            <p style="color:var(--muted);text-align:center;padding:20px;">Cargando mazos...</p>
+        <div class="deck-list">
+            <div class="deck-item" onclick="iniciarMazo('cg')">
+                <div class="deck-icon">🧠</div>
+                <div class="deck-info">
+                    <h4>Cultura General</h4>
+                    <span style="font-size:0.72rem; color:var(--muted); font-style:italic; display:block; margin-top:2px; margin-bottom:4px;">El caj&#243;n de sastre donde acaba todo lo dem&#225;s</span>
+                    <p id="deck-info-cg">Cargando...</p>
+                    <div class="dom-bar"><div class="dom-fill" id="dom-cg" style="width:0%"></div></div>
+                </div>
+                <div class="deck-arrow">›</div>
+            </div>
+            <div class="deck-item" onclick="iniciarMazo('hist')">
+                <div class="deck-icon">⚔️</div>
+                <div class="deck-info">
+                    <h4>Historia y Geografía</h4>
+                    <span style="font-size:0.72rem; color:var(--muted); font-style:italic; display:block; margin-top:2px; margin-bottom:4px;">Guerras, imperios y humanos haciendo siempre lo mismo</span>
+                    <p id="deck-info-hist">Cargando...</p>
+                    <div class="dom-bar"><div class="dom-fill" id="dom-hist" style="width:0%"></div></div>
+                </div>
+                <div class="deck-arrow">›</div>
+            </div>
+            <div class="deck-item" onclick="iniciarMazo('literatura')">
+                <div class="deck-icon">📚</div>
+                <div class="deck-info">
+                    <h4>Literatura</h4>
+                    <span style="font-size:0.72rem; color:var(--muted); font-style:italic; display:block; margin-top:2px; margin-bottom:4px;">Se&#241;ores tristes escribiendo cosas profundas</span>
+                    <p id="deck-info-literatura">Cargando...</p>
+                    <div class="dom-bar"><div class="dom-fill" id="dom-literatura" style="width:0%"></div></div>
+                </div>
+                <div class="deck-arrow">›</div>
+            </div>
+            <div class="deck-item" onclick="iniciarMazo('arte')">
+                <div class="deck-icon">🎨</div>
+                <div class="deck-info">
+                    <h4>Arte, Música y Cine</h4>
+                    <span style="font-size:0.72rem; color:var(--muted); font-style:italic; display:block; margin-top:2px; margin-bottom:4px;">Cuadros que parecen f&#225;ciles hasta que te preguntan el autor</span>
+                    <p id="deck-info-arte">Cargando...</p>
+                    <div class="dom-bar"><div class="dom-fill" id="dom-arte" style="width:0%"></div></div>
+                </div>
+                <div class="deck-arrow">›</div>
+            </div>
+            <div class="deck-item" onclick="iniciarMazo('ciencia')">
+                <div class="deck-icon">🔬</div>
+                <div class="deck-info">
+                    <h4>Ciencia y Nat.</h4>
+                    <span style="font-size:0.72rem; color:var(--muted); font-style:italic; display:block; margin-top:2px; margin-bottom:4px;">Premios Nobel y f&#243;rmulas que no entiendes</span>
+                    <p id="deck-info-ciencia">Cargando...</p>
+                    <div class="dom-bar"><div class="dom-fill" id="dom-ciencia" style="width:0%"></div></div>
+                </div>
+                <div class="deck-arrow">›</div>
+            </div>
+            <div class="deck-item" onclick="iniciarMazo('deporte')">
+                <div class="deck-icon">&#127942;</div>
+                <div class="deck-info">
+                    <h4>Deporte</h4>
+                    <span style="font-size:0.72rem; color:var(--muted); font-style:italic; display:block; margin-top:2px; margin-bottom:4px;">Finales injustas y debates eternos</span>
+                    <p id="deck-info-deporte">Cargando...</p>
+                    <div class="dom-bar"><div class="dom-fill" id="dom-deporte" style="width:0%"></div></div>
+                </div>
+                <div class="deck-arrow">&#8250;</div>
+            </div>
+            <div class="deck-item" onclick="iniciarMazo('mitologia')">
+                <div class="deck-icon">&#127963;</div>
+                <div class="deck-info">
+                    <h4>Mitolog&#237;a</h4>
+                    <span style="font-size:0.72rem; color:var(--muted); font-style:italic; display:block; margin-top:2px; margin-bottom:4px;">S&#225;lvame Deluxe en el Monte Olimpo</span>
+                    <p id="deck-info-mitologia">Cargando...</p>
+                    <div class="dom-bar"><div class="dom-fill" id="dom-mitologia" style="width:0%"></div></div>
+                </div>
+                <div class="deck-arrow">&#8250;</div>
+            </div>
+            <div class="deck-item" onclick="iniciarMazo('naturaleza')">
+                <div class="deck-icon">&#127807;</div>
+                <div class="deck-info">
+                    <h4>Naturaleza</h4>
+                    <span style="font-size:0.72rem; color:var(--muted); font-style:italic; display:block; margin-top:2px; margin-bottom:4px;">Documentales de La 2 y alergia al polen</span>
+                    <p id="deck-info-naturaleza">Cargando...</p>
+                    <div class="dom-bar"><div class="dom-fill" id="dom-naturaleza" style="width:0%"></div></div>
+                </div>
+                <div class="deck-arrow">&#8250;</div>
+            </div>
+            <div class="deck-item" onclick="iniciarMazo('tecnologia')">
+                <div class="deck-icon">&#128187;</div>
+                <div class="deck-info">
+                    <h4>Tecnolog&#237;a</h4>
+                    <span style="font-size:0.72rem; color:var(--muted); font-style:italic; display:block; margin-top:2px; margin-bottom:4px;">Apagar y encender el router</span>
+                    <p id="deck-info-tecnologia">Cargando...</p>
+                    <div class="dom-bar"><div class="dom-fill" id="dom-tecnologia" style="width:0%"></div></div>
+                </div>
+                <div class="deck-arrow">&#8250;</div>
+            </div>
+            <div class="deck-item" onclick="iniciarMazo('capitales')">
+                <div class="deck-icon">&#9992;</div>
+                <div class="deck-info">
+                    <h4>Capitales</h4>
+                    <span style="font-size:0.72rem; color:var(--muted); font-style:italic; display:block; margin-top:2px; margin-bottom:4px;">Porque S&#237;dney no es la capital de Australia y lo sabes</span>
+                    <p id="deck-info-capitales">Cargando...</p>
+                    <div class="dom-bar"><div class="dom-fill" id="dom-capitales" style="width:0%"></div></div>
+                </div>
+                <div class="deck-arrow">&#8250;</div>
+            </div>
+            <div class="deck-item" onclick="iniciarMatchCapitales()" style="border-color:var(--accent);">
+                <div class="deck-icon">&#127760;</div>
+                <div class="deck-info">
+                    <h4>Emparejar Capitales</h4>
+                    <span style="font-size:0.72rem; color:var(--muted); font-style:italic; display:block; margin-top:2px; margin-bottom:4px;">Une cada pa&#237;s con su capital</span>
+                </div>
+                <div class="deck-arrow">&#8250;</div>
+            </div>
+            <div class="deck-item" onclick="iniciarMazoCustom()">
+                <div class="deck-icon">⭐</div>
+                <div class="deck-info">
+                    <h4>Mis mazos</h4>
+                    <p id="deck-info-custom">Tus propias tarjetas</p>
+                </div>
+                <div class="deck-arrow">›</div>
+            </div>
         </div>
 
         <div class="section-label">Herramientas</div>
@@ -964,10 +1063,19 @@ if ('serviceWorker' in navigator) {
             <button onclick="showTermsAgain()">Términos y Condiciones</button>
         </div>
     </div>
-    <div style="padding: 16px 16px 32px;">
+    <div style="padding: 16px 16px 32px; display:flex; flex-direction:column; gap:10px;">
         <button onclick="actualizarApp()" style="width:100%; background:transparent; border:1px solid var(--border); color:var(--muted); border-radius:14px; padding:14px; font-family:'Space Grotesk',sans-serif; font-size:0.9rem; cursor:pointer; display:flex; align-items:center; justify-content:center; gap:8px;">
             🔄 Actualizar app
         </button>
+        <div style="display:flex; gap:10px;">
+            <button onclick="backupProgreso()" style="flex:1; background:transparent; border:1px solid var(--border); color:var(--muted); border-radius:14px; padding:12px 8px; font-family:'Space Grotesk',sans-serif; font-size:0.82rem; cursor:pointer; display:flex; align-items:center; justify-content:center; gap:6px;">
+                💾 Guardar progreso
+            </button>
+            <label style="flex:1; background:transparent; border:1px solid var(--border); color:var(--muted); border-radius:14px; padding:12px 8px; font-family:'Space Grotesk',sans-serif; font-size:0.82rem; cursor:pointer; display:flex; align-items:center; justify-content:center; gap:6px;">
+                📂 Restaurar progreso
+                <input type="file" accept=".json" onchange="restaurarProgreso(event)" style="display:none;">
+            </label>
+        </div>
     </div>
 
 </div>
@@ -11325,63 +11433,36 @@ function updateStreak() {
 //  DECK INFO + DOMINIO BARS
 // ============================================================
 function loadDeckInfo() {
-    if (typeof MAZOS === 'undefined' || !MAZOS.length) {
-        setTimeout(loadDeckInfo, 200); return;
-    }
+    if (typeof MAZOS === 'undefined') return;
     const now = Date.now();
     let totalAll = 0, masteredAll = 0;
 
-    // Renderizar deck-items dinámicamente si no están
-    var dl = document.getElementById('deck-list-dynamic');
-    if (dl) {
-        dl.innerHTML = '';
-        MAZOS.forEach(function(m) {
-            var item = document.createElement('div');
-            item.className = 'deck-item';
-            item.onclick = function() { iniciarMazo(m.id); };
-            item.innerHTML =
-                '<div class="deck-icon">' + (m.icon || '📚') + '</div>' +
-                '<div class="deck-info">' +
-                    '<h4>' + m.name + '</h4>' +
-                    (m.sub ? '<span style="font-size:0.72rem;color:var(--muted);font-style:italic;display:block;margin-top:2px;margin-bottom:4px;">' + m.sub + '</span>' : '') +
-                    '<p id="deck-info-' + m.id + '">Cargando...</p>' +
-                    '<div class="dom-bar"><div class="dom-fill" id="dom-' + m.id + '" style="width:0%"></div></div>' +
-                '</div>' +
-                '<div class="deck-arrow">›</div>';
-            dl.appendChild(item);
-        });
-    }
-
     MAZOS.forEach(m => {
-        const el  = document.getElementById('deck-info-' + m.id);
-        const dom = document.getElementById('dom-' + m.id);
+        const el  = document.getElementById(`deck-info-${m.id}`);
+        const dom = document.getElementById(`dom-${m.id}`);
         if (!el) return;
 
-        const total = m.questions ? m.questions.length : 0;
-        const srsData = loadStudyData ? loadStudyData() : {};
-        let mastered = 0, dueToday = 0;
-        if (m.questions) {
-            m.questions.forEach(function(q) {
-                var key = q.a || q.word || '';
-                var d = srsData[key];
-                if (d && d.nextReview > now + 6 * 86400000) mastered++;
-                if (!d || d.nextReview <= now) dueToday++;
-            });
-        }
-        totalAll += total;
-        masteredAll += mastered;
+        const total    = m.questions.length;
+        const doneToday = countDoneToday(m.id);
 
-        var pct = total > 0 ? Math.round(mastered / total * 100) : 0;
-        el.textContent = total + ' preguntas · ' + dueToday + ' para hoy';
+        // "Dominada" = próximo repaso > 25 días
+        const mastered = m.questions.filter(q => {
+            const next = parseInt(localStorage.getItem(`srs_${q.a}`) || '0');
+            return next > now + 25 * 86400000;
+        }).length;
+
+        const pct = total > 0 ? Math.round((mastered / total) * 100) : 0;
+        el.textContent  = `${total} preguntas · ${doneToday} hoy · ${pct}% dominadas`;
         if (dom) dom.style.width = pct + '%';
+
+        totalAll   += total;
+        masteredAll += mastered;
     });
 
-    // Barra global
-    var gpct = totalAll > 0 ? Math.round(masteredAll / totalAll * 100) : 0;
-    var gEl = document.getElementById('global-pct');
-    var gFill = document.getElementById('global-bar-fill');
-    if (gEl) gEl.textContent = gpct + '%';
-    if (gFill) gFill.style.width = gpct + '%';
+    // Global bar
+    const globalPct = totalAll > 0 ? Math.round((masteredAll / totalAll) * 100) : 0;
+    document.getElementById('global-pct').textContent = globalPct + '%';
+    document.getElementById('global-bar-fill').style.width = globalPct + '%';
 }
 
 function countDoneToday(deckId) {
@@ -12725,25 +12806,7 @@ function openExternalUrl(url) {
     }
 }
 
-function renderDashboard(){try{var u=JSON.parse(localStorage.getItem('ppro_usage')||'{"sessions":[],"byDeck":{},"daily":{}}');var letters=JSON.parse(localStorage.getItem('ppro_letters')||'{}');var roscoH=JSON.parse(localStorage.getItem('ppro_rosco_hist')||'[]');var sessions=u.sessions||[],byDeck=u.byDeck||{},daily=u.daily||{};var totalQ=sessions.reduce(function(s,x){return s+(x.answered||0);},0);var totalOk=sessions.reduce(function(s,x){return s+(x.correct||0);},0);var totalMin=sessions.reduce(function(s,x){return s+(x.minutes||0);},0);var pct=totalQ?Math.round(100*totalOk/totalQ):0;var today=new Date().toISOString().slice(0,10);var todayMin=sessions.filter(function(s){return s.date===today;}).reduce(function(s,x){return s+(x.minutes||0);},0);var streak=0;for(var i=0;i<365;i++){var dd=new Date();dd.setDate(dd.getDate()-i);if((daily[dd.toISOString().slice(0,10)]||0)>0)streak++;else if(i>0)break;}document.getElementById('db-total').textContent=totalQ.toLocaleString('es');document.getElementById('db-pct').textContent=pct+'%';document.getElementById('db-streak').textContent=streak+'d';document.getElementById('db-today').textContent=todayMin<60?todayMin+'min':Math.floor(todayMin/60)+'h '+(todayMin%60?todayMin%60+'m':'');document.getElementById('db-total-time').textContent=Math.round(totalMin/60)+'h';var heat=document.getElementById('db-heatmap');heat.innerHTML='';var vals=Object.values(daily).map(Number);var maxD=vals.length?Math.max.apply(null,[1].concat(vals)):1;for(var j=69;j>=0;j--){var dj=new Date();dj.setDate(dj.getDate()-j);var kj=dj.toISOString().slice(0,10);var vj=daily[kj]||0;var aj=vj?Math.max(0.15,vj/maxD):0;var cel=document.createElement('div');cel.style.cssText='width:11px;height:11px;border-radius:2px;background:'+(vj?'rgba(240,192,64,'+aj.toFixed(2)+')':'var(--border2)')+';';cel.title=kj+': '+vj+' preguntas';heat.appendChild(cel);}var deckEl=document.getElementById('db-by-deck');var entries=Object.entries(byDeck).sort(function(a,b){return b[1].answered-a[1].answered;});deckEl.innerHTML=entries.length?entries.map(function(e){var id=e[0],data=e[1];var p=data.answered?Math.round(100*data.correct/data.answered):0;var col=p>=70?'var(--green)':p>=40?'var(--gold)':'var(--red)';var nm=(typeof MAZOS!=='undefined')?((MAZOS.find(function(m){return m.id===id;})||{}).name||id):id;return '<div style="margin-bottom:10px;"><div style="display:flex;justify-content:space-between;font-size:0.74rem;margin-bottom:3px;"><span>'+nm+'</span><span style="color:'+col+'">'+p+'% ('+data.answered+')</span></div><div style="background:var(--border2);border-radius:5px;height:6px;"><div style="width:'+p+'%;background:'+col+';border-radius:5px;height:6px;"></div></div></div>';}).join(''):'<p style="color:var(--muted);font-size:0.8rem;text-align:center;padding:8px;">Practica para ver tus stats \U0001f4aa</p>';var hlEl=document.getElementById('db-hard-letters');var lArr=Object.entries(letters).map(function(e){var l=e[0],d=e[1];return{l:l,pct:(d.ok+d.fail)?Math.round(100*(d.ok||0)/(d.ok+d.fail)):100};}).sort(function(a,b){return a.pct-b.pct;}).slice(0,10);hlEl.innerHTML=lArr.length?lArr.map(function(x){var col=x.pct<50?'var(--red)':x.pct<70?'var(--gold)':'var(--green)';return '<div style="background:var(--card2);border:1px solid '+(x.pct<50?'var(--red)':'var(--border2)')+';border-radius:9px;padding:5px 11px;display:flex;align-items:center;gap:6px;font-size:0.8rem;"><strong style="font-size:1.05rem">'+x.l+'</strong><span style="color:'+col+'">'+x.pct+'%</span></div>';}).join(''):'<span style="color:var(--muted);font-size:0.8rem;">Sin datos a\u00fan, \u00a1haz el rosco!</span>';var rEl=document.getElementById('db-rosco-hist');rEl.innerHTML=roscoH.length?roscoH.slice(-8).reverse().map(function(r){var p=r.total?Math.round(100*r.ok/r.total):0;var col=p>=70?'var(--green)':p>=40?'var(--gold)':'var(--red)';return '<div style="display:flex;align-items:center;gap:8px;font-size:0.77rem;padding:7px 0;border-bottom:1px solid var(--border2);"><span style="color:var(--muted);min-width:68px;font-size:0.7rem;">'+r.date+'</span><span style="color:var(--green);">+'+r.ok+'</span><span style="color:var(--red);">\u2716'+r.fail+'</span><span style="color:var(--muted);">~'+(r.pass||0)+'</span><span style="font-weight:700;margin-left:auto;color:'+col+';">'+p+'%</span></div>';}).join(''):'<p style="color:var(--muted);font-size:0.8rem;text-align:center;padding:8px;">\u00a1Haz tu primer rosco!</p>';}catch(e){console.error('Dashboard:',e);}
-    // === SECCIÓN POR LETRA ===
-    try {
-        var letters = JSON.parse(localStorage.getItem('ppro_letters') || '{}');
-        var letras = 'ABCDEFGHIJKLMNÑOPQRSTUVWXYZ'.split('');
-        var letrasHTML = '<div style="margin-top:20px;"><div style="font-weight:700;color:var(--text);margin-bottom:10px;font-size:0.95rem;">📝 Progreso por letra</div><div style="display:grid;grid-template-columns:repeat(7,1fr);gap:6px;">';
-        letras.forEach(function(l) {
-            var d = letters[l] || {ok:0,fail:0};
-            var total = (d.ok||0) + (d.fail||0);
-            var pct = total > 0 ? Math.round((d.ok||0) / total * 100) : null;
-            var bg = pct === null ? 'var(--card)' : pct >= 80 ? 'rgba(34,197,94,0.25)' : pct >= 50 ? 'rgba(245,158,11,0.25)' : 'rgba(239,68,68,0.25)';
-            var tc = pct === null ? 'var(--muted)' : pct >= 80 ? '#22c55e' : pct >= 50 ? '#f59e0b' : '#ef4444';
-            letrasHTML += '<div style="background:'+bg+';border-radius:8px;padding:6px 2px;text-align:center;"><div style="font-weight:800;font-size:1rem;color:'+tc+';">'+l+'</div>'+(pct!==null?'<div style="font-size:0.65rem;color:var(--muted);">'+pct+'%</div>':'')+'</div>';
-        });
-        letrasHTML += '</div></div>';
-        container.innerHTML += letrasHTML;
-    } catch(e) {}
-
-}
+function renderDashboard(){try{var u=JSON.parse(localStorage.getItem('ppro_usage')||'{"sessions":[],"byDeck":{},"daily":{}}');var letters=JSON.parse(localStorage.getItem('ppro_letters')||'{}');var roscoH=JSON.parse(localStorage.getItem('ppro_rosco_hist')||'[]');var sessions=u.sessions||[],byDeck=u.byDeck||{},daily=u.daily||{};var totalQ=sessions.reduce(function(s,x){return s+(x.answered||0);},0);var totalOk=sessions.reduce(function(s,x){return s+(x.correct||0);},0);var totalMin=sessions.reduce(function(s,x){return s+(x.minutes||0);},0);var pct=totalQ?Math.round(100*totalOk/totalQ):0;var today=new Date().toISOString().slice(0,10);var todayMin=sessions.filter(function(s){return s.date===today;}).reduce(function(s,x){return s+(x.minutes||0);},0);var streak=0;for(var i=0;i<365;i++){var dd=new Date();dd.setDate(dd.getDate()-i);if((daily[dd.toISOString().slice(0,10)]||0)>0)streak++;else if(i>0)break;}document.getElementById('db-total').textContent=totalQ.toLocaleString('es');document.getElementById('db-pct').textContent=pct+'%';document.getElementById('db-streak').textContent=streak+'d';document.getElementById('db-today').textContent=todayMin<60?todayMin+'min':Math.floor(todayMin/60)+'h '+(todayMin%60?todayMin%60+'m':'');document.getElementById('db-total-time').textContent=Math.round(totalMin/60)+'h';var heat=document.getElementById('db-heatmap');heat.innerHTML='';var vals=Object.values(daily).map(Number);var maxD=vals.length?Math.max.apply(null,[1].concat(vals)):1;for(var j=69;j>=0;j--){var dj=new Date();dj.setDate(dj.getDate()-j);var kj=dj.toISOString().slice(0,10);var vj=daily[kj]||0;var aj=vj?Math.max(0.15,vj/maxD):0;var cel=document.createElement('div');cel.style.cssText='width:11px;height:11px;border-radius:2px;background:'+(vj?'rgba(240,192,64,'+aj.toFixed(2)+')':'var(--border2)')+';';cel.title=kj+': '+vj+' preguntas';heat.appendChild(cel);}var deckEl=document.getElementById('db-by-deck');var entries=Object.entries(byDeck).sort(function(a,b){return b[1].answered-a[1].answered;});deckEl.innerHTML=entries.length?entries.map(function(e){var id=e[0],data=e[1];var p=data.answered?Math.round(100*data.correct/data.answered):0;var col=p>=70?'var(--green)':p>=40?'var(--gold)':'var(--red)';var nm=(typeof MAZOS!=='undefined')?((MAZOS.find(function(m){return m.id===id;})||{}).name||id):id;return '<div style="margin-bottom:10px;"><div style="display:flex;justify-content:space-between;font-size:0.74rem;margin-bottom:3px;"><span>'+nm+'</span><span style="color:'+col+'">'+p+'% ('+data.answered+')</span></div><div style="background:var(--border2);border-radius:5px;height:6px;"><div style="width:'+p+'%;background:'+col+';border-radius:5px;height:6px;"></div></div></div>';}).join(''):'<p style="color:var(--muted);font-size:0.8rem;text-align:center;padding:8px;">Practica para ver tus stats \U0001f4aa</p>';var hlEl=document.getElementById('db-hard-letters');var lArr=Object.entries(letters).map(function(e){var l=e[0],d=e[1];return{l:l,pct:(d.ok+d.fail)?Math.round(100*(d.ok||0)/(d.ok+d.fail)):100};}).sort(function(a,b){return a.pct-b.pct;}).slice(0,10);hlEl.innerHTML=lArr.length?lArr.map(function(x){var col=x.pct<50?'var(--red)':x.pct<70?'var(--gold)':'var(--green)';return '<div style="background:var(--card2);border:1px solid '+(x.pct<50?'var(--red)':'var(--border2)')+';border-radius:9px;padding:5px 11px;display:flex;align-items:center;gap:6px;font-size:0.8rem;"><strong style="font-size:1.05rem">'+x.l+'</strong><span style="color:'+col+'">'+x.pct+'%</span></div>';}).join(''):'<span style="color:var(--muted);font-size:0.8rem;">Sin datos a\u00fan, \u00a1haz el rosco!</span>';var rEl=document.getElementById('db-rosco-hist');rEl.innerHTML=roscoH.length?roscoH.slice(-8).reverse().map(function(r){var p=r.total?Math.round(100*r.ok/r.total):0;var col=p>=70?'var(--green)':p>=40?'var(--gold)':'var(--red)';return '<div style="display:flex;align-items:center;gap:8px;font-size:0.77rem;padding:7px 0;border-bottom:1px solid var(--border2);"><span style="color:var(--muted);min-width:68px;font-size:0.7rem;">'+r.date+'</span><span style="color:var(--green);">+'+r.ok+'</span><span style="color:var(--red);">\u2716'+r.fail+'</span><span style="color:var(--muted);">~'+(r.pass||0)+'</span><span style="font-weight:700;margin-left:auto;color:'+col+';">'+p+'%</span></div>';}).join(''):'<p style="color:var(--muted);font-size:0.8rem;text-align:center;padding:8px;">\u00a1Haz tu primer rosco!</p>';}catch(e){console.error('Dashboard:',e);}}
 
 function downloadBackup(){try{var blob=new Blob([JSON.stringify({exported:new Date().toISOString(),dificiles:getDificiles(),usage:JSON.parse(localStorage.getItem('ppro_usage')||'{}'),rosco_hist:JSON.parse(localStorage.getItem('ppro_rosco_hist')||'[]'),letters:JSON.parse(localStorage.getItem('ppro_letters')||'{}')},null,2)],{type:'application/json'});var a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='noemi_ppro_'+new Date().toISOString().slice(0,10)+'.json';document.body.appendChild(a);a.click();setTimeout(function(){document.body.removeChild(a);},100);showToast('\U0001f4be Backup descargado');}catch(e){showToast('Error al descargar backup');}}
 
@@ -12761,45 +12824,81 @@ function openMapNow(el) {
     var url = el.dataset ? el.dataset.url : el.getAttribute('data-url');
     if (url) openExternalUrl(url);
 }
-function actualizarApp() {
-    showToast('🔄 Actualizando...', 1500);
-    // Limpiar Service Worker
-    if ('serviceWorker' in navigator) {
-        navigator.serviceWorker.getRegistrations().then(function(regs) {
-            regs.forEach(function(r) { r.unregister(); });
-        });
+function backupProgreso() {
+    try {
+        var backup = { exportado: new Date().toISOString(), datos: {} };
+        for (var i = 0; i < localStorage.length; i++) {
+            var key = localStorage.key(i);
+            backup.datos[key] = localStorage.getItem(key);
+        }
+        var json = JSON.stringify(backup, null, 2);
+        var blob = new Blob([json], { type: 'application/json' });
+        var a = document.createElement('a');
+        a.href = URL.createObjectURL(blob);
+        a.download = 'backup_noemi_' + new Date().toISOString().slice(0, 10) + '.json';
+        document.body.appendChild(a);
+        a.click();
+        setTimeout(function() { document.body.removeChild(a); URL.revokeObjectURL(a.href); }, 500);
+        return true;
+    } catch(e) {
+        console.error('Backup error:', e);
+        return false;
     }
-    // Limpiar caché
-    if ('caches' in window) {
-        caches.keys().then(function(names) {
-            names.forEach(function(name) { caches.delete(name); });
-        });
-    }
-    // Recargar forzando descarga nueva
-    setTimeout(function() {
-        window.location.href = window.location.href.split('?')[0] + '?v=' + Date.now();
-    }, 800);
 }
-function mostrarPalabraDelDia() {
-    var pool = (typeof MAZOS_VOCAB !== 'undefined' && MAZOS_VOCAB.length) ? MAZOS_VOCAB : null;
-    if (!pool) { setTimeout(mostrarPalabraDelDia, 400); return; }
-    var today = new Date();
-    var seed = today.getFullYear() * 10000 + (today.getMonth()+1) * 100 + today.getDate();
-    var idx = seed % pool.length;
-    var card = pool[idx];
-    if (!card) return;
-    var el = document.getElementById('palabra-del-dia');
-    if (!el) return;
-    var palabra = card.word || card.a || '';
-    var def = card.def || card.q || '';
-    var pos_gram = card.pos || '';
-    el.innerHTML =
-        '<div style="font-size:0.7rem;color:var(--accent);font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:6px;">📖 Palabra del día</div>' +
-        '<div style="font-size:1.2rem;font-weight:800;color:var(--text);margin-bottom:2px;">' + palabra +
-            (pos_gram ? ' <span style="font-size:0.7rem;color:var(--muted);font-weight:400;">(' + pos_gram + ')</span>' : '') + '</div>' +
-        '<div style="font-size:0.8rem;color:var(--muted);line-height:1.5;margin-top:4px;">' + def.substring(0,140) + (def.length>140?'…':'') + '</div>' +
-        '<div style="font-size:0.7rem;color:var(--accent);margin-top:8px;">Pulsa para practicar RAE →</div>';
-    el.style.display = 'block';
+
+function restaurarProgreso(event) {
+    var file = event.target.files[0];
+    if (!file) return;
+    var reader = new FileReader();
+    reader.onload = function(e) {
+        try {
+            var parsed = JSON.parse(e.target.result);
+            // Soportar formato nuevo {exportado, datos} y formato antiguo directo
+            var datos = parsed.datos || parsed;
+            var count = 0;
+            Object.keys(datos).forEach(function(key) {
+                localStorage.setItem(key, datos[key]);
+                count++;
+            });
+            showToast('✅ Progreso restaurado — ' + count + ' registros', 3000);
+            setTimeout(function() { window.location.reload(); }, 1500);
+        } catch(err) {
+            showToast('❌ Archivo inválido o corrupto');
+        }
+    };
+    reader.readAsText(file);
+}
+
+function actualizarApp() {
+    // PASO 1: Auto-backup ANTES de actualizar — siempre, sin excepción
+    showToast('💾 Guardando progreso antes de actualizar...', 2000);
+    var backupOk = backupProgreso();
+
+    // PASO 2: Limpiar solo caché SW, NUNCA localStorage
+    setTimeout(function() {
+        var promises = [];
+        if ('serviceWorker' in navigator) {
+            promises.push(
+                navigator.serviceWorker.getRegistrations().then(function(regs) {
+                    return Promise.all(regs.map(function(r) { return r.unregister(); }));
+                })
+            );
+        }
+        if ('caches' in window) {
+            promises.push(
+                caches.keys().then(function(names) {
+                    return Promise.all(names.map(function(name) { return caches.delete(name); }));
+                })
+            );
+        }
+        Promise.all(promises).then(function() {
+            showToast('🔄 Actualizando...', 1000);
+            setTimeout(function() {
+                // Recarga simple sin ?v= para no perder localStorage en PWA
+                window.location.reload(true);
+            }, 800);
+        });
+    }, 1500);
 }
 
 </script>
