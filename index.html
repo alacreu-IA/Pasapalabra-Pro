@@ -1067,6 +1067,9 @@ html, body {
         <button onclick="actualizarApp()" style="width:100%; background:transparent; border:1px solid var(--border); color:var(--muted); border-radius:14px; padding:14px; font-family:'Space Grotesk',sans-serif; font-size:0.9rem; cursor:pointer; display:flex; align-items:center; justify-content:center; gap:8px;">
             🔄 Actualizar app
         </button>
+        <button onclick="rescatarTodo()" style="width:100%; background:#f0c040; color:#1a1a2e; border:none; border-radius:14px; padding:14px; font-family:'Space Grotesk',sans-serif; font-size:0.95rem; font-weight:700; cursor:pointer; display:flex; align-items:center; justify-content:center; gap:8px;">
+            🆘 Rescatar mi progreso
+        </button>
         <div style="display:flex; gap:10px;">
             <button onclick="backupProgreso()" style="flex:1; background:transparent; border:1px solid var(--border); color:var(--muted); border-radius:14px; padding:12px 8px; font-family:'Space Grotesk',sans-serif; font-size:0.82rem; cursor:pointer; display:flex; align-items:center; justify-content:center; gap:6px;">
                 💾 Guardar progreso
@@ -11397,7 +11400,6 @@ window.onload = function () {
     document.getElementById('home').classList.add('active');
 
     if (!localStorage.getItem('terms_accepted_v2')) {
-        // Show terms — remove hidden class so overlay is visible
         document.getElementById('terms-overlay').classList.remove('hidden');
     } else {
         document.getElementById('terms-overlay').classList.add('hidden');
@@ -11405,7 +11407,43 @@ window.onload = function () {
     updateStreak();
     loadDeckInfo();
     updateDifHomeCount();
+
+    // AUTO-BACKUP DIARIO: se descarga un JSON completo una vez al día
+    // Si Noemi abre la app cada día, siempre hay un backup reciente en Descargas
+    autoBackupDiario();
 };
+
+function autoBackupDiario() {
+    try {
+        var today = new Date().toISOString().slice(0, 10);
+        var lastBackup = localStorage.getItem('last_auto_backup');
+        // Solo una vez al día, y solo si hay datos que guardar
+        var difs = JSON.parse(localStorage.getItem('dificiles') || '[]');
+        if (lastBackup === today || difs.length === 0) return;
+
+        // Recopilar TODO el localStorage
+        var backup = { exportado: new Date().toISOString(), datos: {} };
+        for (var i = 0; i < localStorage.length; i++) {
+            var key = localStorage.key(i);
+            backup.datos[key] = localStorage.getItem(key);
+        }
+
+        var blob = new Blob([JSON.stringify(backup, null, 2)], { type: 'application/json' });
+        var a = document.createElement('a');
+        a.href = URL.createObjectURL(blob);
+        a.download = 'backup_noemi_' + today + '.json';
+        document.body.appendChild(a);
+        a.click();
+        setTimeout(function() {
+            document.body.removeChild(a);
+            URL.revokeObjectURL(a.href);
+        }, 500);
+
+        localStorage.setItem('last_auto_backup', today);
+    } catch(e) {
+        console.warn('Auto-backup falló:', e);
+    }
+}
 
 // ============================================================
 //  STREAK
@@ -12824,6 +12862,38 @@ function openMapNow(el) {
     var url = el.dataset ? el.dataset.url : el.getAttribute('data-url');
     if (url) openExternalUrl(url);
 }
+function rescatarTodo() {
+    try {
+        var datos = {};
+        var total = localStorage.length;
+        for (var i = 0; i < localStorage.length; i++) {
+            var key = localStorage.key(i);
+            datos[key] = localStorage.getItem(key);
+        }
+        // Mostrar resumen
+        var difs = [];
+        try { difs = JSON.parse(datos['dificiles'] || '[]'); } catch(e) {}
+        var srs = Object.keys(datos).filter(function(k) { return k.startsWith('srs_'); }).length;
+        
+        if (total === 0) {
+            showToast('❌ No hay datos guardados en este dispositivo', 3000);
+            return;
+        }
+        
+        var backup = { exportado: new Date().toISOString(), total_claves: total, datos: datos };
+        var blob = new Blob([JSON.stringify(backup, null, 2)], { type: 'application/json' });
+        var a = document.createElement('a');
+        a.href = URL.createObjectURL(blob);
+        a.download = 'rescate_noemi_' + new Date().toISOString().slice(0, 10) + '.json';
+        document.body.appendChild(a);
+        a.click();
+        setTimeout(function() { document.body.removeChild(a); URL.revokeObjectURL(a.href); }, 500);
+        showToast('✅ Rescatado: ' + difs.length + ' difíciles, ' + srs + ' SRS, ' + total + ' claves', 4000);
+    } catch(e) {
+        showToast('❌ Error al rescatar: ' + e.message);
+    }
+}
+
 function backupProgreso() {
     try {
         var backup = { exportado: new Date().toISOString(), datos: {} };
