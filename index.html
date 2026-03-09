@@ -1067,7 +1067,7 @@ html, body {
         <button onclick="actualizarApp()" style="width:100%; background:transparent; border:1px solid var(--border); color:var(--muted); border-radius:14px; padding:14px; font-family:'Space Grotesk',sans-serif; font-size:0.9rem; cursor:pointer; display:flex; align-items:center; justify-content:center; gap:8px;">
             🔄 Actualizar app
         </button>
-        <button onclick="rescatarTodo()" style="width:100%; background:#f0c040; color:#1a1a2e; border:none; border-radius:14px; padding:14px; font-family:'Space Grotesk',sans-serif; font-size:0.95rem; font-weight:700; cursor:pointer; display:flex; align-items:center; justify-content:center; gap:8px;">
+        <button onclick="rescatarTodo()" style="width:100%; background:#f0c040; color:#1a1a2e; border:none; border-radius:14px; padding:14px; font-family:'Space Grotesk',sans-serif; font-size:0.95rem; font-weight:700; cursor:pointer; display:flex; align-items:center; justify-content:center; gap:8px; margin-bottom:10px;">
             🆘 Rescatar mi progreso
         </button>
         <div style="display:flex; gap:10px;">
@@ -11417,11 +11417,12 @@ function autoBackupDiario() {
     try {
         var today = new Date().toISOString().slice(0, 10);
         var lastBackup = localStorage.getItem('last_auto_backup');
-        // Solo una vez al día, y solo si hay datos que guardar
-        var difs = JSON.parse(localStorage.getItem('dificiles') || '[]');
-        if (lastBackup === today || difs.length === 0) return;
+        // Solo una vez al día
+        if (lastBackup === today) return;
+        // Solo si hay datos reales (más de 3 claves significa que ha jugado)
+        if (localStorage.length <= 3) return;
 
-        // Recopilar TODO el localStorage
+        // Recopilar TODO el localStorage sin excepción
         var backup = { exportado: new Date().toISOString(), datos: {} };
         for (var i = 0; i < localStorage.length; i++) {
             var key = localStorage.key(i);
@@ -11440,6 +11441,7 @@ function autoBackupDiario() {
         }, 500);
 
         localStorage.setItem('last_auto_backup', today);
+        console.log('Auto-backup OK: ' + localStorage.length + ' claves guardadas');
     } catch(e) {
         console.warn('Auto-backup falló:', e);
     }
@@ -12864,34 +12866,24 @@ function openMapNow(el) {
 }
 function rescatarTodo() {
     try {
-        var datos = {};
         var total = localStorage.length;
+        if (total === 0) { showToast('❌ No hay datos en este dispositivo', 3000); return; }
+        var datos = {};
         for (var i = 0; i < localStorage.length; i++) {
             var key = localStorage.key(i);
             datos[key] = localStorage.getItem(key);
         }
-        // Mostrar resumen
-        var difs = [];
-        try { difs = JSON.parse(datos['dificiles'] || '[]'); } catch(e) {}
-        var srs = Object.keys(datos).filter(function(k) { return k.startsWith('srs_'); }).length;
-        
-        if (total === 0) {
-            showToast('❌ No hay datos guardados en este dispositivo', 3000);
-            return;
-        }
-        
+        var difs = []; try { difs = JSON.parse(datos['dificiles'] || '[]'); } catch(e) {}
+        var srs = Object.keys(datos).filter(function(k){ return k.startsWith('srs_'); }).length;
         var backup = { exportado: new Date().toISOString(), total_claves: total, datos: datos };
         var blob = new Blob([JSON.stringify(backup, null, 2)], { type: 'application/json' });
         var a = document.createElement('a');
         a.href = URL.createObjectURL(blob);
-        a.download = 'rescate_noemi_' + new Date().toISOString().slice(0, 10) + '.json';
-        document.body.appendChild(a);
-        a.click();
-        setTimeout(function() { document.body.removeChild(a); URL.revokeObjectURL(a.href); }, 500);
+        a.download = 'rescate_noemi_' + new Date().toISOString().slice(0,10) + '.json';
+        document.body.appendChild(a); a.click();
+        setTimeout(function(){ document.body.removeChild(a); URL.revokeObjectURL(a.href); }, 500);
         showToast('✅ Rescatado: ' + difs.length + ' difíciles, ' + srs + ' SRS, ' + total + ' claves', 4000);
-    } catch(e) {
-        showToast('❌ Error al rescatar: ' + e.message);
-    }
+    } catch(e) { showToast('❌ Error: ' + e.message); }
 }
 
 function backupProgreso() {
