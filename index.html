@@ -868,7 +868,6 @@ html, body {
 
     <div class="scroll-body">
 
-        <div id="palabra-del-dia" style="display:none;background:linear-gradient(135deg,rgba(255,200,0,0.08),rgba(255,200,0,0.03));border:1px solid rgba(255,200,0,0.2);border-radius:16px;padding:14px 16px;margin-bottom:16px;cursor:pointer;" onclick="goTo('rae');initRaeIfNeeded();"></div>
 
         <div class="section-label">Modo de estudio</div>
         <div class="mode-grid">
@@ -1116,17 +1115,16 @@ html, body {
         <div class="grp-defs" id="card-defs"></div>
         <div id="card-extra"></div>
         <a class="rae-link" id="card-rae-link" href="#" target="_blank">📖 Ver en la RAE</a>
+        <div class="rating-btns" style="padding:10px 0 4px; flex-shrink:0;">
+            <button id="btn-bad"  onclick="rate(1)">✖ No sé</button>
+            <button id="btn-mid"  onclick="rate(3)">🔄 Regular</button>
+            <button id="btn-good" onclick="rate(5)">✔ ¡La sé!</button>
+        </div>
     </div>
 
     <!-- fantasma para compatibilidad con flipCard() -->
     <div style="display:none">
         <div id="flashcard"><div id="card-front"></div><div id="card-back"></div></div>
-    </div>
-
-    <div class="rating-btns">
-        <button id="btn-bad"  onclick="rate(1)">✖ No sé</button>
-        <button id="btn-mid"  onclick="rate(3)">🔄 Regular</button>
-        <button id="btn-good" onclick="rate(5)">✔ ¡La sé!</button>
     </div>
 </div>
 
@@ -11727,6 +11725,11 @@ window.startSmartStudy = function(deckId) {
    }
 
    if (studyDeck.length === 0) return;
+   var sa = document.getElementById('study-area');
+   if (sa) sa.style.display = 'flex';
+   var resDiv = document.getElementById('estudio-resumen');
+   if (resDiv) resDiv.style.display = 'none';
+   studySessionTotal = 0; studySessionBien = 0; studySessionMal = 0;
    document.getElementById('view-smart-study').style.display = 'flex';
    nextStudyCard();
 };
@@ -11776,7 +11779,8 @@ window.startSmartStudyAll = function(deckId) {
 
 
 window.nextStudyCard = function() {
-
+   // Re-habilitar botones de acción
+   document.querySelectorAll('#study-actions button').forEach(function(b){ b.disabled = false; });
     if (!studyDeck.length) {
         // Mostrar resumen de sesión de estudio
         mostrarResumenEstudio();
@@ -11873,6 +11877,8 @@ window.flipStudyCard = function() {
 };
 
 window.scoreStudy = function(score) {
+   // Deshabilitar botones inmediatamente para evitar doble clic
+   document.querySelectorAll('#study-actions button').forEach(function(b){ b.disabled = true; });
    const card = studyDeck.shift(); 
    if (!card) return;
    const id = card?.q ?? card?.def ?? ''; 
@@ -11983,7 +11989,7 @@ function goTo(id) {
     document.getElementById(id).classList.add('active');
 
     // Side effects por pantalla
-    if (id === 'home')      { loadDeckInfo(); updateDifHomeCount(); mostrarPalabraDelDia(); }
+    if (id === 'home')      { loadDeckInfo(); updateDifHomeCount(); }
     if (id === 'dificiles') { renderDificiles(); }
     if (id === 'creator')   { renderCustomList(); }
     if (id === 'rosco')     { startRosco(); } // mode set before arriving
@@ -12035,7 +12041,51 @@ window.onload = function () {
     // AUTO-BACKUP DIARIO: se descarga un JSON completo una vez al día
     // Si Noemi abre la app cada día, siempre hay un backup reciente en Descargas
     autoBackupDiario();
+    setTimeout(avisoViernes, 1500);
 };
+
+function avisoViernes() {
+    var hoy = new Date();
+    if (hoy.getDay() !== 5) return;
+    var semana = hoy.getFullYear() + '-W' + Math.ceil((hoy - new Date(hoy.getFullYear(),0,1)) / 604800000);
+    if (localStorage.getItem('aviso_viernes_visto') === semana) return;
+    localStorage.setItem('aviso_viernes_visto', semana);
+
+    var mensajes = [
+        "[Pasapalabra Pro – Support Bot 🤖]\n📅 Viernes detectado. Protocolo de Backup activado.\n\nNoe, envía tu JSON de progreso a Andrea.\n\nUn pequeño JSON semanal mantiene los roscos a salvo, la app tranquila y a la desarrolladora lejos de reuniones incómodas investigando qué ha pasado.\n\nTiempo estimado: 12 segundos.\n\nEl sistema recuerda que un backup a tiempo evita sustos, teorías conspiranoicas y desarrolladoras mirando el código a las 23:47 preguntándose \"pero esto quién lo ha roto\".\n\nGracias por confiar en Pasapalabra Pro. 🤖",
+        "Viernes detectado 🚨 La desarrolladora ha tenido una semana muy dura. No la hagas llorar. Guarda el JSON.",
+        "Es viernes, Noe. Andrea tiene familia, hipoteca y ansiedad. Un JSON tuyo al mes la mantiene estable. 💾",
+        "Recordatorio semanal de tu desarrolladora favorita (y única): si pierdes el progreso, esta vez sí me jubilo. 🫡",
+        "Feliz viernes 🎉 Andrea no pide mucho. Solo el JSON. Y que no la despidas. Y paz mundial. Pero sobre todo el JSON.",
+        "Oye. Es viernes. Tu desarrolladora sigue en activo porque tú guardas el backup. No rompas esa racha. 📂",
+        "El bote te espera, Noemi. Pero Andrea también. Con el JSON en la mano. No la dejes esperando. 🙏",
+        "Protocolo viernes activado 🔐 La desarrolladora promete no tocarte nada si le mandas el backup. Trato justo.",
+        "Es viernes y Andrea tiene los nervios a flor de piel. Un JSON tuyo es terapia para las dos. 💆‍♀️"
+    ];
+    var msg = mensajes[Math.floor(Math.random() * mensajes.length)];
+
+    var overlay = document.createElement('div');
+    overlay.id = 'aviso-viernes-overlay';
+    overlay.style.cssText = 'position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,0.7);z-index:9999;display:flex;align-items:center;justify-content:center;padding:20px;';
+    var box = document.createElement('div');
+    box.style.cssText = 'background:#1a1a2e;border:1px solid rgba(240,192,64,0.4);border-radius:20px;padding:28px 24px;max-width:320px;width:100%;text-align:center;font-family:Space Grotesk,sans-serif;';
+    box.innerHTML = '<div style="font-size:2.5rem;margin-bottom:12px;">📅</div>' +
+        '<div style="color:#f0c040;font-weight:700;font-size:1.1rem;margin-bottom:10px;">Recordatorio semanal</div>' +
+        '<div style="color:#ccc;font-size:0.9rem;line-height:1.5;margin-bottom:20px;white-space:pre-line;text-align:left;">' + msg + '</div>' +
+        '<div style="display:flex;gap:10px;">' +
+        '<button id="aviso-guardar-btn" style="flex:1;background:#f0c040;color:#000;border:none;border-radius:12px;padding:13px;font-weight:700;font-size:0.9rem;cursor:pointer;font-family:Space Grotesk,sans-serif;">💾 Guardar ahora</button>' +
+        '<button id="aviso-despues-btn" style="flex:1;background:transparent;border:1px solid #555;color:#aaa;border-radius:12px;padding:13px;font-size:0.9rem;cursor:pointer;font-family:Space Grotesk,sans-serif;">Después</button>' +
+        '</div>';
+    overlay.appendChild(box);
+    document.body.appendChild(overlay);
+    document.getElementById('aviso-guardar-btn').addEventListener('click', function() {
+        backupProgreso();
+        document.getElementById('aviso-viernes-overlay').remove();
+    });
+    document.getElementById('aviso-despues-btn').addEventListener('click', function() {
+        document.getElementById('aviso-viernes-overlay').remove();
+    });
+}
 
 function autoBackupDiario() {
     try {
@@ -12312,10 +12362,10 @@ function checkGameAnswer() {
     // Los botones de valoración siguen apareciendo para que ella decida el intervalo
     showRatingBtns('game');
 
-    // Scroll a los botones para que siempre sean visibles
+    // Scroll al panel de resultado para ver los botones
     setTimeout(function() {
-        var btns = document.querySelector('.rating-btns');
-        if (btns) btns.scrollIntoView({ behavior: 'smooth', block: 'end' });
+        var panel = document.getElementById('game-result-phase');
+        if (panel) panel.scrollTop = panel.scrollHeight;
     }, 150);
 
     if (isCorrect && typeof spawnConfetti === 'function') {
