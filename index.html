@@ -800,6 +800,47 @@ html, body {
     line-height: 1.5; flex-shrink: 0;
 }
 
+
+/* ===== CURIOSIDAD DEL DÍA ===== */
+#btn-curiosidad {
+  display: inline-flex; align-items: center; gap: 7px;
+  padding: 8px 18px; border-radius: 20px;
+  border: 2px solid #f0a500; background: transparent;
+  color: #f0a500; font-size: 0.82rem; font-weight: 700;
+  cursor: pointer; transition: all 0.25s ease;
+  font-family: 'Space Grotesk', sans-serif; letter-spacing: 0.03em;
+}
+#btn-curiosidad:hover:not(.vista) { background: #f0a500; color: #fff; }
+#btn-curiosidad.vista {
+  border-color: var(--border); color: var(--muted);
+  opacity: 0.5; cursor: default; pointer-events: none;
+}
+#cur-modal {
+  position: fixed; inset: 0; background: rgba(0,0,0,0.65);
+  z-index: 9999; display: flex; align-items: flex-end; justify-content: center;
+}
+#cur-modal.hidden { display: none; }
+#cur-modal-box {
+  background: var(--card, #1a1a2e); border-radius: 22px 22px 0 0;
+  width: 100%; max-width: 520px; max-height: 82vh; overflow-y: auto;
+  padding: 28px 22px 40px; color: var(--text, #eee);
+  animation: cur-up 0.3s cubic-bezier(.22,1,.36,1);
+}
+@keyframes cur-up {
+  from { transform: translateY(100%); opacity: 0; }
+  to   { transform: translateY(0);    opacity: 1; }
+}
+.cur-tipo   { font-size:0.72rem; font-weight:800; letter-spacing:0.12em; color:#f0a500; text-transform:uppercase; margin-bottom:10px; }
+.cur-titulo { font-size:1.18rem; font-weight:800; line-height:1.3; margin-bottom:14px; }
+.cur-texto  { font-size:0.95rem; line-height:1.65; opacity:0.88; margin-bottom:12px; }
+.cur-num    { font-size:0.7rem; opacity:0.35; text-align:right; margin-bottom:22px; }
+.cur-cerrar { width:100%; padding:13px; border-radius:14px; border:none; background:#f0a500; color:#fff; font-weight:700; font-size:0.95rem; cursor:pointer; margin-bottom:24px; font-family:'Space Grotesk',sans-serif; }
+.cur-historico  { border-top:1px solid rgba(255,255,255,0.08); padding-top:18px; }
+.cur-hist-label { font-size:0.72rem; font-weight:700; letter-spacing:0.1em; opacity:0.4; text-transform:uppercase; margin-bottom:14px; }
+.cur-hist-item  { display:flex; gap:12px; margin-bottom:14px; align-items:flex-start; }
+.cur-hist-ico   { font-size:1.2rem; flex-shrink:0; margin-top:2px; }
+.cur-hist-nom   { font-size:0.82rem; font-weight:700; margin-bottom:3px; }
+.cur-hist-txt   { font-size:0.78rem; opacity:0.6; line-height:1.45; }
 </style>
 </head>
 <body>
@@ -872,6 +913,11 @@ html, body {
     </div>
 
     <div class="scroll-body">
+
+        <!-- Curiosidad del día -->
+        <div style="text-align:center; padding: 4px 0 16px;">
+            <button id="btn-curiosidad" onclick="abrirCuriosidad()">💡 Curiosidad del día</button>
+        </div>
 
         <div class="section-label">Modo de estudio</div>
         <div class="mode-grid">
@@ -1083,6 +1129,14 @@ html, body {
             </div>
         </div>
     </div>
+</div>
+
+<!-- Modal Curiosidad del Día -->
+<div id="cur-modal" class="hidden" onclick="if(event.target===this)cerrarCuriosidad()">
+  <div id="cur-modal-box">
+    <div id="cur-modal-contenido"></div>
+    <button class="cur-cerrar" onclick="cerrarCuriosidad()">Cerrar</button>
+  </div>
 </div>
 
 <!-- ================================================================
@@ -13838,6 +13892,454 @@ function showTermsAgain() {
 // ============================================================
 //  INIT
 // ============================================================
+// ============================================================
+// CURIOSIDADES DEL DÍA — 365 entradas, en orden desde el primer uso
+// ============================================================
+const curiosidades = [
+  { id: 1, tipo: "CIENCIA", icono: "🔬", titulo: "EL SOMBRERERO LOCO Y EL MERCURIO", texto: "La expresión 'loco como un sombrerero' nació porque los fabricantes de sombreros sufrían daños neurológicos al inhalar vapores de mercurio." },
+  { id: 2, tipo: "MUSICA", icono: "🎵", titulo: "VAINA LOCA Y EL SUR", texto: "En el éxito 'Vaina Loca' de Ozuna y Manuel Turizo, la frase 'ella quiere que baje pal sur' se hizo viral por su doble sentido." },
+  { id: 3, tipo: "CINE", icono: "🎬", titulo: "EL FINAL DE HABITACIÓN EN ROMA", texto: "La escena final donde Elena Anaya corre por la calle fue improvisada, capturando las reacciones reales de la gente que pasaba." },
+  { id: 4, tipo: "HISTORIA", icono: "🏛️", titulo: "LA GUERRA DE LOS EMÚES", texto: "En 1932, Australia declaró la guerra a una plaga de emúes enviando al ejército con ametralladoras. Curiosamente, los emúes ganaron." },
+  { id: 5, tipo: "PALABRA", icono: "📚", titulo: "MURCIÉLAGO Y LAS CINCO VOCALES", texto: "Aunque 'murciélago' es famosa por tener las cinco vocales, palabras como 'euforia', 'arquitecto' o 'ayuntamiento' también las contienen." },
+  { id: 6, tipo: "CULTURA", icono: "🧠", titulo: "VAN DAMME Y EL BALLET", texto: "Jean-Claude Van Damme estudió ballet 5 años, explicando su flexibilidad y por qué la canción dice 'te rompo la boca como Van Damme'." },
+  { id: 7, tipo: "CIENCIA", icono: "🔬", titulo: "PLÁTANOS RADIACTIVOS", texto: "Los plátanos contienen potasio-40 y son ligeramente radiactivos." },
+  { id: 8, tipo: "MUSICA", icono: "🎵", titulo: "VOLARE Y LOS GRAMMY", texto: "La canción 'Nel blu dipinto di blu', conocida como 'Volare', ganó el primer premio a Grabación del Año en los Grammy de 1959." },
+  { id: 9, tipo: "CINE", icono: "🎬", titulo: "SANGRE DE CHOCOLATE", texto: "En la mítica escena de la ducha de 'Psicosis', Alfred Hitchcock utilizó sirope de chocolate para simular la sangre." },
+  { id: 10, tipo: "HISTORIA", icono: "🏛️", titulo: "CLEOPATRA Y EL IPHONE", texto: "Cleopatra vivió temporalmente más cerca de la invención del iPhone que de la construcción de la Gran Pirámide de Guiza." },
+  { id: 11, tipo: "PALABRA", icono: "📚", titulo: "LA PALABRA MÁS LARGA", texto: "'Electroencefalografista' es reconocida por la RAE como una de las palabras más largas del diccionario español, con 23 letras." },
+  { id: 12, tipo: "CULTURA", icono: "🧠", titulo: "EL SUDOR DE LOS HIPOPÓTAMOS", texto: "Los hipopótamos segregan un sudor rojizo que actúa como protector solar natural y antibiótico." },
+  { id: 13, tipo: "CIENCIA", icono: "🔬", titulo: "YOLO: SOLO MIRAS UNA VEZ", texto: "YOLO (You Only Look Once) es uno de los algoritmos de visión artificial más rápidos para el reconocimiento de objetos en tiempo real." },
+  { id: 14, tipo: "MUSICA", icono: "🎵", titulo: "LA SINCERIDAD DE NANA TRISTE", texto: "'Nana Triste', de Guitarricadelafuente y Natalia Lacunza, se grabó de forma muy íntima y acústica en la habitación de un hotel." },
+  { id: 15, tipo: "CINE", icono: "🎬", titulo: "EL CÓDIGO DEL MATRIX", texto: "El icónico código verde que cae en 'The Matrix' está compuesto en realidad por recetas de sushi japonesas escaneadas." },
+  { id: 16, tipo: "HISTORIA", icono: "🏛️", titulo: "OXFORD ANTES QUE LOS AZTECAS", texto: "La Universidad de Oxford se fundó en el año 1096, mucho antes de que se estableciera el Imperio Azteca en México." },
+  { id: 17, tipo: "PALABRA", icono: "📚", titulo: "¿QUÉ ES UN OXÍMORON?", texto: "Un oxímoron es una figura retórica que usa conceptos contradictorios, como 'silencio ensordecedor' o 'secreto a voces'." },
+  { id: 18, tipo: "CULTURA", icono: "🧠", titulo: "LA LETRA MÁS USADA", texto: "La letra 'E' es la vocal más utilizada tanto en español como en inglés." },
+  { id: 19, tipo: "CIENCIA", icono: "🔬", titulo: "EL AGUA QUE NO CONGELA", texto: "El agua ultrapura puede enfriarse muy por debajo de los 0°C sin congelarse hasta que encuentra una impureza que inicie la cristalización." },
+  { id: 20, tipo: "MUSICA", icono: "🎵", titulo: "EL CONCIERTO EN LA ANTÁRTIDA", texto: "Metallica es la única banda del mundo que ha tocado en los siete continentes, tras dar un concierto en la Antártida en 2013." },
+  { id: 21, tipo: "CINE", icono: "🎬", titulo: "EL RUGIDO DEL LEÓN", texto: "El famoso rugido del león de la productora MGM no es de un león, sino una mezcla de sonidos de tigres y panteras." },
+  { id: 22, tipo: "HISTORIA", icono: "🏛️", titulo: "EL ZAR Y LA BARBA", texto: "Pedro el Grande de Rusia impuso un 'impuesto a la barba' para modernizar la sociedad e imitar el estilo europeo occidental." },
+  { id: 23, tipo: "PALABRA", icono: "📚", titulo: "LA PALABRA QUE NADIE LEE", texto: "La 'bibliofilia' es el amor por los libros, pero comprar libros y no leerlos se llama 'tsundoku' en japonés." },
+  { id: 24, tipo: "CULTURA", icono: "🧠", titulo: "EL CREADOR DE LOS DORITOS", texto: "El inventor de los Doritos, Arch West, pidió que en su funeral se esparcieran estos snacks de queso sobre su tumba." },
+  { id: 25, tipo: "CIENCIA", icono: "🔬", titulo: "CORAZONES DE PULPO", texto: "Los pulpos tienen tres corazones: uno bombea sangre al cuerpo y los otros dos a las branquias." },
+  { id: 26, tipo: "MUSICA", icono: "🎵", titulo: "MOZART Y SU HUMOR", texto: "Mozart compuso una obra coral llamada 'Leck mich im Arsch', que se traduce literalmente como 'Lámeme el trasero'." },
+  { id: 27, tipo: "CINE", icono: "🎬", titulo: "EL DINOSAURIO RECICLADO", texto: "El sonido de los velociraptores comunicándose en 'Jurassic Park' es en realidad el sonido de tortugas apareándose." },
+  { id: 28, tipo: "HISTORIA", icono: "🏛️", titulo: "LA PATA DE MADERA MILITAR", texto: "El general mexicano Santa Anna organizó un funeral de estado con honores militares solo para su pierna amputada en batalla." },
+  { id: 29, tipo: "PALABRA", icono: "📚", titulo: "EL ORIGEN DE 'SALARIO'", texto: "La palabra 'salario' proviene del latín 'salarium', porque en Roma a los soldados a veces se les pagaba con sal." },
+  { id: 30, tipo: "CULTURA", icono: "🧠", titulo: "LOS CUBOS DE LOS WÓMBATS", texto: "El wómbat es el único animal cuyas heces tienen forma de cubo perfecto, lo que evita que rueden cuesta abajo." },
+  { id: 31, tipo: "CIENCIA", icono: "🔬", titulo: "LLUVIA DE DIAMANTES", texto: "En planetas como Neptuno y Urano, las altas presiones hacen que literalmente lluevan diamantes." },
+  { id: 32, tipo: "MUSICA", icono: "🎵", titulo: "EL SILENCIO DE JOHN CAGE", texto: "La obra '4'33\"' del compositor John Cage consiste en cuatro minutos y treinta y tres segundos de absoluto silencio." },
+  { id: 33, tipo: "CINE", icono: "🎬", titulo: "LOS COLORES DEL PADRINO", texto: "En la trilogía de 'El Padrino', la aparición de naranjas en pantalla presagia que pronto habrá una traición o muerte." },
+  { id: 34, tipo: "HISTORIA", icono: "🏛️", titulo: "EL PAPA QUE DESENTERRÓ A OTRO", texto: "En el año 897, el Papa Esteban VI desenterró el cadáver de su predecesor para someterlo a un juicio conocido como el 'Sínodo del Terror'." },
+  { id: 35, tipo: "PALABRA", icono: "📚", titulo: "LA LETRA 'J' ES NUEVA", texto: "La letra 'J' fue la última en añadirse al alfabeto latino; antes de 1524 no existía y se usaba la 'I' en su lugar." },
+  { id: 36, tipo: "CULTURA", icono: "🧠", titulo: "EL SABOR DE LOS PIES", texto: "Las mariposas tienen sensores gustativos en las patas, por lo que saborean la comida simplemente posándose sobre ella." },
+  { id: 37, tipo: "CIENCIA", icono: "🔬", titulo: "EL DÍA MÁS LARGO QUE EL AÑO", texto: "En Venus, un día (rotación sobre su eje) dura más que todo su año (órbita alrededor del Sol)." },
+  { id: 38, tipo: "MUSICA", icono: "🎵", titulo: "LA GUITARRA DE BRIAN MAY", texto: "Brian May, guitarrista de Queen, fabricó su famosa 'Red Special' junto a su padre usando madera de una chimenea antigua." },
+  { id: 39, tipo: "CINE", icono: "🎬", titulo: "EL PRESUPUESTO DE MONTY PYTHON", texto: "Los 'caballos' en 'Los caballeros de la mesa cuadrada' son cocos porque la película no tenía presupuesto para caballos reales." },
+  { id: 40, tipo: "HISTORIA", icono: "🏛️", titulo: "EL EJÉRCITO DE GATOS", texto: "En la batalla de Pelusio, los persas usaron gatos como escudos sabiendo que los egipcios no dispararían a animales sagrados." },
+  { id: 41, tipo: "PALABRA", icono: "📚", titulo: "AMBIDIESTRO SIGNIFICA DERECHO", texto: "La palabra 'ambidiestro' viene del latín y literalmente significa 'que tiene dos manos derechas'." },
+  { id: 42, tipo: "CULTURA", icono: "🧠", titulo: "MÁQUINAS EXPENDEDORAS EN JAPÓN", texto: "Japón tiene una máquina expendedora por cada 23 personas, vendiendo de todo: desde paraguas calientes hasta insectos." },
+  { id: 43, tipo: "CIENCIA", icono: "🔬", titulo: "LA SANGRE AZUL", texto: "La sangre de los cangrejos herradura es azul porque contiene cobre en lugar de hierro, y se usa en laboratorios para detectar toxinas." },
+  { id: 44, tipo: "MUSICA", icono: "🎵", titulo: "LOS BEATLES Y LA LECTURA", texto: "Ninguno de los cuatro miembros de The Beatles sabía leer o escribir partituras musicales de forma tradicional." },
+  { id: 45, tipo: "CINE", icono: "🎬", titulo: "LA EDAD DE SEAN CONNERY", texto: "En 'Indiana Jones y la última cruzada', Connery interpretaba al padre de Harrison Ford aunque solo era 12 años mayor." },
+  { id: 46, tipo: "HISTORIA", icono: "🏛️", titulo: "LA CARTA MÁS CORTA", texto: "Victor Hugo envió a su editor un telegrama con solo '?' para saber cómo iban las ventas de 'Los Miserables'. La respuesta fue '!'." },
+  { id: 47, tipo: "PALABRA", icono: "📚", titulo: "EL TILDAR DE LA 'Ñ'", texto: "La virgulilla sobre la ñ era originalmente otra 'n' pequeña que los monjes copistas escribían encima para ahorrar espacio." },
+  { id: 48, tipo: "CULTURA", icono: "🧠", titulo: "EL COLOR DE LAS ZANAHORIAS", texto: "Las zanahorias originales eran moradas o blancas; las naranjas fueron cultivadas en Holanda en el siglo XVII para honrar a la Casa de Orange." },
+  { id: 49, tipo: "CIENCIA", icono: "🔬", titulo: "EL HUESO MÁS PEQUEÑO", texto: "El estribo, en el oído medio, es el hueso más pequeño del cuerpo humano: mide poco más de 2 milímetros." },
+  { id: 50, tipo: "MUSICA", icono: "🎵", titulo: "LA CANCIÓN DEL CUMPLEAÑOS", texto: "'Cumpleaños Feliz' estuvo bajo derechos de autor hasta 2015, por lo que las películas evitaban usarla para no pagar regalías." },
+  { id: 51, tipo: "CINE", icono: "🎬", titulo: "EL OSCAR DE YESO", texto: "Durante la Segunda Guerra Mundial, por escasez de metales, las estatuillas de los Oscar se fabricaron con yeso pintado." },
+  { id: 52, tipo: "HISTORIA", icono: "🏛️", titulo: "EL FALSO ATAQUE MARCIANO", texto: "En 1938, la dramatización radiofónica de 'La guerra de los mundos' por Orson Welles causó pánico real en EE.UU." },
+  { id: 53, tipo: "PALABRA", icono: "📚", titulo: "LA PALABRA GACHUPÍN", texto: "El término 'gachupín', usado en México para referirse a los españoles, proviene de una palabra náhuatl que significa 'hombre que patea'." },
+  { id: 54, tipo: "CULTURA", icono: "🧠", titulo: "EL INVENTOR DEL MICROONDAS", texto: "El microondas se inventó por accidente cuando un ingeniero que trabajaba con radares notó que el radar le había derretido el chocolate del bolsillo." },
+  { id: 55, tipo: "CIENCIA", icono: "🔬", titulo: "LA DENSIDAD DE SATURNO", texto: "Saturno tiene una densidad tan baja que, si pudieras encontrar una bañera suficientemente grande, el planeta entero flotaría." },
+  { id: 56, tipo: "MUSICA", icono: "🎵", titulo: "LA NOTA MÁS BAJA", texto: "Tim Storms tiene el récord Guinness por la nota más baja cantada, un Sol tan grave que solo los elefantes pueden escucharlo." },
+  { id: 57, tipo: "CINE", icono: "🎬", titulo: "ALIEN Y LA IMPROVISACIÓN", texto: "En 'Alien', las expresiones de terror de los actores al aparecer la criatura son reales porque no sabían lo que iba a pasar." },
+  { id: 58, tipo: "HISTORIA", icono: "🏛️", titulo: "EL VERDADERO CONDE DRÁCULA", texto: "El personaje de Drácula se basó en Vlad el Empalador, príncipe de Valaquia del siglo XV famoso por su extrema crueldad." },
+  { id: 59, tipo: "PALABRA", icono: "📚", titulo: "PALÍNDROMOS LARGOS", texto: "'Reconocer' es uno de los verbos más comunes en español que se lee igual de izquierda a derecha que de derecha a izquierda." },
+  { id: 60, tipo: "CULTURA", icono: "🧠", titulo: "EL MIEDO A LOS OMBLIGOS", texto: "La 'omfalofobia' es el miedo irracional a ver o tocar un ombligo, propio o ajeno." },
+  { id: 61, tipo: "CIENCIA", icono: "🔬", titulo: "EL ADN HUMANO Y LAS BANANAS", texto: "Los seres humanos comparten aproximadamente el 50% de su ADN con los plátanos, por genes fundamentales para el metabolismo celular." },
+  { id: 62, tipo: "MUSICA", icono: "🎵", titulo: "EL PIANO MÁS LARGO", texto: "El piano más largo del mundo mide 5,7 metros, fue construido en Nueva Zelanda y logra bajos espectaculares." },
+  { id: 63, tipo: "CINE", icono: "🎬", titulo: "EL TÍTULO DE TOY STORY", texto: "El título provisional de la primera Toy Story era 'You Are a Toy' (Eres un juguete)." },
+  { id: 64, tipo: "HISTORIA", icono: "🏛️", titulo: "EL VUELO DE LOS WRIGHT", texto: "El primer vuelo de los hermanos Wright duró 12 segundos y recorrió 36 metros, menos que la envergadura de un Boeing 747." },
+  { id: 65, tipo: "PALABRA", icono: "📚", titulo: "EL ORIGEN DE 'ALMOHADA'", texto: "Como casi todas las palabras que empiezan por 'al-', 'almohada' proviene del árabe: 'al-muhadda' (el lugar para la mejilla)." },
+  { id: 66, tipo: "CULTURA", icono: "🧠", titulo: "EL COLOR DEL PISTACHO", texto: "En el pasado, los pistachos importados se teñían de rojo para ocultar las manchas en sus cáscaras provocadas por la recolección manual." },
+  { id: 67, tipo: "CIENCIA", icono: "🔬", titulo: "EL OJO DE LA AVESTRUZ", texto: "El ojo de un avestruz es más grande que su cerebro, lo que explica su excelente vista pero su limitada capacidad para resolver problemas." },
+  { id: 68, tipo: "MUSICA", icono: "🎵", titulo: "LA BATERÍA DE PHIL COLLINS", texto: "El famoso 'Gated Reverb' en 'In the Air Tonight' de Phil Collins fue descubierto completamente por accidente en el estudio." },
+  { id: 69, tipo: "CINE", icono: "🎬", titulo: "LOS SONIDOS DE R2-D2", texto: "Los icónicos pitidos de R2-D2 son una mezcla de un sintetizador analógico y la propia voz del diseñador de sonido." },
+  { id: 70, tipo: "HISTORIA", icono: "🏛️", titulo: "LA BOMBILLA MÁS ANTIGUA", texto: "La 'Bombilla Centenaria' de Livermore, California, lleva encendida casi ininterrumpidamente desde 1901." },
+  { id: 71, tipo: "PALABRA", icono: "📚", titulo: "LA HIPOPOTOMONSTROSESQUIPEDALIOFOBIA", texto: "Irónicamente, esta palabra tan larga es el término técnico para el miedo irracional a las palabras largas." },
+  { id: 72, tipo: "CULTURA", icono: "🧠", titulo: "EL AROMA A LLUVIA", texto: "El olor a tierra mojada tras la lluvia se llama 'petricor' y es provocado por aceites y bacterias del suelo." },
+  { id: 73, tipo: "CIENCIA", icono: "🔬", titulo: "LA INMORTALIDAD DE LA MEDUSA", texto: "La medusa 'Turritopsis dohrnii' es biológicamente inmortal: si envejece, puede revertir su ciclo vital a la etapa de pólipo." },
+  { id: 74, tipo: "MUSICA", icono: "🎵", titulo: "LA SINCRONÍA DEL LÁPIZ", texto: "Antes de los casetes digitales, rebobinar una cinta atascada requería usar un bolígrafo BIC como engranaje manual." },
+  { id: 75, tipo: "CINE", icono: "🎬", titulo: "EL VÉRTIGO DE HITCHCOCK", texto: "Para 'Vértigo', se inventó el efecto de hacer zoom in mientras la cámara retrocede, creando la ilusión de caída." },
+  { id: 76, tipo: "HISTORIA", icono: "🏛️", titulo: "LA TORRE EIFFEL TEMPORAL", texto: "La Torre Eiffel fue construida para la Exposición Universal de 1889 y originalmente estaba destinada a ser desmantelada en 20 años." },
+  { id: 77, tipo: "PALABRA", icono: "📚", titulo: "EL PUNTITO DE LA 'I'", texto: "El punto sobre la 'i' y la 'j' minúsculas recibe el nombre técnico de 'ápice' o 'título'." },
+  { id: 78, tipo: "CULTURA", icono: "🧠", titulo: "EL COLOR DEL UNIVERSO", texto: "Los astrónomos calcularon el color promedio del universo: un tono beige que bautizaron como 'Cosmic Latte'." },
+  { id: 79, tipo: "CIENCIA", icono: "🔬", titulo: "LOS ÁRBOLES SE COMUNICAN", texto: "Los árboles se advierten mutuamente de plagas a través de redes subterráneas de hongos: la 'Wood Wide Web'." },
+  { id: 80, tipo: "MUSICA", icono: "🎵", titulo: "EL HIMNO SIN LETRA", texto: "La Marcha Real española es uno de los cuatro himnos nacionales del mundo que no tiene letra oficial." },
+  { id: 81, tipo: "CINE", icono: "🎬", titulo: "LOS CAMEOS DE STAN LEE", texto: "Stan Lee hizo 37 cameos en películas de Marvel; el primero fue como miembro del jurado en 'El juicio del increíble Hulk' (1989)." },
+  { id: 82, tipo: "HISTORIA", icono: "🏛️", titulo: "EL CORAZÓN DE CHOPIN", texto: "Frédéric Chopin pidió que extrajeran su corazón antes de morir; descansa conservado en coñac dentro de una iglesia en Varsovia." },
+  { id: 83, tipo: "PALABRA", icono: "📚", titulo: "PANGRAMAS DEL ESPAÑOL", texto: "Un pangrama usa todas las letras del alfabeto, como: 'El veloz murciélago hindú comía feliz cardillo y kiwi'." },
+  { id: 84, tipo: "CULTURA", icono: "🧠", titulo: "EL AJEDREZ Y LAS POSIBILIDADES", texto: "Existen más partidas posibles de ajedrez (el número de Shannon) que átomos en todo el universo observable." },
+  { id: 85, tipo: "CIENCIA", icono: "🔬", titulo: "EL FRÍO NO TE RESFRÍA", texto: "Tener frío no causa resfriados; estos son producidos por virus (rinovirus) que se propagan más fácilmente en invierno." },
+  { id: 86, tipo: "MUSICA", icono: "🎵", titulo: "LA PARTITURA CIRCULAR", texto: "El compositor Baude Cordier escribió una pieza llamada 'Tout par compas suy composés' en un manuscrito literal con forma de círculo." },
+  { id: 87, tipo: "CINE", icono: "🎬", titulo: "EL ORIGEN DEL TRÁILER", texto: "Los tráileres se llaman así porque originalmente se proyectaban 'arrastrados' al final de las películas, no al principio." },
+  { id: 88, tipo: "HISTORIA", icono: "🏛️", titulo: "LA VENTA DE ALASKA", texto: "Rusia vendió Alaska a Estados Unidos en 1867 por 7,2 millones de dólares, a unos dos centavos por acre." },
+  { id: 89, tipo: "PALABRA", icono: "📚", titulo: "LA LETRA 'W' Y SU NOMBRE", texto: "En inglés se llama 'double u', revelando que históricamente se formó juntando dos letras 'u'." },
+  { id: 90, tipo: "CULTURA", icono: "🧠", titulo: "EL INVENTO DEL ROMPECABEZAS", texto: "El primer rompecabezas fue creado en 1766 por el cartógrafo John Spilsbury, pegando un mapa sobre madera y cortándolo por los bordes de los países." },
+  { id: 91, tipo: "CIENCIA", icono: "🔬", titulo: "EL ESTÓMAGO QUE SE DISUELVE", texto: "Los ácidos del estómago podrían disolver zinc, por lo que sus paredes se renuevan cada pocos días para no digerirse a sí mismas." },
+  { id: 92, tipo: "MUSICA", icono: "🎵", titulo: "LA AUDICIÓN DE THE BEATLES", texto: "La discográfica Decca rechazó a The Beatles en 1962 alegando que 'los grupos de guitarras estaban pasando de moda'." },
+  { id: 93, tipo: "CINE", icono: "🎬", titulo: "LOS CORTES DE ROCKY", texto: "Stallone tuvo que vender a su perro para sobrevivir, pero lo recompró con su primer sueldo de Rocky y lo incluyó en la película." },
+  { id: 94, tipo: "HISTORIA", icono: "🏛️", titulo: "LAS PIRÁMIDES Y LOS MAMUTS", texto: "Cuando los egipcios construían las Grandes Pirámides, aún quedaban poblaciones de mamuts vivos en la isla de Wrangel." },
+  { id: 95, tipo: "PALABRA", icono: "📚", titulo: "LA PALABRA 'ROBOT'", texto: "La palabra 'robot' proviene del checo 'robota', que significa 'trabajo forzado' o 'servidumbre'." },
+  { id: 96, tipo: "CULTURA", icono: "🧠", titulo: "LOS ZURDOS EN EL MUNDO", texto: "Aproximadamente el 10% de la población mundial es zurda, proporción que se ha mantenido constante a lo largo de la historia." },
+  { id: 97, tipo: "CIENCIA", icono: "🔬", titulo: "LA LUNA SE ALEJA", texto: "La Luna se aleja de la Tierra a unos 3,8 centímetros por año debido a la transferencia de energía mareal." },
+  { id: 98, tipo: "MUSICA", icono: "🎵", titulo: "LA SINFONÍA INCONCLUSA", texto: "Schubert nunca terminó su octava sinfonía no por morir repentinamente, sino porque la abandonó para dedicarse a otras obras." },
+  { id: 99, tipo: "CINE", icono: "🎬", titulo: "EL MIEDO AL TIBURÓN", texto: "El tiburón mecánico de 'Tiburón' fallaba tanto que Spielberg tuvo que sugerir su presencia con música, haciéndolo más aterrador." },
+  { id: 100, tipo: "HISTORIA", icono: "🏛️", titulo: "EL NÚMERO 100", texto: "Los romanos usaban la 'C' para el número 100 porque es la inicial de 'centum'. De ahí vienen 'centena', 'centenario' o 'porcentaje'." },
+  { id: 101, tipo: "PALABRA", icono: "📚", titulo: "LA PALABRA 'QUARK'", texto: "El término 'quark' para las partículas subatómicas fue tomado por el físico Gell-Mann de una frase del 'Finnegans Wake' de James Joyce." },
+  { id: 102, tipo: "CULTURA", icono: "🧠", titulo: "EL ORIGEN DEL CAFÉ", texto: "Según la leyenda, el café fue descubierto por el pastor Kaldi, que notó que sus cabras se volvían hiperactivas tras comer bayas de café." },
+  { id: 103, tipo: "CIENCIA", icono: "🔬", titulo: "EL SUEÑO DE LOS DELFINES", texto: "Los delfines duermen con un hemisferio cerebral a la vez para poder seguir nadando y respirando conscientemente." },
+  { id: 104, tipo: "MUSICA", icono: "🎵", titulo: "EL ORIGEN DEL FLAMENCO", texto: "El flamenco nació del cante jondo de los gitanos andaluces, con influencias árabes y judías." },
+  { id: 105, tipo: "CINE", icono: "🎬", titulo: "LA DURACIÓN DE GONE WITH THE WIND", texto: "'Lo que el viento se llevó' (1939) dura casi cuatro horas y fue la primera película en color en ganar el Oscar a Mejor Película." },
+  { id: 106, tipo: "HISTORIA", icono: "🏛️", titulo: "EL PRIMER HOTEL DEL MUNDO", texto: "El Hoshi Ryokan de Japón, fundado en el 718, es el hotel más antiguo en funcionamiento, regentado por la misma familia durante 46 generaciones." },
+  { id: 107, tipo: "PALABRA", icono: "📚", titulo: "LA ETIMOLOGÍA DE 'PÁNICO'", texto: "La palabra 'pánico' viene del dios griego Pan, cuyo grito repentino en el bosque causaba terror irracional a los caminantes." },
+  { id: 108, tipo: "CULTURA", icono: "🧠", titulo: "EL PESO DE UN MILLÓN DE DÓLARES", texto: "Un millón de dólares en billetes de un dólar pesaría aproximadamente una tonelada métrica." },
+  { id: 109, tipo: "CIENCIA", icono: "🔬", titulo: "EL TIEMPO DE LUZ SOLAR", texto: "La luz del Sol tarda 8 minutos y 20 segundos en llegar a la Tierra, pero el fotón tardó miles de años en escapar del núcleo solar." },
+  { id: 110, tipo: "MUSICA", icono: "🎵", titulo: "LA GUITARRA ELÉCTRICA Y LES PAUL", texto: "Les Paul construyó el primer prototipo funcional de guitarra eléctrica maciza en 1941 usando rieles de tren como cuerpo." },
+  { id: 111, tipo: "CINE", icono: "🎬", titulo: "EL PERSONAJE DE HANNIBAL LECTER", texto: "Hopkins se basó en el habla mecánica y sin parpadeos de HAL 9000 de '2001: Una odisea del espacio' para crear la voz de Hannibal." },
+  { id: 112, tipo: "HISTORIA", icono: "🏛️", titulo: "EL MURO DE BERLÍN Y LOS AÑOS", texto: "El Muro de Berlín estuvo en pie 28 años (1961-1989). La Alemania reunificada lleva ya más de 35 años sin él." },
+  { id: 113, tipo: "PALABRA", icono: "📚", titulo: "LA PALABRA 'LAVABO'", texto: "La palabra 'lavabo' viene del latín litúrgico y significa 'lavaré', siendo la primera palabra del salmo que el sacerdote recitaba al lavarse las manos." },
+  { id: 114, tipo: "CULTURA", icono: "🧠", titulo: "ESTRELLAS Y GRANOS DE ARENA", texto: "Se estima que hay más estrellas en el universo observable que granos de arena en todas las playas y desiertos de la Tierra." },
+  { id: 115, tipo: "CIENCIA", icono: "🔬", titulo: "LA VELOCIDAD DEL ESTORNUDO", texto: "Un estornudo puede propulsar partículas a 160 km/h, y las gotículas pueden viajar hasta 8 metros de distancia." },
+  { id: 116, tipo: "MUSICA", icono: "🎵", titulo: "EL UKELELE Y HAWAII", texto: "El ukelele no es originario de Hawaii: fue llevado allí por inmigrantes portugueses a finales del siglo XIX." },
+  { id: 117, tipo: "CINE", icono: "🎬", titulo: "EL SONIDO DEL SABLE LÁSER", texto: "El zumbido del sable láser se creó combinando el ronroneo de un proyector de cine antiguo y la interferencia de un televisor en un micrófono." },
+  { id: 118, tipo: "HISTORIA", icono: "🏛️", titulo: "EL NACIMIENTO DE LOS IMPERIOS", texto: "El Imperio Romano de Occidente cayó en el 476 d.C., pero el Imperio Bizantino continuó hasta 1453, casi mil años más." },
+  { id: 119, tipo: "PALABRA", icono: "📚", titulo: "EL ORIGEN DE 'CANDIDATO'", texto: "En Roma, los aspirantes a cargo político se vestían de blanco (cándido) para demostrar honradez. De ahí viene 'candidato'." },
+  { id: 120, tipo: "CULTURA", icono: "🧠", titulo: "EL TAMAÑO DE AUSTRALIA", texto: "Australia es más ancha que la Luna: la distancia de este a oeste supera el diámetro del satélite natural de la Tierra." },
+  { id: 121, tipo: "CIENCIA", icono: "🔬", titulo: "EL NÚMERO PI Y SU LONGITUD", texto: "Con solo 39 decimales de π se puede calcular el volumen del universo observable con precisión atómica." },
+  { id: 122, tipo: "MUSICA", icono: "🎵", titulo: "EL CASTRATO MÁS FAMOSO", texto: "Farinelli, el castrato del siglo XVIII, tenía un rango vocal de más de 3 octavas y se dice que su voz hacía llorar a los reyes." },
+  { id: 123, tipo: "CINE", icono: "🎬", titulo: "EL MÉTODO DE DANIEL DAY-LEWIS", texto: "Para 'Mi pie izquierdo', Day-Lewis estuvo en silla de ruedas durante todo el rodaje y exigió que el equipo lo empujara entre tomas." },
+  { id: 124, tipo: "HISTORIA", icono: "🏛️", titulo: "LA GUERRA MÁS CORTA", texto: "La guerra más corta de la historia fue la Anglo-Zanzíbari de 1896, que duró entre 38 y 45 minutos antes de la rendición." },
+  { id: 125, tipo: "PALABRA", icono: "📚", titulo: "LA PALABRA 'HOOLIGAN'", texto: "La palabra 'hooligan' viene de un personaje de cómic irlandés de los años 1890, Patrick Hooligan, conocido por su comportamiento violento." },
+  { id: 126, tipo: "CULTURA", icono: "🧠", titulo: "EL ORIGEN DE LOS GUANTES DE BOXEO", texto: "Los guantes de boxeo no se inventaron para proteger al adversario, sino las manos del boxeador para poder entrenar más tiempo." },
+  { id: 127, tipo: "CIENCIA", icono: "🔬", titulo: "EL FRÍO DEL ESPACIO", texto: "La temperatura del espacio interestelar es de -270,45°C, apenas 2,7 grados por encima del cero absoluto." },
+  { id: 128, tipo: "MUSICA", icono: "🎵", titulo: "LA OBERTURA DE GUILLERMO TELL", texto: "La Obertura de Guillermo Tell de Rossini dura 12 minutos, pero solo se conoce popularmente su cabalgata final de 4 minutos." },
+  { id: 129, tipo: "CINE", icono: "🎬", titulo: "EL CAMEO DE HITCHCOCK", texto: "Alfred Hitchcock apareció en 39 de sus propias películas, casi siempre como transeúnte en segundo plano." },
+  { id: 130, tipo: "HISTORIA", icono: "🏛️", titulo: "EL DESCUBRIMIENTO DE LA PENICILINA", texto: "Fleming descubrió la penicilina en 1928 porque se fue de vacaciones y olvidó limpiar sus cultivos, permitiendo que el moho los contaminara." },
+  { id: 131, tipo: "PALABRA", icono: "📚", titulo: "LA ETIMOLOGÍA DE 'DESASTRE'", texto: "La palabra 'desastre' proviene del italiano 'dis-astro' (mala estrella), fruto de la astrología medieval." },
+  { id: 132, tipo: "CULTURA", icono: "🧠", titulo: "EL INVENTOR DE LAS GAFAS DE SOL", texto: "Los inuit usaban gafas de hueso con ranuras estrechas para protegerse de la ceguera de la nieve hace miles de años." },
+  { id: 133, tipo: "CIENCIA", icono: "🔬", titulo: "LA VELOCIDAD DE LOS NERVIOS", texto: "Los impulsos nerviosos viajan desde 0,5 m/s (dolor lento) hasta 120 m/s en fibras motoras, más rápido que un coche de F1." },
+  { id: 134, tipo: "MUSICA", icono: "🎵", titulo: "EL PIANO Y SUS CUERDAS", texto: "Un piano de cola tiene 88 teclas pero hasta 243 cuerdas, ya que las notas más agudas tienen tres cuerdas cada una para mayor resonancia." },
+  { id: 135, tipo: "CINE", icono: "🎬", titulo: "EL AULLIDO DE TARZÁN", texto: "El famoso grito de Tarzán era una mezcla de la voz de Weissmuller, un violín y la voz de una soprano cantando al revés." },
+  { id: 136, tipo: "HISTORIA", icono: "🏛️", titulo: "EL PRIMER MAPA DEL MUNDO", texto: "El mapa más antiguo conocido es una tablilla de barro babilónica del 600 a.C. que muestra Babilonia como centro del universo." },
+  { id: 137, tipo: "PALABRA", icono: "📚", titulo: "LA PALABRA 'TÓPICO'", texto: "En español 'tópico' puede significar 'lugar común' (del griego 'topos') o 'medicamento de aplicación externa': dos acepciones completamente distintas." },
+  { id: 138, tipo: "CULTURA", icono: "🧠", titulo: "EL ORIGEN DEL BIKINI", texto: "El bikini fue bautizado así en 1946 en honor a las pruebas nucleares que EE.UU. realizaba en el Atolón Bikini." },
+  { id: 139, tipo: "CIENCIA", icono: "🔬", titulo: "EL CEREBRO Y LA ENERGÍA", texto: "El cerebro humano consume el 20% de la energía total del cuerpo a pesar de representar solo el 2% de su peso." },
+  { id: 140, tipo: "MUSICA", icono: "🎵", titulo: "LA EDAD DE MOZART AL COMPONER", texto: "Mozart compuso su primera sinfonía a los 8 años y su primera ópera a los 11, durante una gira por Londres con su familia." },
+  { id: 141, tipo: "CINE", icono: "🎬", titulo: "EL PRESUPUESTO DE AVATAR", texto: "'Avatar' de Cameron costó más de 300 millones y tardó 15 años en producirse. Al estrenarse en 2009, fue la película más taquillera de la historia." },
+  { id: 142, tipo: "HISTORIA", icono: "🏛️", titulo: "LA LENGUA DEL QUECHUA", texto: "El quechua, lengua del Imperio Inca, sigue siendo hablada por unos 8-10 millones de personas en Sudamérica." },
+  { id: 143, tipo: "PALABRA", icono: "📚", titulo: "LA PALABRA 'BONANZA'", texto: "La palabra 'bonanza', popularizada en inglés por la serie de TV, es española y proviene del latín 'bonacia': buen tiempo en el mar." },
+  { id: 144, tipo: "CULTURA", icono: "🧠", titulo: "EL ORIGEN DE LA PIZZA", texto: "La pizza margherita fue creada en Nápoles en 1889 para honrar a la reina Margherita, con los colores de la bandera italiana." },
+  { id: 145, tipo: "CIENCIA", icono: "🔬", titulo: "EL TAMAÑO DE LOS ÁTOMOS", texto: "Si un átomo fuera del tamaño de una catedral, su núcleo sería del tamaño de una mosca. El resto es espacio casi completamente vacío." },
+  { id: 146, tipo: "MUSICA", icono: "🎵", titulo: "EL INSTRUMENTO MÁS DIFÍCIL", texto: "El órgano de tubos es considerado el instrumento más complejo del mundo, pudiendo tener miles de tubos y varios teclados." },
+  { id: 147, tipo: "CINE", icono: "🎬", titulo: "EL PRIMER OSCAR", texto: "La primera ceremonia Oscar se celebró en 1929, duró solo 15 minutos y las categorías ganadoras se anunciaron con tres meses de antelación." },
+  { id: 148, tipo: "HISTORIA", icono: "🏛️", titulo: "EL TELEGRAMA DE ZIMMERMANN", texto: "En 1917, Alemania propuso a México en secreto una alianza contra EE.UU. Su interceptación precipitó la entrada americana en la Gran Guerra." },
+  { id: 149, tipo: "PALABRA", icono: "📚", titulo: "EL ORIGEN DE 'REFRÁN'", texto: "La palabra 'refrán' proviene del francés antiguo 'refrain' (estribillo) y llegó al castellano en el siglo XIII." },
+  { id: 150, tipo: "CULTURA", icono: "🧠", titulo: "EL LIBRO MÁS VENDIDO", texto: "La Biblia es el libro más vendido de la historia, con más de 5.000 millones de copias impresas en más de 2.500 idiomas." },
+  { id: 151, tipo: "CIENCIA", icono: "🔬", titulo: "LA NARIZ QUE DETECTA BILLONES", texto: "El olfato humano puede detectar más de un billón de olores distintos, superando con creces la capacidad de distinguir colores." },
+  { id: 152, tipo: "MUSICA", icono: "🎵", titulo: "EL PRIMER VIDEOCLIP", texto: "Muchos consideran 'Bohemian Rhapsody' de Queen (1975) como el primer videoclip moderno creado para promocionar una canción en televisión." },
+  { id: 153, tipo: "CINE", icono: "🎬", titulo: "EL FONDO VERDE", texto: "La técnica del croma fue inventada en los años 30 para el cine; inicialmente se usaba azul, no verde." },
+  { id: 154, tipo: "HISTORIA", icono: "🏛️", titulo: "LA VUELTA AL MUNDO DE ELCANO", texto: "La expedición de Magallanes y Elcano demostró en 1522 que la Tierra era redonda, partiendo y llegando a Sanlúcar de Barrameda." },
+  { id: 155, tipo: "PALABRA", icono: "📚", titulo: "LA PALABRA 'SILUETA'", texto: "El término 'silueta' viene de Étienne de Silhouette, ministro francés tan tacaño que los retratos baratos en sombra tomaron su nombre." },
+  { id: 156, tipo: "CULTURA", icono: "🧠", titulo: "EL PAPEL HIGIÉNICO EN CHINA", texto: "El papel higiénico fue inventado en China en el siglo VI d.C., aunque el papel general existía allí desde el siglo II a.C." },
+  { id: 157, tipo: "CIENCIA", icono: "🔬", titulo: "EL AGUA EN EL ESPACIO", texto: "Existen nubes de vapor de agua en el espacio interestelar con masas equivalentes a 140 billones de veces toda el agua de los océanos terrestres." },
+  { id: 158, tipo: "MUSICA", icono: "🎵", titulo: "LA FLAUTA DE HUESO", texto: "Las flautas de hueso de buitre encontradas en Alemania, con más de 40.000 años, son los instrumentos musicales más antiguos conocidos." },
+  { id: 159, tipo: "CINE", icono: "🎬", titulo: "EL ACTOR DE VOZ DE MUFASA", texto: "James Earl Jones, la voz de Mufasa en 'El Rey León', es también la voz de Darth Vader, siendo una de las voces más icónicas del cine." },
+  { id: 160, tipo: "HISTORIA", icono: "🏛️", titulo: "EL INCENDIO DE ALEJANDRÍA", texto: "La Gran Biblioteca de Alejandría no fue destruida en un único incendio, sino que fue decayendo gradualmente por múltiples incidentes y abandono." },
+  { id: 161, tipo: "PALABRA", icono: "📚", titulo: "LA PALABRA 'SÁNDWICH'", texto: "El sándwich lleva el nombre del Conde de Sandwich, que en el siglo XVIII pedía carne entre pan para no interrumpir sus partidas de cartas." },
+  { id: 162, tipo: "CULTURA", icono: "🧠", titulo: "EL PESO DEL INTERNET", texto: "Si sumáramos la masa de todos los electrones transportando datos en internet en un momento dado, el peso total sería de unos 50 gramos." },
+  { id: 163, tipo: "CIENCIA", icono: "🔬", titulo: "EL VUELO DE LAS ABEJAS", texto: "Según las primeras ecuaciones aerodinámicas del siglo XX, el vuelo de las abejas era físicamente imposible. El error estaba en las ecuaciones." },
+  { id: 164, tipo: "MUSICA", icono: "🎵", titulo: "EL DO DE PECHO", texto: "El Do5 que los tenores alcanzan en ópera no estaba en las partituras originales de Verdi o Donizetti: fue añadido por los propios cantantes." },
+  { id: 165, tipo: "CINE", icono: "🎬", titulo: "LOS PLATÓS DE STAR WARS", texto: "Las escenas del desierto de Tatooine fueron filmadas en Túnez. Algunas construcciones del set siguen en pie y son visitables por turistas." },
+  { id: 166, tipo: "HISTORIA", icono: "🏛️", titulo: "LA MOMIA MÁS ANTIGUA", texto: "Las momias más antiguas no son egipcias: pertenecen a la cultura Chinchorro del norte de Chile y sur de Perú, con unos 7.000 años." },
+  { id: 167, tipo: "PALABRA", icono: "📚", titulo: "EL ORIGEN DE 'QUIJOTE'", texto: "El nombre 'Quijote' puede derivar del árabe 'qijote' (cuello de armadura) o del catalán 'cuixa' (muslo), parte que la armadura protege." },
+  { id: 168, tipo: "CULTURA", icono: "🧠", titulo: "LAS VELAS DE CUMPLEAÑOS", texto: "La tradición de las velas en la tarta de cumpleaños tiene origen en la Grecia antigua, donde se hacían pasteles con velas para honrar a Artemisa." },
+  { id: 169, tipo: "CIENCIA", icono: "🔬", titulo: "EL HIELO QUE FLOTA", texto: "El hielo flota porque el agua es una de las pocas sustancias que se expande al congelarse, siendo menos densa en sólido que en líquido." },
+  { id: 170, tipo: "MUSICA", icono: "🎵", titulo: "EL ORIGEN DEL JAZZ", texto: "El jazz nació a finales del siglo XIX en Nueva Orleans, de la mezcla de blues, espirituales afroamericanos y música europea de viento." },
+  { id: 171, tipo: "CINE", icono: "🎬", titulo: "LA FRASE DE CASABLANCA", texto: "La frase 'Tócala otra vez, Sam', tan popular en el imaginario colectivo, nunca se pronuncia exactamente así en la película." },
+  { id: 172, tipo: "HISTORIA", icono: "🏛️", titulo: "EL NAUFRAGIO DEL TITANIC", texto: "El Titanic tardó 2 horas y 40 minutos en hundirse. Sus restos descansan a 3.800 metros de profundidad en el Atlántico Norte." },
+  { id: 173, tipo: "PALABRA", icono: "📚", titulo: "LA PALABRA 'CORNUCOPIA'", texto: "La cornucopia proviene de la mitología griega: era el cuerno de Amaltea, nodriza de Zeus, que rebosaba eternamente de alimentos." },
+  { id: 174, tipo: "CULTURA", icono: "🧠", titulo: "EL CONTEO DE LAS ABEJAS", texto: "Una colmena puede contener hasta 80.000 abejas en verano. Su inteligencia colectiva de enjambre rivaliza con sistemas computacionales." },
+  { id: 175, tipo: "CIENCIA", icono: "🔬", titulo: "EL SONIDO BAJO EL AGUA", texto: "El sonido viaja cuatro veces más rápido bajo el agua (1.500 m/s) que en el aire (340 m/s)." },
+  { id: 176, tipo: "MUSICA", icono: "🎵", titulo: "EL BANJO Y SU ORIGEN AFRICANO", texto: "El banjo, icónico de la música country americana, tiene su origen en los laúdes africanos traídos por los esclavos al continente." },
+  { id: 177, tipo: "CINE", icono: "🎬", titulo: "EL GUION DE CITIZEN KANE", texto: "'Ciudadano Kane' de Orson Welles es considerada por muchos la mejor película de todos los tiempos, aunque fue un fracaso de taquilla en 1941." },
+  { id: 178, tipo: "HISTORIA", icono: "🏛️", titulo: "EL PRIMER PERIÓDICO", texto: "El primer periódico impreso fue la 'Relation', publicado en Estrasburgo en 1605. Antes existían hojas manuscritas llamadas 'gazettes' en Venecia." },
+  { id: 179, tipo: "PALABRA", icono: "📚", titulo: "LA PALABRA 'CÓCTEL'", texto: "Una teoría popular sobre 'cocktail' es que proviene de 'cock's tail' (cola de gallo), en referencia a los cócteles de colores vistosos." },
+  { id: 180, tipo: "CULTURA", icono: "🧠", titulo: "EL ORIGEN DE LOS REYES MAGOS", texto: "Los Reyes Magos no son mencionados como reyes ni en número de tres en la Biblia. La tradición surgió de los tres regalos descritos." },
+  { id: 181, tipo: "CIENCIA", icono: "🔬", titulo: "LA PIEL SE RENUEVA", texto: "La epidermis se renueva completamente cada 2-4 semanas, lo que significa que mudamos de piel unas 1.000 veces a lo largo de la vida." },
+  { id: 182, tipo: "MUSICA", icono: "🎵", titulo: "EL THEREMIN Y SU MAGIA", texto: "El theremin es el único instrumento musical que se toca sin contacto físico, controlando volumen y tono por proximidad de las manos a dos antenas." },
+  { id: 183, tipo: "CINE", icono: "🎬", titulo: "LA TRAMPA DEL CINE DE TERROR", texto: "El cine de terror activa las mismas regiones del cerebro que el dolor físico real, lo que explica por qué lo recordamos tan vívidamente." },
+  { id: 184, tipo: "HISTORIA", icono: "🏛️", titulo: "EL IDIOMA DEL VATICANO", texto: "El latín es el idioma oficial del Vaticano, y su banco tiene los únicos cajeros automáticos del mundo en latín." },
+  { id: 185, tipo: "PALABRA", icono: "📚", titulo: "LA PALABRA 'BALCÓN'", texto: "La palabra 'balcón' viene del italiano 'balcone', del germánico 'balko' (viga de madera), referido a la estructura que lo sostiene." },
+  { id: 186, tipo: "CULTURA", icono: "🧠", titulo: "EL ORIGEN DE LA COCA-COLA", texto: "La Coca-Cola fue inventada en 1886 como jarabe medicinal para dolores de cabeza. Originalmente contenía extracto de hoja de coca." },
+  { id: 187, tipo: "CIENCIA", icono: "🔬", titulo: "EL COLOR DEL SOL", texto: "El Sol no es amarillo: es blanco. Aparece amarillo desde la Tierra porque la atmósfera dispersa la luz azul (efecto Rayleigh)." },
+  { id: 188, tipo: "MUSICA", icono: "🎵", titulo: "LA ORQUESTA MÁS GRANDE", texto: "El récord de orquesta más grande lo tiene Venezuela con El Sistema, que reunió a 12.000 músicos tocando simultáneamente en 2019." },
+  { id: 189, tipo: "CINE", icono: "🎬", titulo: "EL MÉTODO DE DUSTIN HOFFMAN", texto: "Para 'Kramer contra Kramer', Hoffman abofeteó a Meryl Streep sin avisar antes de una toma para obtener una reacción auténtica." },
+  { id: 190, tipo: "HISTORIA", icono: "🏛️", titulo: "EL CABALLO DE TROYA", texto: "El Caballo de Troya fue, según la mitología griega, un caballo de madera gigante en cuyo interior se ocultaron soldados griegos para infiltrarse en Troya." },
+  { id: 191, tipo: "PALABRA", icono: "📚", titulo: "EL ORIGEN DE 'ESPADACHÍN'", texto: "La palabra 'espadachín' tiene un sufijo peyorativo (-achín) que originalmente implicaba desprecio: alguien que usa la espada de forma fanfarrona." },
+  { id: 192, tipo: "CULTURA", icono: "🧠", titulo: "EL NÚMERO DE IDIOMAS", texto: "Existen aproximadamente 7.000 idiomas vivos en el mundo, pero se estima que el 40% están en peligro de extinción." },
+  { id: 193, tipo: "CIENCIA", icono: "🔬", titulo: "LA COLA DEL COMETA", texto: "Los cometas desarrollan sus colas al acercarse al Sol, porque el calor evapora sus hielos y el viento solar empuja ese gas lejos del núcleo." },
+  { id: 194, tipo: "MUSICA", icono: "🎵", titulo: "EL FESTIVAL DE WOODSTOCK", texto: "Woodstock 1969 fue un caos total: las vallas se derrumbaron, entró el doble del aforo y la lluvia convirtió el campo en barro." },
+  { id: 195, tipo: "CINE", icono: "🎬", titulo: "EL PRESUPUESTO DE MAD MAX", texto: "'Mad Max' (1979) se filmó con 400.000 dólares australianos y recaudó más de 100 millones, siendo durante décadas la película más rentable de la historia." },
+  { id: 196, tipo: "HISTORIA", icono: "🏛️", titulo: "EL IDIOMA DEL ESPERANTO", texto: "El esperanto fue creado en 1887 por el oftalmólogo polaco Zamenhof para ser una lengua internacional neutral que fomentara la paz." },
+  { id: 197, tipo: "PALABRA", icono: "📚", titulo: "LA PALABRA 'ASESINO'", texto: "La palabra 'asesino' proviene del árabe 'hashshashin' (consumidores de hachís), nombre de una secta medieval famosa por sus magnicidios." },
+  { id: 198, tipo: "CULTURA", icono: "🧠", titulo: "EL TAMAÑO DEL ADN", texto: "Si estiráramos el ADN de todas las células de nuestro cuerpo, llegaría de la Tierra al Sol unas 300 veces." },
+  { id: 199, tipo: "CIENCIA", icono: "🔬", titulo: "EL TIEMPO DE LOS FÓSILES", texto: "Para que los huesos se fosilicen se necesita una combinación muy específica de condiciones geológicas, lo que hace los fósiles extraordinariamente raros." },
+  { id: 200, tipo: "MUSICA", icono: "🎵", titulo: "EL VIOLÍN DE STRADIVARI", texto: "Los instrumentos construidos por Antonio Stradivari hace más de 300 años siguen siendo considerados los mejores violines del mundo." },
+  { id: 201, tipo: "CINE", icono: "🎬", titulo: "EL CINE MUDO Y CHAPLIN", texto: "Chaplin rechazó durante años el cine sonoro. Cuando hizo 'El gran dictador' (1940), su primera película hablada, también era director, guionista y compositor." },
+  { id: 202, tipo: "HISTORIA", icono: "🏛️", titulo: "EL PRIMER ORDENADOR", texto: "El ENIAC, primer ordenador electrónico de propósito general, pesaba 30 toneladas, ocupaba 167 m² y consumía como una pequeña ciudad." },
+  { id: 203, tipo: "PALABRA", icono: "📚", titulo: "LA PALABRA 'CAOS'", texto: "En la mitología griega, Caos no era desorden sino el vacío primordial que existía antes de la creación del universo." },
+  { id: 204, tipo: "CULTURA", icono: "🧠", titulo: "EL ORIGEN DE LA CORBATA", texto: "La corbata nació de los pañuelos al cuello de los soldados croatas del siglo XVII. Los franceses los adoptaron llamándolos 'à la croate', que evolucionó a 'cravate'." },
+  { id: 205, tipo: "CIENCIA", icono: "🔬", titulo: "EL AGUA Y LA MEMORIA", texto: "El agua no tiene memoria científicamente demostrada. Los experimentos del investigador Masaru Emoto nunca han podido replicarse." },
+  { id: 206, tipo: "MUSICA", icono: "🎵", titulo: "LA ÓPERA MÁS CORTA", texto: "La ópera más corta del mundo reconocida por el Guinness es 'The Sands of Time', con una duración de 4 minutos y 9 segundos." },
+  { id: 207, tipo: "CINE", icono: "🎬", titulo: "EL CASTING DE HARRY POTTER", texto: "Los tres protagonistas de Harry Potter fueron elegidos de entre miles de candidatos. Radcliffe fue el último seleccionado, casi dos años después del inicio de la búsqueda." },
+  { id: 208, tipo: "HISTORIA", icono: "🏛️", titulo: "EL ORIGEN DE LOS JUEGOS OLÍMPICOS", texto: "Los primeros Juegos Olímpicos se celebraron en Olimpia en el 776 a.C. en honor a Zeus. Los atletas competían completamente desnudos." },
+  { id: 209, tipo: "PALABRA", icono: "📚", titulo: "EL ORIGEN DE 'CATÁSTROFE'", texto: "La palabra 'catástrofe' proviene del griego 'katastrophé', que en el teatro significaba el desenlace o vuelco final de una obra." },
+  { id: 210, tipo: "CULTURA", icono: "🧠", titulo: "EL VELCRO Y LA NATURALEZA", texto: "El velcro fue inventado en 1941 por el ingeniero George de Mestral, inspirado en los cardos que se pegaban al pelaje de su perro." },
+  { id: 211, tipo: "CIENCIA", icono: "🔬", titulo: "LOS COLORES QUE NO EXISTEN", texto: "El magenta no existe como longitud de onda en el espectro. Es un color que el cerebro inventa para conectar el rojo y el violeta." },
+  { id: 212, tipo: "MUSICA", icono: "🎵", titulo: "EL BAJO DE PAUL MCCARTNEY", texto: "McCartney toca el bajo con la mano izquierda en un instrumento reconvertido al revés, lo que le da un sonido y posición de cuerdas únicos." },
+  { id: 213, tipo: "CINE", icono: "🎬", titulo: "EL UNICORNIO DE BLADE RUNNER", texto: "El origami de unicornio al final de 'Blade Runner' implica que Deckard podría ser un replicante, pues el jefe conoce sus sueños íntimos." },
+  { id: 214, tipo: "HISTORIA", icono: "🏛️", titulo: "EL GALLEGO Y EL PORTUGUÉS", texto: "El gallego y el portugués descienden del mismo idioma medieval: el galaico-portugués. Un gallego puede entender el portugués con relativa facilidad." },
+  { id: 215, tipo: "PALABRA", icono: "📚", titulo: "LA PALABRA 'TRAMPA'", texto: "La palabra 'trampa' es una onomatopeya que imita el sonido de una puerta que se cierra de golpe, aplicada luego a mecanismos de captura." },
+  { id: 216, tipo: "CULTURA", icono: "🧠", titulo: "EL ORIGEN DEL PAPEL", texto: "El papel fue inventado en China por Cai Lun alrededor del año 105 d.C. Tardó mil años en llegar a Europa." },
+  { id: 217, tipo: "CIENCIA", icono: "🔬", titulo: "EL NÚMERO DE NEURONAS", texto: "El cerebro humano tiene unos 86.000 millones de neuronas, no 100.000 millones como se creía: el error viene de una estimación imprecisa de los años 70." },
+  { id: 218, tipo: "MUSICA", icono: "🎵", titulo: "EL CUARTETO DE CUERDA", texto: "El cuarteto de cuerda (dos violines, viola y cello) fue prácticamente inventado por Haydn con sus 68 cuartetos." },
+  { id: 219, tipo: "CINE", icono: "🎬", titulo: "EL FINAL DE 'THE SHINING'", texto: "La última foto de 'El resplandor' de Kubrick, que muestra a Jack en la fiesta de 1921, no aparece en la novela original de Stephen King." },
+  { id: 220, tipo: "HISTORIA", icono: "🏛️", titulo: "EL PRIMER TELÉFONO", texto: "La primera llamada telefónica fue realizada por Bell el 10 de marzo de 1876, cuando llamó a su asistente Watson, en la habitación de al lado." },
+  { id: 221, tipo: "PALABRA", icono: "📚", titulo: "LA PALABRA 'MELANCÓLICO'", texto: "La 'melancolía' proviene del griego 'melas' (negro) y 'kholé' (bilis), porque los griegos creían que era causada por un exceso de bilis negra." },
+  { id: 222, tipo: "CULTURA", icono: "🧠", titulo: "EL AJEDREZ Y LA MEMORIA", texto: "Un jugador amateur maneja miles de posiciones conocidas. Un gran maestro tiene más de 300.000 patrones de juego memorizados." },
+  { id: 223, tipo: "CIENCIA", icono: "🔬", titulo: "LA VELOCIDAD DE LA LUZ", texto: "La velocidad de la luz en el vacío es exactamente 299.792.458 metros por segundo: una constante fundamental que define el metro." },
+  { id: 224, tipo: "MUSICA", icono: "🎵", titulo: "EL CONTRABAJO MÁS GRANDE", texto: "El contrabajo más grande construido y tocable fue creado en 1889, medía 4,8 metros y necesitaba ser tocado con arco desde una escalera." },
+  { id: 225, tipo: "CINE", icono: "🎬", titulo: "EL IDIOMA KLINGON", texto: "El klingon de Star Trek fue desarrollado por el lingüista Marc Okrand y es un idioma completo. Existen traducciones de Hamlet y el Gilgamesh al klingon." },
+  { id: 226, tipo: "HISTORIA", icono: "🏛️", titulo: "EL CÓDIGO SECRETO DE LOS MAYAS", texto: "Los jeroglíficos mayas estuvieron sin descifrar durante siglos. Knorozov propuso en 1952 que representaban sílabas, no solo ideas." },
+  { id: 227, tipo: "PALABRA", icono: "📚", titulo: "LA PALABRA 'BUFÓN'", texto: "La palabra 'bufón' viene del italiano 'buffone', de 'buffare' (soplar, resoplar), en referencia a los gestos cómicos del juglar de corte." },
+  { id: 228, tipo: "CULTURA", icono: "🧠", titulo: "EL ORIGEN DE LAS PALOMITAS", texto: "Las palomitas se venden en cines desde los años 30 de la Gran Depresión, cuando eran el snack más barato para aumentar los ingresos." },
+  { id: 229, tipo: "CIENCIA", icono: "🔬", titulo: "EL DIAMANTE Y EL CARBONO", texto: "El grafito y el diamante están compuestos exactamente del mismo elemento: carbono puro. Su diferencia radical se debe a cómo están ordenados sus átomos." },
+  { id: 230, tipo: "MUSICA", icono: "🎵", titulo: "EL PRIMER SINTETIZADOR", texto: "El primer sintetizador comercial, el Moog, fue presentado en 1964 y revolucionó la música popular con sonidos nunca antes escuchados." },
+  { id: 231, tipo: "CINE", icono: "🎬", titulo: "EL ACTOR MÁS TAQUILLERO", texto: "Samuel L. Jackson ostenta el récord del actor con mayor recaudación acumulada en su carrera: más de 27.000 millones de dólares en taquilla." },
+  { id: 232, tipo: "HISTORIA", icono: "🏛️", titulo: "EL ORIGEN DE LOS VIKINGOS", texto: "'Ir de vikingo' (víkingr) no designaba una etnia sino una actividad: embarcarse en expediciones de comercio y pillaje durante el verano." },
+  { id: 233, tipo: "PALABRA", icono: "📚", titulo: "LA PALABRA 'CENIZA'", texto: "La palabra 'ceniza' comparte raíz latina con Cenicienta: 'Cinderella' en inglés viene de 'cinder' (ceniza), literalmente 'la de la ceniza'." },
+  { id: 234, tipo: "CULTURA", icono: "🧠", titulo: "EL ORIGEN DE LA PIÑATA", texto: "Aunque la piñata es símbolo de México, se originó en China, pasó a Italia con Marco Polo y de allí a España, que la llevó a América." },
+  { id: 235, tipo: "CIENCIA", icono: "🔬", titulo: "LOS HUESOS DE LOS BEBÉS", texto: "Los bebés nacen con unos 270-300 huesos, pero al llegar a adultos solo tienen 206, porque muchos cartílagos se fusionan con el crecimiento." },
+  { id: 236, tipo: "MUSICA", icono: "🎵", titulo: "EL ORIGEN DE LA SALSA", texto: "La salsa surgió en Nueva York en los años 60-70 de la mezcla de ritmos cubanos, puertorriqueños y afroamericanos. No tiene un único origen geográfico." },
+  { id: 237, tipo: "CINE", icono: "🎬", titulo: "EL LENGUAJE DEL CINE", texto: "El 'montaje Kuleshov' demostró que dos planos yuxtapuestos crean un significado que ninguno de los dos tiene por sí solo." },
+  { id: 238, tipo: "HISTORIA", icono: "🏛️", titulo: "EL IDIOMA MÁS HABLADO", texto: "El mandarín es el idioma con más hablantes nativos (920 millones), seguido del español (480 millones). El inglés es tercero en hablantes nativos." },
+  { id: 239, tipo: "PALABRA", icono: "📚", titulo: "LA PALABRA 'ALQUIMIA'", texto: "La palabra 'alquimia' proviene del árabe 'al-kīmiyā', que puede derivar del griego (arte de fundir metales) o del copto (tierra negra, nombre de Egipto)." },
+  { id: 240, tipo: "CULTURA", icono: "🧠", titulo: "LAS SEÑALES DE TRÁFICO", texto: "Las primeras señales de tráfico modernas fueron instaladas en Londres en 1868 para regular el tráfico de carruajes frente al Parlamento, usando gas." },
+  { id: 241, tipo: "CIENCIA", icono: "🔬", titulo: "EL SONIDO QUE NO ESCUCHAMOS", texto: "El rango audible humano es de 20 a 20.000 Hz. Los perros escuchan hasta 65.000 Hz y los murciélagos hasta 200.000 Hz." },
+  { id: 242, tipo: "MUSICA", icono: "🎵", titulo: "EL VIOLÍN Y SU HISTORIA", texto: "El violín fue perfeccionado en el siglo XVI en Cremona por Andrea Amati, cuya tradición heredaron Guarneri y Stradivari." },
+  { id: 243, tipo: "CINE", icono: "🎬", titulo: "EL ORIGEN DEL OSCAR", texto: "La estatuilla del Oscar fue diseñada por Cedric Gibbons en 1928 y representa a un caballero sosteniendo una espada sobre un rollo de película." },
+  { id: 244, tipo: "HISTORIA", icono: "🏛️", titulo: "EL TRATADO MÁS ANTIGUO", texto: "El tratado de paz más antiguo conocido es el de Qadesh, firmado hacia el 1259 a.C. entre el faraón Ramsés II y el rey hitita Hattusili III." },
+  { id: 245, tipo: "PALABRA", icono: "📚", titulo: "LA PALABRA 'TABACO'", texto: "La palabra 'tabaco' proviene del taíno 'tobago' o 'tabago', nombre de la pipa en forma de Y que usaban los indígenas para inhalar el humo." },
+  { id: 246, tipo: "CULTURA", icono: "🧠", titulo: "EL COLOR FAVORITO DEL MUNDO", texto: "Según encuestas en más de 30 países, el azul es el color favorito de la mayor parte de la población mundial, independientemente de la cultura." },
+  { id: 247, tipo: "CIENCIA", icono: "🔬", titulo: "EL ORIGEN DE LA LUNA", texto: "La teoría más aceptada es que la Luna se formó hace 4.500 millones de años tras el impacto de un planeta del tamaño de Marte contra la joven Tierra." },
+  { id: 248, tipo: "MUSICA", icono: "🎵", titulo: "EL ACORDE PROHIBIDO", texto: "El intervalo de tritono fue llamado 'diabolus in musica' en la Edad Media y estaba prohibido en la música religiosa por su disonancia." },
+  { id: 249, tipo: "CINE", icono: "🎬", titulo: "EL MINUTO MÁS LARGO", texto: "En el cine de terror, mostrar el peligro sin que llegue es más efectivo que el susto en sí, según estudios de psicología del suspense." },
+  { id: 250, tipo: "HISTORIA", icono: "🏛️", titulo: "LA INQUISICIÓN ESPAÑOLA", texto: "La Inquisición española ejecutó directamente entre 3.000 y 5.000 personas en sus tres siglos de existencia, según los historiadores actuales." },
+  { id: 251, tipo: "PALABRA", icono: "📚", titulo: "LA PALABRA 'HORARIO'", texto: "La palabra 'horario' procede del latín 'horarius'. En español medieval, 'hora' podía referirse tanto a una unidad de tiempo como a un rezo canónico." },
+  { id: 252, tipo: "CULTURA", icono: "🧠", titulo: "EL TIEMPO VIENDO LA TELE", texto: "El estadounidense promedio pasa más de 4 horas al día viendo televisión, lo que equivale a unos 9 años de vida acumulados." },
+  { id: 253, tipo: "CIENCIA", icono: "🔬", titulo: "EL NÚMERO DE BACTERIAS", texto: "El cuerpo humano alberga más bacterias que células propias: por cada célula humana hay entre 1 y 3 bacterias, principalmente en el intestino." },
+  { id: 254, tipo: "MUSICA", icono: "🎵", titulo: "EL TENOR PAVAROTTI", texto: "Luciano Pavarotti recibió en Berlín una ovación de 165 minutos de aplausos ininterrumpidos: récord mundial según el Libro Guinness." },
+  { id: 255, tipo: "CINE", icono: "🎬", titulo: "EL NACIMIENTO DE LOS EFECTOS DIGITALES", texto: "'Tron' (1982) fue paradójicamente descalificada del Oscar por 'hacer trampa' al usar ordenadores, siendo pionera en animación digital." },
+  { id: 256, tipo: "HISTORIA", icono: "🏛️", titulo: "EL CALENDARIO GREGORIANO", texto: "El calendario gregoriano fue introducido en 1582 por Gregorio XIII. España lo adoptó inmediatamente; Gran Bretaña tardó 170 años." },
+  { id: 257, tipo: "PALABRA", icono: "📚", titulo: "LA PALABRA 'DICCIONARIO'", texto: "El primer diccionario monolingüe español fue el 'Tesoro' de Sebastián de Covarrubias, publicado en 1611." },
+  { id: 258, tipo: "CULTURA", icono: "🧠", titulo: "EL ORIGEN DE LA SIESTA", texto: "El término 'siesta' deriva de la 'hora sexta' romana (el mediodía), cuando el calor invitaba al descanso." },
+  { id: 259, tipo: "CIENCIA", icono: "🔬", titulo: "LA FUERZA DE LOS INSECTOS", texto: "El escarabajo rinoceronte puede cargar 850 veces su peso corporal. Con esa proporción, un humano podría levantar un Airbus A380." },
+  { id: 260, tipo: "MUSICA", icono: "🎵", titulo: "EL ORIGEN DEL BOLERO", texto: "El bolero español (danza) y el bolero latinoamericano (canción romántica) son géneros completamente distintos, nacidos en lugares y épocas diferentes." },
+  { id: 261, tipo: "CINE", icono: "🎬", titulo: "EL ROBO DEL GUION DE PULP FICTION", texto: "El guion de 'Pulp Fiction' fue robado del coche de Tarantino antes del rodaje. El ladrón, sin saber lo que tenía, lo tiró sin leerlo." },
+  { id: 262, tipo: "HISTORIA", icono: "🏛️", titulo: "EL ORIGEN DEL UNIFORME ESCOLAR", texto: "Los primeros uniformes escolares registrados se implantaron en el Christ's Hospital de Londres en 1552, para distinguir a los alumnos de la caridad." },
+  { id: 263, tipo: "PALABRA", icono: "📚", titulo: "LA PALABRA 'CAPRICHO'", texto: "La palabra 'capricho' viene del italiano 'capriccio', posiblemente de 'capro' (cabra), por los saltos imprevisibles del animal." },
+  { id: 264, tipo: "CULTURA", icono: "🧠", titulo: "EL TIEMPO LIBRE DE LOS ROMANOS", texto: "Los ciudadanos de la Roma clásica tenían entre 100 y 150 días festivos al año, muchos con espectáculos públicos gratuitos pagados por el Estado." },
+  { id: 265, tipo: "CIENCIA", icono: "🔬", titulo: "EL SEXTO SENTIDO DE LOS TIBURONES", texto: "Los tiburones detectan los campos eléctricos de sus presas a través de órganos llamados Ampollas de Lorenzini: su sexto sentido." },
+  { id: 266, tipo: "MUSICA", icono: "🎵", titulo: "EL ORIGEN DE LA BACHATA", texto: "La bachata nació en República Dominicana en los años 60 como música popular despreciada por la élite, antes de su reconocimiento internacional." },
+  { id: 267, tipo: "CINE", icono: "🎬", titulo: "EL PRIMER PLANO AMERICANO", texto: "El 'plano americano' (de rodillas a cabeza) recibió su nombre porque era el encuadre habitual en el western para mostrar al vaquero con la mano cerca del revólver." },
+  { id: 268, tipo: "HISTORIA", icono: "🏛️", titulo: "EL ORIGEN DE LA SEMANA", texto: "La semana de 7 días proviene de los babilonios, que la basaron en los 7 astros visibles: Sol, Luna, Marte, Mercurio, Júpiter, Venus y Saturno." },
+  { id: 269, tipo: "PALABRA", icono: "📚", titulo: "LA PALABRA 'QUÓRUM'", texto: "La palabra 'quórum' viene del latín jurídico: era la primera palabra de la fórmula con que se convocaba a ciertos miembros del parlamento inglés." },
+  { id: 270, tipo: "CULTURA", icono: "🧠", titulo: "EL ORIGEN DEL BESO", texto: "Una teoría sugiere que el beso romántico evolucionó del beso madre-hijo para transferir alimentos masticados, práctica aún común en algunas culturas." },
+  { id: 271, tipo: "CIENCIA", icono: "🔬", titulo: "EL CORAZÓN QUE LATE SOLO", texto: "El corazón tiene su propio sistema eléctrico (el nodo sinusal) que genera latidos de forma autónoma, por lo que puede latir fuera del cuerpo si se mantiene irrigado." },
+  { id: 272, tipo: "MUSICA", icono: "🎵", titulo: "EL ORIGEN DEL REGGAE", texto: "El reggae nació en Jamaica a finales de los 60, y Bob Marley lo convirtió en símbolo de resistencia y espiritualidad rastafari a escala mundial." },
+  { id: 273, tipo: "CINE", icono: "🎬", titulo: "EL DIRECTOR MÁS JOVEN EN CANNES", texto: "Xavier Dolan debutó en Cannes con 'J'ai tué ma mère' con solo 20 años, siendo uno de los directores más jóvenes en competir en el festival." },
+  { id: 274, tipo: "HISTORIA", icono: "🏛️", titulo: "EL ORIGEN DEL CÓDIGO MORSE", texto: "El código Morse fue desarrollado en 1836 por Samuel Morse. La primera frase enviada oficialmente fue '¿Qué ha obrado Dios?'." },
+  { id: 275, tipo: "PALABRA", icono: "📚", titulo: "LA PALABRA 'ESPÁRRAGO'", texto: "La palabra 'espárrago' viene del latín y griego 'asparagos'. Aparece en recetarios romanos del siglo I d.C., siendo uno de los vegetales más antiguamente documentados." },
+  { id: 276, tipo: "CULTURA", icono: "🧠", titulo: "LAS GAFAS CON PATILLAS", texto: "Las gafas tardaron casi 300 años en tener patillas después de su invención: inicialmente se sujetaban pellizcando la nariz o atando hilos." },
+  { id: 277, tipo: "CIENCIA", icono: "🔬", titulo: "EL PESO DEL AIRE", texto: "El peso de la columna de atmósfera que nos aplasta equivale a unos 10.000 kilos de fuerza sobre nuestros cuerpos, aunque no lo notamos." },
+  { id: 278, tipo: "MUSICA", icono: "🎵", titulo: "EL ORIGEN DEL MAMBO", texto: "El mambo fue creado por el cubano Pérez Prado en México en los años 40 y se convirtió en fenómeno mundial con su 'Mambo N°5'." },
+  { id: 279, tipo: "CINE", icono: "🎬", titulo: "EL PRIMER LARGOMETRAJE ANIMADO", texto: "'Blancanieves y los siete enanitos' (1937) fue el primer largometraje de animación. La industria lo llamaba 'la locura de Disney' antes de su estreno." },
+  { id: 280, tipo: "HISTORIA", icono: "🏛️", titulo: "EL ORIGEN DEL METRO", texto: "El metro fue definido en 1793 durante la Revolución Francesa como la diezmillonésima parte de la distancia del polo norte al ecuador, a través de París." },
+  { id: 281, tipo: "PALABRA", icono: "📚", titulo: "LA PALABRA 'PARAGUAS'", texto: "La palabra 'paraguas' es un compuesto español de 'parar' y 'aguas'. Su equivalente inglés 'umbrella' viene del latín 'umbra' (sombra)." },
+  { id: 282, tipo: "CULTURA", icono: "🧠", titulo: "EL ORIGEN DE LOS DADOS", texto: "Los dados con seis caras han aparecido en yacimientos de Mesopotamia con más de 5.000 años de antigüedad." },
+  { id: 283, tipo: "CIENCIA", icono: "🔬", titulo: "EL CICLO DEL AGUA Y LOS DINOSAURIOS", texto: "Es posible que estés bebiendo moléculas de agua que un día formaron parte de un dinosaurio, un océano primordial o incluso un cometa." },
+  { id: 284, tipo: "MUSICA", icono: "🎵", titulo: "EL ORIGEN DE LA POLKA", texto: "La polka es un baile originario de Bohemia (actual República Checa) que se popularizó en toda Europa en el siglo XIX con una rapidez sin precedentes." },
+  { id: 285, tipo: "CINE", icono: "🎬", titulo: "EL ORIGEN DE LA PALABRA PELÍCULA", texto: "La palabra 'película' viene del latín 'pellicula' (pequeña piel), porque las primeras cintas eran de celuloide, una fina membrana." },
+  { id: 286, tipo: "HISTORIA", icono: "🏛️", titulo: "EL ORIGEN DEL CHAMPÁN", texto: "El champán fue perfeccionado por el monje Dom Pérignon, quien, al contrario de la leyenda, trabajó para eliminar las burbujas, no para crearlas." },
+  { id: 287, tipo: "PALABRA", icono: "📚", titulo: "LA PALABRA 'ALTRUISMO'", texto: "La palabra 'altruismo' fue inventada por el filósofo Auguste Comte en el siglo XIX, del italiano 'altrui' (de otros), como antónimo de 'egoísmo'." },
+  { id: 288, tipo: "CULTURA", icono: "🧠", titulo: "EL ORIGEN DEL CHOCOLATE", texto: "El chocolate fue consumido durante milenios como bebida amarga y picante por mayas y aztecas. El chocolate dulce sólido es una invención europea del siglo XIX." },
+  { id: 289, tipo: "CIENCIA", icono: "🔬", titulo: "LOS HUESOS EN LA MANO", texto: "La mano humana contiene 27 huesos, más de una décima parte de los 206 del esqueleto adulto, lo que explica su extraordinaria precisión motriz." },
+  { id: 290, tipo: "MUSICA", icono: "🎵", titulo: "EL ORIGEN DEL TANGO", texto: "El tango nació a finales del siglo XIX en los arrabales de Buenos Aires y Montevideo, de la mezcla de música africana, milonga criolla e influencia europea." },
+  { id: 291, tipo: "CINE", icono: "🎬", titulo: "EL ORIGEN DE LOS SUBTÍTULOS", texto: "Los subtítulos existen desde el cine mudo, cuando se llamaban 'intertítulos': tarjetas con texto insertadas entre fotogramas para explicar la acción." },
+  { id: 292, tipo: "HISTORIA", icono: "🏛️", titulo: "EL NOMBRE DE EUROPA", texto: "Europa toma su nombre de la ninfa Europa de la mitología griega, raptada por Zeus convertido en toro blanco." },
+  { id: 293, tipo: "PALABRA", icono: "📚", titulo: "LA PALABRA 'CÁNCER'", texto: "La palabra 'cáncer' viene del latín y significa 'cangrejo', porque Hipócrates observó que los tumores y sus venas se parecían a la forma del crustáceo." },
+  { id: 294, tipo: "CULTURA", icono: "🧠", titulo: "EL ORIGEN DEL KARATE", texto: "El karate ('mano vacía' en japonés) se desarrolló en Okinawa como sistema de combate sin armas, ya que los invasores habían prohibido portar armas." },
+  { id: 295, tipo: "CIENCIA", icono: "🔬", titulo: "LA LUZ DE LAS ESTRELLAS", texto: "Cuando miramos el cielo nocturno, vemos el pasado: la luz de las estrellas tardó años o milenios en llegar, y muchas ya no existen." },
+  { id: 296, tipo: "MUSICA", icono: "🎵", titulo: "EL ORIGEN DE LA SARDANA", texto: "La sardana, danza nacional de Cataluña, destaca por su ritmo asimétrico de 11 tiempos, único en la música folclórica europea." },
+  { id: 297, tipo: "CINE", icono: "🎬", titulo: "LOS LUMIÈRE Y EL FUTURO DEL CINE", texto: "Los hermanos Lumière, inventores del cinematógrafo, pensaban que el cine era solo una curiosidad científica sin futuro comercial." },
+  { id: 298, tipo: "HISTORIA", icono: "🏛️", titulo: "LAS OLIMPIADAS MODERNAS", texto: "Las Olimpiadas modernas fueron impulsadas por el barón Pierre de Coubertin y se celebraron por primera vez en Atenas en 1896, con 241 atletas, todos hombres." },
+  { id: 299, tipo: "PALABRA", icono: "📚", titulo: "LA PALABRA 'ECLIPSE'", texto: "La palabra 'eclipse' viene del griego 'ekleipsis' (abandono), porque los griegos creían que el Sol o la Luna abandonaban temporalmente su lugar." },
+  { id: 300, tipo: "CULTURA", icono: "🧠", titulo: "LOS PULGARES ARRIBA EN ROMA", texto: "El gesto de 'pulgar arriba' no significaba 'vida' en el anfiteatro romano. El gesto real para perdonar era envolver el pulgar, no levantarlo." },
+  { id: 301, tipo: "CIENCIA", icono: "🔬", titulo: "LOS COLORES DEL ARCOÍRIS", texto: "El arcoíris aparece en el lado opuesto al Sol porque la luz se refracta dentro de las gotas de agua. Cada gota solo envía un color a tus ojos." },
+  { id: 302, tipo: "MUSICA", icono: "🎵", titulo: "EL ORIGEN DEL VALS", texto: "El vals era escandaloso en el siglo XVIII por ser el primer baile europeo en el que la pareja se abrazaba." },
+  { id: 303, tipo: "CINE", icono: "🎬", titulo: "EL TÉRMINO 'BLOCKBUSTER'", texto: "La palabra 'blockbuster' viene de la Segunda Guerra Mundial, donde describía las bombas capaces de destruir una manzana entera de edificios." },
+  { id: 304, tipo: "HISTORIA", icono: "🏛️", titulo: "EL ORIGEN DE LA PASTA", texto: "Contrariamente a la leyenda, Marco Polo no llevó la pasta de China a Italia. La pasta ya existía en Italia antes de su viaje." },
+  { id: 305, tipo: "PALABRA", icono: "📚", titulo: "LA PALABRA 'UTOPÍA'", texto: "La palabra 'utopía' fue inventada por Tomás Moro en 1516 del griego 'ou-topos' (ningún lugar): una sociedad perfecta que él reconocía como imposible." },
+  { id: 306, tipo: "CULTURA", icono: "🧠", titulo: "LA NAVIDAD EL 25 DE DICIEMBRE", texto: "La celebración de la Navidad el 25 de diciembre no está documentada en la Biblia. La fecha fue adoptada en el siglo IV para coincidir con festividades paganas del solsticio." },
+  { id: 307, tipo: "CIENCIA", icono: "🔬", titulo: "EL PRINCIPIO DE ARQUÍMEDES", texto: "Según la anécdota, Arquímedes descubrió su famoso principio en la bañera y salió corriendo desnudo por las calles de Siracusa gritando '¡Eureka!'." },
+  { id: 308, tipo: "MUSICA", icono: "🎵", titulo: "EL ORIGEN DEL BREAK-DANCE", texto: "El break-dance surgió en el Bronx a principios de los 70, cuando los DJ's alargaban los 'breaks' instrumentales para que los bailarines actuaran." },
+  { id: 309, tipo: "CINE", icono: "🎬", titulo: "EL FORMATO 16:9", texto: "El formato panorámico 16:9 fue adoptado como estándar porque es el tamaño que más se aproxima al campo de visión horizontal natural del ojo humano." },
+  { id: 310, tipo: "HISTORIA", icono: "🏛️", titulo: "EL PRIMER LIBRO IMPRESO", texto: "La Biblia de Gutenberg, impresa hacia 1455, fue el primer libro europeo con tipos móviles. Gutenberg imprimió antes un poema y un calendario, pero la Biblia le dio fama." },
+  { id: 311, tipo: "PALABRA", icono: "📚", titulo: "LA PALABRA 'ZAFIO'", texto: "La palabra 'zafio' para describir a alguien grosero tiene su origen en el árabe 'safi' (rústico, palurdo), llegando al español en el periodo medieval." },
+  { id: 312, tipo: "CULTURA", icono: "🧠", titulo: "EL ORIGEN DEL SEMÁFORO", texto: "El primer semáforo fue instalado en Londres en 1868 y funcionaba con gas. Explotó en 1869 hiriendo a un policía, y no se retomó la idea hasta el siglo XX." },
+  { id: 313, tipo: "CIENCIA", icono: "🔬", titulo: "EL ORIGEN DE LAS MAREAS", texto: "Las mareas son causadas principalmente por la atracción gravitatoria de la Luna. El Sol también contribuye pero en menor medida por su mayor distancia." },
+  { id: 314, tipo: "MUSICA", icono: "🎵", titulo: "EL ORIGEN DE LA PALABRA FLAMENCO", texto: "La palabra 'flamenco' tiene origen disputado: puede venir del holandés 'Vlaming' (de Flandes), del árabe 'fellah-mengu' o del pájaro flamenco." },
+  { id: 315, tipo: "CINE", icono: "🎬", titulo: "EL PRIMER GUION DE CINE", texto: "El primer guion cinematográfico fue escrito en 1903 para 'El gran robo del tren', la primera película con narración completa. Tenía solo una página." },
+  { id: 316, tipo: "HISTORIA", icono: "🏛️", titulo: "LA BIBLIOTECA NACIONAL DE ESPAÑA", texto: "La Biblioteca Nacional de España, fundada en 1711 por Felipe V, custodia el manuscrito original del Quijote y obras de Lope de Vega." },
+  { id: 317, tipo: "PALABRA", icono: "📚", titulo: "QUÉ ES UN ANTIMACASAR", texto: "El pequeño paño del respaldo de butacas se llama 'antimacasar' porque evitaba que el aceite capilar 'Macasar' manchara los muebles." },
+  { id: 318, tipo: "CULTURA", icono: "🧠", titulo: "EL COLCHÓN DE LOS REYES", texto: "En la Europa medieval, la mayoría dormía en el suelo sobre paja. Poseer una cama de madera elevada era el máximo símbolo de riqueza." },
+  { id: 319, tipo: "CIENCIA", icono: "🔬", titulo: "LA PELA DE LA CEBOLLA", texto: "Lloramos al cortar cebolla porque el gas liberado reacciona con el agua del ojo formando una pequeña cantidad de ácido sulfúrico." },
+  { id: 320, tipo: "MUSICA", icono: "🎵", titulo: "EL ÉXITO INESPERADO", texto: "El legendario riff de 'Sweet Child O' Mine' de Guns N' Roses nació simplemente como ejercicio de calentamiento de dedos del guitarrista Slash." },
+  { id: 321, tipo: "CINE", icono: "🎬", titulo: "EL INICIO DE INDIANA JONES", texto: "Indiana Jones debe su nombre al perro Malamute de George Lucas, el mismo perro que inspiró la figura de Chewbacca en Star Wars." },
+  { id: 322, tipo: "HISTORIA", icono: "🏛️", titulo: "LA CARTA DE CRISTÓBAL COLÓN", texto: "La carta anunciando el descubrimiento del Nuevo Mundo fue un bestseller inmediato en 1493, reimpresa en varias lenguas europeas gracias a la imprenta." },
+  { id: 323, tipo: "PALABRA", icono: "📚", titulo: "LA ETIMOLOGÍA DE 'BÚHO'", texto: "La palabra 'búho' proviene del latín vulgar 'bubo', que es una onomatopeya que imita el ulular grave de esta ave rapaz nocturna." },
+  { id: 324, tipo: "CULTURA", icono: "🧠", titulo: "LAS MATRIOSKAS RUSAS", texto: "Las muñecas matrioskas, souvenir clásico de Rusia, provienen en realidad de un muñeco de los Siete Dioses de la Fortuna japoneses." },
+  { id: 325, tipo: "CIENCIA", icono: "🔬", titulo: "LA GOTA DE AGUA GIGANTE", texto: "En la Estación Espacial Internacional se puede jugar al ping-pong con una raqueta de teflón golpeando una enorme gota de agua esférica." },
+  { id: 326, tipo: "MUSICA", icono: "🎵", titulo: "LA TIERRA DEL K-POP", texto: "En Corea del Sur, las academias de K-Pop son muy exigentes: niños y niñas entrenan diariamente en baile y canto antes de siquiera debutar." },
+  { id: 327, tipo: "CINE", icono: "🎬", titulo: "EL DIRECTOR DE PSICOSIS", texto: "Hitchcock compró anónimamente tantos ejemplares del libro 'Psicosis' como pudo antes del estreno para evitar que el público supiera el final." },
+  { id: 328, tipo: "HISTORIA", icono: "🏛️", titulo: "EL APELLIDO DE DA VINCI", texto: "'Da Vinci' no era el apellido de Leonardo: era su lugar de procedencia. Su nombre significaba literalmente 'Leonardo, de Vinci'." },
+  { id: 329, tipo: "PALABRA", icono: "📚", titulo: "LA PALABRA MÁS USADA", texto: "La palabra más frecuente en el vocabulario de los hispanohablantes es simplemente la preposición 'de', seguida de cerca por 'la'." },
+  { id: 330, tipo: "CULTURA", icono: "🧠", titulo: "LAS ESTATUAS Y LOS CABALLOS", texto: "Hay un mito urbano que dice que las patas levantadas de un caballo de bronce indican cómo murió el jinete, pero la mayoría de estatuas no siguen esa regla." },
+  { id: 331, tipo: "CIENCIA", icono: "🔬", titulo: "LA BACTERIA EXTREMA", texto: "La bacteria Deinococcus radiodurans, apodada 'Conan la bacteria', sobrevive a la radiación atómica extrema y ambientes muy ácidos." },
+  { id: 332, tipo: "MUSICA", icono: "🎵", titulo: "LA VOZ DE LOS PITUFOS", texto: "La voz aguda de Los Pitufos se lograba, antes del mundo digital, reproduciendo las cintas analógicas de grabación a mucha más velocidad." },
+  { id: 333, tipo: "CINE", icono: "🎬", titulo: "EL TÍTULO FALSO DE EL RETORNO DEL JEDI", texto: "Para engañar a la prensa, 'Star Wars: El retorno del Jedi' se filmó bajo el título falso de 'Blue Harvest: Horror Beyond Imagination'." },
+  { id: 334, tipo: "HISTORIA", icono: "🏛️", titulo: "LAS ESCALERAS DE LOS CASTILLOS", texto: "Las escaleras de caracol de los castillos medievales subían hacia la derecha para dar ventaja de espada a los defensores diestros." },
+  { id: 335, tipo: "PALABRA", icono: "📚", titulo: "EL ORIGEN DE 'VAMPIRO'", texto: "La palabra 'vampiro' llegó al español en el siglo XIX procedente del alemán 'vampir', que a su vez se basó en cuentos populares serbios." },
+  { id: 336, tipo: "CULTURA", icono: "🧠", titulo: "EL COLOR DE LOS TAZOS", texto: "El juego de tazos nació en los años 90 en Hawái, inspirado en un pasatiempo antiguo donde los niños jugaban con tapas de cartón de botellas de leche." },
+  { id: 337, tipo: "CIENCIA", icono: "🔬", titulo: "LA TEMPERATURA DE LA NIEVE", texto: "Los copos de hielo son transparentes, no blancos. La luz se refleja y dispersa en cada cristal, haciendo que toda la masa de nieve parezca blanca." },
+  { id: 338, tipo: "MUSICA", icono: "🎵", titulo: "LA TROMPETA DE MILES DAVIS", texto: "Miles Davis cambió la historia del jazz con su álbum 'Kind of Blue', grabado prácticamente en directo con solo unas cuantas instrucciones." },
+  { id: 339, tipo: "CINE", icono: "🎬", titulo: "LA BANDA SONORA DEL REY LEÓN", texto: "Hans Zimmer casi rechaza 'El Rey León' de Disney, pero aceptó porque le prometieron que su hija de seis años podría asistir a la premiere." },
+  { id: 340, tipo: "HISTORIA", icono: "🏛️", titulo: "EL TELÉFONO DE EDISON", texto: "Bell propuso contestar el teléfono diciendo 'Ahoy', pero Edison popularizó 'Hello'. Este último ganó la batalla para siempre." },
+  { id: 341, tipo: "PALABRA", icono: "📚", titulo: "EL SIGNIFICADO DE 'ESTUPENDO'", texto: "La palabra 'estupendo' proviene del latín 'stupendus', que significaba algo que debía causar estupor, parálisis o un gran asombro." },
+  { id: 342, tipo: "CULTURA", icono: "🧠", titulo: "LAS RAYAS DE LA CEBRA", texto: "Las rayas de las cebras actúan como ilusión óptica y repelente natural que desorienta tanto a los depredadores como a las moscas hematófagas." },
+  { id: 343, tipo: "CIENCIA", icono: "🔬", titulo: "LA RESPIRACIÓN DEL CABALLO", texto: "Un caballo de pura sangre no respira independientemente de sus pasos: sus pulmones dan exactamente un respiro por cada zancada al galope." },
+  { id: 344, tipo: "MUSICA", icono: "🎵", titulo: "EL BAJO DEL FUNK", texto: "La técnica del 'Slap Bass' se inventó cuando el bajista Larry Graham emulaba el sonido rítmico de un bombo y una caja." },
+  { id: 345, tipo: "CINE", icono: "🎬", titulo: "LA BANDA SONORA DE DUNE", texto: "La banda sonora de 'Dune' por Hans Zimmer utiliza instrumentos completamente nuevos, creados desde cero para darle una atmósfera alienígena." },
+  { id: 346, tipo: "HISTORIA", icono: "🏛️", titulo: "LA BOMBILLA INCANDESCENTE", texto: "Edison no inventó la primera bombilla, sino el primer filamento suficientemente resistente y económico para que durara encendido muchas horas." },
+  { id: 347, tipo: "PALABRA", icono: "📚", titulo: "LA LETRA 'H' Y EL ALIENTO", texto: "La H se llama 'muda' en español, pero originalmente en latín se pronunciaba como una leve aspiración parecida a la H inglesa actual." },
+  { id: 348, tipo: "CULTURA", icono: "🧠", titulo: "LAS BOLAS DE BILLAR DE MARFIL", texto: "Antes de los plásticos modernos, las bolas de billar se torneaban a partir de colmillos de elefante, haciendo el juego prohibitivamente caro." },
+  { id: 349, tipo: "CIENCIA", icono: "🔬", titulo: "LA CAÍDA DE LAS PLUMAS", texto: "En el vacío, una bola de bolos y una pluma de halcón caen exactamente a la misma velocidad, tocando el suelo al mismo tiempo." },
+  { id: 350, tipo: "MUSICA", icono: "🎵", titulo: "EL PRIMER CD COMERCIAL", texto: "El primer álbum pregrabado en Compact Disc fue 'The Visitors' de ABBA, lanzado a mediados de 1982." },
+  { id: 351, tipo: "CINE", icono: "🎬", titulo: "EL OSCAR AL REY LEÓN", texto: "'La Bella y la Bestia' (1991) fue la primera película de animación nominada a la categoría principal de Mejor Película en los Oscar." },
+  { id: 352, tipo: "HISTORIA", icono: "🏛️", titulo: "EL PAPA LEÓN Y ATILA", texto: "Atila el Huno nunca llegó a atacar Roma porque el Papa León I lo convenció de dar la vuelta en sus puertas, en uno de los diálogos más misteriosos de la historia." },
+  { id: 353, tipo: "PALABRA", icono: "📚", titulo: "QUÉ ES UN PALÍNDROMO", texto: "'Amo la pacífica paloma' es una frase palíndroma en español: descartando los espacios, se lee idéntico de izquierda a derecha." },
+  { id: 354, tipo: "CULTURA", icono: "🧠", titulo: "LA INVENCIÓN DEL PARAGUAS", texto: "El paraguas fue inventado hace más de 4.000 años en Egipto, Asiria y China para dar sombra y proteger del sol, no de la lluvia." },
+  { id: 355, tipo: "CIENCIA", icono: "🔬", titulo: "LA METAMORFOSIS DE LAS ORUGAS", texto: "Al entrar en la crisálida, las orugas se disuelven completamente en un 'caldo' celular antes de reformarse como mariposa." },
+  { id: 356, tipo: "MUSICA", icono: "🎵", titulo: "LA MÚSICA DE LAS PLANTAS", texto: "Algunos estudios han registrado que ciertas plantas emiten clics ultrasónicos al sufrir estrés hídrico, inaudibles para el oído humano." },
+  { id: 357, tipo: "CINE", icono: "🎬", titulo: "LOS CORTES DE MONTAJE", texto: "En el cine moderno, una toma dura apenas 4-6 segundos antes del siguiente corte. Antes de los años 80, las tomas duraban más de 12 segundos." },
+  { id: 358, tipo: "HISTORIA", icono: "🏛️", titulo: "LA PIMIENTA EN ROMA", texto: "Los romanos de clase alta compraban y exhibían su pimienta en pequeños frascos de plata para lucirla frente a sus invitados." },
+  { id: 359, tipo: "PALABRA", icono: "📚", titulo: "LAS LETRAS CH Y LL", texto: "La 'ch' y la 'll' dejaron de ser letras del alfabeto español en 2010 por la RAE, pasando a ser denominadas solo dígrafos." },
+  { id: 360, tipo: "CULTURA", icono: "🧠", titulo: "EL CHARIZARD HOLOGRÁFICO", texto: "Un Charizard holográfico de primera edición en perfectas condiciones puede superar el medio millón de dólares en subastas." },
+  { id: 361, tipo: "CIENCIA", icono: "🔬", titulo: "EL PESO DE LAS NUBES", texto: "Un cúmulo promedio puede llegar a pesar más de un millón de toneladas gracias a los microscópicos cristales y gotas de agua que contiene." },
+  { id: 362, tipo: "MUSICA", icono: "🎵", titulo: "EL ACORDE DE SEINFELD", texto: "La icónica música de Seinfeld no se tocó con un bajo real, sino con un teclado sintetizador Korg." },
+  { id: 363, tipo: "CINE", icono: "🎬", titulo: "LOS DIBUJOS DE DISNEY", texto: "Para Blancanieves, Walt Disney mantuvo un pequeño zoológico de animales vivos en el estudio para que los animadores copiaran sus movimientos reales." },
+  { id: 364, tipo: "HISTORIA", icono: "🏛️", titulo: "EL INVENTO DE LAS GAFAS", texto: "Las primeras gafas para corregir la visión se inventaron en el norte de Italia a finales del siglo XIII, revolucionando el trabajo de los monjes copistas." },
+  { id: 365, tipo: "PALABRA", icono: "📚", titulo: "EL TÉRMINO 'GIGABYTE'", texto: "El prefijo 'giga' proviene del griego 'gigas' (gigante), por lo que un gigabyte es literalmente un 'byte gigante' de información." }
+];
+
+// --- Lógica de Curiosidad del Día ---
+// Usa el día 0 = hoy (primer uso), guardado en localStorage
+function getCuriosidadIdx() {
+  var HOY = new Date().toISOString().slice(0, 10); // "2026-03-13"
+  var inicio = localStorage.getItem('curiosidades_inicio');
+  if (!inicio) {
+    localStorage.setItem('curiosidades_inicio', HOY);
+    inicio = HOY;
+  }
+  var msInicio = new Date(inicio).getTime();
+  var msHoy    = new Date(HOY).getTime();
+  var diasDesde = Math.floor((msHoy - msInicio) / 86400000); // 0, 1, 2...
+  return diasDesde % curiosidades.length; // índice 0-364
+}
+
+function getCuriosidadDelDia() {
+  return curiosidades[getCuriosidadIdx()];
+}
+
+function haVistoHoy() {
+  var key = 'cur_vista_' + new Date().toISOString().slice(0, 10);
+  return localStorage.getItem(key) === '1';
+}
+
+function marcarVistaHoy(id) {
+  var key = 'cur_vista_' + new Date().toISOString().slice(0, 10);
+  localStorage.setItem(key, '1');
+  // guardar en histórico
+  var hist = JSON.parse(localStorage.getItem('cur_historico') || '[]');
+  if (!hist.includes(id)) { hist.push(id); localStorage.setItem('cur_historico', JSON.stringify(hist)); }
+}
+
+function actualizarBtnCuriosidad() {
+  var btn = document.getElementById('btn-curiosidad');
+  if (!btn) return;
+  if (haVistoHoy()) {
+    btn.classList.add('vista');
+    btn.textContent = '✓ Ya tienes tu curiosidad de hoy';
+  } else {
+    btn.classList.remove('vista');
+    btn.innerHTML = '💡 Curiosidad del día';
+  }
+}
+
+function abrirCuriosidad() {
+  if (haVistoHoy()) return; // botón gris = no hace nada
+  var c = getCuriosidadDelDia();
+  marcarVistaHoy(c.id);
+  actualizarBtnCuriosidad();
+
+  var hist = JSON.parse(localStorage.getItem('cur_historico') || '[]');
+  var anteriores = curiosidades.filter(function(x){ return hist.includes(x.id) && x.id !== c.id; }).reverse();
+
+  var historicoHTML = '';
+  if (anteriores.length > 0) {
+    historicoHTML = '<div class="cur-historico"><div class="cur-hist-label">📜 Anteriores</div>' +
+      anteriores.map(function(h){
+        return '<div class="cur-hist-item"><span class="cur-hist-ico">' + h.icono + '</span>' +
+               '<div><div class="cur-hist-nom">' + h.titulo + '</div>' +
+               '<div class="cur-hist-txt">' + h.texto + '</div></div></div>';
+      }).join('') + '</div>';
+  }
+
+  document.getElementById('cur-modal-contenido').innerHTML =
+    '<div class="cur-tipo">' + c.icono + ' ' + c.tipo + '</div>' +
+    '<div class="cur-titulo">' + c.titulo + '</div>' +
+    '<div class="cur-texto">' + c.texto + '</div>' +
+    '<div class="cur-num">Curiosidad ' + c.id + ' de 365</div>' +
+    historicoHTML;
+
+  document.getElementById('cur-modal').classList.remove('hidden');
+}
+
+function cerrarCuriosidad() {
+  document.getElementById('cur-modal').classList.add('hidden');
+}
+
 window.onload = function () {
     // Activate home screen (always behind overlay if needed)
     document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
@@ -13855,6 +14357,7 @@ window.onload = function () {
     // AUTO-BACKUP DIARIO: se descarga un JSON completo una vez al día
     // Si Noemi abre la app cada día, siempre hay un backup reciente en Descargas
     autoBackupDiario();
+    actualizarBtnCuriosidad();
     setTimeout(avisoViernes, 1500);
 };
 
