@@ -14349,6 +14349,13 @@ function cerrarCuriosidad() {
   document.getElementById('cur-modal').classList.add('hidden');
 }
 
+// Registrar Service Worker — necesario para que Chrome Android instale como app
+if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('./sw.js').catch(function(e) {
+        console.log('SW error:', e);
+    });
+}
+
 window.onload = function () {
     // Activate home screen (always behind overlay if needed)
     document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
