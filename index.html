@@ -5,8 +5,11 @@
     <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
     <title>PasaPalabra Pro — Noemi al Bote</title>
     <meta name="theme-color" content="#080810">
+    <meta name="mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="PasaPalabra Pro">
+    <link rel="manifest" href="manifest.json">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,700;1,400&display=swap" rel="stylesheet">
 <style>
@@ -813,7 +816,7 @@ html, body {
 #btn-curiosidad:hover:not(.vista) { background: #f0a500; color: #fff; }
 #btn-curiosidad.vista {
   border-color: var(--border); color: var(--muted);
-  opacity: 0.5; cursor: default; pointer-events: none;
+  opacity: 0.55; cursor: pointer;
 }
 #cur-modal {
   position: fixed; inset: 0; background: rgba(0,0,0,0.65);
@@ -14300,7 +14303,7 @@ function actualizarBtnCuriosidad() {
   if (!btn) return;
   if (haVistoHoy()) {
     btn.classList.add('vista');
-    btn.textContent = '✓ Ya tienes tu curiosidad de hoy';
+    btn.innerHTML = '📜 Ver curiosidades';
   } else {
     btn.classList.remove('vista');
     btn.innerHTML = '💡 Curiosidad del día';
@@ -14308,11 +14311,16 @@ function actualizarBtnCuriosidad() {
 }
 
 function abrirCuriosidad() {
-  if (haVistoHoy()) return; // botón gris = no hace nada
   var c = getCuriosidadDelDia();
-  marcarVistaHoy(c.id);
-  actualizarBtnCuriosidad();
+  var yaVista = haVistoHoy();
 
+  // Solo marcar como vista la primera vez del día
+  if (!yaVista) {
+    marcarVistaHoy(c.id);
+    actualizarBtnCuriosidad();
+  }
+
+  // Histórico: solo las anteriores (no la de hoy, no las futuras)
   var hist = JSON.parse(localStorage.getItem('cur_historico') || '[]');
   var anteriores = curiosidades.filter(function(x){ return hist.includes(x.id) && x.id !== c.id; }).reverse();
 
@@ -14326,6 +14334,7 @@ function abrirCuriosidad() {
       }).join('') + '</div>';
   }
 
+  // Siempre muestra la curiosidad de hoy + histórico (nunca las futuras)
   document.getElementById('cur-modal-contenido').innerHTML =
     '<div class="cur-tipo">' + c.icono + ' ' + c.tipo + '</div>' +
     '<div class="cur-titulo">' + c.titulo + '</div>' +
@@ -16074,6 +16083,20 @@ function restaurarProgreso(event) {
                 localStorage.setItem(key, datos[key]);
                 count++;
             });
+
+            // --- CURIOSIDADES: garantizar arranque correcto ---
+            // Si el backup no incluye curiosidades_inicio (backups antiguos),
+            // lo inicializamos a ayer para que hoy toque la curiosidad 2
+            if (!datos['curiosidades_inicio']) {
+                var ayer = new Date();
+                ayer.setDate(ayer.getDate() - 1);
+                var ayerStr = ayer.toISOString().slice(0, 10);
+                localStorage.setItem('curiosidades_inicio', ayerStr);
+                // Marcar la curiosidad 1 (sombrerero) como vista ayer
+                localStorage.setItem('cur_vista_' + ayerStr, '1');
+                localStorage.setItem('cur_historico', JSON.stringify([1]));
+            }
+
             showToast('✅ Progreso restaurado — ' + count + ' registros', 3000);
             setTimeout(function() { window.location.reload(); }, 1500);
         } catch(err) {
