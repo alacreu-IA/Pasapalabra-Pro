@@ -844,6 +844,348 @@ html, body {
 .cur-hist-ico   { font-size:1.2rem; flex-shrink:0; margin-top:2px; }
 .cur-hist-nom   { font-size:0.82rem; font-weight:700; margin-bottom:3px; }
 .cur-hist-txt   { font-size:0.78rem; opacity:0.6; line-height:1.45; }
+
+/* ================================================================
+   DICCIONARIO RAE — PANTALLA COMPLETA
+================================================================ */
+#dic-rae { background: var(--bg); }
+
+/* TOP BAR DICCIONARIO */
+#dic-rae .top-bar { position: relative; }
+
+/* SELECTOR DE MODO — pills horizontales */
+.dic-mode-bar {
+    display: flex; gap: 6px; padding: 12px 16px 8px;
+    overflow-x: auto; scrollbar-width: none;
+    background: var(--bg);
+    border-bottom: 1px solid var(--border);
+    flex-shrink: 0;
+}
+.dic-mode-bar::-webkit-scrollbar { display: none; }
+.dic-mode-pill {
+    flex-shrink: 0; padding: 6px 14px;
+    border-radius: 20px; border: 1.5px solid var(--border2);
+    background: transparent; color: var(--muted);
+    font-size: 0.78rem; font-weight: 600;
+    cursor: pointer; transition: all 0.18s ease;
+    font-family: 'Space Grotesk', sans-serif;
+    white-space: nowrap;
+}
+.dic-mode-pill.active {
+    background: var(--gold); border-color: var(--gold);
+    color: #000; 
+}
+.dic-mode-pill:hover:not(.active) {
+    border-color: var(--gold); color: var(--gold);
+}
+
+/* SUBPANEL DE FILTROS */
+.dic-filter-panel {
+    padding: 10px 16px 6px; background: var(--bg2);
+    border-bottom: 1px solid var(--border);
+    flex-shrink: 0; display: none;
+}
+.dic-filter-panel.visible { display: block; }
+.dic-filter-label {
+    font-size: 0.68rem; font-weight: 700; letter-spacing: 0.1em;
+    color: var(--muted); text-transform: uppercase; margin-bottom: 8px;
+}
+.dic-filter-grid {
+    display: flex; flex-wrap: wrap; gap: 5px;
+}
+.dic-filter-btn {
+    padding: 4px 10px; border-radius: 12px;
+    border: 1px solid var(--border2); background: transparent;
+    color: var(--muted); font-size: 0.72rem; font-weight: 600;
+    cursor: pointer; font-family: 'Space Grotesk', sans-serif;
+    transition: all 0.15s;
+}
+.dic-filter-btn.sel {
+    background: var(--card2); border-color: var(--gold); color: var(--gold);
+}
+.dic-filter-btn:hover:not(.sel) { border-color: var(--border2); color: var(--text); }
+
+/* BARRA DE ESTADO */
+.dic-status-bar {
+    padding: 8px 16px; background: var(--bg);
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1px solid var(--border);
+    flex-shrink: 0;
+}
+.dic-status-count {
+    font-size: 0.75rem; color: var(--muted); font-weight: 600;
+}
+.dic-status-progress {
+    font-size: 0.75rem; color: var(--gold); font-weight: 700;
+}
+
+/* TARJETA DE PALABRA — el corazón del aprendizaje */
+.dic-card-wrap {
+    flex: 1; overflow-y: auto; padding: 16px;
+    overscroll-behavior: contain;
+    -webkit-overflow-scrolling: touch;
+    display: flex; flex-direction: column; gap: 12px;
+}
+.dic-card-wrap::-webkit-scrollbar { display: none; }
+
+/* FRENTE — definición */
+.dic-front-card {
+    background: var(--card);
+    border: 1px solid var(--border2);
+    border-radius: 20px;
+    padding: 22px 20px 18px;
+    position: relative;
+    overflow: hidden;
+}
+.dic-front-card::before {
+    content: '';
+    position: absolute; top: 0; left: 0; right: 0; height: 3px;
+    background: linear-gradient(90deg, var(--gold), var(--purple));
+}
+.dic-campo-badge {
+    display: inline-flex; align-items: center; gap: 4px;
+    padding: 3px 10px; border-radius: 10px;
+    background: var(--card2); border: 1px solid var(--border2);
+    font-size: 0.68rem; font-weight: 700; letter-spacing: 0.08em;
+    color: var(--muted); text-transform: uppercase;
+    margin-bottom: 14px;
+}
+.dic-def-main {
+    font-size: 1.08rem; line-height: 1.6;
+    color: var(--text); font-weight: 500;
+    margin-bottom: 10px;
+}
+.dic-def-extra {
+    font-size: 0.85rem; line-height: 1.55;
+    color: var(--muted); display: none;
+}
+.dic-def-extra.visible { display: block; }
+.dic-def-toggle {
+    display: inline; font-size: 0.75rem; color: var(--gold);
+    background: none; border: none; cursor: pointer;
+    font-family: 'Space Grotesk', sans-serif;
+    padding: 0; margin-top: 4px;
+}
+.dic-pos-tag {
+    font-size: 0.72rem; color: var(--purple);
+    font-style: italic; font-weight: 600; margin-bottom: 4px;
+}
+
+/* REVERSO — la palabra */
+.dic-back-card {
+    background: linear-gradient(135deg, var(--card2) 0%, var(--card) 100%);
+    border: 1.5px solid var(--gold);
+    border-radius: 20px;
+    padding: 22px 20px;
+    text-align: center;
+    display: none;
+    position: relative;
+    overflow: hidden;
+}
+.dic-back-card::after {
+    content: '📖';
+    position: absolute; right: 16px; top: 16px;
+    font-size: 1.4rem; opacity: 0.3;
+}
+.dic-back-card.visible { display: block; }
+.dic-word-main {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem; font-weight: 700;
+    color: var(--gold); letter-spacing: 0.02em;
+    margin-bottom: 6px; line-height: 1.2;
+}
+.dic-word-pos { font-size: 0.8rem; color: var(--muted); font-style: italic; }
+
+/* SECCIÓN ETIMOLOGÍA */
+.dic-section {
+    background: var(--card); border: 1px solid var(--border);
+    border-radius: 14px; padding: 14px 16px;
+    display: none;
+}
+.dic-section.visible { display: block; }
+.dic-section-label {
+    font-size: 0.68rem; font-weight: 800; letter-spacing: 0.12em;
+    text-transform: uppercase; margin-bottom: 8px;
+}
+.dic-etym-label { color: var(--blue); }
+.dic-syn-label  { color: var(--green); }
+.dic-ex-label   { color: var(--purple); }
+.dic-section-text {
+    font-size: 0.88rem; line-height: 1.6; color: var(--text); opacity: 0.85;
+}
+
+/* SECCIÓN EJEMPLO IA */
+.dic-example-section {
+    background: var(--card); border: 1px solid var(--border);
+    border-radius: 14px; padding: 14px 16px; display: none;
+}
+.dic-example-section.visible { display: block; }
+.dic-example-text {
+    font-size: 0.9rem; line-height: 1.6; color: var(--text);
+    font-style: italic; opacity: 0.9;
+}
+.dic-example-loading {
+    font-size: 0.82rem; color: var(--muted); text-align: center; padding: 8px 0;
+}
+
+/* BOTONES DE ACCIÓN */
+.dic-action-row {
+    display: flex; gap: 8px; flex-wrap: wrap;
+    padding: 0 0 4px;
+}
+.dic-btn-reveal {
+    flex: 1; padding: 14px;
+    background: var(--gold); border: none; border-radius: 14px;
+    color: #000; font-weight: 700; font-size: 0.95rem;
+    cursor: pointer; font-family: 'Space Grotesk', sans-serif;
+    transition: all 0.18s;
+}
+.dic-btn-reveal:hover { background: var(--gold2); }
+.dic-btn-example {
+    padding: 14px 16px; border-radius: 14px;
+    border: 1.5px solid var(--purple); background: transparent;
+    color: var(--purple); font-weight: 700; font-size: 0.85rem;
+    cursor: pointer; font-family: 'Space Grotesk', sans-serif;
+    transition: all 0.18s; white-space: nowrap;
+}
+.dic-btn-example:hover { background: rgba(153,102,255,0.1); }
+.dic-btn-example:disabled { opacity: 0.4; cursor: default; }
+
+/* BOTONES DE CALIFICACIÓN */
+.dic-rate-row {
+    display: flex; gap: 8px; display: none;
+}
+.dic-rate-row.visible { display: flex; }
+.dic-rate-btn {
+    flex: 1; padding: 13px 8px;
+    border-radius: 14px; border: 1.5px solid;
+    background: transparent; font-weight: 700; font-size: 0.82rem;
+    cursor: pointer; font-family: 'Space Grotesk', sans-serif;
+    display: flex; flex-direction: column; align-items: center; gap: 3px;
+    transition: all 0.18s;
+}
+.dic-rate-btn span { font-size: 0.65rem; font-weight: 600; opacity: 0.8; }
+.dic-rate-fail  { border-color: var(--red);   color: var(--red);   }
+.dic-rate-mid   { border-color: var(--gold);  color: var(--gold);  }
+.dic-rate-good  { border-color: var(--green); color: var(--green); }
+.dic-rate-fail:hover  { background: rgba(255,85,85,0.1); }
+.dic-rate-mid:hover   { background: rgba(240,192,64,0.1); }
+.dic-rate-good:hover  { background: rgba(68,212,144,0.1); }
+
+/* SIGUIENTE — botón fantasma */
+.dic-btn-next {
+    width: 100%; padding: 12px;
+    border: 1px solid var(--border2); border-radius: 14px;
+    background: transparent; color: var(--muted);
+    font-family: 'Space Grotesk', sans-serif; font-size: 0.85rem;
+    cursor: pointer; display: none; transition: all 0.18s;
+}
+.dic-btn-next.visible { display: block; }
+.dic-btn-next:hover { border-color: var(--gold); color: var(--gold); }
+
+/* PANTALLA SELECTOR — el menú de entrada */
+#dic-selector { background: var(--bg); }
+.dic-sel-body {
+    flex: 1; overflow-y: auto; padding: 16px 16px 80px;
+    overscroll-behavior: contain;
+}
+.dic-sel-body::-webkit-scrollbar { display: none; }
+
+/* HERO del selector */
+.dic-hero {
+    text-align: center; padding: 20px 0 28px;
+}
+.dic-hero-icon { font-size: 3rem; margin-bottom: 10px; }
+.dic-hero-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem; color: var(--gold); font-weight: 700;
+    margin-bottom: 6px;
+}
+.dic-hero-sub { font-size: 0.82rem; color: var(--muted); line-height: 1.5; }
+
+/* GRID de modos de estudio */
+.dic-modes-grid {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 10px; margin-bottom: 20px;
+}
+.dic-mode-card {
+    background: var(--card); border: 1px solid var(--border2);
+    border-radius: 16px; padding: 16px 14px;
+    cursor: pointer; transition: all 0.2s; position: relative;
+    overflow: hidden;
+}
+.dic-mode-card:hover { border-color: var(--gold); transform: translateY(-1px); }
+.dic-mode-card.featured {
+    grid-column: span 2;
+    border-color: var(--gold);
+    background: linear-gradient(135deg, var(--card2), var(--card));
+}
+.dic-mode-card.featured::before {
+    content: '⭐ RECOMENDADO';
+    position: absolute; top: 10px; right: 10px;
+    font-size: 0.6rem; font-weight: 800; letter-spacing: 0.1em;
+    color: var(--gold); opacity: 0.7;
+}
+.dic-mc-icon { font-size: 1.6rem; margin-bottom: 8px; }
+.dic-mc-title { font-size: 0.9rem; font-weight: 700; color: var(--text); margin-bottom: 4px; }
+.dic-mc-desc  { font-size: 0.72rem; color: var(--muted); line-height: 1.4; }
+.dic-mc-count { 
+    display: inline-block; margin-top: 8px;
+    font-size: 0.68rem; font-weight: 700; color: var(--gold);
+    background: var(--gold-dim); padding: 2px 8px; border-radius: 8px;
+}
+
+/* LETRAS grid */
+.dic-sel-label {
+    font-size: 0.72rem; font-weight: 800; letter-spacing: 0.12em;
+    color: var(--muted); text-transform: uppercase;
+    margin: 18px 0 10px;
+}
+.dic-letras-grid {
+    display: grid; grid-template-columns: repeat(6, 1fr); gap: 6px;
+}
+.dic-letra-btn {
+    aspect-ratio: 1; border-radius: 12px;
+    border: 1px solid var(--border2); background: var(--card);
+    color: var(--text); font-size: 0.95rem; font-weight: 700;
+    cursor: pointer; transition: all 0.15s; display: flex;
+    align-items: center; justify-content: center;
+    font-family: 'Space Grotesk', sans-serif;
+}
+.dic-letra-btn:hover { border-color: var(--gold); color: var(--gold); }
+
+/* CAMPOS temáticos */
+.dic-campos-grid {
+    display: flex; flex-direction: column; gap: 8px;
+}
+.dic-campo-row {
+    display: flex; align-items: center; gap: 12px;
+    background: var(--card); border: 1px solid var(--border2);
+    border-radius: 14px; padding: 12px 14px;
+    cursor: pointer; transition: all 0.18s;
+}
+.dic-campo-row:hover { border-color: var(--gold); }
+.dic-campo-row-icon { font-size: 1.3rem; }
+.dic-campo-row-info { flex: 1; }
+.dic-campo-row-name { font-size: 0.88rem; font-weight: 700; color: var(--text); }
+.dic-campo-row-n { font-size: 0.72rem; color: var(--muted); margin-top: 2px; }
+.dic-campo-row-arr { color: var(--muted); font-size: 1.1rem; }
+
+/* LOADING */
+.dic-loading {
+    flex: 1; display: flex; flex-direction: column;
+    align-items: center; justify-content: center; gap: 14px;
+    padding: 40px;
+}
+.dic-loading-spinner {
+    width: 36px; height: 36px; border-radius: 50%;
+    border: 3px solid var(--border2);
+    border-top-color: var(--gold);
+    animation: dic-spin 0.8s linear infinite;
+}
+@keyframes dic-spin { to { transform: rotate(360deg); } }
+.dic-loading-text { font-size: 0.85rem; color: var(--muted); }
+
 </style>
 </head>
 <body>
@@ -1100,6 +1442,14 @@ html, body {
                 </div>
                 <div class="deck-arrow">›</div>
             </div>
+            <div class="deck-item" onclick="goTo('dic-selector')" style="border-color:var(--blue);">
+                <div class="deck-icon">📚</div>
+                <div class="deck-info">
+                    <h4>Diccionario RAE</h4>
+                    <p>75.812 palabras · por letra, campo y más</p>
+                </div>
+                <div class="deck-arrow">›</div>
+            </div>
         </div>
 
         <div class="section-label">Generador IA</div>
@@ -1140,6 +1490,168 @@ html, body {
     <div id="cur-modal-contenido"></div>
     <button class="cur-cerrar" onclick="cerrarCuriosidad()">Cerrar</button>
   </div>
+</div>
+
+
+<!-- ================================================================
+     DICCIONARIO RAE — SELECTOR
+================================================================ -->
+<div id="dic-selector" class="screen">
+    <div class="top-bar">
+        <button class="btn-back" onclick="goTo('home')">←</button>
+        <div class="top-bar-title">📚 Diccionario RAE</div>
+        <div class="top-bar-right" style="font-size:0.72rem;color:var(--muted);">75.812 palabras</div>
+    </div>
+    <div class="dic-sel-body">
+        <div class="dic-hero">
+            <div class="dic-hero-icon">📚</div>
+            <div class="dic-hero-title">Diccionario completo</div>
+            <div class="dic-hero-sub">Estudia el diccionario de la RAE<br>completo. Elige cómo quieres empezar.</div>
+        </div>
+
+        <!-- MODOS PRINCIPALES -->
+        <div class="dic-modes-grid">
+            <div class="dic-mode-card featured" onclick="iniciarDiccionario('aleatorio', null)">
+                <div class="dic-mc-icon">🎲</div>
+                <div class="dic-mc-title">Aleatorio</div>
+                <div class="dic-mc-desc">Palabras al azar de todo el diccionario. El modo más sorprendente.</div>
+                <div class="dic-mc-count">75.812 palabras</div>
+            </div>
+            <div class="dic-mode-card" onclick="mostrarFiltroLetra()">
+                <div class="dic-mc-icon">🔤</div>
+                <div class="dic-mc-title">Por letra</div>
+                <div class="dic-mc-desc">Estudia todas las palabras de una letra.</div>
+                <div class="dic-mc-count">A — Z</div>
+            </div>
+            <div class="dic-mode-card" onclick="mostrarFiltroCampo()">
+                <div class="dic-mc-icon">🏷️</div>
+                <div class="dic-mc-title">Por campo</div>
+                <div class="dic-mc-desc">Botánica, zoología, náutica, derecho...</div>
+                <div class="dic-mc-count">14 campos</div>
+            </div>
+            <div class="dic-mode-card" onclick="iniciarDiccionario('campo', 'gentilicio')">
+                <div class="dic-mc-icon">🌍</div>
+                <div class="dic-mc-title">Gentilicios</div>
+                <div class="dic-mc-desc">¿Cómo se llaman los habitantes de...?</div>
+                <div class="dic-mc-count">~1.800 palabras</div>
+            </div>
+            <div class="dic-mode-card" onclick="iniciarDiccionario('campo', 'desusada')">
+                <div class="dic-mc-icon">⏳</div>
+                <div class="dic-mc-title">Palabras olvidadas</div>
+                <div class="dic-mc-desc">Términos en desuso que pocos conocen.</div>
+                <div class="dic-mc-count">~4.600 palabras</div>
+            </div>
+            <div class="dic-mode-card" onclick="iniciarDiccionario('campo', 'americanismo')">
+                <div class="dic-mc-icon">🌎</div>
+                <div class="dic-mc-title">Americanismos</div>
+                <div class="dic-mc-desc">Palabras del español de América.</div>
+                <div class="dic-mc-count">~1.000 palabras</div>
+            </div>
+        </div>
+
+        <!-- GRID DE LETRAS -->
+        <div id="dic-letras-panel" style="display:none;">
+            <div class="dic-sel-label">Elige una letra</div>
+            <div class="dic-letras-grid" id="dic-letras-grid"></div>
+        </div>
+
+        <!-- GRID DE CAMPOS -->
+        <div id="dic-campos-panel" style="display:none;">
+            <div class="dic-sel-label">Elige un campo temático</div>
+            <div class="dic-campos-grid" id="dic-campos-grid"></div>
+        </div>
+
+    </div>
+</div>
+
+<!-- ================================================================
+     DICCIONARIO RAE — ESTUDIO
+================================================================ -->
+<div id="dic-rae" class="screen">
+    <div class="top-bar">
+        <button class="btn-back" onclick="goTo('dic-selector')">←</button>
+        <div class="top-bar-title" id="dic-rae-title">📚 Diccionario</div>
+        <div class="top-bar-right" id="dic-rae-counter" style="font-size:0.78rem;color:var(--muted);">0/0</div>
+    </div>
+
+    <!-- LOADING -->
+    <div class="dic-loading" id="dic-loading">
+        <div class="dic-loading-spinner"></div>
+        <div class="dic-loading-text">Cargando palabras...</div>
+    </div>
+
+    <!-- CONTENIDO PRINCIPAL (oculto hasta que carga) -->
+    <div id="dic-content" style="display:none; flex:1; overflow:hidden; flex-direction:column; display:none;">
+        <div class="dic-card-wrap" id="dic-card-wrap">
+            <!-- BADGE CAMPO -->
+            <div style="display:flex; gap:8px; align-items:center;">
+                <div class="dic-campo-badge" id="dic-badge">–</div>
+                <div class="dic-pos-tag" id="dic-pos">–</div>
+            </div>
+
+            <!-- TARJETA FRENTE: definición -->
+            <div class="dic-front-card" id="dic-front">
+                <div class="dic-def-main" id="dic-def-main">–</div>
+                <button class="dic-def-toggle" id="dic-def-toggle" onclick="toggleDefExtra()" style="display:none;">
+                    + ver más acepciones
+                </button>
+                <div class="dic-def-extra" id="dic-def-extra"></div>
+            </div>
+
+            <!-- TARJETA REVERSO: la palabra -->
+            <div class="dic-back-card" id="dic-back">
+                <div class="dic-word-main" id="dic-word">–</div>
+                <div class="dic-word-pos" id="dic-word-pos">–</div>
+            </div>
+
+            <!-- ETIMOLOGÍA -->
+            <div class="dic-section" id="dic-etym-section">
+                <div class="dic-section-label dic-etym-label">🌿 Etimología</div>
+                <div class="dic-section-text" id="dic-etym-text"></div>
+            </div>
+
+            <!-- SINÓNIMOS -->
+            <div class="dic-section" id="dic-syn-section">
+                <div class="dic-section-label dic-syn-label">🔗 Sinónimos</div>
+                <div class="dic-section-text" id="dic-syn-text"></div>
+            </div>
+
+            <!-- EJEMPLO IA -->
+            <div class="dic-example-section" id="dic-ex-section">
+                <div class="dic-section-label dic-ex-label">✍️ Ejemplo de uso</div>
+                <div class="dic-example-loading" id="dic-ex-loading" style="display:none;">Generando ejemplo...</div>
+                <div class="dic-example-text" id="dic-ex-text"></div>
+            </div>
+
+            <!-- ACCIONES -->
+            <div class="dic-action-row">
+                <button class="dic-btn-reveal" id="dic-btn-reveal" onclick="dicRevelar()">
+                    Ver palabra →
+                </button>
+                <button class="dic-btn-example" id="dic-btn-example" onclick="dicGenerarEjemplo()" style="display:none;">
+                    💡 Ejemplo
+                </button>
+            </div>
+
+            <!-- CALIFICACIÓN (aparece tras revelar) -->
+            <div class="dic-rate-row" id="dic-rate-row">
+                <button class="dic-rate-btn dic-rate-fail" onclick="dicCalificar(1)">✖<span>No la sé</span></button>
+                <button class="dic-rate-btn dic-rate-mid"  onclick="dicCalificar(3)">🔄<span>Regular</span></button>
+                <button class="dic-rate-btn dic-rate-good" onclick="dicCalificar(5)">✔<span>La sé</span></button>
+            </div>
+
+            <!-- SIGUIENTE -->
+            <button class="dic-btn-next" id="dic-btn-next" onclick="dicSiguiente()">
+                Siguiente palabra →
+            </button>
+
+            <!-- LINK RAE -->
+            <a id="dic-rae-link" href="#" target="_blank" 
+               style="display:none; text-align:center; font-size:0.75rem; color:var(--muted); text-decoration:none; padding:4px 0;">
+                📖 Ver en dle.rae.es
+            </a>
+        </div>
+    </div>
 </div>
 
 <!-- ================================================================
@@ -14349,11 +14861,388 @@ function cerrarCuriosidad() {
   document.getElementById('cur-modal').classList.add('hidden');
 }
 
-// Registrar Service Worker — necesario para que Chrome Android instale como app
-if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('./sw.js').catch(function(e) {
-        console.log('SW error:', e);
-    });
+
+// ============================================================
+// DICCIONARIO RAE — LÓGICA COMPLETA
+// ============================================================
+
+const DIC_BASE_URL = 'https://alacreu-ia.github.io/Pasapalabra-Pro/diccionarios/';
+
+const DIC_CAMPOS = [
+    { id: 'gentilicio',    icon: '🌍', name: 'Gentilicios',         n: '~1.800' },
+    { id: 'botanica',      icon: '🌿', name: 'Botánica',            n: '~1.200' },
+    { id: 'zoologia',      icon: '🦎', name: 'Zoología',            n: '~400'   },
+    { id: 'medicina',      icon: '🏥', name: 'Medicina y Anatomía', n: '~110'   },
+    { id: 'nautica',       icon: '⛵', name: 'Náutica',             n: '~90'    },
+    { id: 'arte_literatura',icon: '🎨', name: 'Arte y Literatura',  n: '~730'   },
+    { id: 'musica',        icon: '🎵', name: 'Música',              n: '~125'   },
+    { id: 'religion',      icon: '⛪', name: 'Religión',            n: '~465'   },
+    { id: 'derecho',       icon: '⚖️', name: 'Derecho',            n: '~485'   },
+    { id: 'militar',       icon: '⚔️', name: 'Militar',            n: '~620'   },
+    { id: 'gastronomia',   icon: '🍷', name: 'Gastronomía',        n: '~177'   },
+    { id: 'comercio',      icon: '🏪', name: 'Comercio',            n: '~82'    },
+    { id: 'geografia',     icon: '🗺️', name: 'Geografía',          n: '~950'   },
+    { id: 'ciencia',       icon: '🔬', name: 'Ciencia',             n: '~159'   },
+    { id: 'filosofia',     icon: '🧠', name: 'Filosofía',           n: '~15'    },
+    { id: 'coloquial',     icon: '💬', name: 'Coloquial y vulgar',  n: '~1.750' },
+    { id: 'desusada',      icon: '⏳', name: 'Palabras en desuso',  n: '~4.650' },
+    { id: 'americanismo',  icon: '🌎', name: 'Americanismos',       n: '~1.050' },
+    { id: 'sustantivo',    icon: '📦', name: 'Sustantivos',         n: '~36.000'},
+    { id: 'adjetivo',      icon: '🎨', name: 'Adjetivos',           n: '~18.700'},
+    { id: 'verbo',         icon: '⚡', name: 'Verbos',              n: '~9.450' },
+    { id: 'adverbio',      icon: '↗️', name: 'Adverbios',          n: '~1.500' },
+];
+
+const DIC_LETRAS = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','Ñ','O','P','Q','R','S','T','U','V','X','Y','Z'];
+
+const DIC_CAMPO_ICONS = {};
+DIC_CAMPOS.forEach(function(c){ DIC_CAMPO_ICONS[c.id] = c.icon + ' ' + c.name; });
+
+// Estado del diccionario
+var dicState = {
+    modo: null,       // 'aleatorio' | 'letra' | 'campo'
+    filtro: null,     // letra o campo
+    palabras: [],     // array de palabras cargadas
+    idx: 0,           // posición actual
+    revelado: false,
+    letrasCache: {},  // cache de letras ya descargadas
+};
+
+function mostrarFiltroLetra() {
+    var panel = document.getElementById('dic-letras-panel');
+    var campos = document.getElementById('dic-campos-panel');
+    campos.style.display = 'none';
+    panel.style.display = panel.style.display === 'none' ? 'block' : 'none';
+    if (panel.style.display === 'block') {
+        var grid = document.getElementById('dic-letras-grid');
+        if (!grid.children.length) {
+            DIC_LETRAS.forEach(function(l) {
+                var btn = document.createElement('button');
+                btn.className = 'dic-letra-btn';
+                btn.textContent = l;
+                btn.onclick = function() { iniciarDiccionario('letra', l); };
+                grid.appendChild(btn);
+            });
+        }
+        panel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }
+}
+
+function mostrarFiltroCampo() {
+    var panel = document.getElementById('dic-campos-panel');
+    var letras = document.getElementById('dic-letras-panel');
+    letras.style.display = 'none';
+    panel.style.display = panel.style.display === 'none' ? 'block' : 'none';
+    if (panel.style.display === 'block') {
+        var grid = document.getElementById('dic-campos-grid');
+        if (!grid.children.length) {
+            DIC_CAMPOS.forEach(function(c) {
+                var row = document.createElement('div');
+                row.className = 'dic-campo-row';
+                row.innerHTML = '<div class="dic-campo-row-icon">' + c.icon + '</div>' +
+                    '<div class="dic-campo-row-info">' +
+                    '<div class="dic-campo-row-name">' + c.name + '</div>' +
+                    '<div class="dic-campo-row-n">' + c.n + ' palabras</div>' +
+                    '</div><div class="dic-campo-row-arr">›</div>';
+                row.onclick = function() { iniciarDiccionario('campo', c.id); };
+                grid.appendChild(row);
+            });
+        }
+        panel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }
+}
+
+async function iniciarDiccionario(modo, filtro) {
+    dicState.modo   = modo;
+    dicState.filtro = filtro;
+    dicState.idx    = 0;
+    dicState.revelado = false;
+
+    goTo('dic-rae');
+    document.getElementById('dic-loading').style.display = 'flex';
+    document.getElementById('dic-content').style.display = 'none';
+
+    try {
+        var palabras = await dicCargarPalabras(modo, filtro);
+        if (!palabras || palabras.length === 0) {
+            showToast('No hay palabras para este filtro');
+            goTo('dic-selector'); return;
+        }
+        // Mezclar si es aleatorio
+        if (modo === 'aleatorio') palabras = dicMezclar(palabras);
+        dicState.palabras = palabras;
+        dicState.idx = 0;
+
+        // Título
+        var titulo = modo === 'aleatorio' ? '🎲 Aleatorio' :
+                     modo === 'letra'     ? '🔤 Letra ' + filtro :
+                     (DIC_CAMPO_ICONS[filtro] || filtro);
+        document.getElementById('dic-rae-title').textContent = titulo;
+
+        document.getElementById('dic-loading').style.display = 'none';
+        document.getElementById('dic-content').style.display = 'flex';
+        dicMostrarPalabra();
+    } catch(e) {
+        showToast('Error cargando el diccionario. ¿Hay conexión?');
+        goTo('dic-selector');
+    }
+}
+
+async function dicCargarPalabras(modo, filtro) {
+    if (modo === 'aleatorio') {
+        // Cargamos 3 letras al azar para una muestra variada inicial
+        var letras = dicMezclar([...DIC_LETRAS]).slice(0, 3);
+        var todas = [];
+        for (var l of letras) {
+            var data = await dicCargarLetra(l);
+            todas = todas.concat(data);
+        }
+        return todas;
+    } else if (modo === 'letra') {
+        return await dicCargarLetra(filtro);
+    } else if (modo === 'campo') {
+        // Cargar todas las letras y filtrar por campo
+        // Cargamos de a poco para no bloquear
+        var todas = [];
+        for (var l of DIC_LETRAS) {
+            var data = await dicCargarLetra(l);
+            var filtradas = data.filter(function(p){ return p.c === filtro; });
+            todas = todas.concat(filtradas);
+        }
+        return todas;
+    }
+    return [];
+}
+
+async function dicCargarLetra(letra) {
+    if (dicState.letrasCache[letra]) return dicState.letrasCache[letra];
+    var url = DIC_BASE_URL + 'dic_' + letra + '.json';
+    var resp = await fetch(url);
+    if (!resp.ok) throw new Error('No se pudo cargar dic_' + letra + '.json');
+    var data = await resp.json();
+    dicState.letrasCache[letra] = data;
+    return data;
+}
+
+function dicMezclar(arr) {
+    var a = arr.slice();
+    for (var i = a.length - 1; i > 0; i--) {
+        var j = Math.floor(Math.random() * (i + 1));
+        var t = a[i]; a[i] = a[j]; a[j] = t;
+    }
+    return a;
+}
+
+function dicMostrarPalabra() {
+    var total = dicState.palabras.length;
+    var idx   = dicState.idx;
+    var p     = dicState.palabras[idx];
+    if (!p) return;
+
+    dicState.revelado = false;
+
+    // Counter
+    document.getElementById('dic-rae-counter').textContent = (idx+1) + '/' + total;
+
+    // Badge campo
+    var campoInfo = DIC_CAMPOS.find(function(c){ return c.id === p.c; });
+    var badgeText = campoInfo ? campoInfo.icon + ' ' + campoInfo.name : (p.c || '–');
+    document.getElementById('dic-badge').textContent = badgeText;
+    document.getElementById('dic-pos').textContent = p.p || '';
+
+    // Definición principal — limpiar marcas técnicas
+    var defLimpia = dicLimpiarDef(p.d || p.df || '–');
+    document.getElementById('dic-def-main').textContent = defLimpia;
+
+    // Definición extra (acepciones adicionales)
+    var defCompleta = p.df || '';
+    var acepciones = defCompleta.split(' | ');
+    if (acepciones.length > 1) {
+        var extras = acepciones.slice(1).map(function(a){ return '• ' + dicLimpiarDef(a); }).join('\n');
+        document.getElementById('dic-def-extra').textContent = extras;
+        document.getElementById('dic-def-extra').classList.remove('visible');
+        document.getElementById('dic-def-toggle').style.display = 'inline';
+        document.getElementById('dic-def-toggle').textContent = '+ ' + (acepciones.length-1) + ' acepción(es) más';
+    } else {
+        document.getElementById('dic-def-extra').classList.remove('visible');
+        document.getElementById('dic-def-toggle').style.display = 'none';
+    }
+
+    // Reset reverso
+    document.getElementById('dic-back').classList.remove('visible');
+    document.getElementById('dic-word').textContent = '–';
+    document.getElementById('dic-word-pos').textContent = '';
+
+    // Reset secciones
+    document.getElementById('dic-etym-section').classList.remove('visible');
+    document.getElementById('dic-syn-section').classList.remove('visible');
+    document.getElementById('dic-ex-section').classList.remove('visible');
+
+    // Reset botones
+    document.getElementById('dic-btn-reveal').style.display = '';
+    document.getElementById('dic-btn-example').style.display = 'none';
+    document.getElementById('dic-rate-row').classList.remove('visible');
+    document.getElementById('dic-btn-next').classList.remove('visible');
+
+    // Link RAE
+    var linkEl = document.getElementById('dic-rae-link');
+    linkEl.style.display = 'none';
+
+    // Scroll arriba
+    document.getElementById('dic-card-wrap').scrollTo({top: 0, behavior: 'smooth'});
+
+    // Pre-cargar más palabras si modo aleatorio y quedan pocas
+    if (dicState.modo === 'aleatorio' && dicState.palabras.length - idx < 20) {
+        dicCargarMasAleatorio();
+    }
+}
+
+async function dicCargarMasAleatorio() {
+    var letrasUsadas = Object.keys(dicState.letrasCache);
+    var letrasDisp = DIC_LETRAS.filter(function(l){ return !letrasUsadas.includes(l); });
+    if (!letrasDisp.length) return;
+    var letra = letrasDisp[Math.floor(Math.random() * letrasDisp.length)];
+    var data = await dicCargarLetra(letra);
+    dicState.palabras = dicState.palabras.concat(dicMezclar(data).slice(0, 100));
+}
+
+function dicLimpiarDef(d) {
+    if (!d) return '–';
+    // Quitar prefijos de categoría gramatical
+    d = d.replace(/^(m\.|f\.|adj\.|tr\.|intr\.|prnl\.|adv\.|interj\.|m\. y f\.|m\. o f\.|loc\.) /, '');
+    // Quitar marcas de uso al inicio
+    d = d.replace(/^(coloq\.|vulg\.|p\. us\.|desus\.|cult\.|poét\.|rur\.|Am\.|Ar\.|germ\.) /, '');
+    // Quitar referencias ‖
+    d = d.replace(/\(‖[^)]+\)/g, '').trim();
+    // Primera letra mayúscula
+    return d.charAt(0).toUpperCase() + d.slice(1);
+}
+
+function toggleDefExtra() {
+    var extra = document.getElementById('dic-def-extra');
+    var btn   = document.getElementById('dic-def-toggle');
+    var visible = extra.classList.toggle('visible');
+    btn.textContent = visible ? '− ocultar acepciones' : '+ ' + (extra.textContent.split('\n').length) + ' acepción(es) más';
+}
+
+function dicRevelar() {
+    var p = dicState.palabras[dicState.idx];
+    if (!p) return;
+    dicState.revelado = true;
+
+    // Mostrar la palabra
+    document.getElementById('dic-back').classList.add('visible');
+    document.getElementById('dic-word').textContent = p.w;
+    document.getElementById('dic-word-pos').textContent = p.p || '';
+
+    // Mostrar etimología si existe
+    if (p.e && p.e.trim()) {
+        document.getElementById('dic-etym-text').textContent = p.e;
+        document.getElementById('dic-etym-section').classList.add('visible');
+    }
+
+    // Mostrar sinónimos si existen (limpiar el texto)
+    if (p.s && p.s.trim()) {
+        var sinLimpios = p.s.replace(/Sin\.: /g,'').split(' | ')[0];
+        document.getElementById('dic-syn-text').textContent = sinLimpios;
+        document.getElementById('dic-syn-section').classList.add('visible');
+    }
+
+    // Link RAE
+    var linkEl = document.getElementById('dic-rae-link');
+    linkEl.href = 'https://dle.rae.es/' + encodeURIComponent(p.w.toLowerCase());
+    linkEl.style.display = 'block';
+
+    // Mostrar botón ejemplo y ocultar reveal
+    document.getElementById('dic-btn-reveal').style.display = 'none';
+    document.getElementById('dic-btn-example').style.display = '';
+
+    // Mostrar calificación
+    document.getElementById('dic-rate-row').classList.add('visible');
+
+    // Scroll a la palabra
+    document.getElementById('dic-back').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+}
+
+async function dicGenerarEjemplo() {
+    var p = dicState.palabras[dicState.idx];
+    if (!p) return;
+    
+    var btn = document.getElementById('dic-btn-example');
+    btn.disabled = true;
+    btn.textContent = '⏳ Generando...';
+
+    var exSection = document.getElementById('dic-ex-section');
+    var exText    = document.getElementById('dic-ex-text');
+    var exLoading = document.getElementById('dic-ex-loading');
+    
+    exSection.classList.add('visible');
+    exLoading.style.display = 'block';
+    exText.textContent = '';
+
+    try {
+        var prompt = 'Escribe UNA frase de ejemplo en español que use la palabra "' + p.w + '" (' + (p.p||'') + ', ' + dicLimpiarDef(p.d) + '). La frase debe ser elegante, culta y breve (máximo 20 palabras). Solo la frase, sin comillas ni explicaciones.';
+        
+        var resp = await fetch('https://api.anthropic.com/v1/messages', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+                model: 'claude-sonnet-4-20250514',
+                max_tokens: 100,
+                messages: [{ role: 'user', content: prompt }]
+            })
+        });
+        var data = await resp.json();
+        var ejemplo = data.content && data.content[0] ? data.content[0].text.trim() : '';
+        
+        exLoading.style.display = 'none';
+        exText.textContent = ejemplo || 'No se pudo generar el ejemplo.';
+        
+        btn.textContent = '✓ Ejemplo generado';
+        btn.disabled = true;
+    } catch(e) {
+        exLoading.style.display = 'none';
+        exText.textContent = 'Error generando el ejemplo. ¿Hay conexión?';
+        btn.textContent = '💡 Ejemplo';
+        btn.disabled = false;
+    }
+}
+
+function dicCalificar(nivel) {
+    // Guardar en localStorage la calificación (clave dic_[word])
+    var p = dicState.palabras[dicState.idx];
+    if (p) {
+        var key = 'dic_' + p.w.toLowerCase().replace(/\s+/g,'_');
+        var prev = JSON.parse(localStorage.getItem(key) || '{}');
+        prev.nivel = nivel;
+        prev.ts = Date.now();
+        prev.rep = (prev.rep || 0) + 1;
+        localStorage.setItem(key, JSON.stringify(prev));
+    }
+
+    // Ocultar rating, mostrar siguiente
+    document.getElementById('dic-rate-row').classList.remove('visible');
+    document.getElementById('dic-btn-next').classList.add('visible');
+    document.getElementById('dic-btn-next').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+}
+
+function dicSiguiente() {
+    dicState.idx++;
+    if (dicState.idx >= dicState.palabras.length) {
+        // Fin del mazo
+        showToast('¡Has repasado todas las palabras! 🎉');
+        if (dicState.modo === 'aleatorio') {
+            // En aleatorio, seguir cargando más
+            dicCargarMasAleatorio().then(function(){
+                if (dicState.idx < dicState.palabras.length) dicMostrarPalabra();
+                else goTo('dic-selector');
+            });
+        } else {
+            goTo('dic-selector');
+        }
+        return;
+    }
+    dicMostrarPalabra();
 }
 
 window.onload = function () {
