@@ -846,311 +846,183 @@ html, body {
 .cur-hist-txt   { font-size:0.78rem; opacity:0.6; line-height:1.45; }
 
 /* ================================================================
-   DICCIONARIO RAE — PANTALLA COMPLETA
+   DICCIONARIO RAE — PANTALLA FLASHCARD (estilo RAE Extremo)
 ================================================================ */
 #dic-rae { background: var(--bg); }
 
-/* TOP BAR DICCIONARIO */
-#dic-rae .top-bar { position: relative; }
-
-/* SELECTOR DE MODO — pills horizontales */
-.dic-mode-bar {
-    display: flex; gap: 6px; padding: 12px 16px 8px;
-    overflow-x: auto; scrollbar-width: none;
-    background: var(--bg);
-    border-bottom: 1px solid var(--border);
-    flex-shrink: 0;
+/* FILTRO DIFICULTAD */
+.dic-filter-row {
+    display: flex; gap: 6px; padding: 8px 16px 0;
+    flex-shrink: 0; overflow-x: auto; scrollbar-width: none;
 }
-.dic-mode-bar::-webkit-scrollbar { display: none; }
-.dic-mode-pill {
-    flex-shrink: 0; padding: 6px 14px;
-    border-radius: 20px; border: 1.5px solid var(--border2);
-    background: transparent; color: var(--muted);
-    font-size: 0.78rem; font-weight: 600;
-    cursor: pointer; transition: all 0.18s ease;
-    font-family: 'Space Grotesk', sans-serif;
-    white-space: nowrap;
-}
-.dic-mode-pill.active {
-    background: var(--gold); border-color: var(--gold);
-    color: #000; 
-}
-.dic-mode-pill:hover:not(.active) {
-    border-color: var(--gold); color: var(--gold);
-}
-
-/* SUBPANEL DE FILTROS */
-.dic-filter-panel {
-    padding: 10px 16px 6px; background: var(--bg2);
-    border-bottom: 1px solid var(--border);
-    flex-shrink: 0; display: none;
-}
-.dic-filter-panel.visible { display: block; }
-.dic-filter-label {
-    font-size: 0.68rem; font-weight: 700; letter-spacing: 0.1em;
-    color: var(--muted); text-transform: uppercase; margin-bottom: 8px;
-}
-.dic-filter-grid {
-    display: flex; flex-wrap: wrap; gap: 5px;
-}
-.dic-filter-btn {
-    padding: 4px 10px; border-radius: 12px;
+.dic-filter-row::-webkit-scrollbar { display: none; }
+.dic-filt-btn {
+    flex-shrink: 0; padding: 4px 12px; border-radius: 12px;
     border: 1px solid var(--border2); background: transparent;
     color: var(--muted); font-size: 0.72rem; font-weight: 600;
     cursor: pointer; font-family: 'Space Grotesk', sans-serif;
     transition: all 0.15s;
 }
-.dic-filter-btn.sel {
-    background: var(--card2); border-color: var(--gold); color: var(--gold);
-}
-.dic-filter-btn:hover:not(.sel) { border-color: var(--border2); color: var(--text); }
+.dic-filt-btn.on { background: var(--card2); border-color: var(--gold); color: var(--gold); }
 
-/* BARRA DE ESTADO */
-.dic-status-bar {
-    padding: 8px 16px; background: var(--bg);
-    display: flex; align-items: center; justify-content: space-between;
-    border-bottom: 1px solid var(--border);
-    flex-shrink: 0;
-}
-.dic-status-count {
-    font-size: 0.75rem; color: var(--muted); font-weight: 600;
-}
-.dic-status-progress {
-    font-size: 0.75rem; color: var(--gold); font-weight: 700;
+/* PANEL FRENTE — ocupa toda la pantalla */
+.dic-panel {
+    flex: 1; display: flex; flex-direction: column;
+    padding: 14px 18px; overflow: hidden; min-height: 0;
 }
 
-/* TARJETA DE PALABRA — el corazón del aprendizaje */
-.dic-card-wrap {
-    flex: 1; overflow-y: auto; padding: 16px;
-    overscroll-behavior: contain;
+/* Tag superior */
+.dic-front-tag {
+    font-size: 0.68rem; color: var(--muted);
+    text-transform: uppercase; letter-spacing: 2px;
+    font-weight: 700; margin-bottom: 8px; flex-shrink: 0;
+}
+
+/* Badge campo + pos */
+.dic-badges-row {
+    display: flex; gap: 6px; align-items: center;
+    flex-wrap: wrap; margin-bottom: 12px; flex-shrink: 0;
+}
+.dic-campo-pill {
+    display: inline-flex; align-items: center;
+    background: var(--gold-dim); border: 1px solid rgba(240,192,64,0.3);
+    color: var(--gold); font-size: 0.72rem; font-weight: 700;
+    padding: 3px 10px; border-radius: 20px;
+}
+.dic-pos-pill {
+    display: inline-flex; align-items: center;
+    background: rgba(153,102,255,0.08); border: 1px solid rgba(153,102,255,0.25);
+    color: var(--purple); font-size: 0.72rem; font-weight: 700;
+    padding: 3px 10px; border-radius: 20px; font-style: italic;
+}
+.dic-srs-pill {
+    display: inline-flex; align-items: center;
+    font-size: 0.68rem; font-weight: 700;
+    padding: 3px 10px; border-radius: 20px;
+}
+.dic-srs-nueva    { background: rgba(68,136,255,0.12); color: var(--blue); border: 1px solid rgba(68,136,255,0.3); }
+.dic-srs-dificil  { background: rgba(255,85,85,0.12);  color: var(--red);  border: 1px solid rgba(255,85,85,0.3); }
+.dic-srs-regular  { background: rgba(240,192,64,0.12); color: var(--gold); border: 1px solid rgba(240,192,64,0.3); }
+.dic-srs-dominada { background: rgba(68,212,144,0.12); color: var(--green);border: 1px solid rgba(68,212,144,0.3); }
+
+/* Caja de definición — scrollable, ocupa el espacio disponible */
+.dic-def-box {
+    flex: 1; overflow-y: auto; min-height: 0;
+    font-size: 1.05rem; line-height: 1.6; color: var(--text);
+    background: var(--card); border: 1px solid var(--border2);
+    border-radius: 16px; padding: 16px;
     -webkit-overflow-scrolling: touch;
-    display: flex; flex-direction: column; gap: 12px;
 }
-.dic-card-wrap::-webkit-scrollbar { display: none; }
-
-/* FRENTE — definición */
-.dic-front-card {
-    background: var(--card);
-    border: 1px solid var(--border2);
-    border-radius: 20px;
-    padding: 22px 20px 18px;
-    position: relative;
-    overflow: hidden;
+.dic-def-box::-webkit-scrollbar { display: none; }
+.dic-acep-hint {
+    font-size: 0.75rem; color: var(--muted);
+    text-align: center; padding: 6px 0 2px; flex-shrink: 0;
 }
-.dic-front-card::before {
-    content: '';
-    position: absolute; top: 0; left: 0; right: 0; height: 3px;
-    background: linear-gradient(90deg, var(--gold), var(--purple));
+.dic-def-extra-text {
+    margin-top: 10px; padding-top: 10px;
+    border-top: 1px solid var(--border);
+    font-size: 0.88rem; color: var(--muted);
+    display: none;
 }
-.dic-campo-badge {
-    display: inline-flex; align-items: center; gap: 4px;
-    padding: 3px 10px; border-radius: 10px;
-    background: var(--card2); border: 1px solid var(--border2);
-    font-size: 0.68rem; font-weight: 700; letter-spacing: 0.08em;
-    color: var(--muted); text-transform: uppercase;
-    margin-bottom: 14px;
-}
-.dic-def-main {
-    font-size: 1.08rem; line-height: 1.6;
-    color: var(--text); font-weight: 500;
-    margin-bottom: 10px;
-}
-.dic-def-extra {
-    font-size: 0.85rem; line-height: 1.55;
-    color: var(--muted); display: none;
-}
-.dic-def-extra.visible { display: block; }
+.dic-def-extra-text.visible { display: block; }
 .dic-def-toggle {
     display: inline; font-size: 0.75rem; color: var(--gold);
     background: none; border: none; cursor: pointer;
+    font-family: 'Space Grotesk', sans-serif; padding: 4px 0 0;
+}
+
+/* Botón revelar */
+.dic-reveal-btn {
+    background: var(--gold); color: #000; border: none;
+    border-radius: 14px; padding: 15px;
     font-family: 'Space Grotesk', sans-serif;
-    padding: 0; margin-top: 4px;
+    font-size: 1rem; font-weight: 800; cursor: pointer;
+    flex-shrink: 0; margin-top: 10px;
+    transition: background 0.18s;
 }
-.dic-pos-tag {
-    font-size: 0.72rem; color: var(--purple);
-    font-style: italic; font-weight: 600; margin-bottom: 4px;
-}
+.dic-reveal-btn:hover { background: var(--gold2); }
 
-/* REVERSO — la palabra */
-.dic-back-card {
-    background: linear-gradient(135deg, var(--card2) 0%, var(--card) 100%);
-    border: 1.5px solid var(--gold);
-    border-radius: 20px;
-    padding: 22px 20px;
-    text-align: center;
-    display: none;
-    position: relative;
-    overflow: hidden;
+/* PANEL REVERSO */
+#dic-panel-back { display: none; }
+#dic-panel-back.visible { display: flex; }
+
+.dic-back-scroll {
+    flex: 1; overflow-y: auto; padding: 0 0 8px;
+    -webkit-overflow-scrolling: touch; min-height: 0;
 }
-.dic-back-card::after {
-    content: '📖';
-    position: absolute; right: 16px; top: 16px;
-    font-size: 1.4rem; opacity: 0.3;
-}
-.dic-back-card.visible { display: block; }
-.dic-word-main {
+.dic-back-scroll::-webkit-scrollbar { display: none; }
+
+/* Palabra principal */
+.dic-answer-word {
     font-family: 'Playfair Display', serif;
-    font-size: 2rem; font-weight: 700;
-    color: var(--gold); letter-spacing: 0.02em;
-    margin-bottom: 6px; line-height: 1.2;
+    color: var(--gold); font-size: 2rem; line-height: 1.1;
+    margin-bottom: 2px; word-break: break-word;
 }
-.dic-word-pos { font-size: 0.8rem; color: var(--muted); font-style: italic; }
-
-/* SECCIÓN ETIMOLOGÍA */
-.dic-section {
-    background: var(--card); border: 1px solid var(--border);
-    border-radius: 14px; padding: 14px 16px;
-    display: none;
-}
-.dic-section.visible { display: block; }
-.dic-section-label {
-    font-size: 0.68rem; font-weight: 800; letter-spacing: 0.12em;
-    text-transform: uppercase; margin-bottom: 8px;
-}
-.dic-etym-label { color: var(--blue); }
-.dic-syn-label  { color: var(--green); }
-.dic-ex-label   { color: var(--purple); }
-.dic-section-text {
-    font-size: 0.88rem; line-height: 1.6; color: var(--text); opacity: 0.85;
+.dic-answer-pos {
+    font-size: 0.78rem; color: var(--muted);
+    margin-bottom: 12px; font-style: italic;
 }
 
-/* SECCIÓN EJEMPLO IA */
-
-
-/* BOTONES DE ACCIÓN */
-.dic-action-row {
-    display: flex; gap: 8px; flex-wrap: wrap;
-    padding: 0 0 4px;
+/* Cajitas de info — igual que RAE Extremo */
+.dic-info-block {
+    border-radius: 12px; padding: 9px 12px;
+    margin-bottom: 8px; font-size: 0.82rem; line-height: 1.45;
 }
-.dic-btn-reveal {
-    flex: 1; padding: 14px;
-    background: var(--gold); border: none; border-radius: 14px;
-    color: #000; font-weight: 700; font-size: 0.95rem;
-    cursor: pointer; font-family: 'Space Grotesk', sans-serif;
-    transition: all 0.18s;
+.dic-info-block.def   { background: var(--card); border: 1px solid var(--border2); }
+.dic-info-block.syn   { background: rgba(68,212,144,0.07); border: 1px solid rgba(68,212,144,0.25); }
+.dic-info-block.ant   { background: rgba(255,85,85,0.07);  border: 1px solid rgba(255,85,85,0.25); }
+.dic-info-block.etym  { background: rgba(240,192,64,0.07); border: 1px solid rgba(240,192,64,0.25); }
+.dic-info-block.rel   { background: rgba(153,102,255,0.07);border: 1px solid rgba(153,102,255,0.25); }
+.dic-info-label {
+    font-size: 0.62rem; text-transform: uppercase;
+    letter-spacing: 1.5px; font-weight: 800;
+    display: block; margin-bottom: 4px;
 }
-.dic-btn-reveal:hover { background: var(--gold2); }
+.dic-info-block.def  .dic-info-label { color: var(--muted); }
+.dic-info-block.syn  .dic-info-label { color: var(--green); }
+.dic-info-block.ant  .dic-info-label { color: var(--red); }
+.dic-info-block.etym .dic-info-label { color: var(--gold); }
+.dic-info-block.rel  .dic-info-label { color: var(--purple); }
+.dic-info-text { color: var(--muted); }
 
-
-/* BOTONES DE CALIFICACIÓN */
-.dic-rate-row {
-    display: flex; gap: 8px; display: none;
+/* Tags de palabras relacionadas */
+.dic-rel-tags { display: flex; flex-wrap: wrap; gap: 5px; margin-top: 4px; }
+.dic-rel-tag {
+    padding: 2px 9px; border-radius: 10px;
+    background: var(--card2); border: 1px solid var(--border2);
+    font-size: 0.75rem; color: var(--muted); cursor: pointer;
+    transition: all 0.15s;
 }
-.dic-rate-row.visible { display: flex; }
+.dic-rel-tag:hover { border-color: var(--purple); color: var(--purple); }
+
+/* Link RAE */
+.dic-rae-link-btn {
+    text-align: center; font-size: 0.75rem; color: var(--muted);
+    text-decoration: none; padding: 4px 0; display: none;
+}
+
+/* Rating bar fija abajo */
+.dic-rating-bar {
+    display: flex; gap: 8px; padding: 10px 18px 20px;
+    flex-shrink: 0; border-top: 1px solid var(--border);
+    background: var(--bg); display: none;
+}
+.dic-rating-bar.visible { display: flex; }
 .dic-rate-btn {
-    flex: 1; padding: 13px 8px;
-    border-radius: 14px; border: 1.5px solid;
-    background: transparent; font-weight: 700; font-size: 0.82rem;
-    cursor: pointer; font-family: 'Space Grotesk', sans-serif;
-    display: flex; flex-direction: column; align-items: center; gap: 3px;
-    transition: all 0.18s;
-}
-.dic-rate-btn span { font-size: 0.65rem; font-weight: 600; opacity: 0.8; }
-.dic-rate-fail  { border-color: var(--red);   color: var(--red);   }
-.dic-rate-mid   { border-color: var(--gold);  color: var(--gold);  }
-.dic-rate-good  { border-color: var(--green); color: var(--green); }
-.dic-rate-fail:hover  { background: rgba(255,85,85,0.1); }
-.dic-rate-mid:hover   { background: rgba(240,192,64,0.1); }
-.dic-rate-good:hover  { background: rgba(68,212,144,0.1); }
-
-/* SIGUIENTE — botón fantasma */
-.dic-btn-next {
-    width: 100%; padding: 12px;
-    border: 1px solid var(--border2); border-radius: 14px;
-    background: transparent; color: var(--muted);
-    font-family: 'Space Grotesk', sans-serif; font-size: 0.85rem;
-    cursor: pointer; display: none; transition: all 0.18s;
-}
-.dic-btn-next.visible { display: block; }
-.dic-btn-next:hover { border-color: var(--gold); color: var(--gold); }
-
-/* PANTALLA SELECTOR — el menú de entrada */
-#dic-selector { background: var(--bg); }
-.dic-sel-body {
-    flex: 1; overflow-y: auto; padding: 16px 16px 80px;
-    overscroll-behavior: contain;
-}
-.dic-sel-body::-webkit-scrollbar { display: none; }
-
-/* HERO del selector */
-.dic-hero {
-    text-align: center; padding: 20px 0 28px;
-}
-.dic-hero-icon { font-size: 3rem; margin-bottom: 10px; }
-.dic-hero-title {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.5rem; color: var(--gold); font-weight: 700;
-    margin-bottom: 6px;
-}
-.dic-hero-sub { font-size: 0.82rem; color: var(--muted); line-height: 1.5; }
-
-/* GRID de modos de estudio */
-.dic-modes-grid {
-    display: grid; grid-template-columns: 1fr 1fr;
-    gap: 10px; margin-bottom: 20px;
-}
-.dic-mode-card {
-    background: var(--card); border: 1px solid var(--border2);
-    border-radius: 16px; padding: 16px 14px;
-    cursor: pointer; transition: all 0.2s; position: relative;
-    overflow: hidden;
-}
-.dic-mode-card:hover { border-color: var(--gold); transform: translateY(-1px); }
-.dic-mode-card.featured {
-    grid-column: span 2;
-    border-color: var(--gold);
-    background: linear-gradient(135deg, var(--card2), var(--card));
-}
-.dic-mode-card.featured::before {
-    content: '⭐ RECOMENDADO';
-    position: absolute; top: 10px; right: 10px;
-    font-size: 0.6rem; font-weight: 800; letter-spacing: 0.1em;
-    color: var(--gold); opacity: 0.7;
-}
-.dic-mc-icon { font-size: 1.6rem; margin-bottom: 8px; }
-.dic-mc-title { font-size: 0.9rem; font-weight: 700; color: var(--text); margin-bottom: 4px; }
-.dic-mc-desc  { font-size: 0.72rem; color: var(--muted); line-height: 1.4; }
-.dic-mc-count { 
-    display: inline-block; margin-top: 8px;
-    font-size: 0.68rem; font-weight: 700; color: var(--gold);
-    background: var(--gold-dim); padding: 2px 8px; border-radius: 8px;
-}
-
-/* LETRAS grid */
-.dic-sel-label {
-    font-size: 0.72rem; font-weight: 800; letter-spacing: 0.12em;
-    color: var(--muted); text-transform: uppercase;
-    margin: 18px 0 10px;
-}
-.dic-letras-grid {
-    display: grid; grid-template-columns: repeat(6, 1fr); gap: 6px;
-}
-.dic-letra-btn {
-    aspect-ratio: 1; border-radius: 12px;
-    border: 1px solid var(--border2); background: var(--card);
-    color: var(--text); font-size: 0.95rem; font-weight: 700;
-    cursor: pointer; transition: all 0.15s; display: flex;
-    align-items: center; justify-content: center;
+    flex: 1; border-radius: 12px; padding: 12px 6px;
     font-family: 'Space Grotesk', sans-serif;
+    font-size: 1rem; font-weight: 700; border: 1px solid;
+    cursor: pointer; display: flex; flex-direction: column;
+    align-items: center; gap: 3px; background: transparent;
+    transition: background 0.15s;
 }
-.dic-letra-btn:hover { border-color: var(--gold); color: var(--gold); }
-
-/* CAMPOS temáticos */
-.dic-campos-grid {
-    display: flex; flex-direction: column; gap: 8px;
-}
-.dic-campo-row {
-    display: flex; align-items: center; gap: 12px;
-    background: var(--card); border: 1px solid var(--border2);
-    border-radius: 14px; padding: 12px 14px;
-    cursor: pointer; transition: all 0.18s;
-}
-.dic-campo-row:hover { border-color: var(--gold); }
-.dic-campo-row-icon { font-size: 1.3rem; }
-.dic-campo-row-info { flex: 1; }
-.dic-campo-row-name { font-size: 0.88rem; font-weight: 700; color: var(--text); }
-.dic-campo-row-n { font-size: 0.72rem; color: var(--muted); margin-top: 2px; }
-.dic-campo-row-arr { color: var(--muted); font-size: 1.1rem; }
+.dic-rate-btn span { font-size: 0.7rem; font-weight: 600; }
+.dic-rate-fail { border-color: var(--red);   color: var(--red);   }
+.dic-rate-mid  { border-color: var(--gold);  color: var(--gold);  }
+.dic-rate-good { border-color: var(--green); color: var(--green); }
+.dic-rate-fail:hover { background: rgba(255,85,85,0.1); }
+.dic-rate-mid:hover  { background: rgba(240,192,64,0.1); }
+.dic-rate-good:hover { background: rgba(68,212,144,0.1); }
 
 /* LOADING */
 .dic-loading {
@@ -1916,77 +1788,89 @@ html, body {
         <div class="dic-loading-text">Cargando palabras...</div>
     </div>
 
-    <!-- CONTENIDO PRINCIPAL (oculto hasta que carga) -->
-    <div id="dic-content" style="flex:1; overflow:hidden; flex-direction:column; display:none;">
-        <div class="dic-card-wrap" id="dic-card-wrap">
-            <!-- BADGE CAMPO -->
-            <div style="display:flex; gap:8px; align-items:center; flex-wrap:wrap;">
-                <div class="dic-campo-badge" id="dic-badge">–</div>
-                <div class="dic-pos-tag" id="dic-pos">–</div>
-                <span class="dic-srs-badge dic-srs-nueva" id="dic-srs-badge" style="display:none;"></span>
+    <!-- FRENTE: definición — pantalla completa -->
+    <div class="dic-panel" id="dic-panel-front" style="display:none;">
+        <div class="dic-front-tag">📖 ¿Qué palabra es?</div>
+
+        <!-- Badges -->
+        <div class="dic-badges-row">
+            <span class="dic-campo-pill" id="dic-badge">–</span>
+            <span class="dic-pos-pill" id="dic-pos">–</span>
+            <span class="dic-srs-pill" id="dic-srs-badge" style="display:none;"></span>
+        </div>
+
+        <!-- Definición -->
+        <div class="dic-def-box" id="dic-def-main">–</div>
+        <div class="dic-acep-hint" id="dic-acep-hint"></div>
+
+        <!-- Ver más acepciones -->
+        <button class="dic-def-toggle" id="dic-def-toggle" onclick="toggleDefExtra()" style="display:none;">
+            + ver más acepciones
+        </button>
+
+        <!-- Botón revelar -->
+        <button class="dic-reveal-btn" id="dic-btn-reveal" onclick="dicRevelar()">
+            Ver palabra →
+        </button>
+    </div>
+
+    <!-- REVERSO: palabra + info — pantalla completa -->
+    <div class="dic-panel" id="dic-panel-back">
+        <div class="dic-back-scroll" id="dic-back-scroll">
+            <!-- Palabra -->
+            <div class="dic-answer-word" id="dic-word">–</div>
+            <div class="dic-answer-pos" id="dic-word-pos">–</div>
+
+            <!-- Definición completa -->
+            <div class="dic-info-block def" id="dic-defs-block">
+                <span class="dic-info-label">📖 Definición</span>
+                <div class="dic-info-text" id="dic-defs-text"></div>
+                <div class="dic-def-extra-text" id="dic-def-extra"></div>
+                <button class="dic-def-toggle" id="dic-def-toggle2" onclick="toggleDefExtra2()" style="display:none;"></button>
             </div>
 
-            <!-- TARJETA FRENTE: definición -->
-            <div class="dic-front-card" id="dic-front">
-                <div class="dic-def-main" id="dic-def-main">–</div>
-                <button class="dic-def-toggle" id="dic-def-toggle" onclick="toggleDefExtra()" style="display:none;">
-                    + ver más acepciones
-                </button>
-                <div class="dic-def-extra" id="dic-def-extra"></div>
+            <!-- Sinónimos -->
+            <div class="dic-info-block syn" id="dic-syn-section" style="display:none;">
+                <span class="dic-info-label">🔗 Sinónimos</span>
+                <div class="dic-info-text" id="dic-syn-text"></div>
             </div>
 
-            <!-- TARJETA REVERSO: la palabra -->
-            <div class="dic-back-card" id="dic-back">
-                <div class="dic-word-main" id="dic-word">–</div>
-                <div class="dic-word-pos" id="dic-word-pos">–</div>
+            <!-- Antónimos -->
+            <div class="dic-info-block ant" id="dic-ant-section" style="display:none;">
+                <span class="dic-info-label">↔ Antónimos</span>
+                <div class="dic-info-text" id="dic-ant-text"></div>
             </div>
 
-            <!-- ETIMOLOGÍA -->
-            <div class="dic-section" id="dic-etym-section">
-                <div class="dic-section-label dic-etym-label">🌿 Etimología</div>
-                <div class="dic-section-text" id="dic-etym-text"></div>
+            <!-- Etimología -->
+            <div class="dic-info-block etym" id="dic-etym-section" style="display:none;">
+                <span class="dic-info-label">🏛 Etimología</span>
+                <div class="dic-info-text" id="dic-etym-text"></div>
             </div>
 
-            <!-- SINÓNIMOS -->
-            <div class="dic-section" id="dic-syn-section">
-                <div class="dic-section-label dic-syn-label">🔗 Sinónimos</div>
-                <div class="dic-section-text" id="dic-syn-text"></div>
+            <!-- Palabras relacionadas -->
+            <div class="dic-info-block rel" id="dic-rel-section" style="display:none;">
+                <span class="dic-info-label">🔀 Relacionadas</span>
+                <div class="dic-rel-tags" id="dic-rel-words"></div>
             </div>
 
-            <!-- PALABRAS RELACIONADAS -->
-            <div class="dic-section" id="dic-rel-section">
-                <div class="dic-section-label" style="color:var(--gold);">🔀 Palabras relacionadas</div>
-                <div class="dic-related" id="dic-rel-words"></div>
-            </div>
-
-
-
-            <!-- ACCIONES -->
-            <div class="dic-action-row">
-                <button class="dic-btn-reveal" id="dic-btn-reveal" onclick="dicRevelar()">
-                    Ver palabra →
-                </button>
-
-            </div>
-
-            <!-- CALIFICACIÓN (aparece tras revelar) -->
-            <div class="dic-rate-row" id="dic-rate-row">
-                <button class="dic-rate-btn dic-rate-fail" onclick="dicCalificar(1)">✖<span>No la sé</span></button>
-                <button class="dic-rate-btn dic-rate-mid"  onclick="dicCalificar(3)">🔄<span>Regular</span></button>
-                <button class="dic-rate-btn dic-rate-good" onclick="dicCalificar(5)">✔<span>La sé</span></button>
-            </div>
-
-            <!-- SIGUIENTE -->
-            <button class="dic-btn-next" id="dic-btn-next" onclick="dicSiguiente()">
-                Siguiente palabra →
-            </button>
-
-            <!-- LINK RAE -->
-            <a id="dic-rae-link" href="#" target="_blank" 
-               style="display:none; text-align:center; font-size:0.75rem; color:var(--muted); text-decoration:none; padding:4px 0;">
+            <!-- Link RAE -->
+            <a class="dic-rae-link-btn" id="dic-rae-link" href="#" target="_blank">
                 📖 Ver en dle.rae.es
             </a>
+
+            <!-- Botón siguiente (aparece tras calificar) -->
+            <button class="dic-reveal-btn" id="dic-btn-next" onclick="dicSiguiente()"
+                    style="display:none; background: var(--card); color: var(--muted); border: 1px solid var(--border2); margin-top:4px;">
+                Siguiente →
+            </button>
         </div>
+    </div>
+
+    <!-- RATING BAR fija abajo -->
+    <div class="dic-rating-bar" id="dic-rate-row">
+        <button class="dic-rate-btn dic-rate-fail" onclick="dicCalificar(1)">✖<span>No la sé</span></button>
+        <button class="dic-rate-btn dic-rate-mid"  onclick="dicCalificar(3)">🔄<span>Regular</span></button>
+        <button class="dic-rate-btn dic-rate-good" onclick="dicCalificar(5)">✔<span>La sé</span></button>
     </div>
 </div>
 
@@ -13553,6 +13437,404 @@ MAZOS.push({
     {q: "Con la X: Nombre de pila de Bobés, el genial creador escénico de teatro de objetos que acaparó nominaciones y premios en 2023 con su delicada obra sobre el maestro Antoni Benaiges.", a: "Xavier", letra: "X"},
     {q: "Con la Y: Apodo por el que es conocido el talentoso director de la compañía Ay Teatro, Cáceres, habitual finalista en los galardones nacionales con joyas clásicas como 'Malvivir'.", a: "Yayo", letra: "Y"},
     {q: "Con la Z: Nombre de la histórica y gamberra compañía de teatro de calle española que en 2021 se hizo con el Premio Max a Mejor Espectáculo de Calle por la obra 'Al otro lado'.", a: "Zanguango", letra: "Z"},
+    {q: "Con la A: En comedia antigua griega, escena de debate formal o enfrentamiento verbal entre dos personajes.", a: "Agón", letra: "A"},
+    {q: "Con la B: Armazón de madera cubierto de tela que, pintado, forma parte del decorado a los lados del escenario.", a: "Bastidor", letra: "B"},
+    {q: "Con la C: Espacio escénico al aire libre del Siglo de Oro español, situado en el patio interior de las casas.", a: "Corral", letra: "C"},
+    {q: "Con la D: Palabra genérica para designar al escritor y creador de obras teatrales.", a: "Dramaturgo", letra: "D"},
+    {q: "Con la E: Primera representación pública de un montaje teatral o de una obra dramática nueva.", a: "Estreno", letra: "E"},
+    {q: "Con la F: Figura espectral del rey asesinado que se aparece en el primer acto de la célebre tragedia 'Hamlet'.", a: "Fantasma", letra: "F"},
+    {q: "Con la G: Texto escrito que recoge los diálogos y las indicaciones técnicas de un espectáculo escénico.", a: "Guion", letra: "G"},
+    {q: "Con la H: Actor de la antigua Roma; hoy alude al actor que actúa con una expresión muy exagerada y gestual.", a: "Histrión", letra: "H"},
+    {q: "Con la I: Técnica escénica consistente en actuar y crear diálogo en directo sin un libreto previo.", a: "Improvisación", letra: "I"},
+    {q: "Con la J: Nombre del mítico seductor sevillano que inspiró obras teatrales a Tirso de Molina y a Zorrilla.", a: "Juan", letra: "J"},
+    {q: "Con la L: Rey mítico que divide su reino entre sus hijas, protagonista de una de las mayores tragedias de Shakespeare.", a: "Lear", letra: "L"},
+    {q: "Con la M: Muñeco movido mediante hilos o introduciendo la mano, protagonista del tradicional teatro de títeres.", a: "Marioneta", letra: "M"},
+    {q: "Con la N: Movimiento teatral del siglo XVIII que restauró la rígida regla de las tres unidades clásicas de Aristóteles.", a: "Neoclasicismo", letra: "N"},
+    {q: "Contiene la Ñ: Actividad fundamental de creación visual en el teatro para idear la escenografía o el vestuario.", a: "Diseño", letra: "Ñ"},
+    {q: "Con la O: Nombre del famoso teatro en Vicenza diseñado por Palladio, el primero cubierto y de mampostería del Renacimiento.", a: "Olímpico", letra: "O"},
+    {q: "Con la P: Personaje principal de una obra de teatro, en torno al cual gira la acción dramática fundamental.", a: "Protagonista", letra: "P"},
+    {q: "Contiene la Q: Señal acústica que se daba con campana o mazo en los teatros antiguos para avisar del comienzo de la función.", a: "Toque", letra: "Q"},
+    {q: "Con la R: Apellido del máximo exponente de la tragedia neoclásica francesa, dramaturgo autor de 'Fedra'.", a: "Racine", letra: "R"},
+    {q: "Con la S: Dramaturgo de la antigua Grecia clásica, autor de 'Edipo Rey', que introdujo al tercer actor en escena.", a: "Sófocles", letra: "S"},
+    {q: "Con la T: Cortina de gran tamaño que se coloca en la embocadura de un escenario para cerrarlo a la vista del público.", a: "Telón", letra: "T"},
+    {q: "Contiene la U: Persona oculta antiguamente en la concha del proscenio que dictaba el texto a los actores si lo olvidaban.", a: "Apuntador", letra: "U"},
+    {q: "Con la V: Corrientes escénicas experimentales del siglo XX, como el dadaísmo o surrealismo, que rompieron con el teatro tradicional.", a: "Vanguardia", letra: "V"},
+    {q: "Contiene la X: Entorno histórico, social o cultural que enmarca una obra teatral concreta y ayuda al espectador a entenderla.", a: "Contexto", letra: "X"},
+    {q: "Contiene la Y: Avenida de Nueva York mundialmente famosa por concentrar la industria comercial de los grandes musicales.", a: "Broadway", letra: "Y"},
+    {q: "Con la Z: Apellido del dramaturgo y poeta del Romanticismo español mundialmente célebre por su obra 'Don Juan Tenorio'.", a: "Zorrilla", letra: "Z"},
+    {q: "Con la A: Apellido del creador del 'Teatro de la crueldad' y dramaturgo francés autor de 'El teatro y su doble'.", a: "Artaud", letra: "A"},
+    {q: "Con la B: Apellido del creador brasileño del 'Teatro del Oprimido', método escénico que busca la transformación social.", a: "Boal", letra: "B"},
+    {q: "Con la C: Fila de luces en el borde del proscenio de los teatros antiguos que alumbraba a los actores desde abajo.", a: "Candilejas", letra: "C"},
+    {q: "Con la D: Persona responsable de la puesta en escena, que guía a los actores y coordina el montaje teatral.", a: "Director", letra: "D"},
+    {q: "Con la E: Abertura del escenario a través de la cual el público ve la representación, a menudo en forma de arco.", a: "Embocadura", letra: "E"},
+    {q: "Con la F: Espacio subterráneo debajo del escenario donde se sitúa la maquinaria para hacer apariciones o trucos.", a: "Foso", letra: "F"},
+    {q: "Con la G: Personaje prototípico del teatro clásico español, hombre joven y apuesto que lidera la acción amorosa.", a: "Galán", letra: "G"},
+    {q: "Con la H: Concepto griego que define la desmesura u orgullo ciego que lleva a la ruina al héroe trágico.", a: "Hibris", letra: "H"},
+    {q: "Con la I: Término genérico que denomina a la persona que ejecuta un papel en una obra escénica, sea actor o bailarín.", a: "Intérprete", letra: "I"},
+    {q: "Con la J: País asiático de origen de formas teatrales tradicionales y estilizadas como el Kabuki y el Noh.", a: "Japón", letra: "J"},
+    {q: "Con la L: Primera etapa de ensayos donde el elenco se sienta alrededor de una mesa para repasar el texto juntos.", a: "Lectura", letra: "L"},
+    {q: "Con la M: Seudónimo del gran dramaturgo y actor francés Jean-Baptiste Poquelin, maestro de la comedia clásica.", a: "Molière", letra: "M"},
+    {q: "Con la N: Diosa griega cuyo concepto en la tragedia hace referencia al castigo ineludible por la arrogancia humana.", a: "Némesis", letra: "N"},
+    {q: "Contiene la Ñ: Palabra presente en el título de la famosa comedia fantástica de Shakespeare 'El ... de una noche de verano'.", a: "Sueño", letra: "Ñ"},
+    {q: "Con la O: Indicación de iluminación en teatro que ordena apagar bruscamente todas las luces del escenario.", a: "Oscuro", letra: "O"},
+    {q: "Con la P: Conjunto de espectadores que asiste a la representación de una obra de teatro y completa el hecho escénico.", a: "Público", letra: "P"},
+    {q: "Contiene la Q: Apodo que recibían los espectadores del Siglo de Oro que asistían de pie, bullangueros, al patio del corral.", a: "Mosquetero", letra: "Q"},
+    {q: "Con la R: Movimiento teatral del siglo XIX que pretendía reflejar fielmente la vida cotidiana y los problemas sociales.", a: "Realismo", letra: "R"},
+    {q: "Con la S: Apellido del más afamado y universal dramaturgo inglés de la historia, creador del teatro de El Globo.", a: "Shakespeare", letra: "S"},
+    {q: "Con la T: Muñeco de pasta, madera o trapo, manipulado a mano o con hilos para representar obras de teatro.", a: "Títere", letra: "T"},
+    {q: "Con la U: Apellido del autor de la Generación del 98 que cultivó el drama íntimo y filosófico con obras como 'El otro'.", a: "Unamuno", letra: "U"},
+    {q: "Con la V: Forma métrica de escritura poética en la que está redactada casi toda la inmensa producción del teatro del Siglo de Oro.", a: "Verso", letra: "V"},
+    {q: "Contiene la X: Cualidad física y anatómica fundamental que debe entrenar el actor contemporáneo, especialmente en teatro gestual.", a: "Flexibilidad", letra: "X"},
+    {q: "Con la Y: Tragedia de ambiente rural de Federico García Lorca, cuya protagonista sufre la terrible angustia de no poder ser madre.", a: "Yerma", letra: "Y"},
+    {q: "Contiene la Z: Conjunto total de los objetos, utensilios y mobiliario que se usan en una escenografía para dotarla de realismo.", a: "Atrezzo", letra: "Z"},
+    {q: "Con la A: Término de la poética de Aristóteles para el momento en que un personaje descubre una verdad esencial.", a: "Anagnórisis", letra: "A"},
+    {q: "Con la B: Nombre de la famosa compañía de teatro universitario fundada y codirigida por Federico García Lorca.", a: "Barraca", letra: "B"},
+    {q: "Con la C: Grupo de espectadores que, antiguamente, eran contratados para aplaudir y jalear a los actores.", a: "Claque", letra: "C"},
+    {q: "Con la D: Nombre de pila del actor y dramaturgo italiano Premio Nobel de Literatura, creador del 'Misterio Bufo'.", a: "Dario", letra: "D"},
+    {q: "Con la E: Dramaturgo griego más antiguo de los tres grandes trágicos clásicos, autor de 'Los persas'.", a: "Esquilo", letra: "E"},
+    {q: "Con la F: Persona que aparece en escena formando parte de un grupo o muchedumbre, normalmente sin texto propio.", a: "Figurante", letra: "F"},
+    {q: "Con la G: Categoría o clase en la que se clasifican las obras teatrales, como la comedia, el drama o la tragedia.", a: "Género", letra: "G"},
+    {q: "Con la H: Nombre del avaro y mezquino protagonista de la famosa comedia escrita por el dramaturgo francés Molière.", a: "Harpagón", letra: "H"},
+    {q: "Con la I: Arte de diseñar y aplicar la luz en el escenario teatral para crear atmósferas y resaltar elementos.", a: "Iluminación", letra: "I"},
+    {q: "Con la J: Tipo de teatro pedagógico desarrollado en los colegios de la Compañía de Jesús durante el Renacimiento.", a: "Jesuítico", letra: "J"},
+    {q: "Con la L: Texto que contiene los diálogos y las partes cantadas de una obra de teatro musical o una ópera.", a: "Libreto", letra: "L"},
+    {q: "Con la M: Discurso dramático pronunciado ininterrumpidamente por un personaje que se encuentra solo en el escenario.", a: "Monólogo", letra: "M"},
+    {q: "Con la N: Nombre de la protagonista de 'Casa de muñecas', la famosa obra teatral y símbolo feminista de Henrik Ibsen.", a: "Nora", letra: "N"},
+    {q: "Contiene la Ñ: País donde germinó y se desarrolló de forma brillante el teatro del Siglo de Oro, con autores como Lope de Vega.", a: "España", letra: "Ñ"},
+    {q: "Con la O: Personaje femenino de la tragedia 'Hamlet' de Shakespeare, joven noble que enloquece trágicamente.", a: "Ofelia", letra: "O"},
+    {q: "Con la P: Zona de asientos en la planta baja o piso principal de un teatro, equivalente al patio de butacas.", a: "Platea", letra: "P"},
+    {q: "Con la Q: Apellidos de los hermanos Serafín y Joaquín, exitosos y prolíficos comediógrafos costumbristas españoles.", a: "Quintero", letra: "Q"},
+    {q: "Con la R: Tipo de estrofa poética española que Lope de Vega recomendaba para 'las relaciones' de los personajes en escena.", a: "Romance", letra: "R"},
+    {q: "Con la S: Apellido del filósofo y dramaturgo francés del existencialismo, famoso por la pieza teatral 'A puerta cerrada'.", a: "Sartre", letra: "S"},
+    {q: "Con la T: Estructura situada en la parte superior del escenario, de donde bajan y suben los decorados y los focos.", a: "Telar", letra: "T"},
+    {q: "Con la U: Tipo de teatro amateur e investigador que se desarrolla en el seno de instituciones académicas de educación superior.", a: "Universitario", letra: "U"},
+    {q: "Con la V: Instrumento sonoro principal del actor, que debe entrenar para proyectar el texto hasta la última fila del teatro.", a: "Voz", letra: "V"},
+    {q: "Contiene la X: Conjunto estructurado de los diálogos y las acotaciones que conforman una obra dramática por escrito.", a: "Texto", letra: "X"},
+    {q: "Contiene la Y: Profesional del teatro encargado de asistir directamente y trabajar bajo las órdenes del director de escena.", a: "Ayudante", letra: "Y"},
+    {q: "Contiene la Z: Oficio de la rebelde mujer protagonista de una de las famosas farsas de García Lorca, que era 'prodigiosa'.", a: "Zapatera", letra: "Z"},
+    {q: "Con la A: Hija de Edipo que da título a la célebre tragedia de Sófocles por su heroico empeño en enterrar a su hermano.", a: "Antígona", letra: "A"},
+    {q: "Con la B: Fila de luces situada en la parte delantera del escenario, a nivel del suelo, originaria de teatros antiguos.", a: "Batería", letra: "B"},
+    {q: "Con la C: Habitación de un teatro donde los actores se visten, peinan y maquillan antes de salir a escena.", a: "Camerino", letra: "C"},
+    {q: "Con la D: Género teatral que representa pasiones y situaciones humanas, a menudo combinando elementos cómicos y trágicos.", a: "Drama", letra: "D"},
+    {q: "Con la E: Pieza cómica breve que en el Siglo de Oro español se representaba en los entreactos de una obra mayor.", a: "Entremés", letra: "E"},
+    {q: "Con la F: Representación pública de un espectáculo teatral ante una audiencia.", a: "Función", letra: "F"},
+    {q: "Con la G: Primer apellido del universal poeta andaluz, autor de la aclamada tragedia rural 'Bodas de sangre'.", a: "García", letra: "G"},
+    {q: "Con la H: Personaje principal y de espíritu noble de la tragedia clásica que se enfrenta a un destino ineludible.", a: "Héroe", letra: "H"},
+    {q: "Con la I: Apellido de Eugène, dramaturgo franco-rumano fundamental del teatro del absurdo, autor de 'La cantante calva'.", a: "Ionesco", letra: "I"},
+    {q: "Con la J: Apellido del autor francés precursor del vanguardista teatro del absurdo con su obra provocadora 'Ubú Rey'.", a: "Jarry", letra: "J"},
+    {q: "Con la L: Segundo apellido del poeta granadino que escribió magistrales tragedias como 'Yerma'.", a: "Lorca", letra: "L"},
+    {q: "Con la M: Palabra que se dice o se anota en el libreto para indicar que un actor se retira de la escena.", a: "Mutis", letra: "M"},
+    {q: "Con la N: Ciudad celtíbera protagonista de la famosa tragedia heroica y de resistencia patriótica escrita por Miguel de Cervantes.", a: "Numancia", letra: "N"},
+    {q: "Contiene la Ñ: Título o tratamiento de respeto de la protagonista de la cruda obra teatral sobre la lucha de clases de August Strindberg.", a: "Señorita", letra: "Ñ"},
+    {q: "Con la O: Conjunto de todas las creaciones literarias dramáticas de un determinado autor teatral.", a: "Obras", letra: "O"},
+    {q: "Con la P: Parte del escenario de un teatro situada más cerca del público, entre el telón de boca y la orquesta.", a: "Proscenio", letra: "P"},
+    {q: "Contiene la Q: Discurso que mantiene un personaje consigo mismo en voz alta sobre el escenario, muy cultivado por Shakespeare.", a: "Soliloquio", letra: "Q"},
+    {q: "Con la R: Lista de los actores y actrices junto con los personajes que van a interpretar en una obra teatral.", a: "Reparto", letra: "R"},
+    {q: "Con la S: Conjunto de intenciones y emociones latentes de un personaje, que no se dicen explícitamente en su diálogo.", a: "Subtexto", letra: "S"},
+    {q: "Con la T: Nombre literario del fraile mercedario y dramaturgo del Siglo de Oro que fijó el mito de Don Juan, ... de Molina.", a: "Tirso", letra: "T"},
+    {q: "Con la U: Nombre de pila del despótico y grotesco rey de Polonia creado como parodia por el dramaturgo francés Alfred Jarry.", a: "Ubú", letra: "U"},
+    {q: "Con la V: En el teatro clásico español, personaje de origen rústico pero poseedor de gran sentido del honor e integridad.", a: "Villano", letra: "V"},
+    {q: "Contiene la X: Momento de máxima tensión y culminación dramática en la trama de una obra teatral, previo a su resolución.", a: "Clímax", letra: "X"},
+    {q: "Contiene la Y: Sesión de preparación y repetición de los actores, a puerta cerrada, para afinar el montaje antes del estreno.", a: "Ensayo", letra: "Y"},
+    {q: "Contiene la Z: Municipio extremeño que da nombre a la célebre obra de honor villano escrita por Calderón, gobernado por Pedro Crespo.", a: "Zalamea", letra: "Z"},
+    {q: "Con la A: Indicación que hace el dramaturgo en el texto sobre las actitudes de los personajes o la escenografía.", a: "Acotación", letra: "A"},
+    {q: "Con la B: Asiento con brazos y respaldo en la planta baja de un teatro, desde donde el público observa la función.", a: "Butaca", letra: "B"},
+    {q: "Con la C: Grupo de intérpretes del teatro griego clásico que comentaban la acción dramática cantando y bailando.", a: "Coro", letra: "C"},
+    {q: "Con la D: Conjunto de telones, muebles y objetos que crean el ambiente escénico donde se desarrolla la acción.", a: "Decorado", letra: "D"},
+    {q: "Con la E: Arte integral de diseñar y montar el espacio visual en el que se desarrolla una representación teatral.", a: "Escenografía", letra: "E"},
+    {q: "Con la F: Vestíbulo amplio de los grandes teatros donde el público pasea y se reúne elegantemente en los descansos.", a: "Foyer", letra: "F"},
+    {q: "Con la G: Apellido del dramaturgo italiano que renovó la comedia en el siglo XVIII con obras como 'La locandiera'.", a: "Goldoni", letra: "G"},
+    {q: "Con la H: Apellido de Víctor, el principal exponente del Romanticismo literario francés y dramaturgo autor de 'Cromwell'.", a: "Hugo", letra: "H"},
+    {q: "Con la I: Apellido del dramaturgo noruego, padre del drama realista moderno y autor de 'Casa de muñecas'.", a: "Ibsen", letra: "I"},
+    {q: "Con la J: Artista ambulante medieval que actuaba, recitaba y cantaba en plazas públicas, precursor del teatro profano.", a: "Juglar", letra: "J"},
+    {q: "Con la L: Trastorno mental, fingido o real, que sufren emblemáticos personajes teatrales trágicos como Ofelia o el rey Lear.", a: "Locura", letra: "L"},
+    {q: "Con la M: Accesorio facial usado frecuentemente por los actores en el teatro griego y en la Commedia dell'arte.", a: "Máscara", letra: "M"},
+    {q: "Con la N: Apellido de Francisco, célebre dramaturgo español, escenógrafo y creador del llamado 'Teatro furioso'.", a: "Nieva", letra: "N"},
+    {q: "Contiene la Ñ: Juguete que aparece en el título de la revolucionaria y emblemática obra de teatro del siglo XIX de Henrik Ibsen.", a: "Muñeca", letra: "Ñ"},
+    {q: "Con la O: Género de artes escénicas en el que la obra dramática se representa en su totalidad mediante el canto y la orquesta.", a: "Ópera", letra: "O"},
+    {q: "Con la P: Representación escénica silenciosa en la que los actores se expresan exclusivamente mediante gestos corporales.", a: "Pantomima", letra: "P"},
+    {q: "Contiene la Q: Departamento de un gran teatro encargado de diseñar, colocar y mantener los postizos y peinados de los actores.", a: "Peluquería", letra: "Q"},
+    {q: "Con la R: Conjunto de obras teatrales que una compañía tiene montadas y preparadas para ser representadas en gira o temporada.", a: "Repertorio", letra: "R"},
+    {q: "Con la S: Creencia irracional pero muy arraigada en el teatro, como la de desear 'mucha mierda' o evitar el color amarillo.", a: "Superstición", letra: "S"},
+    {q: "Con la T: Edificio, sala o espacio arquitectónico específicamente diseñado para la representación de obras dramáticas.", a: "Teatro", letra: "T"},
+    {q: "Con la U: Espectáculo o montaje teatral que es interpretado de principio a fin por un único actor o actriz sobre el escenario.", a: "Unipersonal", letra: "U"},
+    {q: "Con la V: Conjunto de ropas, trajes y complementos que visten los actores en escena para caracterizar a sus personajes.", a: "Vestuario", letra: "V"},
+    {q: "Contiene la X: Nombre de los premios más prestigiosos de las artes escénicas de España, entregados por la Fundación SGAE.", a: "Max", letra: "X"},
+    {q: "Contiene la Y: Técnica vocal y de volumen esencial para que la palabra del actor en escena se escuche clara en toda la sala.", a: "Proyección", letra: "Y"},
+    {q: "Contiene la Z: Pieza breve, musical o cómica, que se ejecutaba en los intermedios de las antiguas óperas o grandes dramas.", a: "Intermezzo", letra: "Z"},
+    {q: "Con la A: Espacio escénico circular u ovalado de la Antigüedad romana provisto de gradas para los espectadores.", a: "Anfiteatro", letra: "A"},
+    {q: "Con la B: Apellido del dramaturgo alemán creador del teatro épico y del revolucionario efecto de distanciamiento.", a: "Brecht", letra: "B"},
+    {q: "Con la C: Primer apellido del insigne dramaturgo barroco español autor de la obra maestra 'La vida es sueño'.", a: "Calderón", letra: "C"},
+    {q: "Con la D: Parte final de una obra de teatro donde se resuelve de forma definitiva el conflicto planteado en la trama.", a: "Desenlace", letra: "D"},
+    {q: "Con la E: Dramaturgo de la antigua Grecia, autor de célebres y descarnadas tragedias como 'Medea' y 'Las bacantes'.", a: "Eurípides", letra: "E"},
+    {q: "Con la F: Falsa realidad e historia imaginaria pactada con el público que se desarrolla de forma inmersiva sobre el escenario.", a: "Ficción", letra: "F"},
+    {q: "Con la G: Tipo de teatro contemporáneo basado principalmente en la expresión corporal y el mimo antes que en la palabra.", a: "Gestual", letra: "G"},
+    {q: "Con la H: Tragedia cumbre de William Shakespeare que comienza con la aparición de un espíritu en el castillo de Elsinor.", a: "Hamlet", letra: "H"},
+    {q: "Con la I: Corriente escenográfica que busca crear en el espectador una sensación de realidad absoluta, engañando al ojo.", a: "Ilusionismo", letra: "I"},
+    {q: "Con la J: Nombre de la protagonista femenina del drama romántico más célebre de Shakespeare, de la enemistada familia Capuleto.", a: "Julieta", letra: "J"},
+    {q: "Con la L: En plural, pasajes cómicos e improvisaciones rutinarias y acrobáticas de la tradición de la Commedia dell'arte.", a: "Lazzi", letra: "L"},
+    {q: "Con la M: Intérprete teatral que utiliza exclusivamente la gesticulación y los elocuentes movimientos corporales para expresarse.", a: "Mimo", letra: "M"},
+    {q: "Con la N: Género literario narrativo al que pertenecen muchísimas obras que luego son adaptadas para el escenario teatral.", a: "Novela", letra: "N"},
+    {q: "Contiene la Ñ: Grupo o agrupación formal de actores y técnicos que montan y representan obras de teatro de forma conjunta.", a: "Compañía", letra: "Ñ"},
+    {q: "Con la O: Composición musical instrumental que se ejecuta antes de que se levante el telón, como introducción de la obra.", a: "Obertura", letra: "O"},
+    {q: "Con la P: Texto preliminar de una obra teatral que introduce la acción o el tema al espectador antes de la primera jornada.", a: "Prólogo", letra: "P"},
+    {q: "Con la Q: Apellido del genial autor del Siglo de Oro español que escribió entremeses y mantuvo una fiera rivalidad con Góngora.", a: "Quevedo", letra: "Q"},
+    {q: "Con la R: Profesional técnico responsable del escenario que da las órdenes u 'operas' para los cambios de luces o escena.", a: "Regidor", letra: "R"},
+    {q: "Con la S: Apellido del célebre dramaturgo romántico alemán, autor de grandes obras históricas como 'Guillermo Tell' y 'Los bandidos'.", a: "Schiller", letra: "S"},
+    {q: "Con la T: Género teatral clásico en el que personajes nobles se enfrentan a un destino fatal y destructivo que provoca compasión.", a: "Tragedia", letra: "T"},
+    {q: "Contiene la U: Prueba artística y práctica que realiza un intérprete ante un director para lograr ser seleccionado en un reparto.", a: "Audición", letra: "U"},
+    {q: "Con la V: Primer apellido del genial dramaturgo gallego creador del grotesco género del esperpento escénico español.", a: "Valle", letra: "V"},
+    {q: "Contiene la X: Cualidad fundamental del actor, tanto a nivel facial como corporal y vocal, para transmitir el alma de su personaje.", a: "Expresión", letra: "X"},
+    {q: "Contiene la Y: Gran narración poética y heroica antigua que sirvió como rica fuente de adaptaciones para la tragedia grecolatina.", a: "Epopeya", letra: "Y"},
+    {q: "Contiene la Z: Mujer profesional que desempeña un papel en una obra teatral interpretando las acciones y textos de su personaje.", a: "Actriz", letra: "Z"},
+    {q: "Con la A: Cada una de las partes principales en las que se divide estructuralmente una obra de teatro al representarse.", a: "Acto", letra: "A"},
+    {q: "Con la B: Primera palabra del título de la obra de Tirso de Molina que originó el mito de Don Juan: 'El ... de Sevilla'.", a: "Burlador", letra: "B"},
+    {q: "Con la C: Género teatral opuesto a la tragedia que busca hacer reír al público con situaciones de enredo o de sátira.", a: "Comedia", letra: "C"},
+    {q: "Con la D: Intercambio verbal escrito en el libreto entre dos o más personajes sobre el escenario.", a: "Diálogo", letra: "D"},
+    {q: "Con la E: Rey de Tebas protagonista de la más famosa tragedia de Sófocles, que se arranca los ojos al conocer su crudo destino.", a: "Edipo", letra: "E"},
+    {q: "Con la F: Apellido del genial dramaturgo y actor italiano autor de 'Misterio Bufo', ganador del Premio Nobel de Literatura en 1997.", a: "Fo", letra: "F"},
+    {q: "Con la G: Famoso teatro isabelino circular de madera en Londres donde William Shakespeare estrenó sus mejores y más populares obras.", a: "Globo", letra: "G"},
+    {q: "Con la H: Del griego, término original para 'actor', que literalmente significa el que responde detrás de la máscara y hoy es alguien falso.", a: "Hipócrita", letra: "H"},
+    {q: "Con la I: Enredo o maquinación secreta que sirve de base para desarrollar la tensión en la trama de muchísimas obras dramáticas.", a: "Intriga", letra: "I"},
+    {q: "Con la J: Estilo del teatro inglés, en su mayoría dramas de venganza, que floreció bajo el reinado de Jacobo I y sucedió al teatro isabelino.", a: "Jacobeo", letra: "J"},
+    {q: "Con la L: Documento o permiso legal que antiguamente necesitaban obligatoriamente las compañías teatrales para poder representar en una ciudad.", a: "Licencia", letra: "L"},
+    {q: "Con la M: Sangrienta tragedia escocesa de Shakespeare cuyo protagonista asesina al rey Duncan impulsado por la ambición de su esposa.", a: "Macbeth", letra: "M"},
+    {q: "Con la N: Parte central de la estructura dramática clásica, situada temporalmente entre el planteamiento y el desenlace final.", a: "Nudo", letra: "N"},
+    {q: "Contiene la Ñ: Acción de mentir o hacer creer algo falso a otro personaje, motor clásico de muchísimas tramas de comedia.", a: "Engaño", letra: "Ñ"},
+    {q: "Con la O: General moro al servicio de Venecia, protagonista de la tragedia sobre los celos más famosa escrita por Shakespeare.", a: "Otelo", letra: "O"},
+    {q: "Con la P: Cada uno de los seres de ficción, humanos o no, que intervienen y tienen voz en una representación teatral.", a: "Personaje", letra: "P"},
+    {q: "Contiene la Q: Ventanilla o lugar a la entrada del teatro donde el público compra los billetes para asistir a la función.", a: "Taquilla", letra: "Q"},
+    {q: "Con la R: Joven de la casa Montesco que se enamora perdidamente de la hija de sus enemigos los Capuleto en Verona.", a: "Romeo", letra: "R"},
+    {q: "Con la S: Filósofo estoico y político romano, principal autor y representante de tragedias latinas como 'Medea' o 'Fedra'.", a: "Séneca", letra: "S"},
+    {q: "Con la T: Nombre del falso devoto, estafador y protagonista hipócrita de una de las más célebres comedias de Molière.", a: "Tartufo", letra: "T"},
+    {q: "Con la U: Profesional del teatro encargado de fabricar, manejar y mantener los pequeños objetos que manipulan los actores en escena.", a: "Utilero", letra: "U"},
+    {q: "Con la V: Segundo apellido del inmenso y prolífico dramaturgo español conocido como el 'Fénix de los Ingenios', Lope de...", a: "Vega", letra: "V"},
+    {q: "Contiene la X: Triunfo clamoroso de un montaje teatral al estrenarse, logrando el unánime favor del público y de la crítica.", a: "Éxito", letra: "X"},
+    {q: "Contiene la Y: Narración popular y mitológica en la que se han inspirado dramas románticos españoles como 'Los amantes de Teruel'.", a: "Leyenda", letra: "Y"},
+    {q: "Contiene la Z: Herramienta agrícola que empuña el sepulturero en la tragedia 'Hamlet' mientras abre la fosa y canta sobre el escenario.", a: "Azada", letra: "Z"},
+    {q: "Con la A: Comediógrafo más célebre de la Grecia clásica, genio de la sátira y autor de obras como 'Lisístrata' o 'Las ranas'.", a: "Aristófanes", letra: "A"},
+    {q: "Con la B: Apellido del insigne dramaturgo español del siglo XX, autor de 'Historia de una escalera' y ganador del Premio Cervantes.", a: "Buero", letra: "B"},
+    {q: "Con la C: Apellido del médico y gran dramaturgo ruso, maestro absoluto del subtexto y autor de 'El jardín de los cerezos'.", a: "Chejov", letra: "C"},
+    {q: "Con la D: Título de la obra lírica de Alejandro Casona en la que la muerte, personificada, visita a una familia: 'La ... del alba'.", a: "Dama", letra: "D"},
+    {q: "Con la E: Conjunto de actores o plantilla que forman una compañía teatral y que actúan de forma conjunta en una representación.", a: "Elenco", letra: "E"},
+    {q: "Con la F: Pueblo cordobés que da título a la obra de Lope de Vega donde todos asumen a una voz la muerte del comendador.", a: "Fuenteovejuna", letra: "F"},
+    {q: "Con la G: País europeo cuna del teatro occidental, donde nacieron de forma cívica la tragedia y la comedia en honor a Dioniso.", a: "Grecia", letra: "G"},
+    {q: "Con la H: Esposa mítica de Menelao, cuya fuga a Troya es el detonante argumental de varias tragedias de Eurípides.", a: "Helena", letra: "H"},
+    {q: "Con la I: Hija de Agamenón que es sacrificada en Áulide por su propio padre, protagonista de sendas e intensas tragedias clásicas.", a: "Ifigenia", letra: "I"},
+    {q: "Con la J: Lugar de la finca rusa donde transcurre íntegramente la célebre obra y canto de cisne de Antón Chéjov, 'El ... de los cerezos'.", a: "Jardín", letra: "J"},
+    {q: "Con la L: Listón de madera que se clava en el suelo del escenario para hacer topes o nivelar el decorado.", a: "Listón", letra: "L"},
+    {q: "Con la M: Hechicera de la mitología griega, princesa de la Cólquide, que asesina a sus propios hijos en la feroz tragedia de Eurípides.", a: "Medea", letra: "M"},
+    {q: "Con la N: Adjetivo del teatro financiado por el estado de un país, como por ejemplo el Centro Dramático... en España.", a: "Nacional", letra: "N"},
+    {q: "Contiene la Ñ: Arma blanca corta con la que muchísimos personajes de la tragedia y del drama romántico se dan muerte en el escenario.", a: "Puñal", letra: "Ñ"},
+    {q: "Con la O: Monte sagrado donde residían las divinidades griegas, presentes frecuentemente como deidad en el teatro grecolatino.", a: "Olimpo", letra: "O"},
+    {q: "Con la P: Término que, seguido de 'en escena', define el trabajo y concepción global de dirección de una obra de teatro.", a: "Puesta", letra: "P"},
+    {q: "Contiene la Q: Profesional del teatro que se encarga de aplicar los cosméticos y caracterizar facialmente a los actores antes de salir.", a: "Maquillador", letra: "Q"},
+    {q: "Con la R: Apellido de Fernando de..., presunto autor de la 'Tragicomedia de Calisto y Melibea', obra de transición conocida como 'La Celestina'.", a: "Rojas", letra: "R"},
+    {q: "Con la S: Recinto interior de un teatro, acondicionado con butacas y buena acústica, donde el público presencia el espectáculo.", a: "Sala", letra: "S"},
+    {q: "Con la T: Argumento principal o conjunto de hilos narrativos entrelazados que suceden en una obra de teatro.", a: "Trama", letra: "T"},
+    {q: "Con la U: Adjetivo que califica a un tema dramático que trasciende fronteras y es comprensible y válido para cualquier cultura o época.", a: "Universal", letra: "U"},
+    {q: "Con la V: Engaño de los sentidos o sistema de cuerdas que en el espectacular teatro barroco permitía la elevación de personajes por el aire.", a: "Vuelo", letra: "V"},
+    {q: "Contiene la X: Motivo falso o excusa que un personaje alega para ocultar sus verdaderas intenciones en la trama de enredo.", a: "Pretexto", letra: "X"},
+    {q: "Contiene la Y: Cómico del circo y la comedia física del que beben técnicas teatrales contemporáneas para trabajar la vulnerabilidad en escena.", a: "Payaso", letra: "Y"},
+    {q: "Contiene la Z: Arte de mover el cuerpo estéticamente, muy ligada a los coros del teatro griego clásico y a los musicales modernos.", a: "Danza", letra: "Z"},
+    {q: "Con la A: Filósofo griego que estableció las reglas de la tragedia, como la peripecia o las tres unidades, en su obra 'Poética'.", a: "Aristóteles", letra: "A"},
+    {q: "Con la B: Primera palabra del título de la tragedia rural de Lorca que termina fatalmente con un duelo a navaja: '... de sangre'.", a: "Bodas", letra: "B"},
+    {q: "Con la C: Estructura del escenario formada por el suelo, las paredes laterales y el techo, denominada escénicamente como '... escénica'.", a: "Caja", letra: "C"},
+    {q: "Con la D: Primera palabra de la expresión latina '... ex machina', resolución artificial de un conflicto teatral irresoluble.", a: "Deus", letra: "D"},
+    {q: "Con la E: Fragmento o división de un acto en la que intervienen los mismos personajes y no hay cambios de tiempo o de lugar.", a: "Escena", letra: "E"},
+    {q: "Con la F: Animal de la mitología del renacer con el que se identificaba al arrollador Lope de Vega: 'El ... de los ingenios'.", a: "Fénix", letra: "F"},
+    {q: "Con la G: Teatro de títeres originario de Francia, cuyo rebelde personaje principal de madera da nombre genérico a estas representaciones.", a: "Guiñol", letra: "G"},
+    {q: "Con la H: Tono y recurso característico de la comedia para hacer reír, que puede ser absurdo, negro, blanco o satírico.", a: "Humor", letra: "H"},
+    {q: "Con la I: País europeo donde nació en pleno Renacimiento la forma de la 'Commedia dell'arte' y donde floreció el teatro de Goldoni.", a: "Italia", letra: "I"},
+    {q: "Con la J: Título de la célebre obra, luego musical, 'La ... de las locas', sobre una extravagante pareja homosexual en Saint-Tropez.", a: "Jaula", letra: "J"},
+    {q: "Con la L: Secreción ocular que el actor debe aprender a provocar o fingir emotivamente en los momentos más altos del drama.", a: "Lágrimas", letra: "L"},
+    {q: "Con la M: Género teatral moderno de gran espectacularidad que combina diálogos, canciones y bailes, muy típico de Londres y Nueva York.", a: "Musical", letra: "M"},
+    {q: "Con la N: Cada una de las divinidades menores de la mitología grecolatina que aparecen en pastoradas y teatro renacentista español.", a: "Ninfa", letra: "N"},
+    {q: "Contiene la Ñ: Gesto rápido del ojo que en el teatro cómico un actor hace al público para indicarle complicidad rompiendo la convención.", a: "Guiño", letra: "Ñ"},
+    {q: "Con la O: Punto cardinal que geográficamente da origen al milenario y tradicional teatro Noh y Kabuki.", a: "Oriente", letra: "O"},
+    {q: "Con la P: Concepto escénico, la 'cuarta...', que nombra la barrera invisible que separa a los actores del público en el teatro realista.", a: "Pared", letra: "P"},
+    {q: "Contiene la Q: Dirección hacia la que el director orienta la iluminación o la atención visual dramática en el escenario.", a: "Enfoque", letra: "Q"},
+    {q: "Con la R: Título o cargo nobiliario supremo que ostentan personajes trágicos de Shakespeare como Lear, Ricardo III o Macbeth.", a: "Rey", letra: "R"},
+    {q: "Con la S: Efecto visual que en el teatro se utiliza proyectando luz tras un lienzo blanco para mostrar perfiles misteriosos de personajes.", a: "Sombra", letra: "S"},
+    {q: "Con la T: Plataforma de madera levantada sobre el suelo, equivalente a un pequeño escenario o entablado humilde.", a: "Tarima", letra: "T"},
+    {q: "Con la U: Obra política o lugar ideal e inexistente tratado recurrentemente en obras de teatro filosófico contemporáneo.", a: "Utopía", letra: "U"},
+    {q: "Con la V: Corriente teatral de finales del XIX, muy arraigada en la ópera italiana, que buscaba plasmar el máximo realismo de los bajos fondos.", a: "Verismo", letra: "V"},
+    {q: "Contiene la X: Acción de pensar profundamente sobre la vida, a menudo verbalizada por el héroe dramático en un gran monólogo.", a: "Reflexión", letra: "X"},
+    {q: "Contiene la Y: Fenómeno atmosférico que en el teatro romántico se recreaba tras el escenario iluminando planchas de metal simulando tormentas.", a: "Rayo", letra: "Y"},
+    {q: "Contiene la Z: Órgano vital humano que metafóricamente da nombre a los conflictos amorosos, leales y pasionales en el teatro.", a: "Corazón", letra: "Z"},
+    {q: "Con la A: Esposa de Héctor en la mitología griega, protagonista estoica de grandes tragedias escritas por Eurípides y Jean Racine.", a: "Andrómaca", letra: "A"},
+    {q: "Con la B: Apellido del dramaturgo irlandés, Nobel de literatura y autor cumbre del teatro del absurdo con 'Esperando a Godot'.", a: "Beckett", letra: "B"},
+    {q: "Con la C: Máscara o rostro de cartón falso que usaban los actores clásicos para representar un personaje y proyectar la voz.", a: "Careta", letra: "C"},
+    {q: "Con la D: Técnica, arte o trabajo de adaptar, estructurar y escribir literariamente un material para su representación teatral.", a: "Dramaturgia", letra: "D"},
+    {q: "Con la E: Corriente filosófica sobre el sentido de la vida a la que pertenecieron dramaturgos franceses como Jean-Paul Sartre y Albert Camus.", a: "Existencialismo", letra: "E"},
+    {q: "Con la F: Evento o certamen, a menudo estival, donde se exhiben múltiples obras de teatro de estreno, como los de Mérida o Aviñón.", a: "Festival", letra: "F"},
+    {q: "Con la G: Serie continuada de representaciones que realiza una compañía teatral desplazándose por diferentes ciudades o países.", a: "Gira", letra: "G"},
+    {q: "Con la H: Cuerda fina que el titiritero utiliza para manipular desde la cruz de madera superior las articulaciones de sus marionetas.", a: "Hilo", letra: "H"},
+    {q: "Con la I: Recurso dramático que consiste en decir lo contrario de lo que se piensa con un tono concreto, muy explotado en la comedia.", a: "Ironía", letra: "I"},
+    {q: "Con la J: Religión del usurero Shylock, uno de los personajes más famosos, complejos y trágicos de 'El mercader de Venecia'.", a: "Judío", letra: "J"},
+    {q: "Con la L: Capital europea a orillas del río Támesis que alberga el famoso e histórico distrito teatral del West End.", a: "Londres", letra: "L"},
+    {q: "Con la M: Género teatral del siglo XIX de emociones exageradas y conflictos simples e intensos entre personajes muy buenos o muy malos.", a: "Melodrama", letra: "M"},
+    {q: "Con la N: Personaje teatral, externo o interno a la obra, que en algún momento se dirige al público para explicarle la historia.", a: "Narrador", letra: "N"},
+    {q: "Contiene la Ñ: Herramienta agrícola de hoja curva que, como emblema de la muerte en el teatro simbólico, suele empuñar La Parca.", a: "Guadaña", letra: "Ñ"},
+    {q: "Con la O: Sentimiento de soberbia y altivez humana que ciega a los héroes trágicos y precipita su caída fatal contra los dioses.", a: "Orgullo", letra: "O"},
+    {q: "Con la P: Personaje astuto, marginado y antihéroe, típico de la literatura española, que fue adaptado en muchísimas piezas de teatro breve.", a: "Pícaro", letra: "P"},
+    {q: "Contiene la Q: En el teatro griego clásico, artefacto que servía como grúa para hacer descender a las divinidades a la zona de actuación.", a: "Máquina", letra: "Q"},
+    {q: "Con la R: Fluidez y velocidad temporal con la que se desarrollan los diálogos y la acción en un montaje para mantener al público atento.", a: "Ritmo", letra: "R"},
+    {q: "Con la S: Fluido vital que mancha las manos de Lady Macbeth de forma imaginaria por culpa de sus terribles remordimientos nocturnos.", a: "Sangre", letra: "S"},
+    {q: "Con la T: Periodo de tiempo o meses del año durante los cuales un teatro mantiene abierta su cartelera de programación de forma regular.", a: "Temporada", letra: "T"},
+    {q: "Con la U: País actual de Europa oriental donde nació el aclamado escritor de piezas de teatro como 'El inspector', Nikolái Gógol.", a: "Ucrania", letra: "U"},
+    {q: "Con la V: Valor interpretativo fundamental que un actor debe transmitir al espectador para que su creación de personaje resulte creíble.", a: "Verdad", letra: "V"},
+    {q: "Contiene la X: Sensación física de ahogo que a menudo deben escenificar los personajes de drama al ser estrangulados en la trama.", a: "Asfixia", letra: "X"},
+    {q: "Contiene la Y: Apellido del genial pintor aragonés y sordo retratado en la magnífica obra de teatro de Buero Vallejo 'El sueño de la razón'.", a: "Goya", letra: "Y"},
+    {q: "Con la Z: Prenda de calzado que da nombre a una célebre obra de teatro infantil, y clásico ballet, basada en el cuento de una joven y su madrastra.", a: "Zapato", letra: "Z"},
+    {q: "Con la A: Personaje de la comedia de Plauto y Molière cuyo nombre designa hoy popularmente a quien recibe invitados en su propia casa.", a: "Anfitrión", letra: "A"},
+    {q: "Con la B: Dios romano del vino y el éxtasis, equivalente al griego Dioniso, en cuyo honor se celebraban festividades teatrales clásicas.", a: "Baco", letra: "B"},
+    {q: "Con la C: Adjetivo de la pared invisible que metafóricamente separa el escenario del público observador en el teatro naturalista moderno.", a: "Cuarta", letra: "C"},
+    {q: "Con la D: Título de respeto que antecede siempre al nombre del más célebre seductor del teatro español clásico y del romanticismo, ... Juan.", a: "Don", letra: "D"},
+    {q: "Con la E: Parte final y añadida de una obra teatral, donde a veces se resume la moraleja de la historia o el actor se despide del público.", a: "Epílogo", letra: "E"},
+    {q: "Con la F: Lámpara de luz muy potente y direccional utilizada por los técnicos para iluminar una zona concreta del escenario o seguir a un actor.", a: "Foco", letra: "F"},
+    {q: "Con la G: Movimiento corporal o facial que hace el actor de forma deliberada para expresar una emoción sin necesidad de palabras.", a: "Gesto", letra: "G"},
+    {q: "Con la H: Relatos, leyendas o fábulas que se cuentan, se adaptan y se escenifican sobre las tablas para disfrute del espectador.", a: "Historias", letra: "H"},
+    {q: "Con la I: Efecto mágico de apariencia engañosa que se crea en escena mediante trucos escenográficos, falsos fondos o juegos de luces.", a: "Ilusión", letra: "I"},
+    {q: "Con la J: Figura de autoridad legal a la que apelan los personajes en juicios teatrales, como hace Porcia en 'El mercader de Venecia'.", a: "Juez", letra: "J"},
+    {q: "Con la L: Cualidad poética y de elevación emotiva en los diálogos, muy presente en el teatro romántico o en el drama simbolista.", a: "Lirismo", letra: "L"},
+    {q: "Con la M: Arte de caracterizar el rostro del actor empleando pinturas, polvos y postizos para adecuarlo a la edad y rasgos de su personaje.", a: "Maquillaje", letra: "M"},
+    {q: "Con la N: Ciudad del sur de Italia, gran cuna de la irreverente Commedia dell'arte y de personajes tradicionales como Polichinela.", a: "Nápoles", letra: "N"},
+    {q: "Contiene la Ñ: Casa rústica de madera o choza donde se desarrollan a menudo idílicas tramas teatrales de ambiente pastoril y campesino.", a: "Cabaña", letra: "Ñ"},
+    {q: "Con la O: Lugar del escenario que no está a la vista del público y desde el cual los actores a veces gritan o hablan, actuando 'en...'.", a: "Oculto", letra: "O"},
+    {q: "Con la P: Titán de la mitología griega, encadenado en una cumbre por robar el fuego, que da título a la célebre tragedia atribuida a Esquilo.", a: "Prometeo", letra: "P"},
+    {q: "Contiene la Q: Envoltorio o caja que a menudo sirve como elemento de utilería misterioso detonante de enredos en las comedias.", a: "Paquete", letra: "Q"},
+    {q: "Con la R: Plano inclinado construido sobre el escenario que une desniveles, muy utilizado en la escenografía expresionista o de vanguardia.", a: "Rampa", letra: "R"},
+    {q: "Con la S: Género y tono mordaz de muchas obras de Aristófanes o Molière que se burla sin piedad de las costumbres sociales y políticas.", a: "Satírico", letra: "S"},
+    {q: "Con la T: Clima emocional de intensidad e incertidumbre que el director y los actores construyen de cara al gran clímax dramático.", a: "Tensión", letra: "T"},
+    {q: "Con la U: Espacio global, figurado o literal, que abarca el mundo de ficción completo en el que conviven los personajes de la obra.", a: "Universo", letra: "U"},
+    {q: "Con la V: Pieza de utilería sanitaria que causó gran revuelo y escándalo al ponerse por primera vez sobre un escenario en el teatro naturalista.", a: "Váter", letra: "V"},
+    {q: "Contiene la X: Cambio de tono o de volumen repentino en la voz del actor para dar mayor expresividad y matiz a la intención de su réplica.", a: "Inflexión", letra: "X"},
+    {q: "Contiene la Y: Auxilio físico o moral que un personaje secundario de la obra brinda al protagonista en su momento de mayor crisis.", a: "Apoyo", letra: "Y"},
+    {q: "Con la Z: Arbusto espinoso que a menudo sirve de decorado y atrezo para representar un bosque espeso o un lugar salvaje en el escenario.", a: "Zarza", letra: "Z"},
+    {q: "Con la A: Dios griego de la luz y de las artes, a menudo invocado por los coros clásicos y antagonista moral en la tragedia de Orestes.", a: "Apolo", letra: "A"},
+    {q: "Con la B: Apellido del dramaturgo ilustrado francés, creador de las célebres comedias 'El barbero de Sevilla' y 'Las bodas de Fígaro'.", a: "Beaumarchais", letra: "B"},
+    {q: "Con la C: Conjunto de obras de teatro que giran sobre el mismo héroe o tema, como el mito tebano en Grecia o los reyes de Shakespeare.", a: "Ciclo", letra: "C"},
+    {q: "Con la D: Estado de parálisis intelectual e incertidumbre que atenaza al protagonista del teatro moderno, como ejemplifica el príncipe Hamlet.", a: "Duda", letra: "D"},
+    {q: "Con la E: Exhibición teatral, representación de artes escénicas o función pública que se ofrece a una audiencia para su entretenimiento.", a: "Espectáculo", letra: "E"},
+    {q: "Con la F: Término musical y teatral para el apoteósico gran cierre o número de clausura que congrega a todos en una obra o revista.", a: "Final", letra: "F"},
+    {q: "Con la G: Idioma antiguo en el que fueron escritas y representadas originalmente las mayores tragedias y comedias de la historia occidental.", a: "Griego", letra: "G"},
+    {q: "Con la H: Seres mágicos femeninos del bosque que acompañan a Titania en la comedia 'El sueño de una noche de verano' de Shakespeare.", a: "Hadas", letra: "H"},
+    {q: "Con la I: Capacidad mental del director, dramaturgo y escenógrafo para idear de la nada mundos escénicos y ficciones innovadoras.", a: "Imaginación", letra: "I"},
+    {q: "Con la J: Edad o condición biológica de los personajes clásicos masculinos a los que en las compañías de teatro se les llama 'galanes'.", a: "Joven", letra: "J"},
+    {q: "Con la L: Estado mental o máscara del bufón en el teatro isabelino, al que se le permitía decir crueles verdades bajo la apariencia de desvarío.", a: "Loco", letra: "L"},
+    {q: "Con la M: Formato teatral moderno de obras muy breves, representadas para muy pocos espectadores y en un espacio inusualmente reducido.", a: "Microteatro", letra: "M"},
+    {q: "Con la N: Comedia de Aristófanes, en plural, en la que se satiriza al filósofo Sócrates suspendiéndolo ridículamente en una cesta en el aire.", a: "Nubes", letra: "N"},
+    {q: "Contiene la Ñ: Insecto venenoso que da nombre al título del drama y aclamado musical 'El beso de la mujer...', basado en la novela de Manuel Puig.", a: "Araña", letra: "Ñ"},
+    {q: "Con la O: Animal dócil que, en el inicio de la obra 'Fuenteovejuna' de Lope de Vega, funciona como símbolo del pacífico pueblo oprimido.", a: "Oveja", letra: "O"},
+    {q: "Con la P: Filósofo griego que, paradójicamente, desconfiaba del valor moral del teatro en su República por considerar que solo imitaba falsas ilusiones.", a: "Platón", letra: "P"},
+    {q: "Contiene la Q: Objeto sagrado o muy antiguo de utilería que a veces sirve de macguffin o desencadena la trama en los grandes dramas históricos.", a: "Reliquia", letra: "Q"},
+    {q: "Con la R: Destrucción trágica del estatus, de la cordura o de la propia vida del héroe tras llegar al inexorable final de una tragedia clásica.", a: "Ruina", letra: "R"},
+    {q: "Con la S: Mueble básico de atrezo, presente en infinidad de escenarios, en el que el personaje reposa habitualmente durante los diálogos largos.", a: "Silla", letra: "S"},
+    {q: "Con la T: Ciudad asediada de la Antigüedad, mítico escenario y telón de fondo de numerosísimas tragedias clásicas como 'Las troyanas'.", a: "Troya", letra: "T"},
+    {q: "Con la U: Tipo de teatro contemporáneo que abandona las salas cerradas convencionales para representarse interviniendo calles de la ciudad.", a: "Urbano", letra: "U"},
+    {q: "Con la V: Aparición fantástica o revelación sobrenatural que un personaje contempla con éxtasis en escena, muy usada en teatro religioso.", a: "Visión", letra: "V"},
+    {q: "Contiene la X: Actitud de desmesura y falta de moderación de los personajes trágicos griegos, que les lleva irremediablemente a su castigo divino.", a: "Exceso", letra: "X"},
+    {q: "Contiene la Y: Concavidad en la tierra, similar a una fosa, que se suele simular sobre el escenario para sepultar a un personaje en la trama.", a: "Hoyo", letra: "Y"},
+    {q: "Con la Z: Trinchera o excavación alargada que a veces se representa rígidamente en decorados de obras de teatro de ambientación bélica.", a: "Zanja", letra: "Z"},
+    {q: "Con la A: Apellido de Max, inmenso dramaturgo republicano español, autor de obras como 'San Juan', que vivió exiliado tras la Guerra Civil.", a: "Aub", letra: "A"},
+    {q: "Con la B: Elemento arquitectónico desde el cual transcurre la famosísima y nocturna declaración de amor entre Romeo y Julieta.", a: "Balcón", letra: "B"},
+    {q: "Con la C: Choque de intereses, fuerzas o pasiones antagónicas entre personajes, que es el verdadero motor de la tensión dramática de la obra.", a: "Conflicto", letra: "C"},
+    {q: "Con la D: Profesional que asiste al escenógrafo eligiendo las telas, los muebles y el embellecimiento del espacio del escenario.", a: "Decorador", letra: "D"},
+    {q: "Con la E: Guion técnico o lista ordenada a nivel interno de las escenas, cambios de luces y entradas que marca el esqueleto de una representación.", a: "Escaleta", letra: "E"},
+    {q: "Con la F: Apellido del gran compositor gaditano autor de 'El amor brujo', obra que nació como una pantomima teatral con pastorelas.", a: "Falla", letra: "F"},
+    {q: "Con la G: Famoso astrónomo renacentista italiano, protagonista y título de una obra maestra del teatro épico y didáctico de Bertolt Brecht.", a: "Galileo", letra: "G"},
+    {q: "Con la H: Lesión física, o profunda metáfora de dolor emocional, que sufren muchos héroes dramáticos en el sangriento desenlace de su tragedia.", a: "Herida", letra: "H"},
+    {q: "Con la I: Nacionalidad del genio teatral Oscar Wilde, autor de la brillante e irónica comedia 'La importancia de llamarse Ernesto'.", a: "Irlandés", letra: "I"},
+    {q: "Con la J: Ciudad santa, capital de Judea, que en los autos sacramentales de Calderón de la Barca a menudo se representa como decorado celestial.", a: "Jerusalén", letra: "J"},
+    {q: "Con la L: Borde del proscenio o frontera imaginaria hacia el público que los actores de teatro clásico tienen la orden de no sobrepasar.", a: "Límite", letra: "L"},
+    {q: "Con la M: Arte que trata de la medida y la rima de los versos, esencial para la correcta declamación rítmica del teatro del Siglo de Oro.", a: "Métrica", letra: "M"},
+    {q: "Con la N: Festividad cristiana invernal durante la cual, desde la Edad Media, es tradición arraigada representar pequeñas obras pastoriles.", a: "Navidad", letra: "N"},
+    {q: "Contiene la Ñ: Habitación sanitaria que funciona como el único y opresivo escenario de algunas obras del polémico teatro 'in-yer-face'.", a: "Baño", letra: "Ñ"},
+    {q: "Con la O: Principio, causa o lugar histórico y antropológico de donde procede una manifestación teatral o una técnica actoral concreta.", a: "Origen", letra: "O"},
+    {q: "Con la P: Emoción muy intensa, afecto desordenado a menudo de carácter amoroso o vengativo, que nubla el raciocinio del personaje dramático.", a: "Pasión", letra: "P"},
+    {q: "Contiene la Q: Parte lateral del escenario teatral donde convergen dos paredes de decorado construido, formando un ángulo o recoveco.", a: "Esquina", letra: "Q"},
+    {q: "Con la R: Forma de drama puramente acústico transmitido por ondas, que fue enormemente popular en los hogares antes de la era televisiva.", a: "Radioteatro", letra: "R"},
+    {q: "Con la S: Condición física de sordera parcial que tenía Francisco de Goya y que se plasma auditivamente en la obra 'El sueño de la razón'.", a: "Sordo", letra: "S"},
+    {q: "Con la T: Prenda de vestir aparatosa que en la comedia de Molière 'El burgués gentilhombre' sirve para ridiculizar a quien quiere fingir nobleza.", a: "Traje", letra: "T"},
+    {q: "Con la U: Cualidad de un arreglo escénico o ensayo corrector que se debe hacer de manera precipitada y sin demora horas antes del estreno.", a: "Urgente", letra: "U"},
+    {q: "Con la V: Fuerza bruta, crímenes o agresiones físicas extremas, recursos muy habituales para el impacto en las tragedias latinas de Séneca.", a: "Violencia", letra: "V"},
+    {q: "Contiene la X: Gas letal, '... de carbono', que se utiliza habitualmente como método de suicidio para los personajes en oscuros dramas urbanos y realistas.", a: "Monóxido", letra: "X"},
+    {q: "Contiene la Y: Rey mítico de Tebas, padre biológico de Edipo, al que este asesina en un cruce de caminos cumpliendo el oráculo de la tragedia.", a: "Layo", letra: "Y"},
+    {q: "Con la Z: Animal astuto que da nombre popular y apodo al personaje enmascarado adaptado a miles de piezas cómicas y de capa y espada.", a: "Zorro", letra: "Z"},
+    {q: "Con la A: Crimen o muerte violenta de un personaje que, por regla sagrada, en el teatro clásico griego jamás se mostraba, sino que se narraba.", a: "Asesinato", letra: "A"},
+    {q: "Con la B: Primer nombre del dramaturgo francés de apellido Koltès, autor de la emblemática obra de duelos verbales 'En la soledad de los campos de algodón'.", a: "Bernard", letra: "B"},
+    {q: "Con la C: Género de espectáculo teatral y musical de variedades en locales nocturnos, de tono provocativo, que tuvo su época dorada en el París bohemio.", a: "Cabaret", letra: "C"},
+    {q: "Con la D: Título, referido al tranvía de Nueva Orleans, de la magistral obra teatral de pasiones y violencia escrita por Tennessee Williams.", a: "Deseo", letra: "D"},
+    {q: "Con la E: Vanguardia teatral alemana de principios del siglo XX que distorsionaba la escenografía para mostrar la cruda angustia interior de los personajes.", a: "Expresionismo", letra: "E"},
+    {q: "Con la F: Destino trágico e ineludible que persigue y aplasta a los héroes de la Grecia antigua, marcado inexorablemente por la voluntad de los dioses.", a: "Fatalidad", letra: "F"},
+    {q: "Con la G: Espíritu mágico de la lámpara que aparece en infinidad de coloridas obras de teatro infantil adaptadas de 'Las mil y una noches'.", a: "Genio", letra: "G"},
+    {q: "Con la H: Acciones bélicas, gloriosas e ilustres de caballeros medievales y reyes que constituían el tema predilecto del drama histórico español.", a: "Hazañas", letra: "H"},
+    {q: "Con la I: Profesión del creador escenotécnico, figura que históricamente debía diseñar y fabricar los sistemas mecánicos y trucos para el escenario.", a: "Inventor", letra: "I"},
+    {q: "Con la J: Nombre de la ilustre religiosa, excelsa poetisa y dramaturga novohispana del Siglo de Oro, Sor ... Inés de la Cruz.", a: "Juana", letra: "J"},
+    {q: "Con la L: Instrumento amenazador de castigo, hecho de cuero, que blanden algunos domadores y figuras despóticas del teatro de la crueldad.", a: "Látigo", letra: "L"},
+    {q: "Con la M: Recurso teatral consciente donde hay teatro dentro del teatro, o los personajes reflexionan sobre su propia condición de actores de ficción.", a: "Metateatro", letra: "M"},
+    {q: "Con la N: Gran desastre marítimo, como el provocado mágicamente por Próspero en la primera y trepidante escena de la obra 'La tempestad' de Shakespeare.", a: "Naufragio", letra: "N"},
+    {q: "Contiene la Ñ: Pelos del párpado que, en los densos maquillajes teatrales de revista, se suelen añadir postizas y muy alargadas para potenciar la mirada.", a: "Pestañas", letra: "Ñ"},
+    {q: "Con la O: Ausencia dramática de luz en el escenario, a veces usada expresamente como recurso estético o para infundir gran terror al público.", a: "Oscuridad", letra: "O"},
+    {q: "Con la P: Personaje clásico de la pantomima francesa, caracterizado siempre de riguroso blanco y de carácter profundamente triste o melancólico.", a: "Pierrot", letra: "P"},
+    {q: "Con la Q: Monstruo mitológico inalcanzable o sueño imposible, término literario y estético muy recurrente en el teatro poético y simbolista.", a: "Quimera", letra: "Q"},
+    {q: "Con la R: Ceremonia sagrada o mística en la antigüedad, considerada por antropólogos como el origen primigenio de toda representación teatral.", a: "Rito", letra: "R"},
+    {q: "Con la S: Argumentos falsos pero que aparentan ser lógicos, usados por personajes manipuladores en el teatro griego para convencer o dañar.", a: "Sofismas", letra: "S"},
+    {q: "Con la T: Asiento regio y solemne que sirve de centro de la escenografía o de motivo principal en la inmensa mayoría de tragedias palaciegas o de poder.", a: "Trono", letra: "T"},
+    {q: "Con la U: Adjetivo que designa al ensayo general definitivo, el '... ensayo', que se hace en las condiciones y con los nervios exactos del estreno.", a: "Último", letra: "U"},
+    {q: "Con la V: Obstáculo o cerramiento bajo, a menudo de madera en el escenario, que delimita fincas o jardines en obras naturalistas de ambiente rural.", a: "Valla", letra: "V"},
+    {q: "Contiene la X: Precisión o rigor milimétrico requerido durante la coreografía o ejecución de un peligroso truco escénico para que nada falle ante el público.", a: "Exactitud", letra: "X"},
+    {q: "Contiene la Y: Pronombre posesivo que utiliza apasionadamente un personaje en el diálogo romántico para reclamar la pertenencia del amor de su pareja.", a: "Tuyo", letra: "Y"},
+    {q: "Contiene la Z: Comida de mediodía alrededor de la cual transcurren largas y conflictivas escenas de comedia burguesa en el escenario del siglo XX.", a: "Almuerzo", letra: "Z"},
+    {q: "Con la A: Fiero héroe griego, guerrero en Troya, que da título a una tragedia de Sófocles en la que enloquece y sacrifica rebaños creyéndolos enemigos.", a: "Áyax", letra: "A"},
+    {q: "Con la B: Apellido de Sergi, aclamado y laureado dramaturgo contemporáneo catalán, autor de obras de éxito internacional como 'Después de la lluvia'.", a: "Belbel", letra: "B"},
+    {q: "Con la C: Época o estilo del teatro actual que busca romper barreras convencionales heredadas y explora nuevos lenguajes, el teatro...", a: "Contemporáneo", letra: "C"},
+    {q: "Con la D: En el teatro clásico, ser mítico supremo u olímpico que interviene en la trama para salvar al héroe de forma artificial ('... ex machina').", a: "Dios", letra: "D"},
+    {q: "Con la E: Descanso, pausa o intervalo de tiempo que se hace por convención entre los actos de una obra de teatro para que público y actores repongan fuerzas.", a: "Entreacto", letra: "E"},
+    {q: "Con la F: Escritor o persona que inventa cuentos y ficciones de la nada, función esencial de todo dramaturgo según las antiguas poéticas del arte.", a: "Fabulador", letra: "F"},
+    {q: "Con la G: Estilo arquitectónico de origen medieval que inspiró decorados sombríos de castillos y catedrales en los melodramas de terror del siglo XIX.", a: "Gótico", letra: "G"},
+    {q: "Con la H: Capacidad humana de articular palabras que el actor debe proyectar magistralmente hacia la última butaca mediante su técnica vocal.", a: "Habla", letra: "H"},
+    {q: "Con la I: Tipo de teatro vanguardista en el que el espectador no está pasivo en la butaca, sino que camina libremente y forma parte de la escenografía.", a: "Inmersivo", letra: "I"},
+    {q: "Con la J: Actividades lúdicas y festivas que en la Antigua Roma incluían las representaciones de comedia palliata como gran forma de ocio, los '... escénicos'.", a: "Juegos", letra: "J"},
+    {q: "Con la L: Anhelo existencial fundamental de personajes oprimidos, como clama en voz alta el encadenado Segismundo en su torre de 'La vida es sueño'.", a: "Libertad", letra: "L"},
+    {q: "Con la M: Conjunto de costumbres y valores éticos sobre el bien y el mal que muchísimas piezas de teatro religioso o pedagógico pretenden enseñar.", a: "Morales", letra: "M"},
+    {q: "Con la N: Rechazo rotundo o negativa de un personaje testarudo a aceptar su destino, lo que suele acelerar e intensificar la peripecia de la tragedia.", a: "Negación", letra: "N"},
+    {q: "Contiene la Ñ: Sentimiento de profunda pena melancólica por la pérdida de tiempos pasados, muy propio de la burguesía en decadencia de las obras de Chéjov.", a: "Añoranza", letra: "Ñ"},
+    {q: "Con la O: Recipiente o vasija redondeada de barro, llena de oro, que sirve de desencadenante de enredos y da título a la célebre comedia 'Aulularia' de Plauto.", a: "Olla", letra: "O"},
+    {q: "Con la P: Imitación de tono burlesco o satírico que una comedia teatral hace de una gran tragedia, de un estilo solemne o de un personaje histórico serio.", a: "Parodia", letra: "P"},
+    {q: "Contiene la Q: Modelo original o patrón de personaje universal que se repite idéntico en el teatro de distintas culturas, como el avaro, el soldado fanfarrón o el celoso.", a: "Arquetipo", letra: "Q"},
+    {q: "Con la R: Pequeño escenario tradicional, a veces portátil, muy célebre en el Quijote con Maese Pedro, donde se representan las históricas funciones de títeres.", a: "Retablo", letra: "R"},
+    {q: "Con la S: Forma de un actor oscuro que se recorta contra el ciclorama iluminado del fondo de la caja negra para crear un efecto de misterio o terror visual.", a: "Silueta", letra: "S"},
+    {q: "Con la T: Fenómeno meteorológico violento, con grandes truenos y precipitación, con el que arranca magistralmente y hace un paralelismo la tragedia 'El rey Lear'.", a: "Tormenta", letra: "T"},
+    {q: "Con la U: Estado de gran colaboración y fuerte cohesión grupal que requiere imperativamente cualquier compañía de teatro de repertorio para funcionar bien.", a: "Unido", letra: "U"},
+    {q: "Con la V: Tela fina y ligera que cubre parcialmente el rostro de las protagonistas femeninas en muchas escenas de misterio, duelo estricto o luto dramático.", a: "Velo", letra: "V"},
+    {q: "Contiene la X: Instrumento musical de viento que suena habitualmente, acompañando a ritmos de jazz y cabarets, en los fosos de los grandes teatros musicales.", a: "Saxo", letra: "X"},
+    {q: "Contiene la Y: Objeto valioso de utilería, como un anillo precioso o un gran collar de perlas, cuyo presunto robo genera numerosos enredos en la alta comedia.", a: "Joya", letra: "Y"},
+    {q: "Contiene la Z: Capacidad de pensamiento lógico que reyes teatrales como Lear o príncipes como Hamlet pierden o fingen perder cuando se sumergen en la locura.", a: "Razón", letra: "Z"},
+    {q: "Con la A: Capacidad máxima permitida, en número total de espectadores sentados o de pie, que puede albergar una sala de teatro legalmente.", a: "Aforo", letra: "A"},
+    {q: "Con la B: Clase social pudiente a la que pertenece la inmensa mayoría del público, así como los personajes acomodados, del teatro realista del siglo XIX.", a: "Burguesía", letra: "B"},
+    {q: "Con la C: Cuaderno de la obra, protegido por el secreto profesional, del que leía oculto el apuntador en los teatros clásicos españoles para chivar réplicas.", a: "Consueta", letra: "C"},
+    {q: "Con la D: Actor o actriz suplente especialmente preparado para sustituir de urgencia al titular en escenas peligrosas o si este enferma antes de la función.", a: "Doble", letra: "D"},
+    {q: "Con la E: Entorno físico y vacío que se delimita en un escenario y que el escenógrafo debe transformar hábilmente, conocido como '... escénico'.", a: "Espacio", letra: "E"},
+    {q: "Con la F: Género de papeles, personajes o actrices, que en el puritano teatro isabelino inglés de la época de Shakespeare tenían estrictamente prohibido subir a escena.", a: "Femenino", letra: "F"},
+    {q: "Con la G: Personaje de mendigo charlatán o pícaro de mal vivir que vagabundea y engaña en las comedias del Siglo de Oro, sinónimo popular de golfo.", a: "Guitón", letra: "G"},
+    {q: "Con la H: Estado sólido del agua que se menciona por los actores para enfatizar que hay recintos de teatro muy fríos o el clima insoportable en dramas nórdicos.", a: "Hielo", letra: "H"},
+    {q: "Con la I: Propósito psicológico o motivación secreta que dirige la forma de decir cada réplica de un personaje, pilar esencial del método Stanislavski.", a: "Intención", letra: "I"},
+    {q: "Con la J: Famoso y melancólico personaje de la comedia de Shakespeare 'Como gustáis', autor del mítico monólogo que compara el mundo entero con un teatro.", a: "Jaques", letra: "J"},
+    {q: "Con la L: Componente textual básico y literal de los diálogos que el actor tiene la obligación de aprender de memoria en casa para poder pronunciar su papel.", a: "Letra", letra: "L"},
+    {q: "Con la M: Fin orgánico de la vida de un personaje trágico, suceso irreparable, a menudo fuera de escena, con el que suelen terminar dramas como el de Julieta.", a: "Muerte", letra: "M"},
+    {q: "Con la N: Doctrina política e identitaria en la que se inspiró fervorosamente el teatro romántico europeo para ensalzar los mitos, leyendas e historia locales.", a: "Nacionalismo", letra: "N"},
+    {q: "Contiene la Ñ: Pequeño diálogo, escena, morcilla cómica o chiste extra que el director incorpora y suma al texto original del dramaturgo durante los ensayos.", a: "Añadido", letra: "Ñ"},
+    {q: "Con la O: Fatal fallo de memoria que sufre un actor en escena por el cual se queda en blanco, no recuerda su texto y requiere la rápida ayuda del apuntador o compañero.", a: "Olvido", letra: "O"},
+    {q: "Con la P: Corredor estrecho entre las filas de butacas de un teatro por donde el público accede a sus asientos o por donde, rompiendo la convención, entran los actores.", a: "Pasillo", letra: "P"},
+    {q: "Contiene la Q: Prenda formal de vestir masculina, oscura y con faldones, que forma la etiqueta clásica en el foso para los directores de orquesta de las grandes óperas.", a: "Chaqué", letra: "Q"},
+    {q: "Con la R: Reacción sonora, incontrolable y festiva del público que persigue y necesita desesperadamente provocar toda comedia, farsa o vodevil.", a: "Risa", letra: "R"},
+    {q: "Con la S: Superficie plana, lisa y resistente del escenario que pisan físicamente los actores, la cual está a menudo revestida de madera de pino o cubierta de linóleo negro.", a: "Suelo", letra: "S"},
+    {q: "Con la V: Corriente impetuosa de aire que en los modernos escenarios de teatro se puede generar artificialmente con enormes ventiladores para mover las telas de los vestidos.", a: "Viento", letra: "V"},
+    {q: "Contiene la X: Temática de calado filosófico, muy recurrente en el teatro francés de Sartre o Camus, siempre referida al sentido de la vida humana y la angustia de ser libre.", a: "Existencia", letra: "X"},
+    {q: "Contiene la Y: Sentimiento oculto, secreto o conflicto emocional que no aflora explícitamente en el texto del dramaturgo pero que está latente en el interior del personaje.", a: "Subyacente", letra: "Y"},
+    {q: "Con la Z: Ruido monótono e irritante, similar al de un insecto grave, a menudo introducido por el diseñador de sonido en la sala para crear zozobra en un moderno drama psicológico.", a: "Zumbido", letra: "Z"},
   ]
 });
 </script>
@@ -14179,6 +14461,496 @@ MAZOS.push({
     {q: "Con la V: Apellido del autor de la novela epistolar 'Pepita Jiménez'.", a: "Valera", letra: "V"},
     {q: "Con la Y: Título de la tragedia de Lorca que forma parte de su trilogía rural junto a 'Bodas de sangre'.", a: "Yerma", letra: "Y"},
     {q: "Con la Z: Apellido de la filósofa malagueña, ensayista de la Generación del 27.", a: "Zambrano", letra: "Z"},
+    {q: "Con la A: Apellido del poeta de la Generación del 27, autor de 'La destrucción o el amor', que ganó el Premio Nobel en 1977.", a: "Aleixandre", letra: "A"},
+    {q: "Con la B: Apellido del poeta romántico sevillano que dejó para la posteridad sus inmortales 'Rimas y leyendas'.", a: "Bécquer", letra: "B"},
+    {q: "Con la C: Primera palabra del título del poema épico medieval que narra las hazañas del caballero Rodrigo Díaz de Vivar.", a: "Cantar", letra: "C"},
+    {q: "Con la D: Apellido del autor vallisoletano que retrató magistralmente la posguerra en novelas como 'El camino' o 'Cinco horas con Mario'.", a: "Delibes", letra: "D"},
+    {q: "Con la E: Pieza teatral breve, de carácter cómico, que durante el Siglo de Oro español se representaba en los descansos de las comedias.", a: "Entremés", letra: "E"},
+    {q: "Con la F: Título de la célebre obra teatral de Lope de Vega en la que todo un pueblo se une para vengar los abusos del Comendador.", a: "Fuenteovejuna", letra: "F"},
+    {q: "Con la G: Segundo apellido, por el que es universalmente conocido, el gran novelista canario autor de los 'Episodios Nacionales'.", a: "Galdós", letra: "G"},
+    {q: "Con la H: Localidad que da título al Arcipreste de nombre Juan Ruiz, autor de la gran obra del mester de clerecía en el siglo XIV.", a: "Hita", letra: "H"},
+    {q: "Con la I: Concepto filosófico literario creado por Miguel de Unamuno para referirse a la vida tradicional, silenciosa y anónima de los pueblos.", a: "Intrahistoria", letra: "I"},
+    {q: "Con la J: Breves composiciones líricas escritas en mozárabe al final de poemas árabes, consideradas los primeros textos literarios peninsulares.", a: "Jarchas", letra: "J"},
+    {q: "Con la L: Primera palabra del título de la obra teatral de Valle-Inclán que inaugura el revolucionario género del esperpento.", a: "Luces", letra: "L"},
+    {q: "Con la M: Apellido del poeta andaluz, insigne representante de la Generación del 98, autor del poemario 'Campos de Castilla'.", a: "Machado", letra: "M"},
+    {q: "Con la N: Título de la novela de tono existencialista con la que Carmen Laforet ganó la primera edición del Premio Nadal.", a: "Nada", letra: "N"},
+    {q: "Contiene la Ñ: Apellido del célebre aristócrata sevillano del siglo XVII, de nombre Miguel, cuya vida inspiró el mito literario de Don Juan.", a: "Mañara", letra: "Ñ"},
+    {q: "Con la O: Composición poética de tono elevado y solemne que elogia a un personaje o idea, como las que componía Fray Luis de León.", a: "Oda", letra: "O"},
+    {q: "Con la P: Subgénero narrativo español nacido en el siglo XVI, protagonizado por un antihéroe astuto de origen marginal.", a: "Picaresca", letra: "P"},
+    {q: "Con la Q: Apellido de la escritora de nombre Elena, segunda mujer en ingresar en la RAE y ganadora del Nadal con 'Viento del norte'.", a: "Quiroga", letra: "Q"},
+    {q: "Con la R: Colección de poemas tradicionales octosílabos, o primera palabra del título de la gran obra andaluza de García Lorca publicada en 1928.", a: "Romancero", letra: "R"},
+    {q: "Con la S: Palabra que acompaña a 'de Oro' para denominar la época de mayor esplendor de la literatura española (siglos XVI y XVII).", a: "Siglo", letra: "S"},
+    {q: "Con la T: Palabra principal del título del drama romántico de Antonio García Gutiérrez que posteriormente inspiraría una famosa ópera de Verdi.", a: "Trovador", letra: "T"},
+    {q: "Con la U: Movimiento literario de vanguardia surgido en España en 1918 que buscaba la eliminación de la anécdota y la exaltación de la metáfora.", a: "Ultraísmo", letra: "U"},
+    {q: "Con la V: Composición poética popular provista de estribillo, originariamente profana, que con los siglos derivó en cantos literarios navideños.", a: "Villancico", letra: "V"},
+    {q: "Con la X: Seudónimo utilizado en sus glosas periodísticas por el escritor, ensayista y crítico de arte catalán Eugenio d'Ors.", a: "Xenius", letra: "X"},
+    {q: "Contiene la Y: Apellido del dramaturgo madrileño contemporáneo de nombre Juan, autor de 'El chico de la última fila' y Premio Princesa de Asturias.", a: "Mayorga", letra: "Y"},
+    {q: "Con la Z: Apellido del escritor romántico que en 1844 estrenó la versión más popular del mito del burlador sevillano ('Don Juan Tenorio').", a: "Zorrilla", letra: "Z"},
+    {q: "Con la A: Primer apellido del escritor granadino decimonónico, autor de la novela corta costumbrista 'El sombrero de tres picos'.", a: "Alarcón", letra: "A"},
+    {q: "Con la B: Primer apellido del dramaturgo de la posguerra, autor de 'Historia de una escalera' y 'El tragaluz'.", a: "Buero", letra: "B"},
+    {q: "Con la C: Primer apellido del novelista gallego galardonado con el Premio Nobel en 1989, autor de 'La familia de Pascual Duarte'.", a: "Cela", letra: "C"},
+    {q: "Con la D: Título nobiliario por el que es conocido el dramaturgo Ángel de Saavedra, autor de 'Don Álvaro o la fuerza del sino'.", a: "Duque", letra: "D"},
+    {q: "Con la E: Apellido del poeta, dramaturgo y novelista catalán de nombre Salvador, autor de 'La pell de brau'.", a: "Espriu", letra: "E"},
+    {q: "Con la F: Nombre del padre benedictino ensayista de la Ilustración, de nombre Benito Jerónimo, autor del 'Teatro crítico universal'.", a: "Feijoo", letra: "F"},
+    {q: "Con la G: Apellido del escritor y pensador jesuita aragonés del Barroco, maestro del conceptismo y autor de 'El Criticón'.", a: "Gracián", letra: "G"},
+    {q: "Con la H: Apellido del dramaturgo romántico, director de la Biblioteca Nacional, autor de 'Los amantes de Teruel'.", a: "Hartzenbusch", letra: "H"},
+    {q: "Con la I: Apellido del escritor y fabulista canario de la Ilustración de nombre Tomás, autor de las 'Fábulas literarias'.", a: "Iriarte", letra: "I"},
+    {q: "Con la J: Apellido del poeta sevillano del Siglo de Oro de nombre Juan, enemigo acérrimo de Góngora y Quevedo.", a: "Jáuregui", letra: "J"},
+    {q: "Con la L: Género literario al que pertenecen las obras que expresan sentimientos y emociones íntimas del autor, frecuentemente en verso.", a: "Lírica", letra: "L"},
+    {q: "Con la M: Oficio u ocupación en la Edad Media. Da nombre a las escuelas narrativas de los juglares o de los clérigos.", a: "Mester", letra: "M"},
+    {q: "Con la N: Palabra que acompaña a 'Ejemplares' en el título de la colección de doce relatos cortos publicada por Miguel de Cervantes.", a: "Novelas", letra: "N"},
+    {q: "Contiene la Ñ: Canción de cuna tradicional de la literatura oral asturiana.", a: "Añada", letra: "Ñ"},
+    {q: "Con la O: Primer apellido del pensador y ensayista del Novecentismo autor de 'La rebelión de las masas'.", a: "Ortega", letra: "O"},
+    {q: "Con la P: Apellido del escritor cántabro representante de la novela realista de corte tradicionalista, autor de 'Peñas arriba'.", a: "Pereda", letra: "P"},
+    {q: "Con la Q: Apellido de los célebres hermanos dramaturgos, Serafín y Joaquín, maestros del teatro costumbrista andaluz.", a: "Quintero", letra: "Q"},
+    {q: "Con la R: Apellido del dramaturgo sevillano del siglo XVI, de nombre Lope, considerado el creador del teatro profesional en España.", a: "Rueda", letra: "R"},
+    {q: "Con la S: Apellido del prolífico novelista aragonés exiliado tras la Guerra Civil, autor de 'Réquiem por un campesino español'.", a: "Sender", letra: "S"},
+    {q: "Con la T: Género dramático que combina elementos trágicos y cómicos, subtítulo de la famosa obra sobre Calisto y Melibea.", a: "Tragicomedia", letra: "T"},
+    {q: "Con la U: Apellido del poeta prerrenacentista español de nombre Pedro Manuel, autor de 'Cancionero' y vinculado a la corte aragonesa.", a: "Urrea", letra: "U"},
+    {q: "Con la V: Apellido literario del llamado 'Fénix de los ingenios', creador de la comedia nueva en el Barroco español.", a: "Vega", letra: "V"},
+    {q: "Contiene la X: Apellido de la famosa actriz catalana de nombre Margarita, musa de Federico García Lorca que estrenó muchas de sus obras.", a: "Xirgú", letra: "X"},
+    {q: "Contiene la Y: Apellido del escritor asturiano de nombre Ramón Pérez, integrante del Novecentismo y autor de 'Tigre Juan'.", a: "Ayala", letra: "Y"},
+    {q: "Con la Z: Nombre de pila del aventurero vasco creado por Pío Baroja, famoso por ser el héroe de la novela homónima.", a: "Zalacaín", letra: "Z"},
+    {q: "Con la A: Apellido del escritor español nacido en París de nombre Max, autor de los laberintos literarios conocidos como 'El laberinto mágico'.", a: "Aub", letra: "A"},
+    {q: "Con la B: Apellido del poeta renacentista de nombre Juan, amigo de Garcilaso, con quien introdujo el endecasílabo italiano en España.", a: "Boscán", letra: "B"},
+    {q: "Con la C: Primer apellido del genial dramaturgo barroco que escribió 'La vida es sueño' y 'El alcalde de Zalamea'.", a: "Calderón", letra: "C"},
+    {q: "Con la D: Género literario al que pertenecen las obras destinadas a la representación en un escenario ante un público.", a: "Drama", letra: "D"},
+    {q: "Con la E: Género literario creado por Ramón María del Valle-Inclán que deforma sistemáticamente la realidad buscando su lado más grotesco.", a: "Esperpento", letra: "E"},
+    {q: "Con la F: Palabra que, seguida de 'de los ingenios', fue el sobrenombre que Cervantes otorgó a Lope de Vega por su asombrosa fecundidad literaria.", a: "Fénix", letra: "F"},
+    {q: "Con la G: Apellido del precursor intelectual de la Generación del 98, autor del ensayo 'Idearium español', que se suicidó en Riga.", a: "Ganivet", letra: "G"},
+    {q: "Con la H: Término métrico que designa cada una de las dos partes en las que una cesura divide un verso de arte mayor.", a: "Hemistiquio", letra: "H"},
+    {q: "Con la I: Apellido del jesuita e ilustrado español autor de la novela satírica 'Fray Gerundio de Campazas'.", a: "Isla", letra: "I"},
+    {q: "Con la J: Nombre del mítico seductor sevillano llevado a la literatura por Tirso de Molina en 'El burlador de Sevilla'.", a: "Juan", letra: "J"},
+    {q: "Con la L: Primera palabra de la obra maestra de Juan Ruiz, Arcipreste de Hita, cumbre de la literatura medieval española.", a: "Libro", letra: "L"},
+    {q: "Con la M: Apellido del comediógrafo madrileño creador de 'Tres sombreros de copa', exponente del teatro del absurdo.", a: "Mihura", letra: "M"},
+    {q: "Con la N: Movimiento cultural e intelectual español también conocido como la Generación del 14, al que pertenecieron Ortega y Gasset y Juan Ramón Jiménez.", a: "Novecentismo", letra: "N"},
+    {q: "Contiene la Ñ: Apellido del genial cineasta y escritor aragonés, amigo íntimo de Lorca y Dalí en la Residencia de Estudiantes.", a: "Buñuel", letra: "Ñ"},
+    {q: "Con la O: Apellido del escritor ilustrado y reformador de nombre Pablo, procesado por la Inquisición, que colonizó Sierra Morena.", a: "Olavide", letra: "O"},
+    {q: "Con la P: Nombre del pequeño burro peludo y suave creado por el poeta Juan Ramón Jiménez en su obra más universal.", a: "Platero", letra: "P"},
+    {q: "Con la Q: Apellido del escritor gaditano de nombre Fernando, representante de la narrativa andaluza contemporánea, autor de 'La canción del pirata'.", a: "Quiñones", letra: "Q"},
+    {q: "Con la R: Apellido real del eclesiástico medieval conocido como el Arcipreste de Hita.", a: "Ruiz", letra: "R"},
+    {q: "Con la S: Apellido del dramaturgo español contemporáneo de nombre Alfonso, principal exponente del teatro de agitación social ('Escuadra hacia la muerte').", a: "Sastre", letra: "S"},
+    {q: "Con la T: Primer apellido del novelista y crítico gallego autor de 'Los gozos y las sombras'.", a: "Torrente", letra: "T"},
+    {q: "Con la U: Apellido de la primera mujer en ganar el Premio Nacional de Poesía en 2003, nacida en Sevilla y de nombre Julia.", a: "Uceda", letra: "U"},
+    {q: "Con la V: Término que engloba a los diferentes movimientos artísticos y literarios rupturistas de principios del siglo XX, como el creacionismo o el ultraísmo.", a: "Vanguardismo", letra: "V"},
+    {q: "Contiene la X: Palabra central del título de la obra satírica del infante don Juan Manuel, 'Libro de los... del conde Lucanor'.", a: "Exemplo", letra: "X"},
+    {q: "Contiene la Y: Apellido del novelista de la Generación del 50, hermano de José Agustín, autor de 'Señas de identidad'.", a: "Goytisolo", letra: "Y"},
+    {q: "Con la Z: Apellido de la escritora del Siglo de Oro de nombre María, pionera en la defensa de las mujeres, autora de 'Novelas amorosas y ejemplares'.", a: "Zayas", letra: "Z"},
+    {q: "Con la A: Apellido del novelista vasco de la Generación de los 50, de nombre Ignacio, maestro del cuento y autor de 'El fulgor y la sangre'.", a: "Aldecoa", letra: "A"},
+    {q: "Con la B: Apellido del dramaturgo madrileño creador de 'Los intereses creados' y ganador del Premio Nobel de Literatura en 1922.", a: "Benavente", letra: "B"},
+    {q: "Con la C: Primera palabra de la elegía medieval que Jorge Manrique dedicó a la memoria de su padre, maestre de Santiago.", a: "Coplas", letra: "C"},
+    {q: "Con la D: Apellido del dramaturgo naturalista autor de la aclamada obra 'Juan José', estrenada con enorme éxito en 1895.", a: "Dicenta", letra: "D"},
+    {q: "Con la E: Apellido del autor salmantino de nombre Juan, considerado el patriarca del teatro renacentista español.", a: "Encina", letra: "E"},
+    {q: "Con la F: Primera palabra del seudónimo utilizado por la escritora costumbrista Cecilia Böhl de Faber.", a: "Fernán", letra: "F"},
+    {q: "Con la G: Apellido del poeta vallisoletano de la Generación del 27, creador del monumental ciclo poético 'Cántico'.", a: "Guillén", letra: "G"},
+    {q: "Con la H: Apellido del poeta sevillano del Siglo de Oro, apodado 'El Divino', maestro de la poesía petrarquista española.", a: "Herrera", letra: "H"},
+    {q: "Con la I: Institución religiosa que durante siglos censuró, expurgó y prohibió numerosos libros en la España moderna.", a: "Inquisición", letra: "I"},
+    {q: "Con la J: Composición poética y teatral del Siglo de Oro, de tono humorístico y lenguaje rufianesco o de los bajos fondos.", a: "Jácara", letra: "J"},
+    {q: "Con la L: Palabra que acompaña a 'verso' para denominar a la poesía que carece de rima y de medida fija, muy usada por los poetas del 27.", a: "Libre", letra: "L"},
+    {q: "Con la M: Primer apellido del mayor comediógrafo del teatro neoclásico español, autor de 'El sí de las niñas'.", a: "Moratín", letra: "M"},
+    {q: "Con la N: Primera palabra del místico poema de San Juan de la Cruz que relata el viaje del alma hasta la unión con Dios ('... oscura').", a: "Noche", letra: "N"},
+    {q: "Contiene la Ñ: Palabra que antecede a 'de Trevélez' en la tragicomedia del escritor alicantino Carlos Arniches.", a: "Señorita", letra: "Ñ"},
+    {q: "Con la O: Estrofa inventada o popularizada por Cervantes que consta de diez versos, alternando octosílabos y trisílabos con rima consonante.", a: "Ovillejo", letra: "O"},
+    {q: "Con la P: Movimiento poético francés de gran influencia en el Modernismo español y latinoamericano, que buscaba 'el arte por el arte'.", a: "Parnasianismo", letra: "P"},
+    {q: "Con la Q: Título de la célebre novela de la escritora gallega Emilia Pardo Bazán en la que retrata la decadencia de la aristocracia.", a: "Quimera", letra: "Q"},
+    {q: "Con la R: Cada uno de los breves poemas de tono intimista escritos por Gustavo Adolfo Bécquer.", a: "Rima", letra: "R"},
+    {q: "Con la S: Estrofa poética muy usada en el Siglo de Oro que combina libremente versos heptasílabos y endecasílabos.", a: "Silva", letra: "S"},
+    {q: "Con la T: Nombre de la joven protagonista de la novela de Pérez Galdós que sufre la dominación de su tutor don Lope y que fue llevada al cine por Buñuel.", a: "Tristana", letra: "T"},
+    {q: "Con la U: Apellido del médico humanista del siglo XVI, Francisco López de, a quien se atribuye la autoría de 'La pícara Justina'.", a: "Úbeda", letra: "U"},
+    {q: "Con la V: Apellido del gran pensador y humanista valenciano de nombre Juan Luis, amigo de Erasmo de Róterdam.", a: "Vives", letra: "V"},
+    {q: "Contiene la X: Primer apellido del influyente Cardenal y estadista que fundó la Universidad de Alcalá e impulsó la Biblia Políglota.", a: "Ximénez", letra: "X"},
+    {q: "Contiene la Y: Género literario cultivado por Gustavo Adolfo Bécquer en prosa, caracterizado por lo sobrenatural y misterioso, como 'El monte de las ánimas'.", a: "Leyenda", letra: "Y"},
+    {q: "Con la Z: Linaje aristocrático de origen morisco que protagoniza diversas novelas fronterizas, rivalizando a menudo con los abencerrajes.", a: "Zegríes", letra: "Z"},
+    {q: "Con la A: Apellido del autor que firmó la continuación apócrifa del 'Quijote' publicada en Tarragona en 1614.", a: "Avellaneda", letra: "A"},
+    {q: "Con la B: Primer apellido de la periodista y escritora almeriense de la Generación del 98, conocida por el seudónimo 'Colombine'.", a: "Burgos", letra: "B"},
+    {q: "Con la C: Apellido del poeta de la Generación del 27 autor de la obra completa 'La realidad y el deseo'.", a: "Cernuda", letra: "C"},
+    {q: "Con la D: Primera palabra del tratado filológico escrito por el humanista Juan de Valdés ('... de la lengua').", a: "Diálogo", letra: "D"},
+    {q: "Con la E: Corriente teológica y filosófica medieval que dominó el pensamiento de las universidades y se reflejó en la literatura de la época.", a: "Escolástica", letra: "E"},
+    {q: "Con la F: Título eclesiástico que precede al nombre literario de Luis de León, gran exponente de la escuela salmantina.", a: "Fray", letra: "F"},
+    {q: "Con la G: Primer apellido del genial vanguardista creador de las greguerías, de nombre Ramón.", a: "Gómez", letra: "G"},
+    {q: "Con la H: Corriente intelectual del Renacimiento que ponía al ser humano en el centro y recuperó el saber de la Antigüedad clásica.", a: "Humanismo", letra: "H"},
+    {q: "Con la I: Invento tecnológico que llegó a España en 1472, transformando la literatura al permitir la publicación del 'Sinodal de Aguilafuente'.", a: "Imprenta", letra: "I"},
+    {q: "Con la J: Río que da título a la célebre novela objetivista de Rafael Sánchez Ferlosio, premio Nadal de 1955.", a: "Jarama", letra: "J"},
+    {q: "Con la L: Primer apellido del gran poeta agustino del siglo XVI que tradujo el 'Cantar de los Cantares', sufriendo prisión por ello.", a: "León", letra: "L"},
+    {q: "Con la M: Primera palabra de la extensa obra mariana de Gonzalo de Berceo en la que salva a devotos pecadores ('... de Nuestra Señora').", a: "Milagros", letra: "M"},
+    {q: "Con la N: Adjetivo que da nombre al Premio literario más importante concedido por el Ministerio de Cultura de España a la trayectoria de un autor.", a: "Nacional", letra: "N"},
+    {q: "Contiene la Ñ: Nombre de la mítica revista de poesía fundada en León durante la posguerra, que apostó por una lírica desarraigada frente al clasicismo garcilasista.", a: "Espadaña", letra: "Ñ"},
+    {q: "Con la O: Primera palabra del nombre de la estrofa renacentista de ocho versos endecasílabos traída de Italia ('... real').", a: "Octava", letra: "O"},
+    {q: "Con la P: Forma de expresión lingüística y literaria, opuesta al verso, utilizada para redactar ensayos o novelas.", a: "Prosa", letra: "P"},
+    {q: "Con la Q: Apellido real que, según el final del primer capítulo, tenía en verdad el hidalgo Don Quijote de la Mancha.", a: "Quijano", letra: "Q"},
+    {q: "Con la R: Movimiento cultural y artístico nacido en Italia que en la España del siglo XVI alumbró la poesía de Garcilaso.", a: "Renacimiento", letra: "R"},
+    {q: "Con la S: Ciudad castellana en la que Antonio Machado ejerció como profesor de francés y que le inspiró sus mejores poemas.", a: "Soria", letra: "S"},
+    {q: "Con la T: Movimiento estético de la literatura española de posguerra caracterizado por mostrar la realidad en su vertiente más cruda y violenta.", a: "Tremendismo", letra: "T"},
+    {q: "Con la U: Primer apellido del erudito decimonónico de nombre Luis de, que rescató a los reformistas españoles censurados reuniéndolos en una gran colección.", a: "Usoz", letra: "U"},
+    {q: "Con la V: Título nobiliario por el que se conoce al poeta Juan de Tassis, ingenio barroco y notorio enemigo literario y político en la corte.", a: "Villamediana", letra: "V"},
+    {q: "Contiene la X: Palabra que refiere al vocabulario empleado por un escritor y de la cual un ilustre académico hace el diccionario.", a: "Léxico", letra: "X"},
+    {q: "Contiene la Y: Localidad cacereña y monasterio donde se retiró el rey Carlos I de España, inspirando obras literarias históricas.", a: "Yuste", letra: "Y"},
+    {q: "Con la Z: Apellido del historiador y cronista del Reino de Aragón en el siglo XVI, autor de los 'Anales de la Corona de Aragón'.", a: "Zurita", letra: "Z"},
+    {q: "Con la B: Apellido del dictador americano protagonista de la novela de Valle-Inclán, obra precursora del género de dictadores.", a: "Banderas", letra: "B"},
+    {q: "Con la C: Seudónimo utilizado por Leopoldo Alas como crítico literario temido y respetado en su tiempo.", a: "Clarín", letra: "C"},
+    {q: "Con la D: Primera palabra de la novela histórica ambientada en el siglo XV escrita por Mariano José de Larra ('El... de don Enrique el Doliente').", a: "Doncel", letra: "D"},
+    {q: "Con la E: Composición poética de tono lamentoso que expresa dolor por la muerte de alguien o por una desgracia, muy cantada en Canarias.", a: "Endecha", letra: "E"},
+    {q: "Con la F: Primera palabra del título de la truculenta novela fundacional del tremendismo español escrita por Camilo José Cela.", a: "Familia", letra: "F"},
+    {q: "Con la G: Grupo de escritores nacidos en fechas cercanas, movidos por un evento común. Las más famosas en España son las del 98 y del 27.", a: "Generación", letra: "G"},
+    {q: "Con la H: Título del tratado de Baltasar Gracián donde traza las cualidades de la grandeza humana y del hombre perfecto.", a: "Héroe", letra: "H"},
+    {q: "Con la I: Nombre de pila del torero, amigo de García Lorca, a cuya muerte el poeta granadino dedicó su más famoso llanto.", a: "Ignacio", letra: "I"},
+    {q: "Con la J: Nombre de pila del poeta cortesano prerrenacentista español autor de las inmortales 'Coplas a la muerte de su padre'.", a: "Jorge", letra: "J"},
+    {q: "Con la L: Composición poética breve de versos cortos dividida en estrofas que finalizan con un mismo estribillo, como las satíricas de Quevedo.", a: "Letrilla", letra: "L"},
+    {q: "Con la M: Primer apellido de la escritora salmantina, miembro de la Generación del 50, que publicó 'El cuarto de atrás'.", a: "Martín", letra: "M"},
+    {q: "Con la N: Género literario narrativo al que pertenecen obras de larga extensión como 'La Regenta' o 'Fortunata y Jacinta'.", a: "Novela", letra: "N"},
+    {q: "Contiene la Ñ: Nombre de pila del célebre poeta del siglo XV, Marqués de Santillana, figura clave del Prerrenacimiento.", a: "Iñigo", letra: "Ñ"},
+    {q: "Con la O: Primer apellido del ensayista catalán que introdujo el Novecentismo y acuñó el término usando su famoso seudónimo Eugenio d'...", a: "Ors", letra: "O"},
+    {q: "Con la P: Breve representación teatral de carácter cómico popularizada en el siglo XVI por Lope de Rueda.", a: "Paso", letra: "P"},
+    {q: "Con la Q: Apellido del poeta ilustrado que cantó a la invención de la imprenta y a la España patriótica, de nombre Manuel José.", a: "Quintana", letra: "Q"},
+    {q: "Con la R: Primera palabra del primer poema lírico extenso de debate medieval en lengua castellana ('... de amor con los denuestos del agua y el vino').", a: "Razón", letra: "R"},
+    {q: "Con la S: Nombre del príncipe polaco, protagonista de 'La vida es sueño' de Calderón de la Barca, encerrado en una torre por su padre.", a: "Segismundo", letra: "S"},
+    {q: "Con la T: Primera palabra de la famosa novela o 'nivola' de Miguel de Unamuno protagonizada por Gertrudis ('La ... Tula').", a: "Tía", letra: "T"},
+    {q: "Con la U: Nombre de la hija de Fernando I, personaje histórico frecuentemente tratado en el Romancero tradicional en el cerco de Zamora.", a: "Urraca", letra: "U"},
+    {q: "Con la V: Categoría gramatical que constituye el núcleo del predicado, y nombre de una revista integrista fundada por Eugenio Vegas Latapie.", a: "Verbo", letra: "V"},
+    {q: "Contiene la X: Localidad granadina de la que fue originario el dramaturgo barroco Antonio Mira de Amescua.", a: "Guadix", letra: "X"},
+    {q: "Con la Y: Apellido del médico e hidalgo novohispano/español Jerónimo de Alcalá, célebre autor del 'Alonso, mozo de muchos amos'.", a: "Yáñez", letra: "Y"},
+    {q: "Con la Z: Ciudad aragonesa sitiada por las tropas napoleónicas, que da título a uno de los 'Episodios Nacionales' de Galdós.", a: "Zaragoza", letra: "Z"},
+    {q: "Con la A: Apellido del comediógrafo alicantino creador de la tragedia grotesca y de obras costumbristas como 'La señorita de Trevélez'.", a: "Arniches", letra: "A"},
+    {q: "Con la B: Primera palabra de la tragedia lorquiana en la que figuran el Novio, la Novia y Leonardo ('... de sangre').", a: "Bodas", letra: "B"},
+    {q: "Con la C: Patios de vecinos donde, durante el Siglo de Oro español, se representaban las obras de teatro populares.", a: "Corrales", letra: "C"},
+    {q: "Con la D: Tema central de la literatura barroca que subraya la fugacidad de la vida, las falsas apariencias y la vanidad del mundo.", a: "Desengaño", letra: "D"},
+    {q: "Con la E: Poema narrativo extenso que canta las hazañas heroicas de un pueblo, género al que pertenece el Cantar de mio Cid.", a: "Epopeya", letra: "E"},
+    {q: "Con la F: Escritores que, especialmente en el siglo XVIII (como Iriarte y Samaniego), componían cuentos morales con animales.", a: "Fabulistas", letra: "F"},
+    {q: "Con la G: Título de la primera novela pastoril escrita por Miguel de Cervantes, publicada en 1585.", a: "Galatea", letra: "G"},
+    {q: "Con la H: Clase social, peldaño más bajo de la nobleza española, a la que pertenecía Alonso Quijano.", a: "Hidalgo", letra: "H"},
+    {q: "Con la I: Nombre de la reina castellana, esposa de Fernando de Aragón, en cuyo reinado Nebrija publicó la primera Gramática castellana.", a: "Isabel", letra: "I"},
+    {q: "Con la J: Primera palabra del drama histórico romántico escrito por García Gutiérrez ambientado en tiempos de Alfonso VIII ('La ... de Toledo').", a: "Judía", letra: "J"},
+    {q: "Con la L: Estrofa poética de cinco versos, combinación de heptasílabos y endecasílabos, introducida por Garcilaso e inspirada en Bernardo Tasso.", a: "Lira", letra: "L"},
+    {q: "Con la M: Primer apellido de la novelista catalana ganadora del Premio Cervantes en 2010, autora de 'Olvidado rey Gudú'.", a: "Matute", letra: "M"},
+    {q: "Con la N: Movimiento estético de la Ilustración (siglo XVIII) que buscó la vuelta a las reglas clásicas y la finalidad didáctica del arte.", a: "Neoclasicismo", letra: "N"},
+    {q: "Contiene la Ñ: Palabra que acompaña a 'Coplas de un' en el título de la célebre novela social de la época franquista escrita por Rafael Guillén.", a: "Albañil", letra: "Ñ"},
+    {q: "Con la O: Ciudad asturiana cuya alta sociedad es retratada satíricamente por 'Clarín' en 'La Regenta' bajo el nombre de Vetusta.", a: "Oviedo", letra: "O"},
+    {q: "Con la P: Primer apellido del escritor realista asturiano de nombre Armando, autor de 'La hermana San Sulpicio' y 'Marta y María'.", a: "Palacio", letra: "P"},
+    {q: "Con la Q: Estrofa de cinco versos de arte menor introducida en el siglo XV que, al pasar a arte mayor, se convirtió en la estrofa octosilábica típica.", a: "Quintilla", letra: "Q"},
+    {q: "Con la R: Época y escuela literaria que exalta el individuo, la libertad, el misterio y los sentimientos apasionados por encima de la razón.", a: "Romántica", letra: "R"},
+    {q: "Con la S: Palabra que acompaña a 'Tres' en el título de la innovadora comedia humorística y absurda de Miguel Mihura ('Tres... de copa').", a: "Sombreros", letra: "S"},
+    {q: "Con la T: Nombre del héroe valenciano de la gran novela de caballerías escrita por Joanot Martorell ('... lo Blanc').", a: "Tirant", letra: "T"},
+    {q: "Con la U: Reglas aristotélicas exigidas en el teatro clásico neoclásico que Lope de Vega rompió: acción, tiempo y lugar.", a: "Unidades", letra: "U"},
+    {q: "Con la V: Término bélico utilizado para referirse a la literatura rupturista y experimental de las primeras décadas del siglo XX.", a: "Vanguardia", letra: "V"},
+    {q: "Con la Y: Objeto de la armadura que Don Quijote confundió con la bacía de un barbero y que bautizó con el nombre de 'Mambrino'.", a: "Yelmo", letra: "Y"},
+    {q: "Con la Z: Palabra que acompaña a 'prodigiosa' en la obra teatral lorquiana sobre el joven matrimonio de un anciano y una muchacha.", a: "Zapatera", letra: "Z"},
+    {q: "Con la A: Protagonista de la novela de caballerías más importante y antigua conservada en la Península Ibérica ('... de Gaula').", a: "Amadís", letra: "A"},
+    {q: "Con la B: Palabra que acompaña a 'Luces de' en la mítica obra de teatro en la que aparece por primera vez la definición del esperpento.", a: "Bohemia", letra: "B"},
+    {q: "Con la C: Corriente literaria del Barroco, en permanente disputa con el culteranismo, que valora la agudeza mental y el juego de palabras, liderada por Quevedo.", a: "Conceptismo", letra: "C"},
+    {q: "Con la D: Verso de diez sílabas fonéticas métricas muy utilizado en los himnos o en algunas variantes del romancero.", a: "Decasílabo", letra: "D"},
+    {q: "Con la E: Composición literaria en forma de carta, a menudo en verso, muy cultivada en el Renacimiento ('... Moral a Fabio').", a: "Epístola", letra: "E"},
+    {q: "Con la F: Piezas cómicas breves anteriores a Lope de Rueda, como las que escribía el dramaturgo renacentista Lucas Fernández ('... y églogas').", a: "Farsas", letra: "F"},
+    {q: "Con la G: Palabra que cierra el título del famoso Romancero andaluz escrito por Federico García Lorca en 1928.", a: "Gitanos", letra: "G"},
+    {q: "Con la H: Figura retórica, obsesivamente empleada por Góngora, consistente en alterar el orden lógico de las palabras de una oración.", a: "Hipérbaton", letra: "H"},
+    {q: "Con la I: Título del famoso ensayo de Ángel Ganivet publicado en 1897 en el que examina el ser y la decadencia de España ('... español').", a: "Idearium", letra: "I"},
+    {q: "Con la J: Artista ambulante medieval que recitaba o cantaba poesía épica en plazas y castillos para entretener al público.", a: "Juglar", letra: "J"},
+    {q: "Con la L: Adjetivo que da nombre a la protagonista pícara y descarada de la novela dialogada escrita por Francisco Delicado ('La... andaluza').", a: "Lozana", letra: "L"},
+    {q: "Con la M: Adjetivo que acompaña a 'prodigioso' en el título de la famosa obra de teatro sobre un pacto demoníaco escrita por Calderón.", a: "Mágico", letra: "M"},
+    {q: "Con la N: Término inventado por Miguel de Unamuno para clasificar su propia obra 'Niebla' y desligarla de las exigencias del género tradicional.", a: "Nivola", letra: "N"},
+    {q: "Contiene la Ñ: Sentimiento de tristeza y recuerdo del hogar o la patria, tema recurrente en la poesía de los escritores exiliados.", a: "Añoranza", letra: "Ñ"},
+    {q: "Con la O: Concepto de la pérdida de la memoria que Cernuda utilizó en el título de uno de sus más célebres libros de poesía ('Donde habite el...').", a: "Olvido", letra: "O"},
+    {q: "Con la P: Nombre de pila del asesino rural protagonista de la desgarradora primera novela de Camilo José Cela ('... Duarte').", a: "Pascual", letra: "P"},
+    {q: "Con la R: Estrofa poética de cuatro versos octosílabos con rima consonante abrazada (abba), muy presente en el teatro del Siglo de Oro.", a: "Redondilla", letra: "R"},
+    {q: "Con la S: Título nobiliario, Marqués de, por el que es conocido el gran poeta y militar humanista Íñigo López de Mendoza.", a: "Santillana", letra: "S"},
+    {q: "Con la T: Apellido del famoso Don Juan literario del romanticismo español, cuya familia da nombre a la calle donde vive doña Inés.", a: "Tenorio", letra: "T"},
+    {q: "Con la U: Ámbito educativo superior alrededor del cual transcurren novelas contemporáneas y de donde surgió la tuna, muy cantada en la novela picaresca.", a: "Universitaria", letra: "U"},
+    {q: "Con la V: Nombre ficticio con el que el escritor Leopoldo Alas enmascaró a la ciudad de Oviedo en su obra cumbre, 'La Regenta'.", a: "Vetusta", letra: "V"},
+    {q: "Contiene la X: Circunstancia forzosa en la que muchos autores de la Generación del 27 y pensadores españoles escribieron tras 1939.", a: "Exilio", letra: "X"},
+    {q: "Contiene la Y: Género literario cultivado profusamente por autores del 98 como Unamuno o Maeztu para analizar los problemas de España.", a: "Ensayo", letra: "Y"},
+    {q: "Con la Z: Composición poética de origen andalusí, emparentada con el villancico, conformada por estribillo, mudanza y verso de vuelta.", a: "Zéjel", letra: "Z"},
+    {q: "Con la A: Pieza teatral religiosa de un solo acto, muy simbólica y alegórica, frecuente en el Barroco español ('... sacramental').", a: "Auto", letra: "A"},
+    {q: "Con la B: Palabra que acompaña a 'de Sevilla' en la obra de Tirso de Molina que supuso la primera aparición literaria de Don Juan.", a: "Burlador", letra: "B"},
+    {q: "Con la C: Escuela poética barroca liderada por Luis de Góngora que, en oposición al conceptismo, abusaba de latinismos, metáforas y cultismos.", a: "Culteranismo", letra: "C"},
+    {q: "Con la D: Estrofa de diez versos octosílabos cuya estructura fija y brillante (abbaaccddc) fue inventada por Vicente Espinel.", a: "Décima", letra: "D"},
+    {q: "Con la E: Adjetivo con el que Cervantes calificó sus doce célebres novelas cortas afirmando que de todas ellas se podía sacar provecho moral.", a: "Ejemplares", letra: "E"},
+    {q: "Con la F: Rama de la lingüística que estudia los sonidos, base de muchos estudios críticos y estructurales del filólogo Tomás Navarro Tomás.", a: "Fonética", letra: "F"},
+    {q: "Con la G: Palabra que acompaña a 'Ciencia' en el antiguo nombre occitano y catalán que se daba al arte de hacer poesía en la Edad Media.", a: "Gaya", letra: "G"},
+    {q: "Con la H: Apellido del dominico sevillano autor del gran poema épico-religioso del Siglo de Oro escrito en Perú titulado 'La Cristiada'.", a: "Hojeda", letra: "H"},
+    {q: "Con la I: Título nobiliario de los cobardes y viles hermanos de Carrión que azotan a las hijas del Cid Campeador en el robledal de Corpes.", a: "Infantes", letra: "I"},
+    {q: "Con la J: Persona que monta a caballo y protagoniza una lúgubre y famosa canción premonitoria de Federico García Lorca ('Canción del...').", a: "Jinete", letra: "J"},
+    {q: "Con la L: Relatos de tradición oral, cargados de misterio y elementos sobrenaturales, inmortalizados en España por Bécquer y Zorrilla.", a: "Leyendas", letra: "L"},
+    {q: "Con la M: Único movimiento literario surgido en Hispanoamérica, encabezado por Rubén Darío, que conquistó y transformó la literatura española.", a: "Modernismo", letra: "M"},
+    {q: "Con la N: Adjetivo que cierra el monumental título de la colección de cuarenta y seis novelas históricas escritas por Benito Pérez Galdós.", a: "Nacionales", letra: "N"},
+    {q: "Contiene la Ñ: Región geográfica del norte peninsular y palabra clave en las crónicas de los indianos o autores como Pereda y José María de Pereda (escritor de La...).", a: "Montaña", letra: "Ñ"},
+    {q: "Con la O: Metal precioso que, junto a la palabra 'Siglo', da nombre a la época más brillante y fructífera de las letras castellanas.", a: "Oro", letra: "O"},
+    {q: "Con la P: Femenino del sustantivo que da nombre a una novela atribuida a López de Úbeda, protagonizada por una moza astuta llamada Justina.", a: "Pícara", letra: "P"},
+    {q: "Con la R: Soberanos que dan título al fragmento teatral medieval español más antiguo conservado ('Auto de los ... Magos').", a: "Reyes", letra: "R"},
+    {q: "Con la S: Ciudad andaluza en la que nacieron grandes poetas como Bécquer o Machado, y cuna del primer y gran 'Burlador'.", a: "Sevilla", letra: "S"},
+    {q: "Con la T: Ciudad imperial a orillas del Tajo, sede de la Escuela de Traductores que impulsó Alfonso X el Sabio.", a: "Toledo", letra: "T"},
+    {q: "Con la U: Género o adjetivo literario que describe sociedades ideales e inexistentes, como 'Sinapia', texto anónimo del siglo XVIII español.", a: "Utópica", letra: "U"},
+    {q: "Con la V: Unidad básica de la poesía, formada por una serie de palabras dispuestas según reglas métricas, que compone una estrofa.", a: "Verso", letra: "V"},
+    {q: "Contiene la X: Consecuencia muy favorable, a menudo en ventas de libros (como los llamados 'bestsellers' literarios).", a: "Éxito", letra: "X"},
+    {q: "Contiene la Y: Pronombre relativo posesivo que inicia uno de los versos más recordados y enigmáticos de Garcilaso: '... rostro ensangrentado...'.", a: "Cuyo", letra: "Y"},
+    {q: "Con la A: Casa nobiliaria española a la que pertenecía la matriarca tiránica creada por Lorca en su drama rural más opresivo.", a: "Alba", letra: "A"},
+    {q: "Con la B: Apellido del poeta asturiano y crítico literario de nombre Carlos, fundamental teórico del simbolismo y la poesía moderna.", a: "Bousoño", letra: "B"},
+    {q: "Con la C: Primera palabra de la extensa obra cumbre de Jorge Guillén, paradigma de la poesía pura española ('... , Fe de vida').", a: "Cántico", letra: "C"},
+    {q: "Con la D: Adjetivo que da título a la novela naturalista de Pérez Galdós protagonizada por Isidora Rufete ('La ...').", a: "Desheredada", letra: "D"},
+    {q: "Con la E: Primera palabra del título del famoso ensayo renacentista de Erasmo de Róterdam que tanta influencia literaria tuvo en España ('... de la locura').", a: "Elogio", letra: "E"},
+    {q: "Con la F: Nombre del monarca (el Segundo) en cuya época Lope de Vega fue militar y Cervantes fue herido en Lepanto.", a: "Felipe", letra: "F"},
+    {q: "Con la G: Nombre de pila del poeta campesino y folclorista extremeño, cuya segunda parte del apellido es 'y Galán'.", a: "Gabriel", letra: "G"},
+    {q: "Con la H: Apellido del poeta madrileño de posguerra, Premio Cervantes en 1998, autor de 'Cuaderno de Nueva York'.", a: "Hierro", letra: "H"},
+    {q: "Con la I: Nombre de pila de la joven Rufete, protagonista obsesionada por su noble cuna en la novela 'La desheredada' de Galdós.", a: "Isidora", letra: "I"},
+    {q: "Con la J: Nombre de pila del autor vallisoletano Zorrilla y del poeta Hierro.", a: "José", letra: "J"},
+    {q: "Con la L: Nombre del primer gran pícaro de la literatura española, un niño que sirve a un ciego y aprende a golpes la dureza de la vida.", a: "Lázaro", letra: "L"},
+    {q: "Con la N: Seres mitológicos que habitan los ríos y bosques, y que completan el título de la novela que le dio el Premio Nadal a Paco Umbral ('Las...').", a: "Ninfas", letra: "N"},
+    {q: "Contiene la Ñ: Nombre de la localidad aragonesa famosa por sus viñedos y que da nombre a una llanura recurrente en autores naturalistas locales.", a: "Cariñena", letra: "Ñ"},
+    {q: "Con la O: Adjetivo que califica a la 'Noche' en el título del más famoso tratado poético místico de San Juan de la Cruz.", a: "Oscura", letra: "O"},
+    {q: "Con la P: Género literario cultivado por Gustavo Adolfo Bécquer, Rosalía de Castro y Antonio Machado.", a: "Poesía", letra: "P"},
+    {q: "Con la R: Apellido que forma parte del título nobiliario del autor de 'Don Álvaro o la fuerza del sino'.", a: "Rivas", letra: "R"},
+    {q: "Con la S: Concepto central en la gran obra filosófico-teatral de Calderón de la Barca, donde se afirma que la vida entera es un... y que los ... ... son.", a: "Sueño", letra: "S"},
+    {q: "Con la T: Río de la Península Ibérica en cuyas aguas nació el pícaro más famoso del siglo XVI español.", a: "Tormes", letra: "T"},
+    {q: "Con la U: Monasterio y localidad conquense, sede de la Orden de Santiago, a cuyo maestre dedicó unas inmortales coplas su hijo Jorge Manrique.", a: "Uclés", letra: "U"},
+    {q: "Con la V: Primera palabra del título de la obra cumbre de Calderón de la Barca protagonizada por Segismundo ('La... es sueño').", a: "Vida", letra: "V"},
+    {q: "Contiene la X: Documento escrito original sobre el que filólogos y eruditos de la RAE fijan su atención para editar obras clásicas.", a: "Texto", letra: "X"},
+    {q: "Con la Z: Ciudad del Duero cuyo famoso e histórico cerco es cantado y recordado en numerosos romances medievales castellanos.", a: "Zamora", letra: "Z"},
+    {q: "Con la A: Primer apellido de la escritora, penalista y precursora del feminismo en España de nombre Concepción.", a: "Arenal", letra: "A"},
+    {q: "Con la B: Primer apellido del novelista valenciano autor de 'La barraca' y 'Los cuatro jinetes del apocalipsis'.", a: "Blasco", letra: "B"},
+    {q: "Con la C: Primer apellido del escritor militar de la Ilustración, autor de las 'Cartas marruecas' y 'Noches lúgubres'.", a: "Cadalso", letra: "C"},
+    {q: "Con la D: Apellido del autor clérigo y renacentista español, de nombre Francisco, que escribió 'La Lozana andaluza'.", a: "Delicado", letra: "D"},
+    {q: "Con la E: Apellido del escritor y músico del Siglo de Oro al que se atribuye la invención de la estrofa conocida como décima.", a: "Espinel", letra: "E"},
+    {q: "Con la F: Apellido del dramaturgo salmantino del Prerrenacimiento, autor de farsas y églogas, de nombre Lucas.", a: "Fernández", letra: "F"},
+    {q: "Con la G: Apellido del poeta barcelonés contemporáneo, académico de la RAE, autor de 'Arde el mar' y Premio Nacional de Poesía.", a: "Gimferrer", letra: "G"},
+    {q: "Con la H: Apellido del poeta cabrero y militante nacido en Orihuela, autor de 'El rayo que no cesa'.", a: "Hernández", letra: "H"},
+    {q: "Con la I: Península que da nombre a la revista impulsada por Juan Ramón Jiménez, y a la que canta Salvador Espriu en 'La pell de brau'.", a: "Iberia", letra: "I"},
+    {q: "Con la J: Primer apellido del renovador del teatro de humor español del siglo XX, autor de 'Eloísa está debajo de un almendro'.", a: "Jardiel", letra: "J"},
+    {q: "Con la L: Nombre de pila del prolífico dramaturgo barroco que revolucionó la escena con su 'Arte nuevo de hacer comedias'.", a: "Lope", letra: "L"},
+    {q: "Con la M: Primera palabra del título del drama de Guillén de Castro en el que se inspiró Corneille ('Las ... del Cid').", a: "Mocedades", letra: "M"},
+    {q: "Con la N: Primer apellido del filólogo español, exiliado tras la Guerra Civil, que escribió el fundamental 'Manual de pronunciación española'.", a: "Navarro", letra: "N"},
+    {q: "Contiene la Ñ: Apellido del famoso cronista burlesco de la corte del emperador Carlos V, de nombre Francesillo.", a: "Zúñiga", letra: "Ñ"},
+    {q: "Con la O: Título de la obra lírica de juventud de José Cadalso, publicada bajo el nombre '... de mi juventud'.", a: "Ocios", letra: "O"},
+    {q: "Con la P: Monte mitológico griego dedicado a las musas que da título a un viaje en verso escrito por Cervantes ('Viaje del...').", a: "Parnaso", letra: "P"},
+    {q: "Con la Q: Nombre hispanizado del retórico hispanorromano nacido en Calahorra cuya obra 'Instituciones oratorias' fue vital en el Renacimiento español.", a: "Quintiliano", letra: "Q"},
+    {q: "Con la R: Apellido del bachiller de la Puebla de Montalbán, autor de los últimos 20 actos de 'La Celestina'.", a: "Rojas", letra: "R"},
+    {q: "Con la S: Apellido del célebre fabulista alavés del siglo XVIII, rival literario de Tomás de Iriarte.", a: "Samaniego", letra: "S"},
+    {q: "Con la T: Apellido del editor, librero y escritor valenciano del siglo XVI que publicó 'El patrañuelo'.", a: "Timoneda", letra: "T"},
+    {q: "Con la U: Nombre de la maga protectora del caballero Amadís de Gaula, apodada 'la Desconocida'.", a: "Urganda", letra: "U"},
+    {q: "Con la V: Apellido del pensador erasmista español, de nombre Juan, autor del influyente 'Diálogo de la lengua'.", a: "Valdés", letra: "V"},
+    {q: "Contiene la X: Estrofa de seis versos cortos, muy utilizada en la poesía medieval y romancero, como las coplas manriqueñas.", a: "Sextilla", letra: "X"},
+    {q: "Contiene la Y: Apellido del pintor aragonés y sordo genial, cuyos cuadros negros inspiraron estéticamente el esperpento de Valle-Inclán.", a: "Goya", letra: "Y"},
+    {q: "Con la Z: Género dramático y musical puramente español, caracterizado por alternar escenas habladas y cantadas.", a: "Zarzuela", letra: "Z"},
+    {q: "Con la A: Apellido del jesuita y naturalista del Siglo de Oro, de nombre José, autor de la 'Historia natural y moral de las Indias'.", a: "Acosta", letra: "A"},
+    {q: "Con la B: Localidad jiennense en la que Antonio Machado fue profesor e inició una nueva etapa poética menos intimista tras enviudar.", a: "Baeza", letra: "B"},
+    {q: "Con la C: Primer apellido de la autora gallega que revitalizó la literatura en su lengua natal con 'Cantares gallegos'.", a: "Castro", letra: "C"},
+    {q: "Con la D: Primer apellido del caballero castellano medieval, apodado Campeador, protagonista del mayor cantar de gesta de nuestras letras.", a: "Díaz", letra: "D"},
+    {q: "Con la E: Nombre del monarca 'Doliente' que aparece en el título de la novela histórica más famosa de Mariano José de Larra.", a: "Enrique", letra: "E"},
+    {q: "Con la F: Subgénero narrativo decimonónico, publicado por entregas en periódicos, caracterizado por tramas melodramáticas y truculentas.", a: "Folletín", letra: "F"},
+    {q: "Con la G: Apellido del obispo y prosista cortesano de Carlos V, de nombre Antonio, autor del 'Menosprecio de corte y alabanza de aldea'.", a: "Guevara", letra: "G"},
+    {q: "Con la H: Nombre que los romanos dieron a la Península Ibérica y que fue ensalzado por los autores del Prerrenacimiento y Renacimiento.", a: "Hispania", letra: "H"},
+    {q: "Con la I: Apellido del impresor real de nombre Joaquín que en 1780 realizó por encargo de la RAE la más exquisita edición del 'Quijote'.", a: "Ibarra", letra: "I"},
+    {q: "Con la J: Nombre de pila del dramaturgo neoclásico de apellido Bermúdez, primer autor de tragedias de estilo grecolatino en España.", a: "Jerónimo", letra: "J"},
+    {q: "Con la L: Nombre del frayle y poeta agustino salmantino que fue encarcelado por la Inquisición y que, al volver, dijo 'Dicebamus hesterna die'.", a: "Luis", letra: "L"},
+    {q: "Con la M: Apellido del poeta y dramaturgo modernista español de nombre Eduardo, autor del drama épico 'En Flandes se ha puesto el sol'.", a: "Marquina", letra: "M"},
+    {q: "Con la N: Apellido toponímico por el que se conoce al humanista de nombre Elio Antonio, autor de la primera gramática castellana.", a: "Nebrija", letra: "N"},
+    {q: "Contiene la Ñ: Título de la colección de relatos cortos y cuentos adaptados por Juan de Timoneda en 1567 ('El ...').", a: "Patrañuelo", letra: "Ñ"},
+    {q: "Con la O: Localidad vallisoletana de la que era caballero don Alonso, protagonista de una trágica y célebre comedia de Lope de Vega.", a: "Olmedo", letra: "O"},
+    {q: "Con la P: Apellido del poeta renacentista valenciano, de nombre Gaspar Gil, autor de la novela pastoril 'Diana enamorada'.", a: "Polo", letra: "P"},
+    {q: "Con la Q: Apellido alternativo que se cita en el primer capítulo del 'Quijote' como posible linaje real del protagonista (junto con Quijada o Quijano).", a: "Quesada", letra: "Q"},
+    {q: "Con la R: Segundo apellido del novelista y académico cartagenero de nombre Arturo, creador del 'Capitán Alatriste'.", a: "Reverte", letra: "R"},
+    {q: "Con la S: Pieza cómica breve surgida en el siglo XVIII, cuyo maestro incontestable fue el dramaturgo Ramón de la Cruz.", a: "Sainete", letra: "S"},
+    {q: "Con la T: Primer apellido del excéntrico escritor, matemático y astrólogo salmantino del siglo XVIII, de nombre Diego, autor de su propia vida.", a: "Torres", letra: "T"},
+    {q: "Con la U: Localidad sevillana en la que nacieron Serafín y Joaquín, los célebres y exitosos comediógrafos costumbristas.", a: "Utrera", letra: "U"},
+    {q: "Con la V: Apellido del poeta lírico riojano del Siglo de Oro, de nombre Esteban Manuel, autor de 'Eróticas o Amatorias'.", a: "Villegas", letra: "V"},
+    {q: "Contiene la X: Nombre de Magno emperador que da título al principal poema castellano medieval del mester de clerecía que fija la cuaderna vía ('Libro de...').", a: "Alexandre", letra: "X"},
+    {q: "Contiene la Y: Habla rústica y pastoril, mezcla de leonés y castellano antiguo, muy utilizada de forma fingida en el teatro de Juan del Encina.", a: "Sayagués", letra: "Y"},
+    {q: "Con la Z: Apellido del general carlista que da título a uno de los Episodios Nacionales escritos por Benito Pérez Galdós.", a: "Zumalacárregui", letra: "Z"},
+    {q: "Con la A: Lugar opuesto a la 'Corte' en el famoso tratado de menosprecio escrito por Antonio de Guevara en el siglo XVI.", a: "Aldea", letra: "A"},
+    {q: "Con la B: Apellido del autor de la tragedia renacentista 'Nise lastimosa', considerado el introductor de la tragedia clásica en España.", a: "Bermúdez", letra: "B"},
+    {q: "Con la C: Apellido del dramaturgo asturiano de la Generación del 27 autor de 'La sirena varada' y 'Los árboles mueren de pie'.", a: "Casona", letra: "C"},
+    {q: "Con la D: Tratamiento honorífico tradicional que precede a los nombres de los dos grandes mitos de la literatura española (Quijote y Juan).", a: "Don", letra: "D"},
+    {q: "Con la E: Apellido del poeta y antologista antequerano, de nombre Pedro, que recopiló 'Flores de poetas ilustres'.", a: "Espinosa", letra: "E"},
+    {q: "Con la F: Segundo apellido del novelista ganador del Premio Nadal con 'El Jarama', de nombre Rafael Sánchez.", a: "Ferlosio", letra: "F"},
+    {q: "Con la G: Lengua romance peninsular en la que compuso sus hermosas cantigas el rey Alfonso X el Sabio.", a: "Gallego", letra: "G"},
+    {q: "Con la H: Nombre del frayle y confesor de la reina Isabel la Católica (de apellido Talavera) autor de tratados morales e impulsor de la imprenta.", a: "Hernando", letra: "H"},
+    {q: "Con la I: Título monárquico castellano que precede al nombre de don Juan Manuel, autor de la prosa narrativa medieval 'El Conde Lucanor'.", a: "Infante", letra: "I"},
+    {q: "Con la J: Nombre del mítico conde visigodo, protagonista de trágicos romances, que supuestamente entregó España a los musulmanes.", a: "Julián", letra: "J"},
+    {q: "Con la L: Primer apellido del poderoso noble y mecenas literario medieval, poeta él mismo, conocido como el Marqués de Santillana (Íñigo... ).", a: "López", letra: "L"},
+    {q: "Con la M: Nombre del poeta hispanorromano nacido en Bílbilis (Calatayud), cuyos epigramas satíricos fueron muy imitados en el Barroco español.", a: "Marcial", letra: "M"},
+    {q: "Con la N: Heroica ciudad celtíbera asediada por los romanos que dio título a una gran tragedia teatral de Miguel de Cervantes.", a: "Numancia", letra: "N"},
+    {q: "Contiene la Ñ: Primer apellido del creador del astracán y autor de la obra de teatro cómica 'La venganza de Don Mendo' (Pedro... Seca).", a: "Muñoz", letra: "Ñ"},
+    {q: "Con la O: Apellido del humanista y filósofo cordobés del Renacimiento español de nombre Fernán Pérez de, rector de la Universidad de Salamanca.", a: "Oliva", letra: "O"},
+    {q: "Con la P: Segundo apellido del humorista, comediógrafo y escritor de la vanguardia cuyo nombre era Enrique Jardiel.", a: "Poncela", letra: "P"},
+    {q: "Con la Q: Apellido del poeta sevillano del Siglo de Oro de nombre Pedro, representante del barroco andaluz más refinado.", a: "Quirós", letra: "Q"},
+    {q: "Con la R: Composición métrica tradicional, no estrófica, de versos octosílabos con rima asonante en los pares.", a: "Romance", letra: "R"},
+    {q: "Con la S: Segundo apellido por el que es conocido el autor de 'La venganza de don Mendo', Pedro Muñoz.", a: "Seca", letra: "S"},
+    {q: "Con la T: Género teatral solemne, protagonizado por héroes o reyes, cuyo fin funesto pretendía causar compasión y terror.", a: "Tragedia", letra: "T"},
+    {q: "Con la U: Apellido del poeta experimental salmantino de la Generación de los 70, de nombre José Miguel, ligado a las artes plásticas.", a: "Ullán", letra: "U"},
+    {q: "Con la V: Apellido del patriarca del teatro renacentista hispanoluso, de nombre Gil, joyero y dramaturgo en las cortes portuguesa y castellana.", a: "Vicente", letra: "V"},
+    {q: "Contiene la X: Figura retórica que consiste en la combinación en una misma estructura sintáctica de dos palabras o expresiones de significado opuesto.", a: "Oxímoron", letra: "X"},
+    {q: "Contiene la Y: Apellido del 'señor' cuyo disputado voto da título a una conocida novela ambientada en la transición española escrita por Delibes.", a: "Cayo", letra: "Y"},
+    {q: "Con la Z: Apellido del novelista vasco de la posguerra, académico de la RAE, autor de narraciones realistas como 'La vida como es'.", a: "Zunzunegui", letra: "Z"},
+    {q: "Con la A: Nombre de pila del intelectual y exiliado republicano de apellido Castro, que polemizó sobre la historia de España con Sánchez Albornoz.", a: "Américo", letra: "A"},
+    {q: "Con la B: Nombre de pila del pensador aragonés conceptista que aconsejaba 'lo bueno, si breve, dos veces bueno'.", a: "Baltasar", letra: "B"},
+    {q: "Con la C: Sobrenombre histórico, derivado del árabe 'sidi' (señor), con el que es conocido el héroe de la primera gesta castellana conservada.", a: "Cid", letra: "C"},
+    {q: "Con la D: Nombre literario que Don Quijote otorgó a la labradora Aldonza Lorenzo para convertirla en la dama de sus pensamientos.", a: "Dulcinea", letra: "D"},
+    {q: "Con la E: Río español que en su paso por Zaragoza fue testigo de diversas aventuras de la segunda parte del Quijote.", a: "Ebro", letra: "E"},
+    {q: "Con la F: Narración breve protagonizada por animales o seres inanimados de la que se extrae una moraleja.", a: "Fábula", letra: "F"},
+    {q: "Con la G: Nombre del famoso pícaro andaluz 'de Alfarache' inventado por el escritor Mateo Alemán.", a: "Guzmán", letra: "G"},
+    {q: "Con la H: Primer apellido del comediógrafo barroco español de nombre Juan, autor de 'El castigo de la miseria'.", a: "Hoz", letra: "H"},
+    {q: "Con la I: Nombre del santo patrón madrileño a cuya figura dedicó Lope de Vega un célebre poema octosilábico.", a: "Isidro", letra: "I"},
+    {q: "Con la J: Nombre de la mujer burguesa y honrada que comparte título con la popular Fortunata en la gran obra de Galdós.", a: "Jacinta", letra: "J"},
+    {q: "Con la L: Nombre de pila del célebre crítico y escritor realista que firmaba y hundía a otros autores usando el seudónimo 'Clarín'.", a: "Leopoldo", letra: "L"},
+    {q: "Con la M: Nombre del mítico trovador gallego medieval, apodado 'El Enamorado', protagonista de un intenso drama romántico de Larra.", a: "Macías", letra: "M"},
+    {q: "Con la N: Punto cardinal que acompaña a la palabra 'Viento' en el título de la novela de Elena Quiroga, ganadora del premio Nadal.", a: "Norte", letra: "N"},
+    {q: "Contiene la Ñ: Título o cargo de la sirvienta viuda de la corte, llamada Dolorida o condesa Trifaldi, engañada en la segunda parte del Quijote.", a: "Dueña", letra: "Ñ"},
+    {q: "Con la O: Estación del año que titula la primera de las 'Sonatas' (Memorias del Marqués de Bradomín) publicadas por Valle-Inclán.", a: "Otoño", letra: "O"},
+    {q: "Con la P: Nombre del cíclope enamorado de la ninfa Galatea cuya fábula fue cantada de forma magistral y culterana por Góngora.", a: "Polifemo", letra: "P"},
+    {q: "Con la Q: Apellido que, en el primer capítulo del Quijote, se ofrece como otra de las conjeturas sobre el verdadero linaje del protagonista hidalgo.", a: "Quijada", letra: "Q"},
+    {q: "Con la R: Apellido de la poeta romántica gallega, de nombre Rosalía, que también escribió en castellano 'En las orillas del Sar'.", a: "Rosalía", letra: "R"},
+    {q: "Con la S: Apellido del médico, militar y poeta andaluz del Renacimiento, Luis Barahona de, autor de 'Las lágrimas de Angélica'.", a: "Soto", letra: "S"},
+    {q: "Con la T: Pueblo de La Mancha, patria de la amada imaginaria a la que Don Quijote debe vasallaje.", a: "Toboso", letra: "T"},
+    {q: "Con la U: Adjetivo que acompaña al 'Teatro Crítico' del Padre Feijoo, ensayo clave de la Ilustración española.", a: "Universal", letra: "U"},
+    {q: "Con la V: Segundo apellido literario por el que se conoce al autor de la obra teatral sobre Velázquez y sus meninas ('Las Meninas').", a: "Vallejo", letra: "V"},
+    {q: "Contiene la X: Parte de la gramática que estudia cómo se combinan y relacionan las palabras, vital en la filología de Amado Alonso o Nebrija.", a: "Sintaxis", letra: "X"},
+    {q: "Contiene la Y: Apellido del erudito renacentista, Juan Pérez de, autor de la mitológica 'Philosofía secreta' en 1568.", a: "Moya", letra: "Y"},
+    {q: "Con la Z: Título de uno de los 'Sueños' de Quevedo en el que el autor viaja al infierno pagano regido por Plutón ('Las ... de Plutón').", a: "Zahurdas", letra: "Z"},
+    {q: "Con la A: Segunda palabra del nombre completo del pícaro Guzmán, referida a su lugar de origen en Sevilla.", a: "Alfarache", letra: "A"},
+    {q: "Con la B: Primer apellido del médico y poeta del círculo granadino del siglo XVI, Luis, imitador de Ariosto.", a: "Barahona", letra: "B"},
+    {q: "Con la C: Nombre de pila del joven burgués y enamorado que, gracias a las artes de una vieja alcahueta, logra los favores de Melibea.", a: "Calisto", letra: "C"},
+    {q: "Con la D: Nombre de pila del poeta santanderino y máximo representante de las vanguardias del 27, autor del 'Romance del río Duero'.", a: "Diego", letra: "D"},
+    {q: "Con la E: Palabra que completa el nombre de la célebre 'Residencia de...', institución madrileña cuna de la Generación del 27.", a: "Estudiantes", letra: "E"},
+    {q: "Con la F: Primer apellido del agustino e historiador de la Ilustración española, Enrique, principal autor de la monumental 'España Sagrada'.", a: "Flórez", letra: "F"},
+    {q: "Con la G: Primer apellido del dramaturgo romántico que alcanzó enorme fama con la obra 'El trovador'.", a: "Gutiérrez", letra: "G"},
+    {q: "Con la H: Cualidad moral ligada a la opinión pública, que en el teatro barroco debe ser vengada o limpiada con sangre si es ultrajada.", a: "Honor", letra: "H"},
+    {q: "Con la I: Orientación estética predominante en las novelas de caballerías y pastoriles, contrapuesta al realismo picaresco.", a: "Idealismo", letra: "I"},
+    {q: "Con la J: Nombre de la protagonista de la novela picaresca española escrita en 1605 por el médico Francisco López de Úbeda ('La pícara...').", a: "Justina", letra: "J"},
+    {q: "Con la L: Título o señorío del conde que consulta sus dudas morales a su sabio consejero Patronio en la obra del siglo XIV.", a: "Lucanor", letra: "L"},
+    {q: "Con la M: Nombre de la doncella principal, hija de Pleberio, cuya muerte trágica cierra una de las mayores joyas teatrales del siglo XV.", a: "Melibea", letra: "M"},
+    {q: "Con la N: Ciudad italiana que fue fundamental en la asimilación del Renacimiento español, patria adoptiva literaria de Garcilaso de la Vega.", a: "Nápoles", letra: "N"},
+    {q: "Contiene la Ñ: Orden religiosa a la que pertenecía Baltasar Gracián ('... de Jesús'), muy influyente en la educación y las letras del Siglo de Oro.", a: "Compañía", letra: "Ñ"},
+    {q: "Con la O: Nombre del ducado español cuyo titular fue el gran protector y mecenas del poeta Francisco de Quevedo.", a: "Osuna", letra: "O"},
+    {q: "Con la P: Primer apellido del erudito historiador y filólogo, fundador de la filología hispánica moderna y director de la RAE de nombre Ramón Menéndez.", a: "Pidal", letra: "P"},
+    {q: "Con la Q: Acto drástico de censura e Inquisición al que el cura y el barbero someten a la biblioteca de Don Quijote en el capítulo VI.", a: "Quema", letra: "Q"},
+    {q: "Con la R: Uno de los nombres de los dos hermanos andaluces, autores teatrales de comedias populares como 'El genio alegre'.", a: "Serafín", letra: "R"},
+    {q: "Con la T: Título honorífico y arciprestazgo del eclesiástico Alfonso Martínez, autor de la obra misógina medieval conocida como 'El Corbacho'.", a: "Talavera", letra: "T"},
+    {q: "Con la U: Materia de los famosos manuales cívicos y morales del Renacimiento, y de las reglas de buen comportamiento en sociedad.", a: "Urbanidad", letra: "U"},
+    {q: "Con la V: Segundo apellido literario del catedrático y médico salmantino del siglo XVIII que noveló su propia vida, de nombre Diego de Torres.", a: "Villarroel", letra: "V"},
+    {q: "Contiene la X: Concepto opuesto a la heterodoxia, base de la doctrina pura cristiana que defendió tenazmente el filólogo Menéndez Pelayo.", a: "Ortodoxia", letra: "X"},
+    {q: "Contiene la Y: Segundo apellido del inmenso erudito y ensayista montañés Marcelino Menéndez, autor de la 'Historia de las ideas estéticas'.", a: "Pelayo", letra: "Y"},
+    {q: "Con la Z: Villa pacense o extremeña en la que Lope de Vega y Calderón situaron las acciones justicieras de sus respectivos alcaldes Pedro Crespo.", a: "Zalamea", letra: "Z"},
+    {q: "Con la A: Cargo municipal que ocupa el villano rico Pedro Crespo en una de las obras cumbres de Calderón de la Barca.", a: "Alcalde", letra: "A"},
+    {q: "Con la B: Región histórica europea que da nombre al conjunto de leyendas y novelas de caballerías relacionadas con el rey Arturo.", a: "Bretaña", letra: "B"},
+    {q: "Con la C: Título de la principal obra satírica y moral de Alfonso Martínez de Talavera, también conocida como 'Reprobación del amor mundano'.", a: "Corbacho", letra: "C"},
+    {q: "Con la D: Nombre del género alegórico medieval en el que un esqueleto invita a bailar a personas de todas las clases sociales ('... de la Muerte').", a: "Danza", letra: "D"},
+    {q: "Con la E: Elemento arquitectónico de un edificio de vecinos que da título a la célebre obra teatral de la posguerra escrita por Buero Vallejo.", a: "Escalera", letra: "E"},
+    {q: "Con la F: Palabra que, en el teatro barroco, designaba a un personaje ridículo y vanidoso, dando nombre a un subgénero ('Comedia de ...').", a: "Figurón", letra: "F"},
+    {q: "Con la G: Nombre de pila del poeta cántabro vanguardista que compuso el famosísimo 'Romance del río Duero'.", a: "Gerardo", letra: "G"},
+    {q: "Con la H: Reputación personal y pureza de sangre que, a diferencia del honor (vinculado a la nobleza), podía pertenecer a los villanos en el Siglo de Oro.", a: "Honra", letra: "H"},
+    {q: "Con la I: Adjetivo gentilicio del tipo de verso endecasílabo y formas estróficas introducidas por Boscán y Garcilaso.", a: "Italiano", letra: "I"},
+    {q: "Con la J: Nombre de pila del pensador regeneracionista aragonés, de apellido Costa, autor de 'Oligarquía y caciquismo'.", a: "Joaquín", letra: "J"},
+    {q: "Con la L: Nombre de pila de la joven esposa soriana de Antonio Machado cuya temprana muerte marcó profundamente la lírica del poeta.", a: "Leonor", letra: "L"},
+    {q: "Con la M: Nombre de pila del poeta hermano de Antonio Machado, representante del modernismo andaluz.", a: "Manuel", letra: "M"},
+    {q: "Con la N: Personaje masculino de la tragedia lorquiana 'Bodas de sangre', que pierde a su prometida y la persigue a caballo.", a: "Novio", letra: "N"},
+    {q: "Contiene la Ñ: Sustantivo que acompaña a 'El casamiento' en una de las Novelas Ejemplares de Cervantes, protagonizada por el alférez Campuzano.", a: "Engaño", letra: "Ñ"},
+    {q: "Con la O: Nombre de la bella hija del rey de Gran Bretaña que se convierte en la amada y esposa del caballero Amadís de Gaula.", a: "Oriana", letra: "O"},
+    {q: "Con la P: Nombre del hijo del barbero de Segovia y la hechicera Aldonza en la descarnada novela picaresca de Francisco de Quevedo.", a: "Pablos", letra: "P"},
+    {q: "Con la Q: Palabra rústica o mohatra, utilizada frecuentemente por pastores teatrales y por Sancho Panza, que servía como comodín o pronombre (aquel, aquello).", a: "Quillotro", letra: "Q"},
+    {q: "Con la R: Disciplina clásica que enseña el arte de hablar o escribir de forma persuasiva y elegante, pilar de la formación de los escritores áureos.", a: "Retórica", letra: "R"},
+    {q: "Con la S: Fenómeno físico que proyecta el ciprés alargado en la primera y aplaudida novela de Miguel Delibes ('La ... del ciprés es alargada').", a: "Sombra", letra: "S"},
+    {q: "Con la T: Apellido del prestamista avaro e inquisidor literario, protagonista de una tetralogía novelística de Pérez Galdós.", a: "Torquemada", letra: "T"},
+    {q: "Con la U: Término geográfico y literario utilizado por la España decimonónica y noventayochista para referirse a las colonias perdidas de Cuba, Puerto Rico y Filipinas.", a: "Ultramar", letra: "U"},
+    {q: "Con la V: Plural del término utilizado en el Siglo de Oro para referirse a los campesinos y labradores que defendían su honra ante los nobles abusivos.", a: "Villanos", letra: "V"},
+    {q: "Contiene la X: Nombre de pila del poeta ciego, apellidado Estrella, protagonista de la bajada a los infiernos de 'Luces de Bohemia'.", a: "Max", letra: "X"},
+    {q: "Contiene la Y: Mes de la primavera que da título a una de las fiestas profanas y cantos líricos medievales renacentistas más tradicionales.", a: "Mayo", letra: "Y"},
+    {q: "Con la Z: Prenda rústica de piel de oveja frecuentemente mencionada como vestimenta de los pastores en las églogas y el teatro de Juan del Encina.", a: "Zamarra", letra: "Z"},
+    {q: "Con la A: Amantes famosos de la ciudad aragonesa que inspiraron la célebre tragedia romántica escrita por Hartzenbusch ('Los ... de Teruel').", a: "Amantes", letra: "A"},
+    {q: "Con la B: Palabra popular con la que se conoce la novela picaresca 'Historia de la vida del... llamado don Pablos'.", a: "Buscón", letra: "B"},
+    {q: "Con la C: Conjunto de clérigos o sabios medievales cuya erudición literaria contrastaba con la de los juglares ('Mester de ...').", a: "Clerecía", letra: "C"},
+    {q: "Con la D: Nombre de la diosa que da título a los 'Siete libros' escritos por Jorge de Montemayor que iniciaron el auge de la novela pastoril.", a: "Diana", letra: "D"},
+    {q: "Con la E: Cuerpo celeste que, junto con 'de Sevilla', da título a una trágica comedia áurea de atribución dudosa (probablemente de Lope o Claramonte).", a: "Estrella", letra: "E"},
+    {q: "Con la F: Nombre de la antología poética más importante del barroco andaluz compilada por Pedro de Espinosa ('... de poetas ilustres').", a: "Flores", letra: "F"},
+    {q: "Con la G: Reino mítico, de resonancias francesas o galesas, al que pertenece el perfecto caballero andante Amadís.", a: "Gaula", letra: "G"},
+    {q: "Con la H: Adjetivo en plural referido a los disidentes religiosos o desviados del dogma, estudiados magistralmente por Menéndez Pelayo ('Historia de los ... españoles').", a: "Heterodoxos", letra: "H"},
+    {q: "Con la I: Nombre del santo visigodo, erudito arzobispo de Sevilla, autor de la enciclopedia medieval 'Las Etimologías'.", a: "Isidoro", letra: "I"},
+    {q: "Con la J: Plural de la palabra que conformaba los certámenes poéticos medievales y provenzales resucitados en el siglo XIX ('... Florales').", a: "Juegos", letra: "J"},
+    {q: "Con la L: Golfo griego donde tuvo lugar la épica batalla naval en la que Cervantes perdió la movilidad de su mano izquierda.", a: "Lepanto", letra: "L"},
+    {q: "Con la M: Apellido del novelista de origen portugués, de nombre Jorge, creador de la exitosa novela pastoril 'La Diana'.", a: "Montemayor", letra: "M"},
+    {q: "Con la N: Personaje femenino protagónico de una de las grandes tragedias de Lorca, que huye el día de su matrimonio con su antiguo amante Leonardo.", a: "Novia", letra: "N"},
+    {q: "Contiene la Ñ: Tratamiento de respeto que antecede al nombre de 'Cayo' en la novela electoral y ruralista del escritor Miguel Delibes.", a: "Señor", letra: "Ñ"},
+    {q: "Con la O: Apellido o título del Conde-Duque válido de Felipe IV, figura política central del Barroco y protector ocasional de escritores.", a: "Olivares", letra: "O"},
+    {q: "Con la P: Adjetivo referido al género literario renacentista que idealiza la vida de los cabreros y ovejeros en plena naturaleza amena.", a: "Pastoril", letra: "P"},
+    {q: "Con la Q: Nombre que recibía la pira o lugar público donde la Inquisición española ejecutaba en la hoguera a los reos y libros censurados.", a: "Quemadero", letra: "Q"},
+    {q: "Con la R: Elemento acuático natural en torno al cual José Luis Sampedro sitúa la acción de los gancheros en su novela ('El ... que nos lleva').", a: "Río", letra: "R"},
+    {q: "Con la S: Apellido del novelista, humanista y economista catalán contemporáneo de nombre José Luis, autor de 'La sonrisa etrusca'.", a: "Sampedro", letra: "S"},
+    {q: "Con la T: Ciudad aragonesa inmortalizada en el teatro romántico gracias al amor imposible de Isabel de Segura y Juan Martínez de Marcilla.", a: "Teruel", letra: "T"},
+    {q: "Con la U: Nombre de pila de la santa que, junto a sus 'once mil vírgenes', nutrió leyendas medievales en España y Europa.", a: "Úrsula", letra: "U"},
+    {q: "Con la V: Localidad burgalesa de donde era originario natural el caballero medieval Rodrigo Díaz, el Campeador.", a: "Vivar", letra: "V"},
+    {q: "Contiene la X: Entorno cultural, histórico y social que rodea la creación de una obra literaria y que es clave para su interpretación filológica.", a: "Contexto", letra: "X"},
+    {q: "Contiene la Y: Verbo antiguo para 'comer' que aparece en el Cantar de mio Cid ('ganarse el ...').", a: "Yantar", letra: "Y"},
+    {q: "Con la Z: Pastor adolescente o muchacho ayudante, muy recurrente en el vocabulario de la poesía bucólica y villancicos populares.", a: "Zagal", letra: "Z"},
+    {q: "Con la A: Cargo eclesiástico que precede a los nombres geográficos de Talavera o Hita en la designación de dos genios de la literatura medieval.", a: "Arcipreste", letra: "A"},
+    {q: "Con la B: Adjetivo referido a la novela de aventuras castas y separaciones geográficas que cultivó Cervantes en el 'Persiles' ('Novela ...').", a: "Bizantina", letra: "B"},
+    {q: "Con la C: Plural del género novelístico de acción bélica, magia y amores ideales que volvió loco a Don Quijote ('Novelas de ...').", a: "Caballerías", letra: "C"},
+    {q: "Con la D: Primer apellido del político, diplomático y brillante ensayista contrarrevolucionario extremeño de nombre Juan ('... Cortés').", a: "Donoso", letra: "D"},
+    {q: "Con la E: Nombre del famoso rufián o hampón inventado por Quevedo que da título a una de sus jácaras más célebres.", a: "Escarramán", letra: "E"},
+    {q: "Con la F: Apellido del poeta renacentista alcalaíno y militar español de nombre Francisco, amigo de Cervantes, apodado 'El Divino'.", a: "Figueroa", letra: "F"},
+    {q: "Con la G: Singular de los penados a remar en galeras, cuyo grupo es liberado por Don Quijote en una de sus más atrevidas aventuras.", a: "Galeote", letra: "G"},
+    {q: "Con la H: Conjunto de rufianes, ladrones y maleantes cuyas fechorías y jerga retrató genialmente la literatura jácara y picaresca.", a: "Hampa", letra: "H"},
+    {q: "Con la I: Catálogo promulgado por la Inquisición española en el que figuraban las obras literarias y teológicas prohibidas o censuradas.", a: "Índice", letra: "I"},
+    {q: "Con la J: Orden religiosa católica a la que pertenecieron enormes figuras de las letras áureas y dieciochescas, como Baltasar Gracián o el Padre Isla.", a: "Jesuitas", letra: "J"},
+    {q: "Con la L: Término latino (seguido de 'amoenus') que designa el tópico literario del paisaje natural idealizado en la poesía renacentista.", a: "Locus", letra: "L"},
+    {q: "Con la M: Figura macabra e igualatoria que en la Edad Media invitaba a papas y campesinos por igual a su funesta 'Danza'.", a: "Muerte", letra: "M"},
+    {q: "Con la N: Festividad del 24 de diciembre que da título a uno de los más pesimistas e introspectivos artículos periodísticos de Mariano José de Larra.", a: "Nochebuena", letra: "N"},
+    {q: "Contiene la Ñ: Personaje asceta que vive aislado y que frecuentemente acoge y cura a los caballeros andantes heridos en los libros de caballerías.", a: "Ermitaño", letra: "Ñ"},
+    {q: "Con la O: Figura retórica consistente en el uso de palabras cuya pronunciación imita el sonido natural de lo que significan.", a: "Onomatopeya", letra: "O"},
+    {q: "Con la P: Nombre del príncipe nórdico que protagoniza, junto a su amada Sigismunda, la última gran novela escrita por Cervantes.", a: "Persiles", letra: "P"},
+    {q: "Con la Q: Ensayo fundamental de Miguel de Unamuno en el que interpreta y exalta la figura del caballero manchego ('Vida de Don Quijote y Sancho, o el...').", a: "Quijotismo", letra: "Q"},
+    {q: "Con la R: Hombre vil, a menudo alcahuete o espadachín, que Cervantes retrató en entremeses y en la obra 'El ... dichoso'.", a: "Rufián", letra: "R"},
+    {q: "Con la S: Nombre de la casta princesa enamorada que acompaña a Persiles disfrazada de hermana bajo el nombre de Auristela.", a: "Sigismunda", letra: "S"},
+    {q: "Con la T: Esfuerzos, penas o tribulaciones que sufren los protagonistas de la novela bizantina de Cervantes, palabra que inicia el título ('Los ... de Persiles').", a: "Trabajos", letra: "T"},
+    {q: "Con la U: Adjetivo derivado del apellido del gran rector de Salamanca utilizado para describir su estilo existencial y paradójico.", a: "Unamuniano", letra: "U"},
+    {q: "Con la V: Género literario itinerante o de ruta, como el que escribió Cela hacia la Alcarria o Cervantes hacia el Parnaso.", a: "Viaje", letra: "V"},
+    {q: "Contiene la X: Acción que realizaba la Inquisición o los censores al eliminar fragmentos peligrosos de un libro sin prohibirlo por completo.", a: "Expurgo", letra: "X"},
+    {q: "Contiene la Y: Terreno inhabitable, desolado y sin vegetación que utilizaron profusamente como paisaje anímico los poetas de la Generación del 98.", a: "Yermo", letra: "Y"},
+    {q: "Con la Z: Instrumento de viento rústico y bucólico con el que los pastores de las églogas acompañan sus lamentos amorosos.", a: "Zampoña", letra: "Z"},
+    {q: "Con la A: Palabra latina que completa el famoso tópico literario renacentista del 'Locus ...', el lugar idílico de la naturaleza perfecta.", a: "Amoenus", letra: "A"},
+    {q: "Con la B: Nombre del leal y valiente caballo que acompañó al Cid Campeador en sus batallas y destierro.", a: "Babieca", letra: "B"},
+    {q: "Con la C: Título de honor guerrero que se ganó el caballero castellano Rodrigo Díaz por su destreza en el campo de batalla.", a: "Campeador", letra: "C"},
+    {q: "Con la D: Río ibérico cuyo discurrir por Soria fue elevado a la categoría de símbolo de Castilla por la pluma de Antonio Machado.", a: "Duero", letra: "D"},
+    {q: "Con la E: Adjetivo calificativo poético que acompaña al sustantivo para destacar una cualidad inherente o embellecer (ej. 'blanca nieve').", a: "Epíteto", letra: "E"},
+    {q: "Con la F: Palabra que en el Renacimiento daba título a la obra completa de poetas fallecidos a cargo de sus amigos ('Obras de ...'). No, contesta: género literario y narrativo en el que los sucesos son producto de la invención del autor.", a: "Ficción", letra: "F"},
+    {q: "Con la G: Tratado lingüístico pionero y normativo que Elio Antonio de Nebrija ofreció a la reina Isabel la Católica en 1492.", a: "Gramática", letra: "G"},
+    {q: "Con la H: Destino trágico e inevitable que en las tragedias clásicas y neoclásicas persigue a los héroes hasta su destrucción.", a: "Hados", letra: "H"},
+    {q: "Con la I: Oficio de figuras como Juan de la Cuesta, responsable de estampar físicamente la edición príncipe de la primera parte del 'Quijote'.", a: "Impresor", letra: "I"},
+    {q: "Con la J: Combate poético o certamen literario muy celebrado durante el Siglo de Oro en cortes y academias ('... poética').", a: "Justa", letra: "J"},
+    {q: "Con la L: Adjetivo que da título a la celebrada comedia de figurón escrita por Agustín Moreto ('El ... don Diego').", a: "Lindo", letra: "L"},
+    {q: "Con la M: Apellido del gran comediógrafo madrileño del Siglo de Oro de nombre Agustín, célebre por su técnica de reescritura teatral.", a: "Moreto", letra: "M"},
+    {q: "Con la N: Título del tratado teológico dialogado escrito por Fray Luis de León ('De los ... de Cristo').", a: "Nombres", letra: "N"},
+    {q: "Contiene la Ñ: Palabra que acompaña a 'El sí de las' en el título de la obra capital del teatro neoclásico de Leandro Fernández de Moratín.", a: "Niñas", letra: "Ñ"},
+    {q: "Con la O: Arte de hablar en público con elocuencia, cultivado con brillantez por literatos y políticos decimonónicos como Emilio Castelar.", a: "Oratoria", letra: "O"},
+    {q: "Con la P: Nombre de la célebre tertulia romántica madrileña que se reunía en el Café del Príncipe.", a: "Parnasillo", letra: "P"},
+    {q: "Con la Q: Llanto, lamento poético profundo o voz desgarrada muy típica de la lírica andaluza y neopopularista de García Lorca.", a: "Quejido", letra: "Q"},
+    {q: "Con la R: Nombre por el que se conoce al joven pícaro Pedro del Rincón en la ilustre novela ejemplar cervantina ambientada en Sevilla.", a: "Rinconete", letra: "R"},
+    {q: "Con la S: Figura retórica que establece una comparación expresa entre dos términos usando partículas como 'cual' o 'como'.", a: "Símil", letra: "S"},
+    {q: "Con la T: Reunión informal de intelectuales, artistas o escritores en un café, clave en la vida literaria de Madrid (Pombo, Gijón...).", a: "Tertulia", letra: "T"},
+    {q: "Con la U: Término místico que designa la vía o fase final en la que el alma del poeta religioso alcanza el matrimonio espiritual con Dios.", a: "Unión", letra: "U"},
+    {q: "Con la V: Gentilicio del personaje fingido en el título de un famoso entremés de Cervantes, muy ridiculizado por su forma de hablar en la época ('El ... fingido').", a: "Vizcaíno", letra: "V"},
+    {q: "Contiene la X: Momento de máxima tensión o culminación de la acción dramática en una obra de teatro antes del desenlace.", a: "Clímax", letra: "X"},
+    {q: "Contiene la Y: Instrumento de trabajo agrícola que el poeta Miguel Hernández transformó en símbolo de opresión en 'El niño yuntero'.", a: "Yugo", letra: "Y"},
+    {q: "Con la Z: Nombre de la mujer mora que protagoniza, junto al moro Tarfe o a Zaide, un enorme ciclo de romances populares fronterizos.", a: "Zaida", letra: "Z"},
+    {q: "Con la A: Apellido del poeta sevillano del Renacimiento, soldado gastrónomo y festivo, autor de 'La cena jocosa' (Baltasar del...).", a: "Alcázar", letra: "A"},
+    {q: "Con la B: Primer apellido del último dramaturgo cortesano del Siglo de Oro, de nombre Francisco, autor de 'El esclavo en grillos de oro' (... Candamo).", a: "Bances", letra: "B"},
+    {q: "Con la C: Apodo del joven pícaro Diego que, armado con unas tijeras, actúa de ladrón en Sevilla junto a su compañero Rinconete.", a: "Cortadillo", letra: "C"},
+    {q: "Con la D: Adjetivo referido al tipo de literatura concebida para enseñar y moralizar, propósito principal de los escritores de la Ilustración.", a: "Didáctica", letra: "D"},
+    {q: "Con la E: Monumental obra del saber francés que influyó poderosamente en los escritores ilustrados y afrancesados españoles del siglo XVIII.", a: "Enciclopedia", letra: "E"},
+    {q: "Con la G: Apellido de la humanista de la corte de los Reyes Católicos, de nombre Beatriz, apodada 'la Latina'.", a: "Galindo", letra: "G"},
+    {q: "Con la H: Filósofo griego 'llorón' que da nombre al título de la obra moral y ascética del joven Quevedo ('... cristiano').", a: "Heráclito", letra: "H"},
+    {q: "Con la I: Composición poética breve, a menudo de tono amoroso y ambientación campestre, prima hermana de la égloga renacentista.", a: "Idilio", letra: "I"},
+    {q: "Con la J: Nombre que, a partir del Siglo de Oro, Lope de Vega y otros dramaturgos daban a cada uno de los tres actos de sus comedias.", a: "Jornada", letra: "J"},
+    {q: "Con la L: Ciudad riojana donde tuvo lugar el famoso auto de fe contra las brujas de Zugarramurdi, relatado años después por el dramaturgo Moratín.", a: "Logroño", letra: "L"},
+    {q: "Con la M: Género dramático religioso medieval, cuyo exponente más famoso conservado se representa anualmente en la ciudad alicantina de Elche.", a: "Misterio", letra: "M"},
+    {q: "Con la N: Título de la novela de Galdós protagonizada por un clérigo errante e idealista cuya fe pura lo acerca a la figura de Jesucristo.", a: "Nazarín", letra: "N"},
+    {q: "Contiene la Ñ: Apellido del poeta soldado imperial de nombre Hernando, autor del famoso soneto al rey que pide 'Un monarca, un imperio y una espada'.", a: "Acuña", letra: "Ñ"},
+    {q: "Con la O: Estrofa de ocho versos de arte menor (generalmente octosílabos) muy utilizada en las coplas y cancioneros tradicionales.", a: "Octavilla", letra: "O"},
+    {q: "Con la P: Condición social baja que define al personaje rústico de Sancho Panza y a los graciosos del teatro del Siglo de Oro.", a: "Plebeyo", letra: "P"},
+    {q: "Con la Q: Adjetivo aplicado a los versos cortos (de cuatro sílabas) que alternan con octosílabos en la famosa copla fúnebre manriqueña (Versos de pie...).", a: "Quebrados", letra: "Q"},
+    {q: "Con la R: Variante del romance métrico cuyos versos son menores de ocho sílabas, habitualmente hexasílabos.", a: "Romancillo", letra: "R"},
+    {q: "Con la S: Estrofa poética de cuatro versos endecasílabos con rima consonante cruzada (ABAB).", a: "Serventesio", letra: "S"},
+    {q: "Con la T: Idea, concepto o fórmula literaria recurrente en la tradición cultural de los autores, como el 'Carpe diem' o 'Beatus ille'.", a: "Tópico", letra: "T"},
+    {q: "Con la U: Hijo único, término empleado frecuentemente por los poetas y escritores místicos españoles para referirse a Jesucristo.", a: "Unigénito", letra: "U"},
+    {q: "Con la V: Figura política, a menudo con rango de duque o marqués, que en el siglo XVII ejercía el poder real y ejercía el mecenazgo literario.", a: "Valido", letra: "V"},
+    {q: "Contiene la X: Corriente de pensamiento europeo que impregnó de angustia, duda y sentido de lo absurdo a novelas como 'Nada' o el pensamiento de Unamuno.", a: "Existencialismo", letra: "X"},
+    {q: "Contiene la Y: Primera palabra del título del desgarrador libro de sonetos amorosos dedicado por Miguel Hernández a Josefina Manresa ('El ... que no cesa').", a: "Rayo", letra: "Y"},
+    {q: "Con la Z: Danza popular y canción muy viva del Siglo de Oro, repetidamente censurada y atacada por los eclesiásticos por su carácter lascivo.", a: "Zarabanda", letra: "Z"},
   ]
 });
 </script>
@@ -15761,15 +16533,13 @@ function dicMostrarRelacionadas(p) {
         tag.className = 'dic-rel-tag';
         tag.textContent = syn;
         tag.onclick = function() {
-            // Buscar y mostrar esta palabra
             document.getElementById('dic-search-input').value = syn;
             dicBuscar(syn);
-            // Hacer scroll al input
             document.getElementById('dic-search-input').scrollIntoView({ behavior:'smooth', block:'nearest' });
         };
         wrap.appendChild(tag);
     });
-    section.classList.add('visible');
+    section.style.display = 'block';
 }
 
 // --- BADGE SRS en tarjeta ---
@@ -15872,7 +16642,7 @@ async function iniciarDiccionario(modo, filtro, desdeInicio) {
                              (DIC_CAMPO_ICONS[filtro] || filtro);
                 document.getElementById('dic-rae-title').textContent = titulo;
                 document.getElementById('dic-loading').style.display = 'none';
-                document.getElementById('dic-content').style.display = 'flex';
+                document.getElementById('dic-panel-front').style.display = 'flex';
                 dicMostrarPalabra();
             } catch(e) {
                 showToast('Error cargando el diccionario. ¿Hay conexión?');
@@ -15918,7 +16688,7 @@ async function iniciarDiccionario(modo, filtro, desdeInicio) {
         document.getElementById('dic-rae-title').textContent = titulo;
 
         document.getElementById('dic-loading').style.display = 'none';
-        document.getElementById('dic-content').style.display = 'flex';
+        document.getElementById('dic-panel-front').style.display = 'flex';
         dicMostrarPalabra();
     } catch(e) {
         showToast('Error cargando el diccionario. ¿Hay conexión?');
@@ -16013,51 +16783,44 @@ function dicMostrarPalabra() {
     var campoInfo = DIC_CAMPOS.find(function(c){ return c.id === p.c; });
     var badgeText = campoInfo ? campoInfo.icon + ' ' + campoInfo.name : (p.c || '–');
     document.getElementById('dic-badge').textContent = badgeText;
+
+    // Pos + letra pista
     var primeraLetra = (p.w || '').charAt(0).toUpperCase();
     document.getElementById('dic-pos').textContent = (p.p || '') + (primeraLetra ? '  ·  Empieza por ' + primeraLetra : '');
 
-    // Definición principal — limpiar marcas técnicas
-    var defLimpia = dicLimpiarDef(p.d || p.df || '–');
-    document.getElementById('dic-def-main').textContent = dicLimpiarDefCircular(defLimpia, p.w);
+    // SRS badge
     dicMostrarBadgeSrs(p.w);
 
-    // Definición extra (acepciones adicionales)
-    var defCompleta = p.df || '';
-    var acepciones = defCompleta.split(' | ');
+    // Definición principal
+    var defLimpia = dicLimpiarDef(p.d || p.df || '–');
+    document.getElementById('dic-def-main').textContent = dicLimpiarDefCircular(defLimpia, p.w);
+
+    // Acepciones adicionales
+    var acepciones = (p.df || '').split(' | ');
+    var hint   = document.getElementById('dic-acep-hint');
+    var toggle = document.getElementById('dic-def-toggle');
     if (acepciones.length > 1) {
-        var extras = acepciones.slice(1).map(function(a){ return '• ' + dicLimpiarDef(a); }).join('\n');
-        document.getElementById('dic-def-extra').textContent = extras;
-        document.getElementById('dic-def-extra').classList.remove('visible');
-        document.getElementById('dic-def-toggle').style.display = 'inline';
-        document.getElementById('dic-def-toggle').textContent = '+ ' + (acepciones.length-1) + ' acepción(es) más';
+        hint.textContent = '+ ' + (acepciones.length-1) + ' acepción(es) más';
+        toggle.textContent = '+ ' + (acepciones.length-1) + ' acepción(es) más';
+        toggle.style.display = 'inline';
     } else {
-        document.getElementById('dic-def-extra').classList.remove('visible');
-        document.getElementById('dic-def-toggle').style.display = 'none';
+        hint.textContent = '';
+        toggle.style.display = 'none';
     }
 
-    // Reset reverso
-    document.getElementById('dic-back').classList.remove('visible');
-    document.getElementById('dic-word').textContent = '–';
-    document.getElementById('dic-word-pos').textContent = '';
-
-    // Reset secciones
-    document.getElementById('dic-etym-section').classList.remove('visible');
-    document.getElementById('dic-syn-section').classList.remove('visible');
-
-    // Reset botones
-    document.getElementById('dic-btn-reveal').style.display = '';
-
+    // Mostrar frente, ocultar reverso y rating
+    document.getElementById('dic-panel-front').style.display = 'flex';
+    document.getElementById('dic-panel-back').style.display = 'none';
     document.getElementById('dic-rate-row').classList.remove('visible');
-    document.getElementById('dic-btn-next').classList.remove('visible');
+    document.getElementById('dic-btn-next').style.display = 'none';
 
-    // Link RAE
-    var linkEl = document.getElementById('dic-rae-link');
-    linkEl.style.display = 'none';
+    // Reset secciones del reverso
+    ['dic-syn-section','dic-ant-section','dic-etym-section','dic-rel-section'].forEach(function(id){
+        var el = document.getElementById(id);
+        if (el) el.style.display = 'none';
+    });
 
-    // Scroll arriba
-    document.getElementById('dic-card-wrap').scrollTo({top: 0, behavior: 'smooth'});
-
-    // Pre-cargar más palabras si modo aleatorio y quedan pocas
+    // Pre-cargar más si aleatorio
     if (dicState.modo === 'aleatorio' && dicState.palabras.length - idx < 20) {
         dicCargarMasAleatorio();
     }
@@ -16084,6 +16847,14 @@ function dicLimpiarDef(d) {
     return d.charAt(0).toUpperCase() + d.slice(1);
 }
 
+function toggleDefExtra2() {
+    var extra = document.getElementById('dic-def-extra');
+    var btn   = document.getElementById('dic-def-toggle2');
+    var visible = extra.classList.toggle('visible');
+    var n = extra.textContent.split('\n').length;
+    btn.textContent = visible ? '− ocultar' : '+ ' + n + ' acepción(es) más';
+}
+
 function toggleDefExtra() {
     var extra = document.getElementById('dic-def-extra');
     var btn   = document.getElementById('dic-def-toggle');
@@ -16096,40 +16867,63 @@ function dicRevelar() {
     if (!p) return;
     dicState.revelado = true;
 
-    // Mostrar la palabra
-    document.getElementById('dic-back').classList.add('visible');
+    // Ocultar frente, mostrar reverso
+    document.getElementById('dic-panel-front').style.display = 'none';
+    document.getElementById('dic-panel-back').style.display = 'flex';
+
+    // Palabra principal
     document.getElementById('dic-word').textContent = p.w;
     document.getElementById('dic-word-pos').textContent = p.p || '';
 
-    // Mostrar etimología si existe
-    if (p.e && p.e.trim()) {
-        document.getElementById('dic-etym-text').textContent = p.e;
-        document.getElementById('dic-etym-section').classList.add('visible');
+    // Definición completa con acepciones
+    var acepciones = (p.df || p.d || '').split(' | ');
+    document.getElementById('dic-defs-text').textContent = dicLimpiarDef(acepciones[0]);
+    var toggle2 = document.getElementById('dic-def-toggle2');
+    var extra   = document.getElementById('dic-def-extra');
+    if (acepciones.length > 1) {
+        extra.textContent = acepciones.slice(1).map(function(a,i){ return (i+2) + '. ' + dicLimpiarDef(a); }).join('\n');
+        toggle2.style.display = 'inline';
+        toggle2.textContent = '+ ' + (acepciones.length-1) + ' acepción(es) más';
+        extra.classList.remove('visible');
+    } else {
+        toggle2.style.display = 'none';
     }
 
-    // Mostrar sinónimos si existen (limpiar el texto)
+    // Sinónimos
     if (p.s && p.s.trim()) {
-        var sinLimpios = p.s.replace(/Sin\.: /g,'').split(' | ')[0];
-        document.getElementById('dic-syn-text').textContent = sinLimpios;
-        document.getElementById('dic-syn-section').classList.add('visible');
+        var sins = p.s.replace(/Sin\.:/g,'').split('|')[0].split(',')
+            .map(function(s){ return s.trim(); }).filter(function(s){ return s.length > 1; });
+        document.getElementById('dic-syn-text').textContent = sins.join(', ');
+        document.getElementById('dic-syn-section').style.display = 'block';
     }
+
+    // Antónimos (buscar "Ant.:" en la definición completa)
+    var antMatch = (p.df || '').match(/Ant\.:\s*([^.|]+)/);
+    if (antMatch) {
+        document.getElementById('dic-ant-text').textContent = antMatch[1].trim();
+        document.getElementById('dic-ant-section').style.display = 'block';
+    }
+
+    // Etimología
+    if (p.e && p.e.trim()) {
+        document.getElementById('dic-etym-text').textContent = p.e;
+        document.getElementById('dic-etym-section').style.display = 'block';
+    }
+
+    // Palabras relacionadas
+    dicMostrarRelacionadas(p);
 
     // Link RAE
     var linkEl = document.getElementById('dic-rae-link');
     linkEl.href = 'https://dle.rae.es/' + encodeURIComponent(p.w.toLowerCase());
     linkEl.style.display = 'block';
-    // Palabras relacionadas (sinónimos como tags clicables)
-    dicMostrarRelacionadas(p);
 
-    // Mostrar botón ejemplo y ocultar reveal
-    document.getElementById('dic-btn-reveal').style.display = 'none';
-
-
-    // Mostrar calificación
+    // Rating bar
     document.getElementById('dic-rate-row').classList.add('visible');
 
-    // Scroll a la palabra
-    document.getElementById('dic-back').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    // Scroll al top
+    var scroll = document.getElementById('dic-back-scroll');
+    if (scroll) scroll.scrollTop = 0;
 }
 
 
@@ -16148,8 +16942,9 @@ function dicCalificar(nivel) {
         }
     }
     document.getElementById('dic-rate-row').classList.remove('visible');
-    document.getElementById('dic-btn-next').classList.add('visible');
-    document.getElementById('dic-btn-next').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    var btnNext = document.getElementById('dic-btn-next');
+    btnNext.style.display = 'block';
+    btnNext.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
 }
 
 function dicSiguiente() {
