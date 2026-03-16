@@ -1836,11 +1836,29 @@ html, body {
                 <div class="dic-mc-desc">¿Cómo se llaman los habitantes de...?</div>
                 <div class="dic-mc-count">~1.800 palabras</div>
             </div>
-            <div class="dic-mode-card" onclick="iniciarDiccionario('campo', 'desusada')">
-                <div class="dic-mc-icon">⏳</div>
-                <div class="dic-mc-title">Palabras olvidadas</div>
-                <div class="dic-mc-desc">Términos en desuso que pocos conocen.</div>
-                <div class="dic-mc-count">~4.600 palabras</div>
+            <div class="dic-mode-card" onclick="iniciarDiccionario('especial', 'larga')">
+                <div class="dic-mc-icon">📏</div>
+                <div class="dic-mc-title">Las más largas</div>
+                <div class="dic-mc-desc">Palabras de 15+ letras. Las que rompen el rosco.</div>
+                <div class="dic-mc-count">~1.660 palabras</div>
+            </div>
+            <div class="dic-mode-card" onclick="iniciarDiccionario('especial', 'onom')">
+                <div class="dic-mc-icon">🔊</div>
+                <div class="dic-mc-title">Onomatopéyicas</div>
+                <div class="dic-mc-desc">Palabras que imitan sonidos. Bambolear, barbullar...</div>
+                <div class="dic-mc-count">~130 palabras</div>
+            </div>
+            <div class="dic-mode-card" onclick="iniciarDiccionario('especial', 'explosiva')">
+                <div class="dic-mc-icon">💥</div>
+                <div class="dic-mc-title">Explosivas</div>
+                <div class="dic-mc-desc">Con 8+ sinónimos. Vocabulario riquísimo.</div>
+                <div class="dic-mc-count">~6.700 palabras</div>
+            </div>
+            <div class="dic-mode-card" onclick="iniciarDiccionario('especial', 'viajera')">
+                <div class="dic-mc-icon">✈️</div>
+                <div class="dic-mc-title">Palabras viajeras</div>
+                <div class="dic-mc-desc">Del árabe, náhuatl, francés, italiano... préstamos al español.</div>
+                <div class="dic-mc-count">~4.400 palabras</div>
             </div>
             <div class="dic-mode-card" onclick="iniciarDiccionario('campo', 'americanismo')">
                 <div class="dic-mc-icon">🌎</div>
@@ -15589,12 +15607,7 @@ function dicActualizarDia() {
 async function prepararPalabrasDia() {
     // Generar 20 palabras del día: priorizando nuevas y difíciles
     var dia = dicGetDia();
-    // Regenerar si existen pero les faltan las definiciones (bug versión anterior)
-    if (dia && dia.palabras && dia.palabras.length > 0 && dia.palabras[0].d) return dia.palabras;
-    if (dia && dia.palabras && dia.palabras.length > 0 && !dia.palabras[0].d) {
-        localStorage.removeItem(dicDiaKey()); // forzar regeneración
-        dia = null;
-    }
+    if (dia) return dia.palabras; // ya están generadas hoy
 
     // Cargar letras al azar para seleccionar
     var letrasAleatorias = dicMezclar([...DIC_LETRAS]).slice(0, 5);
@@ -15616,7 +15629,7 @@ async function prepararPalabrasDia() {
 
     var seleccion = dicMezclar(candidatas).slice(0, 20);
     var nuevoDia = {
-        palabras: seleccion.map(function(p) { return {w:p.w, c:p.c, p:p.p, d:p.d, df:p.df, e:p.e, s:p.s, ec:p.ec}; }),
+        palabras: seleccion.map(function(p) { return {w:p.w, c:p.c, p:p.p}; }),
         vistas: 0,
         fecha: new Date().toISOString().slice(0, 10)
     };
@@ -15889,8 +15902,17 @@ async function iniciarDiccionario(modo, filtro, desdeInicio) {
         dicState.idx = 0;
 
         // Título
+        var titulos_especiales = {
+            'larga':    '📏 Las más largas',
+            'onom':     '🔊 Onomatopéyicas',
+            'explosiva':'💥 Explosivas',
+            'viajera':  '✈️ Palabras viajeras',
+        };
         var titulo = modo === 'aleatorio' ? '🎲 Aleatorio' :
                      modo === 'letra'     ? '🔤 Letra ' + filtro :
+                     modo === 'especial'  ? (titulos_especiales[filtro] || filtro) :
+                     modo === 'dia'       ? '📅 Palabras del día' :
+                     modo === 'dificiles' ? '🔴 Difíciles' :
                      (DIC_CAMPO_ICONS[filtro] || filtro);
         document.getElementById('dic-rae-title').textContent = titulo;
 
@@ -15929,10 +15951,8 @@ async function dicCargarPalabras(modo, filtro) {
         // Palabras del día — generadas o recuperadas
         return await prepararPalabrasDia();
     } else if (modo === 'dificiles') {
-        // Solo las marcadas como difíciles en SRS
         var words = dicGetDificiles();
         if (words.length === 0) return [];
-        // Buscar los datos completos de esas palabras
         var resultado = [];
         var letrasNecesarias = [...new Set(words.map(function(w){
             var l = w[0].toUpperCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'');
@@ -15944,6 +15964,17 @@ async function dicCargarPalabras(modo, filtro) {
             resultado = resultado.concat(matches);
         }
         return resultado;
+    } else if (modo === 'especial') {
+        // filtro = 'larga' | 'onom' | 'explosiva' | 'viajera'
+        var todas = [];
+        for (var l of DIC_LETRAS) {
+            var data = await dicCargarLetra(l);
+            var filtradas = data.filter(function(p){
+                return p.esp && p.esp.includes(filtro);
+            });
+            todas = todas.concat(filtradas);
+        }
+        return dicMezclar(todas);
     }
     return [];
 }
