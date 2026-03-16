@@ -15589,7 +15589,12 @@ function dicActualizarDia() {
 async function prepararPalabrasDia() {
     // Generar 20 palabras del día: priorizando nuevas y difíciles
     var dia = dicGetDia();
-    if (dia) return dia.palabras; // ya están generadas hoy
+    // Regenerar si existen pero les faltan las definiciones (bug versión anterior)
+    if (dia && dia.palabras && dia.palabras.length > 0 && dia.palabras[0].d) return dia.palabras;
+    if (dia && dia.palabras && dia.palabras.length > 0 && !dia.palabras[0].d) {
+        localStorage.removeItem(dicDiaKey()); // forzar regeneración
+        dia = null;
+    }
 
     // Cargar letras al azar para seleccionar
     var letrasAleatorias = dicMezclar([...DIC_LETRAS]).slice(0, 5);
@@ -15611,7 +15616,7 @@ async function prepararPalabrasDia() {
 
     var seleccion = dicMezclar(candidatas).slice(0, 20);
     var nuevoDia = {
-        palabras: seleccion.map(function(p) { return {w:p.w, c:p.c, p:p.p}; }),
+        palabras: seleccion.map(function(p) { return {w:p.w, c:p.c, p:p.p, d:p.d, df:p.df, e:p.e, s:p.s, ec:p.ec}; }),
         vistas: 0,
         fecha: new Date().toISOString().slice(0, 10)
     };
