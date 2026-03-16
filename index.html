@@ -1015,18 +1015,7 @@ html, body {
 }
 
 /* SECCIÓN EJEMPLO IA */
-.dic-example-section {
-    background: var(--card); border: 1px solid var(--border);
-    border-radius: 14px; padding: 14px 16px; display: none;
-}
-.dic-example-section.visible { display: block; }
-.dic-example-text {
-    font-size: 0.9rem; line-height: 1.6; color: var(--text);
-    font-style: italic; opacity: 0.9;
-}
-.dic-example-loading {
-    font-size: 0.82rem; color: var(--muted); text-align: center; padding: 8px 0;
-}
+
 
 /* BOTONES DE ACCIÓN */
 .dic-action-row {
@@ -1041,15 +1030,7 @@ html, body {
     transition: all 0.18s;
 }
 .dic-btn-reveal:hover { background: var(--gold2); }
-.dic-btn-example {
-    padding: 14px 16px; border-radius: 14px;
-    border: 1.5px solid var(--purple); background: transparent;
-    color: var(--purple); font-weight: 700; font-size: 0.85rem;
-    cursor: pointer; font-family: 'Space Grotesk', sans-serif;
-    transition: all 0.18s; white-space: nowrap;
-}
-.dic-btn-example:hover { background: rgba(153,102,255,0.1); }
-.dic-btn-example:disabled { opacity: 0.4; cursor: default; }
+
 
 /* BOTONES DE CALIFICACIÓN */
 .dic-rate-row {
@@ -1185,6 +1166,294 @@ html, body {
 }
 @keyframes dic-spin { to { transform: rotate(360deg); } }
 .dic-loading-text { font-size: 0.85rem; color: var(--muted); }
+
+
+/* ===== DICCIONARIO — MEJORAS v2 ===== */
+
+/* Barra de búsqueda */
+.dic-search-wrap {
+    padding: 10px 16px 8px; background: var(--bg2);
+    border-bottom: 1px solid var(--border); flex-shrink: 0;
+    display: none;
+}
+.dic-search-wrap.visible { display: block; }
+.dic-search-input {
+    width: 100%; padding: 10px 14px; border-radius: 12px;
+    border: 1px solid var(--border2); background: var(--card);
+    color: var(--text); font-family: 'Space Grotesk', sans-serif;
+    font-size: 0.9rem; outline: none;
+}
+.dic-search-input:focus { border-color: var(--gold); }
+.dic-search-results {
+    max-height: 280px; overflow-y: auto; margin-top: 8px;
+    display: none;
+}
+.dic-search-results.visible { display: block; }
+.dic-search-item {
+    padding: 10px 12px; border-radius: 10px; cursor: pointer;
+    transition: background 0.15s; display: flex; gap: 10px; align-items: center;
+}
+.dic-search-item:hover { background: var(--card2); }
+.dic-search-word { font-weight: 700; font-size: 0.9rem; color: var(--gold); }
+.dic-search-def  { font-size: 0.75rem; color: var(--muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; flex:1; }
+
+/* Stats del selector */
+.dic-stats-strip {
+    display: flex; gap: 8px; padding: 0 0 16px; flex-wrap: wrap;
+}
+.dic-stat-pill {
+    display: flex; align-items: center; gap: 5px;
+    background: var(--card); border: 1px solid var(--border2);
+    border-radius: 12px; padding: 6px 12px;
+    font-size: 0.75rem; color: var(--muted);
+}
+.dic-stat-pill strong { color: var(--gold); font-size: 0.85rem; }
+
+/* Palabras del día */
+.dic-dia-card {
+    background: linear-gradient(135deg, #1a1a2e, #13131f);
+    border: 1.5px solid var(--blue); border-radius: 16px;
+    padding: 16px; margin-bottom: 8px; cursor: pointer;
+    transition: all 0.2s; position: relative; overflow: hidden;
+}
+.dic-dia-card::before {
+    content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+    background: linear-gradient(90deg, var(--blue), var(--purple));
+}
+.dic-dia-card:hover { border-color: var(--gold); }
+.dic-dia-title { font-size: 0.9rem; font-weight: 700; color: var(--text); margin-bottom: 4px; }
+.dic-dia-sub { font-size: 0.72rem; color: var(--muted); }
+.dic-dia-badge {
+    display: inline-block; margin-top: 8px;
+    font-size: 0.68rem; font-weight: 700; color: var(--blue);
+    background: rgba(68,136,255,0.12); padding: 2px 8px; border-radius: 8px;
+}
+.dic-dia-done {
+    border-color: var(--green) !important;
+}
+.dic-dia-done .dic-dia-badge { color: var(--green); background: rgba(68,212,144,0.12); }
+
+/* Badge SRS en la tarjeta */
+.dic-srs-badge {
+    display: inline-flex; align-items: center; gap: 4px;
+    padding: 2px 8px; border-radius: 8px; font-size: 0.68rem; font-weight: 700;
+    margin-left: 6px;
+}
+.dic-srs-nueva    { background: rgba(68,136,255,0.15); color: var(--blue); }
+.dic-srs-dificil  { background: rgba(255,85,85,0.15);  color: var(--red);  }
+.dic-srs-regular  { background: rgba(240,192,64,0.15); color: var(--gold); }
+.dic-srs-dominada { background: rgba(68,212,144,0.15); color: var(--green);}
+
+/* Modo solo difíciles */
+.dic-dif-card {
+    background: var(--card); border: 1.5px solid var(--red);
+    border-radius: 16px; padding: 16px; cursor: pointer;
+    transition: all 0.2s; grid-column: span 2;
+}
+.dic-dif-card:hover { background: rgba(255,85,85,0.05); }
+
+/* Filtro de dificultad en la tarjeta */
+.dic-filter-row {
+    display: flex; gap: 6px; padding: 8px 16px 0;
+    flex-shrink: 0; overflow-x: auto; scrollbar-width: none;
+}
+.dic-filter-row::-webkit-scrollbar { display: none; }
+.dic-filt-btn {
+    flex-shrink: 0; padding: 4px 12px; border-radius: 12px;
+    border: 1px solid var(--border2); background: transparent;
+    color: var(--muted); font-size: 0.72rem; font-weight: 600;
+    cursor: pointer; font-family: 'Space Grotesk', sans-serif;
+    transition: all 0.15s;
+}
+.dic-filt-btn.on { background: var(--card2); border-color: var(--gold); color: var(--gold); }
+
+/* Palabras relacionadas */
+.dic-related {
+    display: flex; flex-wrap: wrap; gap: 6px; margin-top: 6px;
+}
+.dic-rel-tag {
+    padding: 3px 10px; border-radius: 10px;
+    background: var(--card2); border: 1px solid var(--border2);
+    font-size: 0.75rem; color: var(--muted); cursor: pointer;
+    transition: all 0.15s;
+}
+.dic-rel-tag:hover { border-color: var(--gold); color: var(--gold); }
+
+
+/* ===== MEJORAS ROSCO ===== */
+
+/* Botón pausa en top bar del rosco */
+.rosco-pause-btn {
+    background: none; border: 1.5px solid var(--border2);
+    color: var(--muted); border-radius: 10px; padding: 5px 10px;
+    font-size: 0.8rem; cursor: pointer; font-family: 'Space Grotesk',sans-serif;
+    transition: all 0.18s; font-weight: 700;
+}
+.rosco-pause-btn:hover { border-color: var(--gold); color: var(--gold); }
+.rosco-pause-btn.paused { border-color: var(--green); color: var(--green); }
+
+/* Overlay de pausa */
+#rosco-pause-overlay {
+    position: absolute; inset: 0; background: rgba(8,8,16,0.92);
+    z-index: 100; display: none;
+    flex-direction: column; align-items: center; justify-content: center;
+    gap: 20px;
+}
+#rosco-pause-overlay.visible { display: flex; }
+.pause-icon { font-size: 3.5rem; }
+.pause-title {
+    font-family: 'Playfair Display', serif; font-size: 1.6rem;
+    color: var(--gold); font-weight: 700;
+}
+.pause-timer { font-size: 1rem; color: var(--muted); }
+.pause-btn-resume {
+    padding: 14px 36px; border-radius: 16px;
+    background: var(--gold); border: none; color: #000;
+    font-size: 1rem; font-weight: 700; cursor: pointer;
+    font-family: 'Space Grotesk', sans-serif;
+}
+.pause-btn-abandon {
+    padding: 10px 24px; border-radius: 14px;
+    background: transparent; border: 1px solid var(--border2);
+    color: var(--muted); font-size: 0.85rem; cursor: pointer;
+    font-family: 'Space Grotesk', sans-serif;
+}
+
+/* Selector de tiempo en rosco-mode */
+.rmc-timer-selector {
+    width: 100%; background: var(--card); border: 1px solid var(--border2);
+    border-radius: 16px; padding: 16px;
+}
+.rmc-timer-label {
+    font-size: 0.78rem; color: var(--muted); font-weight: 700;
+    letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 10px;
+}
+.rmc-timer-btns { display: flex; gap: 6px; }
+.rmc-timer-btn {
+    flex: 1; padding: 10px 4px; border-radius: 12px;
+    border: 1.5px solid var(--border2); background: transparent;
+    color: var(--text); font-size: 0.82rem; font-weight: 700;
+    cursor: pointer; font-family: 'Space Grotesk', sans-serif;
+    transition: all 0.15s; text-align: center;
+}
+.rmc-timer-btn.sel { background: var(--gold-dim); border-color: var(--gold); color: var(--gold); }
+
+/* Entrenamiento por letra */
+#rosco-letra-selector { background: var(--bg); }
+.letra-grid-grande {
+    display: grid; grid-template-columns: repeat(5, 1fr); gap: 8px;
+    padding: 16px;
+}
+.letra-btn-grande {
+    aspect-ratio: 1; border-radius: 14px;
+    border: 1px solid var(--border2); background: var(--card);
+    display: flex; flex-direction: column; align-items: center;
+    justify-content: center; cursor: pointer; transition: all 0.18s;
+    gap: 2px;
+}
+.letra-btn-grande:hover { border-color: var(--gold); }
+.letra-btn-grande .lbg-letra {
+    font-size: 1.3rem; font-weight: 700; color: var(--text);
+}
+.letra-btn-grande .lbg-pct {
+    font-size: 0.6rem; font-weight: 700;
+}
+.lbg-ok   { border-color: var(--green) !important; }
+.lbg-mid  { border-color: var(--gold)  !important; }
+.lbg-bad  { border-color: var(--red)   !important; }
+
+/* Análisis de puntos débiles */
+#rosco-analisis { background: var(--bg); }
+.analisis-section-label {
+    font-size: 0.72rem; font-weight: 800; letter-spacing: 0.1em;
+    color: var(--muted); text-transform: uppercase;
+    margin: 16px 0 8px; padding: 0 16px;
+}
+.analisis-bar-row {
+    display: flex; align-items: center; gap: 10px;
+    padding: 8px 16px; border-bottom: 1px solid var(--border);
+}
+.analisis-letra { font-size: 1.1rem; font-weight: 800; min-width: 28px; color: var(--text); }
+.analisis-bar-wrap { flex: 1; background: var(--border); border-radius: 6px; height: 8px; overflow: hidden; }
+.analisis-bar-fill { height: 100%; border-radius: 6px; transition: width 0.4s ease; }
+.analisis-pct { font-size: 0.75rem; font-weight: 700; min-width: 36px; text-align: right; }
+.analisis-count { font-size: 0.68rem; color: var(--muted); min-width: 50px; text-align: right; }
+.analisis-mazo-row {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 10px 16px; border-bottom: 1px solid var(--border);
+}
+.analisis-mazo-name { font-size: 0.85rem; color: var(--text); }
+.analisis-mazo-stats { font-size: 0.75rem; }
+
+
+/* ===== ROSCO ENTRENAMIENTO POR LETRA — JUEGO ===== */
+#rosco-letra-juego { background: var(--bg); }
+.rle-progress-track { height: 3px; background: var(--border); flex-shrink: 0; }
+.rle-progress-fill  { height: 100%; background: linear-gradient(90deg, var(--gold), var(--purple)); transition: width 0.3s; }
+
+.rle-body {
+    flex: 1; overflow-y: auto; padding: 16px 16px 40px;
+    display: flex; flex-direction: column; gap: 14px;
+    overscroll-behavior: contain;
+}
+.rle-body::-webkit-scrollbar { display: none; }
+
+.rle-letra-badge {
+    width: 60px; height: 60px; border-radius: 50%;
+    background: var(--gold-dim); border: 2px solid var(--gold);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.8rem; font-weight: 800; color: var(--gold);
+    font-family: 'Playfair Display', serif;
+    align-self: center; margin: 4px 0;
+}
+.rle-pregunta-card {
+    background: var(--card); border: 1px solid var(--border2);
+    border-radius: 18px; padding: 20px 18px;
+    font-size: 1.0rem; line-height: 1.6; color: var(--text);
+    position: relative; overflow: hidden;
+}
+.rle-pregunta-card::before {
+    content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+    background: linear-gradient(90deg, var(--gold), var(--purple));
+}
+.rle-input-wrap {
+    display: flex; gap: 8px;
+}
+.rle-input {
+    flex: 1; padding: 12px 16px; border-radius: 14px;
+    border: 1.5px solid var(--border2); background: var(--card);
+    color: var(--text); font-size: 1rem; font-family: 'Space Grotesk', sans-serif;
+    outline: none; transition: border-color 0.18s;
+}
+.rle-input:focus { border-color: var(--gold); }
+.rle-btn-submit {
+    padding: 12px 20px; border-radius: 14px;
+    background: var(--gold); border: none; color: #000;
+    font-weight: 700; font-size: 1rem; cursor: pointer;
+    font-family: 'Space Grotesk', sans-serif;
+}
+.rle-feedback {
+    padding: 12px 16px; border-radius: 14px;
+    font-size: 0.95rem; font-weight: 600; display: none;
+    background: var(--card); border: 1px solid var(--border2);
+}
+.rle-btn-next {
+    padding: 13px; border-radius: 14px;
+    border: 1px solid var(--border2); background: transparent;
+    color: var(--muted); font-family: 'Space Grotesk', sans-serif;
+    font-size: 0.9rem; cursor: pointer; display: none;
+    transition: all 0.18s;
+}
+.rle-btn-next:hover { border-color: var(--gold); color: var(--gold); }
+.rle-stats-row {
+    display: flex; gap: 10px; justify-content: center;
+}
+.rle-stat {
+    background: var(--card); border: 1px solid var(--border2);
+    border-radius: 12px; padding: 8px 16px; text-align: center;
+    font-size: 0.75rem; color: var(--muted);
+}
+.rle-stat strong { display: block; font-size: 1.1rem; margin-bottom: 2px; }
 
 </style>
 </head>
@@ -1502,14 +1771,46 @@ html, body {
         <div class="top-bar-title">📚 Diccionario RAE</div>
         <div class="top-bar-right" style="font-size:0.72rem;color:var(--muted);">75.812 palabras</div>
     </div>
+    <!-- BÚSQUEDA (siempre visible) -->
+    <div class="dic-search-wrap visible" id="dic-search-wrap">
+        <input class="dic-search-input" id="dic-search-input" 
+               placeholder="🔍  Buscar palabra..." 
+               oninput="dicBuscar(this.value)" autocomplete="off" autocorrect="off" spellcheck="false">
+        <div class="dic-search-results" id="dic-search-results"></div>
+    </div>
+
     <div class="dic-sel-body">
-        <div class="dic-hero">
-            <div class="dic-hero-icon">📚</div>
-            <div class="dic-hero-title">Diccionario completo</div>
-            <div class="dic-hero-sub">Estudia el diccionario de la RAE<br>completo. Elige cómo quieres empezar.</div>
+        <!-- STATS DINÁMICAS -->
+        <div class="dic-stats-strip" id="dic-stats-strip">
+            <div class="dic-stat-pill">📚 <strong id="dic-stat-vistas">0</strong> vistas</div>
+            <div class="dic-stat-pill">✔ <strong id="dic-stat-dom">0</strong> dominadas</div>
+            <div class="dic-stat-pill">✖ <strong id="dic-stat-dif">0</strong> difíciles</div>
+            <div class="dic-stat-pill">📅 <strong id="dic-stat-hoy">0</strong> hoy</div>
+        </div>
+
+        <!-- PALABRAS DEL DÍA -->
+        <div class="dic-sel-label">Estudio diario</div>
+        <div class="dic-dia-card" id="dic-dia-card" onclick="iniciarDiccionario('dia', null)">
+            <div class="dic-dia-title">📅 Palabras del día</div>
+            <div class="dic-dia-sub" id="dic-dia-sub">20 palabras nuevas seleccionadas para hoy</div>
+            <div class="dic-dia-badge" id="dic-dia-badge">0 / 20 completadas</div>
+        </div>
+
+        <!-- SOLO DIFÍCILES -->
+        <div class="dic-modes-grid" style="margin-bottom:8px;">
+            <div class="dic-dif-card" id="dic-dif-card" onclick="iniciarDiccionario('dificiles', null)">
+                <div style="display:flex;align-items:center;gap:10px;">
+                    <span style="font-size:1.4rem;">🔴</span>
+                    <div>
+                        <div style="font-size:0.9rem;font-weight:700;color:var(--red);">Repasar difíciles</div>
+                        <div style="font-size:0.72rem;color:var(--muted);margin-top:2px;" id="dic-dif-count">Las que has marcado como difíciles</div>
+                    </div>
+                </div>
+            </div>
         </div>
 
         <!-- MODOS PRINCIPALES -->
+        <div class="dic-sel-label">Explorar</div>
         <div class="dic-modes-grid">
             <div class="dic-mode-card featured" onclick="iniciarDiccionario('aleatorio', null)">
                 <div class="dic-mc-icon">🎲</div>
@@ -1558,6 +1859,14 @@ html, body {
         <!-- GRID DE CAMPOS -->
         <div id="dic-campos-panel" style="display:none;">
             <div class="dic-sel-label">Elige un campo temático</div>
+            <!-- Filtro de grupo -->
+            <div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:10px;" id="dic-grupo-btns">
+                <button class="dic-filter-btn sel" onclick="dicFiltroGrupo('todos')" id="dg-todos">Todos</button>
+                <button class="dic-filter-btn" onclick="dicFiltroGrupo('gramatical')" id="dg-gramatical">📝 Gramatical</button>
+                <button class="dic-filter-btn" onclick="dicFiltroGrupo('tematica')" id="dg-tematica">🏷️ Temático</button>
+                <button class="dic-filter-btn" onclick="dicFiltroGrupo('registro')" id="dg-registro">💬 Registro</button>
+                <button class="dic-filter-btn" onclick="dicFiltroGrupo('etym')" id="dg-etym">🌿 Etimología</button>
+            </div>
             <div class="dic-campos-grid" id="dic-campos-grid"></div>
         </div>
 
@@ -1574,6 +1883,15 @@ html, body {
         <div class="top-bar-right" id="dic-rae-counter" style="font-size:0.78rem;color:var(--muted);">0/0</div>
     </div>
 
+    <!-- FILTRO DIFICULTAD -->
+    <div class="dic-filter-row" id="dic-filter-row">
+        <button class="dic-filt-btn on" onclick="dicSetFiltro('todas')" id="filt-todas">Todas</button>
+        <button class="dic-filt-btn" onclick="dicSetFiltro('nuevas')" id="filt-nuevas">🔵 Nuevas</button>
+        <button class="dic-filt-btn" onclick="dicSetFiltro('dificiles')" id="filt-dificiles">🔴 Difíciles</button>
+        <button class="dic-filt-btn" onclick="dicSetFiltro('repaso')" id="filt-repaso">🟡 Repaso</button>
+        <button class="dic-filt-btn" onclick="dicSetFiltro('dominadas')" id="filt-dom">✔ Dominadas</button>
+    </div>
+
     <!-- LOADING -->
     <div class="dic-loading" id="dic-loading">
         <div class="dic-loading-spinner"></div>
@@ -1581,12 +1899,13 @@ html, body {
     </div>
 
     <!-- CONTENIDO PRINCIPAL (oculto hasta que carga) -->
-    <div id="dic-content" style="display:none; flex:1; overflow:hidden; flex-direction:column; display:none;">
+    <div id="dic-content" style="flex:1; overflow:hidden; flex-direction:column; display:none;">
         <div class="dic-card-wrap" id="dic-card-wrap">
             <!-- BADGE CAMPO -->
-            <div style="display:flex; gap:8px; align-items:center;">
+            <div style="display:flex; gap:8px; align-items:center; flex-wrap:wrap;">
                 <div class="dic-campo-badge" id="dic-badge">–</div>
                 <div class="dic-pos-tag" id="dic-pos">–</div>
+                <span class="dic-srs-badge dic-srs-nueva" id="dic-srs-badge" style="display:none;"></span>
             </div>
 
             <!-- TARJETA FRENTE: definición -->
@@ -1616,21 +1935,20 @@ html, body {
                 <div class="dic-section-text" id="dic-syn-text"></div>
             </div>
 
-            <!-- EJEMPLO IA -->
-            <div class="dic-example-section" id="dic-ex-section">
-                <div class="dic-section-label dic-ex-label">✍️ Ejemplo de uso</div>
-                <div class="dic-example-loading" id="dic-ex-loading" style="display:none;">Generando ejemplo...</div>
-                <div class="dic-example-text" id="dic-ex-text"></div>
+            <!-- PALABRAS RELACIONADAS -->
+            <div class="dic-section" id="dic-rel-section">
+                <div class="dic-section-label" style="color:var(--gold);">🔀 Palabras relacionadas</div>
+                <div class="dic-related" id="dic-rel-words"></div>
             </div>
+
+
 
             <!-- ACCIONES -->
             <div class="dic-action-row">
                 <button class="dic-btn-reveal" id="dic-btn-reveal" onclick="dicRevelar()">
                     Ver palabra →
                 </button>
-                <button class="dic-btn-example" id="dic-btn-example" onclick="dicGenerarEjemplo()" style="display:none;">
-                    💡 Ejemplo
-                </button>
+
             </div>
 
             <!-- CALIFICACIÓN (aparece tras revelar) -->
@@ -1651,6 +1969,83 @@ html, body {
                 📖 Ver en dle.rae.es
             </a>
         </div>
+    </div>
+</div>
+
+
+<!-- ================================================================
+     ROSCO — ENTRENAMIENTO POR LETRA
+================================================================ -->
+<div id="rosco-letra-selector" class="screen">
+    <div class="top-bar">
+        <button class="btn-back" onclick="cerrarEntrenamientoLetra()">←</button>
+        <div class="top-bar-title">🔤 Entrenar por letra</div>
+        <div class="top-bar-right"></div>
+    </div>
+    <div class="scroll-body" style="padding-top:8px;">
+        <p style="padding:0 16px 12px;color:var(--muted);font-size:0.82rem;">
+            Elige una letra para practicar solo sus preguntas. El color indica tu porcentaje de acierto.
+        </p>
+        <div class="letra-grid-grande" id="letra-grid-grande"></div>
+    </div>
+</div>
+
+<!-- ================================================================
+     ROSCO — ANÁLISIS PUNTOS DÉBILES
+================================================================ -->
+<div id="rosco-analisis" class="screen">
+    <div class="top-bar">
+        <button class="btn-back" onclick="goTo('rosco-mode')">←</button>
+        <div class="top-bar-title">📊 Puntos débiles</div>
+        <div class="top-bar-right"></div>
+    </div>
+    <div class="scroll-body" id="analisis-body" style="padding:0 0 60px;">
+        <div style="padding:40px;text-align:center;color:var(--muted);font-size:0.85rem;">Cargando análisis...</div>
+    </div>
+</div>
+
+
+<!-- ================================================================
+     ROSCO — ENTRENAMIENTO POR LETRA — JUEGO
+================================================================ -->
+<div id="rosco-letra-juego" class="screen">
+    <div class="top-bar">
+        <button class="btn-back" onclick="goTo('rosco-letra-selector')">←</button>
+        <div class="top-bar-title" id="rle-title">🔤 Letra A</div>
+        <div class="top-bar-right" id="rle-counter" style="font-size:0.78rem;color:var(--muted);">1/10</div>
+    </div>
+    <div class="rle-progress-track">
+        <div class="rle-progress-fill" id="rle-progress" style="width:0%"></div>
+    </div>
+    <div class="rle-body">
+        <!-- Stats en tiempo real -->
+        <div class="rle-stats-row">
+            <div class="rle-stat"><strong id="rle-ok" style="color:var(--green)">0</strong>Aciertos</div>
+            <div class="rle-stat"><strong id="rle-fail" style="color:var(--red)">0</strong>Fallos</div>
+        </div>
+
+        <!-- Badge letra -->
+        <div class="rle-letra-badge" id="rle-letra">A</div>
+
+        <!-- Pregunta -->
+        <div class="rle-pregunta-card" id="rle-pregunta">Cargando...</div>
+
+        <!-- Input respuesta -->
+        <div class="rle-input-wrap">
+            <input class="rle-input" id="rle-answer" 
+                   placeholder="Tu respuesta..." 
+                   autocomplete="off" autocorrect="off" spellcheck="false"
+                   onkeydown="if(event.key==='Enter') submitLetraAnswer()">
+            <button class="rle-btn-submit" id="rle-btn-submit" onclick="submitLetraAnswer()">✓</button>
+        </div>
+
+        <!-- Feedback -->
+        <div class="rle-feedback" id="rle-feedback"></div>
+
+        <!-- Siguiente -->
+        <button class="rle-btn-next" id="rle-btn-next" onclick="nextLetraQuestion()">
+            Siguiente →
+        </button>
     </div>
 </div>
 
@@ -1790,17 +2185,48 @@ html, body {
             <div class="rmc-arrow">→</div>
         </div>
 
+        <!-- SELECTOR TIEMPO -->
+        <div class="rmc-timer-selector">
+            <div class="rmc-timer-label">⏱ Tiempo del rosco</div>
+            <div class="rmc-timer-btns">
+                <button class="rmc-timer-btn" onclick="setRoscoTime(90)"  id="rt-90">1:30</button>
+                <button class="rmc-timer-btn" onclick="setRoscoTime(150)" id="rt-150">2:30</button>
+                <button class="rmc-timer-btn sel" onclick="setRoscoTime(210)" id="rt-210">3:30</button>
+                <button class="rmc-timer-btn" onclick="setRoscoTime(300)" id="rt-300">5:00</button>
+                <button class="rmc-timer-btn" onclick="setRoscoTime(0)"   id="rt-0">∞</button>
+            </div>
+        </div>
+
+        <!-- ANÁLISIS -->
+        <div class="rosco-mode-card" onclick="goTo('rosco-analisis'); renderAnalisis();" style="width:100%;">
+            <div class="rmc-icon">📊</div>
+            <div class="rmc-body">
+                <div class="rmc-title">Análisis de puntos débiles</div>
+                <div class="rmc-desc">Ve qué letras y mazos te cuestan más.</div>
+            </div>
+            <div class="rmc-arrow">→</div>
+        </div>
+
         <p style="color:var(--muted);font-size:0.75rem;text-align:center;padding:0 20px;margin-top:4px;">
             ⚠️ Los modos de voz requieren HTTPS. Si no funciona, usa el modo silencioso.
         </p>
     </div>
 </div>
 
-<div id="rosco" class="screen">
+<div id="rosco" class="screen" style="position:relative;">
     <div class="top-bar">
-        <button class="btn-back" onclick="abandonarRosco()">←</button>
+        <button class="btn-back" onclick="confirmarAbandonarRosco()">←</button>
         <div class="top-bar-title">🟡 El Rosco</div>
+        <button class="rosco-pause-btn" id="rosco-pause-btn" onclick="togglePausaRosco()">⏸ Pausa</button>
         <div class="rosco-timer" id="rosco-timer">3:30</div>
+    </div>
+    <!-- OVERLAY PAUSA -->
+    <div id="rosco-pause-overlay">
+        <div class="pause-icon">⏸</div>
+        <div class="pause-title">Rosco pausado</div>
+        <div class="pause-timer" id="pause-timer-text">Tiempo restante: 3:30</div>
+        <button class="pause-btn-resume" onclick="togglePausaRosco()">▶ Continuar</button>
+        <button class="pause-btn-abandon" onclick="abandonarRosco()">Abandonar partida</button>
     </div>
 
     <div class="rosco-wheel-wrap">
@@ -13896,6 +14322,12 @@ MAZOS.push({
               </button>
           </div>
 
+          <!-- Entrenar por letra -->
+          <button id="btn-entrenar-letra" style="background:rgba(68,136,255,0.1); color:var(--blue); border:1px solid var(--blue); padding:18px; border-radius:12px; font-weight:bold; font-size:1.1rem; margin-bottom:12px; width:100%; cursor:pointer; display:flex; justify-content:space-between; align-items:center;">
+              <span>🔤 Entrenar por letra</span>
+              <span style="font-size:0.8rem;opacity:0.7;">Practica una letra concreta →</span>
+          </button>
+
           <button onclick="startSmartStudy('mix')" style="background:var(--accent); color:var(--bg); padding:18px; border-radius:12px; border:none; font-weight:bold; font-size:1.1rem; margin-bottom:25px; width:100%; cursor:pointer; box-shadow:0 4px 15px rgba(255,255,255,0.1); display:flex; justify-content:center; align-items:center; gap:10px;">
              🌪️ REPASO GLOBAL (50 tarjetas)
           </button>
@@ -13955,6 +14387,16 @@ MAZOS.push({
     // 3. Modificación del DOM robusta (Arregla lo de "Cargando..." y restaura subtítulos)
     function inyectarInterfaz() {
         document.body.insertAdjacentHTML('beforeend', studyHTML);
+        // Añadir listener al botón de entrenar por letra (onclick en template literal falla en móvil)
+        setTimeout(function() {
+            var btnLetra = document.getElementById('btn-entrenar-letra');
+            if (btnLetra) {
+                btnLetra.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    abrirEntrenamientoLetra();
+                });
+            }
+        }, 100);
 
         const deckContainer = document.querySelector('.deck-list');
         if (deckContainer) {
@@ -14368,6 +14810,11 @@ window.mostrarResumenEstudio = function() {
 //  NAVEGACIÓN — una sola definición definitiva
 // ============================================================
 function goTo(id) {
+    // Ocultar los divs fixed del estudio inteligente al navegar
+    var vsm = document.getElementById('view-smart-study');
+    var vss = document.getElementById('view-study-selector');
+    if (vsm) vsm.style.display = 'none';
+    if (vss) vss.style.display = 'none';
     document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
     document.getElementById(id).classList.add('active');
 
@@ -14377,7 +14824,10 @@ function goTo(id) {
     if (id === 'creator')   { renderCustomList(); }
     if (id === 'rosco')     { startRosco(); } // mode set before arriving
     if (id === 'rae')       { initRaeIfNeeded(); }
-    if (id === 'dashboard') { if (typeof renderDashboard === 'function') renderDashboard(); }
+    if (id === 'dashboard')    { if (typeof renderDashboard === 'function') renderDashboard(); }
+    if (id === 'dic-selector')        { dicActualizarStats(); dicActualizarDia(); }
+    if (id === 'rosco-letra-selector') { renderLetraGrid(); }
+    if (id === 'rosco-analisis')        { renderAnalisis(); }
 }
 
 function showToast(msg, dur = 2000) {
@@ -14781,16 +15231,29 @@ const curiosidades = [
 // --- Lógica de Curiosidad del Día ---
 // Usa el día 0 = hoy (primer uso), guardado en localStorage
 function getCuriosidadIdx() {
-  var HOY = new Date().toISOString().slice(0, 10); // "2026-03-13"
+  var HOY = new Date().toISOString().slice(0, 10);
   var inicio = localStorage.getItem('curiosidades_inicio');
+
   if (!inicio) {
-    localStorage.setItem('curiosidades_inicio', HOY);
-    inicio = HOY;
+    // Si no hay inicio pero sí hay histórico, recalcular el inicio
+    // para que el número de días desde inicio = número de curiosidades ya vistas
+    var hist = JSON.parse(localStorage.getItem('cur_historico') || '[]');
+    var vistas = hist.length;
+    if (vistas > 0) {
+      // El inicio fue hace 'vistas' días (la de hoy aún no está en histórico si no se ha visto)
+      var fechaInicio = new Date();
+      fechaInicio.setDate(fechaInicio.getDate() - vistas);
+      inicio = fechaInicio.toISOString().slice(0, 10);
+    } else {
+      inicio = HOY;
+    }
+    localStorage.setItem('curiosidades_inicio', inicio);
   }
+
   var msInicio = new Date(inicio).getTime();
   var msHoy    = new Date(HOY).getTime();
-  var diasDesde = Math.floor((msHoy - msInicio) / 86400000); // 0, 1, 2...
-  return diasDesde % curiosidades.length; // índice 0-364
+  var diasDesde = Math.floor((msHoy - msInicio) / 86400000);
+  return diasDesde % curiosidades.length;
 }
 
 function getCuriosidadDelDia() {
@@ -14869,28 +15332,46 @@ function cerrarCuriosidad() {
 const DIC_BASE_URL = 'https://alacreu-ia.github.io/Pasapalabra-Pro/diccionarios/';
 
 const DIC_CAMPOS = [
-    { id: 'gentilicio',    icon: '🌍', name: 'Gentilicios',         n: '~1.800' },
-    { id: 'botanica',      icon: '🌿', name: 'Botánica',            n: '~1.200' },
-    { id: 'zoologia',      icon: '🦎', name: 'Zoología',            n: '~400'   },
-    { id: 'medicina',      icon: '🏥', name: 'Medicina y Anatomía', n: '~110'   },
-    { id: 'nautica',       icon: '⛵', name: 'Náutica',             n: '~90'    },
-    { id: 'arte_literatura',icon: '🎨', name: 'Arte y Literatura',  n: '~730'   },
-    { id: 'musica',        icon: '🎵', name: 'Música',              n: '~125'   },
-    { id: 'religion',      icon: '⛪', name: 'Religión',            n: '~465'   },
-    { id: 'derecho',       icon: '⚖️', name: 'Derecho',            n: '~485'   },
-    { id: 'militar',       icon: '⚔️', name: 'Militar',            n: '~620'   },
-    { id: 'gastronomia',   icon: '🍷', name: 'Gastronomía',        n: '~177'   },
-    { id: 'comercio',      icon: '🏪', name: 'Comercio',            n: '~82'    },
-    { id: 'geografia',     icon: '🗺️', name: 'Geografía',          n: '~950'   },
-    { id: 'ciencia',       icon: '🔬', name: 'Ciencia',             n: '~159'   },
-    { id: 'filosofia',     icon: '🧠', name: 'Filosofía',           n: '~15'    },
-    { id: 'coloquial',     icon: '💬', name: 'Coloquial y vulgar',  n: '~1.750' },
-    { id: 'desusada',      icon: '⏳', name: 'Palabras en desuso',  n: '~4.650' },
-    { id: 'americanismo',  icon: '🌎', name: 'Americanismos',       n: '~1.050' },
-    { id: 'sustantivo',    icon: '📦', name: 'Sustantivos',         n: '~36.000'},
-    { id: 'adjetivo',      icon: '🎨', name: 'Adjetivos',           n: '~18.700'},
-    { id: 'verbo',         icon: '⚡', name: 'Verbos',              n: '~9.450' },
-    { id: 'adverbio',      icon: '↗️', name: 'Adverbios',          n: '~1.500' },
+    // GRAMATICALES
+    { id: 'sustantivo',      icon: '📦', name: 'Sustantivos',           n: '~33.400', grupo: 'gramatical' },
+    { id: 'adjetivo',        icon: '🎨', name: 'Adjetivos',             n: '~18.200', grupo: 'gramatical' },
+    { id: 'verbo',           icon: '⚡', name: 'Verbos',                n: '~9.200',  grupo: 'gramatical' },
+    { id: 'adverbio',        icon: '↗️', name: 'Adverbios',            n: '~1.200',  grupo: 'gramatical' },
+    // TEMÁTICAS
+    { id: 'gentilicio',      icon: '🌍', name: 'Gentilicios',           n: '~1.700',  grupo: 'tematica' },
+    { id: 'botanica',        icon: '🌿', name: 'Botánica',              n: '~1.100',  grupo: 'tematica' },
+    { id: 'zoologia',        icon: '🦎', name: 'Zoología',              n: '~410',    grupo: 'tematica' },
+    { id: 'cuerpo_humano',   icon: '🫀', name: 'Cuerpo humano',         n: '~220',    grupo: 'tematica' },
+    { id: 'medicina',        icon: '🏥', name: 'Medicina',              n: '~50',     grupo: 'tematica' },
+    { id: 'vestimenta',      icon: '👗', name: 'Vestimenta y moda',     n: '~330',    grupo: 'tematica' },
+    { id: 'gastronomia',     icon: '🍷', name: 'Gastronomía',           n: '~210',    grupo: 'tematica' },
+    { id: 'agricultura',     icon: '🌾', name: 'Agricultura y campo',   n: '~24',     grupo: 'tematica' },
+    { id: 'herramientas',    icon: '🔨', name: 'Herramientas y oficios',n: '~87',     grupo: 'tematica' },
+    { id: 'nautica',         icon: '⛵', name: 'Náutica',               n: '~87',     grupo: 'tematica' },
+    { id: 'militar',         icon: '⚔️', name: 'Militar',              n: '~39',     grupo: 'tematica' },
+    { id: 'politica',        icon: '🏛️', name: 'Política y gobierno',  n: '~58',     grupo: 'tematica' },
+    { id: 'derecho',         icon: '⚖️', name: 'Derecho',              n: '~485',    grupo: 'tematica' },
+    { id: 'religion',        icon: '⛪', name: 'Religión',              n: '~8',      grupo: 'tematica' },
+    { id: 'arte_literatura', icon: '🎨', name: 'Arte y Literatura',     n: '~240',    grupo: 'tematica' },
+    { id: 'musica',          icon: '🎵', name: 'Música',                n: '~125',    grupo: 'tematica' },
+    { id: 'juegos',          icon: '🎲', name: 'Juegos y entretenimiento', n: '~85', grupo: 'tematica' },
+    { id: 'comercio',        icon: '🏪', name: 'Comercio',              n: '~79',     grupo: 'tematica' },
+    { id: 'geografia',       icon: '🗺️', name: 'Geografía',            n: '~3',      grupo: 'tematica' },
+    { id: 'psicologia',      icon: '😢', name: 'Sentimientos y psicología', n: '~14', grupo: 'tematica' },
+    { id: 'filosofia',       icon: '🧠', name: 'Filosofía',             n: '~14',     grupo: 'tematica' },
+    { id: 'ciencia',         icon: '🔬', name: 'Ciencia',               n: '~14',     grupo: 'tematica' },
+    // REGISTRO
+    { id: 'culto',           icon: '📜', name: 'Palabras cultas',       n: '~173',    grupo: 'registro' },
+    { id: 'coloquial',       icon: '💬', name: 'Coloquial y vulgar',    n: '~1.750',  grupo: 'registro' },
+    { id: 'americanismo',    icon: '🌎', name: 'Americanismos',         n: '~1.870',  grupo: 'registro' },
+    // ETIMOLÓGICAS
+    { id: 'etym_latin',      icon: '🏛️', name: 'Origen latino',        n: '~11.960', grupo: 'etym' },
+    { id: 'etym_griego',     icon: '🏺', name: 'Origen griego',         n: '~1.210',  grupo: 'etym' },
+    { id: 'etym_arabe',      icon: '🕌', name: 'Origen árabe',          n: '~785',    grupo: 'etym' },
+    { id: 'etym_amerindio',  icon: '🪶', name: 'Origen amerindio',      n: '~752',    grupo: 'etym' },
+    { id: 'etym_frances',    icon: '🗼', name: 'Origen francés',        n: '~1.640',  grupo: 'etym' },
+    { id: 'etym_ingles',     icon: '🫖', name: 'Origen inglés',         n: '~584',    grupo: 'etym' },
+    { id: 'etym_italiano',   icon: '🍕', name: 'Origen italiano',       n: '~480',    grupo: 'etym' },
 ];
 
 const DIC_LETRAS = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','Ñ','O','P','Q','R','S','T','U','V','X','Y','Z'];
@@ -14921,11 +15402,56 @@ function mostrarFiltroLetra() {
                 btn.className = 'dic-letra-btn';
                 btn.textContent = l;
                 btn.onclick = function() { iniciarDiccionario('letra', l); };
+                // Mostrar badge de progreso si hay sesión guardada
+                var prog = dicLeerProgreso('letra', l);
+                if (prog && prog.idx > 0) {
+                    var pct = Math.round(prog.idx * 100 / prog.total);
+                    btn.style.borderColor = 'var(--gold)';
+                    btn.style.color = 'var(--gold)';
+                    btn.title = 'Llevas ' + prog.idx + '/' + prog.total + ' (' + pct + '%)';
+                }
                 grid.appendChild(btn);
             });
         }
         panel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
     }
+}
+
+
+function dicFiltroGrupo(grupo) {
+    // Actualizar botones
+    ['todos','gramatical','tematica','registro','etym'].forEach(function(g) {
+        var btn = document.getElementById('dg-' + g);
+        if (btn) btn.classList.remove('sel');
+    });
+    var selBtn = document.getElementById('dg-' + grupo);
+    if (selBtn) selBtn.classList.add('sel');
+
+    // Re-renderizar la grid filtrando por grupo
+    var grid = document.getElementById('dic-campos-grid');
+    if (!grid) return;
+    grid.innerHTML = '';
+    DIC_CAMPOS.forEach(function(c) {
+        if (grupo !== 'todos' && c.grupo !== grupo) return;
+        var row = document.createElement('div');
+        row.className = 'dic-campo-row';
+        row.innerHTML = '<div class="dic-campo-row-icon">' + c.icon + '</div>' +
+            '<div class="dic-campo-row-info">' +
+            '<div class="dic-campo-row-name">' + c.name + '</div>' +
+            '<div class="dic-campo-row-n">' + c.n + ' palabras</div>' +
+            '</div><div class="dic-campo-row-arr">›</div>';
+        // Mostrar progreso si existe
+        var progC = dicLeerProgreso('campo', c.id);
+        if (progC && progC.idx > 0) {
+            var pctC = Math.round(progC.idx * 100 / progC.total);
+            var badge = document.createElement('span');
+            badge.style.cssText = 'margin-left:auto;font-size:0.68rem;font-weight:700;color:var(--gold);background:var(--gold-dim);padding:2px 8px;border-radius:8px;flex-shrink:0;';
+            badge.textContent = pctC + '%';
+            row.querySelector('.dic-campo-row-info').appendChild(badge);
+        }
+        row.onclick = (function(campo){ return function(){ iniciarDiccionario('campo', campo); }; })(c.id);
+        grid.appendChild(row);
+    });
 }
 
 function mostrarFiltroCampo() {
@@ -14945,6 +15471,15 @@ function mostrarFiltroCampo() {
                     '<div class="dic-campo-row-n">' + c.n + ' palabras</div>' +
                     '</div><div class="dic-campo-row-arr">›</div>';
                 row.onclick = function() { iniciarDiccionario('campo', c.id); };
+                // Mostrar progreso guardado
+                var progC = dicLeerProgreso('campo', c.id);
+                if (progC && progC.idx > 0) {
+                    var pctC = Math.round(progC.idx * 100 / progC.total);
+                    var badge = document.createElement('span');
+                    badge.style.cssText = 'margin-left:auto;font-size:0.68rem;font-weight:700;color:var(--gold);background:var(--gold-dim);padding:2px 8px;border-radius:8px;';
+                    badge.textContent = pctC + '%';
+                    row.querySelector('.dic-campo-row-info').appendChild(badge);
+                }
                 grid.appendChild(row);
             });
         }
@@ -14952,11 +15487,386 @@ function mostrarFiltroCampo() {
     }
 }
 
-async function iniciarDiccionario(modo, filtro) {
+
+
+// ================================================================
+// DICCIONARIO RAE — MEJORAS v2
+// ================================================================
+
+// --- SRS ---
+function dicSrsKey(word) {
+    return 'dic_srs_' + word.toLowerCase().replace(/\s+/g, '_');
+}
+
+function dicGetSrs(word) {
+    var raw = localStorage.getItem(dicSrsKey(word));
+    if (!raw) return null;
+    try { return JSON.parse(raw); } catch(e) { return null; }
+}
+
+function dicSetSrs(word, nivel) {
+    var prev = dicGetSrs(word) || { reps: 0, nivel: 0 };
+    var dias = nivel === 1 ? 1 : nivel === 3 ? 7 : 30;
+    prev.nivel = nivel;
+    prev.reps  = (prev.reps || 0) + 1;
+    prev.due   = Date.now() + dias * 86400000;
+    prev.ts    = Date.now();
+    localStorage.setItem(dicSrsKey(word), JSON.stringify(prev));
+}
+
+function dicSrsEstado(word) {
+    var s = dicGetSrs(word);
+    if (!s) return 'nueva';
+    if (s.nivel === 1) return 'dificil';
+    if (s.nivel === 3) return 'repaso';
+    return 'dominada';
+}
+
+// --- STATS GLOBALES ---
+function dicActualizarStats() {
+    var vistas = 0, dom = 0, dif = 0;
+    var hoy = new Date().toDateString();
+    var hoyCount = parseInt(localStorage.getItem('dic_hoy_' + hoy) || '0');
+
+    for (var k in localStorage) {
+        if (!k.startsWith('dic_srs_')) continue;
+        try {
+            var s = JSON.parse(localStorage.getItem(k));
+            vistas++;
+            if (s.nivel === 5 || s.nivel === 4) dom++;
+            if (s.nivel === 1) dif++;
+        } catch(e) {}
+    }
+
+    var el = function(id) { return document.getElementById(id); };
+    if (el('dic-stat-vistas')) el('dic-stat-vistas').textContent = vistas;
+    if (el('dic-stat-dom'))    el('dic-stat-dom').textContent    = dom;
+    if (el('dic-stat-dif'))    el('dic-stat-dif').textContent    = dif;
+    if (el('dic-stat-hoy'))    el('dic-stat-hoy').textContent    = hoyCount;
+
+    // Difíciles count
+    if (el('dic-dif-count')) {
+        el('dic-dif-count').textContent = dif > 0
+            ? dif + ' palabras para repasar'
+            : 'Las que has marcado como difíciles';
+    }
+}
+
+// --- PALABRAS DEL DÍA ---
+function dicDiaKey() {
+    return 'dic_dia_' + new Date().toISOString().slice(0, 10);
+}
+
+function dicGetDia() {
+    var raw = localStorage.getItem(dicDiaKey());
+    if (!raw) return null;
+    try { return JSON.parse(raw); } catch(e) { return null; }
+}
+
+function dicActualizarDia() {
+    var dia = dicGetDia();
+    var badge = document.getElementById('dic-dia-badge');
+    var card  = document.getElementById('dic-dia-card');
+    var sub   = document.getElementById('dic-dia-sub');
+    if (!badge) return;
+    if (dia) {
+        var hechas = dia.vistas || 0;
+        badge.textContent = hechas + ' / ' + dia.palabras.length + ' completadas';
+        if (hechas >= dia.palabras.length) {
+            card.classList.add('dic-dia-done');
+            badge.textContent = '✔ ¡Completadas las ' + dia.palabras.length + ' palabras de hoy!';
+        } else {
+            card.classList.remove('dic-dia-done');
+        }
+        sub.textContent = 'Continúa tu sesión de hoy';
+    } else {
+        badge.textContent = '0 / 20 completadas';
+        sub.textContent = '20 palabras nuevas seleccionadas para hoy';
+        card.classList.remove('dic-dia-done');
+    }
+}
+
+async function prepararPalabrasDia() {
+    // Generar 20 palabras del día: priorizando nuevas y difíciles
+    var dia = dicGetDia();
+    if (dia) return dia.palabras; // ya están generadas hoy
+
+    // Cargar letras al azar para seleccionar
+    var letrasAleatorias = dicMezclar([...DIC_LETRAS]).slice(0, 5);
+    var candidatas = [];
+    for (var l of letrasAleatorias) {
+        try {
+            var data = await dicCargarLetra(l);
+            // Filtrar: no las ya dominadas, priorizar nuevas y difíciles
+            var filtradas = data.filter(function(p) {
+                var s = dicGetSrs(p.w);
+                if (!s) return true; // nueva — incluir
+                if (s.nivel === 1) return true; // difícil — incluir
+                if (s.nivel === 3 && s.due < Date.now()) return true; // toca repasar
+                return false;
+            });
+            candidatas = candidatas.concat(filtradas);
+        } catch(e) {}
+    }
+
+    var seleccion = dicMezclar(candidatas).slice(0, 20);
+    var nuevoDia = {
+        palabras: seleccion.map(function(p) { return {w:p.w, c:p.c, p:p.p}; }),
+        vistas: 0,
+        fecha: new Date().toISOString().slice(0, 10)
+    };
+    localStorage.setItem(dicDiaKey(), JSON.stringify(nuevoDia));
+    return nuevoDia.palabras;
+}
+
+// --- SOLO DIFÍCILES ---
+function dicGetDificiles() {
+    var difs = [];
+    for (var k in localStorage) {
+        if (!k.startsWith('dic_srs_')) continue;
+        try {
+            var s = JSON.parse(localStorage.getItem(k));
+            if (s.nivel === 1) {
+                var word = k.replace('dic_srs_', '').replace(/_/g, ' ');
+                difs.push(word);
+            }
+        } catch(e) {}
+    }
+    return difs;
+}
+
+// --- FILTRO DE DIFICULTAD ---
+var dicFiltroActivo = 'todas';
+
+function dicSetFiltro(f) {
+    dicFiltroActivo = f;
+    ['todas','nuevas','dificiles','repaso','dom'].forEach(function(id) {
+        var btn = document.getElementById('filt-' + id);
+        if (btn) btn.classList.remove('on');
+    });
+    var id = f === 'dificiles' ? 'filt-dificiles' : f === 'repaso' ? 'filt-repaso' : f === 'dominadas' ? 'filt-dom' : f === 'nuevas' ? 'filt-nuevas' : 'filt-todas';
+    var el = document.getElementById(id);
+    if (el) el.classList.add('on');
+
+    // Re-filtrar las palabras actuales
+    if (f === 'todas') {
+        // no filtrar
+        showToast('Mostrando todas las palabras');
+    } else {
+        var antes = dicState.palabras.length;
+        var filtradas = dicState.palabras.filter(function(p) {
+            var e = dicSrsEstado(p.w);
+            if (f === 'nuevas')     return e === 'nueva';
+            if (f === 'dificiles')  return e === 'dificil';
+            if (f === 'repaso')     return e === 'repaso';
+            if (f === 'dominadas')  return e === 'dominada';
+            return true;
+        });
+        if (filtradas.length === 0) {
+            showToast('No hay palabras con ese filtro');
+            return;
+        }
+        dicState.palabras = filtradas;
+        dicState.idx = 0;
+        dicMostrarPalabra();
+        showToast(filtradas.length + ' palabras filtradas');
+    }
+}
+
+// --- BÚSQUEDA ---
+var dicBuscarTimer = null;
+var dicBuscarCache = {};
+
+function dicBuscar(q) {
+    var res = document.getElementById('dic-search-results');
+    if (!q || q.length < 2) { res.classList.remove('visible'); return; }
+    clearTimeout(dicBuscarTimer);
+    dicBuscarTimer = setTimeout(async function() {
+        var letra = q[0].toUpperCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'');
+        if (!['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','X','Y','Z'].includes(letra)) letra = 'A';
+        if (letra === 'Ñ') letra = 'N';
+        try {
+            var data = await dicCargarLetra(letra);
+            var ql = q.toLowerCase();
+            var matches = data.filter(function(p) {
+                return p.w.toLowerCase().startsWith(ql) || p.w.toLowerCase().includes(ql);
+            }).slice(0, 8);
+
+            res.innerHTML = '';
+            if (matches.length === 0) {
+                res.innerHTML = '<div style="padding:10px;color:var(--muted);font-size:0.82rem;">Sin resultados</div>';
+            } else {
+                matches.forEach(function(p) {
+                    var item = document.createElement('div');
+                    item.className = 'dic-search-item';
+                    var estado = dicSrsEstado(p.w);
+                    var dot = estado === 'nueva' ? '' : estado === 'dificil' ? '🔴 ' : estado === 'repaso' ? '🟡 ' : '✔ ';
+                    item.innerHTML = '<span class="dic-search-word">' + dot + p.w + '</span><span class="dic-search-def">' + (p.d || '').substring(0, 60) + '</span>';
+                    item.onclick = function() {
+                        res.classList.remove('visible');
+                        document.getElementById('dic-search-input').value = '';
+                        // Iniciar sesión con solo esta palabra
+                        dicState.modo = 'busqueda';
+                        dicState.filtro = p.w;
+                        dicState.palabras = [p];
+                        dicState.idx = 0;
+                        dicState.revelado = false;
+                        document.getElementById('dic-rae-title').textContent = '🔍 ' + p.w;
+                        document.getElementById('dic-loading').style.display = 'none';
+                        document.getElementById('dic-content').style.display = 'flex';
+                        goTo('dic-rae');
+                        dicMostrarPalabra();
+                    };
+                    res.appendChild(item);
+                });
+            }
+            res.classList.add('visible');
+        } catch(e) {}
+    }, 300);
+}
+
+// --- PALABRAS RELACIONADAS ---
+function dicMostrarRelacionadas(p) {
+    var section = document.getElementById('dic-rel-section');
+    var wrap    = document.getElementById('dic-rel-words');
+    if (!section || !wrap) return;
+    wrap.innerHTML = '';
+
+    // Extraer palabras de los sinónimos
+    var syns = (p.s || '').replace(/Sin\.: /g,'').split(/[,|·]/).map(function(s){ return s.trim(); }).filter(function(s){ return s.length > 2 && s.length < 20 && !/^\d/.test(s); }).slice(0, 8);
+
+    if (syns.length === 0) { section.classList.remove('visible'); return; }
+
+    syns.forEach(function(syn) {
+        var tag = document.createElement('span');
+        tag.className = 'dic-rel-tag';
+        tag.textContent = syn;
+        tag.onclick = function() {
+            // Buscar y mostrar esta palabra
+            document.getElementById('dic-search-input').value = syn;
+            dicBuscar(syn);
+            // Hacer scroll al input
+            document.getElementById('dic-search-input').scrollIntoView({ behavior:'smooth', block:'nearest' });
+        };
+        wrap.appendChild(tag);
+    });
+    section.classList.add('visible');
+}
+
+// --- BADGE SRS en tarjeta ---
+function dicMostrarBadgeSrs(word) {
+    var badge = document.getElementById('dic-srs-badge');
+    if (!badge) return;
+    var e = dicSrsEstado(word);
+    badge.className = 'dic-srs-badge';
+    if (e === 'nueva') {
+        badge.classList.add('dic-srs-nueva'); badge.textContent = '🔵 Nueva';
+    } else if (e === 'dificil') {
+        badge.classList.add('dic-srs-dificil'); badge.textContent = '🔴 Difícil';
+    } else if (e === 'repaso') {
+        badge.classList.add('dic-srs-regular'); badge.textContent = '🟡 Repaso';
+    } else {
+        badge.classList.add('dic-srs-dominada'); badge.textContent = '✔ Dominada';
+    }
+    badge.style.display = '';
+}
+
+// --- LIMPIEZA DE DEFINICIONES CIRCULARES ---
+function dicLimpiarDefCircular(def, word) {
+    if (!def) return def;
+    // Si la definición es solo una referencia a otra palabra (ej: "m. bacalao.")
+    // mostrar "Ver también: X" de forma más útil
+    var circularMatch = def.match(/^([A-Za-záéíóúüñÁÉÍÓÚÜÑ]+)\./);
+    if (circularMatch && def.length < 30 && circularMatch[1].toLowerCase() !== word.toLowerCase()) {
+        return def + ' (→ buscar: ' + circularMatch[1] + ')';
+    }
+    return def;
+}
+
+// --- CONTADOR DIARIO ---
+function dicIncrementarHoy() {
+    var key = 'dic_hoy_' + new Date().toDateString();
+    var n = parseInt(localStorage.getItem(key) || '0') + 1;
+    localStorage.setItem(key, n);
+}
+
+// Clave única por modo+filtro
+function dicProgressKey(modo, filtro) {
+    return 'dic_pos_' + (modo||'') + '_' + (filtro||'todos');
+}
+
+// Guardar posición actual
+function dicGuardarProgreso() {
+    if (dicState.modo === 'aleatorio') return; // aleatorio no se guarda
+    var key = dicProgressKey(dicState.modo, dicState.filtro);
+    localStorage.setItem(key, JSON.stringify({
+        idx: dicState.idx,
+        total: dicState.palabras.length,
+        ts: Date.now()
+    }));
+}
+
+// Leer posición guardada
+function dicLeerProgreso(modo, filtro) {
+    if (modo === 'aleatorio') return null;
+    var key = dicProgressKey(modo, filtro);
+    var raw = localStorage.getItem(key);
+    if (!raw) return null;
+    try { return JSON.parse(raw); } catch(e) { return null; }
+}
+
+// Borrar posición (al terminar el mazo)
+function dicBorrarProgreso(modo, filtro) {
+    localStorage.removeItem(dicProgressKey(modo, filtro));
+}
+
+async function iniciarDiccionario(modo, filtro, desdeInicio) {
     dicState.modo   = modo;
     dicState.filtro = filtro;
     dicState.idx    = 0;
     dicState.revelado = false;
+
+    // Comprobar si hay progreso guardado
+    var progreso = dicLeerProgreso(modo, filtro);
+    if (progreso && progreso.idx > 0 && !desdeInicio) {
+        // Hay progreso — preguntar si continuar
+        var pct = Math.round(progreso.idx * 100 / progreso.total);
+        var msg = '¿Continuar donde lo dejaste?\n\n' +
+                  'Llevas ' + progreso.idx + ' de ' + progreso.total + ' palabras (' + pct + '%).\n\n' +
+                  'Pulsa Aceptar para continuar, Cancelar para empezar de cero.';
+        if (confirm(msg)) {
+            // Continuar — cargar todo y restaurar posición
+            goTo('dic-rae');
+            document.getElementById('dic-loading').style.display = 'flex';
+            document.getElementById('dic-content').style.display = 'none';
+            try {
+                var palabras = await dicCargarPalabras(modo, filtro);
+                if (!palabras || palabras.length === 0) {
+                    showToast('No hay palabras para este filtro');
+                    goTo('dic-selector'); return;
+                }
+                dicState.palabras = palabras;
+                // Restaurar índice guardado (no superar el total actual)
+                dicState.idx = Math.min(progreso.idx, palabras.length - 1);
+                var titulo = modo === 'aleatorio' ? '🎲 Aleatorio' :
+                             modo === 'letra'     ? '🔤 Letra ' + filtro :
+                             (DIC_CAMPO_ICONS[filtro] || filtro);
+                document.getElementById('dic-rae-title').textContent = titulo;
+                document.getElementById('dic-loading').style.display = 'none';
+                document.getElementById('dic-content').style.display = 'flex';
+                dicMostrarPalabra();
+            } catch(e) {
+                showToast('Error cargando el diccionario. ¿Hay conexión?');
+                goTo('dic-selector');
+            }
+            return;
+        } else {
+            // Empezar de cero — borrar progreso y llamarse de nuevo
+            dicBorrarProgreso(modo, filtro);
+            iniciarDiccionario(modo, filtro, true);
+            return;
+        }
+    }
 
     goTo('dic-rae');
     document.getElementById('dic-loading').style.display = 'flex';
@@ -14990,7 +15900,6 @@ async function iniciarDiccionario(modo, filtro) {
 
 async function dicCargarPalabras(modo, filtro) {
     if (modo === 'aleatorio') {
-        // Cargamos 3 letras al azar para una muestra variada inicial
         var letras = dicMezclar([...DIC_LETRAS]).slice(0, 3);
         var todas = [];
         for (var l of letras) {
@@ -15001,15 +15910,35 @@ async function dicCargarPalabras(modo, filtro) {
     } else if (modo === 'letra') {
         return await dicCargarLetra(filtro);
     } else if (modo === 'campo') {
-        // Cargar todas las letras y filtrar por campo
-        // Cargamos de a poco para no bloquear
         var todas = [];
         for (var l of DIC_LETRAS) {
             var data = await dicCargarLetra(l);
-            var filtradas = data.filter(function(p){ return p.c === filtro; });
+            var filtradas = data.filter(function(p){
+                if (filtro.startsWith('etym_')) return p.ec === filtro;
+                return p.c === filtro;
+            });
             todas = todas.concat(filtradas);
         }
         return todas;
+    } else if (modo === 'dia') {
+        // Palabras del día — generadas o recuperadas
+        return await prepararPalabrasDia();
+    } else if (modo === 'dificiles') {
+        // Solo las marcadas como difíciles en SRS
+        var words = dicGetDificiles();
+        if (words.length === 0) return [];
+        // Buscar los datos completos de esas palabras
+        var resultado = [];
+        var letrasNecesarias = [...new Set(words.map(function(w){
+            var l = w[0].toUpperCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'');
+            return ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','X','Y','Z'].includes(l) ? l : 'A';
+        }))];
+        for (var l of letrasNecesarias) {
+            var data = await dicCargarLetra(l);
+            var matches = data.filter(function(p){ return words.includes(p.w.toLowerCase().replace(/\s+/g,'_').replace(/_/g,' ')) || words.includes(p.w); });
+            resultado = resultado.concat(matches);
+        }
+        return resultado;
     }
     return [];
 }
@@ -15052,7 +15981,8 @@ function dicMostrarPalabra() {
 
     // Definición principal — limpiar marcas técnicas
     var defLimpia = dicLimpiarDef(p.d || p.df || '–');
-    document.getElementById('dic-def-main').textContent = defLimpia;
+    document.getElementById('dic-def-main').textContent = dicLimpiarDefCircular(defLimpia, p.w);
+    dicMostrarBadgeSrs(p.w);
 
     // Definición extra (acepciones adicionales)
     var defCompleta = p.df || '';
@@ -15076,11 +16006,10 @@ function dicMostrarPalabra() {
     // Reset secciones
     document.getElementById('dic-etym-section').classList.remove('visible');
     document.getElementById('dic-syn-section').classList.remove('visible');
-    document.getElementById('dic-ex-section').classList.remove('visible');
 
     // Reset botones
     document.getElementById('dic-btn-reveal').style.display = '';
-    document.getElementById('dic-btn-example').style.display = 'none';
+
     document.getElementById('dic-rate-row').classList.remove('visible');
     document.getElementById('dic-btn-next').classList.remove('visible');
 
@@ -15152,10 +16081,12 @@ function dicRevelar() {
     var linkEl = document.getElementById('dic-rae-link');
     linkEl.href = 'https://dle.rae.es/' + encodeURIComponent(p.w.toLowerCase());
     linkEl.style.display = 'block';
+    // Palabras relacionadas (sinónimos como tags clicables)
+    dicMostrarRelacionadas(p);
 
     // Mostrar botón ejemplo y ocultar reveal
     document.getElementById('dic-btn-reveal').style.display = 'none';
-    document.getElementById('dic-btn-example').style.display = '';
+
 
     // Mostrar calificación
     document.getElementById('dic-rate-row').classList.add('visible');
@@ -15164,63 +16095,21 @@ function dicRevelar() {
     document.getElementById('dic-back').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
 }
 
-async function dicGenerarEjemplo() {
-    var p = dicState.palabras[dicState.idx];
-    if (!p) return;
-    
-    var btn = document.getElementById('dic-btn-example');
-    btn.disabled = true;
-    btn.textContent = '⏳ Generando...';
 
-    var exSection = document.getElementById('dic-ex-section');
-    var exText    = document.getElementById('dic-ex-text');
-    var exLoading = document.getElementById('dic-ex-loading');
-    
-    exSection.classList.add('visible');
-    exLoading.style.display = 'block';
-    exText.textContent = '';
-
-    try {
-        var prompt = 'Escribe UNA frase de ejemplo en español que use la palabra "' + p.w + '" (' + (p.p||'') + ', ' + dicLimpiarDef(p.d) + '). La frase debe ser elegante, culta y breve (máximo 20 palabras). Solo la frase, sin comillas ni explicaciones.';
-        
-        var resp = await fetch('https://api.anthropic.com/v1/messages', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({
-                model: 'claude-sonnet-4-20250514',
-                max_tokens: 100,
-                messages: [{ role: 'user', content: prompt }]
-            })
-        });
-        var data = await resp.json();
-        var ejemplo = data.content && data.content[0] ? data.content[0].text.trim() : '';
-        
-        exLoading.style.display = 'none';
-        exText.textContent = ejemplo || 'No se pudo generar el ejemplo.';
-        
-        btn.textContent = '✓ Ejemplo generado';
-        btn.disabled = true;
-    } catch(e) {
-        exLoading.style.display = 'none';
-        exText.textContent = 'Error generando el ejemplo. ¿Hay conexión?';
-        btn.textContent = '💡 Ejemplo';
-        btn.disabled = false;
-    }
-}
 
 function dicCalificar(nivel) {
-    // Guardar en localStorage la calificación (clave dic_[word])
     var p = dicState.palabras[dicState.idx];
     if (p) {
-        var key = 'dic_' + p.w.toLowerCase().replace(/\s+/g,'_');
-        var prev = JSON.parse(localStorage.getItem(key) || '{}');
-        prev.nivel = nivel;
-        prev.ts = Date.now();
-        prev.rep = (prev.rep || 0) + 1;
-        localStorage.setItem(key, JSON.stringify(prev));
+        // SRS real
+        dicSetSrs(p.w, nivel);
+        // Contador diario
+        dicIncrementarHoy();
+        // Si es modo día, actualizar progreso
+        if (dicState.modo === 'dia') {
+            var dia = dicGetDia();
+            if (dia) { dia.vistas = (dia.vistas||0) + 1; localStorage.setItem(dicDiaKey(), JSON.stringify(dia)); }
+        }
     }
-
-    // Ocultar rating, mostrar siguiente
     document.getElementById('dic-rate-row').classList.remove('visible');
     document.getElementById('dic-btn-next').classList.add('visible');
     document.getElementById('dic-btn-next').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
@@ -15228,11 +16117,14 @@ function dicCalificar(nivel) {
 
 function dicSiguiente() {
     dicState.idx++;
+    // Guardar progreso en cada avance (excepto aleatorio)
+    dicGuardarProgreso();
+
     if (dicState.idx >= dicState.palabras.length) {
-        // Fin del mazo
+        // Fin del mazo — borrar progreso guardado
+        dicBorrarProgreso(dicState.modo, dicState.filtro);
         showToast('¡Has repasado todas las palabras! 🎉');
         if (dicState.modo === 'aleatorio') {
-            // En aleatorio, seguir cargando más
             dicCargarMasAleatorio().then(function(){
                 if (dicState.idx < dicState.palabras.length) dicMostrarPalabra();
                 else goTo('dic-selector');
@@ -15243,6 +16135,73 @@ function dicSiguiente() {
         return;
     }
     dicMostrarPalabra();
+}
+
+
+// ================================================================
+// ROSCO — PAUSA, TIEMPO CONFIGURABLE, ROSCO INFINITO
+// ================================================================
+
+var roscoEnPausa = false;
+var roscoTiempoConfig = 210; // 3:30 por defecto
+var roscoInfinitoCont = 0;
+var roscoState = { soloLetra: null };
+
+function togglePausaRosco() {
+    roscoEnPausa = !roscoEnPausa;
+    var overlay = document.getElementById('rosco-pause-overlay');
+    var btn     = document.getElementById('rosco-pause-btn');
+    if (roscoEnPausa) {
+        clearInterval(roscoTimerInterval);
+        if (typeof stopVoice === 'function') stopVoice();
+        if (typeof stopSpeak === 'function') stopSpeak();
+        overlay.classList.add('visible');
+        btn.textContent = '▶ Continuar';
+        btn.classList.add('paused');
+        var m = Math.floor(roscoTimerVal/60), s = roscoTimerVal % 60;
+        var pt = document.getElementById('pause-timer-text');
+        if (pt) pt.textContent = 'Tiempo restante: ' + m + ':' + (s < 10 ? '0' : '') + s;
+    } else {
+        overlay.classList.remove('visible');
+        btn.textContent = '⏸ Pausa';
+        btn.classList.remove('paused');
+        if (roscoTimerVal > 0) roscoTimerInterval = setInterval(tickRosco, 1000);
+    }
+}
+
+function confirmarAbandonarRosco() {
+    if (!roscoEnPausa) togglePausaRosco();
+    if (confirm('¿Abandonar el rosco? Se perderá el progreso de esta partida.')) {
+        abandonarRosco();
+    } else {
+        if (roscoEnPausa) togglePausaRosco();
+    }
+}
+
+function setRoscoTime(seg) {
+    roscoTiempoConfig = seg;
+    [90, 150, 210, 300, 0].forEach(function(t) {
+        var btn = document.getElementById('rt-' + t);
+        if (btn) btn.classList.remove('sel');
+    });
+    var selBtn = document.getElementById('rt-' + seg);
+    if (selBtn) selBtn.classList.add('sel');
+}
+
+function finishRoscoMejoras() {
+    if (roscoState && roscoState.soloLetra) return;
+    roscoInfinitoCont++;
+    if (roscoInfinitoCont >= 2) {
+        setTimeout(function() {
+            if (confirm('🔁 ¿Hacer otro rosco?\n\nLlevas ' + roscoInfinitoCont + ' roscos seguidos. ¡Sigue!')) {
+                roscoInfinitoCont = 0;
+                startRosco();
+                goTo('rosco');
+            } else {
+                roscoInfinitoCont = 0;
+            }
+        }, 2500);
+    }
 }
 
 window.onload = function () {
@@ -15771,11 +16730,11 @@ function endGameSession() {
         msg = opts[Math.floor(Math.random() * opts.length)];
     }
 
-    document.getElementById('end-emoji').textContent  = emoji;
-    document.getElementById('end-title').textContent  = titulo;
-    document.getElementById('end-msg').textContent    = msg;
-    document.getElementById('end-score').textContent  = gameCorrect + '/' + total + ' (' + pct + '%)';
-    goTo('end');
+    document.getElementById('result-emoji').textContent  = emoji;
+    document.getElementById('result-title').textContent  = titulo;
+    document.getElementById('result-msg').textContent    = msg;
+    document.getElementById('result-stats').textContent  = gameCorrect + '/' + total + ' (' + pct + '%)';
+    document.getElementById('result-overlay').classList.add('active');
 }
 
 function closeResult() {
@@ -16060,6 +17019,9 @@ let roscoTimerVal  = 230;
 let roscoTimerInterval = null;
 let voiceEnabled   = false;
 let recognition    = null;
+var roscoState     = { soloLetra: null };
+var roscoEnPausa   = false;
+var roscoTiempoConfig = 210;
 
 function buildRosco() {
     const byLetter = {};
@@ -16177,9 +17139,14 @@ function buildRosco() {
 
 function startRosco() {
     clearInterval(roscoTimerInterval);
+    roscoState.soloLetra = null;
     buildRosco();
-    roscoTimerVal = 230;
+    roscoTimerVal = roscoTiempoConfig > 0 ? roscoTiempoConfig : 9999;
     document.getElementById('rosco-fail-btn').style.display = 'none';
+    roscoEnPausa = false;
+    document.getElementById('rosco-pause-overlay').classList.remove('visible');
+    var pb = document.getElementById('rosco-pause-btn');
+    if (pb) { pb.textContent = '⏸ Pausa'; pb.classList.remove('paused'); }
     drawRoscoWheel();
     showRoscoQuestion();
     roscoTimerInterval = setInterval(tickRosco, 1000);
@@ -16190,19 +17157,30 @@ function abandonarRosco() {
     stopVoice();
     stopSpeak();
     roscoMode = 'silent';
+    roscoEnPausa = false;
+    roscoState.soloLetra = null;
+    var overlay = document.getElementById('rosco-pause-overlay');
+    if (overlay) overlay.classList.remove('visible');
     goTo('home');
 }
 
 function tickRosco() {
-    roscoTimerVal--;
+    if (roscoTimerVal < 9000) {
+        roscoTimerVal--;
+        if (roscoTimerVal <= 0) { clearInterval(roscoTimerInterval); finishRosco(); return; }
+    }
     updateRoscoTimer();
-    if (roscoTimerVal <= 0) { clearInterval(roscoTimerInterval); finishRosco(); }
 }
 
 function updateRoscoTimer() {
+    const el = document.getElementById('rosco-timer');
+    if (roscoTimerVal >= 9000) {
+        el.textContent = '∞';
+        el.classList.remove('danger');
+        return;
+    }
     const m  = Math.floor(roscoTimerVal / 60);
     const s  = roscoTimerVal % 60;
-    const el = document.getElementById('rosco-timer');
     el.textContent = `${m}:${s.toString().padStart(2, '0')}`;
     el.classList.toggle('danger', roscoTimerVal <= 30);
 }
@@ -16313,7 +17291,10 @@ function repetirFallos() {
     roscoCurrentIdx = 0;
     document.getElementById('rosco-fail-btn').style.display = 'none';
     clearInterval(roscoTimerInterval);
-    roscoTimerVal = 230;
+    roscoTimerVal = (typeof roscoTiempoConfig !== 'undefined' && roscoTiempoConfig > 0) ? roscoTiempoConfig : (roscoTiempoConfig === 0 ? 9999 : 210);
+    roscoEnPausa = false;
+    if (document.getElementById('rosco-pause-overlay')) document.getElementById('rosco-pause-overlay').classList.remove('visible');
+    var pb = document.getElementById('rosco-pause-btn'); if (pb) { pb.textContent = '⏸ Pausa'; pb.classList.remove('paused'); }
     drawRoscoWheel();
     showRoscoQuestion();
     roscoTimerInterval = setInterval(tickRosco, 1000);
@@ -16335,6 +17316,9 @@ function finishRosco() {
     const total = roscoOrder.length;
 
     if (fail > 0) document.getElementById('rosco-fail-btn').style.display = 'block';
+    if (typeof finishRoscoMejoras === 'function') finishRoscoMejoras();
+    // Rosco infinito
+    finishRoscoMejoras();
 
     // Mensajes según resultado del rosco
     const pctRosco = Math.round((ok / total) * 100);
@@ -17119,3 +18103,230 @@ function actualizarApp() {
 
 </div>
 </div>
+
+<script>
+// ================================================================
+// ENTRENAMIENTO POR LETRA — versión correcta
+// Usa una pantalla de rosco simplificada, no el wheel de 25 letras
+// ================================================================
+
+var roscoLetraActual = null;
+var roscoLetraPreguntas = [];
+var roscoLetraIdx = 0;
+var roscoLetraOk = 0;
+var roscoLetraFail = 0;
+
+
+
+// Oculta el view-smart-study (div fixed) antes de navegar a una screen
+function ocultarEstudioIrA(screenId) {
+    var view = document.getElementById('view-smart-study');
+    if (view) view.style.display = 'none';
+    document.querySelectorAll('.screen').forEach(function(s){ s.classList.remove('active'); });
+    var pantalla = document.getElementById(screenId);
+    if (pantalla) pantalla.classList.add('active');
+}
+
+function abrirEntrenamientoLetra() {
+    // Ocultar los dos divs fixed del estudio inteligente
+    var vss = document.getElementById('view-study-selector');
+    var vsm = document.getElementById('view-smart-study');
+    if (vss) vss.style.display = 'none';
+    if (vsm) vsm.style.display = 'none';
+    renderLetraGrid();
+    // Activar la screen directamente
+    document.querySelectorAll('.screen').forEach(function(s){ s.classList.remove('active'); });
+    var p = document.getElementById('rosco-letra-selector');
+    if (p) p.classList.add('active');
+}
+
+function cerrarEntrenamientoLetra() {
+    // Volver al home y reabrir el selector del estudio
+    goTo('home');
+    var vss = document.getElementById('view-study-selector');
+    if (vss) vss.style.display = 'flex';
+}
+
+function renderLetraGrid() {
+    var grid = document.getElementById('letra-grid-grande');
+    if (!grid) return;
+    grid.innerHTML = '';
+    var letters = JSON.parse(localStorage.getItem('ppro_letters') || '{}');
+    var LA = ['A','B','C','D','E','F','G','H','I','J','L','M','N','\u00d1','O','P','Q','R','S','T','U','V','X','Y','Z'];
+    LA.forEach(function(l) {
+        var d = letters[l] || {ok:0, fail:0};
+        var tot = d.ok + d.fail;
+        var pct = tot ? Math.round(100 * d.ok / tot) : null;
+        var btn = document.createElement('div');
+        btn.className = 'letra-btn-grande';
+        if (pct !== null) btn.classList.add(pct >= 70 ? 'lbg-ok' : pct >= 40 ? 'lbg-mid' : 'lbg-bad');
+        var col = pct === null ? 'var(--muted)' : pct >= 70 ? 'var(--green)' : pct >= 40 ? 'var(--gold)' : 'var(--red)';
+        btn.innerHTML = '<span class="lbg-letra">' + l + '</span><span class="lbg-pct" style="color:' + col + '">' + (pct !== null ? pct + '%' : '\u2013') + '</span>';
+        btn.onclick = (function(ll){ return function(){ iniciarEntrenamientoLetra(ll); }; })(l);
+        grid.appendChild(btn);
+    });
+}
+
+function iniciarEntrenamientoLetra(letra) {
+    // Recoger preguntas de esa letra de todos los mazos
+    var pool = [];
+    if (typeof MAZOS !== 'undefined') {
+        MAZOS.forEach(function(m) {
+            m.questions.forEach(function(q) {
+                if (q.letra === letra) pool.push(q);
+            });
+        });
+    }
+    if (pool.length === 0) {
+        showToast('No hay preguntas para la letra ' + letra);
+        return;
+    }
+    // Mezclar y coger hasta 10
+    pool.sort(function(){ return Math.random() - 0.5; });
+    roscoLetraPreguntas = pool.slice(0, Math.min(10, pool.length));
+    roscoLetraActual    = letra;
+    roscoLetraIdx       = 0;
+    roscoLetraOk        = 0;
+    roscoLetraFail      = 0;
+
+    // Montar la pantalla de entrenamiento
+    mostrarPreguntaLetra();
+    ocultarEstudioIrA('rosco-letra-juego');
+}
+
+function mostrarPreguntaLetra() {
+    var total = roscoLetraPreguntas.length;
+    if (roscoLetraIdx >= total) {
+        // Fin del entrenamiento
+        var pct = Math.round(100 * roscoLetraOk / total);
+        var msg = '\ud83d\udcca Resultado letra ' + roscoLetraActual + '\n\n' +
+                  '\u2714 Aciertos: ' + roscoLetraOk + '\n' +
+                  '\u2716 Fallos: ' + roscoLetraFail + '\n' +
+                  'Porcentaje: ' + pct + '%';
+        showToast('\u2714 ' + roscoLetraOk + '/' + total + ' (' + pct + '%) en la ' + roscoLetraActual, 4000);
+        setTimeout(function(){ ocultarEstudioIrA('rosco-letra-selector'); renderLetraGrid(); }, 1500);
+        return;
+    }
+    var q = roscoLetraPreguntas[roscoLetraIdx];
+    document.getElementById('rle-counter').textContent = (roscoLetraIdx + 1) + ' / ' + total;
+    document.getElementById('rle-title').textContent = '🔤 Letra ' + roscoLetraActual;
+    document.getElementById('rle-ok').textContent   = roscoLetraOk;
+    document.getElementById('rle-fail').textContent = roscoLetraFail;
+    document.getElementById('rle-letra').textContent = roscoLetraActual;
+    document.getElementById('rle-pregunta').textContent = q.q;
+    document.getElementById('rle-answer').value = '';
+    document.getElementById('rle-feedback').textContent = '';
+    document.getElementById('rle-feedback').style.display = 'none';
+    document.getElementById('rle-btn-next').style.display = 'none';
+    document.getElementById('rle-btn-submit').style.display = '';
+    document.getElementById('rle-answer').focus();
+    // Barra progreso
+    var pct = Math.round(roscoLetraIdx * 100 / total);
+    document.getElementById('rle-progress').style.width = pct + '%';
+}
+
+function submitLetraAnswer() {
+    var q = roscoLetraPreguntas[roscoLetraIdx];
+    var resp = document.getElementById('rle-answer').value.trim();
+    if (!resp) return;
+
+    var norm = function(s){ return s.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').trim(); };
+    var correcto = norm(resp) === norm(q.a);
+
+    // Feedback visual
+    var fb = document.getElementById('rle-feedback');
+    fb.style.display = 'block';
+    if (correcto) {
+        roscoLetraOk++;
+        fb.style.color = 'var(--green)';
+        fb.textContent = '\u2714 \u00a1Correcto! ' + q.a;
+        _ppTrackLetter(roscoLetraActual, true);
+    } else {
+        roscoLetraFail++;
+        fb.style.color = 'var(--red)';
+        fb.textContent = '\u2716 La respuesta era: ' + q.a;
+        _ppTrackLetter(roscoLetraActual, false);
+        // Guardar en el hospital de tarjetas (SRS nivel 0 = toca repasar ya)
+        var srsData = loadStudyData();
+        var id = q.q;
+        if (!srsData[id]) srsData[id] = { level: 0, nextReview: 0 };
+        srsData[id].level = 0;
+        srsData[id].nextReview = Date.now();
+        saveStudyData(srsData);
+    }
+    document.getElementById('rle-btn-submit').style.display = 'none';
+    document.getElementById('rle-btn-next').style.display = 'block';
+    document.getElementById('rle-btn-next').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+}
+
+function nextLetraQuestion() {
+    roscoLetraIdx++;
+    mostrarPreguntaLetra();
+}
+
+// --- ANÁLISIS ---
+function renderAnalisis() {
+    var body = document.getElementById('analisis-body');
+    if (!body) return;
+    var letters = JSON.parse(localStorage.getItem('ppro_letters') || '{}');
+    var usage   = JSON.parse(localStorage.getItem('ppro_usage') || '{"sessions":[],"byDeck":{}}');
+    var byDeck  = usage.byDeck || {};
+    var LA = ['A','B','C','D','E','F','G','H','I','J','L','M','N','\u00d1','O','P','Q','R','S','T','U','V','X','Y','Z'];
+
+    var letraData = LA.map(function(l) {
+        var d = letters[l] || {ok:0, fail:0};
+        var tot = d.ok + d.fail;
+        return { l:l, pct: tot ? Math.round(100*d.ok/tot) : null, tot:tot, ok:d.ok||0, fail:d.fail||0 };
+    }).filter(function(x){ return x.tot > 0; }).sort(function(a,b){ return a.pct - b.pct; });
+
+    if (letraData.length === 0) {
+        body.innerHTML = '<div style="padding:40px;text-align:center;color:var(--muted);">Haz roscos para ver tu an\u00e1lisis \ud83d\udcaa</div>';
+        return;
+    }
+
+    var html = '';
+
+    html += '<div class="analisis-section-label">\ud83d\udd34 Letras m\u00e1s dif\u00edciles <span style="font-size:0.7rem;color:var(--muted);font-weight:400;">(pulsa para entrenar)</span></div>';
+    letraData.slice(0, 8).forEach(function(x) {
+        var col = x.pct < 40 ? 'var(--red)' : x.pct < 70 ? 'var(--gold)' : 'var(--green)';
+        html += '<div class="analisis-bar-row" onclick="iniciarEntrenamientoLetra(\'' + x.l + '\')" style="cursor:pointer;">' +
+            '<div class="analisis-letra">' + x.l + '</div>' +
+            '<div class="analisis-bar-wrap"><div class="analisis-bar-fill" style="width:' + x.pct + '%;background:' + col + ';"></div></div>' +
+            '<div class="analisis-pct" style="color:' + col + '">' + x.pct + '%</div>' +
+            '<div class="analisis-count">' + x.ok + '/' + x.tot + '</div>' +
+            '</div>';
+    });
+
+    html += '<div class="analisis-section-label">\ud83d\udcca Todas las letras</div>';
+    [...letraData].sort(function(a,b){ return a.l.localeCompare(b.l,'es'); }).forEach(function(x) {
+        var col = x.pct < 40 ? 'var(--red)' : x.pct < 70 ? 'var(--gold)' : 'var(--green)';
+        html += '<div class="analisis-bar-row">' +
+            '<div class="analisis-letra">' + x.l + '</div>' +
+            '<div class="analisis-bar-wrap"><div class="analisis-bar-fill" style="width:' + x.pct + '%;background:' + col + ';"></div></div>' +
+            '<div class="analisis-pct" style="color:' + col + '">' + x.pct + '%</div>' +
+            '<div class="analisis-count">' + x.ok + '/' + x.tot + '</div>' +
+            '</div>';
+    });
+
+    if (Object.keys(byDeck).length > 0) {
+        html += '<div class="analisis-section-label">\ud83d\udcda Por mazo</div>';
+        Object.entries(byDeck).sort(function(a,b){
+            var pa = a[1].answered ? a[1].correct/a[1].answered : 1;
+            var pb = b[1].answered ? b[1].correct/b[1].answered : 1;
+            return pa - pb;
+        }).forEach(function(e) {
+            var id = e[0], d = e[1];
+            var pct = d.answered ? Math.round(100*d.correct/d.answered) : 0;
+            var col = pct < 40 ? 'var(--red)' : pct < 70 ? 'var(--gold)' : 'var(--green)';
+            var nm = (typeof MAZOS !== 'undefined') ? ((MAZOS.find(function(m){ return m.id===id; })||{}).name||id) : id;
+            html += '<div class="analisis-mazo-row"><div class="analisis-mazo-name">' + nm + '</div>' +
+                '<div class="analisis-mazo-stats" style="color:' + col + '">' + pct + '% (' + d.answered + ' resp.)</div></div>';
+        });
+    }
+
+    body.innerHTML = html;
+}
+</script>
+
+</body>
+</html>
