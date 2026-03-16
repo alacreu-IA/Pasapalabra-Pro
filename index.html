@@ -15253,17 +15253,18 @@ function getCuriosidadIdx() {
   var inicio = localStorage.getItem('curiosidades_inicio');
 
   if (!inicio) {
-    // Si no hay inicio pero sí hay histórico, recalcular el inicio
-    // para que el número de días desde inicio = número de curiosidades ya vistas
+    // Recalcular desde el histórico si existe
     var hist = JSON.parse(localStorage.getItem('cur_historico') || '[]');
     var vistas = hist.length;
     if (vistas > 0) {
-      // El inicio fue hace 'vistas' días (la de hoy aún no está en histórico si no se ha visto)
+      // Retroceder tantos días como curiosidades ya vistas
       var fechaInicio = new Date();
       fechaInicio.setDate(fechaInicio.getDate() - vistas);
       inicio = fechaInicio.toISOString().slice(0, 10);
     } else {
-      inicio = HOY;
+      // Fallback: Noemi empezó el 13/03/2026 (día 1 = sombrerero)
+      // Esto garantiza que nunca vuelva al día 1 aunque se pierda todo
+      inicio = '2026-03-13';
     }
     localStorage.setItem('curiosidades_inicio', inicio);
   }
@@ -15951,8 +15952,10 @@ async function dicCargarPalabras(modo, filtro) {
         // Palabras del día — generadas o recuperadas
         return await prepararPalabrasDia();
     } else if (modo === 'dificiles') {
+        // Solo las marcadas como difíciles en SRS
         var words = dicGetDificiles();
         if (words.length === 0) return [];
+        // Buscar los datos completos de esas palabras
         var resultado = [];
         var letrasNecesarias = [...new Set(words.map(function(w){
             var l = w[0].toUpperCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'');
@@ -15965,13 +15968,10 @@ async function dicCargarPalabras(modo, filtro) {
         }
         return resultado;
     } else if (modo === 'especial') {
-        // filtro = 'larga' | 'onom' | 'explosiva' | 'viajera'
         var todas = [];
         for (var l of DIC_LETRAS) {
             var data = await dicCargarLetra(l);
-            var filtradas = data.filter(function(p){
-                return p.esp && p.esp.includes(filtro);
-            });
+            var filtradas = data.filter(function(p){ return p.esp && p.esp.includes(filtro); });
             todas = todas.concat(filtradas);
         }
         return dicMezclar(todas);
@@ -16013,7 +16013,8 @@ function dicMostrarPalabra() {
     var campoInfo = DIC_CAMPOS.find(function(c){ return c.id === p.c; });
     var badgeText = campoInfo ? campoInfo.icon + ' ' + campoInfo.name : (p.c || '–');
     document.getElementById('dic-badge').textContent = badgeText;
-    document.getElementById('dic-pos').textContent = p.p || '';
+    var primeraLetra = (p.w || '').charAt(0).toUpperCase();
+    document.getElementById('dic-pos').textContent = (p.p || '') + (primeraLetra ? '  ·  Empieza por ' + primeraLetra : '');
 
     // Definición principal — limpiar marcas técnicas
     var defLimpia = dicLimpiarDef(p.d || p.df || '–');
@@ -16309,8 +16310,13 @@ function autoBackupDiario() {
         var today = new Date().toISOString().slice(0, 10);
         var lastBackup = localStorage.getItem('last_auto_backup');
         // Solo una vez al día, y solo si hay datos que guardar
-        var difs = JSON.parse(localStorage.getItem('dificiles') || '[]');
-        if (lastBackup === today || difs.length === 0) return;
+        if (lastBackup === today) return; // ya se hizo hoy
+        // Disparar si hay cualquier progreso relevante
+        var hayProgreso = localStorage.getItem('pasapalabra_srs') ||
+                          localStorage.getItem('ppro_letters') ||
+                          localStorage.getItem('ppro_usage') ||
+                          localStorage.getItem('streak');
+        if (!hayProgreso) return;
 
         // Recopilar TODO el localStorage
         var backup = { exportado: new Date().toISOString(), datos: {} };
@@ -16832,8 +16838,9 @@ function showRaeCard() {
     // FRONT: show ONLY first definition
     document.getElementById('rae-def-text').textContent = parts[0] || '–';
 
-    // POS badge
-    document.getElementById('rae-cat').textContent = data.pos || '–';
+    // POS badge + primera letra
+    var letra = (data.word || '').charAt(0).toUpperCase();
+    document.getElementById('rae-cat').textContent = (data.pos || '–') + '  ·  Empieza por ' + letra;
 
     // Hint about extra definitions
     var hint = document.getElementById('rae-acep-hint');
@@ -17925,7 +17932,7 @@ function openExternalUrl(url) {
 
 function renderDashboard(){try{var u=JSON.parse(localStorage.getItem('ppro_usage')||'{"sessions":[],"byDeck":{},"daily":{}}');var letters=JSON.parse(localStorage.getItem('ppro_letters')||'{}');var roscoH=JSON.parse(localStorage.getItem('ppro_rosco_hist')||'[]');var sessions=u.sessions||[],byDeck=u.byDeck||{},daily=u.daily||{};var totalQ=sessions.reduce(function(s,x){return s+(x.answered||0);},0);var totalOk=sessions.reduce(function(s,x){return s+(x.correct||0);},0);var totalMin=sessions.reduce(function(s,x){return s+(x.minutes||0);},0);var pct=totalQ?Math.round(100*totalOk/totalQ):0;var today=new Date().toISOString().slice(0,10);var todayMin=sessions.filter(function(s){return s.date===today;}).reduce(function(s,x){return s+(x.minutes||0);},0);var streak=0;for(var i=0;i<365;i++){var dd=new Date();dd.setDate(dd.getDate()-i);if((daily[dd.toISOString().slice(0,10)]||0)>0)streak++;else if(i>0)break;}document.getElementById('db-total').textContent=totalQ.toLocaleString('es');document.getElementById('db-pct').textContent=pct+'%';document.getElementById('db-streak').textContent=streak+'d';document.getElementById('db-today').textContent=todayMin<60?todayMin+'min':Math.floor(todayMin/60)+'h '+(todayMin%60?todayMin%60+'m':'');document.getElementById('db-total-time').textContent=Math.round(totalMin/60)+'h';var heat=document.getElementById('db-heatmap');heat.innerHTML='';var vals=Object.values(daily).map(Number);var maxD=vals.length?Math.max.apply(null,[1].concat(vals)):1;for(var j=69;j>=0;j--){var dj=new Date();dj.setDate(dj.getDate()-j);var kj=dj.toISOString().slice(0,10);var vj=daily[kj]||0;var aj=vj?Math.max(0.15,vj/maxD):0;var cel=document.createElement('div');cel.style.cssText='width:11px;height:11px;border-radius:2px;background:'+(vj?'rgba(240,192,64,'+aj.toFixed(2)+')':'var(--border2)')+';';cel.title=kj+': '+vj+' preguntas';heat.appendChild(cel);}var deckEl=document.getElementById('db-by-deck');var entries=Object.entries(byDeck).sort(function(a,b){return b[1].answered-a[1].answered;});deckEl.innerHTML=entries.length?entries.map(function(e){var id=e[0],data=e[1];var p=data.answered?Math.round(100*data.correct/data.answered):0;var col=p>=70?'var(--green)':p>=40?'var(--gold)':'var(--red)';var nm=(typeof MAZOS!=='undefined')?((MAZOS.find(function(m){return m.id===id;})||{}).name||id):id;return '<div style="margin-bottom:10px;"><div style="display:flex;justify-content:space-between;font-size:0.74rem;margin-bottom:3px;"><span>'+nm+'</span><span style="color:'+col+'">'+p+'% ('+data.answered+')</span></div><div style="background:var(--border2);border-radius:5px;height:6px;"><div style="width:'+p+'%;background:'+col+';border-radius:5px;height:6px;"></div></div></div>';}).join(''):'<p style="color:var(--muted);font-size:0.8rem;text-align:center;padding:8px;">Practica para ver tus stats \U0001f4aa</p>';var hlEl=document.getElementById('db-hard-letters');var lArr=Object.entries(letters).map(function(e){var l=e[0],d=e[1];return{l:l,pct:(d.ok+d.fail)?Math.round(100*(d.ok||0)/(d.ok+d.fail)):100};}).sort(function(a,b){return a.pct-b.pct;}).slice(0,10);hlEl.innerHTML=lArr.length?lArr.map(function(x){var col=x.pct<50?'var(--red)':x.pct<70?'var(--gold)':'var(--green)';return '<div style="background:var(--card2);border:1px solid '+(x.pct<50?'var(--red)':'var(--border2)')+';border-radius:9px;padding:5px 11px;display:flex;align-items:center;gap:6px;font-size:0.8rem;"><strong style="font-size:1.05rem">'+x.l+'</strong><span style="color:'+col+'">'+x.pct+'%</span></div>';}).join(''):'<span style="color:var(--muted);font-size:0.8rem;">Sin datos a\u00fan, \u00a1haz el rosco!</span>';var rEl=document.getElementById('db-rosco-hist');rEl.innerHTML=roscoH.length?roscoH.slice(-8).reverse().map(function(r){var p=r.total?Math.round(100*r.ok/r.total):0;var col=p>=70?'var(--green)':p>=40?'var(--gold)':'var(--red)';return '<div style="display:flex;align-items:center;gap:8px;font-size:0.77rem;padding:7px 0;border-bottom:1px solid var(--border2);"><span style="color:var(--muted);min-width:68px;font-size:0.7rem;">'+r.date+'</span><span style="color:var(--green);">+'+r.ok+'</span><span style="color:var(--red);">\u2716'+r.fail+'</span><span style="color:var(--muted);">~'+(r.pass||0)+'</span><span style="font-weight:700;margin-left:auto;color:'+col+';">'+p+'%</span></div>';}).join(''):'<p style="color:var(--muted);font-size:0.8rem;text-align:center;padding:8px;">\u00a1Haz tu primer rosco!</p>';}catch(e){console.error('Dashboard:',e);}}
 
-function downloadBackup(){try{var blob=new Blob([JSON.stringify({exported:new Date().toISOString(),dificiles:getDificiles(),usage:JSON.parse(localStorage.getItem('ppro_usage')||'{}'),rosco_hist:JSON.parse(localStorage.getItem('ppro_rosco_hist')||'[]'),letters:JSON.parse(localStorage.getItem('ppro_letters')||'{}')},null,2)],{type:'application/json'});var a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='noemi_ppro_'+new Date().toISOString().slice(0,10)+'.json';document.body.appendChild(a);a.click();setTimeout(function(){document.body.removeChild(a);},100);showToast('\U0001f4be Backup descargado');}catch(e){showToast('Error al descargar backup');}}
+function downloadBackup(){ backupProgreso(); }
 
 function saveCurrentProgress() {
         if (typeof userProgress !== 'undefined') {
@@ -17995,22 +18002,34 @@ function restaurarProgreso(event) {
             // Soportar formato nuevo {exportado, datos} y formato antiguo directo
             var datos = parsed.datos || parsed;
             var count = 0;
+            var claves_importantes = {
+                srs: 0, rosco: 0, curiosidades: 0, estudio: 0, otros: 0
+            };
             Object.keys(datos).forEach(function(key) {
                 localStorage.setItem(key, datos[key]);
                 count++;
+                if (key.startsWith('dic_srs_') || key === 'pasapalabra_srs' || key.startsWith('rae_') || key.startsWith('srs_')) claves_importantes.srs++;
+                else if (key.startsWith('ppro_') || key.startsWith('rosco_')) claves_importantes.rosco++;
+                else if (key.startsWith('cur_') || key === 'curiosidades_inicio') claves_importantes.curiosidades++;
+                else if (key.startsWith('dic_pos_') || key.startsWith('dic_dia_')) claves_importantes.estudio++;
+                else claves_importantes.otros++;
             });
+            console.log('Backup restaurado:', claves_importantes);
 
             // --- CURIOSIDADES: garantizar arranque correcto ---
-            // Si el backup no incluye curiosidades_inicio (backups antiguos),
-            // lo inicializamos a ayer para que hoy toque la curiosidad 2
             if (!datos['curiosidades_inicio']) {
-                var ayer = new Date();
-                ayer.setDate(ayer.getDate() - 1);
-                var ayerStr = ayer.toISOString().slice(0, 10);
-                localStorage.setItem('curiosidades_inicio', ayerStr);
-                // Marcar la curiosidad 1 (sombrerero) como vista ayer
-                localStorage.setItem('cur_vista_' + ayerStr, '1');
-                localStorage.setItem('cur_historico', JSON.stringify([1]));
+                // Intentar recalcular desde el histórico del backup
+                var histBackup = JSON.parse(datos['cur_historico'] || '[]');
+                if (histBackup.length > 0) {
+                    // Retroceder tantos días como curiosidades en el histórico
+                    var fechaInicioB = new Date();
+                    fechaInicioB.setDate(fechaInicioB.getDate() - histBackup.length);
+                    localStorage.setItem('curiosidades_inicio', fechaInicioB.toISOString().slice(0, 10));
+                } else {
+                    // Fallback: fecha de inicio real de Noemi
+                    localStorage.setItem('curiosidades_inicio', '2026-03-13');
+                    localStorage.setItem('cur_historico', JSON.stringify([1,2,3]));
+                }
             }
 
             showToast('✅ Progreso restaurado — ' + count + ' registros', 3000);
