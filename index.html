@@ -1327,6 +1327,142 @@ html, body {
 }
 .rle-stat strong { display: block; font-size: 1.1rem; margin-bottom: 2px; }
 
+
+/* ===== DICCIONARIO — SELECTOR ===== */
+#dic-selector { background: var(--bg); }
+.dic-sel-body {
+    flex: 1; overflow-y: auto; padding: 16px 16px 80px;
+    overscroll-behavior: contain;
+}
+.dic-sel-body::-webkit-scrollbar { display: none; }
+
+/* Stats */
+.dic-stats-strip {
+    display: flex; gap: 8px; padding: 0 0 16px; flex-wrap: wrap;
+}
+.dic-stat-pill {
+    display: flex; align-items: center; gap: 5px;
+    background: var(--card); border: 1px solid var(--border2);
+    border-radius: 12px; padding: 6px 12px;
+    font-size: 0.75rem; color: var(--muted);
+}
+.dic-stat-pill strong { color: var(--gold); font-size: 0.85rem; }
+
+/* Palabras del día */
+.dic-dia-card {
+    background: linear-gradient(135deg, #1a1a2e, #13131f);
+    border: 1.5px solid var(--blue); border-radius: 16px;
+    padding: 16px; margin-bottom: 8px; cursor: pointer;
+    transition: all 0.2s; position: relative; overflow: hidden;
+}
+.dic-dia-card::before {
+    content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+    background: linear-gradient(90deg, var(--blue), var(--purple));
+}
+.dic-dia-card:hover { border-color: var(--gold); }
+.dic-dia-title { font-size: 0.9rem; font-weight: 700; color: var(--text); margin-bottom: 4px; }
+.dic-dia-sub { font-size: 0.72rem; color: var(--muted); }
+.dic-dia-badge {
+    display: inline-block; margin-top: 8px;
+    font-size: 0.68rem; font-weight: 700; color: var(--blue);
+    background: rgba(68,136,255,0.12); padding: 2px 8px; border-radius: 8px;
+}
+.dic-dia-done { border-color: var(--green) !important; }
+.dic-dia-done .dic-dia-badge { color: var(--green); background: rgba(68,212,144,0.12); }
+
+/* Difíciles */
+.dic-dif-card {
+    background: var(--card); border: 1.5px solid var(--red);
+    border-radius: 16px; padding: 16px; cursor: pointer;
+    transition: all 0.2s; grid-column: span 2;
+}
+.dic-dif-card:hover { background: rgba(255,85,85,0.05); }
+
+/* Label sección */
+.dic-sel-label {
+    font-size: 0.72rem; font-weight: 800; letter-spacing: 0.12em;
+    color: var(--muted); text-transform: uppercase;
+    margin: 18px 0 10px;
+}
+
+/* Grid modos */
+.dic-modes-grid {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 10px; margin-bottom: 12px;
+}
+.dic-mode-card {
+    background: var(--card); border: 1px solid var(--border2);
+    border-radius: 16px; padding: 16px 14px;
+    cursor: pointer; transition: all 0.2s; position: relative;
+    overflow: hidden;
+}
+.dic-mode-card:hover { border-color: var(--gold); transform: translateY(-1px); }
+.dic-mode-card.featured {
+    grid-column: span 2;
+    border-color: var(--gold);
+    background: linear-gradient(135deg, var(--card2), var(--card));
+}
+.dic-mode-card.featured::before {
+    content: '⭐ RECOMENDADO';
+    position: absolute; top: 10px; right: 10px;
+    font-size: 0.6rem; font-weight: 800; letter-spacing: 0.1em;
+    color: var(--gold); opacity: 0.7;
+}
+.dic-mc-icon { font-size: 1.6rem; margin-bottom: 8px; }
+.dic-mc-title { font-size: 0.9rem; font-weight: 700; color: var(--text); margin-bottom: 4px; }
+.dic-mc-desc  { font-size: 0.72rem; color: var(--muted); line-height: 1.4; }
+.dic-mc-count { 
+    display: inline-block; margin-top: 8px;
+    font-size: 0.68rem; font-weight: 700; color: var(--gold);
+    background: var(--gold-dim); padding: 2px 8px; border-radius: 8px;
+}
+
+/* Grid letras */
+.dic-letras-grid {
+    display: grid; grid-template-columns: repeat(6, 1fr); gap: 6px;
+}
+.dic-letra-btn {
+    aspect-ratio: 1; border-radius: 12px;
+    border: 1px solid var(--border2); background: var(--card);
+    color: var(--text); font-size: 0.95rem; font-weight: 700;
+    cursor: pointer; transition: all 0.15s; display: flex;
+    align-items: center; justify-content: center;
+    font-family: 'Space Grotesk', sans-serif;
+}
+.dic-letra-btn:hover { border-color: var(--gold); color: var(--gold); }
+
+/* Campos temáticos */
+.dic-campos-grid { display: flex; flex-direction: column; gap: 8px; }
+.dic-campo-row {
+    display: flex; align-items: center; gap: 12px;
+    background: var(--card); border: 1px solid var(--border2);
+    border-radius: 14px; padding: 12px 14px;
+    cursor: pointer; transition: all 0.18s;
+}
+.dic-campo-row:hover { border-color: var(--gold); }
+.dic-campo-row-icon { font-size: 1.3rem; }
+.dic-campo-row-info { flex: 1; }
+.dic-campo-row-name { font-size: 0.88rem; font-weight: 700; color: var(--text); }
+.dic-campo-row-n { font-size: 0.72rem; color: var(--muted); margin-top: 2px; }
+.dic-campo-row-arr { color: var(--muted); font-size: 1.1rem; }
+
+/* Filtro de grupos */
+.dic-filter-panel {
+    padding: 10px 16px 6px; background: var(--bg2);
+    border-bottom: 1px solid var(--border);
+    flex-shrink: 0;
+}
+.dic-filter-btn {
+    padding: 4px 10px; border-radius: 12px;
+    border: 1px solid var(--border2); background: transparent;
+    color: var(--muted); font-size: 0.72rem; font-weight: 600;
+    cursor: pointer; font-family: 'Space Grotesk', sans-serif;
+    transition: all 0.15s; margin: 2px;
+}
+.dic-filter-btn.sel {
+    background: var(--card2); border-color: var(--gold); color: var(--gold);
+}
+
 </style>
 </head>
 <body>
@@ -16504,7 +16640,7 @@ function dicBuscar(q) {
                         dicState.revelado = false;
                         document.getElementById('dic-rae-title').textContent = '🔍 ' + p.w;
                         document.getElementById('dic-loading').style.display = 'none';
-                        document.getElementById('dic-content').style.display = 'flex';
+                        document.getElementById('dic-panel-front').style.display = 'flex';
                         goTo('dic-rae');
                         dicMostrarPalabra();
                     };
@@ -16627,7 +16763,8 @@ async function iniciarDiccionario(modo, filtro, desdeInicio) {
             // Continuar — cargar todo y restaurar posición
             goTo('dic-rae');
             document.getElementById('dic-loading').style.display = 'flex';
-            document.getElementById('dic-content').style.display = 'none';
+            document.getElementById('dic-panel-front').style.display = 'none';
+            document.getElementById('dic-panel-back').style.display = 'none';
             try {
                 var palabras = await dicCargarPalabras(modo, filtro);
                 if (!palabras || palabras.length === 0) {
@@ -16659,7 +16796,8 @@ async function iniciarDiccionario(modo, filtro, desdeInicio) {
 
     goTo('dic-rae');
     document.getElementById('dic-loading').style.display = 'flex';
-    document.getElementById('dic-content').style.display = 'none';
+    document.getElementById('dic-panel-front').style.display = 'none';
+    document.getElementById('dic-panel-back').style.display = 'none';
 
     try {
         var palabras = await dicCargarPalabras(modo, filtro);
