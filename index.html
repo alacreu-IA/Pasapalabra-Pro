@@ -1588,6 +1588,18 @@ html, body {
             <div style="font-size:1.6rem; color:var(--accent);">›</div>
         </div>
 
+        <!-- Banner Delito Lingüístico -->
+        <div onclick="iniciarDelitoLinguistico()" style="background:linear-gradient(135deg, rgba(231,76,60,0.08), var(--card)); border:1px solid rgba(231,76,60,0.4); padding:18px 20px; border-radius:16px; margin-bottom:20px; cursor:pointer; box-shadow:0 4px 20px rgba(0,0,0,0.3); display:flex; justify-content:space-between; align-items:center;">
+            <div style="display:flex; align-items:center; gap:14px;">
+                <div style="font-size:2rem;">🔥</div>
+                <div>
+                    <h3 style="color:var(--text); margin-bottom:3px; font-size:1.15rem; font-weight:700;">Delito Lingüístico</h3>
+                    <p style="color:var(--muted); font-size:0.82rem;">Lo hacemos… y ya vemos</p>
+                </div>
+            </div>
+            <div style="font-size:1.6rem; color:var(--muted);">›</div>
+        </div>
+
         <div class="section-label">Herramientas</div>
         <div class="deck-list">
             <div class="deck-item" onclick="goTo('dificiles')">
@@ -15027,6 +15039,172 @@ MAZOS.push({
 });
 </script>
 
+<!-- ================================================================ -->
+<!-- MAZO ESPECIAL: DICCIONARIO DEL DELITO LINGÜÍSTICO -->
+<!-- ================================================================ -->
+<script>
+var DELITO_LINGUISTICO = {
+  id: "delito",
+  name: "Delito Lingüístico",
+  icon: "🔥",
+  sub: "Adaptaciones del inglés que la RAE ha bendecido",
+  color: "#e74c3c",
+  aviso: "⚠️ Recomendación (con cariño)\n\nEste mazo está pensado para disfrutarse poco a poco.\nIdeal para levantar un día regular.\nNo apto para consumir de una sola vez.\n\nPD: Igual no hace falta ni psicóloga hoy… con esto te apañas 😂",
+  palabras: [
+    {
+      palabra: "guachimán",
+      significado: "vigilante, guardia de seguridad",
+      comentario: "GUACHIMÁN. Desde hoy mi palabra favorita. Esto no es una palabra, es un personaje.",
+      ejemplo: "— Oye, ¿puedo pasar?\n— Habla con el guachimán.\n— ¿Quién?\n— EL GUACHIMÁN."
+    },
+    {
+      palabra: "bluyín",
+      significado: "vaqueros",
+      comentario: "BLUYÍN. Existiendo 'vaqueros'. Inexplicable.",
+      ejemplo: "— ¿Qué te pones?\n— El bluyín.\n— Perdona, ¿el qué?\n— …vaqueros."
+    },
+    {
+      palabra: "pirsin",
+      significado: "piercing",
+      comentario: "PIRSIN. Frase que debería activar alarmas.",
+      ejemplo: "— Me hice un pirsin.\n— …\n— Un piercing, perdón."
+    },
+    {
+      palabra: "budín",
+      significado: "postre tipo flan",
+      comentario: "BUDÍN. El crimen perfecto. Que llamen a Reverte, pero YA.",
+      ejemplo: "— ¿Qué has hecho?\n— Budín.\n— ¿Eso no era pudding?\n— Ya no."
+    },
+    {
+      palabra: "chóped",
+      significado: "embutido",
+      comentario: "CHÓPED. Comida o insulto.",
+      ejemplo: "— ¿Quieres chóped?\n— No sé si aceptar eso."
+    },
+    {
+      palabra: "güisqui",
+      significado: "whisky",
+      comentario: "GÜISQUI. Riesgo social.",
+      ejemplo: "— Ponme un güisqui.\n— …\n— Whisky."
+    },
+    {
+      palabra: "lonche",
+      significado: "almuerzo",
+      comentario: "LONCHE. Sospechoso.",
+      ejemplo: "— Vamos a lonchear.\n— No."
+    },
+    {
+      palabra: "yinz",
+      significado: "vaqueros",
+      comentario: "YINZ. Nivel paranormal.",
+      ejemplo: "— Me compré unos yinz.\n— Eso no existe."
+    },
+    {
+      palabra: "yérsey",
+      significado: "jersey",
+      comentario: "YÉRSEY. Cambio de identidad. NO PUEDO CREERME QUE ESTO EXISTA, DE VERDAD JAJAJA",
+      ejemplo: "— Ponte el yérsey.\n— El jersey, ¿no?"
+    },
+    {
+      palabra: "overol",
+      significado: "mono de trabajo",
+      comentario: "OVEROL. OSEA DE OVER Y ALL? jajjajaj NO LO SOPORTO.",
+      ejemplo: "— Ha venido el técnico.\n— ¿Con overol?\n— Sí.\n— Uf."
+    }
+  ]
+};
+
+// Función para iniciar el mazo del Delito Lingüístico
+window.iniciarDelitoLinguistico = function() {
+    // Mostrar aviso primero
+    var avisoHtml = `
+        <div style="position:fixed; top:0; left:0; right:0; bottom:0; background:rgba(0,0,0,0.9); z-index:99999; display:flex; align-items:center; justify-content:center; padding:20px;">
+            <div style="background:var(--card); border-radius:20px; padding:30px; max-width:400px; text-align:center; border:2px solid #e74c3c;">
+                <div style="font-size:3rem; margin-bottom:15px;">🔥</div>
+                <h2 style="color:#e74c3c; margin-bottom:20px; font-family:'Playfair Display',serif;">Diccionario del Delito Lingüístico</h2>
+                <p style="white-space:pre-line; color:var(--text); line-height:1.6; margin-bottom:25px;">${DELITO_LINGUISTICO.aviso}</p>
+                <button onclick="this.closest('div[style*=fixed]').remove(); mostrarTarjetaDelito(0);" style="background:#e74c3c; color:white; border:none; padding:15px 40px; border-radius:30px; font-size:1.1rem; font-weight:bold; cursor:pointer;">
+                    ¡Adelante! 🚀
+                </button>
+            </div>
+        </div>
+    `;
+    document.body.insertAdjacentHTML('beforeend', avisoHtml);
+};
+
+var delitoIndex = 0;
+
+window.mostrarTarjetaDelito = function(idx) {
+    delitoIndex = idx;
+    if (idx >= DELITO_LINGUISTICO.palabras.length) {
+        // Fin del mazo
+        var finHtml = `
+            <div style="position:fixed; top:0; left:0; right:0; bottom:0; background:rgba(0,0,0,0.9); z-index:99999; display:flex; align-items:center; justify-content:center; padding:20px;">
+                <div style="background:var(--card); border-radius:20px; padding:30px; max-width:400px; text-align:center; border:2px solid #e74c3c;">
+                    <div style="font-size:3rem; margin-bottom:15px;">🎉</div>
+                    <h2 style="color:#e74c3c; margin-bottom:20px; font-family:'Playfair Display',serif;">¡Has sobrevivido!</h2>
+                    <p style="color:var(--text); line-height:1.6; margin-bottom:25px;">Has visto todas las palabras del Diccionario del Delito Lingüístico.<br><br>La RAE no tiene perdón. Tú tampoco por reírte. 😂</p>
+                    <button onclick="this.closest('div[style*=fixed]').remove();" style="background:#e74c3c; color:white; border:none; padding:15px 40px; border-radius:30px; font-size:1.1rem; font-weight:bold; cursor:pointer;">
+                        Volver 🏠
+                    </button>
+                </div>
+            </div>
+        `;
+        document.body.insertAdjacentHTML('beforeend', finHtml);
+        return;
+    }
+    
+    var p = DELITO_LINGUISTICO.palabras[idx];
+    var tarjetaHtml = `
+        <div id="delito-overlay" style="position:fixed; top:0; left:0; right:0; bottom:0; background:var(--bg); z-index:99998; display:flex; flex-direction:column; overflow-y:auto;">
+            <!-- Header -->
+            <div style="padding:15px 20px; display:flex; align-items:center; justify-content:space-between; border-bottom:1px solid var(--border);">
+                <button onclick="document.getElementById('delito-overlay').remove();" style="background:none; border:none; color:var(--muted); font-size:1.5rem; cursor:pointer;">✕</button>
+                <span style="color:var(--muted); font-size:0.9rem;">${idx + 1} / ${DELITO_LINGUISTICO.palabras.length}</span>
+                <span style="width:30px;"></span>
+            </div>
+            
+            <!-- Tarjeta -->
+            <div style="flex:1; display:flex; flex-direction:column; align-items:center; justify-content:center; padding:20px;">
+                <div id="delito-card" onclick="document.getElementById('delito-back').style.display='block'; document.getElementById('delito-front').style.display='none'; document.getElementById('delito-actions').style.display='flex';" style="background:linear-gradient(145deg, var(--card), var(--card2)); padding:30px; border-radius:24px; width:100%; max-width:450px; text-align:center; box-shadow:0 15px 35px rgba(231,76,60,0.3); border:3px solid #e74c3c; cursor:pointer; min-height:350px; display:flex; flex-direction:column; justify-content:center;">
+                    
+                    <!-- Frente: solo la palabra -->
+                    <div id="delito-front">
+                        <div style="font-size:0.8rem; color:#e74c3c; margin-bottom:10px; text-transform:uppercase; letter-spacing:2px;">🔥 Delito Lingüístico</div>
+                        <h1 style="font-family:'Playfair Display',serif; font-size:2.8rem; color:var(--text); margin-bottom:15px;">${p.palabra}</h1>
+                        <div style="color:var(--muted); font-size:0.9rem;">Toca para ver el delito completo</div>
+                    </div>
+                    
+                    <!-- Reverso: todo el contenido -->
+                    <div id="delito-back" style="display:none; text-align:left;">
+                        <h1 style="font-family:'Playfair Display',serif; font-size:2.2rem; color:#e74c3c; margin-bottom:5px; text-align:center;">${p.palabra}</h1>
+                        <div style="color:var(--muted); font-size:0.85rem; text-align:center; margin-bottom:20px;">📖 ${p.significado}</div>
+                        
+                        <div style="background:rgba(231,76,60,0.1); padding:15px; border-radius:12px; margin-bottom:15px; border-left:4px solid #e74c3c;">
+                            <div style="font-size:0.75rem; color:#e74c3c; margin-bottom:5px; font-weight:bold;">💬 COMENTARIO</div>
+                            <div style="color:var(--text); line-height:1.5;">${p.comentario}</div>
+                        </div>
+                        
+                        <div style="background:rgba(255,255,255,0.05); padding:15px; border-radius:12px; font-family:monospace;">
+                            <div style="font-size:0.75rem; color:var(--muted); margin-bottom:8px;">📝 EJEMPLO DE USO</div>
+                            <div style="color:var(--text); white-space:pre-line; line-height:1.6; font-size:0.95rem;">${p.ejemplo}</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Acciones -->
+            <div id="delito-actions" style="display:none; padding:20px; gap:15px; justify-content:center; padding-bottom:max(30px, env(safe-area-inset-bottom)); background:linear-gradient(to top, var(--bg) 70%, transparent);">
+                <button onclick="document.getElementById('delito-overlay').remove(); mostrarTarjetaDelito(${idx + 1});" style="flex:1; max-width:300px; background:#e74c3c; color:white; border:none; padding:18px; border-radius:16px; font-size:1.1rem; font-weight:bold; cursor:pointer;">
+                    ${idx + 1 < DELITO_LINGUISTICO.palabras.length ? 'Siguiente delito →' : '🎉 Fin del mazo'}
+                </button>
+            </div>
+        </div>
+    `;
+    document.body.insertAdjacentHTML('beforeend', tarjetaHtml);
+};
+</script>
+
 <script>var studySessionTotal = 0, studySessionBien = 0, studySessionMal = 0;
 
 // =====================================================================
@@ -15297,6 +15475,18 @@ MAZOS.push({
                 }
             });
             
+            // MAZO ESPECIAL: Diccionario del Delito Lingüístico
+            html += `
+            <div class="deck-item" onclick="iniciarDelitoLinguistico()" style="border-color:rgba(231,76,60,0.4); background:linear-gradient(135deg, rgba(231,76,60,0.08), transparent);">
+                <div class="deck-icon">🔥</div>
+                <div class="deck-info">
+                    <h4>Delito Lingüístico</h4>
+                    <span style="font-size:0.72rem; color:var(--muted); font-style:italic; display:block; margin-top:2px; margin-bottom:4px;">Lo hacemos… y ya vemos</span>
+                    <p style="font-size:0.72rem; color:var(--muted);">${DELITO_LINGUISTICO.palabras.length} delitos</p>
+                </div>
+                <div class="deck-arrow">›</div>
+            </div>`;
+            
             // Mis mazos al final
             html += `
             <div class="deck-item" onclick="iniciarMazoCustom()">
@@ -15406,6 +15596,18 @@ window.openStudySelector = function() {
           </div>`;
       }
    });
+   
+   // MAZO ESPECIAL: Diccionario del Delito Lingüístico
+   container.innerHTML += `
+   <div class="deck-item" onclick="iniciarDelitoLinguistico()" style="border-left:4px solid rgba(231,76,60,0.5); background:linear-gradient(135deg, rgba(231,76,60,0.08), transparent);">
+       <div class="deck-icon">🔥</div>
+       <div class="deck-info">
+           <h4>Delito Lingüístico</h4>
+           <span style="font-size:0.72rem; color:var(--muted); font-style:italic; display:block; margin-top:2px; margin-bottom:4px;">Lo hacemos… y ya vemos</span>
+           <p style="font-size:0.72rem; color:var(--muted);">${DELITO_LINGUISTICO.palabras.length} delitos</p>
+       </div>
+       <span style="background:rgba(231,76,60,0.2); color:var(--text); padding:4px 10px; border-radius:20px; font-size:0.75rem; font-weight:bold;">🔥 Ver</span>
+   </div>`;
    
    // Mis mazos al final
    container.innerHTML += `
