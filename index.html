@@ -1573,124 +1573,16 @@ html, body {
             </div>
         </div>
 
-        <div class="section-label">Mazos Activos</div>
-        <div class="deck-list">
-            <div class="deck-item" onclick="iniciarMazo('cg')">
-                <div class="deck-icon">🧠</div>
-                <div class="deck-info">
-                    <h4>Cultura General</h4>
-                    <span style="font-size:0.72rem; color:var(--muted); font-style:italic; display:block; margin-top:2px; margin-bottom:4px;">El caj&#243;n de sastre donde acaba todo lo dem&#225;s</span>
-                    <p id="deck-info-cg">Cargando...</p>
-                    <div class="dom-bar"><div class="dom-fill" id="dom-cg" style="width:0%"></div></div>
+        <!-- Banner Estudio Inteligente (contiene todos los mazos) -->
+        <div onclick="openStudySelector()" style="background:linear-gradient(135deg, var(--card2), var(--card)); border:1px solid var(--accent); padding:18px 20px; border-radius:16px; margin:20px 0; cursor:pointer; box-shadow:0 4px 20px rgba(0,0,0,0.4); display:flex; justify-content:space-between; align-items:center;">
+            <div style="display:flex; align-items:center; gap:14px;">
+                <div style="font-size:2rem;">🧠</div>
+                <div>
+                    <h3 style="color:var(--text); margin-bottom:3px; font-size:1.15rem; font-weight:700;">Estudio Inteligente</h3>
+                    <p style="color:var(--muted); font-size:0.82rem;">Todos los mazos · Algoritmo Leitner</p>
                 </div>
-                <div class="deck-arrow">›</div>
             </div>
-            <div class="deck-item" onclick="iniciarMazo('hist')">
-                <div class="deck-icon">⚔️</div>
-                <div class="deck-info">
-                    <h4>Historia y Geografía</h4>
-                    <span style="font-size:0.72rem; color:var(--muted); font-style:italic; display:block; margin-top:2px; margin-bottom:4px;">Guerras, imperios y humanos haciendo siempre lo mismo</span>
-                    <p id="deck-info-hist">Cargando...</p>
-                    <div class="dom-bar"><div class="dom-fill" id="dom-hist" style="width:0%"></div></div>
-                </div>
-                <div class="deck-arrow">›</div>
-            </div>
-            <div class="deck-item" onclick="iniciarMazo('literatura')">
-                <div class="deck-icon">📚</div>
-                <div class="deck-info">
-                    <h4>Literatura</h4>
-                    <span style="font-size:0.72rem; color:var(--muted); font-style:italic; display:block; margin-top:2px; margin-bottom:4px;">Se&#241;ores tristes escribiendo cosas profundas</span>
-                    <p id="deck-info-literatura">Cargando...</p>
-                    <div class="dom-bar"><div class="dom-fill" id="dom-literatura" style="width:0%"></div></div>
-                </div>
-                <div class="deck-arrow">›</div>
-            </div>
-            <div class="deck-item" onclick="iniciarMazo('arte')">
-                <div class="deck-icon">🎨</div>
-                <div class="deck-info">
-                    <h4>Arte, Música y Cine</h4>
-                    <span style="font-size:0.72rem; color:var(--muted); font-style:italic; display:block; margin-top:2px; margin-bottom:4px;">Cuadros que parecen f&#225;ciles hasta que te preguntan el autor</span>
-                    <p id="deck-info-arte">Cargando...</p>
-                    <div class="dom-bar"><div class="dom-fill" id="dom-arte" style="width:0%"></div></div>
-                </div>
-                <div class="deck-arrow">›</div>
-            </div>
-            <div class="deck-item" onclick="iniciarMazo('ciencia')">
-                <div class="deck-icon">🔬</div>
-                <div class="deck-info">
-                    <h4>Ciencia y Nat.</h4>
-                    <span style="font-size:0.72rem; color:var(--muted); font-style:italic; display:block; margin-top:2px; margin-bottom:4px;">Premios Nobel y f&#243;rmulas que no entiendes</span>
-                    <p id="deck-info-ciencia">Cargando...</p>
-                    <div class="dom-bar"><div class="dom-fill" id="dom-ciencia" style="width:0%"></div></div>
-                </div>
-                <div class="deck-arrow">›</div>
-            </div>
-            <div class="deck-item" onclick="iniciarMazo('deporte')">
-                <div class="deck-icon">&#127942;</div>
-                <div class="deck-info">
-                    <h4>Deporte</h4>
-                    <span style="font-size:0.72rem; color:var(--muted); font-style:italic; display:block; margin-top:2px; margin-bottom:4px;">Finales injustas y debates eternos</span>
-                    <p id="deck-info-deporte">Cargando...</p>
-                    <div class="dom-bar"><div class="dom-fill" id="dom-deporte" style="width:0%"></div></div>
-                </div>
-                <div class="deck-arrow">&#8250;</div>
-            </div>
-            <div class="deck-item" onclick="iniciarMazo('mitologia')">
-                <div class="deck-icon">&#127963;</div>
-                <div class="deck-info">
-                    <h4>Mitolog&#237;a</h4>
-                    <span style="font-size:0.72rem; color:var(--muted); font-style:italic; display:block; margin-top:2px; margin-bottom:4px;">S&#225;lvame Deluxe en el Monte Olimpo</span>
-                    <p id="deck-info-mitologia">Cargando...</p>
-                    <div class="dom-bar"><div class="dom-fill" id="dom-mitologia" style="width:0%"></div></div>
-                </div>
-                <div class="deck-arrow">&#8250;</div>
-            </div>
-            <div class="deck-item" onclick="iniciarMazo('naturaleza')">
-                <div class="deck-icon">&#127807;</div>
-                <div class="deck-info">
-                    <h4>Naturaleza</h4>
-                    <span style="font-size:0.72rem; color:var(--muted); font-style:italic; display:block; margin-top:2px; margin-bottom:4px;">Documentales de La 2 y alergia al polen</span>
-                    <p id="deck-info-naturaleza">Cargando...</p>
-                    <div class="dom-bar"><div class="dom-fill" id="dom-naturaleza" style="width:0%"></div></div>
-                </div>
-                <div class="deck-arrow">&#8250;</div>
-            </div>
-            <div class="deck-item" onclick="iniciarMazo('tecnologia')">
-                <div class="deck-icon">&#128187;</div>
-                <div class="deck-info">
-                    <h4>Tecnolog&#237;a</h4>
-                    <span style="font-size:0.72rem; color:var(--muted); font-style:italic; display:block; margin-top:2px; margin-bottom:4px;">Apagar y encender el router</span>
-                    <p id="deck-info-tecnologia">Cargando...</p>
-                    <div class="dom-bar"><div class="dom-fill" id="dom-tecnologia" style="width:0%"></div></div>
-                </div>
-                <div class="deck-arrow">&#8250;</div>
-            </div>
-            <div class="deck-item" onclick="iniciarMazo('capitales')">
-                <div class="deck-icon">&#9992;</div>
-                <div class="deck-info">
-                    <h4>Capitales</h4>
-                    <span style="font-size:0.72rem; color:var(--muted); font-style:italic; display:block; margin-top:2px; margin-bottom:4px;">Porque S&#237;dney no es la capital de Australia y lo sabes</span>
-                    <p id="deck-info-capitales">Cargando...</p>
-                    <div class="dom-bar"><div class="dom-fill" id="dom-capitales" style="width:0%"></div></div>
-                </div>
-                <div class="deck-arrow">&#8250;</div>
-            </div>
-            <div class="deck-item" onclick="iniciarMatchCapitales()" style="border-color:var(--accent);">
-                <div class="deck-icon">&#127760;</div>
-                <div class="deck-info">
-                    <h4>Emparejar Capitales</h4>
-                    <span style="font-size:0.72rem; color:var(--muted); font-style:italic; display:block; margin-top:2px; margin-bottom:4px;">Une cada pa&#237;s con su capital</span>
-                </div>
-                <div class="deck-arrow">&#8250;</div>
-            </div>
-            <div class="deck-item" onclick="iniciarMazoCustom()">
-                <div class="deck-icon">⭐</div>
-                <div class="deck-info">
-                    <h4>Mis mazos</h4>
-                    <p id="deck-info-custom">Tus propias tarjetas</p>
-                </div>
-                <div class="deck-arrow">›</div>
-            </div>
+            <div style="font-size:1.6rem; color:var(--accent);">›</div>
         </div>
 
         <div class="section-label">Herramientas</div>
@@ -1868,12 +1760,7 @@ html, body {
                 <div class="dic-mc-desc">Del árabe, náhuatl, francés, italiano... préstamos al español.</div>
                 <div class="dic-mc-count">~4.400 palabras</div>
             </div>
-            <div class="dic-mode-card" onclick="iniciarDiccionario('campo', 'americanismo')">
-                <div class="dic-mc-icon">🌎</div>
-                <div class="dic-mc-title">Americanismos</div>
-                <div class="dic-mc-desc">Palabras del español de América.</div>
-                <div class="dic-mc-count">~1.000 palabras</div>
-            </div>
+
         </div>
 
         <!-- GRID DE LETRAS -->
@@ -1983,23 +1870,74 @@ html, body {
                 <div class="dic-info-text" id="dic-etym-text"></div>
             </div>
 
+            <!-- Easter egg 🥚 -->
+            <div class="dic-info-block" id="dic-ex-section" style="display:none;
+                background:linear-gradient(135deg,rgba(240,192,64,0.08),rgba(153,102,255,0.08));
+                border:1px solid rgba(240,192,64,0.35);">
+                <span class="dic-info-label" style="color:var(--gold);">✨ Nota especial</span>
+                <div class="dic-info-text" id="dic-ex-text" style="font-style:italic;"></div>
+            </div>
+
             <!-- Palabras relacionadas -->
             <div class="dic-info-block rel" id="dic-rel-section" style="display:none;">
                 <span class="dic-info-label">🔀 Relacionadas</span>
                 <div class="dic-rel-tags" id="dic-rel-words"></div>
             </div>
 
-            <!-- Link RAE -->
-            <a class="dic-rae-link-btn" id="dic-rae-link" href="#" target="_blank">
-                📖 Ver en dle.rae.es
-            </a>
+            <!-- Link RAE + Ocultar -->
+            <div style="display:flex; gap:8px; align-items:center; margin-top:4px;">
+                <a class="dic-rae-link-btn" id="dic-rae-link" href="#" target="_blank"
+                   style="flex:1; display:none; text-align:center; font-size:0.75rem; color:var(--muted); text-decoration:none; padding:6px 0;">
+                    📖 Ver en dle.rae.es
+                </a>
+                <button id="dic-btn-ocultar" onclick="dicOcultar()"
+                    style="display:none; flex-shrink:0; background:transparent; border:1px solid var(--border2);
+                    color:var(--muted); border-radius:10px; padding:5px 10px; font-size:0.72rem;
+                    font-family:'Space Grotesk',sans-serif; cursor:pointer;">
+                    🙈 No mostrar más
+                </button>
+            </div>
 
             <!-- Botón siguiente (aparece tras calificar) -->
-            <button class="dic-reveal-btn" id="dic-btn-next" onclick="dicSiguiente()"
-                    style="display:none; background: var(--card); color: var(--muted); border: 1px solid var(--border2); margin-top:4px;">
-                Siguiente →
-            </button>
+            <div id="dic-btn-next" style="display:none; margin-top:4px;">
+                <button class="dic-reveal-btn" onclick="dicSiguiente()"
+                        style="background: var(--card); color: var(--muted); border: 1px solid var(--border2); width:100%;">
+                    Siguiente →
+                </button>
+                <button onclick="dicOcultarPalabra()" id="dic-btn-ocultar"
+                        style="width:100%; margin-top:6px; background:transparent; border:1px solid rgba(255,85,85,0.3);
+                               color:rgba(255,85,85,0.6); border-radius:14px; padding:10px; font-size:0.8rem;
+                               font-family:'Space Grotesk',sans-serif; cursor:pointer;">
+                    🚫 No mostrar más esta palabra
+                </button>
+            </div>
         </div>
+    </div>
+
+    <!-- RESUMEN DE SESIÓN -->
+    <div id="dic-resumen" style="display:none; flex-direction:column; flex:1; overflow-y:auto; padding:24px 18px 40px; background:var(--bg);">
+        <div style="text-align:center; font-size:2.5rem; margin-bottom:8px;" id="dic-res-emoji">🎉</div>
+        <div style="text-align:center; font-family:'Playfair Display',serif; font-size:1.5rem; color:var(--gold); margin-bottom:4px;" id="dic-res-titulo">Sesión completada</div>
+        <div style="text-align:center; font-size:0.8rem; color:var(--muted); margin-bottom:28px;" id="dic-res-sub">Has repasado todas las palabras</div>
+
+        <!-- Barras de resultado -->
+        <div style="display:flex; flex-direction:column; gap:12px; margin-bottom:28px;" id="dic-res-barras"></div>
+
+        <!-- Palabras difíciles lista -->
+        <div id="dic-res-dificiles-wrap" style="display:none; margin-bottom:24px;">
+            <div style="font-size:0.72rem; font-weight:800; letter-spacing:0.1em; color:var(--red); text-transform:uppercase; margin-bottom:10px;">🔴 Para repasar</div>
+            <div id="dic-res-dificiles" style="display:flex; flex-wrap:wrap; gap:6px;"></div>
+        </div>
+
+        <!-- Botones -->
+        <button onclick="dicResumenRepetirDificiles()" id="dic-res-btn-dif"
+            style="display:none; width:100%; padding:14px; background:var(--red); color:#fff; border:none; border-radius:14px; font-family:'Space Grotesk',sans-serif; font-weight:800; font-size:0.95rem; cursor:pointer; margin-bottom:10px;">
+            🔴 Repetir las difíciles
+        </button>
+        <button onclick="goTo('dic-selector')"
+            style="width:100%; padding:14px; background:transparent; color:var(--muted); border:1px solid var(--border2); border-radius:14px; font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:0.9rem; cursor:pointer;">
+            ← Volver al selector
+        </button>
     </div>
 
     <!-- RATING BAR fija abajo -->
@@ -2126,6 +2064,7 @@ html, body {
             <button id="btn-mid"  onclick="rate(3)" onmouseenter="showSrsPreview(14)" ontouchstart="showSrsPreview(14)" onmouseleave="clearSrsPreview()">🔄 Regular</button>
             <button id="btn-good" onclick="rate(5)" onmouseenter="showSrsPreview(30)" ontouchstart="showSrsPreview(30)" onmouseleave="clearSrsPreview()">✔ ¡La sé!</button>
         </div>
+        <button id="btn-archivar-entrenamiento" onclick="archivarTarjetaEntrenamiento()" style="background:transparent; border:1px solid var(--border); color:var(--muted); padding:6px 14px; border-radius:16px; font-size:0.72rem; cursor:pointer; margin-top:4px;">📦 Ya me la sé, no mostrar más</button>
         <div id="srs-preview" style="text-align:center; font-size:0.75rem; color:var(--muted); min-height:18px; padding-bottom:6px; transition: opacity 0.2s;"></div>
     </div>
 
@@ -2169,6 +2108,7 @@ html, body {
             <button class="rae-rate-btn rae-rate-mid"  onclick="rateRae(3)" onmouseenter="showSrsPreview(14)" ontouchstart="showSrsPreview(14)" onmouseleave="clearSrsPreview()">🔄<span>Regular</span></button>
             <button class="rae-rate-btn rae-rate-good" onclick="rateRae(5)" onmouseenter="showSrsPreview(30)" ontouchstart="showSrsPreview(30)" onmouseleave="clearSrsPreview()">✔<span>La sé</span></button>
         </div>
+        <button id="btn-archivar-rae" onclick="archivarTarjetaRae()" style="background:transparent; border:1px solid var(--border); color:var(--muted); padding:6px 14px; border-radius:16px; font-size:0.72rem; cursor:pointer; margin-top:4px;">📦 Ya me la sé, no mostrar más</button>
         <div id="rae-srs-preview" style="text-align:center; font-size:0.75rem; color:var(--muted); min-height:18px; padding: 2px 0 8px; transition: opacity 0.2s;"></div>
     </div>
 </div>
@@ -2416,7 +2356,8 @@ if (typeof MAZOS === 'undefined') { var MAZOS = []; }
 MAZOS.push({
   id: "cg", 
   name: "Cultura General Avanzada", 
-  icon: "🧠", 
+  icon: "🧠",
+  sub: "El cajón de sastre donde acaba todo lo demás",
   questions: [
     // ROSCO 1 - NIVEL ALTO
     {q: "Con la A: Ascendencia de abuelos o antepasados, especialmente si es ilustre.", a: "abolengo", letra: "A"},
@@ -3475,7 +3416,8 @@ if (typeof MAZOS === 'undefined') { var MAZOS = []; }
 MAZOS.push({
   id: "hist", 
   name: "Geografía e Historia", 
-  icon: "⚔️", 
+  icon: "⚔️",
+  sub: "Guerras, imperios y humanos haciendo siempre lo mismo",
   questions: [
     // ROSCO 1 - HISTORIA UNIVERSAL BÁSICA
     {q: "Con la A: Rey macedonio que conquistó el Imperio Persa y llegó hasta la India.", a: "Alejandro Magno", letra: "A"},
@@ -4607,6 +4549,7 @@ MAZOS.push({
   id: "literatura",
   name: "Literatura Nivel Bote Final",
   icon: "📚",
+  sub: "Señores tristes escribiendo cosas profundas",
   questions: [
 
     // ROSCO 1 - AUTORES + NOBEL (sin falsos Nobel)
@@ -4974,7 +4917,8 @@ if (typeof MAZOS === 'undefined') { var MAZOS = []; }
 MAZOS.push({
   id: "arte", 
   name: "Arte, Música y Cine", 
-  icon: "🎨", 
+  icon: "🎨",
+  sub: "Cuadros que parecen fáciles hasta que te preguntan el autor",
   questions: [
     // ROSCO 1 - ARTE Y CINE CLÁSICO (A CONTRARRELOJ)
     {q: "Con la A:  Pintura realizada con colores diluidos en agua.", a: "acuarela", letra: "A"},
@@ -5786,7 +5730,8 @@ if (typeof MAZOS === 'undefined') { var MAZOS = []; }
 MAZOS.push({
   id: "ciencia", 
   name: "Ciencia y Tecnología", 
-  icon: "🔬", 
+  icon: "🔬",
+  sub: "Premios Nobel y fórmulas que no entiendes",
   questions: [
     // ROSCO 1 - BIOLOGÍA Y CUERPO HUMANO
     {q: "Con la A: Molécula que contiene las instrucciones genéticas usadas en el desarrollo de los seres vivos (Siglas).", a: "ADN", letra: "A"},
@@ -12328,7 +12273,8 @@ if (typeof MAZOS === 'undefined') { var MAZOS = []; }
 MAZOS.push({
   id: "deporte", 
   name: "Deporte", 
-  icon: "🏆", // Te he cambiado el pincel por una copa
+  icon: "🏆",
+  sub: "Finales injustas y debates eternos",
   questions: [
 // ROSCO 101 - DEPORTES OLÍMPICOS Y DISCIPLINAS
 {q: "Con la A: Deporte que agrupa pruebas de velocidad, saltos y lanzamientos.", a: "Atletismo", letra: "A"},
@@ -12833,7 +12779,8 @@ if (typeof MAZOS === 'undefined') { var MAZOS = []; }
 MAZOS.push({
     id: "naturaleza", 
     name: "Naturaleza", 
-    icon: "🌿", 
+    icon: "🌿",
+    sub: "Documentales de La 2 y alergia al polen",
     questions: [
         // PEGA AQUÍ TUS ROSCOS DE NATURALEZA
      // ROSCO 1 - NATURALEZA
@@ -13004,7 +12951,8 @@ if (typeof MAZOS === 'undefined') { var MAZOS = []; }
 MAZOS.push({
     id: "tecnologia", 
     name: "Tecnología", 
-    icon: "💻", 
+    icon: "💻",
+    sub: "Apagar y encender el router",
     questions: [
         // PEGA AQUÍ TUS ROSCOS DE TECNOLOGÍA E INFORMÁTICA
        // ROSCO 1 - TECNOLOGÍA, INFORMÁTICA Y FÍSICA APLICADA
@@ -13163,7 +13111,8 @@ if (typeof MAZOS === 'undefined') { var MAZOS = []; }
 MAZOS.push({
     id: "capitales", 
     name: "Capitales", 
-    icon: "✈️", 
+    icon: "✈️",
+    sub: "Porque Sídney no es la capital de Australia y lo sabes",
     questions: [
         // PEGA AQUÍ TUS ROSCOS DE CAPITALES
       // ROSCO 1 - CAPITALES
@@ -14460,7 +14409,7 @@ MAZOS.push({
   id: "lit_esp",
   name: "Literatura Española",
   icon: "📚",
-  sub: "Señores tristes escribiendo cosas profundas",
+  sub: "Donde Góngora y Quevedo se tiraban los trastos... en sonetos",
   color: "#fab1a0",
   questions: [
     {q: "Con la A: Primer apellido del escritor conocido por el seudónimo 'Clarín', autor de la novela 'La Regenta'.", a: "Alas", letra: "A"},
@@ -15117,7 +15066,7 @@ MAZOS.push({
         "capitales": { id: "capitales", name: "Capitales", icon: "✈️", sub: "Porque Sídney no es la capital de Australia y lo sabes", color: "#feca57", questions: [] },
         "politica": { id: "politica", name: "Política y Const.", icon: "🗳️", sub: "Artículos que nadie ha leído pero todos opinan", color: "#a29bfe", questions: [] },
         "mitologia": { id: "mitologia", name: "Mitología", icon: "🏛️", sub: "Sálvame Deluxe en el Monte Olimpo", color: "#ffeaa7", questions: [] },
-        "lit_esp": { id: "lit_esp", name: "Literatura Española", icon: "📚", sub: "Señores tristes escribiendo cosas profundas", color: "#fab1a0", questions: [] },
+        "lit_esp": { id: "lit_esp", name: "Literatura Española", icon: "📚", sub: "Donde Góngora y Quevedo se tiraban los trastos... en sonetos", color: "#fab1a0", questions: [] },
         "lit_uni": { id: "lit_uni", name: "Lit. Universal", icon: "📖", sub: "Rusos con trauma y franceses intensitos", color: "#e17055", questions: [] },
         "cine": { id: "cine", name: "Cine", icon: "🎬", sub: "Oscars, Kubrick y te gusta 'Chicas malas', no hablemos de cine.", color: "#ffeaa7", questions: [] },
         "teatro": { id: "teatro", name: "Teatro", icon: "🎭", sub: "Gente gritando sentimientos en voz alta", color: "#fd79a8", questions: [] },
@@ -15307,6 +15256,9 @@ MAZOS.push({
              <span style="font-size:1.6rem;">🟢</span> Perfecta
           </button>
        </div>
+       <button id="btn-archivar-tarjeta" onclick="archivarTarjetaEstudio()" style="display:none; position:absolute; bottom:110px; left:50%; transform:translateX(-50%); background:transparent; border:1px solid var(--border); color:var(--muted); padding:8px 16px; border-radius:20px; font-size:0.75rem; cursor:pointer; z-index:20;">
+          📦 Ya me la sé, no mostrar más
+       </button>
     </div>
     `;
 
@@ -15324,45 +15276,53 @@ MAZOS.push({
             }
         }, 100);
 
-        const deckContainer = document.querySelector('.deck-list');
-        if (deckContainer) {
+        // Generar los mazos DENTRO de #smart-study-topics (Estudio Inteligente)
+        const studyTopicsContainer = document.getElementById('smart-study-topics');
+        if (studyTopicsContainer) {
             let html = '';
             MAZOS.forEach(m => {
+                // Para capitales, añadir también el botón de emparejar
+                const isCapitales = m.id === 'capitales';
+                const subText = m.sub || '';
                 html += `
                 <div class="deck-item" onclick="startSmartStudyAll('${m.id}')">
                     <div class="deck-icon">${m.icon}</div>
                     <div class="deck-info">
                         <h4>${m.name}</h4>
-                        <span style="font-size: 0.72rem; color: var(--muted); font-style: italic; display: block; margin-top: 2px; margin-bottom: 4px; line-height: 1.3;">${m.sub}</span>
-                        <p id="deck-info-${m.id}" style="font-size: 0.7rem; font-weight: bold; color: var(--text);">Cargando...</p>
+                        ${subText ? `<span style="font-size:0.72rem; color:var(--muted); font-style:italic; display:block; margin-top:2px; margin-bottom:4px; line-height:1.3;">${subText}</span>` : ''}
+                        <p id="deck-info-${m.id}">Cargando...</p>
                         <div class="dom-bar"><div class="dom-fill" id="dom-${m.id}" style="width:0%"></div></div>
                     </div>
                     <div class="deck-arrow">›</div>
                 </div>`;
+                
+                // Si es capitales, añadir el juego de emparejar justo después
+                if (isCapitales) {
+                    html += `
+                    <div class="deck-item" onclick="iniciarMatchCapitales()" style="border-color:var(--accent);">
+                        <div class="deck-icon">🌍</div>
+                        <div class="deck-info">
+                            <h4>Emparejar Capitales</h4>
+                            <span style="font-size:0.72rem; color:var(--muted); font-style:italic; display:block; margin-top:2px;">Une cada país con su capital</span>
+                        </div>
+                        <div class="deck-arrow">›</div>
+                    </div>`;
+                }
             });
             
+            // Mis mazos al final
             html += `
             <div class="deck-item" onclick="iniciarMazoCustom()">
                 <div class="deck-icon">⭐</div>
                 <div class="deck-info">
                     <h4>Mis mazos</h4>
-                    <span style="font-size: 0.72rem; color: var(--muted); font-style: italic; display: block; margin-top: 2px; margin-bottom: 4px;">Las preguntas que tú mismo añades</span>
-                    <p id="deck-info-custom" style="font-size: 0.7rem; font-weight: bold; color: var(--text);">Tus propias tarjetas</p>
+                    <span style="font-size:0.72rem; color:var(--muted); font-style:italic; display:block; margin-top:2px; margin-bottom:4px;">Las preguntas que tú mismo añades</span>
+                    <p id="deck-info-custom">Tus propias tarjetas</p>
                 </div>
                 <div class="deck-arrow">›</div>
             </div>`;
-            deckContainer.innerHTML = html;
-
-            const studyBanner = document.createElement('div');
-            studyBanner.innerHTML = `
-            <div onclick="openStudySelector()" style="background: linear-gradient(135deg, var(--card2), var(--card)); border:1px solid var(--accent); padding:20px; border-radius:15px; margin-bottom:20px; text-align:left; cursor:pointer; box-shadow: 0 4px 20px rgba(0,0,0,0.4); display:flex; justify-content:space-between; align-items:center;">
-                <div>
-                    <h3 style="color:var(--text); margin-bottom:5px; font-size:1.2rem;">🧠 Estudio Inteligente</h3>
-                    <p style="color:var(--muted); font-size:0.85rem;">Algoritmo Leitner a largo plazo</p>
-                </div>
-                <div style="font-size:1.5rem; color:var(--accent);">›</div>
-            </div>`;
-            deckContainer.parentNode.insertBefore(studyBanner, deckContainer);
+            
+            studyTopicsContainer.innerHTML = html;
         }
 
         const raeCardText = document.querySelector('.mode-card[onclick="goTo(\'rae\')"] p');
@@ -15431,14 +15391,49 @@ window.openStudySelector = function() {
           return !id || !srsData[id] || srsData[id].nextReview <= now;
       }).length;
       const isDone = dueCount === 0;
+      const subText = m.sub || '';
+      const isCapitales = m.id === 'capitales';
       
       container.innerHTML += `
-      <button onclick="${isDone ? '' : `startSmartStudy('${m.id}')`}" style="background:var(--card); color:${isDone ? 'var(--muted)' : 'var(--text)'}; border:1px solid ${isDone ? 'var(--border)' : m.color}; padding:15px; border-radius:10px; text-align:left; font-size:1rem; width:100%; display:flex; align-items:center; gap:12px; cursor:${isDone ? 'default' : 'pointer'}; opacity:${isDone ? '0.6' : '1'}; border-left: 4px solid ${isDone ? 'transparent' : m.color};">
-         <span style="font-size:1.4rem;">${m.icon}</span> 
-         <span style="flex:1; font-weight:bold;">${m.name}</span>
-         <span style="background:${isDone ? 'transparent' : m.color}; color:${isDone ? 'var(--muted)' : '#000'}; padding:4px 10px; border-radius:20px; font-size:0.8rem; font-weight:bold;">${isDone ? 'Al día ✓' : dueCount + ' hoy'}</span>
-      </button>`;
+      <div class="deck-item" onclick="${isDone ? '' : `startSmartStudy('${m.id}')`}" style="border-left:4px solid ${isDone ? 'var(--border)' : (m.color || 'var(--accent)')}; opacity:${isDone ? '0.6' : '1'}; cursor:${isDone ? 'default' : 'pointer'};">
+          <div class="deck-icon">${m.icon}</div>
+          <div class="deck-info">
+              <h4>${m.name}</h4>
+              ${subText ? `<span style="font-size:0.72rem; color:var(--muted); font-style:italic; display:block; margin-top:2px; margin-bottom:4px; line-height:1.3;">${subText}</span>` : ''}
+              <p id="deck-info-${m.id}" style="font-size:0.72rem; color:var(--muted); margin-top:2px;">${isDone ? '✓ Al día' : dueCount + ' pendientes hoy'}</p>
+              <div class="dom-bar"><div class="dom-fill" id="dom-${m.id}" style="width:0%; background:${m.color || 'linear-gradient(90deg,var(--green),var(--gold))'}"></div></div>
+          </div>
+          <span style="background:${isDone ? 'transparent' : (m.color || 'var(--accent)')}; color:${isDone ? 'var(--muted)' : '#000'}; padding:4px 10px; border-radius:20px; font-size:0.75rem; font-weight:bold; white-space:nowrap;">${isDone ? 'Al día ✓' : dueCount + ' hoy'}</span>
+      </div>`;
+      
+      // Si es capitales, añadir el juego de emparejar justo después
+      if (isCapitales) {
+          container.innerHTML += `
+          <div class="deck-item" onclick="iniciarMatchCapitales()" style="border-color:var(--accent);">
+              <div class="deck-icon">🌍</div>
+              <div class="deck-info">
+                  <h4>Emparejar Capitales</h4>
+                  <span style="font-size:0.72rem; color:var(--muted); font-style:italic; display:block; margin-top:2px;">Une cada país con su capital</span>
+              </div>
+              <div class="deck-arrow">›</div>
+          </div>`;
+      }
    });
+   
+   // Mis mazos al final
+   container.innerHTML += `
+   <div class="deck-item" onclick="iniciarMazoCustom()">
+       <div class="deck-icon">⭐</div>
+       <div class="deck-info">
+           <h4>Mis mazos</h4>
+           <span style="font-size:0.72rem; color:var(--muted); font-style:italic; display:block; margin-top:2px; margin-bottom:4px;">Las preguntas que tú mismo añades</span>
+           <p id="deck-info-custom" style="font-size:0.72rem; color:var(--muted);">Tus propias tarjetas</p>
+       </div>
+       <div class="deck-arrow">›</div>
+   </div>`;
+   
+   // Actualizar barras de progreso
+   setTimeout(function(){ if (typeof loadDeckInfo === 'function') loadDeckInfo(); }, 50);
    
    document.getElementById('view-study-selector').style.display = 'flex';
 };
@@ -15450,9 +15445,10 @@ window.startSmartStudy = function(deckId) {
    const srsData = loadStudyData();
    const now = Date.now();
    studyDeck = [];
+   const archivedCards = getArchivedCards();
 
    if (deckId === 'sos') {
-       studyDeck = getSosCards();
+       studyDeck = getSosCards().filter(q => { const id = q?.q ?? q?.def ?? ''; return !archivedCards.includes(id); });
        studyDeck.sort(() => Math.random() - 0.5);
        studyDeck = studyDeck.slice(0, 30);
        document.getElementById('study-title').innerText = "🚨 Hospital (Urgencias)";
@@ -15461,7 +15457,7 @@ window.startSmartStudy = function(deckId) {
        MAZOS.forEach(m => {
            (m?.questions ?? []).forEach(q => allQuestions.push({...q, deckId: m?.id, color: m?.color}));
        });
-       studyDeck = allQuestions.filter(q => { const id = q?.q ?? q?.def ?? ''; return !id || !srsData[id] || srsData[id].nextReview <= now; });
+       studyDeck = allQuestions.filter(q => { const id = q?.q ?? q?.def ?? ''; return !archivedCards.includes(id) && (!id || !srsData[id] || srsData[id].nextReview <= now); });
        studyDeck.sort(() => Math.random() - 0.5); 
        studyDeck = studyDeck.slice(0, 50); 
        document.getElementById('study-title').innerText = "🌪️ Repaso Global";
@@ -15470,7 +15466,7 @@ window.startSmartStudy = function(deckId) {
        if (!mazo) return;
        const questions = mazo?.questions ?? [];
        let questionsWithContext = questions.map(q => ({...q, deckId: mazo?.id, color: mazo?.color}));
-       studyDeck = questionsWithContext.filter(q => { const id = q?.q ?? q?.def ?? ''; return !id || !srsData[id] || srsData[id].nextReview <= now; });
+       studyDeck = questionsWithContext.filter(q => { const id = q?.q ?? q?.def ?? ''; return !archivedCards.includes(id) && (!id || !srsData[id] || srsData[id].nextReview <= now); });
        studyDeck.sort(() => Math.random() - 0.5); 
        studyDeck = studyDeck.slice(0, 50); 
        document.getElementById('study-title').innerText = (mazo?.icon ?? '') + " " + (mazo?.name ?? '');
@@ -15500,7 +15496,12 @@ window.startSmartStudyAll = function(deckId) {
         return;
     }
 
+    var archivedCards = getArchivedCards();
     studyDeck = (mazo.questions || [])
+        .filter(function(q){
+            var id = q?.q ?? q?.def ?? '';
+            return !archivedCards.includes(id);
+        })
         .map(function(q){
             return Object.assign({}, q, {
                 deckId: mazo.id,
@@ -15580,6 +15581,9 @@ window.nextStudyCard = function() {
    document.getElementById('study-a').style.display = 'none';
    document.getElementById('study-actions').style.display = 'none';
    document.getElementById('study-show-btn').style.display = 'flex';
+   // Ocultar botón de archivar hasta que se gire la tarjeta
+   var btnArchivar = document.getElementById('btn-archivar-tarjeta');
+   if (btnArchivar) btnArchivar.style.display = 'none';
 };
 
 window.showHint = function() {
@@ -15625,6 +15629,111 @@ window.flipStudyCard = function() {
    document.getElementById('study-a').style.display = 'flex';
    document.getElementById('study-actions').style.display = 'flex';
    document.getElementById('study-show-btn').style.display = 'none';
+   // Mostrar botón de archivar
+   var btnArchivar = document.getElementById('btn-archivar-tarjeta');
+   if (btnArchivar) btnArchivar.style.display = 'block';
+};
+
+// Sistema de archivo de tarjetas dominadas
+window.getArchivedCards = function() {
+    try { return JSON.parse(localStorage.getItem('ppro_archived_cards') || '[]'); }
+    catch(e) { return []; }
+};
+
+window.saveArchivedCards = function(cards) {
+    localStorage.setItem('ppro_archived_cards', JSON.stringify(cards));
+};
+
+window.isCardArchived = function(cardId) {
+    return getArchivedCards().includes(cardId);
+};
+
+window.archivarTarjetaEstudio = function() {
+    var card = currentStudyCard;
+    if (!card) return;
+    
+    var id = card?.q ?? card?.def ?? '';
+    if (!id) return;
+    
+    // Añadir a archivadas
+    var archived = getArchivedCards();
+    if (!archived.includes(id)) {
+        archived.push(id);
+        saveArchivedCards(archived);
+    }
+    
+    // Eliminar de la cola actual
+    studyDeck = studyDeck.filter(function(c) {
+        var cid = c?.q ?? c?.def ?? '';
+        return cid !== id;
+    });
+    
+    // Feedback visual
+    if (typeof showToast === 'function') {
+        showToast('📦 Archivada · No volverá a aparecer', 2000);
+    }
+    
+    // Siguiente tarjeta
+    nextStudyCard();
+};
+
+// Archivar tarjeta desde modo Entrenamiento
+window.archivarTarjetaEntrenamiento = function() {
+    if (typeof gameSession === 'undefined' || typeof gameIndex === 'undefined') return;
+    var data = gameSession[gameIndex];
+    if (!data) return;
+    
+    var id = data.q || data.def || data.a || data.word || '';
+    if (!id) return;
+    
+    var archived = getArchivedCards();
+    if (!archived.includes(id)) {
+        archived.push(id);
+        saveArchivedCards(archived);
+    }
+    
+    if (typeof showToast === 'function') {
+        showToast('📦 Archivada · No volverá a aparecer', 2000);
+    }
+    
+    // Avanzar a siguiente tarjeta
+    gameIndex++;
+    if (gameIndex < gameSession.length) {
+        showCard();
+    } else {
+        endGameSession();
+    }
+};
+
+// Archivar tarjeta desde modo RAE Extremo
+window.archivarTarjetaRae = function() {
+    if (typeof raeSession === 'undefined' || typeof raeIndex === 'undefined') return;
+    var data = raeSession[raeIndex];
+    if (!data) return;
+    
+    var id = data.word || data.def || '';
+    if (!id) return;
+    
+    var archived = getArchivedCards();
+    if (!archived.includes(id)) {
+        archived.push(id);
+        saveArchivedCards(archived);
+    }
+    
+    if (typeof showToast === 'function') {
+        showToast('📦 Archivada · No volverá a aparecer', 2000);
+    }
+    
+    // Avanzar a siguiente tarjeta
+    raeIndex++;
+    if (raeIndex < raeSession.length) {
+        showRaeCard();
+    } else {
+        raeSession = [];
+        raeStarted = false;
+        showToast('🎓 ¡Sesión completada!', 2000);
+        goTo('home');
+    }
 };
 
 window.scoreStudy = function(score) {
@@ -16290,7 +16399,7 @@ const DIC_CAMPOS = [
     // REGISTRO
     { id: 'culto',           icon: '📜', name: 'Palabras cultas',       n: '~173',    grupo: 'registro' },
     { id: 'coloquial',       icon: '💬', name: 'Coloquial y vulgar',    n: '~1.750',  grupo: 'registro' },
-    { id: 'americanismo',    icon: '🌎', name: 'Americanismos',         n: '~1.870',  grupo: 'registro' },
+    // americanismo eliminado — no relevante para Pasapalabra España
     // ETIMOLÓGICAS
     { id: 'etym_latin',      icon: '🏛️', name: 'Origen latino',        n: '~11.960', grupo: 'etym' },
     { id: 'etym_griego',     icon: '🏺', name: 'Origen griego',         n: '~1.210',  grupo: 'etym' },
@@ -16538,7 +16647,7 @@ async function prepararPalabrasDia() {
 
     var seleccion = dicMezclar(candidatas).slice(0, 20);
     var nuevoDia = {
-        palabras: seleccion.map(function(p) { return {w:p.w, c:p.c, p:p.p}; }),
+        palabras: seleccion.map(function(p) { return {w:p.w, c:p.c, p:p.p, d:p.d, df:p.df, e:p.e, s:p.s, ec:p.ec, esp:p.esp}; }),
         vistas: 0,
         fecha: new Date().toISOString().slice(0, 10)
     };
@@ -16562,6 +16671,30 @@ function dicGetDificiles() {
     return difs;
 }
 
+
+// --- PALABRAS OCULTAS ---
+function dicOcultarPalabra() {
+    var p = dicState.palabras[dicState.idx];
+    if (!p) return;
+    // Guardar como oculta
+    localStorage.setItem('dic_ocultar_' + p.w.toLowerCase(), '1');
+    // Marcar también como dominada en SRS para que no salga en días
+    dicSetSrs(p.w, 5);
+    showToast('🚫 "' + p.w + '" ocultada — no volverá a aparecer');
+    // Quitar de la sesión actual y pasar a la siguiente
+    dicState.palabras.splice(dicState.idx, 1);
+    if (dicState.palabras.length === 0) {
+        goTo('dic-selector');
+        return;
+    }
+    if (dicState.idx >= dicState.palabras.length) dicState.idx = 0;
+    dicMostrarPalabra();
+}
+
+function dicEstaOculta(word) {
+    return localStorage.getItem('dic_ocultar_' + word.toLowerCase()) === '1';
+}
+
 // --- FILTRO DE DIFICULTAD ---
 var dicFiltroActivo = 'todas';
 
@@ -16575,28 +16708,46 @@ function dicSetFiltro(f) {
     var el = document.getElementById(id);
     if (el) el.classList.add('on');
 
-    // Re-filtrar las palabras actuales
+    // Si el filtro necesita buscar en todo el diccionario, relanzar
     if (f === 'todas') {
-        // no filtrar
-        showToast('Mostrando todas las palabras');
-    } else {
-        var antes = dicState.palabras.length;
-        var filtradas = dicState.palabras.filter(function(p) {
-            var e = dicSrsEstado(p.w);
-            if (f === 'nuevas')     return e === 'nueva';
-            if (f === 'dificiles')  return e === 'dificil';
-            if (f === 'repaso')     return e === 'repaso';
-            if (f === 'dominadas')  return e === 'dominada';
-            return true;
-        });
-        if (filtradas.length === 0) {
-            showToast('No hay palabras con ese filtro');
+        // Recargar el modo actual sin filtro
+        iniciarDiccionario(dicState.modo, dicState.filtro);
+        return;
+    }
+    if (f === 'dificiles') {
+        iniciarDiccionario('dificiles', null);
+        return;
+    }
+    if (f === 'nuevas') {
+        var filtradas = dicState.palabras.filter(function(p){ return dicSrsEstado(p.w) === 'nueva'; });
+        if (filtradas.length === 0) { showToast('No hay palabras nuevas en esta sesión 💪'); return; }
+        dicState.palabras = filtradas; dicState.idx = 0; dicMostrarPalabra();
+        showToast(filtradas.length + ' palabras nuevas'); return;
+    }
+    if (f === 'repaso' || f === 'dominadas') {
+        // Buscar en TODO localStorage — no solo en las palabras ya cargadas
+        var palabrasEncontradas = [];
+        for (var lsk in localStorage) {
+            if (!lsk.startsWith('dic_srs_')) continue;
+            try {
+                var srs = JSON.parse(localStorage.getItem(lsk));
+                var ok = (f === 'repaso' && srs.nivel === 3) || (f === 'dominadas' && srs.nivel >= 4);
+                if (!ok) continue;
+                var word = lsk.replace('dic_srs_', '').replace(/_/g, ' ');
+                var encontrada = null;
+                for (var lc in dicState.letrasCache) {
+                    var match = dicState.letrasCache[lc].find(function(p){ return p.w.toLowerCase() === word; });
+                    if (match) { encontrada = match; break; }
+                }
+                palabrasEncontradas.push(encontrada || {w:word, c:'', p:'', d:'', df:'', e:'', s:''});
+            } catch(e2) {}
+        }
+        if (palabrasEncontradas.length === 0) {
+            showToast(f === 'repaso' ? 'No hay palabras para repasar aún' : '¡Todavía no has dominado ninguna... a estudiar!');
             return;
         }
-        dicState.palabras = filtradas;
-        dicState.idx = 0;
-        dicMostrarPalabra();
-        showToast(filtradas.length + ' palabras filtradas');
+        dicState.palabras = dicMezclar(palabrasEncontradas); dicState.idx = 0; dicMostrarPalabra();
+        showToast(palabrasEncontradas.length + ' palabras para ' + f); return;
     }
 }
 
@@ -16882,7 +17033,7 @@ async function dicCargarPalabras(modo, filtro) {
             var filtradas = data.filter(function(p){ return p.esp && p.esp.includes(filtro); });
             todas = todas.concat(filtradas);
         }
-        return dicMezclar(todas);
+        return dicMezclar(todas).filter(function(p){ return !dicEstaOculta(p.w); });
     }
     return [];
 }
@@ -16893,6 +17044,7 @@ async function dicCargarLetra(letra) {
     var resp = await fetch(url);
     if (!resp.ok) throw new Error('No se pudo cargar dic_' + letra + '.json');
     var data = await resp.json();
+    data = data.filter(function(p){ return !dicEstaOculta(p.w); });
     dicState.letrasCache[letra] = data;
     return data;
 }
@@ -16913,6 +17065,7 @@ function dicMostrarPalabra() {
     if (!p) return;
 
     dicState.revelado = false;
+    document.getElementById('dic-resumen').style.display = 'none';
 
     // Counter
     document.getElementById('dic-rae-counter').textContent = (idx+1) + '/' + total;
@@ -16953,7 +17106,7 @@ function dicMostrarPalabra() {
     document.getElementById('dic-btn-next').style.display = 'none';
 
     // Reset secciones del reverso
-    ['dic-syn-section','dic-ant-section','dic-etym-section','dic-rel-section'].forEach(function(id){
+    ['dic-syn-section','dic-ant-section','dic-etym-section','dic-rel-section','dic-ex-section'].forEach(function(id){
         var el = document.getElementById(id);
         if (el) el.style.display = 'none';
     });
@@ -16985,6 +17138,21 @@ function dicLimpiarDef(d) {
     return d.charAt(0).toUpperCase() + d.slice(1);
 }
 
+function dicOcultar() {
+    var p = dicState.palabras[dicState.idx];
+    if (!p) return;
+    localStorage.setItem('dic_ocultar_' + p.w.toLowerCase(), '1');
+    showToast('🙈 "' + p.w + '" no aparecerá más');
+    // Quitar de la lista actual y avanzar
+    dicState.palabras.splice(dicState.idx, 1);
+    if (dicState.palabras.length === 0) {
+        showToast('¡Has ocultado todas las palabras de esta sesión!');
+        goTo('dic-selector'); return;
+    }
+    if (dicState.idx >= dicState.palabras.length) dicState.idx = 0;
+    dicMostrarPalabra();
+}
+
 function toggleDefExtra2() {
     var extra = document.getElementById('dic-def-extra');
     var btn   = document.getElementById('dic-def-toggle2');
@@ -16999,6 +17167,86 @@ function toggleDefExtra() {
     var visible = extra.classList.toggle('visible');
     btn.textContent = visible ? '− ocultar acepciones' : '+ ' + (extra.textContent.split('\n').length) + ' acepción(es) más';
 }
+
+
+// ================================================================
+// EASTER EGGS — Ejemplos personalizados para Noemi y Andrea
+// ================================================================
+var DIC_EASTER_EGGS = {
+    // ENFERMERA DE UCI
+    "taquicardia":     { ex: "En la UCI de Noemi, una taquicardia a las 3am es la señal de que va a ser una noche larga. FC > 100 lpm, a por ello." },
+    "bradicardia":     { ex: "FC < 60 lpm. Noemi sabe que no siempre es mala señal — en atletas es normal. Contexto, siempre contexto." },
+    "desfibrilador":   { ex: "El mejor amigo de Noemi en una parada cardíaca. 'Despejada' y a rezar." },
+    "intubación":      { ex: "Noemi ha intubado en condiciones que no se le desearían a nadie. Manos firmes, cabeza fría." },
+    "septicemia":      { ex: "La pesadilla de cualquier UCI. Noemi sabe que cada hora cuenta — protocolo Sepsis-3." },
+    "hipoxia":         { ex: "Saturación por los suelos. Noemi ya está moviendo antes de que suene la alarma." },
+    "vasopresores":    { ex: "Cuando la tensión no sube sola, Noemi saca la noradrenalina. UCI life." },
+    "nosocomial":      { ex: "Infección adquirida en el hospital. El enemigo interno que Noemi combate cada día con guantes y protocolo." },
+    "iatrógeno":       { ex: "El daño que causa el propio tratamiento. Noemi siempre pesa el riesgo antes de actuar." },
+    "disnea":          { ex: "La paciente no puede respirar. Noemi ya está ahí antes de que terminen de llamarla." },
+    "anamnesis":       { ex: "La historia clínica que Noemi construye con paciencia aunque el paciente apenas pueda hablar." },
+    "triaje":          { ex: "Decidir quién va primero. Una de las habilidades más duras y más nobles de Noemi." },
+    "paliativo":       { ex: "No siempre se puede curar. Noemi también sabe acompañar, y eso requiere más valentía." },
+    "monitorización":  { ex: "Noemi no le quita ojo a esa pantalla. ECG, SpO2, TA... la UCI nunca duerme." },
+
+    // FAVORITAS Y SONORAS
+    "inefable":        { ex: "Inefable: lo que Noemi siente cuando su hija le da un abrazo después de un turno de 12 horas. No hay palabras." },
+    "zafarrancho":     { ex: "La UCI en lunes por la mañana es un zafarrancho monumental. También significa limpieza general en los barcos — doble sentido perfecto." },
+    "crujiente":       { ex: "Crujiente: como suena la bolsa de patatas que Noemi se merece después de una guardia. Y como suena la palabra cuando la dices despacio: cru-jien-te. 🤤" },
+    "efímero":         { ex: "Efímero como ese momento de silencio en la UCI de madrugada antes de que vuelva a sonar algún monitor." },
+    "crepitar":        { ex: "El sonido que Noemi escucha en los pulmones con el fonendo. También el sonido del fuego y del pan recién hecho." },
+    "borbotear":       { ex: "El sonido del suero en el gotero. Borbotear, borbotar, borbollonear... el español tiene palabras para todo." },
+    "murmullo":        { ex: "El murmullo del pasillo de la UCI a las 5am. Noemi lo conoce de memoria." },
+    "estrépito":       { ex: "Cuando se cae la bandeja de instrumental en quirófano: estrépito monumental. Todo el mundo se gira." },
+    "chisporrotear":   { ex: "Como suena y como se siente: chisporrotear. Di la palabra en voz alta. ¿Verdad que es perfecta?" },
+    "zigzag":          { ex: "El ECG de un paciente con fibrilación. Noemi lo identifica de un vistazo." },
+    "algarabía":       { ex: "La guardia del 31 de diciembre en urgencias. Pura algarabía." },
+    "bambolear":       { ex: "El paciente sedado que hay que recolocar. Bambolear sin despertar — todo un arte." },
+
+    // IDENTIDAD
+    "sáfico":          { ex: "Del poeta Safo de Lesbos, que escribió los poemas de amor más hermosos de la Antigüedad. Noemi lo sabe bien." },
+    "querencia":       { ex: "Querencia: el lugar al que siempre vuelves. Para Noemi, su casa, su hija, su gente." },
+    "enamoramiento":   { ex: "Estado alterado de consciencia, según la neurociencia. Dopamina, oxitocina, serotonina. Noemi sabe de química." },
+
+    // MATERNIDAD
+    "oxitocina":       { ex: "La hormona del amor y del vínculo. Noemi la conoce desde dos ángulos: la UCI y ser madre." },
+    "puerperio":       { ex: "Las semanas después del parto. Noemi sabe perfectamente que es mucho más duro de lo que nadie te cuenta." },
+    "ternura":         { ex: "Lo que siente Noemi mirando dormir a su hija después de una guardia. Inefable, ya que estamos." },
+    "vínculo":         { ex: "El vínculo madre-hija que Noemi forja cada día. Tan sólido como los conocimientos que está construyendo para el bote." },
+
+    // PASAPALABRA
+    "efímero":         { ex: "Efímero como el tiempo en el rosco. 2 minutos 30 segundos. Noemi los va a aprovechar al máximo." },
+    "serendipia":      { ex: "Un hallazgo afortunado por casualidad. Como el día que Noemi descubrió que podía prepararse en serio para Pasapalabra." },
+    "concentración":   { ex: "Lo que necesita Noemi en el rosco. La misma concentración que en la UCI, pero sin monitor de constantes." },
+    "bote":            { ex: "El objetivo. El bote de Pasapalabra. Noemi, estás más cerca de lo que crees." },
+
+    // FILOLOGÍA
+    "etimología":      { ex: "La materia en la que Noemi es experta. Del griego etymon (verdadero) + logos (estudio). El origen de las palabras." },
+    "polisemia":       { ex: "Una palabra, varios significados. Como 'bote': recipiente, embarcación, y el dineral que Noemi va a ganar." },
+    "sinécdoque":      { ex: "Tomar la parte por el todo o viceversa. 'Hay cien bocas que alimentar' (bocas = personas). Noemi lo explica mejor que nadie." },
+    "paronomasia":     { ex: "Palabras parecidas en sonido pero distintas en significado. Como 'Noemi ganó' y 'Noemi GaNó'. Sutilezas de filóloga." },
+    "diacrónico":      { ex: "El estudio de la lengua a través del tiempo. Noemi ve la evolución del español con ojos de filóloga." },
+    "hipérbaton":      { ex: "Alterar el orden normal de las palabras. 'Del monte en la ladera...' (Fray Luis). A Noemi, con su background, le sale natural." },
+
+    // ANDREA
+    "tesón":           { ex: "Tesón: lo que tiene Andrea construyendo esta app de cero para que Noemi llegue al bote. Tú eres la hostia, Andrea. 🔥" },
+    "resiliencia":     { ex: "Adaptarse y seguir adelante. Lo que tiene Noemi en la UCI y en la vida. Lo que tiene Andrea depurando código a las 2am." },
+    "tenacidad":       { ex: "De tener (del latín tenax). Noemi estudiando. Andrea programando. Tenacidad pura." },
+    "artífice":        { ex: "La persona que crea algo con destreza y habilidad. Andrea es la artífice de esta app. Noemi será la artífice de su victoria." },
+    "proeza":          { ex: "Hazaña que requiere valor y habilidad. Llegar al bote de Pasapalabra. Y también haber construido esto desde cero, Andrea." },
+    "ingenio":         { ex: "Capacidad de inventar o crear con gracia. El ingrediente secreto de Andrea en cada funcionalidad nueva." },
+    "empeño":          { ex: "Noemi estudiando las palabras más largas del diccionario a las 11pm. Andrea añadiendo easter eggs a las 12pm. Empeño, las dos." },
+    "perseverancia":   { ex: "Del latín perseverare. Lo que hace que Noemi abra la app cada día y Andrea la mejore cada semana." },
+    "pionera":         { ex: "Andrea, creando una app de preparación para Pasapalabra que no existía. Noemi, demostrando que la UCI y el bote son compatibles." },
+
+    // DIVERTIDAS
+    "galimatías":      { ex: "Este párrafo sobre la fisiopatología de la sepsis es un galimatías. Noemi lo entiende igual. UCI level." },
+    "estrafalario":    { ex: "El vestuario de algunos colaboradores de Pasapalabra. Estrafalario pero coherente." },
+    "marimorena":      { ex: "Se armó la marimorena en la sala de espera de urgencias. Noemi ya iba de camino." },
+    "algarabía":       { ex: "Cuando el rosco termina con bote, en el plató se arma una algarabía monumental. Noemi lo vivirá en primera persona." },
+    "zarandear":       { ex: "Zarandear las ideas hasta que tengan sentido. Metodología Noemi para estudiar vocabulario complicado." },
+    "morrocotudo":     { ex: "Un trabajo morrocotudo. Como memorizar 68.000 palabras del diccionario de la RAE. Noemi, tú puedes." },
+};
 
 function dicRevelar() {
     var p = dicState.palabras[dicState.idx];
@@ -17048,13 +17296,49 @@ function dicRevelar() {
         document.getElementById('dic-etym-section').style.display = 'block';
     }
 
+    // Easter egg ✨
+    var exEl = document.getElementById('dic-ex-section');
+    if (p.ex && p.ex.trim() && exEl) {
+        document.getElementById('dic-ex-text').textContent = p.ex;
+        exEl.style.display = 'block';
+    } else if (exEl) {
+        exEl.style.display = 'none';
+    }
+
     // Palabras relacionadas
     dicMostrarRelacionadas(p);
 
-    // Link RAE
+    // Easter egg — ejemplo personalizado
+    var easterKey = p.w.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'');
+    var easterEx  = DIC_EASTER_EGGS[p.w.toLowerCase()] || DIC_EASTER_EGGS[easterKey];
+    var ejBlock   = document.getElementById('dic-ej-easter');
+    if (!ejBlock) {
+        ejBlock = document.createElement('div');
+        ejBlock.id = 'dic-ej-easter';
+        ejBlock.style.cssText = 'background:linear-gradient(135deg,rgba(240,192,64,0.08),rgba(153,102,255,0.08));' +
+            'border:1px solid rgba(240,192,64,0.35);border-radius:12px;padding:10px 12px;margin-bottom:8px;' +
+            'font-size:0.82rem;line-height:1.5;';
+        var scroll = document.getElementById('dic-back-scroll');
+        if (scroll) {
+            var linkRef = document.getElementById('dic-rae-link');
+            scroll.insertBefore(ejBlock, linkRef);
+        }
+    }
+    if (easterEx && easterEx.ex) {
+        ejBlock.innerHTML = '<span style="font-size:0.62rem;text-transform:uppercase;letter-spacing:1.5px;font-weight:800;' +
+            'color:var(--gold);display:block;margin-bottom:4px;">✨ Para ti, Noemi</span>' +
+            '<span style="color:var(--muted);">' + easterEx.ex + '</span>';
+        ejBlock.style.display = 'block';
+    } else {
+        ejBlock.style.display = 'none';
+    }
+
+    // Link RAE + botón ocultar
     var linkEl = document.getElementById('dic-rae-link');
     linkEl.href = 'https://dle.rae.es/' + encodeURIComponent(p.w.toLowerCase());
     linkEl.style.display = 'block';
+    var btnOcultar = document.getElementById('dic-btn-ocultar');
+    if (btnOcultar) btnOcultar.style.display = 'block';
 
     // Rating bar
     document.getElementById('dic-rate-row').classList.add('visible');
@@ -17081,7 +17365,8 @@ function dicCalificar(nivel) {
     }
     document.getElementById('dic-rate-row').classList.remove('visible');
     var btnNext = document.getElementById('dic-btn-next');
-    btnNext.style.display = 'block';
+    btnNext.style.display = 'flex';
+    btnNext.style.flexDirection = 'column';
     btnNext.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
 }
 
@@ -17091,16 +17376,14 @@ function dicSiguiente() {
     dicGuardarProgreso();
 
     if (dicState.idx >= dicState.palabras.length) {
-        // Fin del mazo — borrar progreso guardado
         dicBorrarProgreso(dicState.modo, dicState.filtro);
-        showToast('¡Has repasado todas las palabras! 🎉');
         if (dicState.modo === 'aleatorio') {
             dicCargarMasAleatorio().then(function(){
                 if (dicState.idx < dicState.palabras.length) dicMostrarPalabra();
-                else goTo('dic-selector');
+                else dicMostrarResumen();
             });
         } else {
-            goTo('dic-selector');
+            dicMostrarResumen();
         }
         return;
     }
@@ -17451,7 +17734,13 @@ function iniciarMazoCustom() {
 }
 
 function pickRandom(arr, n) {
-    return [...arr].sort(() => Math.random() - 0.5).slice(0, n);
+    // Filtrar tarjetas archivadas
+    var archived = typeof getArchivedCards === 'function' ? getArchivedCards() : [];
+    var filtered = arr.filter(function(item) {
+        var id = item.q || item.def || item.a || item.word || '';
+        return !archived.includes(id);
+    });
+    return [...filtered].sort(() => Math.random() - 0.5).slice(0, n);
 }
 
 function startGameSession() {
@@ -19106,10 +19395,12 @@ var roscoLetraFail = 0;
 
 
 
-// Oculta el view-smart-study (div fixed) antes de navegar a una screen
+// Oculta AMBOS divs fixed del estudio (view-smart-study y view-study-selector) antes de navegar a una screen
 function ocultarEstudioIrA(screenId) {
     var view = document.getElementById('view-smart-study');
+    var selector = document.getElementById('view-study-selector');
     if (view) view.style.display = 'none';
+    if (selector) selector.style.display = 'none';
     document.querySelectorAll('.screen').forEach(function(s){ s.classList.remove('active'); });
     var pantalla = document.getElementById(screenId);
     if (pantalla) pantalla.classList.add('active');
