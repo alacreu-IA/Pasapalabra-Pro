@@ -1003,26 +1003,29 @@ html, body {
 
 /* Rating bar fija abajo */
 .dic-rating-bar {
-    display: flex; gap: 8px; padding: 10px 18px 20px;
+    display: none; gap: 10px; padding: 14px 18px;
+    padding-bottom: max(20px, env(safe-area-inset-bottom));
     flex-shrink: 0; border-top: 1px solid var(--border);
-    background: var(--bg); display: none;
+    background: var(--bg);
 }
 .dic-rating-bar.visible { display: flex; }
 .dic-rate-btn {
-    flex: 1; border-radius: 12px; padding: 12px 6px;
+    flex: 1; border-radius: 16px; padding: 14px 8px;
     font-family: 'Space Grotesk', sans-serif;
-    font-size: 1rem; font-weight: 700; border: 1px solid;
+    font-size: 1.1rem; font-weight: 700; border: 2px solid;
     cursor: pointer; display: flex; flex-direction: column;
-    align-items: center; gap: 3px; background: transparent;
-    transition: background 0.15s;
+    align-items: center; gap: 4px; background: transparent;
+    transition: background 0.15s, transform 0.1s;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
 }
-.dic-rate-btn span { font-size: 0.7rem; font-weight: 600; }
-.dic-rate-fail { border-color: var(--red);   color: var(--red);   }
-.dic-rate-mid  { border-color: var(--gold);  color: var(--gold);  }
-.dic-rate-good { border-color: var(--green); color: var(--green); }
-.dic-rate-fail:hover { background: rgba(255,85,85,0.1); }
-.dic-rate-mid:hover  { background: rgba(240,192,64,0.1); }
-.dic-rate-good:hover { background: rgba(68,212,144,0.1); }
+.dic-rate-btn:active { transform: scale(0.97); }
+.dic-rate-btn span { font-size: 0.72rem; font-weight: 600; }
+.dic-rate-fail { border-color: var(--red);   color: var(--red);   background: rgba(255,85,85,0.08); }
+.dic-rate-mid  { border-color: var(--gold);  color: var(--gold);  background: rgba(240,192,64,0.08); }
+.dic-rate-good { border-color: var(--green); color: var(--green); background: rgba(68,212,144,0.08); }
+.dic-rate-fail:hover { background: rgba(255,85,85,0.15); }
+.dic-rate-mid:hover  { background: rgba(240,192,64,0.15); }
+.dic-rate-good:hover { background: rgba(68,212,144,0.15); }
 
 /* LOADING */
 .dic-loading {
@@ -1884,33 +1887,11 @@ html, body {
                 <div class="dic-rel-tags" id="dic-rel-words"></div>
             </div>
 
-            <!-- Link RAE + Ocultar -->
-            <div style="display:flex; gap:8px; align-items:center; margin-top:4px;">
-                <a class="dic-rae-link-btn" id="dic-rae-link" href="#" target="_blank"
-                   style="flex:1; display:none; text-align:center; font-size:0.75rem; color:var(--muted); text-decoration:none; padding:6px 0;">
-                    📖 Ver en dle.rae.es
-                </a>
-                <button id="dic-btn-ocultar" onclick="dicOcultar()"
-                    style="display:none; flex-shrink:0; background:transparent; border:1px solid var(--border2);
-                    color:var(--muted); border-radius:10px; padding:5px 10px; font-size:0.72rem;
-                    font-family:'Space Grotesk',sans-serif; cursor:pointer;">
-                    🙈 No mostrar más
-                </button>
-            </div>
-
-            <!-- Botón siguiente (aparece tras calificar) -->
-            <div id="dic-btn-next" style="display:none; margin-top:4px;">
-                <button class="dic-reveal-btn" onclick="dicSiguiente()"
-                        style="background: var(--card); color: var(--muted); border: 1px solid var(--border2); width:100%;">
-                    Siguiente →
-                </button>
-                <button onclick="dicOcultarPalabra()" id="dic-btn-ocultar"
-                        style="width:100%; margin-top:6px; background:transparent; border:1px solid rgba(255,85,85,0.3);
-                               color:rgba(255,85,85,0.6); border-radius:14px; padding:10px; font-size:0.8rem;
-                               font-family:'Space Grotesk',sans-serif; cursor:pointer;">
-                    🚫 No mostrar más esta palabra
-                </button>
-            </div>
+            <!-- Link RAE -->
+            <a class="dic-rae-link-btn" id="dic-rae-link" href="#" target="_blank"
+               style="display:none; text-align:center; font-size:0.75rem; color:var(--muted); text-decoration:none; padding:6px 0; margin-top:8px;">
+                📖 Ver en dle.rae.es
+            </a>
         </div>
     </div>
 
@@ -1946,6 +1927,12 @@ html, body {
         <button class="dic-rate-btn dic-rate-mid"  onclick="dicCalificar(3)">🔄<span>Regular</span></button>
         <button class="dic-rate-btn dic-rate-good" onclick="dicCalificar(5)">✔<span>La sé</span></button>
     </div>
+    <button id="dic-btn-archivar" onclick="dicOcultarPalabra()" 
+            style="display:none; width:calc(100% - 36px); margin:0 18px 16px; background:transparent; border:1px solid var(--border);
+                   color:var(--muted); border-radius:14px; padding:10px; font-size:0.75rem;
+                   font-family:'Space Grotesk',sans-serif; cursor:pointer;">
+        📦 Ya me la sé, no mostrar más
+    </button>
 </div>
 
 
@@ -17103,7 +17090,8 @@ function dicMostrarPalabra() {
     document.getElementById('dic-panel-front').style.display = 'flex';
     document.getElementById('dic-panel-back').style.display = 'none';
     document.getElementById('dic-rate-row').classList.remove('visible');
-    document.getElementById('dic-btn-next').style.display = 'none';
+    var btnArchivar = document.getElementById('dic-btn-archivar');
+    if (btnArchivar) btnArchivar.style.display = 'none';
 
     // Reset secciones del reverso
     ['dic-syn-section','dic-ant-section','dic-etym-section','dic-rel-section','dic-ex-section'].forEach(function(id){
@@ -17337,11 +17325,10 @@ function dicRevelar() {
     var linkEl = document.getElementById('dic-rae-link');
     linkEl.href = 'https://dle.rae.es/' + encodeURIComponent(p.w.toLowerCase());
     linkEl.style.display = 'block';
-    var btnOcultar = document.getElementById('dic-btn-ocultar');
-    if (btnOcultar) btnOcultar.style.display = 'block';
-
-    // Rating bar
+    // Rating bar y botón archivar
     document.getElementById('dic-rate-row').classList.add('visible');
+    var btnArchivar = document.getElementById('dic-btn-archivar');
+    if (btnArchivar) btnArchivar.style.display = 'block';
 
     // Scroll al top
     var scroll = document.getElementById('dic-back-scroll');
@@ -17363,11 +17350,10 @@ function dicCalificar(nivel) {
             if (dia) { dia.vistas = (dia.vistas||0) + 1; localStorage.setItem(dicDiaKey(), JSON.stringify(dia)); }
         }
     }
+    // Ocultar barra de rating
     document.getElementById('dic-rate-row').classList.remove('visible');
-    var btnNext = document.getElementById('dic-btn-next');
-    btnNext.style.display = 'flex';
-    btnNext.style.flexDirection = 'column';
-    btnNext.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    // Pasar directamente a la siguiente palabra
+    dicSiguiente();
 }
 
 function dicSiguiente() {
