@@ -15229,6 +15229,14 @@ window.startLitEspEpoca = function(epocaId) {
     var sel = document.getElementById('view-study-selector');
     if (sel) sel.style.display = 'none';
     
+    // ocultar juegos de emparejar si están abiertos
+    var aoMatch = document.getElementById('ao-match-inline');
+    if (aoMatch) aoMatch.style.display = 'none';
+    var histMatch = document.getElementById('hist-match-inline');
+    if (histMatch) histMatch.style.display = 'none';
+    var maMatch = document.getElementById('ma-inline');
+    if (maMatch) maMatch.style.display = 'none';
+    
     var view = document.getElementById('view-smart-study');
     if (view) view.style.display = 'flex';
     
@@ -16173,6 +16181,18 @@ window.startSmartStudyAll = function(deckId) {
     // cerrar selector si está abierto
     var sel = document.getElementById('view-study-selector');
     if (sel) sel.style.display = 'none';
+
+    // ocultar juegos de emparejar si están abiertos
+    var aoMatch = document.getElementById('ao-match-inline');
+    if (aoMatch) aoMatch.style.display = 'none';
+    var histMatch = document.getElementById('hist-match-inline');
+    if (histMatch) histMatch.style.display = 'none';
+    var maMatch = document.getElementById('ma-inline');
+    if (maMatch) maMatch.style.display = 'none';
+
+    // mostrar study-area
+    var sa = document.getElementById('study-area');
+    if (sa) sa.style.display = 'flex';
 
     // abrir pantalla de estudio
     var view = document.getElementById('view-smart-study');
