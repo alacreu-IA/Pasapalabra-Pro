@@ -15037,6 +15037,459 @@ MAZOS.push({
     {q: "Con la Z: Danza popular y canción muy viva del Siglo de Oro, repetidamente censurada y atacada por los eclesiásticos por su carácter lascivo.", a: "Zarabanda", letra: "Z"},
   ]
 });
+
+// ================================================================
+// LITERATURA ESPAÑOLA - SUBMAZOS POR ÉPOCA (Clasificación Gemini)
+// ================================================================
+var LIT_ESP_EPOCAS = {
+    MED:   { id: "lit_med",   name: "Medieval",        icon: "📜", sub: "Berceo, Manrique, La Celestina...",     color: "#a0522d", questions: [] },
+    ORO:   { id: "lit_oro",   name: "Siglos de Oro",   icon: "✨", sub: "Cervantes, Lope, Góngora, Quevedo...", color: "#daa520", questions: [] },
+    XVIII: { id: "lit_xviii", name: "Siglo XVIII",     icon: "🎭", sub: "Feijoo, Jovellanos, Moratín...",        color: "#708090", questions: [] },
+    ROM:   { id: "lit_rom",   name: "Siglo XIX",       icon: "📖", sub: "Bécquer, Larra, Galdós, Clarín...",     color: "#8b0000", questions: [] },
+    GEN:   { id: "lit_gen",   name: "Generaciones",    icon: "🖤", sub: "98, 14 y 27: Lorca, Machado, Unamuno...", color: "#2c3e50", questions: [] },
+    POS:   { id: "lit_pos",   name: "Posguerra",       icon: "📺", sub: "Cela, Delibes, Martín Gaite...",        color: "#34495e", questions: [] },
+    NA:    { id: "lit_na",    name: "Varios",          icon: "🔀", sub: "Métrica, conceptos generales...",       color: "#95a5a6", questions: [] }
+};
+
+// Clasificación por índice (de Gemini) - cada número es el índice de la pregunta (1-624) y su época
+var LIT_CLASIF = {"1":"ROM","2":"MED","3":"MED","4":"GEN","5":"ROM","6":"ROM","7":"ORO","8":"POS","9":"XVIII","10":"XVIII","11":"ORO","12":"POS","13":"POS","14":"NA","15":"ROM","16":"ORO","17":"ROM","18":"ORO","19":"ORO","20":"GEN","21":"ROM","22":"POS","23":"GEN","24":"GEN","25":"ORO","26":"ORO","27":"ROM","28":"ROM","29":"ORO","30":"POS","31":"ORO","32":"XVIII","33":"ROM","34":"POS","35":"GEN","36":"GEN","37":"POS","38":"ORO","39":"ROM","40":"NA","41":"ROM","42":"ROM","43":"GEN","44":"GEN","45":"GEN","46":"GEN","47":"MED","48":"POS","49":"GEN","50":"ORO","51":"ROM","52":"ORO","53":"NA","54":"ROM","55":"GEN","56":"GEN","57":"MED","58":"ROM","59":"NA","60":"ROM","61":"ORO","62":"ROM","63":"NA","64":"ORO","65":"POS","66":"ROM","67":"POS","68":"NA","69":"POS","70":"ORO","71":"ORO","72":"NA","73":"ORO","74":"POS","75":"GEN","76":"NA","77":"MED","78":"GEN","79":"ORO","80":"MED","81":"GEN","82":"ORO","83":"POS","84":"MED","85":"POS","86":"ROM","87":"ORO","88":"NA","89":"ROM","90":"MED","91":"GEN","92":"GEN","93":"GEN","94":"ORO","95":"ROM","96":"ORO","97":"NA","98":"XVIII","99":"XVIII","100":"GEN","101":"MED","102":"GEN","103":"ORO","104":"GEN","105":"ORO","106":"MED","107":"NA","108":"POS","109":"POS","110":"ORO","111":"ROM","112":"GEN","113":"ORO","114":"POS","115":"POS","116":"ROM","117":"ORO","118":"ROM","119":"GEN","120":"POS","121":"ROM","122":"ROM","123":"GEN","124":"POS","125":"GEN","126":"ROM","127":"ORO","128":"ROM","129":"ORO","130":"ORO","131":"GEN","132":"ROM","133":"GEN","134":"GEN","135":"GEN","136":"ROM","137":"MED","138":"POS","139":"ORO","140":"ORO","141":"ROM","142":"MED","143":"GEN","144":"MED","145":"GEN","146":"GEN","147":"POS","148":"ORO","149":"ORO","150":"ORO","151":"POS","152":"GEN","153":"ORO","154":"ROM","155":"GEN","156":"MED","157":"GEN","158":"POS","159":"ROM","160":"ROM","161":"POS","162":"POS","163":"ROM","164":"POS","165":"XVIII","166":"ORO","167":"ROM","168":"XVIII","169":"ORO","170":"NA","171":"MED","172":"ORO","173":"NA","174":"GEN","175":"ROM","176":"ROM","177":"ORO","178":"POS","179":"MED","180":"MED","181":"ORO","182":"GEN","183":"GEN","184":"GEN","185":"POS","186":"ORO","187":"ORO","188":"NA","189":"GEN","190":"ORO","191":"GEN","192":"NA","193":"XVIII","194":"ORO","195":"MED","196":"POS","197":"GEN","198":"GEN","199":"XVIII","200":"GEN","201":"POS","202":"MED","203":"POS","204":"POS","205":"POS","206":"GEN","207":"MED","208":"POS","209":"ORO","210":"POS","211":"GEN","212":"MED","213":"ROM","214":"MED","215":"ROM","216":"GEN","217":"ORO","218":"ORO","219":"ORO","220":"GEN","221":"XVIII","222":"ORO","223":"GEN","224":"ORO","225":"GEN","226":"ROM","227":"ROM","228":"ORO","229":"ROM","230":"ORO","231":"ORO","232":"MED","233":"ROM","234":"MED","235":"ORO","236":"GEN","237":"GEN","238":"ORO","239":"MED","240":"ORO","241":"GEN","242":"ORO","243":"MED","244":"POS","245":"ORO","246":"MED","247":"POS","248":"POS","249":"ORO","250":"NA","251":"ORO","252":"ORO","253":"GEN","254":"POS","255":"ROM","256":"ORO","257":"NA","258":"ORO","259":"ORO","260":"GEN","261":"ROM","262":"ROM","263":"NA","264":"POS","265":"NA","266":"ORO","267":"GEN","268":"MED","269":"ORO","270":"POS","271":"ROM","272":"MED","273":"GEN","274":"ORO","275":"ROM","276":"MED","277":"ORO","278":"GEN","279":"MED","280":"NA","281":"ORO","282":"ORO","283":"ROM","284":"GEN","285":"GEN","286":"ORO","287":"ORO","288":"MED","289":"XVIII","290":"ORO","291":"ORO","292":"MED","293":"ROM","294":"ORO","295":"POS","296":"XVIII","297":"POS","298":"ROM","299":"ROM","300":"MED","301":"ROM","302":"POS","303":"MED","304":"XVIII","305":"GEN","306":"ORO","307":"GEN","308":"MED","309":"GEN","310":"ORO","311":"NA","312":"ORO","313":"MED","314":"GEN","315":"ORO","316":"GEN","317":"MED","318":"ORO","319":"ORO","320":"GEN","321":"POS","322":"GEN","323":"POS","324":"ORO","325":"MED","326":"ROM","327":"NA","328":"ROM","329":"POS","330":"GEN","331":"MED","332":"ORO","333":"ORO","334":"ORO","335":"ORO","336":"ORO","337":"NA","338":"MED","339":"ORO","340":"MED","341":"GEN","342":"ROM","343":"GEN","344":"ROM","345":"ROM","346":"ORO","347":"ORO","348":"MED","349":"ORO","350":"MED","351":"XVIII","352":"NA","353":"NA","354":"ORO","355":"GEN","356":"POS","357":"GEN","358":"ROM","359":"ORO","360":"ORO","361":"ROM","362":"POS","363":"ROM","364":"NA","365":"ORO","366":"POS","367":"ROM","368":"ORO","369":"NA","370":"ROM","371":"ORO","372":"ORO","373":"MED","374":"ORO","375":"NA","376":"MED","377":"ROM","378":"ROM","379":"XVIII","380":"ORO","381":"ORO","382":"MED","383":"POS","384":"GEN","385":"POS","386":"GEN","387":"ORO","388":"ORO","389":"POS","390":"ORO","391":"XVIII","392":"ORO","393":"ORO","394":"MED","395":"XVIII","396":"ORO","397":"MED","398":"ORO","399":"MED","400":"GEN","401":"ORO","402":"ORO","403":"GEN","404":"ROM","405":"MED","406":"ROM","407":"ROM","408":"ORO","409":"MED","410":"XVIII","411":"ORO","412":"ORO","413":"GEN","414":"MED","415":"ORO","416":"ORO","417":"ORO","418":"ORO","419":"POS","420":"XVIII","421":"XVIII","422":"ROM","423":"ORO","424":"MED","425":"MED","426":"ROM","427":"ORO","428":"ORO","429":"GEN","430":"NA","431":"ORO","432":"POS","433":"MED","434":"MED","435":"MED","436":"MED","437":"MED","438":"ORO","439":"ORO","440":"GEN","441":"ORO","442":"GEN","443":"ORO","444":"MED","445":"GEN","446":"NA","447":"POS","448":"MED","449":"NA","450":"POS","451":"POS","452":"POS","453":"ORO","454":"MED","455":"ORO","456":"ORO","457":"XVIII","458":"ORO","459":"ORO","460":"ORO","461":"ROM","462":"ROM","463":"ROM","464":"POS","465":"ORO","466":"GEN","467":"ORO","468":"ORO","469":"ROM","470":"ORO","471":"ORO","472":"XVIII","473":"POS","474":"NA","475":"ORO","476":"ORO","477":"ORO","478":"ORO","479":"MED","480":"GEN","481":"GEN","482":"XVIII","483":"ROM","484":"ORO","485":"ORO","486":"ORO","487":"MED","488":"MED","489":"ORO","490":"ORO","491":"ORO","492":"GEN","493":"ORO","494":"ROM","495":"MED","496":"ORO","497":"XVIII","498":"ROM","499":"ROM","500":"ORO","501":"ORO","502":"MED","503":"MED","504":"MED","505":"POS","506":"ORO","507":"GEN","508":"ORO","509":"ORO","510":"GEN","511":"GEN","512":"GEN","513":"GEN","514":"ORO","515":"MED","516":"ORO","517":"ORO","518":"ORO","519":"POS","520":"ROM","521":"GEN","522":"ORO","523":"GEN","524":"MED","525":"MED","526":"ROM","527":"ORO","528":"MED","529":"ORO","530":"ORO","531":"ORO","532":"MED","533":"ROM","534":"MED","535":"ROM","536":"ORO","537":"ORO","538":"GEN","539":"POS","540":"ORO","541":"ORO","542":"ORO","543":"POS","544":"POS","545":"ROM","546":"MED","547":"MED","548":"NA","549":"MED","550":"ORO","551":"MED","552":"ORO","553":"ORO","554":"ROM","555":"ORO","556":"ORO","557":"ORO","558":"ORO","559":"ORO","560":"ORO","561":"ORO","562":"MED","563":"ROM","564":"MED","565":"NA","566":"ORO","567":"GEN","568":"ORO","569":"ORO","570":"ORO","571":"GEN","572":"ORO","573":"ORO","574":"GEN","575":"ORO","576":"ORO","577":"MED","578":"MED","579":"GEN","580":"NA","581":"NA","582":"MED","583":"XVIII","584":"ORO","585":"ORO","586":"ORO","587":"ORO","588":"ORO","589":"XVIII","590":"ROM","591":"ROM","592":"GEN","593":"ORO","594":"NA","595":"ROM","596":"ORO","597":"ORO","598":"NA","599":"GEN","600":"MED","601":"ORO","602":"ORO","603":"ORO","604":"XVIII","605":"XVIII","606":"MED","607":"ORO","608":"ORO","609":"ORO","610":"XVIII","611":"MED","612":"ROM","613":"ORO","614":"ORO","615":"ORO","616":"MED","617":"ORO","618":"NA","619":"NA","620":"ORO","621":"ORO","622":"POS","623":"GEN","624":"ORO"};
+
+// Clasificar las preguntas de lit_esp en los submazos por época
+(function() {
+    var litEsp = MAZOS.find(function(m) { return m.id === 'lit_esp'; });
+    if (!litEsp) return;
+    
+    litEsp.questions.forEach(function(q, idx) {
+        var epoca = LIT_CLASIF[(idx + 1).toString()] || 'NA';
+        if (LIT_ESP_EPOCAS[epoca]) {
+            LIT_ESP_EPOCAS[epoca].questions.push(q);
+        }
+    });
+})();
+
+// Función para abrir el selector de submazos de Literatura Española
+window.abrirSelectorLitEsp = function() {
+    var litEsp = MAZOS.find(function(m) { return m.id === 'lit_esp'; });
+    var totalPreguntas = litEsp ? litEsp.questions.length : 0;
+    
+    var html = `
+        <div id="lit-esp-selector" style="position:fixed; top:0; left:0; right:0; bottom:0; background:var(--bg); z-index:99999; display:flex; flex-direction:column; overflow-y:auto;">
+            <div style="padding:15px 20px; display:flex; align-items:center; gap:15px; border-bottom:1px solid var(--border);">
+                <button onclick="document.getElementById('lit-esp-selector').remove();" style="background:none; border:none; color:var(--text); font-size:1.5rem; cursor:pointer;">←</button>
+                <div>
+                    <h2 style="color:var(--text); font-size:1.3rem; margin:0;">📚 Literatura Española</h2>
+                    <p style="color:var(--muted); font-size:0.8rem; margin:4px 0 0 0;">${totalPreguntas} preguntas en total</p>
+                </div>
+            </div>
+            
+            <div style="padding:20px; display:flex; flex-direction:column; gap:12px;">
+                
+                <!-- Aleatorio (el original) -->
+                <div class="deck-item" onclick="document.getElementById('lit-esp-selector').remove(); startSmartStudyAll('lit_esp');" style="border-color:var(--accent); background:linear-gradient(135deg, rgba(255,255,255,0.05), transparent);">
+                    <div class="deck-icon">🎲</div>
+                    <div class="deck-info">
+                        <h4>Aleatorio</h4>
+                        <span style="font-size:0.72rem; color:var(--muted); font-style:italic;">Todo mezclado, como siempre</span>
+                        <p style="font-size:0.72rem; color:var(--muted); margin-top:4px;">${totalPreguntas} preguntas</p>
+                    </div>
+                    <div class="deck-arrow">›</div>
+                </div>
+                
+                <div style="border-top:1px solid var(--border); margin:10px 0; position:relative;">
+                    <span style="position:absolute; top:-10px; left:50%; transform:translateX(-50%); background:var(--bg); padding:0 10px; color:var(--muted); font-size:0.75rem;">o por época</span>
+                </div>
+                
+                <!-- Medieval -->
+                <div class="deck-item" onclick="document.getElementById('lit-esp-selector').remove(); startLitEspEpoca('MED');" style="border-color:${LIT_ESP_EPOCAS.MED.color};">
+                    <div class="deck-icon">${LIT_ESP_EPOCAS.MED.icon}</div>
+                    <div class="deck-info">
+                        <h4>${LIT_ESP_EPOCAS.MED.name}</h4>
+                        <span style="font-size:0.72rem; color:var(--muted); font-style:italic;">${LIT_ESP_EPOCAS.MED.sub}</span>
+                        <p style="font-size:0.72rem; color:var(--muted); margin-top:4px;">${LIT_ESP_EPOCAS.MED.questions.length} preguntas</p>
+                    </div>
+                    <div class="deck-arrow">›</div>
+                </div>
+                
+                <!-- Siglos de Oro -->
+                <div class="deck-item" onclick="document.getElementById('lit-esp-selector').remove(); startLitEspEpoca('ORO');" style="border-color:${LIT_ESP_EPOCAS.ORO.color};">
+                    <div class="deck-icon">${LIT_ESP_EPOCAS.ORO.icon}</div>
+                    <div class="deck-info">
+                        <h4>${LIT_ESP_EPOCAS.ORO.name}</h4>
+                        <span style="font-size:0.72rem; color:var(--muted); font-style:italic;">${LIT_ESP_EPOCAS.ORO.sub}</span>
+                        <p style="font-size:0.72rem; color:var(--muted); margin-top:4px;">${LIT_ESP_EPOCAS.ORO.questions.length} preguntas</p>
+                    </div>
+                    <div class="deck-arrow">›</div>
+                </div>
+                
+                <!-- Siglo XVIII -->
+                <div class="deck-item" onclick="document.getElementById('lit-esp-selector').remove(); startLitEspEpoca('XVIII');" style="border-color:${LIT_ESP_EPOCAS.XVIII.color};">
+                    <div class="deck-icon">${LIT_ESP_EPOCAS.XVIII.icon}</div>
+                    <div class="deck-info">
+                        <h4>${LIT_ESP_EPOCAS.XVIII.name}</h4>
+                        <span style="font-size:0.72rem; color:var(--muted); font-style:italic;">${LIT_ESP_EPOCAS.XVIII.sub}</span>
+                        <p style="font-size:0.72rem; color:var(--muted); margin-top:4px;">${LIT_ESP_EPOCAS.XVIII.questions.length} preguntas</p>
+                    </div>
+                    <div class="deck-arrow">›</div>
+                </div>
+                
+                <!-- Siglo XIX -->
+                <div class="deck-item" onclick="document.getElementById('lit-esp-selector').remove(); startLitEspEpoca('ROM');" style="border-color:${LIT_ESP_EPOCAS.ROM.color};">
+                    <div class="deck-icon">${LIT_ESP_EPOCAS.ROM.icon}</div>
+                    <div class="deck-info">
+                        <h4>${LIT_ESP_EPOCAS.ROM.name}</h4>
+                        <span style="font-size:0.72rem; color:var(--muted); font-style:italic;">${LIT_ESP_EPOCAS.ROM.sub}</span>
+                        <p style="font-size:0.72rem; color:var(--muted); margin-top:4px;">${LIT_ESP_EPOCAS.ROM.questions.length} preguntas</p>
+                    </div>
+                    <div class="deck-arrow">›</div>
+                </div>
+                
+                <!-- Generaciones -->
+                <div class="deck-item" onclick="document.getElementById('lit-esp-selector').remove(); startLitEspEpoca('GEN');" style="border-color:${LIT_ESP_EPOCAS.GEN.color};">
+                    <div class="deck-icon">${LIT_ESP_EPOCAS.GEN.icon}</div>
+                    <div class="deck-info">
+                        <h4>${LIT_ESP_EPOCAS.GEN.name}</h4>
+                        <span style="font-size:0.72rem; color:var(--muted); font-style:italic;">${LIT_ESP_EPOCAS.GEN.sub}</span>
+                        <p style="font-size:0.72rem; color:var(--muted); margin-top:4px;">${LIT_ESP_EPOCAS.GEN.questions.length} preguntas</p>
+                    </div>
+                    <div class="deck-arrow">›</div>
+                </div>
+                
+                <!-- Posguerra -->
+                <div class="deck-item" onclick="document.getElementById('lit-esp-selector').remove(); startLitEspEpoca('POS');" style="border-color:${LIT_ESP_EPOCAS.POS.color};">
+                    <div class="deck-icon">${LIT_ESP_EPOCAS.POS.icon}</div>
+                    <div class="deck-info">
+                        <h4>${LIT_ESP_EPOCAS.POS.name}</h4>
+                        <span style="font-size:0.72rem; color:var(--muted); font-style:italic;">${LIT_ESP_EPOCAS.POS.sub}</span>
+                        <p style="font-size:0.72rem; color:var(--muted); margin-top:4px;">${LIT_ESP_EPOCAS.POS.questions.length} preguntas</p>
+                    </div>
+                    <div class="deck-arrow">›</div>
+                </div>
+                
+                <!-- Varios (NA) -->
+                <div class="deck-item" onclick="document.getElementById('lit-esp-selector').remove(); startLitEspEpoca('NA');" style="border-color:${LIT_ESP_EPOCAS.NA.color}; opacity:0.7;">
+                    <div class="deck-icon">${LIT_ESP_EPOCAS.NA.icon}</div>
+                    <div class="deck-info">
+                        <h4>${LIT_ESP_EPOCAS.NA.name}</h4>
+                        <span style="font-size:0.72rem; color:var(--muted); font-style:italic;">${LIT_ESP_EPOCAS.NA.sub}</span>
+                        <p style="font-size:0.72rem; color:var(--muted); margin-top:4px;">${LIT_ESP_EPOCAS.NA.questions.length} preguntas</p>
+                    </div>
+                    <div class="deck-arrow">›</div>
+                </div>
+                
+                <div style="border-top:1px solid var(--border); margin:10px 0; position:relative;">
+                    <span style="position:absolute; top:-10px; left:50%; transform:translateX(-50%); background:var(--bg); padding:0 10px; color:var(--muted); font-size:0.75rem;">minijuego</span>
+                </div>
+                
+                <!-- Emparejar Autor-Obra -->
+                <div class="deck-item" onclick="document.getElementById('lit-esp-selector').remove(); iniciarMatchAutorObra();" style="border-color:#e056fd; background:linear-gradient(135deg, rgba(224,86,253,0.1), transparent);">
+                    <div class="deck-icon">🔗</div>
+                    <div class="deck-info">
+                        <h4>Emparejar</h4>
+                        <span style="font-size:0.72rem; color:var(--muted); font-style:italic;">¿Quién escribió qué? Demuéstralo</span>
+                        <p style="font-size:0.72rem; color:var(--muted); margin-top:4px;">${AUTOR_OBRA_PARES.length} pares autor↔obra</p>
+                    </div>
+                    <div class="deck-arrow">›</div>
+                </div>
+            </div>
+        </div>
+    `;
+    document.body.insertAdjacentHTML('beforeend', html);
+};
+
+// Función para iniciar un submazo de Literatura Española por época
+window.startLitEspEpoca = function(epocaId) {
+    var epoca = LIT_ESP_EPOCAS[epocaId];
+    if (!epoca || !epoca.questions.length) {
+        if (typeof showToast === 'function') showToast('Sin preguntas en esta época');
+        return;
+    }
+    
+    var archivedCards = getArchivedCards();
+    studyDeck = epoca.questions
+        .filter(function(q) {
+            var id = q.q || '';
+            return !archivedCards.includes(id);
+        })
+        .map(function(q) {
+            return Object.assign({}, q, {
+                deckId: 'lit_esp',
+                color: epoca.color
+            });
+        })
+        .sort(function() { return Math.random() - 0.5; })
+        .slice(0, 30);
+    
+    if (!studyDeck.length) {
+        if (typeof showToast === 'function') showToast('Todas archivadas en esta época');
+        return;
+    }
+    
+    document.getElementById('study-title').innerText = epoca.icon + ' ' + epoca.name;
+    
+    var sel = document.getElementById('view-study-selector');
+    if (sel) sel.style.display = 'none';
+    
+    var view = document.getElementById('view-smart-study');
+    if (view) view.style.display = 'flex';
+    
+    var sa = document.getElementById('study-area');
+    if (sa) sa.style.display = 'flex';
+    
+    studySessionTotal = 0; studySessionBien = 0; studySessionMal = 0;
+    nextStudyCard();
+};
+
+// ================================================================
+// JUEGO EMPAREJAR AUTOR ↔ OBRA (dentro de Literatura Española)
+// ================================================================
+var AUTOR_OBRA_PARES = [
+{"autor":"Anónimo","obra":"Cantar de Mio Cid"},
+{"autor":"Anónimo","obra":"Lazarillo de Tormes"},
+{"autor":"Gonzalo de Berceo","obra":"Milagros de Nuestra Señora"},
+{"autor":"Arcipreste de Hita","obra":"Libro de buen amor"},
+{"autor":"Jorge Manrique","obra":"Coplas a la muerte de su padre"},
+{"autor":"Don Juan Manuel","obra":"El Conde Lucanor"},
+{"autor":"Fernando de Rojas","obra":"La Celestina"},
+{"autor":"Miguel de Cervantes","obra":"Don Quijote de la Mancha"},
+{"autor":"Miguel de Cervantes","obra":"Novelas ejemplares"},
+{"autor":"Lope de Vega","obra":"Fuenteovejuna"},
+{"autor":"Lope de Vega","obra":"El perro del hortelano"},
+{"autor":"Lope de Vega","obra":"El caballero de Olmedo"},
+{"autor":"Pedro Calderón de la Barca","obra":"La vida es sueño"},
+{"autor":"Pedro Calderón de la Barca","obra":"El alcalde de Zalamea"},
+{"autor":"Tirso de Molina","obra":"El burlador de Sevilla"},
+{"autor":"Tirso de Molina","obra":"Don Gil de las calzas verdes"},
+{"autor":"Francisco de Quevedo","obra":"La vida del Buscón"},
+{"autor":"Francisco de Quevedo","obra":"Los Sueños"},
+{"autor":"Luis de Góngora","obra":"Soledades"},
+{"autor":"Luis de Góngora","obra":"Fábula de Polifemo y Galatea"},
+{"autor":"Garcilaso de la Vega","obra":"Églogas"},
+{"autor":"Fray Luis de León","obra":"Oda a la vida retirada"},
+{"autor":"San Juan de la Cruz","obra":"Cántico espiritual"},
+{"autor":"Santa Teresa de Jesús","obra":"Las moradas"},
+{"autor":"Leandro Fernández de Moratín","obra":"El sí de las niñas"},
+{"autor":"José Cadalso","obra":"Cartas marruecas"},
+{"autor":"Tomás de Iriarte","obra":"Fábulas literarias"},
+{"autor":"Félix María Samaniego","obra":"Fábulas morales"},
+{"autor":"Gustavo Adolfo Bécquer","obra":"Rimas"},
+{"autor":"Gustavo Adolfo Bécquer","obra":"Leyendas"},
+{"autor":"José Zorrilla","obra":"Don Juan Tenorio"},
+{"autor":"Duque de Rivas","obra":"Don Álvaro o la fuerza del sino"},
+{"autor":"José de Espronceda","obra":"El estudiante de Salamanca"},
+{"autor":"Rosalía de Castro","obra":"En las orillas del Sar"},
+{"autor":"Mariano José de Larra","obra":"Artículos de costumbres"},
+{"autor":"Benito Pérez Galdós","obra":"Fortunata y Jacinta"},
+{"autor":"Benito Pérez Galdós","obra":"Episodios Nacionales"},
+{"autor":"Benito Pérez Galdós","obra":"Misericordia"},
+{"autor":"Leopoldo Alas Clarín","obra":"La Regenta"},
+{"autor":"Emilia Pardo Bazán","obra":"Los pazos de Ulloa"},
+{"autor":"Juan Valera","obra":"Pepita Jiménez"},
+{"autor":"Vicente Blasco Ibáñez","obra":"La barraca"},
+{"autor":"Miguel de Unamuno","obra":"Niebla"},
+{"autor":"Miguel de Unamuno","obra":"San Manuel Bueno, mártir"},
+{"autor":"Pío Baroja","obra":"El árbol de la ciencia"},
+{"autor":"Pío Baroja","obra":"Zalacaín el aventurero"},
+{"autor":"Antonio Machado","obra":"Campos de Castilla"},
+{"autor":"Ramón María del Valle-Inclán","obra":"Luces de bohemia"},
+{"autor":"Ramón María del Valle-Inclán","obra":"Tirano Banderas"},
+{"autor":"Azorín","obra":"La voluntad"},
+{"autor":"Juan Ramón Jiménez","obra":"Platero y yo"},
+{"autor":"Federico García Lorca","obra":"La casa de Bernarda Alba"},
+{"autor":"Federico García Lorca","obra":"Bodas de sangre"},
+{"autor":"Federico García Lorca","obra":"Yerma"},
+{"autor":"Rafael Alberti","obra":"Marinero en tierra"},
+{"autor":"Rafael Alberti","obra":"Sobre los ángeles"},
+{"autor":"Luis Cernuda","obra":"La realidad y el deseo"},
+{"autor":"Vicente Aleixandre","obra":"La destrucción o el amor"},
+{"autor":"Miguel Hernández","obra":"El rayo que no cesa"},
+{"autor":"Pedro Salinas","obra":"La voz a ti debida"},
+{"autor":"Jorge Guillén","obra":"Cántico"},
+{"autor":"Dámaso Alonso","obra":"Hijos de la ira"},
+{"autor":"Camilo José Cela","obra":"La familia de Pascual Duarte"},
+{"autor":"Camilo José Cela","obra":"La colmena"},
+{"autor":"Miguel Delibes","obra":"El camino"},
+{"autor":"Miguel Delibes","obra":"Cinco horas con Mario"},
+{"autor":"Miguel Delibes","obra":"Los santos inocentes"},
+{"autor":"Carmen Laforet","obra":"Nada"},
+{"autor":"Carmen Martín Gaite","obra":"Entre visillos"},
+{"autor":"Carmen Martín Gaite","obra":"El cuarto de atrás"},
+{"autor":"Ana María Matute","obra":"Primera memoria"},
+{"autor":"Antonio Buero Vallejo","obra":"Historia de una escalera"},
+{"autor":"Miguel Mihura","obra":"Tres sombreros de copa"},
+{"autor":"Alejandro Casona","obra":"La dama del alba"},
+{"autor":"Enrique Jardiel Poncela","obra":"Eloísa está debajo de un almendro"},
+{"autor":"Jacinto Benavente","obra":"Los intereses creados"},
+{"autor":"Pedro Muñoz Seca","obra":"La venganza de Don Mendo"},
+{"autor":"Eduardo Mendoza","obra":"La verdad sobre el caso Savolta"},
+{"autor":"Eduardo Mendoza","obra":"Sin noticias de Gurb"},
+{"autor":"Arturo Pérez-Reverte","obra":"El capitán Alatriste"},
+{"autor":"Carlos Ruiz Zafón","obra":"La sombra del viento"},
+{"autor":"Antonio Muñoz Molina","obra":"El invierno en Lisboa"},
+{"autor":"Javier Marías","obra":"Corazón tan blanco"},
+{"autor":"Almudena Grandes","obra":"Las edades de Lulú"},
+{"autor":"Rosa Montero","obra":"La hija del caníbal"},
+{"autor":"Luis Martín-Santos","obra":"Tiempo de silencio"},
+{"autor":"Rafael Sánchez Ferlosio","obra":"El Jarama"},
+{"autor":"Juan Marsé","obra":"Últimas tardes con Teresa"},
+{"autor":"Gonzalo Torrente Ballester","obra":"Los gozos y las sombras"},
+{"autor":"Fernando Fernán Gómez","obra":"Las bicicletas son para el verano"},
+{"autor":"Javier Cercas","obra":"Soldados de Salamina"},
+{"autor":"Ramón J. Sender","obra":"Réquiem por un campesino español"},
+{"autor":"Francisco Umbral","obra":"Mortal y rosa"},
+{"autor":"Baltasar Gracián","obra":"El Criticón"},
+{"autor":"Guillén de Castro","obra":"Las mocedades del Cid"},
+{"autor":"Antonio García Gutiérrez","obra":"El trovador"},
+{"autor":"Torcuato Luca de Tena","obra":"Los renglones torcidos de Dios"},
+{"autor":"Alfonso Sastre","obra":"Escuadra hacia la muerte"},
+{"autor":"José Sanchis Sinisterra","obra":"¡Ay, Carmela!"}
+];
+
+// Variables del juego emparejar autor-obra
+var aoMatchOk = 0, aoMatchFail = 0, aoMatchRound = 1;
+var aoMatchSelected = null, aoMatchPairs = [], aoMatchSolved = 0;
+
+window.iniciarMatchAutorObra = function() {
+    var overlay = document.getElementById('view-smart-study');
+    overlay.style.display = 'flex';
+    
+    var sa = document.getElementById('study-area');
+    if (sa) sa.style.display = 'none';
+    
+    var ma = document.getElementById('ao-match-inline');
+    if (!ma) {
+        ma = document.createElement('div');
+        ma.id = 'ao-match-inline';
+        ma.style.cssText = 'flex:1; display:flex; flex-direction:column; padding:16px; overflow-y:auto;';
+        overlay.appendChild(ma);
+    }
+    ma.style.display = 'flex';
+    
+    aoMatchOk = 0; aoMatchFail = 0; aoMatchRound = 1;
+    loadAoMatchRound();
+};
+
+function closeAoMatchGame() {
+    var ma = document.getElementById('ao-match-inline');
+    if (ma) ma.style.display = 'none';
+    var sa = document.getElementById('study-area');
+    if (sa) sa.style.display = 'flex';
+}
+
+function loadAoMatchRound() {
+    aoMatchSelected = null;
+    aoMatchSolved = 0;
+
+    var ma = document.getElementById('ao-match-inline');
+    if (!ma) return;
+    
+    ma.innerHTML = '<div style="text-align:center; margin-bottom:14px;">' +
+        '<span style="color:var(--muted); font-size:0.85rem;">Ronda ' + aoMatchRound + ' &nbsp;|&nbsp; </span>' +
+        '<span id="ao-match-ok" style="color:#22c55e; font-weight:700;">✓ ' + aoMatchOk + '</span>' +
+        ' <span id="ao-match-fail" style="color:#ef4444; font-weight:700;">✗ ' + aoMatchFail + '</span>' +
+        '</div>' +
+        '<p style="text-align:center; color:var(--muted); font-size:0.8rem; margin-bottom:12px;">Pulsa un autor y luego su obra</p>' +
+        '<div id="ao-match-grid" style="display:grid; grid-template-columns:1fr 1fr; gap:10px;"></div>' +
+        '<div id="ao-match-result" style="display:none; text-align:center; margin-top:20px;"></div>';
+
+    // Seleccionar 6 pares aleatorios
+    var shuffled = AUTOR_OBRA_PARES.slice().sort(function() { return Math.random() - 0.5; }).slice(0, 6);
+    aoMatchPairs = shuffled;
+
+    var autores = shuffled.map(function(p) { return p.autor; }).sort(function() { return Math.random() - 0.5; });
+    var obras   = shuffled.map(function(p) { return p.obra; }).sort(function() { return Math.random() - 0.5; });
+
+    var grid = document.getElementById('ao-match-grid');
+    for (var i = 0; i < 6; i++) {
+        (function(autor, obra) {
+            var aBtn = document.createElement('button');
+            aBtn.style.cssText = 'background:var(--card);border:2px solid var(--border);border-radius:12px;padding:10px 6px;font-size:0.78rem;cursor:pointer;color:var(--text);text-align:center;min-height:52px;width:100%;line-height:1.3;';
+            aBtn.textContent = autor;
+            aBtn.onclick = function() { selectAoMatch(this, 'autor', autor); };
+            grid.appendChild(aBtn);
+
+            var oBtn = document.createElement('button');
+            oBtn.style.cssText = 'background:var(--card2);border:2px solid var(--border);border-radius:12px;padding:10px 6px;font-size:0.78rem;cursor:pointer;color:var(--text);text-align:center;min-height:52px;width:100%;line-height:1.3;font-style:italic;';
+            oBtn.textContent = obra;
+            oBtn.onclick = function() { selectAoMatch(this, 'obra', obra); };
+            grid.appendChild(oBtn);
+        })(autores[i], obras[i]);
+    }
+}
+
+function selectAoMatch(btn, tipo, valor) {
+    if (btn.disabled) return;
+    
+    if (!aoMatchSelected) {
+        aoMatchSelected = { btn: btn, tipo: tipo, valor: valor };
+        btn.style.borderColor = '#e056fd';
+        btn.style.transform = 'scale(1.04)';
+        return;
+    }
+    
+    if (aoMatchSelected.btn === btn) {
+        btn.style.borderColor = 'var(--border)';
+        btn.style.transform = '';
+        aoMatchSelected = null;
+        return;
+    }
+    
+    if (aoMatchSelected.tipo === tipo) {
+        aoMatchSelected.btn.style.borderColor = 'var(--border)';
+        aoMatchSelected.btn.style.transform = '';
+        aoMatchSelected = { btn: btn, tipo: tipo, valor: valor };
+        btn.style.borderColor = '#e056fd';
+        btn.style.transform = 'scale(1.04)';
+        return;
+    }
+    
+    var autor = tipo === 'autor' ? valor : aoMatchSelected.valor;
+    var obra  = tipo === 'obra'  ? valor : aoMatchSelected.valor;
+    var correcto = aoMatchPairs.some(function(p) { return p.autor === autor && p.obra === obra; });
+    
+    var color = correcto ? '#22c55e' : '#ef4444';
+    btn.style.borderColor = color;
+    btn.style.background  = correcto ? 'rgba(34,197,94,0.15)' : 'rgba(239,68,68,0.15)';
+    aoMatchSelected.btn.style.borderColor = color;
+    aoMatchSelected.btn.style.background  = correcto ? 'rgba(34,197,94,0.15)' : 'rgba(239,68,68,0.15)';
+    
+    if (correcto) {
+        aoMatchOk++;
+        btn.disabled = true;
+        aoMatchSelected.btn.disabled = true;
+        btn.style.transform = '';
+        aoMatchSolved++;
+        document.getElementById('ao-match-ok').innerHTML = '✓ ' + aoMatchOk;
+        if (aoMatchSolved === 6) {
+            setTimeout(showAoMatchRoundResult, 600);
+        }
+    } else {
+        aoMatchFail++;
+        document.getElementById('ao-match-fail').innerHTML = '✗ ' + aoMatchFail;
+        var b1 = btn; var b2 = aoMatchSelected.btn;
+        setTimeout(function() {
+            b1.style.borderColor = 'var(--border)'; b1.style.background = '';  b1.style.transform = '';
+            b2.style.borderColor = 'var(--border)'; b2.style.background = '';  b2.style.transform = '';
+        }, 800);
+    }
+    aoMatchSelected = null;
+}
+
+function showAoMatchRoundResult() {
+    var grid = document.getElementById('ao-match-grid');
+    if (grid) grid.style.display = 'none';
+    var res = document.getElementById('ao-match-result');
+    if (!res) return;
+    res.style.display = 'block';
+    var pct = aoMatchOk + aoMatchFail > 0 ? Math.round((aoMatchOk / (aoMatchOk + aoMatchFail)) * 100) : 0;
+    var emoji, msg;
+    if (aoMatchFail === 0)    { emoji = '🏆'; msg = '¡Ronda perfecta! Esto es saber de literatura.'; }
+    else if (pct >= 75)       { emoji = '💪'; msg = aoMatchOk + ' bien, ' + aoMatchFail + ' falladas. ¡Casi!'; }
+    else                      { emoji = '📖'; msg = aoMatchOk + ' bien, ' + aoMatchFail + ' falladas. ¡A repasar!'; }
+    res.innerHTML = '<div style="font-size:2.5rem; margin-bottom:8px;">' + emoji + '</div>' +
+        '<div style="font-weight:700; margin-bottom:16px;">' + msg + '</div>' +
+        '<button onclick="aoMatchRound++; loadAoMatchRound();" style="background:#e056fd;color:#fff;border:none;border-radius:12px;padding:12px 24px;font-weight:700;font-size:0.95rem;cursor:pointer;width:100%;">Siguiente ronda →</button>' +
+        '<button onclick="closeAoMatchGame()" style="margin-top:8px;background:transparent;color:var(--muted);border:1px solid var(--border);border-radius:12px;padding:10px;font-size:0.85rem;cursor:pointer;width:100%;">Volver</button>';
+}
 </script>
 
 <!-- ================================================================ -->
@@ -15448,9 +15901,14 @@ window.mostrarTarjetaDelito = function(idx) {
             MAZOS.forEach(m => {
                 // Para capitales, añadir también el botón de emparejar
                 const isCapitales = m.id === 'capitales';
+                const isLitEsp = m.id === 'lit_esp';
                 const subText = m.sub || '';
+                
+                // Si es Literatura Española, abrir el selector de submazos
+                const onclickAction = isLitEsp ? 'abrirSelectorLitEsp()' : `startSmartStudyAll('${m.id}')`;
+                
                 html += `
-                <div class="deck-item" onclick="startSmartStudyAll('${m.id}')">
+                <div class="deck-item" onclick="${onclickAction}"${isLitEsp ? ' style="border-color:#fab1a0;"' : ''}>
                     <div class="deck-icon">${m.icon}</div>
                     <div class="deck-info">
                         <h4>${m.name}</h4>
@@ -15570,9 +16028,13 @@ window.openStudySelector = function() {
       const isDone = dueCount === 0;
       const subText = m.sub || '';
       const isCapitales = m.id === 'capitales';
+      const isLitEsp = m.id === 'lit_esp';
+      
+      // Si es Literatura Española, siempre abrir el selector de submazos
+      const onclickAction = isLitEsp ? 'abrirSelectorLitEsp()' : (isDone ? '' : `startSmartStudy('${m.id}')`);
       
       container.innerHTML += `
-      <div class="deck-item" onclick="${isDone ? '' : `startSmartStudy('${m.id}')`}" style="border-left:4px solid ${isDone ? 'var(--border)' : (m.color || 'var(--accent)')}; opacity:${isDone ? '0.6' : '1'}; cursor:${isDone ? 'default' : 'pointer'};">
+      <div class="deck-item" onclick="${onclickAction}" style="border-left:4px solid ${isDone && !isLitEsp ? 'var(--border)' : (m.color || 'var(--accent)')}; opacity:${isDone && !isLitEsp ? '0.6' : '1'}; cursor:${isDone && !isLitEsp ? 'default' : 'pointer'};">
           <div class="deck-icon">${m.icon}</div>
           <div class="deck-info">
               <h4>${m.name}</h4>
@@ -15580,7 +16042,7 @@ window.openStudySelector = function() {
               <p id="deck-info-${m.id}" style="font-size:0.72rem; color:var(--muted); margin-top:2px;">${isDone ? '✓ Al día' : dueCount + ' pendientes hoy'}</p>
               <div class="dom-bar"><div class="dom-fill" id="dom-${m.id}" style="width:0%; background:${m.color || 'linear-gradient(90deg,var(--green),var(--gold))'}"></div></div>
           </div>
-          <span style="background:${isDone ? 'transparent' : (m.color || 'var(--accent)')}; color:${isDone ? 'var(--muted)' : '#000'}; padding:4px 10px; border-radius:20px; font-size:0.75rem; font-weight:bold; white-space:nowrap;">${isDone ? 'Al día ✓' : dueCount + ' hoy'}</span>
+          ${isLitEsp ? '<span style="background:#fab1a0; color:#000; padding:4px 10px; border-radius:20px; font-size:0.75rem; font-weight:bold;">4 categorías</span>' : `<span style="background:${isDone ? 'transparent' : (m.color || 'var(--accent)')}; color:${isDone ? 'var(--muted)' : '#000'}; padding:4px 10px; border-radius:20px; font-size:0.75rem; font-weight:bold; white-space:nowrap;">${isDone ? 'Al día ✓' : dueCount + ' hoy'}</span>`}
       </div>`;
       
       // Si es capitales, añadir el juego de emparejar justo después
