@@ -4539,6 +4539,740 @@ MAZOS.push({
     {q: "Con la Z: Ciudad capital de Croacia, situada a las orillas del río Sava.", a: "Zagreb", letra: "Z"}
   ]
 });
+
+// ================================================================
+// HISTORIA DE ESPAÑA - SISTEMA DE EMPAREJAMIENTOS
+// ================================================================
+
+var HIST_REY_APODO = [
+{"rey": "Pelayo", "apodo": "el Restaurador"},
+{"rey": "Alfonso I de Asturias", "apodo": "el Católico"},
+{"rey": "Alfonso II de Asturias", "apodo": "el Casto"},
+{"rey": "Alfonso III de Asturias", "apodo": "el Magno"},
+{"rey": "Sancho III de Pamplona", "apodo": "el Mayor"},
+{"rey": "Fernando I de León", "apodo": "el Magno"},
+{"rey": "Alfonso VI de León", "apodo": "el Bravo"},
+{"rey": "Alfonso I de Aragón", "apodo": "el Batallador"},
+{"rey": "Alfonso VII de León", "apodo": "el Emperador"},
+{"rey": "Alfonso VIII de Castilla", "apodo": "el de las Navas"},
+{"rey": "Alfonso IX de León", "apodo": "el Baboso"},
+{"rey": "Alfonso X de Castilla", "apodo": "el Sabio"},
+{"rey": "Fernando III de Castilla", "apodo": "el Santo"},
+{"rey": "Jaime I de Aragón", "apodo": "el Conquistador"},
+{"rey": "Sancho IV de Castilla", "apodo": "el Bravo"},
+{"rey": "Fernando IV de Castilla", "apodo": "el Emplazado"},
+{"rey": "Alfonso XI de Castilla", "apodo": "el Justiciero"},
+{"rey": "Pedro I de Castilla", "apodo": "el Cruel"},
+{"rey": "Enrique II de Castilla", "apodo": "el de las Mercedes"},
+{"rey": "Pedro IV de Aragón", "apodo": "el Ceremonioso"},
+{"rey": "Juan I de Castilla", "apodo": "el de Trastámara"},
+{"rey": "Enrique III de Castilla", "apodo": "el Doliente"},
+{"rey": "Juan II de Castilla", "apodo": "el Poeta"},
+{"rey": "Enrique IV de Castilla", "apodo": "el Impotente"},
+{"rey": "Isabel I de Castilla", "apodo": "la Católica"},
+{"rey": "Fernando II de Aragón", "apodo": "el Católico"},
+{"rey": "Juana I de Castilla", "apodo": "la Loca"},
+{"rey": "Felipe I de Castilla", "apodo": "el Hermoso"},
+{"rey": "Carlos I de España", "apodo": "el César"},
+{"rey": "Felipe II de España", "apodo": "el Prudente"},
+{"rey": "Felipe III de España", "apodo": "el Piadoso"},
+{"rey": "Felipe IV de España", "apodo": "el Rey Planeta"},
+{"rey": "Carlos II de España", "apodo": "el Hechizado"},
+{"rey": "Felipe V de España", "apodo": "el Animoso"},
+{"rey": "Luis I de España", "apodo": "el Bien Amado"},
+{"rey": "Fernando VI de España", "apodo": "el Justo"},
+{"rey": "Carlos III de España", "apodo": "el Político"},
+{"rey": "Carlos IV de España", "apodo": "el Cazador"},
+{"rey": "Fernando VII de España", "apodo": "el Deseado"},
+{"rey": "José I Bonaparte", "apodo": "Pepe Botella"},
+{"rey": "Isabel II de España", "apodo": "la de los Tristes Destinos"},
+{"rey": "Amadeo I de España", "apodo": "el Rey Caballero"},
+{"rey": "Alfonso XII de España", "apodo": "el Pacificador"},
+{"rey": "Alfonso XIII de España", "apodo": "el Africano"},
+{"rey": "Juan Carlos I", "apodo": "el Campechano"},
+{"rey": "Felipe VI de España", "apodo": "el Preparado"}
+];
+
+var HIST_BATALLA_ANO = [
+{"batalla": "Sitio de Sagunto", "año": "219 a.C."},
+{"batalla": "Batalla de Baecula", "año": "208 a.C."},
+{"batalla": "Batalla de Ilipa", "año": "206 a.C."},
+{"batalla": "Cerco de Numancia", "año": "133 a.C."},
+{"batalla": "Guadalete", "año": "711"},
+{"batalla": "Covadonga", "año": "722"},
+{"batalla": "Roncesvalles", "año": "778"},
+{"batalla": "Simancas", "año": "939"},
+{"batalla": "Calatañazor", "año": "1002"},
+{"batalla": "Sagrajas", "año": "1086"},
+{"batalla": "Alcoraz", "año": "1096"},
+{"batalla": "Cutanda", "año": "1120"},
+{"batalla": "Alarcos", "año": "1195"},
+{"batalla": "Las Navas de Tolosa", "año": "1212"},
+{"batalla": "El Salado", "año": "1340"},
+{"batalla": "Nájera", "año": "1367"},
+{"batalla": "Montiel", "año": "1369"},
+{"batalla": "La Higueruela", "año": "1431"},
+{"batalla": "Toro", "año": "1476"},
+{"batalla": "Granada", "año": "1492"},
+{"batalla": "Ceriñola", "año": "1503"},
+{"batalla": "Villalar", "año": "1521"},
+{"batalla": "Pavía", "año": "1525"},
+{"batalla": "San Quintín", "año": "1557"},
+{"batalla": "Lepanto", "año": "1571"},
+{"batalla": "Montaña Blanca", "año": "1620"},
+{"batalla": "Nördlingen", "año": "1634"},
+{"batalla": "Las Dunas", "año": "1639"},
+{"batalla": "Rocroi", "año": "1643"},
+{"batalla": "Almansa", "año": "1707"},
+{"batalla": "Villaviciosa", "año": "1710"},
+{"batalla": "Trafalgar", "año": "1805"},
+{"batalla": "Bailén", "año": "1808"},
+{"batalla": "Sitio de Zaragoza", "año": "1808"},
+{"batalla": "Ocaña", "año": "1809"},
+{"batalla": "Los Arapiles", "año": "1812"},
+{"batalla": "Vitoria", "año": "1813"},
+{"batalla": "Ayacucho", "año": "1824"},
+{"batalla": "Luchana", "año": "1836"},
+{"batalla": "Alcolea", "año": "1868"},
+{"batalla": "Oroquieta", "año": "1872"},
+{"batalla": "Cavite", "año": "1898"},
+{"batalla": "Annual", "año": "1921"},
+{"batalla": "Alhucemas", "año": "1925"},
+{"batalla": "Madrid", "año": "1936"},
+{"batalla": "Jarama", "año": "1937"},
+{"batalla": "Guadalajara", "año": "1937"},
+{"batalla": "Brunete", "año": "1937"},
+{"batalla": "Belchite", "año": "1937"},
+{"batalla": "Teruel", "año": "1938"},
+{"batalla": "Ebro", "año": "1938"}
+];
+
+var HIST_PERSONAJE_HECHO = [
+{"personaje": "Don Pelayo", "hecho": "Venció en Covadonga"},
+{"personaje": "El Cid Campeador", "hecho": "Conquistó Valencia"},
+{"personaje": "Cristóbal Colón", "hecho": "Llegó a América"},
+{"personaje": "Hernán Cortés", "hecho": "Conquistó México"},
+{"personaje": "Francisco Pizarro", "hecho": "Conquistó el Perú"},
+{"personaje": "Magallanes", "hecho": "Inició vuelta al mundo"},
+{"personaje": "Elcano", "hecho": "Completó vuelta al mundo"},
+{"personaje": "Cervantes", "hecho": "Escribió El Quijote"},
+{"personaje": "Velázquez", "hecho": "Pintó Las Meninas"},
+{"personaje": "Lope de Vega", "hecho": "Renovó el teatro"},
+{"personaje": "Goya", "hecho": "Pintó los fusilamientos"},
+{"personaje": "Blas de Lezo", "hecho": "Defendió Cartagena"},
+{"personaje": "Álvaro de Bazán", "hecho": "Almirante invicto"},
+{"personaje": "Torquemada", "hecho": "Inquisidor General"},
+{"personaje": "Cisneros", "hecho": "Regente de Castilla"},
+{"personaje": "Olivares", "hecho": "Valido de Felipe IV"},
+{"personaje": "Jovellanos", "hecho": "Ilustrado español"},
+{"personaje": "Prim", "hecho": "Lideró La Gloriosa"},
+{"personaje": "Cánovas", "hecho": "Arquitecto Restauración"},
+{"personaje": "Sagasta", "hecho": "Líder liberal"},
+{"personaje": "Joaquín Costa", "hecho": "Regeneracionista"},
+{"personaje": "Primo de Rivera", "hecho": "Dictador 1923-1930"},
+{"personaje": "Azaña", "hecho": "Presidente República"},
+{"personaje": "Franco", "hecho": "Dictador 1939-1975"},
+{"personaje": "José Antonio", "hecho": "Fundó la Falange"},
+{"personaje": "Pasionaria", "hecho": "Líder comunista"},
+{"personaje": "Adolfo Suárez", "hecho": "Artífice Transición"},
+{"personaje": "Carrero Blanco", "hecho": "Asesinado por ETA"},
+{"personaje": "Felipe González", "hecho": "Modernizó España"},
+{"personaje": "Ramón y Cajal", "hecho": "Nobel de Medicina"},
+{"personaje": "Severo Ochoa", "hecho": "Nobel de Medicina"},
+{"personaje": "Isaac Peral", "hecho": "Inventó el submarino"},
+{"personaje": "La Cierva", "hecho": "Inventó el autogiro"},
+{"personaje": "García Lorca", "hecho": "Poeta del 27"},
+{"personaje": "Picasso", "hecho": "Pintó el Guernica"},
+{"personaje": "Dalí", "hecho": "Genio surrealismo"},
+{"personaje": "Antonio Machado", "hecho": "Poeta de Castilla"},
+{"personaje": "Clara Campoamor", "hecho": "Sufragio femenino"},
+{"personaje": "Pardo Bazán", "hecho": "Escritora naturalista"},
+{"personaje": "Rosalía de Castro", "hecho": "Renacimiento gallego"},
+{"personaje": "Luis Buñuel", "hecho": "Cineasta surrealista"},
+{"personaje": "Manuel de Falla", "hecho": "Compositor nacionalista"},
+{"personaje": "Nebrija", "hecho": "Primera gramática"},
+{"personaje": "Las Casas", "hecho": "Defensor de indios"},
+{"personaje": "Miguel Servet", "hecho": "Circulación pulmonar"},
+{"personaje": "Santa Teresa", "hecho": "Reforma del Carmelo"},
+{"personaje": "San Juan de la Cruz", "hecho": "Poeta místico"},
+{"personaje": "Loyola", "hecho": "Fundó los Jesuitas"},
+{"personaje": "Canalejas", "hecho": "Político asesinado"},
+{"personaje": "Santiago Carrillo", "hecho": "Eurocomunista"},
+{"personaje": "Tejero", "hecho": "Golpe del 23-F"}
+];
+
+var HIST_MONUMENTO_CIUDAD = [
+{"monumento": "Alhambra", "ciudad": "Granada"},
+{"monumento": "Mezquita-Catedral", "ciudad": "Córdoba"},
+{"monumento": "Acueducto romano", "ciudad": "Segovia"},
+{"monumento": "Alcázar", "ciudad": "Segovia"},
+{"monumento": "Catedral gótica", "ciudad": "Sevilla"},
+{"monumento": "Giralda", "ciudad": "Sevilla"},
+{"monumento": "Torre del Oro", "ciudad": "Sevilla"},
+{"monumento": "Sagrada Familia", "ciudad": "Barcelona"},
+{"monumento": "Parque Güell", "ciudad": "Barcelona"},
+{"monumento": "Teatro romano", "ciudad": "Mérida"},
+{"monumento": "Murallas romanas", "ciudad": "Lugo"},
+{"monumento": "Murallas medievales", "ciudad": "Ávila"},
+{"monumento": "Catedral del Apóstol", "ciudad": "Santiago"},
+{"monumento": "Catedral gótica", "ciudad": "Burgos"},
+{"monumento": "Catedral vidrieras", "ciudad": "León"},
+{"monumento": "El Escorial", "ciudad": "Madrid"},
+{"monumento": "Palacio Real", "ciudad": "Madrid"},
+{"monumento": "Puerta de Alcalá", "ciudad": "Madrid"},
+{"monumento": "Museo del Prado", "ciudad": "Madrid"},
+{"monumento": "Plaza Mayor", "ciudad": "Madrid"},
+{"monumento": "Basílica del Pilar", "ciudad": "Zaragoza"},
+{"monumento": "Lonja de la Seda", "ciudad": "Valencia"},
+{"monumento": "Catedral primada", "ciudad": "Toledo"},
+{"monumento": "Alcázar imperial", "ciudad": "Toledo"},
+{"monumento": "Monasterio Montserrat", "ciudad": "Barcelona"},
+{"monumento": "Monasterio de Poblet", "ciudad": "Tarragona"},
+{"monumento": "Castillo de Loarre", "ciudad": "Huesca"},
+{"monumento": "Castillo Bellver", "ciudad": "Palma"},
+{"monumento": "Catedral gótica", "ciudad": "Palma"},
+{"monumento": "Puente romano", "ciudad": "Córdoba"},
+{"monumento": "Templo de Debod", "ciudad": "Madrid"},
+{"monumento": "Casa Batlló", "ciudad": "Barcelona"},
+{"monumento": "Palacio Magdalena", "ciudad": "Santander"},
+{"monumento": "Colegiata", "ciudad": "Santillana"},
+{"monumento": "Casas Colgadas", "ciudad": "Cuenca"},
+{"monumento": "Guggenheim", "ciudad": "Bilbao"},
+{"monumento": "Gaztelugatxe", "ciudad": "Bermeo"},
+{"monumento": "La Aljafería", "ciudad": "Zaragoza"},
+{"monumento": "San Isidoro", "ciudad": "León"},
+{"monumento": "Plaza Mayor", "ciudad": "Salamanca"},
+{"monumento": "Monasterio Guadalupe", "ciudad": "Cáceres"},
+{"monumento": "Torre de Hércules", "ciudad": "A Coruña"}
+];
+
+var HIST_TRATADO_ANO = [
+{"tratado": "Concordia de Segovia", "año": "1475"},
+{"tratado": "Alcaçovas", "año": "1479"},
+{"tratado": "Santa Fe", "año": "1492"},
+{"tratado": "Barcelona", "año": "1493"},
+{"tratado": "Tordesillas", "año": "1494"},
+{"tratado": "Paz de las Damas", "año": "1529"},
+{"tratado": "Augsburgo", "año": "1555"},
+{"tratado": "Cateau-Cambrésis", "año": "1559"},
+{"tratado": "Unión de Arrás", "año": "1579"},
+{"tratado": "Londres", "año": "1604"},
+{"tratado": "Tregua Doce Años", "año": "1609"},
+{"tratado": "Westfalia", "año": "1648"},
+{"tratado": "Pirineos", "año": "1659"},
+{"tratado": "Lisboa", "año": "1668"},
+{"tratado": "Nimega", "año": "1678"},
+{"tratado": "Ryswick", "año": "1697"},
+{"tratado": "Utrecht", "año": "1713"},
+{"tratado": "Rastatt", "año": "1714"},
+{"tratado": "Sevilla", "año": "1729"},
+{"tratado": "Pacto de Familia", "año": "1733"},
+{"tratado": "Madrid", "año": "1750"},
+{"tratado": "París", "año": "1763"},
+{"tratado": "San Ildefonso", "año": "1777"},
+{"tratado": "El Pardo", "año": "1778"},
+{"tratado": "Basilea", "año": "1795"},
+{"tratado": "Fontainebleau", "año": "1807"},
+{"tratado": "Constitución Cádiz", "año": "1812"},
+{"tratado": "Valençay", "año": "1813"},
+{"tratado": "Vergara", "año": "1839"},
+{"tratado": "Ostende", "año": "1866"},
+{"tratado": "París (Cuba)", "año": "1898"},
+{"tratado": "San Sebastián", "año": "1930"},
+{"tratado": "Madrid (Bases EEUU)", "año": "1953"},
+{"tratado": "Acuerdos Sáhara", "año": "1975"},
+{"tratado": "Constitución", "año": "1978"},
+{"tratado": "Adhesión CEE", "año": "1985"},
+{"tratado": "Maastricht", "año": "1992"}
+];
+
+var histMatchType = null;
+var histMatchOk = 0, histMatchFail = 0, histMatchRound = 1;
+var histMatchSelected = null, histMatchPairs = [], histMatchSolved = 0;
+
+window.abrirSelectorHistMatch = function() {
+    var html = '<div id="hist-match-selector" style="position:fixed; top:0; left:0; right:0; bottom:0; background:var(--bg); z-index:99999; display:flex; flex-direction:column; overflow-y:auto;">' +
+        '<div style="padding:15px 20px; display:flex; align-items:center; gap:15px; border-bottom:1px solid var(--border);">' +
+        '<button onclick="document.getElementById(\'hist-match-selector\').remove();" style="background:none; border:none; color:var(--text); font-size:1.5rem; cursor:pointer;">←</button>' +
+        '<div><h2 style="color:var(--text); font-size:1.3rem; margin:0;">🔗 Emparejar Historia</h2>' +
+        '<p style="color:var(--muted); font-size:0.8rem; margin:4px 0 0 0;">5 modos para dominar la historia</p></div></div>' +
+        '<div style="padding:20px; display:flex; flex-direction:column; gap:12px;">' +
+        '<div class="deck-item" onclick="document.getElementById(\'hist-match-selector\').remove(); iniciarHistMatch(\'rey\');" style="border-color:#ffd700;">' +
+        '<div class="deck-icon">👑</div><div class="deck-info"><h4>Rey ↔ Apodo</h4>' +
+        '<span style="font-size:0.72rem; color:var(--muted); font-style:italic;">El Sabio, el Hechizado, la Católica...</span>' +
+        '<p style="font-size:0.72rem; color:var(--muted); margin-top:4px;">' + HIST_REY_APODO.length + ' pares</p></div><div class="deck-arrow">›</div></div>' +
+        '<div class="deck-item" onclick="document.getElementById(\'hist-match-selector\').remove(); iniciarHistMatch(\'batalla\');" style="border-color:#dc3545;">' +
+        '<div class="deck-icon">⚔️</div><div class="deck-info"><h4>Batalla ↔ Año</h4>' +
+        '<span style="font-size:0.72rem; color:var(--muted); font-style:italic;">Covadonga, Lepanto, Bailén...</span>' +
+        '<p style="font-size:0.72rem; color:var(--muted); margin-top:4px;">' + HIST_BATALLA_ANO.length + ' pares</p></div><div class="deck-arrow">›</div></div>' +
+        '<div class="deck-item" onclick="document.getElementById(\'hist-match-selector\').remove(); iniciarHistMatch(\'personaje\');" style="border-color:#17a2b8;">' +
+        '<div class="deck-icon">🧑</div><div class="deck-info"><h4>Personaje ↔ Hecho</h4>' +
+        '<span style="font-size:0.72rem; color:var(--muted); font-style:italic;">¿Quién hizo qué?</span>' +
+        '<p style="font-size:0.72rem; color:var(--muted); margin-top:4px;">' + HIST_PERSONAJE_HECHO.length + ' pares</p></div><div class="deck-arrow">›</div></div>' +
+        '<div class="deck-item" onclick="document.getElementById(\'hist-match-selector\').remove(); iniciarHistMatch(\'monumento\');" style="border-color:#28a745;">' +
+        '<div class="deck-icon">🏰</div><div class="deck-info"><h4>Monumento ↔ Ciudad</h4>' +
+        '<span style="font-size:0.72rem; color:var(--muted); font-style:italic;">Alhambra, Giralda, Acueducto...</span>' +
+        '<p style="font-size:0.72rem; color:var(--muted); margin-top:4px;">' + HIST_MONUMENTO_CIUDAD.length + ' pares</p></div><div class="deck-arrow">›</div></div>' +
+        '<div class="deck-item" onclick="document.getElementById(\'hist-match-selector\').remove(); iniciarHistMatch(\'tratado\');" style="border-color:#6f42c1;">' +
+        '<div class="deck-icon">📜</div><div class="deck-info"><h4>Tratado ↔ Año</h4>' +
+        '<span style="font-size:0.72rem; color:var(--muted); font-style:italic;">Utrecht, Tordesillas, Westfalia...</span>' +
+        '<p style="font-size:0.72rem; color:var(--muted); margin-top:4px;">' + HIST_TRATADO_ANO.length + ' pares</p></div><div class="deck-arrow">›</div></div>' +
+        '</div></div>';
+    document.body.insertAdjacentHTML('beforeend', html);
+};
+
+window.iniciarHistMatch = function(tipo) {
+    histMatchType = tipo;
+    var overlay = document.getElementById('view-smart-study');
+    overlay.style.display = 'flex';
+    var sa = document.getElementById('study-area');
+    if (sa) sa.style.display = 'none';
+    var ma = document.getElementById('hist-match-inline');
+    if (!ma) {
+        ma = document.createElement('div');
+        ma.id = 'hist-match-inline';
+        ma.style.cssText = 'flex:1; display:flex; flex-direction:column; padding:16px; overflow-y:auto;';
+        overlay.appendChild(ma);
+    }
+    ma.style.display = 'flex';
+    histMatchOk = 0; histMatchFail = 0; histMatchRound = 1;
+    loadHistMatchRound();
+};
+
+function closeHistMatchGame() {
+    var ma = document.getElementById('hist-match-inline');
+    if (ma) ma.style.display = 'none';
+    var sa = document.getElementById('study-area');
+    if (sa) sa.style.display = 'flex';
+}
+
+function getHistMatchData() {
+    switch(histMatchType) {
+        case 'rey': return { data: HIST_REY_APODO, left: 'rey', right: 'apodo', icon: '👑', title: 'Rey ↔ Apodo', color: '#ffd700' };
+        case 'batalla': return { data: HIST_BATALLA_ANO, left: 'batalla', right: 'año', icon: '⚔️', title: 'Batalla ↔ Año', color: '#dc3545' };
+        case 'personaje': return { data: HIST_PERSONAJE_HECHO, left: 'personaje', right: 'hecho', icon: '🧑', title: 'Personaje ↔ Hecho', color: '#17a2b8' };
+        case 'monumento': return { data: HIST_MONUMENTO_CIUDAD, left: 'monumento', right: 'ciudad', icon: '🏰', title: 'Monumento ↔ Ciudad', color: '#28a745' };
+        case 'tratado': return { data: HIST_TRATADO_ANO, left: 'tratado', right: 'año', icon: '📜', title: 'Tratado ↔ Año', color: '#6f42c1' };
+    }
+}
+
+function loadHistMatchRound() {
+    histMatchSelected = null;
+    histMatchSolved = 0;
+    var config = getHistMatchData();
+    var ma = document.getElementById('hist-match-inline');
+    if (!ma) return;
+    
+    ma.innerHTML = '<div style="text-align:center; margin-bottom:14px;">' +
+        '<span style="font-size:1.2rem;">' + config.icon + '</span> ' +
+        '<span style="color:var(--text); font-weight:600;">' + config.title + '</span><br>' +
+        '<span style="color:var(--muted); font-size:0.85rem;">Ronda ' + histMatchRound + ' | </span>' +
+        '<span id="hist-match-ok" style="color:#22c55e; font-weight:700;">✓ ' + histMatchOk + '</span>' +
+        ' <span id="hist-match-fail" style="color:#ef4444; font-weight:700;">✗ ' + histMatchFail + '</span>' +
+        '</div>' +
+        '<p style="text-align:center; color:var(--muted); font-size:0.8rem; margin-bottom:12px;">Empareja cada elemento</p>' +
+        '<div id="hist-match-grid" style="display:grid; grid-template-columns:1fr 1fr; gap:10px;"></div>' +
+        '<div id="hist-match-result" style="display:none; text-align:center; margin-top:20px;"></div>';
+
+    var shuffled = config.data.slice().sort(function() { return Math.random() - 0.5; }).slice(0, 6);
+    histMatchPairs = shuffled;
+    var lefts = shuffled.map(function(p) { return p[config.left]; }).sort(function() { return Math.random() - 0.5; });
+    var rights = shuffled.map(function(p) { return p[config.right]; }).sort(function() { return Math.random() - 0.5; });
+    var grid = document.getElementById('hist-match-grid');
+    for (var i = 0; i < 6; i++) {
+        (function(leftVal, rightVal) {
+            var lBtn = document.createElement('button');
+            lBtn.style.cssText = 'background:var(--card);border:2px solid var(--border);border-radius:12px;padding:10px 6px;font-size:0.78rem;cursor:pointer;color:var(--text);text-align:center;min-height:52px;width:100%;line-height:1.3;';
+            lBtn.textContent = leftVal;
+            lBtn.onclick = function() { selectHistMatch(this, 'left', leftVal); };
+            grid.appendChild(lBtn);
+            var rBtn = document.createElement('button');
+            rBtn.style.cssText = 'background:var(--card2);border:2px solid var(--border);border-radius:12px;padding:10px 6px;font-size:0.78rem;cursor:pointer;color:var(--text);text-align:center;min-height:52px;width:100%;line-height:1.3;';
+            rBtn.textContent = rightVal;
+            rBtn.onclick = function() { selectHistMatch(this, 'right', rightVal); };
+            grid.appendChild(rBtn);
+        })(lefts[i], rights[i]);
+    }
+}
+
+function selectHistMatch(btn, tipo, valor) {
+    if (btn.disabled) return;
+    var config = getHistMatchData();
+    if (!histMatchSelected) {
+        histMatchSelected = { btn: btn, tipo: tipo, valor: valor };
+        btn.style.borderColor = config.color;
+        btn.style.transform = 'scale(1.04)';
+        return;
+    }
+    if (histMatchSelected.btn === btn) {
+        btn.style.borderColor = 'var(--border)';
+        btn.style.transform = '';
+        histMatchSelected = null;
+        return;
+    }
+    if (histMatchSelected.tipo === tipo) {
+        histMatchSelected.btn.style.borderColor = 'var(--border)';
+        histMatchSelected.btn.style.transform = '';
+        histMatchSelected = { btn: btn, tipo: tipo, valor: valor };
+        btn.style.borderColor = config.color;
+        btn.style.transform = 'scale(1.04)';
+        return;
+    }
+    var leftVal = tipo === 'left' ? valor : histMatchSelected.valor;
+    var rightVal = tipo === 'right' ? valor : histMatchSelected.valor;
+    var correcto = histMatchPairs.some(function(p) { return p[config.left] === leftVal && p[config.right] === rightVal; });
+    var color = correcto ? '#22c55e' : '#ef4444';
+    btn.style.borderColor = color;
+    btn.style.background = correcto ? 'rgba(34,197,94,0.15)' : 'rgba(239,68,68,0.15)';
+    histMatchSelected.btn.style.borderColor = color;
+    histMatchSelected.btn.style.background = correcto ? 'rgba(34,197,94,0.15)' : 'rgba(239,68,68,0.15)';
+    if (correcto) {
+        histMatchOk++;
+        btn.disabled = true;
+        histMatchSelected.btn.disabled = true;
+        btn.style.transform = '';
+        histMatchSolved++;
+        document.getElementById('hist-match-ok').innerHTML = '✓ ' + histMatchOk;
+        if (histMatchSolved === 6) setTimeout(showHistMatchRoundResult, 600);
+    } else {
+        histMatchFail++;
+        document.getElementById('hist-match-fail').innerHTML = '✗ ' + histMatchFail;
+        var b1 = btn, b2 = histMatchSelected.btn;
+        setTimeout(function() {
+            b1.style.borderColor = 'var(--border)'; b1.style.background = ''; b1.style.transform = '';
+            b2.style.borderColor = 'var(--border)'; b2.style.background = ''; b2.style.transform = '';
+        }, 800);
+    }
+    histMatchSelected = null;
+}
+
+function showHistMatchRoundResult() {
+    var grid = document.getElementById('hist-match-grid');
+    if (grid) grid.style.display = 'none';
+    var res = document.getElementById('hist-match-result');
+    if (!res) return;
+    res.style.display = 'block';
+    var config = getHistMatchData();
+    var pct = histMatchOk + histMatchFail > 0 ? Math.round((histMatchOk / (histMatchOk + histMatchFail)) * 100) : 0;
+    var emoji, msg;
+    if (histMatchFail === 0) { emoji = '🏆'; msg = '¡Ronda perfecta!'; }
+    else if (pct >= 75) { emoji = '💪'; msg = histMatchOk + ' bien, ' + histMatchFail + ' mal. ¡Casi!'; }
+    else { emoji = '📚'; msg = histMatchOk + ' bien, ' + histMatchFail + ' mal. ¡A repasar!'; }
+    res.innerHTML = '<div style="font-size:2.5rem; margin-bottom:8px;">' + emoji + '</div>' +
+        '<div style="font-weight:700; margin-bottom:16px;">' + msg + '</div>' +
+        '<button onclick="histMatchRound++; loadHistMatchRound();" style="background:' + config.color + ';color:#000;border:none;border-radius:12px;padding:12px 24px;font-weight:700;font-size:0.95rem;cursor:pointer;width:100%;">Siguiente ronda →</button>' +
+        '<button onclick="closeHistMatchGame()" style="margin-top:8px;background:transparent;color:var(--muted);border:1px solid var(--border);border-radius:12px;padding:10px;font-size:0.85rem;cursor:pointer;width:100%;">Volver</button>';
+}
+
+// Función para abrir selector de Historia (incluye emparejamientos)
+window.abrirSelectorHist = function() {
+    var histMazo = MAZOS.find(function(m) { return m.id === 'hist'; });
+    var totalPreguntas = histMazo ? histMazo.questions.length : 0;
+    
+    var html = '<div id="hist-selector" style="position:fixed; top:0; left:0; right:0; bottom:0; background:var(--bg); z-index:99999; display:flex; flex-direction:column; overflow-y:auto;">' +
+        '<div style="padding:15px 20px; display:flex; align-items:center; gap:15px; border-bottom:1px solid var(--border);">' +
+            '<button onclick="document.getElementById(\'hist-selector\').remove();" style="background:none; border:none; color:var(--text); font-size:1.5rem; cursor:pointer;">←</button>' +
+            '<div>' +
+                '<h2 style="color:var(--text); font-size:1.3rem; margin:0;">⚔️ Geografía e Historia</h2>' +
+                '<p style="color:var(--muted); font-size:0.8rem; margin:4px 0 0 0;">' + totalPreguntas + ' preguntas en total</p>' +
+            '</div>' +
+        '</div>' +
+        '<div style="padding:20px; display:flex; flex-direction:column; gap:12px;">' +
+            '<div class="deck-item" onclick="document.getElementById(\'hist-selector\').remove(); startSmartStudyAll(\'hist\');" style="border-color:var(--accent); background:linear-gradient(135deg, rgba(255,255,255,0.05), transparent);">' +
+                '<div class="deck-icon">🎲</div>' +
+                '<div class="deck-info">' +
+                    '<h4>Aleatorio</h4>' +
+                    '<span style="font-size:0.72rem; color:var(--muted); font-style:italic;">Todo mezclado</span>' +
+                    '<p style="font-size:0.72rem; color:var(--muted); margin-top:4px;">' + totalPreguntas + ' preguntas</p>' +
+                '</div>' +
+                '<div class="deck-arrow">›</div>' +
+            '</div>' +
+            '<div style="border-top:1px solid var(--border); margin:10px 0; position:relative;">' +
+                '<span style="position:absolute; top:-10px; left:50%; transform:translateX(-50%); background:var(--bg); padding:0 10px; color:var(--muted); font-size:0.75rem;">minijuegos</span>' +
+            '</div>' +
+            '<div class="deck-item" onclick="document.getElementById(\'hist-selector\').remove(); iniciarHistMatch(\'rey\');" style="border-color:#ffd700;">' +
+                '<div class="deck-icon">👑</div>' +
+                '<div class="deck-info">' +
+                    '<h4>Rey ↔ Apodo</h4>' +
+                    '<span style="font-size:0.72rem; color:var(--muted); font-style:italic;">El Sabio, el Hechizado, la Católica...</span>' +
+                    '<p style="font-size:0.72rem; color:var(--muted); margin-top:4px;">' + HIST_REY_APODO.length + ' pares</p>' +
+                '</div>' +
+                '<div class="deck-arrow">›</div>' +
+            '</div>' +
+            '<div class="deck-item" onclick="document.getElementById(\'hist-selector\').remove(); iniciarHistMatch(\'batalla\');" style="border-color:#dc3545;">' +
+                '<div class="deck-icon">⚔️</div>' +
+                '<div class="deck-info">' +
+                    '<h4>Batalla ↔ Año</h4>' +
+                    '<span style="font-size:0.72rem; color:var(--muted); font-style:italic;">Covadonga, Lepanto, Bailén...</span>' +
+                    '<p style="font-size:0.72rem; color:var(--muted); margin-top:4px;">' + HIST_BATALLA_ANO.length + ' pares</p>' +
+                '</div>' +
+                '<div class="deck-arrow">›</div>' +
+            '</div>' +
+            '<div class="deck-item" onclick="document.getElementById(\'hist-selector\').remove(); iniciarHistMatch(\'personaje\');" style="border-color:#17a2b8;">' +
+                '<div class="deck-icon">🧑</div>' +
+                '<div class="deck-info">' +
+                    '<h4>Personaje ↔ Hecho</h4>' +
+                    '<span style="font-size:0.72rem; color:var(--muted); font-style:italic;">¿Quién hizo qué?</span>' +
+                    '<p style="font-size:0.72rem; color:var(--muted); margin-top:4px;">' + HIST_PERSONAJE_HECHO.length + ' pares</p>' +
+                '</div>' +
+                '<div class="deck-arrow">›</div>' +
+            '</div>' +
+            '<div class="deck-item" onclick="document.getElementById(\'hist-selector\').remove(); iniciarHistMatch(\'monumento\');" style="border-color:#28a745;">' +
+                '<div class="deck-icon">🏰</div>' +
+                '<div class="deck-info">' +
+                    '<h4>Monumento ↔ Ciudad</h4>' +
+                    '<span style="font-size:0.72rem; color:var(--muted); font-style:italic;">Alhambra, Giralda, Acueducto...</span>' +
+                    '<p style="font-size:0.72rem; color:var(--muted); margin-top:4px;">' + HIST_MONUMENTO_CIUDAD.length + ' pares</p>' +
+                '</div>' +
+                '<div class="deck-arrow">›</div>' +
+            '</div>' +
+            '<div class="deck-item" onclick="document.getElementById(\'hist-selector\').remove(); iniciarHistMatch(\'tratado\');" style="border-color:#6f42c1;">' +
+                '<div class="deck-icon">📜</div>' +
+                '<div class="deck-info">' +
+                    '<h4>Tratado ↔ Año</h4>' +
+                    '<span style="font-size:0.72rem; color:var(--muted); font-style:italic;">Utrecht, Tordesillas, Westfalia...</span>' +
+                    '<p style="font-size:0.72rem; color:var(--muted); margin-top:4px;">' + HIST_TRATADO_ANO.length + ' pares</p>' +
+                '</div>' +
+                '<div class="deck-arrow">›</div>' +
+            '</div>' +
+        '</div>' +
+    '</div>';
+    document.body.insertAdjacentHTML('beforeend', html);
+};
+
+// Función para abrir selector de Historia de España (desde categorías clasificadas)
+window.abrirSelectorHistEsp = function() {
+    var histEspMazo = MAZOS.find(function(m) { return m.id === 'hist_esp'; });
+    var totalPreguntas = histEspMazo ? histEspMazo.questions.length : 0;
+    
+    var html = '<div id="hist-esp-selector" style="position:fixed; top:0; left:0; right:0; bottom:0; background:var(--bg); z-index:99999; display:flex; flex-direction:column; overflow-y:auto;">' +
+        '<div style="padding:15px 20px; display:flex; align-items:center; gap:15px; border-bottom:1px solid var(--border);">' +
+            '<button onclick="document.getElementById(\'hist-esp-selector\').remove();" style="background:none; border:none; color:var(--text); font-size:1.5rem; cursor:pointer;">←</button>' +
+            '<div>' +
+                '<h2 style="color:var(--text); font-size:1.3rem; margin:0;">🇪🇸 Historia de España</h2>' +
+                '<p style="color:var(--muted); font-size:0.8rem; margin:4px 0 0 0;">' + totalPreguntas + ' preguntas + 5 minijuegos</p>' +
+            '</div>' +
+        '</div>' +
+        '<div style="padding:20px; display:flex; flex-direction:column; gap:12px;">' +
+            '<div class="deck-item" onclick="document.getElementById(\'hist-esp-selector\').remove(); startSmartStudyAll(\'hist_esp\');" style="border-color:#ff7675; background:linear-gradient(135deg, rgba(255,255,255,0.05), transparent);">' +
+                '<div class="deck-icon">🎲</div>' +
+                '<div class="deck-info">' +
+                    '<h4>Preguntas de rosco</h4>' +
+                    '<span style="font-size:0.72rem; color:var(--muted); font-style:italic;">Todas las preguntas mezcladas</span>' +
+                    '<p style="font-size:0.72rem; color:var(--muted); margin-top:4px;">' + totalPreguntas + ' preguntas</p>' +
+                '</div>' +
+                '<div class="deck-arrow">›</div>' +
+            '</div>' +
+            '<div style="border-top:1px solid var(--border); margin:10px 0; position:relative;">' +
+                '<span style="position:absolute; top:-10px; left:50%; transform:translateX(-50%); background:var(--bg); padding:0 10px; color:var(--muted); font-size:0.75rem;">minijuegos de emparejar</span>' +
+            '</div>' +
+            '<div class="deck-item" onclick="document.getElementById(\'hist-esp-selector\').remove(); iniciarHistMatch(\'rey\');" style="border-color:#ffd700;">' +
+                '<div class="deck-icon">👑</div>' +
+                '<div class="deck-info">' +
+                    '<h4>Rey ↔ Apodo</h4>' +
+                    '<span style="font-size:0.72rem; color:var(--muted); font-style:italic;">El Sabio, el Hechizado, la Católica...</span>' +
+                    '<p style="font-size:0.72rem; color:var(--muted); margin-top:4px;">' + HIST_REY_APODO.length + ' pares</p>' +
+                '</div>' +
+                '<div class="deck-arrow">›</div>' +
+            '</div>' +
+            '<div class="deck-item" onclick="document.getElementById(\'hist-esp-selector\').remove(); iniciarHistMatch(\'batalla\');" style="border-color:#dc3545;">' +
+                '<div class="deck-icon">⚔️</div>' +
+                '<div class="deck-info">' +
+                    '<h4>Batalla ↔ Año</h4>' +
+                    '<span style="font-size:0.72rem; color:var(--muted); font-style:italic;">Covadonga, Lepanto, Bailén...</span>' +
+                    '<p style="font-size:0.72rem; color:var(--muted); margin-top:4px;">' + HIST_BATALLA_ANO.length + ' pares</p>' +
+                '</div>' +
+                '<div class="deck-arrow">›</div>' +
+            '</div>' +
+            '<div class="deck-item" onclick="document.getElementById(\'hist-esp-selector\').remove(); iniciarHistMatch(\'personaje\');" style="border-color:#17a2b8;">' +
+                '<div class="deck-icon">🧑</div>' +
+                '<div class="deck-info">' +
+                    '<h4>Personaje ↔ Hecho</h4>' +
+                    '<span style="font-size:0.72rem; color:var(--muted); font-style:italic;">¿Quién hizo qué?</span>' +
+                    '<p style="font-size:0.72rem; color:var(--muted); margin-top:4px;">' + HIST_PERSONAJE_HECHO.length + ' pares</p>' +
+                '</div>' +
+                '<div class="deck-arrow">›</div>' +
+            '</div>' +
+            '<div class="deck-item" onclick="document.getElementById(\'hist-esp-selector\').remove(); iniciarHistMatch(\'monumento\');" style="border-color:#28a745;">' +
+                '<div class="deck-icon">🏰</div>' +
+                '<div class="deck-info">' +
+                    '<h4>Monumento ↔ Ciudad</h4>' +
+                    '<span style="font-size:0.72rem; color:var(--muted); font-style:italic;">Alhambra, Giralda, Acueducto...</span>' +
+                    '<p style="font-size:0.72rem; color:var(--muted); margin-top:4px;">' + HIST_MONUMENTO_CIUDAD.length + ' pares</p>' +
+                '</div>' +
+                '<div class="deck-arrow">›</div>' +
+            '</div>' +
+            '<div class="deck-item" onclick="document.getElementById(\'hist-esp-selector\').remove(); iniciarHistMatch(\'tratado\');" style="border-color:#6f42c1;">' +
+                '<div class="deck-icon">📜</div>' +
+                '<div class="deck-info">' +
+                    '<h4>Tratado ↔ Año</h4>' +
+                    '<span style="font-size:0.72rem; color:var(--muted); font-style:italic;">Utrecht, Tordesillas, Westfalia...</span>' +
+                    '<p style="font-size:0.72rem; color:var(--muted); margin-top:4px;">' + HIST_TRATADO_ANO.length + ' pares</p>' +
+                '</div>' +
+                '<div class="deck-arrow">›</div>' +
+            '</div>' +
+        '</div>' +
+    '</div>';
+    document.body.insertAdjacentHTML('beforeend', html);
+};
+
+window.iniciarHistMatch = function(tipo) {
+    histMatchType = tipo;
+    var overlay = document.getElementById('view-smart-study');
+    overlay.style.display = 'flex';
+    
+    var sa = document.getElementById('study-area');
+    if (sa) sa.style.display = 'none';
+    
+    var ma = document.getElementById('hist-match-inline');
+    if (!ma) {
+        ma = document.createElement('div');
+        ma.id = 'hist-match-inline';
+        ma.style.cssText = 'flex:1; display:flex; flex-direction:column; padding:16px; overflow-y:auto;';
+        overlay.appendChild(ma);
+    }
+    ma.style.display = 'flex';
+    
+    histMatchOk = 0; histMatchFail = 0; histMatchRound = 1;
+    loadHistMatchRound();
+};
+
+function closeHistMatchGame() {
+    var ma = document.getElementById('hist-match-inline');
+    if (ma) ma.style.display = 'none';
+    var sa = document.getElementById('study-area');
+    if (sa) sa.style.display = 'flex';
+}
+
+function getHistMatchConfig() {
+    switch(histMatchType) {
+        case 'rey': return { data: HIST_REY_APODO, left: 'rey', right: 'apodo', icon: '👑', title: 'Rey ↔ Apodo', color: '#ffd700' };
+        case 'batalla': return { data: HIST_BATALLA_ANO, left: 'batalla', right: 'año', icon: '⚔️', title: 'Batalla ↔ Año', color: '#dc3545' };
+        case 'personaje': return { data: HIST_PERSONAJE_HECHO, left: 'personaje', right: 'hecho', icon: '🧑', title: 'Personaje ↔ Hecho', color: '#17a2b8' };
+        case 'monumento': return { data: HIST_MONUMENTO_CIUDAD, left: 'monumento', right: 'ciudad', icon: '🏰', title: 'Monumento ↔ Ciudad', color: '#28a745' };
+        case 'tratado': return { data: HIST_TRATADO_ANO, left: 'tratado', right: 'año', icon: '📜', title: 'Tratado ↔ Año', color: '#6f42c1' };
+    }
+}
+
+function loadHistMatchRound() {
+    histMatchSelected = null;
+    histMatchSolved = 0;
+    
+    var config = getHistMatchConfig();
+    var ma = document.getElementById('hist-match-inline');
+    if (!ma) return;
+    
+    ma.innerHTML = '<div style="text-align:center; margin-bottom:14px;">' +
+        '<span style="font-size:1.2rem;">' + config.icon + '</span> ' +
+        '<span style="color:var(--text); font-weight:600;">' + config.title + '</span><br>' +
+        '<span style="color:var(--muted); font-size:0.85rem;">Ronda ' + histMatchRound + ' &nbsp;|&nbsp; </span>' +
+        '<span id="hist-match-ok" style="color:#22c55e; font-weight:700;">✓ ' + histMatchOk + '</span>' +
+        ' <span id="hist-match-fail" style="color:#ef4444; font-weight:700;">✗ ' + histMatchFail + '</span>' +
+        '</div>' +
+        '<p style="text-align:center; color:var(--muted); font-size:0.8rem; margin-bottom:12px;">Empareja cada elemento</p>' +
+        '<div id="hist-match-grid" style="display:grid; grid-template-columns:1fr 1fr; gap:10px;"></div>' +
+        '<div id="hist-match-result" style="display:none; text-align:center; margin-top:20px;"></div>';
+
+    var shuffled = config.data.slice().sort(function() { return Math.random() - 0.5; }).slice(0, 6);
+    histMatchPairs = shuffled;
+
+    var lefts = shuffled.map(function(p) { return p[config.left]; }).sort(function() { return Math.random() - 0.5; });
+    var rights = shuffled.map(function(p) { return p[config.right]; }).sort(function() { return Math.random() - 0.5; });
+
+    var grid = document.getElementById('hist-match-grid');
+    for (var i = 0; i < 6; i++) {
+        (function(leftVal, rightVal) {
+            var lBtn = document.createElement('button');
+            lBtn.style.cssText = 'background:var(--card);border:2px solid var(--border);border-radius:12px;padding:10px 6px;font-size:0.75rem;cursor:pointer;color:var(--text);text-align:center;min-height:52px;width:100%;line-height:1.3;';
+            lBtn.textContent = leftVal;
+            lBtn.onclick = function() { selectHistMatch(this, 'left', leftVal); };
+            grid.appendChild(lBtn);
+
+            var rBtn = document.createElement('button');
+            rBtn.style.cssText = 'background:var(--card2);border:2px solid var(--border);border-radius:12px;padding:10px 6px;font-size:0.75rem;cursor:pointer;color:var(--text);text-align:center;min-height:52px;width:100%;line-height:1.3;';
+            rBtn.textContent = rightVal;
+            rBtn.onclick = function() { selectHistMatch(this, 'right', rightVal); };
+            grid.appendChild(rBtn);
+        })(lefts[i], rights[i]);
+    }
+}
+
+function selectHistMatch(btn, tipo, valor) {
+    if (btn.disabled) return;
+    var config = getHistMatchConfig();
+    
+    if (!histMatchSelected) {
+        histMatchSelected = { btn: btn, tipo: tipo, valor: valor };
+        btn.style.borderColor = config.color;
+        btn.style.transform = 'scale(1.04)';
+        return;
+    }
+    
+    if (histMatchSelected.btn === btn) {
+        btn.style.borderColor = 'var(--border)';
+        btn.style.transform = '';
+        histMatchSelected = null;
+        return;
+    }
+    
+    if (histMatchSelected.tipo === tipo) {
+        histMatchSelected.btn.style.borderColor = 'var(--border)';
+        histMatchSelected.btn.style.transform = '';
+        histMatchSelected = { btn: btn, tipo: tipo, valor: valor };
+        btn.style.borderColor = config.color;
+        btn.style.transform = 'scale(1.04)';
+        return;
+    }
+    
+    var leftVal = tipo === 'left' ? valor : histMatchSelected.valor;
+    var rightVal = tipo === 'right' ? valor : histMatchSelected.valor;
+    var correcto = histMatchPairs.some(function(p) { return p[config.left] === leftVal && p[config.right] === rightVal; });
+    
+    var color = correcto ? '#22c55e' : '#ef4444';
+    btn.style.borderColor = color;
+    btn.style.background = correcto ? 'rgba(34,197,94,0.15)' : 'rgba(239,68,68,0.15)';
+    histMatchSelected.btn.style.borderColor = color;
+    histMatchSelected.btn.style.background = correcto ? 'rgba(34,197,94,0.15)' : 'rgba(239,68,68,0.15)';
+    
+    if (correcto) {
+        histMatchOk++;
+        btn.disabled = true;
+        histMatchSelected.btn.disabled = true;
+        btn.style.transform = '';
+        histMatchSolved++;
+        document.getElementById('hist-match-ok').innerHTML = '✓ ' + histMatchOk;
+        if (histMatchSolved === 6) {
+            setTimeout(showHistMatchResult, 600);
+        }
+    } else {
+        histMatchFail++;
+        document.getElementById('hist-match-fail').innerHTML = '✗ ' + histMatchFail;
+        var b1 = btn; var b2 = histMatchSelected.btn;
+        setTimeout(function() {
+            b1.style.borderColor = 'var(--border)'; b1.style.background = ''; b1.style.transform = '';
+            b2.style.borderColor = 'var(--border)'; b2.style.background = ''; b2.style.transform = '';
+        }, 800);
+    }
+    histMatchSelected = null;
+}
+
+function showHistMatchResult() {
+    var config = getHistMatchConfig();
+    var grid = document.getElementById('hist-match-grid');
+    if (grid) grid.style.display = 'none';
+    var res = document.getElementById('hist-match-result');
+    if (!res) return;
+    res.style.display = 'block';
+    var pct = histMatchOk + histMatchFail > 0 ? Math.round((histMatchOk / (histMatchOk + histMatchFail)) * 100) : 0;
+    var emoji, msg;
+    if (histMatchFail === 0) { emoji = '🏆'; msg = '¡Ronda perfecta!'; }
+    else if (pct >= 75) { emoji = '💪'; msg = histMatchOk + ' bien, ' + histMatchFail + ' falladas. ¡Casi!'; }
+    else { emoji = '📖'; msg = histMatchOk + ' bien, ' + histMatchFail + ' falladas. ¡A repasar!'; }
+    res.innerHTML = '<div style="font-size:2.5rem; margin-bottom:8px;">' + emoji + '</div>' +
+        '<div style="font-weight:700; margin-bottom:16px;">' + msg + '</div>' +
+        '<button onclick="histMatchRound++; loadHistMatchRound();" style="background:' + config.color + ';color:#fff;border:none;border-radius:12px;padding:12px 24px;font-weight:700;font-size:0.95rem;cursor:pointer;width:100%;">Siguiente ronda →</button>' +
+        '<button onclick="closeHistMatchGame()" style="margin-top:8px;background:transparent;color:var(--muted);border:1px solid var(--border);border-radius:12px;padding:10px;font-size:0.85rem;cursor:pointer;width:100%;">Volver</button>';
+}
 </script>
 <script>
 // mazos/mazo_lit_perfecto.js
@@ -15910,18 +16644,27 @@ window.mostrarTarjetaDelito = function(idx) {
                 // Para capitales, añadir también el botón de emparejar
                 const isCapitales = m.id === 'capitales';
                 const isLitEsp = m.id === 'lit_esp';
+                const isHist = m.id === 'hist';
+                const isHistEsp = m.id === 'hist_esp';
                 const subText = m.sub || '';
                 
-                // Si es Literatura Española, abrir el selector de submazos
-                const onclickAction = isLitEsp ? 'abrirSelectorLitEsp()' : `startSmartStudyAll('${m.id}')`;
+                // Si es Literatura Española, Historia o Historia de España, abrir selector de submazos
+                let onclickAction = `startSmartStudyAll('${m.id}')`;
+                if (isLitEsp) onclickAction = 'abrirSelectorLitEsp()';
+                if (isHist) onclickAction = 'abrirSelectorHist()';
+                if (isHistEsp) onclickAction = 'abrirSelectorHistEsp()';
+                
+                const hasSelector = isLitEsp || isHist || isHistEsp;
+                const badgeText = isLitEsp ? '7 épocas' : (isHist ? '6 minijuegos' : (isHistEsp ? '5 minijuegos' : 'Cargando...'));
+                const borderColor = isLitEsp ? '#fab1a0' : (isHist ? '#dc3545' : (isHistEsp ? '#ff7675' : ''));
                 
                 html += `
-                <div class="deck-item" onclick="${onclickAction}"${isLitEsp ? ' style="border-color:#fab1a0;"' : ''}>
+                <div class="deck-item" onclick="${onclickAction}"${borderColor ? ` style="border-color:${borderColor};"` : ''}>
                     <div class="deck-icon">${m.icon}</div>
                     <div class="deck-info">
                         <h4>${m.name}</h4>
                         ${subText ? `<span style="font-size:0.72rem; color:var(--muted); font-style:italic; display:block; margin-top:2px; margin-bottom:4px; line-height:1.3;">${subText}</span>` : ''}
-                        <p id="deck-info-${m.id}">Cargando...</p>
+                        <p id="deck-info-${m.id}">${hasSelector ? badgeText : 'Cargando...'}</p>
                         <div class="dom-bar"><div class="dom-fill" id="dom-${m.id}" style="width:0%"></div></div>
                     </div>
                     <div class="deck-arrow">›</div>
@@ -16037,12 +16780,23 @@ window.openStudySelector = function() {
       const subText = m.sub || '';
       const isCapitales = m.id === 'capitales';
       const isLitEsp = m.id === 'lit_esp';
+      const isHist = m.id === 'hist';
+      const isHistEsp = m.id === 'hist_esp';
       
-      // Si es Literatura Española, siempre abrir el selector de submazos
-      const onclickAction = isLitEsp ? 'abrirSelectorLitEsp()' : (isDone ? '' : `startSmartStudy('${m.id}')`);
+      // Si es Literatura Española, Historia o Historia de España, siempre abrir el selector de submazos
+      let onclickAction = isDone ? '' : `startSmartStudy('${m.id}')`;
+      if (isLitEsp) onclickAction = 'abrirSelectorLitEsp()';
+      if (isHist) onclickAction = 'abrirSelectorHist()';
+      if (isHistEsp) onclickAction = 'abrirSelectorHistEsp()';
+      
+      const hasSelector = isLitEsp || isHist || isHistEsp;
+      const badgeContent = isLitEsp ? '<span style="background:#fab1a0; color:#000; padding:4px 10px; border-radius:20px; font-size:0.75rem; font-weight:bold;">7 épocas</span>' 
+                         : (isHist ? '<span style="background:#dc3545; color:#fff; padding:4px 10px; border-radius:20px; font-size:0.75rem; font-weight:bold;">6 minijuegos</span>'
+                         : (isHistEsp ? '<span style="background:#ff7675; color:#fff; padding:4px 10px; border-radius:20px; font-size:0.75rem; font-weight:bold;">5 minijuegos</span>'
+                         : `<span style="background:${isDone ? 'transparent' : (m.color || 'var(--accent)')}; color:${isDone ? 'var(--muted)' : '#000'}; padding:4px 10px; border-radius:20px; font-size:0.75rem; font-weight:bold; white-space:nowrap;">${isDone ? 'Al día ✓' : dueCount + ' hoy'}</span>`));
       
       container.innerHTML += `
-      <div class="deck-item" onclick="${onclickAction}" style="border-left:4px solid ${isDone && !isLitEsp ? 'var(--border)' : (m.color || 'var(--accent)')}; opacity:${isDone && !isLitEsp ? '0.6' : '1'}; cursor:${isDone && !isLitEsp ? 'default' : 'pointer'};">
+      <div class="deck-item" onclick="${onclickAction}" style="border-left:4px solid ${isDone && !hasSelector ? 'var(--border)' : (m.color || 'var(--accent)')}; opacity:${isDone && !hasSelector ? '0.6' : '1'}; cursor:${isDone && !hasSelector ? 'default' : 'pointer'};">
           <div class="deck-icon">${m.icon}</div>
           <div class="deck-info">
               <h4>${m.name}</h4>
@@ -16050,7 +16804,7 @@ window.openStudySelector = function() {
               <p id="deck-info-${m.id}" style="font-size:0.72rem; color:var(--muted); margin-top:2px;">${isDone ? '✓ Al día' : dueCount + ' pendientes hoy'}</p>
               <div class="dom-bar"><div class="dom-fill" id="dom-${m.id}" style="width:0%; background:${m.color || 'linear-gradient(90deg,var(--green),var(--gold))'}"></div></div>
           </div>
-          ${isLitEsp ? '<span style="background:#fab1a0; color:#000; padding:4px 10px; border-radius:20px; font-size:0.75rem; font-weight:bold;">4 categorías</span>' : `<span style="background:${isDone ? 'transparent' : (m.color || 'var(--accent)')}; color:${isDone ? 'var(--muted)' : '#000'}; padding:4px 10px; border-radius:20px; font-size:0.75rem; font-weight:bold; white-space:nowrap;">${isDone ? 'Al día ✓' : dueCount + ' hoy'}</span>`}
+          ${badgeContent}
       </div>`;
       
       // Si es capitales, añadir el juego de emparejar justo después
@@ -16136,6 +16890,15 @@ window.startSmartStudy = function(deckId) {
    if (sa) sa.style.display = 'flex';
    var resDiv = document.getElementById('estudio-resumen');
    if (resDiv) resDiv.style.display = 'none';
+   
+   // Ocultar todos los juegos de emparejar
+   var aoMatch = document.getElementById('ao-match-inline');
+   if (aoMatch) aoMatch.style.display = 'none';
+   var histMatch = document.getElementById('hist-match-inline');
+   if (histMatch) histMatch.style.display = 'none';
+   var maMatch = document.getElementById('ma-inline');
+   if (maMatch) maMatch.style.display = 'none';
+   
    studySessionTotal = 0; studySessionBien = 0; studySessionMal = 0;
    document.getElementById('view-smart-study').style.display = 'flex';
    nextStudyCard();
@@ -19690,8 +20453,8 @@ function loadMatchRound() {
     
     ma.innerHTML = '<div style="text-align:center; margin-bottom:14px;">' +
         '<span style="color:var(--muted); font-size:0.85rem;">Ronda ' + matchRound + ' &nbsp;|&nbsp; </span>' +
-        '<span style="color:#22c55e; font-weight:700;">&#10003; ' + matchOk + '</span>' +
-        ' <span style="color:#ef4444; font-weight:700;">&#10007; ' + matchFail + '</span>' +
+        '<span id="match-ok" style="color:#22c55e; font-weight:700;">&#10003; ' + matchOk + '</span>' +
+        ' <span id="match-fail" style="color:#ef4444; font-weight:700;">&#10007; ' + matchFail + '</span>' +
         '</div>' +
         '<p style="text-align:center; color:var(--muted); font-size:0.8rem; margin-bottom:12px;">Pulsa un pa&#237;s y luego su capital</p>' +
         '<div id="ma-grid" style="display:grid; grid-template-columns:1fr 1fr; gap:10px;"></div>' +
