@@ -5035,6 +5035,13 @@ window.abrirSelectorHist = function() {
                 '</div>' +
                 '<div class="deck-arrow">›</div>' +
             '</div>' +
+            '<div class="deck-item" onclick="document.getElementById(\'geo-esp-selector\').remove();iniciarGeoRios();" style="border-color:#74b9ff;">' +
+                '<div class="deck-icon">🌊</div>' +
+                '<div class="deck-info"><h4>Ríos</h4>' +
+                '<span style="font-size:0.72rem;color:var(--muted);font-style:italic;display:block;margin-top:2px;">¿Por qué provincias pasa?</span>' +
+                '<p style="font-size:0.72rem;color:var(--muted);margin-top:4px;">57 ríos</p></div>' +
+                '<div class="deck-arrow">›</div>' +
+            '</div>' +
         '</div>' +
     '</div>';
     document.body.insertAdjacentHTML('beforeend', html);
@@ -5351,7 +5358,7 @@ window.abrirSelectorGeoEsp = function() {
         '<div style="padding:15px 20px;display:flex;align-items:center;gap:15px;border-bottom:1px solid var(--border);">' +
             '<button onclick="document.getElementById(\'geo-esp-selector\').remove();" style="background:none;border:none;color:var(--text);font-size:1.5rem;cursor:pointer;">←</button>' +
             '<div><h2 style="color:var(--text);font-size:1.3rem;margin:0;">📍 Geografía de España</h2>' +
-            '<p style="color:var(--muted);font-size:0.8rem;margin:4px 0 0 0;">' + totalQ + ' preguntas + 3 minijuegos</p></div>' +
+            '<p style="color:var(--muted);font-size:0.8rem;margin:4px 0 0 0;">' + totalQ + ' preguntas + 4 minijuegos</p></div>' +
         '</div>' +
         '<div style="padding:20px;display:flex;flex-direction:column;gap:12px;">' +
             '<div class="deck-item" onclick="document.getElementById(\'geo-esp-selector\').remove();startSmartStudyAll(\'geo_esp\');" style="border-color:#55efc4;background:linear-gradient(135deg,rgba(255,255,255,0.05),transparent);">' +
@@ -5383,6 +5390,13 @@ window.abrirSelectorGeoEsp = function() {
                 '<div class="deck-info"><h4>Vecinos</h4>' +
                 '<span style="font-size:0.72rem;color:var(--muted);font-style:italic;display:block;margin-top:2px;">¿Con qué provincias linda?</span>' +
                 '<p style="font-size:0.72rem;color:var(--muted);margin-top:4px;">52 provincias</p></div>' +
+                '<div class="deck-arrow">›</div>' +
+            '</div>' +
+            '<div class="deck-item" onclick="document.getElementById(\'geo-esp-selector\').remove();iniciarGeoRios();" style="border-color:#74b9ff;">' +
+                '<div class="deck-icon">🌊</div>' +
+                '<div class="deck-info"><h4>Ríos</h4>' +
+                '<span style="font-size:0.72rem;color:var(--muted);font-style:italic;display:block;margin-top:2px;">¿Por qué provincias pasa?</span>' +
+                '<p style="font-size:0.72rem;color:var(--muted);margin-top:4px;">57 ríos</p></div>' +
                 '<div class="deck-arrow">›</div>' +
             '</div>' +
         '</div>' +
@@ -5783,6 +5797,137 @@ function geoVecinosFinal() {
         '<p style="color:var(--muted);">' + geoVecinosState.ok + ' perfectas · ' + geoVecinosState.fail + ' falladas</p>' +
         '<button onclick="iniciarGeoVecinos();" style="background:#a29bfe;color:#fff;border:none;border-radius:12px;padding:12px 28px;font-weight:700;cursor:pointer;font-size:0.95rem;">Otra ronda 🤝</button>' +
         '<button onclick="document.getElementById(\'geo-vecinos-game\').remove();" style="background:transparent;color:var(--muted);border:1px solid var(--border);border-radius:12px;padding:10px;cursor:pointer;font-size:0.85rem;">Volver</button>' +
+    '</div>';
+}
+</script>
+
+<script>
+// ================================================================
+// GEO RÍOS — Minijuego ¿Por qué provincias pasa?
+// ================================================================
+var GEO_RIOS = {"Ebro": ["Cantabria", "Burgos", "La Rioja", "Álava", "Navarra", "Zaragoza", "Tarragona"], "Tajo": ["Teruel", "Cuenca", "Guadalajara", "Madrid", "Toledo", "Cáceres"], "Duero": ["Soria", "Burgos", "Valladolid", "Zamora", "Salamanca"], "Guadalquivir": ["Jaén", "Córdoba", "Sevilla", "Cádiz", "Huelva"], "Guadiana": ["Albacete", "Ciudad Real", "Badajoz", "Huelva"], "Júcar": ["Cuenca", "Albacete", "Valencia"], "Segura": ["Jaén", "Albacete", "Murcia", "Alicante"], "Miño": ["Lugo", "Ourense", "Pontevedra"], "Turia": ["Teruel", "Cuenca", "Valencia"], "Genil": ["Granada", "Málaga", "Córdoba", "Sevilla"], "Pisuerga": ["Palencia", "Burgos", "Valladolid"], "Esla": ["León", "Zamora"], "Nalón": ["Asturias"], "Bidasoa": ["Navarra", "Gipuzkoa"], "Tormes": ["Ávila", "Salamanca", "Zamora"], "Tiétar": ["Madrid", "Ávila", "Toledo", "Cáceres"], "Cabriel": ["Teruel", "Cuenca", "Albacete", "Valencia"], "Jalón": ["Soria", "Zaragoza"], "Zújar": ["Córdoba", "Badajoz"], "Tinto": ["Huelva"], "Odiel": ["Huelva"], "Guadalete": ["Cádiz"], "Sella": ["Asturias"], "Navia": ["Lugo", "Asturias"], "Ulla": ["A Coruña", "Pontevedra"], "Mijares": ["Teruel", "Castellón"], "Vinalopó": ["Alicante"], "Aragón": ["Huesca", "Zaragoza", "Navarra"], "Alagón": ["Salamanca", "Cáceres"], "Adaja": ["Ávila", "Segovia", "Valladolid"], "Ter": ["Girona"], "Llobregat": ["Barcelona"], "Cinca": ["Huesca", "Zaragoza"], "Jarama": ["Guadalajara", "Madrid"], "Manzanares": ["Madrid"], "Alberche": ["Ávila", "Madrid", "Toledo"], "Guadarrama": ["Madrid", "Toledo"], "Henares": ["Guadalajara", "Madrid"], "Órbigo": ["León", "Zamora"], "Carrión": ["Palencia", "Valladolid"], "Arlanza": ["Burgos", "Palencia"], "Eresma": ["Ávila", "Segovia", "Valladolid"], "Segre": ["Lleida"], "Gállego": ["Huesca", "Zaragoza"], "Noguera Ribagorzana": ["Huesca", "Lleida"], "Jiloca": ["Teruel", "Zaragoza"], "Andarax": ["Almería"], "Almanzora": ["Almería"], "Guadalhorce": ["Málaga"], "Palancia": ["Castellón", "Valencia"], "Barbate": ["Cádiz"], "Chanza": ["Badajoz", "Huelva"], "Eo": ["Lugo", "Asturias"], "Nervión": ["Burgos", "Álava", "Bizkaia"], "Tambre": ["A Coruña"], "Besòs": ["Barcelona"], "Fluvià": ["Girona"], "Francolí": ["Tarragona"]};
+
+var geoRiosState = { round:0, ok:0, fail:0, deck:[], deckIdx:0 };
+
+window.iniciarGeoRios = function() {
+    geoRiosState = { round:0, ok:0, fail:0, deck:[], deckIdx:0 };
+    var html = '<div id="geo-rios-game" style="position:fixed;top:0;left:0;right:0;bottom:0;background:var(--bg);z-index:99999;display:flex;flex-direction:column;">' +
+        '<div style="padding:12px 16px;display:flex;align-items:center;gap:12px;border-bottom:1px solid var(--border);">' +
+            '<button onclick="document.getElementById(\'geo-rios-game\').remove();" style="background:none;border:none;color:var(--text);font-size:1.5rem;cursor:pointer;">←</button>' +
+            '<div style="flex:1;"><h3 style="margin:0;font-size:1rem;">🌊 Ríos</h3>' +
+            '<div style="display:flex;gap:16px;margin-top:4px;">' +
+                '<span id="geo-rios-ok" style="color:var(--green);font-size:0.8rem;font-weight:700;">✓ 0</span>' +
+                '<span id="geo-rios-fail" style="color:var(--red);font-size:0.8rem;font-weight:700;">✗ 0</span>' +
+                '<span id="geo-rios-round" style="color:var(--muted);font-size:0.8rem;">Ronda 0/10</span>' +
+            '</div></div>' +
+        '</div>' +
+        '<div id="geo-rios-content" style="flex:1;overflow-y:auto;padding:20px 16px;display:flex;flex-direction:column;gap:14px;align-items:center;padding-top:24px;"></div>' +
+    '</div>';
+    document.body.insertAdjacentHTML('beforeend', html);
+    geoRiosRound();
+};
+
+function geoRiosRound() {
+    if (!document.getElementById('geo-rios-game')) return;
+    if (geoRiosState.round >= 10) { geoRiosFinal(); return; }
+    geoRiosState.round++;
+    document.getElementById('geo-rios-round').textContent = 'Ronda ' + geoRiosState.round + '/10';
+
+    // Shuffled deck — sin repetir hasta agotar todos los ríos
+    var shuffle = function(a) { var b=a.slice(); for(var i=b.length-1;i>0;i--){ var j=Math.floor(Math.random()*(i+1));var t=b[i];b[i]=b[j];b[j]=t; } return b; };
+    if (!geoRiosState.deck.length || geoRiosState.deckIdx >= geoRiosState.deck.length) {
+        geoRiosState.deck = shuffle(Object.keys(GEO_RIOS));
+        geoRiosState.deckIdx = 0;
+    }
+    var rio = geoRiosState.deck[geoRiosState.deckIdx++];
+    var realProvs = GEO_RIOS[rio];
+
+    // Opciones: todas las provincias reales + señuelos hasta completar entre 6 y 10 botones
+    var allProvs = Object.keys(GEO_VECINOS).filter(function(p) { return !realProvs.includes(p); });
+    var decoys = shuffle(allProvs).slice(0, Math.max(3, 8 - realProvs.length));
+    var options = shuffle(realProvs.concat(decoys));
+
+    geoRiosState.rio = rio;
+    geoRiosState.realProvs = realProvs;
+    geoRiosState.selected = [];
+    geoRiosState.confirmed = false;
+
+    var content = document.getElementById('geo-rios-content');
+    content.innerHTML =
+        '<p style="color:var(--muted);font-size:0.85rem;text-align:center;">Selecciona las provincias por las que pasa</p>' +
+        '<h2 style="text-align:center;color:#74b9ff;font-size:1.5rem;margin:0;">🌊 ' + rio + '</h2>' +
+        '<p style="color:var(--muted);font-size:0.75rem;text-align:center;">(' + realProvs.length + ' provincia' + (realProvs.length !== 1 ? 's' : '') + ')</p>' +
+        '<div id="geo-rios-opts" style="display:flex;flex-wrap:wrap;gap:10px;justify-content:center;width:100%;max-width:440px;">' +
+        options.map(function(opt) {
+            return '<button data-opt="' + opt.replace(/"/g,'&quot;') + '" class="geo-rios-btn" style="background:var(--card2);border:2px solid var(--border2);border-radius:10px;padding:10px 14px;font-size:0.85rem;font-weight:600;color:var(--text);cursor:pointer;">' + opt + '</button>';
+        }).join('') +
+        '</div>' +
+        '<button onclick="geoRiosConfirm()" id="geo-rios-confirm" style="background:#74b9ff;color:#000;border:none;border-radius:12px;padding:12px 28px;font-weight:700;cursor:pointer;font-size:0.95rem;margin-top:4px;">Confirmar ✓</button>';
+
+    content.querySelectorAll('.geo-rios-btn').forEach(function(btn) {
+        btn.addEventListener('click', function() {
+            if (geoRiosState.confirmed) return;
+            var opt = this.getAttribute('data-opt');
+            var idx = geoRiosState.selected.indexOf(opt);
+            if (idx === -1) {
+                geoRiosState.selected.push(opt);
+                this.style.borderColor = '#74b9ff';
+                this.style.background = 'rgba(116,185,255,0.2)';
+            } else {
+                geoRiosState.selected.splice(idx, 1);
+                this.style.borderColor = 'var(--border2)';
+                this.style.background = 'var(--card2)';
+            }
+        });
+    });
+}
+
+window.geoRiosConfirm = function() {
+    if (geoRiosState.confirmed) return;
+    geoRiosState.confirmed = true;
+    var real = geoRiosState.realProvs;
+    var sel = geoRiosState.selected;
+    var missed = real.filter(function(p) { return !sel.includes(p); });
+    var extra = sel.filter(function(p) { return !real.includes(p); });
+    var perfect = missed.length === 0 && extra.length === 0;
+
+    if (perfect) {
+        geoRiosState.ok++;
+        document.getElementById('geo-rios-ok').textContent = '✓ ' + geoRiosState.ok;
+    } else {
+        geoRiosState.fail++;
+        document.getElementById('geo-rios-fail').textContent = '✗ ' + geoRiosState.fail;
+    }
+
+    document.querySelectorAll('#geo-rios-opts button').forEach(function(btn) {
+        var p = btn.textContent;
+        btn.disabled = true;
+        if (real.includes(p) && sel.includes(p))      { btn.style.borderColor='var(--green)'; btn.style.background='rgba(68,212,144,0.2)'; }
+        else if (real.includes(p) && !sel.includes(p)) { btn.style.borderColor='var(--red)';   btn.style.background='rgba(255,85,85,0.15)'; }
+        else if (!real.includes(p) && sel.includes(p)) { btn.style.borderColor='var(--red)';   btn.style.background='rgba(255,85,85,0.15)'; }
+    });
+
+    var confirmBtn = document.getElementById('geo-rios-confirm');
+    if (confirmBtn) {
+        confirmBtn.textContent = perfect ? '¡Perfecto! →' : 'Siguiente →';
+        confirmBtn.style.background = perfect ? 'var(--green)' : 'var(--muted)';
+        confirmBtn.onclick = function() { geoRiosRound(); };
+    }
+};
+
+function geoRiosFinal() {
+    var pct = geoRiosState.ok + geoRiosState.fail > 0
+        ? Math.round(geoRiosState.ok / (geoRiosState.ok + geoRiosState.fail) * 100) : 0;
+    var emoji = pct === 100 ? '🏆' : pct >= 80 ? '💪' : pct >= 60 ? '🙂' : '📚';
+    var el = document.getElementById('geo-rios-game');
+    if (!el) return;
+    el.innerHTML = '<div style="display:flex;flex-direction:column;align-items:center;justify-content:center;height:100%;padding:30px;text-align:center;gap:16px;">' +
+        '<div style="font-size:3.5rem;">' + emoji + '</div>' +
+        '<h2 style="color:var(--gold);">Ríos</h2>' +
+        '<p style="font-size:1.4rem;font-weight:700;">' + pct + '% correcto</p>' +
+        '<p style="color:var(--muted);">' + geoRiosState.ok + ' perfectas · ' + geoRiosState.fail + ' falladas</p>' +
+        '<button onclick="iniciarGeoRios();" style="background:#74b9ff;color:#000;border:none;border-radius:12px;padding:12px 28px;font-weight:700;cursor:pointer;font-size:0.95rem;">Otra ronda 🌊</button>' +
+        '<button onclick="document.getElementById(\'geo-rios-game\').remove();" style="background:transparent;color:var(--muted);border:1px solid var(--border);border-radius:12px;padding:10px;cursor:pointer;font-size:0.85rem;">Volver</button>' +
     '</div>';
 }
 </script>
@@ -17170,7 +17315,7 @@ window.mostrarTarjetaDelito = function(idx) {
                 if (isGeoEsp) onclickAction = 'abrirSelectorGeoEsp()';
                 
                 const hasSelector = isLitEsp || isHist || isHistEsp || isGeoEsp;
-                const badgeText = isLitEsp ? '7 épocas' : (isHist ? '6 minijuegos' : (isHistEsp ? '5 minijuegos' : (isGeoEsp ? '3 minijuegos' : 'Cargando...')));
+                const badgeText = isLitEsp ? '7 épocas' : (isHist ? '6 minijuegos' : (isHistEsp ? '5 minijuegos' : (isGeoEsp ? '4 minijuegos' : 'Cargando...')));
                 const borderColor = isLitEsp ? '#fab1a0' : (isHist ? '#dc3545' : (isHistEsp ? '#ff7675' : (isGeoEsp ? '#55efc4' : '')));
                 
                 html += `
@@ -17310,7 +17455,7 @@ window.openStudySelector = function() {
       const badgeContent = isLitEsp ? '<span style="background:#fab1a0; color:#000; padding:4px 10px; border-radius:20px; font-size:0.75rem; font-weight:bold;">7 épocas</span>' 
                          : (isHist ? '<span style="background:#dc3545; color:#fff; padding:4px 10px; border-radius:20px; font-size:0.75rem; font-weight:bold;">6 minijuegos</span>'
                          : (isHistEsp ? '<span style="background:#ff7675; color:#fff; padding:4px 10px; border-radius:20px; font-size:0.75rem; font-weight:bold;">5 minijuegos</span>'
-                         : (isGeoEsp ? '<span style="background:#55efc4; color:#000; padding:4px 10px; border-radius:20px; font-size:0.75rem; font-weight:bold;">3 minijuegos</span>'
+                         : (isGeoEsp ? '<span style="background:#55efc4; color:#000; padding:4px 10px; border-radius:20px; font-size:0.75rem; font-weight:bold;">4 minijuegos</span>'
                          : `<span style="background:${isDone ? 'transparent' : (m.color || 'var(--accent)')}; color:${isDone ? 'var(--muted)' : '#000'}; padding:4px 10px; border-radius:20px; font-size:0.75rem; font-weight:bold; white-space:nowrap;">${isDone ? 'Al día ✓' : dueCount + ' hoy'}</span>`)));
       
       container.innerHTML += `
