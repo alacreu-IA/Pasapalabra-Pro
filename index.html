@@ -6576,7 +6576,425 @@ function geoMontGeoAnswer(chosen) {
     setTimeout(geoMontGeoRound, 1500);
 }
 </script>
+<script>
+// ================================================================
+// GEO MUNDIAL — Datos países
+// ================================================================
+var PAISES = {"Afganistán": {"continente": "Asia", "lat": 33.0, "lon": 65.0}, "Albania": {"continente": "Europa", "lat": 41.0, "lon": 20.0}, "Argelia": {"continente": "África", "lat": 28.0, "lon": 3.0}, "Andorra": {"continente": "Europa", "lat": 42.5, "lon": 1.5}, "Angola": {"continente": "África", "lat": -12.5, "lon": 18.5}, "Argentina": {"continente": "América", "lat": -34.0, "lon": -64.0}, "Armenia": {"continente": "Asia", "lat": 40.0, "lon": 45.0}, "Australia": {"continente": "Oceanía", "lat": -27.0, "lon": 133.0}, "Austria": {"continente": "Europa", "lat": 47.33, "lon": 13.33}, "Azerbaiyán": {"continente": "Asia", "lat": 40.5, "lon": 47.5}, "Bangladesh": {"continente": "Asia", "lat": 24.0, "lon": 90.0}, "Bielorrusia": {"continente": "Europa", "lat": 53.0, "lon": 28.0}, "Bélgica": {"continente": "Europa", "lat": 50.83, "lon": 4.0}, "Belice": {"continente": "América", "lat": 17.25, "lon": -88.75}, "Bután": {"continente": "Asia", "lat": 27.5, "lon": 90.5}, "Bolivia": {"continente": "América", "lat": -17.0, "lon": -65.0}, "Bosnia y Herzegovina": {"continente": "Europa", "lat": 44.0, "lon": 18.0}, "Botswana": {"continente": "África", "lat": -22.0, "lon": 24.0}, "Brasil": {"continente": "América", "lat": -10.0, "lon": -55.0}, "Bulgaria": {"continente": "Europa", "lat": 43.0, "lon": 25.0}, "Burkina Faso": {"continente": "África", "lat": 13.0, "lon": -2.0}, "Camboya": {"continente": "Asia", "lat": 13.0, "lon": 105.0}, "Camerún": {"continente": "África", "lat": 6.0, "lon": 12.0}, "Canadá": {"continente": "América", "lat": 60.0, "lon": -95.0}, "República Centroafricana": {"continente": "África", "lat": 7.0, "lon": 21.0}, "Chad": {"continente": "África", "lat": 15.0, "lon": 19.0}, "Chile": {"continente": "América", "lat": -30.0, "lon": -71.0}, "China": {"continente": "Asia", "lat": 35.0, "lon": 105.0}, "Colombia": {"continente": "América", "lat": 4.0, "lon": -72.0}, "Congo": {"continente": "África", "lat": -1.0, "lon": 15.0}, "Congo (Rep. Dem.)": {"continente": "África", "lat": 0.0, "lon": 25.0}, "Costa Rica": {"continente": "América", "lat": 10.0, "lon": -84.0}, "Croacia": {"continente": "Europa", "lat": 45.17, "lon": 15.5}, "Cuba": {"continente": "América", "lat": 21.5, "lon": -80.0}, "Chipre": {"continente": "Europa", "lat": 35.0, "lon": 33.0}, "República Checa": {"continente": "Europa", "lat": 49.75, "lon": 15.5}, "Dinamarca": {"continente": "Europa", "lat": 56.0, "lon": 10.0}, "Ecuador": {"continente": "América", "lat": -2.0, "lon": -77.5}, "Egipto": {"continente": "África", "lat": 27.0, "lon": 30.0}, "El Salvador": {"continente": "América", "lat": 13.83, "lon": -88.92}, "Eritrea": {"continente": "África", "lat": 15.0, "lon": 39.0}, "Estonia": {"continente": "Europa", "lat": 59.0, "lon": 26.0}, "Etiopía": {"continente": "África", "lat": 8.0, "lon": 38.0}, "Finlandia": {"continente": "Europa", "lat": 64.0, "lon": 26.0}, "Francia": {"continente": "Europa", "lat": 46.0, "lon": 2.0}, "Gabón": {"continente": "África", "lat": -1.0, "lon": 11.75}, "Georgia": {"continente": "Asia", "lat": 42.0, "lon": 43.5}, "Alemania": {"continente": "Europa", "lat": 51.0, "lon": 9.0}, "Ghana": {"continente": "África", "lat": 8.0, "lon": -2.0}, "Grecia": {"continente": "Europa", "lat": 39.0, "lon": 22.0}, "Guatemala": {"continente": "América", "lat": 15.5, "lon": -90.25}, "Guinea": {"continente": "África", "lat": 11.0, "lon": -10.0}, "Guyana": {"continente": "América", "lat": 5.0, "lon": -59.0}, "Haití": {"continente": "América", "lat": 19.0, "lon": -72.42}, "Honduras": {"continente": "América", "lat": 15.0, "lon": -86.5}, "Hungría": {"continente": "Europa", "lat": 47.0, "lon": 20.0}, "Islandia": {"continente": "Europa", "lat": 65.0, "lon": -18.0}, "India": {"continente": "Asia", "lat": 20.0, "lon": 77.0}, "Indonesia": {"continente": "Asia", "lat": -5.0, "lon": 120.0}, "Irán": {"continente": "Asia", "lat": 32.0, "lon": 53.0}, "Irak": {"continente": "Asia", "lat": 33.0, "lon": 44.0}, "Irlanda": {"continente": "Europa", "lat": 53.0, "lon": -8.0}, "Israel": {"continente": "Asia", "lat": 31.5, "lon": 34.75}, "Italia": {"continente": "Europa", "lat": 42.83, "lon": 12.83}, "Costa de Marfil": {"continente": "África", "lat": 8.0, "lon": -5.0}, "Jamaica": {"continente": "América", "lat": 18.25, "lon": -77.5}, "Japón": {"continente": "Asia", "lat": 36.0, "lon": 138.0}, "Jordania": {"continente": "Asia", "lat": 31.0, "lon": 36.0}, "Kazajistán": {"continente": "Asia", "lat": 48.0, "lon": 68.0}, "Kenia": {"continente": "África", "lat": 1.0, "lon": 38.0}, "Kuwait": {"continente": "Asia", "lat": 29.5, "lon": 45.75}, "Laos": {"continente": "Asia", "lat": 18.0, "lon": 105.0}, "Letonia": {"continente": "Europa", "lat": 57.0, "lon": 25.0}, "Líbano": {"continente": "Asia", "lat": 33.83, "lon": 35.83}, "Libéria": {"continente": "África", "lat": 6.5, "lon": -9.5}, "Libia": {"continente": "África", "lat": 25.0, "lon": 17.0}, "Lituania": {"continente": "Europa", "lat": 56.0, "lon": 24.0}, "Luxemburgo": {"continente": "Europa", "lat": 49.75, "lon": 6.17}, "Madagascar": {"continente": "África", "lat": -20.0, "lon": 47.0}, "Malawi": {"continente": "África", "lat": -13.5, "lon": 34.0}, "Malasia": {"continente": "Asia", "lat": 2.5, "lon": 112.5}, "Malí": {"continente": "África", "lat": 17.0, "lon": -4.0}, "Mauritania": {"continente": "África", "lat": 20.0, "lon": -12.0}, "México": {"continente": "América", "lat": 23.0, "lon": -102.0}, "Moldavia": {"continente": "Europa", "lat": 47.0, "lon": 29.0}, "Mongolia": {"continente": "Asia", "lat": 46.0, "lon": 105.0}, "Marruecos": {"continente": "África", "lat": 32.0, "lon": -5.0}, "Mozambique": {"continente": "África", "lat": -18.25, "lon": 35.0}, "Myanmar": {"continente": "Asia", "lat": 22.0, "lon": 98.0}, "Namibia": {"continente": "África", "lat": -22.0, "lon": 17.0}, "Nepal": {"continente": "Asia", "lat": 28.0, "lon": 84.0}, "Países Bajos": {"continente": "Europa", "lat": 52.5, "lon": 5.75}, "Nueva Zelanda": {"continente": "Oceanía", "lat": -41.0, "lon": 174.0}, "Nicaragua": {"continente": "América", "lat": 13.0, "lon": -85.0}, "Níger": {"continente": "África", "lat": 16.0, "lon": 8.0}, "Nigeria": {"continente": "África", "lat": 10.0, "lon": 8.0}, "Corea del Norte": {"continente": "Asia", "lat": 40.0, "lon": 127.0}, "Macedonia del Norte": {"continente": "Europa", "lat": 41.83, "lon": 22.0}, "Noruega": {"continente": "Europa", "lat": 62.0, "lon": 10.0}, "Omán": {"continente": "Asia", "lat": 21.0, "lon": 57.0}, "Pakistán": {"continente": "Asia", "lat": 30.0, "lon": 70.0}, "Panamá": {"continente": "América", "lat": 9.0, "lon": -80.0}, "Paraguay": {"continente": "América", "lat": -23.0, "lon": -58.0}, "Perú": {"continente": "América", "lat": -10.0, "lon": -76.0}, "Filipinas": {"continente": "Asia", "lat": 13.0, "lon": 122.0}, "Polonia": {"continente": "Europa", "lat": 52.0, "lon": 20.0}, "Portugal": {"continente": "Europa", "lat": 39.5, "lon": -8.0}, "Qatar": {"continente": "Asia", "lat": 25.5, "lon": 51.25}, "Rumania": {"continente": "Europa", "lat": 46.0, "lon": 25.0}, "Rusia": {"continente": "Europa", "lat": 60.0, "lon": 100.0}, "Ruanda": {"continente": "África", "lat": -2.0, "lon": 30.0}, "Arabia Saudí": {"continente": "Asia", "lat": 25.0, "lon": 45.0}, "Senegal": {"continente": "África", "lat": 14.0, "lon": -14.0}, "Serbia": {"continente": "Europa", "lat": 44.0, "lon": 21.0}, "Sierra Leona": {"continente": "África", "lat": 8.5, "lon": -11.5}, "Singapur": {"continente": "Asia", "lat": 1.37, "lon": 103.8}, "Eslovaquia": {"continente": "Europa", "lat": 48.67, "lon": 19.5}, "Eslovenia": {"continente": "Europa", "lat": 46.12, "lon": 14.82}, "Somalia": {"continente": "África", "lat": 10.0, "lon": 49.0}, "Sudáfrica": {"continente": "África", "lat": -29.0, "lon": 24.0}, "Corea del Sur": {"continente": "Asia", "lat": 37.0, "lon": 127.5}, "Sudán del Sur": {"continente": "África", "lat": 7.0, "lon": 30.0}, "España": {"continente": "Europa", "lat": 40.0, "lon": -4.0}, "Sri Lanka": {"continente": "Asia", "lat": 7.0, "lon": 81.0}, "Sudán": {"continente": "África", "lat": 15.0, "lon": 30.0}, "Surinam": {"continente": "América", "lat": 4.0, "lon": -56.0}, "Suecia": {"continente": "Europa", "lat": 62.0, "lon": 15.0}, "Suiza": {"continente": "Europa", "lat": 47.0, "lon": 8.0}, "Siria": {"continente": "Asia", "lat": 35.0, "lon": 38.0}, "Taiwán": {"continente": "Asia", "lat": 23.5, "lon": 121.0}, "Tayikistán": {"continente": "Asia", "lat": 39.0, "lon": 71.0}, "Tanzania": {"continente": "África", "lat": -6.0, "lon": 35.0}, "Tailandia": {"continente": "Asia", "lat": 15.0, "lon": 100.0}, "Togo": {"continente": "África", "lat": 8.0, "lon": 1.17}, "Trinidad y Tobago": {"continente": "América", "lat": 11.0, "lon": -61.0}, "Túnez": {"continente": "África", "lat": 34.0, "lon": 9.0}, "Turquía": {"continente": "Asia", "lat": 39.0, "lon": 35.0}, "Turkmenistán": {"continente": "Asia", "lat": 40.0, "lon": 60.0}, "Uganda": {"continente": "África", "lat": 1.0, "lon": 32.0}, "Ucrania": {"continente": "Europa", "lat": 49.0, "lon": 32.0}, "Emiratos Árabes Unidos": {"continente": "Asia", "lat": 24.0, "lon": 54.0}, "Reino Unido": {"continente": "Europa", "lat": 54.0, "lon": -2.0}, "Estados Unidos": {"continente": "América", "lat": 38.0, "lon": -97.0}, "Uruguay": {"continente": "América", "lat": -33.0, "lon": -56.0}, "Uzbekistán": {"continente": "Asia", "lat": 41.0, "lon": 64.0}, "Venezuela": {"continente": "América", "lat": 8.0, "lon": -66.0}, "Vietnam": {"continente": "Asia", "lat": 16.17, "lon": 107.83}, "Yemen": {"continente": "Asia", "lat": 15.0, "lon": 48.0}, "Zambia": {"continente": "África", "lat": -15.0, "lon": 30.0}, "Zimbabue": {"continente": "África", "lat": -20.0, "lon": 30.0}, "Gambia": {"continente": "África", "lat": 13.47, "lon": -16.57}, "Benín": {"continente": "África", "lat": 9.5, "lon": 2.25}, "Burundi": {"continente": "África", "lat": -3.5, "lon": 30.0}};
+var PAISES_POR_CONTINENTE = {"Asia": ["Afganistán", "Armenia", "Azerbaiyán", "Bangladesh", "Bután", "Camboya", "China", "Georgia", "India", "Indonesia", "Irán", "Irak", "Israel", "Japón", "Jordania", "Kazajistán", "Kuwait", "Laos", "Líbano", "Malasia", "Mongolia", "Myanmar", "Nepal", "Corea del Norte", "Omán", "Pakistán", "Filipinas", "Qatar", "Arabia Saudí", "Singapur", "Corea del Sur", "Sri Lanka", "Siria", "Taiwán", "Tayikistán", "Tailandia", "Turquía", "Turkmenistán", "Emiratos Árabes Unidos", "Uzbekistán", "Vietnam", "Yemen"], "Europa": ["Albania", "Andorra", "Austria", "Bielorrusia", "Bélgica", "Bosnia y Herzegovina", "Bulgaria", "Croacia", "Chipre", "República Checa", "Dinamarca", "Estonia", "Finlandia", "Francia", "Alemania", "Grecia", "Hungría", "Islandia", "Irlanda", "Italia", "Letonia", "Lituania", "Luxemburgo", "Moldavia", "Países Bajos", "Macedonia del Norte", "Noruega", "Polonia", "Portugal", "Rumania", "Rusia", "Serbia", "Eslovaquia", "Eslovenia", "España", "Suecia", "Suiza", "Ucrania", "Reino Unido"], "África": ["Argelia", "Angola", "Botswana", "Burkina Faso", "Camerún", "República Centroafricana", "Chad", "Congo", "Congo (Rep. Dem.)", "Egipto", "Eritrea", "Etiopía", "Gabón", "Ghana", "Guinea", "Costa de Marfil", "Kenia", "Libéria", "Libia", "Madagascar", "Malawi", "Malí", "Mauritania", "Marruecos", "Mozambique", "Namibia", "Níger", "Nigeria", "Ruanda", "Senegal", "Sierra Leona", "Somalia", "Sudáfrica", "Sudán del Sur", "Sudán", "Tanzania", "Togo", "Túnez", "Uganda", "Zambia", "Zimbabue", "Gambia", "Benín", "Burundi"], "América": ["Argentina", "Belice", "Bolivia", "Brasil", "Canadá", "Chile", "Colombia", "Costa Rica", "Cuba", "Ecuador", "El Salvador", "Guatemala", "Guyana", "Haití", "Honduras", "Jamaica", "México", "Nicaragua", "Panamá", "Paraguay", "Perú", "Surinam", "Trinidad y Tobago", "Estados Unidos", "Uruguay", "Venezuela"], "Oceanía": ["Australia", "Nueva Zelanda"]};
 
+// ── HELPERS ──────────────────────────────────────────────────────
+function geoMundShuffle(a) {
+    var b = a.slice();
+    for (var i=b.length-1;i>0;i--) { var j=Math.floor(Math.random()*(i+1)); var t=b[i];b[i]=b[j];b[j]=t; }
+    return b;
+}
+function geoMundClose(id) { var el=document.getElementById(id); if(el) el.remove(); }
+function geoMundGameHtml(id, title) {
+    var html = '<div id="'+id+'" style="position:fixed;top:0;left:0;right:0;bottom:0;background:var(--bg);z-index:99999;display:flex;flex-direction:column;">' +
+        '<div style="padding:12px 16px;display:flex;align-items:center;gap:12px;border-bottom:1px solid var(--border);">' +
+            '<button id="'+id+'-back" style="background:none;border:none;color:var(--text);font-size:1.5rem;cursor:pointer;">←</button>' +
+            '<div style="flex:1;"><h3 style="margin:0;font-size:1rem;">'+title+'</h3>' +
+            '<div style="display:flex;gap:16px;margin-top:4px;">' +
+                '<span id="'+id+'-ok"    style="color:var(--green);font-size:0.8rem;font-weight:700;">✓ 0</span>' +
+                '<span id="'+id+'-fail"  style="color:var(--red);font-size:0.8rem;font-weight:700;">✗ 0</span>' +
+                '<span id="'+id+'-round" style="color:var(--muted);font-size:0.8rem;">0/10</span>' +
+            '</div></div>' +
+        '</div>' +
+        '<div id="'+id+'-content" style="flex:1;overflow-y:auto;padding:20px 16px;display:flex;flex-direction:column;gap:12px;align-items:center;justify-content:center;"></div>' +
+    '</div>';
+    document.body.insertAdjacentHTML('beforeend', html);
+    var backBtn = document.getElementById(id+'-back');
+    if (backBtn) backBtn.addEventListener('click', function() { geoMundClose(id); });
+}
+function geoMundOptsHtml(opts) {
+    return '<div style="display:flex;flex-direction:column;gap:10px;width:100%;max-width:420px;margin-top:10px;">' +
+        opts.map(function(opt) {
+            return '<button data-opt="'+opt.replace(/"/g,'&quot;')+'" class="geomun-btn" ' +
+                'style="background:var(--card2);border:2px solid var(--border2);border-radius:12px;' +
+                'padding:13px 16px;font-size:0.9rem;font-weight:600;color:var(--text);cursor:pointer;text-align:left;">' +
+                opt+'</button>';
+        }).join('') +
+    '</div>';
+}
+function geoMundMarkAnswer(id, chosen, correct) {
+    document.querySelectorAll('#'+id+'-content .geomun-btn').forEach(function(btn) {
+        btn.disabled = true;
+        var v = btn.getAttribute('data-opt');
+        if (v === correct) { btn.style.borderColor='var(--green)'; btn.style.background='rgba(68,212,144,0.2)'; }
+        else if (v === chosen && chosen !== correct) { btn.style.borderColor='var(--red)'; btn.style.background='rgba(255,85,85,0.15)'; }
+    });
+}
+function geoMundScore(id, ok, state) {
+    if (ok) { state.ok++; document.getElementById(id+'-ok').textContent='✓ '+state.ok; }
+    else    { state.fail++; document.getElementById(id+'-fail').textContent='✗ '+state.fail; }
+}
+function geoMundFinal(id, label, relaunchFn, state) {
+    var pct = state.ok+state.fail>0 ? Math.round(state.ok/(state.ok+state.fail)*100) : 0;
+    var emoji = pct===100?'🏆':pct>=80?'💪':pct>=60?'🙂':'📚';
+    var el = document.getElementById(id);
+    if (!el) return;
+    el.innerHTML = '<div style="display:flex;flex-direction:column;align-items:center;justify-content:center;height:100%;padding:30px;text-align:center;gap:16px;">' +
+        '<div style="font-size:3.5rem;">'+emoji+'</div>' +
+        '<h2 style="color:var(--gold);">'+label+'</h2>' +
+        '<p style="font-size:1.4rem;font-weight:700;">'+pct+'% correcto</p>' +
+        '<p style="color:var(--muted);">'+state.ok+' bien · '+state.fail+' mal</p>' +
+        '<button id="'+id+'-replay" style="background:#74b9ff;color:#000;border:none;border-radius:12px;padding:12px 28px;font-weight:700;cursor:pointer;font-size:0.95rem;">Otra ronda 🌍</button>' +
+        '<button id="'+id+'-volver" style="background:transparent;color:var(--muted);border:1px solid var(--border);border-radius:12px;padding:10px;cursor:pointer;font-size:0.85rem;">Volver</button>' +
+    '</div>';
+    document.getElementById(id+'-replay').addEventListener('click', function() { window[relaunchFn](); });
+    document.getElementById(id+'-volver').addEventListener('click', function() { geoMundClose(id); });
+}
+
+// ── MINIJUEGO 1: UBICACIÓN (norte/sur/este/oeste) ─────────────────
+var geoMundUbicState = {ok:0,fail:0,deck:[],deckIdx:0};
+var DIRS_MUND = {
+    norte:  {label:'más al norte',    sort:function(a,b){return PAISES[b].lat-PAISES[a].lat;}},
+    sur:    {label:'más al sur',       sort:function(a,b){return PAISES[a].lat-PAISES[b].lat;}},
+    este:   {label:'más al oriente',   sort:function(a,b){return PAISES[b].lon-PAISES[a].lon;}},
+    oeste:  {label:'más al occidente', sort:function(a,b){return PAISES[a].lon-PAISES[b].lon;}},
+};
+
+window.iniciarGeoMundUbic = function() {
+    geoMundUbicState = {ok:0,fail:0,deck:[],deckIdx:0,round:0};
+    geoMundGameHtml('geo-mund-ubic','🧭 Ubicación mundial');
+    geoMundUbicRound();
+};
+
+function geoMundUbicBuildDeck() {
+    var deck = [];
+    var paises = Object.keys(PAISES);
+    var dirs = Object.keys(DIRS_MUND);
+    // Global: 4 países cualquiera
+    for (var k=0;k<60;k++) {
+        var cuatro = geoMundShuffle(paises).slice(0,4);
+        var dir = dirs[k%dirs.length];
+        deck.push({tipo:'global', paises:cuatro, dir:dir});
+    }
+    // Por continente: ¿cuál está más al X dentro de su continente?
+    Object.keys(PAISES_POR_CONTINENTE).forEach(function(cont) {
+        var del_cont = PAISES_POR_CONTINENTE[cont];
+        if (del_cont.length < 4) return;
+        dirs.forEach(function(dir) {
+            for (var k=0;k<3;k++) {
+                var cuatro = geoMundShuffle(del_cont).slice(0,4);
+                deck.push({tipo:'continente', paises:cuatro, dir:dir, cont:cont});
+            }
+        });
+    });
+    return geoMundShuffle(deck);
+}
+
+function geoMundUbicRound() {
+    var id = 'geo-mund-ubic';
+    if (!document.getElementById(id)) return;
+    if (geoMundUbicState.round >= 10) { geoMundFinal(id,'🧭 Ubicación mundial','iniciarGeoMundUbic',geoMundUbicState); return; }
+    geoMundUbicState.round++;
+    document.getElementById(id+'-round').textContent = geoMundUbicState.round+'/10';
+    if (!geoMundUbicState.deck.length || geoMundUbicState.deckIdx >= geoMundUbicState.deck.length) {
+        geoMundUbicState.deck = geoMundUbicBuildDeck();
+        geoMundUbicState.deckIdx = 0;
+    }
+    var q = geoMundUbicState.deck[geoMundUbicState.deckIdx++];
+    var cfg = DIRS_MUND[q.dir];
+    var correct = q.paises.slice().sort(cfg.sort)[0];
+    var content = document.getElementById(id+'-content');
+    var prefix = q.tipo==='continente' ? '<p style="color:var(--muted);font-size:0.75rem;text-align:center;margin-bottom:4px;">En '+q.cont+'</p>' : '';
+    content.innerHTML = prefix +
+        '<p style="color:var(--muted);font-size:0.85rem;text-align:center;">¿Cuál está</p>' +
+        '<h2 style="color:#74b9ff;font-size:1.3rem;margin:0;text-align:center;">🧭 '+cfg.label+'</h2>' +
+        geoMundOptsHtml(geoMundShuffle(q.paises));
+    content.querySelectorAll('.geomun-btn').forEach(function(btn) {
+        btn.addEventListener('click', function() {
+            var chosen = this.getAttribute('data-opt');
+            var ok = chosen === correct;
+            geoMundMarkAnswer(id, chosen, correct);
+            geoMundScore(id, ok, geoMundUbicState);
+            setTimeout(geoMundUbicRound, 1300);
+        });
+    });
+}
+
+// ── MINIJUEGO 2: INTRUSO CONTINENTE ───────────────────────────────
+var geoMundIntrusoState = {ok:0,fail:0,deck:[],deckIdx:0,round:0};
+
+window.iniciarGeoMundIntruso = function() {
+    geoMundIntrusoState = {ok:0,fail:0,deck:[],deckIdx:0,round:0};
+    geoMundGameHtml('geo-mund-intruso','🔍 Intruso continental');
+    geoMundIntrusoRound();
+};
+
+function geoMundIntrusoBuildDeck() {
+    var deck = [];
+    Object.keys(PAISES_POR_CONTINENTE).forEach(function(cont) {
+        var del_cont = PAISES_POR_CONTINENTE[cont];
+        var otros = Object.keys(PAISES).filter(function(p){return PAISES[p].continente!==cont;});
+        if (del_cont.length < 3) return;
+        for (var k=0;k<8;k++) {
+            deck.push({cont:cont, del_cont:del_cont, otros:otros});
+        }
+    });
+    return geoMundShuffle(deck);
+}
+
+function geoMundIntrusoRound() {
+    var id = 'geo-mund-intruso';
+    if (!document.getElementById(id)) return;
+    if (geoMundIntrusoState.round >= 10) { geoMundFinal(id,'🔍 Intruso continental','iniciarGeoMundIntruso',geoMundIntrusoState); return; }
+    geoMundIntrusoState.round++;
+    document.getElementById(id+'-round').textContent = geoMundIntrusoState.round+'/10';
+    if (!geoMundIntrusoState.deck.length || geoMundIntrusoState.deckIdx >= geoMundIntrusoState.deck.length) {
+        geoMundIntrusoState.deck = geoMundIntrusoBuildDeck();
+        geoMundIntrusoState.deckIdx = 0;
+    }
+    var q = geoMundIntrusoState.deck[geoMundIntrusoState.deckIdx++];
+    var tres = geoMundShuffle(q.del_cont).slice(0,3);
+    var intruso = geoMundShuffle(q.otros)[0];
+    var opts = geoMundShuffle(tres.concat([intruso]));
+    var content = document.getElementById(id+'-content');
+    content.innerHTML =
+        '<p style="color:var(--muted);font-size:0.85rem;text-align:center;">¿Cuál <b>NO</b> está en</p>' +
+        '<h2 style="color:#fd79a8;font-size:1.3rem;margin:0;text-align:center;">'+q.cont+'</h2>' +
+        geoMundOptsHtml(opts);
+    content.querySelectorAll('.geomun-btn').forEach(function(btn) {
+        btn.addEventListener('click', function() {
+            var chosen = this.getAttribute('data-opt');
+            var ok = chosen === intruso;
+            geoMundMarkAnswer(id, chosen, intruso);
+            geoMundScore(id, ok, geoMundIntrusoState);
+            setTimeout(geoMundIntrusoRound, 1300);
+        });
+    });
+}
+
+// ── SELECTOR GEO MUNDIAL ─────────────────────────────────────────
+window.abrirSelectorGeoMund = function() {
+    var mazo = MAZOS.find(function(m){return m.id==='geo_mund';});
+    var totalQ = mazo ? mazo.questions.length : 0;
+    var html = '<div id="geo-mund-selector" style="position:fixed;top:0;left:0;right:0;bottom:0;background:var(--bg);z-index:99999;display:flex;flex-direction:column;overflow-y:auto;">' +
+        '<div style="padding:15px 20px;display:flex;align-items:center;gap:15px;border-bottom:1px solid var(--border);">' +
+            '<button id="geo-mund-sel-back" style="background:none;border:none;color:var(--text);font-size:1.5rem;cursor:pointer;">←</button>' +
+            '<div><h2 style="color:var(--text);font-size:1.3rem;margin:0;">🗺️ Geografía Mundial</h2>' +
+            '<p style="color:var(--muted);font-size:0.8rem;margin:4px 0 0 0;">'+totalQ+' preguntas + 3 minijuegos</p></div>' +
+        '</div>' +
+        '<div style="padding:20px;display:flex;flex-direction:column;gap:12px;">' +
+            '<div class="deck-item" id="geo-mund-rosco-btn" style="border-color:#00b894;background:linear-gradient(135deg,rgba(255,255,255,0.05),transparent);">' +
+                '<div class="deck-icon">🎲</div>' +
+                '<div class="deck-info"><h4>Preguntas de rosco</h4>' +
+                '<span style="font-size:0.72rem;color:var(--muted);font-style:italic;display:block;margin-top:2px;">Todas las preguntas mezcladas</span>' +
+                '<p style="font-size:0.72rem;color:var(--muted);margin-top:4px;">'+totalQ+' preguntas</p></div>' +
+                '<div class="deck-arrow">›</div>' +
+            '</div>' +
+            '<div style="border-top:1px solid var(--border);margin:10px 0;position:relative;">' +
+                '<span style="position:absolute;top:-10px;left:50%;transform:translateX(-50%);background:var(--bg);padding:0 10px;color:var(--muted);font-size:0.75rem;">minijuegos</span>' +
+            '</div>' +
+            '<div class="deck-item" id="geo-mund-ubic-btn" style="border-color:#74b9ff;">' +
+                '<div class="deck-icon">🧭</div>' +
+                '<div class="deck-info"><h4>Ubicación</h4>' +
+                '<span style="font-size:0.72rem;color:var(--muted);font-style:italic;display:block;margin-top:2px;">¿Cuál está más al norte/sur/oriente/occidente?</span>' +
+                '<p style="font-size:0.72rem;color:var(--muted);margin-top:4px;">'+Object.keys(PAISES).length+' países</p></div>' +
+                '<div class="deck-arrow">›</div>' +
+            '</div>' +
+            '<div class="deck-item" id="geo-mund-intruso-btn" style="border-color:#fd79a8;">' +
+                '<div class="deck-icon">🔍</div>' +
+                '<div class="deck-info"><h4>Intruso continental</h4>' +
+                '<span style="font-size:0.72rem;color:var(--muted);font-style:italic;display:block;margin-top:2px;">¿Cuál NO pertenece a ese continente?</span>' +
+                '<p style="font-size:0.72rem;color:var(--muted);margin-top:4px;">6 continentes</p></div>' +
+                '<div class="deck-arrow">›</div>' +
+            '</div>' +
+            '<div class="deck-item" id="geo-mund-front-btn" style="border-color:#a29bfe;">' +
+                '<div class="deck-icon">🤝</div>' +
+                '<div class="deck-info"><h4>Fronteras</h4>' +
+                '<span style="font-size:0.72rem;color:var(--muted);font-style:italic;display:block;margin-top:2px;">Vecinos, intruso, ¿comparten frontera?</span>' +
+                '<p style="font-size:0.72rem;color:var(--muted);margin-top:4px;">145 países · prioriza falladas</p></div>' +
+                '<div class="deck-arrow">›</div>' +
+            '</div>' +
+        '</div>' +
+    '</div>';
+    document.body.insertAdjacentHTML('beforeend', html);
+    document.getElementById('geo-mund-sel-back').addEventListener('click', function() { geoMundClose('geo-mund-selector'); });
+    document.getElementById('geo-mund-rosco-btn').addEventListener('click', function() { geoMundClose('geo-mund-selector'); startSmartStudyAll('geo_mund'); });
+    document.getElementById('geo-mund-ubic-btn').addEventListener('click', function() { geoMundClose('geo-mund-selector'); iniciarGeoMundUbic(); });
+    document.getElementById('geo-mund-intruso-btn').addEventListener('click', function() { geoMundClose('geo-mund-selector'); iniciarGeoMundIntruso(); });
+    document.getElementById('geo-mund-front-btn').addEventListener('click', function() { geoMundClose('geo-mund-selector'); iniciarGeoMundFronteras(); });
+};
+</script>
+<script>
+// ================================================================
+// GEO MUNDIAL — Fronteras (vecinos) + datos
+// ================================================================
+var FRONTERAS = {"Andorra": ["España", "Francia"], "Francia": ["Alemania", "Andorra", "Bélgica", "España", "Italia", "Luxemburgo", "Suiza"], "España": ["Andorra", "Francia", "Marruecos", "Portugal"], "Emiratos Árabes Unidos": ["Arabia Saudí", "Omán"], "Omán": ["Arabia Saudí", "Emiratos Árabes Unidos", "Yemen"], "Arabia Saudí": ["Emiratos Árabes Unidos", "Irak", "Jordania", "Kuwait", "Omán", "Qatar", "Yemen"], "Afganistán": ["China", "Irán", "Pakistán", "Tayikistán", "Turkmenistán", "Uzbekistán"], "China": ["Afganistán", "Bután", "Corea del Norte", "India", "Kazajistán", "Kirguizistán", "Laos", "Mongolia", "Myanmar", "Nepal", "Pakistán", "Rusia", "Tayikistán", "Vietnam"], "Irán": ["Afganistán", "Armenia", "Azerbaiyán", "Irak", "Pakistán", "Turkmenistán", "Turquía"], "Pakistán": ["Afganistán", "China", "India", "Irán"], "Tayikistán": ["Afganistán", "China", "Kirguizistán", "Uzbekistán"], "Turkmenistán": ["Afganistán", "Irán", "Kazajistán", "Uzbekistán"], "Uzbekistán": ["Afganistán", "Kazajistán", "Kirguizistán", "Tayikistán", "Turkmenistán"], "Albania": ["Grecia", "Macedonia del Norte", "Montenegro", "Serbia"], "Grecia": ["Albania", "Bulgaria", "Macedonia del Norte", "Turquía"], "Montenegro": ["Albania", "Bosnia y Herzegovina", "Croacia", "Serbia"], "Macedonia del Norte": ["Albania", "Bulgaria", "Grecia", "Serbia"], "Serbia": ["Albania", "Bosnia y Herzegovina", "Bulgaria", "Croacia", "Hungría", "Macedonia del Norte", "Montenegro", "Rumania"], "Armenia": ["Azerbaiyán", "Georgia", "Irán", "Turquía"], "Azerbaiyán": ["Armenia", "Georgia", "Irán", "Rusia", "Turquía"], "Georgia": ["Armenia", "Azerbaiyán", "Rusia", "Turquía"], "Turquía": ["Armenia", "Azerbaiyán", "Bulgaria", "Georgia", "Grecia", "Irak", "Irán", "Siria"], "Angola": ["Congo", "Congo (Rep. Dem.)", "Namibia", "Zambia"], "Congo": ["Angola", "Camerún", "Congo (Rep. Dem.)", "Gabón", "República Centroafricana"], "Congo (Rep. Dem.)": ["Angola", "Burundi", "Congo", "República Centroafricana", "Ruanda", "Sudán del Sur", "Tanzania", "Uganda", "Zambia"], "Namibia": ["Angola", "Botswana", "Sudáfrica", "Zambia"], "Zambia": ["Angola", "Botswana", "Congo (Rep. Dem.)", "Malawi", "Mozambique", "Namibia", "Tanzania", "Zimbabue"], "Argentina": ["Bolivia", "Brasil", "Chile", "Paraguay", "Uruguay"], "Bolivia": ["Argentina", "Brasil", "Chile", "Paraguay", "Perú"], "Brasil": ["Argentina", "Bolivia", "Colombia", "Guyana", "Paraguay", "Perú", "Surinam", "Uruguay", "Venezuela"], "Chile": ["Argentina", "Bolivia", "Perú"], "Paraguay": ["Argentina", "Bolivia", "Brasil"], "Uruguay": ["Argentina", "Brasil"], "Austria": ["Alemania", "Eslovaquia", "Eslovenia", "Hungría", "Italia", "República Checa", "Suiza"], "República Checa": ["Alemania", "Austria", "Eslovaquia", "Polonia"], "Alemania": ["Austria", "Bélgica", "Dinamarca", "Francia", "Luxemburgo", "Países Bajos", "Polonia", "República Checa", "Suiza"], "Hungría": ["Austria", "Croacia", "Eslovaquia", "Eslovenia", "Rumania", "Serbia", "Ucrania"], "Italia": ["Austria", "Eslovenia", "Francia", "Suiza"], "Eslovaquia": ["Austria", "Hungría", "Polonia", "República Checa", "Ucrania"], "Eslovenia": ["Austria", "Croacia", "Hungría", "Italia"], "Suiza": ["Alemania", "Austria", "Francia", "Italia"], "Rusia": ["Azerbaiyán", "Bielorrusia", "China", "Corea del Norte", "Estonia", "Finlandia", "Georgia", "Kazajistán", "Letonia", "Lituania", "Mongolia", "Noruega", "Polonia", "Ucrania"], "Bosnia y Herzegovina": ["Croacia", "Montenegro", "Serbia"], "Croacia": ["Bosnia y Herzegovina", "Eslovenia", "Hungría", "Montenegro", "Serbia"], "Bangladesh": ["India", "Myanmar"], "India": ["Bangladesh", "Bután", "China", "Myanmar", "Nepal", "Pakistán"], "Myanmar": ["Bangladesh", "China", "India", "Laos", "Tailandia"], "Bélgica": ["Alemania", "Francia", "Luxemburgo", "Países Bajos"], "Luxemburgo": ["Alemania", "Bélgica", "Francia"], "Países Bajos": ["Alemania", "Bélgica"], "Burkina Faso": ["Benín", "Ghana", "Malí", "Níger", "Togo"], "Benín": ["Burkina Faso", "Nigeria", "Níger", "Togo"], "Ghana": ["Burkina Faso", "Togo"], "Malí": ["Argelia", "Burkina Faso", "Guinea", "Mauritania", "Níger", "Senegal"], "Níger": ["Argelia", "Benín", "Burkina Faso", "Chad", "Libia", "Malí", "Nigeria"], "Togo": ["Benín", "Burkina Faso", "Ghana"], "Bulgaria": ["Grecia", "Macedonia del Norte", "Rumania", "Serbia", "Turquía"], "Rumania": ["Bulgaria", "Hungría", "Moldavia", "Serbia", "Ucrania"], "Burundi": ["Congo (Rep. Dem.)", "Ruanda", "Tanzania"], "Ruanda": ["Burundi", "Congo (Rep. Dem.)", "Tanzania", "Uganda"], "Tanzania": ["Burundi", "Congo (Rep. Dem.)", "Kenia", "Malawi", "Mozambique", "Ruanda", "Uganda", "Zambia"], "Nigeria": ["Benín", "Camerún", "Chad", "Níger"], "Perú": ["Bolivia", "Brasil", "Chile", "Colombia", "Ecuador"], "Colombia": ["Brasil", "Ecuador", "Panamá", "Perú", "Venezuela"], "Guyana": ["Brasil", "Surinam", "Venezuela"], "Surinam": ["Brasil", "Guyana"], "Venezuela": ["Brasil", "Colombia", "Guyana"], "Bután": ["China", "India"], "Botswana": ["Namibia", "Sudáfrica", "Zambia", "Zimbabue"], "Sudáfrica": ["Botswana", "Lesotho", "Mozambique", "Namibia", "Suazilandia", "Zimbabue"], "Zimbabue": ["Botswana", "Mozambique", "Sudáfrica", "Zambia"], "Bielorrusia": ["Letonia", "Lituania", "Polonia", "Rusia", "Ucrania"], "Letonia": ["Bielorrusia", "Estonia", "Lituania", "Rusia"], "Lituania": ["Bielorrusia", "Letonia", "Polonia", "Rusia"], "Polonia": ["Alemania", "Bielorrusia", "Eslovaquia", "Lituania", "República Checa", "Rusia", "Ucrania"], "Ucrania": ["Bielorrusia", "Eslovaquia", "Hungría", "Moldavia", "Polonia", "Rumania", "Rusia"], "Belice": ["Guatemala", "México"], "Guatemala": ["Belice", "El Salvador", "Honduras", "México"], "México": ["Belice", "Estados Unidos", "Guatemala"], "Canadá": ["Estados Unidos"], "Estados Unidos": ["Canadá", "México"], "República Centroafricana": ["Camerún", "Chad", "Congo", "Congo (Rep. Dem.)", "Sudán", "Sudán del Sur"], "Sudán del Sur": ["Congo (Rep. Dem.)", "Etiopía", "Kenia", "República Centroafricana", "Sudán", "Uganda"], "Uganda": ["Congo (Rep. Dem.)", "Kenia", "Ruanda", "Sudán del Sur", "Tanzania"], "Camerún": ["Chad", "Congo", "Gabón", "Guinea Ecuatorial", "Nigeria", "República Centroafricana"], "Chad": ["Camerún", "Libia", "Nigeria", "Níger", "República Centroafricana", "Sudán"], "Sudán": ["Chad", "Egipto", "Eritrea", "Etiopía", "Libia", "República Centroafricana", "Sudán del Sur"], "Gabón": ["Camerún", "Congo", "Guinea Ecuatorial"], "Guinea Ecuatorial": ["Camerún", "Gabón"], "Kazajistán": ["China", "Kirguizistán", "Rusia", "Turkmenistán", "Uzbekistán"], "Corea del Norte": ["China", "Corea del Sur", "Rusia"], "Kirguizistán": ["China", "Kazajistán", "Tayikistán", "Uzbekistán"], "Laos": ["Camboya", "China", "Myanmar", "Tailandia", "Vietnam"], "Mongolia": ["China", "Rusia"], "Nepal": ["China", "India"], "Vietnam": ["Camboya", "China", "Laos"], "Ecuador": ["Colombia", "Perú"], "Panamá": ["Colombia", "Costa Rica"], "Costa Rica": ["Nicaragua", "Panamá"], "Nicaragua": ["Costa Rica", "Honduras"], "Dinamarca": ["Alemania"], "Argelia": ["Libia", "Malí", "Marruecos", "Mauritania", "Níger", "Túnez"], "Libia": ["Argelia", "Chad", "Egipto", "Níger", "Sudán", "Túnez"], "Mauritania": ["Argelia", "Malí", "Senegal"], "Marruecos": ["Argelia", "España"], "Túnez": ["Argelia", "Libia"], "Estonia": ["Letonia", "Rusia"], "Egipto": ["Israel", "Libia", "Palestina", "Sudán"], "Israel": ["Egipto", "Jordania", "Líbano", "Palestina", "Siria"], "Palestina": ["Egipto", "Israel", "Jordania"], "Eritrea": ["Etiopía", "Sudán"], "Etiopía": ["Eritrea", "Kenia", "Somalia", "Sudán", "Sudán del Sur"], "Portugal": ["España"], "Kenia": ["Etiopía", "Somalia", "Sudán del Sur", "Tanzania", "Uganda"], "Somalia": ["Etiopía", "Kenia"], "Finlandia": ["Noruega", "Rusia", "Suecia"], "Noruega": ["Finlandia", "Rusia", "Suecia"], "Suecia": ["Finlandia", "Noruega"], "Reino Unido": ["Irlanda"], "Irlanda": ["Reino Unido"], "Gambia": ["Senegal"], "Senegal": ["Gambia", "Guinea", "Guinea-Bisáu", "Malí", "Mauritania"], "Guinea": ["Guinea-Bisáu", "Libéria", "Malí", "Senegal", "Sierra Leona"], "Guinea-Bisáu": ["Guinea", "Senegal"], "Libéria": ["Guinea", "Sierra Leona"], "Sierra Leona": ["Guinea", "Libéria"], "El Salvador": ["Guatemala", "Honduras"], "Honduras": ["El Salvador", "Guatemala", "Nicaragua"], "Indonesia": ["Malasia"], "Malasia": ["Indonesia", "Tailandia"], "Jordania": ["Arabia Saudí", "Irak", "Israel", "Palestina", "Siria"], "Líbano": ["Israel", "Siria"], "Siria": ["Irak", "Israel", "Jordania", "Líbano", "Turquía"], "Irak": ["Arabia Saudí", "Irán", "Jordania", "Kuwait", "Siria", "Turquía"], "Kuwait": ["Arabia Saudí", "Irak"], "Camboya": ["Laos", "Tailandia", "Vietnam"], "Tailandia": ["Camboya", "Laos", "Malasia", "Myanmar"], "Corea del Sur": ["Corea del Norte"], "Lesotho": ["Sudáfrica"], "Moldavia": ["Rumania", "Ucrania"], "Malawi": ["Mozambique", "Tanzania", "Zambia"], "Mozambique": ["Malawi", "Suazilandia", "Sudáfrica", "Tanzania", "Zambia", "Zimbabue"], "Suazilandia": ["Mozambique", "Sudáfrica"], "Yemen": ["Arabia Saudí", "Omán"], "Qatar": ["Arabia Saudí"]};
+
+// ── SRS ligero para fronteras: prioriza falladas ──────────────────
+var _fronterasFail = {};  // país → nº de fallos acumulados
+
+function geoMundFronterasBuildDeck() {
+    var paises = Object.keys(FRONTERAS).filter(function(p) {
+        return FRONTERAS[p].length > 0;
+    });
+    // Peso: países fallados aparecen más veces
+    var weighted = [];
+    paises.forEach(function(p) {
+        var weight = 1 + (_fronterasFail[p] || 0);  // mínimo 1, +1 por cada fallo
+        for (var i=0; i<Math.min(weight, 4); i++) weighted.push(p);
+    });
+    return geoMundShuffle(weighted);
+}
+
+// Tipos de pregunta:
+// A) Selección múltiple: marca TODOS los vecinos (igual que vecinos ES)
+// B) ¿Cuántos vecinos tiene X? (4 opciones numéricas)
+// C) Intruso: 3 vecinos reales + 1 falso → ¿cuál NO limita con X?
+// D) ¿Comparten frontera X e Y? Sí/No
+
+var geoMundFrontState = {ok:0,fail:0,deck:[],deckIdx:0,round:0};
+
+window.iniciarGeoMundFronteras = function() {
+    geoMundFrontState = {ok:0,fail:0,deck:[],deckIdx:0,round:0};
+    geoMundGameHtml('geo-mund-front','🤝 Fronteras mundiales');
+    geoMundFrontRound();
+};
+
+function geoMundFrontPickType(vecinos) {
+    // Vary question type based on number of neighbors
+    var n = vecinos.length;
+    var roll = Math.random();
+    if (n === 0) return 'none';
+    if (n === 1) return roll < 0.5 ? 'yesno' : 'intruso';
+    if (n >= 3 && roll < 0.35) return 'seleccion';   // select all neighbors
+    if (n >= 3 && roll < 0.55) return 'intruso';      // which is NOT a neighbor
+    return 'yesno';                                     // do X and Y share border?
+}
+
+function geoMundFrontRound() {
+    var id = 'geo-mund-front';
+    if (!document.getElementById(id)) return;
+    if (geoMundFrontState.round >= 10) {
+        geoMundFinal(id,'🤝 Fronteras','iniciarGeoMundFronteras',geoMundFrontState);
+        return;
+    }
+    geoMundFrontState.round++;
+    document.getElementById(id+'-round').textContent = geoMundFrontState.round+'/10';
+
+    if (!geoMundFrontState.deck.length || geoMundFrontState.deckIdx >= geoMundFrontState.deck.length) {
+        geoMundFrontState.deck = geoMundFronterasBuildDeck();
+        geoMundFrontState.deckIdx = 0;
+    }
+    var pais = geoMundFrontState.deck[geoMundFrontState.deckIdx++];
+    var vecinos = FRONTERAS[pais] || [];
+    var tipo = geoMundFrontPickType(vecinos);
+    var content = document.getElementById(id+'-content');
+
+    if (tipo === 'seleccion') {
+        // Mark ALL neighbors — multi-select like vecinos ES
+        var allPaises = Object.keys(FRONTERAS);
+        var noVecinos = geoMundShuffle(allPaises.filter(function(p){ return p!==pais && !vecinos.includes(p); }));
+        var numDecoys = Math.min(4, Math.max(2, 8 - vecinos.length));
+        var opts = geoMundShuffle(vecinos.concat(noVecinos.slice(0, numDecoys)));
+        geoMundFrontState.tipo = 'seleccion';
+        geoMundFrontState.pais = pais;
+        geoMundFrontState.vecinos = vecinos;
+        geoMundFrontState.sel = [];
+        geoMundFrontState.confirmed = false;
+
+        content.innerHTML =
+            '<p style="color:var(--muted);font-size:0.85rem;text-align:center;">Selecciona TODOS los países que limitan con</p>' +
+            '<h2 style="color:#74b9ff;font-size:1.3rem;margin:0;text-align:center;">🤝 '+pais+'</h2>' +
+            '<p style="color:var(--muted);font-size:0.72rem;text-align:center;">('+vecinos.length+' vecino'+(vecinos.length!==1?'s':'')+')</p>' +
+            '<div id="'+id+'-opts" style="display:flex;flex-wrap:wrap;gap:9px;justify-content:center;width:100%;max-width:440px;">' +
+            opts.map(function(opt) {
+                return '<button data-opt="'+opt.replace(/"/g,'&quot;')+'" class="geomun-btn" '+
+                    'style="background:var(--card2);border:2px solid var(--border2);border-radius:10px;'+
+                    'padding:9px 13px;font-size:0.82rem;font-weight:600;color:var(--text);cursor:pointer;">'+opt+'</button>';
+            }).join('') +
+            '</div>' +
+            '<button id="'+id+'-confirm" style="background:#74b9ff;color:#000;border:none;border-radius:12px;padding:11px 26px;font-weight:700;cursor:pointer;font-size:0.9rem;margin-top:4px;">Confirmar ✓</button>';
+
+        content.querySelectorAll('.geomun-btn').forEach(function(btn) {
+            btn.addEventListener('click', function() {
+                if (geoMundFrontState.confirmed) return;
+                var opt = this.getAttribute('data-opt');
+                var idx = geoMundFrontState.sel.indexOf(opt);
+                if (idx === -1) {
+                    geoMundFrontState.sel.push(opt);
+                    this.style.borderColor='#74b9ff'; this.style.background='rgba(116,185,255,0.2)';
+                } else {
+                    geoMundFrontState.sel.splice(idx,1);
+                    this.style.borderColor='var(--border2)'; this.style.background='var(--card2)';
+                }
+            });
+        });
+        document.getElementById(id+'-confirm').addEventListener('click', function() {
+            geoMundFrontState.confirmed = true;
+            var real = geoMundFrontState.vecinos;
+            var sel  = geoMundFrontState.sel;
+            var missed = real.filter(function(p){return !sel.includes(p);});
+            var extra  = sel.filter(function(p){return !real.includes(p);});
+            var ok = missed.length===0 && extra.length===0;
+            content.querySelectorAll('.geomun-btn').forEach(function(b) {
+                b.disabled = true;
+                var p = b.getAttribute('data-opt');
+                if (real.includes(p) && sel.includes(p))      { b.style.borderColor='var(--green)'; b.style.background='rgba(68,212,144,0.2)'; }
+                else if (real.includes(p) && !sel.includes(p)) { b.style.borderColor='#74b9ff';      b.style.background='rgba(116,185,255,0.2)'; }
+                else if (!real.includes(p) && sel.includes(p)) { b.style.borderColor='var(--red)';   b.style.background='rgba(255,85,85,0.15)'; }
+            });
+            if (!ok) _fronterasFail[pais] = (_fronterasFail[pais]||0)+1;
+            geoMundScore(id, ok, geoMundFrontState);
+            var conf = document.getElementById(id+'-confirm');
+            if (conf) { conf.textContent = ok?'¡Perfecto! →':'Siguiente →'; conf.style.background=ok?'var(--green)':'var(--muted)'; conf.onclick=function(){geoMundFrontRound();}; }
+        });
+
+    } else if (tipo === 'intruso') {
+        // 3 real neighbors + 1 false
+        var tres = geoMundShuffle(vecinos).slice(0,3);
+        var allPaises = Object.keys(FRONTERAS);
+        var falso = geoMundShuffle(allPaises.filter(function(p){return !vecinos.includes(p)&&p!==pais;}))[0];
+        var opts = geoMundShuffle(tres.concat([falso]));
+        content.innerHTML =
+            '<p style="color:var(--muted);font-size:0.85rem;text-align:center;">¿Cuál <b>NO</b> limita con</p>' +
+            '<h2 style="color:#fd79a8;font-size:1.3rem;margin:0;text-align:center;">🤝 '+pais+'</h2>' +
+            geoMundOptsHtml(opts);
+        content.querySelectorAll('.geomun-btn').forEach(function(btn) {
+            btn.addEventListener('click', function() {
+                var chosen = this.getAttribute('data-opt');
+                var ok = chosen === falso;
+                if (!ok) _fronterasFail[pais] = (_fronterasFail[pais]||0)+1;
+                geoMundMarkAnswer(id, chosen, falso);
+                geoMundScore(id, ok, geoMundFrontState);
+                setTimeout(geoMundFrontRound, 1300);
+            });
+        });
+
+    } else {
+        // yesno: ¿X e Y comparten frontera?
+        var allPaises = Object.keys(FRONTERAS);
+        var esVecino = Math.random() < 0.5 && vecinos.length > 0;
+        var otro = esVecino
+            ? vecinos[Math.floor(Math.random()*vecinos.length)]
+            : geoMundShuffle(allPaises.filter(function(p){return !vecinos.includes(p)&&p!==pais;}))[0];
+        var correct = esVecino ? 'Sí' : 'No';
+        content.innerHTML =
+            '<p style="color:var(--muted);font-size:0.85rem;text-align:center;">¿Comparten frontera?</p>' +
+            '<h2 style="color:#a29bfe;font-size:1.2rem;margin:0;text-align:center;">'+pais+' — '+otro+'</h2>' +
+            '<div style="display:flex;gap:14px;margin-top:14px;">' +
+            ['Sí','No'].map(function(opt) {
+                return '<button data-opt="'+opt+'" class="geomun-btn" '+
+                    'style="background:var(--card2);border:2px solid var(--border2);border-radius:12px;'+
+                    'padding:16px 36px;font-size:1.1rem;font-weight:700;color:var(--text);cursor:pointer;">'+opt+'</button>';
+            }).join('') + '</div>';
+        content.querySelectorAll('.geomun-btn').forEach(function(btn) {
+            btn.addEventListener('click', function() {
+                var chosen = this.getAttribute('data-opt');
+                var ok = chosen === correct;
+                if (!ok) _fronterasFail[pais] = (_fronterasFail[pais]||0)+1;
+                geoMundMarkAnswer(id, chosen, correct);
+                geoMundScore(id, ok, geoMundFrontState);
+                setTimeout(geoMundFrontRound, 1300);
+            });
+        });
+    }
+}
+</script>
 <script>
 // mazos/mazo_lit_perfecto.js
 if (typeof MAZOS === 'undefined') { var MAZOS = []; }
@@ -17950,6 +18368,7 @@ window.mostrarTarjetaDelito = function(idx) {
                 const isHist = m.id === 'hist';
                 const isHistEsp = m.id === 'hist_esp';
                 const isGeoEsp = m.id === 'geo_esp';
+                const isGeoMund = m.id === 'geo_mund';
                 const subText = m.sub || '';
                 
                 // Si es Literatura Española, Historia, Historia de España o Geografía de España, abrir selector de submazos
@@ -17958,10 +18377,11 @@ window.mostrarTarjetaDelito = function(idx) {
                 if (isHist) onclickAction = 'abrirSelectorHist()';
                 if (isHistEsp) onclickAction = 'abrirSelectorHistEsp()';
                 if (isGeoEsp) onclickAction = 'abrirSelectorGeoEsp()';
+                if (isGeoMund) onclickAction = 'abrirSelectorGeoMund()';
                 
-                const hasSelector = isLitEsp || isHist || isHistEsp || isGeoEsp;
-                const badgeText = isLitEsp ? '7 épocas' : (isHist ? '6 minijuegos' : (isHistEsp ? '5 minijuegos' : (isGeoEsp ? '5 minijuegos' : 'Cargando...')));
-                const borderColor = isLitEsp ? '#fab1a0' : (isHist ? '#dc3545' : (isHistEsp ? '#ff7675' : (isGeoEsp ? '#55efc4' : '')));
+                const hasSelector = isLitEsp || isHist || isHistEsp || isGeoEsp || isGeoMund;
+                const badgeText = isLitEsp ? '7 épocas' : (isHist ? '6 minijuegos' : (isHistEsp ? '5 minijuegos' : (isGeoEsp ? '5 minijuegos' : (isGeoMund ? '3 minijuegos' : 'Cargando...'))));
+                const borderColor = isLitEsp ? '#fab1a0' : (isHist ? '#dc3545' : (isHistEsp ? '#ff7675' : (isGeoEsp ? '#55efc4' : (isGeoMund ? '#00b894' : ''))));
                 
                 html += `
                 <div class="deck-item" onclick="${onclickAction}"${borderColor ? ` style="border-color:${borderColor};"` : ''}>
@@ -18088,6 +18508,7 @@ window.openStudySelector = function() {
       const isHist = m.id === 'hist';
       const isHistEsp = m.id === 'hist_esp';
       const isGeoEsp = m.id === 'geo_esp';
+      const isGeoMund = m.id === 'geo_mund';
       
       // Si es Literatura Española, Historia, Historia de España o Geografía de España, siempre abrir el selector de submazos
       let onclickAction = isDone ? '' : `startSmartStudy('${m.id}')`;
@@ -18095,13 +18516,15 @@ window.openStudySelector = function() {
       if (isHist) onclickAction = 'abrirSelectorHist()';
       if (isHistEsp) onclickAction = 'abrirSelectorHistEsp()';
       if (isGeoEsp) onclickAction = 'abrirSelectorGeoEsp()';
+      if (isGeoMund) onclickAction = 'abrirSelectorGeoMund()';
       
-      const hasSelector = isLitEsp || isHist || isHistEsp || isGeoEsp;
+      const hasSelector = isLitEsp || isHist || isHistEsp || isGeoEsp || isGeoMund;
       const badgeContent = isLitEsp ? '<span style="background:#fab1a0; color:#000; padding:4px 10px; border-radius:20px; font-size:0.75rem; font-weight:bold;">7 épocas</span>' 
                          : (isHist ? '<span style="background:#dc3545; color:#fff; padding:4px 10px; border-radius:20px; font-size:0.75rem; font-weight:bold;">6 minijuegos</span>'
                          : (isHistEsp ? '<span style="background:#ff7675; color:#fff; padding:4px 10px; border-radius:20px; font-size:0.75rem; font-weight:bold;">5 minijuegos</span>'
                          : (isGeoEsp ? '<span style="background:#55efc4; color:#000; padding:4px 10px; border-radius:20px; font-size:0.75rem; font-weight:bold;">5 minijuegos</span>'
-                         : `<span style="background:${isDone ? 'transparent' : (m.color || 'var(--accent)')}; color:${isDone ? 'var(--muted)' : '#000'}; padding:4px 10px; border-radius:20px; font-size:0.75rem; font-weight:bold; white-space:nowrap;">${isDone ? 'Al día ✓' : dueCount + ' hoy'}</span>`)));
+                         : (isGeoMund ? '<span style="background:#00b894; color:#fff; padding:4px 10px; border-radius:20px; font-size:0.75rem; font-weight:bold;">3 minijuegos</span>'
+                         : `<span style="background:${isDone ? 'transparent' : (m.color || 'var(--accent)')}; color:${isDone ? 'var(--muted)' : '#000'}; padding:4px 10px; border-radius:20px; font-size:0.75rem; font-weight:bold; white-space:nowrap;">${isDone ? 'Al día ✓' : dueCount + ' hoy'}</span>`))));
       
       container.innerHTML += `
       <div class="deck-item" onclick="${onclickAction}" style="border-left:4px solid ${isDone && !hasSelector ? 'var(--border)' : (m.color || 'var(--accent)')}; opacity:${isDone && !hasSelector ? '0.6' : '1'}; cursor:${isDone && !hasSelector ? 'default' : 'pointer'};">
