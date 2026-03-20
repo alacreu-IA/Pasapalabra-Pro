@@ -5037,9 +5037,23 @@ window.abrirSelectorHist = function() {
             '</div>' +
             '<div class="deck-item" onclick="document.getElementById(\'geo-esp-selector\').remove();iniciarGeoRios();" style="border-color:#74b9ff;">' +
                 '<div class="deck-icon">🌊</div>' +
-                '<div class="deck-info"><h4>Ríos</h4>' +
+                '<div class="deck-info"><h4>Ríos: provincias</h4>' +
                 '<span style="font-size:0.72rem;color:var(--muted);font-style:italic;display:block;margin-top:2px;">¿Por qué provincias pasa?</span>' +
                 '<p style="font-size:0.72rem;color:var(--muted);margin-top:4px;">57 ríos</p></div>' +
+                '<div class="deck-arrow">›</div>' +
+            '</div>' +
+            '<div class="deck-item" onclick="document.getElementById(\'geo-esp-selector\').remove();iniciarGeoRiosAv();" style="border-color:#a29bfe;">' +
+                '<div class="deck-icon">💧</div>' +
+                '<div class="deck-info"><h4>Ríos: afluentes y nacimientos</h4>' +
+                '<span style="font-size:0.72rem;color:var(--muted);font-style:italic;display:block;margin-top:2px;">Intruso, clasificación, vertientes</span>' +
+                '<p style="font-size:0.72rem;color:var(--muted);margin-top:4px;">Afluentes · Nacimientos · Vertientes</p></div>' +
+                '<div class="deck-arrow">›</div>' +
+            '</div>' +
+            '<div class="deck-item" onclick="document.getElementById(\'geo-esp-selector\').remove();iniciarGeoMont();" style="border-color:var(--gold);">' +
+                '<div class="deck-icon">⛰️</div>' +
+                '<div class="deck-info"><h4>Montañas</h4>' +
+                '<span style="font-size:0.72rem;color:var(--muted);font-style:italic;display:block;margin-top:2px;">Comparación, orden, clasificación</span>' +
+                '<p style="font-size:0.72rem;color:var(--muted);margin-top:4px;">26 picos · 10 sistemas</p></div>' +
                 '<div class="deck-arrow">›</div>' +
             '</div>' +
         '</div>' +
@@ -5358,7 +5372,7 @@ window.abrirSelectorGeoEsp = function() {
         '<div style="padding:15px 20px;display:flex;align-items:center;gap:15px;border-bottom:1px solid var(--border);">' +
             '<button onclick="document.getElementById(\'geo-esp-selector\').remove();" style="background:none;border:none;color:var(--text);font-size:1.5rem;cursor:pointer;">←</button>' +
             '<div><h2 style="color:var(--text);font-size:1.3rem;margin:0;">📍 Geografía de España</h2>' +
-            '<p style="color:var(--muted);font-size:0.8rem;margin:4px 0 0 0;">' + totalQ + ' preguntas + 4 minijuegos</p></div>' +
+            '<p style="color:var(--muted);font-size:0.8rem;margin:4px 0 0 0;">' + totalQ + ' preguntas + 5 minijuegos</p></div>' +
         '</div>' +
         '<div style="padding:20px;display:flex;flex-direction:column;gap:12px;">' +
             '<div class="deck-item" onclick="document.getElementById(\'geo-esp-selector\').remove();startSmartStudyAll(\'geo_esp\');" style="border-color:#55efc4;background:linear-gradient(135deg,rgba(255,255,255,0.05),transparent);">' +
@@ -5371,13 +5385,7 @@ window.abrirSelectorGeoEsp = function() {
             '<div style="border-top:1px solid var(--border);margin:10px 0;position:relative;">' +
                 '<span style="position:absolute;top:-10px;left:50%;transform:translateX(-50%);background:var(--bg);padding:0 10px;color:var(--muted);font-size:0.75rem;">minijuegos</span>' +
             '</div>' +
-            '<div class="deck-item" onclick="document.getElementById(\'geo-esp-selector\').remove();iniciarGeoMapa();" style="border-color:#55efc4;">' +
-                '<div class="deck-icon">🗺️</div>' +
-                '<div class="deck-info"><h4>Apunta al mapa</h4>' +
-                '<span style="font-size:0.72rem;color:var(--muted);font-style:italic;display:block;margin-top:2px;">¿Dónde está esa provincia?</span>' +
-                '<p style="font-size:0.72rem;color:var(--muted);margin-top:4px;">52 provincias</p></div>' +
-                '<div class="deck-arrow">›</div>' +
-            '</div>' +
+
             '<div class="deck-item" onclick="document.getElementById(\'geo-esp-selector\').remove();iniciarGeoIntruso();" style="border-color:#fdcb6e;">' +
                 '<div class="deck-icon">🔍</div>' +
                 '<div class="deck-info"><h4>El intruso</h4>' +
@@ -5394,9 +5402,23 @@ window.abrirSelectorGeoEsp = function() {
             '</div>' +
             '<div class="deck-item" onclick="document.getElementById(\'geo-esp-selector\').remove();iniciarGeoRios();" style="border-color:#74b9ff;">' +
                 '<div class="deck-icon">🌊</div>' +
-                '<div class="deck-info"><h4>Ríos</h4>' +
+                '<div class="deck-info"><h4>Ríos: provincias</h4>' +
                 '<span style="font-size:0.72rem;color:var(--muted);font-style:italic;display:block;margin-top:2px;">¿Por qué provincias pasa?</span>' +
                 '<p style="font-size:0.72rem;color:var(--muted);margin-top:4px;">57 ríos</p></div>' +
+                '<div class="deck-arrow">›</div>' +
+            '</div>' +
+            '<div class="deck-item" onclick="document.getElementById(\'geo-esp-selector\').remove();iniciarGeoRiosAv();" style="border-color:#a29bfe;">' +
+                '<div class="deck-icon">💧</div>' +
+                '<div class="deck-info"><h4>Ríos: afluentes y nacimientos</h4>' +
+                '<span style="font-size:0.72rem;color:var(--muted);font-style:italic;display:block;margin-top:2px;">Intruso, clasificación, vertientes</span>' +
+                '<p style="font-size:0.72rem;color:var(--muted);margin-top:4px;">Afluentes · Nacimientos · Vertientes</p></div>' +
+                '<div class="deck-arrow">›</div>' +
+            '</div>' +
+            '<div class="deck-item" onclick="document.getElementById(\'geo-esp-selector\').remove();iniciarGeoMont();" style="border-color:var(--gold);">' +
+                '<div class="deck-icon">⛰️</div>' +
+                '<div class="deck-info"><h4>Montañas</h4>' +
+                '<span style="font-size:0.72rem;color:var(--muted);font-style:italic;display:block;margin-top:2px;">Comparación, orden, clasificación</span>' +
+                '<p style="font-size:0.72rem;color:var(--muted);margin-top:4px;">26 picos · 10 sistemas</p></div>' +
                 '<div class="deck-arrow">›</div>' +
             '</div>' +
         '</div>' +
@@ -5772,8 +5794,8 @@ window.geoVecinosConfirm = function() {
         var p = btn.textContent;
         btn.disabled = true;
         if (real.includes(p) && sel.includes(p)) { btn.style.borderColor = 'var(--green)'; btn.style.background = 'rgba(68,212,144,0.2)'; }
-        else if (real.includes(p) && !sel.includes(p)) { btn.style.borderColor = 'var(--red)'; btn.style.background = 'rgba(255,85,85,0.15)'; }
-        else if (!real.includes(p) && sel.includes(p)) { btn.style.borderColor = 'var(--red)'; btn.style.background = 'rgba(255,85,85,0.15)'; }
+        else if (real.includes(p) && !sel.includes(p)) { btn.style.borderColor = '#74b9ff'; btn.style.background = 'rgba(116,185,255,0.2)'; } // olvidada
+        else if (!real.includes(p) && sel.includes(p)) { btn.style.borderColor = 'var(--red)'; btn.style.background = 'rgba(255,85,85,0.15)'; } // fallo
     });
     
     var confirmBtn = document.getElementById('geo-vecinos-confirm');
@@ -5903,8 +5925,8 @@ window.geoRiosConfirm = function() {
         var p = btn.textContent;
         btn.disabled = true;
         if (real.includes(p) && sel.includes(p))      { btn.style.borderColor='var(--green)'; btn.style.background='rgba(68,212,144,0.2)'; }
-        else if (real.includes(p) && !sel.includes(p)) { btn.style.borderColor='var(--red)';   btn.style.background='rgba(255,85,85,0.15)'; }
-        else if (!real.includes(p) && sel.includes(p)) { btn.style.borderColor='var(--red)';   btn.style.background='rgba(255,85,85,0.15)'; }
+        else if (real.includes(p) && !sel.includes(p)) { btn.style.borderColor='#74b9ff';     btn.style.background='rgba(116,185,255,0.2)'; } // olvidada
+        else if (!real.includes(p) && sel.includes(p)) { btn.style.borderColor='var(--red)';   btn.style.background='rgba(255,85,85,0.15)'; } // fallo
     });
 
     var confirmBtn = document.getElementById('geo-rios-confirm');
@@ -5929,6 +5951,629 @@ function geoRiosFinal() {
         '<button onclick="iniciarGeoRios();" style="background:#74b9ff;color:#000;border:none;border-radius:12px;padding:12px 28px;font-weight:700;cursor:pointer;font-size:0.95rem;">Otra ronda 🌊</button>' +
         '<button onclick="document.getElementById(\'geo-rios-game\').remove();" style="background:transparent;color:var(--muted);border:1px solid var(--border);border-radius:12px;padding:10px;cursor:pointer;font-size:0.85rem;">Volver</button>' +
     '</div>';
+}
+</script>
+
+<script>
+// ================================================================
+// GEO AFLUENTES + NACIMIENTOS + VERTIENTES (datos)
+// ================================================================
+var GEO_AFLUENTES   = {"Ebro": ["Segre", "Gállego", "Cinca", "Jalón", "Aragón", "Guadalope", "Huerva", "Zadorra"], "Tajo": ["Jarama", "Alberche", "Tiétar", "Alagón", "Guadarrama", "Salor", "Gallo", "Algodor"], "Duero": ["Pisuerga", "Esla", "Tormes", "Adaja", "Águeda", "Valderaduey", "Riaza", "Támega"], "Guadiana": ["Zújar", "Jabalón", "Cigüela", "Matachel", "Bullaque", "Chanza", "Ardila", "Azuer"], "Guadalquivir": ["Genil", "Guadalimar", "Guadiana Menor", "Jándula", "Guadiato", "Bembézar", "Viar", "Corbones"], "Júcar": ["Cabriel", "Magro", "Albaida", "Valdemembra", "Huécar"], "Segura": ["Mundo", "Guadalentín", "Mula", "Taibilla", "Argos", "Quípar"], "Miño": ["Sil", "Neira", "Avia", "Arnoia", "Búbal", "Tea"], "Nalón": ["Narcea", "Caudal", "Trubia", "Cubia", "Orlé"]};
+var GEO_NACIMIENTOS = {"Ebro": {"lugar": "Fontibre", "provincia": "Cantabria", "zona": "Cordillera Cantábrica"}, "Tajo": {"lugar": "Fuente de García", "provincia": "Teruel", "zona": "Sistema Ibérico"}, "Duero": {"lugar": "Picos de Urbión", "provincia": "Soria", "zona": "Sistema Ibérico"}, "Guadalquivir": {"lugar": "Cañada de las Fuentes", "provincia": "Jaén", "zona": "Sistemas Béticos"}, "Guadiana": {"lugar": "Ojos del Guadiana / Lagunas de Ruidera", "provincia": "Ciudad Real", "zona": "Campo de Montiel"}, "Júcar": {"lugar": "Ojuelos de Valdeminguete", "provincia": "Cuenca", "zona": "Sistema Ibérico"}, "Segura": {"lugar": "Fuente Segura", "provincia": "Jaén", "zona": "Sistemas Béticos"}, "Miño": {"lugar": "Pedregal de Irimia", "provincia": "Lugo", "zona": "Macizo Galaico"}, "Turia": {"lugar": "Muela de San Juan", "provincia": "Teruel", "zona": "Sistema Ibérico"}, "Genil": {"lugar": "Pico Veleta", "provincia": "Granada", "zona": "Sistemas Béticos"}, "Pisuerga": {"lugar": "Cueva del Cobre", "provincia": "Palencia", "zona": "Cordillera Cantábrica"}, "Esla": {"lugar": "Valle de Valdeburón", "provincia": "León", "zona": "Cordillera Cantábrica"}, "Tormes": {"lugar": "Prado Tormejón", "provincia": "Ávila", "zona": "Sistema Central"}, "Nalón": {"lugar": "Fuente de la Nalona", "provincia": "Asturias", "zona": "Cordillera Cantábrica"}, "Navia": {"lugar": "Pedrafita do Cebreiro", "provincia": "Lugo", "zona": "Macizo Galaico"}, "Nervión": {"lugar": "Peña de Orduña", "provincia": "Burgos", "zona": "Montes Vascos"}, "Bidasoa": {"lugar": "Pico de Aizko", "provincia": "Navarra", "zona": "Pirineos"}, "Llobregat": {"lugar": "Fuentes del Llobregat", "provincia": "Barcelona", "zona": "Prepirineo"}, "Ter": {"lugar": "Ulldeter", "provincia": "Girona", "zona": "Pirineos"}, "Gállego": {"lugar": "Col d'Aneu", "provincia": "Huesca", "zona": "Pirineos"}, "Aragón": {"lugar": "Valle de Astún", "provincia": "Huesca", "zona": "Pirineos"}, "Cinca": {"lugar": "Glaciar de Marboré", "provincia": "Huesca", "zona": "Pirineos"}, "Cabriel": {"lugar": "Muela de San Juan", "provincia": "Teruel", "zona": "Sistema Ibérico"}, "Mijares": {"lugar": "Alto de la Muela", "provincia": "Teruel", "zona": "Sistema Ibérico"}, "Sella": {"lugar": "Fuente del Infierno", "provincia": "León", "zona": "Cordillera Cantábrica"}, "Guadalete": {"lugar": "Sierra del Endrinal", "provincia": "Cádiz", "zona": "Sistemas Béticos"}, "Tinto": {"lugar": "Sierra de Padre Caro", "provincia": "Huelva", "zona": "Sierra Morena"}, "Odiel": {"lugar": "Sierra de Aracena", "provincia": "Huelva", "zona": "Sierra Morena"}, "Sil": {"lugar": "La Cueta", "provincia": "León", "zona": "Cordillera Cantábrica"}, "Alberche": {"lugar": "Cañada del Horno", "provincia": "Ávila", "zona": "Sistema Central"}};
+var GEO_VERTIENTES  = {"Atlántica": ["Duero", "Tajo", "Guadiana", "Guadalquivir", "Miño", "Sil", "Tormes", "Esla", "Pisuerga", "Ulla", "Tambre", "Guadalete"], "Mediterránea": ["Ebro", "Júcar", "Segura", "Turia", "Mijares", "Llobregat", "Ter", "Francolí", "Guadalhorce", "Almanzora", "Segre", "Jalón"], "Cantábrica": ["Nalón", "Navia", "Sella", "Eo", "Nervión", "Bidasoa", "Deva", "Pas", "Nansa", "Besaya", "Narcea", "Saja"]};
+
+// ================================================================
+// MINIJUEGO: RÍOS AVANZADO — Afluentes, nacimientos, vertientes
+// 3 modos: Intruso, Clasificación, Mezcla
+// ================================================================
+var geoRiosAvState = { round:0, ok:0, fail:0, deck:[], deckIdx:0 };
+
+window.iniciarGeoRiosAv = function() {
+    geoRiosAvState = { round:0, ok:0, fail:0, deck:[], deckIdx:0 };
+    var html = '<div id="geo-riosav-game" style="position:fixed;top:0;left:0;right:0;bottom:0;background:var(--bg);z-index:99999;display:flex;flex-direction:column;">' +
+        '<div style="padding:12px 16px;display:flex;align-items:center;gap:12px;border-bottom:1px solid var(--border);">' +
+            '<button onclick="document.getElementById(\'geo-riosav-game\').remove();" style="background:none;border:none;color:var(--text);font-size:1.5rem;cursor:pointer;">←</button>' +
+            '<div style="flex:1;"><h3 style="margin:0;font-size:1rem;">💧 Afluentes y nacimientos</h3>' +
+            '<div style="display:flex;gap:16px;margin-top:4px;">' +
+                '<span id="geo-riosav-ok"    style="color:var(--green);font-size:0.8rem;font-weight:700;">✓ 0</span>' +
+                '<span id="geo-riosav-fail"  style="color:var(--red);font-size:0.8rem;font-weight:700;">✗ 0</span>' +
+                '<span id="geo-riosav-round" style="color:var(--muted);font-size:0.8rem;">Ronda 0/10</span>' +
+            '</div></div>' +
+        '</div>' +
+        '<div id="geo-riosav-content" style="flex:1;overflow-y:auto;padding:20px 16px;display:flex;flex-direction:column;gap:16px;align-items:center;justify-content:center;"></div>' +
+    '</div>';
+    document.body.insertAdjacentHTML('beforeend', html);
+    geoRiosAvRound();
+};
+
+function geoRiosAvShuffle(a) {
+    var b = a.slice();
+    for (var i = b.length-1; i > 0; i--) {
+        var j = Math.floor(Math.random()*(i+1));
+        var t = b[i]; b[i] = b[j]; b[j] = t;
+    }
+    return b;
+}
+
+// Build a flat deck of question descriptors
+function geoRiosAvBuildDeck() {
+    var deck = [];
+    var rios = Object.keys(GEO_AFLUENTES);
+
+    // Tipo 1: Intruso — ¿cuál NO es afluente del río X?
+    rios.forEach(function(rio) {
+        var afluentes = GEO_AFLUENTES[rio];
+        if (afluentes.length < 3) return;
+        // Gather all afluentes from OTHER rivers as decoy pool
+        var otrosAfluentes = [];
+        rios.forEach(function(r2) { if (r2 !== rio) otrosAfluentes = otrosAfluentes.concat(GEO_AFLUENTES[r2]); });
+        deck.push({ tipo:'intruso_afl', rio:rio, afluentes:afluentes, pool:otrosAfluentes });
+    });
+
+    // Tipo 2: Clasificación — afluente X → ¿de qué río?
+    rios.forEach(function(rio) {
+        GEO_AFLUENTES[rio].forEach(function(afl) {
+            deck.push({ tipo:'clasif_afl', afluente:afl, rio:rio, todosRios:rios });
+        });
+    });
+
+    // Tipo 3: Mezcla — ¿qué río tiene como afluente X?  (same as clasif but phrased differently)
+    rios.forEach(function(rio) {
+        GEO_AFLUENTES[rio].forEach(function(afl) {
+            deck.push({ tipo:'mezcla_afl', afluente:afl, rio:rio, todosRios:rios });
+        });
+    });
+
+    // Tipo 4: Nacimiento provincia — el X nace en la provincia de...
+    Object.keys(GEO_NACIMIENTOS).forEach(function(rio) {
+        var n = GEO_NACIMIENTOS[rio];
+        var todasProvincias = Object.values(GEO_NACIMIENTOS).map(function(x){return x.provincia;});
+        var distintas = todasProvincias.filter(function(p){return p !== n.provincia;});
+        deck.push({ tipo:'nac_prov', rio:rio, prov:n.provincia, zona:n.zona, pool:distintas });
+    });
+
+    // Tipo 5: Vertiente — ¿a qué vertiente pertenece el río X?
+    Object.keys(GEO_VERTIENTES).forEach(function(vert) {
+        GEO_VERTIENTES[vert].forEach(function(rio) {
+            deck.push({ tipo:'vertiente', rio:rio, vertiente:vert });
+        });
+    });
+
+    return geoRiosAvShuffle(deck);
+}
+
+function geoRiosAvRound() {
+    if (!document.getElementById('geo-riosav-game')) return;
+    if (geoRiosAvState.round >= 10) { geoRiosAvFinal(); return; }
+    geoRiosAvState.round++;
+    document.getElementById('geo-riosav-round').textContent = 'Ronda ' + geoRiosAvState.round + '/10';
+
+    if (!geoRiosAvState.deck.length || geoRiosAvState.deckIdx >= geoRiosAvState.deck.length) {
+        geoRiosAvState.deck = geoRiosAvBuildDeck();
+        geoRiosAvState.deckIdx = 0;
+    }
+    var q = geoRiosAvState.deck[geoRiosAvState.deckIdx++];
+    geoRiosAvState.q = q;
+
+    var content = document.getElementById('geo-riosav-content');
+    var html = '';
+
+    if (q.tipo === 'intruso_afl') {
+        // 4 opciones: 3 afluentes reales + 1 intruso
+        var corrects = geoRiosAvShuffle(q.afluentes).slice(0, 3);
+        var decoy    = geoRiosAvShuffle(q.pool.filter(function(x){return !q.afluentes.includes(x);}))[0];
+        var opts     = geoRiosAvShuffle(corrects.concat([decoy]));
+        geoRiosAvState.correct = decoy;
+        geoRiosAvState.mode = 'single';
+        html = '<p style="color:var(--muted);font-size:0.85rem;">¿Cuál NO es afluente del</p>' +
+               '<h2 style="color:#74b9ff;font-size:1.4rem;margin:0;">💧 ' + q.rio + '</h2>' +
+               geoRiosAvOptsHtml(opts);
+    } else if (q.tipo === 'clasif_afl') {
+        // ¿De qué río es afluente X? → 4 opciones de ríos
+        var wrongRios = geoRiosAvShuffle(q.todosRios.filter(function(r){return r !== q.rio;}).slice(0,3));
+        var opts = geoRiosAvShuffle([q.rio].concat(wrongRios));
+        geoRiosAvState.correct = q.rio;
+        geoRiosAvState.mode = 'single';
+        html = '<p style="color:var(--muted);font-size:0.85rem;">¿De qué río es afluente?</p>' +
+               '<h2 style="color:#a29bfe;font-size:1.5rem;margin:0;">〰️ ' + q.afluente + '</h2>' +
+               geoRiosAvOptsHtml(opts);
+    } else if (q.tipo === 'mezcla_afl') {
+        // ¿Qué río tiene como afluente X? → igual que clasif pero phrasing diferente
+        var wrongRios = geoRiosAvShuffle(q.todosRios.filter(function(r){return r !== q.rio;}).slice(0,3));
+        var opts = geoRiosAvShuffle([q.rio].concat(wrongRios));
+        geoRiosAvState.correct = q.rio;
+        geoRiosAvState.mode = 'single';
+        html = '<p style="color:var(--muted);font-size:0.85rem;">¿Qué río tiene como afluente al</p>' +
+               '<h2 style="color:#fd79a8;font-size:1.5rem;margin:0;">〰️ ' + q.afluente + '</h2>' +
+               geoRiosAvOptsHtml(opts);
+    } else if (q.tipo === 'nac_prov') {
+        // ¿En qué provincia nace el X?
+        var decoys = geoRiosAvShuffle(q.pool.filter(function(p){return p !== q.prov;})).slice(0,3);
+        var opts = geoRiosAvShuffle([q.prov].concat(decoys));
+        geoRiosAvState.correct = q.prov;
+        geoRiosAvState.mode = 'single';
+        html = '<p style="color:var(--muted);font-size:0.85rem;">¿En qué provincia nace?</p>' +
+               '<h2 style="color:#55efc4;font-size:1.5rem;margin:0;">💧 ' + q.rio + '</h2>' +
+               geoRiosAvOptsHtml(opts);
+    } else if (q.tipo === 'vertiente') {
+        var verts = Object.keys(GEO_VERTIENTES);
+        var opts = geoRiosAvShuffle(verts);
+        geoRiosAvState.correct = q.vertiente;
+        geoRiosAvState.mode = 'single';
+        html = '<p style="color:var(--muted);font-size:0.85rem;">¿A qué vertiente pertenece?</p>' +
+               '<h2 style="color:#fdcb6e;font-size:1.5rem;margin:0;">💧 ' + q.rio + '</h2>' +
+               geoRiosAvOptsHtml(opts);
+    }
+
+    content.innerHTML = html;
+    content.querySelectorAll('.riosav-btn').forEach(function(btn) {
+        btn.addEventListener('click', function() { geoRiosAvAnswer(this.getAttribute('data-opt')); });
+    });
+}
+
+function geoRiosAvOptsHtml(opts) {
+    return '<div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;width:100%;max-width:400px;margin-top:8px;">' +
+        opts.map(function(opt) {
+            return '<button data-opt="' + opt.replace(/"/g,'&quot;') + '" class="riosav-btn" ' +
+                'style="background:var(--card2);border:2px solid var(--border2);border-radius:12px;' +
+                'padding:14px 10px;font-size:0.9rem;font-weight:600;color:var(--text);cursor:pointer;">' +
+                opt + '</button>';
+        }).join('') +
+    '</div>';
+}
+
+window.geoRiosAvAnswer = function(chosen) {
+    var correct = geoRiosAvState.correct;
+    var ok = chosen === correct;
+
+    document.querySelectorAll('.riosav-btn').forEach(function(btn) {
+        btn.disabled = true;
+        var v = btn.getAttribute('data-opt');
+        if (v === correct) {
+            btn.style.borderColor = 'var(--green)';
+            btn.style.background  = 'rgba(68,212,144,0.2)';
+        } else if (v === chosen && !ok) {
+            btn.style.borderColor = 'var(--red)';
+            btn.style.background  = 'rgba(255,85,85,0.15)';
+        }
+    });
+
+    if (ok) {
+        geoRiosAvState.ok++;
+        document.getElementById('geo-riosav-ok').textContent = '✓ ' + geoRiosAvState.ok;
+    } else {
+        geoRiosAvState.fail++;
+        document.getElementById('geo-riosav-fail').textContent = '✗ ' + geoRiosAvState.fail;
+    }
+    setTimeout(geoRiosAvRound, 1200);
+};
+
+function geoRiosAvFinal() {
+    var pct = geoRiosAvState.ok + geoRiosAvState.fail > 0
+        ? Math.round(geoRiosAvState.ok / (geoRiosAvState.ok + geoRiosAvState.fail) * 100) : 0;
+    var emoji = pct === 100 ? '🏆' : pct >= 80 ? '💪' : pct >= 60 ? '🙂' : '📚';
+    var el = document.getElementById('geo-riosav-game');
+    if (!el) return;
+    el.innerHTML = '<div style="display:flex;flex-direction:column;align-items:center;justify-content:center;height:100%;padding:30px;text-align:center;gap:16px;">' +
+        '<div style="font-size:3.5rem;">' + emoji + '</div>' +
+        '<h2 style="color:var(--gold);">Afluentes y nacimientos</h2>' +
+        '<p style="font-size:1.4rem;font-weight:700;">' + pct + '% correcto</p>' +
+        '<p style="color:var(--muted);">' + geoRiosAvState.ok + ' bien · ' + geoRiosAvState.fail + ' mal</p>' +
+        '<button onclick="iniciarGeoRiosAv();" style="background:#74b9ff;color:#000;border:none;border-radius:12px;padding:12px 28px;font-weight:700;cursor:pointer;font-size:0.95rem;">Otra ronda 💧</button>' +
+        '<button onclick="document.getElementById(\'geo-riosav-game\').remove();" style="background:transparent;color:var(--muted);border:1px solid var(--border);border-radius:12px;padding:10px;cursor:pointer;font-size:0.85rem;">Volver</button>' +
+    '</div>';
+}
+</script>
+
+<script>window.geoMontClose = function(id) { var el=document.getElementById(id); if(el) el.remove(); };
+
+// ================================================================
+// GEO MONTAÑAS v2 — 2 submodos: Altura y Geografía
+// ================================================================
+var GEO_PICOS  = {"Teide":{"provincia":"Santa Cruz de Tenerife","altura":3718,"sistema":"Canarias"},"Mulhacén":{"provincia":"Granada","altura":3482,"sistema":"Cordillera Penibética"},"Aneto":{"provincia":"Huesca","altura":3404,"sistema":"Pirineos"},"Veleta":{"provincia":"Granada","altura":3398,"sistema":"Cordillera Penibética"},"Posets":{"provincia":"Huesca","altura":3375,"sistema":"Pirineos"},"Monte Perdido":{"provincia":"Huesca","altura":3355,"sistema":"Pirineos"},"Pica d'Estats":{"provincia":"Lleida","altura":3143,"sistema":"Pirineos"},"Torre de Cerredo":{"provincia":"Asturias","altura":2650,"sistema":"Cordillera Cantábrica"},"Almanzor":{"provincia":"Ávila","altura":2591,"sistema":"Sistema Central"},"Peñalara":{"provincia":"Madrid","altura":2428,"sistema":"Sistema Central"},"Roque de los Muchachos":{"provincia":"Santa Cruz de Tenerife","altura":2426,"sistema":"Canarias"},"Peña Ubiña":{"provincia":"León","altura":2417,"sistema":"Cordillera Cantábrica"},"Moncayo":{"provincia":"Zaragoza","altura":2314,"sistema":"Sistema Ibérico"},"Pico del Lobo":{"provincia":"Segovia","altura":2274,"sistema":"Sistema Central"},"Pico Mágina":{"provincia":"Jaén","altura":2167,"sistema":"Cordillera Subbética"},"Peña Trevinca":{"provincia":"Ourense","altura":2127,"sistema":"Macizo Galaico-Leonés"},"Pico San Millán":{"provincia":"Burgos","altura":2131,"sistema":"Sistema Ibérico"},"Castro Valnera":{"provincia":"Cantabria","altura":2069,"sistema":"Cordillera Cantábrica"},"Pico de las Nieves":{"provincia":"Las Palmas","altura":1949,"sistema":"Canarias"},"Penyagolosa":{"provincia":"Castellón","altura":1813,"sistema":"Sistema Ibérico"},"Cabeza de Manzaneda":{"provincia":"Ourense","altura":1778,"sistema":"Macizo Galaico-Leonés"},"Turó de l'Home":{"provincia":"Barcelona","altura":1706,"sistema":"Cordilleras Costero-Catalanas"},"Aitana":{"provincia":"Alicante","altura":1558,"sistema":"Cordilleras Béticas"},"Aizkorri":{"provincia":"Gipuzkoa","altura":1523,"sistema":"Montes Vascos"},"Gorbea":{"provincia":"Álava","altura":1481,"sistema":"Montes Vascos"},"Puig Major":{"provincia":"Illes Balears","altura":1436,"sistema":"Sierra de Tramontana"}};
+var GEO_COORDS = {"Teide":[28.27,-16.64],"Mulhacén":[37.05,-3.31],"Aneto":[42.63,0.66],"Veleta":[37.06,-3.37],"Posets":[42.65,0.42],"Monte Perdido":[42.68,0.03],"Pica d'Estats":[42.66,1.40],"Torre de Cerredo":[43.20,-4.86],"Almanzor":[40.24,-5.30],"Peñalara":[40.86,-3.95],"Roque de los Muchachos":[28.76,-17.88],"Peña Ubiña":[43.01,-5.91],"Moncayo":[41.79,-1.84],"Pico del Lobo":[41.33,-3.48],"Pico Mágina":[37.71,-3.47],"Peña Trevinca":[42.17,-6.78],"Pico San Millán":[41.97,-3.12],"Castro Valnera":[43.14,-3.67],"Pico de las Nieves":[27.97,-15.57],"Penyagolosa":[40.22,-0.35],"Cabeza de Manzaneda":[42.23,-7.23],"Turó de l'Home":[41.70,2.44],"Aitana":[38.66,-0.27],"Aizkorri":[42.97,-2.31],"Gorbea":[43.03,-2.77],"Puig Major":[39.81,2.79]};
+
+var geoMontState = {round:0, ok:0, fail:0, deck:[], deckIdx:0};
+
+// ── SUBMODE SELECTOR ──────────────────────────────────────────────
+window.iniciarGeoMont = function() {
+    var html = '<div id="geo-mont-menu" style="position:fixed;top:0;left:0;right:0;bottom:0;background:var(--bg);z-index:99999;display:flex;flex-direction:column;">' +
+        '<div style="padding:12px 16px;display:flex;align-items:center;gap:12px;border-bottom:1px solid var(--border);">' +
+            '<button onclick="document.getElementById(\'geo-mont-menu\').remove();" style="background:none;border:none;color:var(--text);font-size:1.5rem;cursor:pointer;">←</button>' +
+            '<h3 style="margin:0;font-size:1rem;">⛰️ Montañas</h3>' +
+        '</div>' +
+        '<div style="padding:24px 20px;display:flex;flex-direction:column;gap:14px;">' +
+            '<div class="deck-item" onclick="document.getElementById(\'geo-mont-menu\').remove();iniciarGeoMontAltura();" style="border-color:var(--gold);">' +
+                '<div class="deck-icon">📏</div>' +
+                '<div class="deck-info"><h4>Altura</h4>' +
+                '<span style="font-size:0.72rem;color:var(--muted);font-style:italic;display:block;margin-top:2px;">Ordena 4 picos · ¿cuál es más alto? · intrusos</span>' +
+                '<p style="font-size:0.72rem;color:var(--muted);margin-top:4px;">Altitudes de los 26 picos principales</p></div>' +
+                '<div class="deck-arrow">›</div>' +
+            '</div>' +
+            '<div class="deck-item" onclick="document.getElementById(\'geo-mont-menu\').remove();iniciarGeoMontGeo();" style="border-color:#74b9ff;">' +
+                '<div class="deck-icon">🧭</div>' +
+                '<div class="deck-info"><h4>Geografía</h4>' +
+                '<span style="font-size:0.72rem;color:var(--muted);font-style:italic;display:block;margin-top:2px;">Norte/sur/este/oeste · sistema · provincia</span>' +
+                '<p style="font-size:0.72rem;color:var(--muted);margin-top:4px;">Ubicación y clasificación</p></div>' +
+                '<div class="deck-arrow">›</div>' +
+            '</div>' +
+        '</div>' +
+    '</div>';
+    document.body.insertAdjacentHTML('beforeend', html);
+};
+
+// ── SHARED HELPERS ────────────────────────────────────────────────
+function geoMontShuffle(a) {
+    var b = a.slice();
+    for (var i = b.length-1; i > 0; i--) { var j = Math.floor(Math.random()*(i+1)); var t=b[i];b[i]=b[j];b[j]=t; }
+    return b;
+}
+function geoMontOptsGrid(opts, selFn) {
+    return '<div style="display:flex;flex-direction:column;gap:10px;width:100%;max-width:420px;margin-top:10px;">' +
+        opts.map(function(opt) {
+            return '<button data-opt="' + opt.replace(/"/g,'&quot;') + '" class="geomont-btn" ' +
+                'style="background:var(--card2);border:2px solid var(--border2);border-radius:12px;' +
+                'padding:13px 16px;font-size:0.9rem;font-weight:600;color:var(--text);cursor:pointer;text-align:left;">' +
+                opt + '</button>';
+        }).join('') +
+    '</div>';
+}
+function geoMontRevealHeights(correct, opts) {
+    // After answer, show height next to each button
+    opts.forEach(function(name) {
+        var btns = document.querySelectorAll('.geomont-btn');
+        btns.forEach(function(btn) {
+            if (btn.getAttribute('data-opt') === name) {
+                var h = GEO_PICOS[name] ? GEO_PICOS[name].altura : null;
+                if (h) btn.innerHTML = name + ' <span style="color:var(--muted);font-size:0.78rem;font-weight:400;">— ' + h + ' m</span>';
+            }
+        });
+    });
+}
+function geoMontMarkAnswer(chosen, correct, allOpts) {
+    document.querySelectorAll('.geomont-btn').forEach(function(btn) {
+        btn.disabled = true;
+        var v = btn.getAttribute('data-opt');
+        if (v === correct) { btn.style.borderColor='var(--green)'; btn.style.background='rgba(68,212,144,0.2)'; }
+        else if (v === chosen && chosen !== correct) { btn.style.borderColor='var(--red)'; btn.style.background='rgba(255,85,85,0.15)'; }
+    });
+    if (allOpts) geoMontRevealHeights(correct, allOpts);
+}
+function geoMontScoreUpdate(ok, id) {
+    if (ok) {
+        geoMontState.ok++;
+        document.getElementById(id+'-ok').textContent = '✓ ' + geoMontState.ok;
+    } else {
+        geoMontState.fail++;
+        document.getElementById(id+'-fail').textContent = '✗ ' + geoMontState.fail;
+    }
+}
+function geoMontGameHtml(id, title) {
+    var html = '<div id="' + id + '" style="position:fixed;top:0;left:0;right:0;bottom:0;background:var(--bg);z-index:99999;display:flex;flex-direction:column;">' +
+        '<div style="padding:12px 16px;display:flex;align-items:center;gap:12px;border-bottom:1px solid var(--border);">' +
+            '<button id="' + id + '-back" style="background:none;border:none;color:var(--text);font-size:1.5rem;cursor:pointer;">←</button>' +
+            '<div style="flex:1;"><h3 style="margin:0;font-size:1rem;">' + title + '</h3>' +
+            '<div style="display:flex;gap:16px;margin-top:4px;">' +
+                '<span id="' + id + '-ok"    style="color:var(--green);font-size:0.8rem;font-weight:700;">✓ 0</span>' +
+                '<span id="' + id + '-fail"  style="color:var(--red);font-size:0.8rem;font-weight:700;">✗ 0</span>' +
+                '<span id="' + id + '-round" style="color:var(--muted);font-size:0.8rem;">Ronda 0/10</span>' +
+            '</div></div>' +
+        '</div>' +
+        '<div id="' + id + '-content" style="flex:1;overflow-y:auto;padding:20px 16px;display:flex;flex-direction:column;gap:12px;align-items:center;justify-content:center;"></div>' +
+    '</div>';
+    document.body.insertAdjacentHTML('beforeend', html);
+    var backBtn = document.getElementById(id + '-back');
+    if (backBtn) backBtn.addEventListener('click', function() { geoMontClose(id); });
+}
+function geoMontFinalHtml(id, label, relaunchFn) {
+    var pct = geoMontState.ok + geoMontState.fail > 0
+        ? Math.round(geoMontState.ok / (geoMontState.ok + geoMontState.fail) * 100) : 0;
+    var emoji = pct===100?'🏆':pct>=80?'💪':pct>=60?'🙂':'📚';
+    var el = document.getElementById(id);
+    if (!el) return;
+    el.innerHTML = '<div style="display:flex;flex-direction:column;align-items:center;justify-content:center;height:100%;padding:30px;text-align:center;gap:16px;">' +
+        '<div style="font-size:3.5rem;">' + emoji + '</div>' +
+        '<h2 style="color:var(--gold);">⛰️ ' + label + '</h2>' +
+        '<p style="font-size:1.4rem;font-weight:700;">' + pct + '% correcto</p>' +
+        '<p style="color:var(--muted);">' + geoMontState.ok + ' bien · ' + geoMontState.fail + ' mal</p>' +
+        '<button id="' + id + '-replay" style="background:var(--gold);color:#000;border:none;border-radius:12px;padding:12px 28px;font-weight:700;cursor:pointer;font-size:0.95rem;">Otra ronda ⛰️</button>' +
+        '<button id="' + id + '-volver" style="background:transparent;color:var(--muted);border:1px solid var(--border);border-radius:12px;padding:10px;cursor:pointer;font-size:0.85rem;">Volver</button>' +
+    '</div>';
+    var replayBtn = document.getElementById(id + '-replay');
+    var volverBtn = document.getElementById(id + '-volver');
+    if (replayBtn) replayBtn.addEventListener('click', function() { window[relaunchFn](); });
+    if (volverBtn) volverBtn.addEventListener('click', function() { geoMontClose(id); });
+}
+
+// ── SUBMODE A: ALTURA ─────────────────────────────────────────────
+// Tipos: ordenar 4 por altura (drag-free: tap order), ¿cuál es más alto? (4 ops), intruso sistema
+var geoMontAltDeck = [];
+var geoMontAltIdx  = 0;
+
+function geoMontAltBuild() {
+    var deck = [];
+    var picos = Object.keys(GEO_PICOS);
+    var sistemas = {};
+    picos.forEach(function(p){ var s=GEO_PICOS[p].sistema; if(!sistemas[s])sistemas[s]=[]; sistemas[s].push(p); });
+
+    // A1: Ordena 4 de mayor a menor altura (tap in order)
+    for (var k=0; k<30; k++) {
+        var cuatro = geoMontShuffle(picos).slice(0,4);
+        deck.push({tipo:'orden_altura', picos:cuatro});
+    }
+    // A2: ¿Cuál es más alto de 4?
+    for (var k=0; k<20; k++) {
+        var cuatro = geoMontShuffle(picos).slice(0,4);
+        deck.push({tipo:'mas_alto', picos:cuatro});
+    }
+    // A3: ¿Cuál es más bajo de 4?
+    for (var k=0; k<10; k++) {
+        var cuatro = geoMontShuffle(picos).slice(0,4);
+        deck.push({tipo:'mas_bajo', picos:cuatro});
+    }
+    // A4: Intruso sistema — ¿cuál NO pertenece?
+    Object.keys(sistemas).forEach(function(s) {
+        var del_s = sistemas[s]; var otros = picos.filter(function(p){return GEO_PICOS[p].sistema!==s;});
+        if (del_s.length >= 3) deck.push({tipo:'intruso_s', sistema:s, del_s:del_s, otros:otros});
+    });
+    // A5: Clasificación sistema
+    picos.forEach(function(p) {
+        var todosSist = Object.keys(sistemas);
+        deck.push({tipo:'clasif_s', pico:p, sistema:GEO_PICOS[p].sistema, todosSist:todosSist});
+    });
+    return geoMontShuffle(deck);
+}
+
+window.iniciarGeoMontAltura = function() {
+    geoMontState = {round:0, ok:0, fail:0};
+    geoMontAltDeck = geoMontAltBuild();
+    geoMontAltIdx = 0;
+    geoMontGameHtml('geo-mont-alt','📏 Altura');
+    geoMontAltRound();
+};
+
+function geoMontAltRound() {
+    if (!document.getElementById('geo-mont-alt')) return;
+    if (geoMontState.round >= 10) { geoMontFinalHtml('geo-mont-alt','Altura','iniciarGeoMontAltura'); return; }
+    geoMontState.round++;
+    document.getElementById('geo-mont-alt-round').textContent = 'Ronda '+geoMontState.round+'/10';
+    if (geoMontAltIdx >= geoMontAltDeck.length) { geoMontAltDeck=geoMontAltBuild(); geoMontAltIdx=0; }
+    var q = geoMontAltDeck[geoMontAltIdx++];
+    var content = document.getElementById('geo-mont-alt-content');
+    var html = '';
+
+    if (q.tipo === 'orden_altura') {
+        // 4 buttons, tap in order from highest to lowest
+        var sorted = q.picos.slice().sort(function(a,b){return GEO_PICOS[b].altura - GEO_PICOS[a].altura;});
+        geoMontState.orderTarget = sorted;
+        geoMontState.orderSel = [];
+        geoMontState.modo = 'orden';
+        var shuffled = geoMontShuffle(q.picos);
+        html = '<p style="color:var(--muted);font-size:0.85rem;text-align:center;">Toca en orden <b>de mayor a menor altura</b></p>' +
+               '<p style="color:var(--muted);font-size:0.72rem;text-align:center;">1º = más alto · 4º = más bajo</p>' +
+               geoMontOptsGrid(shuffled) +
+               '<p id="geo-mont-alt-hint" style="color:var(--muted);font-size:0.75rem;margin-top:4px;">0/4 seleccionados</p>';
+        content.innerHTML = html;
+        content.querySelectorAll('.geomont-btn').forEach(function(btn) {
+            btn.addEventListener('click', function() { geoMontAltOrdenClick(this); });
+        });
+        return;
+
+    } else if (q.tipo === 'mas_alto') {
+        var correct = q.picos.slice().sort(function(a,b){return GEO_PICOS[b].altura-GEO_PICOS[a].altura;})[0];
+        geoMontState.modo = 'single'; geoMontState.correct = correct; geoMontState.revealPicos = q.picos;
+        html = '<p style="color:var(--muted);font-size:0.85rem;text-align:center;">¿Cuál es el más <b>alto</b>?</p>' +
+               geoMontOptsGrid(geoMontShuffle(q.picos));
+
+    } else if (q.tipo === 'mas_bajo') {
+        var correct = q.picos.slice().sort(function(a,b){return GEO_PICOS[a].altura-GEO_PICOS[b].altura;})[0];
+        geoMontState.modo = 'single'; geoMontState.correct = correct; geoMontState.revealPicos = q.picos;
+        html = '<p style="color:var(--muted);font-size:0.85rem;text-align:center;">¿Cuál es el más <b>bajo</b>?</p>' +
+               geoMontOptsGrid(geoMontShuffle(q.picos));
+
+    } else if (q.tipo === 'intruso_s') {
+        var tres = geoMontShuffle(q.del_s).slice(0,3);
+        var intruso = geoMontShuffle(q.otros)[0];
+        var opts = geoMontShuffle(tres.concat([intruso]));
+        geoMontState.modo='single'; geoMontState.correct=intruso; geoMontState.revealPicos=null;
+        html = '<p style="color:var(--muted);font-size:0.85rem;text-align:center;">¿Cuál <b>NO</b> pertenece a</p>' +
+               '<h2 style="color:#fd79a8;font-size:1.1rem;margin:0;text-align:center;">⛰️ '+q.sistema+'</h2>' +
+               geoMontOptsGrid(opts);
+
+    } else if (q.tipo === 'clasif_s') {
+        var wrongSist = geoMontShuffle(q.todosSist.filter(function(s){return s!==q.sistema;})).slice(0,3);
+        var opts = geoMontShuffle([q.sistema].concat(wrongSist));
+        geoMontState.modo='single'; geoMontState.correct=q.sistema; geoMontState.revealPicos=null;
+        html = '<p style="color:var(--muted);font-size:0.85rem;text-align:center;">¿A qué sistema pertenece?</p>' +
+               '<h2 style="color:#a29bfe;font-size:1.3rem;margin:0;text-align:center;">⛰️ '+q.pico+'</h2>' +
+               geoMontOptsGrid(opts);
+    }
+
+    content.innerHTML = html;
+    content.querySelectorAll('.geomont-btn').forEach(function(btn) {
+        btn.addEventListener('click', function() { geoMontAltAnswer(this.getAttribute('data-opt')); });
+    });
+}
+
+function geoMontAltOrdenClick(btn) {
+    if (btn.disabled) return;
+    var name = btn.getAttribute('data-opt');
+    if (geoMontState.orderSel.includes(name)) return;
+    var n = geoMontState.orderSel.length + 1;
+    geoMontState.orderSel.push(name);
+    btn.innerHTML = n + '. ' + name;
+    btn.style.borderColor = '#74b9ff';
+    btn.style.background  = 'rgba(116,185,255,0.15)';
+    var hint = document.getElementById('geo-mont-alt-hint');
+    if (hint) hint.textContent = n + '/4 seleccionados';
+
+    if (n === 4) {
+        var ok = geoMontState.orderSel.join('|') === geoMontState.orderTarget.join('|');
+        // Reveal heights + correct order
+        document.querySelectorAll('.geomont-btn').forEach(function(b) {
+            b.disabled = true;
+            var nm = b.getAttribute('data-opt');
+            var rank = geoMontState.orderTarget.indexOf(nm) + 1;
+            var h = GEO_PICOS[nm].altura;
+            var selRank = geoMontState.orderSel.indexOf(nm) + 1;
+            var color = (rank === selRank) ? 'var(--green)' : 'var(--red)';
+            b.style.borderColor = color;
+            b.style.background  = (rank===selRank) ? 'rgba(68,212,144,0.2)' : 'rgba(255,85,85,0.15)';
+            b.innerHTML = rank + '. ' + nm + ' <span style="color:var(--muted);font-size:0.78rem;font-weight:400;">— ' + h + ' m</span>';
+        });
+        if (hint) hint.textContent = ok ? '✅ ¡Perfecto!' : '❌ Orden correcto arriba';
+        geoMontScoreUpdate(ok, 'geo-mont-alt');
+        setTimeout(geoMontAltRound, 2000);
+    }
+}
+
+function geoMontAltAnswer(chosen) {
+    var ok = chosen === geoMontState.correct;
+    geoMontMarkAnswer(chosen, geoMontState.correct, geoMontState.revealPicos);
+    geoMontScoreUpdate(ok, 'geo-mont-alt');
+    setTimeout(geoMontAltRound, 1500);
+}
+
+// ── SUBMODE B: GEOGRAFÍA ──────────────────────────────────────────
+var geoMontGeoDeck = [];
+var geoMontGeoIdx  = 0;
+
+var PUNTOS_CARDINALES = {
+    norte: { label:'más al norte',    sort:function(a,b){ return GEO_COORDS[b][0]-GEO_COORDS[a][0]; } },
+    sur:   { label:'más al sur',      sort:function(a,b){ return GEO_COORDS[a][0]-GEO_COORDS[b][0]; } },
+    este:  { label:'más al oriente',  sort:function(a,b){ return GEO_COORDS[b][1]-GEO_COORDS[a][1]; } },
+    oeste: { label:'más al occidente',sort:function(a,b){ return GEO_COORDS[a][1]-GEO_COORDS[b][1]; } },
+};
+var ORDEN_DIRS = {
+    norte_sur: { label:'de norte a sur',   sort:function(a,b){ return GEO_COORDS[b][0]-GEO_COORDS[a][0]; } },
+    sur_norte: { label:'de sur a norte',   sort:function(a,b){ return GEO_COORDS[a][0]-GEO_COORDS[b][0]; } },
+    este_oeste:{ label:'de este a oeste',  sort:function(a,b){ return GEO_COORDS[b][1]-GEO_COORDS[a][1]; } },
+    oeste_este:{ label:'de oeste a este',  sort:function(a,b){ return GEO_COORDS[a][1]-GEO_COORDS[b][1]; } },
+};
+
+function geoMontGeoBuild() {
+    var deck = [];
+    var picos = Object.keys(GEO_PICOS).filter(function(p){ return !!GEO_COORDS[p]; });
+    var continental = picos.filter(function(p){ return GEO_COORDS[p][0]>36 && GEO_COORDS[p][0]<44; });
+    var sistemas = {};
+    picos.forEach(function(p){ var s=GEO_PICOS[p].sistema; if(!sistemas[s])sistemas[s]=[]; sistemas[s].push(p); });
+
+    // G1: ¿Cuál está más al norte/sur/este/oeste? (4 opciones)
+    var dirs = Object.keys(PUNTOS_CARDINALES);
+    for (var k=0; k<25; k++) {
+        var cuatro = geoMontShuffle(continental).slice(0,4);
+        var dir = dirs[k % dirs.length];
+        deck.push({tipo:'ubic', picos:cuatro, dir:dir});
+    }
+
+    // G2: Ordenar 4 de norte a sur / sur a norte / este a oeste / oeste a este
+    var odirs = Object.keys(ORDEN_DIRS);
+    for (var k=0; k<20; k++) {
+        var cuatro = geoMontShuffle(continental).slice(0,4);
+        var dir = odirs[k % odirs.length];
+        deck.push({tipo:'orden_geo', picos:cuatro, dir:dir});
+    }
+
+    // G3: Clasificación provincia
+    picos.forEach(function(p) {
+        var todasProv = Object.values(GEO_PICOS).map(function(x){return x.provincia;}).filter(function(v,i,a){return a.indexOf(v)===i;});
+        deck.push({tipo:'clasif_prov', pico:p, prov:GEO_PICOS[p].provincia, pool:todasProv});
+    });
+
+    return geoMontShuffle(deck);
+}
+
+window.iniciarGeoMontGeo = function() {
+    geoMontState = {round:0, ok:0, fail:0};
+    geoMontGeoDeck = geoMontGeoBuild();
+    geoMontGeoIdx = 0;
+    geoMontGameHtml('geo-mont-geo','🧭 Geografía');
+    geoMontGeoRound();
+};
+
+function geoMontGeoRound() {
+    if (!document.getElementById('geo-mont-geo')) return;
+    if (geoMontState.round >= 10) { geoMontFinalHtml('geo-mont-geo','Geografía','iniciarGeoMontGeo'); return; }
+    geoMontState.round++;
+    document.getElementById('geo-mont-geo-round').textContent = 'Ronda '+geoMontState.round+'/10';
+    if (geoMontGeoIdx >= geoMontGeoDeck.length) { geoMontGeoDeck=geoMontGeoBuild(); geoMontGeoIdx=0; }
+    var q = geoMontGeoDeck[geoMontGeoIdx++];
+    var content = document.getElementById('geo-mont-geo-content');
+    var html = '';
+
+    if (q.tipo === 'ubic') {
+        var cfg = PUNTOS_CARDINALES[q.dir];
+        var correct = q.picos.slice().sort(cfg.sort)[0];
+        geoMontState.modo='single'; geoMontState.correct=correct; geoMontState.revealPicos=null;
+        html = '<p style="color:var(--muted);font-size:0.85rem;text-align:center;">¿Cuál está</p>' +
+               '<h2 style="color:#74b9ff;font-size:1.3rem;margin:0;text-align:center;">🧭 '+cfg.label+'</h2>' +
+               geoMontOptsGrid(geoMontShuffle(q.picos));
+
+    } else if (q.tipo === 'orden_geo') {
+        var cfg = ORDEN_DIRS[q.dir];
+        var sorted = q.picos.slice().sort(cfg.sort);
+        geoMontState.orderTarget = sorted;
+        geoMontState.orderSel = [];
+        geoMontState.modo = 'orden_geo';
+        var shuffled = geoMontShuffle(q.picos);
+        html = '<p style="color:var(--muted);font-size:0.85rem;text-align:center;">Toca en orden <b>'+cfg.label+'</b></p>' +
+               geoMontOptsGrid(shuffled) +
+               '<p id="geo-mont-geo-hint" style="color:var(--muted);font-size:0.75rem;margin-top:4px;">0/4 seleccionados</p>';
+        content.innerHTML = html;
+        content.querySelectorAll('.geomont-btn').forEach(function(btn) {
+            btn.addEventListener('click', function() { geoMontGeoOrdenClick(this); });
+        });
+        return;
+
+    } else if (q.tipo === 'clasif_prov') {
+        var decoys = geoMontShuffle(q.pool.filter(function(p){return p!==q.prov;})).slice(0,3);
+        var opts = geoMontShuffle([q.prov].concat(decoys));
+        geoMontState.modo='single'; geoMontState.correct=q.prov; geoMontState.revealPicos=null;
+        html = '<p style="color:var(--muted);font-size:0.85rem;text-align:center;">¿En qué provincia está?</p>' +
+               '<h2 style="color:#55efc4;font-size:1.3rem;margin:0;text-align:center;">⛰️ '+q.pico+'</h2>' +
+               geoMontOptsGrid(opts);
+    }
+
+    content.innerHTML = html;
+    content.querySelectorAll('.geomont-btn').forEach(function(btn) {
+        btn.addEventListener('click', function() { geoMontGeoAnswer(this.getAttribute('data-opt')); });
+    });
+}
+
+function geoMontGeoOrdenClick(btn) {
+    if (btn.disabled) return;
+    var name = btn.getAttribute('data-opt');
+    if (geoMontState.orderSel.includes(name)) return;
+    var n = geoMontState.orderSel.length + 1;
+    geoMontState.orderSel.push(name);
+    btn.innerHTML = n + '. ' + name;
+    btn.style.borderColor = '#74b9ff';
+    btn.style.background  = 'rgba(116,185,255,0.15)';
+    var hint = document.getElementById('geo-mont-geo-hint');
+    if (hint) hint.textContent = n + '/4 seleccionados';
+
+    if (n === 4) {
+        var ok = geoMontState.orderSel.join('|') === geoMontState.orderTarget.join('|');
+        document.querySelectorAll('.geomont-btn').forEach(function(b) {
+            b.disabled = true;
+            var nm = b.getAttribute('data-opt');
+            var rank = geoMontState.orderTarget.indexOf(nm) + 1;
+            var selRank = geoMontState.orderSel.indexOf(nm) + 1;
+            b.style.borderColor = (rank===selRank)?'var(--green)':'var(--red)';
+            b.style.background  = (rank===selRank)?'rgba(68,212,144,0.2)':'rgba(255,85,85,0.15)';
+            b.innerHTML = rank + '. ' + nm + ' <span style="color:var(--muted);font-size:0.78rem;font-weight:400;">('+GEO_PICOS[nm].sistema+')</span>';
+        });
+        if (hint) hint.textContent = ok ? '✅ ¡Perfecto!' : '❌ Orden correcto arriba';
+        geoMontScoreUpdate(ok, 'geo-mont-geo');
+        setTimeout(geoMontGeoRound, 2000);
+    }
+}
+
+function geoMontGeoAnswer(chosen) {
+    var ok = chosen === geoMontState.correct;
+    geoMontMarkAnswer(chosen, geoMontState.correct, null);
+    geoMontScoreUpdate(ok, 'geo-mont-geo');
+    setTimeout(geoMontGeoRound, 1500);
 }
 </script>
 
@@ -17315,7 +17960,7 @@ window.mostrarTarjetaDelito = function(idx) {
                 if (isGeoEsp) onclickAction = 'abrirSelectorGeoEsp()';
                 
                 const hasSelector = isLitEsp || isHist || isHistEsp || isGeoEsp;
-                const badgeText = isLitEsp ? '7 épocas' : (isHist ? '6 minijuegos' : (isHistEsp ? '5 minijuegos' : (isGeoEsp ? '4 minijuegos' : 'Cargando...')));
+                const badgeText = isLitEsp ? '7 épocas' : (isHist ? '6 minijuegos' : (isHistEsp ? '5 minijuegos' : (isGeoEsp ? '5 minijuegos' : 'Cargando...')));
                 const borderColor = isLitEsp ? '#fab1a0' : (isHist ? '#dc3545' : (isHistEsp ? '#ff7675' : (isGeoEsp ? '#55efc4' : '')));
                 
                 html += `
@@ -17455,7 +18100,7 @@ window.openStudySelector = function() {
       const badgeContent = isLitEsp ? '<span style="background:#fab1a0; color:#000; padding:4px 10px; border-radius:20px; font-size:0.75rem; font-weight:bold;">7 épocas</span>' 
                          : (isHist ? '<span style="background:#dc3545; color:#fff; padding:4px 10px; border-radius:20px; font-size:0.75rem; font-weight:bold;">6 minijuegos</span>'
                          : (isHistEsp ? '<span style="background:#ff7675; color:#fff; padding:4px 10px; border-radius:20px; font-size:0.75rem; font-weight:bold;">5 minijuegos</span>'
-                         : (isGeoEsp ? '<span style="background:#55efc4; color:#000; padding:4px 10px; border-radius:20px; font-size:0.75rem; font-weight:bold;">4 minijuegos</span>'
+                         : (isGeoEsp ? '<span style="background:#55efc4; color:#000; padding:4px 10px; border-radius:20px; font-size:0.75rem; font-weight:bold;">5 minijuegos</span>'
                          : `<span style="background:${isDone ? 'transparent' : (m.color || 'var(--accent)')}; color:${isDone ? 'var(--muted)' : '#000'}; padding:4px 10px; border-radius:20px; font-size:0.75rem; font-weight:bold; white-space:nowrap;">${isDone ? 'Al día ✓' : dueCount + ' hoy'}</span>`)));
       
       container.innerHTML += `
