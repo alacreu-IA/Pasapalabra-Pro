@@ -26602,12 +26602,37 @@ var HIST_UNI_EVENTO_FECHA = [
     function clasificarPorPregunta(respuesta, pregunta) {
         var r = respuesta.trim();
         var q = pregunta ? pregunta.toLowerCase() : '';
+
+        // Por valor de respuesta primero
         if (/^\d{4}(-\d{4})?$/.test(r)) return 'año';
         if (/^\d+$/.test(r)) return 'numero';
+
+        // Por señales en la pregunta (alta confianza)
         if (/director/i.test(q)) return 'director';
-        if (/actor|actriz/i.test(q)) return 'actor';
+        if (/\bactor\b|\bactriz\b/i.test(q)) return 'actor';
         if (/pel[ií]cula|film|taquiller|ganó la palma|mejor pel/i.test(q)) return 'pelicula';
-        if (/obra|dramaturgo|teatro|pieza/i.test(q)) return 'obra';
+
+        // Preguntas sobre géneros u obras teatrales
+        if (/\bgénero\b|\bgénero\s|\bpieza\b|\bobra\b|\bobras\b|\bforma\s+teatral|\btécnica\s+teatral|\bcorriente\b|\bestilo\s+teatral/i.test(q)) {
+            return 'concepto';
+        }
+        // Preguntas sobre personas (autor, dramaturgo, creador...)
+        if (/\bautor\b|\bautora\b|\bcreador\b|\bcreadora\b|\beschribió\b|\bdramaturgo\b|\bdramaturga\b|\bescritora\b|\bcomediante\b/i.test(q)) {
+            return 'persona';
+        }
+
+        // Respuesta empieza en minúscula → concepto/género
+        if (/^[a-záéíóúüñ]/.test(r)) return 'concepto';
+
+        // Señales de género teatral en la respuesta
+        var generos = /grotesca|sacramental|esperpento|nivola|in-yer-face|astracán|jácara|entremés|catarsis|hamartía|loa\b|sainete|comedia\s/i;
+        if (generos.test(r)) return 'concepto';
+
+        // 2+ palabras capitalizadas → persona
+        var palabras = r.split(/\s+/);
+        var caps = palabras.filter(function(w) { return w && w[0] === w[0].toUpperCase() && w[0] !== w[0].toLowerCase(); });
+        if (caps.length >= 2) return 'persona';
+
         return 'nombre';
     }
 
@@ -26631,11 +26656,23 @@ var HIST_UNI_EVENTO_FECHA = [
 
         function tipoOf(r) {
             if (tipoMap && tipoMap[r.toLowerCase()]) return tipoMap[r.toLowerCase()];
+            // Fallback: classify by answer value alone
             var t = r.trim();
             if (/^\d{4}(-\d{4})?$/.test(t)) return 'año';
             if (/^\d+$/.test(t)) return 'numero';
+            // Genre/concept signals
+            var generos = /grotesca|sacramental|esperpento|nivola|in-yer-face|astracán|jácara|entremés|catarsis|hamartía|astracán/i;
+            if (generos.test(t)) return 'concepto';
+            if (/^[a-záéíóúüñ]/.test(t)) return 'concepto'; // starts lowercase
+            // 2+ cap words = persona
+            var caps = t.split(/\s+/).filter(function(w){ return w && w[0] === w[0].toUpperCase() && /[A-Za-záéíóúñ]/.test(w[0]); });
+            if (caps.length >= 2) return 'persona';
             return 'nombre';
         }
+
+        // For 'persona'/'concepto', "broader" fallback should stay within non-año/numero names
+        var isPersonaTipo = tipo === 'persona' || tipo === 'director' || tipo === 'actor';
+        var isConceptoTipo = tipo === 'concepto' || tipo === 'obra';
 
         // First: exact same tipo
         var mismo = pool.filter(function(r) {
@@ -26647,7 +26684,7 @@ var HIST_UNI_EVENTO_FECHA = [
         }
         if (shuffled.length >= n) return shuffled.slice(0, n);
 
-        // Fallback: same broad group (names vs años)
+        // Fallback: same broad group
         var isNumTipo = tipo === 'año' || tipo === 'numero';
         var broader = pool.filter(function(r) {
             var low = r.toLowerCase();
@@ -26655,7 +26692,11 @@ var HIST_UNI_EVENTO_FECHA = [
             if (shuffled.indexOf(r) !== -1) return false;
             var rt = tipoOf(r);
             var isNum = rt === 'año' || rt === 'numero';
-            return isNum === isNumTipo;
+            if (isNum !== isNumTipo) return false;
+            // For persona: exclude conceptos; for concepto: exclude personas
+            if (isPersonaTipo && (rt === 'concepto' || rt === 'nombre')) return false;
+            if (isConceptoTipo && (rt === 'persona' || rt === 'director' || rt === 'actor')) return false;
+            return true;
         });
         for (var i = broader.length-1; i > 0; i--) {
             var j = Math.floor(Math.random()*(i+1)); var t=broader[i]; broader[i]=broader[j]; broader[j]=t;
