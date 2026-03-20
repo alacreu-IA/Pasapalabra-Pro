@@ -21390,6 +21390,7 @@ function loadDeckInfo() {
     if (typeof MAZOS === 'undefined') return;
     const now = Date.now();
     let totalAll = 0, masteredAll = 0;
+    const srsData = loadStudyData();  // { questionText: { level, nextReview } }
 
     MAZOS.forEach(m => {
         const el  = document.getElementById(`deck-info-${m.id}`);
@@ -21399,10 +21400,11 @@ function loadDeckInfo() {
         const total    = m.questions.length;
         const doneToday = countDoneToday(m.id);
 
-        // Niveles SRS
-        const mastered  = m.questions.filter(q => parseInt(localStorage.getItem(`srs_${q.a}`) || '0') > now + 25 * 86400000).length;
-        const learning  = m.questions.filter(q => { const n = parseInt(localStorage.getItem(`srs_${q.a}`) || '0'); return n > now && n <= now + 25 * 86400000; }).length;
-        const pending   = m.questions.filter(q => parseInt(localStorage.getItem(`srs_${q.a}`) || '0') <= now).length;
+        // Niveles SRS — usa q.q como clave (igual que saveStudyData)
+        const getNext = q => { const id = q.q || q.def || ''; const e = srsData[id]; return e ? e.nextReview : 0; };
+        const mastered = m.questions.filter(q => getNext(q) > now + 25 * 86400000).length;
+        const learning = m.questions.filter(q => { const n = getNext(q); return n > now && n <= now + 25 * 86400000; }).length;
+        const pending  = m.questions.filter(q => getNext(q) <= now).length;
 
         const pct = total > 0 ? Math.round((mastered / total) * 100) : 0;
 
@@ -21448,6 +21450,9 @@ function loadDeckInfo() {
         globalEl.textContent = `${globalPct}% — ${motivText}`;
     }
     if (globalBar) globalBar.style.width = globalPct + '%';
+
+    // Mensajes de hito cada 10%
+    comprobarHitoProgreso(globalPct);
 }
 
 function countDoneToday(deckId) {
@@ -26142,67 +26147,7 @@ var RIOS_MUNDIALES = {
 </script>
 
 <script>
-// ================================================================
-// BANNER: Recargar progreso
-// ================================================================
-(function() {
-    function mostrarBannerProgreso() {
-        var srs = localStorage.getItem('pasapalabra_srs');
-        if (!srs) return;  // Nunca ha jugado → no mostrar
-        try {
-            var data = JSON.parse(srs);
-            var keys = Object.keys(data);
-            if (keys.length === 0) return;
-        } catch(e) { return; }
-
-        // Ya existe el banner → no duplicar
-        if (document.getElementById('banner-progreso')) return;
-
-        var banner = document.createElement('div');
-        banner.id = 'banner-progreso';
-        banner.style.cssText = 'position:fixed;bottom:80px;left:50%;transform:translateX(-50%);' +
-            'background:linear-gradient(135deg,var(--card2),var(--card));' +
-            'border:1px solid var(--border2);border-radius:14px;' +
-            'padding:12px 18px;z-index:9990;display:flex;align-items:center;gap:12px;' +
-            'box-shadow:0 4px 20px rgba(0,0,0,0.4);max-width:340px;width:90%;';
-        banner.innerHTML =
-            '<span style="font-size:1.2rem;">📊</span>' +
-            '<div style="flex:1;">' +
-                '<p style="margin:0;font-size:0.82rem;font-weight:600;color:var(--text);">Tienes progreso guardado</p>' +
-                '<p style="margin:2px 0 0;font-size:0.72rem;color:var(--muted);">Recarga para actualizar barras y %</p>' +
-            '</div>' +
-            '<button id="btn-recargar-progreso" style="background:var(--gold);color:#000;border:none;' +
-                'border-radius:10px;padding:8px 14px;font-size:0.8rem;font-weight:700;cursor:pointer;white-space:nowrap;">'+
-                'Actualizar</button>' +
-            '<button id="btn-cerrar-banner" style="background:none;border:none;color:var(--muted);' +
-                'font-size:1.1rem;cursor:pointer;padding:4px;">×</button>';
-
-        document.body.appendChild(banner);
-
-        document.getElementById('btn-recargar-progreso').addEventListener('click', function() {
-            // Relleer SRS y actualizar barras sin perder nada
-            if (typeof loadDeckInfo === 'function') loadDeckInfo();
-            if (typeof openStudySelector === 'function') openStudySelector();
-            banner.remove();
-        });
-        document.getElementById('btn-cerrar-banner').addEventListener('click', function() {
-            banner.remove();
-        });
-
-        // Auto-hide after 8 seconds
-        setTimeout(function() {
-            if (document.getElementById('banner-progreso')) banner.remove();
-        }, 8000);
-    }
-
-    if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', function() {
-            setTimeout(mostrarBannerProgreso, 1500);
-        });
-    } else {
-        setTimeout(mostrarBannerProgreso, 1500);
-    }
-})();
+// Progreso cargado automáticamente al abrir la app.
 </script>
 
 <script>
@@ -26881,6 +26826,110 @@ var HIST_UNI_EVENTO_FECHA = [
         };
     }
 })();
+</script>
+
+<script>
+// ================================================================
+// HITOS DE PROGRESO — Mensajes personalizados cada 10%
+// ================================================================
+var HITOS_NOEMI = {
+    10:  { emoji: '🌱', titulo: '¡Primer paso!',       msg: 'Ya tienes un 10% dominado. Eso es vocabulario real que ya no se te escapa en el rosco. Sigue así.' },
+    20:  { emoji: '🔥', titulo: '¡Ya calientas!',       msg: 'Un 20%. Hay gente que lleva meses preparándose y no llega aquí. Tú llevas un rato y ya estás corriendo.' },
+    30:  { emoji: '💪', titulo: '¡Por encima de la media!', msg: '30% dominado. Ya estás por encima de lo que sabe la mayoría de concursantes cuando llegan al plató. Impresionante.' },
+    40:  { emoji: '⚡', titulo: '¡Ritmo de campeona!',  msg: 'El 40% es territorio de finalistas. Muchos sueñan con llegar aquí. Tú ya estás.' },
+    50:  { emoji: '🏅', titulo: '¡La mitad!',           msg: 'MITAD. Esto no lo consigue cualquiera. La otra mitad es la que separa a los buenos concursantes de los que ganan el bote. Y tú vas a por ese bote.' },
+    60:  { emoji: '🎯', titulo: '¡Zona de peligro!',    msg: '60% y subiendo. Ahora cada pregunta que dominas es una que no te va a temblar la voz en el rosco. Eso vale oro.' },
+    70:  { emoji: '🚀', titulo: '¡Imparable!',          msg: '70%. Estás en el top de los mejores preparados que pasan por Pasapalabra. El rosco te empieza a tener respeto.' },
+    80:  { emoji: '👑', titulo: '¡Élite!',              msg: '80% dominado. Aquí ya hablamos de otra dimensión. Los espectadores de casa te estarían aplaudiendo ahora mismo.' },
+    90:  { emoji: '💎', titulo: '¡Casi perfecta!',      msg: '90%. Ese último 10% es lo que hace que el programa dure meses. Tú ya estás rozando el techo. No pares.' },
+    100: { emoji: '🏆', titulo: '¡BOTE ASEGURADO!',     msg: '100%. Eso no existe casi en ningún concursante. Si llegas al plató así, el bote no es un sueño — es un plan.' },
+};
+
+var _ultimoHitoMostrado = parseInt(localStorage.getItem('ppro_ultimo_hito') || '0');
+
+function comprobarHitoProgreso(pct) {
+    if (pct <= 0) return;
+    // Escalón de 10 en 10 — el más alto alcanzado
+    var escalon = Math.floor(pct / 10) * 10;
+    if (escalon <= 0 || escalon <= _ultimoHitoMostrado) return;
+    if (!HITOS_NOEMI[escalon]) return;
+
+    _ultimoHitoMostrado = escalon;
+    localStorage.setItem('ppro_ultimo_hito', escalon);
+    mostrarHito(HITOS_NOEMI[escalon], escalon);
+}
+
+function mostrarHito(hito, pct) {
+    // No mostrar si ya hay uno visible
+    if (document.getElementById('hito-overlay')) return;
+
+    var overlay = document.createElement('div');
+    overlay.id = 'hito-overlay';
+    overlay.style.cssText = [
+        'position:fixed;top:0;left:0;right:0;bottom:0;',
+        'background:rgba(0,0,0,0.75);',
+        'z-index:99998;',
+        'display:flex;align-items:center;justify-content:center;',
+        'padding:20px;',
+        'animation:fadeInHito 0.3s ease;'
+    ].join('');
+
+    overlay.innerHTML = [
+        '<div style="background:linear-gradient(135deg,var(--card),var(--card2));',
+        'border:2px solid var(--gold);border-radius:24px;',
+        'padding:32px 28px;max-width:360px;width:100%;text-align:center;',
+        'box-shadow:0 8px 40px rgba(240,192,64,0.3);',
+        'animation:scaleInHito 0.35s cubic-bezier(.34,1.56,.64,1);">',
+
+        '<div style="font-size:4rem;margin-bottom:8px;">' + hito.emoji + '</div>',
+
+        '<div style="background:var(--gold);color:#000;',
+        'border-radius:20px;padding:4px 16px;',
+        'font-size:0.75rem;font-weight:800;',
+        'display:inline-block;margin-bottom:12px;letter-spacing:0.05em;">',
+        '🎉 ' + pct + '% DOMINADO</div>',
+
+        '<h2 style="color:var(--gold);font-size:1.4rem;margin:0 0 14px;font-weight:800;">',
+        hito.titulo + '</h2>',
+
+        '<p style="color:var(--text);font-size:0.95rem;line-height:1.6;margin:0 0 24px;">',
+        hito.msg + '</p>',
+
+        '<button id="hito-btn-cerrar" style="',
+        'background:var(--gold);color:#000;border:none;',
+        'border-radius:14px;padding:14px 40px;',
+        'font-size:1rem;font-weight:800;cursor:pointer;',
+        'width:100%;">¡A seguir! 💪</button>',
+
+        '</div>'
+    ].join('');
+
+    // Añadir estilos de animación si no existen
+    if (!document.getElementById('hito-styles')) {
+        var style = document.createElement('style');
+        style.id = 'hito-styles';
+        style.textContent = [
+            '@keyframes fadeInHito { from{opacity:0} to{opacity:1} }',
+            '@keyframes scaleInHito { from{transform:scale(0.7);opacity:0} to{transform:scale(1);opacity:1} }'
+        ].join('');
+        document.head.appendChild(style);
+    }
+
+    document.body.appendChild(overlay);
+
+    document.getElementById('hito-btn-cerrar').addEventListener('click', function() {
+        overlay.style.animation = 'fadeInHito 0.2s ease reverse';
+        setTimeout(function() { overlay.remove(); }, 200);
+    });
+
+    // Click fuera también cierra
+    overlay.addEventListener('click', function(e) {
+        if (e.target === overlay) {
+            overlay.style.animation = 'fadeInHito 0.2s ease reverse';
+            setTimeout(function() { overlay.remove(); }, 200);
+        }
+    });
+}
 </script>
 
 <script>
