@@ -6663,20 +6663,23 @@ window.iniciarGeoMundUbic = function() {
 
 function geoMundUbicBuildDeck() {
     var deck = [];
-    var paises = Object.keys(PAISES);
     var dirs = Object.keys(DIRS_MUND);
-    // Global: 4 países cualquiera
-    for (var k=0;k<60;k++) {
-        var cuatro = geoMundShuffle(paises).slice(0,4);
-        var dir = dirs[k%dirs.length];
+    var conts = Object.keys(PAISES_POR_CONTINENTE).filter(function(c){return PAISES_POR_CONTINENTE[c].length>=4;});
+    // Cuota equilibrada: 1 país de cada continente con >=4 países → 4 totales con diversidad
+    for (var k=0; k<80; k++) {
+        var shuffledConts = geoMundShuffle(conts);
+        // Tomar 1 país de cada uno de los 4 primeros continentes del shuffle
+        var cuatro = shuffledConts.slice(0,4).map(function(c){
+            return geoMundShuffle(PAISES_POR_CONTINENTE[c])[0];
+        });
+        var dir = dirs[k % dirs.length];
         deck.push({tipo:'global', paises:cuatro, dir:dir});
     }
-    // Por continente: ¿cuál está más al X dentro de su continente?
-    Object.keys(PAISES_POR_CONTINENTE).forEach(function(cont) {
+    // Por continente (4 del mismo)
+    conts.forEach(function(cont) {
         var del_cont = PAISES_POR_CONTINENTE[cont];
-        if (del_cont.length < 4) return;
         dirs.forEach(function(dir) {
-            for (var k=0;k<3;k++) {
+            for (var k=0;k<4;k++) {
                 var cuatro = geoMundShuffle(del_cont).slice(0,4);
                 deck.push({tipo:'continente', paises:cuatro, dir:dir, cont:cont});
             }
@@ -6726,11 +6729,12 @@ window.iniciarGeoMundIntruso = function() {
 
 function geoMundIntrusoBuildDeck() {
     var deck = [];
-    Object.keys(PAISES_POR_CONTINENTE).forEach(function(cont) {
+    var conts = Object.keys(PAISES_POR_CONTINENTE).filter(function(c){return PAISES_POR_CONTINENTE[c].length>=3;});
+    // Misma cuota por continente: 10 preguntas cada uno
+    conts.forEach(function(cont) {
         var del_cont = PAISES_POR_CONTINENTE[cont];
         var otros = Object.keys(PAISES).filter(function(p){return PAISES[p].continente!==cont;});
-        if (del_cont.length < 3) return;
-        for (var k=0;k<8;k++) {
+        for (var k=0;k<10;k++) {
             deck.push({cont:cont, del_cont:del_cont, otros:otros});
         }
     });
@@ -6775,7 +6779,7 @@ window.abrirSelectorGeoMund = function() {
         '<div style="padding:15px 20px;display:flex;align-items:center;gap:15px;border-bottom:1px solid var(--border);">' +
             '<button id="geo-mund-sel-back" style="background:none;border:none;color:var(--text);font-size:1.5rem;cursor:pointer;">←</button>' +
             '<div><h2 style="color:var(--text);font-size:1.3rem;margin:0;">🗺️ Geografía Mundial</h2>' +
-            '<p style="color:var(--muted);font-size:0.8rem;margin:4px 0 0 0;">'+totalQ+' preguntas + 3 minijuegos</p></div>' +
+            '<p style="color:var(--muted);font-size:0.8rem;margin:4px 0 0 0;">'+totalQ+' preguntas + 4 minijuegos</p></div>' +
         '</div>' +
         '<div style="padding:20px;display:flex;flex-direction:column;gap:12px;">' +
             '<div class="deck-item" id="geo-mund-rosco-btn" style="border-color:#00b894;background:linear-gradient(135deg,rgba(255,255,255,0.05),transparent);">' +
@@ -6809,6 +6813,13 @@ window.abrirSelectorGeoMund = function() {
                 '<p style="font-size:0.72rem;color:var(--muted);margin-top:4px;">145 países · prioriza falladas</p></div>' +
                 '<div class="deck-arrow">›</div>' +
             '</div>' +
+            '<div class="deck-item" id="geo-mund-mont-btn" style="border-color:var(--gold);">' +
+                '<div class="deck-icon">⛰️</div>' +
+                '<div class="deck-info"><h4>Montañas del mundo</h4>' +
+                '<span style="font-size:0.72rem;color:var(--muted);font-style:italic;display:block;margin-top:2px;">Entrenamiento · Practicar altura</span>' +
+                '<p style="font-size:0.72rem;color:var(--muted);margin-top:4px;">30 cumbres</p></div>' +
+                '<div class="deck-arrow">›</div>' +
+            '</div>' +
         '</div>' +
     '</div>';
     document.body.insertAdjacentHTML('beforeend', html);
@@ -6817,6 +6828,7 @@ window.abrirSelectorGeoMund = function() {
     document.getElementById('geo-mund-ubic-btn').addEventListener('click', function() { geoMundClose('geo-mund-selector'); iniciarGeoMundUbic(); });
     document.getElementById('geo-mund-intruso-btn').addEventListener('click', function() { geoMundClose('geo-mund-selector'); iniciarGeoMundIntruso(); });
     document.getElementById('geo-mund-front-btn').addEventListener('click', function() { geoMundClose('geo-mund-selector'); iniciarGeoMundFronteras(); });
+    document.getElementById('geo-mund-mont-btn').addEventListener('click', function() { geoMundClose('geo-mund-selector'); iniciarMontMund(); });
 };
 </script>
 <script>
@@ -6856,14 +6868,12 @@ window.iniciarGeoMundFronteras = function() {
 };
 
 function geoMundFrontPickType(vecinos) {
-    // Vary question type based on number of neighbors
     var n = vecinos.length;
     var roll = Math.random();
     if (n === 0) return 'none';
-    if (n === 1) return roll < 0.5 ? 'yesno' : 'intruso';
-    if (n >= 3 && roll < 0.35) return 'seleccion';   // select all neighbors
-    if (n >= 3 && roll < 0.55) return 'intruso';      // which is NOT a neighbor
-    return 'yesno';                                     // do X and Y share border?
+    if (n === 1) return 'intruso';           // solo 1 vecino → intruso (más sentido)
+    if (roll < 0.55) return 'seleccion';     // selecciona todos los vecinos
+    return 'intruso';                        // cuál NO limita
 }
 
 function geoMundFrontRound() {
@@ -6965,33 +6975,377 @@ function geoMundFrontRound() {
             });
         });
 
-    } else {
-        // yesno: ¿X e Y comparten frontera?
-        var allPaises = Object.keys(FRONTERAS);
-        var esVecino = Math.random() < 0.5 && vecinos.length > 0;
-        var otro = esVecino
-            ? vecinos[Math.floor(Math.random()*vecinos.length)]
-            : geoMundShuffle(allPaises.filter(function(p){return !vecinos.includes(p)&&p!==pais;}))[0];
-        var correct = esVecino ? 'Sí' : 'No';
-        content.innerHTML =
-            '<p style="color:var(--muted);font-size:0.85rem;text-align:center;">¿Comparten frontera?</p>' +
-            '<h2 style="color:#a29bfe;font-size:1.2rem;margin:0;text-align:center;">'+pais+' — '+otro+'</h2>' +
-            '<div style="display:flex;gap:14px;margin-top:14px;">' +
-            ['Sí','No'].map(function(opt) {
-                return '<button data-opt="'+opt+'" class="geomun-btn" '+
-                    'style="background:var(--card2);border:2px solid var(--border2);border-radius:12px;'+
-                    'padding:16px 36px;font-size:1.1rem;font-weight:700;color:var(--text);cursor:pointer;">'+opt+'</button>';
-            }).join('') + '</div>';
-        content.querySelectorAll('.geomun-btn').forEach(function(btn) {
-            btn.addEventListener('click', function() {
-                var chosen = this.getAttribute('data-opt');
-                var ok = chosen === correct;
-                if (!ok) _fronterasFail[pais] = (_fronterasFail[pais]||0)+1;
-                geoMundMarkAnswer(id, chosen, correct);
-                geoMundScore(id, ok, geoMundFrontState);
-                setTimeout(geoMundFrontRound, 1300);
-            });
+    
+    }
+}</script>
+<script>
+// ================================================================
+// MONTAÑAS MUNDIALES — Modos: Entrenamiento / Altura
+// ================================================================
+var MONTS_MUND = {"Everest": {"altura": 8848, "continente": "Asia"}, "K2": {"altura": 8611, "continente": "Asia"}, "Annapurna": {"altura": 8091, "continente": "Asia"}, "Aconcagua": {"altura": 6961, "continente": "América del Sur"}, "Ojos del Salado": {"altura": 6893, "continente": "América del Sur"}, "Huascarán": {"altura": 6768, "continente": "América del Sur"}, "Chimborazo": {"altura": 6263, "continente": "América del Sur"}, "Denali": {"altura": 6190, "continente": "América del Norte"}, "Monte Logan": {"altura": 5959, "continente": "América del Norte"}, "Cotopaxi": {"altura": 5897, "continente": "América del Sur"}, "Kilimanjaro": {"altura": 5895, "continente": "África"}, "Elbrús": {"altura": 5642, "continente": "Europa"}, "Popocatépetl": {"altura": 5426, "continente": "América del Norte"}, "Monte Kenia": {"altura": 5199, "continente": "África"}, "Ararat": {"altura": 5137, "continente": "Asia"}, "Macizo Vinson": {"altura": 4892, "continente": "Antártida"}, "Puncak Jaya": {"altura": 4884, "continente": "Oceanía"}, "Mont Blanc": {"altura": 4810, "continente": "Europa"}, "Monte Cervino": {"altura": 4478, "continente": "Europa"}, "Monte Whitney": {"altura": 4421, "continente": "América del Norte"}, "Monte Tubkal": {"altura": 4167, "continente": "África"}, "Monte Fuji": {"altura": 3776, "continente": "Asia"}, "Monte Cook": {"altura": 3724, "continente": "Oceanía"}, "Teide": {"altura": 3715, "continente": "Europa"}, "Mulhacén": {"altura": 3479, "continente": "Europa"}, "Fitz Roy": {"altura": 3405, "continente": "América del Sur"}, "Etna": {"altura": 3357, "continente": "Europa"}, "Monte Olimpo": {"altura": 2917, "continente": "Europa"}, "Monte Kosciuszko": {"altura": 2228, "continente": "Oceanía"}, "Monte Sinaí": {"altura": 2285, "continente": "Asia"}};
+
+function montMundShuffle(a) {
+    var b=a.slice();
+    for(var i=b.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1));var t=b[i];b[i]=b[j];b[j]=t;}
+    return b;
+}
+function montMundClose(id) { var el=document.getElementById(id); if(el) el.remove(); }
+
+function montMundGameHtml(id, title) {
+    var html =
+        '<div id="'+id+'" style="position:fixed;top:0;left:0;right:0;bottom:0;background:var(--bg);z-index:99999;display:flex;flex-direction:column;">' +
+        '<div style="padding:12px 16px;display:flex;align-items:center;gap:12px;border-bottom:1px solid var(--border);">' +
+            '<button id="'+id+'-back" style="background:none;border:none;color:var(--text);font-size:1.5rem;cursor:pointer;">←</button>' +
+            '<div style="flex:1;"><h3 style="margin:0;font-size:1rem;">'+title+'</h3>' +
+            '<div style="display:flex;gap:16px;margin-top:4px;">' +
+                '<span id="'+id+'-ok"    style="color:var(--green);font-size:0.8rem;font-weight:700;">✓ 0</span>' +
+                '<span id="'+id+'-fail"  style="color:var(--red);font-size:0.8rem;font-weight:700;">✗ 0</span>' +
+                '<span id="'+id+'-round" style="color:var(--muted);font-size:0.8rem;">0/10</span>' +
+            '</div></div>' +
+        '</div>' +
+        '<div id="'+id+'-content" style="flex:1;overflow-y:auto;padding:20px 16px;display:flex;flex-direction:column;gap:12px;align-items:center;justify-content:center;"></div>' +
+    '</div>';
+    document.body.insertAdjacentHTML('beforeend', html);
+    document.getElementById(id+'-back').addEventListener('click', function() { montMundClose(id); });
+}
+
+function montMundOptsHtml(opts, showHeight) {
+    return '<div style="display:flex;flex-direction:column;gap:9px;width:100%;max-width:420px;margin-top:10px;">' +
+        opts.map(function(opt) {
+            var h = MONTS_MUND[opt] ? MONTS_MUND[opt].altura : null;
+            var label = showHeight ? opt+' ('+h+' m)' : opt;
+            return '<button data-opt="'+opt.replace(/"/g,'&quot;')+'" class="montmund-btn" ' +
+                'style="background:var(--card2);border:2px solid var(--border2);border-radius:12px;' +
+                'padding:13px 16px;font-size:0.88rem;font-weight:600;color:var(--text);cursor:pointer;text-align:left;">' +
+                label+'</button>';
+        }).join('') +
+    '</div>';
+}
+
+function montMundRevealHeights(opts) {
+    document.querySelectorAll('.montmund-btn').forEach(function(btn) {
+        var nm = btn.getAttribute('data-opt');
+        var h = MONTS_MUND[nm] ? MONTS_MUND[nm].altura : null;
+        if (h && !btn.textContent.includes('m)')) {
+            btn.innerHTML = nm + ' <span style="color:var(--muted);font-size:0.78rem;font-weight:400;">— '+h+' m</span>';
+        }
+    });
+}
+
+function montMundMarkAnswer(id, chosen, correct, revealH) {
+    document.querySelectorAll('#'+id+'-content .montmund-btn').forEach(function(btn) {
+        btn.disabled = true;
+        var v = btn.getAttribute('data-opt');
+        if (v === correct) { btn.style.borderColor='var(--green)'; btn.style.background='rgba(68,212,144,0.2)'; }
+        else if (v === chosen && chosen !== correct) { btn.style.borderColor='var(--red)'; btn.style.background='rgba(255,85,85,0.15)'; }
+    });
+    if (revealH) montMundRevealHeights();
+}
+
+function montMundScore(id, ok, state) {
+    if (ok) { state.ok++; document.getElementById(id+'-ok').textContent='✓ '+state.ok; }
+    else    { state.fail++; document.getElementById(id+'-fail').textContent='✗ '+state.fail; }
+}
+
+function montMundFinal(id, label, relaunchFn, state) {
+    var pct = state.ok+state.fail>0 ? Math.round(state.ok/(state.ok+state.fail)*100) : 0;
+    var emoji = pct===100?'🏆':pct>=80?'💪':pct>=60?'🙂':'📚';
+    var el = document.getElementById(id);
+    if (!el) return;
+    el.innerHTML = '<div style="display:flex;flex-direction:column;align-items:center;justify-content:center;height:100%;padding:30px;text-align:center;gap:16px;">' +
+        '<div style="font-size:3.5rem;">'+emoji+'</div>' +
+        '<h2 style="color:var(--gold);">⛰️ '+label+'</h2>' +
+        '<p style="font-size:1.4rem;font-weight:700;">'+pct+'% correcto</p>' +
+        '<p style="color:var(--muted);">'+state.ok+' bien · '+state.fail+' mal</p>' +
+        '<button id="'+id+'-replay" style="background:var(--gold);color:#000;border:none;border-radius:12px;padding:12px 28px;font-weight:700;cursor:pointer;font-size:0.95rem;">Otra ronda ⛰️</button>' +
+        '<button id="'+id+'-volver" style="background:transparent;color:var(--muted);border:1px solid var(--border);border-radius:12px;padding:10px;cursor:pointer;font-size:0.85rem;">Volver</button>' +
+    '</div>';
+    document.getElementById(id+'-replay').addEventListener('click', function() { window[relaunchFn](); });
+    document.getElementById(id+'-volver').addEventListener('click', function() { montMundClose(id); });
+}
+
+// ── MENU SELECTOR ────────────────────────────────────────────────
+window.iniciarMontMund = function() {
+    var html = '<div id="mont-mund-menu" style="position:fixed;top:0;left:0;right:0;bottom:0;background:var(--bg);z-index:99999;display:flex;flex-direction:column;">' +
+        '<div style="padding:12px 16px;display:flex;align-items:center;gap:12px;border-bottom:1px solid var(--border);">' +
+            '<button id="mont-mund-menu-back" style="background:none;border:none;color:var(--text);font-size:1.5rem;cursor:pointer;">←</button>' +
+            '<h3 style="margin:0;font-size:1rem;">⛰️ Montañas del mundo</h3>' +
+        '</div>' +
+        '<div style="padding:24px 20px;display:flex;flex-direction:column;gap:14px;">' +
+            '<div class="deck-item" id="mont-mund-train-btn" style="border-color:var(--gold);">' +
+                '<div class="deck-icon">🔹</div>' +
+                '<div class="deck-info"><h4>Entrenamiento</h4>' +
+                '<span style="font-size:0.72rem;color:var(--muted);font-style:italic;display:block;margin-top:2px;">Mezcla: altura, continente, orden, intrusos</span>' +
+                '<p style="font-size:0.72rem;color:var(--muted);margin-top:4px;">30 cumbres · todos los tipos</p></div>' +
+                '<div class="deck-arrow">›</div>' +
+            '</div>' +
+            '<div class="deck-item" id="mont-mund-altura-btn" style="border-color:#74b9ff;">' +
+                '<div class="deck-icon">🔸</div>' +
+                '<div class="deck-info"><h4>Practicar altura</h4>' +
+                '<span style="font-size:0.72rem;color:var(--muted);font-style:italic;display:block;margin-top:2px;">¿Cuál es más alto? Ordenar 4 · altimetría pura</span>' +
+                '<p style="font-size:0.72rem;color:var(--muted);margin-top:4px;">Revela la altura al responder</p></div>' +
+                '<div class="deck-arrow">›</div>' +
+            '</div>' +
+        '</div>' +
+    '</div>';
+    document.body.insertAdjacentHTML('beforeend', html);
+    document.getElementById('mont-mund-menu-back').addEventListener('click', function() { montMundClose('mont-mund-menu'); });
+    document.getElementById('mont-mund-train-btn').addEventListener('click', function() { montMundClose('mont-mund-menu'); iniciarMontMundTrain(); });
+    document.getElementById('mont-mund-altura-btn').addEventListener('click', function() { montMundClose('mont-mund-menu'); iniciarMontMundAltura(); });
+};
+
+// ── HELPERS DECK ─────────────────────────────────────────────────
+function montMundByCont() {
+    var byCont = {};
+    Object.keys(MONTS_MUND).forEach(function(m) {
+        var c = MONTS_MUND[m].continente;
+        if (!byCont[c]) byCont[c] = [];
+        byCont[c].push(m);
+    });
+    return byCont;
+}
+
+// Cuota equilibrada: 1 monte de cada continente disponible
+function montMundCuatro() {
+    var byCont = montMundByCont();
+    var conts = montMundShuffle(Object.keys(byCont));
+    var result = [];
+    conts.forEach(function(c) {
+        if (result.length < 4) result.push(montMundShuffle(byCont[c])[0]);
+    });
+    // Si hay menos de 4 continentes, completar con aleatorios
+    var all = Object.keys(MONTS_MUND);
+    while (result.length < 4) {
+        var extra = montMundShuffle(all.filter(function(m){return !result.includes(m);}))[0];
+        if (extra) result.push(extra);
+        else break;
+    }
+    return montMundShuffle(result);
+}
+
+// ── MODO ENTRENAMIENTO ───────────────────────────────────────────
+var montMundTrainState = {ok:0,fail:0,deck:[],deckIdx:0,round:0};
+
+function montMundBuildTrainDeck() {
+    var deck = [];
+    var all = Object.keys(MONTS_MUND);
+    var byCont = montMundByCont();
+    var conts = Object.keys(byCont);
+
+    // T1: ¿Cuál es más alto? (cuota continentes)
+    for (var k=0;k<20;k++) {
+        deck.push({tipo:'mas_alto', picos:montMundCuatro()});
+    }
+    // T2: ¿Cuál es más bajo? (cuota continentes)
+    for (var k=0;k<10;k++) {
+        deck.push({tipo:'mas_bajo', picos:montMundCuatro()});
+    }
+    // T3: Ordenar 4 de mayor a menor
+    for (var k=0;k<15;k++) {
+        deck.push({tipo:'orden', picos:montMundCuatro()});
+    }
+    // T4: ¿A qué continente pertenece?
+    all.forEach(function(m) {
+        deck.push({tipo:'continente', monte:m, cont:MONTS_MUND[m].continente, todosConts:conts});
+    });
+    // T5: Intruso de continente
+    conts.forEach(function(c) {
+        var del_c = byCont[c]; var otros = all.filter(function(m){return MONTS_MUND[m].continente!==c;});
+        if (del_c.length>=3) {
+            for(var k=0;k<4;k++) deck.push({tipo:'intruso_cont', cont:c, del_c:del_c, otros:otros});
+        }
+    });
+    return montMundShuffle(deck);
+}
+
+window.iniciarMontMundTrain = function() {
+    montMundTrainState = {ok:0,fail:0,deck:[],deckIdx:0,round:0};
+    montMundGameHtml('mont-mund-train','🔹 Entrenamiento');
+    montMundTrainRound();
+};
+
+function montMundTrainRound() {
+    var id = 'mont-mund-train';
+    if (!document.getElementById(id)) return;
+    if (montMundTrainState.round>=10) { montMundFinal(id,'Entrenamiento','iniciarMontMundTrain',montMundTrainState); return; }
+    montMundTrainState.round++;
+    document.getElementById(id+'-round').textContent = montMundTrainState.round+'/10';
+    if (!montMundTrainState.deck.length || montMundTrainState.deckIdx>=montMundTrainState.deck.length) {
+        montMundTrainState.deck = montMundBuildTrainDeck();
+        montMundTrainState.deckIdx = 0;
+    }
+    var q = montMundTrainState.deck[montMundTrainState.deckIdx++];
+    var content = document.getElementById(id+'-content');
+    var html = '';
+
+    if (q.tipo === 'mas_alto') {
+        var correct = q.picos.slice().sort(function(a,b){return MONTS_MUND[b].altura-MONTS_MUND[a].altura;})[0];
+        montMundTrainState.correct = correct; montMundTrainState.revealH = true;
+        html = '<p style="color:var(--muted);font-size:0.85rem;text-align:center;">¿Cuál es el más <b>alto</b>?</p>' + montMundOptsHtml(q.picos, false);
+    } else if (q.tipo === 'mas_bajo') {
+        var correct = q.picos.slice().sort(function(a,b){return MONTS_MUND[a].altura-MONTS_MUND[b].altura;})[0];
+        montMundTrainState.correct = correct; montMundTrainState.revealH = true;
+        html = '<p style="color:var(--muted);font-size:0.85rem;text-align:center;">¿Cuál es el más <b>bajo</b>?</p>' + montMundOptsHtml(q.picos, false);
+    } else if (q.tipo === 'continente') {
+        var otros = montMundShuffle(q.todosConts.filter(function(c){return c!==q.cont;})).slice(0,3);
+        var opts = montMundShuffle([q.cont].concat(otros));
+        montMundTrainState.correct = q.cont; montMundTrainState.revealH = false;
+        html = '<p style="color:var(--muted);font-size:0.85rem;text-align:center;">¿En qué continente está?</p>' +
+               '<h2 style="color:#a29bfe;font-size:1.3rem;margin:0;text-align:center;">⛰️ '+q.monte+'</h2>' +
+               montMundOptsHtml(opts, false);
+    } else if (q.tipo === 'intruso_cont') {
+        var tres = montMundShuffle(q.del_c).slice(0,3);
+        var intruso = montMundShuffle(q.otros)[0];
+        var opts = montMundShuffle(tres.concat([intruso]));
+        montMundTrainState.correct = intruso; montMundTrainState.revealH = false;
+        html = '<p style="color:var(--muted);font-size:0.85rem;text-align:center;">¿Cuál <b>NO</b> está en</p>' +
+               '<h2 style="color:#fd79a8;font-size:1.2rem;margin:0;text-align:center;">'+q.cont+'</h2>' +
+               montMundOptsHtml(opts, false);
+    } else if (q.tipo === 'orden') {
+        var sorted = q.picos.slice().sort(function(a,b){return MONTS_MUND[b].altura-MONTS_MUND[a].altura;});
+        montMundTrainState.orderTarget = sorted;
+        montMundTrainState.orderSel = [];
+        montMundTrainState.modo = 'orden';
+        html = '<p style="color:var(--muted);font-size:0.85rem;text-align:center;">Ordena de <b>mayor a menor altura</b></p>' +
+               '<p style="color:var(--muted);font-size:0.72rem;text-align:center;">Toca en orden: 1º=más alto</p>' +
+               montMundOptsHtml(montMundShuffle(q.picos), false) +
+               '<p id="'+id+'-hint" style="color:var(--muted);font-size:0.75rem;margin-top:4px;">0/4 seleccionados</p>';
+        content.innerHTML = html;
+        content.querySelectorAll('.montmund-btn').forEach(function(btn) {
+            btn.addEventListener('click', function() { montMundTrainOrdenClick(this, id); });
         });
+        return;
+    }
+
+    content.innerHTML = html;
+    content.querySelectorAll('.montmund-btn').forEach(function(btn) {
+        btn.addEventListener('click', function() {
+            var chosen = this.getAttribute('data-opt');
+            var ok = chosen === montMundTrainState.correct;
+            montMundMarkAnswer(id, chosen, montMundTrainState.correct, montMundTrainState.revealH);
+            montMundScore(id, ok, montMundTrainState);
+            setTimeout(montMundTrainRound, 1400);
+        });
+    });
+}
+
+function montMundTrainOrdenClick(btn, id) {
+    if (btn.disabled) return;
+    var nm = btn.getAttribute('data-opt');
+    if (montMundTrainState.orderSel.includes(nm)) return;
+    var n = montMundTrainState.orderSel.length+1;
+    montMundTrainState.orderSel.push(nm);
+    btn.innerHTML = n+'. '+nm;
+    btn.style.borderColor='#74b9ff'; btn.style.background='rgba(116,185,255,0.15)';
+    var hint = document.getElementById(id+'-hint');
+    if (hint) hint.textContent = n+'/4 seleccionados';
+    if (n===4) {
+        var ok = montMundTrainState.orderSel.join('|') === montMundTrainState.orderTarget.join('|');
+        document.querySelectorAll('.montmund-btn').forEach(function(b) {
+            b.disabled=true;
+            var nm2=b.getAttribute('data-opt');
+            var rank=montMundTrainState.orderTarget.indexOf(nm2)+1;
+            var selRank=montMundTrainState.orderSel.indexOf(nm2)+1;
+            var h=MONTS_MUND[nm2].altura;
+            b.style.borderColor=(rank===selRank)?'var(--green)':'var(--red)';
+            b.style.background=(rank===selRank)?'rgba(68,212,144,0.2)':'rgba(255,85,85,0.15)';
+            b.innerHTML=rank+'. '+nm2+' <span style="color:var(--muted);font-size:0.78rem;font-weight:400;">— '+h+' m</span>';
+        });
+        if (hint) hint.textContent = ok?'✅ ¡Perfecto!':'❌ Orden correcto arriba';
+        montMundScore(id, ok, montMundTrainState);
+        setTimeout(montMundTrainRound, 2000);
+    }
+}
+
+// ── MODO ALTURA ───────────────────────────────────────────────────
+var montMundAltState = {ok:0,fail:0,deck:[],deckIdx:0,round:0};
+
+function montMundBuildAltDeck() {
+    var deck = [];
+    var all = Object.keys(MONTS_MUND);
+    // Solo preguntas de altura: ¿cuál más alto? ¿más bajo? Ordenar 4
+    for (var k=0;k<25;k++) deck.push({tipo:'mas_alto', picos:montMundCuatro()});
+    for (var k=0;k<15;k++) deck.push({tipo:'mas_bajo', picos:montMundCuatro()});
+    for (var k=0;k<20;k++) deck.push({tipo:'orden', picos:montMundCuatro()});
+    return montMundShuffle(deck);
+}
+
+window.iniciarMontMundAltura = function() {
+    montMundAltState = {ok:0,fail:0,deck:[],deckIdx:0,round:0};
+    montMundGameHtml('mont-mund-alt','🔸 Practicar altura');
+    montMundAltRound();
+};
+
+function montMundAltRound() {
+    var id = 'mont-mund-alt';
+    if (!document.getElementById(id)) return;
+    if (montMundAltState.round>=10) { montMundFinal(id,'Practicar altura','iniciarMontMundAltura',montMundAltState); return; }
+    montMundAltState.round++;
+    document.getElementById(id+'-round').textContent = montMundAltState.round+'/10';
+    if (!montMundAltState.deck.length || montMundAltState.deckIdx>=montMundAltState.deck.length) {
+        montMundAltState.deck = montMundBuildAltDeck();
+        montMundAltState.deckIdx = 0;
+    }
+    var q = montMundAltState.deck[montMundAltState.deckIdx++];
+    var content = document.getElementById(id+'-content');
+
+    if (q.tipo === 'orden') {
+        var sorted = q.picos.slice().sort(function(a,b){return MONTS_MUND[b].altura-MONTS_MUND[a].altura;});
+        montMundAltState.orderTarget = sorted;
+        montMundAltState.orderSel = [];
+        content.innerHTML =
+            '<p style="color:var(--muted);font-size:0.85rem;text-align:center;">Ordena de <b>mayor a menor altura</b></p>' +
+            montMundOptsHtml(montMundShuffle(q.picos), false) +
+            '<p id="'+id+'-hint" style="color:var(--muted);font-size:0.75rem;margin-top:4px;">0/4 seleccionados</p>';
+        content.querySelectorAll('.montmund-btn').forEach(function(btn) {
+            btn.addEventListener('click', function() { montMundAltOrdenClick(this, id); });
+        });
+        return;
+    }
+
+    var correct = q.tipo==='mas_alto'
+        ? q.picos.slice().sort(function(a,b){return MONTS_MUND[b].altura-MONTS_MUND[a].altura;})[0]
+        : q.picos.slice().sort(function(a,b){return MONTS_MUND[a].altura-MONTS_MUND[b].altura;})[0];
+    montMundAltState.correct = correct;
+    var label = q.tipo==='mas_alto' ? 'más <b>alto</b>' : 'más <b>bajo</b>';
+    content.innerHTML = '<p style="color:var(--muted);font-size:0.85rem;text-align:center;">¿Cuál es el '+label+'?</p>' +
+                        montMundOptsHtml(q.picos, false);
+    content.querySelectorAll('.montmund-btn').forEach(function(btn) {
+        btn.addEventListener('click', function() {
+            var chosen = this.getAttribute('data-opt');
+            var ok = chosen === montMundAltState.correct;
+            montMundMarkAnswer(id, chosen, montMundAltState.correct, true);
+            montMundScore(id, ok, montMundAltState);
+            setTimeout(montMundAltRound, 1500);
+        });
+    });
+}
+
+function montMundAltOrdenClick(btn, id) {
+    if (btn.disabled) return;
+    var nm = btn.getAttribute('data-opt');
+    if (montMundAltState.orderSel.includes(nm)) return;
+    var n = montMundAltState.orderSel.length+1;
+    montMundAltState.orderSel.push(nm);
+    btn.innerHTML = n+'. '+nm;
+    btn.style.borderColor='#74b9ff'; btn.style.background='rgba(116,185,255,0.15)';
+    var hint = document.getElementById(id+'-hint');
+    if (hint) hint.textContent = n+'/4 seleccionados';
+    if (n===4) {
+        var ok = montMundAltState.orderSel.join('|') === montMundAltState.orderTarget.join('|');
+        document.querySelectorAll('.montmund-btn').forEach(function(b) {
+            b.disabled=true;
+            var nm2=b.getAttribute('data-opt');
+            var rank=montMundAltState.orderTarget.indexOf(nm2)+1;
+            var selRank=montMundAltState.orderSel.indexOf(nm2)+1;
+            var h=MONTS_MUND[nm2].altura;
+            b.style.borderColor=(rank===selRank)?'var(--green)':'var(--red)';
+            b.style.background=(rank===selRank)?'rgba(68,212,144,0.2)':'rgba(255,85,85,0.15)';
+            b.innerHTML=rank+'. '+nm2+' <span style="color:var(--muted);font-size:0.78rem;font-weight:400;">— '+h+' m</span>';
+        });
+        if (hint) hint.textContent = ok?'✅ ¡Perfecto!':'❌ Orden correcto arriba';
+        montMundScore(id, ok, montMundAltState);
+        setTimeout(montMundAltRound, 2000);
     }
 }
 </script>
@@ -18380,7 +18734,7 @@ window.mostrarTarjetaDelito = function(idx) {
                 if (isGeoMund) onclickAction = 'abrirSelectorGeoMund()';
                 
                 const hasSelector = isLitEsp || isHist || isHistEsp || isGeoEsp || isGeoMund;
-                const badgeText = isLitEsp ? '7 épocas' : (isHist ? '6 minijuegos' : (isHistEsp ? '5 minijuegos' : (isGeoEsp ? '5 minijuegos' : (isGeoMund ? '3 minijuegos' : 'Cargando...'))));
+                const badgeText = isLitEsp ? '7 épocas' : (isHist ? '6 minijuegos' : (isHistEsp ? '5 minijuegos' : (isGeoEsp ? '5 minijuegos' : (isGeoMund ? '4 minijuegos' : 'Cargando...'))));
                 const borderColor = isLitEsp ? '#fab1a0' : (isHist ? '#dc3545' : (isHistEsp ? '#ff7675' : (isGeoEsp ? '#55efc4' : (isGeoMund ? '#00b894' : ''))));
                 
                 html += `
@@ -18523,7 +18877,7 @@ window.openStudySelector = function() {
                          : (isHist ? '<span style="background:#dc3545; color:#fff; padding:4px 10px; border-radius:20px; font-size:0.75rem; font-weight:bold;">6 minijuegos</span>'
                          : (isHistEsp ? '<span style="background:#ff7675; color:#fff; padding:4px 10px; border-radius:20px; font-size:0.75rem; font-weight:bold;">5 minijuegos</span>'
                          : (isGeoEsp ? '<span style="background:#55efc4; color:#000; padding:4px 10px; border-radius:20px; font-size:0.75rem; font-weight:bold;">5 minijuegos</span>'
-                         : (isGeoMund ? '<span style="background:#00b894; color:#fff; padding:4px 10px; border-radius:20px; font-size:0.75rem; font-weight:bold;">3 minijuegos</span>'
+                         : (isGeoMund ? '<span style="background:#00b894; color:#fff; padding:4px 10px; border-radius:20px; font-size:0.75rem; font-weight:bold;">4 minijuegos</span>'
                          : `<span style="background:${isDone ? 'transparent' : (m.color || 'var(--accent)')}; color:${isDone ? 'var(--muted)' : '#000'}; padding:4px 10px; border-radius:20px; font-size:0.75rem; font-weight:bold; white-space:nowrap;">${isDone ? 'Al día ✓' : dueCount + ' hoy'}</span>`))));
       
       container.innerHTML += `
