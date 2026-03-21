@@ -21390,7 +21390,7 @@ function updateStreak() {
 function loadDeckInfo() {
     if (typeof MAZOS === 'undefined') return;
     const now = Date.now();
-    let totalAll = 0, masteredAll = 0;
+    let totalAll = 0, seenAll = 0;
     const srsData = loadStudyData();  // { questionText: { level, nextReview } }
 
     MAZOS.forEach(m => {
@@ -21398,56 +21398,68 @@ function loadDeckInfo() {
         const dom = document.getElementById(`dom-${m.id}`);
         if (!el) return;
 
-        const total    = m.questions.length;
+        const total = m.questions.length;
         const doneToday = countDoneToday(m.id);
 
         // Niveles SRS — usa q.q como clave (igual que saveStudyData)
-        const getNext = q => { const id = q.q || q.def || ''; const e = srsData[id]; return e ? e.nextReview : 0; };
-        const mastered = m.questions.filter(q => getNext(q) > now + 25 * 86400000).length;
-        const learning = m.questions.filter(q => { const n = getNext(q); return n > now && n <= now + 25 * 86400000; }).length;
-        const pending  = m.questions.filter(q => getNext(q) <= now).length;
+        const getEntry = q => { const id = q.q || q.def || ''; return srsData[id] || null; };
 
-        const pct = total > 0 ? Math.round((mastered / total) * 100) : 0;
+        // Vistas: tarjetas estudiadas al menos 1 vez (tienen entrada en srsData)
+        const seen     = m.questions.filter(q => getEntry(q) !== null).length;
+        // Aprendidas: nivel >= 3 (7+ días → bien consolidadas)
+        const learned  = m.questions.filter(q => { const e = getEntry(q); return e && e.level >= 3; }).length;
+        // Al día: próxima revisión en el futuro
+        const upToDate = m.questions.filter(q => { const e = getEntry(q); return e && e.nextReview > now; }).length;
+        // Pendientes hoy
+        const pending  = seen - upToDate;
+
+        // Barra y % usando "vistas" — refleja el trabajo real
+        const pct = total > 0 ? Math.round((seen / total) * 100) : 0;
 
         // Badge de estado
         let badgeClass, badgeText;
-        if (mastered === 0 && learning === 0) {
+        if (seen === 0) {
             badgeClass = 'dsb-new';      badgeText = '✦ Sin empezar';
         } else if (pct < 30) {
-            badgeClass = 'dsb-learning'; badgeText = '⚡ Aprendiendo';
+            badgeClass = 'dsb-learning'; badgeText = '⚡ Empezando';
         } else if (pct < 70) {
-            badgeClass = 'dsb-good';     badgeText = '✔ Bien encaminada';
+            badgeClass = 'dsb-good';     badgeText = '✔ Buen ritmo';
+        } else if (pct < 100) {
+            badgeClass = 'dsb-mastered'; badgeText = '🔥 ¡Casi!';
         } else {
-            badgeClass = 'dsb-mastered'; badgeText = '🏆 Dominada';
+            badgeClass = 'dsb-mastered'; badgeText = '🏆 Completada';
         }
 
         // Texto de progreso
+        const learnedTxt = learned > 0 ? ` · ${learned} sólidas` : '';
         const pendingTxt = pending > 0 ? `${pending} pendientes` : '✓ Al día';
         const todayTxt   = doneToday > 0 ? ` · ${doneToday} hoy` : '';
-        const progressTxt = `${mastered}/${total} dominadas · ${pendingTxt}${todayTxt}`;
+        const progressTxt = `${seen}/${total} vistas${learnedTxt} · ${pendingTxt}${todayTxt}`;
 
-        // DOM: reemplazar contenido del p con row + badge
+        // DOM
         el.innerHTML = `<div class="deck-progress-row">
             <span class="deck-progress-text">${progressTxt}</span>
             <span class="deck-status-badge ${badgeClass}">${badgeText}</span>
         </div>`;
 
-        // Barra con color del mazo si está disponible
         if (dom) {
             dom.style.width = pct + '%';
             if (m.color) dom.style.background = `linear-gradient(90deg, ${m.color}99, ${m.color})`;
         }
 
-        totalAll    += total;
-        masteredAll += mastered;
+        totalAll += total;
+        seenAll  += seen;
     });
 
-    // Global bar
-    const globalPct = totalAll > 0 ? Math.round((masteredAll / totalAll) * 100) : 0;
-    const globalEl = document.getElementById('global-pct');
+    // Global bar — basada en tarjetas vistas
+    const globalPct = totalAll > 0 ? Math.round((seenAll / totalAll) * 100) : 0;
+    const globalEl  = document.getElementById('global-pct');
     const globalBar = document.getElementById('global-bar-fill');
     if (globalEl) {
-        const motivText = globalPct === 0 ? '¡Empieza hoy!' : globalPct < 20 ? 'Calentando motores' : globalPct < 50 ? 'Buen ritmo' : globalPct < 80 ? '¡Ya casi!' : '¡Imparable!';
+        const motivText = globalPct === 0   ? '¡Empieza hoy!'       :
+                          globalPct < 20    ? 'Calentando motores'   :
+                          globalPct < 50    ? 'Buen ritmo'           :
+                          globalPct < 80    ? '¡Ya casi!'            : '¡Imparable!';
         globalEl.textContent = `${globalPct}% — ${motivText}`;
     }
     if (globalBar) globalBar.style.width = globalPct + '%';
@@ -21849,7 +21861,11 @@ function showRaeCard() {
     var data = raeSession[raeIndex];
     if (!data) return;
 
-    // Reset: show front, hide back
+    // Reset: show front, hide back — clear stale content first
+    document.getElementById('rae-defs').innerHTML    = '';
+    document.getElementById('rae-extras').innerHTML  = '';
+    document.getElementById('rae-def-text').textContent = '';
+    document.getElementById('rae-acep-hint').textContent = '';
     document.getElementById('rae-front').style.display = 'flex';
     document.getElementById('rae-back').style.display  = 'none';
 
@@ -24333,6 +24349,8 @@ function mostrarCadena() {
             </div>
         </div>
     `;
+    var _old = document.getElementById('cadena-game');
+    if (_old) _old.remove();
     document.body.insertAdjacentHTML('beforeend', html);
     
     document.getElementById('cadena-submit').addEventListener('click', function() {
@@ -24410,16 +24428,15 @@ function verificarRespuestaCadena() {
         cadenaState.indicePregunta++;
         
         if (cadenaState.indicePregunta >= cadenaState.cadenaActual.preguntas.length) {
-            // CADENA COMPLETADA
+            // CADENA COMPLETADA — el Siguiente del override llamará mostrarCadena
+            // que detectará idx >= length y mostrará resultado
             fb.innerHTML += `<div style="margin-top:12px; background:rgba(240,192,64,0.2); border-radius:12px; padding:16px;">
                                 <span style="color:var(--gold); font-weight:800;">🏆 ¡CADENA COMPLETADA!</span>
                                 <p style="color:var(--text); margin-top:8px;">Has superado la cadena de ${cadenaState.cadenaActual.tema}.</p>
                              </div>`;
-            setTimeout(mostrarResultadoCadena, 2000);
-            return;
+            // El botón Siguiente del overlay llamará mostrarCadena → mostrará resultado
         }
-        
-        setTimeout(mostrarCadena, 1500);
+        // No auto-advance: el botón Siguiente del overlay maneja la navegación
     } else {
         cadenaState.puntuacion.fail++;
         fb.innerHTML = `<div style="background:rgba(255,85,85,0.15); border:1px solid var(--red); border-radius:12px; padding:16px;">
@@ -24428,13 +24445,12 @@ function verificarRespuestaCadena() {
                             <p style="color:var(--gold); font-size:0.85rem; margin-top:8px;">📚 ${pregunta.pista}</p>
                         </div>`;
         
-        // Repetir la misma pregunta
-        setTimeout(function() {
-            cadenaState.esperandoRespuesta = true;
-            document.getElementById('cadena-respuesta').value = '';
-            document.getElementById('cadena-respuesta').focus();
-            fb.innerHTML = '';
-        }, 2000);
+        // Avanzar a la siguiente (el botón Siguiente del overlay lo maneja)
+        cadenaState.indicePregunta++;
+        if (cadenaState.indicePregunta >= cadenaState.cadenaActual.preguntas.length) {
+            setTimeout(mostrarResultadoCadena, 2500);
+        }
+        // Si no es la última, el botón Siguiente llama mostrarCadena
     }
 }
 
@@ -24652,8 +24668,12 @@ function construirRondaCine(nivel, falladasAnteriores) {
         preguntas = preguntas.concat(falladasAnteriores);
     }
     
+    var _archKey = 'ppro_archivadas_' + ('cine_bote_n' + nivel);
+    var _archivadas = [];
+    try { _archivadas = JSON.parse(localStorage.getItem(_archKey) || '[]'); } catch(e) {}
     var disponibles = pool.filter(function(p) {
-        return !preguntas.some(function(pp) { return pp.texto === p.texto; });
+        return !preguntas.some(function(pp) { return pp.texto === p.texto; })
+            && _archivadas.indexOf(p.texto) === -1;
     });
     
     for (var i = disponibles.length - 1; i > 0; i--) {
@@ -24906,7 +24926,7 @@ var cineExtremoState = {
     falladasEnRonda: [],  // preguntas falladas en esta ronda (para repetir)
     preguntasRonda: [],
     idx: 0,
-    total: 5,  // 5 preguntas por ronda
+    total: 10,  // 10 preguntas por ronda
     esperandoRespuesta: true
 };
 
@@ -24980,8 +25000,12 @@ function construirRondaExtremo(nivel, falladasRonda) {
     }
     
     // Luego completar con preguntas nuevas
+    var _archKey = 'ppro_archivadas_' + ('cine_extremo_n' + nivel);
+    var _archivadas = [];
+    try { _archivadas = JSON.parse(localStorage.getItem(_archKey) || '[]'); } catch(e) {}
     var disponibles = pool.filter(function(p) {
-        return !preguntas.some(function(pp) { return pp.texto === p.texto; });
+        return !preguntas.some(function(pp) { return pp.texto === p.texto; })
+            && _archivadas.indexOf(p.texto) === -1;
     });
     
     // Mezclar disponibles
@@ -25000,7 +25024,7 @@ function construirRondaExtremo(nivel, falladasRonda) {
         preguntas = preguntas.concat(extras);
     }
     
-    return preguntas.slice(0, 5);
+    return preguntas.slice(0, 10);
 }
 
 function iniciarCineExtremo() {
@@ -25060,7 +25084,7 @@ function mostrarPreguntaExtremo() {
     
     var q = cineExtremoState.preguntasRonda[cineExtremoState.idx];
     document.getElementById('cine-extremo-question').textContent = q.texto;
-    document.getElementById('cine-extremo-round').textContent = 'Pregunta ' + (cineExtremoState.idx + 1) + '/5';
+    document.getElementById('cine-extremo-round').textContent = 'Pregunta ' + (cineExtremoState.idx + 1) + '/10';
     document.getElementById('cine-extremo-answer').value = '';
     document.getElementById('cine-extremo-feedback').innerHTML = '';
     cineExtremoState.esperandoRespuesta = true;
@@ -25093,8 +25117,6 @@ function verificarRespuestaExtremo() {
         cineExtremoState.puntuacion.fail++;
         document.getElementById('cine-extremo-fail').textContent = '✗ ' + cineExtremoState.puntuacion.fail;
         fb.innerHTML = '<div style="background:rgba(255,85,85,0.12); border:2px solid var(--red); border-radius:16px; padding:16px;"><span style="color:var(--red); font-weight:800;">✗ INCORRECTO</span><br><span style="color:var(--muted); margin-top:4px; display:block;">La respuesta era: <strong style="color:var(--gold);">' + q.respuesta + '</strong></span><br><span style="color:var(--muted); font-size:0.85rem; margin-top:8px; display:block;">📚 ' + q.curiosidad + '</span></div>';
-        // Guardar esta pregunta para repetir en la misma ronda
-        cineExtremoState.falladasEnRonda.push(q);
         if (navigator.vibrate) navigator.vibrate(200);
     }
     
@@ -25119,7 +25141,7 @@ function verificarRespuestaExtremo() {
 function terminarRondaExtremo() {
     var total = cineExtremoState.puntuacion.ok + cineExtremoState.puntuacion.fail;
     var pct = total > 0 ? Math.round(cineExtremoState.puntuacion.ok / total * 100) : 0;
-    var superado = cineExtremoState.puntuacion.ok >= 4;  // 4 de 5 para pasar
+    var superado = cineExtremoState.puntuacion.ok >= 8;  // 8 de 10 para pasar
     
     var emoji = pct === 100 ? '🏆' : pct >= 80 ? '💪' : pct >= 60 ? '🙂' : '🔥';
     var msg = '';
@@ -25180,36 +25202,36 @@ function cerrarCineExtremo() {
 var CINE_PREGUNTAS = {
     nivel1: [
         // DIRECTORES INTRUSO (3 del mismo, 1 intruso)
-        { tipo: "director", texto: "¿Cuál de estas películas NO dirigió Steven Spielberg?", opciones: ["Tiburón", "E.T.", "Jurassic Park", "Terminator"], respuesta: "Terminator", curiosidad: "Terminator es de James Cameron. Spielberg dirigió Tiburón (1975), E.T. (1982) y Jurassic Park (1993)." },
-        { tipo: "director", texto: "¿Cuál de estas películas NO dirigió Martin Scorsese?", opciones: ["Taxi Driver", "Toro salvaje", "Goodfellas", "El Padrino"], respuesta: "El Padrino", curiosidad: "El Padrino es de Francis Ford Coppola. Scorsese dirigió Taxi Driver (1976), Toro salvaje (1980) y Goodfellas (1990)." },
-        { tipo: "director", texto: "¿Cuál de estas películas NO dirigió Quentin Tarantino?", opciones: ["Pulp Fiction", "Kill Bill", "Django desencadenado", "El club de la lucha"], respuesta: "El club de la lucha", curiosidad: "El club de la lucha es de David Fincher. Tarantino dirigió Pulp Fiction (1994), Kill Bill (2003) y Django desencadenado (2012)." },
-        { tipo: "director", texto: "¿Cuál de estas películas NO dirigió Christopher Nolan?", opciones: ["Memento", "El caballero oscuro", "Origen", "Matrix"], respuesta: "Matrix", curiosidad: "Matrix es de las hermanas Wachowski. Nolan dirigió Memento (2000), El caballero oscuro (2008) y Origen (2010)." },
-        { tipo: "director", texto: "¿Cuál de estas películas NO dirigió James Cameron?", opciones: ["Terminator", "Aliens", "Titanic", "Depredador"], respuesta: "Depredador", curiosidad: "Depredador es de John McTiernan. Cameron dirigió Terminator (1984), Aliens (1986) y Titanic (1997)." },
-        { tipo: "director", texto: "¿Cuál de estas películas NO dirigió Ridley Scott?", opciones: ["Alien", "Blade Runner", "Gladiator", "El silencio de los corderos"], respuesta: "El silencio de los corderos", curiosidad: "El silencio de los corderos es de Jonathan Demme. Scott dirigió Alien (1979), Blade Runner (1982) y Gladiator (2000)." },
-        { tipo: "director", texto: "¿Cuál de estas películas NO dirigió Francis Ford Coppola?", opciones: ["El Padrino", "El Padrino II", "Apocalypse Now", "Taxi Driver"], respuesta: "Taxi Driver", curiosidad: "Taxi Driver es de Scorsese. Coppola dirigió El Padrino (1972), El Padrino II (1974) y Apocalypse Now (1979)." },
-        { tipo: "director", texto: "¿Cuál de estas películas NO dirigió Stanley Kubrick?", opciones: ["2001: Una odisea del espacio", "La naranja mecánica", "El resplandor", "Blade Runner"], respuesta: "Blade Runner", curiosidad: "Blade Runner es de Ridley Scott. Kubrick dirigió 2001 (1968), La naranja mecánica (1971) y El resplandor (1980)." },
-        { tipo: "director", texto: "¿Cuál de estas películas NO dirigió Alfred Hitchcock?", opciones: ["Psicosis", "Los pájaros", "Vértigo", "Ciudadano Kane"], respuesta: "Ciudadano Kane", curiosidad: "Ciudadano Kane es de Orson Welles. Hitchcock dirigió Psicosis (1960), Los pájaros (1963) y Vértigo (1958)." },
-        { tipo: "director", texto: "¿Cuál de estas películas NO dirigió Pedro Almodóvar?", opciones: ["Mujeres al borde de un ataque de nervios", "Todo sobre mi madre", "Volver", "Los amantes del círculo polar"], respuesta: "Los amantes del círculo polar", curiosidad: "Los amantes del círculo polar es de Julio Medem. Almodóvar dirigió Mujeres (1988), Todo sobre mi madre (1999) y Volver (2006)." },
+        { tipo: "director", texto: "¿Qué película dirigió Steven Spielberg en 1993?", opciones: ["Jurassic Park", "Terminator", "Matrix", "Alien"], respuesta: "Jurassic Park", curiosidad: "Spielberg dirigió Jurassic Park en 1993. Terminator es de James Cameron, Matrix de las Wachowski y Alien de Ridley Scott." },
+        { tipo: "director", texto: "¿Quién dirigió Goodfellas (1990)?", opciones: ["Martin Scorsese", "Francis Ford Coppola", "Brian De Palma", "Sidney Lumet"], respuesta: "Martin Scorsese", curiosidad: "Goodfellas (1990) es uno de los grandes de Scorsese. El Padrino es de Coppola. Scorsese también dirigió Taxi Driver y Toro salvaje." },
+        { tipo: "director", texto: "¿Quién dirigió Pulp Fiction (1994)?", opciones: ["Quentin Tarantino", "David Fincher", "Joel Coen", "Paul Thomas Anderson"], respuesta: "Quentin Tarantino", curiosidad: "Pulp Fiction (1994) ganó la Palma de Oro en Cannes. El club de la lucha es de David Fincher. Tarantino también dirigió Kill Bill y Django." },
+        { tipo: "director", texto: "¿Quién dirigió El caballero oscuro (2008)?", opciones: ["Christopher Nolan", "Tim Burton", "Zack Snyder", "Joel Schumacher"], respuesta: "Christopher Nolan", curiosidad: "Christopher Nolan reinventó Batman con su trilogía oscura (2005-2012). Matrix es de las Wachowski, no de Nolan." },
+        { tipo: "director", texto: "¿Quién dirigió Titanic (1997)?", opciones: ["James Cameron", "John McTiernan", "Ron Howard", "Steven Spielberg"], respuesta: "James Cameron", curiosidad: "James Cameron dirigió Titanic (1997) y Avatar (2009). Depredador, que podría confundirse, es de John McTiernan." },
+        { tipo: "director", texto: "¿Quién dirigió Blade Runner (1982)?", opciones: ["Ridley Scott", "Jonathan Demme", "David Lynch", "Paul Verhoeven"], respuesta: "Ridley Scott", curiosidad: "Ridley Scott dirigió Blade Runner (1982), adaptación de Philip K. Dick. El silencio de los corderos es de Jonathan Demme." },
+        { tipo: "director", texto: "¿Qué película dirigió Francis Ford Coppola?", opciones: ["El Padrino", "Taxi Driver", "El Padrino II", "Inception"], respuesta: "El Padrino", curiosidad: "Taxi Driver es de Scorsese. Coppola dirigió El Padrino (1972), El Padrino II (1974) y Apocalypse Now (1979)." },
+        { tipo: "director", texto: "¿Quién dirigió 2001: Una odisea del espacio?", opciones: ["Stanley Kubrick", "Ridley Scott", "Steven Spielberg", "George Lucas"], respuesta: "Stanley Kubrick", curiosidad: "Kubrick rodó 2001 (1968) con Arthur C. Clarke. Blade Runner, visualmente similar, es de Ridley Scott." },
+        { tipo: "director", texto: "¿Quién dirigió Psicosis (1960)?", opciones: ["Alfred Hitchcock", "Orson Welles", "Billy Wilder", "John Huston"], respuesta: "Alfred Hitchcock", curiosidad: "Alfred Hitchcock, maestro del suspense, dirigió Psicosis (1960). Ciudadano Kane es de Orson Welles, no de Hitchcock." },
+        { tipo: "director", texto: "¿Qué película dirigió Pedro Almodóvar?", opciones: ["Mujeres al borde de un ataque de nervios", "Los amantes del círculo polar", "Todo sobre mi madre", "Inception"], respuesta: "Mujeres al borde de un ataque de nervios", curiosidad: "Los amantes del círculo polar es de Julio Medem. Almodóvar dirigió Mujeres (1988), Todo sobre mi madre (1999) y Volver (2006)." },
         // ACTORES INTRUSO
-        { tipo: "actor", texto: "¿Con qué director NO ha trabajado Leonardo DiCaprio?", opciones: ["Martin Scorsese", "Quentin Tarantino", "Christopher Nolan", "Steven Spielberg"], respuesta: "Steven Spielberg", curiosidad: "DiCaprio no ha trabajado con Spielberg. Ha trabajado con Scorsese (El lobo, Los asesinos), Tarantino (Django) y Nolan (Origen)." },
-        { tipo: "actor", texto: "¿Con qué director NO ha trabajado Tom Hanks?", opciones: ["Steven Spielberg", "Robert Zemeckis", "Ron Howard", "Martin Scorsese"], respuesta: "Martin Scorsese", curiosidad: "Hanks no ha trabajado con Scorsese. Ha trabajado con Spielberg (Salvar al soldado Ryan), Zemeckis (Forrest Gump) y Howard (Apolo 13)." },
-        { tipo: "actor", texto: "¿Con qué actor NO ha trabajado Martin Scorsese habitualmente?", opciones: ["Robert De Niro", "Leonardo DiCaprio", "Joe Pesci", "Tom Hanks"], respuesta: "Tom Hanks", curiosidad: "Scorsese no ha trabajado con Hanks. Ha trabajado con De Niro (Taxi Driver), DiCaprio (El lobo) y Pesci (Goodfellas)." },
+        { tipo: "actor", texto: "¿Con qué compañero/director ha trabajado habitualmente?", opciones: ["Martin Scorsese", "Steven Spielberg", "Quentin Tarantino", "Christopher Nolan"], respuesta: "Martin Scorsese", curiosidad: "DiCaprio no ha trabajado con Spielberg. Ha trabajado con Scorsese (El lobo, Los asesinos), Tarantino (Django) y Nolan (Origen)." },
+        { tipo: "actor", texto: "¿Con qué compañero/director ha trabajado habitualmente?", opciones: ["Steven Spielberg", "Martin Scorsese", "Robert Zemeckis", "Ron Howard"], respuesta: "Steven Spielberg", curiosidad: "Hanks no ha trabajado con Scorsese. Ha trabajado con Spielberg (Salvar al soldado Ryan), Zemeckis (Forrest Gump) y Howard (Apolo 13)." },
+        { tipo: "actor", texto: "¿Con qué compañero/director ha trabajado habitualmente?", opciones: ["Robert De Niro", "Tom Hanks", "Leonardo DiCaprio", "Joe Pesci"], respuesta: "Robert De Niro", curiosidad: "Scorsese no ha trabajado con Hanks. Ha trabajado con De Niro (Taxi Driver), DiCaprio (El lobo) y Pesci (Goodfellas)." },
         // OSCARS INTRUSO
-        { tipo: "oscar", texto: "¿Cuál de estas películas NO ganó el Oscar a Mejor Película?", opciones: ["Titanic", "Gladiator", "El Rey León", "El Señor de los Anillos: El retorno del Rey"], respuesta: "El Rey León", curiosidad: "El Rey León es de animación, nunca ganó Mejor Película (solo Mejor Canción). Titanic (1997), Gladiator (2000) y El retorno del Rey (2003) sí ganaron." },
-        { tipo: "oscar", texto: "¿Cuál de estas películas NO ganó el Oscar a Mejor Película?", opciones: ["Forrest Gump", "Pulp Fiction", "La lista de Schindler", "El Padrino"], respuesta: "Pulp Fiction", curiosidad: "Pulp Fiction perdió el Oscar contra Forrest Gump en 1994. Las otras tres ganaron." },
+        { tipo: "oscar", texto: "¿Cuál de estas películas ganó el Oscar a Mejor Película?", opciones: ["Titanic", "El Rey León", "Speed", "Cuatro bodas y un funeral"], respuesta: "Titanic", curiosidad: "El Rey León es de animación, nunca ganó Mejor Película (solo Mejor Canción). Titanic (1997), Gladiator (2000) y El retorno del Rey (2003) sí ganaron." },
+        { tipo: "oscar", texto: "¿Cuál de estas películas ganó el Oscar a Mejor Película?", opciones: ["Forrest Gump", "Pulp Fiction", "Speed", "Cuatro bodas y un funeral"], respuesta: "Forrest Gump", curiosidad: "Pulp Fiction perdió el Oscar contra Forrest Gump en 1994. Las otras tres ganaron." },
         // AÑOS INTRUSO
-        { tipo: "año", texto: "¿En qué año NO se estrenó Titanic?", opciones: ["1995", "1996", "1997", "1998"], respuesta: "1995", curiosidad: "Titanic se estrenó en 1997 (diciembre en EE.UU., enero 1998 en España)." },
-        { tipo: "año", texto: "¿En qué año NO se estrenó El Padrino?", opciones: ["1970", "1971", "1972", "1973"], respuesta: "1970", curiosidad: "El Padrino se estrenó en 1972. Las otras opciones son años cercanos para confundir." }
+        { tipo: "año", texto: "¿En qué año se estrenó Titanic de James Cameron?", opciones: ["1997", "1995", "1999", "2001"], respuesta: "1997", curiosidad: "Titanic se estrenó en diciembre de 1997 en EE.UU. Fue la película más taquillera de la historia hasta que Avatar la superó en 2010." },
+        { tipo: "año", texto: "¿En qué año se estrenó El Padrino de Coppola?", opciones: ["1972", "1970", "1975", "1969"], respuesta: "1972", curiosidad: "El Padrino se estrenó en marzo de 1972 y ganó el Oscar a Mejor Película. Es considerada una de las mejores películas de la historia." }
     ],
     nivel2: [
         // DIRECTORES PREMIUM
-        { tipo: "director", texto: "¿Cuál de estas películas NO dirigió Bong Joon-ho?", opciones: ["Parásitos", "Memories of Murder", "Snowpiercer", "Oldboy"], respuesta: "Oldboy", curiosidad: "Oldboy es de Park Chan-wook. Bong Joon-ho dirigió Parásitos (2019), Memories of Murder (2003) y Snowpiercer (2013)." },
-        { tipo: "director", texto: "¿Cuál de estas películas NO dirigió Alfonso Cuarón?", opciones: ["Y tu mamá también", "Gravity", "Roma", "Birdman"], respuesta: "Birdman", curiosidad: "Birdman es de Alejandro G. Iñárritu. Cuarón dirigió Y tu mamá también (2001), Gravity (2013) y Roma (2018)." },
-        { tipo: "director", texto: "¿Cuál de estas películas NO dirigió Guillermo del Toro?", opciones: ["El laberinto del fauno", "La forma del agua", "Cronos", "Amores perros"], respuesta: "Amores perros", curiosidad: "Amores perros es de Iñárritu. Del Toro dirigió El laberinto (2006), La forma del agua (2017) y Cronos (1993)." },
-        { tipo: "director", texto: "¿Cuál de estas películas NO dirigió Alejandro G. Iñárritu?", opciones: ["Amores perros", "Birdman", "El renacido", "Roma"], respuesta: "Roma", curiosidad: "Roma es de Cuarón. Iñárritu dirigió Amores perros (2000), Birdman (2014) y El renacido (2015)." },
+        { tipo: "director", texto: "¿Qué película dirigió Bong Joon-ho?", opciones: ["Parásitos", "Oldboy", "Memories of Murder", "Inception"], respuesta: "Parásitos", curiosidad: "Oldboy es de Park Chan-wook. Bong Joon-ho dirigió Parásitos (2019), Memories of Murder (2003) y Snowpiercer (2013)." },
+        { tipo: "director", texto: "¿Quién dirigió Roma (2018)?", opciones: ["Alfonso Cuarón", "Alejandro G. Iñárritu", "Guillermo del Toro", "Carlos Reygadas"], respuesta: "Alfonso Cuarón", curiosidad: "Alfonso Cuarón ganó el Oscar a Mejor Director por Roma (2018). Birdman, que confunde por ser también mexicano, es de Iñárritu." },
+        { tipo: "director", texto: "¿Qué película dirigió Guillermo del Toro?", opciones: ["El laberinto del fauno", "Amores perros", "La forma del agua", "Inception"], respuesta: "El laberinto del fauno", curiosidad: "Amores perros es de Iñárritu. Del Toro dirigió El laberinto (2006), La forma del agua (2017) y Cronos (1993)." },
+        { tipo: "director", texto: "¿Qué película dirigió Alejandro G. Iñárritu?", opciones: ["Amores perros", "Roma", "Birdman", "Inception"], respuesta: "Amores perros", curiosidad: "Roma es de Cuarón. Iñárritu dirigió Amores perros (2000), Birdman (2014) y El renacido (2015)." },
         // ACTORES CON MÚLTIPLES OSCARS
-        { tipo: "actor", texto: "¿Qué actor NO ha ganado dos o más Oscars?", opciones: ["Daniel Day-Lewis", "Meryl Streep", "Tom Hanks", "Brad Pitt"], respuesta: "Brad Pitt", curiosidad: "Brad Pitt ha ganado un Oscar como actor de reparto (Once Upon a Time in Hollywood). Day-Lewis (3), Streep (3) y Hanks (2) tienen más." },
-        { tipo: "actor", texto: "¿Qué actor NO ha ganado el Oscar a Mejor Actor?", opciones: ["Leonardo DiCaprio", "Brad Pitt", "Tom Hanks", "Daniel Day-Lewis"], respuesta: "Brad Pitt", curiosidad: "Pitt ha ganado como actor de reparto, no como protagonista. Los otros tres han ganado como protagonistas." },
+        { tipo: "actor", texto: "¿Quién ganó el Oscar?", opciones: ["Daniel Day-Lewis", "Brad Pitt", "Meryl Streep", "Tom Hanks"], respuesta: "Daniel Day-Lewis", curiosidad: "Brad Pitt ha ganado un Oscar como actor de reparto (Once Upon a Time in Hollywood). Day-Lewis (3), Streep (3) y Hanks (2) tienen más." },
+        { tipo: "actor", texto: "¿Quién ganó el Oscar?", opciones: ["Leonardo DiCaprio", "Brad Pitt", "Tom Hanks", "Daniel Day-Lewis"], respuesta: "Leonardo DiCaprio", curiosidad: "Pitt ha ganado como actor de reparto, no como protagonista. Los otros tres han ganado como protagonistas." },
         // FRASES ICÓNICAS
         { tipo: "frase", texto: "¿De qué película es la frase '¡Hasta la vista, baby!'?", opciones: ["Terminator", "Terminator 2", "Predator", "Commando"], respuesta: "Terminator 2", curiosidad: "La frase la dice Arnold Schwarzenegger en Terminator 2: El juicio final (1991)." },
         { tipo: "frase", texto: "¿De qué película es la frase 'You can't handle the truth!'?", opciones: ["A few good men", "The Firm", "Philadelphia", "Jerry Maguire"], respuesta: "A few good men", curiosidad: "La frase la dice Jack Nicholson en A few good men (1992)." },
@@ -25222,14 +25244,14 @@ var CINE_PREGUNTAS = {
         // DATOS MALDITOS (premios, récords, cine europeo/asiático)
         { tipo: "record", texto: "¿Qué película tiene el récord de más Oscars ganados (11)?", opciones: ["Ben-Hur", "Titanic", "El Señor de los Anillos", "Todas las anteriores"], respuesta: "Todas las anteriores", curiosidad: "Ben-Hur (1959), Titanic (1997) y El retorno del Rey (2003) tienen 11 Oscars cada una." },
         { tipo: "record", texto: "¿Qué actor tiene el récord de más nominaciones al Oscar?", opciones: ["Meryl Streep", "Jack Nicholson", "Katharine Hepburn", "Daniel Day-Lewis"], respuesta: "Meryl Streep", curiosidad: "Meryl Streep tiene 21 nominaciones, la más nominada de la historia." },
-        { tipo: "cine_europeo", texto: "¿Qué película NO es de Pedro Almodóvar?", opciones: ["Volver", "Los abrazos rotos", "Dolor y gloria", "Los amantes del círculo polar"], respuesta: "Los amantes del círculo polar", curiosidad: "Los amantes del círculo polar es de Julio Medem (1998)." },
-        { tipo: "cine_europeo", texto: "¿Qué director español NO ha ganado un Oscar?", opciones: ["Pedro Almodóvar", "Alejandro Amenábar", "Fernando Trueba", "Álex de la Iglesia"], respuesta: "Álex de la Iglesia", curiosidad: "Almodóvar (Todo sobre mi madre), Amenábar (Mar adentro) y Trueba (Belle Époque) tienen Oscar. Álex de la Iglesia no." },
-        { tipo: "cine_asiatico", texto: "¿Qué película NO es de Akira Kurosawa?", opciones: ["Los siete samuráis", "Rashomon", "Ran", "El viaje de Chihiro"], respuesta: "El viaje de Chihiro", curiosidad: "El viaje de Chihiro es de Hayao Miyazaki (Studio Ghibli). Kurosawa dirigió Los siete samuráis (1954), Rashomon (1950) y Ran (1985)." },
-        { tipo: "cine_asiatico", texto: "¿Qué película NO es de Park Chan-wook?", opciones: ["Oldboy", "Sympathy for Lady Vengeance", "The Handmaiden", "Parásitos"], respuesta: "Parásitos", curiosidad: "Parásitos es de Bong Joon-ho. Park Chan-wook dirigió Oldboy (2003), Lady Vengeance (2005) y The Handmaiden (2016)." },
+        { tipo: "cine_europeo", texto: "¿Cuál de estas es una película del mismo director?", opciones: ["Volver", "Los amantes del círculo polar", "Los abrazos rotos", "Dolor y gloria"], respuesta: "Volver", curiosidad: "Los amantes del círculo polar es de Julio Medem (1998)." },
+        { tipo: "cine_europeo", texto: "¿Quién ganó el Oscar?", opciones: ["Pedro Almodóvar", "Álex de la Iglesia", "Alejandro Amenábar", "Fernando Trueba"], respuesta: "Pedro Almodóvar", curiosidad: "Almodóvar (Todo sobre mi madre), Amenábar (Mar adentro) y Trueba (Belle Époque) tienen Oscar. Álex de la Iglesia no." },
+        { tipo: "cine_asiatico", texto: "¿Quién dirigió Los siete samuráis (1954)?", opciones: ["Akira Kurosawa", "Hayao Miyazaki", "Yasujiro Ozu", "Kenji Mizoguchi"], respuesta: "Akira Kurosawa", curiosidad: "Kurosawa dirigió Los siete samuráis (1954). El viaje de Chihiro, que confunde por ser japonesa, es de Hayao Miyazaki." },
+        { tipo: "cine_asiatico", texto: "¿Cuál de estas es una película del mismo director?", opciones: ["Oldboy", "Parásitos", "Sympathy for Lady Vengeance", "The Handmaiden"], respuesta: "Oldboy", curiosidad: "Parásitos es de Bong Joon-ho. Park Chan-wook dirigió Oldboy (2003), Lady Vengeance (2005) y The Handmaiden (2016)." },
         { tipo: "fecha_muerte", texto: "¿En qué año murió Federico Fellini?", opciones: ["1993", "1994", "1995", "1996"], respuesta: "1993", curiosidad: "Fellini murió el 31 de octubre de 1993, días después de recibir un Oscar honorífico." },
         { tipo: "fecha_muerte", texto: "¿En qué año murió Stanley Kubrick?", opciones: ["1997", "1998", "1999", "2000"], respuesta: "1999", curiosidad: "Kubrick murió en marzo de 1999, días después de terminar Eyes Wide Shut." },
-        { tipo: "premio", texto: "¿Qué director NO ha ganado la Palma de Oro en Cannes?", opciones: ["Quentin Tarantino", "Francis Ford Coppola", "Steven Spielberg", "Bong Joon-ho"], respuesta: "Steven Spielberg", curiosidad: "Spielberg no ha ganado la Palma de Oro. Tarantino (Pulp Fiction, 1994), Coppola (La conversación, 1974) y Bong (Parásitos, 2019) sí." },
-        { tipo: "premio", texto: "¿Qué película NO ganó el León de Oro en Venecia?", opciones: ["Rashomon", "El año pasado en Marienbad", "El nombre de la rosa", "El Padrino"], respuesta: "El Padrino", curiosidad: "El Padrino no ganó en Venecia (aunque sí el Oscar). Rashomon (1951), Marienbad (1961) y El nombre de la rosa (1986) ganaron el León de Oro." }
+        { tipo: "premio", texto: "¿Quién ganó el Oscar?", opciones: ["Quentin Tarantino", "Steven Spielberg", "Francis Ford Coppola", "Bong Joon-ho"], respuesta: "Quentin Tarantino", curiosidad: "Spielberg no ha ganado la Palma de Oro. Tarantino (Pulp Fiction, 1994), Coppola (La conversación, 1974) y Bong (Parásitos, 2019) sí." },
+        { tipo: "premio", texto: "¿Cuál de estos directores ha ganado la Palma de Oro en Cannes?", opciones: ["Rashomon", "El Padrino", "El año pasado en Marienbad", "El nombre de la rosa"], respuesta: "Rashomon", curiosidad: "El Padrino no ganó en Venecia (aunque sí el Oscar). Rashomon (1951), Marienbad (1961) y El nombre de la rosa (1986) ganaron el León de Oro." }
     ]
 };
 
@@ -25270,8 +25292,12 @@ function construirRondaMapaCine(nivel, falladasAnteriores) {
         preguntas = preguntas.concat(falladasAnteriores);
     }
     
+    var _archKey = 'ppro_archivadas_' + ('cine_mapa_n' + nivel);
+    var _archivadas = [];
+    try { _archivadas = JSON.parse(localStorage.getItem(_archKey) || '[]'); } catch(e) {}
     var disponibles = pool.filter(function(p) {
-        return !preguntas.some(function(pp) { return pp.texto === p.texto; });
+        return !preguntas.some(function(pp) { return pp.texto === p.texto; })
+            && _archivadas.indexOf(p.texto) === -1;
     });
     
     for (var i = disponibles.length - 1; i > 0; i--) {
@@ -25391,6 +25417,21 @@ function responderCine(chosen) {
         _next.style.cssText = 'margin-top:10px;width:100%;background:var(--gold);color:#000;border:none;border-radius:12px;padding:12px;font-size:0.95rem;font-weight:700;cursor:pointer;';
         _next.addEventListener('click', mostrarPreguntaCine);
         _fb.appendChild(_next);
+        // Ya me la sé
+        var _qText = cineMapaState.preguntasRonda[cineMapaState.idx - 1] ? cineMapaState.preguntasRonda[cineMapaState.idx - 1].texto : '';
+        var _mapaId = 'cine_mapa_n' + (cineMapaState.nivel||1);
+        var _isArchivada = false;
+        try { _isArchivada = JSON.parse(localStorage.getItem('ppro_archivadas_' + _mapaId) || '[]').indexOf(_qText) !== -1; } catch(e){}
+        if (_qText && !_isArchivada) {
+            var _arch = document.createElement('button');
+            _arch.textContent = '📦 Ya me la sé, no preguntar más';
+            _arch.style.cssText = 'margin-top:6px;width:100%;background:transparent;color:var(--muted);border:1px solid var(--border2);border-radius:12px;padding:10px;font-size:0.82rem;font-weight:600;cursor:pointer;';
+            _arch.addEventListener('click', function() {
+                try { var k='ppro_archivadas_'+_mapaId; var a=JSON.parse(localStorage.getItem(k)||'[]'); if(a.indexOf(_qText)===-1){a.push(_qText);localStorage.setItem(k,JSON.stringify(a));} } catch(e){}
+                _arch.textContent = '✓ Guardada'; _arch.disabled = true; _arch.style.color = 'var(--green)'; _arch.style.borderColor = 'var(--green)';
+            });
+            _fb.appendChild(_arch);
+        }
     }
 }
 
@@ -25623,8 +25664,12 @@ function construirRondaTeatro(nivel, falladasAnteriores) {
     }
     
     // Luego completar con preguntas nuevas del pool (evitando duplicados)
+    var _archKey = 'ppro_archivadas_' + ('teatro_n' + nivel);
+    var _archivadas = [];
+    try { _archivadas = JSON.parse(localStorage.getItem(_archKey) || '[]'); } catch(e) {}
     var disponibles = pool.filter(function(p) {
-        return !preguntas.some(function(pp) { return pp.texto === p.texto; });
+        return !preguntas.some(function(pp) { return pp.texto === p.texto; })
+            && _archivadas.indexOf(p.texto) === -1;
     });
     
     // Mezclar disponibles
@@ -26599,7 +26644,10 @@ var HIST_UNI_EVENTO_FECHA = [
 ];
 </script>
 
-<script>
+<script>// ================================================================
+// Opciones múltiples inteligentes — Teatro y Cine Extremo
+// Detecta el tipo de respuesta y filtra decoys del mismo tipo
+// ================================================================
 // ================================================================
 // Opciones múltiples inteligentes — Teatro y Cine Extremo
 // Detecta el tipo de respuesta y filtra decoys del mismo tipo
@@ -26609,42 +26657,66 @@ var HIST_UNI_EVENTO_FECHA = [
         var r = respuesta.trim();
         var q = pregunta ? pregunta.toLowerCase() : '';
 
-        // Por valor de respuesta primero
+        // ── 1. NUMÉRICO (por valor) ───────────────────────────
+        if (/^\d{3,4}\s*a\.?c\.?$/i.test(r)) return 'fecha_ac';
         if (/^\d{4}(-\d{4})?$/.test(r)) return 'año';
-        if (/^\d+$/.test(r)) return 'numero';
+        if (/^[\d\.]+\s*(km|años?|metros?|días?|siglos?|%)/i.test(r)) return 'numero';
+        if (/^\d+\.?\d*$/.test(r)) return 'numero';
 
-        // Por señales en la pregunta (alta confianza)
+        // ── 2. CINE (por pregunta — muy fiable) ──────────────
         if (/director/i.test(q)) return 'director';
         if (/\bactor\b|\bactriz\b/i.test(q)) return 'actor';
         if (/pel[ií]cula|film|taquiller|ganó la palma|mejor pel/i.test(q)) return 'pelicula';
 
-        // PERSONA tiene prioridad — 'obra' puede aparecer como contexto en preg. de autor
-        if (/\bautor\b|\bautora\b|\bcreador\b|\bcreadora\b|\beschribió\b|\bdramaturgo\b|\bdramaturga\b|\bescritora\b|\bcomediante\b/i.test(q)) {
-            return 'persona';
-        }
-        // Géneros/formas teatrales — solo si no hay señal de persona
-        if (/\bgénero\b|\bpieza\b|\bforma\s+teatral|\btécnica\s+teatral|\bcorriente\s+teatral|\bestilo\s+teatral/i.test(q)) {
-            return 'concepto';
-        }
-        // Obra como sujeto (empieza la frase) o con 'escribió'
-        if (/^obra\b|\bobra\s+(de|que|sobre|donde|en\s+la\s+que)/i.test(q)) {
-            return 'concepto';
-        }
-        // 'única obra' / 'su obra'
-        if (/\b(única|su|esta|dicha)\s+obra\b/i.test(q)) {
-            return 'concepto';
-        }
-
-        // Respuesta empieza en minúscula → concepto/género
+        // ── 3. VALOR: ¿empieza en minúscula? → concepto ──────
         if (/^[a-záéíóúüñ]/.test(r)) return 'concepto';
 
-        // Señales de género teatral en la respuesta
-        var generos = /grotesca|sacramental|esperpento|nivola|in-yer-face|astracán|jácara|entremés|catarsis|hamartía|loa\b|sainete|comedia\s/i;
-        if (generos.test(r)) return 'concepto';
+        // ── 4. VALOR: géneros/conceptos reconocibles ─────────
+        if (/grotesca|sacramental|esperpento|nivola|in-yer-face|astracán|jácara|entremés|catarsis|hamartía|loa\b|sainete|deus\s+ex|pax\s+romana/i.test(r)) return 'concepto';
 
-        // 2+ palabras capitalizadas → persona
-        var palabras = r.split(/\s+/);
-        var caps = palabras.filter(function(w) { return w && w[0] === w[0].toUpperCase() && w[0] !== w[0].toLowerCase(); });
+        // ── 5. PREGUNTA: señales de persona ──────────────────
+        // Only classify as persona if question ASKS FOR A PERSON
+        if (/\bautor\b|\bautora\b|\bcreador\b|\bdramaturgo\b|\beschribió\b|\bcomediante\b/i.test(q)) return 'persona';
+        if (/\brey\b|\breina\b|\bemperador\b|\bemperatriz\b|\bfaraón\b|\bcésar\b|\bgeneral\b|\bfilósofo\b|\blíder\b|\bcaudillo\b|\bconquistador\b/i.test(q)) return 'persona';
+        if (/\bquién\b.{0,25}(fue|es|murió|fundó|lideró|derrotó|gobernó|inventó|descubrió)/i.test(q)) return 'persona';
+        if (/\bhijo\b|\bhija\b|\bdiscípulo\b|\bsucesor\b|\bfundador\b/i.test(q)) return 'persona';
+        // "heredero", "archiduque", "estatista", "político"
+        if (/\bheredero\b|\barchiduque\b|\bestad[ií]sta\b|\bpolítico\b|\bpersonaje\b/i.test(q)) return 'persona';
+
+        // ── 6. PREGUNTA: señales de BATALLA/GUERRA ───────────
+        // Only if question starts with "Batalla" or explicitly asks for battle name
+        // NOT if it just mentions "guerra" in passing (e.g. "tratado que puso fin a la guerra")
+        if (/^batalla\b|^¿?cómo\s+se\s+llamó\s+la\s+batalla/i.test(q)) return 'batalla';
+        if (/\bsitio\s+de\b|\bcombate\s+de\b|\bbatalla\s+de\b/i.test(q)) return 'batalla';
+        // "guerra que enfrentó" → the answer IS the name of the war → batalla
+        if (/^guerra\b|guerra\s+que\s+(enfrento|enfrentó|duró|comenzó)/i.test(q)) return 'batalla';
+
+        // ── 7. VALOR: ¿Es un tratado/documento por su nombre? ─
+        // Multi-word answers starting with "Tratado", "Paz de", "Corpus", "Declaración"...
+        if (/^(tratado|paz\s+de|corpus|declaración|constitución|concilio|congreso\s+de|acuerdo)/i.test(r)) return 'tratado';
+
+        // ── 8. PREGUNTA: lugar/ciudad ─────────────────────────
+        if (/\bciudad\b|\bcapital\b|\bimperio\b|\bcivilización\b|\bpalacio\b|\bmonasterio\b|\bcatedral\b|\bfortale\b/i.test(q)) return 'lugar';
+        if (/^¿?dónde\b|^lugar\b/i.test(q)) return 'lugar';
+
+        // ── Teatro: obra como sujeto → concepto
+        if (/^obra\b|\bobra\s+(de|que|sobre)|\b(única|su|esta)\s+obra\b/i.test(q)) return 'concepto';
+        // ── 9. PREGUNTA: tratado/documento ───────────────────
+        if (/\btratado\b|\bconcilio\b|\bdeclaración\b|\bmanifiesto\b/i.test(q)) return 'tratado';
+        // "Período/etapa/sistema/movimiento"
+        if (/\bperíodo\b|\betapa\b|\bsistema\b|\bmovimiento\b/i.test(q)) return 'tratado';
+
+        // ── 10. PREGUNTA: dioses/mitología ────────────────────
+        if (/\bdios\b|\bdiosa\b|\bmitolog|\bdeidad\b/i.test(q)) return 'dios';
+
+        // ── 11. VALOR: 2+ palabras capitalizadas ──────────────
+        // Only now, after specific checks, use cap-counting as fallback
+        var caps = r.split(/\s+/).filter(function(w){
+            return w && w[0] === w[0].toUpperCase() && w[0] !== w[0].toLowerCase();
+        });
+        // Known battle names (1 capitalized word)
+        if (/^(Maratón|Gaugamela|Thermopylae|Waterloo|Austerlitz|Lepanto|Covadonga|Poitiers|Stalingrado|Azincourt|Cajamarca|Mühlberg|Queronea|Accio)$/.test(r)) return 'batalla';
+        if (caps.length >= 3) return 'tratado';
         if (caps.length >= 2) return 'persona';
 
         return 'nombre';
@@ -26670,61 +26742,94 @@ var HIST_UNI_EVENTO_FECHA = [
 
         function tipoOf(r) {
             if (tipoMap && tipoMap[r.toLowerCase()]) return tipoMap[r.toLowerCase()];
-            // Fallback: classify by answer value alone
+            // Fallback classify by value alone (no question context)
             var t = r.trim();
+            if (/^\d{3,4}\s*a\.?c\.?$/i.test(t)) return 'fecha_ac';
             if (/^\d{4}(-\d{4})?$/.test(t)) return 'año';
-            if (/^\d+$/.test(t)) return 'numero';
-            // Genre/concept signals
-            var generos = /grotesca|sacramental|esperpento|nivola|in-yer-face|astracán|jácara|entremés|catarsis|hamartía|astracán/i;
-            if (generos.test(t)) return 'concepto';
-            if (/^[a-záéíóúüñ]/.test(t)) return 'concepto'; // starts lowercase
-            // 2+ cap words = persona
+            if (/^[\d\.]+\s*(km|años?|metros?|días?|siglos?)/i.test(t)) return 'numero';
+            if (/^\d+\.?\d*$/.test(t)) return 'numero';
+            if (/^[a-záéíóúüñ]/.test(t)) return 'concepto';
+            if (/grotesca|sacramental|esperpento|nivola|in-yer-face|astracán|jácara|entremés|catarsis|hamartía|loa\b|sainete|deus\s+ex|pax\s+romana/i.test(t)) return 'concepto';
+            if (/\bmaratón\b|\bgaugamela\b|\bactium\b|\bcanas\b|\bzama\b|\btermópilas\b/i.test(t)) return 'batalla';
             var caps = t.split(/\s+/).filter(function(w){ return w && w[0] === w[0].toUpperCase() && /[A-Za-záéíóúñ]/.test(w[0]); });
+            if (caps.length >= 3) return 'tratado';
             if (caps.length >= 2) return 'persona';
             return 'nombre';
         }
 
-        // For 'persona'/'concepto', "broader" fallback should stay within non-año/numero names
-        var isPersonaTipo = tipo === 'persona' || tipo === 'director' || tipo === 'actor';
-        var isConceptoTipo = tipo === 'concepto' || tipo === 'obra';
+        // Group definitions — what types are compatible as decoys
+        var GRUPOS = {
+            'persona':    ['persona'],
+            'director':   ['director', 'actor'],
+            'actor':      ['actor', 'director'],
+            'pelicula':   ['pelicula'],
+            'batalla':    ['batalla'],
+            'lugar':      ['lugar'],
+            'dios':       ['dios', 'persona'],   // gods and people mix ok
+            'tratado':    ['tratado'],
+            'concepto':   ['concepto'],
+            'obra':       ['concepto', 'obra'],
+            'año':        ['año'],
+            'fecha_ac':   ['fecha_ac', 'año'],
+            'numero':     ['numero'],
+            'nombre':     ['nombre', 'persona'],
+            'lugar_o_documento': ['tratado', 'lugar'],
+        };
+        var compatibles = GRUPOS[tipo] || [tipo];
 
-        // First: exact same tipo
-        var mismo = pool.filter(function(r) {
-            return r.toLowerCase() !== correctLow && tipoOf(r) === tipo;
-        });
-        var shuffled = mismo.slice();
-        for (var i = shuffled.length-1; i > 0; i--) {
-            var j = Math.floor(Math.random()*(i+1)); var t=shuffled[i]; shuffled[i]=shuffled[j]; shuffled[j]=t;
+        // Broad fallback groups (used if not enough exact matches)
+        var BROAD = {
+            'persona':    ['persona', 'dios', 'nombre'],
+            'director':   ['director', 'actor', 'persona'],
+            'actor':      ['actor', 'director', 'persona'],
+            'pelicula':   ['pelicula', 'nombre'],
+            'batalla':    ['batalla', 'lugar', 'nombre'],
+            'lugar':      ['lugar', 'batalla', 'nombre'],
+            'dios':       ['dios', 'persona', 'nombre'],
+            'tratado':    ['tratado', 'lugar_o_documento'],
+            'concepto':   ['concepto', 'nombre'],
+            'obra':       ['concepto', 'obra', 'nombre'],
+            'año':        ['año', 'fecha_ac'],
+            'fecha_ac':   ['fecha_ac', 'año'],
+            'numero':     ['numero'],
+            'nombre':     ['nombre', 'persona', 'lugar'],
+        };
+        var broadCompatibles = BROAD[tipo] || compatibles;
+
+        function shuffle(arr) {
+            for (var i=arr.length-1; i>0; i--) {
+                var j=Math.floor(Math.random()*(i+1)); var t=arr[i]; arr[i]=arr[j]; arr[j]=t;
+            }
+            return arr;
         }
-        if (shuffled.length >= n) return shuffled.slice(0, n);
 
-        // Fallback: same broad group
-        var isNumTipo = tipo === 'año' || tipo === 'numero';
-        var broader = pool.filter(function(r) {
+        // 1. Exact same type
+        var mismo = shuffle(pool.filter(function(r) {
+            return r.toLowerCase() !== correctLow && compatibles.indexOf(tipoOf(r)) !== -1;
+        }));
+        if (mismo.length >= n) return mismo.slice(0, n);
+
+        // 2. Broad group fallback
+        var broader = shuffle(pool.filter(function(r) {
             var low = r.toLowerCase();
             if (low === correctLow) return false;
-            if (shuffled.indexOf(r) !== -1) return false;
-            var rt = tipoOf(r);
-            var isNum = rt === 'año' || rt === 'numero';
-            if (isNum !== isNumTipo) return false;
-            // For persona: exclude conceptos; for concepto: exclude personas
-            if (isPersonaTipo && (rt === 'concepto' || rt === 'nombre')) return false;
-            if (isConceptoTipo && (rt === 'persona' || rt === 'director' || rt === 'actor')) return false;
-            return true;
-        });
-        for (var i = broader.length-1; i > 0; i--) {
-            var j = Math.floor(Math.random()*(i+1)); var t=broader[i]; broader[i]=broader[j]; broader[j]=t;
-        }
-        var result = shuffled.concat(broader).slice(0, n);
+            if (mismo.indexOf(r) !== -1) return false;
+            return broadCompatibles.indexOf(tipoOf(r)) !== -1;
+        }));
+        var result = mismo.concat(broader).slice(0, n);
         if (result.length >= n) return result;
 
-        // Last resort: anything
-        var resto = pool.filter(function(r) {
-            return r.toLowerCase() !== correctLow && result.indexOf(r) === -1;
-        });
-        for (var i = resto.length-1; i > 0; i--) {
-            var j = Math.floor(Math.random()*(i+1)); var t=resto[i]; resto[i]=resto[j]; resto[j]=t;
-        }
+        // 3. Last resort — anything except numbers/years if we're not looking for those
+        var isNumTipo = tipo === 'año' || tipo === 'fecha_ac' || tipo === 'numero';
+        var resto = shuffle(pool.filter(function(r) {
+            if (r.toLowerCase() === correctLow) return false;
+            if (result.indexOf(r) !== -1) return false;
+            if (!isNumTipo) {
+                var rt = tipoOf(r);
+                if (rt === 'año' || rt === 'fecha_ac' || rt === 'numero') return false;
+            }
+            return true;
+        }));
         return result.concat(resto).slice(0, n);
     }
 
@@ -26754,6 +26859,54 @@ var HIST_UNI_EVENTO_FECHA = [
         });
     }
 
+    // ── ARCHIVO "YA ME LA SÉ" ───────────────────────────────────
+    function _archivarKey(gameId) { return 'ppro_archivadas_' + gameId; }
+    function archivarPregunta(gameId, questionText) {
+        try {
+            var key = _archivarKey(gameId);
+            var arr = JSON.parse(localStorage.getItem(key) || '[]');
+            if (arr.indexOf(questionText) === -1) arr.push(questionText);
+            localStorage.setItem(key, JSON.stringify(arr));
+        } catch(e) {}
+    }
+    function estaArchivada(gameId, questionText) {
+        try {
+            var arr = JSON.parse(localStorage.getItem(_archivarKey(gameId)) || '[]');
+            return arr.indexOf(questionText) !== -1;
+        } catch(e) { return false; }
+    }
+
+    // ── BOTONES POST-RESPUESTA ───────────────────────────────────
+    // Adds "Siguiente →" and "Ya me la sé 📦" to the opts div after answering
+    function agregarBotonesPostRespuesta(div, isCorrect, gameId, questionText, onNext) {
+        // Siguiente →
+        var next = document.createElement('button');
+        next.textContent = 'Siguiente →';
+        next.style.cssText = 'margin-top:12px;width:100%;background:var(--gold);color:#000;border:none;'+
+            'border-radius:12px;padding:13px;font-size:0.95rem;font-weight:700;cursor:pointer;';
+        next.addEventListener('click', onNext);
+        div.appendChild(next);
+
+        // Ya me la sé 📦 (only show if not already archived and the answer was correct)
+        if (isCorrect && gameId && questionText && !estaArchivada(gameId, questionText)) {
+            var arch = document.createElement('button');
+            arch.textContent = '📦 Ya me la sé, no preguntar más';
+            arch.style.cssText = 'margin-top:6px;width:100%;background:transparent;color:var(--muted);'+
+                'border:1px solid var(--border2);border-radius:12px;padding:10px;font-size:0.82rem;'+
+                'font-weight:600;cursor:pointer;';
+            arch.addEventListener('click', function() {
+                archivarPregunta(gameId, questionText);
+                arch.textContent = '✓ Guardada';
+                arch.disabled = true;
+                arch.style.color = 'var(--green)';
+                arch.style.borderColor = 'var(--green)';
+            });
+            div.appendChild(arch);
+        }
+    }
+
+
+
     // ── TEATRO ───────────────────────────────────────────────────
     var _teatroOrig = mostrarPreguntaTeatro;
     mostrarPreguntaTeatro = function() {
@@ -26781,17 +26934,9 @@ var HIST_UNI_EVENTO_FECHA = [
             verificarRespuestaTeatro();
             setTimeout(function() {
                 markOpts(div, opt, q.respuesta);
-                // Replace buttons with Siguiente
-                var next = document.createElement('button');
-                next.textContent = 'Siguiente →';
-                next.style.cssText = 'margin-top:12px;width:100%;background:var(--gold);color:#000;border:none;border-radius:12px;padding:13px;font-size:0.95rem;font-weight:700;cursor:pointer;';
-                next.addEventListener('click', function() {
+                agregarBotonesPostRespuesta(div, opt === q.respuesta, 'teatro_n' + (teatroGameState.nivel||1), q.texto, function() {
                     mostrarPreguntaTeatro();
-                    // Re-wire submit for next question
-                    var sub = document.getElementById('teatro-submit');
-                    if (sub) sub.onclick = function() { if (teatroGameState.esperandoRespuesta) verificarRespuestaTeatro(); };
                 });
-                div.appendChild(next);
             }, 80);
         });
         inputEl.parentNode.appendChild(div);
@@ -26824,6 +26969,9 @@ var HIST_UNI_EVENTO_FECHA = [
             verificarRespuestaExtremo();
             setTimeout(function() {
                 markOpts(div, opt, q.respuesta);
+                agregarBotonesPostRespuesta(div, opt === q.respuesta, 'cine_extremo_n' + (cineExtremoState.nivel||1), q.texto, function() {
+                    mostrarPreguntaExtremo();
+                });
             }, 80);
         });
         inputEl.parentNode.appendChild(div);
@@ -26858,23 +27006,102 @@ var HIST_UNI_EVENTO_FECHA = [
                 if (typeof verificarRespuestaCine === 'function') verificarRespuestaCine();
                 setTimeout(function() {
                     markOpts(div, opt, q.respuesta);
-                    var next = document.createElement('button');
-                    next.textContent = 'Siguiente →';
-                    next.style.cssText = 'margin-top:12px;width:100%;background:var(--gold);color:#000;border:none;border-radius:12px;padding:13px;font-size:0.95rem;font-weight:700;cursor:pointer;';
-                    next.addEventListener('click', function() {
+                    agregarBotonesPostRespuesta(div, opt === q.respuesta, 'cine_bote_n' + (cineGameState.nivel||1), q.texto, function() {
                         if (typeof mostrarPreguntaCineBote === 'function') mostrarPreguntaCineBote();
-                        // Re-wire submit
-                        var sub = document.getElementById('cine-bote-submit');
-                        if (sub) sub.onclick = function() { if (cineGameState && cineGameState.esperandoRespuesta) verificarRespuestaCine(); };
                     });
-                    div.appendChild(next);
                 }, 80);
             });
             inputEl.parentNode.appendChild(div);
         };
     }
-})();
-</script>
+
+// ── HISTORIA EN CADENA ─────────────────────────────────────
+    if (typeof mostrarCadena === 'function') {
+        var _cadenaOrig = mostrarCadena;
+        mostrarCadena = function() {
+            // Check end BEFORE calling orig (which removes overlay)
+            if (cadenaState.cadenaActual) {
+                var _idx = cadenaState.indicePregunta;
+                var _len = cadenaState.cadenaActual.preguntas.length;
+                if (_idx >= _len) {
+                    mostrarResultadoCadena();
+                    return;
+                }
+            }
+            _cadenaOrig();
+            cadenaState.esperandoRespuesta = true;  // reset para cada pregunta
+            if (!cadenaState.cadenaActual) return;
+            var pregunta = cadenaState.cadenaActual.preguntas[cadenaState.indicePregunta];
+            if (!pregunta) return;
+
+            // Build pool from all cadenas
+            var pool = [];
+            CADENAS_HISTORIA.forEach(function(c) {
+                c.preguntas.forEach(function(p) { pool.push(p.respuesta); });
+            });
+            // Remove duplicates
+            pool = pool.filter(function(v, i, a) { return a.indexOf(v) === i; });
+
+            // Classify correct answer
+            var correct = pregunta.respuesta;
+            // Build tipoMap for all cadena answers
+            var _cadenaMap = {};
+            CADENAS_HISTORIA.forEach(function(c) {
+                c.preguntas.forEach(function(p) {
+                    _cadenaMap[p.respuesta.toLowerCase()] = clasificarPorPregunta(p.respuesta, p.texto);
+                });
+            });
+            // Use shared pickDecoys with question context
+            var decoys = pickDecoys(correct, pool, 3, pregunta.texto, _cadenaMap);
+            var opts = [correct].concat(decoys);
+            for (var k=opts.length-1;k>0;k--){var j=Math.floor(Math.random()*(k+1));var t=opts[k];opts[k]=opts[j];opts[j]=t;}
+
+            var inputEl = document.getElementById('cadena-respuesta');
+            var submitEl = document.getElementById('cadena-submit');
+            if (!inputEl || !submitEl) return;
+            inputEl.style.display = 'none';
+            submitEl.style.display = 'none';
+
+            var prev = document.querySelector('#cadena-game .cadena-opts-div');
+            if (prev) prev.remove();
+
+            var div = document.createElement('div');
+            div.className = 'cadena-opts-div';
+            div.style.cssText = 'display:flex;flex-direction:column;gap:10px;margin-top:4px;';
+
+            opts.forEach(function(opt) {
+                var btn = document.createElement('button');
+                btn.textContent = opt;
+                btn.style.cssText = 'background:var(--card2);border:2px solid var(--border2);border-radius:12px;'+
+                    'padding:13px 16px;font-size:0.92rem;font-weight:600;color:var(--text);cursor:pointer;text-align:left;width:100%;';
+                btn.addEventListener('click', function() {
+                    if (!cadenaState.esperandoRespuesta) return;
+                    div.querySelectorAll('button').forEach(function(b){ b.disabled=true; });
+                    div.querySelectorAll('button').forEach(function(b){
+                        if (b.textContent === correct) {
+                            b.style.borderColor='var(--green)'; b.style.background='rgba(68,212,144,0.2)';
+                        } else if (b.textContent === opt && opt !== correct) {
+                            b.style.borderColor='var(--red)'; b.style.background='rgba(255,85,85,0.15)';
+                        }
+                    });
+                    inputEl.value = opt;
+                    verificarRespuestaCadena();
+                    // Show Siguiente + Ya me la sé after 80ms (verificarRespuestaCadena handles scoring)
+                    setTimeout(function() {
+                        var cadenaId = 'cadena_' + (cadenaState.cadenaActual ? cadenaState.cadenaActual.tema.replace(/\s+/g,'_').toLowerCase() : 'x');
+                        agregarBotonesPostRespuesta(div, opt === correct, cadenaId, pregunta.texto, function() {
+                            mostrarCadena();
+                        });
+                    }, 80);
+                });
+                div.appendChild(btn);
+            });
+
+            inputEl.parentNode.insertBefore(div, inputEl);
+        };
+    }
+
+})();</script>
 
 <script>
 // ================================================================
