@@ -19014,13 +19014,16 @@ window.iniciarDelitoHistorico = function() {
                 if (isTeatro) onclickAction = 'abrirSelectorTeatro()';
                 if (isHistUni) onclickAction = 'abrirSelectorHistUni()';
                 if (isCapitales) onclickAction = 'abrirSelectorCapitales()';
-      if (m.id === 'deporte') onclickAction = 'abrirSelectorDeporte()';
-      if (m.id === 'ciencia') onclickAction = 'abrirSelectorCiencia()';
-                if (m.id === 'deporte') onclickAction = 'abrirSelectorDeporte()';
-                if (m.id === 'ciencia') onclickAction = 'abrirSelectorCiencia()';
+      if(m.id==='deporte')onclickAction='abrirSelectorDeporte()';
+      if(m.id==='ciencia')onclickAction='abrirSelectorCiencia()';
+      if(m.id==='arte')onclickAction='abrirSelectorArte()';
+                if(m.id==='deporte')onclickAction='abrirSelectorDeporte()';
+                if(m.id==='ciencia')onclickAction='abrirSelectorCiencia()';
+                if(m.id==='arte')onclickAction='abrirSelectorArte()';
                 
-                const hasSelector = isLitEsp || isHist || isHistEsp || isGeoEsp || isGeoMund || isCine || isTeatro || isHistUni || isCapitales;
-                const badgeText = isLitEsp ? '8 minijuegos' : (isHist ? '10 minijuegos' : (isHistEsp ? '5 minijuegos' : (isGeoEsp ? '5 minijuegos' : (isGeoMund ? '6 minijuegos' : (isCine ? '3 juegos' : (isTeatro ? '1 juego' : (isHistUni ? '4 minijuegos' : (isCapitales ? '1 minijuego' : (m.id === 'deporte' ? '3 niveles · tipo test' : (m.id === 'ciencia' ? '2 niveles · tipo test' : 'Cargando...'))))))))));
+                const isD=m.id==='deporte',isC=m.id==='ciencia',isA=m.id==='arte';
+                const hasSelector=isLitEsp||isHist||isHistEsp||isGeoEsp||isGeoMund||isCine||isTeatro||isHistUni||isCapitales||isD||isC||isA;
+                const badgeText = isLitEsp ? '8 minijuegos' : (isHist ? '10 minijuegos' : (isHistEsp ? '5 minijuegos' : (isGeoEsp ? '5 minijuegos' : (isGeoMund ? '6 minijuegos' : (isCine ? '3 juegos' : (isTeatro ? '1 juego' : (isHistUni ? '4 minijuegos' : (isCapitales ? '1 minijuego' : (isD ? '3 niveles' : (isC ? '2 niveles' : (isA ? '2 modos' : 'Cargando...')))))))))));
                 const borderColor = isLitEsp ? '#fab1a0' : (isHist ? '#dc3545' : (isHistEsp ? '#ff7675' : (isGeoEsp ? '#55efc4' : (isGeoMund ? '#00b894' : (isCine ? '#ffeaa7' : (isTeatro ? '#a29bfe' : (isHistUni ? '#fdcb6e' : (isCapitales ? 'var(--accent)' : ''))))))));
                 
                 html += `
@@ -19164,12 +19167,12 @@ window.openStudySelector = function() {
       if (isTeatro) onclickAction = 'abrirSelectorTeatro()';
       if (isHistUni) onclickAction = 'abrirSelectorHistUni()';
       if (isCapitales) onclickAction = 'abrirSelectorCapitales()';
-      if (m.id === 'deporte') onclickAction = 'abrirSelectorDeporte()';
-      if (m.id === 'ciencia') onclickAction = 'abrirSelectorCiencia()';
       
-      const isDeporte = m.id === 'deporte';
-      const isCiencia = m.id === 'ciencia';
-      const hasSelector = isLitEsp || isHist || isHistEsp || isGeoEsp || isGeoMund || isCine || isTeatro || isHistUni || isCapitales || isDeporte || isCiencia;
+      const isD2=m.id==='deporte',isC2=m.id==='ciencia',isA2=m.id==='arte';
+if (isD2) onclickAction = 'abrirSelectorDeporte()';
+if (isC2) onclickAction = 'abrirSelectorCiencia()';
+if (isA2) onclickAction = 'abrirSelectorArte()';
+      const hasSelector=isLitEsp||isHist||isHistEsp||isGeoEsp||isGeoMund||isCine||isTeatro||isHistUni||isCapitales||isD2||isC2||isA2;
       const badgeContent = isLitEsp ? '<span style="background:#fab1a0; color:#000; padding:4px 10px; border-radius:20px; font-size:0.75rem; font-weight:bold;">8 minijuegos</span>' 
                          : (isHist ? '<span style="background:#dc3545; color:#fff; padding:4px 10px; border-radius:20px; font-size:0.75rem; font-weight:bold;">10 minijuegos</span>'
                          : (isHistEsp ? '<span style="background:#ff7675; color:#fff; padding:4px 10px; border-radius:20px; font-size:0.75rem; font-weight:bold;">5 minijuegos</span>'
@@ -19179,9 +19182,11 @@ window.openStudySelector = function() {
                          : (isTeatro ? '<span style="background:#a29bfe; color:#fff; padding:4px 10px; border-radius:20px; font-size:0.75rem; font-weight:bold;">1 juego</span>'
                          : (isHistUni ? '<span style="background:#fdcb6e; color:#000; padding:4px 10px; border-radius:20px; font-size:0.75rem; font-weight:bold;">4 minijuegos</span>'
                          : (isCapitales ? '<span style="background:var(--accent); color:#000; padding:4px 10px; border-radius:20px; font-size:0.75rem; font-weight:bold;">1 minijuego</span>'
-                         : (isDeporte ? '<span style="background:#00cec9; color:#000; padding:4px 10px; border-radius:20px; font-size:0.75rem; font-weight:bold;">3 niveles</span>'
-                         : (isCiencia ? '<span style="background:#a29bfe; color:#000; padding:4px 10px; border-radius:20px; font-size:0.75rem; font-weight:bold;">2 niveles</span>'
-                         : `<span style="background:${isDone ? 'transparent' : (m.color || 'var(--accent)')}; color:${isDone ? 'var(--muted)' : '#000'}; padding:4px 10px; border-radius:20px; font-size:0.75rem; font-weight:bold; white-space:nowrap;">${isDone ? 'Al día ✓' : dueCount + ' hoy'}</span>`))))))))));
+                         : (isD2 ? '<span style="background:#00cec9;color:#000;padding:4px 10px;border-radius:20px;font-size:0.75rem;font-weight:bold;">3 niveles</span>'
+                         : (isC2 ? '<span style="background:#a29bfe;color:#000;padding:4px 10px;border-radius:20px;font-size:0.75rem;font-weight:bold;">2 niveles</span>'
+                         : (isA2 ? '<span style="background:#e17055;color:#fff;padding:4px 10px;border-radius:20px;font-size:0.75rem;font-weight:bold;">2 modos</span>'
+                         : `<span style="background:${isDone ? 'transparent' : (m.color || 'var(--accent)')}; color:${isDone ? 'var(--muted)' : '#000'}; padding:4px 10px; border-radius:20px; font-size:0.75rem; font-weight:bold; white-space:nowrap;">${isDone ? 'Al día ✓' : dueCount + ' hoy'}</span>`)))))))))));
+
       
       container.innerHTML += `
       <div class="deck-item" onclick="${onclickAction}" style="border-left:4px solid ${isDone && !hasSelector ? 'var(--border)' : (m.color || 'var(--accent)')}; opacity:${isDone && !hasSelector ? '0.6' : '1'}; cursor:${isDone && !hasSelector ? 'default' : 'pointer'};">
@@ -28474,6 +28479,9 @@ function deporteRenderPregunta() {
   var gs = deporteGameState;
   var p = gs.preguntas[gs.idx];
   if (!p) { deporteFinJuego(); return; }
+  if (!gs.tanda) gs.tanda=10;
+  if (!gs.tStart) gs.tStart=0;
+  if (gs.idx>0 && gs.idx===gs.tStart+gs.tanda && gs.idx<gs.preguntas.length) { depTanda(); return; }
 
   // Progreso
   var pct = Math.round((gs.idx / gs.preguntas.length) * 100);
@@ -28559,6 +28567,26 @@ function deporteRenderPregunta() {
   });
 }
 
+function depTanda() {
+  var gs=deporteGameState, rest=gs.preguntas.length-gs.idx;
+  document.getElementById('dep-game-barra').style.width=Math.round(gs.idx/gs.preguntas.length*100)+'%';
+  document.getElementById('dep-game-body').innerHTML=
+    '<div style="text-align:center;padding:24px 0;">'+
+    '<div style="font-size:3rem;margin-bottom:10px;">⚽</div>'+
+    '<h3 style="color:var(--text);margin:0 0 6px;">Tanda completada</h3>'+
+    '<p style="color:var(--muted);font-size:0.88rem;margin:0 0 20px;">'+gs.idx+'/'+gs.preguntas.length+' · quedan '+rest+'</p>'+
+    '<div style="display:flex;justify-content:center;gap:20px;margin-bottom:24px;">'+
+      '<div style="text-align:center;"><div style="font-size:1.6rem;font-weight:700;color:#00b894;">'+gs.correctas+'</div><div style="font-size:0.8rem;color:var(--muted);">correctas</div></div>'+
+      '<div style="text-align:center;"><div style="font-size:1.6rem;font-weight:700;color:#e17055;">'+gs.errores+'</div><div style="font-size:0.8rem;color:var(--muted);">errores</div></div>'+
+    '</div>'+
+    '<div style="display:flex;flex-direction:column;gap:10px;">'+
+      '<button id="dep-next-t" style="background:var(--accent);color:#fff;border:none;border-radius:14px;padding:14px;font-size:1rem;font-weight:700;cursor:pointer;width:100%;">Siguiente tanda ('+rest+') →</button>'+
+      '<button id="dep-salir" style="background:var(--card);color:var(--text);border:1px solid var(--border);border-radius:14px;padding:14px;font-size:1rem;cursor:pointer;width:100%;">Guardar y salir</button>'+
+    '</div></div>';
+  document.getElementById('dep-next-t').onclick=function(){gs.tStart=gs.idx;deporteRenderPregunta();};
+  document.getElementById('dep-salir').onclick=function(){deporteFinJuego();};
+}
+
 function deporteFinJuego() {
   var gs = deporteGameState;
   var total = gs.correctas + gs.errores;
@@ -28602,21 +28630,15 @@ function deporteFinJuego() {
       '</div>' +
       desbloqueaMsg +
       '<div style="display:flex;flex-direction:column;gap:10px;margin-top:20px;">' +
-        '<button id="dep-btn-repetir" style="background:var(--accent);color:#fff;border:none;border-radius:14px;padding:14px;font-size:1rem;font-weight:700;cursor:pointer;width:100%;">🔄 Repetir</button>' +
-        '<button id="dep-btn-volver" style="background:var(--card);color:var(--text);border:1px solid var(--border);border-radius:14px;padding:14px;font-size:1rem;cursor:pointer;width:100%;">← Volver al nivel</button>' +
+        '<button id="dep-btn-rep" style="background:var(--accent);color:#fff;border:none;border-radius:14px;padding:14px;font-size:1rem;font-weight:700;cursor:pointer;width:100%;">Repetir</button>' +
+        '<button id="dep-btn-vol" style="background:var(--card);color:var(--text);border:1px solid var(--border);border-radius:14px;padding:14px;font-size:1rem;cursor:pointer;width:100%;">Volver</button>' +
       '</div>' +
     '</div>';
 
   document.getElementById('dep-game-barra').style.width = '100%';
-
-  // Botones fin de juego
-  var btnRep = document.getElementById('dep-btn-repetir');
-  var btnVol = document.getElementById('dep-btn-volver');
-  if (btnRep) btnRep.addEventListener('click', function() { iniciarJuegoDeporte(gs.nivel, gs.bloqueId); });
-  if (btnVol) btnVol.addEventListener('click', function() {
-    var el = document.getElementById('dep-game'); if(el) el.remove();
-    abrirSelectorBloqueDeporte(gs.nivel);
-  });
+  var bR=document.getElementById('dep-btn-repetir'),bV=document.getElementById('dep-btn-volver');
+  if(bR)bR.addEventListener('click',function(){iniciarJuegoDeporte(gs.nivel,gs.bloqueId);});
+  if(bV)bV.addEventListener('click',function(){var el=document.getElementById('dep-game');if(el)el.remove();abrirSelectorBloqueDeporte(gs.nivel);});
 }
 </script>
 <script>
@@ -28683,32 +28705,19 @@ var CIENCIA_NIVELES = [
     { texto: "Nombre químico del vinagre", respuesta: "Ácido acético", curiosidad: "Su fórmula es CH₃COOH. Se obtiene por fermentación del alcohol." },
     { texto: "Nombre químico del bicarbonato de sodio", respuesta: "Hidrogenocarbonato de sodio", curiosidad: "Su fórmula es NaHCO₃. Se usa como antiácido y para repostería." },
     { texto: "Nombre químico del amoniaco", respuesta: "Amoníaco", curiosidad: "Su fórmula es NH₃. Es un gas tóxico que se usa en limpiadores." },
-    { texto: "Nombre químico del ácido sulfúrico", respuesta: "Ácido sulfúrico", curiosidad: "Su fórmula es H₂SO₄. Es el ácido más producido industrialmente." },
-    { texto: "Nombre químico del ácido clorhídrico", respuesta: "Ácido clorhídrico", curiosidad: "Su fórmula es HCl. Está presente en el estómago y en limpiadores industriales." },
-    { texto: "Nombre químico del ácido nítrico", respuesta: "Ácido nítrico", curiosidad: "Su fórmula es HNO₃. Se usa para fabricar fertilizantes y explosivos." },
-    { texto: "Nombre químico del ácido fosfórico", respuesta: "Ácido fosfórico", curiosidad: "Su fórmula es H₃PO₄. Se usa en refrescos de cola." },
-    { texto: "Nombre químico del carbonato de calcio", respuesta: "Carbonato de calcio", curiosidad: "Es el principal componente de la caliza, el mármol y las cáscaras de huevo." },
-    { texto: "Nombre químico de la cal viva", respuesta: "Óxido de calcio", curiosidad: "Su fórmula es CaO. Se obtiene calentando piedra caliza." },
+                        { texto: "Nombre químico de la cal viva", respuesta: "Óxido de calcio", curiosidad: "Su fórmula es CaO. Se obtiene calentando piedra caliza." },
     { texto: "Nombre químico de la cal apagada", respuesta: "Hidróxido de calcio", curiosidad: "Su fórmula es Ca(OH)₂. Se usa para encalar paredes." },
     { texto: "Nombre químico de la sosa cáustica", respuesta: "Hidróxido de sodio", curiosidad: "Su fórmula es NaOH. Es muy corrosivo, se usa para destapar cañerías." },
     { texto: "Nombre químico de la potasa cáustica", respuesta: "Hidróxido de potasio", curiosidad: "Su fórmula es KOH. Se usa en la fabricación de jabones." },
     { texto: "Nombre químico del yeso", respuesta: "Sulfato de calcio dihidratado", curiosidad: "Su fórmula es CaSO₄·2H₂O. Al calentarse se convierte en escayola." },
     { texto: "Nombre químico de la escayola", respuesta: "Sulfato de calcio hemihidratado", curiosidad: "Su fórmula es CaSO₄·½H₂O. Al añadir agua fragua y recupera la forma de yeso." },
     { texto: "Nombre químico del mármol", respuesta: "Carbonato de calcio", curiosidad: "El mármol es caliza metamorfoseada. Reacciona con ácidos efervesciendo." },
-    { texto: "Nombre químico del metano", respuesta: "Metano", curiosidad: "Su fórmula es CH₄. Es el principal componente del gas natural." },
-    { texto: "Nombre químico del etano", respuesta: "Etano", curiosidad: "Su fórmula es C₂H₆. Es un gas presente en el gas natural." },
-    { texto: "Nombre químico del propano", respuesta: "Propano", curiosidad: "Su fórmula es C₃H₈. Se usa como gas licuado para calefacción." },
-    { texto: "Nombre químico del butano", respuesta: "Butano", curiosidad: "Su fórmula es C₄H₁₀. Es el gas de las bombonas domésticas." },
-    { texto: "Nombre químico del benceno", respuesta: "Benceno", curiosidad: "Su fórmula es C₆H₆. Es un hidrocarburo aromático, cancerígeno y muy estable." },
-    { texto: "Nombre químico del tolueno", respuesta: "Metilbenceno", curiosidad: "Su fórmula es C₆H₅CH₃. Se usa como disolvente." },
+                        { texto: "Nombre químico del tolueno", respuesta: "Metilbenceno", curiosidad: "Su fórmula es C₆H₅CH₃. Se usa como disolvente." },
     { texto: "Nombre químico del fenol", respuesta: "Hidroxibenceno", curiosidad: "Su fórmula es C₆H₅OH. Es un antiséptico y desinfectante." },
     { texto: "Nombre químico del alcohol etílico", respuesta: "Etanol", curiosidad: "Su fórmula es CH₃CH₂OH. Es el alcohol de las bebidas." },
     { texto: "Nombre químico del alcohol metílico", respuesta: "Metanol", curiosidad: "Su fórmula es CH₃OH. Es tóxico y puede causar ceguera." },
     { texto: "Nombre químico de la glicerina", respuesta: "Glicerol", curiosidad: "Su fórmula es C₃H₈O₃. Se usa en cosméticos y medicamentos." },
-    { texto: "Nombre químico del ácido cítrico", respuesta: "Ácido cítrico", curiosidad: "Se encuentra en los cítricos. Se usa como conservante y acidulante." },
-    { texto: "Nombre químico del ácido málico", respuesta: "Ácido málico", curiosidad: "Se encuentra en las manzanas. Es el responsable del sabor ácido." },
-    { texto: "Nombre químico del ácido tartárico", respuesta: "Ácido tartárico", curiosidad: "Se encuentra en las uvas. Se usa en la repostería." },
-  ]},
+              ]},
   { id: "reacciones_y_procesos_qu_micos", nombre: "REACCIONES Y PROCESOS QUÍMICOS", icon: "💥", preguntas: [
     { texto: "Proceso químico por el que se obtiene jabón a partir de grasas y sosa", respuesta: "Saponificación", curiosidad: "Se usa hidróxido de sodio (sosa) para convertir grasas en jabón y glicerina." },
     { texto: "Proceso de separación de mezclas basado en diferentes puntos de ebullición", respuesta: "Destilación", curiosidad: "Se usa para obtener alcohol o para refinar petróleo." },
@@ -29232,9 +29241,14 @@ window.iniciarJuegoCiencia = function(nivel, bloqueId) {
     var j = Math.floor(Math.random() * (i + 1)); var t = preguntas[i]; preguntas[i] = preguntas[j]; preguntas[j] = t;
   }
   var todasResp = [];
-  niv.bloques.forEach(function(b) { b.preguntas.forEach(function(p) { todasResp.push(p.respuesta); }); });
+  if (bloqueId === 'todos') {
+    niv.bloques.forEach(function(b) { b.preguntas.forEach(function(p) { todasResp.push(p.respuesta); }); });
+  } else {
+    var bloqueActivo2 = niv.bloques.find(function(b) { return b.id === bloqueId; });
+    if (bloqueActivo2) bloqueActivo2.preguntas.forEach(function(p) { todasResp.push(p.respuesta); });
+  }
 
-  cienciaGameState = { nivel: nivel, bloqueId: bloqueId, preguntas: preguntas, todasResp: todasResp, idx: 0, correctas: 0, errores: 0, respondida: false };
+  cienciaGameState = { nivel: nivel, bloqueId: bloqueId, preguntas: preguntas, todasResp: todasResp, idx: 0, correctas: 0, errores: 0, respondida: false, tanda: 10, tStart: 0 };
 
   var html = '<div id="cien-game" style="position:fixed;top:0;left:0;right:0;bottom:0;background:var(--bg);z-index:99999;display:flex;flex-direction:column;">' +
     '<div style="padding:12px 16px;display:flex;align-items:center;gap:12px;border-bottom:1px solid var(--border);">' +
@@ -29260,13 +29274,17 @@ function cienciaRenderPregunta() {
   var gs = cienciaGameState;
   var p = gs.preguntas[gs.idx];
   if (!p) { cienciaFinJuego(); return; }
+  if (!gs.tanda) gs.tanda=10;
+  if (!gs.tStart) gs.tStart=0;
+  if (gs.idx>0 && gs.idx===gs.tStart+gs.tanda && gs.idx<gs.preguntas.length) { cienTanda(); return; }
 
   var pct = Math.round((gs.idx / gs.preguntas.length) * 100);
   document.getElementById('cien-game-barra').style.width = pct + '%';
   document.getElementById('cien-game-progreso').textContent = 'Pregunta ' + (gs.idx + 1) + ' / ' + gs.preguntas.length;
   document.getElementById('cien-game-score').innerHTML = '✅ ' + gs.correctas + ' &nbsp; ❌ ' + gs.errores;
 
-  var otros = gs.todasResp.filter(function(r) { return r.toLowerCase() !== p.respuesta.toLowerCase(); });
+  var pTextoLower = p.texto.toLowerCase();
+  var otros = gs.todasResp.filter(function(r) { return r.toLowerCase() !== p.respuesta.toLowerCase() && pTextoLower.indexOf(r.toLowerCase()) === -1; });
   for (var i = otros.length - 1; i > 0; i--) { var j = Math.floor(Math.random()*(i+1)); var t=otros[i]; otros[i]=otros[j]; otros[j]=t; }
   var opciones = [p.respuesta].concat(otros.slice(0, 3));
   for (var i = opciones.length - 1; i > 0; i--) { var j = Math.floor(Math.random()*(i+1)); var t=opciones[i]; opciones[i]=opciones[j]; opciones[j]=t; }
@@ -29274,9 +29292,16 @@ function cienciaRenderPregunta() {
   gs.opcionCorrecta = p.respuesta;
 
   var body = document.getElementById('cien-game-body');
+  var textoMostrar = p.texto;
+  var respLower = p.respuesta.toLowerCase();
+  var textoLower2 = p.texto.toLowerCase();
+  var posResp = textoLower2.indexOf(respLower);
+  if (posResp !== -1) {
+    textoMostrar = p.texto.substring(0, posResp) + '<span style="background:rgba(255,255,255,0.15);border-radius:4px;padding:0 6px;color:rgba(255,255,255,0.15);font-style:italic;user-select:none;">___</span>' + p.texto.substring(posResp + p.respuesta.length);
+  }
   body.innerHTML =
     '<div style="background:var(--card);border-radius:16px;padding:22px;border:1px solid var(--border);">' +
-      '<p style="font-size:1rem;line-height:1.6;color:var(--text);margin:0;">' + p.texto + '</p>' +
+      '<p style="font-size:1rem;line-height:1.6;color:var(--text);margin:0;">' + textoMostrar + '</p>' +
     '</div>' +
     '<div id="cien-opciones" style="display:flex;flex-direction:column;gap:10px;">' +
       opciones.map(function(op) {
@@ -29319,6 +29344,26 @@ function cienciaRenderPregunta() {
       setTimeout(function() { fb.scrollIntoView({ behavior: 'smooth', block: 'nearest' }); }, 100);
     });
   });
+}
+
+function cienTanda() {
+  var gs=cienciaGameState, rest=gs.preguntas.length-gs.idx;
+  document.getElementById('cien-game-barra').style.width=Math.round(gs.idx/gs.preguntas.length*100)+'%';
+  document.getElementById('cien-game-body').innerHTML=
+    '<div style="text-align:center;padding:24px 0;">'+
+    '<div style="font-size:3rem;margin-bottom:10px;">⚗️</div>'+
+    '<h3 style="color:var(--text);margin:0 0 6px;">Tanda completada</h3>'+
+    '<p style="color:var(--muted);font-size:0.88rem;margin:0 0 20px;">'+gs.idx+'/'+gs.preguntas.length+' · quedan '+rest+'</p>'+
+    '<div style="display:flex;justify-content:center;gap:20px;margin-bottom:24px;">'+
+      '<div style="text-align:center;"><div style="font-size:1.6rem;font-weight:700;color:#00b894;">'+gs.correctas+'</div><div style="font-size:0.8rem;color:var(--muted);">correctas</div></div>'+
+      '<div style="text-align:center;"><div style="font-size:1.6rem;font-weight:700;color:#e17055;">'+gs.errores+'</div><div style="font-size:0.8rem;color:var(--muted);">errores</div></div>'+
+    '</div>'+
+    '<div style="display:flex;flex-direction:column;gap:10px;">'+
+      '<button id="cien-next-t" style="background:var(--accent);color:#fff;border:none;border-radius:14px;padding:14px;font-size:1rem;font-weight:700;cursor:pointer;width:100%;">Siguiente tanda ('+rest+') →</button>'+
+      '<button id="cien-salir" style="background:var(--card);color:var(--text);border:1px solid var(--border);border-radius:14px;padding:14px;font-size:1rem;cursor:pointer;width:100%;">Guardar y salir</button>'+
+    '</div></div>';
+  document.getElementById('cien-next-t').onclick=function(){gs.tStart=gs.idx;cienciaRenderPregunta();};
+  document.getElementById('cien-salir').onclick=function(){cienciaFinJuego();};
 }
 
 function cienciaFinJuego() {
@@ -29374,6 +29419,576 @@ function cienciaFinJuego() {
     var el = document.getElementById('cien-game'); if(el) el.remove();
     abrirSelectorBloqueCiencia(gs.nivel);
   });
+}
+</script>
+<script>
+var PINTURA_BLOQUES=[
+  { id: "renacimiento_italiano", nombre: "RENACIMIENTO ITALIANO", icon: "🏛️", pintores: [
+    { pintor: "Leonardo da Vinci", obras: ["La Gioconda", "La Última Cena", "La dama del armiño", "El hombre de Vitruvio", "La Virgen de las rocas"] },
+    { pintor: "Miguel Ángel Buonarroti", obras: ["La Creación de Adán", "El Juicio Final", "La Piedad", "La Capilla Sixtina", "David"] },
+    { pintor: "Rafael Sanzio", obras: ["La Escuela de Atenas", "La Madonna Sixtina", "El Parnaso", "La Transfiguración", "Los desposorios de la Virgen"] },
+    { pintor: "Sandro Botticelli", obras: ["El nacimiento de Venus", "La Primavera", "Venus y Marte", "La calumnia de Apeles", "La adoración de los Magos"] },
+    { pintor: "Tiziano Vecellio", obras: ["La Venus de Urbino", "El caballero de la mano en el pecho", "La Asunción de la Virgen", "Dánae", "Baco y Ariadna"] },
+    { pintor: "Caravaggio", obras: ["La vocación de San Mateo", "La crucifixión de San Pedro", "La muerte de la Virgen", "David con la cabeza de Goliat", "Baco"] },
+    { pintor: "El Greco", obras: ["El entierro del Conde de Orgaz", "La vista de Toledo", "La Trinidad", "La Anunciación", "El caballero de la mano en el pecho"] },
+    { pintor: "Giotto di Bondone", obras: ["La huida a Egipto", "El beso de Judas", "La lamentación sobre Cristo muerto", "La Anunciación a Santa Ana", "La Natividad"] },
+    { pintor: "Masaccio", obras: ["La Trinidad", "El tributo de la moneda", "La expulsión del Paraíso", "La Virgen con el Niño y Santa Ana"] },
+    { pintor: "Piero della Francesca", obras: ["La Flagelación de Cristo", "La Resurrección", "La Madonna del Parto", "El sueño de Constantino", "La leyenda de la Vera Cruz"] },
+    { pintor: "Andrea Mantegna", obras: ["La Cámara de los Esposos", "La lamentación sobre Cristo muerto", "El Parnaso", "San Sebastián", "La Virgen de la Victoria"] },
+    { pintor: "Giorgione", obras: ["La tempestad", "La Venus dormida", "Los tres filósofos", "La Virgen con el Niño", "Retrato de joven"] },
+    { pintor: "Antonio Allegri da Correggio", obras: ["La Asunción de la Virgen", "El rapto de Ganímedes", "La Noche", "La Virgen de la escalera", "Júpiter y Ío"] },
+    { pintor: "Paolo Veronese", obras: ["Las bodas de Caná", "La Cena en casa de Leví", "Venus y Adonis", "La familia de Darío ante Alejandro", "El triunfo de Venecia"] },
+    { pintor: "Agnolo Bronzino", obras: ["Alegoría del amor", "Retrato de Lucrezia Panciatichi", "Retrato de Cosme I de Médici", "El descendimiento de Cristo", "San Juan Bautista"] }
+  ]},
+  { id: "barroco_espa_ol", nombre: "BARROCO ESPAÑOL", icon: "🎭", pintores: [
+    { pintor: "Diego Velázquez", obras: ["Las Meninas", "La rendición de Breda", "La Venus del espejo", "El aguador de Sevilla", "El triunfo de Baco", "La fragua de Vulcano"] },
+    { pintor: "Francisco de Zurbarán", obras: ["Agnus Dei", "San Hugo en el refectorio", "La Inmaculada Concepción", "San Francisco en éxtasis", "Bodegón con limones"] },
+    { pintor: "Bartolomé Esteban Murillo", obras: ["La Inmaculada Concepción", "El buen pastor", "Niños comiendo uvas y melón", "La visión de San Antonio", "La Sagrada Familia del pajarito"] },
+    { pintor: "José de Ribera", obras: ["El martirio de San Felipe", "La Magdalena penitente", "El pie varo", "San Jerónimo", "La mujer barbuda"] },
+    { pintor: "Juan de Valdés Leal", obras: ["Finis Gloriae Mundi", "In ictu oculi", "San Jerónimo", "La Inmaculada Concepción", "Las bodas de Caná"] },
+    { pintor: "Alonso Cano", obras: ["La Virgen del Lucero", "San Juan Evangelista", "Cristo muerto sostenido por un ángel", "La Inmaculada Concepción", "Santa Catalina"] },
+    { pintor: "Francisco Pacheco", obras: ["El Juicio Final", "La Inmaculada Concepción", "San Pedro", "Retrato de Miguel de Cervantes", "Santa Catalina"] },
+    { pintor: "Juan Carreño de Miranda", obras: ["La Sagrada Familia", "Carlos II", "La Inmaculada Concepción", "La fundación de la Orden de la Merced", "Retrato de Mariana de Austria"] },
+    { pintor: "Claudio Coello", obras: ["La Sagrada Forma", "El triunfo de San Agustín", "Carlos II adorando la Sagrada Forma", "San Ignacio de Loyola", "La Inmaculada Concepción"] },
+    { pintor: "Antonio de Pereda", obras: ["El sueño del caballero", "La Inmaculada Concepción", "La lección de equitación", "Bodegón con cacería", "San Jerónimo"] }
+  ]},
+  { id: "barroco_flamenco_y_holand_s", nombre: "BARROCO FLAMENCO Y HOLANDÉS", icon: "🌷", pintores: [
+    { pintor: "Peter Paul Rubens", obras: ["Las tres Gracias", "El rapto de las hijas de Leucipo", "La descendimiento de la cruz", "La caza del hipopótamo", "La Adoración de los Magos"] },
+    { pintor: "Rembrandt van Rijn", obras: ["La ronda de noche", "La lección de anatomía", "Autorretrato con dos círculos", "La novia judía", "El regreso del hijo pródigo"] },
+    { pintor: "Johannes Vermeer", obras: ["La joven de la perla", "La lechera", "La vista de Delft", "El geógrafo", "El astrónomo", "La alcoba"] },
+    { pintor: "Anton van Dyck", obras: ["Carlos I a caballo", "La familia de Carlos I", "La Virgen con el Niño", "Retrato de un general", "San Jerónimo"] },
+    { pintor: "Frans Hals", obras: ["La compañía del capitán Reael", "El caballero sonriente", "Los gobernadores del hospital", "La gitana", "Retrato de René Descartes"] },
+    { pintor: "Jan van Eyck", obras: ["El matrimonio Arnolfini", "El cordero místico", "La Virgen del canciller Rolin", "La Virgen en la iglesia", "Retrato de Timoteo"] },
+    { pintor: "Pieter Brueghel el Viejo", obras: ["La torre de Babel", "El triunfo de la muerte", "La cosecha", "Los cazadores en la nieve", "El país de Jauja"] },
+    { pintor: "Hieronymus Bosch", obras: ["El jardín de las delicias", "El carro de heno", "La tentación de San Antonio", "La mesa de los pecados capitales", "La extracción de la piedra de la locura"] },
+    { pintor: "Jacob van Ruisdael", obras: ["El molino de viento", "El cementerio judío", "El gran roble", "Paisaje con cascada", "La playa de Egmond"] },
+    { pintor: "Jan Steen", obras: ["La fiesta de San Nicolás", "El mundo al revés", "La familia del pintor", "La taberna", "El niño enfermo"] }
+  ]},
+  { id: "rococ__y_neoclasicismo", nombre: "ROCOCÓ Y NEOCLASICISMO", icon: "🎪", pintores: [
+    { pintor: "Jean-Honoré Fragonard", obras: ["El columpio", "El cerrojo", "La lectura", "La carta de amor", "La lechera"] },
+    { pintor: "François Boucher", obras: ["El baño de Venus", "La toillette de Venus", "La joven pastora", "El almuerzo", "La odalisca rubia"] },
+    { pintor: "Antoine Watteau", obras: ["El embarque para Citera", "El sibarita", "El charlatán", "El amor en la comedia italiana", "El signo de Gersaint"] },
+    { pintor: "Jean-Baptiste Siméon Chardin", obras: ["El rayo", "La mantarraya", "La sopería", "La vuelta del mercado", "El cartón"] },
+    { pintor: "Jacques-Louis David", obras: ["La muerte de Marat", "El juramento de los Horacios", "La coronación de Napoleón", "El rapto de las sabinas", "Napoleón cruzando los Alpes"] },
+    { pintor: "Jean-Auguste-Dominique Ingres", obras: ["La gran odalisca", "El baño turco", "La apoteosis de Homero", "La Virgen con la Hostia", "Retrato de Monsieur Bertin"] },
+    { pintor: "Francisco de Goya", obras: ["Los fusilamientos del 3 de mayo", "La maja desnuda", "La maja vestida", "La familia de Carlos IV", "El sueño de la razón produce monstruos", "Los caprichos"] },
+    { pintor: "Joseph Mallord William Turner", obras: ["El Temerario remolcado", "Lluvia", "vapor y velocidad", "La esclava", "El incendio del Parlamento", "El último viaje del Temerario"] }
+  ]},
+  { id: "impresionismo_y_postimpresionismo", nombre: "IMPRESIONISMO Y POSTIMPRESIONISMO", icon: "🌸", pintores: [
+    { pintor: "Claude Monet", obras: ["Impresión", "sol naciente", "Nenúfares", "La catedral de Rouen", "Mujeres en el jardín", "El almiares", "La estación de Saint-Lazare"] },
+    { pintor: "Édouard Manet", obras: ["Olympia", "El almuerzo sobre la hierba", "El pífano", "El balcón", "La ejecución de Maximiliano"] },
+    { pintor: "Pierre-Auguste Renoir", obras: ["El baile en el Moulin de la Galette", "El almuerzo de los remeros", "La bañista", "La muchacha del abanico", "Las grandes bañistas"] },
+    { pintor: "Edgar Degas", obras: ["La clase de danza", "La estrella", "La bañista", "La planchadora", "El ajenjo"] },
+    { pintor: "Camille Pissarro", obras: ["El Boulevard Montmartre", "La cosecha", "La nieve en Louveciennes", "El jardín de Pontoise", "El mercado"] },
+    { pintor: "Berthe Morisot", obras: ["La cuna", "El retrato de la madre", "La mariposa", "En el jardín", "La psique"] },
+    { pintor: "Vincent van Gogh", obras: ["La noche estrellada", "Los girasoles", "Autorretrato con la oreja vendada", "La habitación en Arlés", "La noche estrellada sobre el Ródano", "El sembrador"] },
+    { pintor: "Paul Gauguin", obras: ["¿De dónde venimos? ¿Quiénes somos? ¿A dónde vamos?", "La ola", "La visión después del sermón", "La oración", "El Cristo amarillo"] },
+    { pintor: "Paul Cézanne", obras: ["Los jugadores de cartas", "La montaña Sainte-Victoire", "El bodegón con manzanas", "La bañista", "La casa del ahorcado"] },
+    { pintor: "Georges Seurat", obras: ["Una tarde de domingo en la isla de la Grande Jatte", "El circo", "El baño en Asnières", "La modelo", "La parada"] },
+    { pintor: "Henri de Toulouse-Lautrec", obras: ["En el Moulin Rouge", "La Goulue llegando al Moulin Rouge", "El baile", "El circo", "Monsieur Boileau"] },
+    { pintor: "Gustav Klimt", obras: ["El beso", "Judith I", "La dama de oro", "El árbol de la vida", "Adele Bloch-Bauer"] }
+  ]},
+  { id: "expresionismo_y_fovismo", nombre: "EXPRESIONISMO Y FOVISMO", icon: "😱", pintores: [
+    { pintor: "Edvard Munch", obras: ["El grito", "La Madonna", "La niña enferma", "La danza de la vida", "Vampiro"] },
+    { pintor: "Egon Schiele", obras: ["La familia", "El abrazo", "Autorretrato con los dedos separados", "La muerte y la doncella", "La virgen"] },
+    { pintor: "Ernst Ludwig Kirchner", obras: ["Berlín", "calle", "Autorretrato como soldado", "La calle", "La danza", "Cinco mujeres en la calle"] },
+    { pintor: "Henri Matisse", obras: ["La danza", "La alegría de vivir", "La ventana abierta", "Mujer con sombrero", "La habitación roja"] },
+    { pintor: "André Derain", obras: ["El puente de Charing Cross", "La danza", "Los pescadores", "El puerto de Londres", "El paisaje de Collioure"] },
+    { pintor: "Maurice de Vlaminck", obras: ["El Sena en Chatou", "El paisaje", "La taberna", "El puente", "El campo"] }
+  ]},
+  { id: "cubismo_y_vanguardias", nombre: "CUBISMO Y VANGUARDIAS", icon: "🔷", pintores: [
+    { pintor: "Pablo Picasso", obras: ["Guernica", "Las señoritas de Avignon", "El viejo guitarrista", "La mujer que llora", "La paloma de la paz", "El sueño"] },
+    { pintor: "Georges Braque", obras: ["El violín y el candelabro", "La mesa del comedor", "El portugues", "El viaducto", "La frutera"] },
+    { pintor: "Juan Gris", obras: ["El desayuno", "El violín", "La botella de anís", "La guitarra", "El fumador"] },
+    { pintor: "Salvador Dalí", obras: ["La persistencia de la memoria", "La tentación de San Antonio", "El gran masturbador", "El rostro de Mae West", "Cisnes reflejando elefantes"] },
+    { pintor: "René Magritte", obras: ["La traición de las imágenes", "El hijo del hombre", "El imperio de las luces", "El amor", "La condición humana"] },
+    { pintor: "Joan Miró", obras: ["La masía", "La caricia de un pájaro", "La estrella matinal", "Mujeres y pájaros", "La siesta"] },
+    { pintor: "Wassily Kandinsky", obras: ["Composición VII", "Cuadro con círculo", "El jinete azul", "Impresión III", "Punto y línea sobre superficie"] },
+    { pintor: "Piet Mondrian", obras: ["Composición en rojo", "amarillo y azul", "Broadway Boogie Woogie", "Victory Boogie Woogie", "Árbol gris", "Composición II"] }
+  ]},
+  { id: "arte_espa_ol_siglo_xx", nombre: "ARTE ESPAÑOL SIGLO XX", icon: "🎨", pintores: [
+    { pintor: "Antoni Tàpies", obras: ["Gran pintura", "Material en forma de pie", "Caja de zapatos", "La cruz", "Marrón y negro"] },
+    { pintor: "Eduardo Chillida", obras: ["El peine del viento", "Lugar de encuentros", "Homenaje a Mallarmé", "Gravitación", "La casa de Goethe"] },
+    { pintor: "Miquel Barceló", obras: ["Gran elefante", "La sala de la Santa Cena", "El mar", "Ceniza", "Torero"] },
+    { pintor: "Antonio López García", obras: ["La ciudad de Madrid", "El inodoro", "Gran Vía", "El comedor", "Mujer en la bañera"] },
+    { pintor: "José Gutiérrez Solana", obras: ["La tertulia del café Pombo", "La procesión de la muerte", "La chula", "Las coristas", "El ciego"] },
+    { pintor: "Ignacio Zuloaga", obras: ["La bruja de San Millán", "El torero", "La novia", "La mujer de los pájaros", "El Cristo de la sangre"] },
+    { pintor: "Julio Romero de Torres", obras: ["La chiquita piconera", "El poema de Córdoba", "La saeta", "La gitana", "La gracia"] },
+    { pintor: "Joaquín Sorolla", obras: ["Paseo a orillas del mar", "La vuelta de la pesca", "Niños en la playa", "La bata rosa", "El baño del caballo"] }
+  ]},
+  { id: "arte_contempor_neo", nombre: "ARTE CONTEMPORÁNEO", icon: "🟡", pintores: [
+    { pintor: "Andy Warhol", obras: ["Lata de sopa Campbell", "Marilyn Monroe", "Elvis", "The Velvet Underground", "Flores"] },
+    { pintor: "Roy Lichtenstein", obras: ["Whaam!", "Drowning Girl", "Oh", "Jeff...", "M-Maybe", "Crying Girl"] },
+    { pintor: "Jackson Pollock", obras: ["Número 5", "Otoño", "Lavender Mist", "El hombre con la pipa", "La luna"] },
+    { pintor: "Mark Rothko", obras: ["Naranja y amarillo", "Nº 61", "Blanco y negro", "Rojo sobre marrón", "La capilla Rothko"] },
+    { pintor: "Francis Bacon", obras: ["Estudio después del retrato del Papa Inocencio X", "Tres estudios para figuras en la base de una crucifixión", "Autorretrato", "El grito", "El hombre que llora"] },
+    { pintor: "David Hockney", obras: ["Un chapuzón más grande", "Mr. and Mrs. Clark and Percy", "Pearblossom Highway", "El campo", "Autorretrato con un amigo"] }
+  ]}
+];
+var ARTE_KEY='ppro_arte_v1';
+function arteLoad(){try{var r=localStorage.getItem(ARTE_KEY);if(r)return JSON.parse(r);}catch(e){}return{emp:{},quiz:{}};}
+function arteSave(st){try{localStorage.setItem(ARTE_KEY,JSON.stringify(st));}catch(e){}}
+var IMG_URLS={
+  "La Gioconda":"https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Mona_Lisa,_by_Leonardo_da_Vinci,_from_C2RMF_retouched.jpg/800px-Mona_Lisa,_by_Leonardo_da_Vinci,_from_C2RMF_retouched.jpg",
+  "La Última Cena":"https://upload.wikimedia.org/wikipedia/commons/thumb/4/48/The_Last_Supper_-_Leonardo_Da_Vinci_-_High_Resolution_32x16.jpg/800px-The_Last_Supper_-_Leonardo_Da_Vinci_-_High_Resolution_32x16.jpg",
+  "La dama del armiño":"https://upload.wikimedia.org/wikipedia/commons/thumb/8/8f/Leonardo_da_Vinci_-_Lady_with_an_Ermine.jpg/800px-Leonardo_da_Vinci_-_Lady_with_an_Ermine.jpg",
+  "El hombre de Vitruvio":"https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Vitruvian_Man_by_Leonardo_da_Vinci.jpg/800px-Vitruvian_Man_by_Leonardo_da_Vinci.jpg",
+  "La Virgen de las rocas":"https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Leonardo_da_Vinci_-_Virgin_of_the_Rocks_(National_Gallery_London).jpg/800px-Leonardo_da_Vinci_-_Virgin_of_the_Rocks_(National_Gallery_London).jpg",
+  "La Creación de Adán":"https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/Michelangelo_-_Creation_of_Adam_(cropped).jpg/800px-Michelangelo_-_Creation_of_Adam_(cropped).jpg",
+  "El Juicio Final":"https://upload.wikimedia.org/wikipedia/commons/thumb/a/a1/Michelangelo_-_Fresco_of_The_Last_Judgment.jpg/800px-Michelangelo_-_Fresco_of_The_Last_Judgment.jpg",
+  "La Escuela de Atenas":"https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Raphael_School_of_Athens.jpg/800px-Raphael_School_of_Athens.jpg",
+  "La Madonna Sixtina":"https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/Sistine_Madonna.jpg/800px-Sistine_Madonna.jpg",
+  "El nacimiento de Venus":"https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/Sandro_Botticelli_-_La_nascita_di_Venere_-_Google_Art_Project_-_edited.jpg/800px-Sandro_Botticelli_-_La_nascita_di_Venere_-_Google_Art_Project_-_edited.jpg",
+  "La Primavera":"https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Botticelli-primavera.jpg/800px-Botticelli-primavera.jpg",
+  "Las Meninas":"https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Las_Meninas_01.jpg/800px-Las_Meninas_01.jpg",
+  "La rendición de Breda":"https://upload.wikimedia.org/wikipedia/commons/thumb/f/fe/Velazquez-Surrender-of-Breda.jpg/800px-Velazquez-Surrender-of-Breda.jpg",
+  "La Venus del espejo":"https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/Rokeby_Venus.jpg/800px-Rokeby_Venus.jpg",
+  "El tres de mayo de 1808":"https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/El_Tres_de_Mayo,_by_Francisco_de_Goya,_from_Prado_thin_black_margin.jpg/800px-El_Tres_de_Mayo,_by_Francisco_de_Goya,_from_Prado_thin_black_margin.jpg",
+  "La maja desnuda":"https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/Goya_Maja_desnuda.jpg/800px-Goya_Maja_desnuda.jpg",
+  "Saturno devorando a su hijo":"https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Francisco_de_Goya,_Saturno_devorando_a_su_hijo_(1819-1823).jpg/800px-Francisco_de_Goya,_Saturno_devorando_a_su_hijo_(1819-1823).jpg",
+  "La ronda de noche":"https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/The_Night_Watch_-_HD.jpg/800px-The_Night_Watch_-_HD.jpg",
+  "La joven de la perla":"https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/1665_Girl_with_a_Pearl_Earring.jpg/800px-1665_Girl_with_a_Pearl_Earring.jpg",
+  "La lechera":"https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Jan_Vermeer_-_De_melkmeid.jpg/800px-Jan_Vermeer_-_De_melkmeid.jpg",
+  "Las tres Gracias":"https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Rubens_-_The_Three_Graces.jpg/800px-Rubens_-_The_Three_Graces.jpg",
+  "El columpio":"https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/The_Swing_by_Fragonard.jpg/800px-The_Swing_by_Fragonard.jpg",
+  "Impresión, sol naciente":"https://upload.wikimedia.org/wikipedia/commons/thumb/5/54/Claude_Monet,_Impression,_soleil_levant.jpg/800px-Claude_Monet,_Impression,_soleil_levant.jpg",
+  "Los nenúfares":"https://upload.wikimedia.org/wikipedia/commons/thumb/a/aa/Claude_Monet_-_Water_Lilies_-_1906,_Ryerson.jpg/800px-Claude_Monet_-_Water_Lilies_-_1906,_Ryerson.jpg",
+  "Olympia":"https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Edouard_Manet_-_Olympia_-_Google_Art_Project_3.jpg/800px-Edouard_Manet_-_Olympia_-_Google_Art_Project_3.jpg",
+  "El almuerzo sobre la hierba":"https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/Manet-dejeunersurlherbe.jpg/800px-Manet-dejeunersurlherbe.jpg",
+  "Moulin de la Galette":"https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Pierre-Auguste_Renoir,_Le_Moulin_de_la_Galette.jpg/800px-Pierre-Auguste_Renoir,_Le_Moulin_de_la_Galette.jpg",
+  "La noche estrellada":"https://upload.wikimedia.org/wikipedia/commons/thumb/e/ea/Van_Gogh_-_Starry_Night_-_Google_Art_Project.jpg/800px-Van_Gogh_-_Starry_Night_-_Google_Art_Project.jpg",
+  "Los girasoles":"https://upload.wikimedia.org/wikipedia/commons/thumb/e/ee/Van_Gogh_-_Sunflowers.jpg/800px-Van_Gogh_-_Sunflowers.jpg",
+  "El dormitorio en Arlés":"https://upload.wikimedia.org/wikipedia/commons/thumb/6/60/Van_Gogh_-_Van_Goghs_Bedroom_-_Arles.jpg/800px-Van_Gogh_-_Van_Goghs_Bedroom_-_Arles.jpg",
+  "El grito":"https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Edvard_Munch,_1893,_The_Scream,_oil,_tempera_and_pastel_on_cardboard,_91_x_73_cm,_National_Gallery_of_Norway.jpg/800px-Edvard_Munch,_1893,_The_Scream,_oil,_tempera_and_pastel_on_cardboard,_91_x_73_cm,_National_Gallery_of_Norway.jpg",
+  "Guernica":"https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/PicassoGuernica.jpg/800px-PicassoGuernica.jpg",
+  "Las señoritas de Avignon":"https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/Les_Demoiselles_d_Avignon.jpg/800px-Les_Demoiselles_d_Avignon.jpg",
+  "La persistencia de la memoria":"https://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/The_Persistence_of_Memory.jpg/800px-The_Persistence_of_Memory.jpg",
+  "El beso":"https://upload.wikimedia.org/wikipedia/commons/thumb/4/40/The_Kiss_-_Gustav_Klimt_-_Google_Cultural_Institute.jpg/800px-The_Kiss_-_Gustav_Klimt_-_Google_Cultural_Institute.jpg",
+  "Un domingo en La Grande Jatte":"https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/A_Sunday_on_La_Grande_Jatte.jpg/800px-A_Sunday_on_La_Grande_Jatte.jpg",
+  "Nighthawks":"https://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/Nighthawks_by_Edward_Hopper_1942.jpg/800px-Nighthawks_by_Edward_Hopper_1942.jpg",
+  "Marilyn Monroe":"https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/Marilyn_Monroe_-_Andy_Warhol.jpg/800px-Marilyn_Monroe_-_Andy_Warhol.jpg",
+  "Lata de sopa Campbell":"https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Campbells_Soup_Cans_MOMA.jpg/800px-Campbells_Soup_Cans_MOMA.jpg",
+  "Whaam!":"https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/Roy_Lichtenstein_Whaam.jpg/800px-Roy_Lichtenstein_Whaam.jpg",
+  "La danza":"https://upload.wikimedia.org/wikipedia/commons/thumb/1/1d/La_danse_I_by_Matisse.jpg/800px-La_danse_I_by_Matisse.jpg",
+  "Dánae":"https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Tizian_041.jpg/800px-Tizian_041.jpg",
+  "La Venus de Urbino":"https://upload.wikimedia.org/wikipedia/commons/thumb/4/45/Titian_-_Venus_of_Urbino_-_Google_Art_Project.jpg/800px-Titian_-_Venus_of_Urbino_-_Google_Art_Project.jpg",
+  "La vocación de San Mateo":"https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/Caravaggio_-_La_vocazione_di_San_Matteo.jpg/800px-Caravaggio_-_La_vocazione_di_San_Matteo.jpg",
+  "El entierro del Conde de Orgaz":"https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/El_Greco_-_The_Burial_of_the_Count_of_Orgaz.jpg/800px-El_Greco_-_The_Burial_of_the_Count_of_Orgaz.jpg",
+  "La clase de danza":"https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Dance_Class_at_the_Opera.jpg/800px-Dance_Class_at_the_Opera.jpg",
+  "Los jugadores de cartas":"https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Paul_Cezanne_-_Card_Players_-_Courtauld.jpg/800px-Paul_Cezanne_-_Card_Players_-_Courtauld.jpg",
+  "Judith":"https://upload.wikimedia.org/wikipedia/commons/thumb/9/9f/Klimt_-_Judith_I.jpg/800px-Klimt_-_Judith_I.jpg",
+  "La familia":"https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Egon_Schiele_-_The_Family.jpg/800px-Egon_Schiele_-_The_Family.jpg",
+  "El sueño del caballero":"https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/El_sue%C3%B1o_del_caballero.jpg/800px-El_sue%C3%B1o_del_caballero.jpg",
+  "El sibarita":"https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/Jean_Antoine_Watteau_-_Gilles_-_Louvre.jpg/800px-Jean_Antoine_Watteau_-_Gilles_-_Louvre.jpg",
+  "El embarque para Citera":"https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/L%27Embarquement_pour_Cythere%2C_by_Antoine_Watteau%2C_from_C2RMF_retouched.jpg/800px-L%27Embarquement_pour_Cythere%2C_by_Antoine_Watteau%2C_from_C2RMF_retouched.jpg",
+  "El charlatán":"https://upload.wikimedia.org/wikipedia/commons/thumb/4/48/Watteau_charlatans.jpg/800px-Watteau_charlatans.jpg",
+  "El amor en la comedia italiana":"https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Watteau_-_Love_in_the_Italian_Theatre.jpg/800px-Watteau_-_Love_in_the_Italian_Theatre.jpg",
+  "El aguador de Sevilla":"https://upload.wikimedia.org/wikipedia/commons/thumb/2/28/El_aguador_de_Sevilla.jpg/800px-El_aguador_de_Sevilla.jpg",
+  "Retrato de Mariana de Austria":"https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Vel%C3%A1zquez_-_Mariana_de_Austria%2C_Reina_de_Espa%C3%B1a_%281653%2C_Museo_del_Prado%29.jpg/800px-Vel%C3%A1zquez_-_Mariana_de_Austria%2C_Reina_de_Espa%C3%B1a_%281653%2C_Museo_del_Prado%29.jpg",
+  "El triunfo de San Agustín":"https://upload.wikimedia.org/wikipedia/commons/thumb/4/43/Cl%C3%A1udio_Coello_-_The_Triumph_of_Saint_Augustine_-_Google_Art_Project.jpg/800px-Cl%C3%A1udio_Coello_-_The_Triumph_of_Saint_Augustine_-_Google_Art_Project.jpg",
+  "La Inmaculada Concepción":"https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/Murillo_-_Immaculate_Conception_of_Los_Venerables.jpg/800px-Murillo_-_Immaculate_Conception_of_Los_Venerables.jpg",
+  "La fundación de la Orden de la Merced":"https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/Zurbar%C3%A1n_-_La_fundaci%C3%B3n_de_la_Orden_de_la_Merced.jpg/800px-Zurbar%C3%A1n_-_La_fundaci%C3%B3n_de_la_Orden_de_la_Merced.jpg",
+  "Santa Catalina":"https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Francisco_de_Zurbar%C3%A1n_-_Saint_Catherine_of_Alexandria_-_WGA26059.jpg/800px-Francisco_de_Zurbar%C3%A1n_-_Saint_Catherine_of_Alexandria_-_WGA26059.jpg",
+  "San Jerónimo":"https://upload.wikimedia.org/wikipedia/commons/thumb/7/70/El_Greco_-_Saint_Jerome_-_WGA10554.jpg/800px-El_Greco_-_Saint_Jerome_-_WGA10554.jpg",
+  "San Juan Bautista":"https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/El_Greco_-_Saint_John_the_Baptist_-_WGA10521.jpg/800px-El_Greco_-_Saint_John_the_Baptist_-_WGA10521.jpg",
+  "San Juan Evangelista":"https://upload.wikimedia.org/wikipedia/commons/thumb/d/da/El_Greco_-_Saint_John_the_Evangelist_-_WGA10534.jpg/800px-El_Greco_-_Saint_John_the_Evangelist_-_WGA10534.jpg",
+  "El Cristo de la sangre":"https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/El_Greco_-_The_Burial_of_the_Count_of_Org%C3%A1z.jpg/800px-El_Greco_-_The_Burial_of_the_Count_of_Org%C3%A1z.jpg",
+  "La Virgen con el Niño":"https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/Bartolom%C3%A9_Esteban_Murillo_-_Virgin_and_Child_-_WGA16397.jpg/800px-Bartolom%C3%A9_Esteban_Murillo_-_Virgin_and_Child_-_WGA16397.jpg",
+  "La Virgen del Lucero":"https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/Murillo_-_Virgen_con_el_Ni%C3%B1o_%28Galeria_Palatina%29.jpg/800px-Murillo_-_Virgen_con_el_Ni%C3%B1o_%28Galeria_Palatina%29.jpg",
+  "San Pedro":"https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/Murillo_-_Saint_Peter_in_tears.jpg/800px-Murillo_-_Saint_Peter_in_tears.jpg",
+  "La Sagrada Forma":"https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/Claudio_Coello_-_The_Adoration_of_the_Sacred_Form_-_Google_Art_Project.jpg/800px-Claudio_Coello_-_The_Adoration_of_the_Sacred_Form_-_Google_Art_Project.jpg",
+  "Carlos II adorando la Sagrada Forma":"https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/Claudio_Coello_-_The_Adoration_of_the_Sacred_Form_-_Google_Art_Project.jpg/800px-Claudio_Coello_-_The_Adoration_of_the_Sacred_Form_-_Google_Art_Project.jpg",
+  "Carlos II":"https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/Carlos_II._of_Spain.jpg/800px-Carlos_II._of_Spain.jpg",
+  "La lección de equitación":"https://upload.wikimedia.org/wikipedia/commons/thumb/9/9c/Pereda%2C_Antonio_de_-_Knight_with_a_Clock_-_ca._1652.jpg/800px-Pereda%2C_Antonio_de_-_Knight_with_a_Clock_-_ca._1652.jpg",
+  "El descendimiento de Cristo":"https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Rembrandt_-_The_Descent_from_the_Cross_-_WGA19117.jpg/800px-Rembrandt_-_The_Descent_from_the_Cross_-_WGA19117.jpg",
+  "Autorretrato":"https://upload.wikimedia.org/wikipedia/commons/thumb/b/bd/Rembrandt_van_Rijn_-_Self-Portrait_-_Google_Art_Project.jpg/800px-Rembrandt_van_Rijn_-_Self-Portrait_-_Google_Art_Project.jpg",
+  "La compañía del capitán Reael":"https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Rembrandt_van_Rijn_-_The_Night_Watch_-_Google_Art_Project_with_stitching.jpg/800px-Rembrandt_van_Rijn_-_The_Night_Watch_-_Google_Art_Project_with_stitching.jpg",
+  "La fiesta de San Nicolás":"https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/Jan_Steen_-_The_Feast_of_Saint_Nicholas.jpg/800px-Jan_Steen_-_The_Feast_of_Saint_Nicholas.jpg",
+  "El cementerio judío":"https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Jacob_van_Ruisdael_-_The_Jewish_Cemetery_-_WGA20466.jpg/800px-Jacob_van_Ruisdael_-_The_Jewish_Cemetery_-_WGA20466.jpg",
+  "La caza del hipopótamo":"https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/Rubens_hippopotamus.jpg/800px-Rubens_hippopotamus.jpg",
+  "La Sagrada Familia":"https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/Peter_Paul_Rubens_-_The_Holy_Family_with_St_Francis_-_WGA20349.jpg/800px-Peter_Paul_Rubens_-_The_Holy_Family_with_St_Francis_-_WGA20349.jpg",
+  "Retrato de Monsieur Bertin":"https://upload.wikimedia.org/wikipedia/commons/thumb/2/28/Jean_Auguste_Dominique_Ingres_-_Portrait_de_Monsieur_Bertin.jpg/800px-Jean_Auguste_Dominique_Ingres_-_Portrait_de_Monsieur_Bertin.jpg",
+  "La odalisca rubia":"https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/Jean-Auguste-Dominique_Ingres_-_La_Grande_Odalisque_-_WGA11841.jpg/800px-Jean-Auguste-Dominique_Ingres_-_La_Grande_Odalisque_-_WGA11841.jpg",
+  "vapor y velocidad":"https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/Rain_Steam_and_Speed_the_Great_Western_Railway.jpg/800px-Rain_Steam_and_Speed_the_Great_Western_Railway.jpg",
+  "Lluvia":"https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/Rain%2C_Steam_and_Speed_-_The_Great_Western_Railway_%28J._M._W._Turner%29.jpg/800px-Rain%2C_Steam_and_Speed_-_The_Great_Western_Railway_%28J._M._W._Turner%29.jpg",
+  "El puente de Charing Cross":"https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/Claude_Monet_-_Charing_Cross_Bridge_-_Google_Art_Project.jpg/800px-Claude_Monet_-_Charing_Cross_Bridge_-_Google_Art_Project.jpg",
+  "El puerto de Londres":"https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/JMW_Turner_-_The_Thames_above_Waterloo_Bridge.jpg/800px-JMW_Turner_-_The_Thames_above_Waterloo_Bridge.jpg",
+  "La ola":"https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Joseph_Mallord_William_Turner_-_Snow_Storm_-_Steam-Boat_off_a_Harbour%27s_Mouth.jpg/800px-Joseph_Mallord_William_Turner_-_Snow_Storm_-_Steam-Boat_off_a_Harbour%27s_Mouth.jpg",
+  "El molino de viento":"https://upload.wikimedia.org/wikipedia/commons/thumb/c/c4/John_Constable_-_Dedham_Vale_-_Google_Art_Project.jpg/800px-John_Constable_-_Dedham_Vale_-_Google_Art_Project.jpg",
+  "El puente":"https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Constable_Salisbury_Cathedral_from_the_Meadows.jpg/800px-Constable_Salisbury_Cathedral_from_the_Meadows.jpg",
+  "El mar":"https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Caspar_David_Friedrich_-_The_Sea_of_Ice.jpg/800px-Caspar_David_Friedrich_-_The_Sea_of_Ice.jpg",
+  "El paisaje":"https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/Caspar_David_Friedrich_-_Wanderer_above_the_sea_of_fog.jpg/800px-Caspar_David_Friedrich_-_Wanderer_above_the_sea_of_fog.jpg",
+  "Paisaje con cascada":"https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Caspar_David_Friedrich_-_Mountain_Landscape_with_Rainbow.jpg/800px-Caspar_David_Friedrich_-_Mountain_Landscape_with_Rainbow.jpg",
+  "El baile en el Moulin de la Galette":"https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Pierre-Auguste_Renoir_-_Bal_du_moulin_de_la_Galette.jpg/800px-Pierre-Auguste_Renoir_-_Bal_du_moulin_de_la_Galette.jpg",
+  "Las coristas":"https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/Edgar_Degas_-_The_Star_%28Dancer_on_Stage%29_-_Google_Art_Project.jpg/800px-Edgar_Degas_-_The_Star_%28Dancer_on_Stage%29_-_Google_Art_Project.jpg",
+  "Mujer en la bañera":"https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Edgar_Degas_-_The_Tub.jpg/800px-Edgar_Degas_-_The_Tub.jpg",
+  "La Goulue llegando al Moulin Rouge":"https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/La_Goulue_arriving_at_Moulin_Rouge.jpg/800px-La_Goulue_arriving_at_Moulin_Rouge.jpg",
+  "Monsieur Boileau":"https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Henri_de_Toulouse-Lautrec_-_At_the_Moulin_Rouge_-_Google_Art_Project.jpg/800px-Henri_de_Toulouse-Lautrec_-_At_the_Moulin_Rouge_-_Google_Art_Project.jpg",
+  "El almiares":"https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Claude_Monet_-_Haystacks_%28effect_of_snow_and_sun%29.jpg/800px-Claude_Monet_-_Haystacks_%28effect_of_snow_and_sun%29.jpg",
+  "Nenúfares":"https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Claude_Monet_-_Water_Lilies_and_Japanese_Bridge_%281897-1899%29_-_Princeton.jpg/800px-Claude_Monet_-_Water_Lilies_and_Japanese_Bridge_%281897-1899%29_-_Princeton.jpg",
+  "El Sena en Chatou":"https://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/Georges_Seurat_-_A_Sunday_on_La_Grande_Jatte_--_1884_-_Google_Art_Project.jpg/800px-Georges_Seurat_-_A_Sunday_on_La_Grande_Jatte_--_1884_-_Google_Art_Project.jpg",
+  "Autorretrato con la oreja vendada":"https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/Vincent_van_Gogh_-_Self-Portrait_with_Bandaged_Ear.jpg/800px-Vincent_van_Gogh_-_Self-Portrait_with_Bandaged_Ear.jpg",
+  "El campo":"https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Vincent_van_Gogh_-_Wheat_Field_with_Crows.jpg/800px-Vincent_van_Gogh_-_Wheat_Field_with_Crows.jpg",
+  "Los pescadores":"https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/Vincent_van_Gogh_-_Fishing_Boats_on_the_Beach_at_Saintes-Maries-de-la-Mer.jpg/800px-Vincent_van_Gogh_-_Fishing_Boats_on_the_Beach_at_Saintes-Maries-de-la-Mer.jpg",
+  "El niño enfermo":"https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/Edvard_Munch_-_The_Sick_Child_-_Google_Art_Project.jpg/800px-Edvard_Munch_-_The_Sick_Child_-_Google_Art_Project.jpg",
+  "Vampiro":"https://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/Edvard_Munch_-_Vampire_%281895%29_-_Google_Art_Project.jpg/800px-Edvard_Munch_-_Vampire_%281895%29_-_Google_Art_Project.jpg",
+  "El hombre que llora":"https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Edvard_Munch_-_Melancholy_%281894-96%29.jpg/800px-Edvard_Munch_-_Melancholy_%281894-96%29.jpg",
+  "La Virgen en la iglesia":"https://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/Gustav_Klimt_-_The_Virgin_-_Google_Art_Project.jpg/800px-Gustav_Klimt_-_The_Virgin_-_Google_Art_Project.jpg",
+  "La virgen":"https://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/Gustav_Klimt_-_The_Virgin_-_Google_Art_Project.jpg/800px-Gustav_Klimt_-_The_Virgin_-_Google_Art_Project.jpg",
+  "Cinco mujeres en la calle":"https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Ernst_Ludwig_Kirchner_-_F%C3%BCnf_Frauen_auf_der_Stra%C3%9Fe_-_Google_Art_Project.jpg/800px-Ernst_Ludwig_Kirchner_-_F%C3%BCnf_Frauen_auf_der_Stra%C3%9Fe_-_Google_Art_Project.jpg",
+  "Berlín":"https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Ernst_Ludwig_Kirchner_-_Potsdamer_Platz.jpg/800px-Ernst_Ludwig_Kirchner_-_Potsdamer_Platz.jpg",
+  "Autorretrato como soldado":"https://upload.wikimedia.org/wikipedia/commons/thumb/3/31/Oskar_Kokoschka_-_Self-Portrait_as_a_Warrior_-_Google_Art_Project.jpg/800px-Oskar_Kokoschka_-_Self-Portrait_as_a_Warrior_-_Google_Art_Project.jpg",
+  "Autorretrato con los dedos separados":"https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/Egon_Schiele_-_Self-Portrait_with_Physalis_-_Google_Art_Project.jpg/800px-Egon_Schiele_-_Self-Portrait_with_Physalis_-_Google_Art_Project.jpg",
+  "Composición II":"https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Piet_Mondriaan%2C_1930_-_Mondrian_Composition_II_in_Red%2C_Blue%2C_and_Yellow.jpg/800px-Piet_Mondriaan%2C_1930_-_Mondrian_Composition_II_in_Red%2C_Blue%2C_and_Yellow.jpg",
+  "Composición en rojo":"https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Vassily_Kandinsky%2C_1923_-_Composition_8%2C_huile_sur_toile%2C_140_cm_x_201_cm%2C_Guggenheim_Museum.jpg/800px-Vassily_Kandinsky%2C_1923_-_Composition_8%2C_huile_sur_toile%2C_140_cm_x_201_cm%2C_Guggenheim_Museum.jpg",
+  "Impresión III":"https://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/Wassily_Kandinsky%2C_1911%2C_Impression_III_%28Concert%29%2C_oil_on_canvas%2C_77.5_x_100_cm%2C_Stadtische_Galerie_im_Lenbachhaus%2C_Munich.jpg/800px-Wassily_Kandinsky%2C_1911%2C_Impression_III_%28Concert%29%2C_oil_on_canvas%2C_77.5_x_100_cm%2C_Stadtische_Galerie_im_Lenbachhaus%2C_Munich.jpg",
+  "Cuadro con círculo":"https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/Vassily_Kandinsky%2C_1926_-_Several_Circles%2C_Gugg_0910_25.jpg/800px-Vassily_Kandinsky%2C_1926_-_Several_Circles%2C_Gugg_0910_25.jpg",
+  "Punto y línea sobre superficie":"https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Kandinsky_Composition_X.jpg/800px-Kandinsky_Composition_X.jpg",
+  "Victory Boogie Woogie":"https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/Mondrian_-_Victory_Boogie-Woogie.jpg/800px-Mondrian_-_Victory_Boogie-Woogie.jpg",
+  "amarillo y azul":"https://upload.wikimedia.org/wikipedia/commons/thumb/3/32/Mondrian_Tableau_I.jpg/800px-Mondrian_Tableau_I.jpg",
+  "El violín y el candelabro":"https://upload.wikimedia.org/wikipedia/commons/thumb/5/56/Georges_Braque%2C_1909-10%2C_Violin_and_Candlestick%2C_oil_on_canvas%2C_61_x_50_cm%2C_San_Francisco_Museum_of_Modern_Art.jpg/800px-Georges_Braque%2C_1909-10%2C_Violin_and_Candlestick%2C_oil_on_canvas%2C_61_x_50_cm%2C_San_Francisco_Museum_of_Modern_Art.jpg",
+  "El portugues":"https://upload.wikimedia.org/wikipedia/commons/thumb/3/37/Georges_Braque%2C_1911-12%2C_The_Portuguese%2C_oil_on_canvas%2C_116.8_x_81_cm%2C_Kunstmuseum_Basel.jpg/800px-Georges_Braque%2C_1911-12%2C_The_Portuguese%2C_oil_on_canvas%2C_116.8_x_81_cm%2C_Kunstmuseum_Basel.jpg",
+  "El violín":"https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/Georges_Braque%2C_1913-14%2C_Violin_and_Glass%2C_oil_and_charcoal_on_canvas%2C_116_x_81_cm%2C_Kunstmuseum_Basel.jpg/800px-Georges_Braque%2C_1913-14%2C_Violin_and_Glass%2C_oil_and_charcoal_on_canvas%2C_116_x_81_cm%2C_Kunstmuseum_Basel.jpg",
+  "El rostro de Mae West":"https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Mae_West_Lips_Sofa.jpg/800px-Mae_West_Lips_Sofa.jpg",
+  "El inodoro":"https://upload.wikimedia.org/wikipedia/commons/thumb/3/3d/Duchamp_Fountaine.jpg/800px-Duchamp_Fountaine.jpg",
+  "El amor":"https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/Marc_Chagall_-_The_Birthday_%281915%29.jpg/800px-Marc_Chagall_-_The_Birthday_%281915%29.jpg",
+  "La novia":"https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/Marc_Chagall%2C_1912%2C_Le_violoniste%2C_oil_on_canvas%2C_188_x_158_cm%2C_Stedelijk_Museum%2C_Amsterdam.jpg/800px-Marc_Chagall%2C_1912%2C_Le_violoniste%2C_oil_on_canvas%2C_188_x_158_cm%2C_Stedelijk_Museum%2C_Amsterdam.jpg",
+  "La paloma de la paz":"https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/Pablo_Picasso%2C_1949%2C_Dove_%28La_colombe%29%2C_lithograph_poster.jpg/800px-Pablo_Picasso%2C_1949%2C_Dove_%28La_colombe%29%2C_lithograph_poster.jpg",
+  "La guitarra":"https://upload.wikimedia.org/wikipedia/commons/thumb/f/fe/Pablo_Picasso%2C_1913-14%2C_Guitare_%28Guitar%29%2C_oil%2C_charcoal%2C_wax_crayon_and_india_ink_on_canvas%2C_59.7_x_80_cm.jpg/800px-Pablo_Picasso%2C_1913-14%2C_Guitare_%28Guitar%29%2C_oil%2C_charcoal%2C_wax_crayon_and_india_ink_on_canvas%2C_59.7_x_80_cm.jpg",
+  "Mujeres y pájaros":"https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/Joan_Mir%C3%B3_-_The_Farm_-_Google_Art_Project.jpg/800px-Joan_Mir%C3%B3_-_The_Farm_-_Google_Art_Project.jpg",
+  "La mujer de los pájaros":"https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Joan_Mir%C3%B3%2C_1925%2C_The_Tilled_Field%2C_oil_on_canvas%2C_66_x_92.7_cm%2C_Solomon_R._Guggenheim_Museum.jpg/800px-Joan_Mir%C3%B3%2C_1925%2C_The_Tilled_Field%2C_oil_on_canvas%2C_66_x_92.7_cm%2C_Solomon_R._Guggenheim_Museum.jpg",
+  "La caricia de un pájaro":"https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/Joan_Mir%C3%B3_-_The_Birth_of_the_World_-_Google_Art_Project.jpg/800px-Joan_Mir%C3%B3_-_The_Birth_of_the_World_-_Google_Art_Project.jpg",
+  "La luna":"https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Joan_Mir%C3%B3%2C_1926%2C_Dog_Barking_at_the_Moon.jpg/800px-Joan_Mir%C3%B3%2C_1926%2C_Dog_Barking_at_the_Moon.jpg",
+  "La estrella matinal":"https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/Joan_Mir%C3%B3%2C_1940%2C_The_Morning_Star%2C_gouache%2C_watercolor_and_ink_on_paper.jpg/800px-Joan_Mir%C3%B3%2C_1940%2C_The_Morning_Star%2C_gouache%2C_watercolor_and_ink_on_paper.jpg",
+  "Rojo sobre marrón":"https://upload.wikimedia.org/wikipedia/commons/thumb/4/43/Mark_Rothko_-_No._14_-_Google_Art_Project.jpg/800px-Mark_Rothko_-_No._14_-_Google_Art_Project.jpg",
+  "Marrón y negro":"https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/No._61_Rust_and_Blue.jpg/800px-No._61_Rust_and_Blue.jpg",
+  "Nº 61":"https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/No._61_Rust_and_Blue.jpg/800px-No._61_Rust_and_Blue.jpg",
+  "La capilla Rothko":"https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Rothko_Chapel_2006.jpg/800px-Rothko_Chapel_2006.jpg",
+  "Lavender Mist":"https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/No._1._1950_%28Lavender_Mist%29.jpg/800px-No._1._1950_%28Lavender_Mist%29.jpg",
+  "Drowning Girl":"https://upload.wikimedia.org/wikipedia/commons/thumb/b/b3/Roy_Lichtenstein_Drowning_Girl.jpg/800px-Roy_Lichtenstein_Drowning_Girl.jpg",
+  "M-Maybe":"https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Roy_Lichtenstein_-_M-Maybe_%28A_Girl%27s_Picture%29.jpg/800px-Roy_Lichtenstein_-_M-Maybe_%28A_Girl%27s_Picture%29.jpg",
+  "The Velvet Underground":"https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/Velvet_Underground_and_Nico.jpg/800px-Velvet_Underground_and_Nico.jpg",
+  "Mr. and Mrs. Clark and Percy":"https://upload.wikimedia.org/wikipedia/commons/thumb/7/71/Mr_and_Mrs_Clark_and_Percy.jpg/800px-Mr_and_Mrs_Clark_and_Percy.jpg",
+  "El país de Jauja":"https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/Pieter_Bruegel_the_Elder_-_The_Land_of_Cockaigne_-_WGA03518.jpg/800px-Pieter_Bruegel_the_Elder_-_The_Land_of_Cockaigne_-_WGA03518.jpg",
+  "El mundo al revés":"https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/Pieter_Bruegel_d._%C3%84._015.jpg/800px-Pieter_Bruegel_d._%C3%84._015.jpg",
+  "Gran elefante":"https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/Paul_Klee_-_Twittering_Machine_%28Die_Zwitscher-Maschine%29.jpg/800px-Paul_Klee_-_Twittering_Machine_%28Die_Zwitscher-Maschine%29.jpg",
+  "El rayo":"https://upload.wikimedia.org/wikipedia/commons/thumb/7/70/Paul_Klee_-_Senecio_%281922%29.jpg/800px-Paul_Klee_-_Senecio_%281922%29.jpg",
+  "La cruz":"https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Paul_Klee_Ad_Parnassum.jpg/800px-Paul_Klee_Ad_Parnassum.jpg",
+  "Retrato de René Descartes":"https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Frans_Hals_-_Portret_van_Ren%C3%A9_Descartes.jpg/800px-Frans_Hals_-_Portret_van_Ren%C3%A9_Descartes.jpg",
+  "Retrato de joven":"https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Raphael_-_Portrait_of_a_Young_Man.jpg/800px-Raphael_-_Portrait_of_a_Young_Man.jpg"
+};
+function arteImg(obra,container){
+  var url=IMG_URLS[obra];
+  if(!container)return;
+  if(!url){container.innerHTML='<div style="display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;padding:24px;text-align:center;height:100%;"><div style="font-size:2.5rem;">🖼️</div><p style="color:rgba(255,255,255,0.7);font-size:1rem;font-weight:600;margin:0;font-style:italic;">'+obra+'</p><p style="color:rgba(255,255,255,0.3);font-size:0.75rem;margin:0;">Sin imagen disponible</p></div>';return;}
+  container.innerHTML='<p style="color:rgba(255,255,255,0.4);font-size:0.85rem;">Cargando...</p>';
+  var img=document.createElement('img');
+  img.referrerPolicy='no-referrer';
+  img.crossOrigin='anonymous';
+  img.style.cssText='width:100%;height:100%;object-fit:contain;display:block;';
+  img.onload=function(){container.innerHTML='';container.appendChild(img);};
+  img.onerror=function(){container.innerHTML='<div style="display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;padding:24px;text-align:center;height:100%;"><div style="font-size:2.5rem;">🖼️</div><p style="color:rgba(255,255,255,0.7);font-size:1rem;font-weight:600;margin:0;font-style:italic;">'+obra+'</p><p style="color:rgba(255,255,255,0.3);font-size:0.75rem;margin:0;">Sin imagen disponible</p></div>';};
+  img.src=url;
+}
+function mostrarObraAmpliada(obra,pintor){
+  var ov=document.createElement('div');
+  ov.style.cssText='position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,0.96);z-index:999999;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:16px;';
+  var wrap=document.createElement('div');
+  wrap.style.cssText='flex:1;display:flex;align-items:center;justify-content:center;width:100%;max-height:80vh;';
+  ov.innerHTML='<button id="ao-close" style="position:absolute;top:16px;right:16px;background:rgba(255,255,255,0.15);border:none;color:#fff;font-size:1.4rem;width:44px;height:44px;border-radius:50%;cursor:pointer;">X</button>'+
+    '<div style="position:absolute;bottom:16px;text-align:center;"><p style="color:#fff;font-size:0.95rem;font-weight:700;margin:0 0 2px;">'+obra+'</p><p style="color:rgba(255,255,255,0.55);font-size:0.82rem;margin:0;">'+pintor+'</p></div>';
+  ov.appendChild(wrap);
+  document.body.appendChild(ov);
+  document.getElementById('ao-close').onclick=function(){ov.remove();};
+  ov.addEventListener('click',function(e){if(e.target===ov)ov.remove();});
+  arteImg(obra,wrap);
+}
+window.abrirSelectorArte=function(){
+  var h='<div id="arte-sel" style="position:fixed;top:0;left:0;right:0;bottom:0;background:var(--bg);z-index:99999;display:flex;flex-direction:column;overflow-y:auto;">'+
+    '<div style="padding:15px 20px;display:flex;align-items:center;gap:15px;border-bottom:1px solid var(--border);">'+
+      '<button id="arte-sel-bk" style="background:none;border:none;color:var(--text);font-size:1.5rem;cursor:pointer;">&#8592;</button>'+
+      '<div><h2 style="color:var(--text);font-size:1.3rem;margin:0;">&#127912; Arte</h2><p style="color:var(--muted);font-size:0.8rem;margin:4px 0 0;">Pintura</p></div>'+
+    '</div>'+
+    '<div style="padding:20px;display:flex;flex-direction:column;gap:10px;">'+
+      '<div class="deck-item" id="arte-pin-btn" style="border-color:#e17055;"><div class="deck-icon">&#128444;</div><div class="deck-info"><h4>Pintura</h4><span style="font-size:0.72rem;color:var(--muted);font-style:italic;">83 pintores · 9 estilos · imagenes reales</span></div><div class="deck-arrow">&#8250;</div></div>'+
+    '</div></div>';
+  document.body.insertAdjacentHTML('beforeend',h);
+  document.getElementById('arte-sel-bk').onclick=function(){document.getElementById('arte-sel').remove();};
+  document.getElementById('arte-pin-btn').onclick=function(){document.getElementById('arte-sel').remove();abrirPintura();};
+};
+window.abrirPintura=function(){
+  var st=arteLoad();
+  var h='<div id="pin-sel" style="position:fixed;top:0;left:0;right:0;bottom:0;background:var(--bg);z-index:99999;display:flex;flex-direction:column;overflow-y:auto;">'+
+    '<div style="padding:15px 20px;display:flex;align-items:center;gap:15px;border-bottom:1px solid var(--border);">'+
+      '<button id="pin-bk" style="background:none;border:none;color:var(--text);font-size:1.5rem;cursor:pointer;">&#8592;</button>'+
+      '<div><h2 style="color:var(--text);font-size:1.3rem;margin:0;">Pintura</h2><p style="color:var(--muted);font-size:0.8rem;margin:4px 0 0;">Tandas de 10</p></div>'+
+    '</div>'+
+    '<div style="padding:16px;display:flex;flex-direction:column;gap:10px;">'+
+    '<p style="color:var(--muted);font-size:0.75rem;text-transform:uppercase;letter-spacing:0.05em;margin:0 0 4px;">Todos los pintores</p>'+
+    '<div style="display:flex;flex-direction:column;gap:8px;">'+
+      '<div class="deck-item pin-m" data-b="todos" data-m="empareja" style="border-color:#00cec9;"><div class="deck-icon">&#129513;</div><div class="deck-info"><h4>Empareja obras</h4><span style="font-size:0.72rem;color:var(--muted);font-style:italic;">Pintor · selecciona sus obras</span></div><div class="deck-arrow">&#8250;</div></div>'+
+      '<div class="deck-item pin-m" data-b="todos" data-m="quiz_autor" style="border-color:#fdcb6e;"><div class="deck-icon">&#129504;</div><div class="deck-info"><h4>Quiz — De quien es?</h4><span style="font-size:0.72rem;color:var(--muted);font-style:italic;">Ve la imagen · adivina el autor</span></div><div class="deck-arrow">&#8250;</div></div>'+
+      '<div class="deck-item pin-m" data-b="todos" data-m="quiz_titulo" style="border-color:#a29bfe;"><div class="deck-icon">&#127991;</div><div class="deck-info"><h4>Quiz — Como se llama?</h4><span style="font-size:0.72rem;color:var(--muted);font-style:italic;">Ve la imagen · adivina el titulo</span></div><div class="deck-arrow">&#8250;</div></div>'+
+    '</div>'+
+    '<div style="border-top:1px solid var(--border);margin:8px 0;position:relative;"><span style="position:absolute;top:-10px;left:50%;transform:translateX(-50%);background:var(--bg);padding:0 10px;color:var(--muted);font-size:0.75rem;">por estilo</span></div>';
+  PINTURA_BLOQUES.forEach(function(b){
+    var e=st.emp&&st.emp[b.id];
+    var sub=e?e.ses+' ses. mejor '+e.pct+'%':b.pintores.length+' pintores';
+    h+='<div class="deck-item pin-m" data-b="'+b.id+'" data-m="empareja" style="border-color:var(--border);"><div class="deck-icon">'+b.icon+'</div><div class="deck-info" style="flex:1;"><h4 style="margin:0;font-size:0.9rem;">'+b.nombre+'</h4><span style="font-size:0.72rem;color:var(--muted);font-style:italic;">'+sub+'</span></div><div class="deck-arrow">&#8250;</div></div>';
+  });
+  h+='</div></div>';
+  document.body.insertAdjacentHTML('beforeend',h);
+  document.getElementById('pin-bk').onclick=function(){document.getElementById('pin-sel').remove();abrirSelectorArte();};
+  document.querySelectorAll('.pin-m').forEach(function(btn){
+    btn.addEventListener('click',function(){
+      var bid=this.dataset.b,modo=this.dataset.m;
+      document.getElementById('pin-sel').remove();
+      if(modo==='empareja')empStart(bid);else qvStart(bid,modo);
+    });
+  });
+};
+var empSt={};
+function empStart(bid){
+  var ps=[];
+  if(bid==='todos'){PINTURA_BLOQUES.forEach(function(b){b.pintores.forEach(function(p){ps.push({pintor:p.pintor,obras:p.obras,bloque:b.nombre});});});}
+  else{var bl=PINTURA_BLOQUES.find(function(b){return b.id===bid;});if(bl)bl.pintores.forEach(function(p){ps.push({pintor:p.pintor,obras:p.obras,bloque:bl.nombre});});}
+  for(var i=ps.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1));var t=ps[i];ps[i]=ps[j];ps[j]=t;}
+  var todas=[];PINTURA_BLOQUES.forEach(function(b){b.pintores.forEach(function(p){p.obras.forEach(function(o){todas.push(o);});});});
+  empSt={bid:bid,ps:ps,todas:todas,idx:0,ok:0,err:0,tanda:10,tStart:0};
+  var h='<div id="emp-g" style="position:fixed;top:0;left:0;right:0;bottom:0;background:var(--bg);z-index:99999;display:flex;flex-direction:column;">'+
+    '<div style="padding:12px 16px;display:flex;align-items:center;gap:12px;border-bottom:1px solid var(--border);">'+
+      '<button id="emp-bk" style="background:none;border:none;color:var(--text);font-size:1.4rem;cursor:pointer;">&#8592;</button>'+
+      '<div style="flex:1;"><div style="font-size:0.85rem;color:var(--muted);">Empareja obras</div>'+
+      '<div id="emp-prog" style="font-size:0.75rem;color:var(--muted);"></div></div>'+
+      '<div id="emp-sc" style="font-size:0.9rem;font-weight:700;color:#00cec9;"></div>'+
+    '</div>'+
+    '<div style="height:4px;background:var(--border);"><div id="emp-bar" style="height:100%;width:0%;background:#00cec9;transition:width 0.3s;"></div></div>'+
+    '<div id="emp-body" style="flex:1;overflow-y:auto;padding:20px;display:flex;flex-direction:column;gap:14px;"></div>'+
+  '</div>';
+  document.body.insertAdjacentHTML('beforeend',h);
+  document.getElementById('emp-bk').onclick=function(){document.getElementById('emp-g').remove();abrirPintura();};
+  empRender();
+}
+function empRender(){
+  var gs=empSt,p=gs.ps[gs.idx];
+  if(!p){empFin();return;}
+  if(gs.idx>0&&gs.idx===gs.tStart+gs.tanda&&gs.idx<gs.ps.length){empTanda();return;}
+  document.getElementById('emp-bar').style.width=Math.round(gs.idx/gs.ps.length*100)+'%';
+  document.getElementById('emp-prog').textContent='Pintor '+(gs.idx+1)+'/'+gs.ps.length;
+  document.getElementById('emp-sc').innerHTML='&#9989; '+gs.ok+' &#10060; '+gs.err;
+  var cors=p.obras.slice();
+  var dist=gs.todas.filter(function(o){return cors.indexOf(o)===-1;});
+  for(var i=dist.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1));var t=dist[i];dist[i]=dist[j];dist[j]=t;}
+  var opts=cors.concat(dist.slice(0,Math.max(3,Math.min(5,8-cors.length))));
+  for(var i=opts.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1));var t=opts[i];opts[i]=opts[j];opts[j]=t;}
+  gs.sel=[];gs.cors=cors;gs.done=false;
+  var body=document.getElementById('emp-body');
+  body.innerHTML=
+    '<div style="background:var(--card);border-radius:16px;padding:18px 20px;border:2px solid #00cec9;text-align:center;">'+
+      '<p style="color:var(--muted);font-size:0.75rem;margin:0 0 6px;text-transform:uppercase;">'+p.bloque+'</p>'+
+      '<h3 style="color:var(--text);font-size:1.2rem;margin:0;">'+p.pintor+'</h3>'+
+      '<p style="color:var(--muted);font-size:0.82rem;margin:8px 0 0;">Selecciona todas sus obras</p>'+
+    '</div>'+
+    '<div id="emp-opts" style="display:flex;flex-wrap:wrap;gap:10px;">'+
+      opts.map(function(op){return '<button class="emp-ob" data-o="'+op.replace(/"/g,'&quot;')+'" style="background:var(--card);border:2px solid var(--border);color:var(--text);border-radius:12px;padding:10px 16px;font-size:0.88rem;cursor:pointer;flex:1;min-width:45%;">'+op+'</button>';}).join('')+
+    '</div>'+
+    '<button id="emp-conf" style="background:#00cec9;color:#000;border:none;border-radius:14px;padding:14px;font-size:1rem;font-weight:700;cursor:pointer;width:100%;opacity:0.5;pointer-events:none;">Confirmar seleccion</button>'+
+    '<div id="emp-fb" style="display:none;"></div>';
+  document.querySelectorAll('.emp-ob').forEach(function(btn){
+    btn.addEventListener('click',function(){
+      if(gs.done)return;
+      var o=this.dataset.o,i=gs.sel.indexOf(o);
+      if(i===-1){gs.sel.push(o);this.style.borderColor='#00cec9';this.style.background='rgba(0,206,201,0.15)';this.style.color='#00cec9';this.style.fontWeight='700';}
+      else{gs.sel.splice(i,1);this.style.borderColor='var(--border)';this.style.background='var(--card)';this.style.color='var(--text)';this.style.fontWeight='400';}
+      var b2=document.getElementById('emp-conf');b2.style.opacity=gs.sel.length>0?'1':'0.5';b2.style.pointerEvents=gs.sel.length>0?'auto':'none';
+    });
+  });
+  document.getElementById('emp-conf').addEventListener('click',function(){
+    if(gs.done)return;gs.done=true;
+    var cl=gs.cors;
+    var acer=gs.sel.filter(function(o){return cl.indexOf(o)!==-1;});
+    var perd=cl.filter(function(o){return gs.sel.indexOf(o)===-1;});
+    var ok=acer.length===cl.length&&gs.sel.filter(function(o){return cl.indexOf(o)===-1;}).length===0;
+    if(ok)gs.ok++;else gs.err++;
+    document.querySelectorAll('.emp-ob').forEach(function(b){
+      b.style.cursor='default';
+      if(cl.indexOf(b.dataset.o)!==-1){b.style.borderColor='#00b894';b.style.background='rgba(0,184,148,0.15)';b.style.color='#00b894';b.style.fontWeight='700';}
+      else if(gs.sel.indexOf(b.dataset.o)!==-1){b.style.borderColor='#e17055';b.style.background='rgba(225,112,85,0.15)';b.style.color='#e17055';}
+    });
+    var fb=document.getElementById('emp-fb');fb.style.display='block';
+    fb.innerHTML='<div style="background:var(--card);border-radius:14px;padding:14px;border:1px solid '+(ok?'#00b894':'#e17055')+';">'+
+      '<p style="color:'+(ok?'#00b894':'#e17055')+';font-weight:700;margin:0 0 4px;">'+(ok?'Perfecto! '+acer.length+'/'+cl.length:''+acer.length+'/'+cl.length+' correctas'+(perd.length?' faltaron: '+perd.join(', '):''))+'</p>'+
+      '</div>'+
+      '<button id="emp-sig" style="background:var(--accent);color:#fff;border:none;border-radius:14px;padding:14px;font-size:1rem;font-weight:700;cursor:pointer;width:100%;margin-top:8px;">Siguiente</button>';
+    document.getElementById('emp-sig').onclick=function(){gs.idx++;empRender();};
+    setTimeout(function(){fb.scrollIntoView({behavior:'smooth',block:'nearest'});},80);
+  });
+}
+function empTanda(){
+  var gs=empSt,rest=gs.ps.length-gs.idx;
+  document.getElementById('emp-bar').style.width=Math.round(gs.idx/gs.ps.length*100)+'%';
+  document.getElementById('emp-body').innerHTML=
+    '<div style="text-align:center;padding:24px 0;">'+
+    '<div style="font-size:3rem;margin-bottom:10px;">&#127919;</div>'+
+    '<h3 style="color:var(--text);margin:0 0 6px;">Tanda completada</h3>'+
+    '<p style="color:var(--muted);font-size:0.88rem;margin:0 0 20px;">'+gs.idx+'/'+gs.ps.length+' pintores quedan '+rest+'</p>'+
+    '<div style="display:flex;justify-content:center;gap:20px;margin-bottom:24px;">'+
+      '<div style="text-align:center;"><div style="font-size:1.6rem;font-weight:700;color:#00b894;">'+gs.ok+'</div><div style="font-size:0.8rem;color:var(--muted);">perfectos</div></div>'+
+      '<div style="text-align:center;"><div style="font-size:1.6rem;font-weight:700;color:#e17055;">'+gs.err+'</div><div style="font-size:0.8rem;color:var(--muted);">con errores</div></div>'+
+    '</div>'+
+    '<div style="display:flex;flex-direction:column;gap:10px;">'+
+      '<button id="emp-next-t" style="background:#00cec9;color:#000;border:none;border-radius:14px;padding:14px;font-size:1rem;font-weight:700;cursor:pointer;width:100%;">Siguiente tanda ('+rest+') →</button>'+
+      '<button id="emp-salir" style="background:var(--card);color:var(--text);border:1px solid var(--border);border-radius:14px;padding:14px;font-size:1rem;cursor:pointer;width:100%;">Guardar y salir</button>'+
+    '</div></div>';
+  document.getElementById('emp-next-t').onclick=function(){gs.tStart=gs.idx;empRender();};
+  document.getElementById('emp-salir').onclick=function(){empFin();};
+}
+function empFin(){
+  var gs=empSt,total=gs.ok+gs.err,pct=total>0?Math.round(gs.ok/total*100):0;
+  var st=arteLoad();if(!st.emp)st.emp={};
+  if(!st.emp[gs.bid])st.emp[gs.bid]={ses:0,pct:0};
+  st.emp[gs.bid].ses++;if(pct>st.emp[gs.bid].pct)st.emp[gs.bid].pct=pct;arteSave(st);
+  var emoji=pct>=90?'&#127942;':pct>=70?'&#129351;':'&#127912;';
+  var msg=pct>=90?'Eso es nivel Prado!':pct>=70?'Buen ojo!':'Los pintores te necesitan. Repite.';
+  document.getElementById('emp-bar').style.width='100%';
+  document.getElementById('emp-body').innerHTML=
+    '<div style="text-align:center;padding:20px 0;">'+
+    '<div style="font-size:4rem;margin-bottom:12px;">'+emoji+'</div>'+
+    '<h2 style="color:var(--text);margin:0 0 8px;">'+pct+'% de acierto</h2>'+
+    '<p style="color:var(--muted);margin:0 0 20px;">'+msg+'</p>'+
+    '<div style="display:flex;justify-content:center;gap:24px;margin-bottom:20px;">'+
+      '<div style="text-align:center;"><div style="font-size:1.8rem;font-weight:700;color:#00b894;">'+gs.ok+'</div><div style="font-size:0.8rem;color:var(--muted);">perfectos</div></div>'+
+      '<div style="text-align:center;"><div style="font-size:1.8rem;font-weight:700;color:#e17055;">'+gs.err+'</div><div style="font-size:0.8rem;color:var(--muted);">con errores</div></div>'+
+    '</div>'+
+    '<div style="display:flex;flex-direction:column;gap:10px;">'+
+      '<button id="emp-rep" style="background:var(--accent);color:#fff;border:none;border-radius:14px;padding:14px;font-size:1rem;font-weight:700;cursor:pointer;width:100%;">Repetir</button>'+
+      '<button id="emp-vol" style="background:var(--card);color:var(--text);border:1px solid var(--border);border-radius:14px;padding:14px;font-size:1rem;cursor:pointer;width:100%;">Volver</button>'+
+    '</div></div>';
+  document.getElementById('emp-rep').onclick=function(){empStart(gs.bid);};
+  document.getElementById('emp-vol').onclick=function(){document.getElementById('emp-g').remove();abrirPintura();};
+}
+var qvSt={};
+function qvStart(bid,modo){
+  var pares=[];
+  if(bid==='todos'){PINTURA_BLOQUES.forEach(function(b){b.pintores.forEach(function(p){p.obras.forEach(function(o){pares.push({obra:o,pintor:p.pintor});});});});}
+  else{var bl=PINTURA_BLOQUES.find(function(b){return b.id===bid;});if(bl)bl.pintores.forEach(function(p){p.obras.forEach(function(o){pares.push({obra:o,pintor:p.pintor});});});}
+  for(var i=pares.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1));var t=pares[i];pares[i]=pares[j];pares[j]=t;}
+  var tP=PINTURA_BLOQUES.reduce(function(a,b){b.pintores.forEach(function(p){if(a.indexOf(p.pintor)===-1)a.push(p.pintor);});return a;},[]);
+  var tO=PINTURA_BLOQUES.reduce(function(a,b){b.pintores.forEach(function(p){p.obras.forEach(function(o){if(a.indexOf(o)===-1)a.push(o);});});return a;},[]);
+  qvSt={bid:bid,modo:modo,pares:pares,tP:tP,tO:tO,idx:0,ok:0,err:0,done:false,tanda:10,tStart:0};
+  var cm=modo==='quiz_autor'?'#fdcb6e':'#a29bfe';
+  var lm=modo==='quiz_autor'?'De quien es?':'Como se llama?';
+  var h='<div id="qv-g" style="position:fixed;top:0;left:0;right:0;bottom:0;background:var(--bg);z-index:99999;display:flex;flex-direction:column;">'+
+    '<div style="padding:12px 16px;display:flex;align-items:center;gap:12px;border-bottom:1px solid var(--border);">'+
+      '<button id="qv-bk" style="background:none;border:none;color:var(--text);font-size:1.4rem;cursor:pointer;">&#8592;</button>'+
+      '<div style="flex:1;"><div style="font-size:0.85rem;color:var(--muted);">'+lm+'</div>'+
+      '<div id="qv-prog" style="font-size:0.75rem;color:var(--muted);"></div></div>'+
+      '<div id="qv-sc" style="font-size:0.9rem;font-weight:700;color:'+cm+';"></div>'+
+    '</div>'+
+    '<div style="height:4px;background:var(--border);"><div id="qv-bar" style="height:100%;width:0%;background:'+cm+';transition:width 0.3s;"></div></div>'+
+    '<div id="qv-body" style="flex:1;overflow-y:auto;"></div>'+
+  '</div>';
+  document.body.insertAdjacentHTML('beforeend',h);
+  document.getElementById('qv-bk').onclick=function(){document.getElementById('qv-g').remove();abrirPintura();};
+  qvRender();
+}
+function qvRender(){
+  var gs=qvSt,par=gs.pares[gs.idx];
+  if(!par){qvFin();return;}
+  if(gs.idx>0&&gs.idx===gs.tStart+gs.tanda&&gs.idx<gs.pares.length){qvTanda();return;}
+  document.getElementById('qv-bar').style.width=Math.round(gs.idx/gs.pares.length*100)+'%';
+  document.getElementById('qv-prog').textContent='Obra '+(gs.idx+1)+'/'+gs.pares.length;
+  document.getElementById('qv-sc').innerHTML='&#9989; '+gs.ok+' &#10060; '+gs.err;
+  var pool=gs.modo==='quiz_autor'?gs.tP:gs.tO;
+  var cor=gs.modo==='quiz_autor'?par.pintor:par.obra;
+  var otros=pool.filter(function(x){return x.toLowerCase()!==cor.toLowerCase();});
+  for(var i=otros.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1));var t=otros[i];otros[i]=otros[j];otros[j]=t;}
+  var opts=[cor].concat(otros.slice(0,3));
+  for(var i=opts.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1));var t=opts[i];opts[i]=opts[j];opts[j]=t;}
+  gs.done=false;gs.cor=cor;
+  var cm=gs.modo==='quiz_autor'?'#fdcb6e':'#a29bfe';
+  var body=document.getElementById('qv-body');
+  var imgWrap=document.createElement('div');
+  imgWrap.style.cssText='background:#111;width:100%;height:280px;display:flex;align-items:center;justify-content:center;cursor:pointer;position:relative;overflow:hidden;flex-shrink:0;';
+  var ampliar=document.createElement('div');
+  ampliar.style.cssText='position:absolute;bottom:8px;right:8px;background:rgba(0,0,0,0.6);border-radius:20px;padding:4px 10px;font-size:0.72rem;color:rgba(255,255,255,0.7);pointer-events:none;';
+  ampliar.textContent='Ampliar';
+  imgWrap.appendChild(ampliar);
+  imgWrap.addEventListener('click',function(){mostrarObraAmpliada(par.obra,par.pintor);});
+  var optsDiv=document.createElement('div');
+  optsDiv.style.cssText='padding:16px 20px 10px;';
+  optsDiv.innerHTML='<p style="color:'+cm+';font-size:0.82rem;font-weight:600;margin:0 0 12px;text-transform:uppercase;">'+(gs.modo==='quiz_autor'?'Quien pinto esta obra?':'Como se llama esta obra?')+'</p>'+
+    '<div style="display:flex;flex-direction:column;gap:8px;">'+
+      opts.map(function(op){return '<button class="qv-ob" data-o="'+op.replace(/"/g,'&quot;')+'" style="background:var(--card);border:2px solid var(--border);color:var(--text);border-radius:12px;padding:12px 16px;font-size:0.92rem;text-align:left;cursor:pointer;font-weight:500;">'+op+'</button>';}).join('')+
+    '</div>'+
+    '<div id="qv-fb" style="display:none;margin-top:12px;"></div>';
+  body.innerHTML='';
+  body.appendChild(imgWrap);
+  body.appendChild(optsDiv);
+  arteImg(par.obra,imgWrap);
+  document.querySelectorAll('.qv-ob').forEach(function(btn){
+    btn.addEventListener('click',function(){
+      if(gs.done)return;gs.done=true;
+      var elegida=this.dataset.o,cor=gs.cor;
+      var ok=elegida.toLowerCase()===cor.toLowerCase();
+      if(ok)gs.ok++;else gs.err++;
+      document.querySelectorAll('.qv-ob').forEach(function(b){
+        b.style.cursor='default';
+        if(b.dataset.o.toLowerCase()===cor.toLowerCase()){b.style.borderColor='#00b894';b.style.background='rgba(0,184,148,0.15)';b.style.color='#00b894';b.style.fontWeight='700';}
+        else if(b===btn&&!ok){b.style.borderColor='#e17055';b.style.background='rgba(225,112,85,0.15)';b.style.color='#e17055';}
+      });
+      var fb=document.getElementById('qv-fb');fb.style.display='block';
+      fb.innerHTML='<div style="background:var(--card);border-radius:12px;padding:14px;border:1px solid '+(ok?'#00b894':'#e17055')+';margin-bottom:10px;">'+
+        '<p style="color:'+(ok?'#00b894':'#e17055')+';font-weight:700;margin:0 0 4px;">'+(ok?'Correcto!':'Era: '+cor)+'</p>'+
+        '<p style="color:var(--muted);font-size:0.82rem;margin:0;">'+par.obra+' - '+par.pintor+'</p>'+
+        '</div>'+
+        '<button id="qv-sig" style="background:var(--accent);color:#fff;border:none;border-radius:14px;padding:14px;font-size:1rem;font-weight:700;cursor:pointer;width:100%;">Siguiente</button>';
+      document.getElementById('qv-sig').onclick=function(){gs.idx++;qvRender();};
+      setTimeout(function(){fb.scrollIntoView({behavior:'smooth',block:'nearest'});},80);
+    });
+  });
+}
+function qvTanda(){
+  var gs=qvSt,rest=gs.pares.length-gs.idx;
+  document.getElementById('qv-bar').style.width=Math.round(gs.idx/gs.pares.length*100)+'%';
+  document.getElementById('qv-body').innerHTML=
+    '<div style="text-align:center;padding:24px 20px;">'+
+    '<div style="font-size:3rem;margin-bottom:10px;">&#128444;</div>'+
+    '<h3 style="color:var(--text);margin:0 0 6px;">Tanda completada</h3>'+
+    '<p style="color:var(--muted);font-size:0.88rem;margin:0 0 20px;">'+gs.idx+'/'+gs.pares.length+' obras quedan '+rest+'</p>'+
+    '<div style="display:flex;justify-content:center;gap:20px;margin-bottom:24px;">'+
+      '<div style="text-align:center;"><div style="font-size:1.6rem;font-weight:700;color:#00b894;">'+gs.ok+'</div><div style="font-size:0.8rem;color:var(--muted);">correctas</div></div>'+
+      '<div style="text-align:center;"><div style="font-size:1.6rem;font-weight:700;color:#e17055;">'+gs.err+'</div><div style="font-size:0.8rem;color:var(--muted);">errores</div></div>'+
+    '</div>'+
+    '<div style="display:flex;flex-direction:column;gap:10px;">'+
+      '<button id="qv-next-t" style="background:var(--accent);color:#fff;border:none;border-radius:14px;padding:14px;font-size:1rem;font-weight:700;cursor:pointer;width:100%;">Siguiente tanda ('+rest+') </button>'+
+      '<button id="qv-salir" style="background:var(--card);color:var(--text);border:1px solid var(--border);border-radius:14px;padding:14px;font-size:1rem;cursor:pointer;width:100%;">Guardar y salir</button>'+
+    '</div></div>';
+  document.getElementById('qv-next-t').onclick=function(){gs.tStart=gs.idx;qvRender();};
+  document.getElementById('qv-salir').onclick=function(){qvFin();};
+}
+function qvFin(){
+  var gs=qvSt,total=gs.ok+gs.err,pct=total>0?Math.round(gs.ok/total*100):0;
+  var st=arteLoad();if(!st.quiz)st.quiz={};var key=gs.bid+'_'+gs.modo;
+  if(!st.quiz[key])st.quiz[key]={ses:0,pct:0};st.quiz[key].ses++;if(pct>st.quiz[key].pct)st.quiz[key].pct=pct;arteSave(st);
+  var emoji=pct>=90?'&#127942;':pct>=70?'&#129351;':'&#127912;';
+  var msg=pct>=90?'Eso es un curador del Louvre!':pct>=70?'Buen ojo!':'Mas museos, menos Instagram.';
+  document.getElementById('qv-bar').style.width='100%';
+  document.getElementById('qv-body').innerHTML=
+    '<div style="text-align:center;padding:30px 20px;">'+
+    '<div style="font-size:4rem;margin-bottom:12px;">'+emoji+'</div>'+
+    '<h2 style="color:var(--text);margin:0 0 8px;">'+pct+'% de acierto</h2>'+
+    '<p style="color:var(--muted);margin:0 0 20px;">'+msg+'</p>'+
+    '<div style="display:flex;justify-content:center;gap:24px;margin-bottom:24px;">'+
+      '<div style="text-align:center;"><div style="font-size:1.8rem;font-weight:700;color:#00b894;">'+gs.ok+'</div><div style="font-size:0.8rem;color:var(--muted);">correctas</div></div>'+
+      '<div style="text-align:center;"><div style="font-size:1.8rem;font-weight:700;color:#e17055;">'+gs.err+'</div><div style="font-size:0.8rem;color:var(--muted);">errores</div></div>'+
+    '</div>'+
+    '<div style="display:flex;flex-direction:column;gap:10px;">'+
+      '<button id="qv-rep" style="background:var(--accent);color:#fff;border:none;border-radius:14px;padding:14px;font-size:1rem;font-weight:700;cursor:pointer;width:100%;">Repetir</button>'+
+      '<button id="qv-vol" style="background:var(--card);color:var(--text);border:1px solid var(--border);border-radius:14px;padding:14px;font-size:1rem;cursor:pointer;width:100%;">Volver</button>'+
+    '</div></div>';
+  document.getElementById('qv-rep').onclick=function(){qvStart(gs.bid,gs.modo);};
+  document.getElementById('qv-vol').onclick=function(){document.getElementById('qv-g').remove();abrirPintura();};
 }
 </script>
 </body>
