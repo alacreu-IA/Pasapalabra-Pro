@@ -30323,6 +30323,302 @@ function empFin() {
   document.getElementById('emp-vol').onclick = function() { document.getElementById('emp-screen').remove(); abrirPintura(); };
 }
 
+
+// ============================================================
+// SISTEMA SRS ARTE — flashcards con repetición espaciada
+// ============================================================
+var arteSRS = null;
+var ARTE_SRS_KEY = 'ppro_arte_srs_v1';
+
+function arteSRSLoad() {
+  try {
+    var r = localStorage.getItem(ARTE_SRS_KEY);
+    if (r) return JSON.parse(r);
+  } catch(e) {}
+  return { eliminadas: [], sabidas: {} }; // sabidas: {titulo_modo: count}
+}
+
+function arteSRSSave(st) {
+  try { localStorage.setItem(ARTE_SRS_KEY, JSON.stringify(st)); } catch(e) {}
+}
+
+function arteSRSGetPool(modo) {
+  var st = arteSRSLoad();
+  var eliminadas = st.eliminadas || [];
+  var sabidas = st.sabidas || {};
+  
+  return PINTURAS_DATA.filter(function(o) {
+    var key = o.titulo + '|' + modo;
+    if (eliminadas.indexOf(o.titulo) >= 0) return false; // eliminada
+    if ((sabidas[key] || 0) >= 3) return false; // aprendida
+    return true;
+  });
+}
+
+window.iniciarPinQuiz = function(modo) {
+  var st = arteSRSLoad();
+  var pool = arteSRSGetPool(modo);
+  
+  if (pool.length === 0) {
+    // Todo aprendido — mostrar pantalla de victoria
+    arteSRSVictoria(modo, st);
+    return;
+  }
+
+  // Ordenar: primero las que menos veces se han sabido
+  var sabidas = st.sabidas || {};
+  pool.sort(function(a, b) {
+    var ka = (sabidas[a.titulo+'|'+modo] || 0);
+    var kb = (sabidas[b.titulo+'|'+modo] || 0);
+    return ka - kb;
+  });
+
+  // Coger las primeras 10 (las más pendientes)
+  var tanda = pool.slice(0, 10);
+  // Mezclar dentro de la tanda
+  tanda = shuffleArr(tanda);
+
+  arteSRS = {
+    modo: modo,
+    tanda: tanda,
+    poolTotal: pool.length,
+    idx: 0,
+    ok: 0,
+    err: 0,
+    noSabe: [], // obras que no sabe, para repetir al final de tanda
+  };
+
+  pinFlashRender();
+};
+
+function pinFlashRender() {
+  var gs = arteSRS;
+  
+  // Si terminó la tanda, repasar las que no supo
+  if (gs.idx >= gs.tanda.length) {
+    if (gs.noSabe.length > 0) {
+      pinFlashTandaFin();
+    } else {
+      pinFlashSiguienteTanda();
+    }
+    return;
+  }
+
+  var obra = gs.tanda[gs.idx];
+  var cm = gs.modo === 'autor' ? '#fdcb6e' : '#a29bfe';
+  var correcta = gs.modo === 'autor' ? obra.artista : obra.titulo;
+
+  // Generar opciones
+  var otrasObras = PINTURAS_DATA.filter(function(o) { return o.titulo !== obra.titulo; });
+  var distractores = shuffleArr(otrasObras).slice(0, 3).map(function(o) {
+    return gs.modo === 'autor' ? o.artista : o.titulo;
+  }).filter(function(d) { return d !== correcta; }).slice(0, 3);
+  var opciones = shuffleArr([correcta].concat(distractores));
+
+  var st = arteSRSLoad();
+  var key = obra.titulo + '|' + gs.modo;
+  var vecesSabida = (st.sabidas || {})[key] || 0;
+  var totalPool = gs.poolTotal;
+  var aprendidas = PINTURAS_DATA.length - totalPool;
+
+  var existing = document.getElementById('pin-quiz-screen');
+  if (existing) existing.remove();
+
+  var html = '<div id="pin-quiz-screen" style="position:fixed;top:0;left:0;right:0;bottom:0;background:var(--bg);z-index:99999;display:flex;flex-direction:column;">' +
+    '<div style="padding:12px 16px;display:flex;align-items:center;gap:12px;border-bottom:1px solid var(--border);flex-shrink:0;">' +
+      '<button id="pin-quiz-back" style="background:none;border:none;color:var(--text);font-size:1.4rem;cursor:pointer;">&#8592;</button>' +
+      '<div style="flex:1;">' +
+        '<div style="font-size:0.82rem;color:' + cm + ';font-weight:600;">' + (gs.modo === 'autor' ? '¿De quién es?' : '¿Cómo se llama?') + '</div>' +
+        '<div style="font-size:0.72rem;color:var(--muted);">' + (gs.idx+1) + '/' + gs.tanda.length + ' en tanda · ' + aprendidas + '/' + PINTURAS_DATA.length + ' aprendidas</div>' +
+      '</div>' +
+      '<div style="font-size:0.85rem;font-weight:700;color:' + cm + ';">✅ ' + gs.ok + ' &nbsp; ❌ ' + gs.err + '</div>' +
+    '</div>' +
+    '<div style="height:4px;background:var(--border);flex-shrink:0;">' +
+      '<div style="height:100%;width:' + Math.round(gs.idx/gs.tanda.length*100) + '%;background:' + cm + ';transition:width 0.3s;"></div>' +
+    '</div>' +
+    '<div style="flex:1;overflow-y:auto;">' +
+      '<div id="pin-quiz-img" style="width:100%;height:240px;background:#111;display:flex;align-items:center;justify-content:center;flex-shrink:0;overflow:hidden;position:relative;">' +
+        '<div style="color:rgba(255,255,255,0.4);font-size:0.85rem;">Cargando...</div>' +
+        (vecesSabida > 0 ? '<div style="position:absolute;top:8px;right:8px;background:rgba(0,184,148,0.8);border-radius:20px;padding:3px 10px;font-size:0.7rem;color:#fff;">✓ sabida ' + vecesSabida + '/3</div>' : '') +
+      '</div>' +
+      '<div style="padding:16px 20px 10px;">' +
+        '<p style="color:' + cm + ';font-size:0.82rem;font-weight:600;margin:0 0 12px;text-transform:uppercase;">' + (gs.modo === 'autor' ? '¿Quién pintó esta obra?' : '¿Cómo se llama esta obra?') + '</p>' +
+        '<div style="display:flex;flex-direction:column;gap:8px;" id="pin-quiz-opts">' +
+          opciones.map(function(op) {
+            return '<button class="pin-quiz-btn" data-op="' + op.replace(/"/g,'&quot;') + '" style="background:var(--card);border:2px solid var(--border);color:var(--text);border-radius:12px;padding:12px 16px;font-size:0.9rem;text-align:left;cursor:pointer;font-weight:500;">' + op + '</button>';
+          }).join('') +
+        '</div>' +
+        '<div id="pin-quiz-fb" style="display:none;margin-top:12px;"></div>' +
+      '</div>' +
+    '</div>' +
+  '</div>';
+
+  document.body.insertAdjacentHTML('beforeend', html);
+
+  // Cargar imagen
+  var imgDiv = document.getElementById('pin-quiz-img');
+  var img = new Image();
+  img.referrerPolicy = 'no-referrer';
+  img.style.cssText = 'width:100%;height:100%;object-fit:contain;display:block;';
+  img.onload = function() { 
+    // Mantener badge si existe
+    var badge = imgDiv.querySelector('div[style*="sabida"]');
+    imgDiv.innerHTML = ''; 
+    imgDiv.appendChild(img); 
+    if (badge) imgDiv.appendChild(badge);
+  };
+  img.onerror = function() {
+    var mostrarTitulo = gs.modo !== 'titulo';
+    imgDiv.innerHTML = '<div style="text-align:center;padding:20px;"><div style="font-size:2rem;">🖼️</div>' + 
+      (mostrarTitulo ? '<p style="color:rgba(255,255,255,0.5);font-size:0.85rem;font-style:italic;margin:8px 0 0;">' + obra.titulo + '</p>' : '') + '</div>';
+  };
+  img.src = obra.img;
+
+  document.getElementById('pin-quiz-back').onclick = function() {
+    document.getElementById('pin-quiz-screen').remove();
+    abrirPintura();
+  };
+
+  document.querySelectorAll('.pin-quiz-btn').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      if (arteSRS.done) return;
+      arteSRS.done = true;
+      var elegida = this.dataset.op;
+      var ok = elegida === correcta;
+      if (ok) gs.ok++; else gs.err++;
+
+      document.querySelectorAll('.pin-quiz-btn').forEach(function(b) {
+        b.style.cursor = 'default';
+        if (b.dataset.op === correcta) {
+          b.style.borderColor = '#00b894'; b.style.background = 'rgba(0,184,148,0.15)';
+          b.style.color = '#00b894'; b.style.fontWeight = '700';
+        } else if (b === btn && !ok) {
+          b.style.borderColor = '#e17055'; b.style.background = 'rgba(225,112,85,0.15)'; b.style.color = '#e17055';
+        }
+      });
+
+      var infoExtra = gs.modo === 'autor' ? obra.titulo + ' · ' + obra.anio : obra.artista + ' · ' + obra.anio;
+
+      var fb = document.getElementById('pin-quiz-fb');
+      fb.style.display = 'block';
+      fb.innerHTML =
+        '<div style="background:var(--card);border-radius:12px;padding:14px;border:1px solid ' + (ok?'#00b894':'#e17055') + ';margin-bottom:10px;">' +
+          '<p style="color:' + (ok?'#00b894':'#e17055') + ';font-weight:700;margin:0 0 4px;">' + (ok?'✅ ¡Correcto!':'❌ Era: ' + correcta) + '</p>' +
+          '<p style="color:var(--text);font-size:0.88rem;font-weight:600;margin:0 0 4px;">' + infoExtra + '</p>' +
+          '<p style="color:var(--muted);font-size:0.78rem;margin:0 0 12px;font-style:italic;">' + obra.curiosidad + '</p>' +
+          '<div style="display:flex;gap:8px;">' +
+            '<button id="srs-sabe" style="flex:1;padding:10px;border-radius:10px;border:2px solid #00b894;background:rgba(0,184,148,0.1);color:#00b894;font-weight:700;cursor:pointer;font-size:0.85rem;">✅ Me lo sé</button>' +
+            '<button id="srs-nosabe" style="flex:1;padding:10px;border-radius:10px;border:2px solid #e17055;background:rgba(225,112,85,0.1);color:#e17055;font-weight:700;cursor:pointer;font-size:0.85rem;">🔄 Repasar</button>' +
+            '<button id="srs-eliminar" style="padding:10px 14px;border-radius:10px;border:2px solid var(--border);background:var(--card);color:var(--muted);font-weight:700;cursor:pointer;font-size:0.85rem;">🗑️</button>' +
+          '</div>' +
+        '</div>';
+
+      setTimeout(function() { fb.scrollIntoView({behavior:'smooth',block:'nearest'}); }, 80);
+
+      document.getElementById('srs-sabe').onclick = function() {
+        var st = arteSRSLoad();
+        if (!st.sabidas) st.sabidas = {};
+        st.sabidas[key] = (st.sabidas[key] || 0) + 1;
+        arteSRSSave(st);
+        gs.idx++; arteSRS.done = false; pinFlashRender();
+      };
+      document.getElementById('srs-nosabe').onclick = function() {
+        gs.noSabe.push(obra);
+        gs.idx++; arteSRS.done = false; pinFlashRender();
+      };
+      document.getElementById('srs-eliminar').onclick = function() {
+        if (!confirm('¿Eliminar "' + obra.titulo + '" del listado permanentemente?')) return;
+        var st = arteSRSLoad();
+        if (!st.eliminadas) st.eliminadas = [];
+        if (st.eliminadas.indexOf(obra.titulo) < 0) st.eliminadas.push(obra.titulo);
+        arteSRSSave(st);
+        gs.idx++; arteSRS.done = false; pinFlashRender();
+      };
+    });
+  });
+  arteSRS.done = false;
+}
+
+function pinFlashTandaFin() {
+  var gs = arteSRS;
+  var cm = gs.modo === 'autor' ? '#fdcb6e' : '#a29bfe';
+  var existing = document.getElementById('pin-quiz-screen');
+  if (existing) existing.remove();
+
+  var html = '<div id="pin-quiz-screen" style="position:fixed;top:0;left:0;right:0;bottom:0;background:var(--bg);z-index:99999;display:flex;flex-direction:column;">' +
+    '<div style="flex:1;display:flex;align-items:center;justify-content:center;">' +
+    '<div style="text-align:center;padding:30px 24px;">' +
+      '<div style="font-size:3rem;margin-bottom:12px;">🔄</div>' +
+      '<h3 style="color:var(--text);margin:0 0 8px;">Tanda completada</h3>' +
+      '<p style="color:var(--muted);font-size:0.88rem;margin:0 0 6px;">Tienes <strong style="color:' + cm + ';">' + gs.noSabe.length + ' obras</strong> para repasar</p>' +
+      '<p style="color:var(--muted);font-size:0.78rem;margin:0 0 24px;">✅ ' + gs.ok + ' correctas &nbsp; ❌ ' + gs.err + ' errores</p>' +
+      '<div style="display:flex;flex-direction:column;gap:10px;">' +
+        '<button id="pf-repasar" style="background:' + cm + ';color:#fff;border:none;border-radius:14px;padding:14px;font-size:1rem;font-weight:700;cursor:pointer;">Repasar las ' + gs.noSabe.length + ' pendientes</button>' +
+        '<button id="pf-siguiente" style="background:var(--card);color:var(--text);border:1px solid var(--border);border-radius:14px;padding:14px;font-size:1rem;cursor:pointer;">Siguiente tanda de 10</button>' +
+        '<button id="pf-salir" style="background:none;color:var(--muted);border:none;padding:10px;font-size:0.9rem;cursor:pointer;">Guardar y salir</button>' +
+      '</div>' +
+    '</div></div></div>';
+
+  document.body.insertAdjacentHTML('beforeend', html);
+
+  document.getElementById('pf-repasar').onclick = function() {
+    gs.tanda = shuffleArr(gs.noSabe);
+    gs.noSabe = [];
+    gs.idx = 0;
+    pinFlashRender();
+  };
+  document.getElementById('pf-siguiente').onclick = function() { pinFlashSiguienteTanda(); };
+  document.getElementById('pf-salir').onclick = function() {
+    document.getElementById('pin-quiz-screen').remove(); abrirPintura();
+  };
+}
+
+function pinFlashSiguienteTanda() {
+  var gs = arteSRS;
+  var pool = arteSRSGetPool(gs.modo);
+  if (pool.length === 0) { arteSRSVictoria(gs.modo, arteSRSLoad()); return; }
+  var st = arteSRSLoad();
+  var sabidas = st.sabidas || {};
+  pool.sort(function(a, b) {
+    return (sabidas[a.titulo+'|'+gs.modo]||0) - (sabidas[b.titulo+'|'+gs.modo]||0);
+  });
+  var tanda = shuffleArr(pool.slice(0, 10));
+  gs.tanda = tanda;
+  gs.poolTotal = pool.length;
+  gs.noSabe = [];
+  gs.idx = 0;
+  gs.ok = 0;
+  gs.err = 0;
+  pinFlashRender();
+}
+
+function arteSRSVictoria(modo, st) {
+  var cm = modo === 'autor' ? '#fdcb6e' : '#a29bfe';
+  var existing = document.getElementById('pin-quiz-screen');
+  if (existing) existing.remove();
+  var html = '<div id="pin-quiz-screen" style="position:fixed;top:0;left:0;right:0;bottom:0;background:var(--bg);z-index:99999;display:flex;align-items:center;justify-content:center;">' +
+    '<div style="text-align:center;padding:30px 24px;">' +
+      '<div style="font-size:4rem;margin-bottom:16px;">🏆</div>' +
+      '<h2 style="color:' + cm + ';margin:0 0 8px;">¡Todo aprendido!</h2>' +
+      '<p style="color:var(--muted);margin:0 0 24px;">Has dominado las 197 obras en este modo</p>' +
+      '<div style="display:flex;flex-direction:column;gap:10px;">' +
+        '<button id="srs-reset" style="background:' + cm + ';color:#fff;border:none;border-radius:14px;padding:14px;font-size:1rem;font-weight:700;cursor:pointer;">Reiniciar progreso</button>' +
+        '<button id="srs-volver" style="background:var(--card);color:var(--text);border:1px solid var(--border);border-radius:14px;padding:14px;font-size:1rem;cursor:pointer;">Volver</button>' +
+      '</div>' +
+    '</div></div>';
+  document.body.insertAdjacentHTML('beforeend', html);
+  document.getElementById('srs-reset').onclick = function() {
+    var st2 = arteSRSLoad();
+    st2.sabidas = st2.sabidas || {};
+    Object.keys(st2.sabidas).forEach(function(k) { if (k.endsWith('|'+modo)) delete st2.sabidas[k]; });
+    arteSRSSave(st2);
+    iniciarPinQuiz(modo);
+  };
+  document.getElementById('srs-volver').onclick = function() {
+    document.getElementById('pin-quiz-screen').remove(); abrirPintura();
+  };
+}
+
 </script>
 
 </body>
