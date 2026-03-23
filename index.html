@@ -20910,6 +20910,9 @@ function dicMostrarPalabra() {
     var acepciones = (p.df || '').split(' | ');
     var hint   = document.getElementById('dic-acep-hint');
     var toggle = document.getElementById('dic-def-toggle');
+    // Reset extra acepciones siempre
+    var extraEl = document.getElementById('dic-def-extra');
+    if (extraEl) { extraEl.textContent = ''; extraEl.classList.remove('visible'); }
     if (acepciones.length > 1) {
         hint.textContent = '+ ' + (acepciones.length-1) + ' acepción(es) más';
         toggle.textContent = '+ ' + (acepciones.length-1) + ' acepción(es) más';
@@ -21094,6 +21097,8 @@ function dicRevelar() {
         extra.classList.remove('visible');
     } else {
         toggle2.style.display = 'none';
+        extra.textContent = '';
+        extra.classList.remove('visible');
     }
 
     // Sinónimos
@@ -29707,14 +29712,16 @@ window.abrirSelectorArte=function(){
   var h='<div id="arte-sel" style="position:fixed;top:0;left:0;right:0;bottom:0;background:var(--bg);z-index:99999;display:flex;flex-direction:column;overflow-y:auto;">'+
     '<div style="padding:15px 20px;display:flex;align-items:center;gap:15px;border-bottom:1px solid var(--border);">'+
       '<button id="arte-sel-bk" style="background:none;border:none;color:var(--text);font-size:1.5rem;cursor:pointer;">&#8592;</button>'+
-      '<div><h2 style="color:var(--text);font-size:1.3rem;margin:0;">&#127912; Arte</h2><p style="color:var(--muted);font-size:0.8rem;margin:4px 0 0;">Pintura</p></div>'+
+      '<div><h2 style="color:var(--text);font-size:1.3rem;margin:0;">&#127912; Arte</h2><p style="color:var(--muted);font-size:0.8rem;margin:4px 0 0;">Pintura · Escultura</p></div>'+
     '</div>'+
     '<div style="padding:20px;display:flex;flex-direction:column;gap:10px;">'+
       '<div class="deck-item" id="arte-pin-btn" style="border-color:#e17055;"><div class="deck-icon">&#128444;</div><div class="deck-info"><h4>Pintura</h4><span style="font-size:0.72rem;color:var(--muted);font-style:italic;">83 pintores · 9 estilos · imagenes reales</span></div><div class="deck-arrow">&#8250;</div></div>'+
+      '<div class="deck-item" id="arte-esc-btn" style="border-color:#6c5ce7;"><div class="deck-icon">🗿</div><div class="deck-info"><h4>Escultura</h4><span style="font-size:0.72rem;color:var(--muted);font-style:italic;">18 obras · ¿de quién es? · empareja</span></div><div class="deck-arrow">&#8250;</div></div>'+
     '</div></div>';
   document.body.insertAdjacentHTML('beforeend',h);
   document.getElementById('arte-sel-bk').onclick=function(){document.getElementById('arte-sel').remove();};
   document.getElementById('arte-pin-btn').onclick=function(){document.getElementById('arte-sel').remove();abrirPintura();};
+  document.getElementById('arte-esc-btn').onclick=function(){document.getElementById('arte-sel').remove();abrirEscultura();};
 };
 window.abrirPintura=function(){
   var st=arteLoad();
@@ -30226,8 +30233,23 @@ function empRender() {
   var artista = gs.artistas[gs.idx];
   var obrasCorrectas = gs.porArtista[artista];
   var nCorrectas = obrasCorrectas.length;
-  var otrasObras = PINTURAS_DATA.filter(function(o) { return o.artista !== artista; });
-  var distractores = shuffleArr(otrasObras).slice(0, 8 - nCorrectas);
+  // Distractores del mismo bloque (mismo estilo/época)
+  var bloqueActivo = null;
+  PINTURA_BLOQUES.forEach(function(b) {
+    b.pintores.forEach(function(p) { if(p.pintor === artista) bloqueActivo = b; });
+  });
+  var obrasMismoBloque = [];
+  if (bloqueActivo) {
+    bloqueActivo.pintores.forEach(function(p) {
+      if (p.pintor !== artista) p.obras.forEach(function(o) { obrasMismoBloque.push({titulo:o, artista:p.pintor}); });
+    });
+  }
+  // Si hay pocas del mismo bloque, completar con otras
+  if (obrasMismoBloque.length < 8 - nCorrectas) {
+    var extra = PINTURAS_DATA.filter(function(o) { return o.artista !== artista && !obrasMismoBloque.find(function(x){return x.titulo===o.titulo;}); });
+    obrasMismoBloque = obrasMismoBloque.concat(shuffleArr(extra).slice(0, 8 - nCorrectas - obrasMismoBloque.length));
+  }
+  var distractores = shuffleArr(obrasMismoBloque).slice(0, 8 - nCorrectas);
   var todasOpciones = shuffleArr(obrasCorrectas.concat(distractores));
   var titulos_correctos = obrasCorrectas.map(function(o) { return o.titulo; });
   var seleccionadas = [];
@@ -30617,6 +30639,272 @@ function arteSRSVictoria(modo, st) {
   document.getElementById('srs-volver').onclick = function() {
     document.getElementById('pin-quiz-screen').remove(); abrirPintura();
   };
+}
+
+
+// ============================================================
+// ESCULTURA
+// ============================================================
+var ESCULTURAS_DATA = [{"titulo": "Laocoonte y sus hijos", "artista": "Agesandro", "anio": -50, "curiosidad": "Descubierta en Roma en 1506, influyó enormemente en Miguel Ángel. Representa el momento en que serpientes marinas matan al sacerdote troyano y sus hijos. La escultura expresa el dolor extremo con un realismo anatómico impresionante.", "img": "https://raw.githubusercontent.com/alacreu-IA/Pasapalabra-Pro/main/dataset_escultura/Agesandro/Laocoonte%20y%20sus%20hijos.jpg"}, {"titulo": "Móvil", "artista": "Alexander Calder", "anio": 1932, "curiosidad": "Calder inventó el móvil, esculturas cinéticas que se mueven con el aire. Marcel Duchamp acuñó el término 'móvil' para describir sus obras suspendidas que equilibran formas abstractas.", "img": "https://raw.githubusercontent.com/alacreu-IA/Pasapalabra-Pro/main/dataset_escultura/Alexander%20Calder/M%C3%B3vil.jpg"}, {"titulo": "El Pensador", "artista": "Auguste Rodin", "anio": 1902, "curiosidad": "Originalmente formaba parte de 'La Puerta del Infierno', inspirada en Dante. La figura representa al propio Dante o al poeta reflexionando sobre el Infierno. Es una de las esculturas más reconocibles del arte occidental.", "img": "https://raw.githubusercontent.com/alacreu-IA/Pasapalabra-Pro/main/dataset_escultura/Auguste%20Rodin/El%20Pensador.jpg"}, {"titulo": "El beso", "artista": "Auguste Rodin", "anio": 1889, "curiosidad": "Representa a Paolo y Francesca, amantes de la Divina Comedia. Originalmente formaba parte de 'La Puerta del Infierno', pero Rodin la retiró por parecer demasiado feliz para el Infierno.", "img": "https://raw.githubusercontent.com/alacreu-IA/Pasapalabra-Pro/main/dataset_escultura/Auguste%20Rodin/El%20beso.jpg"}, {"titulo": "Los burgueses de Calais", "artista": "Auguste Rodin", "anio": 1889, "curiosidad": "Conmemora a seis ciudadanos que se entregaron a Eduardo III para salvar la ciudad durante la Guerra de los Cien Años. Rodin rompió tradiciones al colocarla a nivel del suelo y representar la angustia individual.", "img": "https://raw.githubusercontent.com/alacreu-IA/Pasapalabra-Pro/main/dataset_escultura/Auguste%20Rodin/Los%20burgueses%20de%20Calais.jpg"}, {"titulo": "El pájaro en el espacio", "artista": "Constantin Brancusi", "anio": 1928, "curiosidad": "Brancusi redujo el pájaro a una forma aerodinámica que sugiere vuelo. En 1926, aduanas estadounidenses se negaron a reconocerla como arte por su abstracción, imponiéndole aranceles de objeto industrial.", "img": "https://raw.githubusercontent.com/alacreu-IA/Pasapalabra-Pro/main/dataset_escultura/Constantin%20Brancusi/El%20p%C3%A1jaro%20en%20el%20espacio.jpg"}, {"titulo": "La columna sin fin", "artista": "Constantin Brancusi", "anio": 1938, "curiosidad": "Brancusi imaginó una columna que se eleva infinitamente. La versión definitiva en Târgu Jiu, Rumanía, mide casi 30 metros y simboliza la conexión entre el cielo y la tierra.", "img": "https://raw.githubusercontent.com/alacreu-IA/Pasapalabra-Pro/main/dataset_escultura/Constantin%20Brancusi/La%20columna%20sin%20fin.jpg"}, {"titulo": "David", "artista": "Donatello", "anio": 1440, "curiosidad": "Fue la primera escultura en bronce fundido a gran escala desde la Antigüedad. Es el primer desnudo completo del Renacimiento. Donatello representa a David joven y andrógino tras vencer a Goliat.", "img": "https://raw.githubusercontent.com/alacreu-IA/Pasapalabra-Pro/main/dataset_escultura/Donatello/David.jpg"}, {"titulo": "El rapto de las sabinas", "artista": "Giambologna", "anio": 1583, "curiosidad": "Giambologna creó una composición serpentinata que permite ver la obra desde todos los ángulos. Fue concebida sin tema específico; el título se añadió después por su parecido con el episodio legendario romano.", "img": "https://raw.githubusercontent.com/alacreu-IA/Pasapalabra-Pro/main/dataset_escultura/Giambologna/El%20rapto%20de%20las%20sabinas.jpg"}, {"titulo": "Mercurio volador", "artista": "Giambologna", "anio": 1580, "curiosidad": "Mercurio se eleva sobre el viento, representado por la cabeza de Eolo. Es un ejemplo magistral del manierismo, con una figura en equilibrio sobre un solo pie que parece desafiar la gravedad.", "img": "https://raw.githubusercontent.com/alacreu-IA/Pasapalabra-Pro/main/dataset_escultura/Giambologna/Mercurio%20volador.jpg"}, {"titulo": "Apolo y Dafne", "artista": "Gian Lorenzo Bernini", "anio": 1625, "curiosidad": "Bernini esculpió el momento exacto en que Dafne se transforma en laurel. La obra es una maravilla técnica con pétalos de mármol casi translúcidos y cabellos al viento que parecen moverse.", "img": "https://raw.githubusercontent.com/alacreu-IA/Pasapalabra-Pro/main/dataset_escultura/Gian%20Lorenzo%20Bernini/Apolo%20y%20Dafne.jpg"}, {"titulo": "El rapto de Proserpina", "artista": "Gian Lorenzo Bernini", "anio": 1622, "curiosidad": "Bernini tenía solo 23 años. La mano de Plutón se hunde en el muslo de Proserpina con un realismo tan extremo que parece carne verdadera. Es una de las obras más dramáticas del Barroco.", "img": "https://raw.githubusercontent.com/alacreu-IA/Pasapalabra-Pro/main/dataset_escultura/Gian%20Lorenzo%20Bernini/El%20rapto%20de%20Proserpina.jpg"}, {"titulo": "El éxtasis de Santa Teresa", "artista": "Gian Lorenzo Bernini", "anio": 1652, "curiosidad": "Es la obra cumbre del Barroco. Bernini fusiona arquitectura, escultura y luz teatral. Representa el momento espiritual de Santa Teresa con una sensualidad única, envuelta en pliegues de mármol que parecen moverse.", "img": "https://raw.githubusercontent.com/alacreu-IA/Pasapalabra-Pro/main/dataset_escultura/Gian%20Lorenzo%20Bernini/El%20%C3%A9xtasis%20de%20Santa%20Teresa.jpg"}, {"titulo": "David", "artista": "Miguel Ángel", "anio": 1504, "curiosidad": "Tallado en un bloque de mármol que dos escultores anteriores consideraron inservible. Mide 5,17 metros y representa a David antes del combate, concentrado y tenso. Es el símbolo del Renacimiento florentino.", "img": "https://raw.githubusercontent.com/alacreu-IA/Pasapalabra-Pro/main/dataset_escultura/Miguel%20%C3%81ngel/David.jpg"}, {"titulo": "La Piedad", "artista": "Miguel Ángel", "anio": 1499, "curiosidad": "Miguel Ángel la esculpió con 24 años. Es la única obra que firmó, grabando su nombre en la banda que cruza el pecho de la Virgen. La juventud de María y la delicadeza del mármol la hacen única.", "img": "https://raw.githubusercontent.com/alacreu-IA/Pasapalabra-Pro/main/dataset_escultura/Miguel%20%C3%81ngel/La%20Piedad.jpg"}, {"titulo": "Moisés", "artista": "Miguel Ángel", "anio": 1515, "curiosidad": "Forma parte del sepulcro de Julio II. Miguel Ángel concibió al Moisés con cuernos, una traducción errónea de la Vulgata. La tensión contenida en la figura anticipa el Barroco.", "img": "https://raw.githubusercontent.com/alacreu-IA/Pasapalabra-Pro/main/dataset_escultura/Miguel%20%C3%81ngel/Mois%C3%A9s.jpg"}, {"titulo": "El Discóbolo", "artista": "Mirón", "anio": -450, "curiosidad": "Originalmente en bronce, se conoce por copias romanas en mármol. Mirón capturó el instante justo antes del lanzamiento, un momento de máxima tensión y equilibrio. Es el icono del atletismo griego.", "img": "https://raw.githubusercontent.com/alacreu-IA/Pasapalabra-Pro/main/dataset_escultura/Mir%C3%B3n/El%20Disc%C3%B3bolo.jpg"}, {"titulo": "Hermes con Dioniso", "artista": "Praxíteles", "anio": -340, "curiosidad": "Es la única escultura original atribuida a Praxíteles que se conserva. Fue hallada en Olimpia en 1877. La curva elegante de Hermes anticipa el manierismo.", "img": "https://raw.githubusercontent.com/alacreu-IA/Pasapalabra-Pro/main/dataset_escultura/Prax%C3%ADteles/Hermes%20con%20Dioniso.jpg"}];
+
+var ARTE_ESC_SRS_KEY = 'ppro_arte_esc_srs_v1';
+function artEscSRSLoad(){try{var r=localStorage.getItem(ARTE_ESC_SRS_KEY);if(r)return JSON.parse(r);}catch(e){}return{eliminadas:[],sabidas:{}};}
+function artEscSRSSave(st){try{localStorage.setItem(ARTE_ESC_SRS_KEY,JSON.stringify(st));}catch(e){}}
+
+window.abrirEscultura=function(){
+  var h='<div id="esc-sel" style="position:fixed;top:0;left:0;right:0;bottom:0;background:var(--bg);z-index:99999;display:flex;flex-direction:column;overflow-y:auto;">'+
+    '<div style="padding:15px 20px;display:flex;align-items:center;gap:15px;border-bottom:1px solid var(--border);">'+
+      '<button id="esc-sel-bk" style="background:none;border:none;color:var(--text);font-size:1.5rem;cursor:pointer;">&#8592;</button>'+
+      '<div><h2 style="color:var(--text);font-size:1.3rem;margin:0;">🗿 Escultura</h2><p style="color:var(--muted);font-size:0.8rem;margin:4px 0 0;">18 obras con imagen</p></div>'+
+    '</div>'+
+    '<div style="padding:16px;display:flex;flex-direction:column;gap:10px;">'+
+      '<div id="esc-autor-btn" style="background:var(--card);border:2px solid #fdcb6e;border-radius:14px;padding:14px 16px;display:flex;align-items:center;gap:12px;cursor:pointer;">'+
+        '<div style="font-size:1.5rem;">🧠</div>'+
+        '<div style="flex:1;"><h4 style="margin:0;font-size:0.9rem;color:var(--text);">¿De quién es?</h4><span style="font-size:0.72rem;color:var(--muted);font-style:italic;">Ve la escultura · adivina el escultor</span></div>'+
+        '<div style="color:var(--muted);">›</div></div>'+
+      '<div id="esc-emp-btn" style="background:var(--card);border:2px solid #00cec9;border-radius:14px;padding:14px 16px;display:flex;align-items:center;gap:12px;cursor:pointer;">'+
+        '<div style="font-size:1.5rem;">🔗</div>'+
+        '<div style="flex:1;"><h4 style="margin:0;font-size:0.9rem;color:var(--text);">Empareja obras</h4><span style="font-size:0.72rem;color:var(--muted);font-style:italic;">Ve el escultor · selecciona sus obras</span></div>'+
+        '<div style="color:var(--muted);">›</div></div>'+
+    '</div></div>';
+  document.body.insertAdjacentHTML('beforeend',h);
+  document.getElementById('esc-sel-bk').onclick=function(){document.getElementById('esc-sel').remove();abrirSelectorArte();};
+  document.getElementById('esc-autor-btn').onclick=function(){document.getElementById('esc-sel').remove();iniciarEscQuiz();};
+  document.getElementById('esc-emp-btn').onclick=function(){document.getElementById('esc-sel').remove();iniciarEscEmparejar();};
+};
+
+var escQuizState=null;
+window.iniciarEscQuiz=function(){
+  var st=artEscSRSLoad();
+  var pool=ESCULTURAS_DATA.filter(function(o){
+    var key=o.titulo+'|'+o.artista;
+    if((st.eliminadas||[]).indexOf(key)>=0)return false;
+    if(((st.sabidas||{})[key]||0)>=3)return false;
+    return true;
+  });
+  if(pool.length===0){escVictoria();return;}
+  pool.sort(function(a,b){return ((st.sabidas||{})[a.titulo+'|'+a.artista]||0)-((st.sabidas||{})[b.titulo+'|'+b.artista]||0);});
+  escQuizState={tanda:shuffleArr(pool.slice(0,10)),poolTotal:pool.length,idx:0,ok:0,err:0,noSabe:[],done:false};
+  escQuizRender();
+};
+
+function escQuizRender(){
+  var gs=escQuizState;
+  if(gs.idx>=gs.tanda.length){if(gs.noSabe.length>0){escTandaFin();}else{escSiguienteTanda();}return;}
+  var obra=gs.tanda[gs.idx];
+  var correcta=obra.artista;
+  var dist=shuffleArr(ESCULTURAS_DATA.filter(function(o){return o.artista!==correcta;}))
+    .map(function(o){return o.artista;}).filter(function(v,i,a){return a.indexOf(v)===i;}).slice(0,3);
+  var opciones=shuffleArr([correcta].concat(dist));
+  var st=artEscSRSLoad();
+  var key=obra.titulo+'|'+obra.artista;
+  var veces=(st.sabidas||{})[key]||0;
+  var aprendidas=ESCULTURAS_DATA.length-gs.poolTotal;
+  var ex=document.getElementById('esc-quiz-screen');if(ex)ex.remove();
+  var html='<div id="esc-quiz-screen" style="position:fixed;top:0;left:0;right:0;bottom:0;background:var(--bg);z-index:99999;display:flex;flex-direction:column;">'+
+    '<div style="padding:12px 16px;display:flex;align-items:center;gap:12px;border-bottom:1px solid var(--border);flex-shrink:0;">'+
+      '<button id="esc-back" style="background:none;border:none;color:var(--text);font-size:1.4rem;cursor:pointer;">&#8592;</button>'+
+      '<div style="flex:1;"><div style="font-size:0.82rem;color:#fdcb6e;font-weight:600;">¿De quién es?</div>'+
+      '<div style="font-size:0.72rem;color:var(--muted);">'+(gs.idx+1)+'/'+gs.tanda.length+' · '+aprendidas+'/'+ESCULTURAS_DATA.length+' aprendidas</div></div>'+
+      '<div style="font-size:0.85rem;font-weight:700;color:#fdcb6e;">✅ '+gs.ok+' &nbsp; ❌ '+gs.err+'</div>'+
+    '</div>'+
+    '<div style="height:4px;background:var(--border);flex-shrink:0;"><div style="height:100%;width:'+Math.round(gs.idx/gs.tanda.length*100)+'%;background:#fdcb6e;transition:width 0.3s;"></div></div>'+
+    '<div style="flex:1;overflow-y:auto;">'+
+      '<div id="esc-img" style="width:100%;height:240px;background:#111;display:flex;align-items:center;justify-content:center;overflow:hidden;position:relative;">'+
+        '<div style="color:rgba(255,255,255,0.4);font-size:0.85rem;">Cargando...</div>'+
+        (veces>0?'<div style="position:absolute;top:8px;right:8px;background:rgba(0,184,148,0.8);border-radius:20px;padding:3px 10px;font-size:0.7rem;color:#fff;">✓ '+veces+'/3</div>':'')+
+      '</div>'+
+      '<div style="padding:16px 20px 10px;">'+
+        '<p style="color:#fdcb6e;font-size:0.82rem;font-weight:600;margin:0 0 12px;text-transform:uppercase;">¿Quién esculpió esta obra?</p>'+
+        '<div style="display:flex;flex-direction:column;gap:8px;" id="esc-opts">'+
+          opciones.map(function(op){return '<button class="esc-btn" data-op="'+op.replace(/"/g,'&quot;')+'" style="background:var(--card);border:2px solid var(--border);color:var(--text);border-radius:12px;padding:12px 16px;font-size:0.9rem;text-align:left;cursor:pointer;font-weight:500;">'+op+'</button>';}).join('')+
+        '</div>'+
+        '<div id="esc-fb" style="display:none;margin-top:12px;"></div>'+
+      '</div>'+
+    '</div></div>';
+  document.body.insertAdjacentHTML('beforeend',html);
+  var imgDiv=document.getElementById('esc-img');
+  var img=new Image();img.referrerPolicy='no-referrer';img.style.cssText='width:100%;height:100%;object-fit:contain;display:block;';
+  img.onload=function(){imgDiv.innerHTML='';imgDiv.appendChild(img);};
+  img.onerror=function(){imgDiv.innerHTML='<div style="text-align:center;padding:20px;"><div style="font-size:2rem;">🗿</div><p style="color:rgba(255,255,255,0.5);font-size:0.85rem;font-style:italic;margin:8px 0 0;">'+obra.titulo+'</p></div>';};
+  img.src=obra.img;
+  document.getElementById('esc-back').onclick=function(){document.getElementById('esc-quiz-screen').remove();abrirEscultura();};
+  document.querySelectorAll('.esc-btn').forEach(function(btn){
+    btn.addEventListener('click',function(){
+      if(gs.done)return;gs.done=true;
+      var elegida=this.dataset.op,ok=elegida===correcta;
+      if(ok)gs.ok++;else gs.err++;
+      document.querySelectorAll('.esc-btn').forEach(function(b){
+        b.style.cursor='default';
+        if(b.dataset.op===correcta){b.style.borderColor='#00b894';b.style.background='rgba(0,184,148,0.15)';b.style.color='#00b894';b.style.fontWeight='700';}
+        else if(b===btn&&!ok){b.style.borderColor='#e17055';b.style.background='rgba(225,112,85,0.15)';b.style.color='#e17055';}
+      });
+      var anioStr=obra.anio<0?Math.abs(obra.anio)+' a.C.':obra.anio;
+      var fb=document.getElementById('esc-fb');fb.style.display='block';
+      fb.innerHTML='<div style="background:var(--card);border-radius:12px;padding:14px;border:1px solid '+(ok?'#00b894':'#e17055')+';margin-bottom:10px;">'+
+        '<p style="color:'+(ok?'#00b894':'#e17055')+';font-weight:700;margin:0 0 4px;">'+(ok?'✅ ¡Correcto!':'❌ Era: '+correcta)+'</p>'+
+        '<p style="color:var(--text);font-size:0.88rem;font-weight:600;margin:0 0 4px;">'+obra.titulo+' · '+anioStr+'</p>'+
+        '<p style="color:var(--muted);font-size:0.78rem;margin:0 0 12px;font-style:italic;">'+obra.curiosidad+'</p>'+
+        '<div style="display:flex;gap:8px;">'+
+          '<button id="esrs-sabe" style="flex:1;padding:10px;border-radius:10px;border:2px solid #00b894;background:rgba(0,184,148,0.1);color:#00b894;font-weight:700;cursor:pointer;font-size:0.85rem;">✅ Me lo sé</button>'+
+          '<button id="esrs-no" style="flex:1;padding:10px;border-radius:10px;border:2px solid #e17055;background:rgba(225,112,85,0.1);color:#e17055;font-weight:700;cursor:pointer;font-size:0.85rem;">🔄 Repasar</button>'+
+          '<button id="esrs-del" style="padding:10px 14px;border-radius:10px;border:2px solid var(--border);background:var(--card);color:var(--muted);font-weight:700;cursor:pointer;font-size:0.85rem;">🗑️</button>'+
+        '</div></div>';
+      setTimeout(function(){fb.scrollIntoView({behavior:'smooth',block:'nearest'});},80);
+      document.getElementById('esrs-sabe').onclick=function(){
+        var st2=artEscSRSLoad();if(!st2.sabidas)st2.sabidas={};
+        st2.sabidas[key]=(st2.sabidas[key]||0)+1;artEscSRSSave(st2);
+        gs.idx++;gs.done=false;escQuizRender();
+      };
+      document.getElementById('esrs-no').onclick=function(){gs.noSabe.push(obra);gs.idx++;gs.done=false;escQuizRender();};
+      document.getElementById('esrs-del').onclick=function(){
+        if(!confirm('¿Eliminar "'+obra.titulo+'" permanentemente?'))return;
+        var st2=artEscSRSLoad();if(!st2.eliminadas)st2.eliminadas=[];
+        if(st2.eliminadas.indexOf(key)<0)st2.eliminadas.push(key);artEscSRSSave(st2);
+        gs.idx++;gs.done=false;escQuizRender();
+      };
+    });
+  });
+  gs.done=false;
+}
+
+function escTandaFin(){
+  var gs=escQuizState;var ex=document.getElementById('esc-quiz-screen');if(ex)ex.remove();
+  var html='<div id="esc-quiz-screen" style="position:fixed;top:0;left:0;right:0;bottom:0;background:var(--bg);z-index:99999;display:flex;align-items:center;justify-content:center;">'+
+    '<div style="text-align:center;padding:30px 24px;">'+
+      '<div style="font-size:3rem;margin-bottom:12px;">🔄</div>'+
+      '<h3 style="color:var(--text);margin:0 0 8px;">Tanda completada</h3>'+
+      '<p style="color:var(--muted);font-size:0.88rem;margin:0 0 24px;"><strong style="color:#fdcb6e;">'+escQuizState.noSabe.length+' obras</strong> para repasar · ✅ '+escQuizState.ok+' ❌ '+escQuizState.err+'</p>'+
+      '<div style="display:flex;flex-direction:column;gap:10px;">'+
+        '<button id="esc-rep2" style="background:#fdcb6e;color:#111;border:none;border-radius:14px;padding:14px;font-size:1rem;font-weight:700;cursor:pointer;">Repasar las '+escQuizState.noSabe.length+' pendientes</button>'+
+        '<button id="esc-sig2" style="background:var(--card);color:var(--text);border:1px solid var(--border);border-radius:14px;padding:14px;font-size:1rem;cursor:pointer;">Siguiente tanda</button>'+
+        '<button id="esc-sal2" style="background:none;color:var(--muted);border:none;padding:10px;font-size:0.9rem;cursor:pointer;">Salir</button>'+
+      '</div></div></div>';
+  document.body.insertAdjacentHTML('beforeend',html);
+  document.getElementById('esc-rep2').onclick=function(){escQuizState.tanda=shuffleArr(escQuizState.noSabe);escQuizState.noSabe=[];escQuizState.idx=0;escQuizRender();};
+  document.getElementById('esc-sig2').onclick=function(){escSiguienteTanda();};
+  document.getElementById('esc-sal2').onclick=function(){document.getElementById('esc-quiz-screen').remove();abrirEscultura();};
+}
+
+function escSiguienteTanda(){
+  var st=artEscSRSLoad();
+  var pool=ESCULTURAS_DATA.filter(function(o){
+    var key=o.titulo+'|'+o.artista;
+    if((st.eliminadas||[]).indexOf(key)>=0)return false;
+    if(((st.sabidas||{})[key]||0)>=3)return false;
+    return true;
+  });
+  if(pool.length===0){escVictoria();return;}
+  pool.sort(function(a,b){return ((st.sabidas||{})[a.titulo+'|'+a.artista]||0)-((st.sabidas||{})[b.titulo+'|'+b.artista]||0);});
+  escQuizState.tanda=shuffleArr(pool.slice(0,10));escQuizState.poolTotal=pool.length;
+  escQuizState.noSabe=[];escQuizState.idx=0;escQuizState.ok=0;escQuizState.err=0;
+  escQuizRender();
+}
+
+function escVictoria(){
+  var ex=document.getElementById('esc-quiz-screen');if(ex)ex.remove();
+  var html='<div id="esc-quiz-screen" style="position:fixed;top:0;left:0;right:0;bottom:0;background:var(--bg);z-index:99999;display:flex;align-items:center;justify-content:center;">'+
+    '<div style="text-align:center;padding:30px 24px;">'+
+      '<div style="font-size:4rem;margin-bottom:16px;">🏆</div>'+
+      '<h2 style="color:#fdcb6e;margin:0 0 8px;">¡Todo aprendido!</h2>'+
+      '<p style="color:var(--muted);margin:0 0 24px;">Has dominado las 18 esculturas</p>'+
+      '<div style="display:flex;flex-direction:column;gap:10px;">'+
+        '<button id="esc-rst" style="background:#fdcb6e;color:#111;border:none;border-radius:14px;padding:14px;font-size:1rem;font-weight:700;cursor:pointer;">Reiniciar progreso</button>'+
+        '<button id="esc-vv" style="background:var(--card);color:var(--text);border:1px solid var(--border);border-radius:14px;padding:14px;font-size:1rem;cursor:pointer;">Volver</button>'+
+      '</div></div></div>';
+  document.body.insertAdjacentHTML('beforeend',html);
+  document.getElementById('esc-rst').onclick=function(){var st2=artEscSRSLoad();st2.sabidas={};st2.eliminadas=[];artEscSRSSave(st2);iniciarEscQuiz();};
+  document.getElementById('esc-vv').onclick=function(){document.getElementById('esc-quiz-screen').remove();abrirEscultura();};
+}
+
+window.iniciarEscEmparejar=function(){
+  var porEscultor={};
+  ESCULTURAS_DATA.forEach(function(o){if(!porEscultor[o.artista])porEscultor[o.artista]=[];porEscultor[o.artista].push(o);});
+  var escultores=shuffleArr(Object.keys(porEscultor).filter(function(a){return porEscultor[a].length>=2;}));
+  escEmpRender({escultores:escultores,porEscultor:porEscultor,idx:0,ok:0,err:0});
+};
+
+function escEmpRender(gs){
+  if(gs.idx>=gs.escultores.length){escEmpFin(gs);return;}
+  var escultor=gs.escultores[gs.idx];
+  var obrasCorrectas=gs.porEscultor[escultor];
+  var nCorrectas=obrasCorrectas.length;
+  var otras=ESCULTURAS_DATA.filter(function(o){return o.artista!==escultor;});
+  var opciones=shuffleArr(obrasCorrectas.concat(shuffleArr(otras).slice(0,8-nCorrectas)));
+  var titulos_correctos=obrasCorrectas.map(function(o){return o.titulo;});
+  var seleccionadas=[];var respondido=false;
+  var ex=document.getElementById('esc-emp-screen');if(ex)ex.remove();
+  var html='<div id="esc-emp-screen" style="position:fixed;top:0;left:0;right:0;bottom:0;background:var(--bg);z-index:99999;display:flex;flex-direction:column;">'+
+    '<div style="padding:12px 16px;display:flex;align-items:center;gap:12px;border-bottom:1px solid var(--border);flex-shrink:0;">'+
+      '<button id="esc-emp-bk" style="background:none;border:none;color:var(--text);font-size:1.4rem;cursor:pointer;">&#8592;</button>'+
+      '<div style="flex:1;"><div style="font-size:0.82rem;color:#00cec9;font-weight:600;">Empareja esculturas</div>'+
+      '<div style="font-size:0.75rem;color:var(--muted);">Escultor '+(gs.idx+1)+'/'+gs.escultores.length+'</div></div>'+
+      '<div style="font-size:0.9rem;font-weight:700;color:#00cec9;">✅ '+gs.ok+' &nbsp; ❌ '+gs.err+'</div>'+
+    '</div>'+
+    '<div style="height:4px;background:var(--border);flex-shrink:0;"><div style="height:100%;width:'+Math.round(gs.idx/gs.escultores.length*100)+'%;background:#00cec9;"></div></div>'+
+    '<div style="flex:1;overflow-y:auto;padding:20px;">'+
+      '<div style="text-align:center;margin-bottom:20px;">'+
+        '<p style="color:var(--muted);font-size:0.8rem;margin:0 0 6px;">¿Cuáles son las obras de...</p>'+
+        '<h2 style="color:var(--text);margin:0;font-size:1.3rem;">🗿 '+escultor+'</h2>'+
+        '<p style="color:var(--muted);font-size:0.75rem;margin:8px 0 0;">Selecciona '+nCorrectas+' obra'+(nCorrectas>1?'s':'')+'</p>'+
+      '</div>'+
+      '<div style="display:flex;flex-direction:column;gap:8px;" id="esc-emp-opts">'+
+        opciones.map(function(o){return '<button class="esc-emp-btn" data-titulo="'+o.titulo.replace(/"/g,'&quot;')+'" style="background:var(--card);border:2px solid var(--border);color:var(--text);border-radius:12px;padding:12px 16px;font-size:0.88rem;text-align:left;cursor:pointer;font-weight:500;">'+o.titulo+'</button>';}).join('')+
+      '</div>'+
+      '<div id="esc-emp-fb" style="display:none;margin-top:16px;"></div>'+
+      '<button id="esc-emp-check" style="background:#00cec9;color:#fff;border:none;border-radius:14px;padding:14px;font-size:1rem;font-weight:700;cursor:pointer;width:100%;margin-top:16px;display:none;">Comprobar ✓</button>'+
+    '</div></div>';
+  document.body.insertAdjacentHTML('beforeend',html);
+  document.getElementById('esc-emp-bk').onclick=function(){document.getElementById('esc-emp-screen').remove();abrirEscultura();};
+  document.querySelectorAll('.esc-emp-btn').forEach(function(btn){
+    btn.addEventListener('click',function(){
+      if(respondido)return;
+      var t=this.dataset.titulo,idx2=seleccionadas.indexOf(t);
+      if(idx2>=0){seleccionadas.splice(idx2,1);this.style.borderColor='var(--border)';this.style.background='var(--card)';this.style.color='var(--text)';}
+      else{if(seleccionadas.length>=nCorrectas)return;seleccionadas.push(t);this.style.borderColor='#00cec9';this.style.background='rgba(0,206,201,0.15)';this.style.color='#00cec9';}
+      document.getElementById('esc-emp-check').style.display=seleccionadas.length===nCorrectas?'block':'none';
+    });
+  });
+  document.getElementById('esc-emp-check').onclick=function(){
+    respondido=true;
+    var aciertos=seleccionadas.filter(function(t){return titulos_correctos.indexOf(t)>=0;}).length;
+    var ok=aciertos===nCorrectas;if(ok)gs.ok++;else gs.err++;
+    document.querySelectorAll('.esc-emp-btn').forEach(function(btn){
+      var t=btn.dataset.titulo,esC=titulos_correctos.indexOf(t)>=0,sel=seleccionadas.indexOf(t)>=0;
+      btn.style.cursor='default';
+      if(esC){btn.style.borderColor='#00b894';btn.style.background='rgba(0,184,148,0.15)';btn.style.color='#00b894';btn.style.fontWeight='700';}
+      else if(sel){btn.style.borderColor='#e17055';btn.style.background='rgba(225,112,85,0.15)';btn.style.color='#e17055';}
+    });
+    var fb=document.getElementById('esc-emp-fb');fb.style.display='block';
+    fb.innerHTML='<div style="background:var(--card);border-radius:12px;padding:14px;border:1px solid '+(ok?'#00b894':'#e17055')+';margin-bottom:12px;">'+
+      '<p style="color:'+(ok?'#00b894':'#e17055')+';font-weight:700;margin:0 0 4px;">'+(ok?'✅ ¡Perfecto!':'❌ '+aciertos+'/'+nCorrectas+' correctas')+'</p>'+
+      '<p style="color:var(--muted);font-size:0.78rem;margin:0;">Obras de '+escultor+': '+titulos_correctos.join(', ')+'</p></div>'+
+      '<button id="esc-emp-sig" style="background:var(--accent);color:#fff;border:none;border-radius:14px;padding:14px;font-size:1rem;font-weight:700;cursor:pointer;width:100%;">'+(gs.idx+1<gs.escultores.length?'Siguiente →':'Ver resultado')+'</button>';
+    document.getElementById('esc-emp-check').style.display='none';
+    document.getElementById('esc-emp-sig').onclick=function(){gs.idx++;escEmpRender(gs);};
+    fb.scrollIntoView({behavior:'smooth',block:'nearest'});
+  };
+}
+
+function escEmpFin(gs){
+  var total=gs.ok+gs.err,pct=total>0?Math.round(gs.ok/total*100):0;
+  var emoji=pct>=90?'🏆':pct>=70?'🥇':pct>=50?'🗿':'🔄';
+  var ex=document.getElementById('esc-emp-screen');if(ex)ex.remove();
+  var html='<div id="esc-emp-screen" style="position:fixed;top:0;left:0;right:0;bottom:0;background:var(--bg);z-index:99999;display:flex;align-items:center;justify-content:center;">'+
+    '<div style="text-align:center;padding:30px 20px;">'+
+      '<div style="font-size:4rem;margin-bottom:12px;">'+emoji+'</div>'+
+      '<h2 style="color:var(--text);margin:0 0 8px;">'+pct+'% de acierto</h2>'+
+      '<div style="display:flex;justify-content:center;gap:24px;margin-bottom:24px;">'+
+        '<div style="text-align:center;"><div style="font-size:1.8rem;font-weight:700;color:#00b894;">'+gs.ok+'</div><div style="font-size:0.8rem;color:var(--muted);">correctos</div></div>'+
+        '<div style="text-align:center;"><div style="font-size:1.8rem;font-weight:700;color:#e17055;">'+gs.err+'</div><div style="font-size:0.8rem;color:var(--muted);">errores</div></div>'+
+      '</div>'+
+      '<div style="display:flex;flex-direction:column;gap:10px;">'+
+        '<button id="esc-emp-rep2" style="background:#00cec9;color:#fff;border:none;border-radius:14px;padding:14px;font-size:1rem;font-weight:700;cursor:pointer;">Repetir</button>'+
+        '<button id="esc-emp-vol2" style="background:var(--card);color:var(--text);border:1px solid var(--border);border-radius:14px;padding:14px;font-size:1rem;cursor:pointer;">Volver</button>'+
+      '</div></div></div>';
+  document.body.insertAdjacentHTML('beforeend',html);
+  document.getElementById('esc-emp-rep2').onclick=function(){iniciarEscEmparejar();};
+  document.getElementById('esc-emp-vol2').onclick=function(){document.getElementById('esc-emp-screen').remove();abrirEscultura();};
 }
 
 </script>
