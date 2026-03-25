@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<title>Familias Léxicas · Pasapalabra Pro</title>
+<style>
+:root {
+  --bg:#080810; --bg2:#0f0f1a; --card:#13131f; --border:#1e1e2e;
+  --text:#e8e8f0; --muted:#6b6b8a; --accent:#7c6aff;
+  --gold:#f0c040; --green:#00b894; --red:#e17055;
+  --blue:#74b9ff; --purple:#a29bfe;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+body{background:var(--bg);color:var(--text);font-family:'Segoe UI',system-ui,sans-serif;min-height:100vh;overflow-x:hidden;}
+
+/* TOP BAR */
+.top-bar{display:flex;align-items:center;gap:12px;padding:14px 16px;border-bottom:1px solid var(--border);background:var(--bg);position:sticky;top:0;z-index:100;}
+.top-bar h1{font-size:1rem;font-weight:700;flex:1;}
+.btn-back{background:none;border:none;color:var(--text);font-size:1.4rem;cursor:pointer;padding:4px;}
+.counter{font-size:0.8rem;color:var(--muted);}
+
+/* HOME */
+.home{padding:16px;}
+.home-title{font-size:1.3rem;font-weight:700;margin-bottom:4px;}
+.home-sub{font-size:0.82rem;color:var(--muted);margin-bottom:20px;}
+.stats-row{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:20px;}
+.stat-box{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:12px;text-align:center;}
+.stat-n{font-size:1.4rem;font-weight:800;color:var(--purple);}
+.stat-l{font-size:0.7rem;color:var(--muted);margin-top:2px;}
+.sec-label{font-size:0.72rem;color:var(--muted);font-weight:700;text-transform:uppercase;letter-spacing:1px;margin-bottom:8px;}
+.letras-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin-bottom:20px;}
+.letra-btn{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:12px 4px;cursor:pointer;text-align:center;color:var(--text);font-size:1rem;font-weight:700;transition:border-color .2s;}
+.letra-btn:hover{border-color:var(--purple);}
+.letra-btn .cnt{font-size:0.6rem;color:var(--muted);margin-top:2px;}
+.modos-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:20px;}
+.modo-card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:16px;cursor:pointer;transition:border-color .2s;}
+.modo-card:hover{border-color:var(--purple);}
+.modo-icon{font-size:1.6rem;margin-bottom:6px;}
+.modo-title{font-size:0.88rem;font-weight:700;}
+.modo-desc{font-size:0.72rem;color:var(--muted);margin-top:3px;}
+
+/* FLASHCARD */
+.flashcard-screen{display:none;flex-direction:column;height:100vh;}
+.flashcard-screen.active{display:flex;}
+.fc-progress-bar{height:3px;background:var(--border);}
+.fc-progress-fill{height:3px;background:var(--purple);transition:width .4s;}
+.fc-body{flex:1;overflow-y:auto;padding:16px 16px 0;}
+
+/* La tarjeta */
+.fc-card{background:var(--card);border:1px solid var(--purple);border-radius:20px;padding:20px;margin-bottom:12px;}
+.fc-familia-label{font-size:0.68rem;color:var(--purple);font-weight:700;text-transform:uppercase;letter-spacing:1px;margin-bottom:8px;}
+.fc-palabra{font-size:2rem;font-weight:800;color:var(--purple);line-height:1.1;margin-bottom:4px;}
+.fc-pos{font-size:0.78rem;color:var(--muted);margin-bottom:14px;}
+.fc-def{font-size:0.9rem;color:var(--text);line-height:1.6;}
+.fc-etim{margin-top:12px;background:rgba(162,155,254,0.08);border-left:3px solid var(--purple);border-radius:0 8px 8px 0;padding:10px 12px;font-size:0.78rem;color:var(--muted);}
+
+/* Palabras de la familia */
+.fc-familia-section{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:16px;margin-bottom:12px;}
+.fc-familia-title{font-size:0.72rem;color:var(--muted);font-weight:700;text-transform:uppercase;letter-spacing:1px;margin-bottom:10px;}
+.fc-rel-list{display:flex;flex-direction:column;gap:6px;}
+.fc-rel-item{background:var(--bg2);border-radius:10px;padding:10px 12px;}
+.fc-rel-word{font-size:0.9rem;font-weight:700;color:var(--text);}
+.fc-rel-pos{font-size:0.7rem;color:var(--muted);margin-left:6px;}
+.fc-rel-def{font-size:0.78rem;color:var(--muted);margin-top:3px;line-height:1.4;}
+
+/* Botones rating */
+.fc-actions{padding:12px 16px 32px;flex-shrink:0;}
+.fc-btns{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;}
+.fc-btn{border:none;border-radius:14px;padding:14px 8px;font-size:0.78rem;font-weight:700;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:4px;}
+.fc-btn-icon{font-size:1.3rem;}
+.fc-btn-fail{background:rgba(225,112,85,0.15);color:var(--red);border:2px solid var(--red);}
+.fc-btn-mid{background:rgba(240,192,64,0.12);color:var(--gold);border:2px solid var(--gold);}
+.fc-btn-ok{background:rgba(0,184,148,0.12);color:var(--green);border:2px solid var(--green);}
+.fc-skip{width:100%;margin-top:8px;background:none;border:1px solid var(--border);border-radius:10px;padding:10px;color:var(--muted);font-size:0.8rem;cursor:pointer;}
+
+/* FIN */
+.fin-screen{display:none;flex-direction:column;align-items:center;justify-content:center;min-height:60vh;padding:32px 24px;text-align:center;}
+.fin-screen.active{display:flex;}
+.fin-emoji{font-size:4rem;margin-bottom:16px;}
+.fin-title{font-size:1.4rem;font-weight:700;margin-bottom:8px;}
+.fin-sub{font-size:0.85rem;color:var(--muted);margin-bottom:24px;}
+.fin-btn{background:var(--purple);color:#fff;border:none;border-radius:14px;padding:14px 32px;font-size:1rem;font-weight:700;cursor:pointer;margin-bottom:10px;width:100%;}
+.fin-btn-sec{background:var(--card);color:var(--text);border:1px solid var(--border);border-radius:14px;padding:14px;font-size:0.9rem;cursor:pointer;width:100%;}
+
+/* Toast */
+.toast{position:fixed;bottom:80px;left:50%;transform:translateX(-50%);background:#222236;border:1px solid var(--purple);color:var(--text);padding:10px 20px;border-radius:20px;font-size:0.82rem;z-index:9999;opacity:0;transition:opacity .3s;pointer-events:none;}
+.toast.show{opacity:1;}
+</style>
+</head>
+<body>
+
+<!-- HOME -->
+<div id="screen-home">
+  <div class="top-bar">
+    <button class="btn-back" onclick="window.history.back()">←</button>
+    <h1>🧬 Familias Léxicas</h1>
+    <span class="counter" id="home-counter">4.990 familias</span>
+  </div>
+  <div class="home">
+    <p class="home-sub">Palabras agrupadas por raíz común · Estudio una a una</p>
+
+    <div class="stats-row">
+      <div class="stat-box"><div class="stat-n">4.990</div><div class="stat-l">Familias</div></div>
+      <div class="stat-box"><div class="stat-n">46.590</div><div class="stat-l">Palabras</div></div>
+      <div class="stat-box"><div class="stat-n" id="stat-estudiadas">0</div><div class="stat-l">Estudiadas</div></div>
+    </div>
+
+    <div class="modos-grid">
+      <div class="modo-card" onclick="iniciarModo('aleatorio')">
+        <div class="modo-icon">🎲</div>
+        <div class="modo-title">Aleatorio</div>
+        <div class="modo-desc">Familias mezcladas de todas las letras</div>
+      </div>
+      <div class="modo-card" onclick="iniciarModo('pendientes')">
+        <div class="modo-icon">🔄</div>
+        <div class="modo-title">Pendientes</div>
+        <div class="modo-desc">Solo las que aún no dominas</div>
+      </div>
+    </div>
+
+    <div class="sec-label">Por letra</div>
+    <div class="letras-grid" id="letras-grid"></div>
+  </div>
+</div>
+
+<!-- FLASHCARD -->
+<div class="flashcard-screen" id="screen-fc">
+  <div class="top-bar">
+    <button class="btn-back" onclick="volverHome()">←</button>
+    <h1 id="fc-title">Familias</h1>
+    <span class="counter" id="fc-counter">0/0</span>
+  </div>
+  <div class="fc-progress-bar">
+    <div class="fc-progress-fill" id="fc-progress" style="width:0%"></div>
+  </div>
+  <div class="fc-body" id="fc-body"></div>
+  <div class="fc-actions">
+    <div class="fc-btns">
+      <button class="fc-btn fc-btn-fail" onclick="calificar(1)">
+        <span class="fc-btn-icon">✖</span>No la sé
+      </button>
+      <button class="fc-btn fc-btn-mid" onclick="calificar(3)">
+        <span class="fc-btn-icon">🔄</span>Regular
+      </button>
+      <button class="fc-btn fc-btn-ok" onclick="calificar(5)">
+        <span class="fc-btn-icon">✔</span>La sé
+      </button>
+    </div>
+    <button class="fc-skip" onclick="siguiente()">Saltar →</button>
+  </div>
+</div>
+
+<!-- FIN -->
+<div class="fin-screen" id="screen-fin">
+  <div class="fin-emoji" id="fin-emoji">🏆</div>
+  <div class="fin-title" id="fin-title">¡Sesión completada!</div>
+  <div class="fin-sub" id="fin-sub"></div>
+  <button class="fin-btn" onclick="iniciarModo('aleatorio')">Nueva sesión</button>
+  <button class="fin-btn-sec" onclick="volverHome()">Volver al inicio</button>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+const BASE_URL = 'https://raw.githubusercontent.com/alacreu-IA/Pasapalabra-Pro/main/diccionarios_familias/';
+const LETRAS = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','X','Y','Z'];
+const SRS_KEY = 'ppro_familias_srs_v1';
+const COUNTS = {A:731,B:296,C:316,D:256,E:406,F:208,G:190,H:157,I:189,J:153,K:47,L:176,M:172,N:204,O:257,P:249,Q:19,R:188,S:183,T:216,U:96,V:118,X:9,Y:56,Z:98};
+
+var estado = { familias: [], idx: 0, ok: 0, fail: 0, modo: '' };
+var cache = {};
+
+// SRS
+function srsKey(w){ return 'fam_' + w.toLowerCase().replace(/\s+/g,'_'); }
+function srsGet(w){ try{ var r=localStorage.getItem(SRS_KEY+'_'+srsKey(w)); return r?JSON.parse(r):null; }catch(e){return null;} }
+function srsSet(w, nivel){
+  var prev = srsGet(w) || {reps:0};
+  var dias = nivel===1?1:nivel===3?7:30;
+  localStorage.setItem(SRS_KEY+'_'+srsKey(w), JSON.stringify({nivel,reps:(prev.reps||0)+1,due:Date.now()+dias*86400000}));
+}
+function srsEstudiadas(){
+  var n=0;
+  for(var k in localStorage){ if(k.startsWith(SRS_KEY+'_')) n++; }
+  return n;
+}
+
+// Cargar letra
+async function cargarLetra(l){
+  if(cache[l]) return cache[l];
+  var r = await fetch(BASE_URL + 'fam_' + l + '.json');
+  var data = await r.json();
+  cache[l] = data;
+  return data;
+}
+
+// Home
+function renderHome(){
+  document.getElementById('stat-estudiadas').textContent = srsEstudiadas().toLocaleString('es');
+  var grid = document.getElementById('letras-grid');
+  grid.innerHTML = '';
+  LETRAS.forEach(function(l){
+    var btn = document.createElement('button');
+    btn.className = 'letra-btn';
+    btn.innerHTML = '<div>' + l + '</div><div class="cnt">' + (COUNTS[l]||0) + '</div>';
+    btn.onclick = function(){ iniciarModo('letra', l); };
+    grid.appendChild(btn);
+  });
+}
+
+// Iniciar modo
+async function iniciarModo(modo, filtro){
+  mostrarToast('Cargando...');
+  estado.modo = modo;
+  estado.idx = 0; estado.ok = 0; estado.fail = 0;
+
+  var familias = [];
+  if(modo === 'letra'){
+    familias = await cargarLetra(filtro);
+  } else if(modo === 'aleatorio'){
+    var letrasRand = shuffle(LETRAS.slice()).slice(0,4);
+    for(var l of letrasRand){
+      var data = await cargarLetra(l);
+      familias = familias.concat(data.slice(0,10));
+    }
+    familias = shuffle(familias).slice(0,40);
+  } else if(modo === 'pendientes'){
+    var letrasAll = shuffle(LETRAS.slice()).slice(0,6);
+    for(var l of letrasAll){
+      var data = await cargarLetra(l);
+      var pend = data.filter(function(f){
+        var s = srsGet(f.w);
+        if(!s) return true;
+        if(s.nivel===1) return true;
+        if(s.nivel===3 && s.due < Date.now()) return true;
+        return false;
+      });
+      familias = familias.concat(pend.slice(0,8));
+    }
+    familias = shuffle(familias).slice(0,40);
+    if(!familias.length){ mostrarToast('¡Sin pendientes!'); return; }
+  }
+
+  estado.familias = familias;
+  document.getElementById('fc-title').textContent = modo==='letra' ? 'Letra '+filtro : modo==='pendientes' ? 'Pendientes' : 'Aleatorio';
+  mostrarScreen('fc');
+  renderTarjeta();
+}
+
+function renderTarjeta(){
+  var gs = estado;
+  if(gs.idx >= gs.familias.length){ mostrarFin(); return; }
+
+  var fam = gs.familias[gs.idx];
+  var total = gs.familias.length;
+
+  // Progress
+  document.getElementById('fc-counter').textContent = (gs.idx+1) + '/' + total;
+  document.getElementById('fc-progress').style.width = Math.round(gs.idx/total*100) + '%';
+
+  var html = '<div class="fc-card">' +
+    '<div class="fc-familia-label">🧬 Familia léxica</div>' +
+    '<div class="fc-palabra">' + fam.w + '</div>' +
+    '<div class="fc-pos">' + (fam.p||'') + '</div>' +
+    '<div class="fc-def">' + fam.d + '</div>' +
+    (fam.e ? '<div class="fc-etim">' + fam.e + '</div>' : '') +
+  '</div>';
+
+  if(fam.r && fam.r.length){
+    html += '<div class="fc-familia-section">' +
+      '<div class="fc-familia-title">🔗 ' + fam.r.length + ' palabras de la misma familia</div>' +
+      '<div class="fc-rel-list">';
+    fam.r.forEach(function(rel){
+      html += '<div class="fc-rel-item">' +
+        '<div><span class="fc-rel-word">' + rel.w + '</span><span class="fc-rel-pos">' + (rel.p||'') + '</span></div>' +
+        '<div class="fc-rel-def">' + rel.d + '</div>' +
+      '</div>';
+    });
+    html += '</div></div>';
+  }
+
+  document.getElementById('fc-body').innerHTML = html;
+  document.getElementById('fc-body').scrollTop = 0;
+}
+
+function calificar(nivel){
+  var fam = estado.familias[estado.idx];
+  if(fam) srsSet(fam.w, nivel);
+  if(nivel >= 4) estado.ok++;
+  else if(nivel === 1) estado.fail++;
+  siguiente();
+}
+
+function siguiente(){
+  estado.idx++;
+  renderTarjeta();
+}
+
+function mostrarFin(){
+  var total = estado.ok + estado.fail;
+  var pct = total ? Math.round(estado.ok/total*100) : 0;
+  var emoji = pct>=80?'🏆':pct>=50?'🎯':'🔄';
+  document.getElementById('fin-emoji').textContent = emoji;
+  document.getElementById('fin-title').textContent = '¡Sesión completada!';
+  document.getElementById('fin-sub').textContent = estado.ok + ' dominadas · ' + estado.fail + ' para repasar · ' + pct + '% de acierto';
+  mostrarScreen('fin');
+  renderHome(); // actualizar contador
+}
+
+function volverHome(){
+  mostrarScreen('home');
+  renderHome();
+}
+
+function mostrarScreen(id){
+  ['home','fc','fin'].forEach(function(s){
+    var el = document.getElementById('screen-'+s);
+    if(el){
+      if(s==='home'){ el.style.display = id==='home'?'block':'none'; }
+      else { el.classList.toggle('active', s===id); }
+    }
+  });
+}
+
+function shuffle(arr){
+  for(var i=arr.length-1;i>0;i--){
+    var j=Math.floor(Math.random()*(i+1));
+    var t=arr[i];arr[i]=arr[j];arr[j]=t;
+  }
+  return arr;
+}
+
+function mostrarToast(msg){
+  var t=document.getElementById('toast');
+  t.textContent=msg; t.classList.add('show');
+  setTimeout(function(){t.classList.remove('show');},1800);
+}
+
+// Init
+renderHome();
+</script>
+</body>
+</html>
