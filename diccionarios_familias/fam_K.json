@@ -1,0 +1,514 @@
+[
+  {
+    "w": "Kabuki",
+    "d": "Género teatral japonés que combina actuación, declamación y música, en el que los papeles femeninos son representados por hombres.",
+    "p": "m.",
+    "e": "Del jap. kabuki, y este de ka 'canción', bu 'danza' y ki 'arte, habilidad'.",
+    "r": []
+  },
+  {
+    "w": "Kafkiano",
+    "d": "Perteneciente o relativo a Franz Kafka, escritor checo, o a su obra. Las novelas kafkianas.",
+    "p": "adj.",
+    "e": "",
+    "r": []
+  },
+  {
+    "w": "Kaki",
+    "d": "Árbol de la familia de las ebenáceas, originario del Japón y de China, del que se cultivan numerosas variedades en Europa y América del Sur. Su fruto, dulce y carnoso, del tamaño de una manzana aproximadamente, es comestible.",
+    "p": "m.",
+    "e": "",
+    "r": []
+  },
+  {
+    "w": "Kamikaze",
+    "d": "En la Segunda Guerra Mundial, piloto suicida japonés que tripulaba un avión con explosivos con el que se lanzaba contra un objetivo. U. t. en apos.",
+    "p": "m.",
+    "e": "Del jap. kamikaze, y este de kami 'divinidad, dios' y kaze 'viento'.",
+    "r": []
+  },
+  {
+    "w": "Kanindeyuense",
+    "d": "Natural de Kanindeyú, departamento del Paraguay. U. t. c. s.",
+    "p": "adj.",
+    "e": "",
+    "r": []
+  },
+  {
+    "w": "Kanjobal",
+    "d": "Dicho de una persona: De un pueblo amerindio de la familia maya de Guatemala. U. t. c. s.",
+    "p": "adj.",
+    "e": "",
+    "r": []
+  },
+  {
+    "w": "Kantiano",
+    "d": "Fil. Perteneciente o relativo a Immanuel Kant, filósofo alemán, o a su obra.",
+    "p": "adj.",
+    "e": "",
+    "r": []
+  },
+  {
+    "w": "Kantismo",
+    "d": "Fil. Sistema filosófico creado por Immanuel Kant a fines del siglo XVIII, que se funda en la crítica de la sensibilidad, del entendimiento y de la razón.",
+    "p": "m.",
+    "e": "",
+    "r": []
+  },
+  {
+    "w": "Kappa",
+    "d": "Décima letra del alfabeto griego (Κ, κ), que corresponde a la k del latino, y que en esa lengua y en los idiomas neolatinos se ha sustituido en general por la c; p. ej., centro, cripta.",
+    "p": "f.",
+    "e": "",
+    "r": []
+  },
+  {
+    "w": "Karaoke",
+    "d": "Diversión consistente en interpretar una canción sobre un fondo musical grabado, mientras se sigue la letra que aparece en una pantalla.",
+    "p": "m.",
+    "e": "Del jap. karaoke, de kara 'vacío' y oke, acort. de ōkesutora 'orquesta', y este del ingl. orchestra.",
+    "r": []
+  },
+  {
+    "w": "Karateca",
+    "d": "Y f. Persona que practica el kárate.",
+    "p": "m. y f.",
+    "e": "Del jap. karateka, y este de karate 'kárate' y ka 'practicante, especialista'.",
+    "r": []
+  },
+  {
+    "w": "Karma",
+    "d": "Rel. En algunas religiones de la India, energía derivada de los actos de un individuo durante su vida, que condiciona cada una de sus sucesivas reencarnaciones, hasta que alcanza la perfección.",
+    "p": "m.",
+    "e": "Del sánscr. karma 'hecho, acción'.",
+    "r": []
+  },
+  {
+    "w": "Karst",
+    "d": "Geol. Paisaje de relieve accidentado, con grietas y crestas agudas, originado por la erosión química en terrenos calcáreos.",
+    "p": "m.",
+    "e": "",
+    "r": [
+      {
+        "w": "Kárstico",
+        "d": "Geol. Dicho de una formación caliza: Producida por la acción erosiva o disolvente del agua.",
+        "p": "adj."
+      }
+    ]
+  },
+  {
+    "w": "Katipunan",
+    "d": "Sociedad secreta fundada en Filipinas en 1892, con el fin de promover el alzamiento en armas de la población indígena contra la soberanía política de España.",
+    "p": "m.",
+    "e": "Voz tagala.",
+    "r": []
+  },
+  {
+    "w": "Katiuska",
+    "d": "Bota de material impermeable, de caña alta, para proteger del agua.",
+    "p": "f.",
+    "e": "Del n. p. ruso Katjuša, dim. de Katja, y este hipocorístico de Ekaterina 'Catalina'.",
+    "r": []
+  },
+  {
+    "w": "Kayak",
+    "d": "Canoa de pesca usada por los esquimales, tradicionalmente fabricada con piel de foca, cuya cubierta solo tiene una abertura, cerrada con un material impermeable que se ajusta al tronco del tripulante.",
+    "p": "m.",
+    "e": "Del ingl. kayak, y este del esquimal qayaq.",
+    "r": []
+  },
+  {
+    "w": "Kazako",
+    "d": "Kazajo. Apl. a pers., u. t. c. s. Sin.: kazajo.",
+    "p": "adj.",
+    "e": "",
+    "r": []
+  },
+  {
+    "w": "Kebab",
+    "d": "Masa de carne picada que, ensartada en una varilla, se asa haciéndose girar ante una fuente de calor.",
+    "p": "m.",
+    "e": "Del ár. kabāb.",
+    "r": []
+  },
+  {
+    "w": "Kelvin",
+    "d": "Fís. Unidad de temperatura termodinámica del sistema internacional, igual al grado Celsius, pero en la escala de temperatura absoluta en que el 0 está fijado en −273,16 °C. (Símb. K).",
+    "p": "m.",
+    "e": "Del barón de Kelvin, W. Thomson, 1824-1907, físico irlandés.",
+    "r": []
+  },
+  {
+    "w": "Kendo",
+    "d": "Arte marcial de origen japonés, en el que se utiliza una armadura y un sable de bambú.",
+    "p": "m.",
+    "e": "Del jap. kendo, de ken 'espada' y dō 'camino'.",
+    "r": []
+  },
+  {
+    "w": "Keniano",
+    "d": "Natural de Kenia, país de África. U. t. c. s. Sin.: keniata.",
+    "p": "adj.",
+    "e": "",
+    "r": []
+  },
+  {
+    "w": "Keniata",
+    "d": "Keniano. Apl. a pers., u. t. c. s. Sin.: keniano.",
+    "p": "adj.",
+    "e": "",
+    "r": []
+  },
+  {
+    "w": "Kerigma",
+    "d": "Rel. En la religión cristiana, predicación apostólica que anuncia a Jesús como salvador.",
+    "p": "m.",
+    "e": "Del gr. κήρυγμα kḗrygma 'proclamación'.",
+    "r": []
+  },
+  {
+    "w": "Kermes",
+    "d": "Insecto hemíptero parecido a la cochinilla, que vive en la coscoja y cuya hembra forma las agallitas que dan el color de grana. Sin.: alquermes, carmes, grana2.",
+    "p": "m.",
+    "e": "",
+    "r": [
+      {
+        "w": "Kermés",
+        "d": "Fiesta popular, al aire libre, con bailes, rifas, concursos, etc.",
+        "p": "f."
+      }
+    ]
+  },
+  {
+    "w": "Keroseno",
+    "d": "Fracción del petróleo natural, obtenida por refinación y destilación, usada en el alumbrado y como combustible en los propulsores de chorro. Sin.: querosén, canfín, querosene, querosín.",
+    "p": "m.",
+    "e": "",
+    "r": []
+  },
+  {
+    "w": "Kibutz",
+    "d": "En Israel, colonia agrícola de producción y consumo comunitarios.",
+    "p": "m.",
+    "e": "Del fr. kibboutz, voz de or. hebr.",
+    "r": []
+  },
+  {
+    "w": "Kilocaloría",
+    "d": "Fís. Unidad de energía equivalente a 1000 calorías. (Símb. kcal).",
+    "p": "f.",
+    "e": "De kilo- y caloría.",
+    "r": []
+  },
+  {
+    "w": "Kilociclo",
+    "d": "Fís. kilociclo por segundo.",
+    "p": "m.",
+    "e": "De kilo- y ciclo.",
+    "r": []
+  },
+  {
+    "w": "Kilogramo",
+    "d": "Unidad de masa del sistema internacional, equivalente a la de un cilindro de platino e iridio conservado en la Oficina Internacional de Pesas y Medidas, y aproximadamente igual a la masa de 1000 centímetros cúbicos de agua a la temperatura de su máxima densidad, cuatro grados Celsius. (Símb. kg). Sin.: kilo.",
+    "p": "m.",
+    "e": "",
+    "r": []
+  },
+  {
+    "w": "Kilohercio",
+    "d": "Fís. Unidad de frecuencia equivalente a 1000 hercios. (Símb. kHz).",
+    "p": "m.",
+    "e": "De kilo- y hercio.",
+    "r": []
+  },
+  {
+    "w": "Kilolitro",
+    "d": "Unidad de volumen equivalente a 1000 litros, es decir, 1 metro cúbico. (Símb. kl, kL).",
+    "p": "m.",
+    "e": "",
+    "r": []
+  },
+  {
+    "w": "Kilometrar",
+    "d": "Señalar las distancias medidas en kilómetros con postes, mojones, etc.",
+    "p": "tr.",
+    "e": "",
+    "r": [
+      {
+        "w": "Kilometraje",
+        "d": "Acción de kilometrar.",
+        "p": "m."
+      },
+      {
+        "w": "Kilométrico",
+        "d": "Perteneciente o relativo al kilómetro.",
+        "p": "adj."
+      }
+    ]
+  },
+  {
+    "w": "Kilotón",
+    "d": "Fís. Unidad de energía liberada por un explosivo, equivalente a la energía de la explosión de 1000 toneladas de trinitrotolueno. (Símb. kt).",
+    "p": "m.",
+    "e": "Del ingl. kiloton, de kilo- 'kilo-' y ton 'tonelada'.",
+    "r": []
+  },
+  {
+    "w": "Kilovatio",
+    "d": "Electr. Unidad de potencia equivalente a 1000 vatios. (Símb. kW).",
+    "p": "m.",
+    "e": "De kilo- y vatio.",
+    "r": []
+  },
+  {
+    "w": "Kilovoltio",
+    "d": "Electr. Unidad de potencial y de fuerza electromotriz que equivale a 1000 voltios. (Símb. kV).",
+    "p": "m.",
+    "e": "De kilo- y voltio1.",
+    "r": []
+  },
+  {
+    "w": "Kimono",
+    "d": "Túnica de origen japonés, de mangas anchas y largas, abierta por delante y que se ciñe, cruzándola, mediante un cinturón. Sin.: túnica.",
+    "p": "m.",
+    "e": "",
+    "r": []
+  },
+  {
+    "w": "Kindergarten",
+    "d": "Jardín de infancia. Sin.: guardería, parvulario.",
+    "p": "m.",
+    "e": "Del al. Kindergarten.",
+    "r": []
+  },
+  {
+    "w": "Kinesiología",
+    "d": "Med. Conjunto de los procedimientos terapéuticos encaminados a restablecer la normalidad de los movimientos del cuerpo humano.",
+    "p": "f.",
+    "e": "",
+    "r": []
+  },
+  {
+    "w": "Kinesioterapia",
+    "d": "Med. Método terapéutico por medio de movimientos activos o pasivos de todo el cuerpo o de alguna de sus partes. Sin.: kinesiterapia, cinesiterapia.",
+    "p": "f.",
+    "e": "",
+    "r": []
+  },
+  {
+    "w": "Kinesioterápico",
+    "d": "Med. Perteneciente o relativo a la kinesioterapia. Sin.: kinesiterápico.",
+    "p": "adj.",
+    "e": "",
+    "r": []
+  },
+  {
+    "w": "Kinesiterapia",
+    "d": "Med. kinesioterapia. Sin.: kinesioterapia, cinesiterapia.",
+    "p": "f.",
+    "e": "",
+    "r": []
+  },
+  {
+    "w": "Kinesiterápico",
+    "d": "Med. kinesioterápico. Sin.: kinesioterápico.",
+    "p": "adj.",
+    "e": "",
+    "r": []
+  },
+  {
+    "w": "Kinesiólogo",
+    "d": "Y f. Med. Persona experta en kinesiología.",
+    "p": "m. y f.",
+    "e": "",
+    "r": []
+  },
+  {
+    "w": "Kiosco",
+    "d": "Templete o pabellón en parques o jardines, generalmente abierto por todos sus lados, que entre otros usos ha servido tradicionalmente para celebrar conciertos populares. Sin.: templete, pabellón, cenador, pérgola, glorieta.",
+    "p": "m.",
+    "e": "",
+    "r": []
+  },
+  {
+    "w": "Kiosquero",
+    "d": "Y f. Persona que trabaja en un quiosco, especialmente de periódicos.",
+    "p": "m. y f.",
+    "e": "",
+    "r": []
+  },
+  {
+    "w": "Kipá",
+    "d": "Casquete redondo, generalmente de tela, usado por los judíos para cubrirse la coronilla, especialmente en los actos religiosos.",
+    "p": "f.",
+    "e": "Del fr. kippa, y este del hebr. kippāh.",
+    "r": []
+  },
+  {
+    "w": "Kirguís",
+    "d": "Natural de Kirguistán, país de Asia. U. t. c. s. Sin.: kirguiz.",
+    "p": "adj.",
+    "e": "Del turco kɩrgɩz.",
+    "r": []
+  },
+  {
+    "w": "Kiribatiano",
+    "d": "Natural de Kiribati, país de Oceanía. U. t. c. s.",
+    "p": "adj.",
+    "e": "",
+    "r": []
+  },
+  {
+    "w": "Kirie",
+    "d": "Invocación que se hace a Dios, al principio de la misa, tras el introito. U. m. en pl. Sin.: kirieleisón.",
+    "p": "m.",
+    "e": "",
+    "r": []
+  },
+  {
+    "w": "Kirsch",
+    "d": "Aguardiente de cerezas.",
+    "p": "m.",
+    "e": "Voz al.",
+    "r": []
+  },
+  {
+    "w": "Kitsch",
+    "d": "Estética pretenciosa, pasada de moda y considerada de mal gusto.",
+    "p": "m.",
+    "e": "Voz al.",
+    "r": []
+  },
+  {
+    "w": "Kiwi",
+    "d": "Ave apterigiforme, del tamaño de una gallina, que habita en Nueva Zelanda. Sin.: kivi.",
+    "p": "m.",
+    "e": "Voz maorí.",
+    "r": []
+  },
+  {
+    "w": "Koala",
+    "d": "Mamífero marsupial arborícola parecido a un oso pequeño, propio de los eucaliptales australianos.",
+    "p": "m.",
+    "e": "",
+    "r": []
+  },
+  {
+    "w": "Koiné",
+    "d": "Ling. Lengua griega común, derivada del ático, que fue de uso general en el mundo helénico tras las conquistas de Alejandro Magno.",
+    "p": "f.",
+    "e": "",
+    "r": []
+  },
+  {
+    "w": "Kopek",
+    "d": "Moneda rusa, equivalente a la centésima parte de un rublo.",
+    "p": "m.",
+    "e": "",
+    "r": []
+  },
+  {
+    "w": "Krausismo",
+    "d": "Fil. Sistema filosófico ideado por el alemán Friedrich Krause a principios del siglo XIX, que tuvo larga influencia en España e inspiró la Institución Libre de Enseñanza.",
+    "p": "m.",
+    "e": "",
+    "r": [
+      {
+        "w": "Krausista",
+        "d": "Fil. Perteneciente o relativo al krausismo.",
+        "p": "adj."
+      }
+    ]
+  },
+  {
+    "w": "Kremlinología",
+    "d": "Estudio y análisis de la política, los métodos y los usos de los Gobiernos soviéticos.",
+    "p": "f.",
+    "e": "De kremlin, la vocal de unión -o- y -logía.",
+    "r": []
+  },
+  {
+    "w": "Kremlinólogo",
+    "d": "Y f. Persona experta en kremlinología.",
+    "p": "m. y f.",
+    "e": "",
+    "r": []
+  },
+  {
+    "w": "Kril",
+    "d": "Banco de crustáceos planctónicos semejantes al camarón, que constituye el alimento principal de las ballenas.",
+    "p": "m.",
+    "e": "Del ingl. krill, y este del noruego krill 'alevín, pez pequeño'.",
+    "r": []
+  },
+  {
+    "w": "Kriptón",
+    "d": "Elemento químico de núm. atóm. 36, perteneciente al grupo de los gases nobles, raro en la atmósfera terrestre, presente en los gases volcánicos y en algunas aguas termales, y que se usa en la fabricación de lámparas de fluorescencia. (Símb. Kr).",
+    "p": "m.",
+    "e": "",
+    "r": []
+  },
+  {
+    "w": "Kris",
+    "d": "Daga, de uso en Filipinas, que tiene la hoja de forma serpenteada.",
+    "p": "m.",
+    "e": "",
+    "r": []
+  },
+  {
+    "w": "Kurdo",
+    "d": "Natural del Kurdistán, pueblo o nación repartido entre los estados de Turquía, Irán, Irak, Siria, Armenia y Azerbaiyán. U. t. c. s.",
+    "p": "adj.",
+    "e": "",
+    "r": []
+  },
+  {
+    "w": "Kuwaití",
+    "d": "Natural de Kuwait, país de Asia, o de su capital. U. t. c. s.",
+    "p": "adj.",
+    "e": "",
+    "r": []
+  },
+  {
+    "w": "Káiser",
+    "d": "Emperador de Alemania y Austria. Sin.: emperador, césar, soberano.",
+    "p": "m.",
+    "e": "Del al. Kaiser, este del a. al. ant. keisar, este del gót. *kaisar, y este del lat. Caesar 'césar, emperador'.",
+    "r": []
+  },
+  {
+    "w": "Kárate",
+    "d": "Modalidad de lucha japonesa, basada en golpes secos realizados con el borde de la mano, los codos o los pies, y que es fundamentalmente un arte de defensa.",
+    "p": "m.",
+    "e": "",
+    "r": []
+  },
+  {
+    "w": "Kéfir",
+    "d": "Leche fermentada artificialmente y que contiene ácido láctico, alcohol y ácido carbónico.",
+    "p": "m.",
+    "e": "Voz caucásica.",
+    "r": []
+  },
+  {
+    "w": "Kétchup",
+    "d": "Salsa de tomate condimentada con vinagre, azúcar y especias.",
+    "p": "m.",
+    "e": "Del ingl. ketchup, y este del chino dialect. kuêchap 'salsa picante hecha con soja o pescado fermentados', quizá de kuê 'pulpa', 'estrujado' y chap 'jugo'.",
+    "r": []
+  },
+  {
+    "w": "Kílim",
+    "d": "Alfombra oriental de colores vivos y escaso grosor, generalmente de reducidas dimensiones, que se caracteriza por estar decorada con motivos geométricos. Sin.: alfombra1.",
+    "p": "m.",
+    "e": "",
+    "r": []
+  },
+  {
+    "w": "Kínder",
+    "d": "Jardín de infancia.",
+    "p": "m.",
+    "e": "Acort. de kindergarten.",
+    "r": []
+  }
+]
