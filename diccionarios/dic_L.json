@@ -130,16 +130,6 @@
     "ec": ""
   },
   {
-    "w": "Laborar",
-    "p": "tr.",
-    "d": "Labrar. Sin.: labrar, arar2, roturar, surcar, laborear, trabajar.",
-    "df": "tr. labrar. Sin.: labrar, arar2, roturar, surcar, laborear, trabajar.",
-    "e": "Del lat. laborāre.",
-    "s": "",
-    "c": "verbo",
-    "ec": "etym_latin"
-  },
-  {
     "w": "Laborear",
     "p": "tr.",
     "d": "Labrar o trabajar algo. Sin.: labrar, trabajar.",
@@ -396,16 +386,6 @@
     "ec": "etym_latin"
   },
   {
-    "w": "Lacena",
-    "p": "f.",
-    "d": "Alacena. Sin.: alacena, aparador, armario.",
-    "df": "f. alacena. Sin.: alacena, aparador, armario.",
-    "e": "Afér.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Laceración",
     "p": "f.",
     "d": "Acción y efecto de lacerar. Sin.: lesión, magullamiento, traumatismo, daño, golpe, herida, llaga.",
@@ -467,19 +447,6 @@
     "s": "",
     "c": "adjetivo",
     "ec": "etym_latin"
-  },
-  {
-    "w": "Lacha",
-    "p": "f.",
-    "d": "Alacha. Sin.: alacha, alache, alece, aleche, lorcha2.",
-    "df": "f. alacha. Sin.: alacha, alache, alece, aleche, lorcha2. | f. coloq. vergüenza (‖ estimación de la propia honra). Sin.: vergüenza, dignidad, pundonor, honra, decencia, decoro1, orgullo.",
-    "e": "De or. caló; cf. sánscr. lajjā 'vergüenza'.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "",
-    "esp": [
-      "explosiva"
-    ]
   },
   {
     "w": "Lacinia",
@@ -721,29 +688,6 @@
     "ec": ""
   },
   {
-    "w": "Lacónico",
-    "p": "adj.",
-    "d": "Laconio . Sin.: laconio, lacón1.",
-    "df": "adj. laconio (‖ perteneciente a Laconia). Sin.: laconio, lacón1. | adj. Breve, conciso, compendioso. Lenguaje, estilo lacónico. Carta, respuesta lacónica. Sin.: conciso, escueto, parco2, breve, sobrio, sucinto. | adj. Que habla o escribe de manera lacónica. Escritor lacónico. Persona lacónica. Ant.: locuaz, verboso.",
-    "e": "Del lat. Laconĭcus, y este del gr. Λακωνικός Lakōnikós.",
-    "s": "",
-    "c": "adjetivo",
-    "ec": "etym_latin",
-    "esp": [
-      "explosiva"
-    ]
-  },
-  {
-    "w": "Lada",
-    "p": "f.",
-    "d": "Jara . Sin.: jara, ladón.",
-    "df": "f. jara (‖ arbusto). Sin.: jara, ladón.",
-    "e": "Del lat. lada.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_latin"
-  },
-  {
     "w": "Ladeado",
     "p": "adj.",
     "d": "Bot. Dicho de las hojas, de las flores, de las espigas y demás partes de una planta: Que miran todas a un solo lado. Sin.: oblicuo, sesgado, torcido.",
@@ -782,19 +726,6 @@
     "s": "",
     "c": "sustantivo",
     "ec": ""
-  },
-  {
-    "w": "Ladierno",
-    "p": "m.",
-    "d": "Aladierna. Sin.: aladierna, aladierno, alaterno, alitierno, mesto1, nevadilla, sanguino, carrasquilla, sangricio, lanterno.",
-    "df": "m. aladierna. Sin.: aladierna, aladierno, alaterno, alitierno, mesto1, nevadilla, sanguino, carrasquilla, sangricio, lanterno.",
-    "e": "Del lat. alaternus.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_latin",
-    "esp": [
-      "explosiva"
-    ]
   },
   {
     "w": "Ladillo",
@@ -862,16 +793,6 @@
     "d": "Solado de ladrillos.",
     "df": "m. Solado de ladrillos.",
     "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Ladrillador",
-    "p": "m.",
-    "d": "Solador. Sin.: solador, enladrillador.",
-    "df": "m. solador. Sin.: solador, enladrillador.",
-    "e": "De ladrillar2 y -dor.",
     "s": "",
     "c": "sustantivo",
     "ec": ""
@@ -947,16 +868,6 @@
     "ec": ""
   },
   {
-    "w": "Ladronería",
-    "p": "f.",
-    "d": "Latrocinio. Sin.: latrocinio, ladrocinio, ladronicio.",
-    "df": "f. latrocinio. Sin.: latrocinio, ladrocinio, ladronicio.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Ladronesca",
     "p": "adj. coloq.",
     "d": "Perteneciente o relativo a los ladrones.",
@@ -988,16 +899,6 @@
     "esp": [
       "explosiva"
     ]
-  },
-  {
-    "w": "Ladón",
-    "p": "m.",
-    "d": "Lada. Sin.: jara, lada.",
-    "df": "m. lada. Sin.: jara, lada.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
   },
   {
     "w": "Lagar",
@@ -1116,26 +1017,6 @@
     "ec": ""
   },
   {
-    "w": "Lagaña",
-    "p": "f.",
-    "d": "Legaña. Sin.: legaña, pitaña, pitarra, chele, magaña2.",
-    "df": "f. legaña. Sin.: legaña, pitaña, pitarra, chele, magaña2.",
-    "e": "De or. inc., quizá prerromano.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Lagañoso",
-    "p": "adj.",
-    "d": "Legañoso. Sin.: legañoso, pitañoso, pitarroso, legañil, cheloso, magañoso.",
-    "df": "adj. legañoso. Sin.: legañoso, pitañoso, pitarroso, legañil, cheloso, magañoso.",
-    "e": "",
-    "s": "",
-    "c": "adjetivo",
-    "ec": ""
-  },
-  {
     "w": "Lagomorfo",
     "p": "adj.",
     "d": "Zool. Dicho de un mamífero: Semejante a los roedores, de los que se diferencia por poseer dos pares de incisivos superiores en lugar de uno; p. ej., el conejo o la liebre. U. t. c. s. m., en pl. como taxón.",
@@ -1196,16 +1077,6 @@
     "ec": ""
   },
   {
-    "w": "Lagrimar",
-    "p": "intr.",
-    "d": "Llorar . Sin.: llorar.",
-    "df": "intr. llorar (‖ derramar lágrimas). Sin.: llorar.",
-    "e": "Del lat. lacrimāre.",
-    "s": "",
-    "c": "verbo",
-    "ec": "etym_latin"
-  },
-  {
     "w": "Lagrimear",
     "p": "intr.",
     "d": "Segregar lágrimas. Sin.: llorar.",
@@ -1241,16 +1112,6 @@
     "d": "Charco que queda en el campo después de haber llovido o haberse inundado.",
     "df": "m. Charco que queda en el campo después de haber llovido o haberse inundado.",
     "e": "Del despect. de laguna.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Lagunar",
-    "p": "m.",
-    "d": "Charco. Sin.: charco, charca, aguachar1.",
-    "df": "m. charco. Sin.: charco, charca, aguachar1. | m. Arq. Cada uno de los huecos que dejan los maderos con que se forma el techo artesonado. Sin.: lacunario.",
-    "e": "De laguna.",
     "s": "",
     "c": "sustantivo",
     "ec": ""
@@ -1445,19 +1306,6 @@
     "ec": ""
   },
   {
-    "w": "Lambetazo",
-    "p": "m.",
-    "d": "Lenguarada . Sin.: lenguarada, lengüetada, lengüetazo.",
-    "df": "m. lenguarada (‖ acción de pasar la lengua). Sin.: lenguarada, lengüetada, lengüetazo. | m. Méx. adulación. Sin.: adulación, lametón, copaleo, cumbo, lambetada, lambisconería, lambonería, botafumeiro.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "",
-    "esp": [
-      "explosiva"
-    ]
-  },
-  {
     "w": "Lambiche",
     "p": "m. y f.",
     "d": "Y f. Méx. Persona aduladora.",
@@ -1633,19 +1481,6 @@
     "ec": "etym_latin"
   },
   {
-    "w": "Lamentación",
-    "p": "f.",
-    "d": "Queja . Sin.: lamento, queja, quejido, plañido, gemido, gimoteo, clamor, llanto, lloro, sollozo, suspiro.",
-    "df": "f. queja (‖ expresión de dolor o pena). Sin.: lamento, queja, quejido, plañido, gemido, gimoteo, clamor, llanto, lloro, sollozo, suspiro. | f. Queja dolorosa con llanto, suspiros u otras muestras de aflicción. Sin.: lamento, queja, quejido, plañido, gemido, gimoteo, clamor, llanto, lloro, sollozo, suspiro. | f. Cada una de las partes del canto lúgubre de Jeremías.",
-    "e": "Del lat. lamentatio, -ōnis.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_latin",
-    "esp": [
-      "explosiva"
-    ]
-  },
-  {
     "w": "Lamentador",
     "p": "adj.",
     "d": "Que lamenta o se lamenta. U. t. c. s.",
@@ -1679,26 +1514,6 @@
     ]
   },
   {
-    "w": "Lametada",
-    "p": "f.",
-    "d": "Lametón. Sin.: lametón, lametazo, lenguarada, lengüetada, lambetazo, chupada.",
-    "df": "f. lametón. Sin.: lametón, lametazo, lenguarada, lengüetada, lambetazo, chupada.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Lametazo",
-    "p": "m.",
-    "d": "Lametón. Sin.: lametón, lametada, lenguarada, lengüetada, lambetazo, chupada.",
-    "df": "m. lametón. Sin.: lametón, lametada, lenguarada, lengüetada, lambetazo, chupada.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Lametear",
     "p": "tr.",
     "d": "Lamer reiteradamente. Sin.: lambetear, relamer.",
@@ -1730,16 +1545,6 @@
     "s": "",
     "c": "sustantivo",
     "ec": "etym_latin"
-  },
-  {
-    "w": "Laminación",
-    "p": "f.",
-    "d": "Laminado. Sin.: laminado.",
-    "df": "f. laminado. Sin.: laminado.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
   },
   {
     "w": "Laminado",
@@ -1888,19 +1693,6 @@
     "ec": ""
   },
   {
-    "w": "Lamparilla",
-    "p": "f.",
-    "d": "Mariposa . Sin.: mecha, mariposa, candil, candileja.",
-    "df": "f. mariposa (‖ mecha que flota en un recipiente con aceite). Sin.: mecha, mariposa, candil, candileja. | f. Plato, vaso o vasija en que se pone la lamparilla. Sin.: mecha, mariposa, candil, candileja. | f. Álamo de hoja temblona, por la evocación del parpadeo de la candelilla encendida. | f. Cuen. Retel de cangrejos. | f. Tejido de lana delgado y ligero de que se solían hacer vestidos y capas de verano.",
-    "e": "Del dim. de lámpara.",
-    "s": "",
-    "c": "vestimenta",
-    "ec": "",
-    "esp": [
-      "explosiva"
-    ]
-  },
-  {
     "w": "Lamparista",
     "p": "m. y f.",
     "d": "Y f. lamparero.",
@@ -1915,16 +1707,6 @@
     "p": "m.",
     "d": "Cerco de metal en que se pone la lamparilla en las iglesias.",
     "df": "m. Cerco de metal en que se pone la lamparilla en las iglesias.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Lamparón",
-    "p": "m.",
-    "d": "Lámpara . Sin.: churretón, chorretón, lámpara, mancha1, grasa, suciedad.",
-    "df": "m. lámpara (‖ mancha en la ropa). Sin.: churretón, chorretón, lámpara, mancha1, grasa, suciedad. | m. Med. Escrófula en el cuello. Sin.: estruma. | m. Veter. Enfermedad de los solípedos, acompañada de erupción de tumores linfáticos en varios sitios.",
     "e": "",
     "s": "",
     "c": "sustantivo",
@@ -2027,16 +1809,6 @@
     "ec": ""
   },
   {
-    "w": "Lamprehuela",
-    "p": "f.",
-    "d": "Lampreílla. Sin.: lampreílla.",
-    "df": "f. lampreílla. Sin.: lampreílla.",
-    "e": "De lamprea.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Lampreílla",
     "p": "f.",
     "d": "Pez de río comestible, parecido a la lamprea de agua dulce en forma y color, pero de menor tamaño. Sin.: lamprehuela.",
@@ -2108,16 +1880,6 @@
     "s": "",
     "c": "adjetivo",
     "ec": ""
-  },
-  {
-    "w": "Lanaria",
-    "p": "f.",
-    "d": "Jabonera . Sin.: jabonera, albada2, saponaria.",
-    "df": "f. jabonera (‖ planta herbácea). Sin.: jabonera, albada2, saponaria. | f. jabonera (‖ planta cariofilácea). Sin.: jabonera, herbada.",
-    "e": "Del lat. lanaria [herba] '[hierba] lanera', usada en los lavaderos para limpiar la lana.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_latin"
   },
   {
     "w": "Lanceado",
@@ -2194,16 +1956,6 @@
     "p": "f.",
     "d": "Acción y efecto de herir con la lanceta. Sin.: lancetazo, corte1.",
     "df": "f. Acción y efecto de herir con la lanceta. Sin.: lancetazo, corte1.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Lancetazo",
-    "p": "m.",
-    "d": "Lancetada. Sin.: lancetada, corte1.",
-    "df": "m. lancetada. Sin.: lancetada, corte1.",
     "e": "",
     "s": "",
     "c": "sustantivo",
@@ -2419,16 +2171,6 @@
     "ec": ""
   },
   {
-    "w": "Langaruto",
-    "p": "adj. coloq.",
-    "d": "Larguirucho. Sin.: larguirucho, largurucho, desgarbado, desproporcionado.",
-    "df": "adj. coloq. larguirucho. Sin.: larguirucho, largurucho, desgarbado, desproporcionado.",
-    "e": "Disimilación de largaruto, y este despect. de largo.",
-    "s": "",
-    "c": "adjetivo",
-    "ec": ""
-  },
-  {
     "w": "Langosta",
     "p": "f.",
     "d": "Insecto ortóptero de la familia de los acrídidos, parecido al saltamontes pero de mayor tamaño, de color gris amarillento, que en ciertas circunstancias se multiplica extraordinariamente, formando espesas nubes que arrasan los campos. Sin.: tucura.",
@@ -2456,16 +2198,6 @@
     "e": "De langosta e -ino.",
     "s": "",
     "c": "zoologia",
-    "ec": ""
-  },
-  {
-    "w": "Langostín",
-    "p": "m.",
-    "d": "Langostino. Sin.: langostino.",
-    "df": "m. langostino. Sin.: langostino.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
     "ec": ""
   },
   {
@@ -2688,19 +2420,6 @@
     "ec": ""
   },
   {
-    "w": "Lanzazo",
-    "p": "m.",
-    "d": "Lanzada . Sin.: lanzada1, garrochazo, pinchazo, rejonazo.",
-    "df": "m. lanzada (‖ golpe). Sin.: lanzada1, garrochazo, pinchazo, rejonazo. | m. lanzada (‖ herida). Sin.: lanzada1, garrochazo, punzada, rejonazo, puyazo.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "",
-    "esp": [
-      "explosiva"
-    ]
-  },
-  {
     "w": "Lanzón",
     "p": "m.",
     "d": "Lanza corta y gruesa con un rejón de hierro ancho y grande, que solían usar los guardas de las viñas.",
@@ -2834,16 +2553,6 @@
     "ec": "etym_latin"
   },
   {
-    "w": "Lapidar",
-    "p": "tr.",
-    "d": "Apedrear . Sin.: apedrear, linchar, matar, eliminar.",
-    "df": "tr. apedrear (‖ matar a pedradas). Sin.: apedrear, linchar, matar, eliminar.",
-    "e": "Del lat. lapidāre.",
-    "s": "",
-    "c": "verbo",
-    "ec": "etym_latin"
-  },
-  {
     "w": "Lapidario",
     "p": "adj.",
     "d": "Perteneciente o relativo a las piedras preciosas.",
@@ -2855,26 +2564,6 @@
     "esp": [
       "explosiva"
     ]
-  },
-  {
-    "w": "Lapidoso",
-    "p": "adj.",
-    "d": "Lapídeo. Sin.: lapídeo, pétreo.",
-    "df": "adj. lapídeo. Sin.: lapídeo, pétreo.",
-    "e": "Del lat. lapidōsus.",
-    "s": "",
-    "c": "adjetivo",
-    "ec": "etym_latin"
-  },
-  {
-    "w": "Lapilla",
-    "p": "f.",
-    "d": "Cinoglosa. Sin.: cinoglosa, viniebla.",
-    "df": "f. cinoglosa. Sin.: cinoglosa, viniebla.",
-    "e": "Del dim. de lapa2.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
   },
   {
     "w": "Lapislázuli",
@@ -2907,19 +2596,6 @@
     "ec": ""
   },
   {
-    "w": "Lapo",
-    "p": "m.",
-    "d": "Bofetada. Sin.: bofetada, cachete, golpe, palo, latigazo, trastazo, leche.",
-    "df": "m. bofetada. Sin.: bofetada, cachete, golpe, palo, latigazo, trastazo, leche. | m. trago (‖ porción de líquido que se bebe de una vez). Sin.: trago1, sorbo, buche1, tucún. | m. coloq. Cintarazo, latigazo, bastonazo o varazo. | m. coloq. escupitajo. Sin.: escupitajo, salivazo, flema, esputo, gargajo1, escupitinajo, escupidura, escupitina.",
-    "e": "De or. inc.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "",
-    "esp": [
-      "explosiva"
-    ]
-  },
-  {
     "w": "Lapsus",
     "p": "m.",
     "d": "Falta o equivocación cometida por descuido. Sin.: error, equivocación, falta, fallo2, desliz, descuido, olvido, yerro, gazapo2, errata, omisión, traspié.",
@@ -2950,16 +2626,6 @@
     "e": "",
     "s": "",
     "c": "gentilicio",
-    "ec": ""
-  },
-  {
-    "w": "Laquear",
-    "p": "tr.",
-    "d": "Lacar. Sin.: lacar.",
-    "df": "tr. lacar. Sin.: lacar.",
-    "e": "De laca y -ear.",
-    "s": "",
-    "c": "verbo",
     "ec": ""
   },
   {
@@ -3076,16 +2742,6 @@
     ]
   },
   {
-    "w": "Largor",
-    "p": "m.",
-    "d": "Longitud . Sin.: longitud, largo, largura, largueza.",
-    "df": "m. longitud (‖ mayor dimensión lineal de una superficie plana). Sin.: longitud, largo, largura, largueza.",
-    "e": "De largo.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Largueado",
     "p": "adj.",
     "d": "Listado o adornado con listas.",
@@ -3093,29 +2749,6 @@
     "e": "De largo.",
     "s": "",
     "c": "adjetivo",
-    "ec": ""
-  },
-  {
-    "w": "Largueza",
-    "p": "f.",
-    "d": "Longitud . Sin.: longitud, largo, largor, largura.",
-    "df": "f. longitud (‖ mayor dimensión lineal de una superficie plana). Sin.: longitud, largo, largor, largura. | f. liberalidad (‖ virtud moral). Sin.: liberalidad, generosidad, dadivosidad, desprendimiento, esplendidez. Ant.: egoísmo, tacañería. | f. liberalidad (‖ generosidad). Sin.: liberalidad, generosidad, dadivosidad, desprendimiento, esplendidez. Ant.: egoísmo, tacañería.",
-    "e": "De largo.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "",
-    "esp": [
-      "explosiva"
-    ]
-  },
-  {
-    "w": "Largura",
-    "p": "f.",
-    "d": "Longitud . Sin.: longitud, largo, largor, largueza.",
-    "df": "f. longitud (‖ mayor dimensión lineal de una superficie plana). Sin.: longitud, largo, largor, largueza.",
-    "e": "De largo y -ura.",
-    "s": "",
-    "c": "sustantivo",
     "ec": ""
   },
   {
@@ -3243,16 +2876,6 @@
     "esp": [
       "explosiva"
     ]
-  },
-  {
-    "w": "Larval",
-    "p": "adj.",
-    "d": "Larvario. Sin.: larvario.",
-    "df": "adj. larvario. Sin.: larvario.",
-    "e": "De larva.",
-    "s": "",
-    "c": "adjetivo",
-    "ec": ""
   },
   {
     "w": "Larvario",
@@ -3442,19 +3065,6 @@
     "s": "",
     "c": "sustantivo",
     "ec": "etym_griego"
-  },
-  {
-    "w": "Latazo",
-    "p": "m. coloq.",
-    "d": "Lata . Sin.: lata, aburrimiento, pesadez, tabarra, rollo, tostón1, gaita, fastidio, incordio, monserga.",
-    "df": "m. coloq. lata (‖ cosa que causa hastío y disgusto). Sin.: lata, aburrimiento, pesadez, tabarra, rollo, tostón1, gaita, fastidio, incordio, monserga.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "",
-    "esp": [
-      "explosiva"
-    ]
   },
   {
     "w": "Latebroso",
@@ -3888,16 +3498,6 @@
     "ec": "etym_latin"
   },
   {
-    "w": "Laureando",
-    "p": "m.",
-    "d": "Graduando. Sin.: graduando.",
-    "df": "m. graduando. Sin.: graduando.",
-    "e": "Del lat. mediev. laureandus 'que ha de ser laureado', gerundivo de laureare 'laurear'.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_latin"
-  },
-  {
     "w": "Laurear",
     "p": "tr.",
     "d": "Coronar con laurel. Sin.: coronar.",
@@ -3936,16 +3536,6 @@
     "d": "Impr. En las fábricas de papel, oficial que tenía como cometido principal acudir a las tinas con los moldes y hacer los pliegos.",
     "df": "m. Impr. En las fábricas de papel, oficial que tenía como cometido principal acudir a las tinas con los moldes y hacer los pliegos.",
     "e": "De or. inc.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Laureola",
-    "p": "f.",
-    "d": "Adelfilla. Sin.: adelfilla.",
-    "df": "f. adelfilla. Sin.: adelfilla. | f. aureola. Sin.: aureola, halo, corona. | f. Corona de laurel con que se premiaban las acciones heroicas o se coronaban los sacerdotes de los gentiles.",
-    "e": "",
     "s": "",
     "c": "sustantivo",
     "ec": ""
@@ -4034,19 +3624,6 @@
     "ec": ""
   },
   {
-    "w": "Lavada",
-    "p": "f.",
-    "d": "Lavado . Sin.: lavado, lavación, lavadura, lavamiento, lavatorio, ablución, colada1, baño, aseo, jabonadura.",
-    "df": "f. lavado (‖ acción de lavar). Sin.: lavado, lavación, lavadura, lavamiento, lavatorio, ablución, colada1, baño, aseo, jabonadura.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "",
-    "esp": [
-      "explosiva"
-    ]
-  },
-  {
     "w": "Lavadura",
     "p": "f.",
     "d": "Acción y efecto de lavar. Sin.: lavado, lavada, lavación, lavamiento, lavatorio, ablución, colada1, baño, aseo, jabonadura.",
@@ -4124,19 +3701,6 @@
     "s": "",
     "c": "sustantivo",
     "ec": ""
-  },
-  {
-    "w": "Lavanda",
-    "p": "f.",
-    "d": "Lavándula. Sin.: lavándula.",
-    "df": "f. lavándula. Sin.: lavándula. | f. espliego. U. especialmente en perfumería. Sin.: espliego. | f. Perfume que se obtiene de la lavanda. | adj. De color lavanda. Paredes lavanda. Sin.: violeta, malva.",
-    "e": "Del fr. lavande o el it. lavanda.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_frances",
-    "esp": [
-      "viajera"
-    ]
   },
   {
     "w": "Lavandera",
@@ -4292,16 +3856,6 @@
     "ec": "etym_latin"
   },
   {
-    "w": "Laxamiento",
-    "p": "m.",
-    "d": "Laxación. Sin.: laxación, relajamiento, distensión.",
-    "df": "m. laxación. Sin.: laxación, relajamiento, distensión.",
-    "e": "Del lat. laxamentum.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_latin"
-  },
-  {
     "w": "Laxativo",
     "p": "adj.",
     "d": "Que laxa o tiene virtud de laxar. U. t. c. s. m. Sin.: relajante, suavizante, laxante. laxante, purgante, purificante, evacuativo, evacuatorio.",
@@ -4309,16 +3863,6 @@
     "e": "Del lat. laxatīvus.",
     "s": "",
     "c": "adjetivo",
-    "ec": "etym_latin"
-  },
-  {
-    "w": "Laxidad",
-    "p": "f.",
-    "d": "Laxitud. Sin.: laxitud, relajamiento, distensión, abandono, flacidez, flojedad.",
-    "df": "f. laxitud. Sin.: laxitud, relajamiento, distensión, abandono, flacidez, flojedad.",
-    "e": "Del lat. laxĭtas, -ātis.",
-    "s": "",
-    "c": "sustantivo",
     "ec": "etym_latin"
   },
   {
@@ -4568,26 +4112,6 @@
     "d": "Cierto guiso de liebre.",
     "df": "f. Cierto guiso de liebre.",
     "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Lebrasta",
-    "p": "f.",
-    "d": "Lebrato. Sin.: lebrato, lebrastón, liebratico, farnaca.",
-    "df": "f. lebrato. Sin.: lebrato, lebrastón, liebratico, farnaca.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Lebrastón",
-    "p": "m.",
-    "d": "Lebrato. Sin.: lebrato, lebrasta, liebratico, farnaca.",
-    "df": "m. lebrato. Sin.: lebrato, lebrasta, liebratico, farnaca.",
-    "e": "Del ant. lebrasto.",
     "s": "",
     "c": "sustantivo",
     "ec": ""
@@ -5012,16 +4536,6 @@
     "esp": [
       "explosiva"
     ]
-  },
-  {
-    "w": "Legación",
-    "p": "f.",
-    "d": "Legacía. Sin.: legacía.",
-    "df": "f. legacía. Sin.: legacía. | f. Cargo que da un Gobierno a alguien para que lo represente cerca de otro Gobierno extranjero, ya sea como embajador, ya como plenipotenciario, ya como encargado de negocios. Sin.: delegación, representación, embajada. | f. Conjunto de los empleados que el legado tiene a sus órdenes, y otras personas de su comitiva oficial. Sin.: delegación, representación, embajada. | f. Casa u oficina del legado.",
-    "e": "Del lat. legatio, -ōnis.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_latin"
   },
   {
     "w": "Legacía",
@@ -5683,39 +5197,6 @@
     "ec": ""
   },
   {
-    "w": "Lengüeta",
-    "p": "f.",
-    "d": "Epiglotis. Sin.: epiglotis.",
-    "df": "f. epiglotis. Sin.: epiglotis. | f. Fiel de la balanza, y más propiamente el de la romana. Sin.: lengua. | f. Cuchilla de acero que forma parte del ingenio usado por los encuadernadores. | f. Hierro en forma de anzuelo que tienen las garrochas, saetas, banderillas, etc. | f. Horquilla que sostiene abierta la trampa o armadijo de coger pájaros. | f. Moldura o adorno en forma de lengüeta. | f. Barrena que se usa para agrandar y terminar los agujeros empezados con el berbiquí. | f. Tira de piel que suelen tener los zapatos en la parte del cierre por debajo de los cordones. | f. Arq. y Constr. Tabique pequeño de ladrillo con que se fortifican las embocaduras de las bóvedas, o se separan los cañones de algunas chimeneas. | f. Carp. Espiga prolongada que se labra a lo largo del canto de una tabla o un tablón, generalmente de un tercio de grueso, con objeto de encajarla en una ranura de otra pieza. | f. Med. Especie de compresa larga y estrecha que se aplica en las amputaciones, fracturas, etc. | f. Mús. Pieza de caña u otro material, que se coloca en la boquilla de algunos instrumentos musicales de viento y cuya vibración al paso del aire produce el sonido.",
-    "e": "Del dim. de lengua.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Lengüetada",
-    "p": "f.",
-    "d": "Lenguarada . Sin.: lenguarada, lengüetazo, lambetazo, lametazo, lametón, lamedura.",
-    "df": "f. lenguarada (‖ acción de pasar la lengua). Sin.: lenguarada, lengüetazo, lambetazo, lametazo, lametón, lamedura.",
-    "e": "De lengüeta.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Lengüetazo",
-    "p": "m.",
-    "d": "Lenguarada . Sin.: lenguarada, lengüetada, lambetazo, lametazo, lametón.",
-    "df": "m. lenguarada (‖ acción de pasar la lengua). Sin.: lenguarada, lengüetada, lambetazo, lametazo, lametón. | m. El Salv. chismorreo. Sin.: chismorreo, chismorrería, argüende, bembeteo, chismerío, conventilleo, lengüeteada.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "",
-    "esp": [
-      "explosiva"
-    ]
-  },
-  {
     "w": "Lengüetear",
     "p": "intr.",
     "d": "Dar lengüetazos. U. t. c. tr. El niño lengüeteaba su helado de fresa. Sin.: lamer, lamber, relamer, lametear, lambetear, chupetear, chuperretear.",
@@ -5744,16 +5225,6 @@
     "d": "Tímido al hablar, reservado.",
     "df": "adj. coloq. Tímido al hablar, reservado.",
     "e": "",
-    "s": "",
-    "c": "adjetivo",
-    "ec": ""
-  },
-  {
-    "w": "Lengüilargo",
-    "p": "adj. coloq.",
-    "d": "Lenguaraz . Sin.: lenguaraz, lengudo, deslenguado, languarico, lenguatón.",
-    "df": "adj. coloq. lenguaraz (‖ deslenguado). Sin.: lenguaraz, lengudo, deslenguado, languarico, lenguatón.",
-    "e": "De lengua y largo.",
     "s": "",
     "c": "adjetivo",
     "ec": ""
@@ -6035,16 +5506,6 @@
     "ec": "etym_latin"
   },
   {
-    "w": "Leprocomio",
-    "p": "m.",
-    "d": "Leprosería. Sin.: leprosería, leprosario, leprosorio.",
-    "df": "m. leprosería. Sin.: leprosería, leprosario, leprosorio.",
-    "e": "De lepra y -comio.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Leprosería",
     "p": "f.",
     "d": "Hospital de leprosos. Sin.: lazareto, leprocomio, leprosario, leprosorio, malatería.",
@@ -6086,16 +5547,6 @@
     "esp": [
       "viajera"
     ]
-  },
-  {
-    "w": "Lera",
-    "p": "f.",
-    "d": "Helera. Sin.: helera.",
-    "df": "f. helera. Sin.: helera.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
   },
   {
     "w": "Lercha",
@@ -6726,16 +6177,6 @@
     "ec": ""
   },
   {
-    "w": "Lexicón",
-    "p": "m.",
-    "d": "Diccionario . Sin.: diccionario, vocabulario, léxico, mataburros, amansaburros, tumbaburros.",
-    "df": "m. diccionario (‖ repertorio). Sin.: diccionario, vocabulario, léxico, mataburros, amansaburros, tumbaburros. | m. Ling. Conocimiento léxico que un hablante posee sobre una lengua.",
-    "e": "Del gr. λεξικόν lexikón 'glosario'.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_griego"
-  },
-  {
     "w": "Lezda",
     "p": "f.",
     "d": "Tributo, impuesto, especialmente el que se pagaba por las mercancías.",
@@ -6870,19 +6311,6 @@
     "s": "",
     "c": "cuerpo_humano",
     "ec": ""
-  },
-  {
-    "w": "Liana",
-    "p": "f.",
-    "d": "Bejuco. Sin.: bejuco, enredadera, hiedra, boqui.",
-    "df": "f. bejuco. Sin.: bejuco, enredadera, hiedra, boqui.",
-    "e": "Del fr. liane.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_frances",
-    "esp": [
-      "viajera"
-    ]
   },
   {
     "w": "Liante",
@@ -7339,16 +6767,6 @@
     "ec": ""
   },
   {
-    "w": "Librillo",
-    "p": "m.",
-    "d": "Lebrillo. Sin.: lebrillo.",
-    "df": "m. lebrillo. Sin.: lebrillo. | m. Cuaderno de papel de fumar. | m. libro (‖ cavidad del estómago de los rumiantes). Sin.: libro, omaso. | m. Especie de bisagra diminuta para las cajas muy pequeñas.",
-    "e": "Del dim. de libro.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Libélula",
     "p": "f.",
     "d": "Insecto del orden de los odonatos, de cuerpo largo, esbelto y de colores llamativos, con ojos muy grandes, antenas cortas y dos pares de alas reticulares, que mantiene horizontales cuando se posa, y que vive en las orillas de estanques y ríos. Sin.: aguacil, alguacil, matapiojos, chapul, gallego, gallito, pipilacha, robapelo.",
@@ -7618,16 +7036,6 @@
     "ec": ""
   },
   {
-    "w": "Licuefactible",
-    "p": "adj.",
-    "d": "Licuable. Sin.: licuable.",
-    "df": "adj. licuable. Sin.: licuable.",
-    "e": "De licuefacer.",
-    "s": "",
-    "c": "adjetivo",
-    "ec": ""
-  },
-  {
     "w": "Licuefactivo",
     "p": "adj.",
     "d": "Que tiene aptitud o fuerza para licuar.",
@@ -7725,31 +7133,11 @@
     "ec": ""
   },
   {
-    "w": "Liebratico",
-    "p": "m.",
-    "d": "Lebrato. Sin.: lebrato, lebrasta, lebrastón, farnaca.",
-    "df": "m. lebrato. Sin.: lebrato, lebrasta, lebrastón, farnaca.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Liebratón",
     "p": "m.",
     "d": "Liebre nueva grande.",
     "df": "m. Liebre nueva grande.",
     "e": "De liebre.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Liebrecilla",
-    "p": "f.",
-    "d": "Aciano. Sin.: aciano, aldiza.",
-    "df": "f. aciano. Sin.: aciano, aldiza.",
-    "e": "De liebre y -ecilla.",
     "s": "",
     "c": "sustantivo",
     "ec": ""
@@ -8034,36 +7422,6 @@
     "ec": ""
   },
   {
-    "w": "Ligustro",
-    "p": "m.",
-    "d": "Alheña . Sin.: aligustre, alheña, alcana, jena, cinamomo.",
-    "df": "m. alheña (‖ arbusto). Sin.: aligustre, alheña, alcana, jena, cinamomo.",
-    "e": "Del lat. ligustrum.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_latin"
-  },
-  {
-    "w": "Ligón",
-    "p": "m.",
-    "d": "Legón. Sin.: legón, ligona.",
-    "df": "m. legón. Sin.: legón, ligona. | adj. coloq. Que liga (‖ entabla relaciones amorosas). U. m. c. s. Sin.: conquistador, mujeriego, donjuán, playboy.",
-    "e": "Del lat. ligo, -ōnis.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_latin"
-  },
-  {
-    "w": "Ligústico",
-    "p": "adj.",
-    "d": "Ligurino . Sin.: ligurino.",
-    "df": "adj. ligurino (‖ perteneciente a Liguria). Sin.: ligurino.",
-    "e": "Del lat. Ligustĭcus.",
-    "s": "",
-    "c": "adjetivo",
-    "ec": "etym_latin"
-  },
-  {
     "w": "Lijado",
     "p": "m.",
     "d": "Operación de lijar1.",
@@ -8104,19 +7462,6 @@
     "ec": "etym_frances",
     "esp": [
       "explosiva",
-      "viajera"
-    ]
-  },
-  {
-    "w": "Lilac",
-    "p": "f.",
-    "d": "Lila . Sin.: lila1, lilo.",
-    "df": "f. lila (‖ arbusto). Sin.: lila1, lilo.",
-    "e": "Del fr. lilac, este del ár. līlak, este del persa lila[n]ǧ o lilang, y este del sánscr. nîla 'azul oscuro'.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_frances",
-    "esp": [
       "viajera"
     ]
   },
@@ -8171,26 +7516,6 @@
     "e": "Del lat. liliaceus 'propio del lirio'.",
     "s": "",
     "c": "adjetivo",
-    "ec": "etym_latin"
-  },
-  {
-    "w": "Lilo",
-    "p": "m.",
-    "d": "Lila . Sin.: lila1, lilac.",
-    "df": "m. lila (‖ arbusto). Sin.: lila1, lilac.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Limaco",
-    "p": "m.",
-    "d": "Babosa . Sin.: babosa, babaza, babosilla, limaza, lumiaco.",
-    "df": "m. babosa (‖ molusco). Sin.: babosa, babaza, babosilla, limaza, lumiaco.",
-    "e": "Del lat. limax, -ācis, y este del gr. λεῖμαξ leîmax.",
-    "s": "",
-    "c": "sustantivo",
     "ec": "etym_latin"
   },
   {
@@ -8270,31 +7595,11 @@
     "ec": ""
   },
   {
-    "w": "Limaza",
-    "p": "f.",
-    "d": "Babosa . Sin.: babosa, babaza, limaco, babosilla, lumiaco.",
-    "df": "f. babosa (‖ molusco). Sin.: babosa, babaza, limaco, babosilla, lumiaco.",
-    "e": "Del lat. vulg. *limacea, der. del lat. limax, -ācis 'babosa'.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_latin"
-  },
-  {
     "w": "Limazo",
     "p": "m.",
     "d": "Viscosidad o babaza.",
     "df": "m. Viscosidad o babaza.",
     "e": "Del lat. limaceus, de limus 'lodo'.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_latin"
-  },
-  {
-    "w": "Limen",
-    "p": "m.",
-    "d": "Umbral . Sin.: umbral.",
-    "df": "m. poét. umbral (‖ parte inferior o escalón de una puerta o entrada). Sin.: umbral. | m. Paso primero o entrada al conocimiento de una materia.",
-    "e": "Del lat. limen.",
     "s": "",
     "c": "sustantivo",
     "ec": "etym_latin"
@@ -8370,16 +7675,6 @@
     "p": "adj.",
     "d": "Que pone límites. Sin.: limitante, delimitador.",
     "df": "adj. Que pone límites. Sin.: limitante, delimitador.",
-    "e": "",
-    "s": "",
-    "c": "adjetivo",
-    "ec": ""
-  },
-  {
-    "w": "Limitante",
-    "p": "adj.",
-    "d": "Limitador . Sin.: limitador, delimitador.",
-    "df": "adj. limitador (‖ que pone límites). Sin.: limitador, delimitador.",
     "e": "",
     "s": "",
     "c": "adjetivo",
@@ -9112,16 +8407,6 @@
     "ec": "etym_latin"
   },
   {
-    "w": "Linimiento",
-    "p": "m.",
-    "d": "Linimento. Sin.: linimento.",
-    "df": "m. linimento. Sin.: linimento.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Linio",
     "p": "m.",
     "d": "Línea de árboles u otras plantas.",
@@ -9212,19 +8497,6 @@
     "ec": ""
   },
   {
-    "w": "Lináloe",
-    "p": "m.",
-    "d": "Áloe . Sin.: áloe, acíbar, zabila, sábila, alcíbar.",
-    "df": "m. áloe (‖ planta). Sin.: áloe, acíbar, zabila, sábila, alcíbar. | m. Jugo del lináloe. Sin.: áloe, acíbar, zabila, sábila.",
-    "e": "De lignáloe.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "",
-    "esp": [
-      "explosiva"
-    ]
-  },
-  {
     "w": "Linóleo",
     "p": "m.",
     "d": "Tela fuerte e impermeable, formada por un tejido de yute cubierto con una capa muy comprimida de corcho en polvo amasado con aceite de linaza bien oxidado. Sin.: linóleum.",
@@ -9236,16 +8508,6 @@
     "esp": [
       "viajera"
     ]
-  },
-  {
-    "w": "Linóleum",
-    "p": "m.",
-    "d": "Linóleo. Sin.: linóleo.",
-    "df": "m. linóleo. Sin.: linóleo.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
   },
   {
     "w": "Linón",
@@ -9296,19 +8558,6 @@
     "s": "",
     "c": "gentilicio",
     "ec": ""
-  },
-  {
-    "w": "Lioso",
-    "p": "adj.",
-    "d": "Embrollador. Sin.: embrollador, embrollón.",
-    "df": "adj. embrollador. Sin.: embrollador, embrollón. | adj. Que trata de indisponer a unas personas con otras. Sin.: chismoso, enredador, liante, mentiroso. | adj. Dicho de una cosa: Que está embrollada. Sin.: desordenado, confuso, complicado, difícil.",
-    "e": "De lío.",
-    "s": "",
-    "c": "adjetivo",
-    "ec": "",
-    "esp": [
-      "explosiva"
-    ]
   },
   {
     "w": "Lipasa",
@@ -9687,26 +8936,6 @@
     "esp": [
       "explosiva"
     ]
-  },
-  {
-    "w": "Listar",
-    "p": "tr.",
-    "d": "Alistar . Sin.: alistar1, registrar, inventariar, catalogar, enumerar, enlistar.",
-    "df": "tr. alistar (‖ inscribir en lista). Sin.: alistar1, registrar, inventariar, catalogar, enumerar, enlistar.",
-    "e": "De lista.",
-    "s": "",
-    "c": "verbo",
-    "ec": ""
-  },
-  {
-    "w": "Listeado",
-    "p": "adj.",
-    "d": "Listado . Sin.: listado, alistado, bandeado.",
-    "df": "adj. listado (‖ que tiene listas). Sin.: listado, alistado, bandeado.",
-    "e": "",
-    "s": "",
-    "c": "adjetivo",
-    "ec": ""
   },
   {
     "w": "Listel",
@@ -10329,16 +9558,6 @@
     "ec": "etym_griego"
   },
   {
-    "w": "Livianamente",
-    "p": "adv.",
-    "d": "Deshonestamente. Sin.: deshonestamente.",
-    "df": "adv. deshonestamente. Sin.: deshonestamente. | adv. Con ligereza, sin fundamento. | adv. superficialmente. Sin.: superficialmente.",
-    "e": "",
-    "s": "",
-    "c": "adverbio",
-    "ec": ""
-  },
-  {
     "w": "Lividecer",
     "p": "intr.",
     "d": "Ponerse lívido. Sin.: palidecer, empalidecer.",
@@ -10400,19 +9619,6 @@
     "s": "",
     "c": "verbo",
     "ec": "etym_latin"
-  },
-  {
-    "w": "Liza",
-    "p": "f.",
-    "d": "Mújol. Sin.: mújol, múgil, albur, breca, cabezudo, capitón, dardo, lisa, muble, mugle, mule.",
-    "df": "f. mújol. Sin.: mújol, múgil, albur, breca, cabezudo, capitón, dardo, lisa, muble, mugle, mule. | f. Campo dispuesto para que lidien dos o más personas. Sin.: campo, plaza, palenque, palestra, arena, estadio, ruedo. | f. lid. Sin.: lid, combate, pelea, competición. | f. Ar. Hilo grueso de cáñamo.",
-    "e": "Cf. lisa.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "",
-    "esp": [
-      "explosiva"
-    ]
   },
   {
     "w": "Lizo",
@@ -10479,16 +9685,6 @@
     "s": "",
     "c": "verbo",
     "ec": "etym_latin"
-  },
-  {
-    "w": "Llamadera",
-    "p": "f.",
-    "d": "Aguijada . Sin.: aguijada, aguijadera, aijada, terigüela.",
-    "df": "f. aguijada (‖ vara para picar a la yunta). Sin.: aguijada, aguijadera, aijada, terigüela.",
-    "e": "De llamar.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
   },
   {
     "w": "Llamarón",
@@ -10559,16 +9755,6 @@
     "s": "",
     "c": "adverbio",
     "ec": ""
-  },
-  {
-    "w": "Llande",
-    "p": "f.",
-    "d": "Bellota . Sin.: bellota.",
-    "df": "f. bellota (‖ fruto de la encina). Sin.: bellota.",
-    "e": "Del lat. glans, glandis.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_latin"
   },
   {
     "w": "Llaneador",
@@ -10644,41 +9830,11 @@
     ]
   },
   {
-    "w": "Llantera",
-    "p": "f. coloq.",
-    "d": "Llorera. Sin.: llorera, llantina, berreadera, chilladera, lloreta.",
-    "df": "f. coloq. llorera. Sin.: llorera, llantina, berreadera, chilladera, lloreta.",
-    "e": "De llanto.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Llantero",
     "p": "m. y f.",
     "d": "Y f. Ec. Obrero que trabaja en una llantera .",
     "df": "m. y f. Ec. Obrero que trabaja en una llantera (‖ fábrica). | f. Ec. y Hond. Establecimiento que se dedica a arreglar pinchazos de las llantas (‖ neumáticos).",
     "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Llanterío",
-    "p": "m.",
-    "d": "Llantería. Sin.: llantería.",
-    "df": "m. llantería. Sin.: llantería.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Llantina",
-    "p": "f. coloq.",
-    "d": "Llorera. Sin.: llorera, llantera1, chilladera, berreadera, lloreta.",
-    "df": "f. coloq. llorera. Sin.: llorera, llantera1, chilladera, berreadera, lloreta.",
-    "e": "De llanto.",
     "s": "",
     "c": "sustantivo",
     "ec": ""
@@ -10765,16 +9921,6 @@
     "s": "",
     "c": "adverbio",
     "ec": ""
-  },
-  {
-    "w": "Llera",
-    "p": "f.",
-    "d": "Cantizal. Sin.: cantizal, cantal, cantorral.",
-    "df": "f. cantizal. Sin.: cantizal, cantal, cantorral.",
-    "e": "Del lat. glarea 'cantorral'.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_latin"
   },
   {
     "w": "Llocura",
@@ -10910,16 +10056,6 @@
     "ec": ""
   },
   {
-    "w": "Llubina",
-    "p": "f.",
-    "d": "Lubina. Sin.: lubina, róbalo.",
-    "df": "f. lubina. Sin.: lubina, róbalo.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Llueca",
     "p": "adj.",
     "d": "Dicho de un ave: clueca. U. t. c. s. f. Sin.: clueca, chiriza.",
@@ -10968,16 +10104,6 @@
     "s": "",
     "c": "sustantivo",
     "ec": ""
-  },
-  {
-    "w": "Loba",
-    "p": "f.",
-    "d": "Sotana . Sin.: sotana.",
-    "df": "f. sotana (‖ vestidura talar). Sin.: sotana.",
-    "e": "Del gr. λώπη lṓpē 'especie de manto de piel'.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_griego"
   },
   {
     "w": "Lobado",
@@ -11093,16 +10219,6 @@
     "ec": "etym_latin"
   },
   {
-    "w": "Lobina",
-    "p": "f.",
-    "d": "Róbalo. Sin.: lubina, róbalo, céfalo, lobarro.",
-    "df": "f. róbalo. Sin.: lubina, róbalo, céfalo, lobarro.",
-    "e": "Der. de lobo1 'escualo de la familia del cazón'.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Loboso",
     "p": "adj.",
     "d": "Dicho de un terreno: En que se crían muchos lobos.",
@@ -11118,16 +10234,6 @@
     "d": "Med. Ablación total o parcial de los lóbulos frontales del cerebro.",
     "df": "f. Med. Ablación total o parcial de los lóbulos frontales del cerebro.",
     "e": "De lobo2 y -tomía.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Lobreguez",
-    "p": "f.",
-    "d": "Oscuridad . Sin.: oscuridad, tenebrosidad, tile, lobregura.",
-    "df": "f. oscuridad (‖ falta de luz). Sin.: oscuridad, tenebrosidad, tile, lobregura. | f. Densidad muy sombría de un bosque.",
-    "e": "De lóbrego y -ez.",
     "s": "",
     "c": "sustantivo",
     "ec": ""
@@ -11286,16 +10392,6 @@
     "ec": "etym_latin"
   },
   {
-    "w": "Locomotriz",
-    "p": "adj.",
-    "d": "Locomotora. Sin.: locomotora.",
-    "df": "adj. locomotora. Sin.: locomotora.",
-    "e": "",
-    "s": "",
-    "c": "adjetivo",
-    "ec": ""
-  },
-  {
     "w": "Locomovible",
     "p": "adj.",
     "d": "Que puede llevarse de un sitio a otro. U. t. c. s. f.",
@@ -11415,34 +10511,11 @@
     "ec": "etym_latin"
   },
   {
-    "w": "Lodoñero",
-    "p": "m.",
-    "d": "Guayacán . Sin.: guayacán.",
-    "df": "m. guayacán (‖ árbol). Sin.: guayacán.",
-    "e": "De lodoño y -ero.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Lodoño",
     "p": "m.",
     "d": "Nav. almez . Sin.: almez, lirón3, lodón, latón2, latonero2, ledón, lidón, lironero, litonero.",
     "df": "m. Nav. almez (‖ árbol). Sin.: almez, lirón3, lodón, latón2, latonero2, ledón, lidón, lironero, litonero.",
     "e": "De lodón.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "",
-    "esp": [
-      "explosiva"
-    ]
-  },
-  {
-    "w": "Lodón",
-    "p": "m.",
-    "d": "Almez . Sin.: almez, lirón3, latón2, latonero2, ledón, lidón, lironero, litonero, lodoño.",
-    "df": "m. almez (‖ árbol). Sin.: almez, lirón3, latón2, latonero2, ledón, lidón, lironero, litonero, lodoño.",
-    "e": "Cruce del lat. lotus y unĕdo, -ōnis 'almez'.",
     "s": "",
     "c": "sustantivo",
     "ec": "",
@@ -11747,16 +10820,6 @@
     "ec": "etym_latin"
   },
   {
-    "w": "Lombárdico",
-    "p": "adj.",
-    "d": "Lombardo . Sin.: lombardo, longobardo.",
-    "df": "adj. lombardo (‖ perteneciente a Lombardía). Sin.: lombardo, longobardo.",
-    "e": "",
-    "s": "",
-    "c": "adjetivo",
-    "ec": ""
-  },
-  {
     "w": "Lomear",
     "p": "intr.",
     "d": "Dicho de un caballo: Mover el lomo, encorvándolo con violencia.",
@@ -11920,30 +10983,6 @@
     "ec": "etym_latin"
   },
   {
-    "w": "Lonja",
-    "p": "f.",
-    "d": "Loncha . Sin.: loncha, rodaja, tajada, rebanada, feta, lasca.",
-    "df": "f. loncha (‖ porción ancha que se corta). Sin.: loncha, rodaja, tajada, rebanada, feta, lasca. | f. En los coches de caballos, pieza de vaqueta con que se afianzan los balancines. | f. Cineg. Correa larga que se ataba a las pihuelas del halcón para no tenerlo muy recogido. | f. Edificio público donde se reúnen mercaderes y comerciantes para negociar sus tratos, especialmente el de un puerto, destinado a la subasta de pescado. Sin.: mercado, plaza, parián, tianguis. | f. Atrio algo levantado del piso de las calles, al que regularmente salen las puertas de los templos y otros edificios. | f. En las casas de esquileo, almacén donde se colocaba la pila de lana. | f. Tienda donde se vendía cacao, azúcar y otros géneros.",
-    "e": "Del fr. longe.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_frances",
-    "esp": [
-      "explosiva",
-      "viajera"
-    ]
-  },
-  {
-    "w": "Lonjeta",
-    "p": "f.",
-    "d": "Cenador . Sin.: cenador, cenadero, glorieta, emparrado.",
-    "df": "f. cenador (‖ espacio de los jardines). Sin.: cenador, cenadero, glorieta, emparrado.",
-    "e": "De lonja2.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Lontananza",
     "p": "f.",
     "d": "Pint. Términos de un cuadro más distantes del plano principal. Sin.: lejanía.",
@@ -11955,26 +10994,6 @@
     "esp": [
       "viajera"
     ]
-  },
-  {
-    "w": "Loor",
-    "p": "m.",
-    "d": "Elogio. Sin.: elogio, loa, alabanza, encomio, enaltecimiento, apología.",
-    "df": "m. elogio. Sin.: elogio, loa, alabanza, encomio, enaltecimiento, apología.",
-    "e": "De loar.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Lopigia",
-    "p": "f.",
-    "d": "Alopecia. Sin.: alopecia, calvicie, pelambrera.",
-    "df": "f. alopecia. Sin.: alopecia, calvicie, pelambrera.",
-    "e": "Deformac. de alopecia.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
   },
   {
     "w": "Lopista",
@@ -11994,16 +11013,6 @@
     "e": "De loco2 y -ear.",
     "s": "",
     "c": "verbo",
-    "ec": ""
-  },
-  {
-    "w": "Loquería",
-    "p": "f.",
-    "d": "Manicomio. Sin.: manicomio, psiquiátrico, frenopático, loquero.",
-    "df": "f. manicomio. Sin.: manicomio, psiquiátrico, frenopático, loquero.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
     "ec": ""
   },
   {
@@ -12382,26 +11391,6 @@
     "ec": ""
   },
   {
-    "w": "Lubigante",
-    "p": "m.",
-    "d": "Lobagante. Sin.: bogavante2, lobagante, llocántaro.",
-    "df": "m. lobagante. Sin.: bogavante2, lobagante, llocántaro.",
-    "e": "Var. de lobagante.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Lubina",
-    "p": "f.",
-    "d": "Róbalo. Sin.: róbalo, céfalo, llubina, lobina, lobarro.",
-    "df": "f. róbalo. Sin.: róbalo, céfalo, llubina, lobina, lobarro.",
-    "e": "De lobina.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Lubricación",
     "p": "f.",
     "d": "Acción y efecto de lubricar. Sin.: engrase, lubrificación.",
@@ -12485,16 +11474,6 @@
     "ec": ""
   },
   {
-    "w": "Lubrificar",
-    "p": "tr.",
-    "d": "Lubricar. Sin.: lubricar, engrasar, aceitar.",
-    "df": "tr. lubricar. Sin.: lubricar, engrasar, aceitar.",
-    "e": "Adapt. del fr. lubrifier, y este del lat. lubrĭcus 'resbaladizo' y el fr. -fier '-ficar'.",
-    "s": "",
-    "c": "verbo",
-    "ec": ""
-  },
-  {
     "w": "Lucaneño",
     "p": "adj.",
     "d": "Natural de Lucanas, provincia del departamento de Ayacucho, en el Perú. U. t. c. s.",
@@ -12575,16 +11554,6 @@
     "ec": ""
   },
   {
-    "w": "Lucernario",
-    "p": "m.",
-    "d": "Claraboya. Sin.: lucerna, claraboya, tragaluz, lumbrera.",
-    "df": "m. claraboya. Sin.: lucerna, claraboya, tragaluz, lumbrera. | m. Arq. linterna (‖ torre con ventanas que remata algunos edificios). Sin.: linterna, cupulino.",
-    "e": "Del lat. tardío lucernarium 'lámpara de aceite'.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_latin"
-  },
-  {
     "w": "Luchadero",
     "p": "m.",
     "d": "Sitio donde se roza el remo con la regala en las embarcaciones menores.",
@@ -12618,19 +11587,6 @@
     ]
   },
   {
-    "w": "Lucifer",
-    "p": "m.",
-    "d": "Lucero . Sin.: lucero, lucífero, fósforo, nixtamalero.",
-    "df": "m. poét. lucero (‖ planeta Venus). Sin.: lucero, lucífero, fósforo, nixtamalero. | m. Hombre soberbio, encolerizado y maligno. Sin.: maligno, satanás, soberbio, diablo.",
-    "e": "Del lat. lucĭfer, -ĕri 'portador de luz1'; en acep. 2, de Lucifer, príncipe de los ángeles rebelados.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_latin",
-    "esp": [
-      "explosiva"
-    ]
-  },
-  {
     "w": "Luciferino",
     "p": "adj.",
     "d": "Perteneciente o relativo a Lucifer, príncipe de los ángeles rebelados. Sin.: demoniaco, satánico, diabólico.",
@@ -12639,16 +11595,6 @@
     "s": "",
     "c": "adjetivo",
     "ec": ""
-  },
-  {
-    "w": "Lucilina",
-    "p": "f.",
-    "d": "Petróleo. Sin.: petróleo, crudo, brent, queroseno.",
-    "df": "f. petróleo. Sin.: petróleo, crudo, brent, queroseno.",
-    "e": "Del lat. lux, lucis 'luz1' y la t. de naftalina.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_latin"
   },
   {
     "w": "Lucillo",
@@ -12727,16 +11673,6 @@
     ]
   },
   {
-    "w": "Lucubración",
-    "p": "f.",
-    "d": "Elucubración. Sin.: elucubración, cavilación, reflexión, divagación.",
-    "df": "f. elucubración. Sin.: elucubración, cavilación, reflexión, divagación.",
-    "e": "Del lat. lucubratio, -ōnis.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_latin"
-  },
-  {
     "w": "Lucubrar",
     "p": "tr.",
     "d": "Elucubrar. U. t. c. intr. Sin.: elucubrar, reflexionar, cavilar, meditar, divagar.",
@@ -12744,16 +11680,6 @@
     "e": "Del lat. lucubrāre.",
     "s": "",
     "c": "verbo",
-    "ec": "etym_latin"
-  },
-  {
-    "w": "Lucérnula",
-    "p": "f.",
-    "d": "Neguilla . Sin.: neguilla, candileja, candilejo, neguillón.",
-    "df": "f. neguilla (‖ planta cariofilácea). Sin.: neguilla, candileja, candilejo, neguillón.",
-    "e": "Del lat. tardío lucernŭla 'lámpara pequeña'.",
-    "s": "",
-    "c": "sustantivo",
     "ec": "etym_latin"
   },
   {
@@ -12979,16 +11905,6 @@
     "ec": ""
   },
   {
-    "w": "Lujación",
-    "p": "f.",
-    "d": "Luxación. Sin.: luxación, dislocación, torcedura, descoyuntamiento.",
-    "df": "f. luxación. Sin.: luxación, dislocación, torcedura, descoyuntamiento.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Lujar",
     "p": "tr.",
     "d": "Bruñir, alisar, especialmente la suela del calzado y sus bordes.",
@@ -13112,16 +12028,6 @@
     "ec": ""
   },
   {
-    "w": "Lumbrerada",
-    "p": "f.",
-    "d": "Lumbrarada. Sin.: lumbrarada, lumbrada.",
-    "df": "f. lumbrarada. Sin.: lumbrarada, lumbrada.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Lumbroso",
     "p": "adj.",
     "d": "Que despide luz.",
@@ -13234,16 +12140,6 @@
     ]
   },
   {
-    "w": "Lumpen",
-    "p": "m.",
-    "d": "Lumpemproletariado. Sin.: lumpemproletariado.",
-    "df": "m. lumpemproletariado. Sin.: lumpemproletariado. | m. Persona que forma parte del lumpen. | adj. Propio del lumpen.",
-    "e": "Acort. del al. Lumpenproletariat 'lumpemproletariado'.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Lumínico",
     "p": "adj.",
     "d": "Perteneciente o relativo a la luz.",
@@ -13347,16 +12243,6 @@
     "ec": ""
   },
   {
-    "w": "Lupanar",
-    "p": "m.",
-    "d": "Mancebía . Sin.: burdel, prostíbulo, mancebía.",
-    "df": "m. mancebía (‖ casa de prostitución). Sin.: burdel, prostíbulo, mancebía.",
-    "e": "Del lat. lupānar, -āris.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_latin"
-  },
-  {
     "w": "Lupanario",
     "p": "adj.",
     "d": "Perteneciente o relativo al lupanar.",
@@ -13372,16 +12258,6 @@
     "d": "Pl. Fiestas que en el mes de febrero celebraban los romanos en honor del dios Pan.",
     "df": "f. pl. Fiestas que en el mes de febrero celebraban los romanos en honor del dios Pan.",
     "e": "Del lat. Lupercalia.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_latin"
-  },
-  {
-    "w": "Lupia",
-    "p": "f.",
-    "d": "Lobanillo . Sin.: lobanillo, bulto, quiste, excrecencia, tumor.",
-    "df": "f. lobanillo (‖ bulto). Sin.: lobanillo, bulto, quiste, excrecencia, tumor. | f. Pequeño tumor que se forma en las articulaciones de las patas de las caballerías.",
-    "e": "Del lat. vulg. *lupea.",
     "s": "",
     "c": "sustantivo",
     "ec": "etym_latin"
@@ -13460,31 +12336,11 @@
     "ec": ""
   },
   {
-    "w": "Lusismo",
-    "p": "m.",
-    "d": "Portuguesismo. Sin.: portuguesismo, lusitanismo.",
-    "df": "m. portuguesismo. Sin.: portuguesismo, lusitanismo.",
-    "e": "De luso e -ismo.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Lusista",
     "p": "m. y f.",
     "d": "Y f. Especialista en la lengua y la cultura portuguesas. Sin.: lusitanista.",
     "df": "m. y f. Especialista en la lengua y la cultura portuguesas. Sin.: lusitanista.",
     "e": "De luso e -ista.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Lusitanismo",
-    "p": "m.",
-    "d": "Lusismo. Sin.: lusismo, portuguesismo.",
-    "df": "m. lusismo. Sin.: lusismo, portuguesismo.",
-    "e": "De lusitano e -ismo.",
     "s": "",
     "c": "sustantivo",
     "ec": ""
@@ -13616,26 +12472,6 @@
     ]
   },
   {
-    "w": "Lutoso",
-    "p": "adj.",
-    "d": "Luctuoso. Sin.: luctuoso, fúnebre, funesto, triste, penoso, lúgubre, trágico.",
-    "df": "adj. luctuoso. Sin.: luctuoso, fúnebre, funesto, triste, penoso, lúgubre, trágico.",
-    "e": "De luto.",
-    "s": "",
-    "c": "adjetivo",
-    "ec": ""
-  },
-  {
-    "w": "Lutria",
-    "p": "f.",
-    "d": "Nutria . Sin.: nutria, nutra, ludria.",
-    "df": "f. nutria (‖ mamífero). Sin.: nutria, nutra, ludria.",
-    "e": "Del lat. *lutrea, de lutra.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_latin"
-  },
-  {
     "w": "Luvita",
     "p": "adj.",
     "d": "Dicho de una persona: De un antiguo pueblo de Anatolia. U. t. c. s.",
@@ -13683,16 +12519,6 @@
     "e": "",
     "s": "",
     "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Luético",
-    "p": "adj.",
-    "d": "Sifilítico. Sin.: sifilítico.",
-    "df": "adj. sifilítico. Sin.: sifilítico.",
-    "e": "De lúes y ‒́tico.",
-    "s": "",
-    "c": "adjetivo",
     "ec": ""
   },
   {
@@ -13764,16 +12590,6 @@
     "d": "Piedra llana en que ordinariamente se pone una inscripción. Sin.: losa, estela3, tumba1, laude1, lauda, mármol, placa.",
     "df": "f. Piedra llana en que ordinariamente se pone una inscripción. Sin.: losa, estela3, tumba1, laude1, lauda, mármol, placa.",
     "e": "Del lat. lapis, -ĭdis 'piedra'.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_latin"
-  },
-  {
-    "w": "Lárice",
-    "p": "m.",
-    "d": "Alerce. Sin.: alerce.",
-    "df": "m. alerce. Sin.: alerce.",
-    "e": "Del lat. larix, -ĭcis.",
     "s": "",
     "c": "sustantivo",
     "ec": "etym_latin"
@@ -13912,16 +12728,6 @@
     "ec": ""
   },
   {
-    "w": "Lívido",
-    "p": "adj.",
-    "d": "Amoratado. Sin.: amoratado, cárdeno.",
-    "df": "adj. amoratado. Sin.: amoratado, cárdeno. | adj. Intensamente pálido. Sin.: pálido, descolorido, marchito, cadavérico, exangüe.",
-    "e": "Del lat. livĭdus.",
-    "s": "",
-    "c": "adjetivo",
-    "ec": "etym_latin"
-  },
-  {
     "w": "Lóbulo",
     "p": "m.",
     "d": "Cada una de las partes, a manera de ondas, que sobresalen en el borde de una cosa; como en la hoja de una planta o en el intradós de un arco. Sin.: prominencia, onda.",
@@ -13930,19 +12736,6 @@
     "s": "",
     "c": "sustantivo",
     "ec": "etym_latin"
-  },
-  {
-    "w": "Lúbrico",
-    "p": "adj.",
-    "d": "Resbaladizo. Sin.: resbaladizo, deslizante, resbaloso, escurridizo, baboso.",
-    "df": "adj. resbaladizo. Sin.: resbaladizo, deslizante, resbaloso, escurridizo, baboso. | adj. Inclinado a la lujuria. Sin.: lascivo, lujurioso, libidinoso, rijoso, obsceno, impúdico, voluptuoso, libertino, verde. | adj. Libidinoso, lascivo. Sin.: lascivo, lujurioso, libidinoso, rijoso, obsceno, impúdico, voluptuoso, libertino, verde.",
-    "e": "Del lat. lubrĭcus.",
-    "s": "",
-    "c": "adjetivo",
-    "ec": "etym_latin",
-    "esp": [
-      "explosiva"
-    ]
   },
   {
     "w": "Lúcuma",
@@ -13973,16 +12766,6 @@
     "d": "Perteneciente o relativo al juego. Sin.: lúdicro.",
     "df": "adj. Perteneciente o relativo al juego. Sin.: lúdicro.",
     "e": "Del lat. ludus 'juego' e ‒́ico.",
-    "s": "",
-    "c": "adjetivo",
-    "ec": "etym_latin"
-  },
-  {
-    "w": "Lúdicro",
-    "p": "adj.",
-    "d": "Lúdico. Sin.: lúdico.",
-    "df": "adj. lúdico. Sin.: lúdico.",
-    "e": "Del lat. ludĭcrus.",
     "s": "",
     "c": "adjetivo",
     "ec": "etym_latin"
@@ -14035,16 +12818,6 @@
     "e": "Del lat. lustrĭcus.",
     "s": "",
     "c": "adjetivo",
-    "ec": "etym_latin"
-  },
-  {
-    "w": "Lútea",
-    "p": "f.",
-    "d": "Oropéndola. Sin.: oropéndola, becafigo, oriol, papafigo, víreo, virio, muchilero.",
-    "df": "f. oropéndola. Sin.: oropéndola, becafigo, oriol, papafigo, víreo, virio, muchilero.",
-    "e": "Del lat. lutea 'amarilla'.",
-    "s": "",
-    "c": "sustantivo",
     "ec": "etym_latin"
   }
 ]

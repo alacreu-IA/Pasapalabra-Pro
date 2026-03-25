@@ -508,16 +508,6 @@
     "ec": "etym_latin"
   },
   {
-    "w": "Paidofilia",
-    "p": "f.",
-    "d": "Pedofilia. Sin.: pedofilia, pederastia.",
-    "df": "f. pedofilia. Sin.: pedofilia, pederastia.",
-    "e": "Del gr. παῖς, παιδός paîs, paidós 'niño' y -filia.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_griego"
-  },
-  {
     "w": "Paidología",
     "p": "f.",
     "d": "Ciencia que estudia todo lo relativo a la infancia y su buen desarrollo físico e intelectual.",
@@ -562,31 +552,11 @@
     ]
   },
   {
-    "w": "Pailebot",
-    "p": "m.",
-    "d": "Pailebote. Sin.: pailebote.",
-    "df": "m. pailebote. Sin.: pailebote.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Pailebote",
     "p": "m.",
     "d": "Goleta pequeña, sin gavias, muy rasa y fina.",
     "df": "m. Goleta pequeña, sin gavias, muy rasa y fina.",
     "e": "De pailebot, y este del ingl. pilot's boat 'bote del piloto'.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Painel",
-    "p": "m.",
-    "d": "Panel . Sin.: panel1.",
-    "df": "m. panel (‖ compartimento de paredes o puertas). Sin.: panel1.",
-    "e": "",
     "s": "",
     "c": "sustantivo",
     "ec": ""
@@ -716,16 +686,6 @@
     "ec": ""
   },
   {
-    "w": "Pajarel",
-    "p": "m.",
-    "d": "Pardillo . Sin.: pardal, pardillo, pechirrojo, gafarrón.",
-    "df": "m. pardillo (‖ ave). Sin.: pardal, pardillo, pechirrojo, gafarrón.",
-    "e": "Del cat. passerell.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Pajarera",
     "p": "adj.",
     "d": "Perteneciente o relativo a los pájaros. Redes pajareras.",
@@ -773,16 +733,6 @@
     "e": "Del ant. passarín.",
     "s": "",
     "c": "adjetivo",
-    "ec": ""
-  },
-  {
-    "w": "Pajarilla",
-    "p": "f.",
-    "d": "Aguileña. Sin.: aguileña, guileña, pelícanos.",
-    "df": "f. aguileña. Sin.: aguileña, guileña, pelícanos. | f. Bazo, especialmente el del cerdo. Sin.: bazo. | f. Ar. palomilla (‖ mariposa nocturna). Sin.: palomilla, paulilla.",
-    "e": "De pájara e -illa.",
-    "s": "",
-    "c": "sustantivo",
     "ec": ""
   },
   {
@@ -847,16 +797,6 @@
     "esp": [
       "viajera"
     ]
-  },
-  {
-    "w": "Pajea",
-    "p": "f.",
-    "d": "Ajea. Sin.: ajea.",
-    "df": "f. ajea. Sin.: ajea.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
   },
   {
     "w": "Pajecillo",
@@ -1065,19 +1005,6 @@
     "ec": ""
   },
   {
-    "w": "Palabrerío",
-    "p": "m.",
-    "d": "Palabrería. Sin.: palabrería, locuacidad, labia, charlatanería, fraseología, verborrea, verbosidad, retartalillas, baba1, literatura, cháchara, pico1.",
-    "df": "m. palabrería. Sin.: palabrería, locuacidad, labia, charlatanería, fraseología, verborrea, verbosidad, retartalillas, baba1, literatura, cháchara, pico1.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "",
-    "esp": [
-      "explosiva"
-    ]
-  },
-  {
     "w": "Palabrista",
     "p": "adj.",
     "d": "Palabrero. U. t. c. s.",
@@ -1118,16 +1045,6 @@
     "ec": ""
   },
   {
-    "w": "Palabrón",
-    "p": "adj.",
-    "d": "Palabrero. Sin.: palabrero.",
-    "df": "adj. palabrero. Sin.: palabrero.",
-    "e": "",
-    "s": "",
-    "c": "adjetivo",
-    "ec": ""
-  },
-  {
     "w": "Palacete",
     "p": "m.",
     "d": "Casa de recreo construida y alhajada como un palacio, pero más pequeña. Sin.: villa, palacio, chalé.",
@@ -1142,16 +1059,6 @@
     "p": "adj.",
     "d": "Perteneciente o relativo al palacio. Sin.: palaciego.",
     "df": "adj. Perteneciente o relativo al palacio. Sin.: palaciego.",
-    "e": "",
-    "s": "",
-    "c": "adjetivo",
-    "ec": ""
-  },
-  {
-    "w": "Palaciano",
-    "p": "adj.",
-    "d": "Palaciego. Sin.: palaciego.",
-    "df": "adj. palaciego. Sin.: palaciego.",
     "e": "",
     "s": "",
     "c": "adjetivo",
@@ -1353,26 +1260,6 @@
     "ec": ""
   },
   {
-    "w": "Palancana",
-    "p": "f.",
-    "d": "Jofaina. Sin.: palangana, jofaina, lavabo, aguamanil, lavatorio, lavamanos, pileta.",
-    "df": "f. jofaina. Sin.: palangana, jofaina, lavabo, aguamanil, lavatorio, lavamanos, pileta.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Palangana",
-    "p": "f.",
-    "d": "Jofaina. Sin.: palancana, jofaina, lavabo, aguamanil, lavatorio, lavamanos, pileta.",
-    "df": "f. jofaina. Sin.: palancana, jofaina, lavabo, aguamanil, lavatorio, lavamanos, pileta. | f. Ur. lavabo (‖ pila con grifos para lavarse). | m. y f. C. Rica y Ur. Persona boba, tonta. | m. y f. C. Rica. Persona indecisa. | m. y f. C. Rica. Persona entrometida.",
-    "e": "De or. inc.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Palanganero",
     "p": "m.",
     "d": "Mueble de madera o hierro, por lo común de tres pies, donde se coloca la palangana para lavarse, y a veces un jarro con agua, el jabón y otras cosas para el aseo de la persona. Sin.: aguamanil, lavamanos, zafero.",
@@ -1413,16 +1300,6 @@
     "ec": ""
   },
   {
-    "w": "Palanquear",
-    "p": "tr.",
-    "d": "Apalancar . Sin.: apalancar.",
-    "df": "tr. apalancar (‖ mover algo con una palanca). Sin.: apalancar. | tr. coloq. Arg., Bol., Chile, Cuba, Ec., El Salv., Hond., Nic., Par., Perú, Ur. y Ven. Dicho de una persona: Emplear su influencia para que alguien consiga un fin determinado.",
-    "e": "",
-    "s": "",
-    "c": "verbo",
-    "ec": ""
-  },
-  {
     "w": "Palanqueta",
     "p": "f.",
     "d": "Barreta de hierro que sirve para forzar las puertas o las cerraduras. Sin.: palanca.",
@@ -1448,16 +1325,6 @@
     "d": "Ganapán o mozo de cordel que lleva cargas de una parte a otra.",
     "df": "m. Ganapán o mozo de cordel que lleva cargas de una parte a otra. | m. Mar. Cada uno de los cabos que sirven para cargar los puños de las velas mayores, llevándolos a la cruz de sus vergas respectivas. Sin.: ronzal2. | m. Mar. Aparejo que se usa a bordo para meter los cañones en batería, después de hecha la carga. | m. Especie de andas usadas en Oriente para llevar en ellas a las personas importantes. Sin.: andas, parihuelas, angarillas, camilla, litera.",
     "e": "De palanca.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Palasan",
-    "p": "m.",
-    "d": "Ratán. Sin.: ratán, bengala, junquillo, rota2, roten.",
-    "df": "m. ratán. Sin.: ratán, bengala, junquillo, rota2, roten.",
-    "e": "De or. tagalo.",
     "s": "",
     "c": "sustantivo",
     "ec": ""
@@ -1811,19 +1678,6 @@
     "ec": ""
   },
   {
-    "w": "Paleotestamentario",
-    "p": "adj.",
-    "d": "Veterotestamentario. Sin.: veterotestamentario.",
-    "df": "adj. veterotestamentario. Sin.: veterotestamentario.",
-    "e": "De paleo- y testamentario.",
-    "s": "",
-    "c": "adjetivo",
-    "ec": "",
-    "esp": [
-      "larga"
-    ]
-  },
-  {
     "w": "Paleozoico",
     "p": "adj.",
     "d": "Geol. Dicho de una era geológica: Que abarca desde el fin del Precámbrico, hace unos 570 millones de años hasta hace unos 230 millones de años, y comprende sucesivamente los períodos cámbrico, ordovícico, silúrico, devónico, carbonífero y pérmico. U. t. c. s. m. Sin.: primario.",
@@ -1952,16 +1806,6 @@
     "d": "Despect. Acción o actitud propia del paleto. Sin.: paletada2.",
     "df": "f. despect. Acción o actitud propia del paleto. Sin.: paletada2. | f. despect. Conjunto de paletos. | f. Méx. Tienda en donde se venden paletas (‖ helados).",
     "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Paletilla",
-    "p": "f.",
-    "d": "Omóplato. Sin.: omóplato, escápula, paleta.",
-    "df": "f. omóplato. Sin.: omóplato, escápula, paleta. | f. En algunas reses, como el cordero, etc., cuarto delantero. | f. Ternilla en que termina el esternón y que corresponde a la región llamada boca del estómago. | f. Candelero bajo con asa.",
-    "e": "Del dim. de paleta.",
     "s": "",
     "c": "sustantivo",
     "ec": ""
@@ -2347,16 +2191,6 @@
     ]
   },
   {
-    "w": "Palloza",
-    "p": "f.",
-    "d": "Pallaza. Sin.: pallaza.",
-    "df": "f. pallaza. Sin.: pallaza.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Pallón",
     "p": "m.",
     "d": "Esfera pequeña de oro o plata que resulta en la copela al hacer el ensayo de menas auríferas o argentíferas.",
@@ -2365,19 +2199,6 @@
     "s": "",
     "c": "sustantivo",
     "ec": ""
-  },
-  {
-    "w": "Palmacristi",
-    "p": "f.",
-    "d": "Ricino. Sin.: ricino, cherva, crotón, higuereta, higuerilla, rezno, croto, tártaro1.",
-    "df": "f. ricino. Sin.: ricino, cherva, crotón, higuereta, higuerilla, rezno, croto, tártaro1.",
-    "e": "Del lat. palma Christi 'palma de Cristo'.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_latin",
-    "esp": [
-      "explosiva"
-    ]
   },
   {
     "w": "Palmada",
@@ -2421,16 +2242,6 @@
     "esp": [
       "viajera"
     ]
-  },
-  {
-    "w": "Palmatoria",
-    "p": "f.",
-    "d": "Palmeta . Sin.: palmeta.",
-    "df": "f. palmeta (‖ instrumento). Sin.: palmeta. | f. Especie de candelero bajo, con mango y pie, generalmente de forma de platillo. Sin.: paletilla, candelero, candil.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
   },
   {
     "w": "Palmeado",
@@ -2596,16 +2407,6 @@
     "ec": ""
   },
   {
-    "w": "Palmotada",
-    "p": "f.",
-    "d": "Palmoteo . Sin.: palmoteo, aplauso.",
-    "df": "f. palmoteo (‖ acción de palmotear). Sin.: palmoteo, aplauso.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Palmotear",
     "p": "intr.",
     "d": "Golpear una con otra las palmas de las manos. Sin.: palmear, aplaudir.",
@@ -2657,16 +2458,6 @@
     "esp": [
       "viajera"
     ]
-  },
-  {
-    "w": "Paloduz",
-    "p": "m.",
-    "d": "Orozuz. Sin.: regaliz, orozuz, alcazuz, alfendoz.",
-    "df": "m. orozuz. Sin.: regaliz, orozuz, alcazuz, alfendoz.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
   },
   {
     "w": "Palomadura",
@@ -2848,16 +2639,6 @@
     "ec": ""
   },
   {
-    "w": "Palpadura",
-    "p": "f.",
-    "d": "Palpación . Sin.: palpación, palpamiento, toque, tacto.",
-    "df": "f. palpación (‖ acción de palpar). Sin.: palpación, palpamiento, toque, tacto.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Palpallén",
     "p": "m.",
     "d": "Arbusto americano de la familia de las compuestas, que alcanza dos metros de altura, con hojas aovadas, dentadas y cubiertas de un tomento blanquecino, y flores amarillas.",
@@ -2869,16 +2650,6 @@
     "esp": [
       "viajera"
     ]
-  },
-  {
-    "w": "Palpamiento",
-    "p": "m.",
-    "d": "Palpación . Sin.: palpación, palpadura, toque, tacto.",
-    "df": "m. palpación (‖ acción de palpar). Sin.: palpación, palpadura, toque, tacto.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
   },
   {
     "w": "Palpar",
@@ -3076,19 +2847,6 @@
     "ec": ""
   },
   {
-    "w": "Pamema",
-    "p": "f.",
-    "d": "Melindre . Sin.: melindre, remilgo, afectación, ñoñería, cursilería, dengue1.",
-    "df": "f. melindre (‖ delicadeza afectada). Sin.: melindre, remilgo, afectación, ñoñería, cursilería, dengue1. | f. fingimiento (‖ simulación). Sin.: pantomima, simulación, fingimiento, artificio, comedia, farsa. | f. coloq. Hecho o dicho fútil y de poca entidad, a que se ha querido dar importancia. Sin.: tontería, futilidad, memez, nadería, bobada, simpleza.",
-    "e": "Del cruce de pamplina y memo1.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "",
-    "esp": [
-      "explosiva"
-    ]
-  },
-  {
     "w": "Pampanada",
     "p": "f.",
     "d": "Zumo que se saca de los pámpanos para suplir el del agraz, porque casi tiene el mismo sabor.",
@@ -3149,16 +2907,6 @@
     "ec": ""
   },
   {
-    "w": "Pampero",
-    "p": "adj.",
-    "d": "Pampeano . Sin.: pampeano.",
-    "df": "adj. pampeano (‖ de una pampa). Sin.: pampeano.",
-    "e": "",
-    "s": "",
-    "c": "adjetivo",
-    "ec": ""
-  },
-  {
     "w": "Pampino",
     "p": "adj.",
     "d": "Dicho de una persona: Que trabaja en la pampa salitrera.",
@@ -3179,19 +2927,6 @@
     "ec": ""
   },
   {
-    "w": "Pamplina",
-    "p": "f.",
-    "d": "Álsine. Sin.: álsine, picagallina.",
-    "df": "f. álsine. Sin.: álsine, picagallina. | f. Planta herbácea anual, de la familia de las papaveráceas, con tallos de 20 a 30 cm, hojas partidas en lacinias muy estrechas y agudas, flores de cuatro pétalos amarillos, en panojas pequeñas, y fruto seco en vainillas con muchas simientes, que infesta los sembrados de suelo arenisco, que en la primavera parecen teñidos de amarillo por la abundancia de flores. Sin.: zadorija. | f. coloq. Dicho o cosa de poca entidad, fundamento o utilidad. U. m. en pl. ¡Con buenas pamplinas te vienes! Sin.: tontería, bobada, paparrucha, chorrada, nadería, insustancialidad, futilidad, nimiedad. | f. coloq. Manifestación poco sincera que pretende halagar a alguien o congraciarse con él. U. m. en pl. No intentes engañarme con tus pamplinas. Sin.: lisonja1, zalamería, halago, adulación, peloteo, pamema, coba1, patarata.",
-    "e": "Del lat. vulg. *papaverīna, y este del lat. papāver 'amapola'.",
-    "s": "",
-    "c": "botanica",
-    "ec": "etym_latin",
-    "esp": [
-      "explosiva"
-    ]
-  },
-  {
     "w": "Pamplinada",
     "p": "f.",
     "d": "Dicho o cosa fútil.",
@@ -3206,16 +2941,6 @@
     "p": "adj.",
     "d": "Propenso a decir pamplinas. Sin.: pamplinoso, zalamero, cuentista, pataratero.",
     "df": "adj. Propenso a decir pamplinas. Sin.: pamplinoso, zalamero, cuentista, pataratero.",
-    "e": "",
-    "s": "",
-    "c": "adjetivo",
-    "ec": ""
-  },
-  {
-    "w": "Pamplinoso",
-    "p": "adj.",
-    "d": "Pamplinero. Sin.: pamplinero, zalamero, cuentista, pataratero.",
-    "df": "adj. pamplinero. Sin.: pamplinero, zalamero, cuentista, pataratero.",
     "e": "",
     "s": "",
     "c": "adjetivo",
@@ -3239,16 +2964,6 @@
     "e": "",
     "s": "",
     "c": "gentilicio",
-    "ec": ""
-  },
-  {
-    "w": "Pamporcino",
-    "p": "m.",
-    "d": "Ciclamen. Sin.: ciclamen, artanita, ciclamino, artanica.",
-    "df": "m. ciclamen. Sin.: ciclamen, artanita, ciclamino, artanica.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
     "ec": ""
   },
   {
@@ -3735,16 +3450,6 @@
     "esp": [
       "explosiva"
     ]
-  },
-  {
-    "w": "Pandera",
-    "p": "f.",
-    "d": "Pandero . Sin.: pandero, pandereta, adufe.",
-    "df": "f. pandero (‖ instrumento). Sin.: pandero, pandereta, adufe.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
   },
   {
     "w": "Panderada",
@@ -4786,16 +4491,6 @@
     "ec": ""
   },
   {
-    "w": "Pantufla",
-    "p": "f.",
-    "d": "Pantuflo. Sin.: pantuflo, zapatilla, chinela, babucha, chancleta, chancla.",
-    "df": "f. pantuflo. Sin.: pantuflo, zapatilla, chinela, babucha, chancleta, chancla.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Pantuflazo",
     "p": "m.",
     "d": "Golpe que se da con el pantuflo.",
@@ -5118,19 +4813,6 @@
     "ec": ""
   },
   {
-    "w": "Paparruchada",
-    "p": "f. coloq.",
-    "d": "Paparrucha . Sin.: bulo, trola, embuste, mentira, bola, cuento1, paparrucha, patraña.",
-    "df": "f. coloq. paparrucha (‖ noticia falsa y desatinada). Sin.: bulo, trola, embuste, mentira, bola, cuento1, paparrucha, patraña. | f. coloq. paparrucha (‖ tontería, estupidez). Sin.: tontería, paparrucha, estupidez, memez, bobada, sandez, majadería, babosada, babosería.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "",
-    "esp": [
-      "explosiva"
-    ]
-  },
-  {
     "w": "Papasal",
     "p": "m.",
     "d": "Friolera, bagatela, cosa insustancial o que sirve de entretenimiento.",
@@ -5221,16 +4903,6 @@
     "ec": ""
   },
   {
-    "w": "Papelerío",
-    "p": "m.",
-    "d": "Papelería . Sin.: papelería, papelorio, papeleo.",
-    "df": "m. Am. papelería (‖ conjunto de papeles sin orden). Sin.: papelería, papelorio, papeleo.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Papeletear",
     "p": "tr.",
     "d": "Anotar en papeletas los datos que interesan para algún fin, o escudriñar un texto con este propósito. Sin.: papeletizar.",
@@ -5248,16 +4920,6 @@
     "e": "",
     "s": "",
     "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Papeletizar",
-    "p": "tr.",
-    "d": "Papeletear. Sin.: papeletear.",
-    "df": "tr. papeletear. Sin.: papeletear.",
-    "e": "",
-    "s": "",
-    "c": "verbo",
     "ec": ""
   },
   {
@@ -5339,16 +5001,6 @@
     "d": "Puchero en que se hacen las papas para los niños.",
     "df": "m. Puchero en que se hacen las papas para los niños. | m. Papilla de los niños. | adj. Am. Perteneciente o relativo a la papa.",
     "e": "De papa3 y -ero.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Papialbillo",
-    "p": "m.",
-    "d": "Gineta. Sin.: gineta, ganeta.",
-    "df": "m. gineta. Sin.: gineta, ganeta.",
-    "e": "De papo1 'parte abultada' y albillo, dim. de albo.",
     "s": "",
     "c": "sustantivo",
     "ec": ""
@@ -5560,16 +5212,6 @@
     "ec": ""
   },
   {
-    "w": "Papión",
-    "p": "m.",
-    "d": "Zambo . Sin.: zambo.",
-    "df": "m. zambo (‖ mono). Sin.: zambo.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Paporreta",
     "p": "f.",
     "d": "Despect. Perú. Repetición mecánica de lo que se ha aprendido de memoria sin entenderlo o entendiéndolo a medias.",
@@ -5663,16 +5305,6 @@
     ]
   },
   {
-    "w": "Paquebot",
-    "p": "m.",
-    "d": "Paquebote. Sin.: paquebote, paquete1, correo1.",
-    "df": "m. paquebote. Sin.: paquebote, paquete1, correo1.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Paquebote",
     "p": "m.",
     "d": "Embarcación que lleva la correspondencia pública, y generalmente pasajeros también, de un puerto a otro. Sin.: paquebot, paquete1, correo1.",
@@ -5753,16 +5385,6 @@
     "e": "",
     "s": "",
     "c": "gentilicio",
-    "ec": ""
-  },
-  {
-    "w": "Parabién",
-    "p": "m.",
-    "d": "Felicitación. Sin.: felicitación, enhorabuena, congratulación, pláceme.",
-    "df": "m. felicitación. Sin.: felicitación, enhorabuena, congratulación, pláceme.",
-    "e": "De la fr. para bien sea, que se suele dirigir al favorecido por un suceso próspero.",
-    "s": "",
-    "c": "sustantivo",
     "ec": ""
   },
   {
@@ -6277,16 +5899,6 @@
     "d": "Que paraliza. Sin.: paralizante.",
     "df": "adj. Que paraliza. Sin.: paralizante.",
     "e": "",
-    "s": "",
-    "c": "adjetivo",
-    "ec": ""
-  },
-  {
-    "w": "Paralizante",
-    "p": "adj.",
-    "d": "Paralizador. Sin.: paralizador.",
-    "df": "adj. paralizador. Sin.: paralizador.",
-    "e": "De paralizar y -nte.",
     "s": "",
     "c": "adjetivo",
     "ec": ""
@@ -6844,16 +6456,6 @@
     "ec": ""
   },
   {
-    "w": "Parasol",
-    "p": "m.",
-    "d": "Quitasol. Sin.: quitasol, sombrilla, guardasol.",
-    "df": "m. quitasol. Sin.: quitasol, sombrilla, guardasol. | m. En el interior de un vehículo, dispositivo móvil sujeto sobre el parabrisas, usado para evitar el deslumbramiento por los rayos del sol.",
-    "e": "De parar1 y sol1.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Parasíntesis",
     "p": "f.",
     "d": "Gram. Proceso de formación de palabras en que intervienen simultáneamente la composición y la derivación; p. ej., pordiosero, picapedrero.",
@@ -7014,16 +6616,6 @@
     "ec": ""
   },
   {
-    "w": "Parchar",
-    "p": "tr.",
-    "d": "Emparchar . Sin.: emparchar, parchear.",
-    "df": "tr. emparchar (‖ poner parches). Sin.: emparchar, parchear.",
-    "e": "",
-    "s": "",
-    "c": "verbo",
-    "ec": ""
-  },
-  {
     "w": "Parchazo",
     "p": "m.",
     "d": "Mar. Golpazo que pega una vela contra su palo o mastelero, ya por un cambio súbito del viento, ya por un descuido en el gobierno del buque.",
@@ -7137,16 +6729,6 @@
     ]
   },
   {
-    "w": "Pardisco",
-    "p": "adj.",
-    "d": "Parduzco. Sin.: parduzco, pardusco.",
-    "df": "adj. parduzco. Sin.: parduzco, pardusco.",
-    "e": "",
-    "s": "",
-    "c": "adjetivo",
-    "ec": ""
-  },
-  {
     "w": "Pardomonte",
     "p": "m.",
     "d": "Clase de paño ordinario que en el siglo XVIII se usaba para capas de la gente artesana.",
@@ -7154,16 +6736,6 @@
     "e": "",
     "s": "",
     "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Pardusco",
-    "p": "adj.",
-    "d": "Parduzco. Sin.: parduzco, pardisco.",
-    "df": "adj. parduzco. Sin.: parduzco, pardisco.",
-    "e": "",
-    "s": "",
-    "c": "adjetivo",
     "ec": ""
   },
   {
@@ -7655,16 +7227,6 @@
     "ec": "etym_latin"
   },
   {
-    "w": "Parisilábico",
-    "p": "adj.",
-    "d": "Parisílabo. Sin.: parisílabo.",
-    "df": "adj. parisílabo. Sin.: parisílabo.",
-    "e": "",
-    "s": "",
-    "c": "adjetivo",
-    "ec": ""
-  },
-  {
     "w": "Parisino",
     "p": "adj.",
     "d": "Parisiense. Apl. a pers., u. t. c. s. Sin.: parisiense, parisién.",
@@ -7794,19 +7356,6 @@
     "e": "",
     "s": "",
     "c": "adjetivo",
-    "ec": "",
-    "esp": [
-      "explosiva"
-    ]
-  },
-  {
-    "w": "Parlería",
-    "p": "f.",
-    "d": "Verbosidad. Sin.: verborrea, cháchara, verbosidad, parla, parola.",
-    "df": "f. verbosidad. Sin.: verborrea, cháchara, verbosidad, parla, parola. | f. Chisme, cuento o hablilla. Sin.: chisme, cuento1, cotilleo, habladuría.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
     "ec": "",
     "esp": [
       "explosiva"
@@ -7949,32 +7498,6 @@
     "s": "",
     "c": "sustantivo",
     "ec": ""
-  },
-  {
-    "w": "Parola",
-    "p": "f. coloq.",
-    "d": "Verbosidad. Sin.: verborrea, cháchara, verbosidad, parlería, parla.",
-    "df": "f. coloq. verbosidad. Sin.: verborrea, cháchara, verbosidad, parlería, parla. | f. coloq. Conversación larga e insustancial. Sin.: charla, palique.",
-    "e": "Del it. parola 'palabra'.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_italiano",
-    "esp": [
-      "viajera"
-    ]
-  },
-  {
-    "w": "Parolero",
-    "p": "adj. coloq.",
-    "d": "Parlero . Sin.: parlanchín, parlero, parlón, hablador, hablantín, locuaz, charlatán, gárrulo, cotorra.",
-    "df": "adj. coloq. parlero (‖ que habla mucho). Sin.: parlanchín, parlero, parlón, hablador, hablantín, locuaz, charlatán, gárrulo, cotorra.",
-    "e": "De parola y -ero.",
-    "s": "",
-    "c": "adjetivo",
-    "ec": "",
-    "esp": [
-      "explosiva"
-    ]
   },
   {
     "w": "Paronimia",
@@ -8120,16 +7643,6 @@
     "ec": ""
   },
   {
-    "w": "Parpallota",
-    "p": "f.",
-    "d": "Parpalla. Sin.: parpalla, pataca1.",
-    "df": "f. parpalla. Sin.: parpalla, pataca1.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Parpar",
     "p": "intr.",
     "d": "Dicho de un pato: Dar graznidos.",
@@ -8137,26 +7650,6 @@
     "e": "",
     "s": "",
     "c": "verbo",
-    "ec": ""
-  },
-  {
-    "w": "Parquear",
-    "p": "tr.",
-    "d": "Aparcar. Sin.: aparcar, estacionar.",
-    "df": "tr. Am. aparcar. Sin.: aparcar, estacionar.",
-    "e": "",
-    "s": "",
-    "c": "verbo",
-    "ec": ""
-  },
-  {
-    "w": "Parqui",
-    "p": "m.",
-    "d": "Palqui. Sin.: palqui.",
-    "df": "m. palqui. Sin.: palqui.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
     "ec": ""
   },
   {
@@ -8343,26 +7836,6 @@
     "e": "",
     "s": "",
     "c": "gastronomia",
-    "ec": ""
-  },
-  {
-    "w": "Parriza",
-    "p": "f.",
-    "d": "Labrusca. Sin.: labrusca, parrón.",
-    "df": "f. labrusca. Sin.: labrusca, parrón.",
-    "e": "De parra1 e -iza.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Parro",
-    "p": "m.",
-    "d": "Pato . Sin.: pato1, ánade, curro2, corco, corío.",
-    "df": "m. pato (‖ ave). Sin.: pato1, ánade, curro2, corco, corío.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
     "ec": ""
   },
   {
@@ -8604,16 +8077,6 @@
     "ec": "etym_latin"
   },
   {
-    "w": "Partidura",
-    "p": "f.",
-    "d": "Crencha . Sin.: raya1, crencha, carrera, partido.",
-    "df": "f. crencha (‖ raya que divide el cabello). Sin.: raya1, crencha, carrera, partido.",
-    "e": "De partir y -dura.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Partija",
     "p": "f.",
     "d": "Partición o repartimiento, especialmente el de una herencia. Sin.: partición, partimiento, reparto, división, fraccionamiento, despedazamiento, parcelación, repartición, distribución, prorrateo.",
@@ -8638,16 +8101,6 @@
     "esp": [
       "viajera"
     ]
-  },
-  {
-    "w": "Partisano",
-    "p": "adj.",
-    "d": "Guerrillero. Sin.: guerrillero.",
-    "df": "adj. guerrillero. Sin.: guerrillero.",
-    "e": "",
-    "s": "",
-    "c": "adjetivo",
-    "ec": ""
   },
   {
     "w": "Partita",
@@ -8681,19 +8134,6 @@
     "s": "",
     "c": "adjetivo",
     "ec": "etym_latin"
-  },
-  {
-    "w": "Party",
-    "p": "m.",
-    "d": "Fiesta . Sin.: fiesta, celebración, festejo, guateque, velada, reunión, convite, verbena, juerga, jarana, chonguenga, fiestoca, pedo.",
-    "df": "m. fiesta (‖ reunión para divertirse). Sin.: fiesta, celebración, festejo, guateque, velada, reunión, convite, verbena, juerga, jarana, chonguenga, fiestoca, pedo.",
-    "e": "Voz ingl.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "",
-    "esp": [
-      "explosiva"
-    ]
   },
   {
     "w": "Partícipe",
@@ -8809,16 +8249,6 @@
     ]
   },
   {
-    "w": "Parágrafo",
-    "p": "m.",
-    "d": "Párrafo. Sin.: párrafo, acápite.",
-    "df": "m. párrafo. Sin.: párrafo, acápite.",
-    "e": "Del lat. tardío paragrăphus, y este del gr. παράγραφος parágraphos.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_latin"
-  },
-  {
     "w": "Parástade",
     "p": "m.",
     "d": "Arq. Pilastra colocada junto a una columna y detrás de ella para sostener mejor el peso de la techumbre.",
@@ -8899,16 +8329,6 @@
     "ec": ""
   },
   {
-    "w": "Pasacalle",
-    "p": "m.",
-    "d": "Pasacalles. Sin.: pasacalles, correcalles, correcalle, marcha, desfile, cabalgata.",
-    "df": "m. pasacalles. Sin.: pasacalles, correcalles, correcalle, marcha, desfile, cabalgata. | m. Arg. y Ur. Cartel que cruza la calzada por lo alto, especialmente con anuncios de campañas políticas, gremiales, religiosas o navideñas. | m. Méx. Obra instrumental de movimiento pausado, desarrollado en variaciones.",
-    "e": "De pasar y calle.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Pasacólica",
     "p": "f.",
     "d": "Med. Cólico pasajero.",
@@ -8983,16 +8403,6 @@
     "esp": [
       "explosiva"
     ]
-  },
-  {
-    "w": "Pasadía",
-    "p": "f.",
-    "d": "Pasada . Sin.: pasada, renta, ahorro.",
-    "df": "f. pasada (‖ renta para mantenerse). Sin.: pasada, renta, ahorro.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
   },
   {
     "w": "Pasajuego",
@@ -9328,16 +8738,6 @@
     "s": "",
     "c": "sustantivo",
     "ec": ""
-  },
-  {
-    "w": "Pasiflora",
-    "p": "f.",
-    "d": "Pasionaria . Sin.: pasionaria, murucuyá.",
-    "df": "f. pasionaria (‖ planta). Sin.: pasionaria, murucuyá.",
-    "e": "Del lat. cient. passiflora.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_latin"
   },
   {
     "w": "Pasifloráceo",
@@ -9782,26 +9182,6 @@
     "ec": ""
   },
   {
-    "w": "Pasterización",
-    "p": "f.",
-    "d": "Pasteurización. Sin.: pasteurización.",
-    "df": "f. pasteurización. Sin.: pasteurización.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Pasterizar",
-    "p": "tr.",
-    "d": "Pasteurizar. Sin.: pasteurizar.",
-    "df": "tr. pasteurizar. Sin.: pasteurizar.",
-    "e": "",
-    "s": "",
-    "c": "verbo",
-    "ec": ""
-  },
-  {
     "w": "Pastero",
     "p": "m.",
     "d": "Encargado de echar en los capachos la pasta de la aceituna molida.",
@@ -10073,19 +9453,6 @@
     "ec": ""
   },
   {
-    "w": "Pataca",
-    "p": "f.",
-    "d": "Parpalla. Sin.: parpalla, parpallota.",
-    "df": "f. parpalla. Sin.: parpalla, parpallota. | f. Antigua moneda de plata de una onza. | f. Planta de la familia de las compuestas, herbácea, con tallos rectos de dos metros de altura, hojas ovales, acuminadas, ásperas y vellosas, flores redondas y amarillas, y rizoma tuberculoso, feculento y comestible. Sin.: tupinambo, aguaturma. | f. Tubérculo de la pataca. Sin.: tupinambo, aguaturma.",
-    "e": "Del it. patacca.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_italiano",
-    "esp": [
-      "viajera"
-    ]
-  },
-  {
     "w": "Patacamayeño",
     "p": "adj.",
     "d": "Natural de Patacamaya, localidad del departamento de La Paz, en Bolivia. U. t. c. s.",
@@ -10123,16 +9490,6 @@
     "e": "",
     "s": "",
     "c": "vestimenta",
-    "ec": ""
-  },
-  {
-    "w": "Patagorrilla",
-    "p": "f.",
-    "d": "Patagorrillo. Sin.: patagorrillo.",
-    "df": "f. patagorrillo. Sin.: patagorrillo.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
     "ec": ""
   },
   {
@@ -10176,16 +9533,6 @@
     "e": "",
     "s": "",
     "c": "adjetivo",
-    "ec": ""
-  },
-  {
-    "w": "Pataje",
-    "p": "m.",
-    "d": "Patache . Sin.: patache.",
-    "df": "m. patache (‖ embarcación de guerra). Sin.: patache.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
     "ec": ""
   },
   {
@@ -10425,16 +9772,6 @@
     "e": "Del lat. pater familias.",
     "s": "",
     "c": "sustantivo",
-    "ec": "etym_latin"
-  },
-  {
-    "w": "Paternal",
-    "p": "adj.",
-    "d": "Paterno . Sin.: paterno, parental, patrio, familiar.",
-    "df": "adj. paterno (‖ perteneciente al padre o a los padres). Sin.: paterno, parental, patrio, familiar.",
-    "e": "Del lat. mediev. paternalis, y este del lat. paternus 'paterno' y -ālis '-al'.",
-    "s": "",
-    "c": "adjetivo",
     "ec": "etym_latin"
   },
   {
@@ -11002,16 +10339,6 @@
     ]
   },
   {
-    "w": "Patrología",
-    "p": "f.",
-    "d": "Patrística. Sin.: patrística.",
-    "df": "f. patrística. Sin.: patrística. | f. Tratado sobre los santos padres. | f. Colección de escritos de los santos padres.",
-    "e": "Del gr. πατήρ, πατρός patḗr, patrós 'padre' y -logía.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_griego"
-  },
-  {
     "w": "Patronado",
     "p": "adj.",
     "d": "Dicho de una iglesia o de un beneficio: Que tiene patrono.",
@@ -11019,16 +10346,6 @@
     "e": "",
     "s": "",
     "c": "adjetivo",
-    "ec": ""
-  },
-  {
-    "w": "Patronazgo",
-    "p": "m.",
-    "d": "Patronato. Sin.: patronato.",
-    "df": "m. patronato. Sin.: patronato.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
     "ec": ""
   },
   {
@@ -11171,16 +10488,6 @@
     "ec": "etym_latin"
   },
   {
-    "w": "Patín",
-    "p": "m.",
-    "d": "Petrel. Sin.: petrel.",
-    "df": "m. petrel. Sin.: petrel. | m. Aparato de patinar que consiste en una plancha que se adapta a la suela del calzado y lleva una especie de cuchilla o dos pares de ruedas, según sirva para ir sobre el hielo o sobre un pavimento duro, liso y muy llano. | m. patinete. Sin.: patinete, patineta, carriola. | m. Embarcación de recreo formada por dos flotadores paralelos y propulsada, generalmente, por pedales. | m. El Salv. Fetidez del aliento. | m. Nic. En lenguaje juvenil, idea obsesiva.",
-    "e": "Del dim. de pato1.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Patólogo",
     "p": "m. y f.",
     "d": "Y f. Med. Especialista en patología.",
@@ -11231,16 +10538,6 @@
     "e": "De pablar.",
     "s": "",
     "c": "verbo",
-    "ec": ""
-  },
-  {
-    "w": "Paulilla",
-    "p": "f.",
-    "d": "Palomilla . Sin.: palomilla, pajarilla.",
-    "df": "f. palomilla (‖ mariposa nocturna). Sin.: palomilla, pajarilla.",
-    "e": "Del mozár. y ár. hisp. pawléḻa, y este del lat. papilio, -ōnis 'mariposa'.",
-    "s": "",
-    "c": "sustantivo",
     "ec": ""
   },
   {
@@ -11373,16 +10670,6 @@
     "ec": ""
   },
   {
-    "w": "Pavezno",
-    "p": "m.",
-    "d": "Pavipollo. Sin.: pavipollo.",
-    "df": "m. pavipollo. Sin.: pavipollo.",
-    "e": "De pavo.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Paviano",
     "p": "adj.",
     "d": "Natural de Pavía, ciudad de Italia. U. t. c. s.",
@@ -11411,16 +10698,6 @@
     "s": "",
     "c": "verbo",
     "ec": "etym_latin"
-  },
-  {
-    "w": "Paviota",
-    "p": "f.",
-    "d": "Gaviota. Sin.: gaviota, gavia2, gavina.",
-    "df": "f. gaviota. Sin.: gaviota, gavia2, gavina.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
   },
   {
     "w": "Pavipollo",
@@ -11693,16 +10970,6 @@
     "s": "",
     "c": "sustantivo",
     "ec": "etym_latin"
-  },
-  {
-    "w": "Pazote",
-    "p": "m.",
-    "d": "Epazote. Sin.: epazote, pizate, paico, epasote, pasota2, pasote.",
-    "df": "m. epazote. Sin.: epazote, pizate, paico, epasote, pasota2, pasote.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
   },
   {
     "w": "Pañalón",
@@ -12107,16 +11374,6 @@
     "ec": ""
   },
   {
-    "w": "Pechblenda",
-    "p": "f.",
-    "d": "Pecblenda. Sin.: pecblenda.",
-    "df": "f. pecblenda. Sin.: pecblenda.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Pechear",
     "p": "tr.",
     "d": "Embestir con el pecho a la manera de los gallos de pelea.",
@@ -12140,16 +11397,6 @@
     ]
   },
   {
-    "w": "Pechero",
-    "p": "m.",
-    "d": "Babero . Sin.: babero, babadero, babador.",
-    "df": "m. babero (‖ prenda que se coloca a los niños). Sin.: babero, babadero, babador. | m. Arg. Pieza del apero para resguardar el pecho de la cabalgadura. | adj. Obligado a pagar o contribuir con pecho2. U. t. c. s. | adj. plebeyo (‖ que no es noble). U. t. c. s. Sin.: plebeyo, ordinario.",
-    "e": "De pecho1.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Pechería",
     "p": "f.",
     "d": "Conjunto de toda clase de pechos2.",
@@ -12167,16 +11414,6 @@
     "e": "",
     "s": "",
     "c": "adjetivo",
-    "ec": ""
-  },
-  {
-    "w": "Pechicolorado",
-    "p": "m.",
-    "d": "Pechirrojo. Sin.: pechirrojo, pardillo, pajarel, pardal, gafarrón.",
-    "df": "m. pechirrojo. Sin.: pechirrojo, pardillo, pajarel, pardal, gafarrón.",
-    "e": "De pecho1 y colorado.",
-    "s": "",
-    "c": "sustantivo",
     "ec": ""
   },
   {
@@ -12210,16 +11447,6 @@
     "ec": "etym_latin"
   },
   {
-    "w": "Pechirrojo",
-    "p": "m.",
-    "d": "Pardillo . Sin.: pardillo, pechicolorado, pajarel, pardal, gafarrón.",
-    "df": "m. pardillo (‖ ave). Sin.: pardillo, pechicolorado, pajarel, pardal, gafarrón.",
-    "e": "De pecho1 y rojo.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Pechugazo",
     "p": "m.",
     "d": "Caída o encuentro de pechos.",
@@ -12247,16 +11474,6 @@
     "e": "De pechuga.",
     "s": "",
     "c": "adjetivo",
-    "ec": ""
-  },
-  {
-    "w": "Pechín",
-    "p": "m.",
-    "d": "Alpechín. Sin.: alpechín, jámila, morga, murga1, tinaco, aguachas, amurca.",
-    "df": "m. alpechín. Sin.: alpechín, jámila, morga, murga1, tinaco, aguachas, amurca.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
     "ec": ""
   },
   {
@@ -12945,31 +12162,11 @@
     "ec": ""
   },
   {
-    "w": "Pedregullo",
-    "p": "m.",
-    "d": "Ripio . Sin.: ripio, cascajo, casquijo.",
-    "df": "m. ripio (‖ fragmentos de piedras). Sin.: ripio, cascajo, casquijo.",
-    "e": "Del gall. pedregullo 'cascajo', y este der. de pedra 'piedra'.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Pedrejón",
     "p": "m.",
     "d": "Piedra grande o suelta.",
     "df": "m. Piedra grande o suelta.",
     "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Pedrera",
-    "p": "f.",
-    "d": "Cantera . Sin.: cantera, tajo, pedrero.",
-    "df": "f. cantera (‖ sitio de donde se saca piedra). Sin.: cantera, tajo, pedrero.",
-    "e": "De piedra.",
     "s": "",
     "c": "sustantivo",
     "ec": ""
@@ -13039,16 +12236,6 @@
     "p": "m.",
     "d": "Piedra o granizo grueso que cae de las nubes en abundancia y con gran violencia. Sin.: granizo, granizada1, pedrisquero, pedrea.",
     "df": "m. Piedra o granizo grueso que cae de las nubes en abundancia y con gran violencia. Sin.: granizo, granizada1, pedrisquero, pedrea. | m. Conjunto o abundancia de piedras.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Pedrisquero",
-    "p": "m.",
-    "d": "Pedrisco . Sin.: pedrisco, granizada1, granizo, pedrea.",
-    "df": "m. pedrisco (‖ granizo). Sin.: pedrisco, granizada1, granizo, pedrea.",
     "e": "",
     "s": "",
     "c": "sustantivo",
@@ -13163,29 +12350,6 @@
     "s": "",
     "c": "verbo",
     "ec": "etym_latin"
-  },
-  {
-    "w": "Pegadizo",
-    "p": "adj.",
-    "d": "Pegajoso . Sin.: chicloso, pegajoso.",
-    "df": "adj. pegajoso (‖ que se pega con facilidad). Sin.: chicloso, pegajoso. | adj. Que se graba en la memoria con facilidad. Sin.: fácil. | adj. Fácilmente contagioso. Sin.: contagioso, pegajoso. | adj. Que se arrima a otra persona o se introduce con ella para comer o divertirse a costa suya. Sin.: gorrón2. | adj. postizo (‖ no natural). Sin.: postizo, hechizo. Ant.: natural.",
-    "e": "",
-    "s": "",
-    "c": "adjetivo",
-    "ec": "",
-    "esp": [
-      "explosiva"
-    ]
-  },
-  {
-    "w": "Pegador",
-    "p": "m.",
-    "d": "Rémora . Sin.: rémora, guaicán, pega1, tardanaos.",
-    "df": "m. rémora (‖ pez). Sin.: rémora, guaicán, pega1, tardanaos. | m. Ingen. En las minas y canteras, operario que está encargado de pegar fuego a las mechas de los barrenos.",
-    "e": "De pegar.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
   },
   {
     "w": "Pegadura",
@@ -13381,16 +12545,6 @@
     "ec": ""
   },
   {
-    "w": "Pegullón",
-    "p": "m.",
-    "d": "Pegujón. Sin.: pegujón.",
-    "df": "m. pegujón. Sin.: pegujón.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Pegunta",
     "p": "f.",
     "d": "Señal o marca que se pone con pez derretida al ganado, especialmente al lanar.",
@@ -13462,16 +12616,6 @@
     "esp": [
       "viajera"
     ]
-  },
-  {
-    "w": "Peina",
-    "p": "f.",
-    "d": "Peineta . Sin.: peineta.",
-    "df": "f. peineta (‖ peine convexo de mujer). Sin.: peineta.",
-    "e": "De peine.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
   },
   {
     "w": "Peinada",
@@ -13592,16 +12736,6 @@
     "s": "",
     "c": "sustantivo",
     "ec": ""
-  },
-  {
-    "w": "Peje",
-    "p": "m.",
-    "d": "Pez . Sin.: pez1.",
-    "df": "m. pez (‖ vertebrado acuático). Sin.: pez1. | m. Hombre astuto, sagaz e industrioso.",
-    "e": "Del lat. piscis.",
-    "s": "",
-    "c": "zoologia",
-    "ec": "etym_latin"
   },
   {
     "w": "Pejepalo",
@@ -13754,16 +12888,6 @@
     "p": "f.",
     "d": "Acción y efecto de pelar . Sin.: mondadura, pelado2.",
     "df": "f. Acción y efecto de pelar (‖ quitar la piel). Sin.: mondadura, pelado2. | f. Monda, hollejo, cáscara. Sin.: mondadura, corteza1, cáscara, piel.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Pelagallos",
-    "p": "m. coloq.",
-    "d": "Pelagatos. Sin.: pelafustán, pelagatos, paria.",
-    "df": "m. coloq. pelagatos. Sin.: pelafustán, pelagatos, paria.",
     "e": "",
     "s": "",
     "c": "sustantivo",
@@ -14195,16 +13319,6 @@
     "ec": ""
   },
   {
-    "w": "Peliforra",
-    "p": "f. coloq.",
-    "d": "Prostituta. Sin.: prostituta.",
-    "df": "f. coloq. prostituta. Sin.: prostituta.",
-    "e": "De pelo.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Peligno",
     "p": "adj.",
     "d": "Natural de un territorio de la Italia antigua comprendido en el que ahora se llama de los Abruzos. U. t. c. s.",
@@ -14528,16 +13642,6 @@
     "ec": "etym_latin"
   },
   {
-    "w": "Pelosilla",
-    "p": "f.",
-    "d": "Vellosilla. Sin.: vellosilla, pelusilla.",
-    "df": "f. vellosilla. Sin.: vellosilla, pelusilla.",
-    "e": "De peloso.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Peloso",
     "p": "adj.",
     "d": "Que tiene pelo.",
@@ -14596,19 +13700,6 @@
     "s": "",
     "c": "sustantivo",
     "ec": ""
-  },
-  {
-    "w": "Pelotero",
-    "p": "m. coloq.",
-    "d": "Pelotera. Sin.: riña, pelotera.",
-    "df": "m. coloq. pelotera. Sin.: riña, pelotera. | m. y f. Persona que tiene por oficio hacer pelotas de jugar. | m. y f. Persona que suministra pelotas en el juego. | m. y f. coloq. Dep. futbolista. Sin.: futbolista. | m. y f. Ant., Ec., EE. UU., Méx., Nic., Pan. y Ven. Jugador de béisbol. Sin.: beisbolista. | adj. C. Rica. entremetido. Sin.: entremetido, entrometido, metido, metete, metiche, entrépito, meterete, presentado, sacón1, safrisco, sácalas, salsero, metijón, meticón, refitolero. | adj. Nic. tacaño (‖ que escatima en el gasto). Sin.: tacaño, agarrado, pinche, codo2, coñete, coño, durañón, hambriento, mezquino, piche1, pichiriche, pichirre, pisirico.",
-    "e": "De pelote.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "",
-    "esp": [
-      "explosiva"
-    ]
   },
   {
     "w": "Pelotilla",
@@ -14681,19 +13772,6 @@
     "ec": ""
   },
   {
-    "w": "Peluche",
-    "p": "m.",
-    "d": "Felpa . Sin.: felpa.",
-    "df": "m. felpa (‖ tejido con pelo por el haz). Sin.: felpa. | m. Juguete de peluche. Sin.: muñeco, juguete.",
-    "e": "Del fr. peluche.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_frances",
-    "esp": [
-      "viajera"
-    ]
-  },
-  {
     "w": "Peluco",
     "p": "m.",
     "d": "Jerg. Esp. Reloj ostentoso de pulsera o de bolsillo.",
@@ -14739,16 +13817,6 @@
     "d": "Pelo muy tenue de algunas frutas. Sin.: pelo, vello.",
     "df": "f. Pelo muy tenue de algunas frutas. Sin.: pelo, vello. | f. Pelo menudo que con el uso se desprende de las telas. | f. Vello tenue que aparece en la cara de las personas y en el cuerpo de los polluelos de algunas aves. Sin.: pelo, vello. | f. Aglomeración de polvo y suciedad que se forma generalmente debajo de los muebles. | f. coloq. Envidia propia de los niños. Sin.: celos, envidia.",
     "e": "Del despect. de pelo.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Pelusilla",
-    "p": "f.",
-    "d": "Vellosilla. Sin.: vellosilla, pelosilla.",
-    "df": "f. vellosilla. Sin.: vellosilla, pelosilla.",
-    "e": "Del dim. de pelusa.",
     "s": "",
     "c": "sustantivo",
     "ec": ""
@@ -14867,16 +13935,6 @@
     "e": "",
     "s": "",
     "c": "adjetivo",
-    "ec": ""
-  },
-  {
-    "w": "Penadilla",
-    "p": "f.",
-    "d": "Penada . Sin.: penada, vasija.",
-    "df": "f. penada (‖ vasija de cerámica). Sin.: penada, vasija.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
     "ec": ""
   },
   {
@@ -15018,16 +14076,6 @@
     "d": "Derecho de apropiarse en las presas de mar todos los géneros que están sobre cubierta, aunque pertenezcan a los ocupantes de la embarcación apresada.",
     "df": "m. Derecho de apropiarse en las presas de mar todos los géneros que están sobre cubierta, aunque pertenezcan a los ocupantes de la embarcación apresada.",
     "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Pendolario",
-    "p": "m.",
-    "d": "Pendolista . Sin.: pendolista.",
-    "df": "m. pendolista (‖ persona que escribe con buena letra). Sin.: pendolista.",
-    "e": "De péndola1.",
     "s": "",
     "c": "sustantivo",
     "ec": ""
@@ -15257,16 +14305,6 @@
     "esp": [
       "viajera"
     ]
-  },
-  {
-    "w": "Penisla",
-    "p": "f.",
-    "d": "Península. Sin.: península, quersoneso.",
-    "df": "f. península. Sin.: península, quersoneso.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
   },
   {
     "w": "Penitenciado",
@@ -15865,16 +14903,6 @@
     "ec": ""
   },
   {
-    "w": "Pepón",
-    "p": "m.",
-    "d": "Sandía . Sin.: sandía.",
-    "df": "m. sandía (‖ fruto). Sin.: sandía.",
-    "e": "Del lat. pepo, -ōnis 'melón1', y este del gr. πέπων pépōn.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_latin"
-  },
-  {
     "w": "Pepónide",
     "p": "f.",
     "d": "Bot. Fruto carnoso unido al cáliz, con una sola celda y muchas semillas adheridas a tres placentas; p. ej., la calabaza, el pepino y el melón.",
@@ -15983,26 +15011,6 @@
     "d": "Arq. Parte que en la altura de un arco, bóveda o armadura excede al semicírculo.",
     "df": "m. Arq. Parte que en la altura de un arco, bóveda o armadura excede al semicírculo. | m. Ingen. En las carreteras, vías férreas o circuitos, mayor elevación de la parte exterior de una curva en relación con la interior. Sin.: desnivel, inclinación.",
     "e": "De peraltar.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Peralto",
-    "p": "m.",
-    "d": "Altura . Sin.: altura.",
-    "df": "m. altura (‖ distancia entre el vértice y un lado). Sin.: altura.",
-    "e": "Del lat. *peraltus 'muy alto'.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_latin"
-  },
-  {
-    "w": "Perantón",
-    "p": "m.",
-    "d": "Mirabel . Sin.: mirabel, ayuga, pinillo.",
-    "df": "m. mirabel (‖ planta quenopodiácea). Sin.: mirabel, ayuga, pinillo. | m. Abanico muy grande. | m. coloq. Persona muy alta.",
-    "e": "Del aum. de peralto.",
     "s": "",
     "c": "sustantivo",
     "ec": ""
@@ -16530,33 +15538,10 @@
     "ec": ""
   },
   {
-    "w": "Perecible",
-    "p": "adj.",
-    "d": "Perecedero . Sin.: perecedero, breve, caduco, efímero, fugaz, pasajero, transitorio, corto1.",
-    "df": "adj. perecedero (‖ poco durable). Sin.: perecedero, breve, caduco, efímero, fugaz, pasajero, transitorio, corto1.",
-    "e": "",
-    "s": "",
-    "c": "adjetivo",
-    "ec": "",
-    "esp": [
-      "explosiva"
-    ]
-  },
-  {
     "w": "Perecimiento",
     "p": "m.",
     "d": "Acción de perecer.",
     "df": "m. Acción de perecer.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Peregrinaje",
-    "p": "m.",
-    "d": "Peregrinación. Sin.: peregrinación, romería, viaje1, excursión, éxodo.",
-    "df": "m. peregrinación. Sin.: peregrinación, romería, viaje1, excursión, éxodo.",
     "e": "",
     "s": "",
     "c": "sustantivo",
@@ -16613,16 +15598,6 @@
     "ec": ""
   },
   {
-    "w": "Perencejo",
-    "p": "m.",
-    "d": "Perengano. Sin.: perengano, fulano, mengano, zutano.",
-    "df": "m. perengano. Sin.: perengano, fulano, mengano, zutano.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Perención",
     "p": "f.",
     "d": "Der. Prescripción que anulaba el procedimiento, cuando transcurría cierto número de años sin haber hecho gestiones las partes, hoy llamada caducidad de la instancia.",
@@ -16633,26 +15608,6 @@
     "ec": "etym_latin"
   },
   {
-    "w": "Perendeca",
-    "p": "f. coloq.",
-    "d": "Prostituta. Sin.: prostituta.",
-    "df": "f. coloq. prostituta. Sin.: prostituta.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Perendengue",
-    "p": "m.",
-    "d": "Pendiente . Sin.: pendiente, arete, zarcillo1, aro1, caravanas, pantalla.",
-    "df": "m. pendiente (‖ arete). Sin.: pendiente, arete, zarcillo1, aro1, caravanas, pantalla. | m. Adorno femenino de poco valor. | m. Moneda de vellón que se acuñó en tiempo de Felipe IV, y valía cuatro maravedís. | m. pl. Requilorios, dificultades, trabas.",
-    "e": "Der. de pender.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Perengano",
     "p": "m. y f.",
     "d": "Y f. U. para aludir a alguien cuyo nombre se ignora o no se quiere expresar después de haber mencionado a otra u otras personas con palabras de igual indeterminación, como fulano, mengano, zutano. Sin.: perencejo, fulano, mengano, zutano.",
@@ -16660,26 +15615,6 @@
     "e": "Quizá cruce de Pere o Pérez y mengano.",
     "s": "",
     "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Perennal",
-    "p": "adj.",
-    "d": "Perenne. Sin.: perenne.",
-    "df": "adj. perenne. Sin.: perenne.",
-    "e": "",
-    "s": "",
-    "c": "adjetivo",
-    "ec": ""
-  },
-  {
-    "w": "Perennalmente",
-    "p": "adv.",
-    "d": "Perennemente. Sin.: perennemente.",
-    "df": "adv. perennemente. Sin.: perennemente.",
-    "e": "",
-    "s": "",
-    "c": "adverbio",
     "ec": ""
   },
   {
@@ -16856,16 +15791,6 @@
     "ec": ""
   },
   {
-    "w": "Perfoliata",
-    "p": "f.",
-    "d": "Perfoliada. Sin.: perfoliada.",
-    "df": "f. perfoliada. Sin.: perfoliada.",
-    "e": "Del lat. mod. perfoliata, y este del lat. per- 'per-' y foliāta, f. de foliātus 'provisto de hojas'.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_latin"
-  },
-  {
     "w": "Perforador",
     "p": "adj.",
     "d": "Que perfora u horada. U. t. c. s. Sin.: taladro, barrena, broca, excavador.",
@@ -17004,16 +15929,6 @@
     "s": "",
     "c": "sustantivo",
     "ec": "etym_latin"
-  },
-  {
-    "w": "Pergenio",
-    "p": "m.",
-    "d": "Pergeño. Sin.: pergeño.",
-    "df": "m. pergeño. Sin.: pergeño. | m. Ur. Niño, especialmente el que es inquieto y vivaz.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
   },
   {
     "w": "Pergeñar",
@@ -17282,19 +16197,6 @@
     "ec": ""
   },
   {
-    "w": "Perindola",
-    "p": "f.",
-    "d": "Perinola . Sin.: perinola, peonza, trompo, peón1, pirindola, pirla, guazapa.",
-    "df": "f. perinola (‖ peonza pequeña). Sin.: perinola, peonza, trompo, peón1, pirindola, pirla, guazapa. | f. perinola (‖ adorno). Sin.: perinola, pirindola.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "",
-    "esp": [
-      "explosiva"
-    ]
-  },
-  {
     "w": "Perineal",
     "p": "adj.",
     "d": "Anat. Perteneciente o relativo al perineo. Región perineal.",
@@ -17467,16 +16369,6 @@
     "ec": ""
   },
   {
-    "w": "Periquito",
-    "p": "m.",
-    "d": "Perico . Sin.: perico1, mariquita, catey.",
-    "df": "m. perico (‖ ave). Sin.: perico1, mariquita, catey. | adj. Perteneciente o relativo al Real Club Deportivo Español de Barcelona. Sin.: perico2. | adj. Jugador o seguidor del Real Club Deportivo Español de Barcelona. U. t. c. s. Sin.: perico2.",
-    "e": "Del cat. [els quatre gats] periquitos '[los cuatro gatos] periquitos', cuatro gatos idénticos al gato Periquito, con los que el humorista V. Castanys representaba en los años 20 a los seguidores del R. C. D. Español por alus. a la escasa afluencia de público a su estadio.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Periscopio",
     "p": "m.",
     "d": "Instrumento óptico que permite, por medio de espejos o prismas instalados en un tubo vertical, la observación de una zona inaccesible a la visión directa; como el de los submarinos.",
@@ -17561,16 +16453,6 @@
     "p": "f.",
     "d": "Trabajo o estudio que hace un perito. Sin.: peritaje, evaluación, valoración, estimación, informe1.",
     "df": "f. Trabajo o estudio que hace un perito. Sin.: peritaje, evaluación, valoración, estimación, informe1.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Peritaje",
-    "p": "m.",
-    "d": "Peritación. Sin.: peritación, evaluación, valoración, estimación, informe1.",
-    "df": "m. peritación. Sin.: peritación, evaluación, valoración, estimación, informe1. | m. Estudios o carrera de perito.",
     "e": "",
     "s": "",
     "c": "sustantivo",
@@ -18062,16 +16944,6 @@
     "ec": ""
   },
   {
-    "w": "Pernocta",
-    "p": "f.",
-    "d": "Pernoctación. Sin.: pernoctación.",
-    "df": "f. pernoctación. Sin.: pernoctación.",
-    "e": "De pernoctar.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Pernoctación",
     "p": "f.",
     "d": "Acción de pernoctar. Sin.: pernocta.",
@@ -18119,16 +16991,6 @@
     "e": "",
     "s": "",
     "c": "adjetivo",
-    "ec": ""
-  },
-  {
-    "w": "Perojimén",
-    "p": "m.",
-    "d": "Pedrojiménez. Sin.: pedrojiménez.",
-    "df": "m. pedrojiménez. Sin.: pedrojiménez.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
     "ec": ""
   },
   {
@@ -18255,16 +17117,6 @@
     "esp": [
       "larga"
     ]
-  },
-  {
-    "w": "Perpendículo",
-    "p": "m.",
-    "d": "Plomada . Sin.: plomada, aplomo2, plomo.",
-    "df": "m. plomada (‖ pesa de metal). Sin.: plomada, aplomo2, plomo. | m. Mec. péndulo (‖ cuerpo que oscila). Sin.: péndulo, péndola2.",
-    "e": "Del lat. perpendicŭlum.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_latin"
   },
   {
     "w": "Perpetración",
@@ -18635,16 +17487,6 @@
     "e": "Del lat. Persiānus, de Persia 'Persia'.",
     "s": "",
     "c": "gentilicio",
-    "ec": "etym_latin"
-  },
-  {
-    "w": "Persicaria",
-    "p": "f.",
-    "d": "Duraznillo. Sin.: duraznillo.",
-    "df": "f. duraznillo. Sin.: duraznillo.",
-    "e": "Del lat. persicaria.",
-    "s": "",
-    "c": "sustantivo",
     "ec": "etym_latin"
   },
   {
@@ -19048,16 +17890,6 @@
     "ec": "etym_latin"
   },
   {
-    "w": "Pervinca",
-    "p": "f.",
-    "d": "Vincapervinca. Sin.: vincapervinca, vinca.",
-    "df": "f. vincapervinca. Sin.: vincapervinca, vinca.",
-    "e": "Del lat. pervinca.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_latin"
-  },
-  {
     "w": "Pervivencia",
     "p": "f.",
     "d": "Acción y efecto de pervivir.",
@@ -19224,16 +18056,6 @@
     "ec": ""
   },
   {
-    "w": "Pesantez",
-    "p": "f.",
-    "d": "Pesadez . Sin.: pesadez, gravedad, gravitación.",
-    "df": "f. pesadez (‖ gravedad terrestre). Sin.: pesadez, gravedad, gravitación.",
-    "e": "De pesante y -ez.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Pesario",
     "p": "m.",
     "d": "Med. Dispositivo que se coloca en la vagina para corregir el descenso de la matriz.",
@@ -19242,16 +18064,6 @@
     "s": "",
     "c": "sustantivo",
     "ec": "etym_latin"
-  },
-  {
-    "w": "Pescada",
-    "p": "f.",
-    "d": "Merluza . Sin.: merluza, pescadilla.",
-    "df": "f. merluza (‖ pez). Sin.: merluza, pescadilla. | f. Merluza seca. | f. germ. Llave hecha de un alambre, ganzúa.",
-    "e": "De pescar.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
   },
   {
     "w": "Pescadero",
@@ -19299,16 +18111,6 @@
     "d": "And. Punta de besana.",
     "df": "f. And. Punta de besana.",
     "e": "Del desus. pos 'después, tras1' y cola1.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Pescozada",
-    "p": "f.",
-    "d": "Pescozón . Sin.: pescozón, collazo2, cogotazo, colleja2.",
-    "df": "f. pescozón (‖ golpe en el pescuezo o la cabeza). Sin.: pescozón, collazo2, cogotazo, colleja2. | f. Golpe ritual que quien armaba caballero daba en el cuello con la mano abierta al caballero novel. | f. C. Rica. pescozón (‖ golpe en cualquier parte del cuerpo). Sin.: pescozón.",
-    "e": "",
     "s": "",
     "c": "sustantivo",
     "ec": ""
@@ -19773,16 +18575,6 @@
     "ec": ""
   },
   {
-    "w": "Petar",
-    "p": "intr.",
-    "d": "Agradar . Sin.: agradar, satisfacer, apetecer.",
-    "df": "intr. coloq. agradar (‖ complacer). Sin.: agradar, satisfacer, apetecer. | intr. coloq. Estallar o explotar. Sin.: explotar2, estallar. | intr. Gal. y León. Golpear en el suelo, llamar a la puerta.",
-    "e": "Del cat. petar 'peer', 'agradar', 'estallar', der. de pet 'pedo'.",
-    "s": "",
-    "c": "verbo",
-    "ec": ""
-  },
-  {
     "w": "Petardeo",
     "p": "m.",
     "d": "Ruido repetitivo semejante al producido por detonaciones de petardos.",
@@ -20160,32 +18952,6 @@
     "ec": ""
   },
   {
-    "w": "Petroleoquímica",
-    "p": "adj.",
-    "d": "Petroquímico. Sin.: petroquímico.",
-    "df": "adj. petroquímico. Sin.: petroquímico.",
-    "e": "",
-    "s": "",
-    "c": "adjetivo",
-    "ec": "",
-    "esp": [
-      "larga"
-    ]
-  },
-  {
-    "w": "Petroleoquímico",
-    "p": "adj.",
-    "d": "Petroquímico. Sin.: petroquímico.",
-    "df": "adj. petroquímico. Sin.: petroquímico.",
-    "e": "",
-    "s": "",
-    "c": "adjetivo",
-    "ec": "",
-    "esp": [
-      "larga"
-    ]
-  },
-  {
     "w": "Petrología",
     "p": "f.",
     "d": "Estudio de las rocas.",
@@ -20256,16 +19022,6 @@
     "e": "Del lat. cient. Petunia, der. del fr. petun 'planta del tabaco', y este del tupí petỹ, y el lat. -ia '-ia'.",
     "s": "",
     "c": "botanica",
-    "ec": "etym_latin"
-  },
-  {
-    "w": "Peucédano",
-    "p": "m.",
-    "d": "Servato. Sin.: servato, ervato.",
-    "df": "m. servato. Sin.: servato, ervato.",
-    "e": "Del lat. peucedănum, y este del gr. πευκέδανον peukédanon.",
-    "s": "",
-    "c": "sustantivo",
     "ec": "etym_latin"
   },
   {
@@ -20703,49 +19459,6 @@
     "ec": ""
   },
   {
-    "w": "Picafigo",
-    "p": "m.",
-    "d": "Papafigo . Sin.: papafigo, papahígo.",
-    "df": "m. papafigo (‖ ave paseriforme de catorce centímetros). Sin.: papafigo, papahígo.",
-    "e": "De picar y figo.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Picaflor",
-    "p": "m.",
-    "d": "Colibrí. Sin.: colibrí, tominejo, tomineja, chupaflor, chupamiel, zumbador, chupamirto, chuparrosa, rumbo2, quinde, tentenelaire, gurrión, chichinflor, gorrión, tucusito, zunzún.",
-    "df": "m. colibrí. Sin.: colibrí, tominejo, tomineja, chupaflor, chupamiel, zumbador, chupamirto, chuparrosa, rumbo2, quinde, tentenelaire, gurrión, chichinflor, gorrión, tucusito, zunzún. | m. Frívolo inconstante.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "",
-    "esp": [
-      "explosiva"
-    ]
-  },
-  {
-    "w": "Picagallina",
-    "p": "f.",
-    "d": "Álsine. Sin.: álsine, pamplina.",
-    "df": "f. álsine. Sin.: álsine, pamplina.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Picagrega",
-    "p": "f.",
-    "d": "Alcaudón. Sin.: alcaudón, caudón, degollador, desollador, galdón, verdugo, gaudón.",
-    "df": "f. alcaudón. Sin.: alcaudón, caudón, degollador, desollador, galdón, verdugo, gaudón.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Picajoso",
     "p": "adj.",
     "d": "Que fácilmente se pica o da por ofendido. U. t. c. s. Sin.: susceptible, quisquilloso.",
@@ -20934,16 +19647,6 @@
     "s": "",
     "c": "sustantivo",
     "ec": ""
-  },
-  {
-    "w": "Picaza",
-    "p": "f.",
-    "d": "Urraca. Sin.: urraca.",
-    "df": "f. urraca. Sin.: urraca. | f. Mur. Azada o legón pequeño que sirve para cavar la tierra superficialmente y limpiarla de las hierbas.",
-    "e": "Del lat. pica.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_latin"
   },
   {
     "w": "Picazo",
@@ -21219,16 +19922,6 @@
     "d": "Rollo o columna de piedra o de fábrica, que había a la entrada de algunos lugares, donde se exponían públicamente las cabezas de los ajusticiados, o los reos. Sin.: columna, poste.",
     "df": "f. Rollo o columna de piedra o de fábrica, que había a la entrada de algunos lugares, donde se exponían públicamente las cabezas de los ajusticiados, o los reos. Sin.: columna, poste. | f. Variedad de cereza, que se caracteriza por su forma algo apuntada, consistencia carnosa y muy escasa adherencia al pedúnculo. Sin.: cereza. | f. Juego de muchachos consistente en tirar un palo puntiagudo para clavarlo en el suelo y derribar el del contrario. | f. Parte superior, en punta, de una torre o montaña muy alta. Sin.: altura, cumbre. | f. Mar. Barra ahorquillada donde descansa el perno sobre el cual gira el guimbalete.",
     "e": "De pico1 o pica1.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Picotada",
-    "p": "f.",
-    "d": "Picotazo. Sin.: picotazo, picazo2.",
-    "df": "f. picotazo. Sin.: picotazo, picazo2.",
-    "e": "",
     "s": "",
     "c": "sustantivo",
     "ec": ""
@@ -21603,16 +20296,6 @@
     "ec": ""
   },
   {
-    "w": "Pigmentar",
-    "p": "tr.",
-    "d": "Colorar . Sin.: colorar, colorear, tintar, teñir.",
-    "df": "tr. colorar (‖ dar color a una cosa). Sin.: colorar, colorear, tintar, teñir. | tr. Producir coloración anormal y prolongada en la piel y otros tejidos, por diversas causas. U. t. c. prnl.",
-    "e": "",
-    "s": "",
-    "c": "verbo",
-    "ec": ""
-  },
-  {
     "w": "Pigmentario",
     "p": "adj.",
     "d": "Perteneciente o relativo al pigmento. Sin.: tintóreo.",
@@ -21704,16 +20387,6 @@
     "s": "",
     "c": "sustantivo",
     "ec": "etym_latin"
-  },
-  {
-    "w": "Pijote",
-    "p": "m.",
-    "d": "Esmeril2. Sin.: esmeril2.",
-    "df": "m. esmeril2. Sin.: esmeril2.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
   },
   {
     "w": "Pijotero",
@@ -21970,19 +20643,6 @@
     "ec": ""
   },
   {
-    "w": "Piltra",
-    "p": "f. coloq.",
-    "d": "Cama . Sin.: cama1, lecho, cucha, camucha.",
-    "df": "f. coloq. cama (‖ mueble). Sin.: cama1, lecho, cucha, camucha.",
-    "e": "Del fr. ant. peautre 'catre'.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_frances",
-    "esp": [
-      "viajera"
-    ]
-  },
-  {
     "w": "Piltrafa",
     "p": "f.",
     "d": "Parte de carne flaca, que casi no tiene más que el pellejo.",
@@ -22142,16 +20802,6 @@
     "ec": ""
   },
   {
-    "w": "Pimpollear",
-    "p": "intr.",
-    "d": "Pimpollecer. Sin.: pimpollecer.",
-    "df": "intr. pimpollecer. Sin.: pimpollecer.",
-    "e": "",
-    "s": "",
-    "c": "verbo",
-    "ec": ""
-  },
-  {
     "w": "Pimpollecer",
     "p": "intr.",
     "d": "Dicho de una planta: Echar renuevos o pimpollos. Sin.: pimpollear.",
@@ -22203,16 +20853,6 @@
     "d": "Tenis de mesa. Sin.: ping-pong.",
     "df": "m. tenis de mesa. Sin.: ping-pong.",
     "e": "De Ping-pong®, marca reg.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Pinabete",
-    "p": "m.",
-    "d": "Abeto . Sin.: abeto, sapino.",
-    "df": "m. abeto (‖ árbol). Sin.: abeto, sapino.",
-    "e": "De pino1 y abeto.",
     "s": "",
     "c": "sustantivo",
     "ec": ""
@@ -22292,16 +20932,6 @@
     "p": "f.",
     "d": "Hojarasca del pino y demás coníferas.",
     "df": "f. Hojarasca del pino y demás coníferas. | f. Embarcación de remo y de velas, pequeña, estrecha y ligera, que se usó en la marina mercante.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Pincarrasca",
-    "p": "f.",
-    "d": "Pincarrasco. Sin.: pincarrasco, pino1.",
-    "df": "f. pincarrasco. Sin.: pincarrasco, pino1.",
     "e": "",
     "s": "",
     "c": "sustantivo",
@@ -22421,16 +21051,6 @@
     "ec": ""
   },
   {
-    "w": "Pinchón",
-    "p": "m.",
-    "d": "Pinzón . Sin.: pinzón, catachín, triguera.",
-    "df": "m. pinzón (‖ ave paseriforme). Sin.: pinzón, catachín, triguera.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Pinciano",
     "p": "adj.",
     "d": "Natural de Valladolid, ciudad de España. U. t. c. s.",
@@ -22439,16 +21059,6 @@
     "s": "",
     "c": "gentilicio",
     "ec": "etym_latin"
-  },
-  {
-    "w": "Pindonguear",
-    "p": "intr.",
-    "d": "Pendonear. Sin.: pendonear, callejear, errar, trotar, vagabundear.",
-    "df": "intr. coloq. pendonear. Sin.: pendonear, callejear, errar, trotar, vagabundear.",
-    "e": "De pindonga.",
-    "s": "",
-    "c": "verbo",
-    "ec": ""
   },
   {
     "w": "Pindongueo",
@@ -22501,16 +21111,6 @@
     "e": "",
     "s": "",
     "c": "adjetivo",
-    "ec": ""
-  },
-  {
-    "w": "Pinganello",
-    "p": "m.",
-    "d": "Carámbano . Sin.: carámbano, chuzo, candelizo, candela, pinganillo.",
-    "df": "m. carámbano (‖ pedazo de hielo). Sin.: carámbano, chuzo, candelizo, candela, pinganillo.",
-    "e": "Del dim. del leon. píngano 'extremo puntiagudo', 'montaña de cima puntiaguda', y este der. de pingar.",
-    "s": "",
-    "c": "sustantivo",
     "ec": ""
   },
   {
@@ -22760,16 +21360,6 @@
     "ec": ""
   },
   {
-    "w": "Pintarrajar",
-    "p": "tr.",
-    "d": "Pintarrajear. Sin.: pintar, colorear, manchar1, pintarrajear, pintorrear, repintarse.",
-    "df": "tr. coloq. pintarrajear. Sin.: pintar, colorear, manchar1, pintarrajear, pintorrear, repintarse.",
-    "e": "",
-    "s": "",
-    "c": "verbo",
-    "ec": ""
-  },
-  {
     "w": "Pintarrajear",
     "p": "tr.",
     "d": "Pintar sin arte, de uno o varios colores, algo. El niño pintarrajeó la pared.",
@@ -22787,16 +21377,6 @@
     "e": "",
     "s": "",
     "c": "arte_literatura",
-    "ec": ""
-  },
-  {
-    "w": "Pintarroja",
-    "p": "f.",
-    "d": "Lija . Sin.: lija, melgacho, tollo1.",
-    "df": "f. lija (‖ pez). Sin.: lija, melgacho, tollo1.",
-    "e": "De pinta1 y roja.",
-    "s": "",
-    "c": "sustantivo",
     "ec": ""
   },
   {
@@ -22857,16 +21437,6 @@
     "e": "",
     "s": "",
     "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Pintorrear",
-    "p": "tr.",
-    "d": "Pintarrajear . Sin.: pintar, colorear, pintarrajar, pintarrajear.",
-    "df": "tr. coloq. pintarrajear (‖ pintar sin arte). Sin.: pintar, colorear, pintarrajar, pintarrajear.",
-    "e": "De pintar.",
-    "s": "",
-    "c": "verbo",
     "ec": ""
   },
   {
@@ -23059,16 +21629,6 @@
     ]
   },
   {
-    "w": "Piojuelo",
-    "p": "m.",
-    "d": "Pulgón. Sin.: pulgón.",
-    "df": "m. pulgón. Sin.: pulgón.",
-    "e": "Del dim. de piojo.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Piola",
     "p": "f.",
     "d": "Cuerda delgada. Sin.: cabo1, cordel, cuerda.",
@@ -23163,16 +21723,6 @@
     "d": "Terreno poblado de piornos.",
     "df": "f. Terreno poblado de piornos.",
     "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Piorno",
-    "p": "m.",
-    "d": "Gayomba. Sin.: gayomba, canario.",
-    "df": "m. gayomba. Sin.: gayomba, canario. | m. codeso. Sin.: codeso, cítiso, borne2.",
-    "e": "De or. inc.",
     "s": "",
     "c": "sustantivo",
     "ec": ""
@@ -23400,16 +21950,6 @@
     ]
   },
   {
-    "w": "Piporro",
-    "p": "m.",
-    "d": "Botijo . Sin.: botijo, boteja, pipo3.",
-    "df": "m. botijo (‖ vasija para refrescar el agua). Sin.: botijo, boteja, pipo3. | m. coloq. fagot (‖ instrumento musical). Sin.: fagot, fagote. | m. coloq. Persona que toca el fagot.",
-    "e": "Del aum. despect. de pipa1 'lengüeta'.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Pipote",
     "p": "m.",
     "d": "Pipa pequeña que sirve para encerrar y transportar licores, pescados y otras cosas.",
@@ -23418,20 +21958,6 @@
     "s": "",
     "c": "sustantivo",
     "ec": ""
-  },
-  {
-    "w": "Pipí",
-    "p": "m.",
-    "d": "Pitpit. Sin.: pitpit.",
-    "df": "m. pitpit. Sin.: pitpit. | m. infant. orina. Sin.: orina, pis1, micción, chis1, orine, pichí, pichín.",
-    "e": "Voz onomat.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_onomatopeya",
-    "esp": [
-      "onom",
-      "explosiva"
-    ]
   },
   {
     "w": "Pique",
@@ -23475,16 +22001,6 @@
     "d": "Tropa de piqueros.",
     "df": "f. Tropa de piqueros.",
     "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Piqueta",
-    "p": "f.",
-    "d": "Zapapico. Sin.: zapapico, pico1, piocha2.",
-    "df": "f. zapapico. Sin.: zapapico, pico1, piocha2. | f. Herramienta de albañilería, con mango de madera y dos bocas opuestas, una plana como de martillo, y otra aguzada como de pico.",
-    "e": "Del dim. de pica1.",
     "s": "",
     "c": "sustantivo",
     "ec": ""
@@ -23855,16 +22371,6 @@
     "ec": ""
   },
   {
-    "w": "Pirla",
-    "p": "f.",
-    "d": "Perinola . Sin.: perinola, pirindola, perindola, guazapa.",
-    "df": "f. perinola (‖ peonza pequeña). Sin.: perinola, pirindola, perindola, guazapa.",
-    "e": "De la onomat. pirl, imit. del ruido que hace al girar.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Pirlitero",
     "p": "m.",
     "d": "Especie de espino que da majuelas.",
@@ -24194,16 +22700,6 @@
     "ec": "etym_griego"
   },
   {
-    "w": "Pirroniano",
-    "p": "adj.",
-    "d": "Pirrónico. Sin.: escéptico, pirrónico.",
-    "df": "adj. pirrónico. Sin.: escéptico, pirrónico.",
-    "e": "",
-    "s": "",
-    "c": "adjetivo",
-    "ec": ""
-  },
-  {
     "w": "Pirrólico",
     "p": "adj.",
     "d": "Biol. y Quím. Perteneciente o relativo al pirrol o sus derivados.",
@@ -24222,20 +22718,6 @@
     "s": "",
     "c": "adjetivo",
     "ec": ""
-  },
-  {
-    "w": "Pirueta",
-    "p": "f.",
-    "d": "Cabriola . Sin.: cabriola, zapateta, salto, vuelta, giro1, contorsión, maroma.",
-    "df": "f. cabriola (‖ brinco al danzar). Sin.: cabriola, zapateta, salto, vuelta, giro1, contorsión, maroma. | f. voltereta (‖ vuelta cabeza abajo). Sin.: voltereta, volteleta, cabriola, volantín, catatumba, capitón. | f. Salto acrobático consistente en uno o varios giros alrededor del eje vertical del saltador. | f. acrobacia (‖ evolución que efectúa un aviador). Sin.: acrobacia. | f. Equit. Vuelta rápida que se hace dar al caballo, obligándole a alzarse de manos y girar apoyado sobre los pies.",
-    "e": "Del fr. pirouette 'cabriola', 'perinola', y este de la onomat. pir, imit. del ruido que hace al girar.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_frances",
-    "esp": [
-      "explosiva",
-      "viajera"
-    ]
   },
   {
     "w": "Piruetear",
@@ -24424,16 +22906,6 @@
     "ec": "etym_latin"
   },
   {
-    "w": "Piscicultor",
-    "p": "adj.",
-    "d": "Piscícola. Sin.: piscícola.",
-    "df": "adj. piscícola. Sin.: piscícola.",
-    "e": "Del lat. piscis 'pez1' y -cultor.",
-    "s": "",
-    "c": "adjetivo",
-    "ec": "etym_latin"
-  },
-  {
     "w": "Piscicultura",
     "p": "f.",
     "d": "Cría de peces y mariscos.",
@@ -24530,16 +23002,6 @@
     "ec": "etym_latin"
   },
   {
-    "w": "Pisonear",
-    "p": "tr.",
-    "d": "Apisonar. Sin.: apisonar, apelmazar.",
-    "df": "tr. apisonar. Sin.: apisonar, apelmazar.",
-    "e": "",
-    "s": "",
-    "c": "verbo",
-    "ec": ""
-  },
-  {
     "w": "Pisotear",
     "p": "tr.",
     "d": "Pisar repetidamente, maltratando o ajando algo. Sin.: pisar, hollar, rehollar, aplastar, calcar, patear.",
@@ -24590,16 +23052,6 @@
     "e": "",
     "s": "",
     "c": "gastronomia",
-    "ec": ""
-  },
-  {
-    "w": "Pistachero",
-    "p": "m.",
-    "d": "Alfóncigo . Sin.: alfóncigo.",
-    "df": "m. alfóncigo (‖ árbol). Sin.: alfóncigo.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
     "ec": ""
   },
   {
@@ -24728,16 +23180,6 @@
     "ec": ""
   },
   {
-    "w": "Pistraque",
-    "p": "m. coloq.",
-    "d": "Pistraje. Sin.: pistraje.",
-    "df": "m. coloq. pistraje. Sin.: pistraje.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Pistura",
     "p": "f.",
     "d": "Acción y efecto de pistar.",
@@ -24746,19 +23188,6 @@
     "s": "",
     "c": "sustantivo",
     "ec": "etym_latin"
-  },
-  {
-    "w": "Pistón",
-    "p": "m.",
-    "d": "Émbolo . Sin.: émbolo.",
-    "df": "m. émbolo (‖ pieza de una máquina). Sin.: émbolo. | m. Parte o pieza central de la cápsula, donde está colocado el fulminante. | m. Llave en forma de émbolo que tienen diversos instrumentos musicales de viento.",
-    "e": "Del fr. piston.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_frances",
-    "esp": [
-      "viajera"
-    ]
   },
   {
     "w": "Pisón",
@@ -24880,16 +23309,6 @@
     ]
   },
   {
-    "w": "Pitarra",
-    "p": "f.",
-    "d": "Legaña. Sin.: legaña, lagaña, pitaña, chele, magaña2.",
-    "df": "f. legaña. Sin.: legaña, lagaña, pitaña, chele, magaña2. | f. Ext. Vino de elaboración casera. | f. Ext. Cosecha de vino. | f. coloq. P. Vasco. Sidra obtenida de un segundo prensado del orujo después de macerarlo durante doce horas en un tercio de su peso de agua.",
-    "e": "Del vasco pitar.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Pitarro",
     "p": "m.",
     "d": "León, Vall. y Zam. Chorizo pequeño que en las matanzas caseras se hace para los niños.",
@@ -24897,16 +23316,6 @@
     "e": "",
     "s": "",
     "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Pitarroso",
-    "p": "adj.",
-    "d": "Legañoso. Sin.: legañoso, lagañoso, legañil, pitañoso, cheloso, magañoso.",
-    "df": "adj. legañoso. Sin.: legañoso, lagañoso, legañil, pitañoso, cheloso, magañoso.",
-    "e": "De pitarra.",
-    "s": "",
-    "c": "adjetivo",
     "ec": ""
   },
   {
@@ -24974,19 +23383,6 @@
     "s": "",
     "c": "sustantivo",
     "ec": ""
-  },
-  {
-    "w": "Pitillo",
-    "p": "m.",
-    "d": "Cigarrillo. Sin.: cigarrillo, cigarro, pito1, tabaco, faso.",
-    "df": "m. cigarrillo. Sin.: cigarrillo, cigarro, pito1, tabaco, faso. | m. Col. y Ven. paja (‖ tubo para sorber líquidos). Sin.: paja, pajilla, pajita, popote, sorbeto. | m. Cuba. canutillo (‖ planta). Sin.: canutillo.",
-    "e": "Del dim. de pito1.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "",
-    "esp": [
-      "explosiva"
-    ]
   },
   {
     "w": "Pitio",
@@ -25073,16 +23469,6 @@
     "d": "Y f. Persona que adivina . Sin.: adivino, vidente, clarividente, adivinador.",
     "df": "m. y f. Persona que adivina (‖ predice lo futuro). Sin.: adivino, vidente, clarividente, adivinador. | f. Encantadora, hechicera. U. en la traducción de algunos lugares de la Escritura. La pitonisa de Endor.",
     "e": "La forma f., del lat. tardío pythonissa 'mujer que adivina el porvenir', y este de python 'espíritu profético', 'persona poseída por un espíritu profético' y el lat. -issa '-esa'.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Pitorra",
-    "p": "f.",
-    "d": "Becada. Sin.: becada, gallineta, chocha1, chochaperdiz, coalla.",
-    "df": "f. becada. Sin.: becada, gallineta, chocha1, chochaperdiz, coalla.",
-    "e": "De pita2.",
     "s": "",
     "c": "sustantivo",
     "ec": ""
@@ -25347,26 +23733,6 @@
     "ec": ""
   },
   {
-    "w": "Pizarrón",
-    "p": "m.",
-    "d": "Encerado . Sin.: pizarra, encerado, tablero.",
-    "df": "m. Am. encerado (‖ cuadro para escribir o dibujar). Sin.: pizarra, encerado, tablero.",
-    "e": "",
-    "s": "",
-    "c": "arte_literatura",
-    "ec": ""
-  },
-  {
-    "w": "Pizate",
-    "p": "m.",
-    "d": "Pazote. Sin.: pazote, epazote.",
-    "df": "m. pazote. Sin.: pazote, epazote.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Pizcar",
     "p": "tr.",
     "d": "Tomar una porción mínima de algo.",
@@ -25384,16 +23750,6 @@
     "e": "De pizcar.",
     "s": "",
     "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Pizpereta",
-    "p": "adj. coloq.",
-    "d": "Pizpireta. Sin.: pizpireta.",
-    "df": "adj. coloq. pizpireta. Sin.: pizpireta.",
-    "e": "",
-    "s": "",
-    "c": "adjetivo",
     "ec": ""
   },
   {
@@ -25424,26 +23780,6 @@
     "e": "De or. inc.",
     "s": "",
     "c": "juegos",
-    "ec": ""
-  },
-  {
-    "w": "Pizpita",
-    "p": "f.",
-    "d": "Lavandera . Sin.: lavandera, pizpitillo, aguanieves, chirivía, nevatilla, nevereta, sanantona.",
-    "df": "f. lavandera (‖ ave). Sin.: lavandera, pizpitillo, aguanieves, chirivía, nevatilla, nevereta, sanantona.",
-    "e": "De or. expr., con la secuencia psp para indicar vivacidad de movimiento.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Pizpitillo",
-    "p": "m.",
-    "d": "Lavandera . Sin.: lavandera, pizpita, aguanieves, chirivía, nevatilla, nevereta, sanantona.",
-    "df": "m. lavandera (‖ ave). Sin.: lavandera, pizpita, aguanieves, chirivía, nevatilla, nevereta, sanantona.",
-    "e": "De pizpita e -illo.",
-    "s": "",
-    "c": "sustantivo",
     "ec": ""
   },
   {
@@ -25570,16 +23906,6 @@
     "ec": ""
   },
   {
-    "w": "Piñuelo",
-    "p": "m.",
-    "d": "Erraj. Sin.: erraj, herraje2.",
-    "df": "m. erraj. Sin.: erraj, herraje2. | m. Mur. Grano o simiente de la uva y de algunos otros frutos.",
-    "e": "De piña.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Piñón",
     "p": "m.",
     "d": "Simiente del pino, de diferentes tamaños, según las especies, desde 2 a 20 mm de largo y uno a cinco de grueso, elipsoidal, con tres aristas obtusas, cubierta leñosa muy dura y almendra blanca, dulce y comestible en el pino piñonero.",
@@ -25597,16 +23923,6 @@
     "e": "Del lat. placabilĭtas, -ātis.",
     "s": "",
     "c": "sustantivo",
-    "ec": "etym_latin"
-  },
-  {
-    "w": "Placable",
-    "p": "adj.",
-    "d": "Aplacable. Sin.: aplacable.",
-    "df": "adj. aplacable. Sin.: aplacable.",
-    "e": "Del lat. placabĭlis.",
-    "s": "",
-    "c": "adjetivo",
     "ec": "etym_latin"
   },
   {
@@ -25936,16 +24252,6 @@
     "ec": ""
   },
   {
-    "w": "Planco",
-    "p": "m.",
-    "d": "Planga. Sin.: planga, clanga, dango, pulla2.",
-    "df": "m. planga. Sin.: planga, clanga, dango, pulla2.",
-    "e": "Del lat. plancus.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_latin"
-  },
-  {
     "w": "Plancton",
     "p": "m.",
     "d": "Biol. Conjunto de organismos animales y vegetales, generalmente diminutos, que flotan y son desplazados pasivamente en aguas saladas o dulces.",
@@ -26004,16 +24310,6 @@
     "s": "",
     "c": "adjetivo",
     "ec": "etym_latin"
-  },
-  {
-    "w": "Planetoide",
-    "p": "m.",
-    "d": "Asteroide . Sin.: asteroide.",
-    "df": "m. asteroide (‖ cuerpo menor del sistema solar). Sin.: asteroide.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
   },
   {
     "w": "Planetícola",
@@ -26382,16 +24678,6 @@
     "ec": ""
   },
   {
-    "w": "Plastificación",
-    "p": "f.",
-    "d": "Plastificado. Sin.: plastificado.",
-    "df": "f. plastificado. Sin.: plastificado.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Plastificado",
     "p": "m.",
     "d": "Acción y efecto de plastificar. Sin.: plastificación.",
@@ -26440,26 +24726,6 @@
     "d": "Gran suma de plata .",
     "df": "m. Gran suma de plata (‖ dinero).",
     "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Platalea",
-    "p": "f.",
-    "d": "Espátula . Sin.: espátula, cuchareta, quechol.",
-    "df": "f. espátula (‖ ave). Sin.: espátula, cuchareta, quechol.",
-    "e": "Del lat. platalea.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_latin"
-  },
-  {
-    "w": "Platanal",
-    "p": "m.",
-    "d": "Platanar. Sin.: platanar, platanera.",
-    "df": "m. platanar. Sin.: platanar, platanera. | m. coloq. Ec. Cantidad grande de dinero. Sin.: platal.",
-    "e": "Der. irreg. de plata 'dinero'.",
     "s": "",
     "c": "sustantivo",
     "ec": ""
@@ -26674,16 +24940,6 @@
     "ec": ""
   },
   {
-    "w": "Platina",
-    "p": "f.",
-    "d": "Platino. Sin.: platino.",
-    "df": "f. platino. Sin.: platino. | f. Parte del microscopio, en que se coloca el objeto que se quiere observar. | f. En una máquina neumática, disco de vidrio deslustrado o de metal, perfectamente plano, a cuya superficie queda ajustado el borde del recipiente y en cuyo centro tiene un agujero en el que se adapta el tubo por el cual se extrae el aire para hacer el vacío. | f. pletina (‖ dispositivo para grabar). Sin.: pletina. | f. Impr. Mesa fuerte y ancha, forrada de una plancha lisa de hierro, bronce o zinc, que sirve para ajustar, imponer y acuñar las formas. | f. Impr. Superficie plana de la prensa o máquina de imprimir, sobre la cual se coloca la forma.",
-    "e": "De plata.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Platinado",
     "p": "m.",
     "d": "Acción y efecto de platinar.",
@@ -26794,26 +25050,6 @@
     "ec": ""
   },
   {
-    "w": "Platuja",
-    "p": "f.",
-    "d": "Platija. Sin.: platija, acedía2, platusa, pleuronecto.",
-    "df": "f. platija. Sin.: platija, acedía2, platusa, pleuronecto.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Platusa",
-    "p": "f.",
-    "d": "Platija. Sin.: platija, acedía2, platuja, pleuronecto.",
-    "df": "f. platija. Sin.: platija, acedía2, platuja, pleuronecto.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Platáneo",
     "p": "adj.",
     "d": "Bot. platanáceo. U. t. c. s. f., en pl. como taxón. Sin.: platanáceo.",
@@ -26842,16 +25078,6 @@
     "s": "",
     "c": "sustantivo",
     "ec": ""
-  },
-  {
-    "w": "Plaustro",
-    "p": "m.",
-    "d": "Carro . Sin.: carro1.",
-    "df": "m. poét. carro (‖ carruaje de dos ruedas). Sin.: carro1.",
-    "e": "Del lat. plaustrum.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_latin"
   },
   {
     "w": "Plautino",
@@ -27147,16 +25373,6 @@
     "ec": ""
   },
   {
-    "w": "Plenamar",
-    "p": "f.",
-    "d": "Pleamar. Sin.: pleamar.",
-    "df": "f. pleamar. Sin.: pleamar.",
-    "e": "De plena y mar.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Plenario",
     "p": "adj.",
     "d": "Lleno, entero, cumplido, que no le falta nada. Sin.: completo, pleno, total, lleno, entero, íntegro.",
@@ -27218,16 +25434,6 @@
     "s": "",
     "c": "adjetivo",
     "ec": "etym_griego"
-  },
-  {
-    "w": "Plesiosauro",
-    "p": "m.",
-    "d": "Plesiosaurio. Sin.: plesiosaurio.",
-    "df": "m. plesiosaurio. Sin.: plesiosaurio.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
   },
   {
     "w": "Plesímetro",
@@ -27817,19 +26023,6 @@
     ]
   },
   {
-    "w": "Pluridisciplinar",
-    "p": "adj.",
-    "d": "Multidisciplinario. Sin.: pluridisciplinario, multidisciplinario, multidisciplinar.",
-    "df": "adj. multidisciplinario. Sin.: pluridisciplinario, multidisciplinario, multidisciplinar.",
-    "e": "",
-    "s": "",
-    "c": "adjetivo",
-    "ec": "",
-    "esp": [
-      "larga"
-    ]
-  },
-  {
     "w": "Pluriempleado",
     "p": "m. y f.",
     "d": "Y f. Persona en situación de pluriempleo.",
@@ -27845,16 +26038,6 @@
     "d": "Situación social caracterizada por el desempeño de varios cargos, empleos, oficios, etc., por la misma persona. Sin.: chambismo.",
     "df": "m. Situación social caracterizada por el desempeño de varios cargos, empleos, oficios, etc., por la misma persona. Sin.: chambismo.",
     "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Plurilingüismo",
-    "p": "m.",
-    "d": "Multilingüismo. Sin.: multilingüismo.",
-    "df": "m. multilingüismo. Sin.: multilingüismo.",
-    "e": "De plurilingüe e -ismo.",
     "s": "",
     "c": "sustantivo",
     "ec": ""
@@ -27913,16 +26096,6 @@
     "e": "De plurivalente, según el modelo de equivalente y equivalencia.",
     "s": "",
     "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Plurivalente",
-    "p": "adj.",
-    "d": "Polivalente . Sin.: polivalente.",
-    "df": "adj. polivalente (‖ que vale para muchas cosas). Sin.: polivalente.",
-    "e": "De pluri- y -valente.",
-    "s": "",
-    "c": "adjetivo",
     "ec": ""
   },
   {
@@ -28102,16 +26275,6 @@
     "ec": ""
   },
   {
-    "w": "Pluvioso",
-    "p": "adj.",
-    "d": "Lluvioso. Sin.: lluvioso.",
-    "df": "adj. lluvioso. Sin.: lluvioso.",
-    "e": "Del lat. pluviōsus.",
-    "s": "",
-    "c": "adjetivo",
-    "ec": "etym_latin"
-  },
-  {
     "w": "Pluviómetro",
     "p": "m.",
     "d": "Meteor. Aparato que sirve para medir la cantidad de lluvia que cae en un lugar y tiempo dados. Sin.: pluvímetro, udómetro.",
@@ -28126,16 +26289,6 @@
     "p": "m.",
     "d": "Meteor. pluviómetro. Sin.: pluviómetro, udómetro.",
     "df": "m. Meteor. pluviómetro. Sin.: pluviómetro, udómetro.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Pláceme",
-    "p": "m.",
-    "d": "Felicitación. Sin.: felicitación, enhorabuena, congratulación, parabién.",
-    "df": "m. felicitación. Sin.: felicitación, enhorabuena, congratulación, parabién.",
     "e": "",
     "s": "",
     "c": "sustantivo",
@@ -28586,16 +26739,6 @@
     "d": "Persona llena de achaques y dolencias. Sin.: pudrigorio.",
     "df": "m. coloq. Persona llena de achaques y dolencias. Sin.: pudrigorio.",
     "e": "De podrir.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Podrimiento",
-    "p": "m.",
-    "d": "Pudrimiento. Sin.: podredumbre, putrefacción, pudrimiento, descomposición, podredura, podre, pudrición.",
-    "df": "m. pudrimiento. Sin.: podredumbre, putrefacción, pudrimiento, descomposición, podredura, podre, pudrición.",
-    "e": "",
     "s": "",
     "c": "sustantivo",
     "ec": ""
@@ -29435,16 +27578,6 @@
     "ec": ""
   },
   {
-    "w": "Polimórfico",
-    "p": "adj.",
-    "d": "Polimorfo. Sin.: polimorfo, poliforme, multiforme, diversiforme.",
-    "df": "adj. polimorfo. Sin.: polimorfo, poliforme, multiforme, diversiforme.",
-    "e": "",
-    "s": "",
-    "c": "adjetivo",
-    "ec": ""
-  },
-  {
     "w": "Polinesio",
     "p": "adj.",
     "d": "Natural de la Polinesia, región de Oceanía. U. t. c. s. Sin.: polinésico.",
@@ -29515,16 +27648,6 @@
     "ec": "etym_latin"
   },
   {
-    "w": "Polio",
-    "p": "m.",
-    "d": "Zamarrilla. Sin.: zamarrilla.",
-    "df": "m. zamarrilla. Sin.: zamarrilla. | f. coloq. poliomielitis. Sin.: poliomielitis.",
-    "e": "Del lat. polĭon, y este del gr. πόλιον pólion.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_latin"
-  },
-  {
     "w": "Poliomielitis",
     "p": "f.",
     "d": "Med. Grupo de enfermedades, agudas o crónicas, producidas por la lesión de las astas anteriores o motoras de la médula. Sus síntomas principales son la atrofia y parálisis de los músculos correspondientes a las lesiones medulares. Sin.: polio2.",
@@ -29553,16 +27676,6 @@
     "s": "",
     "c": "sustantivo",
     "ec": "etym_griego"
-  },
-  {
-    "w": "Polipasto",
-    "p": "m.",
-    "d": "Polispasto. Sin.: polispasto, aparejo.",
-    "df": "m. polispasto. Sin.: polispasto, aparejo.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
   },
   {
     "w": "Polipero",
@@ -30236,16 +28349,6 @@
     "ec": ""
   },
   {
-    "w": "Polvorera",
-    "p": "f.",
-    "d": "Polvera. Sin.: polvera, estuche, motera.",
-    "df": "f. polvera. Sin.: polvera, estuche, motera.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Polvoriento",
     "p": "adj.",
     "d": "Lleno o cubierto de polvo. Sin.: polvoroso, pulverulento.",
@@ -30498,19 +28601,6 @@
     "ec": ""
   },
   {
-    "w": "Pomelo",
-    "p": "m.",
-    "d": "Toronja. Sin.: toronja, cidra.",
-    "df": "m. toronja. Sin.: toronja, cidra.",
-    "e": "Del ingl. pom[m]elo, y este del neerl. pompelmous.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_ingles",
-    "esp": [
-      "viajera"
-    ]
-  },
-  {
     "w": "Pomerano",
     "p": "adj.",
     "d": "Natural de Pomerania, antigua provincia de Prusia. U. t. c. s.",
@@ -30623,16 +28713,6 @@
     ]
   },
   {
-    "w": "Pomponearse",
-    "p": "prnl.",
-    "d": "Pavonearse. Sin.: pavonearse, pompearse.",
-    "df": "prnl. coloq. pavonearse. Sin.: pavonearse, pompearse.",
-    "e": "",
-    "s": "",
-    "c": "verbo",
-    "ec": ""
-  },
-  {
     "w": "Pompón",
     "p": "m.",
     "d": "Bola de lana o de otro género que se usa como adorno. Sin.: borla, madroño.",
@@ -30725,31 +28805,11 @@
     "ec": ""
   },
   {
-    "w": "Poncidre",
-    "p": "adj.",
-    "d": "Poncil. Sin.: poncil, poncí.",
-    "df": "adj. poncil. Sin.: poncil, poncí.",
-    "e": "De or. inc.",
-    "s": "",
-    "c": "adjetivo",
-    "ec": ""
-  },
-  {
     "w": "Poncil",
     "p": "adj.",
     "d": "Dicho de una especie de limón o de cidra: Agria y de corteza muy gruesa. U. t. c. s. m. Sin.: poncí, poncidre.",
     "df": "adj. Dicho de una especie de limón o de cidra: Agria y de corteza muy gruesa. U. t. c. s. m. Sin.: poncí, poncidre.",
     "e": "De or. inc.",
-    "s": "",
-    "c": "adjetivo",
-    "ec": ""
-  },
-  {
-    "w": "Poncí",
-    "p": "adj.",
-    "d": "Poncil. Sin.: poncil, poncidre.",
-    "df": "adj. poncil. Sin.: poncil, poncidre.",
-    "e": "",
     "s": "",
     "c": "adjetivo",
     "ec": ""
@@ -30903,19 +28963,6 @@
     ]
   },
   {
-    "w": "Pontaje",
-    "p": "m.",
-    "d": "Pontazgo. Sin.: pontazgo.",
-    "df": "m. pontazgo. Sin.: pontazgo.",
-    "e": "Del fr. pontage, y este del lat. mediev. pontaticum, der. del lat. pons, pontis 'puente'.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_frances",
-    "esp": [
-      "viajera"
-    ]
-  },
-  {
     "w": "Pontazgo",
     "p": "m.",
     "d": "Derechos que se pagan en algunas partes para pasar por los puentes. Sin.: pontaje.",
@@ -31003,16 +29050,6 @@
     "e": "Del lat. pontificius.",
     "s": "",
     "c": "adjetivo",
-    "ec": "etym_latin"
-  },
-  {
-    "w": "Ponto",
-    "p": "m.",
-    "d": "Mar . Sin.: mar, piélago, profundo, océano.",
-    "df": "m. poét. mar (‖ masa de agua salada). Sin.: mar, piélago, profundo, océano.",
-    "e": "Del lat. pontus, y este del gr. πόντος póntos.",
-    "s": "",
-    "c": "sustantivo",
     "ec": "etym_latin"
   },
   {
@@ -31130,16 +29167,6 @@
     "esp": [
       "viajera"
     ]
-  },
-  {
-    "w": "Popelín",
-    "p": "m.",
-    "d": "Popelina. Sin.: popelina, poplín.",
-    "df": "m. popelina. Sin.: popelina, poplín.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
   },
   {
     "w": "Poplíteo",
@@ -31935,29 +29962,6 @@
     "ec": ""
   },
   {
-    "w": "Portadera",
-    "p": "f.",
-    "d": "Aportadera . Sin.: aportadera.",
-    "df": "f. aportadera (‖ caja que se pone sobre el aparejo de las caballerías). Sin.: aportadera.",
-    "e": "De portar.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Portaequipaje",
-    "p": "m.",
-    "d": "Maletero . Sin.: maletero, portamaletas, baúl, cajuela, maleta1, maletera.",
-    "df": "m. maletero (‖ lugar para el equipaje en los vehículos). Sin.: maletero, portamaletas, baúl, cajuela, maleta1, maletera. | m. Soporte que se coloca en el techo de un vehículo para llevar maletas y otros bultos. Sin.: baca1, parrilla2.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "",
-    "esp": [
-      "explosiva"
-    ]
-  },
-  {
     "w": "Portaeronaves",
     "p": "m.",
     "d": "Buque de guerra dotado de las instalaciones necesarias para el transporte, despegue y aterrizaje de aviones y helicópteros.",
@@ -32078,16 +30082,6 @@
     "ec": ""
   },
   {
-    "w": "Portaligas",
-    "p": "m.",
-    "d": "Liguero . Sin.: liguero.",
-    "df": "m. liguero (‖ prenda interior para sujetar las medias). Sin.: liguero.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Portalira",
     "p": "m. y f.",
     "d": "Y f. poeta .",
@@ -32128,30 +30122,10 @@
     "ec": ""
   },
   {
-    "w": "Portamaletas",
-    "p": "m.",
-    "d": "Maletero . Sin.: maletero, portaequipajes, baúl, cajuela, maleta1, maletera.",
-    "df": "m. maletero (‖ lugar para el equipaje en los vehículos). Sin.: maletero, portaequipajes, baúl, cajuela, maleta1, maletera.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Portamantas",
     "p": "m.",
     "d": "Par de correas enlazadas por un travesaño de cuero o metal, con las que se sujetan y llevan a la mano las mantas o abrigos para viaje.",
     "df": "m. Par de correas enlazadas por un travesaño de cuero o metal, con las que se sujetan y llevan a la mano las mantas o abrigos para viaje.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Portamanteo",
-    "p": "m.",
-    "d": "Manga . Sin.: manga1, maleta1.",
-    "df": "m. manga (‖ especie de maleta abierta por los extremos). Sin.: manga1, maleta1.",
     "e": "",
     "s": "",
     "c": "sustantivo",
@@ -32292,16 +30266,6 @@
     "p": "m.",
     "d": "Carpintero que hace puertas y ventanas.",
     "df": "m. Carpintero que hace puertas y ventanas.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Portaviandas",
-    "p": "m.",
-    "d": "Fiambrera . Sin.: fiambrera, portacomidas.",
-    "df": "m. fiambrera (‖ conjunto de cacerolas sobrepuestas). Sin.: fiambrera, portacomidas.",
     "e": "",
     "s": "",
     "c": "sustantivo",
@@ -33121,16 +31085,6 @@
     "ec": ""
   },
   {
-    "w": "Posparto",
-    "p": "m.",
-    "d": "Puerperio. Sin.: puerperio.",
-    "df": "m. puerperio. Sin.: puerperio.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Pospierna",
     "p": "f.",
     "d": "Muslo de las caballerías.",
@@ -33370,19 +31324,6 @@
     "ec": ""
   },
   {
-    "w": "Postilla",
-    "p": "f.",
-    "d": "Costra . Sin.: costra, pupa, escara, encostradura.",
-    "df": "f. costra (‖ cubierta o superficie endurecida). Sin.: costra, pupa, escara, encostradura. | f. Acotación o glosa de un texto. Sin.: apostilla, acotación2, glosa, comentario, nota.",
-    "e": "Del lat. *pustella, por pustŭla.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_latin",
-    "esp": [
-      "explosiva"
-    ]
-  },
-  {
     "w": "Postilloso",
     "p": "adj.",
     "d": "Que tiene postillas1.",
@@ -33516,16 +31457,6 @@
     ]
   },
   {
-    "w": "Postremero",
-    "p": "adj.",
-    "d": "Postrimero. Sin.: postrimero, postrero, postrer, postremo.",
-    "df": "adj. postrimero. Sin.: postrimero, postrero, postrer, postremo.",
-    "e": "De postremo.",
-    "s": "",
-    "c": "adjetivo",
-    "ec": ""
-  },
-  {
     "w": "Postrer",
     "p": "adj.",
     "d": "Postrero. U. ante s. m. sing. Sin.: postrero, postrimero, postremo.",
@@ -33567,16 +31498,6 @@
     "esp": [
       "larga"
     ]
-  },
-  {
-    "w": "Postrimero",
-    "p": "adj.",
-    "d": "Postrero. Sin.: postrero, postrer, último, postremo, postremero.",
-    "df": "adj. postrero. Sin.: postrero, postrer, último, postremo, postremero.",
-    "e": "De postremero, con la i de primero.",
-    "s": "",
-    "c": "adjetivo",
-    "ec": ""
   },
   {
     "w": "Postromántico",
@@ -33750,16 +31671,6 @@
     "s": "",
     "c": "sustantivo",
     "ec": "etym_latin"
-  },
-  {
-    "w": "Potada",
-    "p": "f.",
-    "d": "Potala . Sin.: potala.",
-    "df": "f. potala (‖ piedra para fondear). Sin.: potala.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
   },
   {
     "w": "Potaje",
@@ -34141,16 +32052,6 @@
     "ec": ""
   },
   {
-    "w": "Poyete",
-    "p": "m.",
-    "d": "Poyo . Sin.: poyo, pretil, banco, asiento.",
-    "df": "m. poyo (‖ banco de piedra). Sin.: poyo, pretil, banco, asiento.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Poyo",
     "p": "m.",
     "d": "Banco de piedra u otra materia arrimado a las paredes, ordinariamente a la puerta de las casas de zonas rurales. Sin.: poyete, pretil, banco, asiento.",
@@ -34258,16 +32159,6 @@
     "e": "De practicar y -nte.",
     "s": "",
     "c": "adjetivo",
-    "ec": ""
-  },
-  {
-    "w": "Pradal",
-    "p": "m.",
-    "d": "Pradera. Sin.: pradera.",
-    "df": "m. pradera. Sin.: pradera.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
     "ec": ""
   },
   {
@@ -34724,16 +32615,6 @@
     "s": "",
     "c": "sustantivo",
     "ec": "etym_latin"
-  },
-  {
-    "w": "Precintado",
-    "p": "m.",
-    "d": "Precinto . Sin.: precinto, sello, cierre, ligadura.",
-    "df": "m. precinto (‖ ligadura o señal sellada). Sin.: precinto, sello, cierre, ligadura.",
-    "e": "De precintar.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
   },
   {
     "w": "Precintar",
@@ -35413,16 +33294,6 @@
     "ec": ""
   },
   {
-    "w": "Preferencial",
-    "p": "adj.",
-    "d": "Preferente. Sin.: preferente.",
-    "df": "adj. preferente. Sin.: preferente.",
-    "e": "De preferencia y -al.",
-    "s": "",
-    "c": "adjetivo",
-    "ec": ""
-  },
-  {
     "w": "Prefiguración",
     "p": "f.",
     "d": "Representación anticipada de algo.",
@@ -36029,16 +33900,6 @@
     "ec": "etym_latin"
   },
   {
-    "w": "Premonitor",
-    "p": "adj.",
-    "d": "Premonitorio. Sin.: premonitorio.",
-    "df": "adj. premonitorio. Sin.: premonitorio.",
-    "e": "",
-    "s": "",
-    "c": "adjetivo",
-    "ec": ""
-  },
-  {
     "w": "Premonitorio",
     "p": "adj.",
     "d": "Que anuncia o presagia. Sin.: anunciador, indicador, precursor, premonitor.",
@@ -36456,16 +34317,6 @@
     "s": "",
     "c": "sustantivo",
     "ec": "etym_latin"
-  },
-  {
-    "w": "Preparamento",
-    "p": "m.",
-    "d": "Preparamiento. Sin.: preparamiento.",
-    "df": "m. preparamiento. Sin.: preparamiento.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
   },
   {
     "w": "Preparamiento",
@@ -37088,16 +34939,6 @@
     "ec": ""
   },
   {
-    "w": "Presidario",
-    "p": "m.",
-    "d": "Presidiario. Sin.: presidiario.",
-    "df": "m. presidiario. Sin.: presidiario.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Presidenciable",
     "p": "adj.",
     "d": "Que tiene posibilidades de ser presidente o candidato a presidente. U. t. c. s.",
@@ -37281,16 +35122,6 @@
     "ec": ""
   },
   {
-    "w": "Prestiño",
-    "p": "m.",
-    "d": "Pestiño . Sin.: pestiño.",
-    "df": "m. pestiño (‖ fruta de sartén). Sin.: pestiño.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Prestímano",
     "p": "m. y f.",
     "d": "Y f. Prestidigitador que hace juegos de manos.",
@@ -37394,16 +35225,6 @@
     "ec": ""
   },
   {
-    "w": "Pretendencia",
-    "p": "f.",
-    "d": "Pretensión. Sin.: pretensión.",
-    "df": "f. pretensión. Sin.: pretensión.",
-    "e": "De pretender.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Pretendienta",
     "p": "adj.",
     "d": "Que pretende o solicita algo. U. m. c. s. Sin.: aspirante, candidato, interesado, solicitante.",
@@ -37437,16 +35258,6 @@
     "e": "De pre- y tensar.",
     "s": "",
     "c": "verbo",
-    "ec": ""
-  },
-  {
-    "w": "Pretensioso",
-    "p": "adj.",
-    "d": "Pretencioso. Sin.: pretencioso, detalloso.",
-    "df": "adj. pretencioso. Sin.: pretencioso, detalloso.",
-    "e": "",
-    "s": "",
-    "c": "adjetivo",
     "ec": ""
   },
   {
@@ -38375,16 +36186,6 @@
     "ec": ""
   },
   {
-    "w": "Prisco",
-    "p": "m.",
-    "d": "Alberchiguero. Sin.: alberchiguero, albérchigo.",
-    "df": "m. alberchiguero. Sin.: alberchiguero, albérchigo. | m. Fruto del prisco. Sin.: albérchigo.",
-    "e": "Del lat. [pomum] persĭcum.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_latin"
-  },
-  {
     "w": "Prismático",
     "p": "adj.",
     "d": "Perteneciente o relativo al prisma.",
@@ -38430,16 +36231,6 @@
     "d": "Cualidad de privado. Sin.: reserva.",
     "df": "f. Cualidad de privado. Sin.: reserva. | f. Ámbito de la vida privada que se tiene derecho a proteger de cualquier intromisión. Sin.: intimidad, privacía.",
     "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Privadero",
-    "p": "m.",
-    "d": "Pocero . Sin.: pocero.",
-    "df": "m. pocero (‖ hombre que limpia los pozos). Sin.: pocero.",
-    "e": "De privada y -ero.",
     "s": "",
     "c": "sustantivo",
     "ec": ""
@@ -38578,16 +36369,6 @@
     "ec": ""
   },
   {
-    "w": "Probativo",
-    "p": "adj.",
-    "d": "Probatorio . Sin.: probatorio.",
-    "df": "adj. probatorio (‖ que sirve para probar algo). Sin.: probatorio.",
-    "e": "Del lat. probatīvus.",
-    "s": "",
-    "c": "adjetivo",
-    "ec": "etym_latin"
-  },
-  {
     "w": "Probatoria",
     "p": "adj.",
     "d": "Que sirve para probar o averiguar la verdad de algo. Sin.: probativo, demostrativo, acreditativo, justificativo, testifical.",
@@ -38626,19 +36407,6 @@
     "s": "",
     "c": "sustantivo",
     "ec": ""
-  },
-  {
-    "w": "Problematicidad",
-    "p": "f.",
-    "d": "Problematismo. Sin.: problematismo.",
-    "df": "f. problematismo. Sin.: problematismo.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "",
-    "esp": [
-      "larga"
-    ]
   },
   {
     "w": "Problematismo",
@@ -38889,16 +36657,6 @@
     "ec": "etym_latin"
   },
   {
-    "w": "Procomunal",
-    "p": "m.",
-    "d": "Procomún. Sin.: procomún.",
-    "df": "m. procomún. Sin.: procomún.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Procomún",
     "p": "m.",
     "d": "Utilidad pública. Sin.: procomunal.",
@@ -39138,29 +36896,6 @@
     "ec": ""
   },
   {
-    "w": "Productibilidad",
-    "p": "f.",
-    "d": "Producibilidad. Sin.: producibilidad.",
-    "df": "f. producibilidad. Sin.: producibilidad.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "",
-    "esp": [
-      "larga"
-    ]
-  },
-  {
-    "w": "Productible",
-    "p": "adj.",
-    "d": "Producible. Sin.: producible.",
-    "df": "adj. producible. Sin.: producible.",
-    "e": "",
-    "s": "",
-    "c": "adjetivo",
-    "ec": ""
-  },
-  {
     "w": "Proejar",
     "p": "intr.",
     "d": "Remar contra la corriente o la fuerza del viento que embiste a la embarcación por la proa.",
@@ -39224,16 +36959,6 @@
     "ec": "etym_latin"
   },
   {
-    "w": "Profanamiento",
-    "p": "m.",
-    "d": "Profanación. Sin.: profanación, sacrilegio, irreverencia, degradación, envilecimiento, escarnio, mofa.",
-    "df": "m. profanación. Sin.: profanación, sacrilegio, irreverencia, degradación, envilecimiento, escarnio, mofa.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Profanidad",
     "p": "f.",
     "d": "Cualidad de profano.",
@@ -39285,16 +37010,6 @@
     "s": "",
     "c": "adjetivo",
     "ec": ""
-  },
-  {
-    "w": "Profetal",
-    "p": "adj.",
-    "d": "Profético. Sin.: profético.",
-    "df": "adj. profético. Sin.: profético.",
-    "e": "Del lat. tardío prophetālis.",
-    "s": "",
-    "c": "adjetivo",
-    "ec": "etym_latin"
   },
   {
     "w": "Profetisa",
@@ -39384,16 +37099,6 @@
     "esp": [
       "viajera"
     ]
-  },
-  {
-    "w": "Profundar",
-    "p": "tr.",
-    "d": "Profundizar. Sin.: profundizar.",
-    "df": "tr. profundizar. Sin.: profundizar.",
-    "e": "",
-    "s": "",
-    "c": "verbo",
-    "ec": ""
   },
   {
     "w": "Profusamente",
@@ -39503,26 +37208,6 @@
     "s": "",
     "c": "adjetivo",
     "ec": "etym_griego"
-  },
-  {
-    "w": "Progne",
-    "p": "f.",
-    "d": "Golondrina . Sin.: golondrina, andorina, arandela2, volandera.",
-    "df": "f. poét. golondrina (‖ pájaro). Sin.: golondrina, andorina, arandela2, volandera.",
-    "e": "Del b. lat. Progne 'Procne', hija de Pandión, que fue metamorfoseada en golondrina, este del lat. Procne, y este del gr. Πρόκνη Próknē.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Prognosis",
-    "p": "f.",
-    "d": "Pronóstico . Sin.: pronóstico.",
-    "df": "f. cult. pronóstico (‖ acción de pronosticar, o juicio médico). Sin.: pronóstico.",
-    "e": "Del lat. tardío prognōsis, y este del gr. πρόγνωσις prógnōsis, de προ- pro- 'ante, delante' y γνῶσις gnôsis 'conocimiento'.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_latin"
   },
   {
     "w": "Programable",
@@ -39804,26 +37489,6 @@
     "ec": ""
   },
   {
-    "w": "Prolusión",
-    "p": "f.",
-    "d": "Prelusión. Sin.: prelusión, preludio.",
-    "df": "f. prelusión. Sin.: prelusión, preludio.",
-    "e": "Del lat. prolusio, -ōnis.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_latin"
-  },
-  {
-    "w": "Prolífero",
-    "p": "adj.",
-    "d": "Prolífico. Sin.: prolífico.",
-    "df": "adj. prolífico. Sin.: prolífico.",
-    "e": "Del lat. cient. prolifer, -a, -um, y este del lat. proles, -is 'prole' y -fer '‒́fero'.",
-    "s": "",
-    "c": "adjetivo",
-    "ec": "etym_latin"
-  },
-  {
     "w": "Promediar",
     "p": "tr.",
     "d": "Repartir algo en dos partes iguales o casi iguales. Sin.: dividir, distribuir, repartir, demediar.",
@@ -39920,16 +37585,6 @@
     "e": "Del lat. promissio, -ōnis.",
     "s": "",
     "c": "sustantivo",
-    "ec": "etym_latin"
-  },
-  {
-    "w": "Promisor",
-    "p": "adj.",
-    "d": "Prometedor. Sin.: prometedor.",
-    "df": "adj. cult. prometedor. Sin.: prometedor.",
-    "e": "Del lat. promissor, -ōris.",
-    "s": "",
-    "c": "adjetivo",
     "ec": "etym_latin"
   },
   {
@@ -40390,19 +38045,6 @@
     "ec": ""
   },
   {
-    "w": "Proporcionablemente",
-    "p": "adv.",
-    "d": "Proporcionadamente. Sin.: proporcionadamente.",
-    "df": "adv. proporcionadamente. Sin.: proporcionadamente.",
-    "e": "",
-    "s": "",
-    "c": "adverbio",
-    "ec": "",
-    "esp": [
-      "larga"
-    ]
-  },
-  {
     "w": "Proporcionadamente",
     "p": "adv.",
     "d": "Con proporción. Sin.: proporcionablemente.",
@@ -40543,16 +38185,6 @@
     "s": "",
     "c": "sustantivo",
     "ec": ""
-  },
-  {
-    "w": "Prora",
-    "p": "f.",
-    "d": "Proa. Sin.: proa.",
-    "df": "f. poét. proa. Sin.: proa.",
-    "e": "Del lat. prora, y este del gr. πρῴρα prṓira.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_latin"
   },
   {
     "w": "Prorrata",
@@ -41137,16 +38769,6 @@
     "ec": "etym_latin"
   },
   {
-    "w": "Protestación",
-    "p": "f.",
-    "d": "Protesta. Sin.: protesta.",
-    "df": "f. protesta. Sin.: protesta.",
-    "e": "Del lat. protestatio, -ōnis.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_latin"
-  },
-  {
     "w": "Protestantismo",
     "p": "m.",
     "d": "Creencia religiosa de los protestantes. Sin.: reformismo, luteranismo, calvinismo, anglicanismo, presbiterianismo, metodismo, anabaptismo, evangelismo, puritanismo, jansenismo, pietismo, mormonismo.",
@@ -41263,16 +38885,6 @@
     "e": "De proto- y albéitar.",
     "s": "",
     "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Protocolar",
-    "p": "tr.",
-    "d": "Protocolizar. Sin.: protocolizar.",
-    "df": "tr. protocolizar. Sin.: protocolizar. | adj. Perteneciente o relativo al protocolo. Sin.: protocolario.",
-    "e": "",
-    "s": "",
-    "c": "verbo",
     "ec": ""
   },
   {
@@ -41819,19 +39431,6 @@
     "ec": ""
   },
   {
-    "w": "Provisorio",
-    "p": "adj.",
-    "d": "Provisional. Sin.: provisional, temporal1, eventual, circunstancial, momentáneo, accidental, interino, transitorio, pasajero, efímero.",
-    "df": "adj. provisional. Sin.: provisional, temporal1, eventual, circunstancial, momentáneo, accidental, interino, transitorio, pasajero, efímero.",
-    "e": "Del lat. provīsum, supino de providēre 'proveer'.",
-    "s": "",
-    "c": "adjetivo",
-    "ec": "etym_latin",
-    "esp": [
-      "explosiva"
-    ]
-  },
-  {
     "w": "Provisoría",
     "p": "f.",
     "d": "Empleo u oficio de provisor diocesano.",
@@ -41992,26 +39591,6 @@
     "ec": "etym_latin"
   },
   {
-    "w": "Pruna",
-    "p": "f.",
-    "d": "Ciruela. Sin.: ciruela.",
-    "df": "f. ciruela. Sin.: ciruela.",
-    "e": "Del lat. pruna, pl. de prunum 'ciruela'.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_latin"
-  },
-  {
-    "w": "Pruno",
-    "p": "m.",
-    "d": "Ciruelo . Sin.: ciruelo, cirolero.",
-    "df": "m. ciruelo (‖ árbol). Sin.: ciruelo, cirolero.",
-    "e": "Del lat. prunus.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_latin"
-  },
-  {
     "w": "Pruriginoso",
     "p": "adj.",
     "d": "Med. De la naturaleza del prurigo.",
@@ -42106,16 +39685,6 @@
     "s": "",
     "c": "sustantivo",
     "ec": ""
-  },
-  {
-    "w": "Prímula",
-    "p": "f.",
-    "d": "Primavera . Sin.: primavera, vellorita.",
-    "df": "f. primavera (‖ planta). Sin.: primavera, vellorita.",
-    "e": "Del lat. mediev. primula [veris]; literalmente 'la primerita [de la primavera]'.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_latin"
   },
   {
     "w": "Prínceps",
@@ -42875,31 +40444,11 @@
     "ec": "etym_latin"
   },
   {
-    "w": "Pubescencia",
-    "p": "f.",
-    "d": "Pubertad. Sin.: pubertad, adolescencia.",
-    "df": "f. pubertad. Sin.: pubertad, adolescencia. | f. Bot. Cualidad de pubescente (‖ velloso).",
-    "e": "Der. del lat. pubescens, -entis 'pubescente'.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Pubescente",
     "p": "adj.",
     "d": "Que ha llegado a la pubertad. U. t. c. s. Sin.: púber, púbero, adolescente.",
     "df": "adj. Que ha llegado a la pubertad. U. t. c. s. Sin.: púber, púbero, adolescente. | adj. Bot. velloso. Sin.: velloso, vellido.",
     "e": "De pubescer y -nte; lat. pubescens, -entis.",
-    "s": "",
-    "c": "adjetivo",
-    "ec": ""
-  },
-  {
-    "w": "Pubiano",
-    "p": "adj.",
-    "d": "Púbico. Sin.: púbico.",
-    "df": "adj. púbico. Sin.: púbico.",
-    "e": "",
     "s": "",
     "c": "adjetivo",
     "ec": ""
@@ -43008,16 +40557,6 @@
     "ec": ""
   },
   {
-    "w": "Pucelana",
-    "p": "f.",
-    "d": "Puzolana. Sin.: puzolana, puzol.",
-    "df": "f. puzolana. Sin.: puzolana, puzol.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Pucelano",
     "p": "adj. coloq.",
     "d": "Natural de Valladolid, ciudad de España. U. t. c. s.",
@@ -43036,16 +40575,6 @@
     "s": "",
     "c": "sustantivo",
     "ec": ""
-  },
-  {
-    "w": "Puchera",
-    "p": "f. coloq.",
-    "d": "Olla . Sin.: olla, cocido, hervido, puchero, guiso.",
-    "df": "f. coloq. olla (‖ comida preparada con carne, tocino, legumbres y hortalizas). Sin.: olla, cocido, hervido, puchero, guiso.",
-    "e": "Del lat. [olla] pultaria.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_latin"
   },
   {
     "w": "Pucherazo",
@@ -43134,16 +40663,6 @@
     "ec": ""
   },
   {
-    "w": "Pudicicia",
-    "p": "f.",
-    "d": "Pudicia. Sin.: pudicia, pudor1, honestidad, decencia.",
-    "df": "f. pudicia. Sin.: pudicia, pudor1, honestidad, decencia.",
-    "e": "Del lat. pudicitia.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_latin"
-  },
-  {
     "w": "Pudin",
     "p": "m.",
     "d": "Dulce que se prepara con bizcocho o pan deshecho en leche y con azúcar y frutas secas.",
@@ -43189,16 +40708,6 @@
     "d": "Pila donde, en las fábricas de papel, se ponía en remojo el trapo desguinzado.",
     "df": "m. Pila donde, en las fábricas de papel, se ponía en remojo el trapo desguinzado.",
     "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Pudrigorio",
-    "p": "m. coloq.",
-    "d": "Podrigorio. Sin.: podrigorio.",
-    "df": "m. coloq. podrigorio. Sin.: podrigorio.",
-    "e": "De pudrir.",
     "s": "",
     "c": "sustantivo",
     "ec": ""
@@ -43308,16 +40817,6 @@
     "s": "",
     "c": "sustantivo",
     "ec": ""
-  },
-  {
-    "w": "Puerca",
-    "p": "f.",
-    "d": "Escrófula. Sin.: escrófula.",
-    "df": "f. escrófula. Sin.: escrófula. | f. Pieza de pernio o gozne en que está el anillo. | f. Lomo entre surco y surco de la tierra arada. Sin.: caballón, acirate.",
-    "e": "Del lat. porca 'lomo entre dos surcos de tierra arada'.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_latin"
   },
   {
     "w": "Puercamente",
@@ -43431,16 +40930,6 @@
     "s": "",
     "c": "botanica",
     "ec": "etym_latin"
-  },
-  {
-    "w": "Puertaventana",
-    "p": "f.",
-    "d": "Contraventana. Sin.: contraventana.",
-    "df": "f. contraventana. Sin.: contraventana.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
   },
   {
     "w": "Puertoaisenino",
@@ -43662,19 +41151,6 @@
     "ec": ""
   },
   {
-    "w": "Pulchinela",
-    "p": "m.",
-    "d": "Polichinela. Sin.: polichinela.",
-    "df": "m. polichinela. Sin.: polichinela.",
-    "e": "Del it. Pulcinella; cf. polichinela.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_italiano",
-    "esp": [
-      "viajera"
-    ]
-  },
-  {
     "w": "Pulga",
     "p": "f.",
     "d": "Insecto afaníptero, sin alas, de unos dos milímetros de longitud, color negro rojizo, cabeza pequeña, antenas cortas, patas fuertes, largas y adaptadas al salto, y parásito del ser humano y algunos animales.",
@@ -43796,16 +41272,6 @@
     "s": "",
     "c": "adjetivo",
     "ec": "etym_latin"
-  },
-  {
-    "w": "Pulimentación",
-    "p": "f.",
-    "d": "Pulimento . Sin.: pulimento.",
-    "df": "f. pulimento (‖ acción de pulir). Sin.: pulimento.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
   },
   {
     "w": "Pulimentar",
@@ -44042,16 +41508,6 @@
     "s": "",
     "c": "adjetivo",
     "ec": ""
-  },
-  {
-    "w": "Pulsímetro",
-    "p": "m.",
-    "d": "Pulsómetro. Sin.: pulsómetro.",
-    "df": "m. pulsómetro. Sin.: pulsómetro.",
-    "e": "Del lat. pulsus 'pulso' y ‒́metro.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_latin"
   },
   {
     "w": "Pultáceo",
@@ -44573,16 +42029,6 @@
     "ec": ""
   },
   {
-    "w": "Puntillero",
-    "p": "m.",
-    "d": "Cachetero . Sin.: cachetero.",
-    "df": "m. cachetero (‖ subalterno que remata al toro). Sin.: cachetero.",
-    "e": "De puntilla y -ero.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Puntillismo",
     "p": "m.",
     "d": "Escuela pictórica del siglo XIX, derivada del impresionismo, que se caracteriza por los toques de color cortos y yuxtapuestos de colores puros. Sin.: divisionismo.",
@@ -44756,16 +42202,6 @@
     "e": "",
     "s": "",
     "c": "adjetivo",
-    "ec": ""
-  },
-  {
-    "w": "Punzadura",
-    "p": "f.",
-    "d": "Punzada . Sin.: punzada.",
-    "df": "f. punzada (‖ herida). Sin.: punzada.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
     "ec": ""
   },
   {
@@ -45050,16 +42486,6 @@
     "ec": "etym_latin"
   },
   {
-    "w": "Purgatorio",
-    "p": "adj.",
-    "d": "Purgativo. Sin.: purgativo.",
-    "df": "adj. purgativo. Sin.: purgativo. | m. Lugar donde se pasa la vida con trabajo y penalidad. | m. Penalidad que se sufre en un purgatorio.",
-    "e": "Del lat. tardío purgatorius 'que purifica'.",
-    "s": "",
-    "c": "adjetivo",
-    "ec": "etym_latin"
-  },
-  {
     "w": "Purificador",
     "p": "adj.",
     "d": "Que purifica. Apl. a pers., u. t. c. s. Apl. a aparato, u. t. c. s. m. Sin.: purificante, depurador, depurativo, limpiador, catártico.",
@@ -45163,58 +42589,6 @@
     "ec": ""
   },
   {
-    "w": "Purpurina",
-    "p": "adj.",
-    "d": "Púrpura. Sin.: púrpura, purpúreo, coccíneo, múrice, granate, escarlata, encarnado, rojo.",
-    "df": "adj. púrpura. Sin.: púrpura, purpúreo, coccíneo, múrice, granate, escarlata, encarnado, rojo. | adj. Perteneciente o relativo a la púrpura. | f. Polvo finísimo de bronce o de metal blanco, que se aplica a las pinturas antes de que se sequen, para darles aspecto dorado o plateado. | f. Pintura brillante preparada con purpurina.",
-    "e": "",
-    "s": "",
-    "c": "adjetivo",
-    "ec": "",
-    "esp": [
-      "explosiva"
-    ]
-  },
-  {
-    "w": "Purpurino",
-    "p": "adj.",
-    "d": "Púrpura. Sin.: púrpura, purpúreo, coccíneo, múrice, granate, escarlata, encarnado, rojo.",
-    "df": "adj. púrpura. Sin.: púrpura, purpúreo, coccíneo, múrice, granate, escarlata, encarnado, rojo. | adj. Perteneciente o relativo a la púrpura. | f. Polvo finísimo de bronce o de metal blanco, que se aplica a las pinturas antes de que se sequen, para darles aspecto dorado o plateado. | f. Pintura brillante preparada con purpurina.",
-    "e": "",
-    "s": "",
-    "c": "adjetivo",
-    "ec": "",
-    "esp": [
-      "explosiva"
-    ]
-  },
-  {
-    "w": "Purpúrea",
-    "p": "adj.",
-    "d": "Púrpura. Sin.: púrpura, purpurino, coccíneo, múrice, granate, escarlata, encarnado, rojo.",
-    "df": "adj. púrpura. Sin.: púrpura, purpurino, coccíneo, múrice, granate, escarlata, encarnado, rojo. | adj. Perteneciente o relativo a la púrpura.",
-    "e": "Del lat. purpureus.",
-    "s": "",
-    "c": "adjetivo",
-    "ec": "etym_latin",
-    "esp": [
-      "explosiva"
-    ]
-  },
-  {
-    "w": "Purpúreo",
-    "p": "adj.",
-    "d": "Púrpura. Sin.: púrpura, purpurino, coccíneo, múrice, granate, escarlata, encarnado, rojo.",
-    "df": "adj. púrpura. Sin.: púrpura, purpurino, coccíneo, múrice, granate, escarlata, encarnado, rojo. | adj. Perteneciente o relativo a la púrpura.",
-    "e": "Del lat. purpureus.",
-    "s": "",
-    "c": "adjetivo",
-    "ec": "etym_latin",
-    "esp": [
-      "explosiva"
-    ]
-  },
-  {
     "w": "Purrela",
     "p": "f.",
     "d": "Vino último e inferior de los que se llaman aguapié.",
@@ -45222,16 +42596,6 @@
     "e": "",
     "s": "",
     "c": "gastronomia",
-    "ec": ""
-  },
-  {
-    "w": "Purriela",
-    "p": "f. coloq.",
-    "d": "Purrela . Sin.: purrela.",
-    "df": "f. coloq. purrela (‖ cosa despreciable). Sin.: purrela.",
-    "e": "De or. inc.",
-    "s": "",
-    "c": "sustantivo",
     "ec": ""
   },
   {
@@ -45406,31 +42770,6 @@
     "d": "Herida que se hace con una puya1. U. t. en sent. fig. Sin.: lanzada1, lanzazo, garrochazo, rejonazo, pinchazo.",
     "df": "m. Herida que se hace con una puya1. U. t. en sent. fig. Sin.: lanzada1, lanzazo, garrochazo, rejonazo, pinchazo. | m. El Salv. y Guat. Pieza de carne de res para asar.",
     "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Puzle",
-    "p": "m.",
-    "d": "Rompecabezas . Sin.: rompecabezas.",
-    "df": "m. rompecabezas (‖ juego). Sin.: rompecabezas.",
-    "e": "Del ingl. puzzle.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_ingles",
-    "esp": [
-      "viajera"
-    ],
-    "rabia": true,
-    "rabia_comment": "Puzzle pero P-U-Z-L-E. Sin doble Z. 🧩"
-  },
-  {
-    "w": "Puzol",
-    "p": "m.",
-    "d": "Puzolana. Sin.: puzolana, pucelana.",
-    "df": "m. puzolana. Sin.: puzolana, pucelana.",
-    "e": "De Puzol, pueblo de Italia.",
     "s": "",
     "c": "sustantivo",
     "ec": ""
@@ -45659,16 +42998,6 @@
     "ec": ""
   },
   {
-    "w": "Páprika",
-    "p": "f.",
-    "d": "Pimentón . Sin.: pimentón, pimiento.",
-    "df": "f. pimentón (‖ polvo de pimiento molido). Sin.: pimentón, pimiento.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Pápula",
     "p": "f.",
     "d": "Med. Tumor eruptivo que se presenta en la piel sin pus ni serosidad.",
@@ -45821,16 +43150,6 @@
     "ec": ""
   },
   {
-    "w": "Pérsigo",
-    "p": "m.",
-    "d": "Pérsico . Sin.: pérsico.",
-    "df": "m. pérsico (‖ árbol). Sin.: pérsico. | m. pérsico (‖ fruto). Sin.: pérsico.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Pértica",
     "p": "f.",
     "d": "Medida agraria de longitud que consta de dos pasos o diez pies geométricos y equivale aproximadamente a 2,70 m.",
@@ -45871,16 +43190,6 @@
     "ec": "etym_latin"
   },
   {
-    "w": "Pésol",
-    "p": "m.",
-    "d": "Guisante. Sin.: guisante.",
-    "df": "m. guisante. Sin.: guisante.",
-    "e": "Del cat. pèsol, y este del lat. pisŭlum, dim. de pisum.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Pétalo",
     "p": "m.",
     "d": "Hoja transformada, por lo común de bellos colores, que forma parte de la corola de la flor. Sin.: hoja.",
@@ -45908,16 +43217,6 @@
     "e": "Del lat. petreus.",
     "s": "",
     "c": "adjetivo",
-    "ec": "etym_latin"
-  },
-  {
-    "w": "Péñola",
-    "p": "f.",
-    "d": "Pluma . Sin.: pluma.",
-    "df": "f. pluma (‖ de ave para escribir). Sin.: pluma.",
-    "e": "Del lat. pennŭla 'pluma'.",
-    "s": "",
-    "c": "sustantivo",
     "ec": "etym_latin"
   },
   {
@@ -46115,16 +43414,6 @@
     ]
   },
   {
-    "w": "Pódium",
-    "p": "m.",
-    "d": "Podio . Sin.: podio, plataforma.",
-    "df": "m. podio (‖ plataforma). Sin.: podio, plataforma.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Pólder",
     "p": "m.",
     "d": "Terreno pantanoso ganado al mar y que una vez desecado se dedica al cultivo.",
@@ -46176,19 +43465,6 @@
     "s": "",
     "c": "cuerpo_humano",
     "ec": "etym_latin"
-  },
-  {
-    "w": "Póney",
-    "p": "m.",
-    "d": "Poni. Sin.: poni.",
-    "df": "m. poni. Sin.: poni.",
-    "e": "Del ingl. poney.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_ingles",
-    "esp": [
-      "viajera"
-    ]
   },
   {
     "w": "Póntico",

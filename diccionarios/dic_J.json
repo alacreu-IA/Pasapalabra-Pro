@@ -805,29 +805,6 @@
     "ec": ""
   },
   {
-    "w": "Jalar",
-    "p": "tr.",
-    "d": "Halar . Sin.: halar, tirar.",
-    "df": "tr. coloq. halar (‖ tirar de un cabo). Sin.: halar, tirar. | tr. coloq. Tirar de algo o de alguien. Sin.: tirar, halar. | tr. coloq. Comer con mucho apetito. Sin.: zampar, devorar, jamar, tragar. | tr. coloq. Cuba y Hond. Aspirar con fuerza el humo del cigarro. | tr. Cuba. emborrachar (‖ causar embriaguez). | tr. Bol. y Perú. esnifar. Sin.: esnifar, ñatear. | tr. Perú. suspender (‖ negar la aprobación a un examinando). Sin.: suspender, catear2, cepillarse, puyar, quebrar, raspar, tronar. | intr. coloq. Bol. y Hond. Ingerir bebidas alcohólicas. Sin.: beber1, tomar. | intr. coloq. Col. Realizar el coito. Sin.: copular, fornicar, yacer, coitar, follar4, joder, coger. | intr. C. Rica, Hond. y Nic. Mantener relaciones amorosas. | intr. coloq. Hond. y Méx. Dirigirse a un lugar. Sin.: dirigirse, encaminarse, enfilar.",
-    "e": "De halar.",
-    "s": "",
-    "c": "verbo",
-    "ec": "",
-    "esp": [
-      "explosiva"
-    ]
-  },
-  {
-    "w": "Jalda",
-    "p": "f.",
-    "d": "Falda . Sin.: falda, saya.",
-    "df": "f. falda (‖ prenda de vestir). Sin.: falda, saya. | f. P. Rico. falda (‖ parte baja de un monte). Sin.: falda, faldeo, piedemonte.",
-    "e": "De halda.",
-    "s": "",
-    "c": "vestimenta",
-    "ec": ""
-  },
-  {
     "w": "Jalde",
     "p": "adj.",
     "d": "Dicho de un color: Amarillo subido. U. t. c. s. m.",
@@ -1136,19 +1113,6 @@
     "ec": ""
   },
   {
-    "w": "Jangada",
-    "p": "f.",
-    "d": "Balsa . Sin.: balsa2, almadía, zatara.",
-    "df": "f. balsa (‖ plataforma). Sin.: balsa2, almadía, zatara. | f. Salida o idea necia y fuera de tiempo, o ineficaz. Sin.: impertinencia, necedad. | f. coloq. Trastada, mala acción hecha a alguien.",
-    "e": "Del port. jangada, y este del malabar čaṅgāḍam.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_portugues",
-    "esp": [
-      "viajera"
-    ]
-  },
-  {
     "w": "Jangua",
     "p": "f.",
     "d": "Embarcación pequeña armada en guerra, muy usada en los mares de Oriente.",
@@ -1454,16 +1418,6 @@
     "e": "",
     "s": "",
     "c": "verbo",
-    "ec": ""
-  },
-  {
-    "w": "Jarca",
-    "p": "f.",
-    "d": "Harca . Sin.: harca.",
-    "df": "f. harca (‖ partida de rebeldes marroquíes). Sin.: harca. | f. despect. coloq. gentecilla. ¡Menuda jarca! Sin.: gentecilla.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
     "ec": ""
   },
   {
@@ -2058,16 +2012,6 @@
     ]
   },
   {
-    "w": "Jedrea",
-    "p": "f. coloq.",
-    "d": "Ajedrea. Sin.: ajedrea.",
-    "df": "f. coloq. ajedrea. Sin.: ajedrea.",
-    "e": "Del lat. satureia.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_latin"
-  },
-  {
     "w": "Jeito",
     "p": "m.",
     "d": "Red usada en el Atlántico para la pesca del boquerón y la sardina.",
@@ -2139,29 +2083,6 @@
     "d": "Enrejado de piedra, ladrillo, yeso o madera, para dar luz y ventilación.",
     "df": "f. Enrejado de piedra, ladrillo, yeso o madera, para dar luz y ventilación.",
     "e": "Del ár. hisp. šamsíyya '[ventanal] para el sol' o *šamisíyya 'a manera de celosía', y este del ár. clás. šams 'sol1'.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_arabe",
-    "esp": [
-      "viajera"
-    ]
-  },
-  {
-    "w": "Jena",
-    "p": "f.",
-    "d": "Alheña . Sin.: alheña, alcana, aligustre, ligustro, cinamomo.",
-    "df": "f. alheña (‖ arbusto). Sin.: alheña, alcana, aligustre, ligustro, cinamomo. | f. alheña (‖ polvo utilizado como tinte). Sin.: alheña, henna.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Jenabe",
-    "p": "m.",
-    "d": "Mostaza . Sin.: mostaza.",
-    "df": "m. mostaza (‖ planta). Sin.: mostaza. | m. Semilla del jenabe.",
-    "e": "Del ár. hisp. *aššináb, este del lat. sināpi, y este del gr. σίναπι sínapi.",
     "s": "",
     "c": "sustantivo",
     "ec": "etym_arabe",
@@ -2575,16 +2496,6 @@
     ]
   },
   {
-    "w": "Jibia",
-    "p": "f.",
-    "d": "Sepia . Sin.: sepia, choco.",
-    "df": "f. sepia (‖ molusco). Sin.: sepia, choco. | f. Concha de la jibia.",
-    "e": "Del lat. sepĭa, y este del gr. σηπία sēpía.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_latin"
-  },
-  {
     "w": "Jibión",
     "p": "m.",
     "d": "Pieza caliza de la jibia, que sirve a los plateros para hacer moldes, y tiene otros usos industriales.",
@@ -2685,16 +2596,6 @@
     "e": "Acort.",
     "s": "",
     "c": "musica",
-    "ec": ""
-  },
-  {
-    "w": "Jiguilete",
-    "p": "m.",
-    "d": "Jiquilete. Sin.: jiquilete.",
-    "df": "m. jiquilete. Sin.: jiquilete.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
     "ec": ""
   },
   {
@@ -2838,16 +2739,6 @@
     "ec": ""
   },
   {
-    "w": "Jinda",
-    "p": "f.",
-    "d": "Jindama. Sin.: jindama.",
-    "df": "f. jindama. Sin.: jindama.",
-    "e": "Acort.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Jindama",
     "p": "f.",
     "d": "Jerg. Miedo, cobardía. Sin.: jinda.",
@@ -2909,16 +2800,6 @@
     "esp": [
       "viajera"
     ]
-  },
-  {
-    "w": "Jinjolero",
-    "p": "m.",
-    "d": "Azufaifo. Sin.: azufaifo, azofaifo, azufeifo, guinjo, guinjolero.",
-    "df": "m. azufaifo. Sin.: azufaifo, azofaifo, azufeifo, guinjo, guinjolero.",
-    "e": "De jínjol.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
   },
   {
     "w": "Jinojo",
@@ -3006,16 +2887,6 @@
     "d": "Modo de vida o actitud ante ella de los jipis.",
     "df": "m. Modo de vida o actitud ante ella de los jipis.",
     "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Jipío",
-    "p": "m.",
-    "d": "Jipido. Sin.: jipido.",
-    "df": "m. jipido. Sin.: jipido. | m. Grito, quejido, lamento, etc., que se introduce en el cante flamenco.",
-    "e": "Forma andaluza de hipido.",
     "s": "",
     "c": "sustantivo",
     "ec": ""
@@ -3133,16 +3004,6 @@
     ]
   },
   {
-    "w": "Jisca",
-    "p": "f.",
-    "d": "Carrizo . Sin.: carrizo, cañavera, cañeta, cañota, millaca, cisca, sisca.",
-    "df": "f. carrizo (‖ planta gramínea española). Sin.: carrizo, cañavera, cañeta, cañota, millaca, cisca, sisca.",
-    "e": "Cf. sisca.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Jitanjáfora",
     "p": "f.",
     "d": "Texto carente de sentido cuyo valor estético se basa en la sonoridad y en el poder evocador de las palabras, reales o inventadas, que lo componen.",
@@ -3211,19 +3072,6 @@
     "s": "",
     "c": "adjetivo",
     "ec": "etym_latin"
-  },
-  {
-    "w": "Jocó",
-    "p": "m.",
-    "d": "Chimpancé. Sin.: chimpancé.",
-    "df": "m. chimpancé. Sin.: chimpancé.",
-    "e": "Del fr. jocko.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_frances",
-    "esp": [
-      "viajera"
-    ]
   },
   {
     "w": "Jofaina",
@@ -3621,30 +3469,10 @@
     "ec": ""
   },
   {
-    "w": "Joyo",
-    "p": "m.",
-    "d": "Cizaña . Sin.: cizaña, borrachuela, cominillo, rabillo, luello.",
-    "df": "m. cizaña (‖ planta). Sin.: cizaña, borrachuela, cominillo, rabillo, luello.",
-    "e": "Del lat. lolium.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_latin"
-  },
-  {
     "w": "Joyón",
     "p": "m.",
     "d": "Aum. de joya.",
     "df": "m. aum. de joya.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Juagarzo",
-    "p": "m.",
-    "d": "Jaguarzo. Sin.: jaguarzo, tamarilla.",
-    "df": "m. jaguarzo. Sin.: jaguarzo, tamarilla.",
     "e": "",
     "s": "",
     "c": "sustantivo",
@@ -3711,16 +3539,6 @@
     "ec": ""
   },
   {
-    "w": "Juba",
-    "p": "f.",
-    "d": "Aljuba. Sin.: aljuba.",
-    "df": "f. aljuba. Sin.: aljuba.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Jubete",
     "p": "m.",
     "d": "Coleto cubierto de malla de hierro que usaron los soldados españoles hasta fines del siglo XV.",
@@ -3769,16 +3587,6 @@
     "d": "Toro jubillo. Sin.: jubilo.",
     "df": "m. toro jubillo. Sin.: jubilo.",
     "e": "Del dim. de jubo2.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Jubilo",
-    "p": "m.",
-    "d": "Jubillo. Sin.: jubillo.",
-    "df": "m. jubillo. Sin.: jubillo.",
-    "e": "",
     "s": "",
     "c": "sustantivo",
     "ec": ""
@@ -3967,16 +3775,6 @@
     "ec": ""
   },
   {
-    "w": "Judo",
-    "p": "m.",
-    "d": "Yudo. Sin.: yudo.",
-    "df": "m. yudo. Sin.: yudo.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Juera",
     "p": "f.",
     "d": "Ext. Harnero espeso de esparto para limpiar o ahechar el trigo. Sin.: huera.",
@@ -4031,16 +3829,6 @@
     "esp": [
       "explosiva"
     ]
-  },
-  {
-    "w": "Juglara",
-    "p": "f.",
-    "d": "Juglaresa. Sin.: juglaresa, soldadera.",
-    "df": "f. juglaresa. Sin.: juglaresa, soldadera.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
   },
   {
     "w": "Juglaresco",
@@ -4400,16 +4188,6 @@
     "ec": ""
   },
   {
-    "w": "Junquera",
-    "p": "f.",
-    "d": "Junco . Sin.: junco1.",
-    "df": "f. junco (‖ planta juncácea). Sin.: junco1.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Junqueral",
     "p": "m.",
     "d": "Sitio poblado de juncos.",
@@ -4726,16 +4504,6 @@
     "ec": ""
   },
   {
-    "w": "Justicialismo",
-    "p": "m.",
-    "d": "Peronismo . Sin.: peronismo.",
-    "df": "m. peronismo (‖ movimiento político). Sin.: peronismo. | m. peronismo (‖ régimen). Sin.: peronismo. | m. peronismo (‖ ideología política). Sin.: peronismo.",
-    "e": "De justicialista e -ismo.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Justicialista",
     "p": "adj.",
     "d": "Perteneciente o relativo al justicialismo. Sin.: peronista.",
@@ -4889,16 +4657,6 @@
     "ec": ""
   },
   {
-    "w": "Jábeca",
-    "p": "f.",
-    "d": "Jábega1. Sin.: bol2, jábega1.",
-    "df": "f. jábega1. Sin.: bol2, jábega1.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Jábega",
     "p": "f.",
     "d": "Red de pesca de más de cien brazas de largo, compuesta de un copo y dos bandas, de las cuales se tira desde tierra por medio de cabos muy largos. Sin.: bol2, jábeca, red.",
@@ -4937,26 +4695,6 @@
     "d": "Arq. viga maestra.",
     "df": "f. Arq. viga maestra. | f. Bal. Viga gruesa de pino que se utiliza a veces como viga maestra en los tejados a dos aguas. Sin.: viga, travesaño.",
     "e": "Del cat. jàssera o jàssena, y este del ár. hisp. ǧásr 'puente de madera', 'viga'.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Jáculo",
-    "p": "m.",
-    "d": "Dardo . Sin.: dardo.",
-    "df": "m. dardo (‖ lanza pequeña arrojadiza). Sin.: dardo.",
-    "e": "Del lat. iacŭlum.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_latin"
-  },
-  {
-    "w": "Jámila",
-    "p": "f.",
-    "d": "Alpechín. Sin.: alpechín, aguachas, morga, murga1, pechín, tinaco, amurca.",
-    "df": "f. alpechín. Sin.: alpechín, aguachas, morga, murga1, pechín, tinaco, amurca.",
-    "e": "Quizá del dialect. *hamilla, este dim. del ár. hisp. ḥamí 'fango maloliente', y este del ár. clás. ḥama'.",
     "s": "",
     "c": "sustantivo",
     "ec": ""
@@ -5019,16 +4757,6 @@
     "esp": [
       "viajera"
     ]
-  },
-  {
-    "w": "Jínjol",
-    "p": "m.",
-    "d": "Azufaifa. Sin.: azufaifa, azofaifa, azufeifa, guinja, guínjol.",
-    "df": "m. azufaifa. Sin.: azufaifa, azofaifa, azufeifa, guinja, guínjol.",
-    "e": "Del lat. zizy̆phus, y este del gr. ζίζυφος zízyphos.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_latin"
   },
   {
     "w": "Jíride",

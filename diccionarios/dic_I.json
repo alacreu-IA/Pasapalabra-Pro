@@ -359,16 +359,6 @@
     "ec": ""
   },
   {
-    "w": "Ictericiado",
-    "p": "adj.",
-    "d": "Ictérico . Sin.: ictérico, aliacanado, amarillo, bilioso.",
-    "df": "adj. ictérico (‖ que padece ictericia). Sin.: ictérico, aliacanado, amarillo, bilioso.",
-    "e": "",
-    "s": "",
-    "c": "adjetivo",
-    "ec": ""
-  },
-  {
     "w": "Ictiografía",
     "p": "f.",
     "d": "Parte de la zoología que se ocupa de la descripción de los peces.",
@@ -406,16 +396,6 @@
     "e": "",
     "s": "",
     "c": "adjetivo",
-    "ec": ""
-  },
-  {
-    "w": "Ictiosauro",
-    "p": "m.",
-    "d": "Ictiosaurio. Sin.: ictiosaurio.",
-    "df": "m. ictiosaurio. Sin.: ictiosaurio.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
     "ec": ""
   },
   {
@@ -487,16 +467,6 @@
     "s": "",
     "c": "adjetivo",
     "ec": "etym_griego"
-  },
-  {
-    "w": "Icáreo",
-    "p": "adj.",
-    "d": "Icario. Sin.: icario.",
-    "df": "adj. icario. Sin.: icario.",
-    "e": "",
-    "s": "",
-    "c": "adjetivo",
-    "ec": ""
   },
   {
     "w": "Icástico",
@@ -635,19 +605,6 @@
     "ec": ""
   },
   {
-    "w": "Identificatorio",
-    "p": "adj.",
-    "d": "Identificativo. Sin.: identificativo.",
-    "df": "adj. identificativo. Sin.: identificativo.",
-    "e": "",
-    "s": "",
-    "c": "adjetivo",
-    "ec": "",
-    "esp": [
-      "larga"
-    ]
-  },
-  {
     "w": "Ideo",
     "p": "adj.",
     "d": "Perteneciente o relativo al monte Ida, en Troya.",
@@ -771,16 +728,6 @@
     "ec": ""
   },
   {
-    "w": "Idiosincrático",
-    "p": "adj.",
-    "d": "Idiosincrásico. Sin.: idiosincrásico.",
-    "df": "adj. idiosincrásico. Sin.: idiosincrásico.",
-    "e": "",
-    "s": "",
-    "c": "adjetivo",
-    "ec": ""
-  },
-  {
     "w": "Idiotipo",
     "p": "m.",
     "d": "Biol. Conjunto de todos los factores hereditarios, constituido por los genes del núcleo celular y los genes extranucleares, que se transmiten a través de estructuras citoplásmicas, como las mitocondrias.",
@@ -789,16 +736,6 @@
     "s": "",
     "c": "sustantivo",
     "ec": "etym_griego"
-  },
-  {
-    "w": "Idiotismo",
-    "p": "m.",
-    "d": "Ignorancia. Sin.: ignorancia.",
-    "df": "m. ignorancia. Sin.: ignorancia. | m. idiocia. Sin.: idiocia. | m. Ling. Giro o expresión propios de una lengua que no se ajustan a las reglas gramaticales; p. ej., a ojos vistas. Sin.: modismo.",
-    "e": "Del lat. idiotismus 'expresión propia de una lengua', y este del gr. ἰδιωτισμός idiōtismós.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_latin"
   },
   {
     "w": "Idiotizar",
@@ -1035,16 +972,6 @@
     "d": "Acción y efecto de igualar.",
     "df": "f. Acción y efecto de igualar. | f. Ajuste, convenio o concordia.",
     "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Igualada",
-    "p": "f.",
-    "d": "Empate. Sin.: empate, puesta.",
-    "df": "f. empate. Sin.: empate, puesta. | f. Taurom. Acción de igualar el toro.",
-    "e": "De igualar.",
     "s": "",
     "c": "sustantivo",
     "ec": ""
@@ -1567,16 +1494,6 @@
     "s": "",
     "c": "adjetivo",
     "ec": ""
-  },
-  {
-    "w": "Ilírico",
-    "p": "adj.",
-    "d": "Ilirio . Sin.: ilirio.",
-    "df": "adj. ilirio (‖ natural de Iliria). Sin.: ilirio. | adj. ilirio (‖ perteneciente a Iliria).",
-    "e": "Del lat. Illyrĭcus.",
-    "s": "",
-    "c": "gentilicio",
-    "ec": "etym_latin"
   },
   {
     "w": "Imada",
@@ -2112,16 +2029,6 @@
     "ec": "etym_latin"
   },
   {
-    "w": "Implorador",
-    "p": "adj.",
-    "d": "Implorante. Sin.: implorante.",
-    "df": "adj. implorante. Sin.: implorante.",
-    "e": "",
-    "s": "",
-    "c": "adjetivo",
-    "ec": ""
-  },
-  {
     "w": "Implorar",
     "p": "tr.",
     "d": "Pedir con ruegos o lágrimas algo. Sin.: deprecar, rogar, suplicar, impetrar.",
@@ -2590,16 +2497,6 @@
     "ec": "etym_latin"
   },
   {
-    "w": "Impudicicia",
-    "p": "f.",
-    "d": "Impudicia. Sin.: impudicia.",
-    "df": "f. impudicia. Sin.: impudicia.",
-    "e": "Del lat. impudicitia.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_latin"
-  },
-  {
     "w": "Impugnación",
     "p": "f.",
     "d": "Acción y efecto de impugnar. Sin.: refutación, rebatimiento, contestación, rechazo, contradicción, objeción, instancia, oposición.",
@@ -2654,16 +2551,6 @@
     "esp": [
       "explosiva"
     ]
-  },
-  {
-    "w": "Impulsión",
-    "p": "f.",
-    "d": "Impulso. Sin.: impulso.",
-    "df": "f. impulso. Sin.: impulso.",
-    "e": "Del lat. impulsio, -ōnis.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_latin"
   },
   {
     "w": "Impulsor",
@@ -2813,16 +2700,6 @@
     "p": "adj.",
     "d": "Que no se puede apear.",
     "df": "adj. Que no se puede apear. | adj. intransitable. Sin.: intransitable. | adj. Que no se puede comprender o conocer. | adj. Dicho de una persona: Que tenazmente se aferra a su dictamen u opinión.",
-    "e": "",
-    "s": "",
-    "c": "adjetivo",
-    "ec": ""
-  },
-  {
-    "w": "Inaprehensible",
-    "p": "adj.",
-    "d": "Inaprensible. Sin.: inaprensible.",
-    "df": "adj. inaprensible. Sin.: inaprensible.",
     "e": "",
     "s": "",
     "c": "adjetivo",
@@ -3542,16 +3419,6 @@
     ]
   },
   {
-    "w": "Incomposible",
-    "p": "adj.",
-    "d": "Incomponible. Sin.: incomponible.",
-    "df": "adj. incomponible. Sin.: incomponible.",
-    "e": "De in-2 y composible.",
-    "s": "",
-    "c": "adjetivo",
-    "ec": ""
-  },
-  {
     "w": "Incomprendido",
     "p": "adj.",
     "d": "Que no ha sido debidamente comprendido.",
@@ -3633,16 +3500,6 @@
     "esp": [
       "larga"
     ]
-  },
-  {
-    "w": "Inconmutable",
-    "p": "adj.",
-    "d": "Inmutable. Sin.: inmutable.",
-    "df": "adj. inmutable. Sin.: inmutable. | adj. No conmutable. Ant.: conmutable.",
-    "e": "Del lat. incommutabĭlis.",
-    "s": "",
-    "c": "adjetivo",
-    "ec": "etym_latin"
   },
   {
     "w": "Inconsútil",
@@ -3738,39 +3595,6 @@
     "esp": [
       "explosiva"
     ]
-  },
-  {
-    "w": "Incordio",
-    "p": "m.",
-    "d": "Buba . Sin.: buba, caballo, búas, bubones.",
-    "df": "m. buba (‖ tumor blando). Sin.: buba, caballo, búas, bubones. | m. buba (‖ tumor de origen no venéreo). | m. coloq. Persona o cosa incómoda, agobiante o muy molesta. Sin.: engorro, estorbo, gaita, lata, pelma, rollo.",
-    "e": "Del b. lat. *antecordium 'tumor en el pecho de los caballos', y este del lat. ante- 'ante-' y cor, cordis 'corazón'.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "",
-    "esp": [
-      "explosiva"
-    ]
-  },
-  {
-    "w": "Incorporal",
-    "p": "adj.",
-    "d": "Incorpóreo. Sin.: incorpóreo.",
-    "df": "adj. incorpóreo. Sin.: incorpóreo. | adj. Impalpable, que no se puede tocar.",
-    "e": "Del lat. incorporālis.",
-    "s": "",
-    "c": "adjetivo",
-    "ec": "etym_latin"
-  },
-  {
-    "w": "Incorporo",
-    "p": "m.",
-    "d": "Incorporación. Sin.: incorporación.",
-    "df": "m. incorporación. Sin.: incorporación.",
-    "e": "De incorporar.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
   },
   {
     "w": "Incrasar",
@@ -4567,16 +4391,6 @@
     ]
   },
   {
-    "w": "Individua",
-    "p": "adj.",
-    "d": "Individual. Sin.: individual.",
-    "df": "adj. individual. Sin.: individual. | adj. Que no puede ser dividido. Sin.: indivisible, inseparable. | m. y f. despect. Persona despreciable. | m. Persona perteneciente a una clase o corporación. Individuo del Consejo de Estado, de la Academia Española. | m. coloq. Persona, con abstracción de las demás. Tomás cuida bien de su individuo. Sin.: persona, ser2.",
-    "e": "Del lat. individuus 'indivisible'.",
-    "s": "",
-    "c": "adjetivo",
-    "ec": "etym_latin"
-  },
-  {
     "w": "Individuación",
     "p": "f.",
     "d": "Acción y efecto de individuar.",
@@ -4643,26 +4457,6 @@
     "ec": "etym_latin"
   },
   {
-    "w": "Indización",
-    "p": "f.",
-    "d": "Indexación. Sin.: indexación.",
-    "df": "f. indexación. Sin.: indexación.",
-    "e": "De indizar y -ción.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Indizar",
-    "p": "tr.",
-    "d": "Indexar. Sin.: indexar.",
-    "df": "tr. indexar. Sin.: indexar.",
-    "e": "Haplología de *indicizar, y este de índice e -izar.",
-    "s": "",
-    "c": "verbo",
-    "ec": ""
-  },
-  {
     "w": "Indiófilo",
     "p": "adj.",
     "d": "Que protege a los indios. Apl. a pers., u. t. c. s.",
@@ -4720,16 +4514,6 @@
     "e": "",
     "s": "",
     "c": "gentilicio",
-    "ec": ""
-  },
-  {
-    "w": "Indoctrinar",
-    "p": "tr.",
-    "d": "Adoctrinar. Sin.: adoctrinar, aleccionar, doctrinar.",
-    "df": "tr. adoctrinar. Sin.: adoctrinar, aleccionar, doctrinar.",
-    "e": "",
-    "s": "",
-    "c": "verbo",
     "ec": ""
   },
   {
@@ -4857,19 +4641,6 @@
     "s": "",
     "c": "sustantivo",
     "ec": ""
-  },
-  {
-    "w": "Indubitablemente",
-    "p": "adv.",
-    "d": "Indudablemente. Sin.: indudablemente, innegablemente.",
-    "df": "adv. indudablemente. Sin.: indudablemente, innegablemente.",
-    "e": "",
-    "s": "",
-    "c": "adverbio",
-    "ec": "",
-    "esp": [
-      "larga"
-    ]
   },
   {
     "w": "Indubitado",
@@ -5082,16 +4853,6 @@
     "esp": [
       "larga"
     ]
-  },
-  {
-    "w": "Inenarrable",
-    "p": "adj.",
-    "d": "Inefable. Sin.: indescriptible, inexpresable, inefable, impresionante, admirable.",
-    "df": "adj. inefable. Sin.: indescriptible, inexpresable, inefable, impresionante, admirable.",
-    "e": "Del lat. inenarrabĭlis.",
-    "s": "",
-    "c": "adjetivo",
-    "ec": "etym_latin"
   },
   {
     "w": "Inencontrable",
@@ -5633,26 +5394,6 @@
     "ec": "etym_latin"
   },
   {
-    "w": "Infernillo",
-    "p": "m.",
-    "d": "Infiernillo. Sin.: infiernillo.",
-    "df": "m. infiernillo. Sin.: infiernillo.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Infernáculo",
-    "p": "m.",
-    "d": "Rayuela . Sin.: rayuela, truque, coscojita, golosa, luche1, coroneja.",
-    "df": "m. rayuela (‖ juego infantil a la pata coja). Sin.: rayuela, truque, coscojita, golosa, luche1, coroneja.",
-    "e": "Dim. del lat. tardío infernum 'infierno'.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Infestación",
     "p": "f.",
     "d": "Acción y efecto de infestar o infestarse.",
@@ -5671,16 +5412,6 @@
     "s": "",
     "c": "verbo",
     "ec": "etym_latin"
-  },
-  {
-    "w": "Infeudar",
-    "p": "tr.",
-    "d": "Enfeudar. Sin.: enfeudar.",
-    "df": "tr. enfeudar. Sin.: enfeudar.",
-    "e": "",
-    "s": "",
-    "c": "verbo",
-    "ec": ""
   },
   {
     "w": "Infibulación",
@@ -5799,16 +5530,6 @@
     "ec": "etym_latin"
   },
   {
-    "w": "Inflable",
-    "p": "adj.",
-    "d": "Hinchable. Sin.: hinchable.",
-    "df": "adj. hinchable. Sin.: hinchable.",
-    "e": "",
-    "s": "",
-    "c": "adjetivo",
-    "ec": ""
-  },
-  {
     "w": "Inflamatorio",
     "p": "adj.",
     "d": "Perteneciente o relativo a la inflamación.",
@@ -5867,29 +5588,6 @@
     "s": "",
     "c": "adjetivo",
     "ec": ""
-  },
-  {
-    "w": "Influenciar",
-    "p": "tr.",
-    "d": "Influir. Sin.: influir.",
-    "df": "tr. influir. Sin.: influir.",
-    "e": "",
-    "s": "",
-    "c": "verbo",
-    "ec": ""
-  },
-  {
-    "w": "Influenza",
-    "p": "f.",
-    "d": "Gripe. Sin.: gripe, gripa, trancazo.",
-    "df": "f. gripe. Sin.: gripe, gripa, trancazo.",
-    "e": "Del it. influenza.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_italiano",
-    "esp": [
-      "viajera"
-    ]
   },
   {
     "w": "Infografía",
@@ -6420,16 +6118,6 @@
     "ec": "etym_latin"
   },
   {
-    "w": "Inguinario",
-    "p": "adj.",
-    "d": "Inguinal. Sin.: inguinal.",
-    "df": "adj. inguinal. Sin.: inguinal.",
-    "e": "Del b. lat. inguinarius.",
-    "s": "",
-    "c": "adjetivo",
-    "ec": ""
-  },
-  {
     "w": "Ingurgitación",
     "p": "f.",
     "d": "Fisiol. Acción y efecto de ingurgitar.",
@@ -6892,19 +6580,6 @@
     "ec": ""
   },
   {
-    "w": "Inmundicia",
-    "p": "f.",
-    "d": "Suciedad . Sin.: suciedad, basura, desperdicio, detritus, asquerosidad, sarama, porquería, cochambre.",
-    "df": "f. suciedad (‖ cosa que ensucia). Sin.: suciedad, basura, desperdicio, detritus, asquerosidad, sarama, porquería, cochambre. | f. Impureza, deshonestidad. Sin.: impureza, deshonestidad, impudicia, desvergüenza, libertinaje, obscenidad, vicio.",
-    "e": "Del lat. immunditia.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_latin",
-    "esp": [
-      "explosiva"
-    ]
-  },
-  {
     "w": "Inmunitario",
     "p": "adj.",
     "d": "Biol. y Med. Perteneciente o relativo a la inmunidad.",
@@ -7149,16 +6824,6 @@
     "ec": "etym_latin"
   },
   {
-    "w": "Innovamiento",
-    "p": "m.",
-    "d": "Innovación. Sin.: innovación.",
-    "df": "m. innovación. Sin.: innovación.",
-    "e": "De innovar y -miento.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Innumerabilidad",
     "p": "f.",
     "d": "Muchedumbre grande e incontable.",
@@ -7311,16 +6976,6 @@
     "ec": ""
   },
   {
-    "w": "Inoperatividad",
-    "p": "f.",
-    "d": "Inoperancia. Sin.: inoperancia, ineficacia, inutilidad, infructuosidad.",
-    "df": "f. inoperancia. Sin.: inoperancia, ineficacia, inutilidad, infructuosidad.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Inopia",
     "p": "f.",
     "d": "Indigencia, pobreza, escasez.",
@@ -7346,16 +7001,6 @@
     "d": "Que sucede sin haber pensado en ello, o sin esperarlo. Sin.: inesperado, impensado, imprevisto, repentino, súbito, insospechado.",
     "df": "adj. Que sucede sin haber pensado en ello, o sin esperarlo. Sin.: inesperado, impensado, imprevisto, repentino, súbito, insospechado.",
     "e": "Del lat. inopinātus.",
-    "s": "",
-    "c": "adjetivo",
-    "ec": "etym_latin"
-  },
-  {
-    "w": "Inordinado",
-    "p": "adj.",
-    "d": "Inordenado. Sin.: desordenado, inordenado, desorganizado, caótico, anárquico.",
-    "df": "adj. inordenado. Sin.: desordenado, inordenado, desorganizado, caótico, anárquico.",
-    "e": "Del lat. inordinātus.",
     "s": "",
     "c": "adjetivo",
     "ec": "etym_latin"
@@ -7507,16 +7152,6 @@
     "ec": ""
   },
   {
-    "w": "Insania",
-    "p": "f.",
-    "d": "Locura . Sin.: locura, demencia, enajenación, vesania, insanidad, loquera, ñamería.",
-    "df": "f. locura (‖ privación del juicio). Sin.: locura, demencia, enajenación, vesania, insanidad, loquera, ñamería.",
-    "e": "Del lat. insania.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_latin"
-  },
-  {
     "w": "Inscribible",
     "p": "adj.",
     "d": "Que puede inscribirse.",
@@ -7639,16 +7274,6 @@
     "ec": "etym_latin"
   },
   {
-    "w": "Inserir",
-    "p": "tr.",
-    "d": "Injerir. Sin.: injerir.",
-    "df": "tr. injerir. Sin.: injerir.",
-    "e": "Del lat. inserĕre 'introducir'.",
-    "s": "",
-    "c": "verbo",
-    "ec": "etym_latin"
-  },
-  {
     "w": "Inserto",
     "p": "adj.",
     "d": "Que está insertado.",
@@ -7680,19 +7305,6 @@
     "s": "",
     "c": "adjetivo",
     "ec": "etym_latin"
-  },
-  {
-    "w": "Insigne",
-    "p": "adj.",
-    "d": "Célebre. Sin.: célebre, famoso, ilustre, conocido, renombrado, nombrado, distinguido, acreditado, señalado, egregio, afamado1, eximio, preclaro, prestigioso, reputado.",
-    "df": "adj. célebre. Sin.: célebre, famoso, ilustre, conocido, renombrado, nombrado, distinguido, acreditado, señalado, egregio, afamado1, eximio, preclaro, prestigioso, reputado.",
-    "e": "Del lat. insignis.",
-    "s": "",
-    "c": "adjetivo",
-    "ec": "etym_latin",
-    "esp": [
-      "explosiva"
-    ]
   },
   {
     "w": "Insignia",
@@ -7918,26 +7530,6 @@
     "s": "",
     "c": "adjetivo",
     "ec": ""
-  },
-  {
-    "w": "Instabilidad",
-    "p": "f.",
-    "d": "Inestabilidad. Sin.: inestabilidad, inseguridad, desequilibrio, inconsistencia.",
-    "df": "f. inestabilidad. Sin.: inestabilidad, inseguridad, desequilibrio, inconsistencia.",
-    "e": "Del lat. instabilĭtas, -ātis.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_latin"
-  },
-  {
-    "w": "Instable",
-    "p": "adj.",
-    "d": "Inestable. Sin.: inestable, inseguro, inconsistente.",
-    "df": "adj. inestable. Sin.: inestable, inseguro, inconsistente.",
-    "e": "Del lat. instabĭlis.",
-    "s": "",
-    "c": "adjetivo",
-    "ec": "etym_latin"
   },
   {
     "w": "Instalador",
@@ -8455,19 +8047,6 @@
     "ec": "etym_latin"
   },
   {
-    "w": "Intelectualidad",
-    "p": "f.",
-    "d": "Intelecto. Sin.: intelecto, inteligencia1, entendimiento, raciocinio, mente, razón.",
-    "df": "f. intelecto. Sin.: intelecto, inteligencia1, entendimiento, raciocinio, mente, razón. | f. Conjunto de los intelectuales de un país, de una región, etc. Sin.: inteligencia2.",
-    "e": "Del lat. intellectualĭtas, -ātis.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_latin",
-    "esp": [
-      "larga"
-    ]
-  },
-  {
     "w": "Intelectualismo",
     "p": "m.",
     "d": "Fil. Actitud de dar preeminencia al intelecto frente a lo afectivo y volitivo.",
@@ -8632,16 +8211,6 @@
     "ec": ""
   },
   {
-    "w": "Intensivamente",
-    "p": "adv.",
-    "d": "Intensamente. Sin.: intensamente.",
-    "df": "adv. intensamente. Sin.: intensamente.",
-    "e": "",
-    "s": "",
-    "c": "adverbio",
-    "ec": ""
-  },
-  {
     "w": "Intensivista",
     "p": "m. y f.",
     "d": "Y f. Persona especializada en medicina intensiva.",
@@ -8760,16 +8329,6 @@
     "s": "",
     "c": "sustantivo",
     "ec": "etym_latin"
-  },
-  {
-    "w": "Intercaladura",
-    "p": "f.",
-    "d": "Intercalación. Sin.: intercalación, inserción, incrustación, interpolación.",
-    "df": "f. intercalación. Sin.: intercalación, inserción, incrustación, interpolación.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
   },
   {
     "w": "Intercambiable",
@@ -9033,32 +8592,6 @@
     "ec": ""
   },
   {
-    "w": "Interdisciplinar",
-    "p": "adj.",
-    "d": "Interdisciplinario. Sin.: interdisciplinario, multidisciplinar, multidisciplinario.",
-    "df": "adj. interdisciplinario. Sin.: interdisciplinario, multidisciplinar, multidisciplinario.",
-    "e": "",
-    "s": "",
-    "c": "adjetivo",
-    "ec": "",
-    "esp": [
-      "larga"
-    ]
-  },
-  {
-    "w": "Interdisciplinaridad",
-    "p": "f.",
-    "d": "Interdisciplinariedad. Sin.: interdisciplinariedad.",
-    "df": "f. interdisciplinariedad. Sin.: interdisciplinariedad.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "",
-    "esp": [
-      "larga"
-    ]
-  },
-  {
     "w": "Interdisciplinariedad",
     "p": "f.",
     "d": "Cualidad de interdisciplinario. Sin.: interdisciplinaridad.",
@@ -9283,16 +8816,6 @@
     "ec": ""
   },
   {
-    "w": "Interinato",
-    "p": "m.",
-    "d": "Interinidad . Sin.: suplencia, interinidad, ínterin.",
-    "df": "m. Am. interinidad (‖ tiempo que dura el desempeño interino de un cargo). Sin.: suplencia, interinidad, ínterin. | m. Am. Cargo o empleo interino.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Interindividual",
     "p": "adj.",
     "d": "Que concierne a la relación entre individuos humanos como tales, a diferencia de lo social o colectivo.",
@@ -9440,16 +8963,6 @@
     "s": "",
     "c": "verbo",
     "ec": ""
-  },
-  {
-    "w": "Interlocución",
-    "p": "f.",
-    "d": "Diálogo . Sin.: diálogo, conversación, coloquio, plática, platicada.",
-    "df": "f. diálogo (‖ plática entre dos o más personas). Sin.: diálogo, conversación, coloquio, plática, platicada.",
-    "e": "Del lat. interlocutio, -ōnis 'interrupción de una conversación'.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_latin"
   },
   {
     "w": "Interlocutorio",
@@ -9733,16 +9246,6 @@
     "ec": ""
   },
   {
-    "w": "Interpaginar",
-    "p": "tr.",
-    "d": "Interfoliar. Sin.: interfoliar, intercalar2.",
-    "df": "tr. interfoliar. Sin.: interfoliar, intercalar2.",
-    "e": "De inter- y paginar.",
-    "s": "",
-    "c": "verbo",
-    "ec": ""
-  },
-  {
     "w": "Interparlamentario",
     "p": "adj.",
     "d": "Dicho de una comunicación o de una organización: Que enlaza la actividad internacional entre las representaciones legislativas de diferentes países.",
@@ -9959,19 +9462,6 @@
     "s": "",
     "c": "sustantivo",
     "ec": "etym_latin"
-  },
-  {
-    "w": "Interrogación",
-    "p": "f.",
-    "d": "Pregunta. Sin.: pregunta, cuestión, duda, incógnita, interrogante, interpelación, demanda, problema.",
-    "df": "f. pregunta. Sin.: pregunta, cuestión, duda, incógnita, interrogante, interpelación, demanda, problema. | f. Signo ortográfico (¿?) con que se encierra un enunciado, frase o palabra para indicar su modalidad y entonación interrogativas. Sin.: interrogante. | f. Ret. Pregunta que no manifiesta duda ni pide respuesta, sino que expresa indirectamente la afirmación de lo que dice, o le da más vigor y eficacia.",
-    "e": "Del lat. interrogatio, -ōnis.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_latin",
-    "esp": [
-      "explosiva"
-    ]
   },
   {
     "w": "Interrogador",
@@ -10490,16 +9980,6 @@
     "ec": ""
   },
   {
-    "w": "Intricación",
-    "p": "f.",
-    "d": "Intrincación. Sin.: intrincación.",
-    "df": "f. intrincación. Sin.: intrincación.",
-    "e": "De intricar.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Intricar",
     "p": "tr.",
     "d": "Intrincar. U. t. c. prnl.",
@@ -10722,16 +10202,6 @@
     "ec": ""
   },
   {
-    "w": "Intumescencia",
-    "p": "f.",
-    "d": "Hinchazón . Sin.: hinchazón, tumefacción.",
-    "df": "f. hinchazón (‖ efecto de hincharse). Sin.: hinchazón, tumefacción.",
-    "e": "Der. del lat. intumescens, -entis, part. pres. act. de intumescĕre 'empezar a hincharse'.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Intumescente",
     "p": "adj.",
     "d": "Que se va hinchando.",
@@ -10921,16 +10391,6 @@
     "ec": ""
   },
   {
-    "w": "Invernada",
-    "p": "f.",
-    "d": "Invierno . Sin.: invierno.",
-    "df": "f. invierno (‖ época más fría del año). Sin.: invierno. | f. Estancia o permanencia en un lugar durante el invierno. | f. Bol., Chile, Ec., Par., Ur. y Ven. Invernadero para el ganado.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Invernizo",
     "p": "adj.",
     "d": "Perteneciente o relativo al invierno. Sin.: invernal, hibernal, hiemal.",
@@ -10939,16 +10399,6 @@
     "s": "",
     "c": "adjetivo",
     "ec": ""
-  },
-  {
-    "w": "Invernáculo",
-    "p": "m.",
-    "d": "Invernadero . Sin.: invernadero, estufa.",
-    "df": "m. invernadero (‖ recinto para el cultivo de plantas). Sin.: invernadero, estufa.",
-    "e": "Del lat. hibernacŭlum.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_latin"
   },
   {
     "w": "Inversamente",
@@ -12348,26 +11798,6 @@
     "ec": ""
   },
   {
-    "w": "Isoterma",
-    "p": "adj.",
-    "d": "Isotérmico . Sin.: isotérmico.",
-    "df": "adj. isotérmico (‖ que mantiene la temperatura). Sin.: isotérmico. | adj. Fís. De igual temperatura.",
-    "e": "De iso- y -termo.",
-    "s": "",
-    "c": "adjetivo",
-    "ec": ""
-  },
-  {
-    "w": "Isotermo",
-    "p": "adj.",
-    "d": "Isotérmico . Sin.: isotérmico.",
-    "df": "adj. isotérmico (‖ que mantiene la temperatura). Sin.: isotérmico. | adj. Fís. De igual temperatura.",
-    "e": "De iso- y -termo.",
-    "s": "",
-    "c": "adjetivo",
-    "ec": ""
-  },
-  {
     "w": "Isotropía",
     "p": "f.",
     "d": "Fís. Cualidad de isótropo.",
@@ -12739,16 +12169,6 @@
     "ec": "etym_latin"
   },
   {
-    "w": "Iterar",
-    "p": "tr.",
-    "d": "Repetir . Sin.: repetir, reiterar, insistir, machacar.",
-    "df": "tr. repetir (‖ volver a hacer lo que se había hecho). Sin.: repetir, reiterar, insistir, machacar.",
-    "e": "Del lat. iterāre.",
-    "s": "",
-    "c": "verbo",
-    "ec": "etym_latin"
-  },
-  {
     "w": "Iterativo",
     "p": "adj.",
     "d": "Que se repite. Sin.: repetitivo, reiterativo, recurrente.",
@@ -12774,16 +12194,6 @@
     "d": "Que tiene el falo erecto.",
     "df": "adj. cult. Que tiene el falo erecto.",
     "e": "Del lat. ithyphallĭcus, y este del gr. ἰθυφαλλικός ithyphallikós.",
-    "s": "",
-    "c": "adjetivo",
-    "ec": "etym_latin"
-  },
-  {
-    "w": "Itinerante",
-    "p": "adj.",
-    "d": "Ambulante . Sin.: ambulante.",
-    "df": "adj. ambulante (‖ que va de un lugar a otro). Sin.: ambulante.",
-    "e": "Del lat. tardío itinĕrans, -antis 'viajero', y este de itinerāri 'viajar', der. de iter, itinĕris 'camino, viaje'.",
     "s": "",
     "c": "adjetivo",
     "ec": "etym_latin"
@@ -12843,16 +12253,6 @@
     "p": "f.",
     "d": "Acción y efecto de izar. Sin.: izado.",
     "df": "f. Acción y efecto de izar. Sin.: izado.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Izado",
-    "p": "m.",
-    "d": "Izada. Sin.: izada.",
-    "df": "m. izada. Sin.: izada.",
     "e": "",
     "s": "",
     "c": "sustantivo",

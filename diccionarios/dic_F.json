@@ -321,16 +321,6 @@
     ]
   },
   {
-    "w": "Facsímile",
-    "p": "m.",
-    "d": "Facsímil. Sin.: facsímil, reproducción, imitación, copia, duplicado, calco.",
-    "df": "m. facsímil. Sin.: facsímil, reproducción, imitación, copia, duplicado, calco.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Factibilidad",
     "p": "f.",
     "d": "Cualidad o condición de factible.",
@@ -351,16 +341,6 @@
     "ec": ""
   },
   {
-    "w": "Facticio",
-    "p": "adj.",
-    "d": "Artificial . Sin.: artificial.",
-    "df": "adj. artificial (‖ no natural). Sin.: artificial. | adj. Dicho de un libro o volumen: Que recoge libros o impresos diversos.",
-    "e": "Del lat. facticius.",
-    "s": "",
-    "c": "adjetivo",
-    "ec": "etym_latin"
-  },
-  {
     "w": "Factorial",
     "p": "adj.",
     "d": "Perteneciente o relativo a uno o varios factores . Consideración factorial del problema del paro.",
@@ -379,16 +359,6 @@
     "s": "",
     "c": "verbo",
     "ec": ""
-  },
-  {
-    "w": "Factual",
-    "p": "adj.",
-    "d": "Fáctico . Sin.: fáctico.",
-    "df": "adj. fáctico (‖ perteneciente a los hechos). Sin.: fáctico.",
-    "e": "Del lat. factum 'hecho' y -al.",
-    "s": "",
-    "c": "adjetivo",
-    "ec": "etym_latin"
   },
   {
     "w": "Facturar",
@@ -756,16 +726,6 @@
     "ec": ""
   },
   {
-    "w": "Falangia",
-    "p": "f.",
-    "d": "Falangio . Sin.: falangio, segador.",
-    "df": "f. falangio (‖ segador). Sin.: falangio, segador.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Falangiano",
     "p": "adj.",
     "d": "Anat. Perteneciente o relativo a la falange. Articulación falangiana.",
@@ -784,16 +744,6 @@
     "s": "",
     "c": "cuerpo_humano",
     "ec": ""
-  },
-  {
-    "w": "Falangio",
-    "p": "m.",
-    "d": "Segador . Sin.: segador, falangia.",
-    "df": "m. segador (‖ arácnido). Sin.: segador, falangia. | m. Planta de la familia de las liliáceas, con la raíz pequeña, delgada y verde, hojas radicales largas y estrechas, dos o tres escapos con flores blancas, y las semillas negras. Los antiguos la supusieron antídoto contra la picadura del arácnido del mismo nombre.",
-    "e": "Del lat. phalangĭum, y este del gr. φαλάγγιον phalángion.",
-    "s": "",
-    "c": "botanica",
-    "ec": "etym_latin"
   },
   {
     "w": "Falangismo",
@@ -817,16 +767,6 @@
     "esp": [
       "viajera"
     ]
-  },
-  {
-    "w": "Falaris",
-    "p": "f.",
-    "d": "Focha. Sin.: focha, foja2, fúlica, gallineta, gallareta.",
-    "df": "f. focha. Sin.: focha, foja2, fúlica, gallineta, gallareta.",
-    "e": "Del lat. phalāris, y este del gr. φαλαρίς phalarís.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_latin"
   },
   {
     "w": "Falaropo",
@@ -923,19 +863,6 @@
     "s": "",
     "c": "adjetivo",
     "ec": "etym_latin"
-  },
-  {
-    "w": "Falcinelo",
-    "p": "m.",
-    "d": "Morito. Sin.: morito.",
-    "df": "m. morito. Sin.: morito.",
-    "e": "Del it. falcinello.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_italiano",
-    "esp": [
-      "viajera"
-    ]
   },
   {
     "w": "Falcino",
@@ -1088,16 +1015,6 @@
     "ec": ""
   },
   {
-    "w": "Faldriquera",
-    "p": "f.",
-    "d": "Faltriquera. Sin.: faltriquera. [en teatros antiguos] faltriquera, cubillo, bañera.",
-    "df": "f. faltriquera. Sin.: faltriquera. [en teatros antiguos] faltriquera, cubillo, bañera.",
-    "e": "De falda.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Faldudo",
     "p": "adj.",
     "d": "Que tiene mucha falda. Sin.: haldudo.",
@@ -1229,16 +1146,6 @@
     "s": "",
     "c": "sustantivo",
     "ec": ""
-  },
-  {
-    "w": "Falo",
-    "p": "m.",
-    "d": "Pene. Sin.: pene, miembro, verga1, polla.",
-    "df": "m. pene. Sin.: pene, miembro, verga1, polla.",
-    "e": "Del lat. phallus, y este del gr. φαλλός phallós.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_latin"
   },
   {
     "w": "Falocracia",
@@ -1627,16 +1534,6 @@
     "ec": ""
   },
   {
-    "w": "Fandulario",
-    "p": "m.",
-    "d": "Faldulario. Sin.: faldulario, andulario.",
-    "df": "m. faldulario. Sin.: faldulario, andulario.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Faneca",
     "p": "f.",
     "d": "Pez teleósteo marino de hasta 30 cm de longitud, de color parduzco en el lomo y blanco por el vientre, con tres aletas dorsales, dos ventrales y las abdominales por delante de las torácicas.",
@@ -1688,16 +1585,6 @@
     "s": "",
     "c": "adjetivo",
     "ec": "etym_griego"
-  },
-  {
-    "w": "Fanfarrear",
-    "p": "intr.",
-    "d": "Fanfarronear. Sin.: fanfarronear, jactarse, guapear, palanganear.",
-    "df": "intr. fanfarronear. Sin.: fanfarronear, jactarse, guapear, palanganear.",
-    "e": "De la onomat. fanfarr y -ear.",
-    "s": "",
-    "c": "verbo",
-    "ec": ""
   },
   {
     "w": "Fanfarria",
@@ -1892,16 +1779,6 @@
     ]
   },
   {
-    "w": "Faquí",
-    "p": "m.",
-    "d": "Alfaquí. Sin.: alfaquí, ulema, doctor, sabio1, consejero.",
-    "df": "m. alfaquí. Sin.: alfaquí, ulema, doctor, sabio1, consejero.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Faquín",
     "p": "m.",
     "d": "Ganapán, esportillero, mozo de cuerda. Sin.: cargador, esportillero, ganapán, costalero.",
@@ -2005,26 +1882,6 @@
     "ec": ""
   },
   {
-    "w": "Farandola",
-    "p": "f.",
-    "d": "Faralá . Sin.: faralá, holán, volante.",
-    "df": "f. faralá (‖ volante). Sin.: faralá, holán, volante. | f. Danza de origen provenzal que los bailarines ejecutan colocados en fila y agarrados de la mano. | f. Música de la farandola.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Farandulear",
-    "p": "intr.",
-    "d": "Farolear. Sin.: farolear.",
-    "df": "intr. coloq. farolear. Sin.: farolear.",
-    "e": "De farándula y -ear.",
-    "s": "",
-    "c": "verbo",
-    "ec": ""
-  },
-  {
     "w": "Farandulero",
     "p": "adj.",
     "d": "Perteneciente o relativo a la farándula.",
@@ -2053,29 +1910,6 @@
     "s": "",
     "c": "adjetivo",
     "ec": ""
-  },
-  {
-    "w": "Farda",
-    "p": "f.",
-    "d": "Alfarda . Sin.: alfarda1.",
-    "df": "f. alfarda (‖ contribución que pagaban los moros y judíos). Sin.: alfarda1. | f. Contribución por el aprovechamiento de las aguas. Sin.: alfardón2, alfarda1. | f. Bulto o lío de ropa. | f. Carp. Corte o muesca que se hace en un madero para encajar en él la barbilla de otro.",
-    "e": "Etim. disc.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Fardacho",
-    "p": "m.",
-    "d": "Lagarto . Sin.: lagarto, ardacho, gardacho.",
-    "df": "m. lagarto (‖ reptil). Sin.: lagarto, ardacho, gardacho.",
-    "e": "Del ár. hisp. ḥarḍún o ḥarḏún, y este del ár. clás. ḥirḏawn.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_arabe",
-    "esp": [
-      "viajera"
-    ]
   },
   {
     "w": "Fardaje",
@@ -2184,30 +2018,10 @@
     "ec": ""
   },
   {
-    "w": "Farfalá",
-    "p": "m.",
-    "d": "Faralá. Sin.: faralá.",
-    "df": "m. faralá. Sin.: faralá.",
-    "e": "De falbalá.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Farfantonada",
     "p": "f. coloq.",
     "d": "Hecho o dicho propios del farfantón. Sin.: farfantonería.",
     "df": "f. coloq. Hecho o dicho propios del farfantón. Sin.: farfantonería.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Farfantonería",
-    "p": "f. coloq.",
-    "d": "Farfantonada. Sin.: farfantonada.",
-    "df": "f. coloq. farfantonada. Sin.: farfantonada.",
     "e": "",
     "s": "",
     "c": "sustantivo",
@@ -2354,16 +2168,6 @@
     "ec": ""
   },
   {
-    "w": "Farisaicamente",
-    "p": "adv.",
-    "d": "Hipócritamente. Sin.: hipócritamente, falsamente.",
-    "df": "adv. hipócritamente. Sin.: hipócritamente, falsamente.",
-    "e": "",
-    "s": "",
-    "c": "adverbio",
-    "ec": ""
-  },
-  {
     "w": "Farisaico",
     "p": "adj.",
     "d": "Propio o característico de los fariseos. Sin.: fariseo.",
@@ -2375,16 +2179,6 @@
     "esp": [
       "explosiva"
     ]
-  },
-  {
-    "w": "Farisaísmo",
-    "p": "m.",
-    "d": "Fariseísmo . Sin.: fariseísmo.",
-    "df": "m. fariseísmo (‖ secta). Sin.: fariseísmo.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
   },
   {
     "w": "Fariseo",
@@ -2863,16 +2657,6 @@
     "ec": ""
   },
   {
-    "w": "Fascículo",
-    "p": "m.",
-    "d": "Entrega . Sin.: entrega, cuadernillo, folleto, cuaderno.",
-    "df": "m. entrega (‖ cuaderno). Sin.: entrega, cuadernillo, folleto, cuaderno. | m. Anat. Haz de fibras musculares.",
-    "e": "Del lat. fascicŭlus 'hacecillo'.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_latin"
-  },
-  {
     "w": "Fastidiado",
     "p": "adj. coloq.",
     "d": "Enfermo o achacoso. Sin.: enfermo, indispuesto, malo, pachucho.",
@@ -3082,19 +2866,6 @@
     "ec": ""
   },
   {
-    "w": "Faustoso",
-    "p": "adj.",
-    "d": "Fastuoso. Sin.: fastuoso, lujoso, ostentoso, opulento, suntuoso, majestuoso, vistoso, espléndido, imponente, espectacular.",
-    "df": "adj. fastuoso. Sin.: fastuoso, lujoso, ostentoso, opulento, suntuoso, majestuoso, vistoso, espléndido, imponente, espectacular.",
-    "e": "",
-    "s": "",
-    "c": "adjetivo",
-    "ec": "",
-    "esp": [
-      "explosiva"
-    ]
-  },
-  {
     "w": "Fautor",
     "p": "m. y f.",
     "d": "Y f. Persona que favorece y ayuda a otra. U. m. en sent. peyor. Sin.: protector, ayudante, colaborador, cómplice.",
@@ -3103,16 +2874,6 @@
     "s": "",
     "c": "sustantivo",
     "ec": "etym_latin"
-  },
-  {
-    "w": "Fautoría",
-    "p": "f.",
-    "d": "Favor . Sin.: favor, ayuda, socorro, auxilio, amparo, atención, protección.",
-    "df": "f. favor (‖ ayuda). Sin.: favor, ayuda, socorro, auxilio, amparo, atención, protección.",
-    "e": "De fautor.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
   },
   {
     "w": "Favela",
@@ -3626,16 +3387,6 @@
     "ec": ""
   },
   {
-    "w": "Felpo",
-    "p": "m.",
-    "d": "Felpudo . Sin.: felpudo, limpiabarros, estera, pasillo, choapino.",
-    "df": "m. felpudo (‖ estera). Sin.: felpudo, limpiabarros, estera, pasillo, choapino.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Felposo",
     "p": "adj.",
     "d": "Cubierto de pelos blandos, entrelazados, de modo que no se distinguen sus hilos.",
@@ -3677,16 +3428,6 @@
     "s": "",
     "c": "verbo",
     "ec": ""
-  },
-  {
-    "w": "Femenil",
-    "p": "adj.",
-    "d": "Femenino . Sin.: femenino, femíneo, mujeril.",
-    "df": "adj. cult. femenino (‖ perteneciente a la mujer, o propio de ella). Sin.: femenino, femíneo, mujeril.",
-    "e": "Del lat. tardío feminīlis.",
-    "s": "",
-    "c": "adjetivo",
-    "ec": "etym_latin"
   },
   {
     "w": "Femenilmente",
@@ -3789,31 +3530,11 @@
     "ec": ""
   },
   {
-    "w": "Femíneo",
-    "p": "adj.",
-    "d": "Femenino . Sin.: femenino, femenil, mujeril.",
-    "df": "adj. cult. femenino (‖ perteneciente a la mujer, o propio de ella). Sin.: femenino, femenil, mujeril.",
-    "e": "Del lat. femineus.",
-    "s": "",
-    "c": "adjetivo",
-    "ec": "etym_latin"
-  },
-  {
     "w": "Fenda",
     "p": "f.",
     "d": "Raja o hendidura al hilo en la madera.",
     "df": "f. Raja o hendidura al hilo en la madera.",
     "e": "Del ant. fender 'hender'.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Fendi",
-    "p": "m.",
-    "d": "Efendi. Sin.: efendi.",
-    "df": "m. efendi. Sin.: efendi.",
-    "e": "",
     "s": "",
     "c": "sustantivo",
     "ec": ""
@@ -4276,19 +3997,6 @@
     "ec": ""
   },
   {
-    "w": "Ferreruelo",
-    "p": "m.",
-    "d": "Herreruelo2. Sin.: herreruelo2.",
-    "df": "m. herreruelo2. Sin.: herreruelo2.",
-    "e": "Del ár. dialect. feriyûl 'especie de capa o blusa', y este del gr. περιβόλαιον peribólaion.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_arabe",
-    "esp": [
-      "viajera"
-    ]
-  },
-  {
     "w": "Ferrería",
     "p": "f.",
     "d": "Taller en donde se beneficia el mineral de hierro, reduciéndolo a metal. Sin.: forja, herrería, cerrajería.",
@@ -4296,16 +4004,6 @@
     "e": "De ferrero.",
     "s": "",
     "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Ferretear",
-    "p": "tr.",
-    "d": "Ferrar . Sin.: ferrar, guarnecer.",
-    "df": "tr. ferrar (‖ guarnecer con hierro). Sin.: ferrar, guarnecer. | tr. Labrar con hierro.",
-    "e": "De ferrete2.",
-    "s": "",
-    "c": "verbo",
     "ec": ""
   },
   {
@@ -4482,16 +4180,6 @@
     "ec": "etym_latin"
   },
   {
-    "w": "Ferry",
-    "p": "m.",
-    "d": "Ferri. Sin.: ferri, transbordador.",
-    "df": "m. ferri. Sin.: ferri, transbordador.",
-    "e": "Voz ingl.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Ferrón",
     "p": "m.",
     "d": "Empleado en una ferrería.",
@@ -4542,16 +4230,6 @@
     "e": "Del lat. ferulaceus.",
     "s": "",
     "c": "adjetivo",
-    "ec": "etym_latin"
-  },
-  {
-    "w": "Fervencia",
-    "p": "f.",
-    "d": "Hervencia. Sin.: hervencia.",
-    "df": "f. hervencia. Sin.: hervencia.",
-    "e": "Del lat. fervens, -entis 'hirviente'.",
-    "s": "",
-    "c": "sustantivo",
     "ec": "etym_latin"
   },
   {
@@ -5111,16 +4789,6 @@
     "ec": "etym_latin"
   },
   {
-    "w": "Fidecomiso",
-    "p": "m.",
-    "d": "Fideicomiso. Sin.: fideicomiso.",
-    "df": "m. fideicomiso. Sin.: fideicomiso.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Fideero",
     "p": "m. y f.",
     "d": "Y f. Persona que fabrica fideos u otras pastas semejantes.",
@@ -5307,16 +4975,6 @@
     "ec": ""
   },
   {
-    "w": "Figueral",
-    "p": "m.",
-    "d": "Higueral. Sin.: higueral.",
-    "df": "m. higueral. Sin.: higueral.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Figuerense",
     "p": "adj.",
     "d": "Natural de Figueras, ciudad de la provincia de Gerona, en España. U. t. c. s.",
@@ -5473,16 +5131,6 @@
     "ec": ""
   },
   {
-    "w": "Fijapelo",
-    "p": "m.",
-    "d": "Fijador . Sin.: fijador, gomina, laca, brillantina.",
-    "df": "m. fijador (‖ cosmético para asentar el cabello). Sin.: fijador, gomina, laca, brillantina.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Fijativo",
     "p": "m.",
     "d": "Líquido preparado para fijar fotografías o dibujos.",
@@ -5581,16 +5229,6 @@
     "d": "León. Reunión vecinal, invernal y nocturna, en la que las mujeres hilaban y los hombres hacían trabajos manuales, mientras se contaban historias. Sin.: hilorio.",
     "df": "m. León. Reunión vecinal, invernal y nocturna, en la que las mujeres hilaban y los hombres hacían trabajos manuales, mientras se contaban historias. Sin.: hilorio.",
     "e": "Alterac. del ast. filazón, der. del lat. filum 'hilo'.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Filantropismo",
-    "p": "m.",
-    "d": "Filantropía. Sin.: filantropía, altruismo, generosidad, magnanimidad, humanitarismo, abnegación, caridad.",
-    "df": "m. filantropía. Sin.: filantropía, altruismo, generosidad, magnanimidad, humanitarismo, abnegación, caridad.",
-    "e": "De filántropo e -ismo.",
     "s": "",
     "c": "sustantivo",
     "ec": ""
@@ -6052,16 +5690,6 @@
     "ec": ""
   },
   {
-    "w": "Filmina",
-    "p": "f.",
-    "d": "Diapositiva . Sin.: diapositiva, trasparencia, fotografía.",
-    "df": "f. diapositiva (‖ fotografía). Sin.: diapositiva, trasparencia, fotografía.",
-    "e": "De film e -ina; cf. it. filmina.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Filmografía",
     "p": "f.",
     "d": "Descripción o conocimiento de filmes o microfilmes.",
@@ -6173,26 +5801,6 @@
     "s": "",
     "c": "sustantivo",
     "ec": "etym_griego"
-  },
-  {
-    "w": "Filomela",
-    "p": "f.",
-    "d": "Ruiseñor. Sin.: ruiseñor, bulbul, roncal, filomena.",
-    "df": "f. poét. ruiseñor. Sin.: ruiseñor, bulbul, roncal, filomena.",
-    "e": "Del lat. philomēla, y este del gr. φιλομήλα philomḗla.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_latin"
-  },
-  {
-    "w": "Filomena",
-    "p": "f.",
-    "d": "Filomela. Sin.: ruiseñor, roncal, bulbul, filomela.",
-    "df": "f. poét. filomela. Sin.: ruiseñor, roncal, bulbul, filomela.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
   },
   {
     "w": "Filonio",
@@ -6883,19 +6491,6 @@
     "ec": ""
   },
   {
-    "w": "Fisicoculturismo",
-    "p": "m.",
-    "d": "Culturismo. Sin.: culturismo, fisiculturismo, fisioculturismo.",
-    "df": "m. culturismo. Sin.: culturismo, fisiculturismo, fisioculturismo.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "",
-    "esp": [
-      "larga"
-    ]
-  },
-  {
     "w": "Fisicoquímica",
     "p": "adj.",
     "d": "Perteneciente o relativo a la fisicoquímica.",
@@ -6999,16 +6594,6 @@
     "ec": ""
   },
   {
-    "w": "Fisionomía",
-    "p": "f.",
-    "d": "Fisonomía. Sin.: fisonomía, cara1, rostro, semblante, faz, gesto. apariencia, aspecto, forma, figura, tipo, imagen, facies.",
-    "df": "f. fisonomía. Sin.: fisonomía, cara1, rostro, semblante, faz, gesto. apariencia, aspecto, forma, figura, tipo, imagen, facies.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Fisiopatología",
     "p": "f.",
     "d": "Med. Estudio de la relación entre las funciones del organismo y sus posibles alteraciones.",
@@ -7060,19 +6645,6 @@
     "s": "",
     "c": "sustantivo",
     "ec": ""
-  },
-  {
-    "w": "Fisioterapéutico",
-    "p": "adj.",
-    "d": "Fisioterápico. Sin.: fisioterápico.",
-    "df": "adj. fisioterápico. Sin.: fisioterápico.",
-    "e": "",
-    "s": "",
-    "c": "adjetivo",
-    "ec": "",
-    "esp": [
-      "larga"
-    ]
   },
   {
     "w": "Fisioterápico",
@@ -7173,16 +6745,6 @@
     "s": "",
     "c": "sustantivo",
     "ec": "etym_griego"
-  },
-  {
-    "w": "Fistra",
-    "p": "f.",
-    "d": "Ameos . Sin.: ameos.",
-    "df": "f. ameos (‖ planta). Sin.: ameos.",
-    "e": "Del lat. fistŭla 'cañafístula'.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_latin"
   },
   {
     "w": "Fistulación",
@@ -7296,16 +6858,6 @@
     "s": "",
     "c": "adjetivo",
     "ec": "etym_latin"
-  },
-  {
-    "w": "Fitología",
-    "p": "f.",
-    "d": "Botánica . Sin.: botánica.",
-    "df": "f. botánica (‖ ciencia que trata de los vegetales). Sin.: botánica.",
-    "e": "De fito- y -logía.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
   },
   {
     "w": "Fitopatología",
@@ -7564,19 +7116,6 @@
     "ec": "etym_latin"
   },
   {
-    "w": "Flambear",
-    "p": "tr.",
-    "d": "Flamear . Sin.: flamear, llamear, arder.",
-    "df": "tr. flamear (‖ rociar un alimento con licor). Sin.: flamear, llamear, arder.",
-    "e": "Del fr. flamber 'quemar', 'pasar por el fuego'.",
-    "s": "",
-    "c": "verbo",
-    "ec": "etym_frances",
-    "esp": [
-      "viajera"
-    ]
-  },
-  {
     "w": "Flamear",
     "p": "tr.",
     "d": "Rociar un alimento con un licor y prenderle fuego. U. t. c. prnl. Sin.: flambear.",
@@ -7697,16 +7236,6 @@
     "p": "f.",
     "d": "Molde en que se cuaja el flan. Sin.: flanero.",
     "df": "f. Molde en que se cuaja el flan. Sin.: flanero.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Flanero",
-    "p": "m.",
-    "d": "Flanera. Sin.: flanera.",
-    "df": "m. flanera. Sin.: flanera.",
     "e": "",
     "s": "",
     "c": "sustantivo",
@@ -7933,16 +7462,6 @@
     "s": "",
     "c": "sustantivo",
     "ec": "etym_griego"
-  },
-  {
-    "w": "Flebotomiano",
-    "p": "m.",
-    "d": "Sangrador . Sin.: sangrador.",
-    "df": "m. sangrador (‖ hombre que tenía por oficio sangrar). Sin.: sangrador.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
   },
   {
     "w": "Flebotomía",
@@ -8400,19 +7919,6 @@
     ]
   },
   {
-    "w": "Flirtear",
-    "p": "intr.",
-    "d": "Coquetear . Sin.: coquetear, ligar, tontear, galantear, cortejar, enamorar.",
-    "df": "intr. coquetear (‖ dar muestras de sentir atracción, o tener una implicación pasajera en un asunto). Sin.: coquetear, ligar, tontear, galantear, cortejar, enamorar.",
-    "e": "Del ingl. to flirt y -ear.",
-    "s": "",
-    "c": "verbo",
-    "ec": "etym_ingles",
-    "esp": [
-      "viajera"
-    ]
-  },
-  {
     "w": "Flirteo",
     "p": "m.",
     "d": "Acción y efecto de flirtear. Sin.: escarceo, devaneo, aventura, amorío, coqueteo, enamoramiento, galanteo, ligue, flirt, cortejo.",
@@ -8661,16 +8167,6 @@
     ]
   },
   {
-    "w": "Florecido",
-    "p": "adj.",
-    "d": "Mohoso. Sin.: mohoso.",
-    "df": "adj. mohoso. Sin.: mohoso.",
-    "e": "Del part. de florecer.",
-    "s": "",
-    "c": "adjetivo",
-    "ec": ""
-  },
-  {
     "w": "Florense",
     "p": "adj.",
     "d": "Natural de Flores, cabecera del departamento de Petén, en Guatemala. U. t. c. s.",
@@ -8718,16 +8214,6 @@
     "e": "De flor y -ero.",
     "s": "",
     "c": "adjetivo",
-    "ec": ""
-  },
-  {
-    "w": "Florería",
-    "p": "f.",
-    "d": "Floristería. Sin.: floristería.",
-    "df": "f. floristería. Sin.: floristería.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
     "ec": ""
   },
   {
@@ -8954,16 +8440,6 @@
     "ec": "etym_latin"
   },
   {
-    "w": "Florígero",
-    "p": "adj.",
-    "d": "Florífero. Sin.: florífero.",
-    "df": "adj. poét. florífero. Sin.: florífero.",
-    "e": "Del lat. florĭger, -ĕra.",
-    "s": "",
-    "c": "adjetivo",
-    "ec": "etym_latin"
-  },
-  {
     "w": "Florín",
     "p": "m.",
     "d": "Unidad monetaria de Holanda hasta la implantación del euro.",
@@ -9024,26 +8500,6 @@
     "e": "",
     "s": "",
     "c": "adjetivo",
-    "ec": ""
-  },
-  {
-    "w": "Flotadura",
-    "p": "f.",
-    "d": "Flotación. Sin.: flote.",
-    "df": "f. flotación. Sin.: flote.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Flotamiento",
-    "p": "m.",
-    "d": "Flotación. Sin.: flotación.",
-    "df": "m. flotación. Sin.: flotación.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
     "ec": ""
   },
   {
@@ -9405,16 +8861,6 @@
     "ec": ""
   },
   {
-    "w": "Fogarata",
-    "p": "f. coloq.",
-    "d": "Fogarada. Sin.: fogarada, llamarada, fogonazo.",
-    "df": "f. coloq. fogarada. Sin.: fogarada, llamarada, fogonazo.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Fogarear",
     "p": "tr.",
     "d": "Ar. y Sal. Quemar produciendo llama. Sin.: foguerear, quemar.",
@@ -9536,16 +8982,6 @@
     "esp": [
       "explosiva"
     ]
-  },
-  {
-    "w": "Folclor",
-    "p": "m.",
-    "d": "Folclore. Sin.: folclore.",
-    "df": "m. folclore. Sin.: folclore.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
   },
   {
     "w": "Folclore",
@@ -10269,16 +9705,6 @@
     "ec": "etym_latin"
   },
   {
-    "w": "Fonógrafo",
-    "p": "m.",
-    "d": "Gramófono. Sin.: gramófono, ortofónica, gramola.",
-    "df": "m. gramófono. Sin.: gramófono, ortofónica, gramola. | m. Aparato que registraba y reproducía las vibraciones de cualquier sonido en un disco o cilindro.",
-    "e": "De fono- y ‒́grafo.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Fonólogo",
     "p": "m. y f.",
     "d": "Y f. Ling. Especialista en fonología.",
@@ -10867,16 +10293,6 @@
     "ec": "etym_latin"
   },
   {
-    "w": "Fornicio",
-    "p": "m.",
-    "d": "Fornicación. Sin.: fornicación.",
-    "df": "m. fornicación. Sin.: fornicación.",
-    "e": "Del lat. mediev. fornicium, y este der. del lat. fornix, -ĭcis 'lupanar'.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_latin"
-  },
-  {
     "w": "Fornitura",
     "p": "f.",
     "d": "Conjunto de las piezas de repuesto de un reloj o de otro mecanismo de precisión.",
@@ -11166,16 +10582,6 @@
     "ec": ""
   },
   {
-    "w": "Fosforecer",
-    "p": "intr.",
-    "d": "Fosforescer. Sin.: fosforescer, brillar, fulgurar.",
-    "df": "intr. fosforescer. Sin.: fosforescer, brillar, fulgurar.",
-    "e": "",
-    "s": "",
-    "c": "verbo",
-    "ec": ""
-  },
-  {
     "w": "Fosforescencia",
     "p": "f.",
     "d": "Luminiscencia que permanece algún tiempo al cesar la causa que la produce. Sin.: luminiscencia, fluorescencia.",
@@ -11327,29 +10733,6 @@
     "s": "",
     "c": "adjetivo",
     "ec": ""
-  },
-  {
-    "w": "Fosique",
-    "p": "m.",
-    "d": "Fusique. Sin.: fusique.",
-    "df": "m. fusique. Sin.: fusique.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Foso",
-    "p": "m.",
-    "d": "Hoyo. Sin.: hoyo.",
-    "df": "m. hoyo. Sin.: hoyo. | m. Excavación profunda que circuye la fortaleza. Sin.: cava2. | m. En los garajes y talleres mecánicos, excavación que permite arreglar cómodamente desde abajo la máquina colocada encima. | m. Dep. Espacio lleno de arena donde cae el atleta tras el salto de longitud. | m. Teatro. Zona rebajada situada entre el escenario y el patio de butacas destinada generalmente a los músicos. | m. Teatro. Espacio situado bajo el escenario.",
-    "e": "Del it. fosso, y este de fossa 'fosa'.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_italiano",
-    "esp": [
-      "viajera"
-    ]
   },
   {
     "w": "Fosor",
@@ -12109,16 +11492,6 @@
     "ec": ""
   },
   {
-    "w": "Fovismo",
-    "p": "m.",
-    "d": "Fauvismo. Sin.: fauvismo.",
-    "df": "m. fauvismo. Sin.: fauvismo.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Foxino",
     "p": "m.",
     "d": "Pez teleósteo de pequeño tamaño, parcialmente coloreado, con hocico romo y escamas menudas, que abunda en los ríos, sobre todo en sus cursos altos.",
@@ -12364,16 +11737,6 @@
     "ec": ""
   },
   {
-    "w": "Frailengo",
-    "p": "adj.",
-    "d": "Frailego. Sin.: frailego.",
-    "df": "adj. frailego. Sin.: frailego.",
-    "e": "",
-    "s": "",
-    "c": "adjetivo",
-    "ec": ""
-  },
-  {
     "w": "Frailería",
     "p": "f. coloq.",
     "d": "Conjunto de los frailes.",
@@ -12520,19 +11883,6 @@
     "ec": ""
   },
   {
-    "w": "Francmasonería",
-    "p": "f.",
-    "d": "Masonería. Sin.: masonería.",
-    "df": "f. masonería. Sin.: masonería.",
-    "e": "Del fr. francmaçonnerie.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_frances",
-    "esp": [
-      "viajera"
-    ]
-  },
-  {
     "w": "Francmasón",
     "p": "m. y f.",
     "d": "Y f. masón2. Sin.: masón2.",
@@ -12544,16 +11894,6 @@
     "esp": [
       "viajera"
     ]
-  },
-  {
-    "w": "Francmasónico",
-    "p": "adj.",
-    "d": "Masónico. Sin.: masónico.",
-    "df": "adj. masónico. Sin.: masónico.",
-    "e": "",
-    "s": "",
-    "c": "adjetivo",
-    "ec": ""
   },
   {
     "w": "Francocanadiense",
@@ -12795,26 +12135,6 @@
     "ec": ""
   },
   {
-    "w": "Franhueso",
-    "p": "m.",
-    "d": "Quebrantahuesos . Sin.: quebrantahuesos, osífraga, osífrago.",
-    "df": "m. quebrantahuesos (‖ ave). Sin.: quebrantahuesos, osífraga, osífrago.",
-    "e": "De frañer y hueso.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Franjar",
-    "p": "tr.",
-    "d": "Franjear. Sin.: franjear.",
-    "df": "tr. franjear. Sin.: franjear.",
-    "e": "",
-    "s": "",
-    "c": "verbo",
-    "ec": ""
-  },
-  {
     "w": "Franjear",
     "p": "tr.",
     "d": "Guarnecer con franjas. Sin.: franjar.",
@@ -12875,31 +12195,11 @@
     "ec": ""
   },
   {
-    "w": "Franquiciar",
-    "p": "tr.",
-    "d": "Licenciar . Sin.: licenciar.",
-    "df": "tr. licenciar (‖ conceder una licencia). Sin.: licenciar.",
-    "e": "De franquicia.",
-    "s": "",
-    "c": "verbo",
-    "ec": ""
-  },
-  {
     "w": "Franquía",
     "p": "f.",
     "d": "Mar. Situación en la cual un buque tiene paso franco para hacerse a la mar o tomar determinado rumbo. Poner, ganar, estar en franquía.",
     "df": "f. Mar. Situación en la cual un buque tiene paso franco para hacerse a la mar o tomar determinado rumbo. Poner, ganar, estar en franquía.",
     "e": "De franco.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Fraque",
-    "p": "m.",
-    "d": "Frac. Sin.: frac, casaca, pingüino.",
-    "df": "m. frac. Sin.: frac, casaca, pingüino.",
-    "e": "",
     "s": "",
     "c": "sustantivo",
     "ec": ""
@@ -13064,16 +12364,6 @@
     "ec": ""
   },
   {
-    "w": "Fraudulencia",
-    "p": "f.",
-    "d": "Fraude. Sin.: fraude.",
-    "df": "f. fraude. Sin.: fraude. | f. Cualidad de fraudulento.",
-    "e": "Del lat. fraudulentia.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_latin"
-  },
-  {
     "w": "Fraustina",
     "p": "f.",
     "d": "Cabeza de madera en que se solían aderezar las tocas y moños de las mujeres.",
@@ -13187,16 +12477,6 @@
     "ec": "etym_latin"
   },
   {
-    "w": "Fregadura",
-    "p": "f.",
-    "d": "Fregado . Sin.: fregado, lavado, limpieza.",
-    "df": "f. fregado (‖ acción de fregar). Sin.: fregado, lavado, limpieza.",
-    "e": "Del lat. fricatūra.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_latin"
-  },
-  {
     "w": "Fregajo",
     "p": "m.",
     "d": "En las galeras, estropajo . Sin.: estropajo, fregador.",
@@ -13205,16 +12485,6 @@
     "s": "",
     "c": "sustantivo",
     "ec": ""
-  },
-  {
-    "w": "Fregamiento",
-    "p": "m.",
-    "d": "Fricación . Sin.: fricación, frotación.",
-    "df": "m. fricación (‖ acción de fricar). Sin.: fricación, frotación.",
-    "e": "Del lat. fricamentum.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_latin"
   },
   {
     "w": "Fregatriz",
@@ -13328,19 +12598,6 @@
     "s": "",
     "c": "sustantivo",
     "ec": ""
-  },
-  {
-    "w": "Frejol",
-    "p": "m.",
-    "d": "Judía . Sin.: frijol, judía, alubia, habichuela, poroto, caraota, judión, frísol, haba, faba, frejón, fréjul, frijón.",
-    "df": "m. judía (‖ planta). Sin.: frijol, judía, alubia, habichuela, poroto, caraota, judión, frísol, haba, faba, frejón, fréjul, frijón. | m. judía (‖ fruto). Sin.: frijol, judía, alubia, habichuela, frísol, haba, faba, frejón, frijón, fréjul. | m. judía (‖ semilla). Sin.: frijol, judía, alubia, habichuela, poroto, caraota, pipirines, pipiriles, frísol, haba, faba, frejón, frijón, fréjul.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "",
-    "esp": [
-      "explosiva"
-    ]
   },
   {
     "w": "Frejón",
@@ -13722,26 +12979,6 @@
     "ec": ""
   },
   {
-    "w": "Freza",
-    "p": "f.",
-    "d": "Desove. Sin.: desove, puesta.",
-    "df": "f. desove. Sin.: desove, puesta. | f. Surco que dejan ciertos peces cuando se restriegan contra la tierra del fondo para desovar. | f. Tiempo del desove. | f. Huevos de los peces, y pescado menudo recién nacido de ellos. | f. estiércol (‖ excremento de animal). Sin.: estiércol. | f. Cineg. Señal u hoyo que hace un animal escarbando u hozando. | f. Tiempo en que, durante cada una de las mudas, come el gusano de seda.",
-    "e": "De frezar1.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Frezada",
-    "p": "f.",
-    "d": "Frazada. Sin.: frazada, manta, cobija, edredón, colcha, cobertor, chiva1.",
-    "df": "f. frazada. Sin.: frazada, manta, cobija, edredón, colcha, cobertor, chiva1.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Frezadero",
     "p": "m.",
     "d": "Lugar donde los peces acuden a desovar.",
@@ -13866,26 +13103,6 @@
     "d": "Remedio consistente en restregar alguna parte del cuerpo con un paño o cepillo o con las manos. U. m. en pl. Sin.: masaje, fricción, frotamiento, frotación, frote.",
     "df": "f. Remedio consistente en restregar alguna parte del cuerpo con un paño o cepillo o con las manos. U. m. en pl. Sin.: masaje, fricción, frotamiento, frotación, frote. | f. coloq. Tunda, zurra. | f. Arg., Bol., Chile, Cuba, Ec., Hond., Méx., R. Dom. y Ven. Fastidio o malestar. | f. Méx. Trago de bebida alcohólica.",
     "e": "De fregar 'restregar'.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Friegaplatos",
-    "p": "m.",
-    "d": "Lavaplatos . Sin.: lavaplatos, lavavajillas, lavavajilla.",
-    "df": "m. lavaplatos (‖ máquina). Sin.: lavaplatos, lavavajillas, lavavajilla. | m. Hond. Arbusto de la familia de las solanáceas, de hasta tres metros y medio de altura, con los tallos cubiertos de espinas, flores azules o moradas y fruto en baya. Es nativo desde México hasta Costa Rica.",
-    "e": "",
-    "s": "",
-    "c": "botanica",
-    "ec": ""
-  },
-  {
-    "w": "Friera",
-    "p": "f.",
-    "d": "Sabañón. Sin.: sabañón.",
-    "df": "f. sabañón. Sin.: sabañón.",
-    "e": "De frío.",
     "s": "",
     "c": "sustantivo",
     "ec": ""
@@ -14018,16 +13235,6 @@
     "s": "",
     "c": "adjetivo",
     "ec": "etym_latin"
-  },
-  {
-    "w": "Friolento",
-    "p": "adj.",
-    "d": "Friolero. Sin.: friolero, friático.",
-    "df": "adj. friolero. Sin.: friolero, friático.",
-    "e": "De frío y la t. de sanguinolento, vinolento, violento, etc.",
-    "s": "",
-    "c": "adjetivo",
-    "ec": ""
   },
   {
     "w": "Frisado",
@@ -14190,16 +13397,6 @@
     "e": "",
     "s": "",
     "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Friático",
-    "p": "adj.",
-    "d": "Friolero. Sin.: friolero, friolento.",
-    "df": "adj. friolero. Sin.: friolero, friolento. | adj. Frío, necio, sin gracia.",
-    "e": "",
-    "s": "",
-    "c": "adjetivo",
     "ec": ""
   },
   {
@@ -14395,19 +13592,6 @@
     "ec": ""
   },
   {
-    "w": "Frotadura",
-    "p": "f.",
-    "d": "Frotación. Sin.: frotación, frotamiento, frote, fricción, fletación, restregadura, estregadura, estregón, friega.",
-    "df": "f. frotación. Sin.: frotación, frotamiento, frote, fricción, fletación, restregadura, estregadura, estregón, friega.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "",
-    "esp": [
-      "explosiva"
-    ]
-  },
-  {
     "w": "Frotamiento",
     "p": "m.",
     "d": "Acción de frotar. Sin.: frote, frotación, frotadura, fricción, fletación, restregadura, estregadura, rozamiento, estregón, friega.",
@@ -14432,19 +13616,6 @@
     "esp": [
       "explosiva",
       "viajera"
-    ]
-  },
-  {
-    "w": "Frote",
-    "p": "m.",
-    "d": "Frotamiento. Sin.: frotamiento, frotación, frotadura, fricción, fletación, restregadura, estregadura, estregón, friega.",
-    "df": "m. frotamiento. Sin.: frotamiento, frotación, frotadura, fricción, fletación, restregadura, estregadura, estregón, friega.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "",
-    "esp": [
-      "explosiva"
     ]
   },
   {
@@ -14600,16 +13771,6 @@
     "ec": "etym_latin"
   },
   {
-    "w": "Frumenticio",
-    "p": "adj.",
-    "d": "Frumentario . Sin.: frumentario.",
-    "df": "adj. frumentario (‖ perteneciente al trigo y otros cereales). Sin.: frumentario.",
-    "e": "Del lat. frumentum 'trigo'.",
-    "s": "",
-    "c": "adjetivo",
-    "ec": "etym_latin"
-  },
-  {
     "w": "Frunce",
     "p": "m.",
     "d": "Arruga o pliegue, o serie de arrugas o pliegues menudos que se hacen en una tela, papel, piel, etc. Sin.: pliegue, arruga, doblez, fruncido, respingo, plisado.",
@@ -14756,45 +13917,6 @@
     "ec": "etym_latin"
   },
   {
-    "w": "Fréjol",
-    "p": "m.",
-    "d": "Judía . Sin.: frijol, judía, alubia, habichuela, poroto, caraota, judión, frísol, haba, faba, frejón, fréjul, frijón.",
-    "df": "m. judía (‖ planta). Sin.: frijol, judía, alubia, habichuela, poroto, caraota, judión, frísol, haba, faba, frejón, fréjul, frijón. | m. judía (‖ fruto). Sin.: frijol, judía, alubia, habichuela, frísol, haba, faba, frejón, frijón, fréjul. | m. judía (‖ semilla). Sin.: frijol, judía, alubia, habichuela, poroto, caraota, pipirines, pipiriles, frísol, haba, faba, frejón, frijón, fréjul.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "",
-    "esp": [
-      "explosiva"
-    ]
-  },
-  {
-    "w": "Fríjol",
-    "p": "m.",
-    "d": "Judía . Sin.: judía, alubia, habichuela, frejol, poroto, caraota, judión, frísol, haba, faba, frejón, fréjul, frijón.",
-    "df": "m. Am. judía (‖ planta). Sin.: judía, alubia, habichuela, frejol, poroto, caraota, judión, frísol, haba, faba, frejón, fréjul, frijón. | m. Am. judía (‖ fruto). Sin.: judía, alubia, habichuela, frejol, frísol, haba, faba, frejón, frijón, fréjul. | m. Am. judía (‖ semilla). Sin.: judía, alubia, habichuela, frejol, poroto, caraota, pipirines, pipiriles, frísol, haba, faba, frejón, frijón, fréjul.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "",
-    "esp": [
-      "explosiva"
-    ]
-  },
-  {
-    "w": "Frísol",
-    "p": "m.",
-    "d": "Judía . Sin.: judía, alubia, frejol, frisuelo1, frijol, poroto, caraota, habichuela, haba, judión, faba, frejón, fréjul, frijón, pipiriles, pipirines.",
-    "df": "m. judía (‖ planta, fruto, o semilla). Sin.: judía, alubia, frejol, frisuelo1, frijol, poroto, caraota, habichuela, haba, judión, faba, frejón, fréjul, frijón, pipiriles, pipirines.",
-    "e": "Cf. fréjol.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "",
-    "esp": [
-      "explosiva"
-    ]
-  },
-  {
     "w": "Frútice",
     "p": "m.",
     "d": "Planta casi leñosa y de aspecto semejante al de los arbustos; p. ej., el rosal.",
@@ -14917,19 +14039,6 @@
     ]
   },
   {
-    "w": "Fueloil",
-    "p": "m.",
-    "d": "Fuel. Sin.: fuel, fuelóleo, petróleo, combustible.",
-    "df": "m. fuel. Sin.: fuel, fuelóleo, petróleo, combustible.",
-    "e": "Del ingl. fuel oil 'aceite combustible'.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_ingles",
-    "esp": [
-      "viajera"
-    ]
-  },
-  {
     "w": "Fuentada",
     "p": "f. coloq.",
     "d": "Cantidad de comida que cabe en una fuente.",
@@ -15013,16 +14122,6 @@
     ]
   },
   {
-    "w": "Fuina",
-    "p": "f.",
-    "d": "Garduña . Sin.: garduña, garduño, rámila, rezmila.",
-    "df": "f. garduña (‖ mamífero). Sin.: garduña, garduño, rámila, rezmila.",
-    "e": "Del arag. fuina.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Fulano",
     "p": "m. y f.",
     "d": "Y f. U. para aludir a alguien cuyo nombre se ignora o no se quiere expresar.",
@@ -15050,16 +14149,6 @@
     ]
   },
   {
-    "w": "Fulastre",
-    "p": "adj. coloq.",
-    "d": "Chapucero . Sin.: chapucero, charanguero, fulero, descuidado, tosco, torpe.",
-    "df": "adj. coloq. chapucero (‖ hecho tosca y groseramente). Sin.: chapucero, charanguero, fulero, descuidado, tosco, torpe.",
-    "e": "De ful.",
-    "s": "",
-    "c": "adjetivo",
-    "ec": ""
-  },
-  {
     "w": "Fulcro",
     "p": "m.",
     "d": "Mec. Punto de apoyo de la palanca. Sin.: hipomoclio, hipomoclion.",
@@ -15078,32 +14167,6 @@
     "s": "",
     "c": "adjetivo",
     "ec": "etym_latin",
-    "esp": [
-      "explosiva"
-    ]
-  },
-  {
-    "w": "Fulgir",
-    "p": "intr.",
-    "d": "Resplandecer. Sin.: resplandecer, refulgir, fulgurar, destellar, centellear, irradiar, brillar, relucir, relampaguear, rutilar.",
-    "df": "intr. resplandecer. Sin.: resplandecer, refulgir, fulgurar, destellar, centellear, irradiar, brillar, relucir, relampaguear, rutilar.",
-    "e": "Del lat. fulgēre 'brillar'.",
-    "s": "",
-    "c": "verbo",
-    "ec": "etym_latin",
-    "esp": [
-      "explosiva"
-    ]
-  },
-  {
-    "w": "Fulgoroso",
-    "p": "adj.",
-    "d": "Fulguroso. Sin.: fulguroso, fulgente, fúlgido, refulgente, resplandeciente, esplendoroso, brillante, luminoso, centelleante, radiante, rutilante, fosforescente.",
-    "df": "adj. fulguroso. Sin.: fulguroso, fulgente, fúlgido, refulgente, resplandeciente, esplendoroso, brillante, luminoso, centelleante, radiante, rutilante, fosforescente.",
-    "e": "",
-    "s": "",
-    "c": "adjetivo",
-    "ec": "",
     "esp": [
       "explosiva"
     ]
@@ -15789,16 +14852,6 @@
     "ec": "etym_latin"
   },
   {
-    "w": "Funguicida",
-    "p": "m.",
-    "d": "Fungicida. Sin.: fungicida, fungistático, antifúngico, antimicótico.",
-    "df": "m. fungicida. Sin.: fungicida, fungistático, antifúngico, antimicótico.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Funicular",
     "p": "adj.",
     "d": "Dicho de un vehículo o de un artefacto: De tracción realizada mediante una cuerda, cable o cadena. U. t. c. s. Sin.: teleférico, telecabina, telesilla, telesquí, transbordador.",
@@ -15905,16 +14958,6 @@
     ]
   },
   {
-    "w": "Furriela",
-    "p": "f.",
-    "d": "Furriera. Sin.: furriera.",
-    "df": "f. furriera. Sin.: furriera.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Furrier",
     "p": "m.",
     "d": "En las caballerizas reales, oficial que cuidaba de las cobranzas.",
@@ -15969,16 +15012,6 @@
     "s": "",
     "c": "sustantivo",
     "ec": ""
-  },
-  {
-    "w": "Furúnculo",
-    "p": "m.",
-    "d": "Forúnculo. Sin.: forúnculo, divieso, grano, absceso, nacido, golondrino, chichote.",
-    "df": "m. forúnculo. Sin.: forúnculo, divieso, grano, absceso, nacido, golondrino, chichote.",
-    "e": "Del lat. furuncŭlus.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_latin"
   },
   {
     "w": "Fusa",
@@ -16147,19 +15180,6 @@
     "s": "",
     "c": "sustantivo",
     "ec": ""
-  },
-  {
-    "w": "Fuste",
-    "p": "m.",
-    "d": "Madera . Sin.: madera, palo, leñame, mástil1.",
-    "df": "m. madera (‖ parte sólida de los árboles). Sin.: madera, palo, leñame, mástil1. | m. vara (‖ palo largo y delgado). Sin.: vara, palo, verga1, pértiga. | m. Vara o palo en que está fijado el hierro de la lanza. Sin.: asta. | m. vástago (‖ conjunto del tallo y las hojas). Sin.: vástago. | m. Armazón de la silla de montar. | m. Fundamento de algo no material, como un discurso, una oración, un escrito, etc. | m. Nervio, sustancia o entidad. Hombre de fuste. Sin.: nervio, carácter, peso, entidad, sustancia, fundamento, importancia. | m. poét. Silla del caballo. | m. Arq. Parte de la columna que media entre el capitel y la basa. Sin.: caña, caria.",
-    "e": "Del lat. fustis 'palo'.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_latin",
-    "esp": [
-      "explosiva"
-    ]
   },
   {
     "w": "Fustete",
@@ -16449,16 +15469,6 @@
     "ec": ""
   },
   {
-    "w": "Fáunico",
-    "p": "adj.",
-    "d": "Faunístico. Sin.: faunístico.",
-    "df": "adj. faunístico. Sin.: faunístico.",
-    "e": "",
-    "s": "",
-    "c": "adjetivo",
-    "ec": ""
-  },
-  {
     "w": "Fáustico",
     "p": "adj.",
     "d": "Perteneciente o relativo al mito o al personaje de Fausto, especialmente el de Goethe, y a la actitud que este personaje representa.",
@@ -16486,16 +15496,6 @@
     "e": "Del lat. felis 'gato1' e ‒́ido2.",
     "s": "",
     "c": "adjetivo",
-    "ec": "etym_latin"
-  },
-  {
-    "w": "Fémina",
-    "p": "f.",
-    "d": "Mujer . Sin.: mujer, hembra, dama1, vieja, china.",
-    "df": "f. mujer (‖ persona del sexo femenino). Sin.: mujer, hembra, dama1, vieja, china.",
-    "e": "Del lat. femĭna.",
-    "s": "",
-    "c": "sustantivo",
     "ec": "etym_latin"
   },
   {
@@ -16592,19 +15592,6 @@
     "ec": ""
   },
   {
-    "w": "Fólder",
-    "p": "m.",
-    "d": "Carpeta . Sin.: carpeta.",
-    "df": "m. Am. carpeta (‖ útil de escritorio). Sin.: carpeta.",
-    "e": "Del ingl. folder.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_ingles",
-    "esp": [
-      "viajera"
-    ]
-  },
-  {
     "w": "Fórceps",
     "p": "m.",
     "d": "Instrumento en forma de tenaza, que se usa para extraer la criatura en los partos difíciles. U. t. en sent. fig. Le saqué la información con fórceps.",
@@ -16613,19 +15600,6 @@
     "s": "",
     "c": "sustantivo",
     "ec": "etym_latin"
-  },
-  {
-    "w": "Fórum",
-    "p": "m.",
-    "d": "Foro . Sin.: foro.",
-    "df": "m. foro (‖ reunión para debatir ciertos asuntos). Sin.: foro. | m. Lugar donde se celebra un fórum.",
-    "e": "Del ingl. o fr. forum, y este del lat. forum 'plaza para los negocios públicos y los juicios'.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_ingles",
-    "esp": [
-      "viajera"
-    ]
   },
   {
     "w": "Fóvea",
@@ -16649,16 +15623,6 @@
     "esp": [
       "explosiva"
     ]
-  },
-  {
-    "w": "Fúlica",
-    "p": "f.",
-    "d": "Focha. Sin.: focha, falaris, foja2, gallareta, gallineta.",
-    "df": "f. focha. Sin.: focha, falaris, foja2, gallareta, gallineta.",
-    "e": "Del lat. fulĭca.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_latin"
   },
   {
     "w": "Fúnebremente",

@@ -73,16 +73,6 @@
     "ec": ""
   },
   {
-    "w": "Gabasa",
-    "p": "f.",
-    "d": "Prostituta. Sin.: prostituta.",
-    "df": "f. prostituta. Sin.: prostituta.",
-    "e": "De bagasa.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Gabata",
     "p": "m. y f.",
     "d": "Y f. And. Cría menor de un año de los ciervos o de las liebres.",
@@ -167,19 +157,6 @@
     "s": "",
     "c": "sustantivo",
     "ec": ""
-  },
-  {
-    "w": "Gabán",
-    "p": "m.",
-    "d": "Abrigo . Sin.: abrigo, capote, chambergo, pelliza, sobretodo.",
-    "df": "m. abrigo (‖ prenda de vestir). Sin.: abrigo, capote, chambergo, pelliza, sobretodo. | m. Capote con mangas, y a veces con capilla, que se hacía por lo regular de paño fuerte. | m. P. Rico y Ur. chaquetón (‖ prenda de abrigo). Sin.: chaquetón, sacón2. | m. Ven. Ave zancuda de las ciconiformes, con plumaje blanco y algunas plumas negras en las alas y la cola, pico largo, grueso, de color negro grisáceo. Sin.: cayama.",
-    "e": "Quizá del ár. clás. qabā'.",
-    "s": "",
-    "c": "vestimenta",
-    "ec": "",
-    "esp": [
-      "explosiva"
-    ]
   },
   {
     "w": "Gacela",
@@ -408,19 +385,6 @@
     "ec": ""
   },
   {
-    "w": "Gafetí",
-    "p": "m.",
-    "d": "Eupatorio. Sin.: eupatorio.",
-    "df": "m. eupatorio. Sin.: eupatorio.",
-    "e": "Del ár. ḡāfaliṯ.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_arabe",
-    "esp": [
-      "viajera"
-    ]
-  },
-  {
     "w": "Gafo",
     "p": "adj.",
     "d": "Que tiene encorvados y sin movimiento los dedos de manos y pies. U. t. c. s.",
@@ -428,36 +392,6 @@
     "e": "De or. desc.",
     "s": "",
     "c": "adjetivo",
-    "ec": ""
-  },
-  {
-    "w": "Gago",
-    "p": "adj.",
-    "d": "Tartamudo. Sin.: tartamudo, tartajoso, zazo, zazoso, tataretas, tartaja.",
-    "df": "adj. tartamudo. Sin.: tartamudo, tartajoso, zazo, zazoso, tataretas, tartaja.",
-    "e": "Voz imit.",
-    "s": "",
-    "c": "adjetivo",
-    "ec": ""
-  },
-  {
-    "w": "Gaguear",
-    "p": "intr.",
-    "d": "Tartamudear. Sin.: tartamudear, tartajear, tartalear, cancanear.",
-    "df": "intr. tartamudear. Sin.: tartamudear, tartajear, tartalear, cancanear. | intr. Sal. susurrar. U. t. c. tr.",
-    "e": "De gago y -ear.",
-    "s": "",
-    "c": "verbo",
-    "ec": ""
-  },
-  {
-    "w": "Gaguera",
-    "p": "f.",
-    "d": "Tartamudez. Sin.: tartamudez, tartajeo.",
-    "df": "f. tartamudez. Sin.: tartamudez, tartajeo.",
-    "e": "De gago y -era.",
-    "s": "",
-    "c": "sustantivo",
     "ec": ""
   },
   {
@@ -582,16 +516,6 @@
     "d": "Que se mantiene de leche. U. t. c. s.",
     "df": "adj. Que se mantiene de leche. U. t. c. s.",
     "e": "Del lat. mod. galactophagus, y este del gr. γαλακτοφάγος galaktophágos.",
-    "s": "",
-    "c": "adjetivo",
-    "ec": "etym_latin"
-  },
-  {
-    "w": "Galactóforo",
-    "p": "adj.",
-    "d": "Lactífero. Sin.: lactífero.",
-    "df": "adj. lactífero. Sin.: lactífero.",
-    "e": "Del lat. mod. galactophorus, y este del gr. γαλακτοφόρος galaktophóros 'que da leche'.",
     "s": "",
     "c": "adjetivo",
     "ec": "etym_latin"
@@ -776,16 +700,6 @@
     "ec": ""
   },
   {
-    "w": "Galbanero",
-    "p": "adj. coloq.",
-    "d": "Agalbanado. Sin.: agalbanado, perezoso, vago1.",
-    "df": "adj. coloq. agalbanado. Sin.: agalbanado, perezoso, vago1.",
-    "e": "De galbana1.",
-    "s": "",
-    "c": "adjetivo",
-    "ec": ""
-  },
-  {
     "w": "Galce",
     "p": "m.",
     "d": "Ar. gárgol2. Sin.: gárgol2.",
@@ -813,16 +727,6 @@
     "e": "",
     "s": "",
     "c": "adjetivo",
-    "ec": ""
-  },
-  {
-    "w": "Galdón",
-    "p": "m.",
-    "d": "Alcaudón. Sin.: alcaudón, caudón, degollador, desollador, picagrega, verdugo, gaudón.",
-    "df": "m. alcaudón. Sin.: alcaudón, caudón, degollador, desollador, picagrega, verdugo, gaudón.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
     "ec": ""
   },
   {
@@ -926,19 +830,6 @@
     "ec": ""
   },
   {
-    "w": "Galeoto",
-    "p": "m.",
-    "d": "Alcahuete . Sin.: alcahuete, tercero.",
-    "df": "m. alcahuete (‖ hombre que concierta una relación amorosa). Sin.: alcahuete, tercero.",
-    "e": "Del it. galeotto, y este de Galeotto, personaje de romances caballerescos que aparece en Dante y que fue el mediador en la relación entre Ginebra y Lancelot.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_italiano",
-    "esp": [
-      "viajera"
-    ]
-  },
-  {
     "w": "Galerada",
     "p": "f.",
     "d": "Carga que cabe en una galera .",
@@ -969,19 +860,6 @@
     "ec": ""
   },
   {
-    "w": "Galerita",
-    "p": "f.",
-    "d": "Cogujada. Sin.: cogujada, cugujada, cochevís, copada, cotovía, tova, vejeta, corucha, carabinera, agachadera, coguja.",
-    "df": "f. cogujada. Sin.: cogujada, cugujada, cochevís, copada, cotovía, tova, vejeta, corucha, carabinera, agachadera, coguja.",
-    "e": "Del lat. galerīta.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_latin",
-    "esp": [
-      "explosiva"
-    ]
-  },
-  {
     "w": "Galerna",
     "p": "f.",
     "d": "Viento súbito y borrascoso que, en la costa septentrional de España, suele soplar entre el oeste y el noroeste. Sin.: galerno, ciclón, huracán, borrasca, tormenta, temporal1, tempestad, tifón.",
@@ -993,19 +871,6 @@
     "esp": [
       "explosiva",
       "viajera"
-    ]
-  },
-  {
-    "w": "Galerno",
-    "p": "m.",
-    "d": "Galerna. Sin.: galerna, ciclón, huracán, borrasca, tormenta, temporal1, tempestad, tifón.",
-    "df": "m. galerna. Sin.: galerna, ciclón, huracán, borrasca, tormenta, temporal1, tempestad, tifón.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "",
-    "esp": [
-      "explosiva"
     ]
   },
   {
@@ -1049,19 +914,6 @@
     "ec": ""
   },
   {
-    "w": "Galgo",
-    "p": "adj.",
-    "d": "Goloso . Sin.: alcucero, goloso, lambiotón, lambistón, lambrón, lamerón, laminero2, morrudo.",
-    "df": "adj. goloso (‖ aficionado a comer golosinas). Sin.: alcucero, goloso, lambiotón, lambistón, lambrón, lamerón, laminero2, morrudo. | f. Piedra grande que, desprendida de lo alto de una cuesta, baja rodando y dando saltos. Sin.: piedra. | f. En los molinos de aceite, piedra que gira alrededor del árbol del alfarje. | f. Hond. Hormiga amarilla que anda velozmente.",
-    "e": "Del lat. vulg. Gallĭcus [canis] '[perro] de la Galia'.",
-    "s": "",
-    "c": "adjetivo",
-    "ec": "etym_latin",
-    "esp": [
-      "explosiva"
-    ]
-  },
-  {
     "w": "Galguear",
     "p": "tr.",
     "d": "León. Limpiar las regueras.",
@@ -1100,16 +952,6 @@
     "s": "",
     "c": "adjetivo",
     "ec": ""
-  },
-  {
-    "w": "Galiana",
-    "p": "f.",
-    "d": "Cañada . Sin.: cañada, cabañera.",
-    "df": "f. cañada (‖ vía para el ganado). Sin.: cañada, cabañera.",
-    "e": "Del lat. mediev. Galliana [via], der. de Gallia 'Francia'.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_latin"
   },
   {
     "w": "Galianos",
@@ -1385,16 +1227,6 @@
     "ec": ""
   },
   {
-    "w": "Gallareta",
-    "p": "f.",
-    "d": "Focha. Sin.: focha, falaris, foja2, fúlica, gallineta.",
-    "df": "f. focha. Sin.: focha, falaris, foja2, fúlica, gallineta.",
-    "e": "De gallo.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Gallaruza",
     "p": "f.",
     "d": "Vestido de gente montañesa, con capucha para defender la cabeza del frío y de las aguas.",
@@ -1402,16 +1234,6 @@
     "e": "De or. inc.",
     "s": "",
     "c": "vestimenta",
-    "ec": ""
-  },
-  {
-    "w": "Gallarón",
-    "p": "m.",
-    "d": "Sisón1. Sin.: sisón1.",
-    "df": "m. sisón1. Sin.: sisón1.",
-    "e": "De gallo.",
-    "s": "",
-    "c": "sustantivo",
     "ec": ""
   },
   {
@@ -1597,19 +1419,6 @@
     "ec": "etym_latin"
   },
   {
-    "w": "Gallineta",
-    "p": "f.",
-    "d": "Focha. Sin.: focha, falaris, foja2, fúlica, gallareta.",
-    "df": "f. focha. Sin.: focha, falaris, foja2, fúlica, gallareta. | f. becada. Sin.: becada, chocha1, chochaperdiz, coalla, pitorra. | f. escorpina. Sin.: escorpina, escorpena, escorpera, cabracho, rascacio, rescaza. | f. Arg., Chile, Col. y Ven. gallina de Guinea. Sin.: pintada.",
-    "e": "Del dim. de gallina2.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "",
-    "esp": [
-      "explosiva"
-    ]
-  },
-  {
     "w": "Gallinita",
     "p": "f.",
     "d": "Ar., Burg., Córd. y Rioja. mariquita . Sin.: mariquita, santanita, sananica, margarita.",
@@ -1660,19 +1469,6 @@
     "ec": ""
   },
   {
-    "w": "Gallipavo",
-    "p": "m.",
-    "d": "Pavo . Sin.: pavo, chompipe, chumpe, chumpipe, cócono, coronel1, guajolote, guanajo, jolote, mulito, pisco2, totol, tunda3, xolo.",
-    "df": "m. pavo (‖ ave). Sin.: pavo, chompipe, chumpe, chumpipe, cócono, coronel1, guajolote, guanajo, jolote, mulito, pisco2, totol, tunda3, xolo. | m. coloq. gallo (‖ nota falsa). Sin.: gallo.",
-    "e": "De gallo y pavo.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "",
-    "esp": [
-      "explosiva"
-    ]
-  },
-  {
     "w": "Gallito",
     "p": "m.",
     "d": "Hombre presuntuoso o jactancioso. U. t. c. adj. Sin.: fanfarrón, jactancioso, presuntuoso, chulo, presumido, aguajero, valentón, bravucón, matón, perdonavidas, matasiete, tragahombres.",
@@ -1707,16 +1503,6 @@
     "esp": [
       "explosiva"
     ]
-  },
-  {
-    "w": "Gallofar",
-    "p": "intr.",
-    "d": "Gallofear. Sin.: mendigar, gallofear.",
-    "df": "intr. gallofear. Sin.: mendigar, gallofear.",
-    "e": "",
-    "s": "",
-    "c": "verbo",
-    "ec": ""
   },
   {
     "w": "Gallofear",
@@ -1792,16 +1578,6 @@
     "ec": ""
   },
   {
-    "w": "Gallón",
-    "p": "m.",
-    "d": "Tepe. Sin.: tepe, césped.",
-    "df": "m. tepe. Sin.: tepe, césped. | m. Arq. Motivo de ornamentación que decora los boceles de algunos órdenes de arquitectura. Sin.: agallón, agallo. | m. Adorno en forma de gallón que se suele poner en los mangos de los cubiertos de plata. | m. Arq. Cada uno de los segmentos cóncavos de ciertas bóvedas, rematados en redondo por su extremidad más ancha. | m. Mar. Última cuaderna de proa.",
-    "e": "Del lat. vulg. *galleus 'semejante a una agalla de roble o de encina'.",
-    "s": "",
-    "c": "arte_literatura",
-    "ec": "etym_latin"
-  },
-  {
     "w": "Galochero",
     "p": "m.",
     "d": "Fabricante o vendedor de galochas1.",
@@ -1819,16 +1595,6 @@
     "e": "De galocha1.",
     "s": "",
     "c": "adjetivo",
-    "ec": ""
-  },
-  {
-    "w": "Galofobia",
-    "p": "f.",
-    "d": "Francofobia. Sin.: francofobia.",
-    "df": "f. francofobia. Sin.: francofobia.",
-    "e": "De galo- y -fobia.",
-    "s": "",
-    "c": "sustantivo",
     "ec": ""
   },
   {
@@ -1885,16 +1651,6 @@
     ]
   },
   {
-    "w": "Galopa",
-    "p": "f.",
-    "d": "Galop. Sin.: galop.",
-    "df": "f. galop. Sin.: galop.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Galopada",
     "p": "f.",
     "d": "Carrera a galope. Sin.: galope, cabalgada, carrera.",
@@ -1925,16 +1681,6 @@
     "e": "Del part. de galopear.",
     "s": "",
     "c": "adjetivo",
-    "ec": ""
-  },
-  {
-    "w": "Galopear",
-    "p": "intr.",
-    "d": "Galopar. Sin.: galopar.",
-    "df": "intr. galopar. Sin.: galopar.",
-    "e": "",
-    "s": "",
-    "c": "verbo",
     "ec": ""
   },
   {
@@ -2033,16 +1779,6 @@
     "d": "Acción y efecto de galvanizar. Sin.: galvanizado, galvanoplastia.",
     "df": "f. Acción y efecto de galvanizar. Sin.: galvanizado, galvanoplastia.",
     "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Galvanizado",
-    "p": "m.",
-    "d": "Galvanización. Sin.: galvanización, galvanoplastia.",
-    "df": "m. galvanización. Sin.: galvanización, galvanoplastia.",
-    "e": "De galvanizar y -ado.",
     "s": "",
     "c": "sustantivo",
     "ec": ""
@@ -2296,16 +2032,6 @@
     "d": "Correa de poco más de un metro de longitud que, partiendo de la cincha, pasa por entre los brazos del caballo, se asegura en el pretal de la silla y llega a la muserola, donde se afianza. Se ha usado para afirmar la cabeza del caballo e impedir que este despape o picotee.",
     "df": "f. Correa de poco más de un metro de longitud que, partiendo de la cincha, pasa por entre los brazos del caballo, se asegura en el pretal de la silla y llega a la muserola, donde se afianza. Se ha usado para afirmar la cabeza del caballo e impedir que este despape o picotee.",
     "e": "Del vasco gamarra.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Gamarza",
-    "p": "f.",
-    "d": "Alharma. Sin.: alharma, alhámega, alhárgama, alfarma.",
-    "df": "f. alharma. Sin.: alharma, alhámega, alhárgama, alfarma.",
-    "e": "Alterac. del ár. ḥarmal.",
     "s": "",
     "c": "sustantivo",
     "ec": ""
@@ -2606,16 +2332,6 @@
     "ec": ""
   },
   {
-    "w": "Gamonita",
-    "p": "f.",
-    "d": "Gamón. Sin.: gamón, asfódelo.",
-    "df": "f. gamón. Sin.: gamón, asfódelo.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Gamonito",
     "p": "m.",
     "d": "Retoño que echan algunos árboles y plantas alrededor, que siempre se queda pequeño y bajo.",
@@ -2879,16 +2595,6 @@
     "e": "",
     "s": "",
     "c": "adjetivo",
-    "ec": ""
-  },
-  {
-    "w": "Ganeta",
-    "p": "f.",
-    "d": "Gineta. Sin.: gineta, papialbillo.",
-    "df": "f. gineta. Sin.: gineta, papialbillo.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
     "ec": ""
   },
   {
@@ -3362,16 +3068,6 @@
     "ec": ""
   },
   {
-    "w": "Garata",
-    "p": "f.",
-    "d": "Pelea. Sin.: pelea, peleada, vergaceo, cachimbeo, pijín, vergueo, despije.",
-    "df": "f. pelea. Sin.: pelea, peleada, vergaceo, cachimbeo, pijín, vergueo, despije.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Garatero",
     "p": "adj.",
     "d": "Peleador, valentón. U. t. c. s.",
@@ -3397,16 +3093,6 @@
     "d": "Lance del juego del chilindrón o pechigonga, que consiste en descartarse de sus nueve cartas quien es mano, dejando a los demás con las suyas.",
     "df": "f. Lance del juego del chilindrón o pechigonga, que consiste en descartarse de sus nueve cartas quien es mano, dejando a los demás con las suyas. | f. coloq. Halago y caricia para ganar la voluntad de alguien. | f. Esgr. Treta compuesta de nueve movimientos, y partición de dos o tres ángulos, que hacen por ambas partes, por fuera y por dentro, arrojando la espada a los lados, y volviendo a subirla para herir de estocada en el rostro o en el pecho.",
     "e": "Quizá del occit. gratuza 'almohaza'.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Garañuela",
-    "p": "f.",
-    "d": "Grañuela. Sin.: grañuela.",
-    "df": "f. grañuela. Sin.: grañuela.",
-    "e": "",
     "s": "",
     "c": "sustantivo",
     "ec": ""
@@ -3784,16 +3470,6 @@
     "ec": ""
   },
   {
-    "w": "Garfiada",
-    "p": "f.",
-    "d": "Garfada. Sin.: garfada.",
-    "df": "f. garfada. Sin.: garfada.",
-    "e": "De garfio.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Garfio",
     "p": "m.",
     "d": "Instrumento de hierro, curvo y puntiagudo, que sirve para aferrar algún objeto. Sin.: gancho, anzuelo, arpón, uña, hierro, ganzúa, garra, corvo1.",
@@ -3864,26 +3540,6 @@
     "e": "",
     "s": "",
     "c": "adjetivo",
-    "ec": ""
-  },
-  {
-    "w": "Gargamello",
-    "p": "m.",
-    "d": "Garguero . Sin.: garguero, gargüero, garganchón, galillo, güergüero.",
-    "df": "m. garguero (‖ parte superior de la tráquea). Sin.: garguero, gargüero, garganchón, galillo, güergüero.",
-    "e": "De la onomat. garg.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Garganchón",
-    "p": "m.",
-    "d": "Garguero . Sin.: garguero, gargüero, gargamello, galillo, güergüero.",
-    "df": "m. garguero (‖ parte superior de la tráquea). Sin.: garguero, gargüero, gargamello, galillo, güergüero.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
     "ec": ""
   },
   {
@@ -3987,16 +3643,6 @@
     "e": "",
     "s": "",
     "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Garifo",
-    "p": "adj.",
-    "d": "Jarifo. Sin.: jarifo.",
-    "df": "adj. jarifo. Sin.: jarifo.",
-    "e": "",
-    "s": "",
-    "c": "adjetivo",
     "ec": ""
   },
   {
@@ -4106,16 +3752,6 @@
     "ec": ""
   },
   {
-    "w": "Garlocha",
-    "p": "f.",
-    "d": "Garrocha. Sin.: garrocha, garfio, puya1, vara, pica1.",
-    "df": "f. garrocha. Sin.: garrocha, garfio, puya1, vara, pica1.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Garlopa",
     "p": "f.",
     "d": "Carp. Cepillo largo y con puño, que sirve para igualar las superficies de la madera ya cepillada, especialmente en las junturas de las tablas. Sin.: cepillo, galera, repasadera.",
@@ -4176,16 +3812,6 @@
     "ec": "etym_latin"
   },
   {
-    "w": "Garpa",
-    "p": "f.",
-    "d": "Carpa2. Sin.: carpa2.",
-    "df": "f. carpa2. Sin.: carpa2.",
-    "e": "De grapa2.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Garra",
     "p": "f.",
     "d": "Mano o pie del animal, cuando están armados de uñas corvas, fuertes y agudas, como en el león y el águila. Sin.: zarpa1, mano1, uña, garfa.",
@@ -4242,16 +3868,6 @@
     "e": "De garrafiñar.",
     "s": "",
     "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Garrafiñar",
-    "p": "tr.",
-    "d": "Garrapiñar1. Sin.: garrapiñar1.",
-    "df": "tr. coloq. garrapiñar1. Sin.: garrapiñar1.",
-    "e": "",
-    "s": "",
-    "c": "verbo",
     "ec": ""
   },
   {
@@ -4345,16 +3961,6 @@
     "ec": ""
   },
   {
-    "w": "Garrapato",
-    "p": "m.",
-    "d": "Cadillo . Sin.: cadillo, arrancamoños.",
-    "df": "m. cadillo (‖ fruto). Sin.: cadillo, arrancamoños. | m. Rasgo caprichoso e irregular hecho con la pluma. Sin.: garabato, pintarrajo, borrón1, chafarrinada, chafarrinón.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Garrapatoso",
     "p": "adj.",
     "d": "Dicho de una escritura: Llena de garrapatos.",
@@ -4439,16 +4045,6 @@
     "p": "f.",
     "d": "Sal. Prado extenso sin árboles.",
     "df": "f. Sal. Prado extenso sin árboles. | f. Sal. Oveja que se queda rezagada.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Garroba",
-    "p": "f.",
-    "d": "Algarroba . Sin.: algarroba, garrofa.",
-    "df": "f. algarroba (‖ fruto). Sin.: algarroba, garrofa.",
     "e": "",
     "s": "",
     "c": "sustantivo",
@@ -4558,16 +4154,6 @@
     "ec": ""
   },
   {
-    "w": "Garrota",
-    "p": "f.",
-    "d": "Garrote . Sin.: garrote, cayado, cayada, cachava, gayata.",
-    "df": "f. garrote (‖ palo grueso y fuerte). Sin.: garrote, cayado, cayada, cachava, gayata. | f. cayado (‖ palo o bastón).",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Garrotal",
     "p": "m.",
     "d": "Plantío hecho con estacas o garrotes de olivo.",
@@ -4612,26 +4198,6 @@
     "e": "",
     "s": "",
     "c": "musica",
-    "ec": ""
-  },
-  {
-    "w": "Garrubia",
-    "p": "f.",
-    "d": "Algarroba . Sin.: algarroba, arveja, veza, vicia.",
-    "df": "f. algarroba (‖ semilla). Sin.: algarroba, arveja, veza, vicia.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Garrucha",
-    "p": "f.",
-    "d": "Polea. Sin.: polea, roldana, carrillo, motón, trocla, vigota1.",
-    "df": "f. polea. Sin.: polea, roldana, carrillo, motón, trocla, vigota1. | f. coloq. Vall. Pasador del cuello de la camisa.",
-    "e": "De carrucha.",
-    "s": "",
-    "c": "sustantivo",
     "ec": ""
   },
   {
@@ -4683,26 +4249,6 @@
     "s": "",
     "c": "sustantivo",
     "ec": ""
-  },
-  {
-    "w": "Garujo",
-    "p": "m.",
-    "d": "Hormigón . Sin.: hormigón1, concreto2, derretido, mazacote, nuégado.",
-    "df": "m. hormigón (‖ mezcla de agua, arena, grava y cemento). Sin.: hormigón1, concreto2, derretido, mazacote, nuégado.",
-    "e": "De garúa.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Garulla",
-    "p": "f.",
-    "d": "Granuja . Sin.: granuja.",
-    "df": "f. granuja (‖ uva desgranada). Sin.: granuja. | f. granuja (‖ grano interior de la uva). Sin.: granuja. | f. coloq. Conjunto desordenado de gente. | f. cascajo (‖ conjunto de frutas de cáscaras secas). Sin.: cascajo, cascaruja.",
-    "e": "Del lat. vulg. *carulĭa, y este der. del gr. κάρυον káryon 'nuez'.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_latin"
   },
   {
     "w": "Garullada",
@@ -4763,20 +4309,6 @@
     "s": "",
     "c": "adjetivo",
     "ec": ""
-  },
-  {
-    "w": "Garúa",
-    "p": "f.",
-    "d": "Llovizna. Sin.: llovizna, mollina, mollizna, chipichipi, brisa1, chischís, cilampa, páramo, silampa, cerecere, seresere, tapayagua, sirimiri, chirimiri, orvallo.",
-    "df": "f. Am. llovizna. Sin.: llovizna, mollina, mollizna, chipichipi, brisa1, chischís, cilampa, páramo, silampa, cerecere, seresere, tapayagua, sirimiri, chirimiri, orvallo.",
-    "e": "Del port. dialect. caruja 'niebla'.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_portugues",
-    "esp": [
-      "explosiva",
-      "viajera"
-    ]
   },
   {
     "w": "Gasa",
@@ -4846,16 +4378,6 @@
     "ec": ""
   },
   {
-    "w": "Gaseoducto",
-    "p": "m.",
-    "d": "Gasoducto. Sin.: gasoducto.",
-    "df": "m. gasoducto. Sin.: gasoducto.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Gaseosa",
     "p": "adj.",
     "d": "Que se halla en estado de gas. Sin.: gaseiforme, fluido, vaporoso, espumoso, carbonatado, etéreo.",
@@ -4916,19 +4438,6 @@
     "ec": ""
   },
   {
-    "w": "Gasoil",
-    "p": "m.",
-    "d": "Gasóleo. Sin.: diésel, gasóleo, combustible, carburante.",
-    "df": "m. gasóleo. Sin.: diésel, gasóleo, combustible, carburante.",
-    "e": "Del ingl. gas oil.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_ingles",
-    "esp": [
-      "viajera"
-    ]
-  },
-  {
     "w": "Gasolinera",
     "p": "m. y f.",
     "d": "Y f. Persona que trabaja en una gasolinera .",
@@ -4984,16 +4493,6 @@
     "d": "Zool. Dicho de un molusco: Terrestre o acuático, provisto de un pie carnoso con el que se arrastra, cabeza más o menos cilíndrica en cuya parte dorsal tiene uno o dos pares de tentáculos, boca en su extremo anterior, y cuerpo comúnmente protegido por una concha de una pieza y de forma muy variable, según las especies, casi siempre arrollada en espiral; p. ej., la púrpura o los caracoles. U. t. c. s. m., en pl. como taxón.",
     "df": "adj. Zool. Dicho de un molusco: Terrestre o acuático, provisto de un pie carnoso con el que se arrastra, cabeza más o menos cilíndrica en cuya parte dorsal tiene uno o dos pares de tentáculos, boca en su extremo anterior, y cuerpo comúnmente protegido por una concha de una pieza y de forma muy variable, según las especies, casi siempre arrollada en espiral; p. ej., la púrpura o los caracoles. U. t. c. s. m., en pl. como taxón.",
     "e": "De gastero- y ‒́podo.",
-    "s": "",
-    "c": "adjetivo",
-    "ec": ""
-  },
-  {
-    "w": "Gastizo",
-    "p": "adj.",
-    "d": "Gastoso. Sin.: gastoso, derrochador, despilfarrador, dilapidador, manirroto, disipador, gastivo.",
-    "df": "adj. gastoso. Sin.: gastoso, derrochador, despilfarrador, dilapidador, manirroto, disipador, gastivo.",
-    "e": "",
     "s": "",
     "c": "adjetivo",
     "ec": ""
@@ -5317,16 +4816,6 @@
     "ec": ""
   },
   {
-    "w": "Gatesco",
-    "p": "adj. coloq.",
-    "d": "Gatuno. Sin.: gatuno.",
-    "df": "adj. coloq. gatuno. Sin.: gatuno.",
-    "e": "",
-    "s": "",
-    "c": "adjetivo",
-    "ec": ""
-  },
-  {
     "w": "Gatillazo",
     "p": "m.",
     "d": "Error de puntería ocasionado al ejercer excesiva presión sobre el gatillo de un arma de fuego.",
@@ -5358,19 +4847,6 @@
     "s": "",
     "c": "adjetivo",
     "ec": ""
-  },
-  {
-    "w": "Gatopardo",
-    "p": "m.",
-    "d": "Guepardo. Sin.: guepardo, onza2.",
-    "df": "m. guepardo. Sin.: guepardo, onza2.",
-    "e": "Del it. gattopardo, de gatto 'gato1' y pardo 'leopardo'.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_italiano",
-    "esp": [
-      "viajera"
-    ]
   },
   {
     "w": "Gatuna",
@@ -5601,16 +5077,6 @@
     "ec": ""
   },
   {
-    "w": "Gavina",
-    "p": "f.",
-    "d": "Gaviota. Sin.: gaviota, gavia2, paviota.",
-    "df": "f. gaviota. Sin.: gaviota, gavia2, paviota.",
-    "e": "De gavia2.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Gavinote",
     "p": "m.",
     "d": "Pollo de gavina.",
@@ -5639,16 +5105,6 @@
     "s": "",
     "c": "vestimenta",
     "ec": ""
-  },
-  {
-    "w": "Gaya",
-    "p": "f.",
-    "d": "Urraca . Sin.: urraca, marica, gaza2, pega2.",
-    "df": "f. urraca (‖ ave similar al cuervo). Sin.: urraca, marica, gaza2, pega2.",
-    "e": "Del lat. tardío gaia, y este del n. p. Gaia 'Gaya'; cf. urraca y gayo1.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_latin"
   },
   {
     "w": "Gayadura",
@@ -5689,19 +5145,6 @@
     "s": "",
     "c": "zoologia",
     "ec": "etym_latin"
-  },
-  {
-    "w": "Gayola",
-    "p": "f.",
-    "d": "Jaula . Sin.: jaula.",
-    "df": "f. jaula (‖ armazón hecha con barras o listones). Sin.: jaula. | f. coloq. Cárcel de presos. Sin.: cárcel, prisión, presidio, penitenciaría, penal, calabozo1, mazmorra, correccional, chirona, trena, trullo2, jaula, cana3, bote3, peni, tanque1, buchaca. | f. And. Especie de choza sobre palos o árboles, para los guardas de viñas.",
-    "e": "Del lat. caveŏla, dim. de cavea 'jaula'.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_latin",
-    "esp": [
-      "explosiva"
-    ]
   },
   {
     "w": "Gayomba",
@@ -5757,19 +5200,6 @@
     "ec": ""
   },
   {
-    "w": "Gazmoñada",
-    "p": "f.",
-    "d": "Gazmoñería. Sin.: gazmoñería, mojigatería, santurronería, puritanismo, beatería, pacatería, hipocresía, fariseísmo, camandulería.",
-    "df": "f. gazmoñería. Sin.: gazmoñería, mojigatería, santurronería, puritanismo, beatería, pacatería, hipocresía, fariseísmo, camandulería.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "",
-    "esp": [
-      "explosiva"
-    ]
-  },
-  {
     "w": "Gazmoñero",
     "p": "adj.",
     "d": "Gazmoño. U. t. c. s. Sin.: gazmoño, mojigato, santurrón, puritano, beato, pacato, hipócrita, fariseo.",
@@ -5809,16 +5239,6 @@
     ]
   },
   {
-    "w": "Gaznar",
-    "p": "intr.",
-    "d": "Graznar. Sin.: graznar, gañir, crascitar.",
-    "df": "intr. graznar. Sin.: graznar, gañir, crascitar.",
-    "e": "",
-    "s": "",
-    "c": "verbo",
-    "ec": ""
-  },
-  {
     "w": "Gaznatada",
     "p": "f.",
     "d": "Golpe violento que se da con la mano en el gaznate. Sin.: gaznatazo, gaznatón.",
@@ -5834,16 +5254,6 @@
     "d": "Golpe que se da en el gaznate.",
     "df": "m. Golpe que se da en el gaznate. | m. Ar., Cast., León, Man., Rioja y Sal. bofetada (‖ golpe con la mano abierta).",
     "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Gaznate",
-    "p": "m.",
-    "d": "Garguero. Sin.: garguero, garganta, gollete, gola, gañote, tragadero.",
-    "df": "m. garguero. Sin.: garguero, garganta, gollete, gola, gañote, tragadero. | m. Fruta de sartén en forma de gaznate. Sin.: gaznatón. | m. Méx. Dulce hecho de piña o de coco.",
-    "e": "Etim. disc.",
     "s": "",
     "c": "sustantivo",
     "ec": ""
@@ -5894,16 +5304,6 @@
     "d": "And. Sopa caliente con huevos, batida la yema y cuajada la clara, y que se adereza con vinagre o limón.",
     "df": "m. And. Sopa caliente con huevos, batida la yema y cuajada la clara, y que se adereza con vinagre o limón.",
     "e": "Del dim. de gazpacho.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Gazuza",
-    "p": "f. coloq.",
-    "d": "Hambre. Sin.: hambre, apetito, gusa, carpanta, gana, apetencia.",
-    "df": "f. coloq. hambre. Sin.: hambre, apetito, gusa, carpanta, gana, apetencia.",
-    "e": "Etim. disc.",
     "s": "",
     "c": "sustantivo",
     "ec": ""
@@ -6019,16 +5419,6 @@
     "ec": "etym_latin"
   },
   {
-    "w": "Gehena",
-    "p": "f.",
-    "d": "Infierno . Sin.: infierno, averno1, báratro, abismo, profundo, chimbolero.",
-    "df": "f. infierno (‖ lugar de castigo eterno). Sin.: infierno, averno1, báratro, abismo, profundo, chimbolero.",
-    "e": "Del lat. tardío gehenna, y este del hebr. gē hinnōm 'valle de H.', topónimo maldito a causa de los ritos paganos; cf. siriaco gihannā.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_latin"
-  },
-  {
     "w": "Geisha",
     "p": "f.",
     "d": "En el Japón, muchacha instruida para la danza, la música y la ceremonia del té, que se contrata para animar ciertas reuniones masculinas.",
@@ -6046,16 +5436,6 @@
     "e": "",
     "s": "",
     "c": "adjetivo",
-    "ec": ""
-  },
-  {
-    "w": "Geldre",
-    "p": "m.",
-    "d": "Mundillo . Sin.: mundillo, mundo, sauquillo, canillero.",
-    "df": "m. mundillo (‖ arbusto). Sin.: mundillo, mundo, sauquillo, canillero. | m. Flor del geldre.",
-    "e": "De Güeldres, provincia de los Países Bajos.",
-    "s": "",
-    "c": "sustantivo",
     "ec": ""
   },
   {
@@ -6414,16 +5794,6 @@
     "ec": "etym_latin"
   },
   {
-    "w": "Generatriz",
-    "p": "adj.",
-    "d": "Generadora . Sin.: generadora.",
-    "df": "adj. generadora (‖ que genera). Sin.: generadora. | adj. Geom. Dicho de una línea o de una figura: Que por su movimiento engendra, respectivamente, una figura o un cuerpo. U. t. c. s. f. | adj. Fís. Dicho de una máquina: Que convierte la energía mecánica en eléctrica. U. t. c. s. f.",
-    "e": "Del lat. generātrix, -īcis.",
-    "s": "",
-    "c": "adjetivo",
-    "ec": "etym_latin"
-  },
-  {
     "w": "Genesíaco",
     "p": "adj.",
     "d": "Perteneciente o relativo a la génesis.",
@@ -6485,29 +5855,6 @@
     "esp": [
       "explosiva"
     ]
-  },
-  {
-    "w": "Genipa",
-    "p": "f.",
-    "d": "Jagua. Sin.: jagua.",
-    "df": "f. jagua. Sin.: jagua.",
-    "e": "Voz tupí.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_amerindio",
-    "esp": [
-      "viajera"
-    ]
-  },
-  {
-    "w": "Genista",
-    "p": "f.",
-    "d": "Retama. Sin.: retama, escoba, hiniesta, ginesta, retamo.",
-    "df": "f. retama. Sin.: retama, escoba, hiniesta, ginesta, retamo.",
-    "e": "Del lat. genista.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_latin"
   },
   {
     "w": "Genitivo",
@@ -7116,16 +6463,6 @@
     "s": "",
     "c": "adjetivo",
     "ec": ""
-  },
-  {
-    "w": "Geoponía",
-    "p": "f.",
-    "d": "Agricultura. Sin.: geopónica, agricultura.",
-    "df": "f. agricultura. Sin.: geopónica, agricultura.",
-    "e": "Del gr. γεωπονία geōponía 'trabajo de la tierra'.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_griego"
   },
   {
     "w": "Geopónica",
@@ -7874,16 +7211,6 @@
     "ec": "etym_latin"
   },
   {
-    "w": "Gibar",
-    "p": "tr.",
-    "d": "Corcovar. Sin.: corcovar.",
-    "df": "tr. corcovar. Sin.: corcovar. | tr. coloq. Fastidiar, molestar, vejar. Sin.: fastidiar, molestar, jorobar, chinchar, jeringar, incomodar.",
-    "e": "De giba.",
-    "s": "",
-    "c": "verbo",
-    "ec": ""
-  },
-  {
     "w": "Gibelino",
     "p": "adj.",
     "d": "En la Edad Media italiana, partidario de los emperadores de Alemania y enfrentado a los güelfos, defensores de los papas. Apl. a pers., u. t. c. s.",
@@ -8236,16 +7563,6 @@
     "ec": "etym_griego"
   },
   {
-    "w": "Ginesta",
-    "p": "f.",
-    "d": "Retama. Sin.: retama, escoba, genista, hiniesta, retamo.",
-    "df": "f. retama. Sin.: retama, escoba, genista, hiniesta, retamo.",
-    "e": "Del lat. genista.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_latin"
-  },
-  {
     "w": "Gineta",
     "p": "f.",
     "d": "Mamífero vivérrido de unos 45 cm de largo sin contar la cola, de cuerpo esbelto, hocico prolongado y pelaje blanco en la garganta, pardo amarillento con manchas en fajas negras por el cuerpo y con anillos blancos y negros en la cola. Sin.: ganeta, papialbillo.",
@@ -8254,16 +7571,6 @@
     "s": "",
     "c": "zoologia",
     "ec": ""
-  },
-  {
-    "w": "Gingidio",
-    "p": "m.",
-    "d": "Biznaga . Sin.: biznaga1, dauco.",
-    "df": "m. biznaga (‖ planta umbelífera). Sin.: biznaga1, dauco. | m. biznaga (‖ pie de la flor empleado como mondadientes). Sin.: biznaga1.",
-    "e": "Del lat. gingidĭon, y este del gr. γιγγίδιον gingídion.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_latin"
   },
   {
     "w": "Gingival",
@@ -8654,19 +7961,6 @@
     "ec": "etym_latin"
   },
   {
-    "w": "Gladio",
-    "p": "m.",
-    "d": "Espadaña . Sin.: espadaña, aceña, anea, bayón, enea, macío, tul2, bayunco1.",
-    "df": "m. espadaña (‖ planta). Sin.: espadaña, aceña, anea, bayón, enea, macío, tul2, bayunco1.",
-    "e": "Del lat. gladius 'espada', voz de or. celta.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_latin",
-    "esp": [
-      "explosiva"
-    ]
-  },
-  {
     "w": "Gladíolo",
     "p": "m.",
     "d": "Planta de la familia de las iridáceas, de 40 a 60 cm de altura, con hojas radicales, enterísimas, en forma de estoque, y flores en espiga terminal, rojas, de corola partida por el borde en seis lacinias desiguales, que es espontánea en terrenos húmedos y se cultiva en los jardines. Sin.: estoque, gladiola, gallo.",
@@ -8684,16 +7978,6 @@
     "e": "Del búlgaro ant. glagolati 'hablar'.",
     "s": "",
     "c": "adjetivo",
-    "ec": ""
-  },
-  {
-    "w": "Glamour",
-    "p": "m.",
-    "d": "Glamur. Sin.: glamur, elegancia, atractivo, encanto.",
-    "df": "m. glamur. Sin.: glamur, elegancia, atractivo, encanto.",
-    "e": "Voz fr., y esta del ingl. glamour.",
-    "s": "",
-    "c": "sustantivo",
     "ec": ""
   },
   {
@@ -8742,16 +8026,6 @@
     "d": "Bot. Que produce bellotas. U. t. en leng. poét. Sin.: glandígero.",
     "df": "adj. Bot. Que produce bellotas. U. t. en leng. poét. Sin.: glandígero.",
     "e": "Del lat. glandĭfer, -ĕri, de glans, glandis 'bellota' y -fer, -ĕri '‒́fero'.",
-    "s": "",
-    "c": "adjetivo",
-    "ec": "etym_latin"
-  },
-  {
-    "w": "Glandígero",
-    "p": "adj.",
-    "d": "Glandífero. Sin.: glandífero.",
-    "df": "adj. glandífero. Sin.: glandífero.",
-    "e": "Del lat. glans, glandis 'bellota' y gerĕre 'llevar'.",
     "s": "",
     "c": "adjetivo",
     "ec": "etym_latin"
@@ -8860,16 +8134,6 @@
     "ec": "etym_latin"
   },
   {
-    "w": "Glera",
-    "p": "f.",
-    "d": "Cascajar . Sin.: cascajar, pedregal, cantizal, cantera.",
-    "df": "f. cascajar (‖ lugar donde hay mucho cascajo). Sin.: cascajar, pedregal, cantizal, cantera. | f. arenal. Sin.: arenal.",
-    "e": "Del arag. glera, y este del lat. glarea 'cantizal'.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Glial",
     "p": "adj.",
     "d": "Anat. Perteneciente o relativo a la glía.",
@@ -8893,19 +8157,6 @@
     ]
   },
   {
-    "w": "Glicina",
-    "p": "f.",
-    "d": "Glicinia. Sin.: glicinia.",
-    "df": "f. glicinia. Sin.: glicinia. | f. Bioquím. Aminoácido proteico, el más simple de todos ellos, presente en el azúcar de caña y en los colágenos. Sin.: glicocola.",
-    "e": "Del ingl. glycine.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_ingles",
-    "esp": [
-      "viajera"
-    ]
-  },
-  {
     "w": "Glicinia",
     "p": "f.",
     "d": "Planta papilionácea, de origen chino, que puede alcanzar gran tamaño y produce racimos de flores perfumadas de color azulado o malva, o, con menos frecuencia, blanco o rosa pálido. Sin.: glicina.",
@@ -8914,16 +8165,6 @@
     "s": "",
     "c": "botanica",
     "ec": "etym_latin"
-  },
-  {
-    "w": "Glicocola",
-    "p": "f.",
-    "d": "Glicina . Sin.: glicina.",
-    "df": "f. glicina (‖ aminoácido proteico). Sin.: glicina.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
   },
   {
     "w": "Glicol",
@@ -9041,16 +8282,6 @@
     "ec": ""
   },
   {
-    "w": "Globalizante",
-    "p": "adj.",
-    "d": "Globalizador. Sin.: globalizador.",
-    "df": "adj. globalizador. Sin.: globalizador.",
-    "e": "De globalizar y -nte.",
-    "s": "",
-    "c": "adjetivo",
-    "ec": ""
-  },
-  {
     "w": "Globalizar",
     "p": "tr.",
     "d": "Integrar en un todo cosas diversas.",
@@ -9129,20 +8360,6 @@
     "s": "",
     "c": "sustantivo",
     "ec": ""
-  },
-  {
-    "w": "Glorieta",
-    "p": "f.",
-    "d": "Cenador . Sin.: cenador, cenadero, lonjeta.",
-    "df": "f. cenador (‖ espacio de los jardines). Sin.: cenador, cenadero, lonjeta. | f. Plazoleta, por lo común en un jardín, donde suele haber un cenador. Sin.: plazoleta, plaza. | f. Plaza, por lo común de forma circular, donde desembocan varias calles, alamedas o vías de circulación. Sin.: rotonda, redoma. | f. Cuba y R. Dom. quiosco (‖ pabellón abierto). Sin.: quiosco, templete.",
-    "e": "Del fr. gloriette.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_frances",
-    "esp": [
-      "explosiva",
-      "viajera"
-    ]
   },
   {
     "w": "Glorificable",
@@ -9301,16 +8518,6 @@
     "e": "Del gr. γλωττίς glōttís.",
     "s": "",
     "c": "cuerpo_humano",
-    "ec": "etym_griego"
-  },
-  {
-    "w": "Glotología",
-    "p": "f.",
-    "d": "Lingüística. Sin.: lingüística, filología.",
-    "df": "f. lingüística. Sin.: lingüística, filología.",
-    "e": "Del gr. γλῶττα glôtta 'lengua' y -logía.",
-    "s": "",
-    "c": "sustantivo",
     "ec": "etym_griego"
   },
   {
@@ -9804,16 +9011,6 @@
     ]
   },
   {
-    "w": "Goetheano",
-    "p": "adj.",
-    "d": "Goethiano. Sin.: goethiano.",
-    "df": "adj. goethiano. Sin.: goethiano.",
-    "e": "",
-    "s": "",
-    "c": "adjetivo",
-    "ec": ""
-  },
-  {
     "w": "Goethiano",
     "p": "adj.",
     "d": "Perteneciente o relativo a Johann Wolfgang Goethe, escritor alemán, o a su obra. La narrativa goethiana. Sin.: goetheano.",
@@ -9881,16 +9078,6 @@
     "esp": [
       "explosiva"
     ]
-  },
-  {
-    "w": "Goldre",
-    "p": "m.",
-    "d": "Aljaba. Sin.: aljaba, carcaj.",
-    "df": "m. aljaba. Sin.: aljaba, carcaj.",
-    "e": "De or. inc.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
   },
   {
     "w": "Golear",
@@ -9980,19 +9167,6 @@
     "s": "",
     "c": "sustantivo",
     "ec": ""
-  },
-  {
-    "w": "Golfán",
-    "p": "m.",
-    "d": "Nenúfar. Sin.: nenúfar, escudete, ninfea, ninfa, zapalota.",
-    "df": "m. nenúfar. Sin.: nenúfar, escudete, ninfea, ninfa, zapalota.",
-    "e": "Del port. golfão.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_portugues",
-    "esp": [
-      "viajera"
-    ]
   },
   {
     "w": "Golfín",
@@ -10101,16 +9275,6 @@
     ]
   },
   {
-    "w": "Gollizno",
-    "p": "m.",
-    "d": "Gollizo. Sin.: gollizo.",
-    "df": "m. gollizo. Sin.: gollizo.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Gollizo",
     "p": "m.",
     "d": "Estrechura de un paraje. Sin.: gollizno.",
@@ -10138,16 +9302,6 @@
     "e": "De or. inc.",
     "s": "",
     "c": "adjetivo",
-    "ec": ""
-  },
-  {
-    "w": "Golondrinera",
-    "p": "f.",
-    "d": "Celidonia. Sin.: celidonia, hirundinaria, celidueña.",
-    "df": "f. celidonia. Sin.: celidonia, hirundinaria, celidueña.",
-    "e": "De golondrina.",
-    "s": "",
-    "c": "sustantivo",
     "ec": ""
   },
   {
@@ -10194,16 +9348,6 @@
     "ec": ""
   },
   {
-    "w": "Golosear",
-    "p": "intr.",
-    "d": "Golosinear. Sin.: golosinear, golosinar, gulusmear.",
-    "df": "intr. golosinear. Sin.: golosinear, golosinar, gulusmear.",
-    "e": "De goloso y -ear.",
-    "s": "",
-    "c": "verbo",
-    "ec": ""
-  },
-  {
     "w": "Golosina",
     "p": "f.",
     "d": "Manjar delicado, generalmente dulce, que sirve más para el gusto que para el sustento. Sin.: chuchería1, dulce, caramelo, chocolatina, bombón1, pastel, lamín.",
@@ -10215,16 +9359,6 @@
     "esp": [
       "explosiva"
     ]
-  },
-  {
-    "w": "Golosinar",
-    "p": "intr.",
-    "d": "Golosinear. Sin.: golosinear, golosear, gulusmear.",
-    "df": "intr. golosinear. Sin.: golosinear, golosear, gulusmear.",
-    "e": "",
-    "s": "",
-    "c": "verbo",
-    "ec": ""
   },
   {
     "w": "Golosinear",
@@ -10439,19 +9573,6 @@
     "ec": ""
   },
   {
-    "w": "Gomia",
-    "p": "f.",
-    "d": "Tarasca . Sin.: tarasca1, coca3.",
-    "df": "f. tarasca (‖ figura de sierpe). Sin.: tarasca1, coca3. | f. Ser fantástico con que se asusta a los niños. Sin.: coco1, cuco1, papón1, bu, cocora. | f. coloq. Persona que come demasiado y engulle con presteza y voracidad cuanto le dan. Sin.: glotón, tragón, comilón, tragaldabas. | f. coloq. Cosa que consume, gasta y aniquila.",
-    "e": "Del lat. gumia 'comedor, tragón'.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_latin",
-    "esp": [
-      "explosiva"
-    ]
-  },
-  {
     "w": "Gomina",
     "p": "f.",
     "d": "Fijador del cabello. Sin.: fijador, brillantina.",
@@ -10522,16 +9643,6 @@
     "ec": ""
   },
   {
-    "w": "Gonchu",
-    "p": "m.",
-    "d": "Borra . Sin.: borra.",
-    "df": "m. borra (‖ hez o sedimento turbio de los líquidos). Sin.: borra.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Gondolero",
     "p": "m. y f.",
     "d": "Y f. Remero o gobernador de una góndola.",
@@ -10549,49 +9660,6 @@
     "e": "Del it. gonna 'saya'.",
     "s": "",
     "c": "vestimenta",
-    "ec": "etym_italiano",
-    "esp": [
-      "viajera"
-    ]
-  },
-  {
-    "w": "Gonfalonero",
-    "p": "m.",
-    "d": "Confaloniero. Sin.: confaloniero, confalonier, gonfaloniero, gonfalonier, portaestandarte, abanderado.",
-    "df": "m. confaloniero. Sin.: confaloniero, confalonier, gonfaloniero, gonfalonier, portaestandarte, abanderado.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Gonfalonier",
-    "p": "m.",
-    "d": "Confalonier. Sin.: confaloniero, confalonier, gonfalonero, gonfaloniero, portaestandarte, abanderado.",
-    "df": "m. confalonier. Sin.: confaloniero, confalonier, gonfalonero, gonfaloniero, portaestandarte, abanderado.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Gonfaloniero",
-    "p": "m.",
-    "d": "Confaloniero. Sin.: confaloniero, confalonier, gonfalonero, gonfalonier, portaestandarte, abanderado.",
-    "df": "m. confaloniero. Sin.: confaloniero, confalonier, gonfalonero, gonfalonier, portaestandarte, abanderado.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Gonfalón",
-    "p": "m.",
-    "d": "Confalón. Sin.: confalón, estandarte, pendón1, bandera, enseña.",
-    "df": "m. confalón. Sin.: confalón, estandarte, pendón1, bandera, enseña.",
-    "e": "Del it. gonfalone 'estandarte'.",
-    "s": "",
-    "c": "sustantivo",
     "ec": "etym_italiano",
     "esp": [
       "viajera"
@@ -10751,16 +9819,6 @@
     "ec": ""
   },
   {
-    "w": "Gordiflón",
-    "p": "adj. coloq.",
-    "d": "Gordinflón. Sin.: gordinflón.",
-    "df": "adj. coloq. gordinflón. Sin.: gordinflón.",
-    "e": "De gordinflón.",
-    "s": "",
-    "c": "adjetivo",
-    "ec": ""
-  },
-  {
     "w": "Gordinflas",
     "p": "adj. coloq.",
     "d": "Gordinflón. U. t. c. s.",
@@ -10870,19 +9928,6 @@
     ]
   },
   {
-    "w": "Gorgor",
-    "p": "m.",
-    "d": "Gorgoteo. Sin.: gorgoteo, borboteo.",
-    "df": "m. gorgoteo. Sin.: gorgoteo, borboteo.",
-    "e": "Voz onomat.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_onomatopeya",
-    "esp": [
-      "onom"
-    ]
-  },
-  {
     "w": "Gorgorita",
     "p": "f.",
     "d": "Gorgorito . U. m. en pl. Sin.: gorgorito, gorjeo, trino2.",
@@ -10951,16 +9996,6 @@
     "d": "Acción y efecto de gorgotear. Sin.: gorgor, borboteo, borbolleo, borbollón, borbotón, burbujeo.",
     "df": "m. Acción y efecto de gorgotear. Sin.: gorgor, borboteo, borbolleo, borbollón, borbotón, burbujeo.",
     "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Gorgotero",
-    "p": "m.",
-    "d": "Buhonero . Sin.: buhonero, mercachifle, cajero, bufón1, varillero, falte, charanguero.",
-    "df": "m. buhonero (‖ hombre que vende buhonerías). Sin.: buhonero, mercachifle, cajero, bufón1, varillero, falte, charanguero.",
-    "e": "Quizá del fr. gargotier 'figonero', 'criado que sigue a una tropa como lavandero y cocinero'.",
     "s": "",
     "c": "sustantivo",
     "ec": ""
@@ -11070,19 +10105,6 @@
     "ec": ""
   },
   {
-    "w": "Gormar",
-    "p": "tr.",
-    "d": "Vomitar . Sin.: vomitar, devolver, volver, buitrear, debocar, deponer, potar3, lanzar.",
-    "df": "tr. vomitar (‖ arrojar violentamente por la boca). Sin.: vomitar, devolver, volver, buitrear, debocar, deponer, potar3, lanzar.",
-    "e": "De or. inc.",
-    "s": "",
-    "c": "verbo",
-    "ec": "",
-    "esp": [
-      "explosiva"
-    ]
-  },
-  {
     "w": "Gorrada",
     "p": "f.",
     "d": "Cortesía hecha con la gorra.",
@@ -11134,16 +10156,6 @@
     "esp": [
       "explosiva"
     ]
-  },
-  {
-    "w": "Gorrinada",
-    "p": "f. coloq.",
-    "d": "Guarrada. Sin.: porquería, suciedad, guarrada, cerdada, cochinada.",
-    "df": "f. coloq. guarrada. Sin.: porquería, suciedad, guarrada, cerdada, cochinada.",
-    "e": "De gorrino y -ada.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
   },
   {
     "w": "Gorrinería",
@@ -11199,16 +10211,6 @@
     "ec": ""
   },
   {
-    "w": "Gorronal",
-    "p": "m.",
-    "d": "Guijarral. Sin.: guijarral.",
-    "df": "m. guijarral. Sin.: guijarral.",
-    "e": "De gorrón1 'guijarro' y -al.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Gorronear",
     "p": "intr.",
     "d": "Comer o vivir a costa ajena. Sin.: arrimarse, abusar, aprovecharse, sablear, chupar, gorrear.",
@@ -11227,19 +10229,6 @@
     "s": "",
     "c": "sustantivo",
     "ec": ""
-  },
-  {
-    "w": "Gorrín",
-    "p": "m.",
-    "d": "Cerdo . Sin.: cerdo, puerco, gorrino, cochino, marrano, cebón, guarro1, lechón, chancho, tunco1.",
-    "df": "m. cerdo (‖ mamífero). Sin.: cerdo, puerco, gorrino, cochino, marrano, cebón, guarro1, lechón, chancho, tunco1.",
-    "e": "De la onomat. gorr.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "",
-    "esp": [
-      "explosiva"
-    ]
   },
   {
     "w": "Gorullo",
@@ -11561,19 +10550,6 @@
     "ec": ""
   },
   {
-    "w": "Grada",
-    "p": "f.",
-    "d": "Peldaño. Sin.: peldaño, escalón, grado1.",
-    "df": "f. peldaño. Sin.: peldaño, escalón, grado1. | f. Asiento a manera de escalón corrido. | f. En un estadio, un anfiteatro u otro lugar semejante, conjunto de gradas. Sin.: graderío, gradería, anfiteatro, tribuna, tendido, andanada. | f. Público que ocupa la grada. Los jugadores recibieron el aplauso de la grada. Sin.: graderío, público. | f. Tarima que se suele poner al pie de los altares. | f. Mar. Plano inclinado hecho de cantería, a orillas del mar o de un río, sobre el cual se construyen o carenan los barcos. | f. Reja o locutorio de los monasterios de monjas. | f. Instrumento de madera o de hierro, de forma casi cuadrada, a manera de unas parrillas grandes, con el cual se desmenuza y allana la tierra después de arada, para sembrarla. Sin.: rastra1.",
-    "e": "De grado1.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "",
-    "esp": [
-      "explosiva"
-    ]
-  },
-  {
     "w": "Gradado",
     "p": "adj.",
     "d": "Que tiene gradas1.",
@@ -11681,16 +10657,6 @@
     "p": "f.",
     "d": "Cualidad de gradual. Sin.: gradualismo.",
     "df": "f. Cualidad de gradual. Sin.: gradualismo.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Gradualismo",
-    "p": "m.",
-    "d": "Gradualidad. Sin.: gradualidad.",
-    "df": "m. gradualidad. Sin.: gradualidad.",
     "e": "",
     "s": "",
     "c": "sustantivo",
@@ -12108,16 +11074,6 @@
     "ec": ""
   },
   {
-    "w": "Gramático",
-    "p": "adj.",
-    "d": "Gramatical. Sin.: gramatical.",
-    "df": "adj. gramatical. Sin.: gramatical. | f. Tratado de gramática. La biblioteca tiene una buena colección de gramáticas. | f. Tradicionalmente, arte de hablar y escribir correctamente una lengua. | f. Antiguamente, estudio de la lengua latina. | f. Ling. Representación de la competencia lingüística de los hablantes, especialmente en lo relativo a la morfología, la sintaxis y ciertos aspectos del léxico.",
-    "e": "Del lat. grammatĭcus, y este del gr. γραμματικός grammatikós; la forma f., del lat. grammatĭca, y este del gr. γραμματική grammatikḗ.",
-    "s": "",
-    "c": "adjetivo",
-    "ec": "etym_latin"
-  },
-  {
     "w": "Gramíneo",
     "p": "adj.",
     "d": "Bot. Dicho de una planta: Del grupo de las angiospermas monocotiledóneas, con tallo cilíndrico, comúnmente hueco, interrumpido de trecho en trecho por nudos llenos, hojas alternas que nacen de estos nudos y abrazan el tallo, flores muy sencillas, dispuestas en espigas o en panojas, y grano seco cubierto por las escamas de la flor; p. ej., el trigo, el arroz o el bambú. U. t. c. s. f., en pl. como taxón. Sin.: cereal.",
@@ -12324,16 +11280,6 @@
     "ec": ""
   },
   {
-    "w": "Granda",
-    "p": "f.",
-    "d": "Gándara. Sin.: gándara.",
-    "df": "f. gándara. Sin.: gándara.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Grandemente",
     "p": "adv.",
     "d": "Mucho o muy. Sin.: mucho, muy, considerablemente, ampliamente.",
@@ -12402,19 +11348,6 @@
     "s": "",
     "c": "sustantivo",
     "ec": ""
-  },
-  {
-    "w": "Grandílocuo",
-    "p": "adj.",
-    "d": "Grandilocuente. Sin.: grandilocuente, altisonante, altilocuente, rimbombante, pomposo, retórico, ostentoso, hinchado, sentencioso, altílocuo.",
-    "df": "adj. grandilocuente. Sin.: grandilocuente, altisonante, altilocuente, rimbombante, pomposo, retórico, ostentoso, hinchado, sentencioso, altílocuo.",
-    "e": "Del lat. grandilŏquus.",
-    "s": "",
-    "c": "adjetivo",
-    "ec": "etym_latin",
-    "esp": [
-      "explosiva"
-    ]
   },
   {
     "w": "Grandísono",
@@ -12696,16 +11629,6 @@
     "ec": ""
   },
   {
-    "w": "Granujo",
-    "p": "m. coloq.",
-    "d": "Grano . Sin.: grano.",
-    "df": "m. coloq. grano (‖ abultamiento pequeño en alguna parte del cuerpo). Sin.: grano.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Granujoso",
     "p": "adj.",
     "d": "Que tiene granos.",
@@ -12806,20 +11729,6 @@
     "ec": ""
   },
   {
-    "w": "Granza",
-    "p": "f.",
-    "d": "Rubia . Sin.: rubia1.",
-    "df": "f. rubia (‖ planta). Sin.: rubia1. | f. Carbón mineral lavado y clasificado, cuyos trozos han de tener un tamaño reglamentario comprendido entre 15 y 25 mm. | f. Residuo del trigo y la cebada cuando se avientan y criban. U. m. en pl. Sin.: ahechadura, echadura, barcia, rabera, rabo, paja, triguillo. | f. Residuo del café. U. m. en pl. Sin.: cacota, chingaste. | f. C. Rica. Cáscara del grano de arroz. | f. pl. Superfluidades de cualquier metal. Sin.: restos, residuos, desechos.",
-    "e": "Del fr. garance.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_frances",
-    "esp": [
-      "explosiva",
-      "viajera"
-    ]
-  },
-  {
     "w": "Granzoso",
     "p": "adj.",
     "d": "Que tiene muchas granzas.",
@@ -12835,16 +11744,6 @@
     "d": "Ingen. En minería, cada uno de los pedazos gruesos de mineral que no pasan por la criba.",
     "df": "m. Ingen. En minería, cada uno de los pedazos gruesos de mineral que no pasan por la criba. | m. Ven. Piedra pequeña machacada que, mezclada con arena y cemento, se emplea en la construcción.",
     "e": "De granza2 'residuo de paja'.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Granévano",
-    "p": "m.",
-    "d": "Tragacanto. Sin.: tragacanto, tragacanta, alquitira, astrágalo, adraganto.",
-    "df": "m. tragacanto. Sin.: tragacanto, tragacanta, alquitira, astrágalo, adraganto.",
-    "e": "De or. inc.",
     "s": "",
     "c": "sustantivo",
     "ec": ""
@@ -13131,19 +12030,6 @@
     "ec": ""
   },
   {
-    "w": "Gravamen",
-    "p": "m.",
-    "d": "Carga . Sin.: carga, tasa, impuesto, contribución, tributo, canon, censo, gabela, arbitrio, obligación, hipoteca.",
-    "df": "m. carga (‖ impuesto o tributo). Sin.: carga, tasa, impuesto, contribución, tributo, canon, censo, gabela, arbitrio, obligación, hipoteca. | m. Carga impuesta sobre un inmueble o sobre un caudal.",
-    "e": "Del lat. tardío gravāmen 'incomodidad', der. del lat. gravis 'pesado'.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_latin",
-    "esp": [
-      "explosiva"
-    ]
-  },
-  {
     "w": "Gravar",
     "p": "tr.",
     "d": "Cargar, pesar sobre alguien o algo. Sin.: cargar, pesar1, gravitar.",
@@ -13225,16 +12111,6 @@
     "esp": [
       "explosiva"
     ]
-  },
-  {
-    "w": "Gravitatorio",
-    "p": "adj.",
-    "d": "Gravitacional. Sin.: gravitacional.",
-    "df": "adj. gravitacional. Sin.: gravitacional.",
-    "e": "De gravitar y -torio.",
-    "s": "",
-    "c": "adjetivo",
-    "ec": ""
   },
   {
     "w": "Gravídico",
@@ -13464,19 +12340,6 @@
     "s": "",
     "c": "arte_literatura",
     "ec": ""
-  },
-  {
-    "w": "Greguería",
-    "p": "f.",
-    "d": "Gritería. Sin.: gritería, griterío, vocería1, vocerío, alboroto, algarabía1, gritadera, alarida.",
-    "df": "f. gritería. Sin.: gritería, griterío, vocería1, vocerío, alboroto, algarabía1, gritadera, alarida. | f. T. lit. Composición muy breve en prosa, creada por el escritor español Ramón Gómez de la Serna, que mediante el humor y la metáfora presenta una visión sorprendente de algún aspecto de la realidad; p. ej., El cuatro es la silla de los números.",
-    "e": "De griego1 'lenguaje ininteligible' y -ería2.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "",
-    "esp": [
-      "explosiva"
-    ]
   },
   {
     "w": "Greguescos",
@@ -13724,16 +12587,6 @@
     "ec": ""
   },
   {
-    "w": "Grill",
-    "p": "m.",
-    "d": "Parrilla . Sin.: parrilla2, rejilla.",
-    "df": "m. parrilla (‖ utensilio de hierro). Sin.: parrilla2, rejilla. | m. parrilla (‖ restaurante). Sin.: parrilla2, parrillada. | m. gratinador. Sin.: gratinador.",
-    "e": "Voz ingl.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Grilla",
     "p": "m. y f.",
     "d": "Y f. Insecto ortóptero saltador, de unos tres centímetros de largo, color negro rojizo, con una mancha amarilla en el arranque de las alas, cabeza redonda y ojos muy prominentes, cuyo macho sacude y roza con tal fuerza los élitros, que produce un sonido agudo y monótono. U. en m. ref. a la especie.",
@@ -13831,19 +12684,6 @@
     "s": "",
     "c": "sustantivo",
     "ec": ""
-  },
-  {
-    "w": "Grima",
-    "p": "f.",
-    "d": "Desazón . Sin.: disgusto, asco, desazón, aversión, desagrado, repugnancia, sofocón.",
-    "df": "f. desazón (‖ disgusto). Sin.: disgusto, asco, desazón, aversión, desagrado, repugnancia, sofocón. | f. dentera (‖ sensación desagradable). Sin.: dentera, repelús. | f. Hond. Temor muy intenso.",
-    "e": "Quizá del gót. *grimms 'horrible'; cf. a. al. ant. grimmi 'hostil', nórd. grimmr 'rabioso'.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "",
-    "esp": [
-      "explosiva"
-    ]
   },
   {
     "w": "Grimorio",
@@ -14060,16 +12900,6 @@
     ]
   },
   {
-    "w": "Groar",
-    "p": "intr.",
-    "d": "Croar. Sin.: croar.",
-    "df": "intr. croar. Sin.: croar.",
-    "e": "De la onomat. gro.",
-    "s": "",
-    "c": "verbo",
-    "ec": ""
-  },
-  {
     "w": "Groenlandés",
     "p": "adj.",
     "d": "Natural de Groenlandia, región de América del Norte. U. t. c. s.",
@@ -14124,16 +12954,6 @@
     "s": "",
     "c": "sustantivo",
     "ec": ""
-  },
-  {
-    "w": "Gromo",
-    "p": "m.",
-    "d": "Yema . Sin.: yema, botón.",
-    "df": "m. yema (‖ brote embrionario). Sin.: yema, botón. | m. Ast. Rama de piornos.",
-    "e": "Del lat. grumus 'montón de tierra'.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_latin"
   },
   {
     "w": "Gros",
@@ -14621,16 +13441,6 @@
     ]
   },
   {
-    "w": "Guachapazo",
-    "p": "m.",
-    "d": "Costalada. Sin.: costalada, costalazo, talegazo, platanazo, tozolada.",
-    "df": "m. costalada. Sin.: costalada, costalazo, talegazo, platanazo, tozolada.",
-    "e": "De agua y la onomat. chap.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Guachapear",
     "p": "tr.",
     "d": "Golpear y agitar con los pies el agua detenida. U. t. c. intr.",
@@ -14655,16 +13465,6 @@
     "p": "m.",
     "d": "Cría de un animal.",
     "df": "m. Cría de un animal.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Guacia",
-    "p": "f.",
-    "d": "Acacia . Sin.: acacia.",
-    "df": "f. acacia (‖ árbol). Sin.: acacia. | f. Goma de la guacia.",
     "e": "",
     "s": "",
     "c": "sustantivo",
@@ -14746,16 +13546,6 @@
     "d": "Oficio de fabricar guadamecíes.",
     "df": "f. Oficio de fabricar guadamecíes. | f. Taller o tienda de guadamecíes.",
     "e": "De guadamacilero.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Guadamecil",
-    "p": "m.",
-    "d": "Guadamecí. Sin.: guadamecí, guadamacil.",
-    "df": "m. guadamecí. Sin.: guadamecí, guadamacil.",
-    "e": "",
     "s": "",
     "c": "sustantivo",
     "ec": ""
@@ -15735,26 +14525,6 @@
     "ec": ""
   },
   {
-    "w": "Guardafango",
-    "p": "m.",
-    "d": "Guardabarros. Sin.: guardabarros, aleta, salpicadera, tapabarro.",
-    "df": "m. guardabarros. Sin.: guardabarros, aleta, salpicadera, tapabarro.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Guardafangos",
-    "p": "m.",
-    "d": "Guardabarros. Sin.: guardabarros, aleta, salpicadera, tapabarro.",
-    "df": "m. guardabarros. Sin.: guardabarros, aleta, salpicadera, tapabarro.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Guardafrenos",
     "p": "m. y f.",
     "d": "Y f. Empleado que tiene a su cargo el manejo de los frenos en los trenes de ferrocarriles. Sin.: retranquero.",
@@ -15860,16 +14630,6 @@
     "d": "Pieza de adorno que pende sobre el cortinaje por la parte superior y que permanece fija.",
     "df": "f. Pieza de adorno que pende sobre el cortinaje por la parte superior y que permanece fija.",
     "e": "De guardar y malleta, dim. de malla.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Guardamangel",
-    "p": "m.",
-    "d": "Guardamangier . Sin.: guardamangier.",
-    "df": "m. guardamangier (‖ despensa). Sin.: guardamangier.",
-    "e": "",
     "s": "",
     "c": "sustantivo",
     "ec": ""
@@ -15994,16 +14754,6 @@
     "ec": ""
   },
   {
-    "w": "Guardapiés",
-    "p": "m.",
-    "d": "Brial . Sin.: brial.",
-    "df": "m. brial (‖ vestido de las mujeres). Sin.: brial.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Guardapolvo",
     "p": "m.",
     "d": "Protección de tela, tablas u otra materia, que se pone encima de algo para preservarlo del polvo u otro tipo de suciedad. Sin.: funda, protección.",
@@ -16104,19 +14854,6 @@
     "ec": ""
   },
   {
-    "w": "Guardavalla",
-    "p": "m.",
-    "d": "Portero . Sin.: portero, cancerbero, guardameta, meta, arquero2, cuidapalos, golero, guardapalos.",
-    "df": "m. Am. portero (‖ jugador que defiende la portería). Sin.: portero, cancerbero, guardameta, meta, arquero2, cuidapalos, golero, guardapalos.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "",
-    "esp": [
-      "explosiva"
-    ]
-  },
-  {
     "w": "Guardavela",
     "p": "m.",
     "d": "Mar. Cabo que trinca las velas de gavia a los calceses de los palos para acabar de aferrarlas.",
@@ -16172,16 +14909,6 @@
     "d": "En la Orden de San Francisco, prelacía o empleo de guardián.",
     "df": "f. En la Orden de San Francisco, prelacía o empleo de guardián. | f. Tiempo que dura una guardianía. | f. Territorio que tiene señalado cada convento de frailes franciscanos para pedir limosna en los pueblos comprendidos en él. | f. Ec. Servicio de vigilantes jurados.",
     "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Guardilla",
-    "p": "f.",
-    "d": "Buhardilla. Sin.: buhardilla, desván.",
-    "df": "f. buhardilla. Sin.: buhardilla, desván. | f. En costura, cierta labor para adornar y asegurar el cosido. | f. Cada una de las dos púas gruesas del peine que sirven de resguardo de las delgadas. U. m. en pl.",
-    "e": "De guardar.",
     "s": "",
     "c": "sustantivo",
     "ec": ""
@@ -16337,19 +15064,6 @@
     "ec": ""
   },
   {
-    "w": "Guarnir",
-    "p": "tr.",
-    "d": "Guarnecer. Sin.: guarnecer.",
-    "df": "tr. guarnecer. Sin.: guarnecer. | tr. Mar. Colocar convenientemente los cuadernales de un aparejo en una faena.",
-    "e": "Del germ. *warnjan 'amonestar, proveer'; cf. neerl. medio warnen.",
-    "s": "",
-    "c": "verbo",
-    "ec": "etym_germanico",
-    "esp": [
-      "viajera"
-    ]
-  },
-  {
     "w": "Guaro",
     "p": "m.",
     "d": "Especie de loro pequeño, mayor que el perico y muy locuaz.",
@@ -16401,16 +15115,6 @@
     "d": "Y f. porquerizo. Sin.: porquerizo, porquero, chanchero.",
     "df": "m. y f. porquerizo. Sin.: porquerizo, porquero, chanchero.",
     "e": "De guarro1 y -ero.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Guarrería",
-    "p": "f.",
-    "d": "Porquería. Sin.: porquería, guarrada.",
-    "df": "f. porquería. Sin.: porquería, guarrada.",
-    "e": "De guarro1.",
     "s": "",
     "c": "sustantivo",
     "ec": ""
@@ -17062,16 +15766,6 @@
     "ec": ""
   },
   {
-    "w": "Guijón",
-    "p": "m.",
-    "d": "Neguijón. Sin.: neguijón.",
-    "df": "m. neguijón. Sin.: neguijón.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Guilalo",
     "p": "m.",
     "d": "Embarcación filipina de cabotaje, de poco calado, popa y proa afiladas, que usa batangas y velas comúnmente de estera.",
@@ -17079,16 +15773,6 @@
     "e": "",
     "s": "",
     "c": "nautica",
-    "ec": ""
-  },
-  {
-    "w": "Guileña",
-    "p": "f.",
-    "d": "Aguileña. Sin.: aguileña, pajarilla, pelícanos.",
-    "df": "f. aguileña. Sin.: aguileña, pajarilla, pelícanos.",
-    "e": "Afér.",
-    "s": "",
-    "c": "sustantivo",
     "ec": ""
   },
   {
@@ -17257,16 +15941,6 @@
     "ec": ""
   },
   {
-    "w": "Guindal",
-    "p": "m.",
-    "d": "Guindo1. Sin.: guindo1.",
-    "df": "m. guindo1. Sin.: guindo1.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Guindalera",
     "p": "f.",
     "d": "Sitio plantado de guindos1.",
@@ -17371,36 +16045,6 @@
     "esp": [
       "viajera"
     ]
-  },
-  {
-    "w": "Guinja",
-    "p": "f.",
-    "d": "Azufaifa. Sin.: azufaifa, azofaifa, azufeifa, guínjol, jínjol.",
-    "df": "f. azufaifa. Sin.: azufaifa, azofaifa, azufeifa, guínjol, jínjol.",
-    "e": "Del ant. jinja, quizá con infl. de guinda1, y este del ant. jinjo 'azufaifo'; cf. guinjo.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Guinjo",
-    "p": "m.",
-    "d": "Azufaifo. Sin.: azufaifo, guinjolero, jinjolero, azofaifo, azufeifo.",
-    "df": "m. azufaifo. Sin.: azufaifo, guinjolero, jinjolero, azofaifo, azufeifo.",
-    "e": "Del ant. jinjo, este del lat. zizy̆phus, y este del gr. ζίζυφος zízyphos.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Guinjolero",
-    "p": "m.",
-    "d": "Azufaifo. Sin.: guinjo, jinjolero, azufaifo, azofaifo, azufeifo.",
-    "df": "m. azufaifo. Sin.: guinjo, jinjolero, azufaifo, azofaifo, azufeifo.",
-    "e": "De jinjolero.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
   },
   {
     "w": "Guionaje",
@@ -17685,16 +16329,6 @@
     "ec": ""
   },
   {
-    "w": "Guitonear",
-    "p": "intr.",
-    "d": "Vagabundear. Sin.: vagabundear, palomillear.",
-    "df": "intr. vagabundear. Sin.: vagabundear, palomillear.",
-    "e": "De guitón y -ear.",
-    "s": "",
-    "c": "verbo",
-    "ec": ""
-  },
-  {
     "w": "Guitonería",
     "p": "f.",
     "d": "Acción y efecto de guitonear.",
@@ -17748,16 +16382,6 @@
     "ec": ""
   },
   {
-    "w": "Guiñada",
-    "p": "f.",
-    "d": "Guiño. Sin.: guiño, destello.",
-    "df": "f. guiño. Sin.: guiño, destello. | f. Mar. Desvío accidental o involuntario de la nave con relación al rumbo que lleva.",
-    "e": "De guiñar.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Guiñador",
     "p": "adj.",
     "d": "Que guiña los ojos.",
@@ -17766,29 +16390,6 @@
     "s": "",
     "c": "adjetivo",
     "ec": ""
-  },
-  {
-    "w": "Guiñapiento",
-    "p": "adj.",
-    "d": "Guiñaposo. Sin.: guiñaposo.",
-    "df": "adj. guiñaposo. Sin.: guiñaposo.",
-    "e": "",
-    "s": "",
-    "c": "adjetivo",
-    "ec": ""
-  },
-  {
-    "w": "Guiñapo",
-    "p": "m.",
-    "d": "Andrajo . Sin.: andrajo, harapo, chirapa, chiringo, rigil, cangalla1, arrapiezo, argamandel.",
-    "df": "m. andrajo (‖ pedazo o jirón de tela). Sin.: andrajo, harapo, chirapa, chiringo, rigil, cangalla1, arrapiezo, argamandel. | m. Persona que anda con vestido roto y andrajoso. | m. Persona envilecida, degradada. | m. Persona moralmente abatida, o muy débil y enfermiza.",
-    "e": "Metát. del dialect. gañipo, y este del fr. dialect. guenipe, con infl. de harapo.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "",
-    "esp": [
-      "explosiva"
-    ]
   },
   {
     "w": "Guiñaposo",
@@ -17891,26 +16492,6 @@
     "esp": [
       "viajera"
     ]
-  },
-  {
-    "w": "Gullería",
-    "p": "f.",
-    "d": "Gollería . Sin.: gollería, gulloría.",
-    "df": "f. gollería (‖ manjar exquisito). Sin.: gollería, gulloría.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Gulloría",
-    "p": "f.",
-    "d": "Calandria . Sin.: calandria1, caladre, cerrajero.",
-    "df": "f. calandria (‖ pájaro). Sin.: calandria1, caladre, cerrajero. | f. gollería (‖ manjar exquisito). Sin.: gollería, gullería.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
   },
   {
     "w": "Gulusmear",
@@ -18085,16 +16666,6 @@
     ]
   },
   {
-    "w": "Gurupa",
-    "p": "f.",
-    "d": "Grupa. Sin.: grupa, cuadra.",
-    "df": "f. grupa. Sin.: grupa, cuadra.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Gurú",
     "p": "m.",
     "d": "En el hinduismo, maestro espiritual o jefe religioso.",
@@ -18172,16 +16743,6 @@
     "e": "",
     "s": "",
     "c": "adjetivo",
-    "ec": ""
-  },
-  {
-    "w": "Gusarapo",
-    "p": "m.",
-    "d": "Gusarapa. Sin.: gusarapa.",
-    "df": "m. gusarapa. Sin.: gusarapa. | m. Persona despreciable. U. t. c. insulto.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
     "ec": ""
   },
   {
@@ -18281,34 +16842,11 @@
     "ec": ""
   },
   {
-    "w": "Guájara",
-    "p": "f.",
-    "d": "Fragosidad . Sin.: guájar, fragosidad, espesura.",
-    "df": "f. fragosidad (‖ espesura de los montes). Sin.: guájar, fragosidad, espesura.",
-    "e": "Del ár. hisp. wá‘ra, y este del ár. clás. [arḍun] wa'rah 'anfractuosidad'.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_arabe",
-    "esp": [
-      "viajera"
-    ]
-  },
-  {
     "w": "Guásimo",
     "p": "m.",
     "d": "Cen., Col. y Ven. caulote. Sin.: caulote, guásima.",
     "df": "m. Am. Cen., Col. y Ven. caulote. Sin.: caulote, guásima.",
     "e": "De guásima.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Guínjol",
-    "p": "m.",
-    "d": "Azufaifa. Sin.: guinja, jínjol, azufaifa, azofaifa, azufeifa.",
-    "df": "m. azufaifa. Sin.: guinja, jínjol, azufaifa, azofaifa, azufeifa.",
-    "e": "De jínjol.",
     "s": "",
     "c": "sustantivo",
     "ec": ""
@@ -18387,26 +16925,6 @@
     "ec": "etym_latin"
   },
   {
-    "w": "Gáleo",
-    "p": "m.",
-    "d": "Cazón1. Sin.: cazón1.",
-    "df": "m. cazón1. Sin.: cazón1.",
-    "e": "Del lat. galĕos, y este del gr. γαλεός galeós.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_latin"
-  },
-  {
-    "w": "Gálgulo",
-    "p": "m.",
-    "d": "Rabilargo. Sin.: rabilargo, mohíno.",
-    "df": "m. rabilargo. Sin.: rabilargo, mohíno.",
-    "e": "Del lat. galgŭlus, nombre de un pajarillo de color verde claro.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_latin"
-  },
-  {
     "w": "Gálibo",
     "p": "m.",
     "d": "Plantilla o patrón para trazar o comprobar un perfil. Sin.: calibre, plantilla, modelo.",
@@ -18458,16 +16976,6 @@
     "s": "",
     "c": "cuerpo_humano",
     "ec": ""
-  },
-  {
-    "w": "Gámbaro",
-    "p": "m.",
-    "d": "Camarón . Sin.: camarón, quisquilla, cámaro, esquila3, chacalín, esguila.",
-    "df": "m. camarón (‖ crustáceo). Sin.: camarón, quisquilla, cámaro, esquila3, chacalín, esguila.",
-    "e": "Del lat. vulg. gambărus, var. del lat. cammărus, y este del gr. κάμμαρος kámmaros.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_latin"
   },
   {
     "w": "Gándara",

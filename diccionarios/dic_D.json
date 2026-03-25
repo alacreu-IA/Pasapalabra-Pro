@@ -70,16 +70,6 @@
     "ec": "etym_griego"
   },
   {
-    "w": "Dactilar",
-    "p": "adj.",
-    "d": "Digital . Sin.: digital.",
-    "df": "adj. digital (‖ perteneciente a los dedos). Sin.: digital.",
-    "e": "Del gr. δάκτυλος dáktylos 'dedo' y -ar.",
-    "s": "",
-    "c": "adjetivo",
-    "ec": "etym_griego"
-  },
-  {
     "w": "Dactiliforme",
     "p": "adj.",
     "d": "Que tiene forma de palmera, como ciertos capiteles en la arquitectura egipcia.",
@@ -110,26 +100,6 @@
     "ec": ""
   },
   {
-    "w": "Dactilografiar",
-    "p": "tr.",
-    "d": "Mecanografiar. Sin.: mecanografiar.",
-    "df": "tr. mecanografiar. Sin.: mecanografiar.",
-    "e": "De dactilografía.",
-    "s": "",
-    "c": "verbo",
-    "ec": ""
-  },
-  {
-    "w": "Dactilografía",
-    "p": "f.",
-    "d": "Mecanografía. Sin.: mecanografía.",
-    "df": "f. mecanografía. Sin.: mecanografía.",
-    "e": "De dactilo- y -grafía.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Dactilograma",
     "p": "m.",
     "d": "Huella digital impresa en una superficie con fines legales de identificación.",
@@ -137,16 +107,6 @@
     "e": "De dactilo- y -grama.",
     "s": "",
     "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Dactilográfico",
-    "p": "adj.",
-    "d": "Mecanográfico. Sin.: mecanográfico.",
-    "df": "adj. mecanográfico. Sin.: mecanográfico.",
-    "e": "De dactilografía e ‒́ico.",
-    "s": "",
-    "c": "adjetivo",
     "ec": ""
   },
   {
@@ -415,32 +375,6 @@
     "ec": ""
   },
   {
-    "w": "Dalmática",
-    "p": "adj.",
-    "d": "Dálmata . Sin.: dálmata.",
-    "df": "adj. dálmata (‖ perteneciente a Dalmacia). Sin.: dálmata. | adj. Perteneciente o relativo al dalmático (‖ lengua). Léxico dalmático. Sin.: dálmata. | f. Túnica blanca con mangas anchas y cortas y adornada de púrpura, que tomaron de los dálmatas los antiguos romanos. Sin.: túnica, manto, vestidura, veste. | f. Túnica abierta por los lados, usada antiguamente por la gente de guerra, por los reyes de armas y por los maceros. Sin.: túnica, manto, vestidura, veste.",
-    "e": "Del lat. Dalmatĭcus; la forma f., del lat. tardío dalmatĭca.",
-    "s": "",
-    "c": "adjetivo",
-    "ec": "etym_latin",
-    "esp": [
-      "explosiva"
-    ]
-  },
-  {
-    "w": "Dalmático",
-    "p": "adj.",
-    "d": "Dálmata . Sin.: dálmata.",
-    "df": "adj. dálmata (‖ perteneciente a Dalmacia). Sin.: dálmata. | adj. Perteneciente o relativo al dalmático (‖ lengua). Léxico dalmático. Sin.: dálmata. | f. Túnica blanca con mangas anchas y cortas y adornada de púrpura, que tomaron de los dálmatas los antiguos romanos. Sin.: túnica, manto, vestidura, veste. | f. Túnica abierta por los lados, usada antiguamente por la gente de guerra, por los reyes de armas y por los maceros. Sin.: túnica, manto, vestidura, veste.",
-    "e": "Del lat. Dalmatĭcus; la forma f., del lat. tardío dalmatĭca.",
-    "s": "",
-    "c": "adjetivo",
-    "ec": "etym_latin",
-    "esp": [
-      "explosiva"
-    ]
-  },
-  {
     "w": "Daltoniano",
     "p": "adj.",
     "d": "Que padece de daltonismo. U. t. c. s. Sin.: daltónico.",
@@ -497,16 +431,6 @@
     ]
   },
   {
-    "w": "Damascado",
-    "p": "adj.",
-    "d": "Adamascado. Sin.: adamascado.",
-    "df": "adj. adamascado. Sin.: adamascado.",
-    "e": "De damasco 'tela fuerte de seda o lana' y -ado.",
-    "s": "",
-    "c": "adjetivo",
-    "ec": ""
-  },
-  {
     "w": "Damascena",
     "p": "adj.",
     "d": "Natural de Damasco, capital de Siria. U. t. c. s. Sin.: damaceno.",
@@ -534,16 +458,6 @@
     "e": "Del dim. de damasco.",
     "s": "",
     "c": "cuerpo_humano",
-    "ec": ""
-  },
-  {
-    "w": "Damasquina",
-    "p": "adj.",
-    "d": "Damasceno . Sin.: damasceno, damaceno.",
-    "df": "adj. damasceno (‖ perteneciente a Damasco). Sin.: damasceno, damaceno. | adj. Dicho comúnmente de un arma blanca: De muy fino temple y hermosas aguas. | adj. Dicho de la ropa u otro objeto: Hecho con damasco (‖ tela fuerte). Un palio damasquino.",
-    "e": "De Damasco, capital de Siria.",
-    "s": "",
-    "c": "adjetivo",
     "ec": ""
   },
   {
@@ -577,31 +491,11 @@
     "ec": ""
   },
   {
-    "w": "Damasquino",
-    "p": "adj.",
-    "d": "Damasceno . Sin.: damasceno, damaceno.",
-    "df": "adj. damasceno (‖ perteneciente a Damasco). Sin.: damasceno, damaceno. | adj. Dicho comúnmente de un arma blanca: De muy fino temple y hermosas aguas. | adj. Dicho de la ropa u otro objeto: Hecho con damasco (‖ tela fuerte). Un palio damasquino.",
-    "e": "De Damasco, capital de Siria.",
-    "s": "",
-    "c": "adjetivo",
-    "ec": ""
-  },
-  {
     "w": "Damero",
     "p": "m.",
     "d": "Tablero cuadrado compuesto por 64 escaques en que alternan los blancos y negros, que sirve para los juegos de damas y de ajedrez.",
     "df": "m. Tablero cuadrado compuesto por 64 escaques en que alternan los blancos y negros, que sirve para los juegos de damas y de ajedrez. | m. Pasatiempo consistente en formar un texto con las letras de unas palabras que hay que averiguar a partir de sus definiciones. Sin.: damerograma. | m. Cuadrícula cuyas casillas, por pasatiempo, se llenan con letras que componen un texto. | m. Urb. Planta de una zona urbanizada constituida por cuadros o rectángulos.",
     "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Damerograma",
-    "p": "m.",
-    "d": "Damero . Sin.: damero.",
-    "df": "m. damero (‖ pasatiempo). Sin.: damero.",
-    "e": "De damero y -grama.",
     "s": "",
     "c": "sustantivo",
     "ec": ""
@@ -673,16 +567,6 @@
     "ec": ""
   },
   {
-    "w": "Dango",
-    "p": "m.",
-    "d": "Planga. Sin.: planga, clanga, planco, pulla2.",
-    "df": "m. planga. Sin.: planga, clanga, planco, pulla2.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Danlideño",
     "p": "adj.",
     "d": "Natural de Danlí, ciudad del departamento de El Paraíso, en Honduras. U. t. c. s.",
@@ -690,16 +574,6 @@
     "e": "",
     "s": "",
     "c": "gentilicio",
-    "ec": ""
-  },
-  {
-    "w": "Danta",
-    "p": "f.",
-    "d": "Anta1. Sin.: alce1, ante1, anta1.",
-    "df": "f. anta1. Sin.: alce1, ante1, anta1. | f. Col., Ec. y Ven. tapir. Sin.: tapir, danto, ante1.",
-    "e": "Aglutinación de de2 y anta1, en la expr. frecuente [adarga] de anta.",
-    "s": "",
-    "c": "sustantivo",
     "ec": ""
   },
   {
@@ -1061,16 +935,6 @@
     "d": "En comercios y otros establecimientos, aparato que, por medio de una línea telefónica o inalámbrica, permite el pago con tarjetas de crédito o de débito. Sin.: posnet.",
     "df": "m. En comercios y otros establecimientos, aparato que, por medio de una línea telefónica o inalámbrica, permite el pago con tarjetas de crédito o de débito. Sin.: posnet.",
     "e": "De data1 y ‒́fono.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Dauco",
-    "p": "m.",
-    "d": "Biznaga . Sin.: biznaga1, gingidio.",
-    "df": "m. biznaga (‖ planta umbelífera). Sin.: biznaga1, gingidio. | m. Zanahoria silvestre.",
-    "e": "Del mozár. dáwqu, este del lat. daucum o daucos, y este del gr. δαῦκον daûkon o δαῦκος daûkos.",
     "s": "",
     "c": "sustantivo",
     "ec": ""
@@ -1811,16 +1675,6 @@
     "ec": ""
   },
   {
-    "w": "Decimonono",
-    "p": "adj.",
-    "d": "Decimonoveno. Sin.: decimonoveno, diecinueve, decimanona.",
-    "df": "adj. decimonoveno. Sin.: decimonoveno, diecinueve, decimanona.",
-    "e": "De décimo y nono.",
-    "s": "",
-    "c": "adjetivo",
-    "ec": ""
-  },
-  {
     "w": "Decimonoveno",
     "p": "adj.",
     "d": "Que ocupa en una serie el lugar número diecinueve. Sin.: decimonono, diecinueve, decimanona.",
@@ -1876,16 +1730,6 @@
     "d": "Que ocupa en una serie el lugar número trece. Sin.: decimotercer, decimotercio, trece, treceno, decimatercera, decimatercia.",
     "df": "adj. Que ocupa en una serie el lugar número trece. Sin.: decimotercer, decimotercio, trece, treceno, decimatercera, decimatercia.",
     "e": "De décimo y tercero.",
-    "s": "",
-    "c": "adjetivo",
-    "ec": ""
-  },
-  {
-    "w": "Decimotercio",
-    "p": "adj.",
-    "d": "Decimotercero. Sin.: decimotercero, decimotercer, treceno, trece, decimatercia, decimatercera.",
-    "df": "adj. decimotercero. Sin.: decimotercero, decimotercer, treceno, trece, decimatercia, decimatercera.",
-    "e": "De décimo y tercio.",
     "s": "",
     "c": "adjetivo",
     "ec": ""
@@ -2074,16 +1918,6 @@
     "ec": "etym_latin"
   },
   {
-    "w": "Declividad",
-    "p": "f.",
-    "d": "Declive . Sin.: declive, declivio, pendiente, gradiente.",
-    "df": "f. declive (‖ pendiente). Sin.: declive, declivio, pendiente, gradiente.",
-    "e": "Del lat. declivĭtas, -ātis.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_latin"
-  },
-  {
     "w": "Decocción",
     "p": "f.",
     "d": "Acción y efecto de cocer en agua sustancias vegetales o animales.",
@@ -2210,16 +2044,6 @@
     "ec": ""
   },
   {
-    "w": "Decremento",
-    "p": "m.",
-    "d": "Disminución . Sin.: decrecimiento, disminución, aminoración, merma, mengua, derogación.",
-    "df": "m. disminución (‖ merma). Sin.: decrecimiento, disminución, aminoración, merma, mengua, derogación.",
-    "e": "Del lat. decrementum.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_latin"
-  },
-  {
     "w": "Decrepitación",
     "p": "f.",
     "d": "Acción y efecto de decrepitar.",
@@ -2317,16 +2141,6 @@
     "e": "Del lat. decumbens, -entis 'recostado'.",
     "s": "",
     "c": "adjetivo",
-    "ec": "etym_latin"
-  },
-  {
-    "w": "Decuplar",
-    "p": "tr.",
-    "d": "Decuplicar. Sin.: decuplicar.",
-    "df": "tr. decuplicar. Sin.: decuplicar.",
-    "e": "Del lat. decuplāre.",
-    "s": "",
-    "c": "verbo",
     "ec": "etym_latin"
   },
   {
@@ -2520,16 +2334,6 @@
     "ec": "etym_latin"
   },
   {
-    "w": "Dedalera",
-    "p": "f.",
-    "d": "Digital . Sin.: digital.",
-    "df": "f. digital (‖ planta). Sin.: digital.",
-    "e": "De dedal, por la forma de la corola, que lo imita.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Dedazo",
     "p": "m. coloq.",
     "d": "Designación arbitraria de un candidato a un puesto público por parte de una autoridad. La presidenta del partido mostró su oposición al dedazo como método de elección.",
@@ -2547,26 +2351,6 @@
     "e": "",
     "s": "",
     "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Dedeté",
-    "p": "m.",
-    "d": "DDT. Sin.: DDT.",
-    "df": "m. DDT. Sin.: DDT.",
-    "e": "Del deletreo de DDT®, marca reg., sigla de dicloro-difenil-tricloroetano.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Dedicativo",
-    "p": "adj.",
-    "d": "Dedicatorio. Sin.: dedicatorio.",
-    "df": "adj. dedicatorio. Sin.: dedicatorio.",
-    "e": "",
-    "s": "",
-    "c": "adjetivo",
     "ec": ""
   },
   {
@@ -2688,16 +2472,6 @@
     "d": "Que puede faltar.",
     "df": "adj. Que puede faltar.",
     "e": "Del lat. tardío defectibĭlis.",
-    "s": "",
-    "c": "adjetivo",
-    "ec": "etym_latin"
-  },
-  {
-    "w": "Defectivo",
-    "p": "adj.",
-    "d": "Defectuoso. Sin.: defectuoso.",
-    "df": "adj. defectuoso. Sin.: defectuoso. | adj. Gram. Que no se usa en todas sus formas flexivas. El nombre fauces es defectivo porque solo se usa en plural.",
-    "e": "Del lat. tardío defectīvus.",
     "s": "",
     "c": "adjetivo",
     "ec": "etym_latin"
@@ -3084,16 +2858,6 @@
     "ec": ""
   },
   {
-    "w": "Degollado",
-    "p": "m.",
-    "d": "Degolladero . Sin.: degolladero, degolladura.",
-    "df": "m. degolladero (‖ escote de las prendas de vestir). Sin.: degolladero, degolladura.",
-    "e": "De degollar.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Degollador",
     "p": "adj.",
     "d": "Que degüella. U. t. c. s. Sin.: verdugo.",
@@ -3102,16 +2866,6 @@
     "s": "",
     "c": "adjetivo",
     "ec": "etym_latin"
-  },
-  {
-    "w": "Degollamiento",
-    "p": "m.",
-    "d": "Degollación. Sin.: degollación, degüello.",
-    "df": "m. degollación. Sin.: degollación, degüello.",
-    "e": "De degollar.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
   },
   {
     "w": "Degollina",
@@ -3184,16 +2938,6 @@
     "ec": "etym_latin"
   },
   {
-    "w": "Dehesar",
-    "p": "tr.",
-    "d": "Adehesar. Sin.: adehesar.",
-    "df": "tr. adehesar. Sin.: adehesar.",
-    "e": "De dehesa.",
-    "s": "",
-    "c": "verbo",
-    "ec": ""
-  },
-  {
     "w": "Dehesero",
     "p": "m.",
     "d": "Guarda de una dehesa.",
@@ -3252,19 +2996,6 @@
     "s": "",
     "c": "sustantivo",
     "ec": "etym_latin"
-  },
-  {
-    "w": "Deificar",
-    "p": "tr.",
-    "d": "Divinizar . Sin.: divinizar, endiosar, sacralizar, santificar.",
-    "df": "tr. divinizar (‖ hacer o suponer divino a alguien o algo). Sin.: divinizar, endiosar, sacralizar, santificar. | tr. Divinizar algo por medio de la participación de la gracia. | tr. Ensalzar excesivamente a alguien. Sin.: alabar, ensalzar, exaltar, divinizar, endiosar. Ant.: humillar, denigrar.",
-    "e": "Del lat. deificāre.",
-    "s": "",
-    "c": "verbo",
-    "ec": "etym_latin",
-    "esp": [
-      "explosiva"
-    ]
   },
   {
     "w": "Deiforme",
@@ -3328,16 +3059,6 @@
     "esp": [
       "explosiva"
     ]
-  },
-  {
-    "w": "Dejillo",
-    "p": "m.",
-    "d": "Dejo . Sin.: deje, dejo, tonada, tono.",
-    "df": "m. dejo (‖ modo particular de la voz). Sin.: deje, dejo, tonada, tono.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
   },
   {
     "w": "Delantal",
@@ -3434,16 +3155,6 @@
     "s": "",
     "c": "adjetivo",
     "ec": "etym_latin"
-  },
-  {
-    "w": "Deleitación",
-    "p": "f.",
-    "d": "Deleite. Sin.: deleite, gozo, gusto, placer2, satisfacción.",
-    "df": "f. deleite. Sin.: deleite, gozo, gusto, placer2, satisfacción.",
-    "e": "De delectación.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
   },
   {
     "w": "Deletreador",
@@ -3622,26 +3333,6 @@
     "ec": "etym_latin"
   },
   {
-    "w": "Delineamento",
-    "p": "m.",
-    "d": "Delineación. Sin.: delineación, delineamiento.",
-    "df": "m. delineación. Sin.: delineación, delineamiento.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Delineamiento",
-    "p": "m.",
-    "d": "Delineación. Sin.: delineación, delineamento.",
-    "df": "m. delineación. Sin.: delineación, delineamento.",
-    "e": "De delinear.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Delineante",
     "p": "m. y f.",
     "d": "Y f. Persona que tiene por oficio trazar planos. Sin.: proyectista.",
@@ -3695,16 +3386,6 @@
     "ec": "etym_latin"
   },
   {
-    "w": "Deliquio",
-    "p": "m.",
-    "d": "Desmayo . Sin.: desmayo, desfallecimiento, desvanecimiento, vahído, guararey, yeyo.",
-    "df": "m. desmayo (‖ desfallecimiento). Sin.: desmayo, desfallecimiento, desvanecimiento, vahído, guararey, yeyo. | m. Éxtasis, arrobamiento. Sin.: éxtasis.",
-    "e": "Del lat. deliquium.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_latin"
-  },
-  {
     "w": "Delitescencia",
     "p": "f.",
     "d": "Med. Desaparición de alguna afección local.",
@@ -3755,16 +3436,6 @@
     "e": "Del lat. deludĕre.",
     "s": "",
     "c": "verbo",
-    "ec": "etym_latin"
-  },
-  {
-    "w": "Delusión",
-    "p": "f.",
-    "d": "Ilusión . Sin.: ilusión, espejismo, burlería, fatamorgana.",
-    "df": "f. ilusión (‖ concepto o imagen sin verdadera realidad). Sin.: ilusión, espejismo, burlería, fatamorgana.",
-    "e": "Del lat. tardío delusio, -ōnis.",
-    "s": "",
-    "c": "sustantivo",
     "ec": "etym_latin"
   },
   {
@@ -3999,16 +3670,6 @@
     "ec": ""
   },
   {
-    "w": "Demoniomanía",
-    "p": "f.",
-    "d": "Demonomanía. Sin.: demonomanía.",
-    "df": "f. demonomanía. Sin.: demonomanía.",
-    "e": "De demonio y -manía.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Demonismo",
     "p": "m.",
     "d": "Creencia en el demonio u otros seres maléficos.",
@@ -4192,16 +3853,6 @@
     "ec": "etym_latin"
   },
   {
-    "w": "Demudamiento",
-    "p": "m.",
-    "d": "Demudación. Sin.: demudación.",
-    "df": "m. demudación. Sin.: demudación.",
-    "e": "De demudar.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Demudar",
     "p": "tr.",
     "d": "Mudar, variar. Sin.: mudar2, variar, cambiar.",
@@ -4292,26 +3943,6 @@
     "ec": ""
   },
   {
-    "w": "Dendroide",
-    "p": "adj.",
-    "d": "Dendroideo. Sin.: dendroideo, arborescente.",
-    "df": "adj. dendroideo. Sin.: dendroideo, arborescente.",
-    "e": "Del gr. δένδρον déndron 'árbol' y -oide.",
-    "s": "",
-    "c": "adjetivo",
-    "ec": "etym_griego"
-  },
-  {
-    "w": "Dendroideo",
-    "p": "adj.",
-    "d": "Arborescente. Sin.: arborescente, arbóreo, arboriforme, dendroide, dendriforme.",
-    "df": "adj. arborescente. Sin.: arborescente, arbóreo, arboriforme, dendroide, dendriforme.",
-    "e": "Del gr. δένδρον déndron 'árbol' y -oideo.",
-    "s": "",
-    "c": "adjetivo",
-    "ec": "etym_griego"
-  },
-  {
     "w": "Dendrotráquea",
     "p": "f.",
     "d": "Zool. En los insectos, en los miriópodos y en algunos arácnidos, cada uno de los conductos ramificados por los que penetra el aire que el animal utiliza para su respiración.",
@@ -4372,26 +4003,6 @@
     "ec": ""
   },
   {
-    "w": "Dengoso",
-    "p": "adj.",
-    "d": "Melindroso. Sin.: melindroso, remirado, denguero, remilgado, contumerioso, mesingo.",
-    "df": "adj. melindroso. Sin.: melindroso, remirado, denguero, remilgado, contumerioso, mesingo.",
-    "e": "De dengue1 y -oso2.",
-    "s": "",
-    "c": "adjetivo",
-    "ec": ""
-  },
-  {
-    "w": "Denguero",
-    "p": "adj.",
-    "d": "Melindroso. Sin.: melindroso, remilgado, dengoso, remirado, contumerioso, mesingo.",
-    "df": "adj. melindroso. Sin.: melindroso, remilgado, dengoso, remirado, contumerioso, mesingo.",
-    "e": "De dengue1 y -ero.",
-    "s": "",
-    "c": "adjetivo",
-    "ec": ""
-  },
-  {
     "w": "Denigrador",
     "p": "adj.",
     "d": "Que denigra. Apl. a pers., u. t. c. s.",
@@ -4443,26 +4054,6 @@
     "s": "",
     "c": "adjetivo",
     "ec": "etym_latin"
-  },
-  {
-    "w": "Denostable",
-    "p": "adj.",
-    "d": "Vituperable. Sin.: vituperable, blasfemable.",
-    "df": "adj. vituperable. Sin.: vituperable, blasfemable.",
-    "e": "De denostar.",
-    "s": "",
-    "c": "adjetivo",
-    "ec": ""
-  },
-  {
-    "w": "Denostación",
-    "p": "f.",
-    "d": "Denuesto . Sin.: afrenta, agravio, injuria, ofensa, denuesto.",
-    "df": "f. denuesto (‖ injuria). Sin.: afrenta, agravio, injuria, ofensa, denuesto.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
   },
   {
     "w": "Denostador",
@@ -4615,16 +4206,6 @@
     "e": "Del part. de dentellar.",
     "s": "",
     "c": "adjetivo",
-    "ec": ""
-  },
-  {
-    "w": "Dentellar",
-    "p": "intr.",
-    "d": "Castañetear . Sin.: castañetear, castañear, carraquear.",
-    "df": "intr. castañetear (‖ sonar los dientes). Sin.: castañetear, castañear, carraquear.",
-    "e": "Etim. disc.; cf. lat. vulg. *dentellus, occit. dentelhar.",
-    "s": "",
-    "c": "verbo",
     "ec": ""
   },
   {
@@ -5267,16 +4848,6 @@
     ]
   },
   {
-    "w": "Derechamente",
-    "p": "adv.",
-    "d": "Directamente. Sin.: directamente, derecho.",
-    "df": "adv. directamente. Sin.: directamente, derecho. | adv. Con prudencia, destreza y justicia.",
-    "e": "",
-    "s": "",
-    "c": "adverbio",
-    "ec": ""
-  },
-  {
     "w": "Derechazo",
     "p": "m.",
     "d": "Golpe fuerte dado con el puño o con el pie derechos.",
@@ -5569,16 +5140,6 @@
     "ec": ""
   },
   {
-    "w": "Derramo",
-    "p": "m.",
-    "d": "Derrame . Sin.: derrame.",
-    "df": "m. derrame (‖ corte oblicuo en los muros). Sin.: derrame.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Derrapar",
     "p": "intr.",
     "d": "Dicho de un vehículo: Patinar desviándose lateralmente de la dirección que llevaba. Sin.: patinar1, resbalar, deslizarse, roncear, colear.",
@@ -5750,19 +5311,6 @@
     "s": "",
     "c": "sustantivo",
     "ec": ""
-  },
-  {
-    "w": "Derrumbadero",
-    "p": "m.",
-    "d": "Despeñadero. Sin.: precipicio, barranco, despeñadero, derrumbe, desgalgadero, derrumbo, desbarrancadero, zanjón.",
-    "df": "m. despeñadero. Sin.: precipicio, barranco, despeñadero, derrumbe, desgalgadero, derrumbo, desbarrancadero, zanjón.",
-    "e": "De derrumbar y -dero.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "",
-    "esp": [
-      "explosiva"
-    ]
   },
   {
     "w": "Derrumbar",
@@ -6269,16 +5817,6 @@
     "ec": ""
   },
   {
-    "w": "Desaguador",
-    "p": "m.",
-    "d": "Desaguadero . Sin.: desaguadero, desagüe, sumidero, aliviadero, sobradero.",
-    "df": "m. desaguadero (‖ conducto de salida de las aguas). Sin.: desaguadero, desagüe, sumidero, aliviadero, sobradero.",
-    "e": "De desaguar.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Desaguar",
     "p": "tr.",
     "d": "Extraer, echar el agua de un sitio o lugar. Sin.: drenar, desembalsar, avenar, achicar.",
@@ -6491,16 +6029,6 @@
     "ec": "etym_latin"
   },
   {
-    "w": "Desalbardar",
-    "p": "tr.",
-    "d": "Desenalbardar. Sin.: desenalbardar.",
-    "df": "tr. desenalbardar. Sin.: desenalbardar.",
-    "e": "",
-    "s": "",
-    "c": "verbo",
-    "ec": ""
-  },
-  {
     "w": "Desalfombrar",
     "p": "tr.",
     "d": "Quitar o levantar las alfombras de un lugar.",
@@ -6609,16 +6137,6 @@
     "d": "Ling. Efectuar las operaciones necesarias para que una palabra, frase o texto pierdan su ambigüedad.",
     "df": "tr. Ling. Efectuar las operaciones necesarias para que una palabra, frase o texto pierdan su ambigüedad.",
     "e": "",
-    "s": "",
-    "c": "verbo",
-    "ec": ""
-  },
-  {
-    "w": "Desamistarse",
-    "p": "prnl.",
-    "d": "Enemistarse. Sin.: enemistarse, desamigarse.",
-    "df": "prnl. enemistarse. Sin.: enemistarse, desamigarse.",
-    "e": "De des- y amistar.",
     "s": "",
     "c": "verbo",
     "ec": ""
@@ -6960,19 +6478,6 @@
     "ec": ""
   },
   {
-    "w": "Desarraigamiento",
-    "p": "m.",
-    "d": "Desarraigo. Sin.: desarraigo, desplantación.",
-    "df": "m. desarraigo. Sin.: desarraigo, desplantación.",
-    "e": "De desarraigar.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "",
-    "esp": [
-      "larga"
-    ]
-  },
-  {
     "w": "Desarrancarse",
     "p": "prnl.",
     "d": "Dicho de una persona: Desertar, separarse de una asociación o cuerpo al que pertenece.",
@@ -7312,16 +6817,6 @@
     "ec": ""
   },
   {
-    "w": "Desatrampar",
-    "p": "tr.",
-    "d": "Desatrancar . Sin.: desatrancar.",
-    "df": "tr. desatrancar (‖ limpiar un conducto). Sin.: desatrancar.",
-    "e": "De des- y atrampar.",
-    "s": "",
-    "c": "verbo",
-    "ec": ""
-  },
-  {
     "w": "Desatranco",
     "p": "m.",
     "d": "Acción y efecto de desatrancar . Sin.: desatasco.",
@@ -7499,16 +6994,6 @@
     "esp": [
       "explosiva"
     ]
-  },
-  {
-    "w": "Desbarajustar",
-    "p": "tr.",
-    "d": "Desordenar . Sin.: desordenar, desbaratar, trastornar, trastocar, alborotar, desarreglar, despelotar1.",
-    "df": "tr. desordenar (‖ alterar el orden). Sin.: desordenar, desbaratar, trastornar, trastocar, alborotar, desarreglar, despelotar1.",
-    "e": "De des- y barajustar.",
-    "s": "",
-    "c": "verbo",
-    "ec": ""
   },
   {
     "w": "Desbaratado",
@@ -7704,26 +7189,6 @@
     "ec": ""
   },
   {
-    "w": "Desblanquecido",
-    "p": "adj.",
-    "d": "Blanquecino. Sin.: blanquecino, blancuzco, blanquinoso, blanquizco, blancazo, albarizo, desblanquiñado.",
-    "df": "adj. blanquecino. Sin.: blanquecino, blancuzco, blanquinoso, blanquizco, blancazo, albarizo, desblanquiñado.",
-    "e": "De des- y blanquecer.",
-    "s": "",
-    "c": "adjetivo",
-    "ec": ""
-  },
-  {
-    "w": "Desblanquiñado",
-    "p": "adj.",
-    "d": "Blanquecino. Sin.: blanquecino, blancuzco, blanquinoso, blanquizco, desblanquecido, albarizo, blancazo.",
-    "df": "adj. blanquecino. Sin.: blanquecino, blancuzco, blanquinoso, blanquizco, desblanquecido, albarizo, blancazo.",
-    "e": "",
-    "s": "",
-    "c": "adjetivo",
-    "ec": ""
-  },
-  {
     "w": "Desbocadamente",
     "p": "adv.",
     "d": "Con desenfreno y desvergüenza.",
@@ -7810,19 +7275,6 @@
     "e": "De des- y borde1.",
     "s": "",
     "c": "verbo",
-    "ec": "",
-    "esp": [
-      "explosiva"
-    ]
-  },
-  {
-    "w": "Desborde",
-    "p": "m.",
-    "d": "Desbordamiento. Sin.: desbordamiento, rebosamiento, derrame, crecida, riada, inundación, anegamiento, anegación.",
-    "df": "m. desbordamiento. Sin.: desbordamiento, rebosamiento, derrame, crecida, riada, inundación, anegamiento, anegación.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
     "ec": "",
     "esp": [
       "explosiva"
@@ -7962,26 +7414,6 @@
     "ec": ""
   },
   {
-    "w": "Desbroce",
-    "p": "m.",
-    "d": "Desbrozo . Sin.: desbrozo, desbrozamiento, limpieza, desembarazo.",
-    "df": "m. desbrozo (‖ acción de desbrozar). Sin.: desbrozo, desbrozamiento, limpieza, desembarazo.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Desbrozamiento",
-    "p": "m.",
-    "d": "Desbrozo . Sin.: desbrozo, desbroce, limpieza, desembarazo.",
-    "df": "m. desbrozo (‖ acción de desbrozar). Sin.: desbrozo, desbroce, limpieza, desembarazo.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Desbrozar",
     "p": "tr.",
     "d": "Quitar la broza, desembarazar, limpiar. Sin.: desembrozar, despejar, limpiar, desembarazar, sachar, escardar, deshierbar, desherbar, descombrar, desmalezar, macanear.",
@@ -8094,19 +7526,6 @@
     "ec": ""
   },
   {
-    "w": "Descabellamiento",
-    "p": "m.",
-    "d": "Despropósito. Sin.: despropósito, locura, disparate, dislate, desatino, inconveniencia, mamada.",
-    "df": "m. despropósito. Sin.: despropósito, locura, disparate, dislate, desatino, inconveniencia, mamada.",
-    "e": "De descabellar.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "",
-    "esp": [
-      "larga"
-    ]
-  },
-  {
     "w": "Descabello",
     "p": "m.",
     "d": "Taurom. Acción y efecto de descabellar . Sin.: remate, puntilla.",
@@ -8114,16 +7533,6 @@
     "e": "",
     "s": "",
     "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Descabestrar",
-    "p": "tr.",
-    "d": "Desencabestrar. Sin.: desencabestrar.",
-    "df": "tr. desencabestrar. Sin.: desencabestrar.",
-    "e": "De des- y cabestrar.",
-    "s": "",
-    "c": "verbo",
     "ec": ""
   },
   {
@@ -8345,19 +7754,6 @@
     "ec": ""
   },
   {
-    "w": "Descalificatorio",
-    "p": "adj.",
-    "d": "Descalificador. Sin.: descalificador.",
-    "df": "adj. descalificador. Sin.: descalificador.",
-    "e": "",
-    "s": "",
-    "c": "adjetivo",
-    "ec": "",
-    "esp": [
-      "larga"
-    ]
-  },
-  {
     "w": "Descalostrado",
     "p": "adj.",
     "d": "Dicho de una cría: Que ha pasado ya los días del calostro.",
@@ -8396,16 +7792,6 @@
     "s": "",
     "c": "sustantivo",
     "ec": ""
-  },
-  {
-    "w": "Descamar",
-    "p": "tr.",
-    "d": "Escamar . Sin.: escamar, desescamar.",
-    "df": "tr. escamar (‖ quitar las escamas). Sin.: escamar, desescamar.",
-    "e": "Del lat. desquamāre.",
-    "s": "",
-    "c": "verbo",
-    "ec": "etym_latin"
   },
   {
     "w": "Descamativo",
@@ -8544,16 +7930,6 @@
     "ec": ""
   },
   {
-    "w": "Descantonar",
-    "p": "tr.",
-    "d": "Descantillar. Sin.: descantillar, desportillar.",
-    "df": "tr. descantillar. Sin.: descantillar, desportillar.",
-    "e": "De des- y cantón1.",
-    "s": "",
-    "c": "verbo",
-    "ec": ""
-  },
-  {
     "w": "Descaperuzar",
     "p": "tr.",
     "d": "Quitar de la cabeza la caperuza. U. t. c. prnl.",
@@ -8612,19 +7988,6 @@
     "s": "",
     "c": "verbo",
     "ec": ""
-  },
-  {
-    "w": "Descaramiento",
-    "p": "m.",
-    "d": "Descaro. Sin.: descaro, desfachatez, desvergüenza, insolencia, procacidad, sinvergonzonería, caradura, frescura, osadía, atrevimiento, coleto1, empaque2.",
-    "df": "m. descaro. Sin.: descaro, desfachatez, desvergüenza, insolencia, procacidad, sinvergonzonería, caradura, frescura, osadía, atrevimiento, coleto1, empaque2.",
-    "e": "De descararse.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "",
-    "esp": [
-      "explosiva"
-    ]
   },
   {
     "w": "Descararse",
@@ -8801,29 +8164,6 @@
     "esp": [
       "explosiva"
     ]
-  },
-  {
-    "w": "Descarriamiento",
-    "p": "m.",
-    "d": "Descarrío. Sin.: extravío, desvío, descarrío, desorientación. descarrío, perdición, vicio, depravación, perversión, relajación.",
-    "df": "m. descarrío. Sin.: extravío, desvío, descarrío, desorientación. descarrío, perdición, vicio, depravación, perversión, relajación.",
-    "e": "De descarriar.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "",
-    "esp": [
-      "larga"
-    ]
-  },
-  {
-    "w": "Descarriladura",
-    "p": "f.",
-    "d": "Descarrilamiento. Sin.: descarrilamiento.",
-    "df": "f. descarrilamiento. Sin.: descarrilamiento.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
   },
   {
     "w": "Descarrilamiento",
@@ -9011,16 +8351,6 @@
     "ec": ""
   },
   {
-    "w": "Descerar",
-    "p": "tr.",
-    "d": "Despuntar . Sin.: despuntar.",
-    "df": "tr. despuntar (‖ cortar las ceras vanas de la colmena). Sin.: despuntar.",
-    "e": "",
-    "s": "",
-    "c": "verbo",
-    "ec": ""
-  },
-  {
     "w": "Descercado",
     "p": "adj.",
     "d": "Dicho de un lugar: abierto . Sin.: abierto, libre.",
@@ -9134,16 +8464,6 @@
     ]
   },
   {
-    "w": "Descerrar",
-    "p": "tr.",
-    "d": "Abrir . Sin.: abrir, entreabrir, destapar, descubrir, desabrochar.",
-    "df": "tr. abrir (‖ descubrir lo que está cerrado). Sin.: abrir, entreabrir, destapar, descubrir, desabrochar.",
-    "e": "",
-    "s": "",
-    "c": "verbo",
-    "ec": ""
-  },
-  {
     "w": "Descerrumarse",
     "p": "prnl.",
     "d": "Veter. Dicho de una caballería: Dislocarse la articulación del menudillo con la cerruma.",
@@ -9207,16 +8527,6 @@
     "e": "",
     "s": "",
     "c": "adjetivo",
-    "ec": ""
-  },
-  {
-    "w": "Desciframiento",
-    "p": "m.",
-    "d": "Descifre. Sin.: descifre, descodificación, decodificación, resolución.",
-    "df": "m. descifre. Sin.: descifre, descodificación, decodificación, resolución.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
     "ec": ""
   },
   {
@@ -9499,39 +8809,6 @@
     "ec": ""
   },
   {
-    "w": "Descompaginar",
-    "p": "tr.",
-    "d": "Descomponer . Sin.: descomponer, desordenar, revolver, desarreglar, desbaratar, trastocar, estropear.",
-    "df": "tr. descomponer (‖ desordenar). Sin.: descomponer, desordenar, revolver, desarreglar, desbaratar, trastocar, estropear.",
-    "e": "De des- y compaginar.",
-    "s": "",
-    "c": "verbo",
-    "ec": ""
-  },
-  {
-    "w": "Descompasado",
-    "p": "adj.",
-    "d": "Descomedido . Sin.: descomedido, desmedido, desmesurado, desorbitado, exagerado, excesivo, exorbitante, extremado, descomunal.",
-    "df": "adj. descomedido (‖ excesivo). Sin.: descomedido, desmedido, desmesurado, desorbitado, exagerado, excesivo, exorbitante, extremado, descomunal.",
-    "e": "Del part. de descompasarse.",
-    "s": "",
-    "c": "adjetivo",
-    "ec": "",
-    "esp": [
-      "explosiva"
-    ]
-  },
-  {
-    "w": "Descompasarse",
-    "p": "prnl.",
-    "d": "Descomedirse. Sin.: descomedirse, insolentarse, propasarse, desaforarse, atreverse.",
-    "df": "prnl. descomedirse. Sin.: descomedirse, insolentarse, propasarse, desaforarse, atreverse. | prnl. perder el compás.",
-    "e": "",
-    "s": "",
-    "c": "verbo",
-    "ec": ""
-  },
-  {
     "w": "Descompresión",
     "p": "f.",
     "d": "Reducción de la presión a que ha estado sometido un gas o un líquido.",
@@ -9572,16 +8849,6 @@
     "e": "",
     "s": "",
     "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Descomulgar",
-    "p": "tr.",
-    "d": "Excomulgar. Sin.: excomulgar, expulsar, echar, anatematizar, condenar.",
-    "df": "tr. excomulgar. Sin.: excomulgar, expulsar, echar, anatematizar, condenar.",
-    "e": "De excomulgar.",
-    "s": "",
-    "c": "verbo",
     "ec": ""
   },
   {
@@ -9631,19 +8898,6 @@
     "ec": "",
     "esp": [
       "larga"
-    ]
-  },
-  {
-    "w": "Desconchado",
-    "p": "m.",
-    "d": "Desconchadura. Sin.: desconchadura, desconchón, cachadura, desportilladura, descascarillado, mella, rotura, rajadura.",
-    "df": "m. desconchadura. Sin.: desconchadura, desconchón, cachadura, desportilladura, descascarillado, mella, rotura, rajadura.",
-    "e": "De desconchar y -ado.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "",
-    "esp": [
-      "explosiva"
     ]
   },
   {
@@ -9770,26 +9024,6 @@
     "esp": [
       "larga"
     ]
-  },
-  {
-    "w": "Descontinuar",
-    "p": "tr.",
-    "d": "Discontinuar. Sin.: discontinuar, interrumpir, parar1, detener.",
-    "df": "tr. discontinuar. Sin.: discontinuar, interrumpir, parar1, detener. | tr. Ant., Chile, C. Rica, Ec., Guat., Hond., Méx., Nic. y Perú. Interrumpir la fabricación de algo.",
-    "e": "",
-    "s": "",
-    "c": "verbo",
-    "ec": ""
-  },
-  {
-    "w": "Descontinuo",
-    "p": "adj.",
-    "d": "Discontinuo . Sin.: intermitente, entrecortado, discontinuo, irregular, alterno.",
-    "df": "adj. discontinuo (‖ interrumpido). Sin.: intermitente, entrecortado, discontinuo, irregular, alterno.",
-    "e": "",
-    "s": "",
-    "c": "adjetivo",
-    "ec": ""
   },
   {
     "w": "Desconveniencia",
@@ -10037,16 +9271,6 @@
     "ec": ""
   },
   {
-    "w": "Descosedura",
-    "p": "f.",
-    "d": "Descosido . Sin.: descosido, desgarrón, roto, rasgón, rasgado, jirón.",
-    "df": "f. descosido (‖ parte descosida). Sin.: descosido, desgarrón, roto, rasgón, rasgado, jirón.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Descosido",
     "p": "adj.",
     "d": "Desordenado, falto del orden y trabazón convenientes.",
@@ -10088,16 +9312,6 @@
     "esp": [
       "larga"
     ]
-  },
-  {
-    "w": "Descreencia",
-    "p": "f.",
-    "d": "Descreimiento. Sin.: descreimiento, incredulidad, irreligiosidad, impiedad, irreverencia, ateísmo.",
-    "df": "f. descreimiento. Sin.: descreimiento, incredulidad, irreligiosidad, impiedad, irreverencia, ateísmo.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
   },
   {
     "w": "Descremado",
@@ -10181,16 +9395,6 @@
     "esp": [
       "explosiva"
     ]
-  },
-  {
-    "w": "Descristianar",
-    "p": "tr.",
-    "d": "Descrismar . Sin.: descrismar.",
-    "df": "tr. descrismar (‖ quitar el crisma). Sin.: descrismar. | tr. coloq. descrismar (‖ dar un golpe en la cabeza). U. t. c. prnl. Sin.: descalabrar, desnucar, descrismar, atizar, golpear.",
-    "e": "",
-    "s": "",
-    "c": "verbo",
-    "ec": ""
   },
   {
     "w": "Descristianizado",
@@ -10280,29 +9484,6 @@
     "d": "Desvencijar, desunir, desconcertar algo. U. t. c. prnl. Sin.: descuajeringar, desvencijar, desarticular, descomponer, desbaratar, despaturrar, desguañangar, desencuadernar.",
     "df": "tr. Desvencijar, desunir, desconcertar algo. U. t. c. prnl. Sin.: descuajeringar, desvencijar, desarticular, descomponer, desbaratar, despaturrar, desguañangar, desencuadernar.",
     "e": "De descuajar.",
-    "s": "",
-    "c": "verbo",
-    "ec": "",
-    "esp": [
-      "explosiva"
-    ]
-  },
-  {
-    "w": "Descuaje",
-    "p": "m.",
-    "d": "Descuajo. Sin.: descuajo, arrancamiento, extirpación, extracción, destronque.",
-    "df": "m. descuajo. Sin.: descuajo, arrancamiento, extirpación, extracción, destronque.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Descuajeringar",
-    "p": "tr.",
-    "d": "Descuajaringar. Sin.: descuajaringar, desvencijar, desarticular, descomponer, desbaratar, despaturrar, desguañangar, desencuadernar.",
-    "df": "tr. descuajaringar. Sin.: descuajaringar, desvencijar, desarticular, descomponer, desbaratar, despaturrar, desguañangar, desencuadernar.",
-    "e": "",
     "s": "",
     "c": "verbo",
     "ec": "",
@@ -10486,19 +9667,6 @@
     "ec": ""
   },
   {
-    "w": "Descular",
-    "p": "tr.",
-    "d": "Desfondar . Sin.: desfondar.",
-    "df": "tr. desfondar (‖ quitar el fondo a un vaso). Sin.: desfondar. | tr. coloq. Arg. desentrañar (‖ averiguar). Sin.: desentrañar, averiguar, aclarar, penetrar, descifrar, desembrollar, esclarecer.",
-    "e": "",
-    "s": "",
-    "c": "verbo",
-    "ec": "",
-    "esp": [
-      "explosiva"
-    ]
-  },
-  {
     "w": "Descumbrado",
     "p": "adj.",
     "d": "Llano y sin cumbre.",
@@ -10547,19 +9715,6 @@
     "s": "",
     "c": "adjetivo",
     "ec": ""
-  },
-  {
-    "w": "Desdichadamente",
-    "p": "adv.",
-    "d": "Lamentablemente . Sin.: desgraciadamente, lamentablemente.",
-    "df": "adv. lamentablemente (‖ de manera lamentable). Sin.: desgraciadamente, lamentablemente.",
-    "e": "",
-    "s": "",
-    "c": "adverbio",
-    "ec": "",
-    "esp": [
-      "larga"
-    ]
   },
   {
     "w": "Desdicho",
@@ -10625,26 +9780,6 @@
     "e": "",
     "s": "",
     "c": "adjetivo",
-    "ec": ""
-  },
-  {
-    "w": "Desecador",
-    "p": "adj.",
-    "d": "Desecante. Sin.: desecante, secador, deshidratador.",
-    "df": "adj. desecante. Sin.: desecante, secador, deshidratador.",
-    "e": "",
-    "s": "",
-    "c": "adjetivo",
-    "ec": ""
-  },
-  {
-    "w": "Desecamiento",
-    "p": "m.",
-    "d": "Desecación. Sin.: desecación, deshidratación, secado, secamiento, aridez.",
-    "df": "m. desecación. Sin.: desecación, deshidratación, secado, secamiento, aridez.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
     "ec": ""
   },
   {
@@ -10791,16 +9926,6 @@
     "ec": ""
   },
   {
-    "w": "Desembocadero",
-    "p": "m.",
-    "d": "Desembocadura . Sin.: desembocadura.",
-    "df": "m. desembocadura (‖ paraje por donde un río desemboca). Sin.: desembocadura. | m. Abertura o estrecho por donde se sale de un punto a otro, como de una calle, de un camino, etc. Sin.: desembocadura.",
-    "e": "De desembocar y -dero.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Desembojadera",
     "p": "f.",
     "d": "Mujer dedicada a desembojar.",
@@ -10869,16 +9994,6 @@
     "d": "Quitar o sacar del brazo algo.",
     "df": "tr. Quitar o sacar del brazo algo. | tr. Arrojar o despedir un arma u otra cosa con la mayor violencia y fuerza del brazo.",
     "e": "",
-    "s": "",
-    "c": "verbo",
-    "ec": ""
-  },
-  {
-    "w": "Desembrozar",
-    "p": "tr.",
-    "d": "Desbrozar. Sin.: desbrozar, macanear.",
-    "df": "tr. desbrozar. Sin.: desbrozar, macanear.",
-    "e": "De des-, en- y broza.",
     "s": "",
     "c": "verbo",
     "ec": ""
@@ -10954,16 +10069,6 @@
     "ec": ""
   },
   {
-    "w": "Desempavonar",
-    "p": "tr.",
-    "d": "Despavonar. Sin.: desoxidar, despavonar.",
-    "df": "tr. despavonar. Sin.: desoxidar, despavonar.",
-    "e": "",
-    "s": "",
-    "c": "verbo",
-    "ec": ""
-  },
-  {
     "w": "Desempañador",
     "p": "m.",
     "d": "En un automóvil, dispositivo para desempañar los cristales.",
@@ -11032,19 +10137,6 @@
     "s": "",
     "c": "sustantivo",
     "ec": ""
-  },
-  {
-    "w": "Desempolvoradura",
-    "p": "f.",
-    "d": "Desempolvadura. Sin.: desempolvadura.",
-    "df": "f. desempolvadura. Sin.: desempolvadura.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "",
-    "esp": [
-      "larga"
-    ]
   },
   {
     "w": "Desempolvorar",
@@ -11148,19 +10240,6 @@
     "s": "",
     "c": "verbo",
     "ec": ""
-  },
-  {
-    "w": "Desencantamiento",
-    "p": "m.",
-    "d": "Desencanto. Sin.: desencanto, decepción, desengaño, desilusión.",
-    "df": "m. desencanto. Sin.: desencanto, decepción, desengaño, desilusión.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "",
-    "esp": [
-      "larga"
-    ]
   },
   {
     "w": "Desencapar",
@@ -11289,19 +10368,6 @@
     "ec": ""
   },
   {
-    "w": "Desenconamiento",
-    "p": "m.",
-    "d": "Desencono. Sin.: desencono.",
-    "df": "m. desencono. Sin.: desencono.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "",
-    "esp": [
-      "larga"
-    ]
-  },
-  {
     "w": "Desenconar",
     "p": "tr.",
     "d": "Mitigar, templar, quitar la inflamación o encendimiento. U. t. c. prnl.",
@@ -11365,16 +10431,6 @@
     "ec": ""
   },
   {
-    "w": "Desendiablar",
-    "p": "tr.",
-    "d": "Desendemoniar. Sin.: desendemoniar, exorcizar.",
-    "df": "tr. desendemoniar. Sin.: desendemoniar, exorcizar.",
-    "e": "",
-    "s": "",
-    "c": "verbo",
-    "ec": ""
-  },
-  {
     "w": "Desendiosar",
     "p": "tr.",
     "d": "Abatir y ajar la vanidad y altanería de quien, por ser o creerse superior a los demás, se hace intratable o inaccesible. U. t. c. prnl.",
@@ -11399,16 +10455,6 @@
     "p": "tr.",
     "d": "Abrir y desatar los fardos. Sin.: desenfardelar, desembalar.",
     "df": "tr. Abrir y desatar los fardos. Sin.: desenfardelar, desembalar.",
-    "e": "",
-    "s": "",
-    "c": "verbo",
-    "ec": ""
-  },
-  {
-    "w": "Desenfardelar",
-    "p": "tr.",
-    "d": "Desenfardar. Sin.: desenfardar, desembalar.",
-    "df": "tr. desenfardar. Sin.: desenfardar, desembalar.",
     "e": "",
     "s": "",
     "c": "verbo",
@@ -11453,20 +10499,6 @@
     "s": "",
     "c": "adjetivo",
     "ec": ""
-  },
-  {
-    "w": "Desenfrenamiento",
-    "p": "m.",
-    "d": "Desenfreno. Sin.: desenfreno, desfrenamiento, disipación, disolución, intemperancia, inmoderación, desorden, libertinaje, licencia, liviandad, lujuria, escándalo.",
-    "df": "m. desenfreno. Sin.: desenfreno, desfrenamiento, disipación, disolución, intemperancia, inmoderación, desorden, libertinaje, licencia, liviandad, lujuria, escándalo.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "",
-    "esp": [
-      "larga",
-      "explosiva"
-    ]
   },
   {
     "w": "Desenfurecer",
@@ -11602,16 +10634,6 @@
     "ec": ""
   },
   {
-    "w": "Desenlabonar",
-    "p": "tr.",
-    "d": "Deseslabonar. Sin.: deslabonar, deseslabonar.",
-    "df": "tr. deseslabonar. Sin.: deslabonar, deseslabonar.",
-    "e": "",
-    "s": "",
-    "c": "verbo",
-    "ec": ""
-  },
-  {
     "w": "Desenladrillado",
     "p": "m.",
     "d": "Acción y efecto de desenladrillar.",
@@ -11706,16 +10728,6 @@
     "esp": [
       "explosiva"
     ]
-  },
-  {
-    "w": "Desenrizar",
-    "p": "tr.",
-    "d": "Desrizar1. Sin.: desrizar1.",
-    "df": "tr. desrizar1. Sin.: desrizar1. | tr. desrizar2. Sin.: desrizar2.",
-    "e": "",
-    "s": "",
-    "c": "verbo",
-    "ec": ""
   },
   {
     "w": "Desenronar",
@@ -11874,16 +10886,6 @@
     "ec": ""
   },
   {
-    "w": "Desentornillar",
-    "p": "tr.",
-    "d": "Desatornillar. Sin.: desatornillar, destornillar.",
-    "df": "tr. desatornillar. Sin.: desatornillar, destornillar.",
-    "e": "",
-    "s": "",
-    "c": "verbo",
-    "ec": ""
-  },
-  {
     "w": "Desentrañamiento",
     "p": "m.",
     "d": "Acción de desentrañar o desentrañarse.",
@@ -12017,16 +11019,6 @@
     "ec": ""
   },
   {
-    "w": "Deseslabonar",
-    "p": "tr.",
-    "d": "Deslabonar. Sin.: deslabonar, desenlabonar.",
-    "df": "tr. deslabonar. Sin.: deslabonar, desenlabonar.",
-    "e": "",
-    "s": "",
-    "c": "verbo",
-    "ec": ""
-  },
-  {
     "w": "Desespaldar",
     "p": "tr.",
     "d": "Herir la espalda, rompiéndola o descoyuntándola. U. t. c. prnl. Sin.: deslomar, despaldar.",
@@ -12104,16 +11096,6 @@
     "p": "m.",
     "d": "Acción y efecto de desfalcar. Sin.: defraudación, malversación, estafa1, robo1, afano.",
     "df": "m. Acción y efecto de desfalcar. Sin.: defraudación, malversación, estafa1, robo1, afano.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Desfasamiento",
-    "p": "m.",
-    "d": "Desfase . Sin.: desfase, atraso, retraso, obsolescencia.",
-    "df": "m. desfase (‖ acción de desfasarse). Sin.: desfase, atraso, retraso, obsolescencia.",
     "e": "",
     "s": "",
     "c": "sustantivo",
@@ -12220,19 +11202,6 @@
     "ec": ""
   },
   {
-    "w": "Desfiguramiento",
-    "p": "m.",
-    "d": "Desfiguración. Sin.: desfiguración.",
-    "df": "m. desfiguración. Sin.: desfiguración.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "",
-    "esp": [
-      "larga"
-    ]
-  },
-  {
     "w": "Desfigurar",
     "p": "tr.",
     "d": "Desemejar, afear, ajar la composición, orden y hermosura del semblante y de las facciones. U. t. c. prnl. Sin.: alterar, deformar, demudar, descomponer, ajar2, afear, desemejar, inmutar.",
@@ -12297,16 +11266,6 @@
     "s": "",
     "c": "verbo",
     "ec": ""
-  },
-  {
-    "w": "Desflocar",
-    "p": "tr.",
-    "d": "Desflecar. Sin.: desflecar, deshilar, deshilachar.",
-    "df": "tr. desflecar. Sin.: desflecar, deshilar, deshilachar.",
-    "e": "Del lat. defloccāre.",
-    "s": "",
-    "c": "verbo",
-    "ec": "etym_latin"
   },
   {
     "w": "Desfloración",
@@ -12412,30 +11371,10 @@
     "ec": ""
   },
   {
-    "w": "Desformar",
-    "p": "tr.",
-    "d": "Deformar. Sin.: deformar.",
-    "df": "tr. deformar. Sin.: deformar.",
-    "e": "",
-    "s": "",
-    "c": "verbo",
-    "ec": ""
-  },
-  {
     "w": "Desfortalecer",
     "p": "tr.",
     "d": "Demoler una fortaleza, o quitarle la guarnición.",
     "df": "tr. Demoler una fortaleza, o quitarle la guarnición.",
-    "e": "",
-    "s": "",
-    "c": "verbo",
-    "ec": ""
-  },
-  {
-    "w": "Desfruncir",
-    "p": "tr.",
-    "d": "Desplegar . Sin.: desplegar, desdoblar, extender.",
-    "df": "tr. desplegar (‖ desdoblar). Sin.: desplegar, desdoblar, extender.",
     "e": "",
     "s": "",
     "c": "verbo",
@@ -12480,16 +11419,6 @@
     "d": "Rotura de la rama cuando lleva consigo parte de la corteza y aun del tronco a que está asida.",
     "df": "f. Rotura de la rama cuando lleva consigo parte de la corteza y aun del tronco a que está asida.",
     "e": "De desgajar.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Desgajamiento",
-    "p": "m.",
-    "d": "Desgaje. Sin.: desgaje.",
-    "df": "m. desgaje. Sin.: desgaje.",
-    "e": "",
     "s": "",
     "c": "sustantivo",
     "ec": ""
@@ -12676,16 +11605,6 @@
     "d": "Dicho de un labrador: Quitar o arrancar las gatas .",
     "df": "tr. Dicho de un labrador: Quitar o arrancar las gatas (‖ gatuñas).",
     "e": "",
-    "s": "",
-    "c": "verbo",
-    "ec": ""
-  },
-  {
-    "w": "Desgañitarse",
-    "p": "prnl.",
-    "d": "Enronquecerse. Sin.: enronquecerse, desgalillarse.",
-    "df": "prnl. enronquecerse. Sin.: enronquecerse, desgalillarse. | prnl. coloq. Esforzarse violentamente gritando o voceando. Sin.: desgalillarse.",
-    "e": "De des- y gañir.",
     "s": "",
     "c": "verbo",
     "ec": ""
@@ -12891,29 +11810,6 @@
     "ec": ""
   },
   {
-    "w": "Deshaldo",
-    "p": "m.",
-    "d": "Marceo. Sin.: marceo.",
-    "df": "m. marceo. Sin.: marceo.",
-    "e": "De des- y halda.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Desharrapamiento",
-    "p": "m.",
-    "d": "Miseria . Sin.: miseria.",
-    "df": "m. miseria (‖ tacañería). Sin.: miseria.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "",
-    "esp": [
-      "larga"
-    ]
-  },
-  {
     "w": "Deshebrar",
     "p": "tr.",
     "d": "Sacar las hebras o hilos, destejiendo una tela.",
@@ -12944,16 +11840,6 @@
     "ec": ""
   },
   {
-    "w": "Desherbar",
-    "p": "tr.",
-    "d": "Deshierbar. Sin.: deshierbar, escardar.",
-    "df": "tr. deshierbar. Sin.: deshierbar, escardar.",
-    "e": "",
-    "s": "",
-    "c": "verbo",
-    "ec": ""
-  },
-  {
     "w": "Desheredación",
     "p": "f.",
     "d": "Acción y efecto de desheredar. Sin.: desheredamiento.",
@@ -12972,19 +11858,6 @@
     "s": "",
     "c": "adjetivo",
     "ec": ""
-  },
-  {
-    "w": "Desheredamiento",
-    "p": "m.",
-    "d": "Desheredación. Sin.: desheredación.",
-    "df": "m. desheredación. Sin.: desheredación.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "",
-    "esp": [
-      "larga"
-    ]
   },
   {
     "w": "Desherradura",
@@ -13018,16 +11891,6 @@
     "esp": [
       "larga"
     ]
-  },
-  {
-    "w": "Deshierba",
-    "p": "f.",
-    "d": "Escarda. Sin.: escarda.",
-    "df": "f. escarda. Sin.: escarda.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
   },
   {
     "w": "Deshierbar",
@@ -13110,16 +11973,6 @@
     "ec": ""
   },
   {
-    "w": "Deshoja",
-    "p": "f.",
-    "d": "Deshojadura. Sin.: deshojadura, deshojamiento, deshoje.",
-    "df": "f. deshojadura. Sin.: deshojadura, deshojamiento, deshoje.",
-    "e": "De deshojar.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Deshojador",
     "p": "adj.",
     "d": "Que quita las hojas de los árboles. U. t. c. s.",
@@ -13134,16 +11987,6 @@
     "p": "f.",
     "d": "Acción de deshojar. Sin.: deshoja, deshojamiento, deshoje.",
     "df": "f. Acción de deshojar. Sin.: deshoja, deshojamiento, deshoje.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Deshojamiento",
-    "p": "m.",
-    "d": "Deshojadura. Sin.: deshoja, deshojadura, deshoje.",
-    "df": "m. deshojadura. Sin.: deshoja, deshojadura, deshoje.",
     "e": "",
     "s": "",
     "c": "sustantivo",
@@ -13180,16 +12023,6 @@
     "e": "",
     "s": "",
     "c": "verbo",
-    "ec": ""
-  },
-  {
-    "w": "Deshollinadera",
-    "p": "f.",
-    "d": "Deshollinador . Sin.: deshollinador.",
-    "df": "f. deshollinador (‖ escoba). Sin.: deshollinador.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
     "ec": ""
   },
   {
@@ -13230,16 +12063,6 @@
     "e": "",
     "s": "",
     "c": "adjetivo",
-    "ec": ""
-  },
-  {
-    "w": "Deshornar",
-    "p": "tr.",
-    "d": "Desenhornar. Sin.: desenhornar.",
-    "df": "tr. desenhornar. Sin.: desenhornar.",
-    "e": "De des- y horno.",
-    "s": "",
-    "c": "verbo",
     "ec": ""
   },
   {
@@ -13310,26 +12133,6 @@
     "p": "adj.",
     "d": "Que deshumaniza. Sin.: deshumanizante.",
     "df": "adj. Que deshumaniza. Sin.: deshumanizante.",
-    "e": "",
-    "s": "",
-    "c": "adjetivo",
-    "ec": ""
-  },
-  {
-    "w": "Deshumanizante",
-    "p": "adj.",
-    "d": "Deshumanizador. Sin.: deshumanizador.",
-    "df": "adj. deshumanizador. Sin.: deshumanizador.",
-    "e": "De deshumanizar y -nte.",
-    "s": "",
-    "c": "adjetivo",
-    "ec": ""
-  },
-  {
-    "w": "Deshumano",
-    "p": "adj.",
-    "d": "Inhumano. Sin.: inhumano.",
-    "df": "adj. inhumano. Sin.: inhumano.",
     "e": "",
     "s": "",
     "c": "adjetivo",
@@ -13539,16 +12342,6 @@
     "ec": ""
   },
   {
-    "w": "Desistencia",
-    "p": "f.",
-    "d": "Desistimiento. Sin.: desistimiento.",
-    "df": "f. desistimiento. Sin.: desistimiento.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Desjarretadera",
     "p": "f.",
     "d": "Instrumento que sirve para desjarretar toros o vacas compuesto de una cuchilla de acero en forma de media luna, muy cortante, puesta en el extremo de una vara del grueso y longitud de una pica.",
@@ -13596,16 +12389,6 @@
     "e": "",
     "s": "",
     "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Desladrillar",
-    "p": "tr.",
-    "d": "Desenladrillar. Sin.: desenladrillar.",
-    "df": "tr. desenladrillar. Sin.: desenladrillar.",
-    "e": "De des- y ladrillo.",
-    "s": "",
-    "c": "verbo",
     "ec": ""
   },
   {
@@ -13699,16 +12482,6 @@
     "e": "De des- y lechuga.",
     "s": "",
     "c": "verbo",
-    "ec": ""
-  },
-  {
-    "w": "Desleidura",
-    "p": "f.",
-    "d": "Desleimiento. Sin.: desleimiento.",
-    "df": "f. desleimiento. Sin.: desleimiento.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
     "ec": ""
   },
   {
@@ -14454,16 +13227,6 @@
     "ec": ""
   },
   {
-    "w": "Desmirriado",
-    "p": "adj. coloq.",
-    "d": "Esmirriado. Sin.: esmirriado, escuálido1, flaco, enclenque, débil, escurrido.",
-    "df": "adj. coloq. esmirriado. Sin.: esmirriado, escuálido1, flaco, enclenque, débil, escurrido.",
-    "e": "De or. inc.",
-    "s": "",
-    "c": "adjetivo",
-    "ec": ""
-  },
-  {
     "w": "Desmochar",
     "p": "tr.",
     "d": "Quitar, cortar, arrancar o desgajar la parte superior de algo, dejándolo mocho. Desmochó la res, cortándole las astas. Desmochó el árbol, desnudándolo de las ramas. Sin.: cortar, despuntar, podar, cercenar, recortar.",
@@ -14670,16 +13433,6 @@
     "e": "",
     "s": "",
     "c": "verbo",
-    "ec": ""
-  },
-  {
-    "w": "Desmotadera",
-    "p": "f.",
-    "d": "Desmotadora. Sin.: desmotadora.",
-    "df": "f. desmotadora. Sin.: desmotadora.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
     "ec": ""
   },
   {
@@ -14951,16 +13704,6 @@
     "ec": ""
   },
   {
-    "w": "Desnudismo",
-    "p": "m.",
-    "d": "Nudismo. Sin.: nudismo, desnudez.",
-    "df": "m. nudismo. Sin.: nudismo, desnudez.",
-    "e": "De desnudo e -ismo.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Desnudista",
     "p": "adj.",
     "d": "Nudista. Apl. a pers., u. t. c. s. Sin.: nudista.",
@@ -15070,29 +13813,6 @@
     "ec": "etym_latin"
   },
   {
-    "w": "Desolador",
-    "p": "adj.",
-    "d": "Asolador. Sin.: asolador.",
-    "df": "adj. asolador. Sin.: asolador. | adj. Que causa extrema aflicción. Sin.: desconsolador, desesperanzador, doloroso, triste, amargo. Ant.: consolador.",
-    "e": "De desolar.",
-    "s": "",
-    "c": "adjetivo",
-    "ec": ""
-  },
-  {
-    "w": "Desolar",
-    "p": "tr.",
-    "d": "Asolar . Sin.: asolar1, destruir, devastar, arruinar.",
-    "df": "tr. asolar (‖ destruir). Sin.: asolar1, destruir, devastar, arruinar. | tr. Causar a alguien una aflicción extrema. Sin.: afligir, apenar, entristecer, consternar, atribular. Ant.: consolar.",
-    "e": "Del lat. desolāre.",
-    "s": "",
-    "c": "verbo",
-    "ec": "etym_latin",
-    "esp": [
-      "explosiva"
-    ]
-  },
-  {
     "w": "Desolladero",
     "p": "m.",
     "d": "Sitio destinado para desollar las reses. Sin.: matadero.",
@@ -15134,16 +13854,6 @@
     "esp": [
       "explosiva"
     ]
-  },
-  {
-    "w": "Desollón",
-    "p": "m. coloq.",
-    "d": "Desolladura. Sin.: desolladura, desollamiento, despellejadura.",
-    "df": "m. coloq. desolladura. Sin.: desolladura, desollamiento, despellejadura.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
   },
   {
     "w": "Desopilación",
@@ -15297,16 +14007,6 @@
     "s": "",
     "c": "verbo",
     "ec": ""
-  },
-  {
-    "w": "Desosar",
-    "p": "tr.",
-    "d": "Deshuesar. Sin.: deshuesar.",
-    "df": "tr. deshuesar. Sin.: deshuesar.",
-    "e": "Del lat. vulg. dexossare, y este del lat. exossāre, der. de os, ossis 'hueso'.",
-    "s": "",
-    "c": "verbo",
-    "ec": "etym_latin"
   },
   {
     "w": "Desovadero",
@@ -15513,16 +14213,6 @@
     "e": "",
     "s": "",
     "c": "verbo",
-    "ec": ""
-  },
-  {
-    "w": "Despajo",
-    "p": "m.",
-    "d": "Despajadura. Sin.: despajadura.",
-    "df": "m. despajadura. Sin.: despajadura.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
     "ec": ""
   },
   {
@@ -15745,16 +14435,6 @@
     "ec": ""
   },
   {
-    "w": "Desparejo",
-    "p": "adj.",
-    "d": "Desparejado. Sin.: desparejado.",
-    "df": "adj. desparejado. Sin.: desparejado. | adj. dispar. Sin.: diferente, dispar, disparejo, distinto1. Ant.: igual.",
-    "e": "",
-    "s": "",
-    "c": "adjetivo",
-    "ec": ""
-  },
-  {
     "w": "Desparpajado",
     "p": "adj.",
     "d": "Desenvuelto, ufano, que tiene desparpajo.",
@@ -15948,16 +14628,6 @@
     "ec": ""
   },
   {
-    "w": "Despeamiento",
-    "p": "m.",
-    "d": "Despeadura. Sin.: despeadura, despeo.",
-    "df": "m. despeadura. Sin.: despeadura, despeo.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Despearse",
     "p": "prnl.",
     "d": "Dicho de una persona o de un animal: Maltratarse los pies por haber caminado mucho. Sin.: aspearse.",
@@ -16094,16 +14764,6 @@
     "ec": ""
   },
   {
-    "w": "Despegamiento",
-    "p": "m.",
-    "d": "Desapego. Sin.: desapego, despego.",
-    "df": "m. desapego. Sin.: desapego, despego.",
-    "e": "De despegar.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Despeje",
     "p": "m.",
     "d": "En algunos deportes, acción y efecto de despejar .",
@@ -16125,16 +14785,6 @@
     "esp": [
       "explosiva"
     ]
-  },
-  {
-    "w": "Despellejadura",
-    "p": "f.",
-    "d": "Desolladura. Sin.: desolladura, desollamiento, desollón.",
-    "df": "f. desolladura. Sin.: desolladura, desollamiento, desollón.",
-    "e": "De despellejar.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
   },
   {
     "w": "Despellejar",
@@ -16203,16 +14853,6 @@
     "ec": ""
   },
   {
-    "w": "Despeluznar",
-    "p": "tr.",
-    "d": "Despeluzar. Sin.: espeluznar, despeluzar.",
-    "df": "tr. despeluzar. Sin.: espeluznar, despeluzar.",
-    "e": "",
-    "s": "",
-    "c": "verbo",
-    "ec": ""
-  },
-  {
     "w": "Despendolarse",
     "p": "prnl.",
     "d": "Esp. desmadrarse . Sin.: desmadrarse.",
@@ -16237,16 +14877,6 @@
     "p": "f.",
     "d": "Oficio u ocupación de despensero.",
     "df": "f. Oficio u ocupación de despensero.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Despeo",
-    "p": "m.",
-    "d": "Despeadura. Sin.: despeadura, despeamiento.",
-    "df": "m. despeadura. Sin.: despeadura, despeamiento.",
     "e": "",
     "s": "",
     "c": "sustantivo",
@@ -16409,16 +15039,6 @@
     "ec": ""
   },
   {
-    "w": "Despesco",
-    "p": "m.",
-    "d": "Despesca. Sin.: despesca.",
-    "df": "m. despesca. Sin.: despesca.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Despezo",
     "p": "m.",
     "d": "En fontanería y otras artes mecánicas, rebajo que se hace al extremo de un tubo para enchufarlo en otro.",
@@ -16499,16 +15119,6 @@
     "e": "De de- y espichar.",
     "s": "",
     "c": "verbo",
-    "ec": ""
-  },
-  {
-    "w": "Despiece",
-    "p": "m.",
-    "d": "Despiezo. Sin.: despiezo, despezo, descuartizamiento, desguace, desmonte.",
-    "df": "m. despiezo. Sin.: despiezo, despezo, descuartizamiento, desguace, desmonte.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
     "ec": ""
   },
   {
@@ -16735,16 +15345,6 @@
     "ec": ""
   },
   {
-    "w": "Desplantación",
-    "p": "f.",
-    "d": "Desarraigo. Sin.: desarraigo, desarraigamiento.",
-    "df": "f. desarraigo. Sin.: desarraigo, desarraigamiento.",
-    "e": "De desplantar.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Desplantador",
     "p": "adj.",
     "d": "Que desplanta. U. t. c. s.",
@@ -16760,16 +15360,6 @@
     "d": "Dicho o acto lleno de arrogancia, descaro o desabrimiento. Sin.: atrevimiento, descaro, audacia, concha.",
     "df": "m. Dicho o acto lleno de arrogancia, descaro o desabrimiento. Sin.: atrevimiento, descaro, audacia, concha. | m. Danza y Esgr. Postura irregular.",
     "e": "De desplantar.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Desplatación",
-    "p": "f.",
-    "d": "Desplate. Sin.: desplate.",
-    "df": "f. desplate. Sin.: desplate.",
-    "e": "",
     "s": "",
     "c": "sustantivo",
     "ec": ""
@@ -16876,16 +15466,6 @@
     "esp": [
       "explosiva"
     ]
-  },
-  {
-    "w": "Desplume",
-    "p": "m.",
-    "d": "Desplumadura. Sin.: desplumadura.",
-    "df": "m. desplumadura. Sin.: desplumadura.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
   },
   {
     "w": "Despoblador",
@@ -17024,16 +15604,6 @@
     "e": "Del part. de desposar.",
     "s": "",
     "c": "adjetivo",
-    "ec": ""
-  },
-  {
-    "w": "Desposamiento",
-    "p": "m.",
-    "d": "Desposorio. Sin.: desposorio.",
-    "df": "m. desposorio. Sin.: desposorio.",
-    "e": "De desposar.",
-    "s": "",
-    "c": "sustantivo",
     "ec": ""
   },
   {
@@ -17214,16 +15784,6 @@
     "ec": ""
   },
   {
-    "w": "Despueble",
-    "p": "m.",
-    "d": "Despoblación. Sin.: despoblación, despoblamiento.",
-    "df": "m. despoblación. Sin.: despoblación, despoblamiento.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Despulpado",
     "p": "m.",
     "d": "Operación de despulpar.",
@@ -17261,16 +15821,6 @@
     "e": "",
     "s": "",
     "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Despumar",
-    "p": "tr.",
-    "d": "Espumar. Sin.: espumar.",
-    "df": "tr. espumar. Sin.: espumar.",
-    "e": "",
-    "s": "",
-    "c": "verbo",
     "ec": ""
   },
   {
@@ -17387,16 +15937,6 @@
     "e": "",
     "s": "",
     "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Desrabar",
-    "p": "tr.",
-    "d": "Desrabotar. Sin.: desrabotar, descolar, rabotear.",
-    "df": "tr. desrabotar. Sin.: desrabotar, descolar, rabotear.",
-    "e": "",
-    "s": "",
-    "c": "verbo",
     "ec": ""
   },
   {
@@ -17590,26 +16130,6 @@
     "ec": ""
   },
   {
-    "w": "Destapada",
-    "p": "f.",
-    "d": "Descubierta . Sin.: descubierta.",
-    "df": "f. descubierta (‖ pastel). Sin.: descubierta.",
-    "e": "Del part. de destapar.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Destapador",
-    "p": "m.",
-    "d": "Abrebotellas. Sin.: abrebotellas, abridor.",
-    "df": "m. Am. abrebotellas. Sin.: abrebotellas, abridor.",
-    "e": "De destapar y -dor.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Destapadura",
     "p": "f.",
     "d": "Acción y efecto de destapar o destaparse. Sin.: destape.",
@@ -17724,16 +16244,6 @@
     "p": "tr.",
     "d": "Quitar las tejas a los tejados de los edificios o a las albardillas de las tapias. Sin.: desentejar.",
     "df": "tr. Quitar las tejas a los tejados de los edificios o a las albardillas de las tapias. Sin.: desentejar. | tr. Dejar sin reparo o defensa algo.",
-    "e": "",
-    "s": "",
-    "c": "verbo",
-    "ec": ""
-  },
-  {
-    "w": "Destellear",
-    "p": "intr.",
-    "d": "Destellar . Sin.: destellar, centellear, resplandecer, relumbrar, fulgurar, refulgir, brillar.",
-    "df": "intr. destellar (‖ despedir destellos). Sin.: destellar, centellear, resplandecer, relumbrar, fulgurar, refulgir, brillar.",
     "e": "",
     "s": "",
     "c": "verbo",
@@ -18205,16 +16715,6 @@
     "ec": ""
   },
   {
-    "w": "Destrueco",
-    "p": "m.",
-    "d": "Destrueque. Sin.: destrueque.",
-    "df": "m. destrueque. Sin.: destrueque.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Destrueque",
     "p": "m.",
     "d": "Acción y efecto de destrocar. Sin.: destrueco.",
@@ -18422,16 +16922,6 @@
     ]
   },
   {
-    "w": "Desvalijo",
-    "p": "m.",
-    "d": "Desvalijamiento. Sin.: desvalijamiento.",
-    "df": "m. desvalijamiento. Sin.: desvalijamiento.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Desvaporizadero",
     "p": "m.",
     "d": "Lugar por donde se evapora o respira algo.",
@@ -18472,16 +16962,6 @@
     "e": "Del part. de desvariar.",
     "s": "",
     "c": "adjetivo",
-    "ec": ""
-  },
-  {
-    "w": "Desvastigar",
-    "p": "tr.",
-    "d": "Chapodar . Sin.: chapodar.",
-    "df": "tr. chapodar (‖ cortar ramas de los árboles). Sin.: chapodar.",
-    "e": "De des- y vástiga.",
-    "s": "",
-    "c": "verbo",
     "ec": ""
   },
   {
@@ -18546,19 +17026,6 @@
     "s": "",
     "c": "verbo",
     "ec": ""
-  },
-  {
-    "w": "Desventura",
-    "p": "f.",
-    "d": "Desgracia . Sin.: desgracia, pena1, desmán1, través.",
-    "df": "f. desgracia (‖ suceso que produce dolor). Sin.: desgracia, pena1, desmán1, través. | f. desgracia (‖ sufrimiento por suceso doloroso). | f. desgracia (‖ mala suerte). Sin.: adversidad, desdicha, infortunio, desgracia. Ant.: ventura, suerte. | f. desgracia (‖ situación de infelicidad). Sin.: fatalidad, infelicidad, desgracia. Ant.: ventura.",
-    "e": "De des- y ventura.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "",
-    "esp": [
-      "explosiva"
-    ]
   },
   {
     "w": "Desventurado",
@@ -18704,16 +17171,6 @@
     "e": "",
     "s": "",
     "c": "verbo",
-    "ec": ""
-  },
-  {
-    "w": "Desyerba",
-    "p": "f.",
-    "d": "Escarda. Sin.: escarda.",
-    "df": "f. escarda. Sin.: escarda.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
     "ec": ""
   },
   {
@@ -18936,16 +17393,6 @@
     "ec": "etym_latin"
   },
   {
-    "w": "Deterioración",
-    "p": "f.",
-    "d": "Deterioro. Sin.: deterioro, deteriorización.",
-    "df": "f. deterioro. Sin.: deterioro, deteriorización.",
-    "e": "Del lat. deterioratio, -ōnis.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_latin"
-  },
-  {
     "w": "Determinativo",
     "p": "adj.",
     "d": "Que determina o resuelve. Sin.: determinante.",
@@ -18994,16 +17441,6 @@
     "s": "",
     "c": "sustantivo",
     "ec": "etym_latin"
-  },
-  {
-    "w": "Detienebuey",
-    "p": "m.",
-    "d": "Gatuña. Sin.: gatuña, gatuna, gata, asnacho, asnallo, aznallo, tentabuey.",
-    "df": "m. gatuña. Sin.: gatuña, gatuna, gata, asnacho, asnallo, aznallo, tentabuey.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
   },
   {
     "w": "Detonación",
@@ -19378,16 +17815,6 @@
     ]
   },
   {
-    "w": "Devotería",
-    "p": "f.",
-    "d": "Beatería . Sin.: beatería, santurronería, mojigatería, puritanismo, gazmoñería, hipocresía.",
-    "df": "f. beatería (‖ actitud de la persona beata). Sin.: beatería, santurronería, mojigatería, puritanismo, gazmoñería, hipocresía.",
-    "e": "De devoto y -ería.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Devónico",
     "p": "adj.",
     "d": "Geol. Dicho de un período: Cuarto de la era paleozoica, que abarca desde hace 408 millones de años hasta hace 360 millones de años, caracterizado por la aparición de los anfibios, los peces de agua dulce y las formaciones de coral. U. t. c. s. m. Sin.: devoniano.",
@@ -19554,16 +17981,6 @@
     "ec": "etym_latin"
   },
   {
-    "w": "Diabasa",
-    "p": "f.",
-    "d": "Diorita. Sin.: diorita.",
-    "df": "f. diorita. Sin.: diorita.",
-    "e": "Del gr. διάβασις diábasis 'pasaje'.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_griego"
-  },
-  {
     "w": "Diabeto",
     "p": "m.",
     "d": "Mec. Aparato hidráulico, dispuesto de modo que, cuando alcanza el nivel de llenado, vuelve a vaciarse a través de un sifón, constituyendo un sifón intermitente.",
@@ -19618,16 +18035,6 @@
     "p": "m. y f.",
     "d": "Y f. Operario encargado de la diabla .",
     "df": "m. y f. Operario encargado de la diabla (‖ máquina para cardar).",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Diablesa",
-    "p": "f. coloq.",
-    "d": "Diabla . Sin.: diabla.",
-    "df": "f. coloq. diabla (‖ diablo femenino). Sin.: diabla.",
     "e": "",
     "s": "",
     "c": "sustantivo",
@@ -19692,16 +18099,6 @@
     "d": "Med. Electuario purgante que se hacía principalmente con hojas de sen, raíz de ruibarbo y pulpa de tamarindo. Sin.: catolicón, catalicón.",
     "df": "m. Med. Electuario purgante que se hacía principalmente con hojas de sen, raíz de ruibarbo y pulpa de tamarindo. Sin.: catolicón, catalicón.",
     "e": "De dia- y el gr. καθολικόν katholikón 'universal'.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Diacitrón",
-    "p": "m.",
-    "d": "Acitrón . Sin.: acitrón, alcitrón.",
-    "df": "m. acitrón (‖ cidra confitada). Sin.: acitrón, alcitrón.",
-    "e": "",
     "s": "",
     "c": "sustantivo",
     "ec": ""
@@ -20166,16 +18563,6 @@
     "ec": ""
   },
   {
-    "w": "Diamantado",
-    "p": "adj.",
-    "d": "Adiamantado. Sin.: adiamantado.",
-    "df": "adj. adiamantado. Sin.: adiamantado.",
-    "e": "Del part. de diamantar.",
-    "s": "",
-    "c": "adjetivo",
-    "ec": ""
-  },
-  {
     "w": "Diamantar",
     "p": "tr.",
     "d": "Dar a algo el brillo del diamante.",
@@ -20216,16 +18603,6 @@
     "e": "De diamante y ‒́fero.",
     "s": "",
     "c": "adjetivo",
-    "ec": ""
-  },
-  {
-    "w": "Diamela",
-    "p": "f.",
-    "d": "Gemela. Sin.: gemela.",
-    "df": "f. gemela. Sin.: gemela.",
-    "e": "De H. L. Du Hamel du Monceau, 1700-1782, agrarista francés, autor de numerosos tratados de agricultura y silvicultura.",
-    "s": "",
-    "c": "sustantivo",
     "ec": ""
   },
   {
@@ -20390,16 +18767,6 @@
     "d": "Y f. Arg., Bol. y Ur. diariero . Sin.: diariero, periodiquero.",
     "df": "m. y f. Arg., Bol. y Ur. diariero (‖ vendedor de diarios). Sin.: diariero, periodiquero.",
     "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Diarismo",
-    "p": "m.",
-    "d": "Periodismo . Sin.: periodismo.",
-    "df": "m. periodismo (‖ actividad profesional). Sin.: periodismo.",
-    "e": "De diario e -ismo.",
     "s": "",
     "c": "sustantivo",
     "ec": ""
@@ -20664,16 +19031,6 @@
     "ec": ""
   },
   {
-    "w": "Diciente",
-    "p": "adj.",
-    "d": "Dicente. Sin.: dicente.",
-    "df": "adj. dicente. Sin.: dicente.",
-    "e": "De decir1 y -nte; lat. dicens, -entis.",
-    "s": "",
-    "c": "adjetivo",
-    "ec": ""
-  },
-  {
     "w": "Diclino",
     "p": "adj.",
     "d": "Bot. Dicho de una flor: Unisexual, producida por individuos diferentes.",
@@ -20820,16 +19177,6 @@
     "ec": ""
   },
   {
-    "w": "Didactismo",
-    "p": "m.",
-    "d": "Didacticismo. Sin.: didacticismo.",
-    "df": "m. didacticismo. Sin.: didacticismo.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Didascálico",
     "p": "adj.",
     "d": "Dicho especialmente de la poesía: didáctica.",
@@ -20930,16 +19277,6 @@
     "ec": ""
   },
   {
-    "w": "Dieciochista",
-    "p": "adj.",
-    "d": "Dieciochesco. Sin.: dieciochesco.",
-    "df": "adj. dieciochesco. Sin.: dieciochesco.",
-    "e": "",
-    "s": "",
-    "c": "adjetivo",
-    "ec": ""
-  },
-  {
     "w": "Dieciochoavo",
     "p": "adj.",
     "d": "Dicho de una parte: Que es una de las dieciocho iguales en que se divide un todo. U. t. c. s. m. Sin.: dieciochavo.",
@@ -21037,16 +19374,6 @@
     "e": "",
     "s": "",
     "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Dietar",
-    "p": "tr.",
-    "d": "Adietar. Sin.: adietar.",
-    "df": "tr. adietar. Sin.: adietar.",
-    "e": "De dieta1.",
-    "s": "",
-    "c": "verbo",
     "ec": ""
   },
   {
@@ -21253,16 +19580,6 @@
     "s": "",
     "c": "adjetivo",
     "ec": ""
-  },
-  {
-    "w": "Difidencia",
-    "p": "f.",
-    "d": "Desconfianza. Sin.: desconfianza, recelo, reticencia, suspicacia, inconfidencia, defianza.",
-    "df": "f. desconfianza. Sin.: desconfianza, recelo, reticencia, suspicacia, inconfidencia, defianza. | f. Falta de fe.",
-    "e": "Del lat. diffidentia.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_latin"
   },
   {
     "w": "Difluir",
@@ -22131,16 +20448,6 @@
     "ec": ""
   },
   {
-    "w": "Dineralada",
-    "p": "f.",
-    "d": "Dineral . Sin.: dineral, fortuna, dinerada, platal, potosí, millonada, pastón2.",
-    "df": "f. dineral (‖ cantidad grande de dinero). Sin.: dineral, fortuna, dinerada, platal, potosí, millonada, pastón2.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Dinerario",
     "p": "adj.",
     "d": "Perteneciente o relativo al dinero .",
@@ -22267,16 +20574,6 @@
     "ec": "etym_latin"
   },
   {
-    "w": "Dionea",
-    "p": "f.",
-    "d": "Atrapamoscas. Sin.: atrapamoscas.",
-    "df": "f. atrapamoscas. Sin.: atrapamoscas.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Dionisia",
     "p": "f.",
     "d": "Piedra que, según los antiguos, era negra, salpicada de manchas rojas, podía dar sabor de vino al agua y ser un remedio contra la embriaguez.",
@@ -22295,16 +20592,6 @@
     "s": "",
     "c": "adjetivo",
     "ec": ""
-  },
-  {
-    "w": "Dioptra",
-    "p": "f.",
-    "d": "Pínula. Sin.: pínula.",
-    "df": "f. pínula. Sin.: pínula. | f. alidada. Sin.: alidada.",
-    "e": "Del lat. dioptra, y este del gr. διόπτρα dióptra.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_latin"
   },
   {
     "w": "Dioptría",
@@ -22961,19 +21248,6 @@
     "ec": ""
   },
   {
-    "w": "Disconveniencia",
-    "p": "f.",
-    "d": "Desconveniencia. Sin.: desconveniencia, molestia, incomodidad, perjuicio.",
-    "df": "f. desconveniencia. Sin.: desconveniencia, molestia, incomodidad, perjuicio.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "",
-    "esp": [
-      "larga"
-    ]
-  },
-  {
     "w": "Discotequero",
     "p": "adj.",
     "d": "Perteneciente o relativo a la discoteca.",
@@ -23184,16 +21458,6 @@
     "esp": [
       "explosiva"
     ]
-  },
-  {
-    "w": "Diseccionar",
-    "p": "tr.",
-    "d": "Disecar . Sin.: disecar1, anatomizar.",
-    "df": "tr. disecar (‖ dividir en partes un vegetal o un cadáver para su examen). Sin.: disecar1, anatomizar. | tr. Hacer una disección (‖ análisis de algo). Sin.: análisis, examinar, estudiar.",
-    "e": "De disección.",
-    "s": "",
-    "c": "verbo",
-    "ec": ""
   },
   {
     "w": "Disección",
@@ -23568,19 +21832,6 @@
     ]
   },
   {
-    "w": "Disloque",
-    "p": "m. coloq.",
-    "d": "Desorden . Sin.: desorden, desbarajuste, confusión, caos, botadero, despapaye, reguero, desquicio, desbole, pasticho, desparpajo, majamama, majarete, chapandongo.",
-    "df": "m. coloq. desorden (‖ confusión). Sin.: desorden, desbarajuste, confusión, caos, botadero, despapaye, reguero, desquicio, desbole, pasticho, desparpajo, majamama, majarete, chapandongo.",
-    "e": "De dislocar y -e.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "",
-    "esp": [
-      "explosiva"
-    ]
-  },
-  {
     "w": "Dislálico",
     "p": "adj.",
     "d": "Med. Perteneciente o relativo a la dislalia.",
@@ -23684,16 +21935,6 @@
     "ec": "etym_latin"
   },
   {
-    "w": "Disparadero",
-    "p": "m.",
-    "d": "Disparador . Sin.: disparador, gatillo, percutor, percusor, desarmador.",
-    "df": "m. disparador (‖ pieza de un arma de fuego). Sin.: disparador, gatillo, percutor, percusor, desarmador.",
-    "e": "De disparar y -dero.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Disparatado",
     "p": "adj.",
     "d": "Dicho de una persona: Que disparata.",
@@ -23724,16 +21965,6 @@
     "e": "",
     "s": "",
     "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Disparejo",
-    "p": "adj.",
-    "d": "Dispar. Sin.: dispar, desigual, diferente, desparejo.",
-    "df": "adj. dispar. Sin.: dispar, desigual, diferente, desparejo.",
-    "e": "",
-    "s": "",
-    "c": "adjetivo",
     "ec": ""
   },
   {
@@ -24374,32 +22605,6 @@
     "ec": ""
   },
   {
-    "w": "Divertimento",
-    "p": "m.",
-    "d": "Divertimiento . Sin.: diversión, divertimiento, distracción, entretenimiento, esparcimiento, entretención. distracción, diversión, divertimiento, pasatiempo.",
-    "df": "m. divertimiento (‖ diversión). Sin.: diversión, divertimiento, distracción, entretenimiento, esparcimiento, entretención. distracción, diversión, divertimiento, pasatiempo. | m. Obra artística o literaria de carácter ligero, cuyo fin es divertir. | m. Mús. Composición para un reducido número de instrumentos, de forma más o menos libre y carácter ligero y lúdico.",
-    "e": "Del it. divertimento.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_italiano",
-    "esp": [
-      "viajera"
-    ]
-  },
-  {
-    "w": "Divertimiento",
-    "p": "m.",
-    "d": "Diversión . Sin.: diversión, divertimento, entretenimiento, distracción, esparcimiento, entretención.",
-    "df": "m. diversión (‖ acción de divertir). Sin.: diversión, divertimento, entretenimiento, distracción, esparcimiento, entretención. | m. diversión (‖ recreo, pasatiempo). Sin.: divertimento, diversión, distracción, pasatiempo. | m. Distracción momentánea de la atención.",
-    "e": "De divertir.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "",
-    "esp": [
-      "explosiva"
-    ]
-  },
-  {
     "w": "Divertículo",
     "p": "m.",
     "d": "Anat. Bolsa o saco anormal en la pared de un órgano hueco, como el colon.",
@@ -24428,16 +22633,6 @@
     "s": "",
     "c": "botanica",
     "ec": ""
-  },
-  {
-    "w": "Divieso",
-    "p": "m.",
-    "d": "Forúnculo. Sin.: forúnculo, furúnculo, grano, absceso, nacido, golondrino, chichote.",
-    "df": "m. forúnculo. Sin.: forúnculo, furúnculo, grano, absceso, nacido, golondrino, chichote.",
-    "e": "Del lat. diversus 'separado'.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_latin"
   },
   {
     "w": "Divinal",
@@ -24490,26 +22685,6 @@
     "e": "",
     "s": "",
     "c": "adjetivo",
-    "ec": ""
-  },
-  {
-    "w": "Divisionario",
-    "p": "adj.",
-    "d": "Divisional. Sin.: divisional.",
-    "df": "adj. divisional. Sin.: divisional.",
-    "e": "",
-    "s": "",
-    "c": "adjetivo",
-    "ec": ""
-  },
-  {
-    "w": "Divisionismo",
-    "p": "m.",
-    "d": "Puntillismo. Sin.: puntillismo.",
-    "df": "m. puntillismo. Sin.: puntillismo. | m. Tendencia que propicia y promueve escisiones en el seno de la sociedad.",
-    "e": "De división e -ismo; en acep. 1, del fr. divisionnisme.",
-    "s": "",
-    "c": "sustantivo",
     "ec": ""
   },
   {
@@ -24601,16 +22776,6 @@
     "s": "",
     "c": "adjetivo",
     "ec": "etym_latin"
-  },
-  {
-    "w": "Divulgativo",
-    "p": "adj.",
-    "d": "Divulgador. Sin.: divulgador, anunciador, propagador.",
-    "df": "adj. divulgador. Sin.: divulgador, anunciador, propagador.",
-    "e": "",
-    "s": "",
-    "c": "adjetivo",
-    "ec": ""
   },
   {
     "w": "Diyambo",
@@ -24726,16 +22891,6 @@
     "ec": "etym_griego"
   },
   {
-    "w": "Diáspero",
-    "p": "m.",
-    "d": "Diaspro. Sin.: diaspro.",
-    "df": "m. diaspro. Sin.: diaspro.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Diáspora",
     "p": "f.",
     "d": "Dispersión de los judíos exiliados de su país.",
@@ -24804,16 +22959,6 @@
     "s": "",
     "c": "sustantivo",
     "ec": "etym_latin"
-  },
-  {
-    "w": "Diñar",
-    "p": "tr.",
-    "d": "Dar . Sin.: dar, entregar, donar.",
-    "df": "tr. dar (‖ entregar). Sin.: dar, entregar, donar.",
-    "e": "Del caló diñar.",
-    "s": "",
-    "c": "verbo",
-    "ec": ""
   },
   {
     "w": "Diócesi",
@@ -25192,16 +23337,6 @@
     "ec": "etym_latin"
   },
   {
-    "w": "Doctrinar",
-    "p": "tr.",
-    "d": "Adoctrinar. Sin.: adoctrinar, aleccionar, adiestrar, enseñar, instruir, indoctrinar.",
-    "df": "tr. adoctrinar. Sin.: adoctrinar, aleccionar, adiestrar, enseñar, instruir, indoctrinar.",
-    "e": "De doctrina.",
-    "s": "",
-    "c": "verbo",
-    "ec": ""
-  },
-  {
     "w": "Doctrinario",
     "p": "adj.",
     "d": "Que defiende de forma categórica una doctrina determinada con un tono dogmático. Apl. a pers., u. t. c. s. Sin.: dogmático, sectario, fanático, seguidor, partidario, simpatizante, ideólogo.",
@@ -25534,16 +23669,6 @@
     "e": "De duela1 y -aje.",
     "s": "",
     "c": "gastronomia",
-    "ec": ""
-  },
-  {
-    "w": "Dolama",
-    "p": "f.",
-    "d": "Dolame. Sin.: dolame.",
-    "df": "f. dolame. Sin.: dolame. | f. alifafe (‖ achaque leve). Sin.: alifafe1.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
     "ec": ""
   },
   {
@@ -25938,16 +24063,6 @@
     ]
   },
   {
-    "w": "Dompedro",
-    "p": "m.",
-    "d": "Dondiego. Sin.: dondiego, diego, donjuán, arrebolera.",
-    "df": "m. dondiego. Sin.: dondiego, diego, donjuán, arrebolera. | m. coloq. orinal. Sin.: orinal, bacinilla.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Domínica",
     "p": "f.",
     "d": "En lenguaje y estilo eclesiástico, domingo1. Sin.: domingo1.",
@@ -26049,26 +24164,6 @@
     "esp": [
       "explosiva"
     ]
-  },
-  {
-    "w": "Doncellería",
-    "p": "f. coloq.",
-    "d": "Doncellez. Sin.: doncellez, virginidad.",
-    "df": "f. coloq. doncellez. Sin.: doncellez, virginidad.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Doncellez",
-    "p": "f.",
-    "d": "Virginidad. Sin.: virginidad, pureza, flor, castidad, doncellería.",
-    "df": "f. virginidad. Sin.: virginidad, pureza, flor, castidad, doncellería.",
-    "e": "De doncella y -ez.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
   },
   {
     "w": "Dondequiera",
@@ -26191,16 +24286,6 @@
     "e": "De donoso y -ura.",
     "s": "",
     "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Donquijotesco",
-    "p": "adj.",
-    "d": "Quijotesco. Sin.: quijotesco.",
-    "df": "adj. quijotesco. Sin.: quijotesco.",
-    "e": "",
-    "s": "",
-    "c": "adjetivo",
     "ec": ""
   },
   {
@@ -26416,16 +24501,6 @@
     "ec": "etym_latin"
   },
   {
-    "w": "Dormán",
-    "p": "m.",
-    "d": "Dolmán. Sin.: dolmán, pelliza.",
-    "df": "m. dolmán. Sin.: dolmán, pelliza.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Dorna",
     "p": "f.",
     "d": "Gal. Barco pequeño de pesca propio de las Rías Bajas, con vela de trincado y casco de tingladillo.",
@@ -26450,16 +24525,6 @@
     "p": "m.",
     "d": "Fabricante o vendedor de dornillos.",
     "df": "m. Fabricante o vendedor de dornillos. | m. And. En las cuadrillas de trabajadores del campo, encargado de hacer el gazpacho.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Dornillo",
-    "p": "m.",
-    "d": "Dornajo . Sin.: dornajo, artesa, gamella, recipiente, amasadera.",
-    "df": "m. dornajo (‖ especie de artesa). Sin.: dornajo, artesa, gamella, recipiente, amasadera. | m. hortera (‖ escudilla o cazuela). Sin.: hortera. | m. Artesilla de madera usada como escupidera en las habitaciones.",
     "e": "",
     "s": "",
     "c": "sustantivo",
@@ -26599,16 +24664,6 @@
     "e": "",
     "s": "",
     "c": "adjetivo",
-    "ec": ""
-  },
-  {
-    "w": "Dossier",
-    "p": "m.",
-    "d": "Dosier. Sin.: dosier, expediente, informe1, documentación, legajo, carpeta.",
-    "df": "m. dosier. Sin.: dosier, expediente, informe1, documentación, legajo, carpeta.",
-    "e": "Voz fr.",
-    "s": "",
-    "c": "sustantivo",
     "ec": ""
   },
   {
@@ -26881,16 +24936,6 @@
     "ec": ""
   },
   {
-    "w": "Dramaticidad",
-    "p": "f.",
-    "d": "Dramatismo. Sin.: dramatismo.",
-    "df": "f. dramatismo. Sin.: dramatismo.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Dramatizable",
     "p": "adj.",
     "d": "Que puede dramatizarse.",
@@ -27095,16 +25140,6 @@
     "e": "",
     "s": "",
     "c": "verbo",
-    "ec": ""
-  },
-  {
-    "w": "Drogmán",
-    "p": "m.",
-    "d": "Intérprete . Sin.: intérprete, trujamán, truchimán.",
-    "df": "m. intérprete (‖ persona que explica lo dicho en otra lengua). Sin.: intérprete, trujamán, truchimán.",
-    "e": "Cf. truchimán.",
-    "s": "",
-    "c": "sustantivo",
     "ec": ""
   },
   {
@@ -27346,30 +25381,10 @@
     "ec": "etym_latin"
   },
   {
-    "w": "Dualismo",
-    "p": "m.",
-    "d": "Dualidad. Sin.: dualidad.",
-    "df": "m. dualidad. Sin.: dualidad. | m. Creencia religiosa de pueblos antiguos, que consistía en considerar el universo como formado y mantenido por el concurso de dos principios igualmente necesarios y eternos, y por consiguiente independientes uno de otro. | m. Fil. Doctrina que explica el origen y naturaleza del universo por la acción de dos esencias o principios diversos y contrarios.",
-    "e": "De dual e -ismo.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Dualista",
     "p": "adj.",
     "d": "Perteneciente o relativo al dualismo. Sin.: dualístico.",
     "df": "adj. Perteneciente o relativo al dualismo. Sin.: dualístico. | adj. Seguidor del dualismo. Apl. a pers., u. t. c. s.",
-    "e": "",
-    "s": "",
-    "c": "adjetivo",
-    "ec": ""
-  },
-  {
-    "w": "Dualístico",
-    "p": "adj.",
-    "d": "Dualista . Sin.: dualista.",
-    "df": "adj. dualista (‖ perteneciente al dualismo). Sin.: dualista.",
     "e": "",
     "s": "",
     "c": "adjetivo",
@@ -27397,16 +25412,6 @@
     "s": "",
     "c": "sustantivo",
     "ec": "etym_latin"
-  },
-  {
-    "w": "Dubitante",
-    "p": "adj.",
-    "d": "Dubitativo. Sin.: dubitativo.",
-    "df": "adj. cult. dubitativo. Sin.: dubitativo.",
-    "e": "",
-    "s": "",
-    "c": "adjetivo",
-    "ec": ""
   },
   {
     "w": "Dublinés",
@@ -27489,16 +25494,6 @@
     "ec": ""
   },
   {
-    "w": "Ductivo",
-    "p": "adj.",
-    "d": "Conducente. Sin.: conducente.",
-    "df": "adj. conducente. Sin.: conducente.",
-    "e": "Del lat. ductus 'conducido' e -ivo.",
-    "s": "",
-    "c": "adjetivo",
-    "ec": "etym_latin"
-  },
-  {
     "w": "Ducto",
     "p": "m.",
     "d": "Conducto, canal, tubería.",
@@ -27552,16 +25547,6 @@
     ]
   },
   {
-    "w": "Duelaje",
-    "p": "m.",
-    "d": "Dolaje. Sin.: dolaje.",
-    "df": "m. dolaje. Sin.: dolaje.",
-    "e": "De duela1 y -aje.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Duelista",
     "p": "m. y f.",
     "d": "Y f. Persona que participa en un duelo. Sin.: provocador, retador, incitador, espadachín, camorrista.",
@@ -27600,26 +25585,6 @@
     "d": "O f. Sueño ligero en que se halla el que está dormitando.",
     "df": "m. o f. Sueño ligero en que se halla el que está dormitando. | m. o f. Sueño fatigoso y frecuentemente interrumpido.",
     "e": "De dormir y velar1.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Duerna",
-    "p": "f.",
-    "d": "Artesa. Sin.: artesa, duerno1.",
-    "df": "f. artesa. Sin.: artesa, duerno1. | f. Tronco hueco en forma de canal, cerrado por sus dos extremos, que sirve para dar de comer a los animales y para otros usos.",
-    "e": "Quizá del celta *dŭrno-, cierta medida de capacidad; cf. galés dwrn 'puño' y bretón duorn 'mano1'.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Duerno",
-    "p": "m.",
-    "d": "Duerna. Sin.: duerna, artesa.",
-    "df": "m. duerna. Sin.: duerna, artesa. | m. Impr. Conjunto de dos pliegos impresos, metidos uno dentro de otro.",
-    "e": "Del b. lat. duernus, y este der. del lat. duo 'dos'.",
     "s": "",
     "c": "sustantivo",
     "ec": ""
@@ -27692,16 +25657,6 @@
     "ec": "etym_latin"
   },
   {
-    "w": "Dulceacuícola",
-    "p": "adj.",
-    "d": "Dulciacuícola. Sin.: dulciacuícola.",
-    "df": "adj. dulciacuícola. Sin.: dulciacuícola.",
-    "e": "",
-    "s": "",
-    "c": "adjetivo",
-    "ec": ""
-  },
-  {
     "w": "Dulcera",
     "p": "adj. coloq.",
     "d": "Aficionado al dulce. Sin.: goloso, laminero2.",
@@ -27722,16 +25677,6 @@
     "ec": "etym_latin"
   },
   {
-    "w": "Dulcería",
-    "p": "f.",
-    "d": "Confitería. Sin.: confitería, repostería, pastelería, bombonería.",
-    "df": "f. confitería. Sin.: confitería, repostería, pastelería, bombonería.",
-    "e": "De dulcero.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Dulciacuícola",
     "p": "adj.",
     "d": "Perteneciente o relativo a las aguas dulces y, en particular, a los organismos que viven en ellas. Sin.: dulceacuícola.",
@@ -27750,16 +25695,6 @@
     "s": "",
     "c": "sustantivo",
     "ec": ""
-  },
-  {
-    "w": "Dulcémele",
-    "p": "m.",
-    "d": "Salterio . Sin.: salterio1.",
-    "df": "m. salterio (‖ instrumento musical). Sin.: salterio1.",
-    "e": "Del lat. dulcis 'dulce' y el gr. μέλος mélos 'melodía'.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_latin"
   },
   {
     "w": "Dulcísono",
@@ -27835,36 +25770,6 @@
     "e": "De dulce, infl. en su forma por dulzaina1.",
     "s": "",
     "c": "adjetivo",
-    "ec": ""
-  },
-  {
-    "w": "Dulzamara",
-    "p": "f.",
-    "d": "Dulcamara. Sin.: dulcamara.",
-    "df": "f. dulcamara. Sin.: dulcamara.",
-    "e": "De dulce y amaro2.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Dulzarrón",
-    "p": "adj. coloq.",
-    "d": "Dulzón. Sin.: dulzón.",
-    "df": "adj. coloq. dulzón. Sin.: dulzón.",
-    "e": "",
-    "s": "",
-    "c": "adjetivo",
-    "ec": ""
-  },
-  {
-    "w": "Dulzor",
-    "p": "m.",
-    "d": "Dulzura. Sin.: dulzura.",
-    "df": "m. dulzura. Sin.: dulzura.",
-    "e": "De dulce.",
-    "s": "",
-    "c": "sustantivo",
     "ec": ""
   },
   {
@@ -28178,16 +26083,6 @@
     "ec": ""
   },
   {
-    "w": "Duraznilla",
-    "p": "f.",
-    "d": "Durazno . Sin.: durazno.",
-    "df": "f. durazno (‖ fruto). Sin.: durazno.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Duraznillo",
     "p": "m.",
     "d": "Planta de la familia de las poligonáceas, con tallos ramosos de 60 a 120 cm de altura, hojas poco pecioladas, lanceoladas, por lo común con una mancha negra; flores rosáceas o blancas en espigas laterales, y fruto lenticular en vainillas envueltas por el perigonio. Es muy común en las orillas de los ríos y arroyos. Sin.: persicaria.",
@@ -28196,16 +26091,6 @@
     "s": "",
     "c": "botanica",
     "ec": ""
-  },
-  {
-    "w": "Durazno",
-    "p": "m.",
-    "d": "Duraznero . Sin.: duraznero, melocotonero, melocotón.",
-    "df": "m. duraznero (‖ variedad de melocotonero). Sin.: duraznero, melocotonero, melocotón. | m. Fruto del duraznero (‖ variedad de melocotonero). Sin.: duraznilla, melocotón. | m. Am. Nombre genérico de varias especies de árboles, como el melocotonero, el pérsico y el duraznero. Sin.: duraznero. | m. Am. Fruto del durazno (‖ nombre genérico de varias especies de árboles).",
-    "e": "Del lat. duracĭnus.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_latin"
   },
   {
     "w": "Durillo",
@@ -28235,16 +26120,6 @@
     "p": "m.",
     "d": "Pl. germ. Criados de la justicia.",
     "df": "m. pl. germ. Criados de la justicia.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Duunvir",
-    "p": "m.",
-    "d": "Duunviro. Sin.: duunviro.",
-    "df": "m. duunviro. Sin.: duunviro.",
     "e": "",
     "s": "",
     "c": "sustantivo",
@@ -28314,16 +26189,6 @@
     "ec": "etym_latin"
   },
   {
-    "w": "Dánico",
-    "p": "adj.",
-    "d": "Danés . Sin.: danés, dinamarqués.",
-    "df": "adj. danés (‖ perteneciente a Dinamarca). Sin.: danés, dinamarqués.",
-    "e": "",
-    "s": "",
-    "c": "adjetivo",
-    "ec": ""
-  },
-  {
     "w": "Dárdano",
     "p": "adj.",
     "d": "Troyano . Apl. a pers., u. t. c. s. Sin.: troyano, teucro, iliense, ilíaco2, dardanio.",
@@ -28357,16 +26222,6 @@
     "ec": ""
   },
   {
-    "w": "Débito",
-    "p": "m.",
-    "d": "Deuda . Sin.: deuda, adeudo, deber2, dita1, jarana, yuca.",
-    "df": "m. deuda (‖ obligación de pagar, u obligación moral). Sin.: deuda, adeudo, deber2, dita1, jarana, yuca. | m. débito conyugal.",
-    "e": "Del lat. debĭtum.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_latin"
-  },
-  {
     "w": "Décuplo",
     "p": "adj.",
     "d": "Diez veces mayor o que contiene una cantidad diez veces exactamente. U. m. c. s. m.",
@@ -28375,16 +26230,6 @@
     "s": "",
     "c": "adjetivo",
     "ec": "etym_latin"
-  },
-  {
-    "w": "Dédalo",
-    "p": "m.",
-    "d": "Laberinto . Sin.: lío, enredo, embrollo, maraña, laberinto.",
-    "df": "m. laberinto (‖ lugar confuso, cosa confusa y enredada). Sin.: lío, enredo, embrollo, maraña, laberinto.",
-    "e": "Por alus. a Dédalo, personaje mitológico que construyó para el rey cretense Minos el laberinto.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
   },
   {
     "w": "Délfico",
@@ -28521,16 +26366,6 @@
     "ec": "etym_latin"
   },
   {
-    "w": "Díptico",
-    "p": "m.",
-    "d": "Díptica . Sin.: díptica.",
-    "df": "m. díptica (‖ tablas plegables). Sin.: díptica. | m. Pintura, grabado o relieve compuestos de dos paneles que pueden plegarse como las tapas de un libro. | m. Documento o folleto formado por una hoja doblada en dos partes.",
-    "e": "Del lat. tardío dipty̆chum, y este del gr. δίπτυχον díptychon; literalmente 'plegado en dos', de δι- di- 'di-2' y πτύξ, πτυχός ptýx, ptychós 'pliegue'.",
-    "s": "",
-    "c": "arte_literatura",
-    "ec": "etym_latin"
-  },
-  {
     "w": "Dírham",
     "p": "m.",
     "d": "Unidad monetaria de Marruecos y de los Emiratos Árabes Unidos. Sin.: dírhem.",
@@ -28542,16 +26377,6 @@
     "esp": [
       "viajera"
     ]
-  },
-  {
-    "w": "Dírhem",
-    "p": "m.",
-    "d": "Dírham. Sin.: dírham.",
-    "df": "m. dírham. Sin.: dírham.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
   },
   {
     "w": "Dístico",
@@ -28642,16 +26467,6 @@
     "d": "Dorio. U. t. c. s. Sin.: dorio.",
     "df": "adj. dorio. U. t. c. s. Sin.: dorio. | adj. Perteneciente o relativo al orden dórico. Simetría dórica.",
     "e": "Del lat. Dorĭcus, y este del gr. Δωρικός Dōrikós.",
-    "s": "",
-    "c": "adjetivo",
-    "ec": "etym_latin"
-  },
-  {
-    "w": "Dúplex",
-    "p": "adj.",
-    "d": "Doble . Sin.: doble, duplo.",
-    "df": "adj. doble (‖ que contiene dos veces una cantidad). Sin.: doble, duplo. | adj. Dicho de un sistema de información: Capaz de transmitir y recibir simultáneamente dos mensajes, uno en cada sentido. | adj. Dicho de una operación: Que consiste en transmitir y recibir simultáneamente dos mensajes, uno en cada sentido. U. t. c. s.",
-    "e": "Del lat. duplex, -ĭcis.",
     "s": "",
     "c": "adjetivo",
     "ec": "etym_latin"

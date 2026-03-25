@@ -76,16 +76,6 @@
     ]
   },
   {
-    "w": "Ebriedad",
-    "p": "f.",
-    "d": "Embriaguez. Sin.: embriaguez, borrachera, beodez, emborrachamiento, borrachez.",
-    "df": "f. embriaguez. Sin.: embriaguez, borrachera, beodez, emborrachamiento, borrachez.",
-    "e": "Del lat. ebriĕtas, -ātis.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_latin"
-  },
-  {
     "w": "Ebrioso",
     "p": "adj.",
     "d": "Muy dado al vino y que se embriaga fácilmente. U. t. c. s.",
@@ -209,16 +199,6 @@
     "ec": ""
   },
   {
-    "w": "Echacuervos",
-    "p": "m. coloq.",
-    "d": "Alcahuete . Sin.: alcahuete, tercero.",
-    "df": "m. coloq. alcahuete (‖ hombre que concierta una relación amorosa). Sin.: alcahuete, tercero. | m. coloq. Hombre embustero y despreciable. | m. coloq. Predicador o cuestor que iba por los lugares publicando la Cruzada. | m. coloq. bulero. Sin.: bulero.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Echada",
     "p": "f.",
     "d": "Acción y efecto de echar o echarse. La echada de una piedra. Sin.: echazón.",
@@ -264,39 +244,6 @@
     "d": "En los lavaderos de lanas, encargado de tomarlas del tablero para echarlas en el pozo.",
     "df": "m. En los lavaderos de lanas, encargado de tomarlas del tablero para echarlas en el pozo.",
     "e": "De echar y pella.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Echaperros",
-    "p": "m.",
-    "d": "Perrero . Sin.: perrero, caniculario.",
-    "df": "m. perrero (‖ hombre que echaba a los perros de las catedrales). Sin.: perrero, caniculario.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Echarpe",
-    "p": "m.",
-    "d": "Chal. Sin.: chal, pañoleta, mantón1, estola, chalina, mantelete.",
-    "df": "m. chal. Sin.: chal, pañoleta, mantón1, estola, chalina, mantelete.",
-    "e": "Del fr. écharpe.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_frances",
-    "esp": [
-      "viajera"
-    ]
-  },
-  {
-    "w": "Echazón",
-    "p": "f.",
-    "d": "Echada . Sin.: echada.",
-    "df": "f. echada (‖ acción de echar). Sin.: echada. | f. Mar. Acción y efecto de arrojar al agua la carga, parte de ella o ciertos objetos pesados de un buque, cuando es necesario aligerarlo.",
-    "e": "De echar.",
     "s": "",
     "c": "sustantivo",
     "ec": ""
@@ -906,16 +853,6 @@
     "ec": "etym_latin"
   },
   {
-    "w": "Ecúleo",
-    "p": "m.",
-    "d": "Potro . Sin.: potro.",
-    "df": "m. potro (‖ aparato de tortura). Sin.: potro.",
-    "e": "Del lat. equuleus; propiamente 'potro, potrillo'.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_latin"
-  },
-  {
     "w": "Ecúmene",
     "p": "f.",
     "d": "La Tierra habitada. U. t. c. m. Sin.: ecúmeno.",
@@ -924,16 +861,6 @@
     "s": "",
     "c": "sustantivo",
     "ec": ""
-  },
-  {
-    "w": "Ecúmeno",
-    "p": "m.",
-    "d": "Ecúmene. Sin.: ecúmene.",
-    "df": "m. cult. ecúmene. Sin.: ecúmene.",
-    "e": "Del gr. [τὸ] οἰκούμενον [tò] oikoúmenon '[lo] habitado'.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_griego"
   },
   {
     "w": "Edafología",
@@ -1299,16 +1226,6 @@
     "s": "",
     "c": "sustantivo",
     "ec": ""
-  },
-  {
-    "w": "Efable",
-    "p": "adj.",
-    "d": "Expresable. Sin.: expresable.",
-    "df": "adj. expresable. Sin.: expresable.",
-    "e": "Del lat. effabĭlis.",
-    "s": "",
-    "c": "adjetivo",
-    "ec": "etym_latin"
   },
   {
     "w": "Efebo",
@@ -2165,16 +2082,6 @@
     "ec": ""
   },
   {
-    "w": "Elaiotecnia",
-    "p": "f.",
-    "d": "Eleotecnia. Sin.: eleotecnia.",
-    "df": "f. eleotecnia. Sin.: eleotecnia.",
-    "e": "Del gr. ἔλαιον élaion 'aceite' y -tecnia.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_griego"
-  },
-  {
     "w": "Elamita",
     "p": "adj.",
     "d": "Natural de Elam, país del Asia antigua. U. t. c. s.",
@@ -2366,16 +2273,6 @@
     "s": "",
     "c": "adjetivo",
     "ec": ""
-  },
-  {
-    "w": "Electro",
-    "p": "m.",
-    "d": "Ámbar. Sin.: ámbar, cárabe.",
-    "df": "m. ámbar. Sin.: ámbar, cárabe. | m. Aleación de cuatro partes de oro y una de plata, cuyo color es parecido al del ámbar. | m. coloq. electrocardiograma. Sin.: electrocardiograma.",
-    "e": "Del lat. electrum, y este del gr. ἤλεκτρον ḗlektron.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_latin"
   },
   {
     "w": "Electroacústica",
@@ -3250,18 +3147,6 @@
     "ec": "etym_griego"
   },
   {
-    "w": "Elepé",
-    "p": "m.",
-    "d": "LP. Sin.: LP, disco1.",
-    "df": "m. LP. Sin.: LP, disco1.",
-    "e": "Del deletreo de LP, sigla ingl. de long play 'larga duración'.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "",
-    "rabia": true,
-    "rabia_comment": "LP. Pero españolizado. Por qué. 🎵"
-  },
-  {
     "w": "Eleusino",
     "p": "adj.",
     "d": "Perteneciente o relativo a Eleusis, ciudad griega cercana a Atenas, y especialmente referido a los misterios de Ceres que se celebraban en aquella ciudad.",
@@ -3317,16 +3202,6 @@
     "d": "Mecanismo para subir y bajar los cristales de las ventanillas de los automóviles. Sin.: alzacristales, elevavidrio, levantavidrios.",
     "df": "m. Mecanismo para subir y bajar los cristales de las ventanillas de los automóviles. Sin.: alzacristales, elevavidrio, levantavidrios.",
     "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Elevamiento",
-    "p": "m.",
-    "d": "Elevación. Sin.: elevación.",
-    "df": "m. elevación. Sin.: elevación.",
-    "e": "De elevar.",
     "s": "",
     "c": "sustantivo",
     "ec": ""
@@ -3581,16 +3456,6 @@
     "ec": ""
   },
   {
-    "w": "Elongación",
-    "p": "f.",
-    "d": "Alargamiento. Sin.: alargamiento, dilatación, estiramiento.",
-    "df": "f. alargamiento. Sin.: alargamiento, dilatación, estiramiento. | f. Astron. Distancia angular de un astro al Sol con relación a la Tierra. | f. Mec. Alargamiento de una pieza sometida a tracción. | f. Mec. Distancia que, en cada instante, separa a una partícula o cuerpo sometidos a oscilación de su posición de equilibrio. | f. Med. Alargamiento accidental de un miembro o de un nervio. | f. Med. Lesión producida por elongación.",
-    "e": "Del lat. elongatio, -ōnis.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_latin"
-  },
-  {
     "w": "Elongar",
     "p": "tr.",
     "d": "Alargar, estirar, hacer algo más largo por tracción mecánica. Sin.: alargar, estirar.",
@@ -3641,16 +3506,6 @@
     "e": "Del lat. elucidatio, -ōnis.",
     "s": "",
     "c": "sustantivo",
-    "ec": "etym_latin"
-  },
-  {
-    "w": "Elucidar",
-    "p": "tr.",
-    "d": "Dilucidar. Sin.: aclarar, explicar, clarificar, esclarecer, dilucidar.",
-    "df": "tr. dilucidar. Sin.: aclarar, explicar, clarificar, esclarecer, dilucidar.",
-    "e": "Del lat. elucidāre.",
-    "s": "",
-    "c": "verbo",
     "ec": "etym_latin"
   },
   {
@@ -3718,16 +3573,6 @@
     "p": "f.",
     "d": "Acción y efecto de eludir.",
     "df": "f. Acción y efecto de eludir.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Elzevir",
-    "p": "m.",
-    "d": "Elzevirio. Sin.: elzevirio.",
-    "df": "m. elzevirio. Sin.: elzevirio.",
     "e": "",
     "s": "",
     "c": "sustantivo",
@@ -3844,16 +3689,6 @@
     "ec": "etym_latin"
   },
   {
-    "w": "Emanatismo",
-    "p": "m.",
-    "d": "Emanantismo. Sin.: emanantismo.",
-    "df": "m. emanantismo. Sin.: emanantismo.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Emanatista",
     "p": "adj.",
     "d": "Emanantista. Apl. a pers., u. t. c. s.",
@@ -3884,16 +3719,6 @@
     "ec": ""
   },
   {
-    "w": "Emascular",
-    "p": "tr.",
-    "d": "Capar . Sin.: castrar, capar, caponar.",
-    "df": "tr. capar (‖ extirpar los órganos genitales). Sin.: castrar, capar, caponar.",
-    "e": "Del lat. emasculāre.",
-    "s": "",
-    "c": "verbo",
-    "ec": "etym_latin"
-  },
-  {
     "w": "Embachar",
     "p": "tr.",
     "d": "Meter el ganado lanar en el bache2.",
@@ -3921,16 +3746,6 @@
     "e": "",
     "s": "",
     "c": "verbo",
-    "ec": ""
-  },
-  {
-    "w": "Embaición",
-    "p": "f.",
-    "d": "Embaimiento. Sin.: embaimiento.",
-    "df": "f. embaimiento. Sin.: embaimiento.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
     "ec": ""
   },
   {
@@ -3969,16 +3784,6 @@
     "d": "Pavimento solado con baldosas. Sin.: adoquinado, enlosado, pavimento, suelo, piso.",
     "df": "m. Pavimento solado con baldosas. Sin.: adoquinado, enlosado, pavimento, suelo, piso. | m. Acción de embaldosar. Sin.: embaldosadura, solado.",
     "e": "Del part. de embaldosar.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Embaldosadura",
-    "p": "f.",
-    "d": "Embaldosado . Sin.: embaldosado.",
-    "df": "f. embaldosado (‖ acción de embaldosar). Sin.: embaldosado.",
-    "e": "",
     "s": "",
     "c": "sustantivo",
     "ec": ""
@@ -4210,16 +4015,6 @@
     "ec": ""
   },
   {
-    "w": "Embardar",
-    "p": "tr.",
-    "d": "Bardar. Sin.: bardar.",
-    "df": "tr. bardar. Sin.: bardar.",
-    "e": "",
-    "s": "",
-    "c": "verbo",
-    "ec": ""
-  },
-  {
     "w": "Embargador",
     "p": "m. y f.",
     "d": "Y f. Persona que embarga o secuestra.",
@@ -4247,16 +4042,6 @@
     "e": "",
     "s": "",
     "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Embarnizar",
-    "p": "tr.",
-    "d": "Barnizar. Sin.: barnizar.",
-    "df": "tr. barnizar. Sin.: barnizar.",
-    "e": "",
-    "s": "",
-    "c": "verbo",
     "ec": ""
   },
   {
@@ -4330,16 +4115,6 @@
     "ec": ""
   },
   {
-    "w": "Embarrotar",
-    "p": "tr.",
-    "d": "Abarrotar . Sin.: abarrotar.",
-    "df": "tr. abarrotar (‖ fortalecer con barrotes). Sin.: abarrotar.",
-    "e": "",
-    "s": "",
-    "c": "verbo",
-    "ec": ""
-  },
-  {
     "w": "Embarullador",
     "p": "adj. coloq.",
     "d": "Que embarulla. U. t. c. s.",
@@ -4380,16 +4155,6 @@
     "e": "",
     "s": "",
     "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Embastecer",
-    "p": "intr.",
-    "d": "Engrosar . Sin.: engrosar, embarnecer.",
-    "df": "intr. engrosar (‖ hacerse más grueso). Sin.: engrosar, embarnecer.",
-    "e": "De em-, basto2 y -ecer.",
-    "s": "",
-    "c": "verbo",
     "ec": ""
   },
   {
@@ -4631,16 +4396,6 @@
     "ec": ""
   },
   {
-    "w": "Embelesamiento",
-    "p": "m.",
-    "d": "Embeleso . Sin.: embeleso, arrebato1, fascinación, arrobo, arrobamiento, embebecimiento.",
-    "df": "m. embeleso (‖ efecto de embelesar, o cosa que embelesa). Sin.: embeleso, arrebato1, fascinación, arrobo, arrobamiento, embebecimiento.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Embeleñar",
     "p": "tr.",
     "d": "Adormecer con beleño.",
@@ -4702,19 +4457,6 @@
     "s": "",
     "c": "botanica",
     "ec": ""
-  },
-  {
-    "w": "Emberrenchinarse",
-    "p": "prnl.",
-    "d": "Emberrincharse. Sin.: emberrincharse, enrabietarse, enfadarse, cabrearse, enfurecerse, airarse.",
-    "df": "prnl. coloq. emberrincharse. Sin.: emberrincharse, enrabietarse, enfadarse, cabrearse, enfurecerse, airarse.",
-    "e": "De en- y berrenchín.",
-    "s": "",
-    "c": "verbo",
-    "ec": "",
-    "esp": [
-      "larga"
-    ]
   },
   {
     "w": "Emberrincharse",
@@ -4814,16 +4556,6 @@
     "p": "tr.",
     "d": "Ablandar. U. t. c. prnl. Sin.: ablandar.",
     "df": "tr. ablandar. U. t. c. prnl. Sin.: ablandar.",
-    "e": "",
-    "s": "",
-    "c": "verbo",
-    "ec": ""
-  },
-  {
-    "w": "Emblanquecer",
-    "p": "tr.",
-    "d": "Blanquear . Sin.: blanquear, blanquecer.",
-    "df": "tr. blanquear (‖ poner blanco). Sin.: blanquear, blanquecer.",
     "e": "",
     "s": "",
     "c": "verbo",
@@ -5129,16 +4861,6 @@
     "ec": ""
   },
   {
-    "w": "Emboriado",
-    "p": "adj.",
-    "d": "Neblinoso. Sin.: neblinoso, brumoso, nebuloso.",
-    "df": "adj. neblinoso. Sin.: neblinoso, brumoso, nebuloso.",
-    "e": "",
-    "s": "",
-    "c": "adjetivo",
-    "ec": ""
-  },
-  {
     "w": "Embornal",
     "p": "m.",
     "d": "Mar. imbornal . Sin.: imbornal.",
@@ -5169,20 +4891,6 @@
     "ec": "",
     "esp": [
       "larga"
-    ]
-  },
-  {
-    "w": "Emborrachamiento",
-    "p": "m.",
-    "d": "Embriaguez. Sin.: borrachera, embriaguez, trompa, mona, moña, cogorza, melopea, merluza, tajada, curda, castaña, cohete, bomba, peludo, cura.",
-    "df": "m. embriaguez. Sin.: borrachera, embriaguez, trompa, mona, moña, cogorza, melopea, merluza, tajada, curda, castaña, cohete, bomba, peludo, cura.",
-    "e": "De emborrachar.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "",
-    "esp": [
-      "larga",
-      "explosiva"
     ]
   },
   {
@@ -5379,16 +5087,6 @@
     "e": "Del part. de embovedar.",
     "s": "",
     "c": "adjetivo",
-    "ec": ""
-  },
-  {
-    "w": "Embovedar",
-    "p": "tr.",
-    "d": "Abovedar . Sin.: abovedar.",
-    "df": "tr. abovedar (‖ cubrir con bóveda). Sin.: abovedar. | tr. Poner o encerrar algo en una bóveda.",
-    "e": "",
-    "s": "",
-    "c": "verbo",
     "ec": ""
   },
   {
@@ -5636,19 +5334,6 @@
     "s": "",
     "c": "sustantivo",
     "ec": ""
-  },
-  {
-    "w": "Embrocado",
-    "p": "adj. coloq.",
-    "d": "Borracho. Sin.: borracho, ebrio, beodo, bebido, tomado, piripi, curda, alumbrado.",
-    "df": "adj. coloq. borracho. Sin.: borracho, ebrio, beodo, bebido, tomado, piripi, curda, alumbrado.",
-    "e": "Del part. de embrocar1.",
-    "s": "",
-    "c": "adjetivo",
-    "ec": "",
-    "esp": [
-      "explosiva"
-    ]
   },
   {
     "w": "Embrocar",
@@ -6179,16 +5864,6 @@
     "ec": ""
   },
   {
-    "w": "Emocionable",
-    "p": "adj.",
-    "d": "Emotivo . Sin.: emotivo, emocional.",
-    "df": "adj. emotivo (‖ sensible a las emociones). Sin.: emotivo, emocional.",
-    "e": "",
-    "s": "",
-    "c": "adjetivo",
-    "ec": ""
-  },
-  {
     "w": "Emocionalidad",
     "p": "f.",
     "d": "Cualidad de emocional.",
@@ -6378,16 +6053,6 @@
     "ec": ""
   },
   {
-    "w": "Empalagamiento",
-    "p": "m.",
-    "d": "Empalago. Sin.: empalago.",
-    "df": "m. empalago. Sin.: empalago.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Empalagar",
     "p": "tr.",
     "d": "Encharcar un terreno o formar en él un remanso grande de agua. U. m. c. prnl.",
@@ -6442,29 +6107,6 @@
     "s": "",
     "c": "verbo",
     "ec": ""
-  },
-  {
-    "w": "Empalidecer",
-    "p": "intr.",
-    "d": "Palidecer. Sin.: palidecer.",
-    "df": "intr. palidecer. Sin.: palidecer.",
-    "e": "",
-    "s": "",
-    "c": "verbo",
-    "ec": ""
-  },
-  {
-    "w": "Empalizada",
-    "p": "f.",
-    "d": "Estacada . Sin.: estacada, valla, vallado, cerca1, cercado, barrera1, seto, palizada.",
-    "df": "f. estacada (‖ obra hecha de estacas). Sin.: estacada, valla, vallado, cerca1, cercado, barrera1, seto, palizada.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "",
-    "esp": [
-      "explosiva"
-    ]
   },
   {
     "w": "Empalizar",
@@ -6650,26 +6292,6 @@
     "p": "tr.",
     "d": "Ast., León y Sal. empapuzar. Sin.: empapuzar, empapuciar, empapujar.",
     "df": "tr. Ast., León y Sal. empapuzar. Sin.: empapuzar, empapuciar, empapujar.",
-    "e": "",
-    "s": "",
-    "c": "verbo",
-    "ec": ""
-  },
-  {
-    "w": "Empapuciar",
-    "p": "tr.",
-    "d": "Empapuzar. Sin.: empapuzar, empapujar, empapizar.",
-    "df": "tr. coloq. empapuzar. Sin.: empapuzar, empapujar, empapizar.",
-    "e": "",
-    "s": "",
-    "c": "verbo",
-    "ec": ""
-  },
-  {
-    "w": "Empapujar",
-    "p": "tr.",
-    "d": "Empapuzar. Sin.: empapuzar, empapuciar, empapizar.",
-    "df": "tr. coloq. empapuzar. Sin.: empapuzar, empapuciar, empapizar.",
     "e": "",
     "s": "",
     "c": "verbo",
@@ -6984,16 +6606,6 @@
     ]
   },
   {
-    "w": "Empavonar",
-    "p": "tr.",
-    "d": "Pavonar. Sin.: pavonar.",
-    "df": "tr. pavonar. Sin.: pavonar. | tr. P. Rico y R. Dom. Untar, pringar. Sin.: untar, pringar, embadurnar, empatucar.",
-    "e": "",
-    "s": "",
-    "c": "verbo",
-    "ec": ""
-  },
-  {
     "w": "Empavorecer",
     "p": "tr.",
     "d": "Causar pavor, asustar mucho a alguien.",
@@ -7061,16 +6673,6 @@
     "p": "adj.",
     "d": "Que puede empecer. Sin.: empecible.",
     "df": "adj. Que puede empecer. Sin.: empecible.",
-    "e": "",
-    "s": "",
-    "c": "adjetivo",
-    "ec": ""
-  },
-  {
-    "w": "Empecible",
-    "p": "adj.",
-    "d": "Empecedero. Sin.: empecedero.",
-    "df": "adj. empecedero. Sin.: empecedero.",
     "e": "",
     "s": "",
     "c": "adjetivo",
@@ -7200,16 +6802,6 @@
     "ec": ""
   },
   {
-    "w": "Empeguntar",
-    "p": "tr.",
-    "d": "Empegar . Sin.: empegar.",
-    "df": "tr. empegar (‖ marcar con pez el ganado). Sin.: empegar.",
-    "e": "De en- y pegunta.",
-    "s": "",
-    "c": "verbo",
-    "ec": ""
-  },
-  {
     "w": "Empeinoso",
     "p": "adj.",
     "d": "Que tiene empeine .",
@@ -7271,16 +6863,6 @@
     "s": "",
     "c": "verbo",
     "ec": ""
-  },
-  {
-    "w": "Empeller",
-    "p": "tr.",
-    "d": "Empellar. Sin.: empujar, empellar.",
-    "df": "tr. empellar. Sin.: empujar, empellar.",
-    "e": "Del lat. impellĕre.",
-    "s": "",
-    "c": "verbo",
-    "ec": "etym_latin"
   },
   {
     "w": "Empellón",
@@ -7456,16 +7038,6 @@
     "ec": ""
   },
   {
-    "w": "Emperro",
-    "p": "m. coloq.",
-    "d": "Perra . Sin.: perra, rabieta.",
-    "df": "m. coloq. perra (‖ rabieta). Sin.: perra, rabieta.",
-    "e": "De emperrarse.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Empesador",
     "p": "m.",
     "d": "Manojo de raíces de juncos que usan los tejedores de lienzo para atusar la urdimbre.",
@@ -7556,19 +7128,6 @@
     "ec": "etym_latin"
   },
   {
-    "w": "Empilar",
-    "p": "tr.",
-    "d": "Apilar. Sin.: apilar, amontonar, acumular, agrupar, juntar, reunir, encastillar, ataucar, taucar.",
-    "df": "tr. apilar. Sin.: apilar, amontonar, acumular, agrupar, juntar, reunir, encastillar, ataucar, taucar.",
-    "e": "De en- y pila1.",
-    "s": "",
-    "c": "verbo",
-    "ec": "",
-    "esp": [
-      "explosiva"
-    ]
-  },
-  {
     "w": "Empiltrarse",
     "p": "prnl.",
     "d": "Echarse en la piltra.",
@@ -7584,16 +7143,6 @@
     "d": "Sal. Corro de hierba que, por estar más crecida, sobresale en un prado.",
     "df": "f. Sal. Corro de hierba que, por estar más crecida, sobresale en un prado. | f. Sal. Mata de gatuñas o de cualquier hierba, que impide la acción del arado.",
     "e": "De empinar.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Empinadura",
-    "p": "f.",
-    "d": "Empinamiento. Sin.: empinamiento.",
-    "df": "f. empinamiento. Sin.: empinamiento.",
-    "e": "",
     "s": "",
     "c": "sustantivo",
     "ec": ""
@@ -7702,30 +7251,10 @@
     "ec": ""
   },
   {
-    "w": "Empiñonado",
-    "p": "m.",
-    "d": "Piñonate . Sin.: piñonate.",
-    "df": "m. piñonate (‖ pasta de piñones y azúcar). Sin.: piñonate.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Emplastadura",
     "p": "f.",
     "d": "Acción y efecto de emplastar. Sin.: emplastamiento.",
     "df": "f. Acción y efecto de emplastar. Sin.: emplastamiento.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Emplastamiento",
-    "p": "m.",
-    "d": "Emplastadura. Sin.: emplastadura.",
-    "df": "m. emplastadura. Sin.: emplastadura.",
     "e": "",
     "s": "",
     "c": "sustantivo",
@@ -7796,26 +7325,6 @@
     "esp": [
       "explosiva"
     ]
-  },
-  {
-    "w": "Emplebeyecer",
-    "p": "tr.",
-    "d": "Aplebeyar. Sin.: aplebeyar.",
-    "df": "tr. aplebeyar. Sin.: aplebeyar.",
-    "e": "",
-    "s": "",
-    "c": "verbo",
-    "ec": ""
-  },
-  {
-    "w": "Empleita",
-    "p": "f.",
-    "d": "Pleita. Sin.: pleita.",
-    "df": "f. pleita. Sin.: pleita.",
-    "e": "De en- y pleita.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
   },
   {
     "w": "Empleitero",
@@ -8149,16 +7658,6 @@
     "ec": ""
   },
   {
-    "w": "Empulgadera",
-    "p": "f.",
-    "d": "Empulguera . Sin.: empulguera.",
-    "df": "f. empulguera (‖ extremidad de la verga de la ballesta). Sin.: empulguera.",
-    "e": "De empulgar1 y -dera.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Empulgadura",
     "p": "f.",
     "d": "Acción y efecto de empulgar.",
@@ -8458,16 +7957,6 @@
     "ec": ""
   },
   {
-    "w": "Enaguar",
-    "p": "tr.",
-    "d": "Enaguachar . Sin.: enaguachar, aguachar2.",
-    "df": "tr. enaguachar (‖ poner demasiada agua). Sin.: enaguachar, aguachar2.",
-    "e": "De en- y agua; cf. lat. tardío inaquāre 'convertir en agua'.",
-    "s": "",
-    "c": "verbo",
-    "ec": ""
-  },
-  {
     "w": "Enaguazar",
     "p": "tr.",
     "d": "Encharcar, llenar de agua las tierras. U. t. c. prnl. Sin.: aguachinar.",
@@ -8508,16 +7997,6 @@
     "ec": ""
   },
   {
-    "w": "Enajenamiento",
-    "p": "m.",
-    "d": "Enajenación. Sin.: enajenación.",
-    "df": "m. enajenación. Sin.: enajenación.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Enalbar",
     "p": "tr.",
     "d": "Caldear y encender el hierro en la fragua hasta que parece blanco.",
@@ -8545,16 +8024,6 @@
     "e": "Del part. de enalmagrar.",
     "s": "",
     "c": "adjetivo",
-    "ec": ""
-  },
-  {
-    "w": "Enalmagrar",
-    "p": "tr.",
-    "d": "Almagrar . Sin.: almagrar.",
-    "df": "tr. almagrar (‖ teñir de almagre). Sin.: almagrar.",
-    "e": "",
-    "s": "",
-    "c": "verbo",
     "ec": ""
   },
   {
@@ -8599,16 +8068,6 @@
     "esp": [
       "explosiva"
     ]
-  },
-  {
-    "w": "Enamoricarse",
-    "p": "prnl.",
-    "d": "Enamoriscarse. Sin.: enamoriscarse, enamorarse, encapricharse, engolondrinarse.",
-    "df": "prnl. enamoriscarse. Sin.: enamoriscarse, enamorarse, encapricharse, engolondrinarse.",
-    "e": "",
-    "s": "",
-    "c": "verbo",
-    "ec": ""
   },
   {
     "w": "Enamoriscarse",
@@ -8840,16 +8299,6 @@
     ]
   },
   {
-    "w": "Encabrahigar",
-    "p": "tr.",
-    "d": "Cabrahigar. Sin.: cabrahigar.",
-    "df": "tr. cabrahigar. Sin.: cabrahigar.",
-    "e": "",
-    "s": "",
-    "c": "verbo",
-    "ec": ""
-  },
-  {
     "w": "Encabriar",
     "p": "tr.",
     "d": "Arq. y Constr. Colocar los cabrios para formar la cubierta de un edificio.",
@@ -8960,16 +8409,6 @@
     "ec": ""
   },
   {
-    "w": "Encajonado",
-    "p": "m.",
-    "d": "Ataguía. Sin.: ataguía.",
-    "df": "m. ataguía. Sin.: ataguía. | m. Arq. y Constr. Obra de tapia que se hace encajonando tierra y apisonándola dentro de tapiales o tablas puestas en cuchillo, de modo que quede entre ellas un hueco igual al grueso de la pared.",
-    "e": "Del part. de encajonar.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Encalabozar",
     "p": "tr.",
     "d": "Poner o meter a alguien en el calabozo.",
@@ -9010,16 +8449,6 @@
     "p": "f.",
     "d": "Pieza de metal en el jaez del caballo.",
     "df": "f. Pieza de metal en el jaez del caballo.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Encalado",
-    "p": "m.",
-    "d": "Encaladura. Sin.: encaladura, enjalbegado, enlucido, enyesado, estucado, encostradura, revoco.",
-    "df": "m. encaladura. Sin.: encaladura, enjalbegado, enlucido, enyesado, estucado, encostradura, revoco.",
     "e": "",
     "s": "",
     "c": "sustantivo",
@@ -9206,16 +8635,6 @@
     "ec": ""
   },
   {
-    "w": "Encambrar",
-    "p": "tr.",
-    "d": "Encamarar. Sin.: encamarar.",
-    "df": "tr. encamarar. Sin.: encamarar.",
-    "e": "",
-    "s": "",
-    "c": "verbo",
-    "ec": ""
-  },
-  {
     "w": "Encambronar",
     "p": "tr.",
     "d": "Cercar con cambrones una tierra o heredad.",
@@ -9231,16 +8650,6 @@
     "d": "Sitio en que se encaman los animales.",
     "df": "m. Sitio en que se encaman los animales.",
     "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Encaminadura",
-    "p": "f.",
-    "d": "Encaminamiento. Sin.: encaminamiento.",
-    "df": "f. encaminamiento. Sin.: encaminamiento.",
-    "e": "De encaminar.",
     "s": "",
     "c": "sustantivo",
     "ec": ""
@@ -9286,30 +8695,10 @@
     "ec": ""
   },
   {
-    "w": "Encampanado",
-    "p": "adj.",
-    "d": "Acampanado. Sin.: acampanado.",
-    "df": "adj. acampanado. Sin.: acampanado. | adj. Dicho de una pieza de artillería: De ánima que se va estrechando hacia el fondo de la recámara.",
-    "e": "Del part. de encampanar.",
-    "s": "",
-    "c": "adjetivo",
-    "ec": ""
-  },
-  {
     "w": "Encanalar",
     "p": "tr.",
     "d": "Conducir el agua u otro líquido por canales, o hacer que un río o arroyo entre por un canal. U. t. c. prnl. Sin.: encanalizar.",
     "df": "tr. Conducir el agua u otro líquido por canales, o hacer que un río o arroyo entre por un canal. U. t. c. prnl. Sin.: encanalizar.",
-    "e": "",
-    "s": "",
-    "c": "verbo",
-    "ec": ""
-  },
-  {
-    "w": "Encanalizar",
-    "p": "tr.",
-    "d": "Encanalar. Sin.: encanalar.",
-    "df": "tr. encanalar. Sin.: encanalar.",
     "e": "",
     "s": "",
     "c": "verbo",
@@ -9349,16 +8738,6 @@
     "ec": ""
   },
   {
-    "w": "Encancerarse",
-    "p": "prnl.",
-    "d": "Cancerarse. Sin.: cancerarse.",
-    "df": "prnl. cancerarse. Sin.: cancerarse.",
-    "e": "",
-    "s": "",
-    "c": "verbo",
-    "ec": ""
-  },
-  {
     "w": "Encandecer",
     "p": "tr.",
     "d": "Dicho de una cosa: Hacer ascua hasta que quede como blanca de puro encendida. U. t. c. prnl.",
@@ -9376,36 +8755,6 @@
     "e": "De en- y candela.",
     "s": "",
     "c": "verbo",
-    "ec": ""
-  },
-  {
-    "w": "Encandiladera",
-    "p": "f. coloq.",
-    "d": "Alcahueta . Sin.: alcahueta, tercera, celestina2, trotaconventos.",
-    "df": "f. coloq. alcahueta (‖ mujer que concierta una relación amorosa). Sin.: alcahueta, tercera, celestina2, trotaconventos.",
-    "e": "De encandilar y -dera.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Encandilado",
-    "p": "adj. coloq.",
-    "d": "Acandilado . Sin.: acandilado.",
-    "df": "adj. coloq. acandilado (‖ erguido). Sin.: acandilado. | adj. Ven. ebrio (‖ embriagado por la bebida). Sin.: borracho, ebrio, beodo, bebido, tomado, jumo.",
-    "e": "Del part. de encandilar.",
-    "s": "",
-    "c": "adjetivo",
-    "ec": ""
-  },
-  {
-    "w": "Encandilador",
-    "p": "adj.",
-    "d": "Deslumbrador. Sin.: deslumbrador.",
-    "df": "adj. deslumbrador. Sin.: deslumbrador.",
-    "e": "De encandilar y -dor.",
-    "s": "",
-    "c": "adjetivo",
     "ec": ""
   },
   {
@@ -9454,42 +8803,6 @@
     "d": "Devanar el hilo en las canillas. Sin.: encañar2, encañonar.",
     "df": "tr. Devanar el hilo en las canillas. Sin.: encañar2, encañonar.",
     "e": "",
-    "s": "",
-    "c": "verbo",
-    "ec": ""
-  },
-  {
-    "w": "Encantamento",
-    "p": "m.",
-    "d": "Encantamiento. Sin.: encantamiento, encanto, hechizo, conjuro, embrujo, embrujamiento, maleficio, sortilegio, encantorio.",
-    "df": "m. encantamiento. Sin.: encantamiento, encanto, hechizo, conjuro, embrujo, embrujamiento, maleficio, sortilegio, encantorio.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "",
-    "esp": [
-      "explosiva"
-    ]
-  },
-  {
-    "w": "Encantorio",
-    "p": "m. coloq.",
-    "d": "Encantamiento. Sin.: encantamiento, encanto, hechizo, conjuro, embrujo, embrujamiento, maleficio, sortilegio, encantamento.",
-    "df": "m. coloq. encantamiento. Sin.: encantamiento, encanto, hechizo, conjuro, embrujo, embrujamiento, maleficio, sortilegio, encantamento.",
-    "e": "De encantar1.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "",
-    "esp": [
-      "explosiva"
-    ]
-  },
-  {
-    "w": "Encantusar",
-    "p": "tr.",
-    "d": "Engatusar. Sin.: engatusar, rodar, encatusar.",
-    "df": "tr. coloq. engatusar. Sin.: engatusar, rodar, encatusar.",
-    "e": "Cruce de encantar1 y engatusar.",
     "s": "",
     "c": "verbo",
     "ec": ""
@@ -9582,26 +8895,6 @@
     "e": "",
     "s": "",
     "c": "verbo",
-    "ec": ""
-  },
-  {
-    "w": "Encapotadura",
-    "p": "f.",
-    "d": "Ceño . Sin.: ceño2, entrecejo, sobrecejo, encapotamiento, zuño, capote.",
-    "df": "f. ceño (‖ demostración de enfado). Sin.: ceño2, entrecejo, sobrecejo, encapotamiento, zuño, capote.",
-    "e": "De encapotar y -dura.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Encapotamiento",
-    "p": "m.",
-    "d": "Encapotadura. Sin.: ceño2, entrecejo, sobrecejo, encapotadura, zuño, capote.",
-    "df": "m. encapotadura. Sin.: ceño2, entrecejo, sobrecejo, encapotadura, zuño, capote.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
     "ec": ""
   },
   {
@@ -9950,16 +9243,6 @@
     "ec": ""
   },
   {
-    "w": "Encartujado",
-    "p": "m.",
-    "d": "Encarrujado. Sin.: encarrujado, carrujado.",
-    "df": "m. encarrujado. Sin.: encarrujado, carrujado.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Encasar",
     "p": "tr.",
     "d": "Med. Volver un hueso a su sitio.",
@@ -10127,16 +9410,6 @@
     "d": "Sal. Ver de lejos, columbrar.",
     "df": "tr. Sal. Ver de lejos, columbrar.",
     "e": "De en- y catalejo.",
-    "s": "",
-    "c": "verbo",
-    "ec": ""
-  },
-  {
-    "w": "Encatusar",
-    "p": "tr.",
-    "d": "Engatusar. Sin.: engatusar, encantusar, rodar.",
-    "df": "tr. coloq. engatusar. Sin.: engatusar, encantusar, rodar.",
-    "e": "",
     "s": "",
     "c": "verbo",
     "ec": ""
@@ -10372,16 +9645,6 @@
     "e": "",
     "s": "",
     "c": "adjetivo",
-    "ec": ""
-  },
-  {
-    "w": "Enceguecer",
-    "p": "tr.",
-    "d": "Cegar . Sin.: cegar.",
-    "df": "tr. cegar (‖ quitar la vista). Sin.: cegar. | tr. cegar (‖ turbar la razón). U. t. c. prnl. Sin.: cegar.",
-    "e": "De en-, ciego y -ecer.",
-    "s": "",
-    "c": "verbo",
     "ec": ""
   },
   {
@@ -10791,16 +10054,6 @@
     "ec": ""
   },
   {
-    "w": "Enchapar",
-    "p": "tr.",
-    "d": "Chapar . Sin.: chapar1, chapear.",
-    "df": "tr. chapar (‖ cubrir con chapa). Sin.: chapar1, chapear.",
-    "e": "",
-    "s": "",
-    "c": "verbo",
-    "ec": ""
-  },
-  {
     "w": "Enchapinado",
     "p": "adj.",
     "d": "Constr. Levantado y fundado sobre bóveda.",
@@ -11033,30 +10286,10 @@
     "ec": "etym_latin"
   },
   {
-    "w": "Encinal",
-    "p": "m.",
-    "d": "Encinar. Sin.: encinar, carrascal.",
-    "df": "m. encinar. Sin.: encinar, carrascal.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Encinar",
     "p": "m.",
     "d": "Sitio poblado de encinas. Sin.: encinal, carrascal.",
     "df": "m. Sitio poblado de encinas. Sin.: encinal, carrascal.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Encino",
-    "p": "m.",
-    "d": "Encina. Sin.: encina, carrasca1, carrasco, chaparra.",
-    "df": "m. encina. Sin.: encina, carrasca1, carrasco, chaparra.",
     "e": "",
     "s": "",
     "c": "sustantivo",
@@ -11156,16 +10389,6 @@
     "e": "Del part. de enclavar.",
     "s": "",
     "c": "adjetivo",
-    "ec": ""
-  },
-  {
-    "w": "Enclavadura",
-    "p": "f.",
-    "d": "Clavadura. Sin.: clavadura.",
-    "df": "f. clavadura. Sin.: clavadura. | f. Muesca o hueco por donde se unen dos maderos o tablas.",
-    "e": "De enclavar y -dura.",
-    "s": "",
-    "c": "sustantivo",
     "ec": ""
   },
   {
@@ -11398,16 +10621,6 @@
     "ec": ""
   },
   {
-    "w": "Encoladura",
-    "p": "f.",
-    "d": "Encolamiento. Sin.: encolamiento, engrudamiento, engomadura.",
-    "df": "f. encolamiento. Sin.: encolamiento, engrudamiento, engomadura.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Encolamiento",
     "p": "m.",
     "d": "Acción y efecto de encolar. Sin.: encoladura, engrudamiento, engomadura.",
@@ -11511,16 +10724,6 @@
     "ec": ""
   },
   {
-    "w": "Enconrear",
-    "p": "tr.",
-    "d": "Conrear. Sin.: conrear.",
-    "df": "tr. conrear. Sin.: conrear.",
-    "e": "",
-    "s": "",
-    "c": "verbo",
-    "ec": ""
-  },
-  {
     "w": "Encontradizo",
     "p": "adj.",
     "d": "Que se encuentra con algo o alguien. Sin.: topadizo.",
@@ -11529,19 +10732,6 @@
     "s": "",
     "c": "adjetivo",
     "ec": ""
-  },
-  {
-    "w": "Encontronazo",
-    "p": "m.",
-    "d": "Encontrón. Sin.: choque1, colisión, topetazo, encontrón, trompazo1, empellón, pechada2, estrellón, quiñazo.",
-    "df": "m. encontrón. Sin.: choque1, colisión, topetazo, encontrón, trompazo1, empellón, pechada2, estrellón, quiñazo.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "",
-    "esp": [
-      "explosiva"
-    ]
   },
   {
     "w": "Encontrón",
@@ -11804,16 +10994,6 @@
     "ec": ""
   },
   {
-    "w": "Encorvamiento",
-    "p": "m.",
-    "d": "Encorvadura. Sin.: encorvadura, curvatura, alabeo, combadura, arqueamiento, pandeo.",
-    "df": "m. encorvadura. Sin.: encorvadura, curvatura, alabeo, combadura, arqueamiento, pandeo.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Encosadura",
     "p": "f.",
     "d": "Costura con que, en cierto tipo de camisa, se pegaba al resto la parte superior, hecha de lienzo más fino.",
@@ -11882,16 +11062,6 @@
     "s": "",
     "c": "verbo",
     "ec": "etym_latin"
-  },
-  {
-    "w": "Encrespado",
-    "p": "m.",
-    "d": "Encrespadura. Sin.: encrespadura, rizado.",
-    "df": "m. encrespadura. Sin.: encrespadura, rizado.",
-    "e": "De encrespar.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
   },
   {
     "w": "Encrespadura",
@@ -12129,16 +11299,6 @@
     "ec": ""
   },
   {
-    "w": "Enculturación",
-    "p": "f.",
-    "d": "Inculturación. Sin.: inculturación, aculturación.",
-    "df": "f. inculturación. Sin.: inculturación, aculturación.",
-    "e": "De en- y cultura.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Encumbradamente",
     "p": "adv.",
     "d": "Con superioridad, altaneramente.",
@@ -12150,16 +11310,6 @@
     "esp": [
       "larga"
     ]
-  },
-  {
-    "w": "Encumbrado",
-    "p": "adj.",
-    "d": "Alto . Sin.: alto1, elevado, eminente, prominente, destacado, sobresaliente.",
-    "df": "adj. alto (‖ levantado). Sin.: alto1, elevado, eminente, prominente, destacado, sobresaliente.",
-    "e": "Del part. de encumbrar.",
-    "s": "",
-    "c": "adjetivo",
-    "ec": ""
   },
   {
     "w": "Encumbramiento",
@@ -12799,16 +11949,6 @@
     "ec": ""
   },
   {
-    "w": "Endomingado",
-    "p": "adj.",
-    "d": "Dominguero. Sin.: atildado, acicalado, arreglado, peripuesto, compuesto.",
-    "df": "adj. dominguero. Sin.: atildado, acicalado, arreglado, peripuesto, compuesto.",
-    "e": "Del part. de endomingarse.",
-    "s": "",
-    "c": "adjetivo",
-    "ec": ""
-  },
-  {
     "w": "Endomingarse",
     "p": "prnl.",
     "d": "Vestirse con la ropa de fiesta. Sin.: engalanarse, arreglarse, acicalarse, ataviarse, atildarse, adornarse, emperejilarse, emperifollarse, achivarse.",
@@ -12820,16 +11960,6 @@
     "esp": [
       "explosiva"
     ]
-  },
-  {
-    "w": "Endonar",
-    "p": "tr.",
-    "d": "Donar . Sin.: donar, dar, entregar, ceder, traspasar, regalar1.",
-    "df": "tr. donar (‖ traspasar algo). Sin.: donar, dar, entregar, ceder, traspasar, regalar1.",
-    "e": "",
-    "s": "",
-    "c": "verbo",
-    "ec": ""
   },
   {
     "w": "Endoparásito",
@@ -13238,19 +12368,6 @@
     "ec": ""
   },
   {
-    "w": "Enea",
-    "p": "f.",
-    "d": "Espadaña . Sin.: espadaña, aceña, anea, bayón, gladio, macío, tul2, bayunco1.",
-    "df": "f. espadaña (‖ planta). Sin.: espadaña, aceña, anea, bayón, gladio, macío, tul2, bayunco1.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "",
-    "esp": [
-      "explosiva"
-    ]
-  },
-  {
     "w": "Eneal",
     "p": "m.",
     "d": "Sitio donde abunda la enea.",
@@ -13583,19 +12700,6 @@
     "ec": ""
   },
   {
-    "w": "Enfebrecido",
-    "p": "adj. coloq.",
-    "d": "Calenturiento . Sin.: febril, afiebrado, febricitante, calenturiento, calenturoso.",
-    "df": "adj. coloq. calenturiento (‖ que tiene calentura). Sin.: febril, afiebrado, febricitante, calenturiento, calenturoso. | adj. Exaltado, arrebatado de una pasión. Imaginación enfebrecida. Discurso enfebrecido. Sin.: exaltado, ardiente, apasionado, vehemente.",
-    "e": "Del part. de enfebrecer.",
-    "s": "",
-    "c": "adjetivo",
-    "ec": "",
-    "esp": [
-      "explosiva"
-    ]
-  },
-  {
     "w": "Enfermero",
     "p": "m. y f.",
     "d": "Y f. Persona legalmente autorizada para ejercer la enfermería. Sin.: practicante, sanitaria, barchilón, ATS.",
@@ -13614,19 +12718,6 @@
     "s": "",
     "c": "adjetivo",
     "ec": ""
-  },
-  {
-    "w": "Enfervorecer",
-    "p": "tr.",
-    "d": "Enfervorizar. Sin.: enfervorizar, apasionar, entusiasmar, enardecer, inflamar, alentar, excitar, emocionar, arrebatar, animar, electrizar.",
-    "df": "tr. enfervorizar. Sin.: enfervorizar, apasionar, entusiasmar, enardecer, inflamar, alentar, excitar, emocionar, arrebatar, animar, electrizar.",
-    "e": "",
-    "s": "",
-    "c": "verbo",
-    "ec": "",
-    "esp": [
-      "explosiva"
-    ]
   },
   {
     "w": "Enfervorizador",
@@ -13737,16 +12828,6 @@
     "s": "",
     "c": "adjetivo",
     "ec": "etym_latin"
-  },
-  {
-    "w": "Enflacar",
-    "p": "intr.",
-    "d": "Enflaquecer . Sin.: enflaquecer, adelgazar, enmagrecer, demacrar, desengrasar.",
-    "df": "intr. enflaquecer (‖ ponerse flaco). Sin.: enflaquecer, adelgazar, enmagrecer, demacrar, desengrasar.",
-    "e": "",
-    "s": "",
-    "c": "verbo",
-    "ec": ""
   },
   {
     "w": "Enflaquecimiento",
@@ -13945,16 +13026,6 @@
     "ec": ""
   },
   {
-    "w": "Enfurción",
-    "p": "f.",
-    "d": "Infurción. Sin.: infurción.",
-    "df": "f. infurción. Sin.: infurción.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Enfuriarse",
     "p": "prnl.",
     "d": "Sal. enfurecerse .",
@@ -14114,26 +13185,6 @@
     ]
   },
   {
-    "w": "Engallador",
-    "p": "m.",
-    "d": "Engalle. Sin.: engalle.",
-    "df": "m. engalle. Sin.: engalle.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Engalladura",
-    "p": "f.",
-    "d": "Galladura. Sin.: galladura, agalladura, miaja2.",
-    "df": "f. galladura. Sin.: galladura, agalladura, miaja2.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Engallamiento",
     "p": "m.",
     "d": "Acción y efecto de engallar o engallarse.",
@@ -14171,26 +13222,6 @@
     "p": "m.",
     "d": "Acción y efecto de enganchar . Sin.: desgarrón, rasgón, desgarradura, garranchada, roto, carrera, siete.",
     "df": "m. Acción y efecto de enganchar (‖ prender, aunque no sea con gancho). Sin.: desgarrón, rasgón, desgarradura, garranchada, roto, carrera, siete.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Engandujar",
-    "p": "tr.",
-    "d": "Gandujar. Sin.: gandujar, fruncir, plegar.",
-    "df": "tr. gandujar. Sin.: gandujar, fruncir, plegar.",
-    "e": "",
-    "s": "",
-    "c": "verbo",
-    "ec": ""
-  },
-  {
-    "w": "Engandujo",
-    "p": "m.",
-    "d": "Gandujado. Sin.: gandujado.",
-    "df": "m. gandujado. Sin.: gandujado.",
     "e": "",
     "s": "",
     "c": "sustantivo",
@@ -14280,16 +13311,6 @@
     "ec": ""
   },
   {
-    "w": "Engargantadura",
-    "p": "f.",
-    "d": "Engargante. Sin.: engargante.",
-    "df": "f. engargante. Sin.: engargante.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Engargantar",
     "p": "tr.",
     "d": "Meter algo por la garganta o tragadero, como se hace con las aves cuando se ceban a mano.",
@@ -14340,16 +13361,6 @@
     "ec": ""
   },
   {
-    "w": "Engarnio",
-    "p": "m. coloq.",
-    "d": "Pepla. Sin.: pepla.",
-    "df": "m. coloq. pepla. Sin.: pepla.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Engarrafar",
     "p": "tr.",
     "d": "Agarrar fuertemente algo.",
@@ -14367,16 +13378,6 @@
     "e": "",
     "s": "",
     "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Engarronar",
-    "p": "tr.",
-    "d": "Apiolar . Sin.: apiolar, atar, ligar, sujetar.",
-    "df": "tr. apiolar (‖ atar los pies de un animal muerto). Sin.: apiolar, atar, ligar, sujetar.",
-    "e": "De en- y garrón.",
-    "s": "",
-    "c": "verbo",
     "ec": ""
   },
   {
@@ -14490,16 +13491,6 @@
     "ec": ""
   },
   {
-    "w": "Engazador",
-    "p": "adj.",
-    "d": "Engarzador. Sin.: engarzador.",
-    "df": "adj. engarzador. Sin.: engarzador.",
-    "e": "",
-    "s": "",
-    "c": "adjetivo",
-    "ec": ""
-  },
-  {
     "w": "Engañabobos",
     "p": "m.",
     "d": "Despect. Cosa que engaña o defrauda con su apariencia. Sin.: engañifa, camelo, timo2, estafa1, filfa, fraude, engañapichanga.",
@@ -14540,16 +13531,6 @@
     "p": "m.",
     "d": "Despect. Persona que pretende embaucar o deslumbrar. Sin.: embaucador, engañabobos, charlatán, farsante, timador, estafador, tramposo.",
     "df": "m. despect. Persona que pretende embaucar o deslumbrar. Sin.: embaucador, engañabobos, charlatán, farsante, timador, estafador, tramposo.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Engañapastores",
-    "p": "m.",
-    "d": "Chotacabras. Sin.: chotacabras, capacho, engañabobos, zumaya.",
-    "df": "m. chotacabras. Sin.: chotacabras, capacho, engañabobos, zumaya.",
     "e": "",
     "s": "",
     "c": "sustantivo",
@@ -14652,19 +13633,6 @@
     "ec": ""
   },
   {
-    "w": "Englutir",
-    "p": "tr.",
-    "d": "Engullir. Sin.: engullir, chascar, embaular.",
-    "df": "tr. engullir. Sin.: engullir, chascar, embaular.",
-    "e": "Del fr. engloutir.",
-    "s": "",
-    "c": "verbo",
-    "ec": "etym_frances",
-    "esp": [
-      "viajera"
-    ]
-  },
-  {
     "w": "Engobe",
     "p": "m.",
     "d": "En alfarería, pasta de arcilla que se aplica a los objetos de barro, antes de cocerlos, para darles una superficie lisa y vidriada.",
@@ -14739,16 +13707,6 @@
     "e": "",
     "s": "",
     "c": "adjetivo",
-    "ec": ""
-  },
-  {
-    "w": "Engolliparse",
-    "p": "prnl.",
-    "d": "Atragantarse. Sin.: atragantarse, atorarse, atarugarse.",
-    "df": "prnl. atragantarse. Sin.: atragantarse, atorarse, atarugarse. | prnl. Atiborrarse, llenarse hasta el gaznate. Sin.: atiborrarse, hartarse, hincharse.",
-    "e": "De engullir e hipar.",
-    "s": "",
-    "c": "verbo",
     "ec": ""
   },
   {
@@ -14900,16 +13858,6 @@
       "explosiva",
       "viajera"
     ]
-  },
-  {
-    "w": "Engrandar",
-    "p": "tr.",
-    "d": "Agrandar. Sin.: agrandar.",
-    "df": "tr. agrandar. Sin.: agrandar.",
-    "e": "",
-    "s": "",
-    "c": "verbo",
-    "ec": ""
   },
   {
     "w": "Engranerar",
@@ -15381,16 +14329,6 @@
     "ec": ""
   },
   {
-    "w": "Enhestamiento",
-    "p": "m.",
-    "d": "Enhestadura. Sin.: enhestadura.",
-    "df": "m. enhestadura. Sin.: enhestadura.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Enhielar",
     "p": "tr.",
     "d": "Mezclar algo con hiel.",
@@ -15411,29 +14349,6 @@
     "ec": "etym_latin"
   },
   {
-    "w": "Enhilar",
-    "p": "tr.",
-    "d": "Enhebrar. Sin.: enhebrar, ensartar, introducir, pasar, meter, atravesar.",
-    "df": "tr. enhebrar. Sin.: enhebrar, ensartar, introducir, pasar, meter, atravesar. | tr. Ordenar, colocar en su debido lugar las ideas de un escrito o discurso. | tr. Dirigir, guiar o encaminar con orden algo. | tr. enfilar (‖ poner en fila). Sin.: enfilar, alinear.",
-    "e": "De en- e hilo.",
-    "s": "",
-    "c": "verbo",
-    "ec": "",
-    "esp": [
-      "explosiva"
-    ]
-  },
-  {
-    "w": "Enhollinarse",
-    "p": "prnl.",
-    "d": "Tiznarse . Sin.: tiznarse.",
-    "df": "prnl. tiznarse (‖ mancharse con hollín). Sin.: tiznarse.",
-    "e": "",
-    "s": "",
-    "c": "verbo",
-    "ec": ""
-  },
-  {
     "w": "Enhorabuena",
     "p": "f.",
     "d": "Felicitación . Les dimos la enhorabuena por la victoria. Sin.: felicitación, parabién, congratulación, pláceme, norabuena.",
@@ -15441,16 +14356,6 @@
     "e": "",
     "s": "",
     "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Enhornar",
-    "p": "tr.",
-    "d": "Hornear . Sin.: hornear, ahornar, hornar.",
-    "df": "tr. hornear (‖ meter algo en el horno). Sin.: hornear, ahornar, hornar.",
-    "e": "",
-    "s": "",
-    "c": "verbo",
     "ec": ""
   },
   {
@@ -15733,16 +14638,6 @@
     "ec": ""
   },
   {
-    "w": "Enjertar",
-    "p": "tr.",
-    "d": "Injertar. Sin.: injertar, implantar, injerir, inserir.",
-    "df": "tr. injertar. Sin.: injertar, implantar, injerir, inserir.",
-    "e": "Del lat. insertāre 'injertar'.",
-    "s": "",
-    "c": "verbo",
-    "ec": "etym_latin"
-  },
-  {
     "w": "Enjorguinarse",
     "p": "prnl.",
     "d": "Hacerse jorguín o hechicero.",
@@ -15859,16 +14754,6 @@
     "ec": ""
   },
   {
-    "w": "Enjullo",
-    "p": "m.",
-    "d": "Enjulio. Sin.: enjulio, ensullo.",
-    "df": "m. enjulio. Sin.: enjulio, ensullo.",
-    "e": "De ensullo.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Enjuncar",
     "p": "tr.",
     "d": "Cubrir de juncos. U. t. c. prnl.",
@@ -15912,16 +14797,6 @@
     "e": "",
     "s": "",
     "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Enjutar",
-    "p": "tr.",
-    "d": "Enjugar . Sin.: enjugar, secar.",
-    "df": "tr. enjugar (‖ quitar la humedad). Sin.: enjugar, secar. | tr. Arq. Rellenar las enjutas de las bóvedas.",
-    "e": "De enjuto.",
-    "s": "",
-    "c": "verbo",
     "ec": ""
   },
   {
@@ -15980,16 +14855,6 @@
     "d": "Pavimento hecho de ladrillos.",
     "df": "m. Pavimento hecho de ladrillos.",
     "e": "De enladrillar.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Enladrillador",
-    "p": "m.",
-    "d": "Solador. Sin.: solador, ladrillador.",
-    "df": "m. solador. Sin.: solador, ladrillador.",
-    "e": "De enladrillar y -dor.",
     "s": "",
     "c": "sustantivo",
     "ec": ""
@@ -16085,26 +14950,6 @@
     "ec": ""
   },
   {
-    "w": "Enlazadura",
-    "p": "f.",
-    "d": "Enlace . Sin.: enlace, enlazamiento, cohesión.",
-    "df": "f. enlace (‖ unión de algo con otra cosa). Sin.: enlace, enlazamiento, cohesión.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Enlazamiento",
-    "p": "m.",
-    "d": "Enlace. Sin.: enlace.",
-    "df": "m. enlace. Sin.: enlace.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Enlazar",
     "p": "tr.",
     "d": "Coger o juntar algo con lazos.",
@@ -16189,16 +15034,6 @@
     "d": "Poner lienzos o tiras de lienzo en las obras de madera, particularmente en las de escultura, en las partes en que hay peligro de que se abran, y en las juntas.",
     "df": "tr. Poner lienzos o tiras de lienzo en las obras de madera, particularmente en las de escultura, en las partes en que hay peligro de que se abran, y en las juntas.",
     "e": "",
-    "s": "",
-    "c": "verbo",
-    "ec": ""
-  },
-  {
-    "w": "Enlerdar",
-    "p": "tr.",
-    "d": "Entorpecer . Sin.: entorpecer, dificultar, obstaculizar.",
-    "df": "tr. entorpecer (‖ dificultar). Sin.: entorpecer, dificultar, obstaculizar.",
-    "e": "De en- y lerdo.",
     "s": "",
     "c": "verbo",
     "ec": ""
@@ -16294,16 +15129,6 @@
     "ec": ""
   },
   {
-    "w": "Enlodamiento",
-    "p": "m.",
-    "d": "Enlodadura. Sin.: enlodadura.",
-    "df": "m. enlodadura. Sin.: enlodadura.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Enlodar",
     "p": "tr.",
     "d": "Manchar, ensuciar con lodo. U. t. c. prnl. Sin.: embarrar1, enfangar, enlodazar, embadurnar, encenagar.",
@@ -16315,16 +15140,6 @@
     "esp": [
       "explosiva"
     ]
-  },
-  {
-    "w": "Enlodazar",
-    "p": "tr.",
-    "d": "Enlodar. Sin.: enlodar.",
-    "df": "tr. enlodar. Sin.: enlodar.",
-    "e": "",
-    "s": "",
-    "c": "verbo",
-    "ec": ""
   },
   {
     "w": "Enlomarse",
@@ -16453,26 +15268,6 @@
     "e": "Del part. de enlutar.",
     "s": "",
     "c": "adjetivo",
-    "ec": ""
-  },
-  {
-    "w": "Enmaderación",
-    "p": "f.",
-    "d": "Enmaderamiento. Sin.: enmaderamiento, enmaderado, maderamiento.",
-    "df": "f. enmaderamiento. Sin.: enmaderamiento, enmaderado, maderamiento. | f. Ingen. entibación. Sin.: entibación.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Enmaderado",
-    "p": "m.",
-    "d": "Enmaderamiento. Sin.: enmaderamiento, enmaderación, maderamiento.",
-    "df": "m. enmaderamiento. Sin.: enmaderamiento, enmaderación, maderamiento. | m. maderamen. Sin.: maderamen, maderaje, maderación.",
-    "e": "De enmaderar y -ado.",
-    "s": "",
-    "c": "sustantivo",
     "ec": ""
   },
   {
@@ -16741,16 +15536,6 @@
     "d": "Ablandar. U. t. c. prnl.",
     "df": "tr. ablandar. U. t. c. prnl.",
     "e": "Del lat. emollescĕre.",
-    "s": "",
-    "c": "verbo",
-    "ec": "etym_latin"
-  },
-  {
-    "w": "Enmondar",
-    "p": "tr.",
-    "d": "Desliñar. Sin.: desliñar.",
-    "df": "tr. desliñar. Sin.: desliñar.",
-    "e": "Del lat. emundāre 'limpiar, purificar'.",
     "s": "",
     "c": "verbo",
     "ec": "etym_latin"
@@ -17044,16 +15829,6 @@
     ]
   },
   {
-    "w": "Enracimarse",
-    "p": "prnl.",
-    "d": "Arracimarse. Sin.: arracimarse.",
-    "df": "prnl. arracimarse. Sin.: arracimarse.",
-    "e": "",
-    "s": "",
-    "c": "verbo",
-    "ec": ""
-  },
-  {
     "w": "Enrafar",
     "p": "tr.",
     "d": "Mur. Hacer una presa en un cauce.",
@@ -17187,16 +15962,6 @@
     "ec": ""
   },
   {
-    "w": "Enrasamiento",
-    "p": "m.",
-    "d": "Enrase. Sin.: enrase.",
-    "df": "m. enrase. Sin.: enrase.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Enrase",
     "p": "m.",
     "d": "Acción y efecto de enrasar. Sin.: enrasamiento.",
@@ -17211,16 +15976,6 @@
     "p": "tr.",
     "d": "Constr. Colocar las rasillas unidas por el canto para formar el forjado entre las viguetas de un piso.",
     "df": "tr. Constr. Colocar las rasillas unidas por el canto para formar el forjado entre las viguetas de un piso.",
-    "e": "",
-    "s": "",
-    "c": "verbo",
-    "ec": ""
-  },
-  {
-    "w": "Enratonarse",
-    "p": "prnl.",
-    "d": "Ratonarse. Sin.: ratonarse.",
-    "df": "prnl. coloq. ratonarse. Sin.: ratonarse.",
     "e": "",
     "s": "",
     "c": "verbo",
@@ -17290,16 +16045,6 @@
     ]
   },
   {
-    "w": "Enredijo",
-    "p": "m. coloq.",
-    "d": "Enredo . Sin.: enredo, colocho.",
-    "df": "m. coloq. enredo (‖ maraña de cosas que se traban). Sin.: enredo, colocho.",
-    "e": "De enredar e -ijo.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Enrehojar",
     "p": "tr.",
     "d": "Entre cereros, revolver en hojas la cera que está en los pilones, para que se blanquee.",
@@ -17367,16 +16112,6 @@
     "e": "",
     "s": "",
     "c": "verbo",
-    "ec": ""
-  },
-  {
-    "w": "Enriado",
-    "p": "m.",
-    "d": "Enriamiento. Sin.: enriamiento.",
-    "df": "m. enriamiento. Sin.: enriamiento.",
-    "e": "De enriar.",
-    "s": "",
-    "c": "sustantivo",
     "ec": ""
   },
   {
@@ -17540,26 +16275,6 @@
     "ec": ""
   },
   {
-    "w": "Enrodrigar",
-    "p": "tr.",
-    "d": "Rodrigar. Sin.: rodrigar, enrodrigonar.",
-    "df": "tr. rodrigar. Sin.: rodrigar, enrodrigonar.",
-    "e": "",
-    "s": "",
-    "c": "verbo",
-    "ec": ""
-  },
-  {
-    "w": "Enrodrigonar",
-    "p": "tr.",
-    "d": "Rodrigar. Sin.: enrodrigar, rodrigar.",
-    "df": "tr. rodrigar. Sin.: enrodrigar, rodrigar.",
-    "e": "De en- y rodrigón.",
-    "s": "",
-    "c": "verbo",
-    "ec": ""
-  },
-  {
     "w": "Enrojar",
     "p": "tr.",
     "d": "Enrojecer. U. t. c. prnl.",
@@ -17670,19 +16385,6 @@
     "ec": ""
   },
   {
-    "w": "Enronquecimiento",
-    "p": "m.",
-    "d": "Ronquera. Sin.: ronquera, ronquez.",
-    "df": "m. ronquera. Sin.: ronquera, ronquez.",
-    "e": "De enronquecer.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "",
-    "esp": [
-      "larga"
-    ]
-  },
-  {
     "w": "Enroque",
     "p": "m.",
     "d": "En el juego del ajedrez, movimiento defensivo en que el rey y la torre del mismo bando cambian simultáneamente su posición.",
@@ -17710,16 +16412,6 @@
     "e": "",
     "s": "",
     "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Enrostrar",
-    "p": "tr.",
-    "d": "Reprochar. Sin.: reprochar, recriminar, afear.",
-    "df": "tr. Am. reprochar. Sin.: reprochar, recriminar, afear.",
-    "e": "De en- y rostro.",
-    "s": "",
-    "c": "verbo",
     "ec": ""
   },
   {
@@ -17853,16 +16545,6 @@
     "ec": ""
   },
   {
-    "w": "Ensaladilla",
-    "p": "f.",
-    "d": "Ensalada . Sin.: ensalada.",
-    "df": "f. ensalada (‖ conjunto de hortalizas). Sin.: ensalada. | f. ensaladilla rusa. | f. Bocados de dulce de diferentes géneros. | f. Conjunto de piedras preciosas de diferentes colores engastadas en una joya. | f. Conjunto de diversas cosas menudas.",
-    "e": "Del dim. de ensalada.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Ensalivar",
     "p": "tr.",
     "d": "Llenar o empapar de saliva. U. t. c. prnl. Sin.: humedecer, mojar, empapar, impregnar.",
@@ -17981,16 +16663,6 @@
     "d": "Manchar o teñir de sangre. U. t. c. prnl. U. t. en sent. fig.",
     "df": "tr. Manchar o teñir de sangre. U. t. c. prnl. U. t. en sent. fig. | prnl. Encruelecerse con alguien, querer ocasionarle un daño grave. Se ensangrentó CON o CONTRA alguien.",
     "e": "De en- y sangrentar.",
-    "s": "",
-    "c": "verbo",
-    "ec": ""
-  },
-  {
-    "w": "Ensarmentar",
-    "p": "tr.",
-    "d": "Amugronar. Sin.: amugronar, ataquizar, amorgonar.",
-    "df": "tr. amugronar. Sin.: amugronar, ataquizar, amorgonar.",
-    "e": "De en- y sarmiento.",
     "s": "",
     "c": "verbo",
     "ec": ""
@@ -18434,16 +17106,6 @@
     "ec": ""
   },
   {
-    "w": "Ensullo",
-    "p": "m.",
-    "d": "Enjullo. Sin.: enjulio, enjullo.",
-    "df": "m. enjullo. Sin.: enjulio, enjullo.",
-    "e": "Del lat. insubŭlum.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_latin"
-  },
-  {
     "w": "Entabacarse",
     "p": "prnl.",
     "d": "Abusar del tabaco.",
@@ -18511,16 +17173,6 @@
     "p": "m.",
     "d": "Arq. entablamento. Sin.: entablamento, cornisamento.",
     "df": "m. Arq. entablamento. Sin.: entablamento, cornisamento.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Entable",
-    "p": "m.",
-    "d": "Entabladura. Sin.: entabladura.",
-    "df": "m. entabladura. Sin.: entabladura. | m. Posición de las piezas en los juegos de damas, ajedrez, etc.",
     "e": "",
     "s": "",
     "c": "sustantivo",
@@ -18628,16 +17280,6 @@
     "d": "Acción y efecto de entallar1. Sin.: entallamiento, tallado1, cincelado, muesca, tajo, corte1.",
     "df": "f. Acción y efecto de entallar1. Sin.: entallamiento, tallado1, cincelado, muesca, tajo, corte1. | f. Corte que se hace en los pinos para resinarlos. | f. Corte o muesca que se hace en una pieza de madera u otro material, generalmente para ensamblarla con otra.",
     "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Entallamiento",
-    "p": "m.",
-    "d": "Entalladura. Sin.: entalladura.",
-    "df": "m. entalladura. Sin.: entalladura.",
-    "e": "De entallar1.",
     "s": "",
     "c": "sustantivo",
     "ec": ""
@@ -18826,16 +17468,6 @@
     "ec": ""
   },
   {
-    "w": "Entecado",
-    "p": "adj.",
-    "d": "Enteco. Sin.: enteco, movido.",
-    "df": "adj. enteco. Sin.: enteco, movido.",
-    "e": "Del part. de entecarse1.",
-    "s": "",
-    "c": "adjetivo",
-    "ec": ""
-  },
-  {
     "w": "Entelar",
     "p": "tr.",
     "d": "Cubrir o reforzar una superficie con tela. Entelar una pared. Entelar un mapa. Sin.: forrar, tapizar.",
@@ -18943,16 +17575,6 @@
     "e": "De entero- e -itis.",
     "s": "",
     "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Enterizo",
-    "p": "adj.",
-    "d": "Entero. Sin.: entero, completo.",
-    "df": "adj. entero. Sin.: entero, completo. | adj. De una sola pieza. Columna enteriza.",
-    "e": "",
-    "s": "",
-    "c": "adjetivo",
     "ec": ""
   },
   {
@@ -19089,16 +17711,6 @@
     "ec": ""
   },
   {
-    "w": "Entibar",
-    "p": "tr.",
-    "d": "Sufrir . Sin.: sufrir.",
-    "df": "tr. sufrir (‖ oprimir una pieza que se golpea). Sin.: sufrir. | tr. Ingen. Apuntalar, fortalecer con maderas y codales las excavaciones, especialmente las minas, y otras estructuras que ofrecen riesgo de derrumbamiento. Sin.: apuntalar, asegurar, reforzar, afirmar. | tr. Ar. Represar las aguas en un río o canal para aumentar el salto o nivel de aquellas.",
-    "e": "Del lat. instipāre 'compactar'.",
-    "s": "",
-    "c": "verbo",
-    "ec": "etym_latin"
-  },
-  {
     "w": "Entibiadero",
     "p": "m.",
     "d": "Lugar destinado a entibiar algo.",
@@ -19116,16 +17728,6 @@
     "e": "De entibar.",
     "s": "",
     "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Entiesar",
-    "p": "tr.",
-    "d": "Atiesar. Sin.: atiesar, atirantar.",
-    "df": "tr. atiesar. Sin.: atiesar, atirantar.",
-    "e": "",
-    "s": "",
-    "c": "verbo",
     "ec": ""
   },
   {
@@ -19584,16 +18186,6 @@
     "ec": ""
   },
   {
-    "w": "Entrapazar",
-    "p": "intr.",
-    "d": "Trapacear. Sin.: trapacear, trapazar.",
-    "df": "intr. trapacear. Sin.: trapacear, trapazar.",
-    "e": "",
-    "s": "",
-    "c": "verbo",
-    "ec": ""
-  },
-  {
     "w": "Entrañablemente",
     "p": "adv.",
     "d": "De manera entrañable. Sin.: afectuosamente, cordialmente.",
@@ -19700,16 +18292,6 @@
     "e": "",
     "s": "",
     "c": "adjetivo",
-    "ec": ""
-  },
-  {
-    "w": "Entrecasco",
-    "p": "m.",
-    "d": "Entrecorteza. Sin.: entrecorteza.",
-    "df": "m. entrecorteza. Sin.: entrecorteza.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
     "ec": ""
   },
   {
@@ -19995,16 +18577,6 @@
     "ec": ""
   },
   {
-    "w": "Entreforro",
-    "p": "m.",
-    "d": "Entretela . Sin.: entretela.",
-    "df": "m. entretela (‖ lienzo que se pone entre la tela y el forro). Sin.: entretela.",
-    "e": "",
-    "s": "",
-    "c": "arte_literatura",
-    "ec": ""
-  },
-  {
     "w": "Entregador",
     "p": "adj.",
     "d": "Que entrega. U. t. c. s.",
@@ -20096,16 +18668,6 @@
     "esp": [
       "larga"
     ]
-  },
-  {
-    "w": "Entrelazo",
-    "p": "m.",
-    "d": "Entrelazado . Sin.: entrelazado.",
-    "df": "m. entrelazado (‖ motivo ornamental). Sin.: entrelazado.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
   },
   {
     "w": "Entrelinear",
@@ -20241,16 +18803,6 @@
     "ec": "etym_latin"
   },
   {
-    "w": "Entremiso",
-    "p": "m.",
-    "d": "Expremijo. Sin.: expremijo, entremijo.",
-    "df": "m. expremijo. Sin.: expremijo, entremijo.",
-    "e": "Del lat. intermissum.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_latin"
-  },
-  {
     "w": "Entrencar",
     "p": "tr.",
     "d": "Poner las trencas en las colmenas.",
@@ -20265,16 +18817,6 @@
     "p": "m.",
     "d": "Pl. Espacios comprendidos entre los nervios del lomo de un libro.",
     "df": "m. pl. Espacios comprendidos entre los nervios del lomo de un libro.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Entreno",
-    "p": "m.",
-    "d": "Entrenamiento. Sin.: entrenamiento.",
-    "df": "m. entrenamiento. Sin.: entrenamiento.",
     "e": "",
     "s": "",
     "c": "sustantivo",
@@ -20381,16 +18923,6 @@
     "ec": ""
   },
   {
-    "w": "Entrepaño",
-    "p": "m.",
-    "d": "Estante . Sin.: estante, balda1, anaquel.",
-    "df": "m. estante (‖ tabla dispuesta horizontalmente). Sin.: estante, balda1, anaquel. | m. Arq. Parte de la pared comprendida entre dos pilastras, dos columnas o dos huecos. Sin.: lienzo, intercolumnio. | m. Carp. Cada una de las tablas pequeñas o cuarterones que se meten entre los peinazos de las puertas y ventanas. Sin.: cuarterón2.",
-    "e": "",
-    "s": "",
-    "c": "arte_literatura",
-    "ec": ""
-  },
-  {
     "w": "Entrepechado",
     "p": "adj.",
     "d": "León. Canijo, esmirriado.",
@@ -20465,16 +18997,6 @@
     "p": "m.",
     "d": "Piso que se construye quitando parte de la altura de uno, entre este y el superior. Sin.: entreplanta, altillo.",
     "df": "m. Piso que se construye quitando parte de la altura de uno, entre este y el superior. Sin.: entreplanta, altillo. | m. Ingen. En minería, espacio entre los pisos o galerías generales.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Entreplanta",
-    "p": "f.",
-    "d": "Entrepiso . Sin.: entrepiso.",
-    "df": "f. entrepiso (‖ piso). Sin.: entrepiso.",
     "e": "",
     "s": "",
     "c": "sustantivo",
@@ -20595,19 +19117,6 @@
     "s": "",
     "c": "sustantivo",
     "ec": "etym_latin"
-  },
-  {
-    "w": "Entresijo",
-    "p": "m.",
-    "d": "Mesenterio. Sin.: mesenterio, epiplón, redaño.",
-    "df": "m. mesenterio. Sin.: mesenterio, epiplón, redaño. | m. Cosa oculta, interior, escondida. Sin.: misterio, secreto1, entretelas, complicación, dificultad.",
-    "e": "Etim. disc.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "",
-    "esp": [
-      "explosiva"
-    ]
   },
   {
     "w": "Entresuelo",
@@ -20896,16 +19405,6 @@
     "ec": ""
   },
   {
-    "w": "Entrometer",
-    "p": "tr.",
-    "d": "Entremeter . Sin.: entremeter, meter, introducir, mezclar, injerir.",
-    "df": "tr. entremeter (‖ meter entre otras cosas). Sin.: entremeter, meter, introducir, mezclar, injerir.",
-    "e": "Del lat. intromittĕre.",
-    "s": "",
-    "c": "verbo",
-    "ec": "etym_latin"
-  },
-  {
     "w": "Entroncamiento",
     "p": "m.",
     "d": "Acción y efecto de entroncar.",
@@ -20969,16 +19468,6 @@
     "ec": ""
   },
   {
-    "w": "Entruchado",
-    "p": "m. coloq.",
-    "d": "Entruchada. Sin.: entruchada.",
-    "df": "m. coloq. entruchada. Sin.: entruchada. | m. coloq. And. Enojo reconcentrado.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Entruchar",
     "p": "tr.",
     "d": "Atraer a alguien con disimulo y engaño, para meterlo en un negocio.",
@@ -20996,16 +19485,6 @@
     "e": "De entruchar y -ón1.",
     "s": "",
     "c": "adjetivo",
-    "ec": ""
-  },
-  {
-    "w": "Entruejo",
-    "p": "m.",
-    "d": "Antruejo. Sin.: antruejo, antruido.",
-    "df": "m. antruejo. Sin.: antruejo, antruido.",
-    "e": "Alterac. del ant. entroido, y este del lat. introĭtus 'entrada1', por alus. a la entrada de la Cuaresma.",
-    "s": "",
-    "c": "sustantivo",
     "ec": ""
   },
   {
@@ -21461,16 +19940,6 @@
     "ec": ""
   },
   {
-    "w": "Envido",
-    "p": "m.",
-    "d": "Envite . Sin.: envite.",
-    "df": "m. envite (‖ apuesta). Sin.: envite.",
-    "e": "De envidar.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Envigado",
     "p": "m.",
     "d": "Conjunto de las vigas de un edificio.",
@@ -21872,16 +20341,6 @@
     "ec": ""
   },
   {
-    "w": "Epactilla",
-    "p": "f.",
-    "d": "Añalejo. Sin.: epacta, añalejo, cartilla, cuadernillo, burrillo.",
-    "df": "f. añalejo. Sin.: epacta, añalejo, cartilla, cuadernillo, burrillo.",
-    "e": "Del dim. de epacta.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Epanadiplosis",
     "p": "f.",
     "d": "Ret. anadiplosis. Sin.: epanástrofe.",
@@ -21985,16 +20444,6 @@
     ]
   },
   {
-    "w": "Eperlán",
-    "p": "m.",
-    "d": "Eperlano. Sin.: eperlano.",
-    "df": "m. eperlano. Sin.: eperlano.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Epicanto",
     "p": "m.",
     "d": "Anat. Repliegue cutáneo que cubre el ángulo interno de los ojos, especialmente desarrollado en los pueblos mongólicos.",
@@ -22093,16 +20542,6 @@
     "s": "",
     "c": "adjetivo",
     "ec": "etym_latin"
-  },
-  {
-    "w": "Epidemial",
-    "p": "adj.",
-    "d": "Epidémico. Sin.: epidémico.",
-    "df": "adj. epidémico. Sin.: epidémico.",
-    "e": "",
-    "s": "",
-    "c": "adjetivo",
-    "ec": ""
   },
   {
     "w": "Epidemicidad",
@@ -22309,16 +20748,6 @@
     "s": "",
     "c": "cuerpo_humano",
     "ec": "etym_latin"
-  },
-  {
-    "w": "Epigrafiar",
-    "p": "tr.",
-    "d": "Inscribir . Sin.: inscribir, incidir2.",
-    "df": "tr. inscribir (‖ grabar letreros en metal o piedra). Sin.: inscribir, incidir2. | tr. titular (‖ poner título). Sin.: titular2.",
-    "e": "Der. de epigrafía; cf. gr. ἐπιγράφειν epigráphein.",
-    "s": "",
-    "c": "verbo",
-    "ec": ""
   },
   {
     "w": "Epigrafista",
@@ -22549,16 +20978,6 @@
     "d": "Sistema o doctrina de los canonistas favorables a la potestad episcopal y adversarios de la supremacía pontificia.",
     "df": "m. Sistema o doctrina de los canonistas favorables a la potestad episcopal y adversarios de la supremacía pontificia.",
     "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Episcopio",
-    "p": "m.",
-    "d": "Epidiascopio. Sin.: epidiascopio, epidiáscopo.",
-    "df": "m. epidiascopio. Sin.: epidiascopio, epidiáscopo. | m. episcopologio. Sin.: episcopologio. | m. Palacio episcopal.",
-    "e": "Del al. Episkop, y este del gr. ἐπι- epi- 'sobre1' y el al. -skop '-scopio'.",
     "s": "",
     "c": "sustantivo",
     "ec": ""
@@ -22997,16 +21416,6 @@
     "s": "",
     "c": "sustantivo",
     "ec": "etym_latin"
-  },
-  {
-    "w": "Epítima",
-    "p": "f.",
-    "d": "Epítema. Sin.: epítema.",
-    "df": "f. epítema. Sin.: epítema. | f. Consuelo, alivio.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
   },
   {
     "w": "Epítimo",
@@ -23750,16 +22159,6 @@
     "ec": "etym_latin"
   },
   {
-    "w": "Ergástulo",
-    "p": "m.",
-    "d": "Ergástula. Sin.: ergástula.",
-    "df": "m. ergástula. Sin.: ergástula.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Ergónomo",
     "p": "m. y f.",
     "d": "Y f. Persona especializada en ergonomía.",
@@ -24122,16 +22521,6 @@
     "ec": "etym_griego"
   },
   {
-    "w": "Erotógeno",
-    "p": "adj.",
-    "d": "Erógeno. Sin.: erógeno.",
-    "df": "adj. erógeno. Sin.: erógeno.",
-    "e": "Del gr. ἔρως, ἔρωτος érōs, érōtos 'amor sexual' y ‒́geno.",
-    "s": "",
-    "c": "adjetivo",
-    "ec": "etym_griego"
-  },
-  {
     "w": "Erotómano",
     "p": "adj.",
     "d": "Med. Que padece erotomanía. U. t. c. s.",
@@ -24275,16 +22664,6 @@
     "ec": ""
   },
   {
-    "w": "Eruginoso",
-    "p": "adj.",
-    "d": "Ruginoso. Sin.: ruginoso.",
-    "df": "adj. ruginoso. Sin.: ruginoso.",
-    "e": "Del lat. aeruginōsus.",
-    "s": "",
-    "c": "adjetivo",
-    "ec": "etym_latin"
-  },
-  {
     "w": "Erupcionar",
     "p": "intr.",
     "d": "Dicho de un volcán: Entrar en erupción.",
@@ -24316,16 +22695,6 @@
     "s": "",
     "c": "adjetivo",
     "ec": "etym_latin"
-  },
-  {
-    "w": "Ervato",
-    "p": "m.",
-    "d": "Servato. Sin.: servato, peucédano.",
-    "df": "m. servato. Sin.: servato, peucédano.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
   },
   {
     "w": "Eréctil",
@@ -24448,20 +22817,6 @@
     "s": "",
     "c": "verbo",
     "ec": ""
-  },
-  {
-    "w": "Esbozar",
-    "p": "tr.",
-    "d": "Bosquejar. Sin.: bosquejar, abocetar, diseñar, trazar, apuntar, perfilar, plantear1, proponer.",
-    "df": "tr. bosquejar. Sin.: bosquejar, abocetar, diseñar, trazar, apuntar, perfilar, plantear1, proponer. | tr. Insinuar un gesto, normalmente del rostro. Esbozar una sonrisa. Sin.: insinuar, sugerir.",
-    "e": "Del it. sbozzare.",
-    "s": "",
-    "c": "verbo",
-    "ec": "etym_italiano",
-    "esp": [
-      "explosiva",
-      "viajera"
-    ]
   },
   {
     "w": "Esbozo",
@@ -24667,16 +23022,6 @@
     "esp": [
       "viajera"
     ]
-  },
-  {
-    "w": "Escafandro",
-    "p": "m.",
-    "d": "Escafandra . Sin.: escafandra.",
-    "df": "m. escafandra (‖ equipo). Sin.: escafandra.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
   },
   {
     "w": "Escafilar",
@@ -25151,16 +23496,6 @@
     "ec": ""
   },
   {
-    "w": "Escamochar",
-    "p": "tr.",
-    "d": "Desperdiciar . Sin.: desperdiciar.",
-    "df": "tr. desperdiciar (‖ malbaratar). Sin.: desperdiciar. | tr. And. Quitar las hojas no comestibles a los palmitos, lechugas, alcachofas, etc.",
-    "e": "De escamocho.",
-    "s": "",
-    "c": "verbo",
-    "ec": ""
-  },
-  {
     "w": "Escamoche",
     "p": "m.",
     "d": "Sal. Desmoche, corta de leña.",
@@ -25305,16 +23640,6 @@
     "ec": ""
   },
   {
-    "w": "Escampada",
-    "p": "f.",
-    "d": "Clara . Sin.: clara.",
-    "df": "f. clara (‖ espacio corto de tiempo en que deja de llover un día lluvioso). Sin.: clara.",
-    "e": "De escampar.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Escampado",
     "p": "adj.",
     "d": "Dicho de un terreno: Descubierto, sin tropiezos, malezas ni espesuras. Sin.: descampado, limpio, despejado.",
@@ -25332,16 +23657,6 @@
     "e": "De escampar 'despejar' y vía.",
     "s": "",
     "c": "nautica",
-    "ec": ""
-  },
-  {
-    "w": "Escamudo",
-    "p": "adj.",
-    "d": "Escamoso . Sin.: escamoso.",
-    "df": "adj. escamoso (‖ que tiene escamas). Sin.: escamoso.",
-    "e": "",
-    "s": "",
-    "c": "adjetivo",
     "ec": ""
   },
   {
@@ -25905,16 +24220,6 @@
     "ec": ""
   },
   {
-    "w": "Escarbadientes",
-    "p": "m.",
-    "d": "Mondadientes. Sin.: mondadientes, palillo.",
-    "df": "m. mondadientes. Sin.: mondadientes, palillo.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Escarbadura",
     "p": "f.",
     "d": "Acción y efecto de escarbar.",
@@ -26024,26 +24329,6 @@
     "ec": ""
   },
   {
-    "w": "Escarche",
-    "p": "m.",
-    "d": "Escarchado. Sin.: escarchado.",
-    "df": "m. escarchado. Sin.: escarchado.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Escarcho",
-    "p": "m.",
-    "d": "Rubio . Sin.: rubio, trigla, trilla1.",
-    "df": "m. rubio (‖ pez). Sin.: rubio, trigla, trilla1.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Escarcina",
     "p": "f.",
     "d": "Espada corta y corva, a manera de alfanje.",
@@ -26084,16 +24369,6 @@
     "ec": ""
   },
   {
-    "w": "Escardadera",
-    "p": "f.",
-    "d": "Escardadora. Sin.: escardadora.",
-    "df": "f. escardadora. Sin.: escardadora. | f. escardilla (‖ almocafre). Sin.: escardilla, almocafre, azadilla, garabato, escardillo.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Escardador",
     "p": "m. y f.",
     "d": "Y f. Persona que escarda los panes y sembrados. Sin.: escardadera.",
@@ -26121,16 +24396,6 @@
     "e": "De es- y cardo.",
     "s": "",
     "c": "verbo",
-    "ec": ""
-  },
-  {
-    "w": "Escardilla",
-    "p": "f.",
-    "d": "Almocafre. Sin.: escardadera, almocafre, azadilla, garabato, escardillo.",
-    "df": "f. almocafre. Sin.: escardadera, almocafre, azadilla, garabato, escardillo. | f. And. Azadilla de boca estrecha y mango corto, menor que el escardillo.",
-    "e": "Del dim. de escarda 'azadilla'.",
-    "s": "",
-    "c": "sustantivo",
     "ec": ""
   },
   {
@@ -26311,20 +24576,6 @@
     "ec": ""
   },
   {
-    "w": "Escarnecimiento",
-    "p": "m.",
-    "d": "Escarnio. Sin.: escarnio, burla, mofa, ridiculización, bufa, befa, afrenta, pifia.",
-    "df": "m. escarnio. Sin.: escarnio, burla, mofa, ridiculización, bufa, befa, afrenta, pifia.",
-    "e": "De escarnecer y -miento.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "",
-    "esp": [
-      "larga",
-      "explosiva"
-    ]
-  },
-  {
     "w": "Escaro",
     "p": "m.",
     "d": "Pez del orden de los acantopterigios, de unos 40 cm de largo, con cabeza pequeña, mandíbulas muy convexas, muchos dientes en filas concéntricas, labios prominentes, cuerpo ovalado, comprimido, cubierto de grandes escamas y de color más o menos rojo según la estación.",
@@ -26461,16 +24712,6 @@
     "ec": ""
   },
   {
-    "w": "Escartivana",
-    "p": "f.",
-    "d": "Cartivana. Sin.: cartivana.",
-    "df": "f. cartivana. Sin.: cartivana.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Escarza",
     "p": "f.",
     "d": "Veter. Herida causada en los pies o manos de las caballerías por haber entrado en ellos y llegado a lo vivo de la carne una china o cosa semejante.",
@@ -26509,16 +24750,6 @@
     "s": "",
     "c": "adjetivo",
     "ec": ""
-  },
-  {
-    "w": "Escatofagia",
-    "p": "f.",
-    "d": "Coprofagia. Sin.: coprofagia.",
-    "df": "f. coprofagia. Sin.: coprofagia.",
-    "e": "Del lat. cient. scatophagia, y este del gr. σκατοφάγος skatophágos 'que come excrementos' y el lat. -ia '-ia'; cf. escatófago.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_latin"
   },
   {
     "w": "Escatología",
@@ -26657,16 +24888,6 @@
     "ec": ""
   },
   {
-    "w": "Escaña",
-    "p": "f.",
-    "d": "Escanda. Sin.: espelta, escanda.",
-    "df": "f. escanda. Sin.: espelta, escanda.",
-    "e": "Del lat. scandŭla.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_latin"
-  },
-  {
     "w": "Escañarse",
     "p": "prnl.",
     "d": "Ar. atragantarse .",
@@ -26795,16 +25016,6 @@
     "d": "Cebolla albarrana. Sin.: albarrana, esquila3.",
     "df": "f. cebolla albarrana. Sin.: albarrana, esquila3.",
     "e": "Del lat. scilla.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_latin"
-  },
-  {
-    "w": "Escinco",
-    "p": "m.",
-    "d": "Eslizón. Sin.: esquinco, estinco, eslizón, sepedón, sipedón.",
-    "df": "m. eslizón. Sin.: esquinco, estinco, eslizón, sepedón, sipedón.",
-    "e": "Del lat. scincus, y este del gr. σκίγκος skínkos.",
     "s": "",
     "c": "sustantivo",
     "ec": "etym_latin"
@@ -27565,16 +25776,6 @@
     ]
   },
   {
-    "w": "Escolán",
-    "p": "m.",
-    "d": "Escolano. Sin.: escolano.",
-    "df": "m. escolano. Sin.: escolano.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Escolástica",
     "p": "adj.",
     "d": "Perteneciente o relativo a las escuelas medievales o a quienes estudiaban en ellas.",
@@ -27754,16 +25955,6 @@
     "ec": ""
   },
   {
-    "w": "Escondredijo",
-    "p": "m.",
-    "d": "Escondrijo. Sin.: escondrijo, escondite, huarique.",
-    "df": "m. escondrijo. Sin.: escondrijo, escondite, huarique.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Escondrijo",
     "p": "m.",
     "d": "Lugar propio para esconderse, o para esconder y guardar en él algo. Sin.: escondite, escondredijo, huarique.",
@@ -27801,16 +25992,6 @@
     "e": "",
     "s": "",
     "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Escopeteado",
-    "p": "adj. coloq.",
-    "d": "Escopetado. Sin.: escopetado, apresurado, acelerado.",
-    "df": "adj. coloq. escopetado. Sin.: escopetado, apresurado, acelerado.",
-    "e": "",
-    "s": "",
-    "c": "adjetivo",
     "ec": ""
   },
   {
@@ -28020,26 +26201,6 @@
     "ec": ""
   },
   {
-    "w": "Escorpena",
-    "p": "f.",
-    "d": "Escorpina. Sin.: escorpina, escorpera, cabracho, gallineta, rascacio, rescaza.",
-    "df": "f. escorpina. Sin.: escorpina, escorpera, cabracho, gallineta, rascacio, rescaza.",
-    "e": "Del lat. scorpaena, y este del gr. σκόρπαινα skórpaina, der. de σκορπίος skorpíos 'escorpión'.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_latin"
-  },
-  {
-    "w": "Escorpera",
-    "p": "f.",
-    "d": "Escorpina. Sin.: escorpina, escorpena, cabracho, gallineta, rascacio, rescaza.",
-    "df": "f. escorpina. Sin.: escorpina, escorpena, cabracho, gallineta, rascacio, rescaza.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Escorpina",
     "p": "f.",
     "d": "Pez teleósteo, del orden de los acantopterigios, de unos 20 cm de largo, color oscuro por el lomo y rojo en todo lo demás, vientre grande, cola redonda, cabeza gruesa, espinosa, con tubérculos y barbillas movibles, muchos dientes en las mandíbulas y en el paladar, y una sola aleta dorsal, pero casi dividida en dos partes, de las cuales la anterior está erizada de espinas fuertes y desiguales, que producen picaduras muy dolorosas. Sin.: escorpena, escorpera, cabracho, gallineta, rascacio, rescaza.",
@@ -28058,16 +26219,6 @@
     "s": "",
     "c": "adjetivo",
     "ec": ""
-  },
-  {
-    "w": "Escorpioide",
-    "p": "f.",
-    "d": "Alacranera. Sin.: alacranera.",
-    "df": "f. alacranera. Sin.: alacranera.",
-    "e": "Del gr. σκορπιοειδές skorpioeidés; propiamente 'semejante al escorpión', por el parecido de su fruto con la cola de un escorpión.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_griego"
   },
   {
     "w": "Escorpión",
@@ -28777,16 +26928,6 @@
     "ec": ""
   },
   {
-    "w": "Escuerzo",
-    "p": "m.",
-    "d": "Sapo . Sin.: sapo, costro, guácharo.",
-    "df": "m. sapo (‖ anfibio anuro). Sin.: sapo, costro, guácharo. | m. coloq. Persona flaca y desmedrada.",
-    "e": "De or. inc.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Escueto",
     "p": "adj.",
     "d": "Descubierto, libre, despejado, desembarazado.",
@@ -28966,16 +27107,6 @@
     "ec": ""
   },
   {
-    "w": "Escupitinajo",
-    "p": "m. coloq.",
-    "d": "Escupitajo. Sin.: escupitajo, salivazo, esputo, pollo, lapo, escupidura, escupitina.",
-    "df": "m. coloq. escupitajo. Sin.: escupitajo, salivazo, esputo, pollo, lapo, escupidura, escupitina.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Escupiña",
     "p": "f.",
     "d": "Molusco bivalvo comestible semejante a la almeja y caracterizado por poseer excrecencias a modo de verrugas en el borde posterior de la concha.",
@@ -28983,16 +27114,6 @@
     "e": "",
     "s": "",
     "c": "zoologia",
-    "ec": ""
-  },
-  {
-    "w": "Escupo",
-    "p": "m.",
-    "d": "Esputo. Sin.: esputo, escupido, polla.",
-    "df": "m. esputo. Sin.: esputo, escupido, polla.",
-    "e": "De esputo, alterado por etim. pop. por escupir.",
-    "s": "",
-    "c": "sustantivo",
     "ec": ""
   },
   {
@@ -29560,29 +27681,6 @@
     ]
   },
   {
-    "w": "Esfuminar",
-    "p": "tr.",
-    "d": "Difuminar . Sin.: difuminar.",
-    "df": "tr. difuminar (‖ extender el color). Sin.: difuminar.",
-    "e": "",
-    "s": "",
-    "c": "verbo",
-    "ec": ""
-  },
-  {
-    "w": "Esfumino",
-    "p": "m.",
-    "d": "Difumino. Sin.: difumino.",
-    "df": "m. difumino. Sin.: difumino.",
-    "e": "Del it. sfumino.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_italiano",
-    "esp": [
-      "viajera"
-    ]
-  },
-  {
     "w": "Esfácelo",
     "p": "m.",
     "d": "Med. Parte mortificada de la piel o de los tejidos profundos, que se forma en ciertas heridas o quemaduras.",
@@ -29987,16 +28085,6 @@
     "ec": ""
   },
   {
-    "w": "Esmeraldino",
-    "p": "adj.",
-    "d": "Esmeralda. Sin.: esmeralda.",
-    "df": "adj. esmeralda. Sin.: esmeralda.",
-    "e": "",
-    "s": "",
-    "c": "adjetivo",
-    "ec": ""
-  },
-  {
     "w": "Esmerar",
     "p": "tr.",
     "d": "Pulir, limpiar, ilustrar.",
@@ -30213,19 +28301,6 @@
     "ec": ""
   },
   {
-    "w": "Espachurramiento",
-    "p": "m. coloq.",
-    "d": "Despachurramiento. Sin.: despachurramiento.",
-    "df": "m. coloq. despachurramiento. Sin.: despachurramiento.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "",
-    "esp": [
-      "larga"
-    ]
-  },
-  {
     "w": "Espachurrar",
     "p": "tr.",
     "d": "Despachurrar. U. t. c. prnl. Sin.: despachurrar, aplastar, destripar, apachurrar, despanzurrar, reventar, estrujar, apretar, comprimir, machacar, apretujar, espaturrar.",
@@ -30267,16 +28342,6 @@
     "s": "",
     "c": "sustantivo",
     "ec": ""
-  },
-  {
-    "w": "Espaciosidad",
-    "p": "f.",
-    "d": "Anchura . Sin.: anchura, amplitud, holgura, capacidad.",
-    "df": "f. anchura (‖ amplitud o capacidad). Sin.: anchura, amplitud, holgura, capacidad.",
-    "e": "Del lat. tardío spatiosĭtas, -ātis.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_latin"
   },
   {
     "w": "Espadachín",
@@ -30410,16 +28475,6 @@
     "d": "Delincuente que, para penetrar en una casa con el objeto de robar, utiliza una ganzúa.",
     "df": "m. germ. Delincuente que, para penetrar en una casa con el objeto de robar, utiliza una ganzúa.",
     "e": "De espada e -ista.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Espadrapo",
-    "p": "m.",
-    "d": "Esparadrapo. Sin.: esparadrapo, leuco.",
-    "df": "m. esparadrapo. Sin.: esparadrapo, leuco.",
-    "e": "",
     "s": "",
     "c": "sustantivo",
     "ec": ""
@@ -30604,19 +28659,6 @@
     "ec": ""
   },
   {
-    "w": "Espalera",
-    "p": "f.",
-    "d": "Espaldera . Sin.: espaldera, espaldar, enrejado.",
-    "df": "f. espaldera (‖ enrejado para que trepen ciertas plantas). Sin.: espaldera, espaldar, enrejado.",
-    "e": "Del it. spalliera.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_italiano",
-    "esp": [
-      "viajera"
-    ]
-  },
-  {
     "w": "Espalmadura",
     "p": "f.",
     "d": "Desperdicios de los cascos de los animales.",
@@ -30766,26 +28808,6 @@
     "ec": ""
   },
   {
-    "w": "Esparaván",
-    "p": "m.",
-    "d": "Gavilán . Sin.: gavilán, esparver, galfarro.",
-    "df": "m. gavilán (‖ ave). Sin.: gavilán, esparver, galfarro. | m. Veter. Tumor en la parte interna e inferior del corvejón de los solípedos, que si llega a endurecerse produce una cojera incurable. Sin.: garbanzuelo, tumor.",
-    "e": "Cf. esparver.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Esparceta",
-    "p": "f.",
-    "d": "Pipirigallo . Sin.: pipirigallo, zulla1.",
-    "df": "f. pipirigallo (‖ planta). Sin.: pipirigallo, zulla1.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Esparcido",
     "p": "adj.",
     "d": "Festivo, franco en el trato, alegre, divertido.",
@@ -30909,26 +28931,6 @@
     "ec": ""
   },
   {
-    "w": "Esparrancarse",
-    "p": "prnl.",
-    "d": "Desparrancarse. Sin.: desparrancarse, despernancarse, despatarrar, espatarrarse.",
-    "df": "prnl. coloq. desparrancarse. Sin.: desparrancarse, despernancarse, despatarrar, espatarrarse.",
-    "e": "",
-    "s": "",
-    "c": "verbo",
-    "ec": ""
-  },
-  {
-    "w": "Espartal",
-    "p": "m.",
-    "d": "Espartizal. Sin.: espartizal, atochal, atochar1.",
-    "df": "m. espartizal. Sin.: espartizal, atochal, atochar1.",
-    "e": "De esparto.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Espartano",
     "p": "adj.",
     "d": "Natural de Esparta, ciudad de la Grecia antigua. U. t. c. s.",
@@ -31025,16 +29027,6 @@
     "ec": "etym_latin"
   },
   {
-    "w": "Esparver",
-    "p": "m.",
-    "d": "Gavilán . Sin.: gavilán, esparaván, galfarro, esparvel.",
-    "df": "m. gavilán (‖ ave). Sin.: gavilán, esparaván, galfarro, esparvel.",
-    "e": "Del occit. esparvier.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Espasmo",
     "p": "m.",
     "d": "Med. Contracción involuntaria de los músculos, producida generalmente por mecanismo reflejo. Sin.: contracción, convulsión, tic, calambre, sacudida, temblor, ataque.",
@@ -31075,51 +29067,11 @@
     "ec": "etym_latin"
   },
   {
-    "w": "Espatarrada",
-    "p": "f. coloq.",
-    "d": "Despatarrada. Sin.: despatarrada.",
-    "df": "f. coloq. despatarrada. Sin.: despatarrada.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Espatarrarse",
-    "p": "prnl.",
-    "d": "Despatarrarse. Sin.: despatarrarse, desparrancarse, esparrancarse, despernancarse.",
-    "df": "prnl. coloq. despatarrarse. Sin.: despatarrarse, desparrancarse, esparrancarse, despernancarse.",
-    "e": "",
-    "s": "",
-    "c": "verbo",
-    "ec": ""
-  },
-  {
     "w": "Espato",
     "p": "m.",
     "d": "Geol. Mineral de estructura laminar.",
     "df": "m. Geol. Mineral de estructura laminar.",
     "e": "Del al. Spat.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Espaviento",
-    "p": "m.",
-    "d": "Aspaviento. Sin.: aspaviento, pamento, alharaca, gesticulación, exageración, esparajismo, milagrón.",
-    "df": "m. aspaviento. Sin.: aspaviento, pamento, alharaca, gesticulación, exageración, esparajismo, milagrón.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Espay",
-    "p": "m.",
-    "d": "Espahí . Sin.: espahí.",
-    "df": "m. espahí (‖ soldado francés en Argelia). Sin.: espahí.",
-    "e": "",
     "s": "",
     "c": "sustantivo",
     "ec": ""
@@ -31199,16 +29151,6 @@
     "p": "f.",
     "d": "Acción y efecto de españolizar.",
     "df": "f. Acción y efecto de españolizar.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Españolía",
-    "p": "f.",
-    "d": "Españolismo . Sin.: españolidad, españolismo.",
-    "df": "f. españolismo (‖ cualidad de español). Sin.: españolidad, españolismo. | f. españolismo (‖ amor a lo español). Sin.: españolismo.",
     "e": "",
     "s": "",
     "c": "sustantivo",
@@ -31504,16 +29446,6 @@
     "ec": ""
   },
   {
-    "w": "Espelta",
-    "p": "f.",
-    "d": "Escanda. Sin.: escanda, escaña.",
-    "df": "f. escanda. Sin.: escanda, escaña.",
-    "e": "Del lat. spelta.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_latin"
-  },
-  {
     "w": "Espelunca",
     "p": "f.",
     "d": "Cueva, gruta, concavidad tenebrosa.",
@@ -31532,19 +29464,6 @@
     "s": "",
     "c": "verbo",
     "ec": ""
-  },
-  {
-    "w": "Espeluznamiento",
-    "p": "m.",
-    "d": "Despeluzamiento. Sin.: despeluzamiento.",
-    "df": "m. despeluzamiento. Sin.: despeluzamiento.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "",
-    "esp": [
-      "larga"
-    ]
   },
   {
     "w": "Espeluznante",
@@ -31594,16 +29513,6 @@
     "esp": [
       "viajera"
     ]
-  },
-  {
-    "w": "Esperadero",
-    "p": "m.",
-    "d": "Puesto . Sin.: puesto.",
-    "df": "m. puesto (‖ sitio para ocultarse el cazador). Sin.: puesto.",
-    "e": "De esperar y -dero.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
   },
   {
     "w": "Esperador",
@@ -31944,19 +29853,6 @@
     ]
   },
   {
-    "w": "Espetón",
-    "p": "m.",
-    "d": "Espeto . Sin.: espeto, espedo, pincho, broqueta, brocheta.",
-    "df": "m. espeto (‖ hierro largo). Sin.: espeto, espedo, pincho, broqueta, brocheta. | m. hurgón (‖ instrumento para atizar la lumbre). Sin.: hurgón, hurgonero, hurgador, allegador, atizador. | m. Alfiler grande. | m. Golpe dado con el espeto. | m. barracuda. Sin.: barracuda, picuda. | m. And. espeto (‖ sardinas asadas). Sin.: espeto.",
-    "e": "Del aum. de espeto.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "",
-    "esp": [
-      "explosiva"
-    ]
-  },
-  {
     "w": "Espiar",
     "p": "tr.",
     "d": "Acechar, observar disimuladamente a alguien o algo. Sin.: acechar, vigiar, vigilar, celar1, avizorar, atalayar, aguaitar, observar, atisbar, amaitinar, vichar, ojear1.",
@@ -32061,16 +29957,6 @@
     "esp": [
       "explosiva"
     ]
-  },
-  {
-    "w": "Espigadera",
-    "p": "f.",
-    "d": "Espigadora . Sin.: espigadora, recolectora.",
-    "df": "f. espigadora (‖ mujer que recoge espigas). Sin.: espigadora, recolectora.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
   },
   {
     "w": "Espigadilla",
@@ -32227,16 +30113,6 @@
     "d": "Métr. décima . Sin.: décima.",
     "df": "f. Métr. décima (‖ combinación métrica). Sin.: décima. | f. Piedra fina, parecida por su color rojo al rubí, compuesta de alúmina y magnesia, teñida por óxido de hierro y cristalizada en octaedros, que se emplea en joyería. Sin.: rubí.",
     "e": "De V. Espinel, 1550-1624, poeta español a quien se atribuye su creación.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Espinera",
-    "p": "f.",
-    "d": "Espino . Sin.: espino, oxiacanta.",
-    "df": "f. espino (‖ árbol rosáceo). Sin.: espino, oxiacanta.",
-    "e": "",
     "s": "",
     "c": "sustantivo",
     "ec": ""
@@ -32823,16 +30699,6 @@
     "ec": ""
   },
   {
-    "w": "Espolazo",
-    "p": "m.",
-    "d": "Espolada. Sin.: espolada, aguijonazo.",
-    "df": "m. espolada. Sin.: espolada, aguijonazo.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Espoleadura",
     "p": "f.",
     "d": "Herida o llaga que la espuela hace a la caballería.",
@@ -33027,16 +30893,6 @@
     "s": "",
     "c": "sustantivo",
     "ec": "etym_latin"
-  },
-  {
-    "w": "Esponjado",
-    "p": "m.",
-    "d": "Azucarillo . Sin.: azucarillo, panal.",
-    "df": "m. azucarillo (‖ porción de masa esponjosa). Sin.: azucarillo, panal.",
-    "e": "Del part. de esponjar.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
   },
   {
     "w": "Esponjadura",
@@ -33322,21 +31178,6 @@
     "ec": ""
   },
   {
-    "w": "Espray",
-    "p": "m.",
-    "d": "Aerosol . Sin.: aerosol, spray, pulverizador, vaporizador.",
-    "df": "m. aerosol (‖ envase). Sin.: aerosol, spray, pulverizador, vaporizador. | m. aerosol (‖ líquido). Sin.: aerosol, spray.",
-    "e": "Del ingl. spray.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_ingles",
-    "esp": [
-      "viajera"
-    ],
-    "rabia": true,
-    "rabia_comment": "Spray pero con ES porque sí 💨"
-  },
-  {
     "w": "Esprintar",
     "p": "intr.",
     "d": "Realizar un esprint.",
@@ -33455,16 +31296,6 @@
     "ec": ""
   },
   {
-    "w": "Espumajo",
-    "p": "m.",
-    "d": "Espumarajo. Sin.: espumarajo.",
-    "df": "m. espumarajo. Sin.: espumarajo.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Espumajoso",
     "p": "adj.",
     "d": "Lleno de espuma.",
@@ -33482,16 +31313,6 @@
     "e": "Del despect. de espuma.",
     "s": "",
     "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Espumear",
-    "p": "intr.",
-    "d": "Espumar . Sin.: espumar.",
-    "df": "intr. espumar (‖ hacer espuma). Sin.: espumar.",
-    "e": "",
-    "s": "",
-    "c": "verbo",
     "ec": ""
   },
   {
@@ -33549,16 +31370,6 @@
     "p": "tr.",
     "d": "Rociar algo con agua u otro líquido expelido por la boca. Sin.: espurrir2, espurriar.",
     "df": "tr. Rociar algo con agua u otro líquido expelido por la boca. Sin.: espurrir2, espurriar.",
-    "e": "Quizá del lat. aspergĕre.",
-    "s": "",
-    "c": "verbo",
-    "ec": ""
-  },
-  {
-    "w": "Espurriar",
-    "p": "tr.",
-    "d": "Espurrear. Sin.: espurrear, espurrir2.",
-    "df": "tr. espurrear. Sin.: espurrear, espurrir2.",
     "e": "Quizá del lat. aspergĕre.",
     "s": "",
     "c": "verbo",
@@ -33689,16 +31500,6 @@
     "s": "",
     "c": "adjetivo",
     "ec": "etym_latin"
-  },
-  {
-    "w": "Espóndil",
-    "p": "m.",
-    "d": "Espóndilo. Sin.: vértebra, espóndilo.",
-    "df": "m. espóndilo. Sin.: vértebra, espóndilo.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
   },
   {
     "w": "Espóndilo",
@@ -34010,26 +31811,6 @@
     "ec": ""
   },
   {
-    "w": "Esquinante",
-    "p": "m.",
-    "d": "Esquenanto. Sin.: esquenanto, esquinanto.",
-    "df": "m. esquenanto. Sin.: esquenanto, esquinanto.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Esquinanto",
-    "p": "m.",
-    "d": "Esquenanto. Sin.: esquenanto, esquinante.",
-    "df": "m. esquenanto. Sin.: esquenanto, esquinante.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Esquinar",
     "p": "tr.",
     "d": "Hacer o formar esquina. U. t. c. intr. Sin.: escuadrar.",
@@ -34051,36 +31832,6 @@
     "esp": [
       "explosiva"
     ]
-  },
-  {
-    "w": "Esquinco",
-    "p": "m.",
-    "d": "Eslizón. Sin.: eslizón, escinco, estinco, sepedón, sipedón.",
-    "df": "m. eslizón. Sin.: eslizón, escinco, estinco, sepedón, sipedón.",
-    "e": "Del lat. scincus, y este del gr. σκίγκος skínkos.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_latin"
-  },
-  {
-    "w": "Esquinela",
-    "p": "f.",
-    "d": "Espinillera . Sin.: espinillera, canillera.",
-    "df": "f. espinillera (‖ pieza de la armadura). Sin.: espinillera, canillera.",
-    "e": "De esquina, por la arista que llevaba en medio.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Esquinencia",
-    "p": "f.",
-    "d": "Angina . Sin.: angina, amigdalitis, agallas.",
-    "df": "f. angina (‖ inflamación de las amígdalas). Sin.: angina, amigdalitis, agallas.",
-    "e": "Cf. esquinancia.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
   },
   {
     "w": "Esquinera",
@@ -34111,16 +31862,6 @@
     "s": "",
     "c": "sustantivo",
     "ec": ""
-  },
-  {
-    "w": "Esquinzar",
-    "p": "tr.",
-    "d": "Desguinzar. Sin.: desguinzar.",
-    "df": "tr. desguinzar. Sin.: desguinzar.",
-    "e": "Del lat. *exquintiāre 'descuartizar'.",
-    "s": "",
-    "c": "verbo",
-    "ec": "etym_latin"
   },
   {
     "w": "Esquiraza",
@@ -34307,19 +32048,6 @@
     "d": "Palo afilado en un extremo para clavarlo. Sin.: palo, tranca, porra, poste, vara.",
     "df": "f. Palo afilado en un extremo para clavarlo. Sin.: palo, tranca, porra, poste, vara. | f. Rama o palo verde sin raíces que se planta para que se haga árbol. Sin.: esqueje, tallo, vástago, gajo. | f. Palo grueso que puede manejarse a modo de bastón. Sin.: bastón, garrote, garrota, cayado. | f. Clavo de hierro de 30 a 40 cm de largo, que sirve para clavar vigas y maderos. Sin.: estaquilla. | f. Cuerna que aparece en los ciervos al cumplir un año de edad. | f. Bol. y Chile. Pertenencia de una mina que se concede a los peticionarios mediante ciertos trámites. | f. Chile. espolón (‖ apófisis ósea de las aves). Sin.: espolón, espuela.",
     "e": "Quizá del gót. *stakka; cf. ingl. ant. staca, neerl. medio e ingl. stake.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "",
-    "esp": [
-      "explosiva"
-    ]
-  },
-  {
-    "w": "Estacado",
-    "p": "m.",
-    "d": "Palenque . Sin.: palenque, estacada, empalizada, palizada, barrera1, vallado, valla, cerca1.",
-    "df": "m. palenque (‖ valla para cerrar un terreno). Sin.: palenque, estacada, empalizada, palizada, barrera1, vallado, valla, cerca1.",
-    "e": "De estacar.",
     "s": "",
     "c": "sustantivo",
     "ec": "",
@@ -34665,26 +32393,6 @@
     "ec": ""
   },
   {
-    "w": "Estajero",
-    "p": "m.",
-    "d": "Destajero. Sin.: destajista, destajero.",
-    "df": "m. destajero. Sin.: destajista, destajero.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Estajista",
-    "p": "m.",
-    "d": "Destajista. Sin.: destajista, destajero.",
-    "df": "m. destajista. Sin.: destajista, destajero.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Estala",
     "p": "f.",
     "d": "Establo o caballeriza.",
@@ -34891,16 +32599,6 @@
     "ec": ""
   },
   {
-    "w": "Estampida",
-    "p": "f.",
-    "d": "Estampido. Sin.: estampido.",
-    "df": "f. estampido. Sin.: estampido. | f. resonancia (‖ gran divulgación que adquiere un hecho). Sin.: resonancia. | f. Huida impetuosa que emprende una persona, un animal o, especialmente, un conjunto de ellos. Sin.: desbandada, espantada, huida, barajustada, barajuste.",
-    "e": "Del occit. estampida.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Estampido",
     "p": "m.",
     "d": "Ruido fuerte y seco como el producido por el disparo de un cañón. Sin.: estampida, estallido, explosión, detonación, restallido.",
@@ -34977,29 +32675,6 @@
     ]
   },
   {
-    "w": "Estandardización",
-    "p": "f.",
-    "d": "Estandarización. Sin.: estandarización.",
-    "df": "f. estandarización. Sin.: estandarización.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "",
-    "esp": [
-      "larga"
-    ]
-  },
-  {
-    "w": "Estandardizar",
-    "p": "tr.",
-    "d": "Estandarizar. Sin.: tipificar, estandarizar.",
-    "df": "tr. estandarizar. Sin.: tipificar, estandarizar.",
-    "e": "",
-    "s": "",
-    "c": "verbo",
-    "ec": ""
-  },
-  {
     "w": "Estandarización",
     "p": "f.",
     "d": "Acción y efecto de estandarizar. Sin.: estandardización, tipificación, normalización.",
@@ -35020,16 +32695,6 @@
     "e": "",
     "s": "",
     "c": "adjetivo",
-    "ec": ""
-  },
-  {
-    "w": "Estandarizar",
-    "p": "tr.",
-    "d": "Tipificar . Sin.: estandardizar, tipificar, normalizar, homogeneizar, igualar, estereotipar.",
-    "df": "tr. tipificar (‖ ajustar a un tipo o norma). Sin.: estandardizar, tipificar, normalizar, homogeneizar, igualar, estereotipar.",
-    "e": "De estándar.",
-    "s": "",
-    "c": "verbo",
     "ec": ""
   },
   {
@@ -35065,16 +32730,6 @@
     "s": "",
     "c": "adjetivo",
     "ec": "etym_latin"
-  },
-  {
-    "w": "Estanqueidad",
-    "p": "f.",
-    "d": "Estanquidad. Sin.: estanquidad, hermetismo, hermeticidad.",
-    "df": "f. estanquidad. Sin.: estanquidad, hermetismo, hermeticidad.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
   },
   {
     "w": "Estanquero",
@@ -35218,16 +32873,6 @@
     "s": "",
     "c": "sustantivo",
     "ec": "etym_latin"
-  },
-  {
-    "w": "Estatalismo",
-    "p": "m.",
-    "d": "Estatismo2. Sin.: estatismo2.",
-    "df": "m. estatismo2. Sin.: estatismo2.",
-    "e": "De estatal e -ismo.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
   },
   {
     "w": "Estatalista",
@@ -35539,19 +33184,6 @@
     "ec": ""
   },
   {
-    "w": "Estenografía",
-    "p": "f.",
-    "d": "Taquigrafía. Sin.: taquigrafía.",
-    "df": "f. taquigrafía. Sin.: taquigrafía.",
-    "e": "Del ingl. stenography, y este del gr. στενός stenós 'estrecho' y el ingl. -graphy '-grafía'.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_ingles",
-    "esp": [
-      "viajera"
-    ]
-  },
-  {
     "w": "Estenográfico",
     "p": "adj.",
     "d": "Perteneciente o relativo a la estenografía.",
@@ -35703,19 +33335,6 @@
     "s": "",
     "c": "sustantivo",
     "ec": ""
-  },
-  {
-    "w": "Estercolamiento",
-    "p": "m.",
-    "d": "Estercoladura. Sin.: estercoladura.",
-    "df": "m. estercoladura. Sin.: estercoladura.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "",
-    "esp": [
-      "larga"
-    ]
   },
   {
     "w": "Estercolero",
@@ -36100,16 +33719,6 @@
     "ec": ""
   },
   {
-    "w": "Esterquilinio",
-    "p": "m.",
-    "d": "Muladar . Sin.: muladar, estercolero, vertedero, basurero, cenizal.",
-    "df": "m. muladar (‖ lugar donde se echa la basura). Sin.: muladar, estercolero, vertedero, basurero, cenizal.",
-    "e": "Del lat. sterquilinium, der. de stercus 'estiércol'.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_latin"
-  },
-  {
     "w": "Estertor",
     "p": "m.",
     "d": "Respiración anhelosa, generalmente ronca o silbante, propia de la agonía y del coma. Sin.: jadeo, anhélito, sobrealiento.",
@@ -36226,16 +33835,6 @@
     "ec": ""
   },
   {
-    "w": "Estezado",
-    "p": "m.",
-    "d": "Correal. Sin.: correal.",
-    "df": "m. correal. Sin.: correal.",
-    "e": "Del part. de estezar.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Estezar",
     "p": "tr.",
     "d": "Curtir las pieles en seco.",
@@ -36319,26 +33918,6 @@
     "ec": "etym_latin"
   },
   {
-    "w": "Estibina",
-    "p": "f.",
-    "d": "Antimonita. Sin.: antimonita.",
-    "df": "f. antimonita. Sin.: antimonita.",
-    "e": "De estibio e -ina.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Estibio",
-    "p": "m.",
-    "d": "Antimonio. Sin.: antimonio.",
-    "df": "m. antimonio. Sin.: antimonio.",
-    "e": "Del lat. stibium, y este del gr. στίβι stíbi 'polvo negro de antimonio'.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_latin"
-  },
-  {
     "w": "Esticomitia",
     "p": "f.",
     "d": "Métr. En una sucesión de versos, coincidencia entre la unidad sintáctica y la unidad métrica.",
@@ -36400,19 +33979,6 @@
     "s": "",
     "c": "verbo",
     "ec": "etym_latin",
-    "esp": [
-      "explosiva"
-    ]
-  },
-  {
-    "w": "Estilete",
-    "p": "m.",
-    "d": "Estilo . Sin.: estilo, punzón, púa1.",
-    "df": "m. estilo (‖ punzón para escribir). Sin.: estilo, punzón, púa1. | m. estilo (‖ gnomon del reloj de sol). Sin.: aguja, estilo, gnomon. | m. Púa o punzón. | m. Puñal de hoja muy estrecha y aguda. Sin.: puñal1, daga1. | m. Med. Sonda metálica, delgada, flexible o rígida y terminada en una bolita, que sirve para reconocer ciertas heridas. Sin.: sonda.",
-    "e": "Del dim. de estilo.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "",
     "esp": [
       "explosiva"
     ]
@@ -36591,16 +34157,6 @@
     "ec": "etym_latin"
   },
   {
-    "w": "Estinco",
-    "p": "m.",
-    "d": "Eslizón. Sin.: eslizón, escinco, esquinco, sepedón, sipedón.",
-    "df": "m. eslizón. Sin.: eslizón, escinco, esquinco, sepedón, sipedón.",
-    "e": "Del lat. tardío stincus, este del lat. scincus, y este del gr. σκίγκος skínkos.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_latin"
-  },
-  {
     "w": "Estipendial",
     "p": "adj.",
     "d": "Perteneciente o relativo al estipendio.",
@@ -36758,16 +34314,6 @@
     "s": "",
     "c": "sustantivo",
     "ec": "etym_griego"
-  },
-  {
-    "w": "Estocafís",
-    "p": "m.",
-    "d": "Pejepalo. Sin.: pejepalo.",
-    "df": "m. pejepalo. Sin.: pejepalo.",
-    "e": "Del neerl. stokvisch, de stok 'bastón' y visch 'pez1'.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
   },
   {
     "w": "Estoconazo",
@@ -37180,16 +34726,6 @@
     ]
   },
   {
-    "w": "Estora",
-    "p": "f.",
-    "d": "Álabe . Sin.: álabe, bolsa1.",
-    "df": "f. álabe (‖ estera que se pone a los lados de un carro). Sin.: álabe, bolsa1.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Estoraque",
     "p": "m.",
     "d": "Árbol de la familia de las estiracáceas, de cuatro a seis metros de altura, con tronco torcido, hojas alternas, blandas, ovaladas, blanquecinas y vellosas por el envés, flores blancas en grupos axilares, y fruto algo carnoso, elipsoidal, con dos huesos o semillas. Con incisiones en el tronco se obtiene un bálsamo muy oloroso, usado en perfumería y medicina.",
@@ -37247,16 +34783,6 @@
     "e": "",
     "s": "",
     "c": "adjetivo",
-    "ec": ""
-  },
-  {
-    "w": "Estovar",
-    "p": "tr.",
-    "d": "Rehogar. Sin.: rehogar, sofreír, saltear, marear.",
-    "df": "tr. rehogar. Sin.: rehogar, sofreír, saltear, marear.",
-    "e": "De or. inc.",
-    "s": "",
-    "c": "verbo",
     "ec": ""
   },
   {
@@ -37939,16 +35465,6 @@
     "ec": "etym_latin"
   },
   {
-    "w": "Estrepa",
-    "p": "f.",
-    "d": "Estepa2. Sin.: estepa2.",
-    "df": "f. estepa2. Sin.: estepa2.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Estrepada",
     "p": "f.",
     "d": "Esfuerzo que se hace de cada vez para tirar de un cabo, de una cadena, etc., y, en especial, el esfuerzo reunido de diversos operarios, etc.",
@@ -38160,16 +35676,6 @@
     "s": "",
     "c": "sustantivo",
     "ec": ""
-  },
-  {
-    "w": "Estrige",
-    "p": "f.",
-    "d": "Lechuza . Sin.: lechuza, bruja, coruja, curuja, oliva.",
-    "df": "f. lechuza (‖ ave). Sin.: lechuza, bruja, coruja, curuja, oliva.",
-    "e": "Del lat. strix, -igis, y este del gr. στρίγξ, -ιγγός strínx, -ingós.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_latin"
   },
   {
     "w": "Estrigiforme",
@@ -39384,16 +36890,6 @@
     "ec": "etym_latin"
   },
   {
-    "w": "Etiópico",
-    "p": "adj.",
-    "d": "Etíope . Sin.: etíope, etiopio.",
-    "df": "adj. etíope (‖ perteneciente a Etiopía). Sin.: etíope, etiopio. | adj. Perteneciente o relativo al etiópico (‖ grupo de lenguas). Léxico etiópico. Sin.: etíope.",
-    "e": "Del lat. Aethiopĭcus, y este del gr. Αἰθιοπικός Aithiopikós.",
-    "s": "",
-    "c": "adjetivo",
-    "ec": "etym_latin"
-  },
-  {
     "w": "Etmoidal",
     "p": "adj.",
     "d": "Anat. Perteneciente o relativo al hueso etmoides.",
@@ -39678,16 +37174,6 @@
     "s": "",
     "c": "botanica",
     "ec": "etym_latin"
-  },
-  {
-    "w": "Eucaliptus",
-    "p": "m.",
-    "d": "Eucalipto. Sin.: eucalipto.",
-    "df": "m. eucalipto. Sin.: eucalipto.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
   },
   {
     "w": "Eucaria",
@@ -40437,16 +37923,6 @@
     "ec": ""
   },
   {
-    "w": "Evanecer",
-    "p": "tr.",
-    "d": "Evanescer. Sin.: evanescer.",
-    "df": "tr. evanescer. Sin.: evanescer.",
-    "e": "",
-    "s": "",
-    "c": "verbo",
-    "ec": ""
-  },
-  {
     "w": "Evanescencia",
     "p": "f.",
     "d": "Acción y efecto de evanescerse o esfumarse algo.",
@@ -40743,16 +38219,6 @@
     "ec": ""
   },
   {
-    "w": "Evónimo",
-    "p": "m.",
-    "d": "Bonetero . Sin.: bonetero, husera.",
-    "df": "m. bonetero (‖ arbusto). Sin.: bonetero, husera.",
-    "e": "Del lat. evony̆mus, y este del gr. εὐώνυμος euṓnymos.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_latin"
-  },
-  {
     "w": "Exabrupto",
     "p": "m.",
     "d": "Salida de tono, como dicho o ademán inconveniente e inesperado, manifestado con viveza. Sin.: grosería, brusquedad, incorrección.",
@@ -40783,16 +38249,6 @@
     "ec": "etym_latin"
   },
   {
-    "w": "Exacerbamiento",
-    "p": "m.",
-    "d": "Exacerbación. Sin.: enfado, enojo, exacerbación, exasperación, irritación1, excitación.",
-    "df": "m. exacerbación. Sin.: enfado, enojo, exacerbación, exasperación, irritación1, excitación.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Exactor",
     "p": "m.",
     "d": "Cobrador o recaudador de los tributos, impuestos o emolumentos. Sin.: recaudador.",
@@ -40800,16 +38256,6 @@
     "e": "Del lat. exactor, ōris.",
     "s": "",
     "c": "sustantivo",
-    "ec": "etym_latin"
-  },
-  {
-    "w": "Exagerador",
-    "p": "adj.",
-    "d": "Exagerado . Sin.: exagerado.",
-    "df": "adj. exagerado (‖ que exagera). Sin.: exagerado.",
-    "e": "Del lat. exaggerātor, -ōris.",
-    "s": "",
-    "c": "adjetivo",
     "ec": "etym_latin"
   },
   {
@@ -41125,16 +38571,6 @@
     "ec": ""
   },
   {
-    "w": "Excitatriz",
-    "p": "adj.",
-    "d": "Excitadora. Sin.: excitadora.",
-    "df": "adj. excitadora. Sin.: excitadora.",
-    "e": "",
-    "s": "",
-    "c": "adjetivo",
-    "ec": ""
-  },
-  {
     "w": "Exclamación",
     "p": "f.",
     "d": "Voz, grito o frase en que se refleja una emoción, sea de alegría, pena, indignación, cólera, asombro o cualquier otro afecto. Sin.: grito, imprecación, interjección, juramento.",
@@ -41153,16 +38589,6 @@
     "s": "",
     "c": "verbo",
     "ec": "etym_latin"
-  },
-  {
-    "w": "Exclamativo",
-    "p": "adj.",
-    "d": "Exclamatorio. Sin.: exclamatorio.",
-    "df": "adj. exclamatorio. Sin.: exclamatorio. | adj. Gram. Que implica o denota exclamación. | adj. Gram. Que se construye con un exclamativo. ¡Qué inmenso error! es un grupo nominal exclamativo. | m. Gram. determinante exclamativo. | m. Gram. pronombre exclamativo.",
-    "e": "",
-    "s": "",
-    "c": "adjetivo",
-    "ec": ""
   },
   {
     "w": "Exclamatorio",
@@ -41325,16 +38751,6 @@
     "ec": "etym_latin"
   },
   {
-    "w": "Excremental",
-    "p": "adj.",
-    "d": "Excrementicio. Sin.: excrementicio.",
-    "df": "adj. excrementicio. Sin.: excrementicio.",
-    "e": "",
-    "s": "",
-    "c": "adjetivo",
-    "ec": ""
-  },
-  {
     "w": "Excrementar",
     "p": "tr.",
     "d": "Deponer los excrementos. Sin.: defecar, excretar, evacuar, deponer, cagar.",
@@ -41375,16 +38791,6 @@
     "e": "",
     "s": "",
     "c": "adjetivo",
-    "ec": ""
-  },
-  {
-    "w": "Excrescencia",
-    "p": "f.",
-    "d": "Excrecencia. Sin.: excrecencia.",
-    "df": "f. excrecencia. Sin.: excrecencia.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
     "ec": ""
   },
   {
@@ -41446,16 +38852,6 @@
     "s": "",
     "c": "sustantivo",
     "ec": ""
-  },
-  {
-    "w": "Excurso",
-    "p": "m.",
-    "d": "Digresión. Sin.: digresión.",
-    "df": "m. digresión. Sin.: digresión.",
-    "e": "Del lat. excursus.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_latin"
   },
   {
     "w": "Excusabaraja",
@@ -41761,16 +39157,6 @@
     "s": "",
     "c": "adjetivo",
     "ec": ""
-  },
-  {
-    "w": "Exhortatorio",
-    "p": "adj.",
-    "d": "Exhortativo. Sin.: exhortativo.",
-    "df": "adj. exhortativo. Sin.: exhortativo.",
-    "e": "Del lat. exhortatorius.",
-    "s": "",
-    "c": "adjetivo",
-    "ec": "etym_latin"
   },
   {
     "w": "Exhorto",
@@ -42321,16 +39707,6 @@
     ]
   },
   {
-    "w": "Expillo",
-    "p": "m.",
-    "d": "Matricaria. Sin.: matricaria, artemisa, arugas, magarza.",
-    "df": "m. matricaria. Sin.: matricaria, artemisa, arugas, magarza.",
-    "e": "De or. desc.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Explanación",
     "p": "f.",
     "d": "Acción y efecto de explanar. Sin.: allanamiento, alisamiento, nivelación, igualación, desmonte.",
@@ -42580,26 +39956,6 @@
     "ec": ""
   },
   {
-    "w": "Exprimidera",
-    "p": "f.",
-    "d": "Exprimidor. Sin.: exprimidor, exprimidero.",
-    "df": "f. exprimidor. Sin.: exprimidor, exprimidero.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Exprimidero",
-    "p": "m.",
-    "d": "Exprimidor. Sin.: exprimidor, exprimidera.",
-    "df": "m. exprimidor. Sin.: exprimidor, exprimidera.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Exprimidor",
     "p": "m.",
     "d": "Instrumento usado para estrujar la materia cuyo zumo se quiere extraer. Sin.: exprimidera, exprimidero.",
@@ -42716,16 +40072,6 @@
     "ec": ""
   },
   {
-    "w": "Expurgo",
-    "p": "m.",
-    "d": "Expurgación. Sin.: expurgación.",
-    "df": "m. expurgación. Sin.: expurgación.",
-    "e": "De expurgar.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Expósito",
     "p": "adj.",
     "d": "Dicho de un recién nacido: Abandonado o expuesto, o confiado a un establecimiento benéfico. U. m. c. s. Sin.: abandonado, huérfano, concejo, echadillo, echadizo, enechado.",
@@ -42749,16 +40095,6 @@
     ]
   },
   {
-    "w": "Extemporal",
-    "p": "adj.",
-    "d": "Extemporáneo. Sin.: extemporáneo.",
-    "df": "adj. extemporáneo. Sin.: extemporáneo.",
-    "e": "Del lat. extemporālis.",
-    "s": "",
-    "c": "adjetivo",
-    "ec": "etym_latin"
-  },
-  {
     "w": "Extemporaneidad",
     "p": "f.",
     "d": "Cualidad de extemporáneo.",
@@ -42770,16 +40106,6 @@
     "esp": [
       "larga"
     ]
-  },
-  {
-    "w": "Extendidamente",
-    "p": "adv.",
-    "d": "Extensamente. Sin.: extensamente.",
-    "df": "adv. extensamente. Sin.: extensamente.",
-    "e": "",
-    "s": "",
-    "c": "adverbio",
-    "ec": ""
   },
   {
     "w": "Extensivamente",
@@ -42819,16 +40145,6 @@
     "e": "Del lat. exterminabĭlis.",
     "s": "",
     "c": "adjetivo",
-    "ec": "etym_latin"
-  },
-  {
-    "w": "Exterminación",
-    "p": "f.",
-    "d": "Exterminio. Sin.: exterminio.",
-    "df": "f. exterminio. Sin.: exterminio.",
-    "e": "Del lat. exterminatio, -ōnis.",
-    "s": "",
-    "c": "sustantivo",
     "ec": "etym_latin"
   },
   {
@@ -42872,16 +40188,6 @@
     "e": "",
     "s": "",
     "c": "adverbio",
-    "ec": ""
-  },
-  {
-    "w": "Extinguidor",
-    "p": "m.",
-    "d": "Extintor . Sin.: extintor.",
-    "df": "m. Am. extintor (‖ aparato para extinguir incendios). Sin.: extintor.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
     "ec": ""
   },
   {
@@ -43156,16 +40462,6 @@
     ]
   },
   {
-    "w": "Extramarital",
-    "p": "adj.",
-    "d": "Extramatrimonial. Sin.: extramatrimonial, extraconyugal.",
-    "df": "adj. extramatrimonial. Sin.: extramatrimonial, extraconyugal.",
-    "e": "",
-    "s": "",
-    "c": "adjetivo",
-    "ec": ""
-  },
-  {
     "w": "Extramatrimonial",
     "p": "adj.",
     "d": "Que sucede o está fuera del matrimonio. Sin.: extraconyugal, extramarital.",
@@ -43216,16 +40512,6 @@
     "p": "f.",
     "d": "Cualidad y condición de extranjero.",
     "df": "f. Cualidad y condición de extranjero. | f. Cualidad y condición que por las leyes corresponden al extranjero residente en un país, mientras no está naturalizado en él. Sin.: extranjía. | f. Sistema o conjunto de normas reguladoras de la condición, los actos y los intereses de los extranjeros en un país. | f. Conjunto de extranjeros. Sin.: extranjía.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Extranjía",
-    "p": "f. coloq.",
-    "d": "Extranjería. Sin.: extranjería.",
-    "df": "f. coloq. extranjería. Sin.: extranjería.",
     "e": "",
     "s": "",
     "c": "sustantivo",
@@ -43740,26 +41026,6 @@
     "ec": ""
   },
   {
-    "w": "Eyectar",
-    "p": "tr.",
-    "d": "Expulsar . Sin.: expulsar, expeler, lanzar, arrojar.",
-    "df": "tr. expulsar (‖ hacer salir algo del organismo). Sin.: expulsar, expeler, lanzar, arrojar. | tr. Impulsar con fuerza hacia fuera mediante un mecanismo automático. U. t. c. prnl.",
-    "e": "Del lat. eiectāre 'echar fuera, arrojar'.",
-    "s": "",
-    "c": "verbo",
-    "ec": "etym_latin"
-  },
-  {
-    "w": "Eyector",
-    "p": "m.",
-    "d": "Expulsor . Sin.: expulsor.",
-    "df": "m. expulsor (‖ mecanismo de las armas de fuego). Sin.: expulsor. | m. Bomba que sirve para expulsar una pieza o extraer un fluido.",
-    "e": "Del lat. eiectus, part. pas. de eiicĕre 'arrojar, expulsar', y -or2.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_latin"
-  },
-  {
     "w": "Eólico",
     "p": "adj.",
     "d": "Eolio. U. t. c. s.",
@@ -43951,16 +41217,6 @@
     "s": "",
     "c": "otros",
     "ec": ""
-  },
-  {
-    "w": "Ésula",
-    "p": "f.",
-    "d": "Lechetrezna. Sin.: lechetrezna, titímalo, tornagallos.",
-    "df": "f. lechetrezna. Sin.: lechetrezna, titímalo, tornagallos.",
-    "e": "Del lat. cient. [Euphorbia] esula, der. del lat. esus, part. pas. de esse 'comer1'.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_latin"
   },
   {
     "w": "Éter",

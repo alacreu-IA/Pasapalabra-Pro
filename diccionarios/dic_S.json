@@ -365,16 +365,6 @@
     ]
   },
   {
-    "w": "Sabonera",
-    "p": "f.",
-    "d": "Sayón2. Sin.: sayón2.",
-    "df": "f. sayón2. Sin.: sayón2.",
-    "e": "Del lat. mediev. saponaria.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_latin"
-  },
-  {
     "w": "Saboneta",
     "p": "f.",
     "d": "Reloj de bolsillo, cuya esfera, cubierta con una tapa de oro, plata u otro metal, se descubre apretando un muelle.",
@@ -496,16 +486,6 @@
     "ec": ""
   },
   {
-    "w": "Sabuco",
-    "p": "m.",
-    "d": "Saúco . Sin.: saúco, sabugo, cañilero, sayugo.",
-    "df": "m. saúco (‖ arbusto). Sin.: saúco, sabugo, cañilero, sayugo.",
-    "e": "Del lat. sabūcus.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_latin"
-  },
-  {
     "w": "Sabueso",
     "p": "m. y f.",
     "d": "Y f. perro sabueso. Sin.: perro, can1, podenco.",
@@ -524,16 +504,6 @@
     "s": "",
     "c": "sustantivo",
     "ec": ""
-  },
-  {
-    "w": "Sabugo",
-    "p": "m.",
-    "d": "Saúco . Sin.: saúco, sabuco, cañilero, sayugo.",
-    "df": "m. saúco (‖ arbusto). Sin.: saúco, sabuco, cañilero, sayugo.",
-    "e": "Del lat. sabūcus.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_latin"
   },
   {
     "w": "Sabuloso",
@@ -752,16 +722,6 @@
     "ec": ""
   },
   {
-    "w": "Sacadineros",
-    "p": "m. coloq.",
-    "d": "Sacacuartos . Sin.: sacacuartos, sacaperras.",
-    "df": "m. coloq. sacacuartos (‖ actividad que induce a gastar dinero). Sin.: sacacuartos, sacaperras.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Sacador",
     "p": "adj.",
     "d": "Que saca. U. t. c. s.",
@@ -869,16 +829,6 @@
     "p": "m.",
     "d": "Instrumento para sacar balas, usado por los antiguos arcabuceros.",
     "df": "m. Instrumento para sacar balas, usado por los antiguos arcabuceros.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Sacaperras",
-    "p": "m. coloq.",
-    "d": "Sacacuartos . Sin.: sacacuartos, sacadineros.",
-    "df": "m. coloq. sacacuartos (‖ actividad que induce a gastar dinero). Sin.: sacacuartos, sacadineros.",
     "e": "",
     "s": "",
     "c": "sustantivo",
@@ -1013,16 +963,6 @@
     "d": "Empleado del teatro que retira los muebles al final de la escena.",
     "df": "m. coloq. Empleado del teatro que retira los muebles al final de la escena.",
     "e": "De sacar y silla.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Sacatapón",
-    "p": "m.",
-    "d": "Sacacorchos. Sin.: sacacorchos, descorchador, tirabuzón.",
-    "df": "m. sacacorchos. Sin.: sacacorchos, descorchador, tirabuzón.",
-    "e": "",
     "s": "",
     "c": "sustantivo",
     "ec": ""
@@ -1492,29 +1432,6 @@
     "ec": ""
   },
   {
-    "w": "Saeta",
-    "p": "f.",
-    "d": "Flecha . Sin.: flecha, virote, dardo, rehilete.",
-    "df": "f. flecha (‖ arma arrojadiza). Sin.: flecha, virote, dardo, rehilete. | f. Aguja del reloj. Sin.: manecilla, aguja, manilla, saetilla, minutero, segundero, varilla. | f. En una brújula, flecha que se vuelve hacia el polo magnético. | f. Punta del sarmiento que queda en la cepa cuando se poda. | f. Palo flamenco consistente en una jaculatoria o copla que una persona dedica a las imágenes de las procesiones.",
-    "e": "Del lat. sagitta.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_latin",
-    "esp": [
-      "explosiva"
-    ]
-  },
-  {
-    "w": "Saetar",
-    "p": "tr.",
-    "d": "Saetear. Sin.: asaetear, asaetar, saetear, flechar.",
-    "df": "tr. saetear. Sin.: asaetear, asaetar, saetear, flechar.",
-    "e": "",
-    "s": "",
-    "c": "verbo",
-    "ec": ""
-  },
-  {
     "w": "Saetazo",
     "p": "m.",
     "d": "Acción de tirar o herir con la saeta.",
@@ -1522,16 +1439,6 @@
     "e": "",
     "s": "",
     "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Saetear",
-    "p": "tr.",
-    "d": "Asaetear. Sin.: asaetear, asaetar, saetar, flechar.",
-    "df": "tr. asaetear. Sin.: asaetear, asaetar, saetar, flechar.",
-    "e": "",
-    "s": "",
-    "c": "verbo",
     "ec": ""
   },
   {
@@ -1562,16 +1469,6 @@
     "e": "De saeta e -illa.",
     "s": "",
     "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Saetí",
-    "p": "m.",
-    "d": "Raso . Sin.: raso.",
-    "df": "m. raso (‖ tela de seda). Sin.: raso.",
-    "e": "",
-    "s": "",
-    "c": "vestimenta",
     "ec": ""
   },
   {
@@ -1821,16 +1718,6 @@
     "e": "De zahorí.",
     "s": "",
     "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Sahárico",
-    "p": "adj.",
-    "d": "Sahariano . Sin.: sahariano.",
-    "df": "adj. sahariano (‖ perteneciente al Sahara). Sin.: sahariano.",
-    "e": "",
-    "s": "",
-    "c": "adjetivo",
     "ec": ""
   },
   {
@@ -2111,16 +1998,6 @@
     "ec": "etym_latin"
   },
   {
-    "w": "Salamandria",
-    "p": "f.",
-    "d": "Salamanquesa. Sin.: salamanquesa, salamanqueja, perenquén, saltarrostro.",
-    "df": "f. salamanquesa. Sin.: salamanquesa, salamanqueja, perenquén, saltarrostro.",
-    "e": "De salamandra.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Salamandrino",
     "p": "adj.",
     "d": "Perteneciente o relativo a la salamandra.",
@@ -2272,16 +2149,6 @@
     "s": "",
     "c": "sustantivo",
     "ec": ""
-  },
-  {
-    "w": "Salce",
-    "p": "m.",
-    "d": "Sauce. Sin.: sauce, salguera, salguero1, sauz, saz, salgar2.",
-    "df": "m. sauce. Sin.: sauce, salguera, salguero1, sauz, saz, salgar2.",
-    "e": "Del lat. salix, -ĭcis.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_latin"
   },
   {
     "w": "Salceda",
@@ -2481,19 +2348,6 @@
     "ec": "etym_latin"
   },
   {
-    "w": "Salema",
-    "p": "f.",
-    "d": "Salpa . Sin.: salpa, pámpano.",
-    "df": "f. salpa (‖ pez acantopterigio). Sin.: salpa, pámpano.",
-    "e": "Del ár. hisp. ḥalláma.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_arabe",
-    "esp": [
-      "viajera"
-    ]
-  },
-  {
     "w": "Salentino",
     "p": "adj.",
     "d": "Dicho de una persona: De un pueblo de la Italia antigua, en la Mesapia. U. t. c. s.",
@@ -2590,26 +2444,6 @@
     "ec": ""
   },
   {
-    "w": "Salgada",
-    "p": "f.",
-    "d": "Orzaga. Sin.: orzaga, álimo, armuelle, marismo, salgadera.",
-    "df": "f. orzaga. Sin.: orzaga, álimo, armuelle, marismo, salgadera.",
-    "e": "De salgar2.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Salgadera",
-    "p": "f.",
-    "d": "Orzaga. Sin.: orzaga, álimo, armuelle, marismo, salgada.",
-    "df": "f. orzaga. Sin.: orzaga, álimo, armuelle, marismo, salgada.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Salgue",
     "p": "m. coloq.",
     "d": "Ál. Forraje para el ganado.",
@@ -2618,16 +2452,6 @@
     "s": "",
     "c": "sustantivo",
     "ec": ""
-  },
-  {
-    "w": "Salguera",
-    "p": "f.",
-    "d": "Sauce. Sin.: sauce, salce, salguero1, sauz, saz, salgar2.",
-    "df": "f. sauce. Sin.: sauce, salce, salguero1, sauz, saz, salgar2.",
-    "e": "Del lat. vulg. *salicaria, y este der. del lat. salix, -ĭcis 'sauce'.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_latin"
   },
   {
     "w": "Salicaria",
@@ -2730,16 +2554,6 @@
     "ec": ""
   },
   {
-    "w": "Salimiento",
-    "p": "m.",
-    "d": "Salida . Sin.: salida, partida.",
-    "df": "m. salida (‖ acción de salir). Sin.: salida, partida.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Salina",
     "p": "adj.",
     "d": "Que contiene sal. Sin.: salobre, salífero, salado, salitroso.",
@@ -2820,16 +2634,6 @@
     "ec": ""
   },
   {
-    "w": "Salitre",
-    "p": "m.",
-    "d": "Nitro . Sin.: nitro, nitrato, azoato.",
-    "df": "m. nitro (‖ nitrato de potasio). Sin.: nitro, nitrato, azoato. | m. Sustancia salina, especialmente la que aflora en tierras y paredes. Sin.: afronitro, alatrón. | m. nitrato de Chile.",
-    "e": "Del occit. y cat. salnitre, y este del lat. sal nitrum.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Salitrera",
     "p": "adj.",
     "d": "Perteneciente o relativo al salitre.",
@@ -2894,16 +2698,6 @@
     "p": "f.",
     "d": "And., Arg., Bol., Ec., Par. y Ven. escupidera . Sin.: escupidera, escupidero, escupidor.",
     "df": "f. And., Arg., Bol., Ec., Par. y Ven. escupidera (‖ recipiente para escupir). Sin.: escupidera, escupidero, escupidor.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Salivajo",
-    "p": "m.",
-    "d": "Salivazo. Sin.: salivazo, escupitajo.",
-    "df": "m. salivazo. Sin.: salivazo, escupitajo.",
     "e": "",
     "s": "",
     "c": "sustantivo",
@@ -3362,26 +3156,6 @@
     "ec": ""
   },
   {
-    "w": "Salpullido",
-    "p": "m.",
-    "d": "Sarpullido. Sin.: sarpullido, erupción.",
-    "df": "m. sarpullido. Sin.: sarpullido, erupción.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Salpullir",
-    "p": "tr.",
-    "d": "Sarpullir. Sin.: sarpullir.",
-    "df": "tr. sarpullir. Sin.: sarpullir.",
-    "e": "",
-    "s": "",
-    "c": "verbo",
-    "ec": ""
-  },
-  {
     "w": "Salsear",
     "p": "intr.",
     "d": "Mur. Entremeterse, meterse en todo.",
@@ -3545,16 +3319,6 @@
     "ec": ""
   },
   {
-    "w": "Saltambarca",
-    "p": "f.",
-    "d": "Saltaembarca. Sin.: saltaembarca.",
-    "df": "f. saltaembarca. Sin.: saltaembarca.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Saltamontes",
     "p": "m.",
     "d": "Insecto ortóptero de la familia de los acrídidos, de cabeza gruesa, ojos prominentes, antenas finas, alas membranosas, patas anteriores cortas y muy robustas y largas las posteriores, adaptadas para dar grandes saltos, del cual existen numerosas especies. Sin.: caballeta, cigarrón, saltarén, saltigallo, saltaprados, saltapajas, saltón, chapulín.",
@@ -3566,16 +3330,6 @@
     "esp": [
       "explosiva"
     ]
-  },
-  {
-    "w": "Saltaojos",
-    "p": "m.",
-    "d": "Peonía . Sin.: peonía1, albardera.",
-    "df": "m. peonía (‖ planta ranunculácea). Sin.: peonía1, albardera.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
   },
   {
     "w": "Saltapajas",
@@ -3592,16 +3346,6 @@
     "p": "m.",
     "d": "Ast. saltamontes. Sin.: saltamontes, caballeta, cigarrón, saltarén, saltigallo, saltapajas.",
     "df": "m. Ast. saltamontes. Sin.: saltamontes, caballeta, cigarrón, saltarén, saltigallo, saltapajas.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Saltarel",
-    "p": "m.",
-    "d": "Saltarelo. Sin.: saltarelo.",
-    "df": "m. saltarelo. Sin.: saltarelo.",
     "e": "",
     "s": "",
     "c": "sustantivo",
@@ -3894,19 +3638,6 @@
     "ec": "etym_latin"
   },
   {
-    "w": "Salutíferamente",
-    "p": "adv.",
-    "d": "Saludablemente. Sin.: saludablemente.",
-    "df": "adv. saludablemente. Sin.: saludablemente.",
-    "e": "",
-    "s": "",
-    "c": "adverbio",
-    "ec": "",
-    "esp": [
-      "larga"
-    ]
-  },
-  {
     "w": "Salvabarros",
     "p": "m.",
     "d": "Pieza de un vehículo destinada a impedir que salpique el barro. Sin.: guardabarros, guardafangos, parafango1.",
@@ -3941,16 +3672,6 @@
     "p": "m.",
     "d": "Palabra o uso propios del español hablado en El Salvador.",
     "df": "m. Palabra o uso propios del español hablado en El Salvador. | m. Cualidad o condición de salvadoreño. | m. Amor o apego a lo salvadoreño.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Salvaguarda",
-    "p": "f.",
-    "d": "Salvaguardia. Sin.: vigilancia, salvaguardia. salvoconducto, pase2.",
-    "df": "f. salvaguardia. Sin.: vigilancia, salvaguardia. salvoconducto, pase2.",
     "e": "",
     "s": "",
     "c": "sustantivo",
@@ -4116,16 +3837,6 @@
     ]
   },
   {
-    "w": "Salvohonor",
-    "p": "m. coloq.",
-    "d": "Culo . Sin.: nalgas, culo, trasero.",
-    "df": "m. coloq. culo (‖ nalgas). Sin.: nalgas, culo, trasero.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Salvífico",
     "p": "adj.",
     "d": "Perteneciente o relativo a la salvación.",
@@ -4153,16 +3864,6 @@
     "e": "Del occit. y cat. salin, y este del lat. salīnum.",
     "s": "",
     "c": "comercio",
-    "ec": ""
-  },
-  {
-    "w": "Sama",
-    "p": "f.",
-    "d": "Pagel. Sin.: pagel, besuguete.",
-    "df": "f. pagel. Sin.: pagel, besuguete.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
     "ec": ""
   },
   {
@@ -4442,16 +4143,6 @@
     "ec": ""
   },
   {
-    "w": "Sampsuco",
-    "p": "m.",
-    "d": "Mejorana. Sin.: mejorana, almoraduj, amáraco, mayorana, sarilla.",
-    "df": "m. mejorana. Sin.: mejorana, almoraduj, amáraco, mayorana, sarilla.",
-    "e": "Del lat. sampsūchum, y este del gr. σάμψουχον sámpsouchon.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_latin"
-  },
-  {
     "w": "Sampán",
     "p": "m.",
     "d": "Embarcación ligera propia de China, para la navegación en aguas costeras y fluviales, provista de una vela y un toldo y propulsada a remo, que se emplea para el transporte de mercancías y se utiliza como habitación flotante.",
@@ -4467,16 +4158,6 @@
     "d": "En algunas doctrinas orientales, ciclo de transmigraciones, o de renacimientos, causados por el karma.",
     "df": "m. En algunas doctrinas orientales, ciclo de transmigraciones, o de renacimientos, causados por el karma.",
     "e": "Del sánscr. saṃsāra.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Samuga",
-    "p": "f.",
-    "d": "Jamuga. Sin.: jamuga, angarillas, jamúas.",
-    "df": "f. jamuga. Sin.: jamuga, angarillas, jamúas.",
-    "e": "",
     "s": "",
     "c": "sustantivo",
     "ec": ""
@@ -4560,16 +4241,6 @@
     "s": "",
     "c": "sustantivo",
     "ec": ""
-  },
-  {
-    "w": "Sanamunda",
-    "p": "f.",
-    "d": "Salamunda. Sin.: salamunda.",
-    "df": "f. salamunda. Sin.: salamunda.",
-    "e": "Del lat. sanāre 'sanar' y mundāre 'limpiar'.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_latin"
   },
   {
     "w": "Sananica",
@@ -5294,26 +4965,6 @@
     "ec": "etym_latin"
   },
   {
-    "w": "Sanguisorba",
-    "p": "f.",
-    "d": "Pimpinela. Sin.: pimpinela.",
-    "df": "f. pimpinela. Sin.: pimpinela.",
-    "e": "Del lat. cient. Sanguisorba, y este del lat. sanguis 'sangre' y sorbēre 'absorber', por el uso de esta planta como hemostático.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_latin"
-  },
-  {
-    "w": "Sanguiñuelo",
-    "p": "m.",
-    "d": "Cornejo. Sin.: cornejo, cornizo, corno1, durillo, sangüeño, sanguino, albellanino.",
-    "df": "m. cornejo. Sin.: cornejo, cornizo, corno1, durillo, sangüeño, sanguino, albellanino.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Sanguífero",
     "p": "adj.",
     "d": "Que contiene y lleva en sí sangre.",
@@ -5321,36 +4972,6 @@
     "e": "Del lat. sanguis 'sangre' y ‒́fero.",
     "s": "",
     "c": "adjetivo",
-    "ec": "etym_latin"
-  },
-  {
-    "w": "Sangüesa",
-    "p": "f.",
-    "d": "Frambuesa. Sin.: frambuesa, mora2, chordón.",
-    "df": "f. frambuesa. Sin.: frambuesa, mora2, chordón.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Sangüeso",
-    "p": "m.",
-    "d": "Frambueso. Sin.: frambueso, fraga1, chordón.",
-    "df": "m. frambueso. Sin.: frambueso, fraga1, chordón.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Sangüeño",
-    "p": "m.",
-    "d": "Cornejo. Sin.: cornejo, cornizo, corno1, sanguino, sanguiñuelo, durillo, albellanino.",
-    "df": "m. cornejo. Sin.: cornejo, cornizo, corno1, sanguino, sanguiñuelo, durillo, albellanino.",
-    "e": "Del lat. sanguineus 'del color de la sangre'.",
-    "s": "",
-    "c": "sustantivo",
     "ec": "etym_latin"
   },
   {
@@ -5378,16 +4999,6 @@
     "p": "m.",
     "d": "Territorio del Imperio turco, gobernado por un sanjaco. Sin.: sanjacato.",
     "df": "m. Territorio del Imperio turco, gobernado por un sanjaco. Sin.: sanjacato.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Sanjacato",
-    "p": "m.",
-    "d": "Sanjacado. Sin.: sanjacado.",
-    "df": "m. sanjacado. Sin.: sanjacado.",
     "e": "",
     "s": "",
     "c": "sustantivo",
@@ -5840,16 +5451,6 @@
     "ec": ""
   },
   {
-    "w": "Santanita",
-    "p": "f.",
-    "d": "Mariquita . Sin.: mariquita, gallinita, margarita, sananica.",
-    "df": "f. mariquita (‖ insecto coleóptero). Sin.: mariquita, gallinita, margarita, sananica.",
-    "e": "Del dim. de santa Ana.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Santarrosense",
     "p": "adj.",
     "d": "Natural de Santa Rosa, ciudad del departamento de Misiones, en el Paraguay. U. t. c. s. Sin.: santarroseño.",
@@ -5868,19 +5469,6 @@
     "s": "",
     "c": "gentilicio",
     "ec": ""
-  },
-  {
-    "w": "Santateresa",
-    "p": "f.",
-    "d": "Mantis. Sin.: mantis, campamocha, cerbatana, rezadora, rezandera, teresa, carpintesa, carpintera.",
-    "df": "f. mantis. Sin.: mantis, campamocha, cerbatana, rezadora, rezandera, teresa, carpintesa, carpintera.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "",
-    "esp": [
-      "explosiva"
-    ]
   },
   {
     "w": "Santera",
@@ -6083,16 +5671,6 @@
     "ec": ""
   },
   {
-    "w": "Santolio",
-    "p": "m.",
-    "d": "Óleo . Sin.: óleo.",
-    "df": "m. óleo (‖ aceite consagrado). Sin.: óleo.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Santonina",
     "p": "f.",
     "d": "Sustancia neutra, cristalizable, incolora, amarga y acre que se extrae del santónico y se emplea en medicina como vermífugo.",
@@ -6276,16 +5854,6 @@
     "ec": ""
   },
   {
-    "w": "Sapina",
-    "p": "f.",
-    "d": "Salicor. Sin.: salicor, sapillo.",
-    "df": "f. salicor. Sin.: salicor, sapillo.",
-    "e": "Del lat. sapo 'jabón'.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_latin"
-  },
-  {
     "w": "Sapindáceo",
     "p": "adj.",
     "d": "Bot. Dicho de una planta: Del grupo de las angiospermas dicotiledóneas, arbórea o sarmentosa, de hojas casi siempre alternas, agrupadas de tres en tres y pecioladas, flores en espiga con pedúnculos que suelen transformarse en zarcillos, y fruto capsular; p. ej., el farolillo o el jaboncillo. U. t. c. s. f., en pl. como taxón.",
@@ -6293,26 +5861,6 @@
     "e": "Del lat. cient. Sapindaceus, y este de sapindus 'jaboncillo' y -aceus '-aceo'.",
     "s": "",
     "c": "adjetivo",
-    "ec": "etym_latin"
-  },
-  {
-    "w": "Sapino",
-    "p": "m.",
-    "d": "Abeto . Sin.: abeto, pinabete.",
-    "df": "m. abeto (‖ árbol). Sin.: abeto, pinabete.",
-    "e": "Del lat. sapīnus.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_latin"
-  },
-  {
-    "w": "Saponaria",
-    "p": "f.",
-    "d": "Jabonera . Sin.: jabonera, albada2, lanaria.",
-    "df": "f. jabonera (‖ planta herbácea). Sin.: jabonera, albada2, lanaria.",
-    "e": "Del lat. mediev. saponaria.",
-    "s": "",
-    "c": "sustantivo",
     "ec": "etym_latin"
   },
   {
@@ -6354,16 +5902,6 @@
     "s": "",
     "c": "sustantivo",
     "ec": "etym_latin"
-  },
-  {
-    "w": "Sapote",
-    "p": "m.",
-    "d": "Zapote . Sin.: zapote, zapotero.",
-    "df": "m. zapote (‖ árbol). Sin.: zapote, zapotero.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
   },
   {
     "w": "Sapotáceo",
@@ -6522,16 +6060,6 @@
     "ec": ""
   },
   {
-    "w": "Sarapico",
-    "p": "m.",
-    "d": "Zarapito. Sin.: zarapito.",
-    "df": "m. zarapito. Sin.: zarapito.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Sarcocarpio",
     "p": "m.",
     "d": "Bot. Mesocarpio carnoso.",
@@ -6593,26 +6121,6 @@
     "esp": [
       "explosiva"
     ]
-  },
-  {
-    "w": "Sarcófago",
-    "p": "m.",
-    "d": "Sepulcro . Sin.: sepulcro, enterramiento, monumento, tumba1.",
-    "df": "m. sepulcro (‖ obra para dar sepultura a un cadáver). Sin.: sepulcro, enterramiento, monumento, tumba1.",
-    "e": "Del lat. sarcophăgum, y este del gr. σαρκοφάγος sarkophágos; propiamente 'que come carne'.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_latin"
-  },
-  {
-    "w": "Sarda",
-    "p": "f.",
-    "d": "Caballa . Sin.: caballa, escombro2, estornino, verdel.",
-    "df": "f. caballa (‖ pez). Sin.: caballa, escombro2, estornino, verdel. | f. Sal. Pez de río. | f. matorral. Sin.: brusquero, matorral.",
-    "e": "Del lat. sarda.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_latin"
   },
   {
     "w": "Sardana",
@@ -6725,16 +6233,6 @@
     "ec": ""
   },
   {
-    "w": "Sardio",
-    "p": "m.",
-    "d": "Sardónice. Sin.: sardónice, sardo, sardónica, sardonio, sardónique.",
-    "df": "m. sardónice. Sin.: sardónice, sardo, sardónica, sardonio, sardónique.",
-    "e": "Del lat. sardius [lapis].",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_latin"
-  },
-  {
     "w": "Sardo",
     "p": "adj.",
     "d": "Natural de Cerdeña, isla de Italia. U. t. c. s.",
@@ -6765,16 +6263,6 @@
     "ec": "etym_latin"
   },
   {
-    "w": "Sardonio",
-    "p": "m.",
-    "d": "Sardónice. Sin.: sardónice, sardio, sardo, sardónica, sardónique.",
-    "df": "m. sardónice. Sin.: sardónice, sardio, sardo, sardónica, sardónique.",
-    "e": "Del lat. sardonĭus, y este del gr. σαρδόνιος sardónios.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_latin"
-  },
-  {
     "w": "Sardón",
     "p": "m.",
     "d": "Ast. Monte bajo, terreno lleno de maleza.",
@@ -6783,16 +6271,6 @@
     "s": "",
     "c": "sustantivo",
     "ec": ""
-  },
-  {
-    "w": "Sardónica",
-    "p": "f.",
-    "d": "Sardónice. Sin.: sardónice, sardio, sardo, sardonio, sardónique.",
-    "df": "f. sardónice. Sin.: sardónice, sardio, sardo, sardonio, sardónique.",
-    "e": "Del lat. sardony̆cha.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_latin"
   },
   {
     "w": "Sardónice",
@@ -6816,16 +6294,6 @@
     "esp": [
       "explosiva"
     ]
-  },
-  {
-    "w": "Sardónique",
-    "p": "f.",
-    "d": "Sardónice. Sin.: sardónice, sardio, sardo, sardónica, sardonio.",
-    "df": "f. sardónice. Sin.: sardónice, sardio, sardo, sardónica, sardonio.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
   },
   {
     "w": "Sarga",
@@ -6982,16 +6450,6 @@
     "esp": [
       "viajera"
     ]
-  },
-  {
-    "w": "Sarilla",
-    "p": "f.",
-    "d": "Mejorana. Sin.: mejorana, almoraduj, amáraco, mayorana, sampsuco.",
-    "df": "f. mejorana. Sin.: mejorana, almoraduj, amáraco, mayorana, sampsuco.",
-    "e": "Del lat. saturēia 'ajedrea'.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_latin"
   },
   {
     "w": "Sarmentador",
@@ -7156,16 +6614,6 @@
     ]
   },
   {
-    "w": "Sarrapia",
-    "p": "f.",
-    "d": "Sarapia . Sin.: sarapia.",
-    "df": "f. sarapia (‖ árbol). Sin.: sarapia.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Sarrieta",
     "p": "f.",
     "d": "Espuerta honda y alargada en que se echa de comer a los animales de carga.",
@@ -7217,16 +6665,6 @@
     "esp": [
       "explosiva"
     ]
-  },
-  {
-    "w": "Sartal",
-    "p": "m.",
-    "d": "Sarta . Sin.: sarta, ensarta.",
-    "df": "m. sarta (‖ serie de cosas ensartadas entre sí). Sin.: sarta, ensarta.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
   },
   {
     "w": "Sartenada",
@@ -7528,19 +6966,6 @@
     ]
   },
   {
-    "w": "Satín",
-    "p": "m.",
-    "d": "Satén. Sin.: satén, raso.",
-    "df": "m. satén. Sin.: satén, raso. | m. Madera americana semejante al nogal.",
-    "e": "Del fr. satin; en acep. 2, del ingl. satin [walnut]; literalmente '[nogal] de satén'.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_frances",
-    "esp": [
-      "viajera"
-    ]
-  },
-  {
     "w": "Satíricamente",
     "p": "adv.",
     "d": "De modo satírico .",
@@ -7574,46 +6999,6 @@
     "ec": "etym_latin"
   },
   {
-    "w": "Sauceda",
-    "p": "f.",
-    "d": "Salceda. Sin.: salceda, salcedo, saucedal, saucera, salcinar.",
-    "df": "f. salceda. Sin.: salceda, salcedo, saucedal, saucera, salcinar.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Saucedal",
-    "p": "m.",
-    "d": "Salceda. Sin.: salceda, salcedo, sauceda, saucera, salcinar.",
-    "df": "m. salceda. Sin.: salceda, salcedo, sauceda, saucera, salcinar.",
-    "e": "De sauce.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Saucera",
-    "p": "f.",
-    "d": "Salceda. Sin.: salceda, salcedo, sauceda, saucedal, salcinar.",
-    "df": "f. salceda. Sin.: salceda, salcedo, sauceda, saucedal, salcinar.",
-    "e": "De sauce.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Saucillo",
-    "p": "m.",
-    "d": "Centinodia . Sin.: centinodia, correhuela, altamandría.",
-    "df": "m. centinodia (‖ planta poligonácea medicinal). Sin.: centinodia, correhuela, altamandría.",
-    "e": "Del dim. de sauce.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Saudade",
     "p": "f.",
     "d": "Soledad, nostalgia, añoranza. Sin.: nostalgia, añoranza, soledad, melancolía, morriña, melarchía.",
@@ -7632,16 +7017,6 @@
     "d": "Baño de vapor, en recinto de madera, a muy alta temperatura, que produce una rápida y abundante sudoración y que se toma con fines higiénicos y terapéuticos. En Am., u. t. c. m.",
     "df": "f. Baño de vapor, en recinto de madera, a muy alta temperatura, que produce una rápida y abundante sudoración y que se toma con fines higiénicos y terapéuticos. En Am., u. t. c. m. | f. Local en que se pueden tomar saunas. En Am., u. t. c. m. Sin.: sudadero.",
     "e": "Del finés sauna.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Sauquillo",
-    "p": "m.",
-    "d": "Mundillo . Sin.: mundillo, geldre, mundo, canillero.",
-    "df": "m. mundillo (‖ arbusto). Sin.: mundillo, geldre, mundo, canillero.",
-    "e": "Del dim. de saúco.",
     "s": "",
     "c": "sustantivo",
     "ec": ""
@@ -7696,16 +7071,6 @@
     ]
   },
   {
-    "w": "Sauz",
-    "p": "m.",
-    "d": "Sauce. Sin.: sauce, salce, salguera, salguero1, saz, salgar2.",
-    "df": "m. sauce. Sin.: sauce, salce, salguera, salguero1, saz, salgar2.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Sauzal",
     "p": "m.",
     "d": "Sitio poblado de sauces.",
@@ -7739,26 +7104,6 @@
     ]
   },
   {
-    "w": "Saxafrax",
-    "p": "f.",
-    "d": "Saxífraga . Sin.: saxífraga.",
-    "df": "f. saxífraga (‖ planta herbácea). Sin.: saxífraga.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Saxifragia",
-    "p": "f.",
-    "d": "Saxífraga. Sin.: saxífraga, saxafrax. saxífraga, sasafrás.",
-    "df": "f. saxífraga. Sin.: saxífraga, saxafrax. saxífraga, sasafrás.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Saxifragáceo",
     "p": "adj.",
     "d": "Bot. Dicho de una hierba, de un arbusto o de un árbol: Del grupo de las angiospermas dicotiledóneas, a veces con tallos fistulosos, de hojas alternas u opuestas, enteras o lobuladas y generalmente sin estípulas, flores hermafroditas, de cinco a diez pétalos, o tetrámeras, casi siempre regulares, dispuestas en racimos, panojas o cimas, y fruto capsular o en baya; p. ej., la saxífraga, el grosellero o la hortensia. U. t. c. s. f., en pl. como taxón.",
@@ -7766,16 +7111,6 @@
     "e": "De saxífraga y -áceo.",
     "s": "",
     "c": "adjetivo",
-    "ec": ""
-  },
-  {
-    "w": "Saxo",
-    "p": "m.",
-    "d": "Saxofón. Sin.: saxofón, saxófono.",
-    "df": "m. saxofón. Sin.: saxofón, saxófono.",
-    "e": "Acort.",
-    "s": "",
-    "c": "sustantivo",
     "ec": ""
   },
   {
@@ -7819,26 +7154,6 @@
     "e": "Del lat. saxifrăga.",
     "s": "",
     "c": "botanica",
-    "ec": "etym_latin"
-  },
-  {
-    "w": "Saxófono",
-    "p": "m.",
-    "d": "Saxofón. Sin.: saxofón, saxo.",
-    "df": "m. saxofón. Sin.: saxofón, saxo.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Saya",
-    "p": "f.",
-    "d": "Falda . Sin.: falda, jalda, pollera, basquiña, refajo, halda.",
-    "df": "f. falda (‖ prenda de vestir). Sin.: falda, jalda, pollera, basquiña, refajo, halda. | f. Vestidura talar antigua, especie de túnica, que usaban los hombres. | f. Regalo en dinero que en equivalencia de vestido solían dar las reinas a sus servidoras cuando estas se casaban.",
-    "e": "Del lat. vulg. *sagia.",
-    "s": "",
-    "c": "vestimenta",
     "ec": "etym_latin"
   },
   {
@@ -8297,16 +7612,6 @@
     "e": "",
     "s": "",
     "c": "gentilicio",
-    "ec": ""
-  },
-  {
-    "w": "Secoya",
-    "p": "f.",
-    "d": "Secuoya. Sin.: secuoya.",
-    "df": "f. secuoya. Sin.: secuoya.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
     "ec": ""
   },
   {
@@ -9242,31 +8547,11 @@
     "ec": ""
   },
   {
-    "w": "Seiseno",
-    "p": "adj.",
-    "d": "Sexto . Sin.: sexto, seis.",
-    "df": "adj. sexto (‖ que ocupa en una serie el lugar número seis). Sin.: sexto, seis.",
-    "e": "De seis y -eno.",
-    "s": "",
-    "c": "adjetivo",
-    "ec": ""
-  },
-  {
     "w": "Seisillo",
     "p": "m.",
     "d": "Mús. Conjunto de seis notas iguales que se deben cantar o tocar en el tiempo correspondiente a cuatro de ellas.",
     "df": "m. Mús. Conjunto de seis notas iguales que se deben cantar o tocar en el tiempo correspondiente a cuatro de ellas.",
     "e": "Del dim. de seis.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Seisén",
-    "p": "m.",
-    "d": "Sesén. Sin.: sesén, sesena.",
-    "df": "m. sesén. Sin.: sesén, sesena.",
-    "e": "De seis.",
     "s": "",
     "c": "sustantivo",
     "ec": ""
@@ -9569,16 +8854,6 @@
     "ec": ""
   },
   {
-    "w": "Semasiología",
-    "p": "f.",
-    "d": "Semántica. Sin.: semántica.",
-    "df": "f. semántica. Sin.: semántica. | f. Estudio semántico que parte del signo y de sus relaciones, para llegar a la determinación del concepto.",
-    "e": "Del gr. σημασία sēmasía 'significación' y -logía.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_griego"
-  },
-  {
     "w": "Semasiológico",
     "p": "adj.",
     "d": "Perteneciente o relativo a la semasiología.",
@@ -9643,16 +8918,6 @@
     "p": "m.",
     "d": "Ling. Conjunto de todos los semas evocados por un signo lingüístico en un contexto determinado.",
     "df": "m. Ling. Conjunto de todos los semas evocados por un signo lingüístico en un contexto determinado. | m. Ling. Conjunto de semas de un morfema en una lengua determinada.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Semencera",
-    "p": "f.",
-    "d": "Sementera. Sin.: sementera.",
-    "df": "f. sementera. Sin.: sementera.",
     "e": "",
     "s": "",
     "c": "sustantivo",
@@ -9755,16 +9020,6 @@
     "e": "",
     "s": "",
     "c": "adjetivo",
-    "ec": ""
-  },
-  {
-    "w": "Semicabrón",
-    "p": "m.",
-    "d": "Semicapro. Sin.: semicapro.",
-    "df": "m. semicapro. Sin.: semicapro.",
-    "e": "De semi- y cabrón.",
-    "s": "",
-    "c": "sustantivo",
     "ec": ""
   },
   {
@@ -10038,16 +9293,6 @@
     "e": "De semi- y elaborado.",
     "s": "",
     "c": "adjetivo",
-    "ec": ""
-  },
-  {
-    "w": "Semiesfera",
-    "p": "f.",
-    "d": "Hemisferio. Sin.: hemisferio.",
-    "df": "f. hemisferio. Sin.: hemisferio.",
-    "e": "De semi- y esfera.",
-    "s": "",
-    "c": "sustantivo",
     "ec": ""
   },
   {
@@ -10563,19 +9808,6 @@
     "ec": "etym_latin"
   },
   {
-    "w": "Sempiternamente",
-    "p": "adv.",
-    "d": "Eternamente. Sin.: eternamente, siempre, perpetuamente, in aeternum, in perpetuum.",
-    "df": "adv. eternamente. Sin.: eternamente, siempre, perpetuamente, in aeternum, in perpetuum.",
-    "e": "",
-    "s": "",
-    "c": "adverbio",
-    "ec": "",
-    "esp": [
-      "larga"
-    ]
-  },
-  {
     "w": "Semítico",
     "p": "adj.",
     "d": "Perteneciente o relativo a los semitas1. Sin.: semita1, judío, judaico, hebreo, árabe.",
@@ -10584,16 +9816,6 @@
     "s": "",
     "c": "adjetivo",
     "ec": ""
-  },
-  {
-    "w": "Sena",
-    "p": "f.",
-    "d": "Sen1. Sin.: sen1.",
-    "df": "f. sen1. Sin.: sen1. | f. Conjunto de seis puntos señalados en una de las caras del dado.",
-    "e": "Del lat. cient. sene, y este del ár. clás. sanā.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_latin"
   },
   {
     "w": "Senada",
@@ -10657,16 +9879,6 @@
     "esp": [
       "viajera"
     ]
-  },
-  {
-    "w": "Senatorio",
-    "p": "adj.",
-    "d": "Senatorial. Sin.: senatorial, parlamentario.",
-    "df": "adj. senatorial. Sin.: senatorial, parlamentario.",
-    "e": "Del lat. senatorius.",
-    "s": "",
-    "c": "adjetivo",
-    "ec": "etym_latin"
   },
   {
     "w": "Sencido",
@@ -10961,16 +10173,6 @@
     ]
   },
   {
-    "w": "Sensorio",
-    "p": "adj.",
-    "d": "Sensorial. Sin.: sensorial, sensitivo, sensual, sensible.",
-    "df": "adj. sensorial. Sin.: sensorial, sensitivo, sensual, sensible.",
-    "e": "Del lat. sensorius.",
-    "s": "",
-    "c": "adjetivo",
-    "ec": "etym_latin"
-  },
-  {
     "w": "Sensualismo",
     "p": "m.",
     "d": "Propensión excesiva a los placeres de los sentidos. Sin.: sibaritismo, refinamiento, epicureísmo, hedonismo.",
@@ -11103,16 +10305,6 @@
     "ec": ""
   },
   {
-    "w": "Senticar",
-    "p": "m.",
-    "d": "Espinar . Sin.: espinar2, espinero.",
-    "df": "m. espinar (‖ sitio poblado de espinos). Sin.: espinar2, espinero.",
-    "e": "Del lat. sentix, -ĭcis 'zarza'.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_latin"
-  },
-  {
     "w": "Sentimentalidad",
     "p": "f.",
     "d": "Cualidad de sentimental . Sin.: sentimentalismo, emotividad, afectividad, sensiblería.",
@@ -11237,16 +10429,6 @@
     "s": "",
     "c": "adjetivo",
     "ec": "etym_latin"
-  },
-  {
-    "w": "Sepedón",
-    "p": "m.",
-    "d": "Eslizón. Sin.: eslizón, escinco, esquinco, estinco, sipedón.",
-    "df": "m. eslizón. Sin.: eslizón, escinco, esquinco, estinco, sipedón.",
-    "e": "Del gr. σηπεδών sēpedṓn.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_griego"
   },
   {
     "w": "Sepelio",
@@ -11615,16 +10797,6 @@
     "ec": "etym_latin"
   },
   {
-    "w": "Serapino",
-    "p": "m.",
-    "d": "Sagapeno. Sin.: sagapeno.",
-    "df": "m. sagapeno. Sin.: sagapeno.",
-    "e": "Del lat. sagapēnum, con infl. de Serăpis 'Serapis', dios alejandrino patrono de la medicina.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_latin"
-  },
-  {
     "w": "Serasquier",
     "p": "m.",
     "d": "Antiguamente, general de ejército entre los turcos.",
@@ -11653,16 +10825,6 @@
     "s": "",
     "c": "botanica",
     "ec": ""
-  },
-  {
-    "w": "Serbo",
-    "p": "m.",
-    "d": "Serbal. Sin.: serbal, acafresna, azarollo.",
-    "df": "m. serbal. Sin.: serbal, acafresna, azarollo.",
-    "e": "Del lat. sorbus.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_latin"
   },
   {
     "w": "Serbocroata",
@@ -11781,16 +10943,6 @@
     "ec": ""
   },
   {
-    "w": "Sericicultor",
-    "p": "adj.",
-    "d": "Sericícola. Sin.: sericultor.",
-    "df": "adj. sericícola. Sin.: sericultor.",
-    "e": "Del lat. serĭcum 'seda' y -cultor.",
-    "s": "",
-    "c": "adjetivo",
-    "ec": "etym_latin"
-  },
-  {
     "w": "Sericicultura",
     "p": "f.",
     "d": "Fabricación y producción de la seda. Sin.: sericultura.",
@@ -11805,16 +10957,6 @@
     "p": "m. y f.",
     "d": "Y f. sericicultor. Sin.: sericicultor.",
     "df": "m. y f. sericicultor. Sin.: sericicultor.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Sericultura",
-    "p": "f.",
-    "d": "Sericicultura. Sin.: sericicultura.",
-    "df": "f. sericicultura. Sin.: sericicultura.",
     "e": "",
     "s": "",
     "c": "sustantivo",
@@ -12025,26 +11167,6 @@
     "s": "",
     "c": "sustantivo",
     "ec": ""
-  },
-  {
-    "w": "Serpear",
-    "p": "intr.",
-    "d": "Serpentear. Sin.: serpentear, culebrear, zigzaguear, viborear.",
-    "df": "intr. cult. serpentear. Sin.: serpentear, culebrear, zigzaguear, viborear.",
-    "e": "Del lat. serpĕre.",
-    "s": "",
-    "c": "verbo",
-    "ec": "etym_latin"
-  },
-  {
-    "w": "Serpentaria",
-    "p": "f.",
-    "d": "Dragontea. Sin.: dragontea, culebrilla, taragontía, zumillo.",
-    "df": "f. dragontea. Sin.: dragontea, culebrilla, taragontía, zumillo.",
-    "e": "Del lat. serpentaria.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_latin"
   },
   {
     "w": "Serpentario",
@@ -12271,19 +11393,6 @@
     "s": "",
     "c": "sustantivo",
     "ec": ""
-  },
-  {
-    "w": "Serrallo",
-    "p": "m.",
-    "d": "Harén. Sin.: harén, gineceo.",
-    "df": "m. harén. Sin.: harén, gineceo. | m. Sitio donde se cometen graves desórdenes obscenos.",
-    "e": "Del it. serraglio, este del turco saray, y este del persa sarāy 'palacio, morada suntuosa'.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_italiano",
-    "esp": [
-      "viajera"
-    ]
   },
   {
     "w": "Serrana",
@@ -12762,16 +11871,6 @@
     "ec": ""
   },
   {
-    "w": "Sesena",
-    "p": "f.",
-    "d": "Sesén. Sin.: sesén, seisén.",
-    "df": "f. sesén. Sin.: sesén, seisén.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Sesentavo",
     "p": "adj.",
     "d": "Dicho de una parte: Que es una de las sesenta iguales en que se divide un todo. U. t. c. s. m.",
@@ -12810,29 +11909,6 @@
     "s": "",
     "c": "sustantivo",
     "ec": ""
-  },
-  {
-    "w": "Sesgadamente",
-    "p": "adv.",
-    "d": "Oblicuamente. Sin.: sesgamente, oblicuamente, diagonalmente, transversalmente.",
-    "df": "adv. oblicuamente. Sin.: sesgamente, oblicuamente, diagonalmente, transversalmente. | adv. Con quietud (‖ sosiego).",
-    "e": "",
-    "s": "",
-    "c": "adverbio",
-    "ec": ""
-  },
-  {
-    "w": "Sesgado",
-    "p": "adj.",
-    "d": "Oblicuo . Sin.: oblicuo, enviajado, atravesado, diagonal, transversal, ladeado, torcido.",
-    "df": "adj. oblicuo (‖ que se desvía de la horizontal o vertical). Sin.: oblicuo, enviajado, atravesado, diagonal, transversal, ladeado, torcido. | adj. Desviado, tendencioso. Sin.: tendencioso, parcial, partidista. Ant.: objetivo, imparcial. | adj. quieto (‖ pacífico, sosegado). Sin.: quieto, sesgo, calmado, sosegado, pacífico, tranquilo.",
-    "e": "Del part. de sesgar.",
-    "s": "",
-    "c": "adjetivo",
-    "ec": "",
-    "esp": [
-      "explosiva"
-    ]
   },
   {
     "w": "Sesgadura",
@@ -12977,26 +12053,6 @@
     "ec": "etym_latin"
   },
   {
-    "w": "Sestero",
-    "p": "m.",
-    "d": "Sesteadero. Sin.: sesteadero, sesteo, sestil, asestadero.",
-    "df": "m. sesteadero. Sin.: sesteadero, sesteo, sestil, asestadero.",
-    "e": "De siesta y -ero.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Sestil",
-    "p": "m.",
-    "d": "Sesteadero. Sin.: sesteadero, sesteo, sestero, asestadero.",
-    "df": "m. sesteadero. Sin.: sesteadero, sesteo, sestero, asestadero.",
-    "e": "De siesta e -il.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Sesudez",
     "p": "f.",
     "d": "Cualidad de sesudo.",
@@ -13022,16 +12078,6 @@
     "d": "Moneda de Aragón que equivalía a seis maravedís burgaleses. Sin.: seisén, sesena.",
     "df": "m. Moneda de Aragón que equivalía a seis maravedís burgaleses. Sin.: seisén, sesena.",
     "e": "Del lat. sex 'seis'.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_latin"
-  },
-  {
-    "w": "Seta",
-    "p": "f.",
-    "d": "Seda . Sin.: seda.",
-    "df": "f. seda (‖ cerda). Sin.: seda. | f. Cualquier especie de hongo, comestible o no, con forma de sombrilla, sostenida por un pedicelo. Sin.: hongo, callampa. | f. moco (‖ porción derretida de las velas). Sin.: moco, costra.",
-    "e": "Del lat. saeta.",
     "s": "",
     "c": "sustantivo",
     "ec": "etym_latin"
@@ -13135,16 +12181,6 @@
     "s": "",
     "c": "sustantivo",
     "ec": "etym_latin"
-  },
-  {
-    "w": "Setuní",
-    "p": "m.",
-    "d": "Aceituní1. Sin.: aceituní1.",
-    "df": "m. aceituní1. Sin.: aceituní1.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
   },
   {
     "w": "Seudohermafrodita",
@@ -13606,16 +12642,6 @@
     "ec": ""
   },
   {
-    "w": "Señoraje",
-    "p": "m.",
-    "d": "Señoreaje. Sin.: señoreaje.",
-    "df": "m. señoreaje. Sin.: señoreaje.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Señoreador",
     "p": "adj.",
     "d": "Que señorea. U. t. c. s.",
@@ -13881,16 +12907,6 @@
     ]
   },
   {
-    "w": "Sibilítico",
-    "p": "adj.",
-    "d": "Sibilino. Sin.: sibilino.",
-    "df": "adj. sibilino. Sin.: sibilino.",
-    "e": "",
-    "s": "",
-    "c": "adjetivo",
-    "ec": ""
-  },
-  {
     "w": "Siboney",
     "p": "adj.",
     "d": "Dicho de una persona: De un pueblo que se considera el más antiguo de los que habitaron en Cuba. U. t. c. s.",
@@ -13932,16 +12948,6 @@
     "s": "",
     "c": "adjetivo",
     "ec": "etym_latin"
-  },
-  {
-    "w": "Sicamor",
-    "p": "m.",
-    "d": "Ciclamor. Sin.: ciclamor, arjorán.",
-    "df": "m. ciclamor. Sin.: ciclamor, arjorán.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
   },
   {
     "w": "Sicano",
@@ -14012,16 +13018,6 @@
     "s": "",
     "c": "sustantivo",
     "ec": "etym_latin"
-  },
-  {
-    "w": "Sicofante",
-    "p": "m.",
-    "d": "Sicofanta. Sin.: sicofanta, impostor, calumniador.",
-    "df": "m. sicofanta. Sin.: sicofanta, impostor, calumniador.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
   },
   {
     "w": "Sicofísica",
@@ -14147,29 +13143,6 @@
     "ec": "etym_latin"
   },
   {
-    "w": "Siderita",
-    "p": "f.",
-    "d": "Siderosa. Sin.: siderosa.",
-    "df": "f. siderosa. Sin.: siderosa. | f. Planta herbácea de la familia de las labiadas, con tallos medio echados, muy velludos y de 40 a 60 cm de longitud, hojas oblongas, trasovadas, dentadas y pelosas, flores amarillas con el labio superior blanco, en verticilos separados, y fruto seco con semillas menudas. Hay varias especies, todas consideradas por los antiguos como remedio para cicatrizar las heridas hechas con instrumentos de hierro.",
-    "e": "Del lat. siderītis, y este del gr. σιδηρῖτις sidērîtis, der. de σίδηρος sídēros 'hierro'.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_latin"
-  },
-  {
-    "w": "Siderometalurgia",
-    "p": "f.",
-    "d": "Siderurgia. Sin.: siderurgia, fundición, acería, acerería.",
-    "df": "f. siderurgia. Sin.: siderurgia, fundición, acería, acerería.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "",
-    "esp": [
-      "larga"
-    ]
-  },
-  {
     "w": "Siderosa",
     "p": "f.",
     "d": "Geol. Mineral de color pardo amarillento, brillo acerado, quebradizo y algo más duro que el mármol. Es carbonato de óxido de hierro y excelente mena para la siderurgia. Sin.: siderita.",
@@ -14270,16 +13243,6 @@
     "ec": ""
   },
   {
-    "w": "Sidéreo",
-    "p": "adj.",
-    "d": "Sideral . Sin.: sideral, estelar, astral1.",
-    "df": "adj. sideral (‖ perteneciente a las estrellas). Sin.: sideral, estelar, astral1.",
-    "e": "Del lat. sidereus.",
-    "s": "",
-    "c": "adjetivo",
-    "ec": "etym_latin"
-  },
-  {
     "w": "Siega",
     "p": "f.",
     "d": "Acción y efecto de segar. Sin.: cosecha, recolección, segazón, segada, cogida1, corte1.",
@@ -14298,16 +13261,6 @@
     "d": "Electr. Unidad de conductancia, admitancia y susceptancia del sistema internacional, equivalente a la inversa de 1 ohmio. (Símb. S).",
     "df": "m. Electr. Unidad de conductancia, admitancia y susceptancia del sistema internacional, equivalente a la inversa de 1 ohmio. (Símb. S).",
     "e": "De C. W. Siemens, 1823-1883, ingeniero alemán.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Siempretieso",
-    "p": "m.",
-    "d": "Tentetieso. Sin.: tentetieso, tentempié, brujilla, tentemozo, matihuelo, porfiado.",
-    "df": "m. tentetieso. Sin.: tentetieso, tentempié, brujilla, tentemozo, matihuelo, porfiado.",
-    "e": "",
     "s": "",
     "c": "sustantivo",
     "ec": ""
@@ -14534,19 +13487,6 @@
     "s": "",
     "c": "sustantivo",
     "ec": ""
-  },
-  {
-    "w": "Sifué",
-    "p": "m.",
-    "d": "Sobrecincha. Sin.: sobrecincha, sobrecincho.",
-    "df": "m. sobrecincha. Sin.: sobrecincha, sobrecincho.",
-    "e": "Del fr. surfaix, de sur- 'sobre-' y faix 'haz, fajo', y este del lat. fascis.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_frances",
-    "esp": [
-      "viajera"
-    ]
   },
   {
     "w": "Sifílide",
@@ -15229,16 +14169,6 @@
     "ec": ""
   },
   {
-    "w": "Siluetar",
-    "p": "tr.",
-    "d": "Siluetear. Sin.: siluetear.",
-    "df": "tr. siluetear. Sin.: siluetear.",
-    "e": "",
-    "s": "",
-    "c": "verbo",
-    "ec": ""
-  },
-  {
     "w": "Siluetear",
     "p": "tr.",
     "d": "Dibujar, recorrer, etc., algo siguiendo su silueta. U. t. c. prnl. Sin.: siluetar.",
@@ -15269,16 +14199,6 @@
     "ec": "etym_latin"
   },
   {
-    "w": "Silvano",
-    "p": "adj.",
-    "d": "Selvático . Sin.: selvático, silvático, salvaje.",
-    "df": "adj. selvático (‖ perteneciente a las selvas). Sin.: selvático, silvático, salvaje.",
-    "e": "Del lat. silvānus.",
-    "s": "",
-    "c": "adjetivo",
-    "ec": "etym_latin"
-  },
-  {
     "w": "Silvicultor",
     "p": "adj.",
     "d": "Perteneciente o relativo a la silvicultura.",
@@ -15297,16 +14217,6 @@
     "s": "",
     "c": "agricultura",
     "ec": "etym_latin"
-  },
-  {
-    "w": "Silvático",
-    "p": "adj.",
-    "d": "Selvático. Sin.: selvático, silvano, salvaje.",
-    "df": "adj. selvático. Sin.: selvático, silvano, salvaje.",
-    "e": "",
-    "s": "",
-    "c": "adjetivo",
-    "ec": ""
   },
   {
     "w": "Silvícola",
@@ -15490,16 +14400,6 @@
     "esp": [
       "explosiva"
     ]
-  },
-  {
-    "w": "Simiente",
-    "p": "f.",
-    "d": "Semilla. Sin.: semilla, grano, pepita2, pipa2, semen.",
-    "df": "f. semilla. Sin.: semilla, grano, pepita2, pipa2, semen. | f. semen. Sin.: semen, esperma.",
-    "e": "Del lat. sementis.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_latin"
   },
   {
     "w": "Simiesco",
@@ -16338,19 +15238,6 @@
     ]
   },
   {
-    "w": "Singulto",
-    "p": "m.",
-    "d": "Sollozo. Sin.: sollozo, gimoteo, lloro, lloriqueo, gemido, lamento, quejido, suspiro.",
-    "df": "m. sollozo. Sin.: sollozo, gimoteo, lloro, lloriqueo, gemido, lamento, quejido, suspiro. | m. Med. hipo (‖ movimiento convulsivo). Sin.: hipo, hipido.",
-    "e": "Del lat. singultus.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_latin",
-    "esp": [
-      "explosiva"
-    ]
-  },
-  {
     "w": "Siniestrado",
     "p": "adj.",
     "d": "Dicho de una persona o de una cosa: Que ha padecido un siniestro . Apl. a pers., u. t. c. s. Sin.: accidentado, herido, damnificado, afectado, perjudicado, desgraciado.",
@@ -16804,38 +15691,10 @@
     "ec": "etym_latin"
   },
   {
-    "w": "Sinvergonzonada",
-    "p": "f. coloq.",
-    "d": "Sinvergonzonería. Sin.: sinvergonzonería, desvergüenza, desfachatez, descaro, frescura, impudor, inmoralidad, vileza, villanía, sinvergüencería, sinvergüenzada.",
-    "df": "f. coloq. sinvergonzonería. Sin.: sinvergonzonería, desvergüenza, desfachatez, descaro, frescura, impudor, inmoralidad, vileza, villanía, sinvergüencería, sinvergüenzada.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "",
-    "esp": [
-      "larga",
-      "explosiva"
-    ]
-  },
-  {
     "w": "Sinvergonzonería",
     "p": "f. coloq.",
     "d": "Desfachatez, falta de vergüenza. Sin.: desvergüenza, desfachatez, descaro, frescura, impudor, inmoralidad, vileza, villanía, sinvergonzonada, sinvergüencería, sinvergüenzada.",
     "df": "f. coloq. Desfachatez, falta de vergüenza. Sin.: desvergüenza, desfachatez, descaro, frescura, impudor, inmoralidad, vileza, villanía, sinvergonzonada, sinvergüencería, sinvergüenzada.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "",
-    "esp": [
-      "larga",
-      "explosiva"
-    ]
-  },
-  {
-    "w": "Sinvergüencería",
-    "p": "f. coloq.",
-    "d": "Sinvergonzonería. Sin.: sinvergonzonería, desvergüenza, desfachatez, descaro, frescura, impudor, inmoralidad, vileza, villanía, sinvergonzonada, sinvergüenzada.",
-    "df": "f. coloq. sinvergonzonería. Sin.: sinvergonzonería, desvergüenza, desfachatez, descaro, frescura, impudor, inmoralidad, vileza, villanía, sinvergonzonada, sinvergüenzada.",
     "e": "",
     "s": "",
     "c": "sustantivo",
@@ -17002,16 +15861,6 @@
     "ec": ""
   },
   {
-    "w": "Sipedón",
-    "p": "m.",
-    "d": "Eslizón. Sin.: eslizón, escinco, esquinco, estinco, sepedón.",
-    "df": "m. eslizón. Sin.: eslizón, escinco, esquinco, estinco, sepedón.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Sique",
     "p": "m.",
     "d": "Ritmo y baile folclórico nacional de Honduras, que se acompaña con guitarra y marimba y se baila en pareja.",
@@ -17079,16 +15928,6 @@
     "e": "",
     "s": "",
     "c": "verbo",
-    "ec": ""
-  },
-  {
-    "w": "Sirguero",
-    "p": "m.",
-    "d": "Jilguero. Sin.: jilguero, cardelina, colorín, golorito, sietecolores.",
-    "df": "m. jilguero. Sin.: jilguero, cardelina, colorín, golorito, sietecolores.",
-    "e": "De silguero.",
-    "s": "",
-    "c": "sustantivo",
     "ec": ""
   },
   {
@@ -17201,16 +16040,6 @@
     ]
   },
   {
-    "w": "Sirria",
-    "p": "f.",
-    "d": "Sirle. Sin.: sirle, chirle.",
-    "df": "f. sirle. Sin.: sirle, chirle.",
-    "e": "De or. prerromano.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Sirte",
     "p": "f.",
     "d": "Bajo de arena. Sin.: bajo, bajío, banco, médano, barra.",
@@ -17278,16 +16107,6 @@
     ]
   },
   {
-    "w": "Sisallo",
-    "p": "m.",
-    "d": "Caramillo . Sin.: caramillo1, carambillo, salado, tarrico.",
-    "df": "m. caramillo (‖ planta). Sin.: caramillo1, carambillo, salado, tarrico.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Sisardo",
     "p": "m.",
     "d": "Ar. Gamuza de los Pirineos.",
@@ -17351,26 +16170,6 @@
     ]
   },
   {
-    "w": "Sisimbrio",
-    "p": "m.",
-    "d": "Jaramago. Sin.: jaramago, balsamita, ruqueta, raqueta, yuyo.",
-    "df": "m. jaramago. Sin.: jaramago, balsamita, ruqueta, raqueta, yuyo.",
-    "e": "Del lat. sisymbrĭum, y este del gr. σισύμβριον sisýmbrion.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_latin"
-  },
-  {
-    "w": "Sismo",
-    "p": "m.",
-    "d": "Terremoto . Sin.: terremoto, seísmo, temblor.",
-    "df": "m. terremoto (‖ sacudida de la corteza terrestre). Sin.: terremoto, seísmo, temblor.",
-    "e": "Del gr. σεισμός seismós, der. de σείειν seíein 'sacudir', 'hacer temblar'.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_griego"
-  },
-  {
     "w": "Sismología",
     "p": "f.",
     "d": "Ciencia que estudia los terremotos.",
@@ -17432,16 +16231,6 @@
     "s": "",
     "c": "sustantivo",
     "ec": "etym_griego"
-  },
-  {
-    "w": "Sistematicidad",
-    "p": "f.",
-    "d": "Sistematismo. Sin.: sistematismo, ordenación.",
-    "df": "f. sistematismo. Sin.: sistematismo, ordenación.",
-    "e": "De sistemático e -idad.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
   },
   {
     "w": "Sistematismo",
@@ -17656,16 +16445,6 @@
     "ec": ""
   },
   {
-    "w": "Sobaco",
-    "p": "m.",
-    "d": "Axila . Sin.: axila, encuentro, ala1, arca1, islilla.",
-    "df": "m. axila (‖ concavidad entre el brazo y el cuerpo). Sin.: axila, encuentro, ala1, arca1, islilla. | m. Ángulo de una parte de la planta con el tronco. | m. Pez plectognato semejante al pez ballesta.",
-    "e": "De or. inc.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Sobacuno",
     "p": "adj.",
     "d": "Dicho de un olor: Procedente de los sobacos, y, por ende, desagradable. U. t. c. s. m.",
@@ -17759,16 +16538,6 @@
     "ec": ""
   },
   {
-    "w": "Sobajear",
-    "p": "tr.",
-    "d": "Sobar . Sin.: sobar, manosear, sobijar, sobetear, toquetear.",
-    "df": "tr. coloq. sobar (‖ manosear). Sin.: sobar, manosear, sobijar, sobetear, toquetear.",
-    "e": "",
-    "s": "",
-    "c": "verbo",
-    "ec": ""
-  },
-  {
     "w": "Sobajeo",
     "p": "m.",
     "d": "Acción y efecto de sobajear.",
@@ -17834,16 +16603,6 @@
     "d": "Sudor de los sobacos, que tiene un olor característico y desagradable. Sin.: grajo, sajino.",
     "df": "f. Sudor de los sobacos, que tiene un olor característico y desagradable. Sin.: grajo, sajino.",
     "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Sobarba",
-    "p": "f.",
-    "d": "Muserola. Sin.: muserola.",
-    "df": "f. muserola. Sin.: muserola. | f. Abultamiento bajo la barba.",
-    "e": "De so3 y barba.",
     "s": "",
     "c": "sustantivo",
     "ec": ""
@@ -17947,16 +16706,6 @@
     "d": "Clavo de madera.",
     "df": "f. Clavo de madera.",
     "e": "De or. inc.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Sobo",
-    "p": "m.",
-    "d": "Soba. Sin.: soba, manoseo. paliza, aporreo, aporreamiento.",
-    "df": "m. soba. Sin.: soba, manoseo. paliza, aporreo, aporreamiento.",
-    "e": "",
     "s": "",
     "c": "sustantivo",
     "ec": ""
@@ -18257,16 +17006,6 @@
     "ec": ""
   },
   {
-    "w": "Sobreasada",
-    "p": "f.",
-    "d": "Sobrasada. Sin.: sobrasada.",
-    "df": "f. sobrasada. Sin.: sobrasada.",
-    "e": "Etim. disc.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Sobreasar",
     "p": "tr.",
     "d": "Volver a poner a la lumbre lo que está asado o cocido, para que se tueste.",
@@ -18335,16 +17074,6 @@
     "d": "Especie de polaina.",
     "df": "f. Especie de polaina.",
     "e": "De sobre- y calza.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Sobrecama",
-    "p": "f.",
-    "d": "Colcha. Sin.: colcha, cobertor, cubrecama, edredón.",
-    "df": "f. colcha. Sin.: colcha, cobertor, cubrecama, edredón.",
-    "e": "De sobre- y cama1.",
     "s": "",
     "c": "sustantivo",
     "ec": ""
@@ -18448,26 +17177,6 @@
     "d": "Faja o correa que, pasada por debajo de la barriga de la cabalgadura y por encima del aparejo, sujeta la manta, la mantilla o el caparazón. Sin.: sobrecincho, sifué.",
     "df": "f. Faja o correa que, pasada por debajo de la barriga de la cabalgadura y por encima del aparejo, sujeta la manta, la mantilla o el caparazón. Sin.: sobrecincho, sifué.",
     "e": "De sobre- y cincha.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Sobrecincho",
-    "p": "m.",
-    "d": "Sobrecincha. Sin.: sobrecincha, sifué.",
-    "df": "m. sobrecincha. Sin.: sobrecincha, sifué.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Sobreclaustra",
-    "p": "f.",
-    "d": "Sobreclaustro. Sin.: sobreclaustro.",
-    "df": "f. sobreclaustro. Sin.: sobreclaustro.",
-    "e": "",
     "s": "",
     "c": "sustantivo",
     "ec": ""
@@ -19125,16 +17834,6 @@
     "ec": ""
   },
   {
-    "w": "Sobreparto",
-    "p": "m.",
-    "d": "Puerperio. Sin.: puerperio, posparto.",
-    "df": "m. puerperio. Sin.: puerperio, posparto.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Sobrepaño",
     "p": "m.",
     "d": "Lienzo o paño que se pone encima de otro paño.",
@@ -19235,19 +17934,6 @@
     "ec": ""
   },
   {
-    "w": "Sobreproducción",
-    "p": "f.",
-    "d": "Superproducción . Sin.: superproducción.",
-    "df": "f. superproducción (‖ exceso de producción). Sin.: superproducción. | f. Econ. superproducción (‖ proceso económico). Sin.: superproducción.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "",
-    "esp": [
-      "larga"
-    ]
-  },
-  {
     "w": "Sobrepuerta",
     "p": "f.",
     "d": "Pieza de madera a modo de sobradillo que se coloca sobre las puertas interiores de los aposentos, y de la cual penden las cortinas.",
@@ -19314,16 +18000,6 @@
     ]
   },
   {
-    "w": "Sobrerrealismo",
-    "p": "m.",
-    "d": "Superrealismo. Sin.: surrealismo, superrealismo.",
-    "df": "m. superrealismo. Sin.: surrealismo, superrealismo.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Sobrerronda",
     "p": "f.",
     "d": "Segunda ronda que se pone para asegurar la vigilancia de los puestos.",
@@ -19331,16 +18007,6 @@
     "e": "",
     "s": "",
     "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Sobrerropa",
-    "p": "f.",
-    "d": "Sobretodo . Sin.: sobretodo.",
-    "df": "f. sobretodo (‖ prenda de vestir que se lleva sobre el traje ordinario). Sin.: sobretodo.",
-    "e": "",
-    "s": "",
-    "c": "vestimenta",
     "ec": ""
   },
   {
@@ -19583,16 +18249,6 @@
     "ec": ""
   },
   {
-    "w": "Sobretiro",
-    "p": "m.",
-    "d": "Separata. Sin.: separata.",
-    "df": "m. separata. Sin.: separata.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Sobretodo",
     "p": "m.",
     "d": "Prenda de vestir ancha, larga y con mangas, en general más ligera que el gabán, que se lleva sobre el traje ordinario. Sin.: abrigo, gabán, gabardina, trinchera, capote, sobrerropa.",
@@ -19650,16 +18306,6 @@
     "e": "",
     "s": "",
     "c": "verbo",
-    "ec": ""
-  },
-  {
-    "w": "Sobrevesta",
-    "p": "f.",
-    "d": "Sobreveste. Sin.: sobreveste, sobrevista.",
-    "df": "f. sobreveste. Sin.: sobreveste, sobrevista.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
     "ec": ""
   },
   {
@@ -19820,16 +18466,6 @@
     "e": "",
     "s": "",
     "c": "adjetivo",
-    "ec": ""
-  },
-  {
-    "w": "Socapiscol",
-    "p": "m.",
-    "d": "Sochantre. Sin.: sochantre, veintenero.",
-    "df": "m. sochantre. Sin.: sochantre, veintenero.",
-    "e": "De so3 y capiscol.",
-    "s": "",
-    "c": "sustantivo",
     "ec": ""
   },
   {
@@ -20221,19 +18857,6 @@
     "ec": "etym_latin"
   },
   {
-    "w": "Soda",
-    "p": "f.",
-    "d": "Sosa. Sin.: sosa.",
-    "df": "f. sosa. Sin.: sosa. | f. Bebida de agua gaseosa que contiene ácido carbónico. Sin.: gaseosa. | f. C. Rica. Establecimiento, por lo general más pequeño que un restaurante, donde se venden comidas y bebidas.",
-    "e": "Del it. soda.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_italiano",
-    "esp": [
-      "viajera"
-    ]
-  },
-  {
     "w": "Sodero",
     "p": "m. y f.",
     "d": "Y f. Arg. Persona que vende y reparte soda . Sin.: sifonero.",
@@ -20430,16 +19053,6 @@
     "ec": "etym_latin"
   },
   {
-    "w": "Sofocador",
-    "p": "adj.",
-    "d": "Sofocante. Sin.: sofocante, sufocador.",
-    "df": "adj. sofocante. Sin.: sofocante, sufocador.",
-    "e": "",
-    "s": "",
-    "c": "adjetivo",
-    "ec": ""
-  },
-  {
     "w": "Sofocamiento",
     "p": "m.",
     "d": "Acción de sofocar.",
@@ -20494,16 +19107,6 @@
     "esp": [
       "explosiva"
     ]
-  },
-  {
-    "w": "Sofocón",
-    "p": "m. coloq.",
-    "d": "Desazón . Sin.: sofoco, disgusto, desazón, grima.",
-    "df": "m. coloq. desazón (‖ disgusto). Sin.: sofoco, disgusto, desazón, grima.",
-    "e": "Del aum. de sofoco.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
   },
   {
     "w": "Sofoquina",
@@ -20689,16 +19292,6 @@
     "ec": ""
   },
   {
-    "w": "Solada",
-    "p": "f.",
-    "d": "Suelo . Sin.: suelo.",
-    "df": "f. suelo (‖ poso de un líquido). Sin.: suelo.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Solado",
     "p": "m.",
     "d": "Acción de solar.",
@@ -20820,16 +19413,6 @@
     "esp": [
       "explosiva"
     ]
-  },
-  {
-    "w": "Solape",
-    "p": "m.",
-    "d": "Solapamiento. Sin.: solapamiento.",
-    "df": "m. solapamiento. Sin.: solapamiento. | m. solapa. Sin.: solapa.",
-    "e": "De or. desc.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
   },
   {
     "w": "Solariego",
@@ -21171,19 +19754,6 @@
     "ec": ""
   },
   {
-    "w": "Solfa",
-    "p": "f.",
-    "d": "Solfeo . Sin.: solfeo.",
-    "df": "f. solfeo (‖ adiestramiento). Sin.: solfeo. | f. Conjunto o sistema de signos con que se escribe la música. | f. Melodía y armonía. | f. Combinación de ambas. Sin.: música. | f. coloq. Zurra de golpes. Sin.: paliza, tunda2, zurra, vapuleo, soba, solfeo.",
-    "e": "De sol2 y fa.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "",
-    "esp": [
-      "explosiva"
-    ]
-  },
-  {
     "w": "Solfatara",
     "p": "f.",
     "d": "En los terrenos volcánicos, abertura por donde salen, a diversos intervalos, vapores sulfurosos. Sin.: ausol, hervidero.",
@@ -21470,16 +20040,6 @@
     "ec": ""
   },
   {
-    "w": "Sollo",
-    "p": "m.",
-    "d": "Esturión. Sin.: esturión, asturión1, marión1, marón1.",
-    "df": "m. esturión. Sin.: esturión, asturión1, marión1, marón1.",
-    "e": "De or. inc.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Sollozante",
     "p": "adj.",
     "d": "Que solloza. Sin.: lloroso, gimiente, quejumbroso.",
@@ -21557,16 +20117,6 @@
     "esp": [
       "explosiva"
     ]
-  },
-  {
-    "w": "Solomo",
-    "p": "m.",
-    "d": "Solomillo. Sin.: solomillo, filete, entrecuesto, diezmillo, entrecostilla, lomillo.",
-    "df": "m. solomillo. Sin.: solomillo, filete, entrecuesto, diezmillo, entrecostilla, lomillo. | m. Lomo de cerdo adobado.",
-    "e": "De so3 y lomo.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
   },
   {
     "w": "Solsonense",
@@ -21822,16 +20372,6 @@
     "d": "Milicia ciudadana organizada antiguamente para colaborar en la seguridad en los pueblos, generalmente en Cataluña.",
     "df": "m. Milicia ciudadana organizada antiguamente para colaborar en la seguridad en los pueblos, generalmente en Cataluña. | m. Miembro de un somatén. | m. En Cataluña, rebato hecho al vecindario en un peligro. | m. coloq. Bulla, alarma, alboroto.",
     "e": "Del cat. sometent.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Sombraje",
-    "p": "m.",
-    "d": "Sombrajo . Sin.: sombrajo.",
-    "df": "m. sombrajo (‖ reparo para hacer sombra). Sin.: sombrajo.",
-    "e": "",
     "s": "",
     "c": "sustantivo",
     "ec": ""
@@ -22103,26 +20643,6 @@
     "ec": "etym_latin"
   },
   {
-    "w": "Somorgujo",
-    "p": "m.",
-    "d": "Somormujo. Sin.: somormujo, somorgujón, mergo, mergánsar, cotúa.",
-    "df": "m. somormujo. Sin.: somormujo, somorgujón, mergo, mergánsar, cotúa.",
-    "e": "De somorgujar.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Somorgujón",
-    "p": "m.",
-    "d": "Somorgujo. Sin.: somormujo, somorgujo, mergo, mergánsar, cotúa.",
-    "df": "m. somorgujo. Sin.: somormujo, somorgujo, mergo, mergánsar, cotúa.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Somormujo",
     "p": "m.",
     "d": "Ave palmípeda, con pico recto y agudo, alas cortas, patas vestidas, plumas del lomo, cabeza y cuello negras, pecho y abdomen blancos, costados castaños, y un pincel de plumas detrás de cada ojo, que vuela poco y puede mantener por mucho tiempo la cabeza sumergida bajo el agua. Sin.: somorgujo, somorgujón, mergo, mergánsar, cotúa.",
@@ -22140,16 +20660,6 @@
     "e": "",
     "s": "",
     "c": "gentilicio",
-    "ec": ""
-  },
-  {
-    "w": "Sompantle",
-    "p": "m.",
-    "d": "Zompantli. Sin.: zompantli.",
-    "df": "m. zompantli. Sin.: zompantli.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
     "ec": ""
   },
   {
@@ -22244,19 +20754,6 @@
     "s": "",
     "c": "adjetivo",
     "ec": ""
-  },
-  {
-    "w": "Sondear",
-    "p": "tr.",
-    "d": "Sondar. Sin.: sondar.",
-    "df": "tr. sondar. Sin.: sondar. | tr. Hacer las primeras averiguaciones sobre alguien o algo. Sin.: averiguar, sonsacar, inquirir, indagar, tantear, escrutar, pulsar1.",
-    "e": "De sonda y -ear.",
-    "s": "",
-    "c": "verbo",
-    "ec": "",
-    "esp": [
-      "explosiva"
-    ]
   },
   {
     "w": "Sonecillo",
@@ -22425,26 +20922,6 @@
     "ec": ""
   },
   {
-    "w": "Sonotone",
-    "p": "m. coloq.",
-    "d": "Audífono . Sin.: audífono, audiófono.",
-    "df": "m. coloq. audífono (‖ aparato para percibir mejor los sonidos). Sin.: audífono, audiófono.",
-    "e": "De Sonotone®, marca reg.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Sonriso",
-    "p": "m.",
-    "d": "Sonrisa. Sin.: sonrisa.",
-    "df": "m. sonrisa. Sin.: sonrisa.",
-    "e": "Del ant. sonrisar 'sonreír', y este de son- y risa.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Sonrisueño",
     "p": "adj.",
     "d": "Que se sonríe. U. t. c. s.",
@@ -22538,16 +21015,6 @@
     "ec": ""
   },
   {
-    "w": "Sonsacamiento",
-    "p": "m.",
-    "d": "Sonsaca. Sin.: sonsaca.",
-    "df": "m. sonsaca. Sin.: sonsaca.",
-    "e": "De sonsacar.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Sonsacar",
     "p": "tr.",
     "d": "Sacar arteramente algo por debajo del sitio en que está.",
@@ -22566,19 +21033,6 @@
     "s": "",
     "c": "sustantivo",
     "ec": ""
-  },
-  {
-    "w": "Sonso",
-    "p": "adj.",
-    "d": "Zonzo. Sin.: tonto, simple, bobo, zonzo, estúpido, mentecato, memo1, abobado, atontado, tontaina.",
-    "df": "adj. zonzo. Sin.: tonto, simple, bobo, zonzo, estúpido, mentecato, memo1, abobado, atontado, tontaina.",
-    "e": "",
-    "s": "",
-    "c": "adjetivo",
-    "ec": "",
-    "esp": [
-      "explosiva"
-    ]
   },
   {
     "w": "Sonsonateco",
@@ -22619,16 +21073,6 @@
     "s": "",
     "c": "adjetivo",
     "ec": ""
-  },
-  {
-    "w": "Sonómetro",
-    "p": "m.",
-    "d": "Monocordio. Sin.: monocordio.",
-    "df": "m. monocordio. Sin.: monocordio. | m. Acús. Instrumento que mide y compara los sonidos e intervalos musicales.",
-    "e": "Del lat. sonus 'sonido' y ‒́metro.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_latin"
   },
   {
     "w": "Sopaipa",
@@ -22797,16 +21241,6 @@
     "ec": ""
   },
   {
-    "w": "Sopié",
-    "p": "m.",
-    "d": "Somonte. Sin.: somonte.",
-    "df": "m. somonte. Sin.: somonte.",
-    "e": "De so3 y pie.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Sopladero",
     "p": "m.",
     "d": "Abertura por donde sale con fuerza el aire de las cavidades subterráneas. Sin.: soplador.",
@@ -22904,16 +21338,6 @@
     "esp": [
       "explosiva"
     ]
-  },
-  {
-    "w": "Soplonear",
-    "p": "tr.",
-    "d": "Soplar . Sin.: soplar.",
-    "df": "tr. soplar (‖ acusar). Sin.: soplar.",
-    "e": "De soplón y -ear.",
-    "s": "",
-    "c": "verbo",
-    "ec": ""
   },
   {
     "w": "Soplonería",
@@ -23075,16 +21499,6 @@
     "esp": [
       "viajera"
     ]
-  },
-  {
-    "w": "Sorchi",
-    "p": "m. coloq.",
-    "d": "Sorche. Sin.: sorche, recluta, quinto, caloyo.",
-    "df": "m. coloq. sorche. Sin.: sorche, recluta, quinto, caloyo.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
   },
   {
     "w": "Sordamente",
@@ -23352,16 +21766,6 @@
     "ec": ""
   },
   {
-    "w": "Sorteamiento",
-    "p": "m.",
-    "d": "Sorteo. Sin.: sorteo, rifa, lotería, tómbola.",
-    "df": "m. sorteo. Sin.: sorteo, rifa, lotería, tómbola.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Sortero",
     "p": "m. y f.",
     "d": "Y f. Agorero, adivino.",
@@ -23465,16 +21869,6 @@
     "ec": ""
   },
   {
-    "w": "Sosedad",
-    "p": "f.",
-    "d": "Sosería . Sin.: sosería, insulsez, sosera, pavada.",
-    "df": "f. sosería (‖ insulsez). Sin.: sosería, insulsez, sosera, pavada.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Sosegadamente",
     "p": "adv.",
     "d": "Con sosiego. Sin.: tranquilamente, reposadamente.",
@@ -23482,16 +21876,6 @@
     "e": "",
     "s": "",
     "c": "adverbio",
-    "ec": ""
-  },
-  {
-    "w": "Sosera",
-    "p": "f.",
-    "d": "Sosería. Sin.: sosería, insulsez, sosedad, pavada.",
-    "df": "f. sosería. Sin.: sosería, insulsez, sosedad, pavada.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
     "ec": ""
   },
   {
@@ -23539,16 +21923,6 @@
     "p": "adj.",
     "d": "Soslayado, oblicuo. Sin.: oblicuo, sesgado, transversal.",
     "df": "adj. Soslayado, oblicuo. Sin.: oblicuo, sesgado, transversal.",
-    "e": "",
-    "s": "",
-    "c": "adjetivo",
-    "ec": ""
-  },
-  {
-    "w": "Sospechable",
-    "p": "adj.",
-    "d": "Sospechoso . Sin.: sospechoso.",
-    "df": "adj. sospechoso (‖ que inspira sospecha). Sin.: sospechoso.",
     "e": "",
     "s": "",
     "c": "adjetivo",
@@ -23638,16 +22012,6 @@
     "ec": ""
   },
   {
-    "w": "Sotacola",
-    "p": "f.",
-    "d": "Ataharre. Sin.: ataharre, arristranco.",
-    "df": "f. ataharre. Sin.: ataharre, arristranco.",
-    "e": "De sota- y cola1.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Sotacoro",
     "p": "m.",
     "d": "Lugar bajo el coro.",
@@ -23662,16 +22026,6 @@
     "p": "m.",
     "d": "Segundo arco con que se aprietan los extremos o tiestas de los toneles o barriles.",
     "df": "m. Segundo arco con que se aprietan los extremos o tiestas de los toneles o barriles.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Sotaministro",
-    "p": "m.",
-    "d": "Sotoministro. Sin.: sotoministro.",
-    "df": "m. sotoministro. Sin.: sotoministro.",
     "e": "",
     "s": "",
     "c": "sustantivo",
@@ -23738,16 +22092,6 @@
     "p": "prnl.",
     "d": "Mar. Dicho de un buque: Irse o caer a sotavento. Sin.: sotaventearse.",
     "df": "prnl. Mar. Dicho de un buque: Irse o caer a sotavento. Sin.: sotaventearse.",
-    "e": "",
-    "s": "",
-    "c": "verbo",
-    "ec": ""
-  },
-  {
-    "w": "Sotaventearse",
-    "p": "prnl.",
-    "d": "Sotaventarse. Sin.: sotaventarse.",
-    "df": "prnl. sotaventarse. Sin.: sotaventarse.",
     "e": "",
     "s": "",
     "c": "verbo",
@@ -23907,31 +22251,11 @@
     "ec": ""
   },
   {
-    "w": "Soñarrera",
-    "p": "f. coloq.",
-    "d": "Somnolencia. Sin.: somnolencia, soñera, sopor, amodorramiento.",
-    "df": "f. coloq. somnolencia. Sin.: somnolencia, soñera, sopor, amodorramiento.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Soñera",
     "p": "f.",
     "d": "Propensión al sueño. Sin.: soñarrera.",
     "df": "f. Propensión al sueño. Sin.: soñarrera.",
     "e": "De sueño.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Soñolencia",
-    "p": "f.",
-    "d": "Somnolencia. Sin.: somnolencia, modorra, sopor.",
-    "df": "f. somnolencia. Sin.: somnolencia, modorra, sopor.",
-    "e": "",
     "s": "",
     "c": "sustantivo",
     "ec": ""
@@ -23960,40 +22284,10 @@
     ]
   },
   {
-    "w": "Spray",
-    "p": "m.",
-    "d": "Espray. Sin.: [envase] aerosol, espray, vaporizador, pulverizador. [líquido] espray, aerosol.",
-    "df": "m. espray. Sin.: [envase] aerosol, espray, vaporizador, pulverizador. [líquido] espray, aerosol.",
-    "e": "Voz ingl.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Sprint",
-    "p": "m.",
-    "d": "Esprint. Sin.: esprint, aceleración.",
-    "df": "m. esprint. Sin.: esprint, aceleración.",
-    "e": "Voz ingl.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Stop",
     "p": "m.",
     "d": "Señal de tráfico, adoptada internacionalmente, que indica a los conductores la obligación de detenerse. Sin.: pare.",
     "df": "m. Señal de tráfico, adoptada internacionalmente, que indica a los conductores la obligación de detenerse. Sin.: pare. | m. Detención que hace un vehículo para obedecer un stop. El conductor hizo el stop. | m. alto (‖ detención en la marcha o en cualquier otra actividad). Sin.: parada1, alto2, pausa, interrupción. | m. Tecla o botón de algunos aparatos que permite detener su funcionamiento. | m. En un telegrama, punto ortográfico. Sin.: punto.",
-    "e": "Voz ingl.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Striptease",
-    "p": "m.",
-    "d": "Estriptis. Sin.: estriptis.",
-    "df": "m. estriptis. Sin.: estriptis.",
     "e": "Voz ingl.",
     "s": "",
     "c": "sustantivo",
@@ -24153,16 +22447,6 @@
     "ec": ""
   },
   {
-    "w": "Subalterno",
-    "p": "adj.",
-    "d": "Inferior . Sin.: inferior.",
-    "df": "adj. inferior (‖ que está debajo de algo). Sin.: inferior. | adj. Dicho de una persona: inferior (‖ subordinada). Sin.: inferior, subordinado, malmatado. | m. y f. En los centros oficiales, empleado de categoría inferior destinado a servicios que no requieren aptitudes técnicas. | m. y f. Torero que forma parte de la cuadrilla de un matador. | m. y f. Oficial cuyo empleo es inferior al de capitán.",
-    "e": "Del lat. tardío subalternus 'subordinado', referido a una proposición en lógica.",
-    "s": "",
-    "c": "adjetivo",
-    "ec": "etym_latin"
-  },
-  {
     "w": "Subarrendador",
     "p": "m. y f.",
     "d": "Y f. Persona que da en subarriendo algo.",
@@ -24171,19 +22455,6 @@
     "s": "",
     "c": "sustantivo",
     "ec": ""
-  },
-  {
-    "w": "Subarrendamiento",
-    "p": "m.",
-    "d": "Subarriendo. Sin.: subarriendo.",
-    "df": "m. subarriendo. Sin.: subarriendo.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "",
-    "esp": [
-      "larga"
-    ]
   },
   {
     "w": "Subarrendar",
@@ -24333,16 +22604,6 @@
     "p": "f.",
     "d": "Grupo de individuos de una comisión que tiene cometido determinado.",
     "df": "f. Grupo de individuos de una comisión que tiene cometido determinado.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Subconciencia",
-    "p": "f.",
-    "d": "Subconsciencia. Sin.: subconsciencia, subconsciente, inconsciente.",
-    "df": "f. subconsciencia. Sin.: subconsciencia, subconsciente, inconsciente.",
     "e": "",
     "s": "",
     "c": "sustantivo",
@@ -24755,16 +23016,6 @@
     "ec": ""
   },
   {
-    "w": "Subfusil",
-    "p": "m.",
-    "d": "Metralleta. Sin.: metralleta, ametralladora.",
-    "df": "m. metralleta. Sin.: metralleta, ametralladora.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Subgobernador",
     "p": "m. y f.",
     "d": "Y f. Persona que sirve inmediatamente a las órdenes del gobernador o le sustituye en sus funciones.",
@@ -24833,16 +23084,6 @@
     "s": "",
     "c": "sustantivo",
     "ec": ""
-  },
-  {
-    "w": "Subilla",
-    "p": "f.",
-    "d": "Lezna. Sin.: lezna, alesna, lesna.",
-    "df": "f. lezna. Sin.: lezna, alesna, lesna.",
-    "e": "Del lat. *subella, de subŭla.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_latin"
   },
   {
     "w": "Subimiento",
@@ -24935,16 +23176,6 @@
     "ec": ""
   },
   {
-    "w": "Subitáneo",
-    "p": "adj.",
-    "d": "Súbito . Sin.: súbito, repentino, improvisto, inopinado.",
-    "df": "adj. súbito (‖ improvisto). Sin.: súbito, repentino, improvisto, inopinado.",
-    "e": "Del lat. subitaneus.",
-    "s": "",
-    "c": "adjetivo",
-    "ec": "etym_latin"
-  },
-  {
     "w": "Subjefe",
     "p": "m. y f.",
     "d": "Y f. Persona que sirve inmediatamente a las órdenes del jefe o le sustituye en sus funciones.",
@@ -24983,19 +23214,6 @@
     "s": "",
     "c": "sustantivo",
     "ec": "etym_latin"
-  },
-  {
-    "w": "Sublevamiento",
-    "p": "m.",
-    "d": "Sublevación. Sin.: sublevación, alzamiento, insurgencia, insurrección, levantamiento, rebelión, motín, pronunciamiento.",
-    "df": "m. sublevación. Sin.: sublevación, alzamiento, insurgencia, insurrección, levantamiento, rebelión, motín, pronunciamiento.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "",
-    "esp": [
-      "explosiva"
-    ]
   },
   {
     "w": "Sublevar",
@@ -25437,16 +23655,6 @@
     "ec": ""
   },
   {
-    "w": "Subsecuente",
-    "p": "adj.",
-    "d": "Subsiguiente. Sin.: subsiguiente, siguiente, consiguiente.",
-    "df": "adj. subsiguiente. Sin.: subsiguiente, siguiente, consiguiente.",
-    "e": "Del lat. subsĕquens, -entis.",
-    "s": "",
-    "c": "adjetivo",
-    "ec": "etym_latin"
-  },
-  {
     "w": "Subseguir",
     "p": "intr.",
     "d": "Dicho de una cosa: Seguir inmediatamente a otra. U. t. c. prnl.",
@@ -25488,16 +23696,6 @@
     "esp": [
       "larga"
     ]
-  },
-  {
-    "w": "Subsidiaridad",
-    "p": "f.",
-    "d": "Subsidiariedad. Sin.: subsidiariedad, complementariedad.",
-    "df": "f. subsidiariedad. Sin.: subsidiariedad, complementariedad.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
   },
   {
     "w": "Subsidiariedad",
@@ -26013,16 +24211,6 @@
     "ec": "etym_latin"
   },
   {
-    "w": "Subyugador",
-    "p": "adj.",
-    "d": "Subyugante. Sin.: subyugante, arrebatador, cautivador, encantador, embelesador, fascinante.",
-    "df": "adj. subyugante. Sin.: subyugante, arrebatador, cautivador, encantador, embelesador, fascinante.",
-    "e": "Del lat. subiugātor, -ōris.",
-    "s": "",
-    "c": "adjetivo",
-    "ec": "etym_latin"
-  },
-  {
     "w": "Subyugante",
     "p": "adj.",
     "d": "Que subyuga. Sin.: subyugador, arrebatador, cautivador, encantador, embelesador, fascinante.",
@@ -26153,16 +24341,6 @@
     "ec": ""
   },
   {
-    "w": "Sucucho",
-    "p": "m.",
-    "d": "Rincón . Sin.: ángulo, rincón, esquina.",
-    "df": "m. rincón (‖ ángulo entrante). Sin.: ángulo, rincón, esquina. | m. Mar. Rincón estrecho que queda en las partes más cerradas de las ligazones de un buque. | m. Arg., Bol., Chile, Ec., Guat., Méx., Perú, Ur. y Ven. socucho. Sin.: tabuco, cubículo, cuchitril, socucho.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Suculencia",
     "p": "f.",
     "d": "Cualidad de suculento.",
@@ -26191,29 +24369,6 @@
     "s": "",
     "c": "gentilicio",
     "ec": ""
-  },
-  {
-    "w": "Sudación",
-    "p": "f.",
-    "d": "Exudación. Sin.: exudación, resudación, trasudación.",
-    "df": "f. exudación. Sin.: exudación, resudación, trasudación. | f. Med. Sudoración provocada con fines terapéuticos.",
-    "e": "Del lat. sudatio, -ōnis.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_latin"
-  },
-  {
-    "w": "Sudadera",
-    "p": "f.",
-    "d": "Sudadero . Sin.: sudadero, abajera, bajero, sobrepelo, bajera, pelero.",
-    "df": "f. sudadero (‖ manta que se pone a las cabalgaduras). Sin.: sudadero, abajera, bajero, sobrepelo, bajera, pelero. | f. Jersey o chaqueta deportivos, a veces con capucha. Sin.: suéter, calentador. | f. coloq. Sudoración intensa.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "",
-    "esp": [
-      "explosiva"
-    ]
   },
   {
     "w": "Sudadero",
@@ -26267,16 +24422,6 @@
     "s": "",
     "c": "gentilicio",
     "ec": ""
-  },
-  {
-    "w": "Sudatorio",
-    "p": "adj.",
-    "d": "Sudorífico. Sin.: sudorífico, sudorífero, diaforético.",
-    "df": "adj. sudorífico. Sin.: sudorífico, sudorífero, diaforético.",
-    "e": "Del lat. sudatorius.",
-    "s": "",
-    "c": "adjetivo",
-    "ec": "etym_latin"
   },
   {
     "w": "Sudoeste",
@@ -26882,16 +25027,6 @@
     "ec": "etym_latin"
   },
   {
-    "w": "Sulfúrico",
-    "p": "adj.",
-    "d": "Sulfúreo. Sin.: sulfúreo.",
-    "df": "adj. sulfúreo. Sin.: sulfúreo. | adj. Bol. y Ec. irascible. Sin.: irascible.",
-    "e": "",
-    "s": "",
-    "c": "adjetivo",
-    "ec": ""
-  },
-  {
     "w": "Sulla",
     "p": "f.",
     "d": "Zulla1. Sin.: pipirigallo, zulla1, esparceta.",
@@ -27179,16 +25314,6 @@
     "s": "",
     "c": "adjetivo",
     "ec": ""
-  },
-  {
-    "w": "Suncho",
-    "p": "m.",
-    "d": "Zuncho . Sin.: abrazadera, zuncho.",
-    "df": "m. zuncho (‖ abrazadera). Sin.: abrazadera, zuncho. | m. Arg. Arbusto resinoso de la familia de las compuestas, de uno o dos metros de altura. | m. Bol. Planta herbácea de la familia de las compuestas con flores amarillas.",
-    "e": "Del lat. cingŭlum 'cinto'.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_latin"
   },
   {
     "w": "Sunción",
@@ -27697,26 +25822,6 @@
     "ec": ""
   },
   {
-    "w": "Superrealismo",
-    "p": "m.",
-    "d": "Surrealismo. Sin.: surrealismo, sobrerrealismo.",
-    "df": "m. surrealismo. Sin.: surrealismo, sobrerrealismo.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Superrealista",
-    "p": "adj.",
-    "d": "Surrealista . Sin.: surrealista.",
-    "df": "adj. surrealista (‖ perteneciente al surrealismo). Sin.: surrealista. | adj. surrealista (‖ seguidor del surrealismo). Apl. a pers., u. t. c. s. Sin.: surrealista.",
-    "e": "",
-    "s": "",
-    "c": "adjetivo",
-    "ec": ""
-  },
-  {
     "w": "Supersticioso",
     "p": "adj.",
     "d": "Perteneciente o relativo a la superstición. Sin.: fetichista, mitómano.",
@@ -27831,16 +25936,6 @@
     "s": "",
     "c": "adjetivo",
     "ec": "etym_latin"
-  },
-  {
-    "w": "Supervivir",
-    "p": "intr.",
-    "d": "Sobrevivir. Sin.: sobrevivir, subsistir.",
-    "df": "intr. sobrevivir. Sin.: sobrevivir, subsistir.",
-    "e": "Der. regres. de superviviente.",
-    "s": "",
-    "c": "verbo",
-    "ec": ""
   },
   {
     "w": "Superyó",
@@ -28440,16 +26535,6 @@
     "ec": ""
   },
   {
-    "w": "Surquero",
-    "p": "adj.",
-    "d": "Jurquero. Sin.: jurquero, asurcano, surcaño.",
-    "df": "adj. jurquero. Sin.: jurquero, asurcano, surcaño.",
-    "e": "",
-    "s": "",
-    "c": "adjetivo",
-    "ec": ""
-  },
-  {
     "w": "Sursuncorda",
     "p": "m. coloq.",
     "d": "Supuesto personaje anónimo de mucha importancia. No lo haré aunque lo mande el sursuncorda.",
@@ -28500,16 +26585,6 @@
     "e": "",
     "s": "",
     "c": "adjetivo",
-    "ec": ""
-  },
-  {
-    "w": "Surtimiento",
-    "p": "m.",
-    "d": "Surtido . Sin.: surtido, muestrario, colección.",
-    "df": "m. surtido (‖ acción de surtir). Sin.: surtido, muestrario, colección.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
     "ec": ""
   },
   {
@@ -28911,16 +26986,6 @@
     "ec": ""
   },
   {
-    "w": "Sustitutorio",
-    "p": "adj.",
-    "d": "Sustitutivo. Sin.: sustitutivo, sucedáneo.",
-    "df": "adj. sustitutivo. Sin.: sustitutivo, sucedáneo.",
-    "e": "",
-    "s": "",
-    "c": "adjetivo",
-    "ec": ""
-  },
-  {
     "w": "Sustracción",
     "p": "f.",
     "d": "Acción y efecto de sustraer o sustraerse. Sin.: hurto, robo1, timo2, sisa, afano, bolseada.",
@@ -29007,16 +27072,6 @@
     "ec": "etym_latin"
   },
   {
-    "w": "Sutilidad",
-    "p": "f.",
-    "d": "Sutileza. Sin.: sutileza, agudeza, argucia, ingeniosidad, perspicacia.",
-    "df": "f. sutileza. Sin.: sutileza, agudeza, argucia, ingeniosidad, perspicacia.",
-    "e": "Del lat. subtilĭtas, -ātis.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_latin"
-  },
-  {
     "w": "Sutilizador",
     "p": "adj.",
     "d": "Que sutiliza. U. t. c. s.",
@@ -29081,16 +27136,6 @@
     "esp": [
       "viajera"
     ]
-  },
-  {
-    "w": "Suzón",
-    "p": "m.",
-    "d": "Zuzón. Sin.: zuzón.",
-    "df": "m. zuzón. Sin.: zuzón.",
-    "e": "Del lat. senecio, -ōnis.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_latin"
   },
   {
     "w": "Suéter",
@@ -29481,16 +27526,6 @@
     "ec": "etym_latin"
   },
   {
-    "w": "Sílex",
-    "p": "m.",
-    "d": "Pedernal . Sin.: pedernal, moleña, cuarzo, sílice.",
-    "df": "m. pedernal (‖ variedad de cuarzo). Sin.: pedernal, moleña, cuarzo, sílice.",
-    "e": "Del lat. silex.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_latin"
-  },
-  {
     "w": "Sílfide",
     "p": "f.",
     "d": "Según los cabalistas, ser fantástico o espíritu elemental del aire. Sin.: ninfa, ondina, espíritu.",
@@ -29578,16 +27613,6 @@
     "s": "",
     "c": "cuerpo_humano",
     "ec": "etym_griego"
-  },
-  {
-    "w": "Sínfito",
-    "p": "m.",
-    "d": "Consuelda. Sin.: consuelda, consólida, suelda, brunela.",
-    "df": "m. consuelda. Sin.: consuelda, consólida, suelda, brunela.",
-    "e": "Del lat. symphy̆tum, y este del gr. σύμφυτον sýmphyton.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_latin"
   },
   {
     "w": "Sínico",
@@ -29733,16 +27758,6 @@
     "e": "Del lat. *succŭbus, de succŭba 'concubina', según el modelo del lat. tardío incŭbus 'íncubo'.",
     "s": "",
     "c": "adjetivo",
-    "ec": "etym_latin"
-  },
-  {
-    "w": "Súcula",
-    "p": "f.",
-    "d": "Torno . Sin.: torno, cabrestante.",
-    "df": "f. torno (‖ máquina que consiste en un cilindro dispuesto para girar). Sin.: torno, cabrestante.",
-    "e": "Del lat. sucŭla.",
-    "s": "",
-    "c": "sustantivo",
     "ec": "etym_latin"
   },
   {

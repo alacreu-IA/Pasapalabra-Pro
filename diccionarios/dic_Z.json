@@ -1,15 +1,5 @@
 [
   {
-    "w": "Zabalmedina",
-    "p": "m.",
-    "d": "Zalmedina. Sin.: zalmedina.",
-    "df": "m. zalmedina. Sin.: zalmedina.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Zabarcera",
     "p": "m. y f.",
     "d": "Y f. Persona que revende por menudo frutos y otros comestibles.",
@@ -30,42 +20,6 @@
     "ec": "etym_arabe",
     "esp": [
       "viajera"
-    ]
-  },
-  {
-    "w": "Zabazoque",
-    "p": "m.",
-    "d": "Almotacén . Sin.: almotacén.",
-    "df": "m. almotacén (‖ persona que contrastaba las pesas y medidas). Sin.: almotacén.",
-    "e": "Del ár. hisp. *ṣáḥb assúq, y este del ár. clás. ṣāḥibu ssūq 'jefe del mercado'.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_arabe",
-    "esp": [
-      "viajera"
-    ]
-  },
-  {
-    "w": "Zabida",
-    "p": "f.",
-    "d": "Zabila. Sin.: áloe, zabila, acíbar, lináloe, sábila, alcíbar.",
-    "df": "f. zabila. Sin.: áloe, zabila, acíbar, lináloe, sábila, alcíbar.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Zabila",
-    "p": "f.",
-    "d": "Áloe . Sin.: áloe, zabida, acíbar, lináloe, sábila, alcíbar.",
-    "df": "f. áloe (‖ planta). Sin.: áloe, zabida, acíbar, lináloe, sábila, alcíbar. | f. áloe (‖ jugo). Sin.: áloe, acíbar, lináloe, sábila.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "",
-    "esp": [
-      "explosiva"
     ]
   },
   {
@@ -172,36 +126,6 @@
     "ec": ""
   },
   {
-    "w": "Zabullidor",
-    "p": "adj.",
-    "d": "Zambullidor. Sin.: zambullidor.",
-    "df": "adj. zambullidor. Sin.: zambullidor.",
-    "e": "",
-    "s": "",
-    "c": "adjetivo",
-    "ec": ""
-  },
-  {
-    "w": "Zabullidura",
-    "p": "f.",
-    "d": "Zambullidura. Sin.: zambullida, zambullidura, zabullida, zambullimiento, zabullimiento, clavado, clavada.",
-    "df": "f. zambullidura. Sin.: zambullida, zambullidura, zabullida, zambullimiento, zabullimiento, clavado, clavada.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Zabullimiento",
-    "p": "m.",
-    "d": "Zambullimiento. Sin.: zambullida, zambullimiento, zambullidura, zabullida, zabullidura, clavado, clavada.",
-    "df": "m. zambullimiento. Sin.: zambullida, zambullimiento, zambullidura, zabullida, zabullidura, clavado, clavada.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Zabullir",
     "p": "tr.",
     "d": "Zambullir. U. t. c. prnl.",
@@ -256,16 +180,6 @@
     "p": "f.",
     "d": "Riña o contienda con ruido y bulla. Sin.: bronca, zacapella.",
     "df": "f. Riña o contienda con ruido y bulla. Sin.: bronca, zacapella.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Zacapella",
-    "p": "f.",
-    "d": "Zacapela. Sin.: bronca, zacapela.",
-    "df": "f. zacapela. Sin.: bronca, zacapela.",
     "e": "",
     "s": "",
     "c": "sustantivo",
@@ -348,16 +262,6 @@
     "ec": "etym_latin"
   },
   {
-    "w": "Zadorija",
-    "p": "f.",
-    "d": "Pamplina . Sin.: pamplina.",
-    "df": "f. pamplina (‖ planta papaverácea). Sin.: pamplina.",
-    "e": "Del cat. sadorija.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Zafa",
     "p": "f.",
     "d": "Alb., Gran. y Mur. jofaina. Sin.: jofaina, aljofaina, aljébana, almofía, ponchera, lavacara, tazón.",
@@ -431,16 +335,6 @@
     ]
   },
   {
-    "w": "Zafero",
-    "p": "m.",
-    "d": "Palanganero. Sin.: palanganero, aguamanil, lavamanos.",
-    "df": "m. palanganero. Sin.: palanganero, aguamanil, lavamanos.",
-    "e": "De zafa y -ero.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Zafirina",
     "p": "adj.",
     "d": "De color de zafiro. Sin.: zafíreo, azul.",
@@ -501,16 +395,6 @@
     "e": "Quizá del ár. hisp. safíh, y este del ár. clás. safīh 'grosero'; cf. port. safio.",
     "s": "",
     "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Zafíreo",
-    "p": "adj.",
-    "d": "Zafirino. Sin.: zafirino, azul.",
-    "df": "adj. zafirino. Sin.: zafirino, azul.",
-    "e": "De zafiro.",
-    "s": "",
-    "c": "adjetivo",
     "ec": ""
   },
   {
@@ -680,34 +564,11 @@
     ]
   },
   {
-    "w": "Zahína",
-    "p": "f.",
-    "d": "Sorgo . Sin.: sorgo, alcandía.",
-    "df": "f. sorgo (‖ planta). Sin.: sorgo, alcandía.",
-    "e": "Del ár. hisp. saẖína, y este del ár. clás. saẖīnah.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_arabe",
-    "esp": [
-      "viajera"
-    ]
-  },
-  {
     "w": "Zahón",
     "p": "m.",
     "d": "Especie de mandil, principalmente de cuero, atado a la cintura, con perneras abiertas por detrás que se atan a la pierna, usado por cazadores, vaqueros y gente de campo para resguardar el traje. U. m. en pl. Sin.: delanteras, chaparreras, zamarros.",
     "df": "m. Especie de mandil, principalmente de cuero, atado a la cintura, con perneras abiertas por detrás que se atan a la pierna, usado por cazadores, vaqueros y gente de campo para resguardar el traje. U. m. en pl. Sin.: delanteras, chaparreras, zamarros.",
     "e": "De zagón, aum. del ár. hisp. sáq, y este del ár. clás. sāq 'pierna'.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Zahúrda",
-    "p": "f.",
-    "d": "Pocilga. Sin.: pocilga, cochiquera, porqueriza, gorrinera, chiquero, cocha. tugurio, cuchitril, antro, covacha.",
-    "df": "f. pocilga. Sin.: pocilga, cochiquera, porqueriza, gorrinera, chiquero, cocha. tugurio, cuchitril, antro, covacha.",
-    "e": "Quizá voz de or. germ.; cf. al. Sau 'marrana' y Hürde 'cercado'.",
     "s": "",
     "c": "sustantivo",
     "ec": ""
@@ -888,16 +749,6 @@
     "ec": ""
   },
   {
-    "w": "Zamacueca",
-    "p": "f.",
-    "d": "Cueca. Sin.: cueca.",
-    "df": "f. cueca. Sin.: cueca.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Zamanca",
     "p": "f. coloq.",
     "d": "Paliza, zurra, somanta. Sin.: paliza, apaleamiento, azotamiento, leña1, somanta, tunda2, zurra, golpiza.",
@@ -997,19 +848,6 @@
     "ec": ""
   },
   {
-    "w": "Zamarro",
-    "p": "m.",
-    "d": "Zamarra . Sin.: zamarra, pellico.",
-    "df": "m. zamarra (‖ prenda de vestir). Sin.: zamarra, pellico. | m. Piel de cordero. Sin.: pelleja, vellocino, vellón1, tusón. | m. coloq. Hombre tosco, lerdo, rústico, pesado. Sin.: tosco, cazurro, zopenco, tarugo, zoquete, merluzo. | m. coloq. Hombre astuto, pillo.",
-    "e": "",
-    "s": "",
-    "c": "vestimenta",
-    "ec": "",
-    "esp": [
-      "explosiva"
-    ]
-  },
-  {
     "w": "Zamarrudo",
     "p": "adj.",
     "d": "Peyor. Ec. Que lleva puestos zamarros .",
@@ -1101,19 +939,6 @@
     "s": "",
     "c": "sustantivo",
     "ec": ""
-  },
-  {
-    "w": "Zambombazo",
-    "p": "m.",
-    "d": "Golpazo. Sin.: golpazo, trompazo1, batacazo, golpetazo, bojazo.",
-    "df": "m. golpazo. Sin.: golpazo, trompazo1, batacazo, golpetazo, bojazo. | m. Estampido o explosión con mucho ruido y fuerza. Sin.: explosión, estampido, estallido, detonación, cañonazo.",
-    "e": "De zambomba y -azo.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "",
-    "esp": [
-      "explosiva"
-    ]
   },
   {
     "w": "Zambombo",
@@ -1388,16 +1213,6 @@
     "ec": ""
   },
   {
-    "w": "Zancajada",
-    "p": "f.",
-    "d": "Zancada. Sin.: zancada, tranco, trancada, paso1.",
-    "df": "f. zancada. Sin.: zancada, tranco, trancada, paso1.",
-    "e": "De zancajo y -ada.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Zancajear",
     "p": "intr.",
     "d": "Andar mucho de una parte a otra, por lo común aceleradamente. Sin.: corretear, deambular, apresurarse, afanarse.",
@@ -1445,36 +1260,6 @@
     "e": "",
     "s": "",
     "c": "adjetivo",
-    "ec": ""
-  },
-  {
-    "w": "Zancón",
-    "p": "adj. coloq.",
-    "d": "Zancudo . Sin.: zancudo, zanquilargo, piernilargo, patilargo, canilludo.",
-    "df": "adj. coloq. zancudo (‖ que tiene las zancas largas). Sin.: zancudo, zanquilargo, piernilargo, patilargo, canilludo. | adj. Méx. y Ven. Dicho de un traje: Demasiado corto.",
-    "e": "De zanca.",
-    "s": "",
-    "c": "adjetivo",
-    "ec": ""
-  },
-  {
-    "w": "Zanfona",
-    "p": "f.",
-    "d": "Zanfoña. Sin.: zanfoña, zanfonía, sinfonía.",
-    "df": "f. zanfoña. Sin.: zanfoña, zanfonía, sinfonía.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Zanfonía",
-    "p": "f.",
-    "d": "Zanfoña. Sin.: zanfoña, zanfona, sinfonía.",
-    "df": "f. zanfoña. Sin.: zanfoña, zanfona, sinfonía.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
     "ec": ""
   },
   {
@@ -1717,16 +1502,6 @@
     "ec": ""
   },
   {
-    "w": "Zanquilón",
-    "p": "adj. coloq.",
-    "d": "Zanquilargo. Sin.: zanquilargo, zancón, zancudo, piernilargo, patilargo, canilludo.",
-    "df": "adj. coloq. zanquilargo. Sin.: zanquilargo, zancón, zancudo, piernilargo, patilargo, canilludo.",
-    "e": "",
-    "s": "",
-    "c": "adjetivo",
-    "ec": ""
-  },
-  {
     "w": "Zanquituerto",
     "p": "adj. coloq.",
     "d": "Que tiene torcidas o tuertas las piernas. U. t. c. s.",
@@ -1762,16 +1537,6 @@
     "d": "Ál. nenúfar. Sin.: nenúfar, escudete, golfán, ninfea, ninfa.",
     "df": "f. Ál. nenúfar. Sin.: nenúfar, escudete, golfán, ninfea, ninfa.",
     "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Zapapico",
-    "p": "m.",
-    "d": "Pico . Sin.: piqueta, pico1. sacho.",
-    "df": "m. pico (‖ herramienta de cantero). Sin.: piqueta, pico1. sacho. | m. pico (‖ instrumento para cavar). Sin.: piqueta, pico1.",
-    "e": "De zapa1 'pala' y pico1.",
     "s": "",
     "c": "sustantivo",
     "ec": ""
@@ -2042,26 +1807,6 @@
     ]
   },
   {
-    "w": "Zapotero",
-    "p": "m.",
-    "d": "Zapote . Sin.: zapote, sapote.",
-    "df": "m. zapote (‖ árbol). Sin.: zapote, sapote.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Zapotillo",
-    "p": "m.",
-    "d": "Chicozapote. Sin.: chicozapote, níspero, chico, quelachina.",
-    "df": "m. chicozapote. Sin.: chicozapote, níspero, chico, quelachina.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Zaquear",
     "p": "tr.",
     "d": "Mover o trasegar líquidos de unos zaques a otros.",
@@ -2228,20 +1973,6 @@
     "ec": ""
   },
   {
-    "w": "Zaranda",
-    "p": "f.",
-    "d": "Criba. Sin.: criba, cedazo, ceranda, tamiz, harnero.",
-    "df": "f. criba. Sin.: criba, cedazo, ceranda, tamiz, harnero. | f. Cedazo rectangular con fondo de red de tomiza, que se emplea en los lagares para separar los escobajos de la casca. | f. Pasador de metal que se usa para colar la jalea y otros dulces. | f. Ven. trompa (‖ trompo hueco que zumba). Sin.: trompa, trompo, peonza.",
-    "e": "Del ár. hisp. sarand, y este del persa sarand 'cedazo'.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_arabe",
-    "esp": [
-      "explosiva",
-      "viajera"
-    ]
-  },
-  {
     "w": "Zarandador",
     "p": "m. y f.",
     "d": "Y f. Persona que mueve la zaranda o echa el trigo u otro grano en ella.",
@@ -2276,19 +2007,6 @@
     "p": "tr.",
     "d": "Limpiar el grano o la uva, pasándolos por la zaranda. Sin.: cribar, cerner, tamizar.",
     "df": "tr. Limpiar el grano o la uva, pasándolos por la zaranda. Sin.: cribar, cerner, tamizar. | tr. Colar el dulce con la zaranda. | tr. coloq. zarandear (‖ mover con prisa). U. t. c. prnl. Sin.: zarandear, sacudir, agitar. | tr. coloq. Separar de lo común lo especial y más precioso. Sin.: purificar, depurar, limpiar.",
-    "e": "",
-    "s": "",
-    "c": "verbo",
-    "ec": "",
-    "esp": [
-      "explosiva"
-    ]
-  },
-  {
-    "w": "Zarandear",
-    "p": "tr.",
-    "d": "Zarandar . Sin.: cribar, zarandar, cerner, tamizar.",
-    "df": "tr. zarandar (‖ limpiar pasando por la zaranda). Sin.: cribar, zarandar, cerner, tamizar. | tr. Agarrar a alguien por los hombros o los brazos moviéndolo con violencia. Sin.: sacudir, agitar, zarandar, traquetear, menear, zabuquear, zalear1, zangolotear. | tr. ajetrear. Sin.: ajetrear, baquetear, estresar, atosigar2. | tr. coloq. Mover algo con prisa, ligereza y facilidad. U. t. c. prnl.",
     "e": "",
     "s": "",
     "c": "verbo",
@@ -2434,16 +2152,6 @@
     "ec": ""
   },
   {
-    "w": "Zarceta",
-    "p": "f.",
-    "d": "Cerceta1. Sin.: cerceta1.",
-    "df": "f. cerceta1. Sin.: cerceta1.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Zarceño",
     "p": "adj.",
     "d": "Perteneciente o relativo a la zarza.",
@@ -2501,16 +2209,6 @@
     "esp": [
       "viajera"
     ]
-  },
-  {
-    "w": "Zargatona",
-    "p": "f.",
-    "d": "Zaragatona . Sin.: pulguera, zaragatona.",
-    "df": "f. zaragatona (‖ planta). Sin.: pulguera, zaragatona.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
   },
   {
     "w": "Zariano",
@@ -2693,16 +2391,6 @@
     "ec": ""
   },
   {
-    "w": "Zarrapastra",
-    "p": "f. coloq.",
-    "d": "Zarria . Sin.: zarria, cascarria, cazcarria, barro1, lodo.",
-    "df": "f. coloq. zarria (‖ barro). Sin.: zarria, cascarria, cazcarria, barro1, lodo.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Zarrapastro",
     "p": "m.",
     "d": "Persona andrajosa o desaseada.",
@@ -2869,16 +2557,6 @@
     "ec": ""
   },
   {
-    "w": "Zarzaperruna",
-    "p": "f.",
-    "d": "Escaramujo . Sin.: escaramujo, agavanzo, caramujo.",
-    "df": "f. escaramujo (‖ rosal silvestre). Sin.: escaramujo, agavanzo, caramujo.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Zarzarrosa",
     "p": "f.",
     "d": "Flor del escaramujo, muy parecida en su forma a la rosa castellana.",
@@ -2943,16 +2621,6 @@
     "p": "m.",
     "d": "Acción y efecto de zascandilear.",
     "df": "m. Acción y efecto de zascandilear.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Zata",
-    "p": "f.",
-    "d": "Zatara. Sin.: zatara, almadía, armadía1, balsa2, jangada.",
-    "df": "f. zatara. Sin.: zatara, almadía, armadía1, balsa2, jangada.",
     "e": "",
     "s": "",
     "c": "sustantivo",
@@ -3381,16 +3049,6 @@
     "ec": ""
   },
   {
-    "w": "Zoltaní",
-    "p": "m.",
-    "d": "Soltaní. Sin.: soltaní.",
-    "df": "m. soltaní. Sin.: soltaní.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Zombi",
     "p": "m. y f.",
     "d": "Y f. Persona que se supone muerta y reanimada por arte de brujería con el fin de dominar su voluntad.",
@@ -3434,19 +3092,6 @@
     "ec": ""
   },
   {
-    "w": "Zoncera",
-    "p": "f.",
-    "d": "Tontera . Sin.: tontería, tontera, simpleza, tontada, bobada, taradez.",
-    "df": "f. Am. tontera (‖ tontería). Sin.: tontería, tontera, simpleza, tontada, bobada, taradez. | f. Arg., Bol., Cuba, Nic., Par. y Ur. Dicho, hecho u objeto de poco o ningún valor. | f. Cuba. Sensación de desorientación o de turbación que impide pensar con claridad. | f. Cuba. somnolencia (‖ pesadez y torpeza de los sentidos). Sin.: somnolencia, sopor, modorra, amodorramiento, letargo.",
-    "e": "De zonzo.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "",
-    "esp": [
-      "explosiva"
-    ]
-  },
-  {
     "w": "Zoncería",
     "p": "f.",
     "d": "Cualidad de zonzo.",
@@ -3474,16 +3119,6 @@
     "e": "",
     "s": "",
     "c": "verbo",
-    "ec": ""
-  },
-  {
-    "w": "Zonote",
-    "p": "m.",
-    "d": "Cenote. Sin.: cenote.",
-    "df": "m. cenote. Sin.: cenote.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
     "ec": ""
   },
   {
@@ -3610,16 +3245,6 @@
     "ec": "etym_griego"
   },
   {
-    "w": "Zoomórfico",
-    "p": "adj.",
-    "d": "Zoomorfo. Sin.: zoomorfo.",
-    "df": "adj. zoomorfo. Sin.: zoomorfo.",
-    "e": "",
-    "s": "",
-    "c": "adjetivo",
-    "ec": ""
-  },
-  {
     "w": "Zoonosis",
     "p": "f.",
     "d": "Med. Enfermedad o infección que se da en los animales y que es transmisible a las personas en condiciones naturales.",
@@ -3635,16 +3260,6 @@
     "d": "Biol. Plancton marino o de aguas dulces, caracterizado por el predominio de organismos animales, como los copépodos.",
     "df": "m. Biol. Plancton marino o de aguas dulces, caracterizado por el predominio de organismos animales, como los copépodos.",
     "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Zoospermo",
-    "p": "m.",
-    "d": "Espermatozoide. Sin.: espermatozoide, espermio, espermatozoario, espermatozoo, gameto.",
-    "df": "m. espermatozoide. Sin.: espermatozoide, espermio, espermatozoario, espermatozoo, gameto.",
-    "e": "De zoo- y el gr. σπέρμα spérma 'semilla'.",
     "s": "",
     "c": "sustantivo",
     "ec": ""
@@ -3867,16 +3482,6 @@
     "ec": ""
   },
   {
-    "w": "Zorrupia",
-    "p": "f.",
-    "d": "Prostituta. Sin.: prostituta.",
-    "df": "f. prostituta. Sin.: prostituta.",
-    "e": "Der. de zorra.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Zorzal",
     "p": "m.",
     "d": "Nombre vulgar de varias aves paseriformes del mismo género que el mirlo. El común tiene el dorso de color pardo y el pecho claro con pequeñas motas. Vive en España durante el invierno.",
@@ -4019,16 +3624,6 @@
     "ec": ""
   },
   {
-    "w": "Zuela",
-    "p": "f.",
-    "d": "Azuela. Sin.: azuela, achuela, aja.",
-    "df": "f. azuela. Sin.: azuela, achuela, aja.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Zuiza",
     "p": "f.",
     "d": "Suiza1. Sin.: zuriza, suiza.",
@@ -4082,16 +3677,6 @@
     "ec": ""
   },
   {
-    "w": "Zulla",
-    "p": "f.",
-    "d": "Pipirigallo . Sin.: pipirigallo, sulla, esparceta.",
-    "df": "f. pipirigallo (‖ planta). Sin.: pipirigallo, sulla, esparceta. | f. coloq. Excremento humano.",
-    "e": "Var. de sulla, este del ár. hisp. súlla, este del ár. sullah o sillah, y este del siriaco sellā 'lenteja', 'musgo'.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Zullarse",
     "p": "prnl.",
     "d": "Dicho de una persona: Hacer sus necesidades. Sin.: defecar, evacuar, excretar.",
@@ -4139,16 +3724,6 @@
     "e": "",
     "s": "",
     "c": "adjetivo",
-    "ec": ""
-  },
-  {
-    "w": "Zumacaya",
-    "p": "f.",
-    "d": "Zumaya . Sin.: zumaya, martinete1.",
-    "df": "f. zumaya (‖ martinete). Sin.: zumaya, martinete1.",
-    "e": "De or. inc.",
-    "s": "",
-    "c": "sustantivo",
     "ec": ""
   },
   {
@@ -4224,16 +3799,6 @@
     "ec": ""
   },
   {
-    "w": "Zumillo",
-    "p": "m.",
-    "d": "Dragontea. Sin.: dragontea, taragontía, culebrilla, serpentaria.",
-    "df": "m. dragontea. Sin.: dragontea, taragontía, culebrilla, serpentaria. | m. tapsia. Sin.: tapsia.",
-    "e": "Del dim. de zumo.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Zumoso",
     "p": "adj.",
     "d": "Que tiene zumo.",
@@ -4304,16 +3869,6 @@
     "e": "",
     "s": "",
     "c": "adjetivo",
-    "ec": ""
-  },
-  {
-    "w": "Zurcidura",
-    "p": "f.",
-    "d": "Zurcido. Sin.: recosido, remiendo, zurcido, zurcida.",
-    "df": "f. zurcido. Sin.: recosido, remiendo, zurcido, zurcida.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
     "ec": ""
   },
   {
@@ -4602,16 +4157,6 @@
     "ec": ""
   },
   {
-    "w": "Zurrumba",
-    "p": "f.",
-    "d": "Bramadera . Sin.: bramadera, zumba1, zurrumbera.",
-    "df": "f. bramadera (‖ pedazo de tabla usada como juguete). Sin.: bramadera, zumba1, zurrumbera.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Zurrumbera",
     "p": "f.",
     "d": "Ál. bramadera . Sin.: bramadera, zumba1, zurrumba.",
@@ -4756,29 +4301,6 @@
     "s": "",
     "c": "verbo",
     "ec": ""
-  },
-  {
-    "w": "Zuño",
-    "p": "m.",
-    "d": "Ceño . Sin.: ceño2, entrecejo, capote, sobrecejo, encapotadura.",
-    "df": "m. ceño (‖ demostración de enfado). Sin.: ceño2, entrecejo, capote, sobrecejo, encapotadura.",
-    "e": "Del gr. σκύνιον skýnion.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_griego"
-  },
-  {
-    "w": "Zábila",
-    "p": "f.",
-    "d": "Áloe . Sin.: áloe, zabida, acíbar, lináloe, sábila, alcíbar.",
-    "df": "f. áloe (‖ planta). Sin.: áloe, zabida, acíbar, lináloe, sábila, alcíbar. | f. áloe (‖ jugo). Sin.: áloe, acíbar, lináloe, sábila.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "",
-    "esp": [
-      "explosiva"
-    ]
   },
   {
     "w": "Zálamo",

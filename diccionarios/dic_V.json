@@ -20,16 +20,6 @@
     "ec": ""
   },
   {
-    "w": "Vacancia",
-    "p": "f.",
-    "d": "Vacante . Sin.: vacante.",
-    "df": "f. vacante (‖ cargo o empleo sin proveer). Sin.: vacante.",
-    "e": "Del lat. vacantia.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_latin"
-  },
-  {
     "w": "Vacar",
     "p": "intr.",
     "d": "Dicho de una persona: Cesar por algún tiempo en sus habituales negocios, estudios o trabajo. Sin.: cesar, descansar, reposar.",
@@ -182,16 +172,6 @@
     ]
   },
   {
-    "w": "Vaco",
-    "p": "m. coloq.",
-    "d": "Buey . Sin.: buey1.",
-    "df": "m. coloq. buey (‖ macho vacuno). Sin.: buey1. | adj. vacante (‖ sin proveer). Sin.: vacante, vacío, vacuo.",
-    "e": "De vaca.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Vacuidad",
     "p": "f.",
     "d": "Cualidad de vacuo. Sin.: vaciedad.",
@@ -237,16 +217,6 @@
     "d": "Biol. Orgánulo celular en forma de vesícula que almacena sustancias para diversas funciones celulares.",
     "df": "f. Biol. Orgánulo celular en forma de vesícula que almacena sustancias para diversas funciones celulares.",
     "e": "Del lat. cient. vacuola, dim. f. de vacuum 'vacío'.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_latin"
-  },
-  {
-    "w": "Vade",
-    "p": "m.",
-    "d": "Vademécum . Sin.: carpeta, cartapacio, cartera, vademécum.",
-    "df": "m. vademécum (‖ cartapacio en que los niños llevaban sus libros a la escuela). Sin.: carpeta, cartapacio, cartera, vademécum. | m. Cubierta formada de dos hojas cuadrangulares de cartón, piel u otra materia semejante, unidas por uno de sus lados, que se coloca sobre la mesa para guardar papeles dentro y escribir sobre ella.",
-    "e": "Del lat. vade, 2.ª pers. de sing. del imper. de vadĕre 'ir, marchar, caminar1'.",
     "s": "",
     "c": "sustantivo",
     "ec": "etym_latin"
@@ -492,16 +462,6 @@
     "d": "Acción y efecto de arrojar o echar el vaho, aliento o respiración. Sin.: bocanada, aliento, hálito, soplo, bocarada.",
     "df": "f. Acción y efecto de arrojar o echar el vaho, aliento o respiración. Sin.: bocanada, aliento, hálito, soplo, bocarada. | f. Golpe de vaho, olor, calor, etc.",
     "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Vaharera",
-    "p": "f.",
-    "d": "Bocera . Sin.: bocera, boquera.",
-    "df": "f. bocera (‖ excoriación en las comisuras de los labios). Sin.: bocera, boquera.",
-    "e": "De vahar.",
     "s": "",
     "c": "sustantivo",
     "ec": ""
@@ -902,19 +862,6 @@
     "ec": ""
   },
   {
-    "w": "Valija",
-    "p": "f.",
-    "d": "Maleta . Sin.: maleta1, maletín, petaca.",
-    "df": "f. maleta (‖ caja con asa para viajar). Sin.: maleta1, maletín, petaca. | f. Saco de cuero, cerrado con llave, donde llevan la correspondencia los correos. | f. correo (‖ persona que tiene por oficio llevar y traer la correspondencia). Sin.: correo1, cartera. | f. irón. eufem. coloq. Ur. Nalgas notorias por su volumen, especialmente las de la mujer.",
-    "e": "Del it. valigia, y este de or. inc.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_italiano",
-    "esp": [
-      "viajera"
-    ]
-  },
-  {
     "w": "Valijero",
     "p": "m.",
     "d": "Funcionario encargado de conducir la correspondencia que se cursa entre un Estado y sus representantes diplomáticos.",
@@ -946,19 +893,6 @@
     "s": "",
     "c": "sustantivo",
     "ec": ""
-  },
-  {
-    "w": "Valladar",
-    "p": "m.",
-    "d": "Vallado. Sin.: valla, vallado, estacada, cerca1, cercado, seto, muro, empalizada, barrera1, tapia, verja, alambrada.",
-    "df": "m. vallado. Sin.: valla, vallado, estacada, cerca1, cercado, seto, muro, empalizada, barrera1, tapia, verja, alambrada. | m. Obstáculo de cualquier clase para impedir que sea invadido o allanado algo. Sin.: obstáculo, traba, defensa, barrera1.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "",
-    "esp": [
-      "explosiva"
-    ]
   },
   {
     "w": "Vallado",
@@ -1110,19 +1044,6 @@
     ]
   },
   {
-    "w": "Valorizar",
-    "p": "tr.",
-    "d": "Valorar . Sin.: valorar, evaluar, tasar, valuar, apreciar, estimar, justipreciar, avaluar.",
-    "df": "tr. valorar (‖ señalar el precio). Sin.: valorar, evaluar, tasar, valuar, apreciar, estimar, justipreciar, avaluar. | tr. valorar (‖ reconocer el valor de alguien o algo). Sin.: valorar, apreciar, estimar. | tr. Aumentar el valor de algo. Sin.: revalorizar, apreciar, encarecer. Ant.: desvalorizar.",
-    "e": "",
-    "s": "",
-    "c": "verbo",
-    "ec": "",
-    "esp": [
-      "explosiva"
-    ]
-  },
-  {
     "w": "Valquiria",
     "p": "f.",
     "d": "Cada una de ciertas divinidades de la mitología escandinava que en los combates designaban los héroes que habían de morir, y en el cielo les servían de escanciadoras. Sin.: deidad, divinidad.",
@@ -1174,19 +1095,6 @@
     "s": "",
     "c": "sustantivo",
     "ec": ""
-  },
-  {
-    "w": "Valuar",
-    "p": "tr.",
-    "d": "Valorar . Sin.: valorar, evaluar, tasar, apreciar, estimar, justipreciar, valorizar, avaluar.",
-    "df": "tr. valorar (‖ señalar el precio). Sin.: valorar, evaluar, tasar, apreciar, estimar, justipreciar, valorizar, avaluar.",
-    "e": "",
-    "s": "",
-    "c": "verbo",
-    "ec": "",
-    "esp": [
-      "explosiva"
-    ]
   },
   {
     "w": "Valva",
@@ -1426,16 +1334,6 @@
     "s": "",
     "c": "adjetivo",
     "ec": ""
-  },
-  {
-    "w": "Vaporación",
-    "p": "f.",
-    "d": "Evaporación. Sin.: evaporación.",
-    "df": "f. evaporación. Sin.: evaporación.",
-    "e": "Del lat. vaporatio, -ōnis.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_latin"
   },
   {
     "w": "Vaporar",
@@ -1791,16 +1689,6 @@
     "s": "",
     "c": "sustantivo",
     "ec": ""
-  },
-  {
-    "w": "Varbasco",
-    "p": "m.",
-    "d": "Verbasco. Sin.: gordolobo, verbasco.",
-    "df": "m. verbasco. Sin.: gordolobo, verbasco. | m. C. Rica y El Salv. barbasco (‖ bejuco). Sin.: barbasco. | m. Méx. Nombre genérico de varias especies de plantas.",
-    "e": "Del lat. verbascum.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_latin"
   },
   {
     "w": "Vardasca",
@@ -2212,16 +2100,6 @@
     "ec": ""
   },
   {
-    "w": "Varraco",
-    "p": "m.",
-    "d": "Verraco . Sin.: verraco, cerdo.",
-    "df": "m. verraco (‖ cerdo). Sin.: verraco, cerdo.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Varraquear",
     "p": "intr.",
     "d": "Dicho de una persona: Gruñir o enfadarse.",
@@ -2229,16 +2107,6 @@
     "e": "De varraco y -ear.",
     "s": "",
     "c": "verbo",
-    "ec": ""
-  },
-  {
-    "w": "Varraquera",
-    "p": "f. coloq.",
-    "d": "Verraquera. Sin.: verraquera.",
-    "df": "f. coloq. verraquera. Sin.: verraquera.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
     "ec": ""
   },
   {
@@ -2425,16 +2293,6 @@
     "ec": ""
   },
   {
-    "w": "Vasera",
-    "p": "f.",
-    "d": "Vasar. Sin.: vasar, aparador, cristalera, aleja, leja.",
-    "df": "f. vasar. Sin.: vasar, aparador, cristalera, aleja, leja. | f. Caja o funda que se usaba para proteger los recipientes de vidrio. | f. Bandeja grande con encajaduras para los vasos que usaban los aguadores y vendedores de refrescos.",
-    "e": "Del lat. vasaria, pl. de vasarium 'vasar'.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_latin"
-  },
-  {
     "w": "Vasija",
     "p": "f.",
     "d": "Pieza cóncava y pequeña, de barro u otra materia y de forma común u ordinaria, que sirve para contener especialmente líquidos o cosas destinadas a la alimentación. Sin.: cuenco, recipiente, jarra, jarro, cántaro, botijo, taza, termo1, bacía, belez, paila, tecomate, tocomate, cantimplora.",
@@ -2446,16 +2304,6 @@
     "esp": [
       "explosiva"
     ]
-  },
-  {
-    "w": "Vasillo",
-    "p": "m.",
-    "d": "Celdilla . Sin.: celdilla, alvéolo, celda.",
-    "df": "m. celdilla (‖ casilla de los panales). Sin.: celdilla, alvéolo, celda.",
-    "e": "Del lat. vascellum, dim. de vas 'vaso'.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_latin"
   },
   {
     "w": "Vasoconstrictor",
@@ -2637,16 +2485,6 @@
     "ec": ""
   },
   {
-    "w": "Vecería",
-    "p": "f.",
-    "d": "Vecera. Sin.: vecera.",
-    "df": "f. vecera. Sin.: vecera.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Vecinal",
     "p": "adj.",
     "d": "Perteneciente o relativo al vecindario o a los vecinos de un pueblo. Sin.: concejil, villano.",
@@ -2767,16 +2605,6 @@
     "ec": ""
   },
   {
-    "w": "Vedette",
-    "p": "f.",
-    "d": "Vedete. Sin.: vedete, estrella, divo.",
-    "df": "f. vedete. Sin.: vedete, estrella, divo.",
-    "e": "Voz fr.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Vedija",
     "p": "f.",
     "d": "Mechón de lana.",
@@ -2822,16 +2650,6 @@
     "d": "Religión más antigua de los indios, contenida en cada uno de los libros llamados Veda.",
     "df": "m. Religión más antigua de los indios, contenida en cada uno de los libros llamados Veda.",
     "e": "De Veda2 e -ismo.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Veduño",
-    "p": "m.",
-    "d": "Viduño. Sin.: viduño, vidueño.",
-    "df": "m. viduño. Sin.: viduño, vidueño.",
-    "e": "",
     "s": "",
     "c": "sustantivo",
     "ec": ""
@@ -2976,16 +2794,6 @@
     "ec": ""
   },
   {
-    "w": "Veguerío",
-    "p": "m.",
-    "d": "Veguería. Sin.: veguería.",
-    "df": "m. veguería. Sin.: veguería.",
-    "e": "De veguer.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Vehemente",
     "p": "adj.",
     "d": "Que tiene una fuerza impetuosa. Un discurso vehemente. Sin.: impetuoso, fuerte.",
@@ -2997,16 +2805,6 @@
     "esp": [
       "explosiva"
     ]
-  },
-  {
-    "w": "Vehicular",
-    "p": "tr.",
-    "d": "Vehiculizar. Sin.: vehiculizar.",
-    "df": "tr. vehiculizar. Sin.: vehiculizar. | adj. Perteneciente o relativo al vehículo. Tráfico peatonal y vehicular. | adj. Dicho de una lengua: Que sirve de comunicación entre grupos de personas de lengua materna distinta.",
-    "e": "Del lat. tardío vehiculāris.",
-    "s": "",
-    "c": "verbo",
-    "ec": "etym_latin"
   },
   {
     "w": "Veimarés",
@@ -3044,16 +2842,6 @@
     "d": "Conjunto de 20 unidades.",
     "df": "m. Conjunto de 20 unidades.",
     "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Veintenero",
-    "p": "m.",
-    "d": "Sochantre. Sin.: sochantre, socapiscol.",
-    "df": "m. sochantre. Sin.: sochantre, socapiscol.",
-    "e": "De veintena.",
     "s": "",
     "c": "sustantivo",
     "ec": ""
@@ -3189,19 +2977,6 @@
     "ec": ""
   },
   {
-    "w": "Vejeta",
-    "p": "f.",
-    "d": "Cogujada. Sin.: cogujada, cochevís, copada, cotovía, cugujada, galerita, tova, agachadera, carabinera, coguja, corucha.",
-    "df": "f. cogujada. Sin.: cogujada, cochevís, copada, cotovía, cugujada, galerita, tova, agachadera, carabinera, coguja, corucha.",
-    "e": "De vieja.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "",
-    "esp": [
-      "explosiva"
-    ]
-  },
-  {
     "w": "Vejete",
     "p": "adj.",
     "d": "Afect. Viejo, de edad avanzada. U. m. c. s. m. Sin.: viejo, viejales, viejarrón, vejarrón, viejurgo, vejestorio.",
@@ -3229,16 +3004,6 @@
     "e": "",
     "s": "",
     "c": "adjetivo",
-    "ec": ""
-  },
-  {
-    "w": "Vejiguilla",
-    "p": "f.",
-    "d": "Alquequenje . Sin.: alquequenje.",
-    "df": "f. alquequenje (‖ planta). Sin.: alquequenje.",
-    "e": "De vejiga e -illa.",
-    "s": "",
-    "c": "sustantivo",
     "ec": ""
   },
   {
@@ -3459,29 +3224,6 @@
     "ec": ""
   },
   {
-    "w": "Vellido",
-    "p": "adj.",
-    "d": "Velloso. Sin.: velloso, velludo, pubescente, lanoso, peludo, piloso.",
-    "df": "adj. velloso. Sin.: velloso, velludo, pubescente, lanoso, peludo, piloso.",
-    "e": "De vello.",
-    "s": "",
-    "c": "adjetivo",
-    "ec": ""
-  },
-  {
-    "w": "Vellocino",
-    "p": "m.",
-    "d": "Vellón . Sin.: vellón1, vedija1, lana.",
-    "df": "m. vellón (‖ lana de un carnero u oveja). Sin.: vellón1, vedija1, lana. | m. zalea (‖ cuero curtido de oveja o carnero con su lana). Sin.: zalea, tusón, vellón1, cuero, piel.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "",
-    "esp": [
-      "explosiva"
-    ]
-  },
-  {
     "w": "Vellonero",
     "p": "m. y f.",
     "d": "Y f. En los esquileos, persona encargada de recoger los vellones y llevarlos a la pila.",
@@ -3502,16 +3244,6 @@
     "ec": ""
   },
   {
-    "w": "Vellorita",
-    "p": "f.",
-    "d": "Maya . Sin.: maya1, margarita.",
-    "df": "f. maya (‖ planta). Sin.: maya1, margarita. | f. primavera (‖ planta). Sin.: primavera, prímula.",
-    "e": "Del lat. bellis.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_latin"
-  },
-  {
     "w": "Vellorí",
     "p": "m.",
     "d": "Paño entrefino, de color pardo ceniciento o de lana sin teñir. Sin.: vellorín.",
@@ -3520,16 +3252,6 @@
     "s": "",
     "c": "sustantivo",
     "ec": "etym_latin"
-  },
-  {
-    "w": "Vellorín",
-    "p": "m.",
-    "d": "Vellorí. Sin.: vellorí.",
-    "df": "m. vellorí. Sin.: vellorí.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
   },
   {
     "w": "Vellosidad",
@@ -3704,36 +3426,6 @@
     "ec": ""
   },
   {
-    "w": "Velorto",
-    "p": "m.",
-    "d": "Vilorto . Sin.: vilorto, clemátide.",
-    "df": "m. vilorto (‖ especie de clemátide). Sin.: vilorto, clemátide. | m. vilorta (‖ vara para hacer aros y vencejos). Sin.: vilorta, vara. | m. Palo para jugar a la vilorta. | m. Piorno, viburno.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Veludillo",
-    "p": "m.",
-    "d": "Velludillo. Sin.: velludillo.",
-    "df": "m. velludillo. Sin.: velludillo.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Veludo",
-    "p": "m.",
-    "d": "Velludo . Sin.: velludo.",
-    "df": "m. velludo (‖ felpa o terciopelo). Sin.: velludo.",
-    "e": "Del gall. veludo.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Velívolo",
     "p": "adj.",
     "d": "Velero, que navega a toda vela.",
@@ -3761,16 +3453,6 @@
     "e": "Del aum. de vela1.",
     "s": "",
     "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Venable",
-    "p": "adj.",
-    "d": "Venal . Sin.: venal2, vendible.",
-    "df": "adj. venal (‖ vendible). Sin.: venal2, vendible.",
-    "e": "",
-    "s": "",
-    "c": "adjetivo",
     "ec": ""
   },
   {
@@ -4043,16 +3725,6 @@
     "ec": "etym_latin"
   },
   {
-    "w": "Venerando",
-    "p": "adj.",
-    "d": "Venerable . Sin.: venerable, estimable, honorable, respetable, virtuoso, noble, espectable.",
-    "df": "adj. venerable (‖ digno de veneración). Sin.: venerable, estimable, honorable, respetable, virtuoso, noble, espectable.",
-    "e": "Del lat. venerandus 'que ha de ser venerado', gerundivo de venerāri 'venerar'.",
-    "s": "",
-    "c": "adjetivo",
-    "ec": "etym_latin"
-  },
-  {
     "w": "Venereología",
     "p": "f.",
     "d": "Med. Parte de la medicina referente a las enfermedades venéreas.",
@@ -4157,29 +3829,6 @@
     "esp": [
       "explosiva"
     ]
-  },
-  {
-    "w": "Ventalla",
-    "p": "f.",
-    "d": "Válvula. Sin.: válvula.",
-    "df": "f. válvula. Sin.: válvula. | f. Bot. Cada una de las dos o más partes de la cáscara de un fruto, que, juntas por una o más suturas, encierran las semillas, como en el haba y el estramonio. Sin.: valva.",
-    "e": "Del fr. ventaille, der. de venter 'soplar el viento'.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_frances",
-    "esp": [
-      "viajera"
-    ]
-  },
-  {
-    "w": "Ventalle",
-    "p": "m.",
-    "d": "Abanico . Sin.: abanico, abano.",
-    "df": "m. abanico (‖ instrumento de varillas). Sin.: abanico, abano. | m. Pieza movible del casco, que unida a la visera lo cerraba por delante.",
-    "e": "Del cat. ventall, y este der. del lat. ventus 'viento1'.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
   },
   {
     "w": "Ventanaje",
@@ -4417,16 +4066,6 @@
     "ec": ""
   },
   {
-    "w": "Ventorrillo",
-    "p": "m.",
-    "d": "Ventorro. Sin.: ventorro.",
-    "df": "m. ventorro. Sin.: ventorro. | m. Bodegón o casa de comidas en las afueras de una población.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Ventorro",
     "p": "m.",
     "d": "Venta de hospedaje pequeña o mala. Sin.: ventorrillo.",
@@ -4478,19 +4117,6 @@
     "s": "",
     "c": "adjetivo",
     "ec": "etym_latin"
-  },
-  {
-    "w": "Ventrecha",
-    "p": "f.",
-    "d": "Ventresca. Sin.: ventresca, ventrisca.",
-    "df": "f. ventresca. Sin.: ventresca, ventrisca.",
-    "e": "Del fr. ant. ventresche.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_frances",
-    "esp": [
-      "viajera"
-    ]
   },
   {
     "w": "Ventregada",
@@ -4560,16 +4186,6 @@
     "p": "f.",
     "d": "Arte del ventrílocuo.",
     "df": "f. Arte del ventrílocuo.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Ventrisca",
-    "p": "f.",
-    "d": "Ventresca. Sin.: ventresca, ventrecha.",
-    "df": "f. ventresca. Sin.: ventresca, ventrecha.",
     "e": "",
     "s": "",
     "c": "sustantivo",
@@ -4885,16 +4501,6 @@
     "ec": ""
   },
   {
-    "w": "Verbasco",
-    "p": "m.",
-    "d": "Gordolobo. Sin.: gordolobo, candelaria, candelera, varbasco.",
-    "df": "m. gordolobo. Sin.: gordolobo, candelaria, candelera, varbasco.",
-    "e": "Del lat. verbascum.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_latin"
-  },
-  {
     "w": "Verbena",
     "p": "f.",
     "d": "Planta herbácea anual, de la familia de las verbenáceas, con tallo de 60 a 80 cm de altura, erguido y ramoso por arriba, hojas ásperas y hendidas, flores de varios colores, terminales y en espigas largas y delgadas, y fruto seco con dos o cuatro divisiones y otras tantas semillas, y que es común en España.",
@@ -4952,16 +4558,6 @@
     "e": "Del lat. verberāre.",
     "s": "",
     "c": "verbo",
-    "ec": "etym_latin"
-  },
-  {
-    "w": "Verbigracia",
-    "p": "m.",
-    "d": "Ejemplo . Sin.: ejemplo.",
-    "df": "m. ejemplo (‖ hecho o texto que se cita para autorizar un aserto). Sin.: ejemplo.",
-    "e": "Del lat. verbi gratia.",
-    "s": "",
-    "c": "sustantivo",
     "ec": "etym_latin"
   },
   {
@@ -5095,19 +4691,6 @@
     "ec": ""
   },
   {
-    "w": "Verdel",
-    "p": "m.",
-    "d": "Caballa . Sin.: caballa, escombro2, estornino, sarda1.",
-    "df": "m. caballa (‖ pez). Sin.: caballa, escombro2, estornino, sarda1. | m. coloq. Ál. verderón1. Sin.: verderón1, verdecillo, verderol1, verdezuelo, verdón, cañamero1.",
-    "e": "De verde.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "",
-    "esp": [
-      "explosiva"
-    ]
-  },
-  {
     "w": "Verdemar",
     "p": "adj.",
     "d": "Dicho de un color: Semejante al verdoso que suele tomar el mar. U. t. c. s. m.",
@@ -5162,16 +4745,6 @@
     "esp": [
       "explosiva"
     ]
-  },
-  {
-    "w": "Verdete",
-    "p": "m.",
-    "d": "Cardenillo . Sin.: cardenillo, verdín, óxido.",
-    "df": "m. cardenillo (‖ materia con propiedades tóxicas). Sin.: cardenillo, verdín, óxido. | m. Materia colorante verde claro hecha con el acetato o el carbonato de cobre, que se emplea en pintura y en tintorería. | m. Color semejante al del verdete (‖ materia).",
-    "e": "Del dim. de verde.",
-    "s": "",
-    "c": "arte_literatura",
-    "ec": ""
   },
   {
     "w": "Verdevejiga",
@@ -5271,16 +4844,6 @@
     "p": "adj.",
     "d": "Dicho de un color: Muy verde o verdoso.",
     "df": "adj. Dicho de un color: Muy verde o verdoso. | adj. De color verdino.",
-    "e": "",
-    "s": "",
-    "c": "adjetivo",
-    "ec": ""
-  },
-  {
-    "w": "Verdinoso",
-    "p": "adj.",
-    "d": "Verdoso. Sin.: verdoso, verderón3.",
-    "df": "adj. verdoso. Sin.: verdoso, verderón3.",
     "e": "",
     "s": "",
     "c": "adjetivo",
@@ -5403,16 +4966,6 @@
     "e": "",
     "s": "",
     "c": "comercio",
-    "ec": ""
-  },
-  {
-    "w": "Verdusco",
-    "p": "adj.",
-    "d": "Verduzco. Sin.: verduzco, verdoso, verde.",
-    "df": "adj. verduzco. Sin.: verduzco, verdoso, verde.",
-    "e": "",
-    "s": "",
-    "c": "adjetivo",
     "ec": ""
   },
   {
@@ -5618,19 +5171,6 @@
     "ec": ""
   },
   {
-    "w": "Verisimilitud",
-    "p": "f.",
-    "d": "Verosimilitud. Sin.: credibilidad, apariencia, probabilidad, posibilidad, fiabilidad, plausibilidad, autenticidad, veracidad, aceptabilidad, creencia, verosimilitud.",
-    "df": "f. verosimilitud. Sin.: credibilidad, apariencia, probabilidad, posibilidad, fiabilidad, plausibilidad, autenticidad, veracidad, aceptabilidad, creencia, verosimilitud.",
-    "e": "Del lat. verisimilitūdo.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_latin",
-    "esp": [
-      "explosiva"
-    ]
-  },
-  {
     "w": "Verismo",
     "p": "m.",
     "d": "Realismo llevado al extremo en las obras de arte. Sin.: realismo1, realidad, crudeza, autenticidad, sinceridad.",
@@ -5639,16 +5179,6 @@
     "s": "",
     "c": "sustantivo",
     "ec": "etym_latin"
-  },
-  {
-    "w": "Verisímilmente",
-    "p": "adv.",
-    "d": "Verosímilmente. Sin.: verosímilmente.",
-    "df": "adv. verosímilmente. Sin.: verosímilmente.",
-    "e": "",
-    "s": "",
-    "c": "adverbio",
-    "ec": ""
   },
   {
     "w": "Vermicida",
@@ -6329,19 +5859,6 @@
     "ec": "etym_latin"
   },
   {
-    "w": "Veste",
-    "p": "f.",
-    "d": "Vestido. Sin.: vestido, ropa, traje, vestimenta, indumentaria, prenda, vestidura, vestuario, atuendo, atavío, ropaje, sayo, ajuar.",
-    "df": "f. poét. vestido. Sin.: vestido, ropa, traje, vestimenta, indumentaria, prenda, vestidura, vestuario, atuendo, atavío, ropaje, sayo, ajuar.",
-    "e": "Del lat. vestis.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_latin",
-    "esp": [
-      "explosiva"
-    ]
-  },
-  {
     "w": "Vestecha",
     "p": "f.",
     "d": "León y Pal. Soportal o cobertizo, sostenido por postes de madera, que tienen las casas ante la puerta.",
@@ -6372,19 +5889,6 @@
     "ec": ""
   },
   {
-    "w": "Vestidura",
-    "p": "f.",
-    "d": "Vestido . Sin.: vestimenta, ropa, indumentaria, vestuario, atuendo, ropaje, vestido, atavío, prenda, traje, sayo, ajuar, veste.",
-    "df": "f. vestido (‖ prendas con que se cubre el cuerpo). Sin.: vestimenta, ropa, indumentaria, vestuario, atuendo, ropaje, vestido, atavío, prenda, traje, sayo, ajuar, veste. | f. Vestido que, sobrepuesto al ordinario, usan los sacerdotes para el culto divino. U. m. en pl. con el mismo significado que en sing. Sin.: vestimenta.",
-    "e": "",
-    "s": "",
-    "c": "vestimenta",
-    "ec": "",
-    "esp": [
-      "explosiva"
-    ]
-  },
-  {
     "w": "Vestigial",
     "p": "adj.",
     "d": "Que queda como resto de algo que ya ha perdido su función. Órgano vestigial.",
@@ -6393,19 +5897,6 @@
     "s": "",
     "c": "adjetivo",
     "ec": ""
-  },
-  {
-    "w": "Vestigio",
-    "p": "m.",
-    "d": "Huella . Sin.: huella, estampa, pisada, impresión, pista.",
-    "df": "m. huella (‖ señal dejada al pisar una superficie). Sin.: huella, estampa, pisada, impresión, pista. | m. Memoria o noticia de las acciones de los antiguos que se observa para la imitación y el ejemplo. Sin.: memoria, rastro, señal, huella, traza, marca, indicio, evocación, recuerdo. | m. Ruina, señal o resto que queda de algo material o inmaterial. Sin.: ruinas, restos, reliquia, partícula, residuo. | m. Indicio por donde se infiere la verdad de algo o se sigue la averiguación de ello.",
-    "e": "Del lat. vestigium.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_latin",
-    "esp": [
-      "explosiva"
-    ]
   },
   {
     "w": "Vestiglo",
@@ -6566,19 +6057,6 @@
     "ec": ""
   },
   {
-    "w": "Veza",
-    "p": "f.",
-    "d": "Algarroba . Sin.: algarroba, algarrobilla, alverja, arvejera, yero, arveja, vicia.",
-    "df": "f. algarroba (‖ planta). Sin.: algarroba, algarrobilla, alverja, arvejera, yero, arveja, vicia. | f. algarroba (‖ semilla). Sin.: algarroba, garrubia, arveja, vicia.",
-    "e": "Del lat. vicia.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_latin",
-    "esp": [
-      "explosiva"
-    ]
-  },
-  {
     "w": "Vezar",
     "p": "tr.",
     "d": "Avezar. U. t. c. prnl. Sin.: acostumbrarse, habituarse, avezarse, ejercitarse, curtirse, endurecerse, encallecerse, baquetear.",
@@ -6599,16 +6077,6 @@
     "e": "",
     "s": "",
     "c": "gentilicio",
-    "ec": ""
-  },
-  {
-    "w": "Viada",
-    "p": "f.",
-    "d": "Arrancada . Sin.: arranque, arrancada, salida, partida, arrancón.",
-    "df": "f. arrancada (‖ salida violenta). Sin.: arranque, arrancada, salida, partida, arrancón. | f. arrancada (‖ puesta en marcha de un motor). Sin.: arranque, arrancada.",
-    "e": "De vía.",
-    "s": "",
-    "c": "sustantivo",
     "ec": ""
   },
   {
@@ -6979,16 +6447,6 @@
     "ec": ""
   },
   {
-    "w": "Vicecristo",
-    "p": "m.",
-    "d": "Vicediós. Sin.: papa1, pontífice, vicediós.",
-    "df": "m. vicediós. Sin.: papa1, pontífice, vicediós.",
-    "e": "De vice- y Cristo.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Vicecónsul",
     "p": "m. y f.",
     "d": "Y f. Funcionario de la carrera consular, de categoría inmediatamente inferior al cónsul.",
@@ -7202,29 +6660,6 @@
     "ec": ""
   },
   {
-    "w": "Vichy",
-    "p": "m.",
-    "d": "Vichí. Sin.: vichí.",
-    "df": "m. vichí. Sin.: vichí.",
-    "e": "Voz fr., y esta de Vichy, ciudad de Francia.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Vicia",
-    "p": "f.",
-    "d": "Algarroba . Sin.: algarroba, algarrobilla, alverja, arvejera, yero, arveja, veza.",
-    "df": "f. algarroba (‖ planta). Sin.: algarroba, algarrobilla, alverja, arvejera, yero, arveja, veza. | f. algarroba (‖ semilla). Sin.: algarroba, garrubia, arveja, veza.",
-    "e": "Del lat. vicia.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_latin",
-    "esp": [
-      "explosiva"
-    ]
-  },
-  {
     "w": "Vicisitud",
     "p": "f.",
     "d": "Orden sucesivo o alternativo de algo.",
@@ -7301,16 +6736,6 @@
     "ec": ""
   },
   {
-    "w": "Victorear",
-    "p": "tr.",
-    "d": "Vitorear. Sin.: vitorear, vivar2, aclamar, ovacionar, aplaudir.",
-    "df": "tr. vitorear. Sin.: vitorear, vivar2, aclamar, ovacionar, aplaudir.",
-    "e": "",
-    "s": "",
-    "c": "verbo",
-    "ec": ""
-  },
-  {
     "w": "Victoriano",
     "p": "adj.",
     "d": "Perteneciente o relativo a la reina Victoria de Inglaterra o a su época.",
@@ -7342,26 +6767,6 @@
     "esp": [
       "viajera"
     ]
-  },
-  {
-    "w": "Vicésima",
-    "p": "adj.",
-    "d": "Vigésimo . Sin.: vigésimo, veinte, veinteno.",
-    "df": "adj. vigésimo (‖ que ocupa en una serie el lugar número veinte). Sin.: vigésimo, veinte, veinteno. | adj. Dicho de una parte: Que es una de las veinte iguales en que se divide un todo. U. t. c. s. Sin.: veinteavo, vigésimo, veinteno.",
-    "e": "Del lat. vicesĭmus; la forma f., del lat. vicesĭma.",
-    "s": "",
-    "c": "adjetivo",
-    "ec": "etym_latin"
-  },
-  {
-    "w": "Vicésimo",
-    "p": "adj.",
-    "d": "Vigésimo . Sin.: vigésimo, veinte, veinteno.",
-    "df": "adj. vigésimo (‖ que ocupa en una serie el lugar número veinte). Sin.: vigésimo, veinte, veinteno. | adj. Dicho de una parte: Que es una de las veinte iguales en que se divide un todo. U. t. c. s. Sin.: veinteavo, vigésimo, veinteno.",
-    "e": "Del lat. vicesĭmus; la forma f., del lat. vicesĭma.",
-    "s": "",
-    "c": "adjetivo",
-    "ec": "etym_latin"
   },
   {
     "w": "Vidarra",
@@ -7509,16 +6914,6 @@
     "ec": ""
   },
   {
-    "w": "Videograbador",
-    "p": "m.",
-    "d": "Video . Sin.: magnetoscopio, video, videocasete, videocasetera.",
-    "df": "m. video (‖ aparato). Sin.: magnetoscopio, video, videocasete, videocasetera.",
-    "e": "De video- y grabador.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Videograbar",
     "p": "tr.",
     "d": "Grabar imágenes en video.",
@@ -7612,19 +7007,6 @@
     "ec": ""
   },
   {
-    "w": "Vidriado",
-    "p": "adj.",
-    "d": "Vidrioso . Sin.: vidrioso, vítreo, cristalino, quebradizo, frágil.",
-    "df": "adj. vidrioso (‖ que fácilmente se quiebra). Sin.: vidrioso, vítreo, cristalino, quebradizo, frágil. | m. Barniz vítreo. | m. vajilla (‖ conjunto de piezas para el servicio de mesa). Sin.: vajilla, vajillería, servicio, loza, vajillo, vasa, vasija. | m. Operación de vidriar.",
-    "e": "Del part. de vidriar.",
-    "s": "",
-    "c": "adjetivo",
-    "ec": "",
-    "esp": [
-      "explosiva"
-    ]
-  },
-  {
     "w": "Vidriar",
     "p": "tr.",
     "d": "Dar a las piezas de barro o loza un barniz que, fundido al horno, toma la transparencia y lustre del vidrio. Sin.: barnizar, vitrificar.",
@@ -7712,16 +7094,6 @@
     "s": "",
     "c": "adjetivo",
     "ec": "etym_latin"
-  },
-  {
-    "w": "Vidueño",
-    "p": "m.",
-    "d": "Viduño. Sin.: viduño, veduño.",
-    "df": "m. viduño. Sin.: viduño, veduño.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
   },
   {
     "w": "Viduño",
@@ -8425,16 +7797,6 @@
     ]
   },
   {
-    "w": "Vinca",
-    "p": "f.",
-    "d": "Vincapervinca. Sin.: vincapervinca, pervinca.",
-    "df": "f. vincapervinca. Sin.: vincapervinca, pervinca.",
-    "e": "Del lat. vinca.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_latin"
-  },
-  {
     "w": "Vincapervinca",
     "p": "f.",
     "d": "Planta herbácea de la familia de las apocináceas, con flores azules, que se cultiva en los jardines. Sin.: vinca, pervinca.",
@@ -8508,16 +7870,6 @@
     "ec": ""
   },
   {
-    "w": "Vindicta",
-    "p": "f.",
-    "d": "Venganza . Sin.: venganza, desquite, revancha, vendetta.",
-    "df": "f. venganza (‖ satisfacción del daño recibido). Sin.: venganza, desquite, revancha, vendetta.",
-    "e": "Del lat. vindicta.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_latin"
-  },
-  {
     "w": "Vinicultor",
     "p": "adj.",
     "d": "Perteneciente o relativo a la vinicultura. Sin.: vinícola, vitivinícola, vitivinicultor, vinatero, enológico, enotécnico.",
@@ -8536,16 +7888,6 @@
     "s": "",
     "c": "sustantivo",
     "ec": "etym_latin"
-  },
-  {
-    "w": "Viniebla",
-    "p": "f.",
-    "d": "Cinoglosa. Sin.: cinoglosa, lapilla.",
-    "df": "f. cinoglosa. Sin.: cinoglosa, lapilla.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
   },
   {
     "w": "Viniente",
@@ -8744,16 +8086,6 @@
     "ec": ""
   },
   {
-    "w": "Violeto",
-    "p": "m.",
-    "d": "Peladillo . Sin.: peladillo.",
-    "df": "m. peladillo (‖ variedad del pérsico). Sin.: peladillo. | m. peladillo (‖ fruto). Sin.: peladillo.",
-    "e": "De violeta, por el color morado del fruto.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Violinista",
     "p": "m. y f.",
     "d": "Y f. Persona que toca el violín. Sin.: violín.",
@@ -8768,16 +8100,6 @@
     "p": "m. y f.",
     "d": "Y f. violonchelista. Sin.: violonchelista, chelista, chelo1, violonchelo, violoncelo.",
     "df": "m. y f. violonchelista. Sin.: violonchelista, chelista, chelo1, violonchelo, violoncelo.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Violoncelo",
-    "p": "m.",
-    "d": "Violonchelo. Sin.: violonchelo, chelo1.",
-    "df": "m. violonchelo. Sin.: violonchelo, chelo1.",
     "e": "",
     "s": "",
     "c": "sustantivo",
@@ -8818,16 +8140,6 @@
     "esp": [
       "explosiva"
     ]
-  },
-  {
-    "w": "Violón",
-    "p": "m.",
-    "d": "Contrabajo . Sin.: contrabajo.",
-    "df": "m. contrabajo (‖ instrumento musical). Sin.: contrabajo.",
-    "e": "Del aum. de viola1.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
   },
   {
     "w": "Viperino",
@@ -9009,16 +8321,6 @@
     "ec": ""
   },
   {
-    "w": "Virgíneo",
-    "p": "adj.",
-    "d": "Virginal. Sin.: virginal, virgen, puro, inmaculado, intacto.",
-    "df": "adj. virginal. Sin.: virginal, virgen, puro, inmaculado, intacto.",
-    "e": "Del lat. virgineus.",
-    "s": "",
-    "c": "adjetivo",
-    "ec": "etym_latin"
-  },
-  {
     "w": "Virigaza",
     "p": "f. coloq.",
     "d": "Ál. Planta trepadora, especie de clemátide.",
@@ -9076,26 +8378,6 @@
     "e": "De viril2 e -izar.",
     "s": "",
     "c": "verbo",
-    "ec": ""
-  },
-  {
-    "w": "Virilmente",
-    "p": "adv.",
-    "d": "Varonilmente. Sin.: varonilmente.",
-    "df": "adv. varonilmente. Sin.: varonilmente.",
-    "e": "",
-    "s": "",
-    "c": "adverbio",
-    "ec": ""
-  },
-  {
-    "w": "Virio",
-    "p": "m.",
-    "d": "Oropéndola. Sin.: oropéndola, oriol, víreo, becafigo, lútea, papafigo, muchilero.",
-    "df": "m. oropéndola. Sin.: oropéndola, oriol, víreo, becafigo, lútea, papafigo, muchilero.",
-    "e": "De víreo.",
-    "s": "",
-    "c": "sustantivo",
     "ec": ""
   },
   {
@@ -9258,16 +8540,6 @@
     "ec": ""
   },
   {
-    "w": "Virtuosístico",
-    "p": "adj.",
-    "d": "Virtuosista. Sin.: virtuosista.",
-    "df": "adj. virtuosista. Sin.: virtuosista.",
-    "e": "",
-    "s": "",
-    "c": "adjetivo",
-    "ec": ""
-  },
-  {
     "w": "Viruela",
     "p": "f.",
     "d": "Enfermedad aguda, febril, esporádica o epidémica, contagiosa, caracterizada por la erupción de gran número de pústulas. U. t. en pl. con el mismo significado que en sing.",
@@ -9328,29 +8600,6 @@
     "ec": ""
   },
   {
-    "w": "Visaje",
-    "p": "m.",
-    "d": "Gesto . Sin.: gesto, ademán, expresión.",
-    "df": "m. gesto (‖ movimiento con que se expresa algo). Sin.: gesto, ademán, expresión. | m. gesto (‖ movimiento exagerado del rostro por hábito o enfermedad). Sin.: gesto, mueca, mohín, aspaviento.",
-    "e": "Del fr. visage 'rostro'.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_frances",
-    "esp": [
-      "viajera"
-    ]
-  },
-  {
-    "w": "Visajero",
-    "p": "adj.",
-    "d": "Gestero. Sin.: gestero.",
-    "df": "adj. gestero. Sin.: gestero.",
-    "e": "De visaje.",
-    "s": "",
-    "c": "adjetivo",
-    "ec": ""
-  },
-  {
     "w": "Visar",
     "p": "tr.",
     "d": "Reconocer o examinar un instrumento, certificación, etc., poniéndole el visto bueno. Sin.: autorizar, validar, certificar, aprobar, reconocer, permitir, consentir.",
@@ -9373,16 +8622,6 @@
     "s": "",
     "c": "sustantivo",
     "ec": ""
-  },
-  {
-    "w": "Visco",
-    "p": "m.",
-    "d": "Liga . Sin.: liga2, liria, vesque.",
-    "df": "m. liga (‖ materia pegajosa). Sin.: liga2, liria, vesque. | m. Arg. Árbol leguminoso de hasta doce metros de altura, copa muy amplia y flores globosas de color amarillento, que se emplea en carpintería y como planta ornamental.",
-    "e": "Del lat. viscum.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_latin"
   },
   {
     "w": "Viscosa",
@@ -9544,16 +8783,6 @@
     "ec": ""
   },
   {
-    "w": "Visitación",
-    "p": "f.",
-    "d": "Visita . Sin.: visita.",
-    "df": "f. visita (‖ acción de visitar). Sin.: visita. | f. por antonom. Visita que, según el evangelio cristiano, hizo la Virgen María a su prima santa Isabel, y en la que esta conoció la concepción virginal de María. | f. Fiesta con que la Iglesia católica conmemora la visitación.",
-    "e": "Del lat. visitatio, -ōnis.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_latin"
-  },
-  {
     "w": "Visitador",
     "p": "adj.",
     "d": "Que visita frecuentemente. U. t. c. s. Sin.: visitero, visitante.",
@@ -9581,16 +8810,6 @@
     "e": "",
     "s": "",
     "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Visitero",
-    "p": "adj. coloq.",
-    "d": "Visitador . Sin.: visitador.",
-    "df": "adj. coloq. visitador (‖ que visita frecuentemente). Sin.: visitador.",
-    "e": "",
-    "s": "",
-    "c": "adjetivo",
     "ec": ""
   },
   {
@@ -10069,29 +9288,6 @@
     "ec": ""
   },
   {
-    "w": "Vituperosamente",
-    "p": "adv.",
-    "d": "Vituperiosamente. Sin.: vituperiosamente.",
-    "df": "adv. vituperiosamente. Sin.: vituperiosamente.",
-    "e": "",
-    "s": "",
-    "c": "adverbio",
-    "ec": "",
-    "esp": [
-      "larga"
-    ]
-  },
-  {
-    "w": "Vituperoso",
-    "p": "adj.",
-    "d": "Vituperioso. Sin.: vituperioso.",
-    "df": "adj. vituperioso. Sin.: vituperioso.",
-    "e": "",
-    "s": "",
-    "c": "adjetivo",
-    "ec": ""
-  },
-  {
     "w": "Vitáceo",
     "p": "adj.",
     "d": "Bot. Dicho de una planta: Del grupo de las angiospermas dicotiledóneas, por lo común trepadoras, con tallos nudosos, hojas alternas, pecioladas y sencillas, flores regulares, casi siempre pentámeras, dispuestas en racimos, y fruto en baya; p. ej., la vid. U. t. c. s. f., en pl. como taxón. Sin.: ampelídeo.",
@@ -10120,16 +9316,6 @@
     "s": "",
     "c": "adjetivo",
     "ec": "etym_latin"
-  },
-  {
-    "w": "Viudedad",
-    "p": "f.",
-    "d": "Viudez. Sin.: viudez.",
-    "df": "f. viudez. Sin.: viudez. | f. Pensión que recibe una persona viuda.",
-    "e": "De viudo y -edad.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
   },
   {
     "w": "Viudez",
@@ -10180,19 +9366,6 @@
     "d": "Y f. Persona que vendía víveres a los militares siguiéndolos en su marcha o en sus campañas.",
     "df": "m. y f. Persona que vendía víveres a los militares siguiéndolos en su marcha o en sus campañas. | m. y f. And. Persona que lleva el hato a un poblado. | m. y f. Nic. Persona que vende en el mercado de comestibles.",
     "e": "Del fr. vivandier.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_frances",
-    "esp": [
-      "viajera"
-    ]
-  },
-  {
-    "w": "Vivaque",
-    "p": "m.",
-    "d": "Vivac. Sin.: vivac.",
-    "df": "m. vivac. Sin.: vivac. | m. Mil. Guardia principal en las plazas de armas, a la cual acuden todas las demás a tomar el santo y seña.",
-    "e": "Del fr. ant. bivac.",
     "s": "",
     "c": "sustantivo",
     "ec": "etym_frances",
@@ -10254,16 +9427,6 @@
     "e": "",
     "s": "",
     "c": "adjetivo",
-    "ec": ""
-  },
-  {
-    "w": "Viveral",
-    "p": "m.",
-    "d": "Vivero . Sin.: vivero1.",
-    "df": "m. vivero (‖ terreno adonde se trasplantan árboles). Sin.: vivero1.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
     "ec": ""
   },
   {
@@ -10532,16 +9695,6 @@
     "ec": ""
   },
   {
-    "w": "Viñadero",
-    "p": "m.",
-    "d": "Viñador . Sin.: viñador.",
-    "df": "m. viñador (‖ guarda de una viña). Sin.: viñador.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Viñador",
     "p": "m. y f.",
     "d": "Y f. Cultivador de viñas.",
@@ -10725,16 +9878,6 @@
     "ec": ""
   },
   {
-    "w": "Vocería",
-    "p": "f.",
-    "d": "Gritería. Sin.: vocerío, griterío, gritería, alarida, greguería, gritadera.",
-    "df": "f. gritería. Sin.: vocerío, griterío, gritería, alarida, greguería, gritadera. | f. Cargo de vocero.",
-    "e": "De voz 'grito' y -ería2.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Vociferación",
     "p": "f.",
     "d": "Acción y efecto de vociferar.",
@@ -10832,16 +9975,6 @@
     "p": "m. o f.",
     "d": "O f. Especie de aguardiente que se consume mucho en Rusia. U. menos c. f.",
     "df": "m. o f. Especie de aguardiente que se consume mucho en Rusia. U. menos c. f.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Voduismo",
-    "p": "m.",
-    "d": "Vuduismo. Sin.: vudú, vuduismo.",
-    "df": "m. vuduismo. Sin.: vudú, vuduismo.",
     "e": "",
     "s": "",
     "c": "sustantivo",
@@ -10967,16 +10100,6 @@
     ]
   },
   {
-    "w": "Volanta",
-    "p": "f.",
-    "d": "Volante . Sin.: volante.",
-    "df": "f. volante (‖ coche de caballos de las Antillas). Sin.: volante. | f. Méx. Vehículo de los aduaneros que vigilan las carreteras.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Volantazo",
     "p": "m.",
     "d": "Giro brusco y repentino dado al volante de un vehículo en movimiento.",
@@ -10985,19 +10108,6 @@
     "s": "",
     "c": "sustantivo",
     "ec": ""
-  },
-  {
-    "w": "Volantín",
-    "p": "adj.",
-    "d": "Volante . Sin.: volador, volátil, volante, volandero.",
-    "df": "adj. volante (‖ que vuela). Sin.: volador, volátil, volante, volandero. | m. Arg., Chile, Cuba, P. Rico y Ven. cometa (‖ armazón). Sin.: cometa, birlocha, milocha, pandero, papalote, barrilete, chiringa, paloma, papagayo, chichigua, papalota, cachirulo. | m. Hond. y Nic. voltereta (‖ vuelta cabeza abajo). Sin.: cabriola, capitón, catatumba, pirueta, voltereta, volteleta.",
-    "e": "",
-    "s": "",
-    "c": "adjetivo",
-    "ec": "",
-    "esp": [
-      "explosiva"
-    ]
   },
   {
     "w": "Volantón",
@@ -11106,19 +10216,6 @@
     ]
   },
   {
-    "w": "Volatín",
-    "p": "m.",
-    "d": "Volatinero. Sin.: titiritero, volatinero, volantinero, acróbata, alambrista, equilibrista, funambulista, funámbulo.",
-    "df": "m. volatinero. Sin.: titiritero, volatinero, volantinero, acróbata, alambrista, equilibrista, funambulista, funámbulo. | m. Cada uno de los ejercicios del volatinero. Sin.: acrobacia, giro1, salto, cabriola, pirueta, malabarismo, equilibrismo.",
-    "e": "De vela1.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "",
-    "esp": [
-      "explosiva"
-    ]
-  },
-  {
     "w": "Volavérunt",
     "p": "expr.",
     "d": "Expr. fest. U. para indicar que algo faltó del todo, se perdió o desapareció.",
@@ -11134,26 +10231,6 @@
     "d": "Acción de volcar. Sin.: vertido, derramamiento, derrame, vertimiento.",
     "df": "m. Acción de volcar. Sin.: vertido, derramamiento, derrame, vertimiento.",
     "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Volcanismo",
-    "p": "m.",
-    "d": "Vulcanismo. Sin.: vulcanismo, plutonismo.",
-    "df": "m. vulcanismo. Sin.: vulcanismo, plutonismo.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Volcanología",
-    "p": "f.",
-    "d": "Vulcanología. Sin.: vulcanología.",
-    "df": "f. vulcanología. Sin.: vulcanología.",
-    "e": "De volcán y -logía.",
     "s": "",
     "c": "sustantivo",
     "ec": ""
@@ -11368,16 +10445,6 @@
     ]
   },
   {
-    "w": "Volteleta",
-    "p": "f.",
-    "d": "Voltereta . Sin.: voltereta, cabriola, pirueta, catatumba, volantín, capitón.",
-    "df": "f. voltereta (‖ vuelta cabeza abajo). Sin.: voltereta, cabriola, pirueta, catatumba, volantín, capitón.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Volteo",
     "p": "m.",
     "d": "Acción y efecto de voltear. Sin.: volteada.",
@@ -11418,16 +10485,6 @@
     "e": "",
     "s": "",
     "c": "adjetivo",
-    "ec": ""
-  },
-  {
-    "w": "Volteta",
-    "p": "f.",
-    "d": "Voltereta. Sin.: voltereta.",
-    "df": "f. voltereta. Sin.: voltereta.",
-    "e": "De vuelta.",
-    "s": "",
-    "c": "sustantivo",
     "ec": ""
   },
   {
@@ -11560,19 +10617,6 @@
     "ec": ""
   },
   {
-    "w": "Volvo",
-    "p": "m.",
-    "d": "Vólvulo. Sin.: vólvulo.",
-    "df": "m. vólvulo. Sin.: vólvulo.",
-    "e": "Del it. volvolo.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_italiano",
-    "esp": [
-      "viajera"
-    ]
-  },
-  {
     "w": "Volátil",
     "p": "adj.",
     "d": "Que vuela o puede volar. U. t. c. s. Sin.: volador, volante, volantín, volandero.",
@@ -11666,16 +10710,6 @@
     "e": "",
     "s": "",
     "c": "adjetivo",
-    "ec": ""
-  },
-  {
-    "w": "Voquible",
-    "p": "m. coloq.",
-    "d": "Vocablo. Sin.: palabra, vocablo, voz.",
-    "df": "m. coloq. vocablo. Sin.: palabra, vocablo, voz.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
     "ec": ""
   },
   {
@@ -11818,16 +10852,6 @@
     ]
   },
   {
-    "w": "Vozarrona",
-    "p": "f.",
-    "d": "Vozarrón. Sin.: vozarrón, vocerrón, vocerón, gañote.",
-    "df": "f. vozarrón. Sin.: vozarrón, vocerrón, vocerón, gañote.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Vozarrón",
     "p": "m.",
     "d": "Voz muy fuerte y gruesa. Sin.: vozarrona, bramido, rugido, vocerrón, vocerón, gañote, vocejón.",
@@ -11846,16 +10870,6 @@
     "s": "",
     "c": "verbo",
     "ec": "etym_latin"
-  },
-  {
-    "w": "Vuduismo",
-    "p": "m.",
-    "d": "Vudú. Sin.: vudú, voduismo, vodú.",
-    "df": "m. vudú. Sin.: vudú, voduismo, vodú.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
   },
   {
     "w": "Vuduista",
@@ -11946,19 +10960,6 @@
     "s": "",
     "c": "adjetivo",
     "ec": ""
-  },
-  {
-    "w": "Vulcanita",
-    "p": "f.",
-    "d": "Ebonita. Sin.: ebonita.",
-    "df": "f. ebonita. Sin.: ebonita.",
-    "e": "Del ingl. vulcanite, y este de vulcanize 'vulcanizar' y -ite '-ita2'.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_ingles",
-    "esp": [
-      "viajera"
-    ]
   },
   {
     "w": "Vulcanización",
@@ -12101,16 +11102,6 @@
     "ec": "etym_latin"
   },
   {
-    "w": "Vulpeja",
-    "p": "f.",
-    "d": "Zorra . Sin.: raposo, zorra, vulpécula.",
-    "df": "f. zorra (‖ mamífero). Sin.: raposo, zorra, vulpécula.",
-    "e": "Del lat. vulpecŭla, dim. de vulpes 'raposa'.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_latin"
-  },
-  {
     "w": "Vulpino",
     "p": "adj.",
     "d": "Perteneciente o relativo a la zorra.",
@@ -12121,16 +11112,6 @@
     "ec": "etym_latin"
   },
   {
-    "w": "Vulpécula",
-    "p": "f.",
-    "d": "Vulpeja. Sin.: vulpeja, zorra, raposo.",
-    "df": "f. vulpeja. Sin.: vulpeja, zorra, raposo.",
-    "e": "Del lat. vulpecŭla, dim. de vulpes 'raposa'.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_latin"
-  },
-  {
     "w": "Vultuoso",
     "p": "adj.",
     "d": "Med. Dicho del rostro: Abultado por congestión. Sin.: abultado, hinchado, protuberante, prominente.",
@@ -12138,16 +11119,6 @@
     "e": "Del lat. vultuōsus 'que exagera la expresión', 'ceñudo', y este de vultus 'rostro, semblante' y -ōsus '-oso2'.",
     "s": "",
     "c": "adjetivo",
-    "ec": "etym_latin"
-  },
-  {
-    "w": "Vulturno",
-    "p": "m.",
-    "d": "Bochorno . Sin.: bochorno, calor, calima1, calina, canícula, insolación.",
-    "df": "m. bochorno (‖ aire caliente). Sin.: bochorno, calor, calima1, calina, canícula, insolación.",
-    "e": "Del lat. vulturnus 'viento del sudeste'.",
-    "s": "",
-    "c": "sustantivo",
     "ec": "etym_latin"
   },
   {
@@ -12202,35 +11173,6 @@
     "esp": [
       "explosiva"
     ]
-  },
-  {
-    "w": "Vástiga",
-    "p": "f.",
-    "d": "Vástago . Sin.: vástago, brote, pimpollo, yema, cogollo, tallo, renuevo, retoño, bornizo.",
-    "df": "f. vástago (‖ renuevo de las plantas). Sin.: vástago, brote, pimpollo, yema, cogollo, tallo, renuevo, retoño, bornizo.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "",
-    "esp": [
-      "explosiva"
-    ]
-  },
-  {
-    "w": "Váter",
-    "p": "m.",
-    "d": "Inodoro. Sin.: inodoro, retrete, urinario, evacuatorio, letrina.",
-    "df": "m. inodoro. Sin.: inodoro, retrete, urinario, evacuatorio, letrina. | m. cuarto de baño. Sin.: baño, retrete, lavabo, servicio.",
-    "e": "Del ingl. water-closet.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_ingles",
-    "esp": [
-      "explosiva",
-      "viajera"
-    ],
-    "rabia": true,
-    "rabia_comment": "Water-closet → VÁTER. Solo váter. 🚽"
   },
   {
     "w": "Vélite",
@@ -12310,26 +11252,6 @@
     "p": "adj.",
     "d": "Perteneciente o relativo al vino. Sin.: vinatero, vinar, vinario.",
     "df": "adj. Perteneciente o relativo al vino. Sin.: vinatero, vinar, vinario.",
-    "e": "",
-    "s": "",
-    "c": "adjetivo",
-    "ec": ""
-  },
-  {
-    "w": "Víreo",
-    "p": "m.",
-    "d": "Oropéndola. Sin.: oropéndola, oriol, becafigo, lútea, papafigo, virio, muchilero.",
-    "df": "m. oropéndola. Sin.: oropéndola, oriol, becafigo, lútea, papafigo, virio, muchilero.",
-    "e": "Del lat. vireo.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_latin"
-  },
-  {
-    "w": "Vírico",
-    "p": "adj.",
-    "d": "Viral . Sin.: viral, virulento, virósico.",
-    "df": "adj. viral (‖ perteneciente a los virus). Sin.: viral, virulento, virósico.",
     "e": "",
     "s": "",
     "c": "adjetivo",

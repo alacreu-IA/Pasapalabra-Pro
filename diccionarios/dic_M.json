@@ -277,16 +277,6 @@
     "ec": "etym_latin"
   },
   {
-    "w": "Macedónico",
-    "p": "adj.",
-    "d": "Macedonio . Sin.: macedonio, macedón.",
-    "df": "adj. macedonio (‖ perteneciente a Macedonia). Sin.: macedonio, macedón.",
-    "e": "Del lat. Macedonĭcus, y este del gr. Μακεδονικός Makedonikós.",
-    "s": "",
-    "c": "adjetivo",
-    "ec": "etym_latin"
-  },
-  {
     "w": "Maceo",
     "p": "m.",
     "d": "Acción y efecto de macear.",
@@ -307,16 +297,6 @@
     "ec": "etym_latin"
   },
   {
-    "w": "Maceramiento",
-    "p": "m.",
-    "d": "Maceración. Sin.: maceración, enriamiento, enriado.",
-    "df": "m. maceración. Sin.: maceración, enriamiento, enriado.",
-    "e": "De macerar.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Macerar",
     "p": "tr.",
     "d": "Ablandar algo estrujándolo o golpeándolo. Sin.: ablandar, reblandecer, machacar, estrujar, espadar, mazonear.",
@@ -328,16 +308,6 @@
     "esp": [
       "explosiva"
     ]
-  },
-  {
-    "w": "Macerina",
-    "p": "f.",
-    "d": "Mancerina. Sin.: mancerina.",
-    "df": "f. mancerina. Sin.: mancerina.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
   },
   {
     "w": "Macero",
@@ -519,16 +489,6 @@
     "ec": ""
   },
   {
-    "w": "Machar",
-    "p": "tr.",
-    "d": "Machacar . Sin.: machacar, machucar, majar, chancar.",
-    "df": "tr. machacar (‖ golpear). Sin.: machacar, machucar, majar, chancar.",
-    "e": "De macho2.",
-    "s": "",
-    "c": "verbo",
-    "ec": ""
-  },
-  {
     "w": "Machear",
     "p": "tr.",
     "d": "Dicho del macho: Fecundar a la hembra.",
@@ -676,42 +636,6 @@
     "ec": ""
   },
   {
-    "w": "Machucamiento",
-    "p": "m.",
-    "d": "Machucadura. Sin.: machucadura, machucón.",
-    "df": "m. machucadura. Sin.: machucadura, machucón.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Machucante",
-    "p": "tr.",
-    "d": "Machacar . Sin.: machacar, machar, majar.",
-    "df": "tr. machacar (‖ golpear). Sin.: machacar, machar, majar. | tr. El Salv. y Nic. pisar (‖ poner el pie sobre algo). Sin.: pisar, pisotear, hollar. | tr. El Salv. y Nic. Dicho de un ave macho: pisar (‖ cubrir a la hembra). Sin.: aparearse, pisar, cubrir.",
-    "e": "De machar.",
-    "s": "",
-    "c": "verbo",
-    "ec": "",
-    "esp": [
-      "explosiva"
-    ]
-  },
-  {
-    "w": "Machucar",
-    "p": "tr.",
-    "d": "Machacar . Sin.: machacar, machar, majar.",
-    "df": "tr. machacar (‖ golpear). Sin.: machacar, machar, majar. | tr. El Salv. y Nic. pisar (‖ poner el pie sobre algo). Sin.: pisar, pisotear, hollar. | tr. El Salv. y Nic. Dicho de un ave macho: pisar (‖ cubrir a la hembra). Sin.: aparearse, pisar, cubrir.",
-    "e": "De machar.",
-    "s": "",
-    "c": "verbo",
-    "ec": "",
-    "esp": [
-      "explosiva"
-    ]
-  },
-  {
     "w": "Machuelo",
     "p": "m.",
     "d": "Germen de un ser orgánico.",
@@ -727,16 +651,6 @@
     "d": "Arq. Pilar de fábrica. Sin.: macho1, pilar2.",
     "df": "m. Arq. Pilar de fábrica. Sin.: macho1, pilar2. | m. Carp. Madero de escuadría de cinco metros de largo.",
     "e": "De macho1 y -ón1.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Macia",
-    "p": "f.",
-    "d": "Macis. Sin.: macis.",
-    "df": "f. macis. Sin.: macis.",
-    "e": "",
     "s": "",
     "c": "sustantivo",
     "ec": ""
@@ -1077,16 +991,6 @@
     "ec": ""
   },
   {
-    "w": "Madalena",
-    "p": "f.",
-    "d": "Magdalena2. Sin.: magdalena2.",
-    "df": "f. magdalena2. Sin.: magdalena2.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Madapolán",
     "p": "m.",
     "d": "Tela de algodón, especie de percal blanco y de buena calidad.",
@@ -1131,16 +1035,6 @@
     "p": "f.",
     "d": "Conjunto de maderos que se transportan por un río.",
     "df": "f. Conjunto de maderos que se transportan por un río.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Maderaje",
-    "p": "m.",
-    "d": "Maderamen. Sin.: maderamen, enmaderado, maderación.",
-    "df": "m. maderamen. Sin.: maderamen, enmaderado, maderación.",
     "e": "",
     "s": "",
     "c": "sustantivo",
@@ -1333,16 +1227,6 @@
     "ec": ""
   },
   {
-    "w": "Madreña",
-    "p": "f.",
-    "d": "Almadreña. Sin.: zueco1, almadreña.",
-    "df": "f. almadreña. Sin.: zueco1, almadreña.",
-    "e": "De *maderueña 'de madera'.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Madrigado",
     "p": "adj.",
     "d": "Dicho del macho de ciertos animales, especialmente del toro: Que ha padreado.",
@@ -1439,16 +1323,6 @@
     "ec": ""
   },
   {
-    "w": "Madroncillo",
-    "p": "m.",
-    "d": "Fresa . Sin.: fresa1, fragaria, fresón, frutilla, fraga1.",
-    "df": "m. fresa (‖ fruto). Sin.: fresa1, fragaria, fresón, frutilla, fraga1.",
-    "e": "Del dim. de madroño.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Madroñal",
     "p": "m.",
     "d": "Sitio poblado de madroños. Sin.: madroñera, bortal.",
@@ -1457,19 +1331,6 @@
     "s": "",
     "c": "sustantivo",
     "ec": ""
-  },
-  {
-    "w": "Madroñera",
-    "p": "f.",
-    "d": "Madroñal. Sin.: madroñal, bortal.",
-    "df": "f. madroñal. Sin.: madroñal, bortal. | f. madroño (‖ arbusto ericáceo). Sin.: madroño, alborto, alborzo, alborocera, borto, madroñero, algorto.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "",
-    "esp": [
-      "explosiva"
-    ]
   },
   {
     "w": "Madroñero",
@@ -1581,16 +1442,6 @@
     "e": "",
     "s": "",
     "c": "adjetivo",
-    "ec": ""
-  },
-  {
-    "w": "Maesil",
-    "p": "m.",
-    "d": "Maestril. Sin.: maestril, maestral, castillo.",
-    "df": "m. maestril. Sin.: maestril, maestral, castillo.",
-    "e": "De maesa.",
-    "s": "",
-    "c": "sustantivo",
     "ec": ""
   },
   {
@@ -1752,16 +1603,6 @@
     "d": "Máquina militar que servía para batir murallas. Sin.: almajaneque, manganilla.",
     "df": "m. Máquina militar que servía para batir murallas. Sin.: almajaneque, manganilla.",
     "e": "Del occit. manganel.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Magarza",
-    "p": "f.",
-    "d": "Matricaria. Sin.: matricaria, artemisa, arugas, expillo.",
-    "df": "f. matricaria. Sin.: matricaria, artemisa, arugas, expillo.",
-    "e": "Metát. de *harmagaza, y este de *alharmagaza, de alharma y un suf. despect. -gaza.",
     "s": "",
     "c": "sustantivo",
     "ec": ""
@@ -2033,16 +1874,6 @@
     ]
   },
   {
-    "w": "Magnetofón",
-    "p": "m. coloq.",
-    "d": "Magnetófono. Sin.: magnetófono, grabadora, tocacinta, grabador.",
-    "df": "m. coloq. magnetófono. Sin.: magnetófono, grabadora, tocacinta, grabador.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Magnetofónico",
     "p": "adj.",
     "d": "Perteneciente o relativo al magnetófono.",
@@ -2087,16 +1918,6 @@
     "esp": [
       "larga"
     ]
-  },
-  {
-    "w": "Magnetoscopio",
-    "p": "m.",
-    "d": "Video . Sin.: video, videocasete, videograbador, videocasetera.",
-    "df": "m. video (‖ aparato). Sin.: video, videocasete, videograbador, videocasetera. | m. Fís. Aparato que detecta las fuerzas magnéticas.",
-    "e": "De magneto- y -scopio.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
   },
   {
     "w": "Magnetosfera",
@@ -2216,19 +2037,6 @@
     "ec": "etym_latin"
   },
   {
-    "w": "Magnificente",
-    "p": "adj.",
-    "d": "Espléndido. Sin.: espléndido, generoso, liberal.",
-    "df": "adj. espléndido. Sin.: espléndido, generoso, liberal. | adj. excelente (‖ que sobresale). Sin.: excelente, excelso, maravilloso, estupendo, magnífico, espléndido, extraordinario, fabuloso, superior, exquisito, colosal, formidable, soberbio, regio, baril, barí1, chévere, bacán.",
-    "e": "",
-    "s": "",
-    "c": "adjetivo",
-    "ec": "",
-    "esp": [
-      "explosiva"
-    ]
-  },
-  {
     "w": "Magnolia",
     "p": "f.",
     "d": "Árbol de la familia de las magnoliáceas, de 15 a 30 m de altura, tronco liso y copa siempre verde, hojas grandes, lanceoladas, enteras, persistentes, coriáceas, verdes por el haz y algo rojizas por el envés, flores hermosas, terminales, solitarias, muy blancas, de olor intenso y agradable y de forma globosa, y fruto seco, elipsoidal, que se abre irregularmente para soltar las semillas. Es planta originaria de América y Asia, y perfectamente aclimatada en Europa. Sin.: magnolio.",
@@ -2236,16 +2044,6 @@
     "e": "De P. Magnol, 1638-1715, botánico francés.",
     "s": "",
     "c": "botanica",
-    "ec": ""
-  },
-  {
-    "w": "Magnolio",
-    "p": "m.",
-    "d": "Magnolia . Sin.: magnolia.",
-    "df": "m. magnolia (‖ árbol). Sin.: magnolia.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
     "ec": ""
   },
   {
@@ -2349,19 +2147,6 @@
     "ec": ""
   },
   {
-    "w": "Maguey",
-    "p": "m.",
-    "d": "Pita . Sin.: pita1, agave, cabuya, cocuy, cabuyo, zapalote, jeniquén, sisal, magueyera, penco, pitera.",
-    "df": "m. Am. pita (‖ planta). Sin.: pita1, agave, cabuya, cocuy, cabuyo, zapalote, jeniquén, sisal, magueyera, penco, pitera.",
-    "e": "Voz antillana.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "",
-    "esp": [
-      "explosiva"
-    ]
-  },
-  {
     "w": "Maguillo",
     "p": "m.",
     "d": "Manzano silvestre, cuyo fruto es más pequeño y menos sabroso que la manzana común. Suele emplearse para injertar en él, pero también lo hay cultivado, con fruto más crecido y mejor gusto. Sin.: maíllo.",
@@ -2398,19 +2183,6 @@
     ]
   },
   {
-    "w": "Magullamiento",
-    "p": "m.",
-    "d": "Magulladura. Sin.: magulladura, contusión, golpe, hematoma, moradura, cardenal2, magullón, magullada.",
-    "df": "m. magulladura. Sin.: magulladura, contusión, golpe, hematoma, moradura, cardenal2, magullón, magullada.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "",
-    "esp": [
-      "explosiva"
-    ]
-  },
-  {
     "w": "Magullar",
     "p": "tr.",
     "d": "Causar a un tejido orgánico contusión, pero no herida, comprimiéndolo o golpeándolo violentamente. U. t. c. prnl. Sin.: contusionar, lastimar, lesionar, lacerar, golpear, herir, mallugar, tarazar.",
@@ -2434,16 +2206,6 @@
     "ec": ""
   },
   {
-    "w": "Magín",
-    "p": "m. coloq.",
-    "d": "Imaginación. Sin.: imaginación, creatividad, fantasía, inventiva, ingenio, cabeza.",
-    "df": "m. coloq. imaginación. Sin.: imaginación, creatividad, fantasía, inventiva, ingenio, cabeza.",
-    "e": "De maginar.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Magüeta",
     "p": "m. y f.",
     "d": "Y f. novillo . Sin.: novillo, juvenco.",
@@ -2462,19 +2224,6 @@
     "s": "",
     "c": "sustantivo",
     "ec": ""
-  },
-  {
-    "w": "Maharajá",
-    "p": "m.",
-    "d": "Marajá. Sin.: marajá.",
-    "df": "m. marajá. Sin.: marajá.",
-    "e": "Del ingl. maharaja, y este del sánscr. mahārājá, de māha- 'grande' y rājā 'rey', infl. en su acentuación por rajá.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_ingles",
-    "esp": [
-      "viajera"
-    ]
   },
   {
     "w": "Maharaní",
@@ -2673,19 +2422,6 @@
     "ec": ""
   },
   {
-    "w": "Maimón",
-    "p": "m.",
-    "d": "Mico . Sin.: mico.",
-    "df": "m. mico (‖ mono). Sin.: mico. | m. En Andalucía, especie de sopa de pan con aceite. U. m. en pl.",
-    "e": "Del ár. clás. maymūn 'fausto2'.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_arabe",
-    "esp": [
-      "viajera"
-    ]
-  },
-  {
     "w": "Mainel",
     "p": "m.",
     "d": "Barandilla de una escalera.",
@@ -2779,31 +2515,11 @@
     "ec": ""
   },
   {
-    "w": "Majaderico",
-    "p": "m.",
-    "d": "Majaderillo. Sin.: majaderillo, majaderito, majadero.",
-    "df": "m. majaderillo. Sin.: majaderillo, majaderito, majadero. | m. Especie de guarnición que se usaba antiguamente.",
-    "e": "Del dim. de majadero.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Majaderillo",
     "p": "m.",
     "d": "Bolillo para hacer encajes y pasamanería. Sin.: majaderico, majaderito, majadero.",
     "df": "m. Bolillo para hacer encajes y pasamanería. Sin.: majaderico, majaderito, majadero.",
     "e": "Del dim. de majadero.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Majaderito",
-    "p": "m.",
-    "d": "Majaderillo. Sin.: majaderillo, majaderico, majadero.",
-    "df": "m. majaderillo. Sin.: majaderillo, majaderico, majadero.",
-    "e": "",
     "s": "",
     "c": "sustantivo",
     "ec": ""
@@ -2887,29 +2603,6 @@
     "d": "Montón de cantos sueltos que se forma en las tierras de labor o en las encrucijadas y división de términos. Sin.: almora, mureño.",
     "df": "m. Montón de cantos sueltos que se forma en las tierras de labor o en las encrucijadas y división de términos. Sin.: almora, mureño.",
     "e": "De or. desc.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Majar",
-    "p": "tr.",
-    "d": "Machacar . Sin.: machacar, machar, machucar, moler, triturar.",
-    "df": "tr. machacar (‖ golpear). Sin.: machacar, machar, machucar, moler, triturar. | tr. Golpear en la era el trigo, el centeno, el lino, los garbanzos, etc., con el manal o mayal, para separar el grano de la paja. | tr. coloq. Molestar, cansar, importunar. Sin.: molestar, importunar, fastidiar, incordiar, brear2.",
-    "e": "Der. del ant. majo 'mazo de hierro', y este del lat. malleus 'martillo'.",
-    "s": "",
-    "c": "verbo",
-    "ec": "",
-    "esp": [
-      "explosiva"
-    ]
-  },
-  {
-    "w": "Majencia",
-    "p": "f. coloq.",
-    "d": "Majeza. Sin.: majeza.",
-    "df": "f. coloq. majeza. Sin.: majeza.",
-    "e": "",
     "s": "",
     "c": "sustantivo",
     "ec": ""
@@ -3028,16 +2721,6 @@
     "ec": ""
   },
   {
-    "w": "Malabárico",
-    "p": "adj.",
-    "d": "Malabar . Sin.: malabar.",
-    "df": "adj. malabar (‖ perteneciente a Malabar). Sin.: malabar.",
-    "e": "",
-    "s": "",
-    "c": "adjetivo",
-    "ec": ""
-  },
-  {
     "w": "Malacate",
     "p": "m.",
     "d": "Máquina a manera de cabrestante, muy usada en las minas para sacar minerales y agua, que tiene el tambor en lo alto, y debajo las palancas a las que se enganchan las caballerías que lo mueven. Sin.: cabrestante, torno, molinete.",
@@ -3122,26 +2805,6 @@
     "esp": [
       "larga"
     ]
-  },
-  {
-    "w": "Malacuenda",
-    "p": "f.",
-    "d": "Arpillera. Sin.: arpillera, rázago, coleto2.",
-    "df": "f. arpillera. Sin.: arpillera, rázago, coleto2. | f. Hilaza de estopa.",
-    "e": "De mala2 y cuenda.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Malafa",
-    "p": "f.",
-    "d": "Almalafa. Sin.: almalafa.",
-    "df": "f. almalafa. Sin.: almalafa.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
   },
   {
     "w": "Malagana",
@@ -3401,16 +3064,6 @@
     "ec": ""
   },
   {
-    "w": "Malcoraje",
-    "p": "m.",
-    "d": "Mercurial . Sin.: mercurial.",
-    "df": "m. mercurial (‖ planta). Sin.: mercurial.",
-    "e": "Del cat. malcoratge.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Malcorte",
     "p": "m.",
     "d": "Quebrantamiento de las ordenanzas y estatutos al sacar de los montes altos maderas de construcción o leña para combustible y carboneo.",
@@ -3551,16 +3204,6 @@
     "s": "",
     "c": "sustantivo",
     "ec": "etym_latin"
-  },
-  {
-    "w": "Maleducar",
-    "p": "tr.",
-    "d": "Malcriar. Sin.: malcriar, consentir, mimar1, achechar, achichiguar.",
-    "df": "tr. malcriar. Sin.: malcriar, consentir, mimar1, achechar, achichiguar.",
-    "e": "",
-    "s": "",
-    "c": "verbo",
-    "ec": ""
   },
   {
     "w": "Maleficencia",
@@ -3704,16 +3347,6 @@
     "s": "",
     "c": "adjetivo",
     "ec": ""
-  },
-  {
-    "w": "Malhojo",
-    "p": "m.",
-    "d": "Marojo . Sin.: marojo1.",
-    "df": "m. marojo (‖ hojas inútiles). Sin.: marojo1.",
-    "e": "Del lat. malum folium 'hoja mala'.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_latin"
   },
   {
     "w": "Malhumor",
@@ -3979,16 +3612,6 @@
     "e": "De mal2 y parir.",
     "s": "",
     "c": "verbo",
-    "ec": ""
-  },
-  {
-    "w": "Malparto",
-    "p": "m.",
-    "d": "Aborto . Sin.: aborto.",
-    "df": "m. aborto (‖ acción de abortar). Sin.: aborto.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
     "ec": ""
   },
   {
@@ -4299,16 +3922,6 @@
     "e": "",
     "s": "",
     "c": "adjetivo",
-    "ec": ""
-  },
-  {
-    "w": "Malviz",
-    "p": "m.",
-    "d": "Malvís. Sin.: malvís.",
-    "df": "m. malvís. Sin.: malvís.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
     "ec": ""
   },
   {
@@ -4864,16 +4477,6 @@
     "ec": ""
   },
   {
-    "w": "Manato",
-    "p": "m.",
-    "d": "Manatí . Sin.: manatí.",
-    "df": "m. manatí (‖ mamífero). Sin.: manatí.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Manatí",
     "p": "m.",
     "d": "Mamífero sirenio herbívoro, semejante a la foca pero de mayor tamaño, de cuerpo muy grueso y piel grisácea, velluda y de gran espesor, con el labio superior muy desarrollado, y que habita en costas y ríos de la América y África atlánticas. Sin.: sirenio, manato.",
@@ -4889,26 +4492,6 @@
     "d": "Acción y efecto de mancar.",
     "df": "m. Acción y efecto de mancar. | m. Falta, privación, defecto de algo.",
     "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Mancarrón",
-    "p": "adj.",
-    "d": "Matalón. Sin.: matalón, matalote1, ruco.",
-    "df": "adj. matalón. Sin.: matalón, matalote1, ruco.",
-    "e": "Del aum. desus. de manco.",
-    "s": "",
-    "c": "adjetivo",
-    "ec": ""
-  },
-  {
-    "w": "Mancera",
-    "p": "f.",
-    "d": "Esteva . Sin.: esteva, mangorrillo.",
-    "df": "f. esteva (‖ pieza del arado). Sin.: esteva, mangorrillo.",
-    "e": "De un der. del lat. manus.",
     "s": "",
     "c": "sustantivo",
     "ec": ""
@@ -4951,16 +4534,6 @@
     "e": "",
     "s": "",
     "c": "gentilicio",
-    "ec": ""
-  },
-  {
-    "w": "Manchoso",
-    "p": "adj.",
-    "d": "Manchadizo. Sin.: manchadizo, sucio.",
-    "df": "adj. manchadizo. Sin.: manchadizo, sucio.",
-    "e": "",
-    "s": "",
-    "c": "adjetivo",
     "ec": ""
   },
   {
@@ -5165,19 +4738,6 @@
     "ec": ""
   },
   {
-    "w": "Mandil",
-    "p": "m.",
-    "d": "Delantal . Sin.: delantal, guardapolvo.",
-    "df": "m. delantal (‖ prenda para proteger la ropa). Sin.: delantal, guardapolvo. | m. Prenda sujeta a la cintura usada ritualmente por los masones. | m. Pedazo de bayeta que sirve para dar al caballo la última mano de limpieza. | m. Red de mallas muy estrechas para pescar. | m. germ. Criado de rufián o de prostituta.",
-    "e": "Del ár. hisp. mandíl, este del ár. clás. mandīl o mindīl, este del arameo mandīlā, y este del lat. mantīle o mantēle 'toalla', 'paño de manos'.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_arabe",
-    "esp": [
-      "viajera"
-    ]
-  },
-  {
     "w": "Mandilar",
     "p": "tr.",
     "d": "Limpiar el caballo con un paño o mandil.",
@@ -5239,36 +4799,6 @@
     "esp": [
       "viajera"
     ]
-  },
-  {
-    "w": "Mandrache",
-    "p": "m.",
-    "d": "Mandracho. Sin.: tahurería, mandracho.",
-    "df": "m. mandracho. Sin.: tahurería, mandracho.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Mandrachero",
-    "p": "m.",
-    "d": "Tablajero . Sin.: tablajero.",
-    "df": "m. tablajero (‖ dueño de un garito). Sin.: tablajero.",
-    "e": "De mandracho y -ero.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Mandracho",
-    "p": "m.",
-    "d": "Tahurería . Sin.: tahurería, mandrache, leonera.",
-    "df": "m. tahurería (‖ garito de tahúres). Sin.: tahurería, mandrache, leonera.",
-    "e": "Del despect. de mandra.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
   },
   {
     "w": "Mandria",
@@ -5357,16 +4887,6 @@
     "ec": "etym_latin"
   },
   {
-    "w": "Mandrágula",
-    "p": "f. coloq.",
-    "d": "Mandrágora. Sin.: mandrágora.",
-    "df": "f. coloq. mandrágora. Sin.: mandrágora.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Manduca",
     "p": "f. coloq.",
     "d": "Alimento, comida. Sin.: comida, colación, pitanza, condumio, manducatoria, piscolabis.",
@@ -5440,16 +4960,6 @@
     "ec": ""
   },
   {
-    "w": "Manea",
-    "p": "f.",
-    "d": "Apea. Sin.: apea.",
-    "df": "f. apea. Sin.: apea.",
-    "e": "De manear.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Manecilla",
     "p": "f.",
     "d": "Aguja del reloj. Sin.: aguja, saeta, manilla, minutero, segundero.",
@@ -5473,16 +4983,6 @@
     "ec": ""
   },
   {
-    "w": "Maneota",
-    "p": "f.",
-    "d": "Maniota. Sin.: maniota, manezuela.",
-    "df": "f. maniota. Sin.: maniota, manezuela.",
-    "e": "Del aum. de manea.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Manes",
     "p": "m.",
     "d": "Pl. Dioses infernales o almas de los difuntos, considerados benévolos, a los que rendían culto los antiguos romanos.",
@@ -5491,16 +4991,6 @@
     "s": "",
     "c": "sustantivo",
     "ec": "etym_latin"
-  },
-  {
-    "w": "Manezuela",
-    "p": "f.",
-    "d": "Manecilla . Sin.: manecilla.",
-    "df": "f. manecilla (‖ broche). Sin.: manecilla. | f. maniota. Sin.: maniota, maneota.",
-    "e": "Del dim. de mano1.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
   },
   {
     "w": "Mangada",
@@ -5561,19 +5051,6 @@
     "s": "",
     "c": "sustantivo",
     "ec": ""
-  },
-  {
-    "w": "Manganesa",
-    "p": "f.",
-    "d": "Pirolusita. Sin.: manganesia, pirolusita.",
-    "df": "f. pirolusita. Sin.: manganesia, pirolusita.",
-    "e": "Del fr. manganèse.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_frances",
-    "esp": [
-      "viajera"
-    ]
   },
   {
     "w": "Manganeso",
@@ -5641,16 +5118,6 @@
     "d": "Acción y efecto de mangonear . Sin.: manejo, intrusión, intromisión, entrometimiento, entremetimiento, mediatización.",
     "df": "m. coloq. Acción y efecto de mangonear (‖ entremeterse). Sin.: manejo, intrusión, intromisión, entrometimiento, entremetimiento, mediatización.",
     "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Mangorrillo",
-    "p": "m.",
-    "d": "Esteva . Sin.: esteva, mancera.",
-    "df": "m. esteva (‖ pieza del arado). Sin.: esteva, mancera.",
-    "e": "De mango1.",
     "s": "",
     "c": "sustantivo",
     "ec": ""
@@ -5732,16 +5199,6 @@
     "ec": ""
   },
   {
-    "w": "Manguita",
-    "p": "f.",
-    "d": "Funda. Sin.: funda, envoltorio, forro.",
-    "df": "f. funda. Sin.: funda, envoltorio, forro.",
-    "e": "Del dim. de manga1.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Manguito",
     "p": "m.",
     "d": "Manga sobrepuesta para preservar la ropa. Sin.: mangote, manguilla, manga1, funda, protección, cubierta.",
@@ -5765,26 +5222,6 @@
     "ec": ""
   },
   {
-    "w": "Mangón",
-    "p": "m.",
-    "d": "Revendedor. Sin.: revendedor, reventa.",
-    "df": "m. revendedor. Sin.: revendedor, reventa.",
-    "e": "Del lat. mango, -ōnis 'traficante'.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_latin"
-  },
-  {
-    "w": "Manialbo",
-    "p": "adj.",
-    "d": "Maniblanco. Sin.: maniblanco.",
-    "df": "adj. maniblanco. Sin.: maniblanco.",
-    "e": "De mano1 y albo.",
-    "s": "",
-    "c": "adjetivo",
-    "ec": ""
-  },
-  {
     "w": "Maniblaj",
     "p": "m.",
     "d": "Criado de una mancebía.",
@@ -5802,16 +5239,6 @@
     "e": "De mano1 y blanco.",
     "s": "",
     "c": "adjetivo",
-    "ec": ""
-  },
-  {
-    "w": "Manicordio",
-    "p": "m.",
-    "d": "Monacordio. Sin.: monacordio.",
-    "df": "m. monacordio. Sin.: monacordio.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
     "ec": ""
   },
   {
@@ -5905,16 +5332,6 @@
     "s": "",
     "c": "adjetivo",
     "ec": "etym_latin"
-  },
-  {
-    "w": "Manifactura",
-    "p": "f.",
-    "d": "Manufactura . Sin.: manufactura, confección.",
-    "df": "f. manufactura (‖ obra hecha a mano o a máquina). Sin.: manufactura, confección. | f. Hechura y forma de las cosas.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
   },
   {
     "w": "Manifestador",
@@ -6031,19 +5448,6 @@
     "s": "",
     "c": "gentilicio",
     "ec": ""
-  },
-  {
-    "w": "Manilla",
-    "p": "f.",
-    "d": "Ajorca. Sin.: pulsera, brazalete, ajorca, carcax2.",
-    "df": "f. ajorca. Sin.: pulsera, brazalete, ajorca, carcax2. | f. Anillo de hierro que por prisión se echa a la muñeca. Sin.: grillete, argolla, esposas. | f. mango1. Sin.: mango1, empuñadura, manubrio, cabo1, manija. | f. manija (‖ palanca pequeña). Sin.: tirador, manija, manecilla. | f. Manecilla del reloj. Sin.: aguja, manecilla, saeta, minutero, segundero. | f. Cuba. Mazo de hojas de tabaco.",
-    "e": "Del dim. de mano1.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "",
-    "esp": [
-      "explosiva"
-    ]
   },
   {
     "w": "Manillar",
@@ -6499,19 +5903,6 @@
     "ec": ""
   },
   {
-    "w": "Mansarda",
-    "p": "f.",
-    "d": "Buhardilla. Sin.: buhardilla, bohardilla, desván, sobrado, entretecho.",
-    "df": "f. buhardilla. Sin.: buhardilla, bohardilla, desván, sobrado, entretecho.",
-    "e": "Del fr. mansarde, y este de F. Mansart, 1598-1666, arquitecto francés que generalizó su uso y a quien se le atribuye erróneamente la invención.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_frances",
-    "esp": [
-      "viajera"
-    ]
-  },
-  {
     "w": "Mansear",
     "p": "intr.",
     "d": "Taurom. Dicho del toro: Mostrar excesiva mansedumbre en la lidia.",
@@ -6964,26 +6355,6 @@
     "ec": "etym_latin"
   },
   {
-    "w": "Manutergio",
-    "p": "m.",
-    "d": "Cornijal . Sin.: cornijal.",
-    "df": "m. cornijal (‖ lienzo del sacerdote). Sin.: cornijal.",
-    "e": "Del lat. tardío manutergium, de manus 'mano1' y tergēre 'limpiar', 'enjugar'.",
-    "s": "",
-    "c": "arte_literatura",
-    "ec": "etym_latin"
-  },
-  {
-    "w": "Manutisa",
-    "p": "f.",
-    "d": "Minutisa. Sin.: minutisa.",
-    "df": "f. minutisa. Sin.: minutisa.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Manzanal",
     "p": "m.",
     "d": "Terreno poblado de manzanos.",
@@ -7071,16 +6442,6 @@
     "e": "Del dim. de manzano.",
     "s": "",
     "c": "botanica",
-    "ec": ""
-  },
-  {
-    "w": "Maní",
-    "p": "m.",
-    "d": "Cacahuete. Sin.: cacahuete, cacahuate, panchito.",
-    "df": "m. cacahuete. Sin.: cacahuete, cacahuate, panchito.",
-    "e": "Voz taína.",
-    "s": "",
-    "c": "sustantivo",
     "ec": ""
   },
   {
@@ -7794,19 +7155,6 @@
     "ec": ""
   },
   {
-    "w": "Marcasita",
-    "p": "f.",
-    "d": "Pirita. Sin.: pirita, marquesita, margajita, inga.",
-    "df": "f. pirita. Sin.: pirita, marquesita, margajita, inga.",
-    "e": "Del ár. marqašīṯā, y este del arameo marqšīṯā.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_arabe",
-    "esp": [
-      "viajera"
-    ]
-  },
-  {
     "w": "Marcear",
     "p": "tr.",
     "d": "Esquilar las bestias.",
@@ -7815,16 +7163,6 @@
     "s": "",
     "c": "verbo",
     "ec": ""
-  },
-  {
-    "w": "Marcen",
-    "p": "f.",
-    "d": "Amelga. Sin.: amelga, emelga, melga, mielga3, márcena.",
-    "df": "f. amelga. Sin.: amelga, emelga, melga, mielga3, márcena.",
-    "e": "Del lat. margo, -ĭnis 'borde', 'margen'.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_latin"
   },
   {
     "w": "Marcenar",
@@ -8120,19 +7458,6 @@
     ]
   },
   {
-    "w": "Maremagno",
-    "p": "m.",
-    "d": "Maremágnum. Sin.: maremágnum, desorden, confusión, alboroto, barullo, lío, jaleo, follón2, desorganización, morondanga, burundanga. maremágnum, profusión, multitud, abundancia, cantidad.",
-    "df": "m. maremágnum. Sin.: maremágnum, desorden, confusión, alboroto, barullo, lío, jaleo, follón2, desorganización, morondanga, burundanga. maremágnum, profusión, multitud, abundancia, cantidad.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "",
-    "esp": [
-      "explosiva"
-    ]
-  },
-  {
     "w": "Maremoto",
     "p": "m.",
     "d": "Agitación violenta de las aguas del mar a consecuencia de una sacudida del fondo, que a veces se propaga hasta las costas dando lugar a inundaciones. Sin.: tumbazón.",
@@ -8239,31 +7564,11 @@
     "ec": "etym_latin"
   },
   {
-    "w": "Margajita",
-    "p": "f.",
-    "d": "Marcasita. Sin.: pirita, marcasita, marquesita, inga.",
-    "df": "f. marcasita. Sin.: pirita, marcasita, marquesita, inga.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Margal",
     "p": "m.",
     "d": "Terreno en que abunda la marga1.",
     "df": "m. Terreno en que abunda la marga1.",
     "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Margallón",
-    "p": "m.",
-    "d": "Palmito . Sin.: palmito1, palma.",
-    "df": "m. palmito (‖ planta). Sin.: palmito1, palma.",
-    "e": "Del cat. margalló.",
     "s": "",
     "c": "sustantivo",
     "ec": ""
@@ -8330,19 +7635,6 @@
     "s": "",
     "c": "sustantivo",
     "ec": ""
-  },
-  {
-    "w": "Marginalización",
-    "p": "f.",
-    "d": "Marginación. Sin.: marginación, discriminación, segregación, separación, exclusión.",
-    "df": "f. marginación. Sin.: marginación, discriminación, segregación, separación, exclusión.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "",
-    "esp": [
-      "larga"
-    ]
   },
   {
     "w": "Marginar",
@@ -8560,16 +7852,6 @@
     ]
   },
   {
-    "w": "Marimoña",
-    "p": "f.",
-    "d": "Francesilla . Sin.: francesilla.",
-    "df": "f. francesilla (‖ planta). Sin.: francesilla.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Marinada",
     "p": "f.",
     "d": "Adobo líquido compuesto de vino, vinagre, especias, hierbas, etc., en el que se maceran ciertos alimentos, especialmente pescado y carne de caza, antes de cocinarlos. Sin.: marinado, adobo.",
@@ -8706,20 +7988,6 @@
     "ec": ""
   },
   {
-    "w": "Marioneta",
-    "p": "f.",
-    "d": "Títere . Sin.: títere, muñeco, polichinela.",
-    "df": "f. títere (‖ muñeco movido por hilos u otro procedimiento). Sin.: títere, muñeco, polichinela. | f. Persona que se deja manejar. Sin.: fantoche, títere, muñeco, pelele, monigote.",
-    "e": "Del fr. marionnette.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_frances",
-    "esp": [
-      "explosiva",
-      "viajera"
-    ]
-  },
-  {
     "w": "Marionetista",
     "p": "m. y f.",
     "d": "Y f. titiritero . Sin.: titiritero, titerero, titerista.",
@@ -8853,16 +8121,6 @@
     "e": "",
     "s": "",
     "c": "adjetivo",
-    "ec": ""
-  },
-  {
-    "w": "Marismo",
-    "p": "m.",
-    "d": "Orzaga. Sin.: orzaga, álimo, salgada, salgadera, armuelle.",
-    "df": "m. orzaga. Sin.: orzaga, álimo, salgada, salgadera, armuelle.",
-    "e": "De marisma.",
-    "s": "",
-    "c": "sustantivo",
     "ec": ""
   },
   {
@@ -9101,16 +8359,6 @@
     "ec": "etym_latin"
   },
   {
-    "w": "Marmosa",
-    "p": "f.",
-    "d": "Llaca. Sin.: llaca.",
-    "df": "f. llaca. Sin.: llaca.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Marmosete",
     "p": "m.",
     "d": "Impr. Grabado alegórico que suele ponerse al fin de un capítulo, libro o tratado.",
@@ -9298,16 +8546,6 @@
     "ec": ""
   },
   {
-    "w": "Marquesita",
-    "p": "f.",
-    "d": "Pirita. Sin.: pirita, marcasita, margajita, inga.",
-    "df": "f. pirita. Sin.: pirita, marcasita, margajita, inga.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Marquesota",
     "p": "f.",
     "d": "Cuello alto de tela blanca que, muy almidonado y hueco, usaban los hombres como prenda de adorno.",
@@ -9414,16 +8652,6 @@
     "ec": ""
   },
   {
-    "w": "Marramáu",
-    "p": "m.",
-    "d": "Marramao. Sin.: marramao.",
-    "df": "m. marramao. Sin.: marramao.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Marrana",
     "p": "m. y f.",
     "d": "Y f. cerdo . Sin.: cerdo, puerco, gorrino, cochino, cebón, guarro1, lechón, gorrín, chancho, tunco1.",
@@ -9475,19 +8703,6 @@
     "e": "De marrano1 y -ear.",
     "s": "",
     "c": "verbo",
-    "ec": "",
-    "esp": [
-      "explosiva"
-    ]
-  },
-  {
-    "w": "Marranería",
-    "p": "f. coloq.",
-    "d": "Marranada. Sin.: porquería, guarrería, marranada, asquerosidad, cochambre, inmundicia, suciedad, basura. vileza, maldad, feo, desaire, desprecio, faena, jugada, jugarreta, marranada, bajeza, infamia, injuria.",
-    "df": "f. coloq. marranada. Sin.: porquería, guarrería, marranada, asquerosidad, cochambre, inmundicia, suciedad, basura. vileza, maldad, feo, desaire, desprecio, faena, jugada, jugarreta, marranada, bajeza, infamia, injuria.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
     "ec": "",
     "esp": [
       "explosiva"
@@ -9644,29 +8859,6 @@
     "ec": "etym_latin"
   },
   {
-    "w": "Marrulla",
-    "p": "f.",
-    "d": "Marrullería. Sin.: marrullería, treta, trampa, astucia, engaño, artimaña, maniobra, truco, artificio, ardid, picardía, martingala.",
-    "df": "f. marrullería. Sin.: marrullería, treta, trampa, astucia, engaño, artimaña, maniobra, truco, artificio, ardid, picardía, martingala.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "",
-    "esp": [
-      "explosiva"
-    ]
-  },
-  {
-    "w": "Marrullar",
-    "p": "intr.",
-    "d": "Ronronear. Sin.: ronronear.",
-    "df": "intr. ronronear. Sin.: ronronear.",
-    "e": "Cruce de maullar, con arrullar.",
-    "s": "",
-    "c": "verbo",
-    "ec": ""
-  },
-  {
     "w": "Marrullero",
     "p": "adj.",
     "d": "Que usa marrullerías. U. t. c. s. Sin.: tramposo, artero, astuto, ladino, taimado, espabilado, mañoso, ventajista, pícaro, zorro, pillo2, perillán.",
@@ -9734,16 +8926,6 @@
     "esp": [
       "viajera"
     ]
-  },
-  {
-    "w": "Marsopla",
-    "p": "f.",
-    "d": "Marsopa. Sin.: marsopa.",
-    "df": "f. marsopa. Sin.: marsopa.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
   },
   {
     "w": "Marsupial",
@@ -10067,16 +9249,6 @@
     ]
   },
   {
-    "w": "Masada",
-    "p": "f.",
-    "d": "Masía. Sin.: masía, caserío, alquería, cortijo.",
-    "df": "f. masía. Sin.: masía, caserío, alquería, cortijo.",
-    "e": "Del cat. masada.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Masadero",
     "p": "m. y f.",
     "d": "Y f. Vecino o colono de una masada.",
@@ -10118,16 +9290,6 @@
     "esp": [
       "viajera"
     ]
-  },
-  {
-    "w": "Masar",
-    "p": "tr.",
-    "d": "Amasar. Sin.: amasar.",
-    "df": "tr. amasar. Sin.: amasar.",
-    "e": "De masa.",
-    "s": "",
-    "c": "verbo",
-    "ec": ""
   },
   {
     "w": "Masatepino",
@@ -10903,16 +10065,6 @@
     "ec": ""
   },
   {
-    "w": "Matabuey",
-    "p": "f.",
-    "d": "Amarguera. Sin.: amarguera.",
-    "df": "f. amarguera. Sin.: amarguera.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Matacabras",
     "p": "m.",
     "d": "Viento norte fuerte. Sin.: bóreas, norte, septentriones.",
@@ -11026,16 +10178,6 @@
     "ec": ""
   },
   {
-    "w": "Matagallos",
-    "p": "m.",
-    "d": "Aguavientos. Sin.: aguavientos.",
-    "df": "m. aguavientos. Sin.: aguavientos.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Matagalpa",
     "p": "adj.",
     "d": "Dicho de una persona: De un pueblo amerindio que habitaba en el noroeste de Nicaragua y El Salvador. U. t. c. s. Sin.: chontal.",
@@ -11064,29 +10206,6 @@
     "s": "",
     "c": "adjetivo",
     "ec": ""
-  },
-  {
-    "w": "Matalahúga",
-    "p": "f.",
-    "d": "Matalahúva . Sin.: anís, matalahúva.",
-    "df": "f. matalahúva (‖ planta). Sin.: anís, matalahúva.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Matalahúva",
-    "p": "f.",
-    "d": "Anís . Sin.: anís, matalahúga.",
-    "df": "f. anís (‖ planta umbelífera). Sin.: anís, matalahúga. | f. Semilla de matalahúva. Sin.: anís.",
-    "e": "Del ár. hisp. ḥabbat ḥulúwwa 'grano dulce', y este del ár. ḥabbat lḥalāwah 'grano de dulzor'.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_arabe",
-    "esp": [
-      "viajera"
-    ]
   },
   {
     "w": "Matalotaje",
@@ -11195,16 +10314,6 @@
     "ec": ""
   },
   {
-    "w": "Matapulgas",
-    "p": "f.",
-    "d": "Mastranzo . Sin.: mastranzo.",
-    "df": "f. mastranzo (‖ planta labiada). Sin.: mastranzo.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Matarife",
     "p": "m. y f.",
     "d": "Y f. Oficial que mata reses u otras especies y las descuartiza. Sin.: matachín2, matancero1, jifero, camalero.",
@@ -11228,30 +10337,10 @@
     "ec": ""
   },
   {
-    "w": "Matarrubia",
-    "p": "f.",
-    "d": "Coscoja . Sin.: coscoja, chaparra, maraña.",
-    "df": "f. coscoja (‖ árbol). Sin.: coscoja, chaparra, maraña.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Matasellos",
     "p": "m.",
     "d": "Estampilla con que se inutilizan en las oficinas de correos los sellos de las cartas. Sin.: estampilla.",
     "df": "m. Estampilla con que se inutilizan en las oficinas de correos los sellos de las cartas. Sin.: estampilla. | m. Dibujo o sello que se estampa con el matasellos.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Matasiete",
-    "p": "m. coloq.",
-    "d": "Fanfarrón . Sin.: fanfarrón, echador, rajón, bravucón, matón, perdonavidas.",
-    "df": "m. coloq. fanfarrón (‖ hombre preciado de valiente). Sin.: fanfarrón, echador, rajón, bravucón, matón, perdonavidas.",
     "e": "",
     "s": "",
     "c": "sustantivo",
@@ -11926,16 +11015,6 @@
     "ec": ""
   },
   {
-    "w": "Mayador",
-    "p": "adj.",
-    "d": "Maullador. Sin.: maullador, miador.",
-    "df": "adj. maullador. Sin.: maullador, miador.",
-    "e": "De mayar.",
-    "s": "",
-    "c": "adjetivo",
-    "ec": ""
-  },
-  {
     "w": "Mayagüezano",
     "p": "adj.",
     "d": "Natural de Mayagüez, municipio de Puerto Rico, o de su cabeza. U. t. c. s.",
@@ -11956,16 +11035,6 @@
     "ec": ""
   },
   {
-    "w": "Mayar",
-    "p": "intr.",
-    "d": "Maullar. Sin.: maullar, maular, miagar, miañar, miar.",
-    "df": "intr. maullar. Sin.: maullar, maular, miagar, miañar, miar.",
-    "e": "",
-    "s": "",
-    "c": "verbo",
-    "ec": ""
-  },
-  {
     "w": "Mayear",
     "p": "intr.",
     "d": "Hacer el tiempo propio del mes de mayo.",
@@ -11981,16 +11050,6 @@
     "d": "Cád. Viñador de escaso caudal.",
     "df": "m. Cád. Viñador de escaso caudal.",
     "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Mayido",
-    "p": "m.",
-    "d": "Maullido. Sin.: maullido, maúllo, maído.",
-    "df": "m. maullido. Sin.: maullido, maúllo, maído.",
-    "e": "De mayar.",
     "s": "",
     "c": "sustantivo",
     "ec": ""
@@ -12034,16 +11093,6 @@
     "d": "Rebaño que pastoreaba un mayoral.",
     "df": "f. Rebaño que pastoreaba un mayoral. | f. Salario o precio que llevaba el mayoral por su trabajo de pastoreo.",
     "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Mayorana",
-    "p": "f.",
-    "d": "Mejorana. Sin.: mejorana, almoraduj, amáraco, sampsuco, sarilla.",
-    "df": "f. mejorana. Sin.: mejorana, almoraduj, amáraco, sampsuco, sarilla.",
-    "e": "Quizá del lat. amarăcus, con cruces de etim. pop.",
     "s": "",
     "c": "sustantivo",
     "ec": ""
@@ -12160,20 +11209,6 @@
     "s": "",
     "c": "adjetivo",
     "ec": "etym_latin"
-  },
-  {
-    "w": "Mazacote",
-    "p": "m.",
-    "d": "Hormigón . Sin.: hormigón1, concreto2, garujo, nuégado, derretido.",
-    "df": "m. hormigón (‖ mezcla de agua, arena, grava y cemento). Sin.: hormigón1, concreto2, garujo, nuégado, derretido. | m. Objeto de arte no bien concluido y en el cual se ha procurado más la solidez que la elegancia. Sin.: chapuza. | m. Cenizas de la planta llamada barrilla. | m. coloq. Guisado u otra vianda o cosa de masa, seca, dura y pegajosa. | m. coloq. Persona molesta y pesada. | m. Arg., Bol., Par., R. Dom., Ur. y Ven. Masa espesa y pegajosa. Sin.: pasta, masa. | m. Arg. Pasta hecha de los residuos del azúcar que, después de refinada, quedan adheridos al fondo y a las paredes de la caldera.",
-    "e": "Del it. marzacotto, este del ár. masḥaqūniyā, y este del siriaco mšaḥ qūnyā; literalmente 'ungüento de sosa'; cf. port. massicote.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_italiano",
-    "esp": [
-      "explosiva",
-      "viajera"
-    ]
   },
   {
     "w": "Mazamorra",
@@ -12399,16 +11434,6 @@
     "ec": ""
   },
   {
-    "w": "Maíllo",
-    "p": "m.",
-    "d": "Maguillo. Sin.: maguillo.",
-    "df": "m. maguillo. Sin.: maguillo.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Maître",
     "p": "m. y f.",
     "d": "Y f. Jefe de comedor en un restaurante.",
@@ -12416,16 +11441,6 @@
     "e": "Voz fr.",
     "s": "",
     "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Mañanero",
-    "p": "adj.",
-    "d": "Madrugador. Sin.: madrugador, tempranero.",
-    "df": "adj. madrugador. Sin.: madrugador, tempranero. | adj. Perteneciente o relativo a la mañana.",
-    "e": "De mañana.",
-    "s": "",
-    "c": "adjetivo",
     "ec": ""
   },
   {
@@ -12466,16 +11481,6 @@
     "e": "",
     "s": "",
     "c": "adverbio",
-    "ec": ""
-  },
-  {
-    "w": "Maúllo",
-    "p": "m.",
-    "d": "Maullido. Sin.: maullido, mayido, maído.",
-    "df": "m. maullido. Sin.: maullido, mayido, maído.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
     "ec": ""
   },
   {
@@ -13254,40 +12259,10 @@
     "ec": ""
   },
   {
-    "w": "Medioeval",
-    "p": "adj.",
-    "d": "Medieval. Sin.: medieval.",
-    "df": "adj. medieval. Sin.: medieval.",
-    "e": "",
-    "s": "",
-    "c": "adjetivo",
-    "ec": ""
-  },
-  {
-    "w": "Medioevo",
-    "p": "m.",
-    "d": "Medievo. Sin.: medievo.",
-    "df": "m. Medievo. Sin.: medievo.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Mediometraje",
     "p": "m.",
     "d": "Cinem. Película con una duración intermedia entre la del corto y la del largometraje.",
     "df": "m. Cinem. Película con una duración intermedia entre la del corto y la del largometraje.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Mediomundo",
-    "p": "m.",
-    "d": "Velo . Sin.: velo.",
-    "df": "m. velo (‖ aparejo para pescar). Sin.: velo.",
     "e": "",
     "s": "",
     "c": "sustantivo",
@@ -13669,16 +12644,6 @@
     "ec": "etym_latin"
   },
   {
-    "w": "Mejala",
-    "p": "f.",
-    "d": "Mehala. Sin.: mehala.",
-    "df": "f. mehala. Sin.: mehala.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Mejana",
     "p": "f.",
     "d": "Isleta en un río.",
@@ -13696,16 +12661,6 @@
     "e": "",
     "s": "",
     "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Mejer",
-    "p": "tr.",
-    "d": "Mecer . Sin.: mecer1.",
-    "df": "tr. mecer (‖ mover un líquido para que se mezcle). Sin.: mecer1.",
-    "e": "Del dialect. mejer, y este del lat. miscēre 'mezclar'.",
-    "s": "",
-    "c": "verbo",
     "ec": ""
   },
   {
@@ -14054,16 +13009,6 @@
     "ec": ""
   },
   {
-    "w": "Melgacho",
-    "p": "m.",
-    "d": "Lija . Sin.: lija, pintarroja, tollo1.",
-    "df": "m. lija (‖ pez). Sin.: lija, pintarroja, tollo1.",
-    "e": "Del despect. de mielga2.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Melgar",
     "p": "m.",
     "d": "Campo abundante en mielgas.",
@@ -14230,16 +13175,6 @@
     "ec": ""
   },
   {
-    "w": "Melisa",
-    "p": "f.",
-    "d": "Toronjil. Sin.: toronjil, abejera, cidronela, toronjina, aneota.",
-    "df": "f. toronjil. Sin.: toronjil, abejera, cidronela, toronjina, aneota.",
-    "e": "Del gr. μέλισσα mélissa 'abeja', por ser planta que gusta a estos insectos.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_griego"
-  },
-  {
     "w": "Melisma",
     "p": "m.",
     "d": "Mús. Canción o melodía breve.",
@@ -14280,16 +13215,6 @@
     "ec": "etym_latin"
   },
   {
-    "w": "Melión",
-    "p": "m.",
-    "d": "Pigargo. Sin.: pigargo.",
-    "df": "m. pigargo. Sin.: pigargo.",
-    "e": "Del lat. milio, -ōnis 'milano'.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_latin"
-  },
-  {
     "w": "Mellado",
     "p": "adj.",
     "d": "Falto de uno o más dientes. U. t. c. s. Sin.: desdentado.",
@@ -14297,16 +13222,6 @@
     "e": "Del part. de mellar.",
     "s": "",
     "c": "adjetivo",
-    "ec": ""
-  },
-  {
-    "w": "Melladura",
-    "p": "f.",
-    "d": "Mella. Sin.: mella.",
-    "df": "f. mella. Sin.: mella.",
-    "e": "De mellar.",
-    "s": "",
-    "c": "sustantivo",
     "ec": ""
   },
   {
@@ -14387,16 +13302,6 @@
     "s": "",
     "c": "botanica",
     "ec": ""
-  },
-  {
-    "w": "Melocotón",
-    "p": "m.",
-    "d": "Melocotonero. Sin.: melocotonero, duraznero, durazno, alberchiguero, albérchigo.",
-    "df": "m. melocotonero. Sin.: melocotonero, duraznero, durazno, alberchiguero, albérchigo. | m. Fruto del melocotonero. Es una drupa de olor agradable, esférica, de seis a ocho centímetros de diámetro, con un surco profundo que ocupa media circunferencia, epicarpio delgado, velloso, de color amarillo con manchas encarnadas, mesocarpio amarillento, de sabor agradable y adherido a un hueso pardo, duro y rugoso, que encierra una almendra muy amarga. Sin.: durazno, albérchigo. | adj. De color melocotón.",
-    "e": "Del lat. malum cotonium 'membrillo', en cuyo tronco suele injertarse el pérsico para obtener las mejores variedades del melocotonero.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_latin"
   },
   {
     "w": "Melodioso",
@@ -14557,19 +13462,6 @@
     "s": "",
     "c": "sustantivo",
     "ec": ""
-  },
-  {
-    "w": "Melopea",
-    "p": "f.",
-    "d": "Melopeya. Sin.: melopeya.",
-    "df": "f. melopeya. Sin.: melopeya. | f. canturía (‖ canto monótono). Sin.: canturía, canturria. | f. coloq. Embriaguez, borrachera. Sin.: borrachera, embriaguez, trompa, mona, moña, cogorza, merluza, tajada, curda, castaña, cohete, bomba, peludo, cura.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "",
-    "esp": [
-      "explosiva"
-    ]
   },
   {
     "w": "Melopeya",
@@ -14768,26 +13660,6 @@
     "ec": ""
   },
   {
-    "w": "Membrillate",
-    "p": "m.",
-    "d": "Codoñate. Sin.: codoñate.",
-    "df": "m. codoñate. Sin.: codoñate.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Membrillero",
-    "p": "m.",
-    "d": "Membrillo . Sin.: membrillar, membrillo.",
-    "df": "m. membrillo (‖ arbusto). Sin.: membrillar, membrillo.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Membrillo",
     "p": "m.",
     "d": "Arbusto de la familia de las rosáceas, de tres a cuatro metros de altura, muy ramoso, con hojas pecioladas, enteras, aovadas o casi redondas, verdes por el haz y lanuginosas por el envés, flores róseas, solitarias, casi sentadas y de cáliz persistente, y fruto en pomo, de diez a doce centímetros de diámetro, amarillo, muy aromático, de carne áspera y granujienta, que contiene varias pepitas mucilaginosas. Es originario de Asia Menor; el fruto se come asado o en conserva, y las semillas sirven para hacer bandolina. Sin.: membrillar, membrillero.",
@@ -14813,16 +13685,6 @@
     "d": "Condición de miembro de algún ente. Sin.: membresía.",
     "df": "f. Condición de miembro de algún ente. Sin.: membresía.",
     "e": "Del lat. membrum 'miembro' e -ía.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_latin"
-  },
-  {
-    "w": "Memento",
-    "p": "m.",
-    "d": "Compilación . Sin.: compilación, recopilación.",
-    "df": "m. compilación (‖ obra que reúne informaciones). Sin.: compilación, recopilación. | m. Rel. Cada una de las dos partes del canon de la misa, en que se hace conmemoración de los fieles vivos y de los difuntos.",
-    "e": "Del lat. memento 'acuérdate'.",
     "s": "",
     "c": "sustantivo",
     "ec": "etym_latin"
@@ -14896,16 +13758,6 @@
     "s": "",
     "c": "sustantivo",
     "ec": ""
-  },
-  {
-    "w": "Memorándum",
-    "p": "m.",
-    "d": "Memorando1. Sin.: memorando1, memo2.",
-    "df": "m. memorando1. Sin.: memorando1, memo2.",
-    "e": "Del lat. mediev. memorandum 'lo que debe recordarse', n. del gerundivo del lat. memorāre 'recordar'.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_latin"
   },
   {
     "w": "Memorístico",
@@ -15230,16 +14082,6 @@
     ]
   },
   {
-    "w": "Mengue",
-    "p": "m. coloq.",
-    "d": "Diablo . Sin.: diablo, demonio, demontre, diantre, demonche, dianche, diaño.",
-    "df": "m. coloq. diablo (‖ ángel rebelado). Sin.: diablo, demonio, demontre, diantre, demonche, dianche, diaño.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Menhir",
     "p": "m.",
     "d": "Monumento megalítico que consiste en una piedra alargada colocada verticalmente en el suelo. Sin.: monolito, megalito.",
@@ -15357,26 +14199,6 @@
     "s": "",
     "c": "adjetivo",
     "ec": "etym_latin"
-  },
-  {
-    "w": "Menjunje",
-    "p": "m.",
-    "d": "Mejunje. Sin.: mejunje, menjurje, brebaje.",
-    "df": "m. mejunje. Sin.: mejunje, menjurje, brebaje.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Menjuí",
-    "p": "m.",
-    "d": "Benjuí. Sin.: benjuí, benzoe.",
-    "df": "m. benjuí. Sin.: benjuí, benzoe.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
   },
   {
     "w": "Menologio",
@@ -15844,19 +14666,6 @@
     "ec": ""
   },
   {
-    "w": "Meollo",
-    "p": "m.",
-    "d": "Seso . Sin.: seso1, sesera.",
-    "df": "m. seso (‖ masa contenida en el cráneo). Sin.: seso1, sesera. | m. médula (‖ sustancia interior de los huesos). Sin.: médula, tuétano, cañada. | m. fondo (‖ parte principal y esencial de algo). Sin.: núcleo, esencia, quid, fondo2, sustancia, centro1, fundamento, base, miga1. | m. Juicio o entendimiento. Sin.: juicio, entendimiento, inteligencia1, sensatez.",
-    "e": "Del lat. vulg. medullum, y este del lat. medulla.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_latin",
-    "esp": [
-      "explosiva"
-    ]
-  },
-  {
     "w": "Meona",
     "p": "adj.",
     "d": "Dicho especialmente de un niño: Que se orina en su ropa. U. t. c. s.",
@@ -15900,19 +14709,6 @@
     ]
   },
   {
-    "w": "Mercadante",
-    "p": "m.",
-    "d": "Mercader. Sin.: mercader, mercante.",
-    "df": "m. mercader. Sin.: mercader, mercante.",
-    "e": "Del it. mercadante.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_italiano",
-    "esp": [
-      "viajera"
-    ]
-  },
-  {
     "w": "Mercadear",
     "p": "intr.",
     "d": "Hacer trato o comercio de mercancías. Sin.: comerciar, negociar.",
@@ -15950,16 +14746,6 @@
     "e": "",
     "s": "",
     "c": "adjetivo",
-    "ec": ""
-  },
-  {
-    "w": "Mercadería",
-    "p": "f.",
-    "d": "Mercancía. Sin.: mercancía, género, existencias.",
-    "df": "f. mercancía. Sin.: mercancía, género, existencias.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
     "ec": ""
   },
   {
@@ -16123,19 +14909,6 @@
     "ec": ""
   },
   {
-    "w": "Mercurocromo",
-    "p": "m.",
-    "d": "Mercromina. Sin.: mercromina.",
-    "df": "m. mercromina. Sin.: mercromina.",
-    "e": "Del ingl. mercurochrome, de mercury 'mercurio' y el gr. -χρωμος -chrōmos 'coloreado'.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_ingles",
-    "esp": [
-      "viajera"
-    ]
-  },
-  {
     "w": "Mercúrico",
     "p": "adj.",
     "d": "Quím. Perteneciente o relativo al mercurio.",
@@ -16219,16 +14992,6 @@
     "ec": ""
   },
   {
-    "w": "Merendona",
-    "p": "f.",
-    "d": "Merendola. Sin.: merendola.",
-    "df": "f. merendola. Sin.: merendola.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Merengue",
     "p": "m.",
     "d": "Dulce, por lo común de forma aovada y de color blanco, hecho con claras de huevo y azúcar y cocido al horno. Sin.: espumilla.",
@@ -16249,26 +15012,6 @@
     "e": "Del lat. meretricius.",
     "s": "",
     "c": "adjetivo",
-    "ec": "etym_latin"
-  },
-  {
-    "w": "Meretriz",
-    "p": "f.",
-    "d": "Prostituta. Sin.: prostituta, puta, furcia, zorra, ramera, fulana, pelandusca.",
-    "df": "f. prostituta. Sin.: prostituta, puta, furcia, zorra, ramera, fulana, pelandusca.",
-    "e": "Del lat. merĕtrix, -īcis.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_latin"
-  },
-  {
-    "w": "Mergo",
-    "p": "m.",
-    "d": "Somormujo. Sin.: somormujo, somorgujo, mergánsar, cotúa.",
-    "df": "m. somormujo. Sin.: somormujo, somorgujo, mergánsar, cotúa.",
-    "e": "Del lat. mergus.",
-    "s": "",
-    "c": "sustantivo",
     "ec": "etym_latin"
   },
   {
@@ -16372,26 +15115,6 @@
     "ec": ""
   },
   {
-    "w": "Meriñaque",
-    "p": "m.",
-    "d": "Miriñaque . Sin.: miriñaque2, crinolina.",
-    "df": "m. miriñaque (‖ zagalejo interior). Sin.: miriñaque2, crinolina.",
-    "e": "De or. inc.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Merla",
-    "p": "f.",
-    "d": "Mirlo . Sin.: mirlo, merlo, mirla, miruella, miruello.",
-    "df": "f. mirlo (‖ pájaro). Sin.: mirlo, merlo, mirla, miruella, miruello.",
-    "e": "Del lat. merŭla.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_latin"
-  },
-  {
     "w": "Merleta",
     "p": "f.",
     "d": "Heráld. Cada una de las figuras de pájaros que se representan en los escudos.",
@@ -16402,19 +15125,6 @@
     "ec": "etym_frances",
     "esp": [
       "viajera"
-    ]
-  },
-  {
-    "w": "Merlo",
-    "p": "m.",
-    "d": "Mirlo . Sin.: mirlo, merla, mirla, miruella, miruello.",
-    "df": "m. mirlo (‖ pájaro). Sin.: mirlo, merla, mirla, miruella, miruello. | m. budión. Sin.: budión, doncella, baboso.",
-    "e": "Del lat. merŭlus.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_latin",
-    "esp": [
-      "explosiva"
     ]
   },
   {
@@ -16605,19 +15315,6 @@
     "s": "",
     "c": "adjetivo",
     "ec": ""
-  },
-  {
-    "w": "Mescolanza",
-    "p": "f. coloq.",
-    "d": "Mezcolanza. Sin.: mezcolanza.",
-    "df": "f. coloq. mezcolanza. Sin.: mezcolanza.",
-    "e": "Del it. mescolanza.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_italiano",
-    "esp": [
-      "viajera"
-    ]
   },
   {
     "w": "Meseguero",
@@ -17832,16 +16529,6 @@
     ]
   },
   {
-    "w": "Metidillo",
-    "p": "m.",
-    "d": "Metedor . Sin.: metedor, metido, braga1.",
-    "df": "m. metedor (‖ paño). Sin.: metedor, metido, braga1.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Metijón",
     "p": "adj. coloq.",
     "d": "Entremetido. U. t. c. s. Sin.: entrometido, entremetido, meticón, metiche, metido, entrépito, safrisco, meterete, pelotero3, sácalas, presentado, sacón1, metete, refitolero, salsero.",
@@ -18200,16 +16887,6 @@
     "ec": ""
   },
   {
-    "w": "Meya",
-    "p": "f.",
-    "d": "Noca. Sin.: noca, nocla.",
-    "df": "f. noca. Sin.: noca, nocla.",
-    "e": "Del lat. maia o maea, y este del gr. μαῖα maîa 'cangrejo marino'.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_latin"
-  },
-  {
     "w": "Mezcal",
     "p": "m.",
     "d": "Variedad de agave.",
@@ -18362,16 +17039,6 @@
     "ec": ""
   },
   {
-    "w": "Miador",
-    "p": "adj.",
-    "d": "Maullador. Sin.: maullador, mayador.",
-    "df": "adj. maullador. Sin.: maullador, mayador.",
-    "e": "De miar.",
-    "s": "",
-    "c": "adjetivo",
-    "ec": ""
-  },
-  {
     "w": "Miagar",
     "p": "intr.",
     "d": "Cantb. maullar. Sin.: maullar, mayar, maular, miañar, miar.",
@@ -18380,19 +17047,6 @@
     "s": "",
     "c": "verbo",
     "ec": ""
-  },
-  {
-    "w": "Miaja",
-    "p": "f.",
-    "d": "Meaja . Sin.: meaja1.",
-    "df": "f. meaja (‖ moneda de vellón). Sin.: meaja1. | f. migaja (‖ parte más pequeña y menuda del pan). Sin.: miga1, migaja, borona. | f. migaja (‖ porción pequeña de algo). Sin.: migaja, pizca, chispa, ápice, insignificancia, menudencia, grano, gota. | f. Cuba y R. Dom. galladura. Sin.: galladura, agalladura, engalladura.",
-    "e": "Sínc.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "",
-    "esp": [
-      "explosiva"
-    ]
   },
   {
     "w": "Mialgia",
@@ -18523,26 +17177,6 @@
     "d": "Tratamiento honorífico de la corona de Aragón, que se aplicó también a los letrados en las islas Baleares.",
     "df": "m. Tratamiento honorífico de la corona de Aragón, que se aplicó también a los letrados en las islas Baleares.",
     "e": "Del cat. misser, y este del it. messer 'mi señor'.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Micetología",
-    "p": "f.",
-    "d": "Micología. Sin.: micología.",
-    "df": "f. micología. Sin.: micología.",
-    "e": "Del gr. μύκης, -ητος mýkēs, -ētos 'hongo' y -logía.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_griego"
-  },
-  {
-    "w": "Michelín",
-    "p": "m. coloq.",
-    "d": "Lorza . Sin.: flotador, rollo, molla, grasa, llanta2, lorza.",
-    "df": "m. coloq. lorza (‖ pliegue de gordura). Sin.: flotador, rollo, molla, grasa, llanta2, lorza.",
-    "e": "De Michelin®, marca reg.",
     "s": "",
     "c": "sustantivo",
     "ec": ""
@@ -18831,16 +17465,6 @@
     "ec": ""
   },
   {
-    "w": "Microfilm",
-    "p": "m.",
-    "d": "Microfilme. Sin.: microfilme.",
-    "df": "m. microfilme. Sin.: microfilme.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Microfilmación",
     "p": "f.",
     "d": "Acción y efecto de microfilmar.",
@@ -19000,16 +17624,6 @@
     "ec": ""
   },
   {
-    "w": "Microorganismo",
-    "p": "m.",
-    "d": "Microbio. Sin.: microbio, bacteria, germen.",
-    "df": "m. microbio. Sin.: microbio, bacteria, germen.",
-    "e": "De micro- y organismo.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Micropilo",
     "p": "m.",
     "d": "Biol. Orificio de la cubierta del óvulo de algunos animales, como insectos y peces, por el cual penetra el espermatozoide.",
@@ -19156,16 +17770,6 @@
     "ec": ""
   },
   {
-    "w": "Micrón",
-    "p": "m.",
-    "d": "Micra. Sin.: micra, micrómetro.",
-    "df": "m. micra. Sin.: micra, micrómetro.",
-    "e": "Del gr. μικρόν mikrón, n. de μικρός mikrós 'pequeño'.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_griego"
-  },
-  {
     "w": "Micuré",
     "p": "m.",
     "d": "Marsupial americano, de aproximadamente 40 cm de longitud, cola de igual tamaño, y cabeza voluminosa, de hocico largo y puntiagudo. Entre su pelambre, lanosa y basta, de coloración variable según las especies, sobresalen abundantes cerdas largas y fuertes.",
@@ -19206,16 +17810,6 @@
     "ec": ""
   },
   {
-    "w": "Mida",
-    "p": "m.",
-    "d": "Brugo . Sin.: brugo.",
-    "df": "m. brugo (‖ larva de un lepidóptero). Sin.: brugo. | f. Ar. medida.",
-    "e": "Del gr. μίδας mídas 'insecto parásito de las habas'.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_griego"
-  },
-  {
     "w": "Midriasis",
     "p": "f.",
     "d": "Med. Dilatación de la pupila del ojo.",
@@ -19224,19 +17818,6 @@
     "s": "",
     "c": "sustantivo",
     "ec": "etym_latin"
-  },
-  {
-    "w": "Mieditis",
-    "p": "f. coloq.",
-    "d": "Miedo. Sin.: miedo, temor, respeto, susto, sobresalto, canguelo, culillo, chucho3, canillera.",
-    "df": "f. coloq. miedo. Sin.: miedo, temor, respeto, susto, sobresalto, canguelo, culillo, chucho3, canillera.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "",
-    "esp": [
-      "explosiva"
-    ]
   },
   {
     "w": "Miedro",
@@ -19621,16 +18202,6 @@
     "ec": ""
   },
   {
-    "w": "Mildéu",
-    "p": "m.",
-    "d": "Mildiu. Sin.: mildiu.",
-    "df": "m. mildiu. Sin.: mildiu.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Milenario",
     "p": "adj.",
     "d": "Perteneciente o relativo al número mil o al millar.",
@@ -19696,16 +18267,6 @@
     "d": "Campo plantado de granados.",
     "df": "m. Campo plantado de granados.",
     "e": "De milgrana.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Milhojas",
-    "p": "f.",
-    "d": "Milenrama. Sin.: milenrama, aquilea, altarreina.",
-    "df": "f. milenrama. Sin.: milenrama, aquilea, altarreina.",
-    "e": "De mil y hoja.",
     "s": "",
     "c": "sustantivo",
     "ec": ""
@@ -19904,16 +18465,6 @@
     "ec": ""
   },
   {
-    "w": "Millaca",
-    "p": "f.",
-    "d": "Carrizo . Sin.: carrizo, cañota, cañavera, cañeta, cisca, jisca, sisca.",
-    "df": "f. carrizo (‖ planta gramínea española). Sin.: carrizo, cañota, cañavera, cañeta, cisca, jisca, sisca.",
-    "e": "Der. dialect. del m. or. que mijo.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Millardo",
     "p": "m.",
     "d": "Econ. Mil millones. Un millardo de pesos.",
@@ -19925,16 +18476,6 @@
     "esp": [
       "viajera"
     ]
-  },
-  {
-    "w": "Millo",
-    "p": "m.",
-    "d": "Mijo . Sin.: mijo, borona.",
-    "df": "m. mijo (‖ planta gramínea de la India). Sin.: mijo, borona. | m. mijo (‖ semilla). Sin.: mijo, borona. | m. Can. y Sal. maíz. Sin.: maíz, avatí, borona.",
-    "e": "Del dialect. millo, y este del lat. milium.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
   },
   {
     "w": "Millonada",
@@ -20008,19 +18549,6 @@
     "s": "",
     "c": "zoologia",
     "ec": ""
-  },
-  {
-    "w": "Milocha",
-    "p": "f.",
-    "d": "Cometa . Sin.: cometa, birlocha, pandero, chiringa, volantín, barrilete, papagayo, chichigua, papalota, cachirulo.",
-    "df": "f. cometa (‖ armazón). Sin.: cometa, birlocha, pandero, chiringa, volantín, barrilete, papagayo, chichigua, papalota, cachirulo.",
-    "e": "Cf. miloca.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "",
-    "esp": [
-      "explosiva"
-    ]
   },
   {
     "w": "Milonga",
@@ -20229,16 +18757,6 @@
     "ec": "etym_griego"
   },
   {
-    "w": "Mimetización",
-    "p": "f.",
-    "d": "Mimetismo. Sin.: mimetismo, mimesis, imitación, adaptación, ocultación.",
-    "df": "f. mimetismo. Sin.: mimetismo, mimesis, imitación, adaptación, ocultación.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Mimetizado",
     "p": "adj.",
     "d": "Con apariencia de los seres u objetos de su entorno.",
@@ -20246,16 +18764,6 @@
     "e": "",
     "s": "",
     "c": "adjetivo",
-    "ec": ""
-  },
-  {
-    "w": "Mimetizar",
-    "p": "tr.",
-    "d": "Imitar . Sin.: imitar, copiar.",
-    "df": "tr. imitar (‖ ejecutar algo a semejanza de otra cosa, o según el estilo de otra persona). Sin.: imitar, copiar.",
-    "e": "De mimético.",
-    "s": "",
-    "c": "verbo",
     "ec": ""
   },
   {
@@ -20283,16 +18791,6 @@
     "esp": [
       "explosiva"
     ]
-  },
-  {
-    "w": "Mimodrama",
-    "p": "m.",
-    "d": "Pantomima . Sin.: pantomima, mimo2.",
-    "df": "m. pantomima (‖ representación por gestos sin emplear palabras). Sin.: pantomima, mimo2.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
   },
   {
     "w": "Mimosáceo",
@@ -20345,19 +18843,6 @@
     "ec": "",
     "esp": [
       "explosiva"
-    ]
-  },
-  {
-    "w": "Minarete",
-    "p": "m.",
-    "d": "Alminar. Sin.: alminar.",
-    "df": "m. alminar. Sin.: alminar.",
-    "e": "Del fr. minaret.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_frances",
-    "esp": [
-      "viajera"
     ]
   },
   {
@@ -20867,16 +19352,6 @@
     "ec": ""
   },
   {
-    "w": "Minutado",
-    "p": "m.",
-    "d": "Minutaje. Sin.: minutaje.",
-    "df": "m. minutaje. Sin.: minutaje.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Minutaje",
     "p": "m.",
     "d": "Acción y efecto de minutar2. Añadió otra canción al disco para completar el minutaje. Realizar un minutaje de los programas de televisión. Sin.: minutado.",
@@ -21043,26 +19518,6 @@
     "ec": "etym_latin"
   },
   {
-    "w": "Miosota",
-    "p": "f.",
-    "d": "Raspilla. Sin.: raspilla, miosotis.",
-    "df": "f. raspilla. Sin.: raspilla, miosotis.",
-    "e": "Del lat. myosōta, y este del gr. μυὸς ὦτα myòs ôta; literalmente 'orejas de ratón'.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_latin"
-  },
-  {
-    "w": "Miosotis",
-    "p": "f.",
-    "d": "Raspilla. Sin.: raspilla, miosota.",
-    "df": "f. raspilla. Sin.: raspilla, miosota.",
-    "e": "Del lat. myosōtis, y este del gr. μυοσωτίς myosōtís; literalmente 'la de orejas de ratón'; cf. miosota.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_latin"
-  },
-  {
     "w": "Mirabel",
     "p": "m.",
     "d": "Planta herbácea de la familia de las quenopodiáceas, de forma piramidal, con tallo ramoso de 60 a 80 cm de altura, hojas alternas, enteras, muy menudas, y flores pequeñas, verdosas, en grupos axilares. Sin.: ayuga, perantón, pinillo.",
@@ -21100,16 +19555,6 @@
     ]
   },
   {
-    "w": "Miramelindos",
-    "p": "m.",
-    "d": "Balsamina . Sin.: balsamina, nicaragua, adornos, belén, madama.",
-    "df": "m. balsamina (‖ planta balsaminácea). Sin.: balsamina, nicaragua, adornos, belén, madama.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Miramiento",
     "p": "m.",
     "d": "Acción de mirar, atender o considerar algo.",
@@ -21140,16 +19585,6 @@
     "e": "",
     "s": "",
     "c": "gentilicio",
-    "ec": ""
-  },
-  {
-    "w": "Mirasol",
-    "p": "m.",
-    "d": "Girasol . Sin.: girasol, tornasol, mirabel, giganta, gigantea.",
-    "df": "m. girasol (‖ planta). Sin.: girasol, tornasol, mirabel, giganta, gigantea.",
-    "e": "De mirar y sol1.",
-    "s": "",
-    "c": "sustantivo",
     "ec": ""
   },
   {
@@ -21211,16 +19646,6 @@
     "s": "",
     "c": "adjetivo",
     "ec": "etym_griego"
-  },
-  {
-    "w": "Mirla",
-    "p": "f.",
-    "d": "Mirlo . Sin.: mirlo, merla, merlo, miruella, miruello.",
-    "df": "f. mirlo (‖ pájaro). Sin.: mirlo, merla, merlo, miruella, miruello.",
-    "e": "Del lat. merŭla.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_latin"
   },
   {
     "w": "Mirlamiento",
@@ -21336,16 +19761,6 @@
     "ec": "etym_latin"
   },
   {
-    "w": "Mirto",
-    "p": "m.",
-    "d": "Arrayán. Sin.: arrayán, murta, murto, arraiján.",
-    "df": "m. arrayán. Sin.: arrayán, murta, murto, arraiján.",
-    "e": "Del lat. myrtus, y este del gr. μύρτος mýrtos.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_latin"
-  },
-  {
     "w": "Mirtáceo",
     "p": "adj.",
     "d": "Bot. Dicho de un árbol o de un arbusto: Del grupo de las angiospermas dicotiledóneas, tropical casi siempre, de hojas generalmente opuestas, en las que suele haber glándulas pequeñas y transparentes llenas de aceite esencial, lo mismo que en la corteza de las ramas, con flores blancas o encarnadas, y cáliz persistente en el fruto, que es capsular y contiene diversas semillas sin albumen; p. ej., el arrayán, el clavero o el eucalipto. U. t. c. s. f., en pl. como taxón.",
@@ -21427,16 +19842,6 @@
     "d": "Dicho de un libro: Que contiene el orden y modo de celebrar la misa. U. m. c. s. m. Sin.: devocionario, breviario.",
     "df": "adj. Dicho de un libro: Que contiene el orden y modo de celebrar la misa. U. m. c. s. m. Sin.: devocionario, breviario.",
     "e": "Del lat. mediev. missalis.",
-    "s": "",
-    "c": "adjetivo",
-    "ec": "etym_latin"
-  },
-  {
-    "w": "Miscible",
-    "p": "adj.",
-    "d": "Mezclable. Sin.: mezclable, combinable.",
-    "df": "adj. mezclable. Sin.: mezclable, combinable.",
-    "e": "Del lat. miscibĭlis, adj. verbal de miscēre 'mezclar'.",
     "s": "",
     "c": "adjetivo",
     "ec": "etym_latin"
@@ -21817,16 +20222,6 @@
     "ec": "etym_latin"
   },
   {
-    "w": "Mitigatorio",
-    "p": "adj.",
-    "d": "Mitigativo. Sin.: mitigativo.",
-    "df": "adj. mitigativo. Sin.: mitigativo.",
-    "e": "Del lat. mitigatorius.",
-    "s": "",
-    "c": "adjetivo",
-    "ec": "etym_latin"
-  },
-  {
     "w": "Mitimae",
     "p": "m. y f.",
     "d": "Y f. Miembro de un grupo de pobladores que durante el predominio de los incas era trasplantado a una región distinta de su zona de origen con fines políticos y administrativos. U. m. en pl.",
@@ -22003,16 +20398,6 @@
     "e": "",
     "s": "",
     "c": "gentilicio",
-    "ec": ""
-  },
-  {
-    "w": "Mitán",
-    "p": "m.",
-    "d": "Holandilla . Sin.: holandilla, holandeta.",
-    "df": "m. holandilla (‖ lienzo). Sin.: holandilla, holandeta.",
-    "e": "",
-    "s": "",
-    "c": "arte_literatura",
     "ec": ""
   },
   {
@@ -22294,16 +20679,6 @@
     "ec": ""
   },
   {
-    "w": "Moaré",
-    "p": "m.",
-    "d": "Muaré. Sin.: muaré, mue, muer.",
-    "df": "m. muaré. Sin.: muaré, mue, muer.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Moaxaja",
     "p": "f.",
     "d": "T. lit. Composición poética medieval, escrita en árabe o en hebreo, que termina con una jarcha en mozárabe o en árabe coloquial.",
@@ -22317,30 +20692,10 @@
     ]
   },
   {
-    "w": "Moblaje",
-    "p": "m.",
-    "d": "Mobiliario. Sin.: mobiliario, amueblamiento, amoblamiento, amoblado.",
-    "df": "m. mobiliario. Sin.: mobiliario, amueblamiento, amoblamiento, amoblado.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Moca",
     "p": "m.",
     "d": "Café de buena calidad procedente de la ciudad de Moka. Sin.: café.",
     "df": "m. Café de buena calidad procedente de la ciudad de Moka. Sin.: café.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Mocador",
-    "p": "m.",
-    "d": "Moquero. Sin.: moquero, pañuelo.",
-    "df": "m. moquero. Sin.: moquero, pañuelo.",
     "e": "",
     "s": "",
     "c": "sustantivo",
@@ -22485,16 +20840,6 @@
     "d": "Extremo grueso, romo y contundente opuesto a la parte punzante o cortante de ciertas herramientas, como azadones, hachas, etc.",
     "df": "f. Extremo grueso, romo y contundente opuesto a la parte punzante o cortante de ciertas herramientas, como azadones, hachas, etc. | f. Rebajo en el marco de las puertas y ventanas, donde encaja el renvalso. | f. Arq. Ángulo diedro entrante, que se deja o se abre en la esquina de una pared o resulta al encontrarse el plano superior de un miembro arquitectónico con un paramento vertical. | f. Arq. Telar del vano de una puerta o ventana.",
     "e": "De mocho y -eta.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Mochete",
-    "p": "m.",
-    "d": "Cernícalo . Sin.: cernícalo, primilla.",
-    "df": "m. cernícalo (‖ ave). Sin.: cernícalo, primilla.",
-    "e": "De mocho y -ete.",
     "s": "",
     "c": "sustantivo",
     "ec": ""
@@ -23048,16 +21393,6 @@
     "ec": ""
   },
   {
-    "w": "Mogólico",
-    "p": "adj.",
-    "d": "Mongol . Sin.: mongol, mongólico, mogol.",
-    "df": "adj. mongol (‖ perteneciente a Mongolia). Sin.: mongol, mongólico, mogol. | adj. Perteneciente o relativo al gran mogol.",
-    "e": "",
-    "s": "",
-    "c": "adjetivo",
-    "ec": ""
-  },
-  {
     "w": "Mogón",
     "p": "adj.",
     "d": "Dicho de una res vacuna: Que carece de un asta o la tiene rota por la punta.",
@@ -23099,16 +21434,6 @@
     "esp": [
       "viajera"
     ]
-  },
-  {
-    "w": "Mohedal",
-    "p": "m.",
-    "d": "Moheda. Sin.: moheda.",
-    "df": "m. moheda. Sin.: moheda.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
   },
   {
     "w": "Moheño",
@@ -23206,16 +21531,6 @@
     "d": "Mar. Cada una de las cajetas hechas de meollar, del largo de braza y media, las cuales van hacia los chicotes en disminución, y sirven para dar vueltas al cable y al virador cuando se zarpa el ancla.",
     "df": "m. Mar. Cada una de las cajetas hechas de meollar, del largo de braza y media, las cuales van hacia los chicotes en disminución, y sirven para dar vueltas al cable y al virador cuando se zarpa el ancla.",
     "e": "Del cat. moixell 'copo de estopa'.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Mojera",
-    "p": "f.",
-    "d": "Mostellar. Sin.: mostellar, mostajo.",
-    "df": "f. mostellar. Sin.: mostellar, mostajo.",
-    "e": "Del arag. o cat. moixera.",
     "s": "",
     "c": "sustantivo",
     "ec": ""
@@ -23322,19 +21637,6 @@
     "s": "",
     "c": "sustantivo",
     "ec": ""
-  },
-  {
-    "w": "Mojí",
-    "p": "m. coloq.",
-    "d": "Mojicón . Sin.: mojicón, cachete.",
-    "df": "m. coloq. mojicón (‖ golpe en la cara). Sin.: mojicón, cachete.",
-    "e": "Del ár. hisp. muḥší, y este del ár. clás. maḥšū 'relleno'.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_arabe",
-    "esp": [
-      "viajera"
-    ]
   },
   {
     "w": "Mola",
@@ -23964,19 +22266,6 @@
     "ec": ""
   },
   {
-    "w": "Mollizna",
-    "p": "f.",
-    "d": "Llovizna. Sin.: llovizna, mollina, garúa, brisa1, cerecere, chipichipi, chischís, cilampa, páramo, seresere, silampa, tapayagua, orvallo.",
-    "df": "f. llovizna. Sin.: llovizna, mollina, garúa, brisa1, cerecere, chipichipi, chischís, cilampa, páramo, seresere, silampa, tapayagua, orvallo.",
-    "e": "De mollina, con cruce de llovizna.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "",
-    "esp": [
-      "explosiva"
-    ]
-  },
-  {
     "w": "Molliznar",
     "p": "intr. impers.",
     "d": "Impers. lloviznar. Sin.: lloviznar, mollinear, molliznear, garuar, brisar, paramar, pringar, serenar, rocear, orvallar.",
@@ -24193,16 +22482,6 @@
     "ec": ""
   },
   {
-    "w": "Monago",
-    "p": "m. coloq.",
-    "d": "Monaguillo. Sin.: monaguillo, monacillo.",
-    "df": "m. coloq. monaguillo. Sin.: monaguillo, monacillo.",
-    "e": "Der. regres. de monaguillo.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Monaguense",
     "p": "adj.",
     "d": "Natural de Monagas, estado de Venezuela. U. t. c. s.",
@@ -24297,16 +22576,6 @@
     "p": "m.",
     "d": "Cucharilla de limpiar los oídos. Sin.: mondaoídos.",
     "df": "m. Cucharilla de limpiar los oídos. Sin.: mondaoídos.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Mondaoídos",
-    "p": "m.",
-    "d": "Mondaorejas. Sin.: mondaorejas.",
-    "df": "m. mondaorejas. Sin.: mondaorejas.",
     "e": "",
     "s": "",
     "c": "sustantivo",
@@ -24552,16 +22821,6 @@
     "ec": ""
   },
   {
-    "w": "Mongólico",
-    "p": "adj.",
-    "d": "Mongol . Sin.: mogólico, mongol, mogol.",
-    "df": "adj. mongol (‖ perteneciente a Mongolia). Sin.: mogólico, mongol, mogol. | adj. Perteneciente o relativo a la raza amarilla. | adj. Que padece mongolismo. U. t. c. s. U. a veces c. insulto o en sent. despect. Era u. en medicina.",
-    "e": "",
-    "s": "",
-    "c": "adjetivo",
-    "ec": ""
-  },
-  {
     "w": "Moni",
     "p": "m. coloq.",
     "d": "Moneda . U. m. en pl. Sin.: dinero, moneda, efectivo, numerario, pasta, guita, tela1, lana, parné, plata, billete, morlacos, feria, reales, pisto, bolas, mango3, guano2, maracandacas.",
@@ -24573,16 +22832,6 @@
     "esp": [
       "explosiva"
     ]
-  },
-  {
-    "w": "Moniato",
-    "p": "m.",
-    "d": "Boniato. Sin.: boniato.",
-    "df": "m. boniato. Sin.: boniato.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
   },
   {
     "w": "Monición",
@@ -24766,16 +23015,6 @@
     "s": "",
     "c": "adjetivo",
     "ec": ""
-  },
-  {
-    "w": "Monocerote",
-    "p": "m.",
-    "d": "Unicornio . Sin.: unicornio, monoceronte.",
-    "df": "m. unicornio (‖ animal fabuloso). Sin.: unicornio, monoceronte.",
-    "e": "Del lat. monocĕros, -ōtis, y este del gr. μονόκερως monókerōs.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_latin"
   },
   {
     "w": "Monociclo",
@@ -25087,16 +23326,6 @@
     "ec": ""
   },
   {
-    "w": "Monomaniático",
-    "p": "adj.",
-    "d": "Monomaníaco. Sin.: monomaníaco, maniático, obsesivo, paranoico.",
-    "df": "adj. monomaníaco. Sin.: monomaníaco, maniático, obsesivo, paranoico.",
-    "e": "",
-    "s": "",
-    "c": "adjetivo",
-    "ec": ""
-  },
-  {
     "w": "Monomanía",
     "p": "f.",
     "d": "Med. Locura o delirio parcial sobre una sola idea o un solo orden de ideas. Sin.: manía, obsesión, fijación, locura, paranoia, cacalota.",
@@ -25194,16 +23423,6 @@
     "e": "De mono- y parental.",
     "s": "",
     "c": "adjetivo",
-    "ec": ""
-  },
-  {
-    "w": "Monopastos",
-    "p": "m.",
-    "d": "Monospastos. Sin.: monospastos.",
-    "df": "m. monospastos. Sin.: monospastos.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
     "ec": ""
   },
   {
@@ -25785,16 +24004,6 @@
     "ec": ""
   },
   {
-    "w": "Montañismo",
-    "p": "m.",
-    "d": "Alpinismo. Sin.: alpinismo, escalada.",
-    "df": "m. alpinismo. Sin.: alpinismo, escalada.",
-    "e": "De montaña e -ismo.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Montañista",
     "p": "adj.",
     "d": "Montañero . Expedición montañista. Sin.: montañero.",
@@ -25830,16 +24039,6 @@
     "d": "Acción de montear1.",
     "df": "f. Acción de montear1. | f. Arq. Acción de montear (‖ trazar la montea de una obra). | f. Arq. Dibujo de tamaño natural que en el suelo o en una pared se hace del todo o parte de una obra para hacer el despiezo, sacar las plantillas y señalar los cortes. | f. Arq. estereotomía. Sin.: estereotomía. | f. Arq. Sagita de un arco o bóveda.",
     "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Monteador",
-    "p": "m.",
-    "d": "Montero . Sin.: montero.",
-    "df": "m. montero (‖ hombre que busca la caza en el monte). Sin.: montero. | m. Hombre que montea2.",
-    "e": "De montear1 y -dor.",
     "s": "",
     "c": "sustantivo",
     "ec": ""
@@ -26353,16 +24552,6 @@
     "ec": ""
   },
   {
-    "w": "Morago",
-    "p": "m.",
-    "d": "Moraga . Sin.: moraga.",
-    "df": "m. moraga (‖ manojo que forman las espigadoras). Sin.: moraga. | m. Rioja. Tajada del lomo del cerdo que en las moragas o matanzas se come tostada a la lumbre.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Moraleda",
     "p": "f.",
     "d": "Lugar plantado de morales o de moreras.",
@@ -26704,19 +24893,6 @@
     ]
   },
   {
-    "w": "Mordente",
-    "p": "m.",
-    "d": "Mordiente . Sin.: mordiente.",
-    "df": "m. mordiente (‖ sustancia que se emplea para fijar los colores). Sin.: mordiente. | m. Mús. quiebro (‖ notas de adorno que acompañan a una principal). Sin.: quiebro.",
-    "e": "Del it. mordente.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_italiano",
-    "esp": [
-      "viajera"
-    ]
-  },
-  {
     "w": "Morder",
     "p": "tr.",
     "d": "Clavar los dientes en algo. Sin.: dentellear, mordisquear, mordiscar, tarascar, masticar, picar.",
@@ -26841,16 +25017,6 @@
     "s": "",
     "c": "sustantivo",
     "ec": ""
-  },
-  {
-    "w": "Moreda",
-    "p": "f.",
-    "d": "Moral . Sin.: moral2.",
-    "df": "f. moral (‖ árbol oriundo de Asia). Sin.: moral2. | f. Sitio poblado de moreras. Sin.: moreral.",
-    "e": "Del lat. morēta, pl. de morētum, y este der. de morus 'moral2'.",
-    "s": "",
-    "c": "gentilicio",
-    "ec": "etym_latin"
   },
   {
     "w": "Morelense",
@@ -27105,16 +25271,6 @@
     ]
   },
   {
-    "w": "Morga",
-    "p": "f.",
-    "d": "Alpechín. Sin.: alpechín, pechín, jámila, tinaco, murga1, amurca, aguachas.",
-    "df": "f. alpechín. Sin.: alpechín, pechín, jámila, tinaco, murga1, amurca, aguachas. | f. coca de Levante.",
-    "e": "Del lat. amurca.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_latin"
-  },
-  {
     "w": "Morganático",
     "p": "adj.",
     "d": "Dicho de una persona: Que ha contraído matrimonio morganático.",
@@ -27143,16 +25299,6 @@
     "d": "Arpón de casi medio metro de longitud, que los mariscadores introducen en la arena por los orificios en forma de ocho que dejan los sifones del muergo, que vive enterrado a 20 o 30 cm de profundidad.",
     "df": "f. Arpón de casi medio metro de longitud, que los mariscadores introducen en la arena por los orificios en forma de ocho que dejan los sifones del muergo, que vive enterrado a 20 o 30 cm de profundidad.",
     "e": "De muergo y -era.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Morgón",
-    "p": "m.",
-    "d": "Mugrón . Sin.: mugrón, codadura, codal, rastro.",
-    "df": "m. mugrón (‖ sarmiento de la vid). Sin.: mugrón, codadura, codal, rastro.",
-    "e": "De mergón.",
     "s": "",
     "c": "sustantivo",
     "ec": ""
@@ -27228,29 +25374,6 @@
     "ec": ""
   },
   {
-    "w": "Morilla",
-    "p": "f.",
-    "d": "Colmenilla. Sin.: colmenilla, cagarria, carraspina.",
-    "df": "f. colmenilla. Sin.: colmenilla, cagarria, carraspina.",
-    "e": "Del fr. morille.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_frances",
-    "esp": [
-      "viajera"
-    ]
-  },
-  {
-    "w": "Morillero",
-    "p": "m.",
-    "d": "Mochil. Sin.: mochil.",
-    "df": "m. mochil. Sin.: mochil.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Morillo",
     "p": "m.",
     "d": "Cada uno de los caballetes de hierro que se ponen en el hogar para sustentar la leña.",
@@ -27276,16 +25399,6 @@
     "d": "Dicho de un animal ovino, especialmente de la oveja: Que está en celo.",
     "df": "adj. Dicho de un animal ovino, especialmente de la oveja: Que está en celo.",
     "e": "De la raíz de morueco y -iondo.",
-    "s": "",
-    "c": "adjetivo",
-    "ec": ""
-  },
-  {
-    "w": "Morisco",
-    "p": "adj.",
-    "d": "Moro . Sin.: moro, moruno.",
-    "df": "adj. moro (‖ perteneciente al África septentrional). Sin.: moro, moruno. | adj. Dicho de una persona: Musulmana, que, terminada la Reconquista, era bautizada y se quedaba en España. U. t. c. s. | adj. Perteneciente o relativo a los moriscos. | adj. En la América colonial, nacido de mulato y española, o de español y mulata. U. t. c. s.",
-    "e": "De moro e -isco.",
     "s": "",
     "c": "adjetivo",
     "ec": ""
@@ -27344,16 +25457,6 @@
     "ec": ""
   },
   {
-    "w": "Morlón",
-    "p": "adj.",
-    "d": "Morlaco . Sin.: morlaco1.",
-    "df": "adj. morlaco (‖ que finge tontería). Sin.: morlaco1.",
-    "e": "Cruce de morlaco1 y molón1.",
-    "s": "",
-    "c": "adjetivo",
-    "ec": ""
-  },
-  {
     "w": "Mormonismo",
     "p": "m.",
     "d": "Movimiento religioso fundado en los Estados Unidos de América, basado en la Biblia y el Libro de Mormón.",
@@ -27407,16 +25510,6 @@
     "ec": ""
   },
   {
-    "w": "Morojo",
-    "p": "m.",
-    "d": "Madroño . Sin.: madroño, borto, alborocera.",
-    "df": "m. madroño (‖ fruto). Sin.: madroño, borto, alborocera.",
-    "e": "Del gall. morojo, vulgarismo por morogo 'fresa silvestre', 'mora2', 'fruto del madroño'.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Morondanga",
     "p": "f.",
     "d": "Cosa inútil y de poca entidad. Sin.: burundanga.",
@@ -27447,16 +25540,6 @@
     "ec": ""
   },
   {
-    "w": "Moronía",
-    "p": "f.",
-    "d": "Alboronía. Sin.: alboronía, almoronía, boronía.",
-    "df": "f. alboronía. Sin.: alboronía, almoronía, boronía.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Moroso",
     "p": "adj.",
     "d": "Que incurre en morosidad. Deudor moroso. Sin.: lento, parsimonioso, tardo, pausado, calmoso, inactivo.",
@@ -27468,26 +25551,6 @@
     "esp": [
       "explosiva"
     ]
-  },
-  {
-    "w": "Morquera",
-    "p": "f.",
-    "d": "Hisopillo . Sin.: hisopillo, saborea.",
-    "df": "f. hisopillo (‖ mata). Sin.: hisopillo, saborea.",
-    "e": "Cf. amurca.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Morquero",
-    "p": "m.",
-    "d": "Morcón . Sin.: morcón.",
-    "df": "m. morcón (‖ embutido). Sin.: morcón.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
   },
   {
     "w": "Morra",
@@ -27564,16 +25627,6 @@
     "d": "Pl. Ar. Erupción en los labios.",
     "df": "f. pl. Ar. Erupción en los labios.",
     "e": "De morro1 y -era.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Morrilla",
-    "p": "f.",
-    "d": "Alcaucil . Sin.: alcaucil, alcaucí, alcacil.",
-    "df": "f. alcaucil (‖ alcachofa silvestre). Sin.: alcaucil, alcaucí, alcacil.",
-    "e": "Del dim. de morra1.",
     "s": "",
     "c": "sustantivo",
     "ec": ""
@@ -28150,16 +26203,6 @@
     "ec": ""
   },
   {
-    "w": "Mosquitera",
-    "p": "f.",
-    "d": "Mosquitero . Sin.: mosquitero.",
-    "df": "f. mosquitero (‖ pabellón de cama). Sin.: mosquitero.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Mosquitero",
     "p": "m.",
     "d": "Pabellón o colgadura de cama hecho de gasa, para impedir que entren los mosquitos. Sin.: mosquitera.",
@@ -28174,16 +26217,6 @@
     "p": "f.",
     "d": "Tarro o frasco en que se prepara y sirve la mostaza para la mesa. Sin.: mostacero.",
     "df": "f. Tarro o frasco en que se prepara y sirve la mostaza para la mesa. Sin.: mostacero.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Mostacero",
-    "p": "m.",
-    "d": "Mostacera. Sin.: mostacera.",
-    "df": "m. mostacera. Sin.: mostacera.",
     "e": "",
     "s": "",
     "c": "sustantivo",
@@ -28228,26 +26261,6 @@
     "d": "Munición del tamaño de la semilla de mostaza, que se emplea para la caza de pájaros y otros animales pequeños.",
     "df": "f. Munición del tamaño de la semilla de mostaza, que se emplea para la caza de pájaros y otros animales pequeños. | f. Abalorio de cuentecillas muy menudas. | f. Cosa muy pequeña. | f. Hond. Tachuela que utilizan los zapateros para fijar los tacones del calzado a la suela.",
     "e": "Del dim. de mostaza.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Mostagán",
-    "p": "m. coloq.",
-    "d": "Vino . Sin.: vino.",
-    "df": "m. coloq. vino (‖ bebida alcohólica de uvas). Sin.: vino.",
-    "e": "De mosto.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Mostajo",
-    "p": "m.",
-    "d": "Mostellar. Sin.: mostellar, mojera.",
-    "df": "m. mostellar. Sin.: mostellar, mojera.",
-    "e": "",
     "s": "",
     "c": "sustantivo",
     "ec": ""
@@ -28968,16 +26981,6 @@
     "ec": ""
   },
   {
-    "w": "Moñón",
-    "p": "adj.",
-    "d": "Moñudo. Sin.: moñudo.",
-    "df": "adj. moñudo. Sin.: moñudo.",
-    "e": "",
-    "s": "",
-    "c": "adjetivo",
-    "ec": ""
-  },
-  {
     "w": "Muaré",
     "p": "m.",
     "d": "Tela brillante que presenta visos u ondulaciones. Sin.: moaré, muer, mue.",
@@ -29170,16 +27173,6 @@
     ]
   },
   {
-    "w": "Mueblar",
-    "p": "tr.",
-    "d": "Amueblar. Sin.: amueblar, amoblar, alhajar.",
-    "df": "tr. amueblar. Sin.: amueblar, amoblar, alhajar.",
-    "e": "",
-    "s": "",
-    "c": "verbo",
-    "ec": ""
-  },
-  {
     "w": "Mueblería",
     "p": "f.",
     "d": "Taller en que se hacen muebles.",
@@ -29277,16 +27270,6 @@
     "esp": [
       "explosiva"
     ]
-  },
-  {
-    "w": "Muergo",
-    "p": "m.",
-    "d": "Navaja . Sin.: navaja.",
-    "df": "m. navaja (‖ molusco). Sin.: navaja.",
-    "e": "Quizá de muérgano.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
   },
   {
     "w": "Muermo",
@@ -29481,16 +27464,6 @@
     ]
   },
   {
-    "w": "Mugroso",
-    "p": "adj.",
-    "d": "Mugriento. Sin.: mugriento.",
-    "df": "adj. mugriento. Sin.: mugriento.",
-    "e": "De mugor.",
-    "s": "",
-    "c": "adjetivo",
-    "ec": ""
-  },
-  {
     "w": "Mugrón",
     "p": "m.",
     "d": "Sarmiento que, sin cortarlo de la vid, se entierra para que arraigue y produzca nueva planta. Sin.: sarmiento, codadura, codal, morgón, rastro.",
@@ -29522,16 +27495,6 @@
     "esp": [
       "viajera"
     ]
-  },
-  {
-    "w": "Muharra",
-    "p": "f.",
-    "d": "Moharra. Sin.: moharra.",
-    "df": "f. moharra. Sin.: moharra.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
   },
   {
     "w": "Muisca",
@@ -29773,16 +27736,6 @@
     "ec": ""
   },
   {
-    "w": "Muletilla",
-    "p": "f.",
-    "d": "Muleta . Sin.: muleta, franela, pañosa.",
-    "df": "f. muleta (‖ bastón del torero para engañar al toro). Sin.: muleta, franela, pañosa. | f. Voz o frase que alguien repite mucho por hábito. Sin.: estribillo, coletilla, latiguillo, cantaleta. | f. Especie de botón largo de pasamanería, para sujetar o ceñir la ropa. | f. Bastón cuyo puño forma travesaño. | f. Travesaño en el extremo de un palo, como el que lleva la muleta. | f. En minería, clavo con cabeza en forma de cruz, que se fija en un hastial para atar las cuerdas necesarias en el levantamiento del plano de una mina.",
-    "e": "Del dim. de muleta.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Muletillero",
     "p": "m. y f.",
     "d": "Y f. Persona que usa muletillas .",
@@ -29834,16 +27787,6 @@
     "s": "",
     "c": "sustantivo",
     "ec": ""
-  },
-  {
-    "w": "Mullo",
-    "p": "m.",
-    "d": "Salmonete. Sin.: salmonete.",
-    "df": "m. salmonete. Sin.: salmonete. | m. Ec. cuenta (‖ bolas que componen el rosario). Sin.: cuenta1. | m. Ec. cuenta (‖ piezas del collar). Sin.: cuenta1.",
-    "e": "Del lat. mullus.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_latin"
   },
   {
     "w": "Mulo",
@@ -29946,19 +27889,6 @@
     "e": "",
     "s": "",
     "c": "sustantivo",
-    "ec": "",
-    "esp": [
-      "larga"
-    ]
-  },
-  {
-    "w": "Multidisciplinar",
-    "p": "adj.",
-    "d": "Multidisciplinario. Sin.: multidisciplinario, pluridisciplinar, pluridisciplinario.",
-    "df": "adj. multidisciplinario. Sin.: multidisciplinario, pluridisciplinar, pluridisciplinario.",
-    "e": "",
-    "s": "",
-    "c": "adjetivo",
     "ec": "",
     "esp": [
       "larga"
@@ -30263,16 +28193,6 @@
     ]
   },
   {
-    "w": "Muléolo",
-    "p": "m.",
-    "d": "Múleo. Sin.: múleo.",
-    "df": "m. múleo. Sin.: múleo.",
-    "e": "Del lat. mulleŏlus.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_latin"
-  },
-  {
     "w": "Muna",
     "p": "f.",
     "d": "En Marruecos, suministro de víveres que las ciudades, los aduares y las tribus del campo tienen obligación de dar a los enviados del sultán o de un gobernador.",
@@ -30357,16 +28277,6 @@
     "esp": [
       "explosiva"
     ]
-  },
-  {
-    "w": "Mundinovi",
-    "p": "m.",
-    "d": "Mundonuevo. Sin.: mundonuevo, titirimundi, totilimundi, tutilimundi.",
-    "df": "m. mundonuevo. Sin.: mundonuevo, titirimundi, totilimundi, tutilimundi.",
-    "e": "Del lat. mundi novi 'mundos nuevos', con infl. del it. mondi nuovi.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_latin"
   },
   {
     "w": "Mundonuevo",
@@ -30498,16 +28408,6 @@
     "ec": "etym_latin"
   },
   {
-    "w": "Munífico",
-    "p": "adj.",
-    "d": "Munificente. Sin.: munificente.",
-    "df": "adj. munificente. Sin.: munificente.",
-    "e": "Del lat. munifĭcus.",
-    "s": "",
-    "c": "adjetivo",
-    "ec": "etym_latin"
-  },
-  {
     "w": "Muon",
     "p": "m.",
     "d": "Fís. Partícula elemental inestable del grupo de los leptones, de carga igual a la del electrón, pero con una masa aproximadamente 200 veces mayor. (Símb. ε).",
@@ -30526,16 +28426,6 @@
     "d": "Alimento que se toma. Sin.: comida, alimento, vianda.",
     "df": "f. Alimento que se toma. Sin.: comida, alimento, vianda. | f. germ. comida (‖ acción de comer).",
     "e": "De muquir.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Muradal",
-    "p": "m.",
-    "d": "Muladar. Sin.: muladar.",
-    "df": "m. muladar. Sin.: muladar.",
-    "e": "De muro.",
     "s": "",
     "c": "sustantivo",
     "ec": ""
@@ -30568,16 +28458,6 @@
     "e": "",
     "s": "",
     "c": "arte_literatura",
-    "ec": ""
-  },
-  {
-    "w": "Murceguillo",
-    "p": "m.",
-    "d": "Murciélago. Sin.: murciélago, panarra, chinacate, vespertilio, morciguillo, vampiro.",
-    "df": "m. murciélago. Sin.: murciélago, panarra, chinacate, vespertilio, morciguillo, vampiro.",
-    "e": "Del dim. del dialect. murciego.",
-    "s": "",
-    "c": "sustantivo",
     "ec": ""
   },
   {
@@ -30651,29 +28531,6 @@
     "ec": ""
   },
   {
-    "w": "Murena",
-    "p": "f.",
-    "d": "Morena1. Sin.: morena1.",
-    "df": "f. morena1. Sin.: morena1.",
-    "e": "Del lat. muraena, y este del gr. μύραινα mýraina.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_latin"
-  },
-  {
-    "w": "Murga",
-    "p": "f.",
-    "d": "Alpechín. Sin.: alpechín, jámila, morga, pechín, tinaco, aguachas, amurca.",
-    "df": "f. alpechín. Sin.: alpechín, jámila, morga, pechín, tinaco, aguachas, amurca. | f. coloq. Compañía de músicos malos, que en Pascuas, cumpleaños, etc., toca a las puertas de las casas acomodadas, con la esperanza de recibir algún obsequio. Sin.: banda2, charanga, orquestina, conjunto. | f. Esp. Grupo de músicos callejeros que interpretan canciones satíricas en los carnavales.",
-    "e": "Del lat. amurca.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_latin",
-    "esp": [
-      "explosiva"
-    ]
-  },
-  {
     "w": "Murgaño",
     "p": "m.",
     "d": "Especie de ratón de campo. Sin.: morgaño.",
@@ -30689,16 +28546,6 @@
     "d": "Y f. Músico que forma parte de una murga2.",
     "df": "m. y f. Músico que forma parte de una murga2.",
     "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Murgón",
-    "p": "m.",
-    "d": "Esguín. Sin.: esguín.",
-    "df": "m. esguín. Sin.: esguín.",
-    "e": "De or. inc.",
     "s": "",
     "c": "sustantivo",
     "ec": ""
@@ -30800,16 +28647,6 @@
     "ec": "etym_latin"
   },
   {
-    "w": "Murta",
-    "p": "f.",
-    "d": "Mirto. Sin.: arrayán, mirto, murto, arraiján.",
-    "df": "f. mirto. Sin.: arrayán, mirto, murto, arraiján. | f. Fruto de la murta.",
-    "e": "Del lat. murta.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_latin"
-  },
-  {
     "w": "Murtal",
     "p": "m.",
     "d": "Sitio poblado de murtas.",
@@ -30828,16 +28665,6 @@
     "s": "",
     "c": "botanica",
     "ec": ""
-  },
-  {
-    "w": "Murto",
-    "p": "m.",
-    "d": "Mirto. Sin.: mirto, arrayán, murta, arraiján.",
-    "df": "m. mirto. Sin.: mirto, arrayán, murta, arraiján.",
-    "e": "Del lat. murtus 'mirto, arrayán'.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_latin"
   },
   {
     "w": "Murtón",
@@ -30920,19 +28747,6 @@
     "ec": "etym_latin",
     "esp": [
       "explosiva"
-    ]
-  },
-  {
-    "w": "Museal",
-    "p": "adj.",
-    "d": "Museístico. Sin.: museístico.",
-    "df": "adj. museístico. Sin.: museístico.",
-    "e": "Del it. museale, y este de museo 'museo' y -ale '-al'.",
-    "s": "",
-    "c": "adjetivo",
-    "ec": "etym_italiano",
-    "esp": [
-      "viajera"
     ]
   },
   {
@@ -31027,16 +28841,6 @@
     "d": "Y f. Especialista en museología.",
     "df": "m. y f. Especialista en museología.",
     "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Musgaño",
-    "p": "m.",
-    "d": "Musaraña . Sin.: musaraña.",
-    "df": "m. musaraña (‖ pequeño mamífero insectívoro). Sin.: musaraña.",
-    "e": "De murgaño, y este del lat. *muricaneus 'ratoncillo', con infl. de musaraña.",
     "s": "",
     "c": "sustantivo",
     "ec": ""
@@ -31137,16 +28941,6 @@
     "d": "Estudio científico de la teoría y de la historia de la música.",
     "df": "f. Estudio científico de la teoría y de la historia de la música.",
     "e": "De música y -logía.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Musicomanía",
-    "p": "f.",
-    "d": "Melomanía. Sin.: melomanía, filarmonía.",
-    "df": "f. melomanía. Sin.: melomanía, filarmonía.",
-    "e": "Del música y -manía.",
     "s": "",
     "c": "sustantivo",
     "ec": ""
@@ -31253,16 +29047,6 @@
     "s": "",
     "c": "adjetivo",
     "ec": ""
-  },
-  {
-    "w": "Musmón",
-    "p": "m.",
-    "d": "Muflón. Sin.: muflón.",
-    "df": "m. muflón. Sin.: muflón.",
-    "e": "Del lat. musmo, -ōnis, y este del gr. μούσμων, -ονος moúsmōn, -onos.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_latin"
   },
   {
     "w": "Muso",
@@ -31597,19 +29381,6 @@
     "ec": ""
   },
   {
-    "w": "Mácula",
-    "p": "f.",
-    "d": "Mancha . Sin.: mancha1, parchón, taca1, manchurrón.",
-    "df": "f. mancha (‖ señal que ensucia un cuerpo). Sin.: mancha1, parchón, taca1, manchurrón. | f. Cosa que deslustra y desdora. Sin.: tacha1, mancha1, lacra, defecto, maca1, imperfección. | f. coloq. Engaño, trampa. Sin.: engaño, embuste, mentira, trampa. | f. Anat. mácula lútea. | f. Astron. Cada una de las partes oscuras que se observan en el disco del Sol o de la Luna. Sin.: mancha1.",
-    "e": "Del lat. macŭla.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_latin",
-    "esp": [
-      "explosiva"
-    ]
-  },
-  {
     "w": "Mánager",
     "p": "m. y f.",
     "d": "Y f. Gerente o directivo de una empresa o sociedad. Sin.: directivo, director, dirigente, ejecutivo.",
@@ -31651,16 +29422,6 @@
     "s": "",
     "c": "sustantivo",
     "ec": "etym_griego"
-  },
-  {
-    "w": "Márcena",
-    "p": "f.",
-    "d": "Amelga. Sin.: amelga, emelga, melga, mielga3, marcen.",
-    "df": "f. amelga. Sin.: amelga, emelga, melga, mielga3, marcen. | f. Ál. y Rioja. Extremo, orilla o margen de algo.",
-    "e": "Del lat. margo, -ĭnis 'borde', 'margen'.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_latin"
   },
   {
     "w": "Márcola",
@@ -31716,16 +29477,6 @@
     "ec": "etym_latin"
   },
   {
-    "w": "Mártaga",
-    "p": "f.",
-    "d": "Almártaga1. Sin.: almártaga1.",
-    "df": "f. almártaga1. Sin.: almártaga1.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Másculo",
     "p": "adj.",
     "d": "Perteneciente o relativo al varón. U. m. en Am.",
@@ -31759,21 +29510,6 @@
     "ec": "etym_latin"
   },
   {
-    "w": "Máster",
-    "p": "m.",
-    "d": "Maestría . Sin.: maestría, masterado, posgrado.",
-    "df": "m. maestría (‖ curso, o título de posgrado). Sin.: maestría, masterado, posgrado.",
-    "e": "Del ingl. master's [degree]; literalmente '[grado de] maestro'.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_ingles",
-    "esp": [
-      "viajera"
-    ],
-    "rabia": true,
-    "rabia_comment": "Master's degree → máster 🎓"
-  },
-  {
     "w": "Mástil",
     "p": "m.",
     "d": "Palo de una embarcación. Sin.: palo, árbol, trinquete1, mastelero, asta.",
@@ -31804,19 +29540,6 @@
     "ec": ""
   },
   {
-    "w": "Médano",
-    "p": "m.",
-    "d": "Duna. Sin.: duna, mégano.",
-    "df": "m. duna. Sin.: duna, mégano. | m. Montón de arena casi a flor de agua, en un paraje en que el mar tiene poco fondo. Sin.: bajo, banco, barra, sirte.",
-    "e": "Del ár. hisp. máydan, y este del ár. clás. maydān 'explanada [de arena]'; cf. port. médão.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_arabe",
-    "esp": [
-      "viajera"
-    ]
-  },
-  {
     "w": "Médium",
     "p": "m. y f.",
     "d": "Y f. Persona que supuestamente puede ponerse en comunicación con el espíritu de un muerto. Sin.: medio, espiritista.",
@@ -31828,16 +29551,6 @@
     "esp": [
       "viajera"
     ]
-  },
-  {
-    "w": "Mégano",
-    "p": "m.",
-    "d": "Duna. Sin.: duna, médano.",
-    "df": "m. duna. Sin.: duna, médano.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
   },
   {
     "w": "Mélico",
@@ -31981,26 +29694,6 @@
     "ec": ""
   },
   {
-    "w": "Mítulo",
-    "p": "m.",
-    "d": "Mejillón. Sin.: mejillón, choro2.",
-    "df": "m. mejillón. Sin.: mejillón, choro2.",
-    "e": "Del lat. mitŭlus.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_latin"
-  },
-  {
-    "w": "Mízcalo",
-    "p": "m.",
-    "d": "Níscalo. Sin.: níscalo.",
-    "df": "m. níscalo. Sin.: níscalo.",
-    "e": "De or. inc.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Módem",
     "p": "m.",
     "d": "Inform. Aparato que convierte las señales digitales en analógicas y viceversa, y que permite la comunicación entre dos computadoras a través de una línea telefónica o de un cable.",
@@ -32044,19 +29737,6 @@
     "s": "",
     "c": "sustantivo",
     "ec": ""
-  },
-  {
-    "w": "Múgil",
-    "p": "m.",
-    "d": "Mújol. Sin.: mújol, albur, breca, cabezudo, capitón, dardo, lisa, liza1, muble, mugle, mule.",
-    "df": "m. mújol. Sin.: mújol, albur, breca, cabezudo, capitón, dardo, lisa, liza1, muble, mugle, mule.",
-    "e": "Del lat. mugil, -ĭlis.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_latin",
-    "esp": [
-      "explosiva"
-    ]
   },
   {
     "w": "Mújol",
@@ -32107,16 +29787,6 @@
     "d": "Zool. Dicho de un mamífero: Del orden de los roedores que tienen clavículas, de incisivos inferiores agudos y tres o cuatro molares tuberculosos y con raíces a cada lado de ambas mandíbulas, el hocico largo y puntiagudo, y la cola larga y escamosa. U. t. c. s. m., en pl. como taxón.",
     "df": "adj. Zool. Dicho de un mamífero: Del orden de los roedores que tienen clavículas, de incisivos inferiores agudos y tres o cuatro molares tuberculosos y con raíces a cada lado de ambas mandíbulas, el hocico largo y puntiagudo, y la cola larga y escamosa. U. t. c. s. m., en pl. como taxón.",
     "e": "Del lat. mus, muris 'ratón' e ‒́ido2.",
-    "s": "",
-    "c": "adjetivo",
-    "ec": "etym_latin"
-  },
-  {
-    "w": "Mútilo",
-    "p": "adj.",
-    "d": "Mutilado. Sin.: mutilado, trunco, lisiado, tunco2, mutilón.",
-    "df": "adj. mutilado. Sin.: mutilado, trunco, lisiado, tunco2, mutilón.",
-    "e": "Del lat. mutĭlus.",
     "s": "",
     "c": "adjetivo",
     "ec": "etym_latin"

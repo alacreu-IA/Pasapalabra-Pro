@@ -1,18 +1,5 @@
 [
   {
-    "w": "Taba",
-    "p": "f.",
-    "d": "Astrágalo . Sin.: astrágalo, chita1, taquín.",
-    "df": "f. astrágalo (‖ hueso del tarso). Sin.: astrágalo, chita1, taquín. | f. Lado de la taba opuesto a la chuca. | f. Juego en que se tira al aire una taba de carnero, u otro objeto similar, y se gana o se pierde según la posición en que caiga aquella. Sin.: carnicol.",
-    "e": "Del ár. hisp. ká‘ba, y este del ár. clás. ka‘bah.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_arabe",
-    "esp": [
-      "viajera"
-    ]
-  },
-  {
     "w": "Tabacal",
     "p": "m.",
     "d": "Sitio sembrado de tabaco.",
@@ -53,16 +40,6 @@
     "ec": ""
   },
   {
-    "w": "Tabalario",
-    "p": "m. coloq.",
-    "d": "Nalgas . Sin.: nalgas, culo, trasero.",
-    "df": "m. coloq. nalgas (‖ porciones carnosas y redondeadas). Sin.: nalgas, culo, trasero.",
-    "e": "De tabal.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Tabalear",
     "p": "tr.",
     "d": "Menear o mecer algo a una parte y otra. U. t. c. prnl. Sin.: mecer1, menear, balancear.",
@@ -77,16 +54,6 @@
     "p": "m.",
     "d": "Acción y efecto de tabalear.",
     "df": "m. Acción y efecto de tabalear.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Tabanazo",
-    "p": "m. coloq.",
-    "d": "Bofetada . Sin.: bofetada, mandoble, chuleta1, leche.",
-    "df": "m. coloq. bofetada (‖ golpe con la mano abierta). Sin.: bofetada, mandoble, chuleta1, leche.",
     "e": "",
     "s": "",
     "c": "sustantivo",
@@ -209,16 +176,6 @@
     ]
   },
   {
-    "w": "Tabarro",
-    "p": "m.",
-    "d": "Tábano. Sin.: tábano.",
-    "df": "m. tábano. Sin.: tábano. | m. And. Especie de avispa algo mayor que la corriente, y cuya picadura causa intenso dolor.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Tabasqueño",
     "p": "adj.",
     "d": "Natural de Tabasco, estado de México. U. t. c. s.",
@@ -276,26 +233,6 @@
     "p": "adj.",
     "d": "Propio de la taberna o de las personas que la frecuentan. Sin.: tabernero.",
     "df": "adj. Propio de la taberna o de las personas que la frecuentan. Sin.: tabernero. | adj. Bajo, grosero, vil. Sin.: grosero, ordinario, basto2, soez. Ant.: refinado.",
-    "e": "Del lat. tabernarius.",
-    "s": "",
-    "c": "adjetivo",
-    "ec": "etym_latin"
-  },
-  {
-    "w": "Tabernera",
-    "p": "adj.",
-    "d": "Tabernario . Sin.: tabernario.",
-    "df": "adj. tabernario (‖ propio de la taberna). Sin.: tabernario.",
-    "e": "Del lat. tabernarius.",
-    "s": "",
-    "c": "adjetivo",
-    "ec": "etym_latin"
-  },
-  {
-    "w": "Tabernero",
-    "p": "adj.",
-    "d": "Tabernario . Sin.: tabernario.",
-    "df": "adj. tabernario (‖ propio de la taberna). Sin.: tabernario.",
     "e": "Del lat. tabernarius.",
     "s": "",
     "c": "adjetivo",
@@ -748,19 +685,6 @@
     "ec": ""
   },
   {
-    "w": "Taca",
-    "p": "f.",
-    "d": "Mancha . Sin.: mancha1.",
-    "df": "f. mancha (‖ parte de alguna cosa con distinto color del general). Sin.: mancha1. | f. Ar. y Ast. mancha (‖ señal que ensucia un cuerpo). Sin.: mancha1, mácula, manchurrón, parchón, borrón1. | f. Alacena pequeña. | f. Armario pequeño. | f. Ingen. Cada una de las placas que forman parte del crisol de una forja. | f. Chile. Marisco comestible, de concha casi redonda, estriada, blanca con manchas violadas y amarillas.",
-    "e": "Del germ. *taikna 'señal'.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_germanico",
-    "esp": [
-      "viajera"
-    ]
-  },
-  {
     "w": "Tacada",
     "p": "f.",
     "d": "Golpe dado con la boca o la maza del taco a la bola de billar o de trucos.",
@@ -781,30 +705,10 @@
     "ec": ""
   },
   {
-    "w": "Tacamacha",
-    "p": "f.",
-    "d": "Tacamaca. Sin.: tacamaca.",
-    "df": "f. tacamaca. Sin.: tacamaca.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Tacana",
     "p": "f.",
     "d": "Mineral comúnmente negruzco, abundante en plata.",
     "df": "f. Mineral comúnmente negruzco, abundante en plata.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Tacataca",
-    "p": "m.",
-    "d": "Tacatá. Sin.: tacatá, andador, andadera, pollera, andarivel.",
-    "df": "m. tacatá. Sin.: tacatá, andador, andadera, pollera, andarivel.",
     "e": "",
     "s": "",
     "c": "sustantivo",
@@ -1048,16 +952,6 @@
     "ec": ""
   },
   {
-    "w": "Tacómetro",
-    "p": "m.",
-    "d": "Cuentarrevoluciones. Sin.: taquímetro, cuentarrevoluciones, cuentavueltas.",
-    "df": "m. cuentarrevoluciones. Sin.: taquímetro, cuentarrevoluciones, cuentavueltas. | m. Aparato que registra continuamente ciertos datos correspondientes al movimiento de un vehículo pesado.",
-    "e": "Del gr. τάχος táchos 'rapidez' y ‒́metro.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_griego"
-  },
-  {
     "w": "Tacón",
     "p": "m.",
     "d": "Pieza, de mayor o menor altura, unida a la suela del calzado en la parte que corresponde al calcañar. Sin.: taco.",
@@ -1083,16 +977,6 @@
     "d": "Antigua moneda china que también se usaba en Filipinas.",
     "df": "m. Antigua moneda china que también se usaba en Filipinas.",
     "e": "Del malayo tail.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Tafanario",
-    "p": "m. coloq.",
-    "d": "Nalgas . Sin.: nalgas, culo, trasero.",
-    "df": "m. coloq. nalgas (‖ porciones carnosas y redondeadas). Sin.: nalgas, culo, trasero.",
-    "e": "De antifonario 'trasero'.",
     "s": "",
     "c": "sustantivo",
     "ec": ""
@@ -1128,31 +1012,11 @@
     "ec": ""
   },
   {
-    "w": "Tafiletería",
-    "p": "f.",
-    "d": "Marroquinería. Sin.: marroquinería.",
-    "df": "f. marroquinería. Sin.: marroquinería.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Tafistes",
     "p": "m.",
     "d": "Pl. Nic. Canillas largas y delgadas.",
     "df": "m. pl. Nic. Canillas largas y delgadas.",
     "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Tafo",
-    "p": "m.",
-    "d": "Olfato . Sin.: olfato, olisca.",
-    "df": "m. olfato (‖ sentido corporal). Sin.: olfato, olisca. | m. Ál., León, Rioja y Zam. Olor fuerte y desagradable.",
-    "e": "Metát. de fato2, por infl. de tufo1.",
     "s": "",
     "c": "sustantivo",
     "ec": ""
@@ -1198,19 +1062,6 @@
     "e": "Del ár. hisp. ṯaḡarí, y este del ár. clás. ṭaḡrī 'fronterizo'.",
     "s": "",
     "c": "adjetivo",
-    "ec": "etym_arabe",
-    "esp": [
-      "viajera"
-    ]
-  },
-  {
-    "w": "Tagarnina",
-    "p": "f.",
-    "d": "Cardillo1. Sin.: cardillo1.",
-    "df": "f. cardillo1. Sin.: cardillo1. | f. fest. coloq. Cigarro puro muy malo. Sin.: veguero, coracero.",
-    "e": "Del ár. hisp. taqarnína, este del berb. *taqarnina, este del mozár. *karlína, y este der. del lat. cardus 'cardo'.",
-    "s": "",
-    "c": "sustantivo",
     "ec": "etym_arabe",
     "esp": [
       "viajera"
@@ -1502,16 +1353,6 @@
     ]
   },
   {
-    "w": "Tajamiento",
-    "p": "m.",
-    "d": "Tajadura. Sin.: tajo, tajadura, corte1, hendidura, cuchillada, cortadura.",
-    "df": "m. tajadura. Sin.: tajo, tajadura, corte1, hendidura, cuchillada, cortadura.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Tajaraste",
     "p": "m.",
     "d": "Baile popular canario.",
@@ -1519,26 +1360,6 @@
     "e": "Voz prehispánica.",
     "s": "",
     "c": "musica",
-    "ec": ""
-  },
-  {
-    "w": "Tajea",
-    "p": "f.",
-    "d": "Atarjea. Sin.: atarjea, alcantarilla, albañal, cloaca, sumidero.",
-    "df": "f. atarjea. Sin.: atarjea, alcantarilla, albañal, cloaca, sumidero. | f. Puente pequeño en un camino, hecho para que por debajo de él pasen las aguas o una vía de comunicación poco importante.",
-    "e": "Cf. atarjea.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Tajuela",
-    "p": "f.",
-    "d": "Tajuelo . Sin.: banco, tajuelo, tajo.",
-    "df": "f. tajuelo (‖ banco rústico). Sin.: banco, tajuelo, tajo. | f. Zam. tabla de lavar. Sin.: taja, tajo.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
     "ec": ""
   },
   {
@@ -1560,29 +1381,6 @@
     "s": "",
     "c": "sustantivo",
     "ec": "etym_latin"
-  },
-  {
-    "w": "Tajín",
-    "p": "m.",
-    "d": "Tayín. Sin.: tayín.",
-    "df": "m. tayín. Sin.: tayín.",
-    "e": "Del fr. tajine, y este del ár. ṭāǧin 'cazuela'.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_frances",
-    "esp": [
-      "viajera"
-    ]
-  },
-  {
-    "w": "Tajón",
-    "p": "m.",
-    "d": "Tajo . Sin.: tajo, tajadera, tajadero, tajador, picador.",
-    "df": "m. tajo (‖ pedazo de madera para partir la carne). Sin.: tajo, tajadera, tajadero, tajador, picador. | m. Madero de menor longitud de la que por el marco le corresponde. | m. And. Vena de piedra de que se hace la cal. | m. germ. Casa de comidas.",
-    "e": "Del aum. de tajo.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
   },
   {
     "w": "Talabarte",
@@ -2053,16 +1851,6 @@
     ]
   },
   {
-    "w": "Tallecer",
-    "p": "intr.",
-    "d": "Entallecer. Sin.: entallecer, grillarse, agrillarse.",
-    "df": "intr. entallecer. Sin.: entallecer, grillarse, agrillarse. | intr. Dicho de la semilla, del bulbo o del tubérculo de una planta: Echar tallo. U. t. c. prnl.",
-    "e": "",
-    "s": "",
-    "c": "verbo",
-    "ec": ""
-  },
-  {
     "w": "Tallista",
     "p": "m. y f.",
     "d": "Y f. Persona que hace tallados artísticos. Sin.: tallador, modelador, grabador, escultor, estatuario1, imaginero, lapidario.",
@@ -2080,16 +1868,6 @@
     "e": "",
     "s": "",
     "c": "adjetivo",
-    "ec": ""
-  },
-  {
-    "w": "Tallón",
-    "p": "m.",
-    "d": "Talla . Sin.: talla1.",
-    "df": "m. talla (‖ cantidad que se ofrece por el rescate de un cautivo). Sin.: talla1.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
     "ec": ""
   },
   {
@@ -2324,16 +2102,6 @@
     "ec": ""
   },
   {
-    "w": "Tamarilla",
-    "p": "f.",
-    "d": "Jaguarzo. Sin.: jaguarzo, juagarzo.",
-    "df": "f. jaguarzo. Sin.: jaguarzo, juagarzo.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Tamarindo",
     "p": "m.",
     "d": "Árbol de la familia de las papilionáceas, con tronco grueso, elevado y de corteza parda, copa extensa, hojas compuestas de hojuelas elípticas, gruesas y pecioladas, flores amarillentas en espiga, y fruto en vainillas pulposas de una sola semilla. Originario de Asia, se cultiva en los países cálidos, por su fruto de sabor agradable, que se usa en medicina como laxante.",
@@ -2346,16 +2114,6 @@
       "explosiva",
       "viajera"
     ]
-  },
-  {
-    "w": "Tamarisco",
-    "p": "m.",
-    "d": "Taray. Sin.: taray, tamariz.",
-    "df": "m. taray. Sin.: taray, tamariz.",
-    "e": "Del lat. tamariscus.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_latin"
   },
   {
     "w": "Tamariscíneo",
@@ -2376,16 +2134,6 @@
     "s": "",
     "c": "gentilicio",
     "ec": ""
-  },
-  {
-    "w": "Tamariz",
-    "p": "m.",
-    "d": "Taray. Sin.: taray, tamarisco.",
-    "df": "m. taray. Sin.: taray, tamarisco.",
-    "e": "Del lat. tamarīce.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_latin"
   },
   {
     "w": "Tamaulipeco",
@@ -2491,26 +2239,6 @@
     "ec": ""
   },
   {
-    "w": "Tamborada",
-    "p": "f.",
-    "d": "Tamborrada. Sin.: tamborrada.",
-    "df": "f. tamborrada. Sin.: tamborrada.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Tamborear",
-    "p": "intr.",
-    "d": "Tamborilear . Sin.: tamborilear, tabalear, tañer, teclear, redoblar, repiquetear, repicar.",
-    "df": "intr. tamborilear (‖ hacer el ruido del tambor con los dedos). Sin.: tamborilear, tabalear, tañer, teclear, redoblar, repiquetear, repicar.",
-    "e": "",
-    "s": "",
-    "c": "verbo",
-    "ec": ""
-  },
-  {
     "w": "Tamboreo",
     "p": "m.",
     "d": "Acción y efecto de tamborear.",
@@ -2556,16 +2284,6 @@
     "d": "Golpe fuerte que alguien se da cayendo en el suelo, especialmente el que se recibe al caer de nalgas. Sin.: culada, batacazo, sentón, tamborilazo.",
     "df": "f. coloq. Golpe fuerte que alguien se da cayendo en el suelo, especialmente el que se recibe al caer de nalgas. Sin.: culada, batacazo, sentón, tamborilazo. | f. coloq. Golpe dado con la mano en la cabeza o en las espaldas.",
     "e": "De tamboril y -ada.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Tamborilazo",
-    "p": "m. coloq.",
-    "d": "Tamborilada. Sin.: culada, batacazo, sentón, tamborilada.",
-    "df": "m. coloq. tamborilada. Sin.: culada, batacazo, sentón, tamborilada.",
-    "e": "",
     "s": "",
     "c": "sustantivo",
     "ec": ""
@@ -2635,16 +2353,6 @@
     "p": "f.",
     "d": "Celebración popular que consiste en producir estruendo tocando tambores, bombos, etc. Sin.: tamborada.",
     "df": "f. Celebración popular que consiste en producir estruendo tocando tambores, bombos, etc. Sin.: tamborada.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Tamborón",
-    "p": "m.",
-    "d": "Bombo . Sin.: bombo.",
-    "df": "m. bombo (‖ tambor grande). Sin.: bombo.",
     "e": "",
     "s": "",
     "c": "sustantivo",
@@ -2727,16 +2435,6 @@
     "ec": ""
   },
   {
-    "w": "Tamojo",
-    "p": "m.",
-    "d": "Matojo . Sin.: matojo.",
-    "df": "m. matojo (‖ mata quenopodiácea). Sin.: matojo.",
-    "e": "Metát.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Tampiqueño",
     "p": "adj.",
     "d": "Natural de Tampico, ciudad o puerto del estado de Tamaulipas, en México. U. t. c. s.",
@@ -2758,16 +2456,6 @@
     "esp": [
       "viajera"
     ]
-  },
-  {
-    "w": "Tamuja",
-    "p": "f.",
-    "d": "Borrajo . Sin.: borrajo.",
-    "df": "f. borrajo (‖ hojarasca de los pinos). Sin.: borrajo.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
   },
   {
     "w": "Tamujal",
@@ -2893,16 +2581,6 @@
     "ec": ""
   },
   {
-    "w": "Tanga",
-    "p": "f.",
-    "d": "Chito . Sin.: chito1, tángana, tángano, tango1, tarusa.",
-    "df": "f. chito (‖ juego que consiste en arrojar tejos contra un cilindro de madera). Sin.: chito1, tángana, tángano, tango1, tarusa. | f. En el juego del chito, pieza sobre la que se ponen las monedas. | m. o f. Prenda de vestir que por delante cubre la zona genital y por detrás deja las nalgas al aire. En Esp., u. m. c. m. y en Am. c. f. Sin.: taparrabos, colaless.",
-    "e": "Del ant. tanga, 1.ª pers. de sing. del pres. de subj. de tañer 'tocar1', porque gana quien lo toca.",
-    "s": "",
-    "c": "vestimenta",
-    "ec": ""
-  },
-  {
     "w": "Tangado",
     "p": "tr.",
     "d": "Engañar, estafar. Sin.: timar, estafar, perrear.",
@@ -2910,16 +2588,6 @@
     "e": "",
     "s": "",
     "c": "verbo",
-    "ec": ""
-  },
-  {
-    "w": "Tanganazo",
-    "p": "m.",
-    "d": "Lingotazo. Sin.: lingotazo, pelotazo.",
-    "df": "m. lingotazo. Sin.: lingotazo, pelotazo.",
-    "e": "Quizá del dialect. tángano 'golpe' y -azo.",
-    "s": "",
-    "c": "sustantivo",
     "ec": ""
   },
   {
@@ -3358,16 +3026,6 @@
     "ec": ""
   },
   {
-    "w": "Tapamiento",
-    "p": "m.",
-    "d": "Tapadura. Sin.: tapadura.",
-    "df": "m. tapadura. Sin.: tapadura.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Tapara",
     "p": "f.",
     "d": "Fruto del taparo.",
@@ -3542,16 +3200,6 @@
     "esp": [
       "viajera"
     ]
-  },
-  {
-    "w": "Tapirujarse",
-    "p": "prnl.",
-    "d": "Taperujarse. Sin.: taperujarse.",
-    "df": "prnl. coloq. taperujarse. Sin.: taperujarse.",
-    "e": "",
-    "s": "",
-    "c": "verbo",
-    "ec": ""
   },
   {
     "w": "Tapiz",
@@ -3883,16 +3531,6 @@
     "ec": ""
   },
   {
-    "w": "Taquín",
-    "p": "m.",
-    "d": "Astrágalo . Sin.: astrágalo, chita1, taba.",
-    "df": "m. astrágalo (‖ hueso del tarso). Sin.: astrágalo, chita1, taba. | m. Juego de la taba. | m. germ. Jugador que hace trampas, fullero.",
-    "e": "Del dim. de taco.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Tara",
     "p": "f.",
     "d": "Peso del continente de una mercancía o género, vehículo, caja, vasija, etc., que se rebaja en la pesada total con el contenido. Sin.: peso.",
@@ -3903,19 +3541,6 @@
     "ec": "etym_arabe",
     "esp": [
       "viajera"
-    ]
-  },
-  {
-    "w": "Tarabilla",
-    "p": "f.",
-    "d": "Cítola . Sin.: cítola, tarabita.",
-    "df": "f. cítola (‖ tabla del molino). Sin.: cítola, tarabita. | f. Zoquete pequeño de madera que sirve para cerrar puertas y ventanas. Sin.: tarambana, taramela. | f. Listón de madera que por torsión mantiene tirante la cuerda del bastidor de una sierra. Sin.: tarabita. | f. telera (‖ travesaño del arado). Sin.: telera, terigüela. | f. coloq. Persona que habla mucho, deprisa y sin orden ni concierto. Sin.: cotorra, parlanchín, loro1. | f. coloq. Tropel de palabras dichas deprisa y sin orden ni concierto. | f. Sal. Matraca o carraca pequeña.",
-    "e": "Der. del ár. hisp. ṭaráb, y este del ár. clás. ṭarab 'música'; cf. port. tagarela.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "",
-    "esp": [
-      "explosiva"
     ]
   },
   {
@@ -4002,16 +3627,6 @@
     "ec": ""
   },
   {
-    "w": "Taragontía",
-    "p": "f.",
-    "d": "Dragontea. Sin.: dragontea, culebrilla, serpentaria, zumillo.",
-    "df": "f. dragontea. Sin.: dragontea, culebrilla, serpentaria, zumillo.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Taragoza",
     "p": "f.",
     "d": "Ciudad, villa o lugar.",
@@ -4039,16 +3654,6 @@
     "e": "Del tarahumara ralámari 'los que corren a pie'.",
     "s": "",
     "c": "adjetivo",
-    "ec": ""
-  },
-  {
-    "w": "Taraje",
-    "p": "m.",
-    "d": "Taray . Sin.: taray.",
-    "df": "m. taray (‖ arbusto). Sin.: taray.",
-    "e": "Del ant. tarahe, este del ár. hisp. ṭaráfa, y este del ár. clás. ṭarfāh.",
-    "s": "",
-    "c": "sustantivo",
     "ec": ""
   },
   {
@@ -4082,16 +3687,6 @@
     "ec": ""
   },
   {
-    "w": "Tarando",
-    "p": "m.",
-    "d": "Reno. Sin.: reno, rangífero.",
-    "df": "m. reno. Sin.: reno, rangífero.",
-    "e": "Del lat. tarandus, y este del gr. τάρανδος tárandos.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_latin"
-  },
-  {
     "w": "Tarangallo",
     "p": "m.",
     "d": "Palo como de medio metro de largo, que en tiempo de la cría de la caza se pone pendiente del collar a los perros de los ganados que pastan en los cotos, para que no puedan bajar la cabeza hasta el suelo. Sin.: tanganillo, trangallo, taragallo.",
@@ -4100,19 +3695,6 @@
     "s": "",
     "c": "sustantivo",
     "ec": ""
-  },
-  {
-    "w": "Taranta",
-    "p": "f.",
-    "d": "Vena . Sin.: vena.",
-    "df": "f. vena (‖ humor). Sin.: vena. | f. Palo flamenco propio de los mineros de Almería y Murcia, en España. | f. C. Rica, Cuba y Ec. Repente, locura, vena. | f. Cuba y Hond. Desvanecimiento, aturdimiento.",
-    "e": "Del it. taranta 'cierto baile del sur de Italia similar a la tarantela'; propiamente 'tarántula'.",
-    "s": "",
-    "c": "cuerpo_humano",
-    "ec": "etym_italiano",
-    "esp": [
-      "viajera"
-    ]
   },
   {
     "w": "Tarantela",
@@ -4158,16 +3740,6 @@
     "ec": ""
   },
   {
-    "w": "Tarara",
-    "p": "f.",
-    "d": "Tararí . Sin.: tarará, tararí.",
-    "df": "f. tararí (‖ toque de trompeta). Sin.: tarará, tararí.",
-    "e": "De or. onomat.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Tararear",
     "p": "tr.",
     "d": "Cantar entre dientes y sin articular palabras. Sin.: tatarear, canturrear.",
@@ -4183,26 +3755,6 @@
     "d": "Acción y efecto de tararear. Sin.: canturreo.",
     "df": "m. Acción y efecto de tararear. Sin.: canturreo.",
     "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Tararira",
-    "p": "interj.",
-    "d": "Tararí. Sin.: tararí.",
-    "df": "interj. coloq. tararí. Sin.: tararí. | f. Arg. y Ur. Pez común de agua dulce, de carne comestible, veloz, agresivo y voraz, de forma alargada y color gris pizarra, agrisado hacia los flancos, que alcanza los 60 cm de longitud.",
-    "e": "De tarara.",
-    "s": "",
-    "c": "otros",
-    "ec": ""
-  },
-  {
-    "w": "Tarará",
-    "p": "m.",
-    "d": "Tararí . Sin.: tarara, tararí.",
-    "df": "m. tararí (‖ toque de trompeta). Sin.: tarara, tararí.",
-    "e": "De or. onomat.",
     "s": "",
     "c": "sustantivo",
     "ec": ""
@@ -4294,31 +3846,11 @@
     "ec": ""
   },
   {
-    "w": "Taraza",
-    "p": "m.",
-    "d": "Broma . Sin.: broma1, teredo, tiñuela.",
-    "df": "m. broma (‖ molusco). Sin.: broma1, teredo, tiñuela. | m. polilla (‖ mariposa nocturna). Sin.: polilla.",
-    "e": "De tarazar.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Tarazón",
     "p": "m.",
     "d": "Trozo que se parte o corta de algo, y, comúnmente, de carne o pescado.",
     "df": "m. Trozo que se parte o corta de algo, y, comúnmente, de carne o pescado.",
     "e": "De tarazar.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Tardanaos",
-    "p": "m.",
-    "d": "Rémora . Sin.: rémora, pegador, guaicán, pega1.",
-    "df": "m. rémora (‖ pez). Sin.: rémora, pegador, guaicán, pega1.",
-    "e": "De tardar y nao.",
     "s": "",
     "c": "sustantivo",
     "ec": ""
@@ -4377,16 +3909,6 @@
     "ec": ""
   },
   {
-    "w": "Tardíamente",
-    "p": "adv.",
-    "d": "Tarde . Sin.: tarde.",
-    "df": "adv. tarde (‖ fuera de tiempo). Sin.: tarde.",
-    "e": "",
-    "s": "",
-    "c": "adverbio",
-    "ec": ""
-  },
-  {
     "w": "Tardígrado",
     "p": "adj.",
     "d": "Zool. Dicho de un animal: Que se mueve lentamente.",
@@ -4434,16 +3956,6 @@
     "p": "f.",
     "d": "Acción y efecto de tarifar . Sin.: tarificación.",
     "df": "f. Acción y efecto de tarifar (‖ señalar o aplicar una tarifa). Sin.: tarificación.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Tarifador",
-    "p": "m.",
-    "d": "Tarificador. Sin.: tarificador.",
-    "df": "m. tarificador. Sin.: tarificador.",
     "e": "",
     "s": "",
     "c": "sustantivo",
@@ -4752,16 +4264,6 @@
     "ec": ""
   },
   {
-    "w": "Tarrico",
-    "p": "m.",
-    "d": "Caramillo . Sin.: caramillo1, carambillo, salado, sisallo.",
-    "df": "m. caramillo (‖ planta). Sin.: caramillo1, carambillo, salado, sisallo.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Tarrina",
     "p": "f.",
     "d": "Recipiente pequeño en forma de cono truncado invertido, para preparar o conservar alimentos. Sin.: terrina.",
@@ -4803,19 +4305,6 @@
     "s": "",
     "c": "cuerpo_humano",
     "ec": "etym_griego"
-  },
-  {
-    "w": "Tartajear",
-    "p": "intr.",
-    "d": "Tartamudear. Sin.: tartamudear, gaguear, cancanear, tartalear.",
-    "df": "intr. tartamudear. Sin.: tartamudear, gaguear, cancanear, tartalear.",
-    "e": "Voz onomat.",
-    "s": "",
-    "c": "verbo",
-    "ec": "etym_onomatopeya",
-    "esp": [
-      "onom"
-    ]
   },
   {
     "w": "Tartajeo",
@@ -5143,16 +4632,6 @@
     "ec": ""
   },
   {
-    "w": "Tasco",
-    "p": "m.",
-    "d": "Agramiza. Sin.: agramiza, cañamiza.",
-    "df": "m. agramiza. Sin.: agramiza, cañamiza.",
-    "e": "De tascar1.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Tasio",
     "p": "adj.",
     "d": "Natural de Taso, isla del mar Egeo. U. t. c. s.",
@@ -5290,16 +4769,6 @@
     "e": "De tras1 y el ant. trasnieto.",
     "s": "",
     "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Tatarear",
-    "p": "tr.",
-    "d": "Tararear. Sin.: tararear, canturrear.",
-    "df": "tr. tararear. Sin.: tararear, canturrear.",
-    "e": "De or. onomat.",
-    "s": "",
-    "c": "verbo",
     "ec": ""
   },
   {
@@ -5711,16 +5180,6 @@
     "ec": ""
   },
   {
-    "w": "Taño",
-    "p": "m.",
-    "d": "Casca . Sin.: cáscara, corteza1, casca, curtido.",
-    "df": "m. casca (‖ corteza de ciertos árboles). Sin.: cáscara, corteza1, casca, curtido.",
-    "e": "Etim. disc.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Teame",
     "p": "f.",
     "d": "Piedra a la cual algunos de los antiguos atribuían propiedad contraria a la del imán, esto es, la de apartar y desviar el hierro.",
@@ -5821,30 +5280,10 @@
     "ec": ""
   },
   {
-    "w": "Techado",
-    "p": "m.",
-    "d": "Techo . Sin.: techo, techumbre, tejado, cubierta.",
-    "df": "m. techo (‖ parte superior de un edificio). Sin.: techo, techumbre, tejado, cubierta.",
-    "e": "Del part. de techar.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Techador",
     "p": "m. y f.",
     "d": "Y f. Persona que se dedica a techar.",
     "df": "m. y f. Persona que se dedica a techar.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Techumbre",
-    "p": "f.",
-    "d": "Techo . Sin.: techo, tejado, techado.",
-    "df": "f. techo (‖ parte superior de un edificio). Sin.: techo, tejado, techado. | f. Conjunto de la estructura y elementos de cierre de un techo.",
     "e": "",
     "s": "",
     "c": "sustantivo",
@@ -6388,16 +5827,6 @@
     "ec": ""
   },
   {
-    "w": "Tejuela",
-    "p": "f.",
-    "d": "Tejoleta . Sin.: tejoleta.",
-    "df": "f. tejoleta (‖ pedazo de teja o de barro cocido). Sin.: tejoleta. | f. Pieza de madera que forma cada uno de los dos fustes de la silla de montar.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Tejón",
     "p": "m. y f.",
     "d": "Y f. Mamífero carnívoro de unos 80 cm de longitud, con patas cortas, hocico alargado, pelaje largo y espeso y cabeza blanca con franjas longitudinales blancas y negras, que vive en madrigueras profundas y se alimenta de frutos y animales pequeños. U. en m. ref. a la especie. Sin.: tasugo, tajugo, melandro.",
@@ -6594,36 +6023,6 @@
     "ec": ""
   },
   {
-    "w": "Telefacsímil",
-    "p": "m.",
-    "d": "Fax. Sin.: fax, telefax.",
-    "df": "m. fax. Sin.: fax, telefax.",
-    "e": "De tele-1 y facsímil.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Telefax",
-    "p": "m.",
-    "d": "Fax. Sin.: fax, telefacsímil.",
-    "df": "m. fax. Sin.: fax, telefacsímil.",
-    "e": "De tele-1 y fax.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Telefilm",
-    "p": "m.",
-    "d": "Telefilme. Sin.: telefilme.",
-    "df": "m. telefilme. Sin.: telefilme.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Telefilme",
     "p": "m.",
     "d": "Filme de televisión. Sin.: telefilm.",
@@ -6651,16 +6050,6 @@
     "e": "",
     "s": "",
     "c": "verbo",
-    "ec": ""
-  },
-  {
-    "w": "Telefonillo",
-    "p": "m.",
-    "d": "Interfono. Sin.: interfono, intercomunicador, citófono.",
-    "df": "m. interfono. Sin.: interfono, intercomunicador, citófono. | m. portero automático. Sin.: videoportero, portero.",
-    "e": "Del dim. de teléfono.",
-    "s": "",
-    "c": "sustantivo",
     "ec": ""
   },
   {
@@ -6799,16 +6188,6 @@
     "ec": ""
   },
   {
-    "w": "Teleguiado",
-    "p": "adj.",
-    "d": "Teledirigido . Sin.: teledirigido.",
-    "df": "adj. teledirigido (‖ con un mando a distancia). Sin.: teledirigido.",
-    "e": "",
-    "s": "",
-    "c": "adjetivo",
-    "ec": ""
-  },
-  {
     "w": "Telegénico",
     "p": "adj.",
     "d": "Que tiene telegenia. Un presentador telegénico. Una sonrisa telegénica.",
@@ -6820,16 +6199,6 @@
     "esp": [
       "viajera"
     ]
-  },
-  {
-    "w": "Teleimpresor",
-    "p": "m.",
-    "d": "Teletipo. Sin.: teletipo, télex.",
-    "df": "m. teletipo. Sin.: teletipo, télex.",
-    "e": "De tele-1 e impresor.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
   },
   {
     "w": "Teleindicador",
@@ -7162,16 +6531,6 @@
     "ec": ""
   },
   {
-    "w": "Televenta",
-    "p": "f.",
-    "d": "Teletienda. Sin.: teletienda.",
-    "df": "f. teletienda. Sin.: teletienda.",
-    "e": "De tele-2 y venta.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Televidente",
     "p": "m. y f.",
     "d": "Y f. telespectador. Sin.: telespectador, espectador.",
@@ -7265,29 +6624,6 @@
     "ec": ""
   },
   {
-    "w": "Tellina",
-    "p": "f.",
-    "d": "Telina. Sin.: telina.",
-    "df": "f. telina. Sin.: telina.",
-    "e": "Del gr. τελλίνη tellínē.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_griego"
-  },
-  {
-    "w": "Telliz",
-    "p": "m.",
-    "d": "Caparazón . Sin.: caparazón.",
-    "df": "m. caparazón (‖ cubierta que se pone al caballo). Sin.: caparazón.",
-    "e": "Del ár. hisp. tallís, este del ár. clás. tallīs, este del siriaco tallīsā, y este del lat. trilix, -īcis 'tejido de tres hilos'.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_arabe",
-    "esp": [
-      "viajera"
-    ]
-  },
-  {
     "w": "Telliza",
     "p": "f.",
     "d": "Colcha, sobrecama. Sin.: sobrecama, colcha.",
@@ -7336,16 +6672,6 @@
     "s": "",
     "c": "sustantivo",
     "ec": "etym_latin"
-  },
-  {
-    "w": "Teluro",
-    "p": "m.",
-    "d": "Telurio. Sin.: telurio.",
-    "df": "m. telurio. Sin.: telurio.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
   },
   {
     "w": "Telégrafo",
@@ -7411,16 +6737,6 @@
     "ec": ""
   },
   {
-    "w": "Tembladal",
-    "p": "m.",
-    "d": "Tremedal. Sin.: tremedal, tremadal, tembladero, tembladeral.",
-    "df": "m. tremedal. Sin.: tremedal, tremadal, tembladero, tembladeral.",
-    "e": "Der. de temblar.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Temblador",
     "p": "adj.",
     "d": "Que tiembla. U. t. c. s. Sin.: tembloroso, tembleque, tiritón, temblón, trémulo, tremoso, tembladero.",
@@ -7438,19 +6754,6 @@
     "e": "",
     "s": "",
     "c": "adjetivo",
-    "ec": "",
-    "esp": [
-      "explosiva"
-    ]
-  },
-  {
-    "w": "Temblequera",
-    "p": "f. coloq.",
-    "d": "Temblor . Sin.: temblor, estremecimiento, escalofrío, tiritera, tiritona, trepidación, tembleque, tembladera, temblorina, tembloteo, temblequeo, estremezón, canillera.",
-    "df": "f. coloq. temblor (‖ acción de temblar). Sin.: temblor, estremecimiento, escalofrío, tiritera, tiritona, trepidación, tembleque, tembladera, temblorina, tembloteo, temblequeo, estremezón, canillera.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
     "ec": "",
     "esp": [
       "explosiva"
@@ -7570,16 +6873,6 @@
     "ec": "etym_latin"
   },
   {
-    "w": "Temperadamente",
-    "p": "adv.",
-    "d": "Templadamente. Sin.: templadamente.",
-    "df": "adv. templadamente. Sin.: templadamente.",
-    "e": "",
-    "s": "",
-    "c": "adverbio",
-    "ec": ""
-  },
-  {
     "w": "Temperamental",
     "p": "adj.",
     "d": "Perteneciente o relativo al temperamento .",
@@ -7673,16 +6966,6 @@
     "e": "",
     "s": "",
     "c": "adverbio",
-    "ec": ""
-  },
-  {
-    "w": "Templadero",
-    "p": "m.",
-    "d": "Carquesa. Sin.: carquesa.",
-    "df": "m. carquesa. Sin.: carquesa.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
     "ec": ""
   },
   {
@@ -7802,26 +7085,6 @@
     "ec": ""
   },
   {
-    "w": "Tempranamente",
-    "p": "adv.",
-    "d": "Temprano . Sin.: temprano.",
-    "df": "adv. temprano (‖ muy pronto). Sin.: temprano.",
-    "e": "",
-    "s": "",
-    "c": "adverbio",
-    "ec": ""
-  },
-  {
-    "w": "Tempranero",
-    "p": "adj.",
-    "d": "Temprano . Sin.: temprano, prematuro.",
-    "df": "adj. temprano (‖ adelantado). Sin.: temprano, prematuro. | adj. madrugador. U. t. c. s. Sin.: madrugador, mañanero.",
-    "e": "",
-    "s": "",
-    "c": "adjetivo",
-    "ec": ""
-  },
-  {
     "w": "Tempranilla",
     "p": "f.",
     "d": "Uva tempranilla. Sin.: tempranillo.",
@@ -7873,16 +7136,6 @@
     "esp": [
       "explosiva"
     ]
-  },
-  {
-    "w": "Tenada",
-    "p": "f.",
-    "d": "Tinada . Sin.: tinada, cobertizo, tena, teinada, teña2.",
-    "df": "f. tinada (‖ cobertizo). Sin.: tinada, cobertizo, tena, teinada, teña2. | f. Ast. y León. henil. Sin.: henil.",
-    "e": "Del lat. *tignāta, de tignum 'madero'.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_latin"
   },
   {
     "w": "Tenallón",
@@ -7951,31 +7204,11 @@
     "ec": "etym_latin"
   },
   {
-    "w": "Tendajo",
-    "p": "m.",
-    "d": "Tendejón . Sin.: tendejón, changarro, timbiriche.",
-    "df": "m. tendejón (‖ tienda pequeña). Sin.: tendejón, changarro, timbiriche.",
-    "e": "Del despect. de tienda.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Tendalera",
     "p": "f. coloq.",
     "d": "Descompostura y desorden de las cosas que se dejan tendidas por el suelo.",
     "df": "f. coloq. Descompostura y desorden de las cosas que se dejan tendidas por el suelo.",
     "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Tendalero",
-    "p": "m.",
-    "d": "Tendedero . Sin.: tendedero.",
-    "df": "m. tendedero (‖ lugar donde se tiende). Sin.: tendedero.",
-    "e": "De tendal.",
     "s": "",
     "c": "sustantivo",
     "ec": ""
@@ -8100,16 +7333,6 @@
     "ec": ""
   },
   {
-    "w": "Tendiente",
-    "p": "adj.",
-    "d": "Tendente. Sin.: tendente, propenso, proclive, dado2.",
-    "df": "adj. tendente. Sin.: tendente, propenso, proclive, dado2.",
-    "e": "",
-    "s": "",
-    "c": "adjetivo",
-    "ec": ""
-  },
-  {
     "w": "Tendinitis",
     "p": "f.",
     "d": "Med. Inflamación de un tendón.",
@@ -8210,29 +7433,6 @@
     "ec": ""
   },
   {
-    "w": "Tenería",
-    "p": "f.",
-    "d": "Curtiduría. Sin.: curtiduría, curtiembre.",
-    "df": "f. curtiduría. Sin.: curtiduría, curtiembre.",
-    "e": "Del fr. tannerie, der. de tan 'corteza de roble o de encina para curtir', y este del celta *tannos 'roble', 'encina'.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_frances",
-    "esp": [
-      "viajera"
-    ]
-  },
-  {
-    "w": "Tenesmo",
-    "p": "m.",
-    "d": "Pujo . Sin.: pujo.",
-    "df": "m. pujo (‖ gana frecuente de defecar o de orinar). Sin.: pujo.",
-    "e": "Del lat. tenesmus, y este del gr. τεινεσμός teinesmós.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_latin"
-  },
-  {
     "w": "Teniasis",
     "p": "f.",
     "d": "Med. Infestación por tenias.",
@@ -8296,19 +7496,6 @@
     ]
   },
   {
-    "w": "Tenorio",
-    "p": "m.",
-    "d": "Donjuán . Sin.: donjuán, casanova, seductor, conquistador, mujeriego, galanteador, ligón2, rompecorazones, playboy.",
-    "df": "m. donjuán (‖ seductor). Sin.: donjuán, casanova, seductor, conquistador, mujeriego, galanteador, ligón2, rompecorazones, playboy.",
-    "e": "Por alus. a don Juan Tenorio, personaje popularizado por Tirso de Molina y José Zorrilla.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "",
-    "esp": [
-      "explosiva"
-    ]
-  },
-  {
     "w": "Tensino",
     "p": "adj.",
     "d": "Natural del valle de Tena, región de la provincia de Huesca, en España. U. t. c. s.",
@@ -8316,16 +7503,6 @@
     "e": "",
     "s": "",
     "c": "gentilicio",
-    "ec": ""
-  },
-  {
-    "w": "Tensionar",
-    "p": "tr.",
-    "d": "Tensar. Sin.: tensar, estirar, atirantar, templar, requintar.",
-    "df": "tr. tensar. Sin.: tensar, estirar, atirantar, templar, requintar.",
-    "e": "",
-    "s": "",
-    "c": "verbo",
     "ec": ""
   },
   {
@@ -8440,19 +7617,6 @@
     "d": "Puntal o soporte que se aplica a una cosa expuesta a caerse o que amenaza ruina. Sin.: mozo2.",
     "df": "m. Puntal o soporte que se aplica a una cosa expuesta a caerse o que amenaza ruina. Sin.: mozo2. | m. Palo que cuelga del pértigo del carro, que, puesto de punta contra el suelo, impide que aquel caiga hacia adelante. | m. tentetieso. Sin.: tentetieso, tentempié, siempretieso, brujilla, porfiado, matihuelo. | m. quijera (‖ correa). Sin.: quijera.",
     "e": "De tente y mozo2.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "",
-    "esp": [
-      "explosiva"
-    ]
-  },
-  {
-    "w": "Tentempié",
-    "p": "m.",
-    "d": "Tentetieso. Sin.: tentetieso, siempretieso, tentemozo, brujilla, porfiado, matihuelo.",
-    "df": "m. tentetieso. Sin.: tentetieso, siempretieso, tentemozo, brujilla, porfiado, matihuelo. | m. coloq. refrigerio (‖ alimento). Sin.: refrigerio, aperitivo, bocado, piscolabis, pincho, bocadito, puntal, botana, copetín, segundilla, refrigeración.",
-    "e": "De tente en pie.",
     "s": "",
     "c": "sustantivo",
     "ec": "",
@@ -8925,16 +8089,6 @@
     "ec": ""
   },
   {
-    "w": "Tercerilla",
-    "p": "f.",
-    "d": "Salvado. Sin.: salvado, afrecho.",
-    "df": "f. salvado. Sin.: salvado, afrecho. | f. Métr. Composición métrica de tres versos de arte menor, dos de los cuales riman o hacen consonancia. Sin.: terceto.",
-    "e": "Del dim. de tercera.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Tercerista",
     "p": "m.",
     "d": "Der. Parte demandante en una tercería.",
@@ -9094,16 +8248,6 @@
     "ec": ""
   },
   {
-    "w": "Terciopelado",
-    "p": "adj.",
-    "d": "Aterciopelado. Sin.: aterciopelado.",
-    "df": "adj. aterciopelado. Sin.: aterciopelado.",
-    "e": "",
-    "s": "",
-    "c": "adjetivo",
-    "ec": ""
-  },
-  {
     "w": "Terciopelero",
     "p": "m. y f.",
     "d": "Y f. Persona que trabaja los terciopelos.",
@@ -9149,16 +8293,6 @@
     "d": "Animal braquiópodo, del cual se conocen numerosas especies vivientes y fósiles, cuyo cuerpo está protegido por una concha calcárea de valvas desiguales y articuladas mediante charnela.",
     "df": "f. Animal braquiópodo, del cual se conocen numerosas especies vivientes y fósiles, cuyo cuerpo está protegido por una concha calcárea de valvas desiguales y articuladas mediante charnela.",
     "e": "Del lat. cient. Terebratula, y este del lat. terebrāta, f. de terebrātus 'taladrado', y el suf. dim. -ŭla.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_latin"
-  },
-  {
-    "w": "Teredo",
-    "p": "m.",
-    "d": "Broma . Sin.: broma1, terédine, taraza, tiñuela.",
-    "df": "m. broma (‖ molusco). Sin.: broma1, terédine, taraza, tiñuela.",
-    "e": "Del lat. terēdo, -ĭnis 'broma, molusco', y este del gr. τερηδών terēdṓn 'carcoma'.",
     "s": "",
     "c": "sustantivo",
     "ec": "etym_latin"
@@ -9258,16 +8392,6 @@
     "esp": [
       "explosiva"
     ]
-  },
-  {
-    "w": "Teriacal",
-    "p": "adj.",
-    "d": "Triacal. Sin.: triacal.",
-    "df": "adj. triacal. Sin.: triacal.",
-    "e": "De teriaca.",
-    "s": "",
-    "c": "adjetivo",
-    "ec": ""
   },
   {
     "w": "Teridofito",
@@ -9393,16 +8517,6 @@
     "ec": "etym_latin"
   },
   {
-    "w": "Terminajo",
-    "p": "m. coloq.",
-    "d": "Terminacho. Sin.: terminacho.",
-    "df": "m. coloq. terminacho. Sin.: terminacho.",
-    "e": "De término y -ajo.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Terminante",
     "p": "adj.",
     "d": "Que termina. Sin.: terminador.",
@@ -9474,16 +8588,6 @@
     "d": "Quím. Mezcla de limaduras de aluminio y de óxido de otro metal que por inflamación reduce el óxido, obteniéndose el metal en estado puro y una temperatura muy elevada. La de óxido de hierro se emplea para soldar piezas de acero, como raíles.",
     "df": "f. Quím. Mezcla de limaduras de aluminio y de óxido de otro metal que por inflamación reduce el óxido, obteniéndose el metal en estado puro y una temperatura muy elevada. La de óxido de hierro se emplea para soldar piezas de acero, como raíles. | f. Insecto del orden de los isópteros, que vive en colonias y que roe madera, de la que se alimenta, por lo que puede ser peligroso para ciertas construcciones. Sin.: termes, térmite, comején, sepe, anay.",
     "e": "Del al. Thermit, y este der. del gr. θέρμη thérmē 'calor'.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Termitera",
-    "p": "f.",
-    "d": "Termitero. Sin.: termitero.",
-    "df": "f. termitero. Sin.: termitero.",
-    "e": "",
     "s": "",
     "c": "sustantivo",
     "ec": ""
@@ -9914,16 +9018,6 @@
     "ec": ""
   },
   {
-    "w": "Ternilla",
-    "p": "f.",
-    "d": "Cartílago. Sin.: cartílago, cartilágine.",
-    "df": "f. cartílago. Sin.: cartílago, cartilágine.",
-    "e": "Del dim. de tierna.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Terno",
     "p": "m.",
     "d": "Conjunto de tres cosas de una misma especie. Sin.: trío2, tríada, tripleta.",
@@ -9963,16 +9057,6 @@
     ]
   },
   {
-    "w": "Terrado",
-    "p": "m.",
-    "d": "Terraza . Sin.: terraza, terrero, azotea.",
-    "df": "m. terraza (‖ cubierta de un edificio). Sin.: terraza, terrero, azotea.",
-    "e": "Der. de tierra.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Terraguero",
     "p": "m.",
     "d": "Sal. y Zam. terrero . Sin.: terrero.",
@@ -9994,26 +9078,6 @@
     "esp": [
       "viajera"
     ]
-  },
-  {
-    "w": "Terraje",
-    "p": "m.",
-    "d": "Terrazgo . Sin.: terrazgo.",
-    "df": "m. terrazgo (‖ renta). Sin.: terrazgo.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Terrajero",
-    "p": "m.",
-    "d": "Terrazguero. Sin.: terrazguero.",
-    "df": "m. terrazguero. Sin.: terrazguero.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
   },
   {
     "w": "Terramicina",
@@ -10133,19 +9197,6 @@
     "ec": ""
   },
   {
-    "w": "Terrina",
-    "p": "f.",
-    "d": "Tarrina. Sin.: tarrina.",
-    "df": "f. tarrina. Sin.: tarrina. | f. Tiesto en forma de cono truncado invertido, usado en jardinería.",
-    "e": "Del fr. terrine.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_frances",
-    "esp": [
-      "viajera"
-    ]
-  },
-  {
     "w": "Territorialidad",
     "p": "f.",
     "d": "Criterio en virtud del cual la jurisdicción y la ley aplicable a las personas y a los hechos jurídicos son las propias del territorio del Estado en que aquellas se encuentran o estos tienen lugar.",
@@ -10209,26 +9260,6 @@
     "esp": [
       "larga"
     ]
-  },
-  {
-    "w": "Terriza",
-    "p": "adj.",
-    "d": "Terroso . Sin.: terroso, terrino.",
-    "df": "adj. terroso (‖ que participa de la naturaleza de la tierra). Sin.: terroso, terrino. | adj. Dicho del suelo: De tierra, sin pavimentar. | m. And. Era sin pavimentar. | f. Ar. terrizo (‖ barreño). Sin.: vasija, barreño, lebrillo.",
-    "e": "",
-    "s": "",
-    "c": "adjetivo",
-    "ec": ""
-  },
-  {
-    "w": "Terrizo",
-    "p": "adj.",
-    "d": "Terroso . Sin.: terroso, terrino.",
-    "df": "adj. terroso (‖ que participa de la naturaleza de la tierra). Sin.: terroso, terrino. | adj. Dicho del suelo: De tierra, sin pavimentar. | m. And. Era sin pavimentar. | f. Ar. terrizo (‖ barreño). Sin.: vasija, barreño, lebrillo.",
-    "e": "",
-    "s": "",
-    "c": "adjetivo",
-    "ec": ""
   },
   {
     "w": "Terrollo",
@@ -10297,34 +9328,11 @@
     "ec": ""
   },
   {
-    "w": "Terruño",
-    "p": "m.",
-    "d": "Terrón . Sin.: terrón, tormo, tabón1.",
-    "df": "m. terrón (‖ masa de tierra compacta). Sin.: terrón, tormo, tabón1. | m. Comarca o tierra, especialmente el país natal. Sin.: pueblo, patria, país, cuna1. | m. coloq. terreno (‖ porción de tierra). Sin.: terreno, tierra, suelo, campo, solar1.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "",
-    "esp": [
-      "explosiva"
-    ]
-  },
-  {
     "w": "Terráqueo",
     "p": "adj.",
     "d": "Dicho de un globo o una esfera: Que representa en su superficie las tierras y los mares del planeta.",
     "df": "adj. Dicho de un globo o una esfera: Que representa en su superficie las tierras y los mares del planeta.",
     "e": "Del lat. terra 'tierra' y aqua 'agua'.",
-    "s": "",
-    "c": "adjetivo",
-    "ec": "etym_latin"
-  },
-  {
-    "w": "Terrífico",
-    "p": "adj.",
-    "d": "Terrorífico. Sin.: terrorífico.",
-    "df": "adj. terrorífico. Sin.: terrorífico.",
-    "e": "Del lat. terrifĭcus.",
     "s": "",
     "c": "adjetivo",
     "ec": "etym_latin"
@@ -10453,16 +9461,6 @@
     "e": "De tercio.",
     "s": "",
     "c": "adjetivo",
-    "ec": ""
-  },
-  {
-    "w": "Terédine",
-    "p": "f.",
-    "d": "Teredo. Sin.: broma1, teredo, taraza, tiñuela.",
-    "df": "f. teredo. Sin.: broma1, teredo, taraza, tiñuela.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
     "ec": ""
   },
   {
@@ -10596,16 +9594,6 @@
     "ec": ""
   },
   {
-    "w": "Teso",
-    "p": "adj.",
-    "d": "Tieso. Sin.: tieso, tenso, tirante.",
-    "df": "adj. tieso. Sin.: tieso, tenso, tirante. | m. Pequeña salida en una superficie lisa. | m. coloq. Áv. Cada una de las divisiones del rodeo en las ferias. | m. Tol. Sitio en que se efectúa la feria de ganados.",
-    "e": "Del lat. tensus, part. pas. de tendĕre 'tender, extender'.",
-    "s": "",
-    "c": "adjetivo",
-    "ec": "etym_latin"
-  },
-  {
     "w": "Tesonería",
     "p": "f.",
     "d": "Terquedad, pertinacia. Sin.: terquedad, tenacidad, obstinación, tesón.",
@@ -10624,16 +9612,6 @@
     "s": "",
     "c": "sustantivo",
     "ec": "etym_latin"
-  },
-  {
-    "w": "Testada",
-    "p": "f.",
-    "d": "Testarada . Sin.: testarada, testarazo, cabezazo, testerada.",
-    "df": "f. testarada (‖ golpe). Sin.: testarada, testarazo, cabezazo, testerada.",
-    "e": "De testa.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
   },
   {
     "w": "Testador",
@@ -10667,16 +9645,6 @@
     "esp": [
       "viajera"
     ]
-  },
-  {
-    "w": "Testaférrea",
-    "p": "m.",
-    "d": "Testaferro. Sin.: testaferro.",
-    "df": "m. testaferro. Sin.: testaferro.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
   },
   {
     "w": "Testamentario",
@@ -10722,19 +9690,6 @@
     "ec": ""
   },
   {
-    "w": "Testarazo",
-    "p": "m.",
-    "d": "Testarada . Sin.: cabezazo, testarada, testerada, testada.",
-    "df": "m. testarada (‖ golpe). Sin.: cabezazo, testarada, testerada, testada. | m. Golpe, porrazo, encuentro violento. Sin.: porrazo, trompazo1, golpe, golpazo.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "",
-    "esp": [
-      "explosiva"
-    ]
-  },
-  {
     "w": "Testarronería",
     "p": "f. coloq.",
     "d": "Cualidad de testarrón. Sin.: testarudez.",
@@ -10755,16 +9710,6 @@
     "ec": ""
   },
   {
-    "w": "Testerada",
-    "p": "f.",
-    "d": "Testarada . Sin.: cabezazo, testarada, testada, testarazo.",
-    "df": "f. testarada (‖ golpe). Sin.: cabezazo, testarada, testada, testarazo.",
-    "e": "De testera.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Testerilla",
     "p": "m. y f.",
     "d": "Y f. Arg. Caballería que presenta sobre la frente blanca una mancha de color igual al del resto del pelaje.",
@@ -10780,16 +9725,6 @@
     "d": "Y f. Arg. Caballería que presenta sobre la frente blanca una mancha de color igual al del resto del pelaje.",
     "df": "m. y f. Arg. Caballería que presenta sobre la frente blanca una mancha de color igual al del resto del pelaje.",
     "e": "De testera 'frente'.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Testero",
-    "p": "m.",
-    "d": "Testera. Sin.: fachada, frente, exterior, frontis, testera.",
-    "df": "m. testera. Sin.: fachada, frente, exterior, frontis, testera. | m. cabecero (‖ pieza de la cama). Sin.: cabecero, cabezal. | m. Trashoguero de la chimenea. | m. Ingen. En minería, macizo de mineral con dos caras descubiertas, una horizontal inferior y otra vertical. | m. Cuen. Extremo del tronco del pino por donde ha sido cortado con el hacha.",
-    "e": "De testa.",
     "s": "",
     "c": "sustantivo",
     "ec": ""
@@ -10931,16 +9866,6 @@
     "ec": ""
   },
   {
-    "w": "Testuzo",
-    "p": "m.",
-    "d": "Testuz. Sin.: testuz.",
-    "df": "m. testuz. Sin.: testuz.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Testáceo",
     "p": "adj.",
     "d": "Dicho de un animal: Que tiene concha. U. t. c. s. m.",
@@ -10994,19 +9919,6 @@
     "ec": "etym_latin"
   },
   {
-    "w": "Teta",
-    "p": "f.",
-    "d": "Mama . Sin.: mama, pecho1, seno, delantera, pechera1, chiche, tetamen, pechamen. [de animal] ubre.",
-    "df": "f. mama (‖ órgano glanduloso). Sin.: mama, pecho1, seno, delantera, pechera1, chiche, tetamen, pechamen. [de animal] ubre. | f. coloq. Leche que segregan las tetas. | f. Pezón de la teta. Se agarra bien a la teta. Sin.: pezón. | f. mambla. Sin.: mambla. | f. coloq. Cosa muy buena. Es teta pura.",
-    "e": "Quizá voz expr.; cf. germ. *tĭtta, gr. τίτθη títthē.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "",
-    "esp": [
-      "explosiva"
-    ]
-  },
-  {
     "w": "Tetada",
     "p": "f.",
     "d": "Leche que mama el niño cada vez.",
@@ -11024,16 +9936,6 @@
     "e": "De tétanos.",
     "s": "",
     "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Tetar",
-    "p": "tr.",
-    "d": "Atetar. Sin.: atetar, amamantar.",
-    "df": "tr. atetar. Sin.: atetar, amamantar.",
-    "e": "De teta.",
-    "s": "",
-    "c": "verbo",
     "ec": ""
   },
   {
@@ -11200,16 +10102,6 @@
     "ec": "etym_griego"
   },
   {
-    "w": "Tetramotor",
-    "p": "m.",
-    "d": "Cuatrimotor. Sin.: cuatrimotor.",
-    "df": "m. cuatrimotor. Sin.: cuatrimotor.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Tetraplejia",
     "p": "f.",
     "d": "Med. Parálisis de las cuatro extremidades.",
@@ -11370,16 +10262,6 @@
     "ec": ""
   },
   {
-    "w": "Teucali",
-    "p": "m.",
-    "d": "Teocali. Sin.: teocali.",
-    "df": "m. teocali. Sin.: teocali.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Teucrio",
     "p": "m.",
     "d": "Arbusto de la familia de las labiadas, como de un metro de altura, con tallos leñosos, ramas extendidas, hojas persistentes, aovadas, enteras, verdes y lustrosas por el haz, amarillentas y vellosas por el envés; flores axilares, solitarias, azuladas con venas más oscuras, y por fruto cuatro aquenios pardos y algo rugosos en el fondo del cáliz.",
@@ -11473,16 +10355,6 @@
     "ec": "etym_latin"
   },
   {
-    "w": "Tezado",
-    "p": "adj.",
-    "d": "Atezado. Sin.: bronceado, moreno, atezado.",
-    "df": "adj. atezado. Sin.: bronceado, moreno, atezado.",
-    "e": "De tez.",
-    "s": "",
-    "c": "adjetivo",
-    "ec": ""
-  },
-  {
     "w": "Tezcucano",
     "p": "adj.",
     "d": "Texcocano. Apl. a pers., u. t. c. s. Sin.: texcocano.",
@@ -11531,16 +10403,6 @@
     "s": "",
     "c": "sustantivo",
     "ec": ""
-  },
-  {
-    "w": "Teólogo",
-    "p": "adj.",
-    "d": "Teologal. Sin.: teológico, teologal, doctrinal.",
-    "df": "adj. teologal. Sin.: teológico, teologal, doctrinal. | m. y f. Estudiante de teología.",
-    "e": "Del lat. theolŏgus 'el que escribe sobre los dioses', y este del gr. θεολόγος theológos.",
-    "s": "",
-    "c": "adjetivo",
-    "ec": "etym_latin"
   },
   {
     "w": "Teónimo",
@@ -12057,16 +10919,6 @@
     "ec": ""
   },
   {
-    "w": "Tijeretada",
-    "p": "f.",
-    "d": "Tijeretazo. Sin.: tijeretazo, piquetazo, tijerazo, corte1.",
-    "df": "f. tijeretazo. Sin.: tijeretazo, piquetazo, tijerazo, corte1.",
-    "e": "De tijereta, dim. de tijera, y -ada.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Tijeretazo",
     "p": "m.",
     "d": "Corte hecho de un golpe con las tijeras. Sin.: tijeretada, tijerazo, piquetazo, corte1.",
@@ -12097,36 +10949,6 @@
     "ec": ""
   },
   {
-    "w": "Tijerilla",
-    "p": "f.",
-    "d": "Tijereta . Sin.: tijereta, tijeruela.",
-    "df": "f. tijereta (‖ zarcillo de la vid). Sin.: tijereta, tijeruela.",
-    "e": "Del dim. de tijera.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Tijeruela",
-    "p": "f.",
-    "d": "Tijereta . Sin.: tijereta, tijerilla.",
-    "df": "f. tijereta (‖ zarcillo de la vid). Sin.: tijereta, tijerilla.",
-    "e": "De tijera y -uela, y este f. de -uelo.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Tila",
-    "p": "f.",
-    "d": "Tilo. Sin.: tilo, tilia, teja2.",
-    "df": "f. tilo. Sin.: tilo, tilia, teja2. | f. Flor del tilo. | f. Bebida antiespasmódica que se hace con flores de tilo en infusión de agua caliente. Sin.: infusión.",
-    "e": "De tilo.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Tildar",
     "p": "tr.",
     "d": "Poner tilde a las letras que lo necesitan. Sin.: acentuar.",
@@ -12134,16 +10956,6 @@
     "e": "Del lat. tardío titulāre 'intitular'.",
     "s": "",
     "c": "verbo",
-    "ec": "etym_latin"
-  },
-  {
-    "w": "Tilia",
-    "p": "f.",
-    "d": "Tilo. Sin.: tilo, tila, teja2.",
-    "df": "f. tilo. Sin.: tilo, tila, teja2.",
-    "e": "Del lat. tilia.",
-    "s": "",
-    "c": "sustantivo",
     "ec": "etym_latin"
   },
   {
@@ -12393,16 +11205,6 @@
     "ec": ""
   },
   {
-    "w": "Timo",
-    "p": "m.",
-    "d": "Tímalo. Sin.: tímalo.",
-    "df": "m. tímalo. Sin.: tímalo. | m. Acción y efecto de timar. Sin.: engaño, fraude, estafa1. | m. Dicho o frase que se repite a manera de muletilla. Sin.: muletilla, latiguillo, coletilla. | m. Anat. Glándula endocrina de los vertebrados, que participa en la función inmunitaria a través de los linfocitos T.",
-    "e": "Del lat. cient. thymus, y este del gr. θύμος thýmos; propiamente 'tomillo', por la semejanza de la glándula con la flor de esta planta.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_latin"
-  },
-  {
     "w": "Timocracia",
     "p": "f.",
     "d": "Gobierno en que ejercen el poder los ciudadanos que tienen cierto nivel de renta.",
@@ -12599,16 +11401,6 @@
     "ec": "etym_latin"
   },
   {
-    "w": "Tinador",
-    "p": "m.",
-    "d": "Tinado. Sin.: tinado, tinada.",
-    "df": "m. tinado. Sin.: tinado, tinada.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Tinaja",
     "p": "f.",
     "d": "Vasija grande de barro cocido, y a veces vidriado, mucho más ancha por el medio que por el fondo y por la boca, y que encajada en un pie o aro, o empotrada en el suelo, sirve ordinariamente para guardar agua, aceite u otros líquidos. Sin.: tina, chochocol.",
@@ -12762,19 +11554,6 @@
     "ec": ""
   },
   {
-    "w": "Tinglado",
-    "p": "m.",
-    "d": "Cobertizo . Sin.: cobertizo.",
-    "df": "m. cobertizo (‖ sitio cubierto). Sin.: cobertizo. | m. Tablado armado a la ligera. | m. Artificio, enredo, maquinación. Sin.: enredo, embrollo, maraña, lío, berrodo. | m. coloq. Barullo de gentes o cosas. Sin.: barullo, alboroto, lío. | m. Cuba. Tablado en ligero declive donde cae la miel que purgan los panes de azúcar.",
-    "e": "Der. de tinglar 'cubrir parcialmente una tabla a otra', este del fr. ant. tingler 'tapar con piezas de madera los huecos de un maderamen', y este der. de tingle 'pieza de madera'.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "",
-    "esp": [
-      "explosiva"
-    ]
-  },
-  {
     "w": "Tingle",
     "p": "f.",
     "d": "Pieza que usan los vidrieros para abrir las tiras de plomo y ajustarlas al vidrio.",
@@ -12846,16 +11625,6 @@
     "s": "",
     "c": "verbo",
     "ec": "etym_latin"
-  },
-  {
-    "w": "Tintinear",
-    "p": "intr.",
-    "d": "Tintinar. Sin.: tintinar, chingar.",
-    "df": "intr. tintinar. Sin.: tintinar, chingar.",
-    "e": "",
-    "s": "",
-    "c": "verbo",
-    "ec": ""
   },
   {
     "w": "Tintineo",
@@ -13014,16 +11783,6 @@
     "ec": ""
   },
   {
-    "w": "Tipicismo",
-    "p": "m.",
-    "d": "Tipismo. Sin.: tipismo, tipicidad.",
-    "df": "m. tipismo. Sin.: tipismo, tipicidad.",
-    "e": "De típico e -ismo.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Tipificable",
     "p": "adj.",
     "d": "Que se puede tipificar. Virus, alteraciones tipificables.",
@@ -13082,16 +11841,6 @@
     "s": "",
     "c": "adjetivo",
     "ec": ""
-  },
-  {
-    "w": "Tipografía",
-    "p": "f.",
-    "d": "Imprenta . Sin.: imprenta.",
-    "df": "f. imprenta (‖ arte de imprimir). Sin.: imprenta. | f. imprenta (‖ taller donde se imprime). Sin.: imprenta. | f. Modo o estilo en que está impreso un texto. | f. Clase de tipos de imprenta. La computadora permite una tipografía muy variada.",
-    "e": "Del lat. mediev. typographia, y este del gr. τύπος týpos 'tipo' y -γραφία -graphía '-grafía'.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_latin"
   },
   {
     "w": "Tipográfico",
@@ -13159,16 +11908,6 @@
     "d": "Pl. Escrúpulos o reparos vanos o de poquísima importancia. Sin.: reparos, escrúpulos, recelos, melindrería.",
     "df": "m. pl. Escrúpulos o reparos vanos o de poquísima importancia. Sin.: reparos, escrúpulos, recelos, melindrería. | m. pl. coloq. Expresiones o dichos ridículamente corteses o afectados.",
     "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Tirabala",
-    "p": "m.",
-    "d": "Taco . Sin.: taco, tiratacos.",
-    "df": "m. taco (‖ canuto para jugar lanzando tacos de papel o de otra materia). Sin.: taco, tiratacos.",
-    "e": "De tirar y bala.",
     "s": "",
     "c": "sustantivo",
     "ec": ""
@@ -13288,16 +12027,6 @@
     "p": "m.",
     "d": "Ál. Manga provista de un palo largo, que se usa para pescar desde la orilla.",
     "df": "m. Ál. Manga provista de un palo largo, que se usa para pescar desde la orilla.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Tiragomas",
-    "p": "m.",
-    "d": "Tirachinas. Sin.: tirachinas, tirador.",
-    "df": "m. tirachinas. Sin.: tirachinas, tirador.",
     "e": "",
     "s": "",
     "c": "sustantivo",
@@ -13425,16 +12154,6 @@
     "d": "Correa unida por sus extremos que los zapateros pasan por el pie y la rodilla para tener sujeto el zapato con su horma al coserlo.",
     "df": "m. Correa unida por sus extremos que los zapateros pasan por el pie y la rodilla para tener sujeto el zapato con su horma al coserlo.",
     "e": "De tirar y pie.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Tiratacos",
-    "p": "m.",
-    "d": "Taco . Sin.: taco, tirabala.",
-    "df": "m. taco (‖ canuto para jugar lanzando tacos de papel o de otra materia). Sin.: taco, tirabala.",
-    "e": "",
     "s": "",
     "c": "sustantivo",
     "ec": ""
@@ -13666,16 +12385,6 @@
     "ec": "etym_latin"
   },
   {
-    "w": "Tirulato",
-    "p": "adj. coloq.",
-    "d": "Turulato. Sin.: atónito, alelado, estupefacto, pasmado, turulato, tuturuto, turuta.",
-    "df": "adj. coloq. turulato. Sin.: atónito, alelado, estupefacto, pasmado, turulato, tuturuto, turuta.",
-    "e": "",
-    "s": "",
-    "c": "adjetivo",
-    "ec": ""
-  },
-  {
     "w": "Tirulo",
     "p": "m.",
     "d": "Rollo de hoja de tabaco, o porción de picadura de hebra, que forma el alma o tripa del cigarro puro.",
@@ -13885,16 +12594,6 @@
     "ec": ""
   },
   {
-    "w": "Titirimundi",
-    "p": "m.",
-    "d": "Mundonuevo. Sin.: mundonuevo, mundinovi, totilimundi, tutilimundi.",
-    "df": "m. mundonuevo. Sin.: mundonuevo, mundinovi, totilimundi, tutilimundi.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Titiritaina",
     "p": "f. coloq.",
     "d": "Ruido confuso de flautas u otros instrumentos.",
@@ -13926,16 +12625,6 @@
     "esp": [
       "explosiva"
     ]
-  },
-  {
-    "w": "Titubar",
-    "p": "intr.",
-    "d": "Titubear. Sin.: titubear.",
-    "df": "intr. titubear. Sin.: titubear.",
-    "e": "Del lat. titubāre.",
-    "s": "",
-    "c": "verbo",
-    "ec": "etym_latin"
   },
   {
     "w": "Titularización",
@@ -14029,16 +12718,6 @@
     "s": "",
     "c": "zoologia",
     "ec": ""
-  },
-  {
-    "w": "Titímalo",
-    "p": "m.",
-    "d": "Lechetrezna. Sin.: lechetrezna, ésula, tornagallos.",
-    "df": "m. lechetrezna. Sin.: lechetrezna, ésula, tornagallos.",
-    "e": "Del lat. tithymălus, y este del gr. τιθύμαλος tithýmalos.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_latin"
   },
   {
     "w": "Tiza",
@@ -14137,16 +12816,6 @@
     "ec": ""
   },
   {
-    "w": "Tizona",
-    "p": "f.",
-    "d": "Espada . Sin.: espada, hoja, cuchilla.",
-    "df": "f. espada (‖ arma blanca). Sin.: espada, hoja, cuchilla.",
-    "e": "Por alus. a Tizona, nombre de la célebre espada del Cid.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Tizonazo",
     "p": "m.",
     "d": "Golpe dado con un tizón.",
@@ -14208,16 +12877,6 @@
     "s": "",
     "c": "zoologia",
     "ec": "etym_latin"
-  },
-  {
-    "w": "Tiñería",
-    "p": "f. coloq.",
-    "d": "Tiña . Sin.: tiña.",
-    "df": "f. coloq. tiña (‖ miseria). Sin.: tiña.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
   },
   {
     "w": "Tiñoso",
@@ -14415,16 +13074,6 @@
     "ec": ""
   },
   {
-    "w": "Tocasalva",
-    "p": "f.",
-    "d": "Salvilla. Sin.: salvilla, servilla2, salva, bandeja.",
-    "df": "f. salvilla. Sin.: salvilla, servilla2, salva, bandeja.",
-    "e": "De tocar1 y salva.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Tocata",
     "p": "f.",
     "d": "Pieza de música, destinada por lo común a instrumentos de teclado.",
@@ -14545,19 +13194,6 @@
     "ec": ""
   },
   {
-    "w": "Tocología",
-    "p": "f.",
-    "d": "Obstetricia. Sin.: obstetricia.",
-    "df": "f. obstetricia. Sin.: obstetricia.",
-    "e": "Del ingl. tocology, y este del gr. τόκος tókos 'parto1' y -logy '-logía'.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_ingles",
-    "esp": [
-      "viajera"
-    ]
-  },
-  {
     "w": "Tocológico",
     "p": "adj.",
     "d": "Perteneciente o relativo a la tocología.",
@@ -14631,16 +13267,6 @@
     ]
   },
   {
-    "w": "Tocía",
-    "p": "f.",
-    "d": "Atutía. Sin.: atutía.",
-    "df": "f. atutía. Sin.: atutía.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Tocólogo",
     "p": "m. y f.",
     "d": "Y f. Especialista en tocología. Sin.: obstetra, ginecólogo.",
@@ -14674,16 +13300,6 @@
     "ec": ""
   },
   {
-    "w": "Todasana",
-    "p": "f.",
-    "d": "Todabuena. Sin.: todabuena, androsemo, castellar.",
-    "df": "f. todabuena. Sin.: todabuena, androsemo, castellar.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Todoterreno",
     "p": "adj.",
     "d": "Dicho de un vehículo: Que sirve para circular por zonas escarpadas e irregulares. Apl. a un automóvil, u. t. c. s. m. Sin.: campero, yip, jeep.",
@@ -14708,16 +13324,6 @@
     "esp": [
       "viajera"
     ]
-  },
-  {
-    "w": "Toffee",
-    "p": "m.",
-    "d": "Tofe. Sin.: tofe.",
-    "df": "m. tofe. Sin.: tofe.",
-    "e": "Voz ingl.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
   },
   {
     "w": "Tofo",
@@ -15031,16 +13637,6 @@
     ]
   },
   {
-    "w": "Tollón",
-    "p": "m.",
-    "d": "Coladero . Sin.: coladero.",
-    "df": "m. coladero (‖ camino o paso estrecho). Sin.: coladero.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Tolmera",
     "p": "f.",
     "d": "Sitio donde abundan los tolmos. Sin.: tormagal, tormellera, tormera.",
@@ -15203,19 +13799,6 @@
     ]
   },
   {
-    "w": "Tomadura",
-    "p": "f.",
-    "d": "Toma . Sin.: toma, adquisición, obtención.",
-    "df": "f. toma (‖ acción de tomar). Sin.: toma, adquisición, obtención. | f. Porción de alguna cosa que se toma. Sin.: porción, ración, dosis, toma, cuota, cantidad.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "",
-    "esp": [
-      "explosiva"
-    ]
-  },
-  {
     "w": "Tomajón",
     "p": "adj. coloq.",
     "d": "Que toma con frecuencia, facilidad o descaro. U. t. c. s.",
@@ -15337,32 +13920,6 @@
     "s": "",
     "c": "sustantivo",
     "ec": ""
-  },
-  {
-    "w": "Tomineja",
-    "p": "f.",
-    "d": "Tominejo. Sin.: colibrí, tominejo, picaflor, chupaflor, chupamiel, chupamirto, chuparrosa, chichinflor, gurrión, gorrión, quinde, rumbo2, tentenelaire, zumbador.",
-    "df": "f. tominejo. Sin.: colibrí, tominejo, picaflor, chupaflor, chupamiel, chupamirto, chuparrosa, chichinflor, gurrión, gorrión, quinde, rumbo2, tentenelaire, zumbador.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "",
-    "esp": [
-      "explosiva"
-    ]
-  },
-  {
-    "w": "Tominejo",
-    "p": "m.",
-    "d": "Colibrí. Sin.: colibrí, tomineja, picaflor, chupaflor, chupamiel, chupamirto, chuparrosa, chichinflor, gurrión, gorrión, quinde, rumbo2, tentenelaire, zumbador.",
-    "df": "m. colibrí. Sin.: colibrí, tomineja, picaflor, chupaflor, chupamiel, chupamirto, chuparrosa, chichinflor, gurrión, gorrión, quinde, rumbo2, tentenelaire, zumbador.",
-    "e": "De tomín, por alus. a su pequeñez, y -ejo.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "",
-    "esp": [
-      "explosiva"
-    ]
   },
   {
     "w": "Tomismo",
@@ -15530,16 +14087,6 @@
     ]
   },
   {
-    "w": "Tondiz",
-    "p": "f.",
-    "d": "Tundizno. Sin.: tundizno.",
-    "df": "f. tundizno. Sin.: tundizno.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Tondo",
     "p": "m.",
     "d": "Arq. Adorno circular rehundido en un paramento.",
@@ -15604,19 +14151,6 @@
     "s": "",
     "c": "sustantivo",
     "ec": ""
-  },
-  {
-    "w": "Tonga",
-    "p": "f.",
-    "d": "Tongada. Sin.: tongada, capa, recubrimiento, manto, estrato.",
-    "df": "f. tongada. Sin.: tongada, capa, recubrimiento, manto, estrato. | f. Ar. y Col. tarea (‖ obra o trabajo). Sin.: tarea, tanda, trabajo, obra. | f. Can. y Cuba. Pila o porción de cosas apiladas en orden. Sacos en tonga. Una tonga de tablas. Sin.: pila1, montón, tongada.",
-    "e": "Del lat. tunĭca 'túnica', 'envoltura, membrana'.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_latin",
-    "esp": [
-      "explosiva"
-    ]
   },
   {
     "w": "Tongada",
@@ -15695,16 +14229,6 @@
     ]
   },
   {
-    "w": "Tonina",
-    "p": "f.",
-    "d": "Atún . Sin.: atún, toñina.",
-    "df": "f. atún (‖ pez). Sin.: atún, toñina. | f. delfín1. Sin.: delfín1, golfín1, arroaz, bufeo.",
-    "e": "Der. del lat. thunnus 'atún', y este del gr. θύννος thýnnos.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Tonocoté",
     "p": "adj.",
     "d": "Dicho de una persona: De un pueblo amerindio que habitó la región central de la actual provincia de Santiago del Estero, en la Argentina. U. t. c. s.",
@@ -15746,16 +14270,6 @@
     "esp": [
       "explosiva"
     ]
-  },
-  {
-    "w": "Tonsurado",
-    "p": "m.",
-    "d": "Clérigo. Sin.: clérigo, eclesiástico, religioso, fraile, sacerdote.",
-    "df": "m. clérigo. Sin.: clérigo, eclesiástico, religioso, fraile, sacerdote. | m. Rel. Hombre que había recibido la tonsura. U. t. c. adj.",
-    "e": "Del lat. mediev. tonsuratus.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_latin"
   },
   {
     "w": "Tonsurando",
@@ -15910,16 +14424,6 @@
     "ec": ""
   },
   {
-    "w": "Topadizo",
-    "p": "adj.",
-    "d": "Encontradizo. Sin.: encontradizo.",
-    "df": "adj. encontradizo. Sin.: encontradizo.",
-    "e": "Der. de topar.",
-    "s": "",
-    "c": "adjetivo",
-    "ec": ""
-  },
-  {
     "w": "Topador",
     "p": "adj.",
     "d": "Dicho con propiedad de un carnero o de otro animal cornudo: Que topa.",
@@ -15980,19 +14484,6 @@
     "ec": ""
   },
   {
-    "w": "Topetada",
-    "p": "f.",
-    "d": "Topetazo. Sin.: topetazo, topetón, cabezazo, testarada, testarazo, coscorrón, casquetazo, golpe, porrazo, trompazo1.",
-    "df": "f. topetazo. Sin.: topetazo, topetón, cabezazo, testarada, testarazo, coscorrón, casquetazo, golpe, porrazo, trompazo1.",
-    "e": "De topetar.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "",
-    "esp": [
-      "explosiva"
-    ]
-  },
-  {
     "w": "Topetar",
     "p": "tr.",
     "d": "Dicho especialmente de un animal cornudo: Dar con la cabeza en algo con golpe e impulso. U. t. c. intr. Sin.: embestir, topar1, morcar, cornear, tozar.",
@@ -16037,19 +14528,6 @@
     "s": "",
     "c": "adjetivo",
     "ec": ""
-  },
-  {
-    "w": "Topetón",
-    "p": "m.",
-    "d": "Topetazo. Sin.: cabezazo, testarada, testarazo, topetazo, topetada, coscorrón, casquetazo, golpe, porrazo, trompazo1. encontronazo, choque1, colisión, topetazo, tope1, tropiezo, trompicón.",
-    "df": "m. topetazo. Sin.: cabezazo, testarada, testarazo, topetazo, topetada, coscorrón, casquetazo, golpe, porrazo, trompazo1. encontronazo, choque1, colisión, topetazo, tope1, tropiezo, trompicón.",
-    "e": "De topetar.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "",
-    "esp": [
-      "explosiva"
-    ]
   },
   {
     "w": "Topinada",
@@ -16354,19 +14832,6 @@
     "ec": ""
   },
   {
-    "w": "Torcedero",
-    "p": "adj.",
-    "d": "Torcido . Sin.: torcido, sinuoso, tortuoso, izquierdo, rizado, enrollado, chueco, cumbo, quisneto.",
-    "df": "adj. torcido (‖ no recto, con curvas). Sin.: torcido, sinuoso, tortuoso, izquierdo, rizado, enrollado, chueco, cumbo, quisneto.",
-    "e": "De torcer y -dero.",
-    "s": "",
-    "c": "adjetivo",
-    "ec": "",
-    "esp": [
-      "explosiva"
-    ]
-  },
-  {
     "w": "Torcho",
     "p": "m.",
     "d": "Lingote de hierro.",
@@ -16587,26 +15052,6 @@
     "ec": ""
   },
   {
-    "w": "Tormagal",
-    "p": "m.",
-    "d": "Tolmera. Sin.: tolmera, tormellera, tormera.",
-    "df": "m. tolmera. Sin.: tolmera, tormellera, tormera.",
-    "e": "De tormo.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Tormellera",
-    "p": "f.",
-    "d": "Tolmera. Sin.: tolmera, tormagal, tormera.",
-    "df": "f. tolmera. Sin.: tolmera, tormagal, tormera.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Tormentaria",
     "p": "adj.",
     "d": "Perteneciente o relativo a la máquina de guerra destinada a expugnar o defender las fortificaciones.",
@@ -16660,26 +15105,6 @@
     "ec": ""
   },
   {
-    "w": "Tormera",
-    "p": "f.",
-    "d": "Tolmera. Sin.: tolmera, tormagal, tormellera.",
-    "df": "f. tolmera. Sin.: tolmera, tormagal, tormellera.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Tormo",
-    "p": "m.",
-    "d": "Tolmo. Sin.: tolmo, peñasco.",
-    "df": "m. tolmo. Sin.: tolmo, peñasco. | m. terrón (‖ masa de tierra compacta). Sin.: terrón, terruño, tabón1. | m. Pequeña masa suelta de una sustancia.",
-    "e": "De or. inc.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Tornaboda",
     "p": "f.",
     "d": "Día siguiente al de la boda.",
@@ -16708,19 +15133,6 @@
     "s": "",
     "c": "sustantivo",
     "ec": ""
-  },
-  {
-    "w": "Tornado",
-    "p": "m.",
-    "d": "Huracán . Sin.: huracán, ciclón, tifón, baguio.",
-    "df": "m. huracán (‖ viento a modo de torbellino). Sin.: huracán, ciclón, tifón, baguio.",
-    "e": "Del ingl. tornado, y este del esp. tronada.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_ingles",
-    "esp": [
-      "viajera"
-    ]
   },
   {
     "w": "Tornadura",
@@ -16781,19 +15193,6 @@
     "s": "",
     "c": "sustantivo",
     "ec": ""
-  },
-  {
-    "w": "Tornasol",
-    "p": "m.",
-    "d": "Girasol . Sin.: girasol, giganta, gigantea, mirabel, mirasol.",
-    "df": "m. girasol (‖ planta). Sin.: girasol, giganta, gigantea, mirabel, mirasol. | m. Cambiante, reflejo o viso que hace la luz en algunas telas o en otras cosas muy tersas. Sin.: reflejo, brillo, viso, iridiscencia, irisación, cambiante, aguas, matiz, coloración. | m. Quím. Materia colorante azul violácea, de origen vegetal, que sirve de reactivo para reconocer el carácter ácido o básico de una disolución.",
-    "e": "De or. inc.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "",
-    "esp": [
-      "explosiva"
-    ]
   },
   {
     "w": "Tornasolado",
@@ -16949,16 +15348,6 @@
     ]
   },
   {
-    "w": "Torniscón",
-    "p": "m. coloq.",
-    "d": "Tornavirón. Sin.: tornavirón, cachete, golpe, mamporro, mojicón.",
-    "df": "m. coloq. tornavirón. Sin.: tornavirón, cachete, golpe, mamporro, mojicón. | m. coloq. Pellizco retorcido. Sin.: pellizco.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Tornés",
     "p": "adj.",
     "d": "Dicho de una moneda: Que fue fabricada en la ciudad francesa de Tours. Sueldo tornés. Libra tornesa.",
@@ -17018,16 +15407,6 @@
     ]
   },
   {
-    "w": "Toronjina",
-    "p": "f.",
-    "d": "Toronjil. Sin.: toronjil, melisa, cidronela, abejera, aneota.",
-    "df": "f. toronjil. Sin.: toronjil, melisa, cidronela, abejera, aneota.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Toronjo",
     "p": "m.",
     "d": "Variedad de cidro que produce las toronjas.",
@@ -17043,16 +15422,6 @@
     "d": "Inquietud, desazón, sofoco. Sin.: inquietud, desazón, sobresalto.",
     "df": "m. Inquietud, desazón, sofoco. Sin.: inquietud, desazón, sobresalto. | m. Veter. Movimiento violento y desordenado que hacen las caballerías y otros animales cuando padecen enteritis con fuertes dolores. Sin.: torzón. | m. Veter. Enteritis de las caballerías y otros animales, con dolores cólicos. Sin.: torzón.",
     "e": "De torzón.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Torpedeamiento",
-    "p": "m.",
-    "d": "Torpedeo. Sin.: torpedeo.",
-    "df": "m. torpedeo. Sin.: torpedeo.",
-    "e": "",
     "s": "",
     "c": "sustantivo",
     "ec": ""
@@ -17149,16 +15518,6 @@
     "s": "",
     "c": "gentilicio",
     "ec": ""
-  },
-  {
-    "w": "Torrar",
-    "p": "tr.",
-    "d": "Tostar . Sin.: tostar, dorar.",
-    "df": "tr. tostar (‖ poner algo a la lumbre hasta que tome color). Sin.: tostar, dorar.",
-    "e": "Del lat. torrēre.",
-    "s": "",
-    "c": "verbo",
-    "ec": "etym_latin"
   },
   {
     "w": "Torreado",
@@ -17404,16 +15763,6 @@
     "ec": ""
   },
   {
-    "w": "Tortero",
-    "p": "m.",
-    "d": "Tortera1. Sin.: tortera1.",
-    "df": "m. tortera1. Sin.: tortera1. | m. coloq. Ál. Planta de la familia de las gramíneas, que tiene en la raíz varios bulbos en forma de disco. | adj. Dicho de una cazuela o cacerola: Que sirve para hacer tortadas y es casi plana. U. m. c. s. f. Sin.: tartera, tarta.",
-    "e": "De torta.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Torteruelo",
     "p": "m.",
     "d": "Planta de la familia de las papilionáceas, del mismo género que la alfalfa.",
@@ -17525,16 +15874,6 @@
     "s": "",
     "c": "sustantivo",
     "ec": "etym_latin"
-  },
-  {
-    "w": "Torvisca",
-    "p": "f.",
-    "d": "Torvisco. Sin.: torvisco, bolaga, matagallina, matapollo.",
-    "df": "f. torvisco. Sin.: torvisco, bolaga, matagallina, matapollo.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
   },
   {
     "w": "Torviscal",
@@ -17790,19 +16129,6 @@
     ]
   },
   {
-    "w": "Tostón",
-    "p": "m.",
-    "d": "Torrado. Sin.: torrado.",
-    "df": "m. torrado. Sin.: torrado. | m. Rebanada de pan tostado empapado en aceite nuevo, que se unta con ajo y se adereza con sal o azúcar y zumo de naranja. | m. Trozo pequeño de pan frito, generalmente en forma de cubo, que se añade a las sopas, purés, etc. U. m. en pl. Sin.: picatoste. | m. Cosa demasiado tostada. | m. Cochinillo asado. Sin.: rostrizo. | m. Dardo hecho con una vara tostada por la punta para endurecerla. | m. coloq. Tabarra, lata. Sin.: aburrimiento, pesadez, fastidio, rollo, lata, tabarra. | m. coloq. Persona habladora y sin sustancia. | m. Ant., Nic. y Ven. Rodaja de plátano verde, machacado y frito y a veces con especias. Sin.: patacón. | m. Cuba. Planta de la familia de las nictagináceas, con tallo nudoso, hojas ovaladas y florecillas moradas. | m. Tejo para jugar al chito y a otros juegos. | m. Moneda mexicana de 50 centavos. | m. Moneda con diverso valor y factura según las épocas y lugares en que se usó.",
-    "e": "De tostar.",
-    "s": "",
-    "c": "botanica",
-    "ec": "",
-    "esp": [
-      "explosiva"
-    ]
-  },
-  {
     "w": "Totalitario",
     "p": "adj.",
     "d": "Perteneciente o relativo al totalitarismo. Sin.: absolutista, dictatorial, tiránico, autocrático, fascista.",
@@ -17858,16 +16184,6 @@
     "d": "Sistema de creencias y organización de una tribu basado en el tótem.",
     "df": "m. Sistema de creencias y organización de una tribu basado en el tótem.",
     "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Totilimundi",
-    "p": "m.",
-    "d": "Mundonuevo. Sin.: mundonuevo, mundinovi, titirimundi, tutilimundi.",
-    "df": "m. mundonuevo. Sin.: mundonuevo, mundinovi, titirimundi, tutilimundi.",
-    "e": "De tutilimundi.",
     "s": "",
     "c": "sustantivo",
     "ec": ""
@@ -17944,16 +16260,6 @@
     "ec": ""
   },
   {
-    "w": "Totovía",
-    "p": "f.",
-    "d": "Cotovía. Sin.: cogujada, cotovía.",
-    "df": "f. cotovía. Sin.: cogujada, cotovía.",
-    "e": "De la onomat. totovi.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Totumpote",
     "p": "m. y f.",
     "d": "Y f. R. Dom. Persona influyente, poderosa y rica.",
@@ -17972,19 +16278,6 @@
     "s": "",
     "c": "adjetivo",
     "ec": ""
-  },
-  {
-    "w": "Tova",
-    "p": "f.",
-    "d": "Cogujada. Sin.: cogujada, cugujada, cochevís, copada, cotovía, galerita, vejeta, agachadera, carabinera, coguja, corucha.",
-    "df": "f. cogujada. Sin.: cogujada, cugujada, cochevís, copada, cotovía, galerita, vejeta, agachadera, carabinera, coguja, corucha.",
-    "e": "De or. onomat.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "",
-    "esp": [
-      "explosiva"
-    ]
   },
   {
     "w": "Toxemia",
@@ -18140,16 +16433,6 @@
     "ec": ""
   },
   {
-    "w": "Tozo",
-    "p": "m.",
-    "d": "Melojo. Sin.: melojo, marojo1, tocio2.",
-    "df": "m. melojo. Sin.: melojo, marojo1, tocio2. | m. Alb. tozuelo. Sin.: tozuelo. | adj. Enano o de escasa altura. Sin.: tocio1, bajo, enano.",
-    "e": "Quizá de la voz prerromana *taucia 'mata', 'cepa de un árbol'.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Tozolada",
     "p": "f.",
     "d": "Golpe que se da en el tozuelo.",
@@ -18208,16 +16491,6 @@
     "d": "Error o equivocación en una cuenta, que la enreda o dificulta.",
     "df": "f. Error o equivocación en una cuenta, que la enreda o dificulta. | f. Discusión, controversia o disputa.",
     "e": "De trabar y cuenta1.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Trabadero",
-    "p": "m.",
-    "d": "Cuartilla . Sin.: cuartilla, cerruma.",
-    "df": "m. cuartilla (‖ parte entre los menudillos y la corona del casco en las caballerías). Sin.: cuartilla, cerruma.",
-    "e": "",
     "s": "",
     "c": "sustantivo",
     "ec": ""
@@ -18301,16 +16574,6 @@
     "s": "",
     "c": "sustantivo",
     "ec": ""
-  },
-  {
-    "w": "Trabe",
-    "p": "f.",
-    "d": "Viga . Sin.: viga, travesaño, madero.",
-    "df": "f. viga (‖ madero largo y grueso). Sin.: viga, travesaño, madero.",
-    "e": "Del lat. trabs, -bis.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_latin"
   },
   {
     "w": "Trabilla",
@@ -18516,16 +16779,6 @@
     ]
   },
   {
-    "w": "Tractorar",
-    "p": "tr.",
-    "d": "Tractorear. Sin.: tractorear.",
-    "df": "tr. tractorear. Sin.: tractorear.",
-    "e": "",
-    "s": "",
-    "c": "verbo",
-    "ec": ""
-  },
-  {
     "w": "Tractorear",
     "p": "tr.",
     "d": "Labrar la tierra con tractor. Sin.: tractorar.",
@@ -18684,16 +16937,6 @@
       "explosiva",
       "viajera"
     ]
-  },
-  {
-    "w": "Tragacanta",
-    "p": "f.",
-    "d": "Tragacanto. Sin.: tragacanto, alquitira, astrágalo, granévano, adraganto.",
-    "df": "f. tragacanto. Sin.: tragacanto, alquitira, astrágalo, granévano, adraganto.",
-    "e": "Del lat. tragacantha, y este del gr. τραγάκανθα tragákantha.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_latin"
   },
   {
     "w": "Tragacanto",
@@ -19042,31 +17285,11 @@
     "ec": "etym_latin"
   },
   {
-    "w": "Trajinero",
-    "p": "m.",
-    "d": "Trajinante. Sin.: trajinante.",
-    "df": "m. trajinante. Sin.: trajinante.",
-    "e": "De trajín.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Trajinería",
     "p": "f.",
     "d": "Ejercicio de trajinero.",
     "df": "f. Ejercicio de trajinero.",
     "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Trajino",
-    "p": "m.",
-    "d": "Trajín. Sin.: trajín.",
-    "df": "m. trajín. Sin.: trajín.",
-    "e": "De trajinar.",
     "s": "",
     "c": "sustantivo",
     "ec": ""
@@ -19132,16 +17355,6 @@
     "esp": [
       "explosiva"
     ]
-  },
-  {
-    "w": "Tramilla",
-    "p": "f.",
-    "d": "Bramante . Sin.: bramante.",
-    "df": "f. bramante (‖ hilo o cordel hecho de cáñamo). Sin.: bramante.",
-    "e": "De trama.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
   },
   {
     "w": "Tramitador",
@@ -19224,16 +17437,6 @@
     "e": "",
     "s": "",
     "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Tramoyón",
-    "p": "adj. coloq.",
-    "d": "Tramoyista . Sin.: tramoyista.",
-    "df": "adj. coloq. tramoyista (‖ que utiliza ficciones o engaños). Sin.: tramoyista.",
-    "e": "",
-    "s": "",
-    "c": "adjetivo",
     "ec": ""
   },
   {
@@ -19356,16 +17559,6 @@
     ]
   },
   {
-    "w": "Trancada",
-    "p": "f.",
-    "d": "Tranco . Sin.: tranco.",
-    "df": "f. tranco (‖ paso largo). Sin.: tranco. | f. Ar. Golpe que se da con la tranca.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Trancahílo",
     "p": "m.",
     "d": "Nudo o lazo sobrepuesto para que estorbe el paso del hilo o cuerda por alguna parte.",
@@ -19409,16 +17602,6 @@
     ]
   },
   {
-    "w": "Trancelín",
-    "p": "m.",
-    "d": "Trencellín. Sin.: trencellín.",
-    "df": "m. trencellín. Sin.: trencellín.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Trancha",
     "p": "f.",
     "d": "Hierro con canto boto, que, clavado en un borriquete, sirve a los hojalateros para rebordear sobre él con el mazo los cantos de la hojalata.",
@@ -19457,16 +17640,6 @@
     "d": "Paso largo o salto que se da abriendo mucho las piernas. Sin.: trancada, zancada.",
     "df": "m. Paso largo o salto que se da abriendo mucho las piernas. Sin.: trancada, zancada. | m. Umbral de la puerta. Sin.: tranquillo, umbral.",
     "e": "De tranca.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Trangallo",
-    "p": "m.",
-    "d": "Tarangallo. Sin.: tarangallo, tanganillo, taragallo.",
-    "df": "m. tarangallo. Sin.: tarangallo, tanganillo, taragallo.",
-    "e": "",
     "s": "",
     "c": "sustantivo",
     "ec": ""
@@ -19700,16 +17873,6 @@
     ]
   },
   {
-    "w": "Transcribir",
-    "p": "tr.",
-    "d": "Copiar . Sin.: copiar, reproducir, trasladar, duplicar.",
-    "df": "tr. copiar (‖ escribir en una parte lo escrito en otra). Sin.: copiar, reproducir, trasladar, duplicar. | tr. transliterar. Sin.: transliterar. | tr. Representar elementos fonéticos, fonológicos, léxicos o morfológicos de una lengua o dialecto mediante un sistema de escritura. | tr. Mús. Arreglar para un instrumento la música escrita para otro u otros.",
-    "e": "",
-    "s": "",
-    "c": "verbo",
-    "ec": ""
-  },
-  {
     "w": "Transcripto",
     "p": "part. irreg.",
     "d": "Part. irreg. de transcribir.",
@@ -19797,16 +17960,6 @@
     "p": "f.",
     "d": "Cualidad o condición de transexual. Sin.: transexualismo.",
     "df": "f. Cualidad o condición de transexual. Sin.: transexualismo.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Transexualismo",
-    "p": "m.",
-    "d": "Transexualidad. Sin.: transexualidad.",
-    "df": "m. transexualidad. Sin.: transexualidad.",
     "e": "",
     "s": "",
     "c": "sustantivo",
@@ -20243,16 +18396,6 @@
     "ec": ""
   },
   {
-    "w": "Transluciente",
-    "p": "adj.",
-    "d": "Traslúcido. Sin.: traslúcido.",
-    "df": "adj. traslúcido. Sin.: traslúcido.",
-    "e": "",
-    "s": "",
-    "c": "adjetivo",
-    "ec": ""
-  },
-  {
     "w": "Translucirse",
     "p": "tr.",
     "d": "Dicho de una cosa: Permitir conjeturar algo o entreverlo por algún antecedente o indicio. U. t. c. prnl. Sin.: reflejar, mostrar, denotar, manifestar, revelar, evidenciar, transparentar.",
@@ -20382,30 +18525,10 @@
     "ec": ""
   },
   {
-    "w": "Transmundo",
-    "p": "m.",
-    "d": "Ultratumba . Sin.: ultratumba.",
-    "df": "m. ultratumba (‖ ámbito más allá de la muerte). Sin.: ultratumba.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Transmutable",
     "p": "adj.",
     "d": "Que se puede transmutar.",
     "df": "adj. Que se puede transmutar.",
-    "e": "",
-    "s": "",
-    "c": "adjetivo",
-    "ec": ""
-  },
-  {
-    "w": "Transmutativo",
-    "p": "adj.",
-    "d": "Transmutatorio. Sin.: transmutatorio.",
-    "df": "adj. transmutatorio. Sin.: transmutatorio.",
     "e": "",
     "s": "",
     "c": "adjetivo",
@@ -20591,19 +18714,6 @@
     "ec": ""
   },
   {
-    "w": "Transportamiento",
-    "p": "m.",
-    "d": "Transporte . Sin.: transporte.",
-    "df": "m. transporte (‖ acción de transportar). Sin.: transporte.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "",
-    "esp": [
-      "larga"
-    ]
-  },
-  {
     "w": "Transportista",
     "p": "adj.",
     "d": "Que se dedica a hacer transportes. Apl. a pers., u. m. c. s. Sin.: transportador, porteador, conductor, cargador, acarreador.",
@@ -20618,16 +18728,6 @@
     "p": "f.",
     "d": "Acción y efecto de trasponer o trasponerse. Sin.: traspuesta.",
     "df": "f. Acción y efecto de trasponer o trasponerse. Sin.: traspuesta. | f. Ret. Alteración del orden normal de las palabras en un segmento de la oración, como en del caballo el veloz galope. Sin.: alteración.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Transpuesta",
-    "p": "f.",
-    "d": "Traspuesta. Sin.: traspuesta, trasposición.",
-    "df": "f. traspuesta. Sin.: traspuesta, trasposición.",
     "e": "",
     "s": "",
     "c": "sustantivo",
@@ -20855,16 +18955,6 @@
     ]
   },
   {
-    "w": "Trapacería",
-    "p": "f.",
-    "d": "Trapaza. Sin.: trapaza, engaño, estafa1, fraude, timo2, falsedad, asechanza.",
-    "df": "f. trapaza. Sin.: trapaza, engaño, estafa1, fraude, timo2, falsedad, asechanza.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Trapacete",
     "p": "m.",
     "d": "Libro en que un comerciante o un banquero sienta las partidas que da a cambio o logro, o las de los géneros que vende.",
@@ -20915,16 +19005,6 @@
     "ec": ""
   },
   {
-    "w": "Trapatiesta",
-    "p": "f. coloq.",
-    "d": "Zapatiesta. Sin.: zapatiesta, riña, alboroto.",
-    "df": "f. coloq. zapatiesta. Sin.: zapatiesta, riña, alboroto.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Trapaza",
     "p": "f.",
     "d": "Artificio engañoso e ilícito con que se perjudica y defrauda a alguien en alguna compra, venta o cambio. Sin.: trapacería, engaño, estafa1, fraude, timo2, falsedad, asechanza, adrolla.",
@@ -20937,16 +19017,6 @@
       "explosiva",
       "viajera"
     ]
-  },
-  {
-    "w": "Trapazar",
-    "p": "intr.",
-    "d": "Trapacear. Sin.: trapacear, entrapazar.",
-    "df": "intr. trapacear. Sin.: trapacear, entrapazar.",
-    "e": "",
-    "s": "",
-    "c": "verbo",
-    "ec": ""
   },
   {
     "w": "Trape",
@@ -21278,16 +19348,6 @@
     "ec": ""
   },
   {
-    "w": "Trascabo",
-    "p": "m.",
-    "d": "Traspié . Sin.: traspié.",
-    "df": "m. traspié (‖ zancadilla). Sin.: traspié.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Trascacho",
     "p": "m.",
     "d": "Paraje resguardado del viento.",
@@ -21302,16 +19362,6 @@
     "p": "f.",
     "d": "Serie de trascantones de piedra.",
     "df": "f. Serie de trascantones de piedra.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Trascantón",
-    "p": "m.",
-    "d": "Guardacantón . Sin.: guardacantón.",
-    "df": "m. guardacantón (‖ poste de piedra de paseos y caminos). Sin.: guardacantón. | m. Esportillero o mozo que se ponía en una esquina para servir a quien lo llamaba.",
     "e": "",
     "s": "",
     "c": "sustantivo",
@@ -21425,16 +19475,6 @@
     "e": "",
     "s": "",
     "c": "adjetivo",
-    "ec": ""
-  },
-  {
-    "w": "Trascribir",
-    "p": "tr.",
-    "d": "Copiar . Sin.: copiar, reproducir, trasladar, duplicar.",
-    "df": "tr. copiar (‖ escribir en una parte lo escrito en otra). Sin.: copiar, reproducir, trasladar, duplicar. | tr. transliterar. Sin.: transliterar. | tr. Representar elementos fonéticos, fonológicos, léxicos o morfológicos de una lengua o dialecto mediante un sistema de escritura. | tr. Mús. Arreglar para un instrumento la música escrita para otro u otros.",
-    "e": "",
-    "s": "",
-    "c": "verbo",
     "ec": ""
   },
   {
@@ -21813,16 +19853,6 @@
     "ec": ""
   },
   {
-    "w": "Trasgo",
-    "p": "m.",
-    "d": "Duende . Sin.: duende, martinico.",
-    "df": "m. duende (‖ espíritu fantástico). Sin.: duende, martinico.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Trasguero",
     "p": "m. y f.",
     "d": "Y f. Persona que trasguea, o dada a trasguear.",
@@ -21976,16 +20006,6 @@
     "e": "",
     "s": "",
     "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Trasluciente",
-    "p": "adj.",
-    "d": "Traslúcido. Sin.: traslúcido.",
-    "df": "adj. traslúcido. Sin.: traslúcido.",
-    "e": "",
-    "s": "",
-    "c": "adjetivo",
     "ec": ""
   },
   {
@@ -22181,16 +20201,6 @@
     "ec": ""
   },
   {
-    "w": "Trasmontano",
-    "p": "adj.",
-    "d": "Transmontano. Sin.: transmontano.",
-    "df": "adj. transmontano. Sin.: transmontano.",
-    "e": "",
-    "s": "",
-    "c": "adjetivo",
-    "ec": ""
-  },
-  {
     "w": "Trasmontar",
     "p": "tr.",
     "d": "Tramontar. U. t. c. intr. y c. prnl.",
@@ -22211,30 +20221,10 @@
     "ec": ""
   },
   {
-    "w": "Trasmundo",
-    "p": "m.",
-    "d": "Ultratumba . Sin.: ultratumba.",
-    "df": "m. ultratumba (‖ ámbito más allá de la muerte). Sin.: ultratumba.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Trasmutable",
     "p": "adj.",
     "d": "Que se puede transmutar.",
     "df": "adj. Que se puede transmutar.",
-    "e": "",
-    "s": "",
-    "c": "adjetivo",
-    "ec": ""
-  },
-  {
-    "w": "Trasmutativo",
-    "p": "adj.",
-    "d": "Transmutatorio. Sin.: transmutatorio.",
-    "df": "adj. transmutatorio. Sin.: transmutatorio.",
     "e": "",
     "s": "",
     "c": "adjetivo",
@@ -22298,16 +20288,6 @@
     "e": "De tras- y noche.",
     "s": "",
     "c": "verbo",
-    "ec": ""
-  },
-  {
-    "w": "Trasnoche",
-    "p": "m. coloq.",
-    "d": "Trasnocho. Sin.: trasnocho.",
-    "df": "m. coloq. trasnocho. Sin.: trasnocho.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
     "ec": ""
   },
   {
@@ -22481,16 +20461,6 @@
     "ec": ""
   },
   {
-    "w": "Traspellar",
-    "p": "tr.",
-    "d": "Cerrar. Sin.: traspillar, cerrar.",
-    "df": "tr. cerrar. Sin.: traspillar, cerrar.",
-    "e": "",
-    "s": "",
-    "c": "verbo",
-    "ec": ""
-  },
-  {
     "w": "Traspilastra",
     "p": "f.",
     "d": "Arq. Contrapilastra de un muro.",
@@ -22508,16 +20478,6 @@
     "e": "Del part. de traspillar.",
     "s": "",
     "c": "adjetivo",
-    "ec": ""
-  },
-  {
-    "w": "Traspillar",
-    "p": "tr.",
-    "d": "Traspellar. Sin.: traspellar, cerrar.",
-    "df": "tr. traspellar. Sin.: traspellar, cerrar.",
-    "e": "",
-    "s": "",
-    "c": "verbo",
     "ec": ""
   },
   {
@@ -22607,16 +20567,6 @@
     "ec": ""
   },
   {
-    "w": "Trasplantación",
-    "p": "f.",
-    "d": "Trasplante. Sin.: trasplante.",
-    "df": "f. trasplante. Sin.: trasplante.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Trasplantado",
     "p": "m. y f.",
     "d": "Y f. Persona que ha sufrido un trasplante. U. t. c. adj.",
@@ -22701,19 +20651,6 @@
     "s": "",
     "c": "adjetivo",
     "ec": ""
-  },
-  {
-    "w": "Trasportamiento",
-    "p": "m.",
-    "d": "Transporte . Sin.: transporte.",
-    "df": "m. transporte (‖ acción de transportar). Sin.: transporte.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "",
-    "esp": [
-      "larga"
-    ]
   },
   {
     "w": "Trasportar",
@@ -22816,16 +20753,6 @@
     "e": "De trasquilado y mocho.",
     "s": "",
     "c": "adjetivo",
-    "ec": ""
-  },
-  {
-    "w": "Trasquilón",
-    "p": "m. coloq.",
-    "d": "Trasquiladura. Sin.: trasquiladura.",
-    "df": "m. coloq. trasquiladura. Sin.: trasquiladura. | m. coloq. Parte del caudal quitada a alguien con industria o arte.",
-    "e": "De trasquilar.",
-    "s": "",
-    "c": "sustantivo",
     "ec": ""
   },
   {
@@ -23114,16 +21041,6 @@
     "e": "De tras- y trabado.",
     "s": "",
     "c": "adjetivo",
-    "ec": ""
-  },
-  {
-    "w": "Trastrabillar",
-    "p": "intr.",
-    "d": "Trastabillar. Sin.: trastabillar.",
-    "df": "intr. trastabillar. Sin.: trastabillar.",
-    "e": "De tras1 y traba.",
-    "s": "",
-    "c": "verbo",
     "ec": ""
   },
   {
@@ -23728,16 +21645,6 @@
     "ec": ""
   },
   {
-    "w": "Trecenato",
-    "p": "m.",
-    "d": "Trecenazgo. Sin.: trecenazgo.",
-    "df": "m. trecenazgo. Sin.: trecenazgo.",
-    "e": "De treceno y -ato1.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Trecenazgo",
     "p": "m.",
     "d": "Cuerpo supremo integrado por los trece caballeros que tienen a su cargo el gobierno y la administración de la orden militar de caballería de Santiago. Sin.: trecenato.",
@@ -23901,16 +21808,6 @@
     "ec": ""
   },
   {
-    "w": "Tremadal",
-    "p": "m.",
-    "d": "Tremedal. Sin.: tremedal, tembladal, tembladero, tembladeral.",
-    "df": "m. tremedal. Sin.: tremedal, tembladal, tembladero, tembladeral.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Trematodo",
     "p": "adj.",
     "d": "Zool. Dicho de un invertebrado: Del grupo de los platelmintos, parásito, que tiene el cuerpo no segmentado, tubo digestivo ramificado y sin ano, dos o más ventosas y a veces también ganchos que le sirven para fijarse al cuerpo de su huésped; p. ej., la duela. U. t. c. s. m., en pl. como taxón.",
@@ -24000,26 +21897,6 @@
     "ec": ""
   },
   {
-    "w": "Tremielga",
-    "p": "f.",
-    "d": "Torpedo . Sin.: torpedo, trimielga, tembladera, temblador.",
-    "df": "f. torpedo (‖ selacio). Sin.: torpedo, trimielga, tembladera, temblador.",
-    "e": "De or. inc.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Tremol",
-    "p": "m.",
-    "d": "Tremó. Sin.: tremó.",
-    "df": "m. tremó. Sin.: tremó.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Tremolar",
     "p": "tr.",
     "d": "Enarbolar los pendones, las banderas o los estandartes, y, por ext., otras cosas, batiéndolos o moviéndolos en el aire. U. t. c. intr. Sin.: ondear, flamear, agitar, flotar1, enarbolar.",
@@ -24051,32 +21928,6 @@
     "s": "",
     "c": "sustantivo",
     "ec": ""
-  },
-  {
-    "w": "Tremoso",
-    "p": "adj.",
-    "d": "Tembloroso. Sin.: tembloroso, trémulo, tiritón, trepidante, tremulento, tembleque, tembloso, temblón.",
-    "df": "adj. tembloroso. Sin.: tembloroso, trémulo, tiritón, trepidante, tremulento, tembleque, tembloso, temblón.",
-    "e": "",
-    "s": "",
-    "c": "adjetivo",
-    "ec": "",
-    "esp": [
-      "explosiva"
-    ]
-  },
-  {
-    "w": "Tremulento",
-    "p": "adj.",
-    "d": "Trémulo. Sin.: tembloroso, trémulo, tiritón, trepidante, temblón, tremoso, tembleque, tembloso.",
-    "df": "adj. trémulo. Sin.: tembloroso, trémulo, tiritón, trepidante, temblón, tremoso, tembleque, tembloso.",
-    "e": "",
-    "s": "",
-    "c": "adjetivo",
-    "ec": "",
-    "esp": [
-      "explosiva"
-    ]
   },
   {
     "w": "Tremís",
@@ -24215,16 +22066,6 @@
     "ec": ""
   },
   {
-    "w": "Trenzado",
-    "p": "m.",
-    "d": "Trenza. Sin.: trenza, crizneja.",
-    "df": "m. trenza. Sin.: trenza, crizneja. | m. Danza. Salto ligero en el cual los pies baten rápidamente uno contra otro, cruzándose. Sin.: cabriola, zapateta, pirueta. | m. Equit. Paso que hace el caballo piafando.",
-    "e": "Del part. de trenzar.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Treo",
     "p": "m.",
     "d": "Mar. Vela cuadrada o redonda con que las embarcaciones latinas navegan en popa con vientos fuertes.",
@@ -24246,26 +22087,6 @@
     "esp": [
       "explosiva"
     ]
-  },
-  {
-    "w": "Trepado",
-    "p": "m.",
-    "d": "Trepa . Sin.: trepa2, orla, ribete, festón.",
-    "df": "m. trepa (‖ adorno). Sin.: trepa2, orla, ribete, festón. | m. Línea de puntos taladrados a máquina que se hace en el papel para separar fácilmente los documentos de sus matrices, o los sellos de correos. | adj. Dicho de un animal: Rehecho y fornido.",
-    "e": "De trepar2.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Trepajuncos",
-    "p": "m.",
-    "d": "Arandillo . Sin.: arandillo.",
-    "df": "m. arandillo (‖ pájaro). Sin.: arandillo.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
   },
   {
     "w": "Trepanación",
@@ -24305,16 +22126,6 @@
     "e": "",
     "s": "",
     "c": "zoologia",
-    "ec": ""
-  },
-  {
-    "w": "Trepatroncos",
-    "p": "m.",
-    "d": "Herrerillo . Sin.: herrerillo, holleca, ollera.",
-    "df": "m. herrerillo (‖ pájaro de unos quince centímetros). Sin.: herrerillo, holleca, ollera.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
     "ec": ""
   },
   {
@@ -24606,16 +22417,6 @@
     "ec": ""
   },
   {
-    "w": "Tribada",
-    "p": "f.",
-    "d": "Lesbiana. Sin.: lesbiana.",
-    "df": "f. poét. lesbiana. Sin.: lesbiana.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Tribal",
     "p": "adj.",
     "d": "Perteneciente o relativo a la tribu. Sin.: tribual.",
@@ -24680,16 +22481,6 @@
     "s": "",
     "c": "sustantivo",
     "ec": "etym_latin"
-  },
-  {
-    "w": "Tribual",
-    "p": "adj.",
-    "d": "Tribal. Sin.: tribal.",
-    "df": "adj. tribal. Sin.: tribal.",
-    "e": "",
-    "s": "",
-    "c": "adjetivo",
-    "ec": ""
   },
   {
     "w": "Tribunado",
@@ -25173,16 +22964,6 @@
     "ec": ""
   },
   {
-    "w": "Trifolio",
-    "p": "m.",
-    "d": "Trébol. Sin.: trébol, gualputa.",
-    "df": "m. trébol. Sin.: trébol, gualputa.",
-    "e": "Del lat. trifolium.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_latin"
-  },
-  {
     "w": "Triforio",
     "p": "m.",
     "d": "Arq. Galería que rodea el interior de una iglesia sobre los arcos de las naves y que suele tener ventanas de tres huecos. Sin.: galería, corredor.",
@@ -25274,16 +23055,6 @@
     "s": "",
     "c": "sustantivo",
     "ec": ""
-  },
-  {
-    "w": "Trigla",
-    "p": "f.",
-    "d": "Rubio . Sin.: rubio, escarcho, trilla1.",
-    "df": "f. rubio (‖ pez). Sin.: rubio, escarcho, trilla1.",
-    "e": "Del lat. mediev. trigla.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_latin"
   },
   {
     "w": "Triglifo",
@@ -25414,29 +23185,6 @@
     "d": "Monumento megalítico compuesto de tres grandes piedras, dos de las cuales, clavadas verticalmente en el suelo, sostienen la tercera en posición horizontal.",
     "df": "m. Monumento megalítico compuesto de tres grandes piedras, dos de las cuales, clavadas verticalmente en el suelo, sostienen la tercera en posición horizontal.",
     "e": "De tri- y -lito.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Trilla",
-    "p": "f.",
-    "d": "Rubio . Sin.: rubio, escarcho, trigla.",
-    "df": "f. rubio (‖ pez). Sin.: rubio, escarcho, trigla. | f. trillo (‖ instrumento para trillar). Sin.: trillo, trilladera. | f. Acción y efecto de trillar. Sin.: trilladura, despajadura, despajo. | f. Tiempo en que se trilla. | f. And., Chile y P. Rico. Zurra, felpa, pateadura.",
-    "e": "Del lat. mediev. trigla.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_latin",
-    "esp": [
-      "explosiva"
-    ]
-  },
-  {
-    "w": "Trilladera",
-    "p": "f.",
-    "d": "Trillo . Sin.: trilla2, trillo.",
-    "df": "f. trillo (‖ instrumento para trillar). Sin.: trilla2, trillo. | f. coloq. Ál. y Sor. Tirante, por lo general de esparto, con que se ata el trillo a las caballerías.",
-    "e": "",
     "s": "",
     "c": "sustantivo",
     "ec": ""
@@ -25628,16 +23376,6 @@
     "ec": ""
   },
   {
-    "w": "Trimielga",
-    "p": "f.",
-    "d": "Torpedo . Sin.: torpedo, tremielga, tembladera, temblador.",
-    "df": "f. torpedo (‖ selacio). Sin.: torpedo, tremielga, tembladera, temblador.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Trimotor",
     "p": "adj.",
     "d": "Dicho especialmente de un avión: Que tiene tres motores. U. t. c. s.",
@@ -25724,16 +23462,6 @@
     "ec": ""
   },
   {
-    "w": "Trincaesquinas",
-    "p": "m.",
-    "d": "Parahúso. Sin.: parahúso, barrena.",
-    "df": "m. parahúso. Sin.: parahúso, barrena.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Trincafía",
     "p": "f.",
     "d": "Atadura que se hace en espiral, empleada para empalmar dos maderos, para asegurar la rajadura de un palo, etc.",
@@ -25810,16 +23538,6 @@
     "ec": ""
   },
   {
-    "w": "Trinchete",
-    "p": "m.",
-    "d": "Tranchete. Sin.: tranchete, chaira.",
-    "df": "m. tranchete. Sin.: tranchete, chaira.",
-    "e": "Der. de trinchar; cf. tranchete y trincheta.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Trineo",
     "p": "m.",
     "d": "Vehículo provisto de cuchillas o de esquíes en lugar de ruedas para deslizarse sobre el hielo y la nieve. Sin.: troika, tobogán, bobsleigh, luge, carretoncillo.",
@@ -25831,16 +23549,6 @@
     "esp": [
       "viajera"
     ]
-  },
-  {
-    "w": "Trinitaria",
-    "p": "f.",
-    "d": "Pensamiento . Sin.: pensamiento.",
-    "df": "f. pensamiento (‖ planta). Sin.: pensamiento. | f. Flor de la trinitaria. | f. Col., Nic., P. Rico, R. Dom. y Ven. buganvilla. Sin.: buganvilla, buganvilia, veranera, curazao.",
-    "e": "Del lat. mod. trinitarius 'conjunto de tres', por alusión a los tres colores de la flor.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_latin"
   },
   {
     "w": "Trinitario",
@@ -25949,29 +23657,6 @@
     "ec": ""
   },
   {
-    "w": "Tripa",
-    "p": "f.",
-    "d": "Intestino . Sin.: intestino, mondongo.",
-    "df": "f. intestino (‖ conducto del aparato digestivo). Sin.: intestino, mondongo. | f. Vientre, región exterior del cuerpo correspondiente al abdomen, especialmente si es abultado. Sin.: abdomen, vientre, barriga, panza, andorga. | f. panza (‖ parte convexa de las vasijas). Sin.: panza, convexidad, barriga, abultamiento. | f. Relleno del cigarro puro. | f. Hoja de tabaco que por su poco tamaño se destina al relleno de los cigarros puros. | f. pl. Laminillas de sustancia córnea que se encuentran en el interior del cañón de las plumas de algunas aves. | f. pl. Partes interiores de algunas frutas. Sin.: núcleo, corazón, cogollo. | f. pl. Lo interior de ciertas cosas. Al acerico se le salen las tripas. Sin.: núcleo, corazón, cogollo. | f. pl. Conjunto de documentos que componen un expediente administrativo, y a que se refiere el extracto de él.",
-    "e": "De or. inc.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "",
-    "esp": [
-      "explosiva"
-    ]
-  },
-  {
-    "w": "Tripada",
-    "p": "f. coloq.",
-    "d": "Panzada . Sin.: atracón, panzada, atiborramiento, hartazgo, pechada1.",
-    "df": "f. coloq. panzada (‖ hartazgo). Sin.: atracón, panzada, atiborramiento, hartazgo, pechada1.",
-    "e": "De tripa y -ada.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Tripanosoma",
     "p": "m.",
     "d": "Género de flagelados parásitos, con una membrana ondulante, que engloba al flagelo adosado al borde del cuerpo. Provocan enfermedades infecciosas, en general graves, como la enfermedad del sueño, transmitidas casi siempre por artrópodos.",
@@ -26023,16 +23708,6 @@
     "s": "",
     "c": "adjetivo",
     "ec": "etym_latin"
-  },
-  {
-    "w": "Tripastos",
-    "p": "m.",
-    "d": "Trispasto. Sin.: trispasto.",
-    "df": "m. trispasto. Sin.: trispasto.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
   },
   {
     "w": "Tripe",
@@ -26105,16 +23780,6 @@
     "e": "",
     "s": "",
     "c": "adverbio",
-    "ec": ""
-  },
-  {
-    "w": "Tripleta",
-    "p": "f.",
-    "d": "Trío . Sin.: trío2, terna, tríada, trinca, terno, triunvirato, trinidad.",
-    "df": "f. trío (‖ conjunto de tres personas, animales o cosas). Sin.: trío2, terna, tríada, trinca, terno, triunvirato, trinidad.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
     "ec": ""
   },
   {
@@ -26338,16 +24003,6 @@
     "s": "",
     "c": "sustantivo",
     "ec": ""
-  },
-  {
-    "w": "Trisa",
-    "p": "f.",
-    "d": "Sábalo. Sin.: sábalo, alosa.",
-    "df": "f. sábalo. Sin.: sábalo, alosa.",
-    "e": "Del lat. thrissa, y este del gr. θρίσσα thríssa.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_latin"
   },
   {
     "w": "Trisagio",
@@ -26620,19 +24275,6 @@
     "ec": ""
   },
   {
-    "w": "Triunfantemente",
-    "p": "adv.",
-    "d": "Triunfalmente. Sin.: triunfalmente.",
-    "df": "adv. triunfalmente. Sin.: triunfalmente.",
-    "e": "",
-    "s": "",
-    "c": "adverbio",
-    "ec": "",
-    "esp": [
-      "larga"
-    ]
-  },
-  {
     "w": "Triunviral",
     "p": "adj.",
     "d": "Perteneciente o relativo a los triunviros.",
@@ -26714,16 +24356,6 @@
     "esp": [
       "explosiva"
     ]
-  },
-  {
-    "w": "Trizar",
-    "p": "tr.",
-    "d": "Destrizar . Sin.: destrizar, desmenuzar, picar, triturar, trocear, partir, pulverizar.",
-    "df": "tr. destrizar (‖ hacer trizas). Sin.: destrizar, desmenuzar, picar, triturar, trocear, partir, pulverizar.",
-    "e": "Del lat. *tritiāre, der. de tritus, part. pas. de terĕre 'machacar'.",
-    "s": "",
-    "c": "verbo",
-    "ec": "etym_latin"
   },
   {
     "w": "Triádico",
@@ -26867,16 +24499,6 @@
     "d": "Med. Cada uno de los trozos que se hacen de la masa formada de varios ingredientes medicinales, y los cuales se disponen en varias figuras, para formar después las píldoras. Sin.: rótula.",
     "df": "m. Med. Cada uno de los trozos que se hacen de la masa formada de varios ingredientes medicinales, y los cuales se disponen en varias figuras, para formar después las píldoras. Sin.: rótula. | m. Med. Cada una de las masas pequeñas de forma variable compuestas de sustancias medicinales finamente pulverizadas.",
     "e": "Del lat. tardío trochiscus, y este del gr. τροχίσκος trochískos.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_latin"
-  },
-  {
-    "w": "Trocla",
-    "p": "f.",
-    "d": "Polea. Sin.: polea, garrucha, motón, carrillo, vigota1.",
-    "df": "f. polea. Sin.: polea, garrucha, motón, carrillo, vigota1.",
-    "e": "Del lat. trochlĕa, y este del gr. τροχιλία trochilía.",
     "s": "",
     "c": "sustantivo",
     "ec": "etym_latin"
@@ -27041,19 +24663,6 @@
     "ec": "etym_latin"
   },
   {
-    "w": "Tromba",
-    "p": "f.",
-    "d": "Manga . Sin.: manga1, tifón.",
-    "df": "f. manga (‖ columna de agua que se eleva desde el mar). Sin.: manga1, tifón. | f. tromba de agua. Sin.: chaparrón, aguacero. | f. Irrupción tumultuosa de personas.",
-    "e": "Del it. tromba 'trompa'.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_italiano",
-    "esp": [
-      "viajera"
-    ]
-  },
-  {
     "w": "Trombo",
     "p": "m.",
     "d": "Med. Coágulo de sangre en el interior de un vaso sanguíneo. Sin.: coágulo.",
@@ -27127,44 +24736,11 @@
     ]
   },
   {
-    "w": "Trompada",
-    "p": "f. coloq.",
-    "d": "Trompazo . Sin.: trompazo1, golpe, porrazo, trompón, puñetazo, trompis, bollo, cato3, combazo, chopazo, combo2, meco, ñoqui, piña, quiño, toletazo, trompeada, zuácate, cuesco1.",
-    "df": "f. coloq. trompazo (‖ golpe recio). Sin.: trompazo1, golpe, porrazo, trompón, puñetazo, trompis, bollo, cato3, combazo, chopazo, combo2, meco, ñoqui, piña, quiño, toletazo, trompeada, zuácate, cuesco1. | f. coloq. Choque de frente de una persona con otra. | f. coloq. puñetazo. | f. Mar. Embestida que da un buque contra otro o contra la tierra.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "",
-    "esp": [
-      "explosiva"
-    ]
-  },
-  {
     "w": "Trompazo",
     "p": "m.",
     "d": "Golpe dado con la trompa.",
     "df": "m. Golpe dado con la trompa. | m. Golpe recio. Sin.: golpe, batacazo, porrazo, trompada, trompis, bollo. | m. Golpe dado con el trompo. Sin.: golpe.",
     "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Trompear",
-    "p": "intr.",
-    "d": "Trompar2. Sin.: trompar2.",
-    "df": "intr. trompar2. Sin.: trompar2. | tr. Dar trompadas.",
-    "e": "De trompo y -ear.",
-    "s": "",
-    "c": "verbo",
-    "ec": ""
-  },
-  {
-    "w": "Trompetada",
-    "p": "f. coloq.",
-    "d": "Clarinada . Sin.: clarinada, impertinencia, importunidad, trompetazo.",
-    "df": "f. coloq. clarinada (‖ dicho intempestivo). Sin.: clarinada, impertinencia, importunidad, trompetazo.",
-    "e": "De trompeta y -ada.",
     "s": "",
     "c": "sustantivo",
     "ec": ""
@@ -27294,26 +24870,6 @@
     "esp": [
       "viajera"
     ]
-  },
-  {
-    "w": "Trompis",
-    "p": "m. coloq.",
-    "d": "Trompazo . Sin.: trompazo1, trompada, bollo.",
-    "df": "m. coloq. trompazo (‖ golpe recio). Sin.: trompazo1, trompada, bollo.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Trompo",
-    "p": "m.",
-    "d": "Peón . Sin.: peón1, peonza, trompa, perinola.",
-    "df": "m. peón (‖ juguete que se hace bailar). Sin.: peón1, peonza, trompa, perinola. | m. Giro de un vehículo, especialmente un coche, sobre sí mismo al derrapar. Sin.: derrape, giro1. | m. Molusco gasterópodo marino, abundante en las costas de España, con tentáculos cónicos en la cabeza, pie corto y franjeado en el contorno, y concha cónica, gruesa, angulosa en la base, y de abertura entera, deprimida transversalmente. | m. Persona muy torpe. | m. Alb. Planta semejante a la neguilla, que se cría entre el trigo. | m. Perú. Instrumento de madera o de metal, de forma cónica, que se usa para abocardar cañerías.",
-    "e": "De trompa.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
   },
   {
     "w": "Trona",
@@ -27449,16 +25005,6 @@
     "ec": ""
   },
   {
-    "w": "Troncón",
-    "p": "m.",
-    "d": "Tronco . Sin.: tronco, cuerpo, torso.",
-    "df": "m. tronco (‖ cuerpo humano o de animal). Sin.: tronco, cuerpo, torso. | m. tronca (‖ tocón de un árbol). Sin.: tronca, tocón1, tueco, tueca.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Tronera",
     "p": "f.",
     "d": "Abertura en el costado de un buque, en el parapeto de una muralla, etc., para disparar con seguridad y acierto los cañones. Sin.: cañonera, aspillera, buhedera, portillo, abertura.",
@@ -27466,16 +25012,6 @@
     "e": "De trueno y -era.",
     "s": "",
     "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Tronerar",
-    "p": "tr.",
-    "d": "Atronerar. Sin.: atronerar.",
-    "df": "tr. atronerar. Sin.: atronerar.",
-    "e": "De tronera.",
-    "s": "",
-    "c": "verbo",
     "ec": ""
   },
   {
@@ -27534,16 +25070,6 @@
     "d": "Cochero que gobierna los caballos o mulas de tronco.",
     "df": "m. Cochero que gobierna los caballos o mulas de tronco.",
     "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Tronzadera",
-    "p": "f.",
-    "d": "Tronzador. Sin.: tronzador, tronzadora.",
-    "df": "f. tronzador. Sin.: tronzador, tronzadora.",
-    "e": "De tronzar y -dera.",
     "s": "",
     "c": "sustantivo",
     "ec": ""
@@ -27795,16 +25321,6 @@
     "ec": ""
   },
   {
-    "w": "Troquelar",
-    "p": "tr.",
-    "d": "Acuñar1. Sin.: acuñar1.",
-    "df": "tr. acuñar1. Sin.: acuñar1. | tr. Recortar con troquel piezas de cuero, cartones, etc. Sin.: recortar.",
-    "e": "De troquel.",
-    "s": "",
-    "c": "verbo",
-    "ec": ""
-  },
-  {
     "w": "Troqueo",
     "p": "m.",
     "d": "Métr. En la poesía griega y latina, pie compuesto de dos sílabas, la primera larga y la otra breve.",
@@ -27925,16 +25441,6 @@
     "ec": ""
   },
   {
-    "w": "Trova",
-    "p": "f.",
-    "d": "Verso . Sin.: verso1, número.",
-    "df": "f. verso (‖ conjunto de palabras sujetas a medida y cadencia). Sin.: verso1, número. | f. Composición métrica formada a imitación del método, estilo o consonancia de otra. | f. Composición métrica escrita generalmente para canto. Sin.: poema, canto1, canción. | f. Canción amorosa compuesta o cantada por los trovadores.",
-    "e": "De trovar.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Trovadoresco",
     "p": "adj.",
     "d": "Perteneciente o relativo a los trovadores.",
@@ -27995,16 +25501,6 @@
     "e": "De trozar.",
     "s": "",
     "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Trozar",
-    "p": "tr.",
-    "d": "Romper . Sin.: romper1, quebrar, conchabarse, descacharse.",
-    "df": "tr. romper (‖ quebrar). Sin.: romper1, quebrar, conchabarse, descacharse. | tr. Entre madereros, dividir en trozas el tronco de un árbol. | tr. El Salv. y Hond. Herir a alguien. Sin.: herir, dañar.",
-    "e": "De trozo.",
-    "s": "",
-    "c": "verbo",
     "ec": ""
   },
   {
@@ -28164,16 +25660,6 @@
     ]
   },
   {
-    "w": "Truhanada",
-    "p": "f.",
-    "d": "Truhanería . Sin.: truhanería, granujada.",
-    "df": "f. truhanería (‖ acción truhanesca). Sin.: truhanería, granujada.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Truhanamente",
     "p": "adv.",
     "d": "A manera de truhan.",
@@ -28230,16 +25716,6 @@
     ]
   },
   {
-    "w": "Truja",
-    "p": "f.",
-    "d": "Algorín . Sin.: algorín, troj.",
-    "df": "f. algorín (‖ división para depositar la aceituna). Sin.: algorín, troj.",
-    "e": "De troja.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Trujamanear",
     "p": "intr.",
     "d": "Ejercer de trujamán.",
@@ -28271,19 +25747,6 @@
     "s": "",
     "c": "gentilicio",
     "ec": ""
-  },
-  {
-    "w": "Trulla",
-    "p": "f.",
-    "d": "Bulla . Sin.: bulla, alboroto, guirisapa.",
-    "df": "f. bulla (‖ gritería). Sin.: bulla, alboroto, guirisapa. | f. Turba, tropa o multitud de gente. Sin.: tropel, turbamulta, batallón. | f. llana1. Sin.: llana1, plana1, badilejo, cuchara, bailejo, flota.",
-    "e": "De or. inc.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "",
-    "esp": [
-      "explosiva"
-    ]
   },
   {
     "w": "Trullar",
@@ -28995,16 +26458,6 @@
     "ec": "etym_latin"
   },
   {
-    "w": "Tueca",
-    "p": "f.",
-    "d": "Tueco . Sin.: tueco, tocón1, troncón, tronca.",
-    "df": "f. tueco (‖ tocón). Sin.: tueco, tocón1, troncón, tronca.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Tueco",
     "p": "m.",
     "d": "Tocón de árbol. Sin.: tueca, troncón, tocón1, tronca.",
@@ -29020,26 +26473,6 @@
     "d": "Pieza con un hueco labrado en espiral que ajusta exactamente en el filete de un tornillo. Sin.: matriz, rosca, caracola.",
     "df": "f. Pieza con un hueco labrado en espiral que ajusta exactamente en el filete de un tornillo. Sin.: matriz, rosca, caracola.",
     "e": "De or. inc.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Tuero",
-    "p": "m.",
-    "d": "Trashoguero . Sin.: trashoguero.",
-    "df": "m. trashoguero (‖ leño grueso que se pone en el fondo del hogar). Sin.: trashoguero. | m. leño (‖ trozo de árbol cortado y limpio de ramas). Sin.: leño, madero, tarugo, tronco.",
-    "e": "Del lat. torus 'hinchazón de una planta', 'bulto de un objeto'.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_latin"
-  },
-  {
-    "w": "Tueste",
-    "p": "m.",
-    "d": "Tostadura. Sin.: tostadura, tostado, torrefacción.",
-    "df": "m. tostadura. Sin.: tostadura, tostado, torrefacción.",
-    "e": "De tostar.",
     "s": "",
     "c": "sustantivo",
     "ec": ""
@@ -29344,16 +26777,6 @@
     "ec": ""
   },
   {
-    "w": "Tumultuario",
-    "p": "adj.",
-    "d": "Tumultuoso. Sin.: tumultuoso.",
-    "df": "adj. tumultuoso. Sin.: tumultuoso.",
-    "e": "Del lat. tumultuarius.",
-    "s": "",
-    "c": "adjetivo",
-    "ec": "etym_latin"
-  },
-  {
     "w": "Tuna",
     "p": "f.",
     "d": "Higuera de tuna. Sin.: tunal, nopal, opuncia, tunero2, tunera, chumbera, palera.",
@@ -29449,16 +26872,6 @@
     "esp": [
       "explosiva"
     ]
-  },
-  {
-    "w": "Tundear",
-    "p": "tr.",
-    "d": "Tundir2. Sin.: tundir2, apalear1.",
-    "df": "tr. tundir2. Sin.: tundir2, apalear1.",
-    "e": "",
-    "s": "",
-    "c": "verbo",
-    "ec": ""
   },
   {
     "w": "Tundición",
@@ -29630,16 +27043,6 @@
     "ec": "etym_latin"
   },
   {
-    "w": "Tungsteno",
-    "p": "m.",
-    "d": "Wolframio. Sin.: wolframio.",
-    "df": "m. wolframio. Sin.: wolframio.",
-    "e": "Del lat. cient. tungstenum, y este del sueco tungsten, de tung 'pesado' y sten 'piedra'.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_latin"
-  },
-  {
     "w": "Tungurahuense",
     "p": "adj.",
     "d": "Natural de Tungurahua, provincia del Ecuador. U. t. c. s.",
@@ -29796,29 +27199,6 @@
     "ec": ""
   },
   {
-    "w": "Tupitina",
-    "p": "f. coloq.",
-    "d": "Tupa . Sin.: tupa1, tupitaina.",
-    "df": "f. coloq. tupa (‖ acción de tupirse de comida o bebida). Sin.: tupa1, tupitaina.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Tupé",
-    "p": "m.",
-    "d": "Copete . Sin.: copete.",
-    "df": "m. copete (‖ pelo que se lleva levantado sobre la frente). Sin.: copete. | m. coloq. Atrevimiento, desfachatez. Sin.: atrevimiento, insolencia, descaro, desvergüenza, desfachatez.",
-    "e": "Del fr. toupet, y este del m. or. que tope2.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_frances",
-    "esp": [
-      "viajera"
-    ]
-  },
-  {
     "w": "Tupí",
     "p": "adj.",
     "d": "Dicho de una persona: De un pueblo indígena que habita en el Brasil y que, formando una nación numerosa, dominaba sus costas al llegar allí los portugueses. U. t. c. s.",
@@ -29873,16 +27253,6 @@
     "e": "",
     "s": "",
     "c": "adverbio",
-    "ec": ""
-  },
-  {
-    "w": "Turbal",
-    "p": "m.",
-    "d": "Turbera. Sin.: turbera.",
-    "df": "m. turbera. Sin.: turbera.",
-    "e": "De turba1.",
-    "s": "",
-    "c": "sustantivo",
     "ec": ""
   },
   {
@@ -30134,16 +27504,6 @@
     ]
   },
   {
-    "w": "Turbopropulsor",
-    "p": "m.",
-    "d": "Turbohélice. Sin.: turbohélice.",
-    "df": "m. turbohélice. Sin.: turbohélice.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Turborreactor",
     "p": "m.",
     "d": "Aer. Motor de reacción del que es parte funcional una turbina de gas.",
@@ -30266,16 +27626,6 @@
     "ec": "etym_latin"
   },
   {
-    "w": "Turma",
-    "p": "f.",
-    "d": "Testículo. Sin.: testículo, teste, dídimo, bola, cojón, huevo, pelota1.",
-    "df": "f. testículo. Sin.: testículo, teste, dídimo, bola, cojón, huevo, pelota1.",
-    "e": "Del lat. turma 'tropa', 'batallón'.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_latin"
-  },
-  {
     "w": "Turmalina",
     "p": "f.",
     "d": "Geol. Mineral formado por un silicato de alúmina con ácido bórico, magnesia, cal, óxido de hierro y otras sustancias, que se encuentra en los granitos, y cuyas variedades verdes y encarnadas suelen emplearse como piedras finas. Sin.: chorlo.",
@@ -30372,16 +27722,6 @@
     "ec": ""
   },
   {
-    "w": "Turquesco",
-    "p": "adj.",
-    "d": "Turco . Sin.: turco, osmanlí, otomano.",
-    "df": "adj. turco (‖ perteneciente a Turquía). Sin.: turco, osmanlí, otomano.",
-    "e": "",
-    "s": "",
-    "c": "adjetivo",
-    "ec": ""
-  },
-  {
     "w": "Turra",
     "p": "f.",
     "d": "Áv. y Seg. Especie de tomillo muy nocivo para el ganado.",
@@ -30452,19 +27792,6 @@
     "ec": ""
   },
   {
-    "w": "Turumbón",
-    "p": "m.",
-    "d": "Chichón . Sin.: chichón, bollo, burujón, tolondrón, chibolo, chindondo, cototo, chibola, bodoque.",
-    "df": "m. chichón (‖ bulto en la cabeza). Sin.: chichón, bollo, burujón, tolondrón, chibolo, chindondo, cototo, chibola, bodoque.",
-    "e": "De torondón.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "",
-    "esp": [
-      "explosiva"
-    ]
-  },
-  {
     "w": "Tururú",
     "p": "m.",
     "d": "En algunos juegos, acción de reunir un jugador tres cartas del mismo valor.",
@@ -30473,26 +27800,6 @@
     "s": "",
     "c": "sustantivo",
     "ec": ""
-  },
-  {
-    "w": "Turuta",
-    "p": "adj. coloq.",
-    "d": "Turulato. Sin.: turulato, tirulato, tuturuto.",
-    "df": "adj. coloq. turulato. Sin.: turulato, tirulato, tuturuto.",
-    "e": "",
-    "s": "",
-    "c": "adjetivo",
-    "ec": ""
-  },
-  {
-    "w": "Turíbulo",
-    "p": "m.",
-    "d": "Incensario. Sin.: incensario, botafumeiro.",
-    "df": "m. incensario. Sin.: incensario, botafumeiro.",
-    "e": "Del lat. turibŭlum, der. de tus, turis 'incienso'.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_latin"
   },
   {
     "w": "Turífero",
@@ -30622,19 +27929,6 @@
     "ec": ""
   },
   {
-    "w": "Tutilimundi",
-    "p": "m.",
-    "d": "Mundonuevo. Sin.: mundonuevo, mundinovi, titirimundi, totilimundi.",
-    "df": "m. mundonuevo. Sin.: mundonuevo, mundinovi, titirimundi, totilimundi. | m. Méx. todo el mundo.",
-    "e": "Del it. tutti li mondi 'todos los mundos'.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_italiano",
-    "esp": [
-      "viajera"
-    ]
-  },
-  {
     "w": "Tutor",
     "p": "m. y f.",
     "d": "Y f. Persona que ejerce la tutela. Sin.: guardador.",
@@ -30643,16 +27937,6 @@
     "s": "",
     "c": "sustantivo",
     "ec": "etym_latin"
-  },
-  {
-    "w": "Tutorar",
-    "p": "tr.",
-    "d": "Entutorar. Sin.: entutorar, rodrigar, enrodrigar, enrodrigonar.",
-    "df": "tr. entutorar. Sin.: entutorar, rodrigar, enrodrigar, enrodrigonar.",
-    "e": "",
-    "s": "",
-    "c": "verbo",
-    "ec": ""
   },
   {
     "w": "Tutorización",
@@ -30672,16 +27956,6 @@
     "e": "De tutor e -izar.",
     "s": "",
     "c": "verbo",
-    "ec": ""
-  },
-  {
-    "w": "Tutoría",
-    "p": "f.",
-    "d": "Tutela . Sin.: tutela, guarda.",
-    "df": "f. tutela (‖ autoridad del tutor). Sin.: tutela, guarda. | f. Cargo de tutor. | f. Reunión de carácter orientativo e informativo con un tutor (‖ persona que orienta a sus alumnos). Este curso el centro fomentará las tutorías tanto con los alumnos como con los padres.",
-    "e": "De tutor e -ía.",
-    "s": "",
-    "c": "sustantivo",
     "ec": ""
   },
   {
@@ -30725,16 +27999,6 @@
     "e": "",
     "s": "",
     "c": "gentilicio",
-    "ec": ""
-  },
-  {
-    "w": "Tuétano",
-    "p": "m.",
-    "d": "Médula . Sin.: médula, cañada, meollo.",
-    "df": "m. médula (‖ sustancia interior de los huesos). Sin.: médula, cañada, meollo. | m. Parte interior de una raíz o tallo de una planta.",
-    "e": "De tútano.",
-    "s": "",
-    "c": "sustantivo",
     "ec": ""
   },
   {
@@ -30864,16 +28128,6 @@
     "ec": "etym_latin"
   },
   {
-    "w": "Támpax",
-    "p": "m.",
-    "d": "Tampón . Sin.: tampón.",
-    "df": "m. tampón (‖ rollo de celulosa). Sin.: tampón.",
-    "e": "De Tampax®, marca reg.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Tándem",
     "p": "m.",
     "d": "Bicicleta para dos personas, que se sientan una tras otra, provista de pedales para ambos. Sin.: bicicleta.",
@@ -30885,26 +28139,6 @@
     "esp": [
       "viajera"
     ]
-  },
-  {
-    "w": "Tángana",
-    "p": "f.",
-    "d": "Chito . Sin.: chito1, tanga1, tángano, tango1, tarusa.",
-    "df": "f. chito (‖ juego que consiste en arrojar tejos contra un cilindro de madera). Sin.: chito1, tanga1, tángano, tango1, tarusa. | f. Alboroto, escándalo. | f. En el fútbol, follón, jaleo, pelea. | f. Engaño, fraude. | f. Ant. y Ven. Discusión violenta sobre un asunto.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Tángano",
-    "p": "m.",
-    "d": "Chito . Sin.: chito1, tanga1, tángana, tango1, tarusa.",
-    "df": "m. chito (‖ juego que consiste en arrojar tejos contra un cilindro de madera). Sin.: chito1, tanga1, tángana, tango1, tarusa.",
-    "e": "De tango1.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
   },
   {
     "w": "Tánico",
@@ -30935,16 +28169,6 @@
     "s": "",
     "c": "adjetivo",
     "ec": ""
-  },
-  {
-    "w": "Tápara",
-    "p": "f.",
-    "d": "Alcaparra . Sin.: alcaparra, alcaparrera, alcaparro, tápena.",
-    "df": "f. alcaparra (‖ mata caparidácea). Sin.: alcaparra, alcaparrera, alcaparro, tápena. | f. Ar. alcaparrón (‖ fruto). Sin.: alcaparrón, taparote.",
-    "e": "Del lat. cappăris, y este del gr. κάππαρις kápparis.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_latin"
   },
   {
     "w": "Tápena",
@@ -31317,16 +28541,6 @@
     "ec": "etym_latin"
   },
   {
-    "w": "Tórdiga",
-    "p": "f.",
-    "d": "Túrdiga. Sin.: túrdiga.",
-    "df": "f. túrdiga. Sin.: túrdiga.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Tórico",
     "p": "adj.",
     "d": "Geom. Perteneciente o relativo al toro2.",
@@ -31435,16 +28649,6 @@
     "d": "Dicho de una persona: De un pueblo hispánico prerromano que habitó en las zonas llanas de las actuales provincias de Córdoba y Jaén, y el interior de las de Cádiz, Málaga y Granada, y también en otras regiones de la península ibérica, como Sierra Morena o la costa de Portugal. U. t. c. s.",
     "df": "adj. Dicho de una persona: De un pueblo hispánico prerromano que habitó en las zonas llanas de las actuales provincias de Córdoba y Jaén, y el interior de las de Cádiz, Málaga y Granada, y también en otras regiones de la península ibérica, como Sierra Morena o la costa de Portugal. U. t. c. s. | adj. turdetano. Apl. a pers., u. t. c. s. | adj. Perteneciente o relativo a los túrdulos.",
     "e": "Del lat. Turdŭlus.",
-    "s": "",
-    "c": "adjetivo",
-    "ec": "etym_latin"
-  },
-  {
-    "w": "Túrgido",
-    "p": "adj.",
-    "d": "Turgente . Sin.: turgente, firme, tirante.",
-    "df": "adj. poét. turgente (‖ abultado). Sin.: turgente, firme, tirante.",
-    "e": "Del lat. turgĭdus.",
     "s": "",
     "c": "adjetivo",
     "ec": "etym_latin"

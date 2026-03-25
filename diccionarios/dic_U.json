@@ -163,16 +163,6 @@
     "ec": ""
   },
   {
-    "w": "Udómetro",
-    "p": "m.",
-    "d": "Pluviómetro. Sin.: pluvímetro, pluviómetro.",
-    "df": "m. pluviómetro. Sin.: pluvímetro, pluviómetro.",
-    "e": "Del lat. udor 'lluvia' y ‒́metro.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_latin"
-  },
-  {
     "w": "Ufología",
     "p": "f.",
     "d": "Estudio de los fenómenos asociados a los ovnis. Sin.: ovnilogía.",
@@ -753,16 +743,6 @@
     "ec": "etym_latin"
   },
   {
-    "w": "Umbela",
-    "p": "f.",
-    "d": "Guardapolvo . Sin.: guardapolvo, tejadillo, voladizo.",
-    "df": "f. guardapolvo (‖ tejadillo voladizo sobre un balcón o ventana). Sin.: guardapolvo, tejadillo, voladizo. | f. Bot. Grupo de flores o frutos que nacen en un mismo punto del tallo y se elevan a igual o casi igual altura.",
-    "e": "Del lat. umbella 'quitasol'.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_latin"
-  },
-  {
     "w": "Umbelífero",
     "p": "adj.",
     "d": "Bot. Dicho de una planta: Del grupo de las angiospermas dicotiledóneas, con hojas por lo común alternas, simples, más o menos divididas y con pecíolos envainadores, flores blancas o amarillas en umbela, y fruto compuesto por dos aquenios, en cada uno de los cuales hay una sola semilla de albumen carnoso o córneo; p. ej., el cardo corredor, el apio, el perejil, el hinojo, el comino o la zanahoria. U. t. c. s. f., en pl. como taxón. Sin.: aparasolado.",
@@ -850,26 +830,6 @@
     "e": "Del lat. umbratĭcus.",
     "s": "",
     "c": "adjetivo",
-    "ec": "etym_latin"
-  },
-  {
-    "w": "Umbrátil",
-    "p": "adj.",
-    "d": "Umbroso. Sin.: umbroso, sombrío, umbrío.",
-    "df": "adj. umbroso. Sin.: umbroso, sombrío, umbrío. | adj. Que tiene sombra o apariencia de algo.",
-    "e": "Del lat. umbratĭlis.",
-    "s": "",
-    "c": "adjetivo",
-    "ec": "etym_latin"
-  },
-  {
-    "w": "Umero",
-    "p": "m.",
-    "d": "Omero. Sin.: aliso1, omero.",
-    "df": "m. omero. Sin.: aliso1, omero.",
-    "e": "Del lat. ulmus 'olmo'.",
-    "s": "",
-    "c": "sustantivo",
     "ec": "etym_latin"
   },
   {
@@ -1108,16 +1068,6 @@
     "d": "Zool. Dicho de un mamífero: Que tiene las extremidades terminadas en casco o pezuña; p. ej., el caballo o el toro. U. t. c. s. m., en pl. como taxón.",
     "df": "adj. Zool. Dicho de un mamífero: Que tiene las extremidades terminadas en casco o pezuña; p. ej., el caballo o el toro. U. t. c. s. m., en pl. como taxón.",
     "e": "Del lat. cient. Ungulata, y este del lat. ungulātus 'que tiene uña o pezuña', der. de ungŭla 'uña', 'pezuña'.",
-    "s": "",
-    "c": "adjetivo",
-    "ec": "etym_latin"
-  },
-  {
-    "w": "Ungular",
-    "p": "adj.",
-    "d": "Ungueal. Sin.: ungueal.",
-    "df": "adj. ungueal. Sin.: ungueal.",
-    "e": "Del lat. ungŭla 'uña' y -ar.",
     "s": "",
     "c": "adjetivo",
     "ec": "etym_latin"
@@ -1522,16 +1472,6 @@
     "ec": ""
   },
   {
-    "w": "Untamiento",
-    "p": "m.",
-    "d": "Untadura . Sin.: untadura, untura, unción.",
-    "df": "m. untadura (‖ acción de untar). Sin.: untadura, untura, unción.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Untar",
     "p": "tr.",
     "d": "Aplicar y extender superficialmente aceite u otra materia pingüe sobre algo. Sin.: engrasar, aceitar, ungir, embadurnar, bañar.",
@@ -1641,16 +1581,6 @@
     "ec": "etym_latin"
   },
   {
-    "w": "Upupa",
-    "p": "f.",
-    "d": "Abubilla. Sin.: abubilla.",
-    "df": "f. abubilla. Sin.: abubilla.",
-    "e": "Del lat. upŭpa.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_latin"
-  },
-  {
     "w": "Uracilo",
     "p": "m.",
     "d": "Biol. Base nitrogenada fundamental, componente del ARN. (Símb. U).",
@@ -1719,16 +1649,6 @@
     "s": "",
     "c": "sustantivo",
     "ec": "etym_griego"
-  },
-  {
-    "w": "Urao",
-    "p": "m.",
-    "d": "Trona1. Sin.: trona1.",
-    "df": "m. trona1. Sin.: trona1.",
-    "e": "De or. caribe.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
   },
   {
     "w": "Urato",
@@ -1842,16 +1762,6 @@
     "s": "",
     "c": "gentilicio",
     "ec": "etym_latin"
-  },
-  {
-    "w": "Urdidera",
-    "p": "f.",
-    "d": "Urdidora . Sin.: urdidora.",
-    "df": "f. urdidora (‖ que urde). Sin.: urdidora. | f. Instrumento a modo de devanadera, donde se preparan los hilos para las urdimbres. Sin.: urdidora.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
   },
   {
     "w": "Urdidor",
@@ -2059,16 +1969,6 @@
     "ec": ""
   },
   {
-    "w": "Urogenital",
-    "p": "adj.",
-    "d": "Genitourinario. Sin.: genitourinario.",
-    "df": "adj. genitourinario. Sin.: genitourinario.",
-    "e": "Del gr. οὖρον oûron 'orina' y genital.",
-    "s": "",
-    "c": "adjetivo",
-    "ec": "etym_griego"
-  },
-  {
     "w": "Urografía",
     "p": "f.",
     "d": "Med. Radiografía que permite visualizar las vías urinarias mediante el empleo de sustancias de contraste.",
@@ -2136,16 +2036,6 @@
     "e": "De santa Úrsula, virgen y mártir del siglo IV, bajo cuya advocación se fundó esta orden.",
     "s": "",
     "c": "adjetivo",
-    "ec": ""
-  },
-  {
-    "w": "Urta",
-    "p": "f.",
-    "d": "Pargo. Sin.: pargo, bocinegro.",
-    "df": "f. pargo. Sin.: pargo, bocinegro.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
     "ec": ""
   },
   {
@@ -2609,16 +2499,6 @@
     "p": "f.",
     "d": "Abundancia de uva.",
     "df": "f. Abundancia de uva.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Uvaguemaestre",
-    "p": "m.",
-    "d": "Vaguemaestre. Sin.: vaguemaestre.",
-    "df": "m. vaguemaestre. Sin.: vaguemaestre.",
     "e": "",
     "s": "",
     "c": "sustantivo",

@@ -510,16 +510,6 @@
     "ec": ""
   },
   {
-    "w": "Quepí",
-    "p": "m.",
-    "d": "Quepis. Sin.: quepis.",
-    "df": "m. quepis. Sin.: quepis.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Quera",
     "p": "m.",
     "d": "Hombre pesado y molesto.",
@@ -623,16 +613,6 @@
     "ec": ""
   },
   {
-    "w": "Queresa",
-    "p": "f.",
-    "d": "Cresa. Sin.: cresa, moscarda.",
-    "df": "f. cresa. Sin.: cresa, moscarda.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Queretano",
     "p": "adj.",
     "d": "Natural de Querétaro, estado de México, o de su capital. U. t. c. s.",
@@ -719,30 +699,10 @@
     "ec": ""
   },
   {
-    "w": "Querosene",
-    "p": "m.",
-    "d": "Queroseno. Sin.: queroseno, querosén, canfín, querosín.",
-    "df": "m. Am. queroseno. Sin.: queroseno, querosén, canfín, querosín.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Queroseno",
     "p": "m.",
     "d": "Fracción del petróleo natural, obtenida por refinación y destilación, usada en el alumbrado y como combustible en los propulsores de chorro. Sin.: querosén, canfín, querosene, querosín.",
     "df": "m. Fracción del petróleo natural, obtenida por refinación y destilación, usada en el alumbrado y como combustible en los propulsores de chorro. Sin.: querosén, canfín, querosene, querosín.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Querosén",
-    "p": "m.",
-    "d": "Queroseno. Sin.: queroseno, canfín, querosene, querosín.",
-    "df": "m. Am. queroseno. Sin.: queroseno, canfín, querosene, querosín.",
     "e": "",
     "s": "",
     "c": "sustantivo",
@@ -757,16 +717,6 @@
     "s": "",
     "c": "sustantivo",
     "ec": "etym_latin"
-  },
-  {
-    "w": "Querube",
-    "p": "m.",
-    "d": "Querubín. Sin.: querubín.",
-    "df": "m. poét. querubín. Sin.: querubín.",
-    "e": "De querub.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
   },
   {
     "w": "Querubín",
@@ -1029,16 +979,6 @@
     "esp": [
       "explosiva"
     ]
-  },
-  {
-    "w": "Quiebrahacha",
-    "p": "m.",
-    "d": "Quebracho . Sin.: quebracho, caguairán.",
-    "df": "m. quebracho (‖ nombre genérico de varios árboles americanos). Sin.: quebracho, caguairán.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
   },
   {
     "w": "Quiebro",
@@ -1713,26 +1653,6 @@
     "ec": ""
   },
   {
-    "w": "Quincineta",
-    "p": "f.",
-    "d": "Avefría. Sin.: avefría, frailecillo, judía.",
-    "df": "f. avefría. Sin.: avefría, frailecillo, judía.",
-    "e": "De or. desc.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Quincuagena",
-    "p": "f.",
-    "d": "Cincuentena . Sin.: cincuentena.",
-    "df": "f. cincuentena (‖ conjunto de cincuenta unidades). Sin.: cincuentena.",
-    "e": "Del lat. quinquagēna, n. de quinquagēni 'de cincuenta en cincuenta'.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_latin"
-  },
-  {
     "w": "Quincuagenario",
     "p": "adj.",
     "d": "Dicho de una persona: Que tiene entre 50 y 59 años. U. t. c. s. Sin.: cincuenteno, cincuentón.",
@@ -1988,16 +1908,6 @@
     ]
   },
   {
-    "w": "Quinquefolio",
-    "p": "m.",
-    "d": "Cincoenrama. Sin.: cincoenrama.",
-    "df": "m. cincoenrama. Sin.: cincoenrama.",
-    "e": "Del lat. quinquefolium.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_latin"
-  },
-  {
     "w": "Quinquenal",
     "p": "adj.",
     "d": "Que sucede o se repite cada quinquenio.",
@@ -2052,16 +1962,6 @@
     "p": "m. y f.",
     "d": "Y f. quincallero. Sin.: quincallero.",
     "df": "m. y f. quincallero. Sin.: quincallero. | m. y f. quinqui (‖ persona perteneciente a cierto grupo social marginado). Sin.: merchero, quinqui.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Quinquillería",
-    "p": "f.",
-    "d": "Quincallería. Sin.: quincallería.",
-    "df": "f. quincallería. Sin.: quincallería.",
     "e": "",
     "s": "",
     "c": "sustantivo",
@@ -2207,16 +2107,6 @@
     "e": "De quinto.",
     "s": "",
     "c": "verbo",
-    "ec": ""
-  },
-  {
-    "w": "Quinterna",
-    "p": "f.",
-    "d": "Quinterno . Sin.: quinterno, cinquina.",
-    "df": "f. quinterno (‖ acierto de cinco números). Sin.: quinterno, cinquina.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
     "ec": ""
   },
   {
@@ -2442,16 +2332,6 @@
     "ec": ""
   },
   {
-    "w": "Quirigalla",
-    "p": "f.",
-    "d": "Cabra . Sin.: cabra.",
-    "df": "f. cabra (‖ molusco). Sin.: cabra.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Quirinal",
     "p": "adj.",
     "d": "Perteneciente o relativo a Quirino o Rómulo, figura de la mitología romana.",
@@ -2550,16 +2430,6 @@
     "s": "",
     "c": "adjetivo",
     "ec": ""
-  },
-  {
-    "w": "Quiroteca",
-    "p": "f.",
-    "d": "Guante . Sin.: guante.",
-    "df": "f. guante (‖ prenda para cubrir la mano). Sin.: guante.",
-    "e": "Del lat. mediev. chirotheca, y este del gr. χείρ, χειρός cheír, cheirós 'mano1' y θήκη thḗkē 'estuche'.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_latin"
   },
   {
     "w": "Quirógrafo",
@@ -2665,26 +2535,6 @@
     "ec": ""
   },
   {
-    "w": "Quitaguas",
-    "p": "m.",
-    "d": "Paraguas . Sin.: paraguas, sombrilla, bateaguas.",
-    "df": "m. paraguas (‖ utensilio para resguardarse de la lluvia). Sin.: paraguas, sombrilla, bateaguas.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Quitaipón",
-    "p": "m.",
-    "d": "Quitapón. Sin.: quitapón.",
-    "df": "m. quitapón. Sin.: quitapón.",
-    "e": "De la fr. quita y pon.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Quitamanchas",
     "p": "m. y f.",
     "d": "Y f. Persona que tiene por oficio quitar las manchas de las ropas.",
@@ -2739,16 +2589,6 @@
     "p": "f.",
     "d": "Finiquito, liberación o carta de pago que se da al deudor cuando paga.",
     "df": "f. Finiquito, liberación o carta de pago que se da al deudor cuando paga.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Quitapenas",
-    "p": "m. coloq.",
-    "d": "Licor . Sin.: licor.",
-    "df": "m. coloq. licor (‖ bebida espiritosa). Sin.: licor.",
     "e": "",
     "s": "",
     "c": "sustantivo",
@@ -2853,16 +2693,6 @@
     "s": "",
     "c": "sustantivo",
     "ec": "etym_griego"
-  },
-  {
-    "w": "Quivi",
-    "p": "m.",
-    "d": "Kiwi. Sin.: kiwi.",
-    "df": "m. kiwi. Sin.: kiwi.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
   },
   {
     "w": "Quizcuate",

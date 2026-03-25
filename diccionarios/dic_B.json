@@ -36,16 +36,6 @@
     ]
   },
   {
-    "w": "Babada",
-    "p": "f.",
-    "d": "Babilla . Sin.: babilla.",
-    "df": "f. babilla (‖ región de las extremidades posteriores de los cuadrúpedos). Sin.: babilla. | f. P. Rico. tontería. Sin.: babosada.",
-    "e": "De baba1.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Babahoyense",
     "p": "adj.",
     "d": "Natural de Babahoyo, ciudad del Ecuador. U. t. c. s.",
@@ -126,16 +116,6 @@
     "e": "De baba1.",
     "s": "",
     "c": "arte_literatura",
-    "ec": ""
-  },
-  {
-    "w": "Baberol",
-    "p": "m.",
-    "d": "Babera. Sin.: babera, barbote.",
-    "df": "m. babera. Sin.: babera, barbote.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
     "ec": ""
   },
   {
@@ -310,19 +290,6 @@
     "ec": ""
   },
   {
-    "w": "Baca",
-    "p": "f.",
-    "d": "Portaequipajes . Sin.: portaequipajes, parrilla2.",
-    "df": "f. portaequipajes (‖ soporte en el techo de un vehículo). Sin.: portaequipajes, parrilla2. | f. Sitio en la parte superior de las diligencias y demás coches de camino, donde podían ir pasajeros y se colocaban equipajes y otros efectos resguardados con una cubierta. | f. Cubierta de la baca. | f. Fruto o baya del laurel.",
-    "e": "Del fr. bâche, y este del galo *bascanda.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_frances",
-    "esp": [
-      "viajera"
-    ]
-  },
-  {
     "w": "Bacaladero",
     "p": "adj.",
     "d": "Dicho de una embarcación: Destinada a la pesca del bacalao. U. t. c. s., generalmente m.",
@@ -354,29 +321,6 @@
     "esp": [
       "viajera"
     ]
-  },
-  {
-    "w": "Bacará",
-    "p": "m.",
-    "d": "Bacarrá. Sin.: bacarrá.",
-    "df": "m. bacarrá. Sin.: bacarrá. | m. Cristal fino fabricado en la ciudad francesa de Baccarat. Sin.: baccarat.",
-    "e": "Del fr. baccarat, y este de Baccarat, ciudad francesa.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_frances",
-    "esp": [
-      "viajera"
-    ]
-  },
-  {
-    "w": "Bacelar",
-    "p": "m.",
-    "d": "Parral . Sin.: bacillar, parral1.",
-    "df": "m. parral (‖ conjunto de parras sostenidas con armazón). Sin.: bacillar, parral1.",
-    "e": "Del gallegoport. bacelar.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
   },
   {
     "w": "Bacera",
@@ -508,16 +452,6 @@
     "ec": ""
   },
   {
-    "w": "Bacillar",
-    "p": "m.",
-    "d": "Parral . Sin.: parral1, bacelar.",
-    "df": "m. parral (‖ conjunto de parras sostenidas con armazón). Sin.: parral1, bacelar. | m. Viña nueva.",
-    "e": "Der. del lat. bacillum 'bastoncillo'.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Bacillo",
     "p": "m.",
     "d": "Sal. Vástago o renuevo de la vid.",
@@ -549,16 +483,6 @@
     "esp": [
       "viajera"
     ]
-  },
-  {
-    "w": "Bacinica",
-    "p": "f.",
-    "d": "Bacinilla. Sin.: orinal, bacineta, bacinilla. vasija, bacinilla, bacineta.",
-    "df": "f. bacinilla. Sin.: orinal, bacineta, bacinilla. vasija, bacinilla, bacineta.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
   },
   {
     "w": "Bacisco",
@@ -760,16 +684,6 @@
     "ec": ""
   },
   {
-    "w": "Badiana",
-    "p": "f.",
-    "d": "Badián. Sin.: badián.",
-    "df": "f. badián. Sin.: badián. | f. Fruto de la badiana.",
-    "e": "Cf. badián.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Badil",
     "p": "m.",
     "d": "Paleta de hierro o de otro metal, para mover y recoger la lumbre en las chimeneas y braseros. Sin.: badila, hurgón, paleta, hurgonero.",
@@ -778,16 +692,6 @@
     "s": "",
     "c": "sustantivo",
     "ec": "etym_latin"
-  },
-  {
-    "w": "Badila",
-    "p": "f.",
-    "d": "Badil. Sin.: badil.",
-    "df": "f. badil. Sin.: badil.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
   },
   {
     "w": "Badilazo",
@@ -1386,16 +1290,6 @@
     "ec": ""
   },
   {
-    "w": "Balacera",
-    "p": "f.",
-    "d": "Tiroteo. Sin.: tiroteo, baleadura, baleo2.",
-    "df": "f. Am. tiroteo. Sin.: tiroteo, baleadura, baleo2.",
-    "e": "De balazo.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Balada",
     "p": "f.",
     "d": "Canción de ritmo lento y de carácter popular, cuyo asunto es generalmente amoroso. Sin.: canción, canto1, tonada.",
@@ -1411,16 +1305,6 @@
     "d": "Y f. Persona que canta baladas.",
     "df": "m. y f. Persona que canta baladas.",
     "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Baladre",
-    "p": "m.",
-    "d": "Adelfa. Sin.: adelfa.",
-    "df": "m. adelfa. Sin.: adelfa.",
-    "e": "Del cat. baladre, y este del lat. verātrum.",
     "s": "",
     "c": "sustantivo",
     "ec": ""
@@ -1472,19 +1356,6 @@
     "ec": ""
   },
   {
-    "w": "Balaguero",
-    "p": "m.",
-    "d": "Almiar. Sin.: almiar, bálago, niara, nial, montonera, balagar, henazo, niazo, borguil.",
-    "df": "m. almiar. Sin.: almiar, bálago, niara, nial, montonera, balagar, henazo, niazo, borguil.",
-    "e": "De bálago.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "",
-    "esp": [
-      "explosiva"
-    ]
-  },
-  {
     "w": "Balaje",
     "p": "m.",
     "d": "Rubí de color morado.",
@@ -1533,16 +1404,6 @@
     "d": "Acción y efecto de balancear o balancearse. Sin.: fluctuación, vaivén, bamboleo, balance1, oscilación, contoneo, meneo.",
     "df": "m. Acción y efecto de balancear o balancearse. Sin.: fluctuación, vaivén, bamboleo, balance1, oscilación, contoneo, meneo.",
     "e": "De balancear.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Balancero",
-    "p": "m.",
-    "d": "Balanzario. Sin.: balanzario.",
-    "df": "m. balanzario. Sin.: balanzario.",
-    "e": "",
     "s": "",
     "c": "sustantivo",
     "ec": ""
@@ -1660,16 +1521,6 @@
     ]
   },
   {
-    "w": "Balastro",
-    "p": "m.",
-    "d": "Balasto . Sin.: balasto.",
-    "df": "m. balasto (‖ capa de grava). Sin.: balasto.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Balate",
     "p": "m.",
     "d": "Margen de una parata.",
@@ -1723,16 +1574,6 @@
     "ec": ""
   },
   {
-    "w": "Balaustral",
-    "p": "adj.",
-    "d": "Balaustrado . Sin.: abalaustrado, balaustrado.",
-    "df": "adj. balaustrado (‖ con forma de balaustre). Sin.: abalaustrado, balaustrado.",
-    "e": "",
-    "s": "",
-    "c": "adjetivo",
-    "ec": ""
-  },
-  {
     "w": "Balaustre",
     "p": "m.",
     "d": "Cada una de las columnas pequeñas, generalmente con molduras, que con los barandales forman las barandillas o antepechos de balcones, azoteas, corredores y escaleras.",
@@ -1764,16 +1605,6 @@
     "esp": [
       "explosiva"
     ]
-  },
-  {
-    "w": "Balbuceante",
-    "p": "adj.",
-    "d": "Balbuciente. Sin.: balbuciente.",
-    "df": "adj. balbuciente. Sin.: balbuciente.",
-    "e": "De balbucear y -nte.",
-    "s": "",
-    "c": "adjetivo",
-    "ec": ""
   },
   {
     "w": "Balbucear",
@@ -1881,16 +1712,6 @@
     ]
   },
   {
-    "w": "Balconaje",
-    "p": "m.",
-    "d": "Balconada . Sin.: balconada, balconería.",
-    "df": "m. balconada (‖ conjunto de balcones de un edificio). Sin.: balconada, balconería.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Balconcillo",
     "p": "m.",
     "d": "Localidad de la plaza de toros, con barandilla o antepecho, situada sobre la puerta o sobre la salida del toril.",
@@ -1916,16 +1737,6 @@
     "d": "Impedimento físico de quien está baldado. Sin.: baldadura.",
     "df": "m. Impedimento físico de quien está baldado. Sin.: baldadura.",
     "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Baldaquín",
-    "p": "m.",
-    "d": "Baldaquino. Sin.: baldaquino, dosel, palio, ciborio.",
-    "df": "m. baldaquino. Sin.: baldaquino, dosel, palio, ciborio.",
-    "e": "Del arag. baldaquín, y este del cat. mediev. baldaquí, der. de Baldac 'Bagdad', de donde venía una tela así llamada.",
     "s": "",
     "c": "sustantivo",
     "ec": ""
@@ -1988,16 +1799,6 @@
     "e": "",
     "s": "",
     "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Baldosar",
-    "p": "tr.",
-    "d": "Embaldosar. Sin.: embaldosar.",
-    "df": "tr. embaldosar. Sin.: embaldosar.",
-    "e": "",
-    "s": "",
-    "c": "verbo",
     "ec": ""
   },
   {
@@ -2067,16 +1868,6 @@
     "ec": ""
   },
   {
-    "w": "Baleario",
-    "p": "adj.",
-    "d": "Baleárico. Sin.: baleárico.",
-    "df": "adj. baleárico. Sin.: baleárico.",
-    "e": "",
-    "s": "",
-    "c": "adjetivo",
-    "ec": ""
-  },
-  {
     "w": "Balele",
     "p": "m.",
     "d": "Baile que ejecutan los indígenas de algunos pueblos de África al son de tambores.",
@@ -2104,16 +1895,6 @@
     "p": "f.",
     "d": "Provisión de balas de un ejército o una plaza. Sin.: balerío.",
     "df": "f. Provisión de balas de un ejército o una plaza. Sin.: balerío.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Balerío",
-    "p": "m.",
-    "d": "Balería. Sin.: balería.",
-    "df": "m. balería. Sin.: balería.",
     "e": "",
     "s": "",
     "c": "sustantivo",
@@ -2170,16 +1951,6 @@
     "ec": ""
   },
   {
-    "w": "Balista",
-    "p": "f.",
-    "d": "Ballesta . Sin.: ballesta.",
-    "df": "f. ballesta (‖ máquina antigua de guerra). Sin.: ballesta.",
-    "e": "Del lat. ballista, y este der. del gr. βάλλειν bállein 'lanzar, arrojar'.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_latin"
-  },
-  {
     "w": "Balitadera",
     "p": "f.",
     "d": "Trozo de caña hendido por la parte del nudo, que, al soplarlo, imita la voz de la cría del gamo y sirve de reclamo.",
@@ -2198,16 +1969,6 @@
     "s": "",
     "c": "verbo",
     "ec": "etym_latin"
-  },
-  {
-    "w": "Balitear",
-    "p": "intr.",
-    "d": "Balitar. Sin.: balitar.",
-    "df": "intr. balitar. Sin.: balitar.",
-    "e": "",
-    "s": "",
-    "c": "verbo",
-    "ec": ""
   },
   {
     "w": "Baliza",
@@ -2386,16 +2147,6 @@
     "ec": "etym_latin"
   },
   {
-    "w": "Balompié",
-    "p": "m.",
-    "d": "Fútbol. Sin.: fútbol, balón.",
-    "df": "m. fútbol. Sin.: fútbol, balón.",
-    "e": "Calco del ingl. football, y este de foot 'pie' y ball 'balón', 'pelota', 'bola'.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Balompédico",
     "p": "adj.",
     "d": "Perteneciente o relativo al balompié.",
@@ -2528,16 +2279,6 @@
     "ec": ""
   },
   {
-    "w": "Balsadero",
-    "p": "m.",
-    "d": "Balsadera. Sin.: balsadera.",
-    "df": "m. balsadera. Sin.: balsadera.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Balsamera",
     "p": "f.",
     "d": "Vasija pequeña y cerrada usada para poner bálsamo. Sin.: perfumador, esenciero.",
@@ -2566,26 +2307,6 @@
     "s": "",
     "c": "adjetivo",
     "ec": "etym_latin"
-  },
-  {
-    "w": "Balsamita",
-    "p": "f.",
-    "d": "Jaramago. Sin.: jaramago, raqueta, ruqueta, sisimbrio, yuyo.",
-    "df": "f. jaramago. Sin.: jaramago, raqueta, ruqueta, sisimbrio, yuyo.",
-    "e": "Del lat. mediev. balsamita.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_latin"
-  },
-  {
-    "w": "Balsar",
-    "p": "m.",
-    "d": "Barzal. Sin.: barzal.",
-    "df": "m. barzal. Sin.: barzal.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
   },
   {
     "w": "Balsear",
@@ -2854,16 +2575,6 @@
     ]
   },
   {
-    "w": "Bamboneo",
-    "p": "m.",
-    "d": "Bamboleo. Sin.: bamboleo.",
-    "df": "m. bamboleo. Sin.: bamboleo.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Bambuco",
     "p": "m.",
     "d": "Baile popular en Colombia y en la provincia ecuatoriana de Esmeraldas.",
@@ -2922,19 +2633,6 @@
     "s": "",
     "c": "adjetivo",
     "ec": ""
-  },
-  {
-    "w": "Banano",
-    "p": "m.",
-    "d": "Plátano . Sin.: bananero, platanera, platanero, plátano, banana.",
-    "df": "m. plátano (‖ planta musácea). Sin.: bananero, platanera, platanero, plátano, banana. | m. Fruto del banano. | m. cambur. Sin.: cambur. | m. Am. Cen., Bol. y Col. Fruta, variedad de plátano, que se come cruda. Sin.: habano. | m. Hond. plátano guineo. Sin.: guineo, maduro, mínimo.",
-    "e": "De banana.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "",
-    "esp": [
-      "explosiva"
-    ]
   },
   {
     "w": "Banasta",
@@ -3064,16 +2762,6 @@
     "ec": ""
   },
   {
-    "w": "Bandeado",
-    "p": "adj.",
-    "d": "Listado. Sin.: alistado, listado, listeado.",
-    "df": "adj. listado. Sin.: alistado, listado, listeado.",
-    "e": "Del part. de bandear2.",
-    "s": "",
-    "c": "adjetivo",
-    "ec": ""
-  },
-  {
     "w": "Bandeo",
     "p": "m.",
     "d": "Acción y efecto de bandear2.",
@@ -3144,31 +2832,11 @@
     "ec": ""
   },
   {
-    "w": "Bandería",
-    "p": "f.",
-    "d": "Bando . Sin.: bando2, facción.",
-    "df": "f. bando (‖ facción). Sin.: bando2, facción.",
-    "e": "De bandera.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Banderín",
     "p": "m.",
     "d": "Bandera pequeña usada como emblema de instituciones, equipos deportivos, etc. Sin.: bandera, estandarte, banderola, gallardete.",
     "df": "m. Bandera pequeña usada como emblema de instituciones, equipos deportivos, etc. Sin.: bandera, estandarte, banderola, gallardete. | m. Cabo o soldado que sirve de guía a la infantería en sus ejercicios, y lleva al efecto una banderita en la bayoneta o cuchillo bayoneta del fusil.",
     "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Bandidaje",
-    "p": "m.",
-    "d": "Bandolerismo. Sin.: bandolerismo, vandalaje.",
-    "df": "m. bandolerismo. Sin.: bandolerismo, vandalaje.",
-    "e": "De bandido y -aje.",
     "s": "",
     "c": "sustantivo",
     "ec": ""
@@ -3185,16 +2853,6 @@
     "esp": [
       "explosiva"
     ]
-  },
-  {
-    "w": "Bandola",
-    "p": "f.",
-    "d": "Mandolina. Sin.: mandolina, bandolina2.",
-    "df": "f. mandolina. Sin.: mandolina, bandolina2. | f. Ven. Instrumento musical de cuerda, en forma de pera y fondo chato, con cuatro cuerdas dobles que se hacen sonar con una púa. | f. Mar. Armazón provisional que, para seguir navegando, se pone en el buque que ha perdido algún palo por cualquier accidente. | f. C. Rica. Subdivisión de una rama de cafeto.",
-    "e": "Del lat. pandūra, y este del gr. πανδοῦρα pandoûra 'guitarra de tres cuerdas'.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_latin"
   },
   {
     "w": "Bandolera",
@@ -3383,16 +3041,6 @@
     "e": "",
     "s": "",
     "c": "gentilicio",
-    "ec": ""
-  },
-  {
-    "w": "Banjo",
-    "p": "m.",
-    "d": "Banyo. Sin.: banyo.",
-    "df": "m. banyo. Sin.: banyo.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
     "ec": ""
   },
   {
@@ -3671,31 +3319,11 @@
     ]
   },
   {
-    "w": "Barajada",
-    "p": "f.",
-    "d": "Barajadura. Sin.: barajadura, baraje.",
-    "df": "f. barajadura. Sin.: barajadura, baraje.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Barajadura",
     "p": "f.",
     "d": "Acción de barajar. Sin.: barajada, baraje.",
     "df": "f. Acción de barajar. Sin.: barajada, baraje.",
     "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Baraje",
-    "p": "m.",
-    "d": "Barajadura. Sin.: barajada, barajadura.",
-    "df": "m. barajadura. Sin.: barajada, barajadura.",
-    "e": "De barajar.",
     "s": "",
     "c": "sustantivo",
     "ec": ""
@@ -3716,26 +3344,6 @@
     "d": "En Marruecos, protección divina de la que disfrutan jerifes o morabitos.",
     "df": "f. En Marruecos, protección divina de la que disfrutan jerifes o morabitos. | f. fortuna (‖ suerte favorable). Sin.: fortuna, suerte.",
     "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Baranda",
-    "p": "f.",
-    "d": "Barandilla. Sin.: barandilla, barandado, barandaje, barandal, rastel.",
-    "df": "f. barandilla. Sin.: barandilla, barandado, barandaje, barandal, rastel. | f. Borde o cerco que tienen las mesas de billar. | m. despect. coloq. U. para referirse a un individuo, especialmente si es destacado o tiene autoridad.",
-    "e": "De or. indoeuropeo; cf. sánscr. varanda 'barrera, tabique'.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Barandado",
-    "p": "m.",
-    "d": "Barandilla. Sin.: barandilla, baranda1, barandaje, barandal, rastel.",
-    "df": "m. barandilla. Sin.: barandilla, baranda1, barandaje, barandal, rastel.",
-    "e": "De baranda1 y -ado.",
     "s": "",
     "c": "sustantivo",
     "ec": ""
@@ -3956,16 +3564,6 @@
     "ec": ""
   },
   {
-    "w": "Barbarote",
-    "p": "adj.",
-    "d": "Bárbaro . Sin.: bárbaro.",
-    "df": "adj. bárbaro (‖ arrojado, temerario). Sin.: bárbaro. | adj. bárbaro (‖ inculto, grosero). Sin.: bárbaro.",
-    "e": "",
-    "s": "",
-    "c": "adjetivo",
-    "ec": ""
-  },
-  {
     "w": "Barbastrense",
     "p": "adj.",
     "d": "Barbastrino. Apl. a pers., u. t. c. s.",
@@ -3993,16 +3591,6 @@
     "e": "",
     "s": "",
     "c": "verbo",
-    "ec": ""
-  },
-  {
-    "w": "Barbechada",
-    "p": "f.",
-    "d": "Barbechera . Sin.: barbechera, barbecho.",
-    "df": "f. barbechera (‖ acción de barbechar). Sin.: barbechera, barbecho.",
-    "e": "De barbechar.",
-    "s": "",
-    "c": "sustantivo",
     "ec": ""
   },
   {
@@ -4089,26 +3677,6 @@
     ]
   },
   {
-    "w": "Barbiblanco",
-    "p": "adj.",
-    "d": "Barbicano. Sin.: barbicano.",
-    "df": "adj. barbicano. Sin.: barbicano.",
-    "e": "",
-    "s": "",
-    "c": "adjetivo",
-    "ec": ""
-  },
-  {
-    "w": "Barbicacho",
-    "p": "m.",
-    "d": "Barboquejo. Sin.: barboquejo, barbiquejo, barbuquejo, fiador, barbijo.",
-    "df": "m. barboquejo. Sin.: barboquejo, barbiquejo, barbuquejo, fiador, barbijo.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Barbicano",
     "p": "adj.",
     "d": "Que tiene cana la barba. Sin.: barbiblanco.",
@@ -4182,16 +3750,6 @@
     "ec": ""
   },
   {
-    "w": "Barbilucio",
-    "p": "adj.",
-    "d": "Barbilindo. Sin.: barbilindo.",
-    "df": "adj. barbilindo. Sin.: barbilindo.",
-    "e": "De barba y lucio2.",
-    "s": "",
-    "c": "adjetivo",
-    "ec": ""
-  },
-  {
     "w": "Barbiluengo",
     "p": "adj.",
     "d": "Que tiene larga la barba.",
@@ -4240,16 +3798,6 @@
     "s": "",
     "c": "adjetivo",
     "ec": "etym_latin"
-  },
-  {
-    "w": "Barbiquejo",
-    "p": "m.",
-    "d": "Barboquejo. Sin.: barboquejo, barbicacho, barbuquejo, fiador, barbijo.",
-    "df": "m. barboquejo. Sin.: barboquejo, barbicacho, barbuquejo, fiador, barbijo. | m. Mar. Cabo o cadena que sujeta el bauprés al tajamar o a la roda. | m. Perú. Pañuelo que, a modo de venda, se pasa por debajo de la barba y ata por encima de la cabeza, o a un lado de la cara.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
   },
   {
     "w": "Barbirralo",
@@ -4467,16 +4015,6 @@
     "ec": ""
   },
   {
-    "w": "Barbuquejo",
-    "p": "m.",
-    "d": "Barboquejo. Sin.: barboquejo, barbicacho, barbiquejo, fiador, barbijo.",
-    "df": "m. barboquejo. Sin.: barboquejo, barbicacho, barbiquejo, fiador, barbijo.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Barbusano",
     "p": "m.",
     "d": "Árbol de las islas Canarias, de la familia de las lauráceas, que crece hasta 16 m de altura. Su madera es durísima, pero frágil, algo parecida a la caoba y de mucha duración.",
@@ -4565,16 +4103,6 @@
     "d": "Val. Medida de capacidad para áridos.",
     "df": "f. Val. Medida de capacidad para áridos.",
     "e": "Del cat. barcella.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Barceo",
-    "p": "m.",
-    "d": "Albardín. Sin.: albardín, berceo.",
-    "df": "m. albardín. Sin.: albardín, berceo.",
-    "e": "Voz prerromana.",
     "s": "",
     "c": "sustantivo",
     "ec": ""
@@ -4690,41 +4218,11 @@
     "ec": ""
   },
   {
-    "w": "Bardaja",
-    "p": "m.",
-    "d": "Bardaje. Sin.: bardaje.",
-    "df": "m. bardaje. Sin.: bardaje.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Bardaje",
     "p": "m.",
     "d": "Sodomita pasivo. Sin.: bardaja.",
     "df": "m. Sodomita pasivo. Sin.: bardaja.",
     "e": "Del pelvi *bardag 'cautivo', y este del ár. bardaǧ.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Bardal",
-    "p": "m.",
-    "d": "Barda . Sin.: barda2, bardaguera.",
-    "df": "m. barda (‖ cubierta de espinos). Sin.: barda2, bardaguera.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Bardana",
-    "p": "f.",
-    "d": "Lampazo . Sin.: lampazo, purpúrea, anteón, lapa2, zarapón, apegaderas.",
-    "df": "f. lampazo (‖ planta). Sin.: lampazo, purpúrea, anteón, lapa2, zarapón, apegaderas.",
-    "e": "De or. inc.; cf. fr. bardane.",
     "s": "",
     "c": "sustantivo",
     "ec": ""
@@ -5330,19 +4828,6 @@
     "ec": ""
   },
   {
-    "w": "Barraganería",
-    "p": "f.",
-    "d": "Amancebamiento. Sin.: amancebamiento, abarraganamiento, concubinato, amistad, mancebía, lío, arreglo, enredo, germanía.",
-    "df": "f. amancebamiento. Sin.: amancebamiento, abarraganamiento, concubinato, amistad, mancebía, lío, arreglo, enredo, germanía.",
-    "e": "De barragana.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "",
-    "esp": [
-      "explosiva"
-    ]
-  },
-  {
     "w": "Barraganete",
     "p": "m.",
     "d": "Mar. Última pieza alta de la cuaderna.",
@@ -5358,29 +4843,6 @@
     "d": "Cat. Botijo con dos asas laterales.",
     "df": "m. Cat. Botijo con dos asas laterales.",
     "e": "Cf. barril, en b. lat. barrale.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Barranca",
-    "p": "f.",
-    "d": "Barranco . Sin.: barranco, barranquera, cárcava, carcavón, rambla, ramblazo, torrentera, quebrada.",
-    "df": "f. barranco (‖ quiebra producida en la tierra por las aguas). Sin.: barranco, barranquera, cárcava, carcavón, rambla, ramblazo, torrentera, quebrada. | f. barranco (‖ despeñadero). Sin.: despeñadero, precipicio, derrumbadero, barranco, barrancada, desguindo.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "",
-    "esp": [
-      "explosiva"
-    ]
-  },
-  {
-    "w": "Barrancada",
-    "p": "f.",
-    "d": "Barranco . Sin.: barranco, barranca, despeñadero, precipicio, derrumbadero, desguindo.",
-    "df": "f. barranco (‖ despeñadero). Sin.: barranco, barranca, despeñadero, precipicio, derrumbadero, desguindo.",
-    "e": "",
     "s": "",
     "c": "sustantivo",
     "ec": ""
@@ -5404,19 +4866,6 @@
     "s": "",
     "c": "adjetivo",
     "ec": ""
-  },
-  {
-    "w": "Barranquera",
-    "p": "f.",
-    "d": "Barranco . Sin.: barranco, barranca, cárcava, carcavón, rambla, ramblazo, torrentera, quebrada.",
-    "df": "f. barranco (‖ quiebra producida en la tierra por las aguas). Sin.: barranco, barranca, cárcava, carcavón, rambla, ramblazo, torrentera, quebrada.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "",
-    "esp": [
-      "explosiva"
-    ]
   },
   {
     "w": "Barranquillero",
@@ -5449,16 +4898,6 @@
     "ec": ""
   },
   {
-    "w": "Barraquismo",
-    "p": "m.",
-    "d": "Chabolismo. Sin.: chabolismo.",
-    "df": "m. chabolismo. Sin.: chabolismo.",
-    "e": "De barraca e -ismo.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Barraquista",
     "p": "m. y f.",
     "d": "Y f. chabolista . Sin.: chabolista.",
@@ -5484,16 +4923,6 @@
     "d": "Các. Charco con agua donde se revuelcan los cerdos.",
     "df": "m. Các. Charco con agua donde se revuelcan los cerdos.",
     "e": "De barrearse.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Barreal",
-    "p": "m.",
-    "d": "Barrizal. Sin.: barrizal, barrial1, barrero.",
-    "df": "m. barrizal. Sin.: barrizal, barrial1, barrero.",
-    "e": "De barro1.",
     "s": "",
     "c": "sustantivo",
     "ec": ""
@@ -5615,19 +5044,6 @@
     ]
   },
   {
-    "w": "Barrero",
-    "p": "m.",
-    "d": "Barrera . Sin.: barrera2.",
-    "df": "m. barrera (‖ sitio de donde se saca el barro para los alfares). Sin.: barrera2. | m. alfarero. Sin.: alfarero, cantarero, alcaller, alfaharero. | m. barrizal. Sin.: barrizal, barreal, barrial1. | m. Terreno salitroso de algunos lugares de América del Sur.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "",
-    "esp": [
-      "explosiva"
-    ]
-  },
-  {
     "w": "Barretear",
     "p": "tr.",
     "d": "Afianzar o asegurar un baúl, un cofre, un cajón, etc., con barras de metal o de madera. U. t. c. intr. Sin.: barrear, afianzar, asegurar, afirmar.",
@@ -5642,16 +5058,6 @@
     "p": "m.",
     "d": "Ingen. En minería, hombre que trabaja con barreta, cuña o pico.",
     "df": "m. Ingen. En minería, hombre que trabaja con barreta, cuña o pico.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Barreña",
-    "p": "f.",
-    "d": "Barreño. Sin.: barreño, balde1, palangana.",
-    "df": "f. barreño. Sin.: barreño, balde1, palangana.",
     "e": "",
     "s": "",
     "c": "sustantivo",
@@ -5747,16 +5153,6 @@
     "ec": ""
   },
   {
-    "w": "Barrilamen",
-    "p": "m.",
-    "d": "Barrilería . Sin.: barrilería, barrilaje.",
-    "df": "m. barrilería (‖ conjunto de barriles). Sin.: barrilería, barrilaje.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Barrilero",
     "p": "m.",
     "d": "Fabricante o vendedor de barriles. Sin.: tonelero, cubero, carralero.",
@@ -5817,26 +5213,6 @@
     "e": "",
     "s": "",
     "c": "adjetivo",
-    "ec": ""
-  },
-  {
-    "w": "Barrillo",
-    "p": "m.",
-    "d": "Barro . Sin.: barro2, espinilla, grano, comedón.",
-    "df": "m. barro (‖ granillo del rostro). Sin.: barro2, espinilla, grano, comedón.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Barrillos",
-    "p": "m.",
-    "d": "Barro . Sin.: barro2, espinilla, grano, comedón.",
-    "df": "m. barro (‖ granillo del rostro). Sin.: barro2, espinilla, grano, comedón.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
     "ec": ""
   },
   {
@@ -5989,16 +5365,6 @@
     ]
   },
   {
-    "w": "Barruntamiento",
-    "p": "m.",
-    "d": "Barrunto. Sin.: barrunto, barrunte.",
-    "df": "m. barrunto. Sin.: barrunto, barrunte.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Barruntar",
     "p": "tr.",
     "d": "Prever, conjeturar o presentir algo por alguna señal o indicio. Sin.: presentir, intuir, conjeturar, sospechar, sentir1, maliciar, prever, vislumbrar, entrever, predecir, presumir, inferir, suponer, husmear, olfatear, olerse, cachar3.",
@@ -6062,16 +5428,6 @@
     "e": "De barza.",
     "s": "",
     "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Barí",
-    "p": "adj.",
-    "d": "Excelente . Sin.: baril, excelente, magnificente.",
-    "df": "adj. excelente (‖ que sobresale). Sin.: baril, excelente, magnificente. | adj. Dicho de una persona: De un pueblo amerindio que habita en la sierra de Perijá, al oeste del estado venezolano de Zulia. U. t. c. s. | adj. Perteneciente o relativo a los barí. | adj. Perteneciente o relativo al barí (‖ lengua). Léxico barí.",
-    "e": "Del caló baré.",
-    "s": "",
-    "c": "adjetivo",
     "ec": ""
   },
   {
@@ -6158,16 +5514,6 @@
     "ec": ""
   },
   {
-    "w": "Basanita",
-    "p": "f.",
-    "d": "Basalto. Sin.: basalto.",
-    "df": "f. basalto. Sin.: basalto.",
-    "e": "Del lat. basanītes, y este del gr. βασανίτης basanítēs.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_latin"
-  },
-  {
     "w": "Basar",
     "p": "tr.",
     "d": "Asentar algo sobre una base. Sin.: apoyar2, asentar, gravitar, cimentar, sustentar, fundar, estribar.",
@@ -6228,16 +5574,6 @@
     "e": "",
     "s": "",
     "c": "adjetivo",
-    "ec": ""
-  },
-  {
-    "w": "Basculamiento",
-    "p": "m.",
-    "d": "Basculación. Sin.: basculación.",
-    "df": "m. basculación. Sin.: basculación.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
     "ec": ""
   },
   {
@@ -6365,16 +5701,6 @@
     "ec": ""
   },
   {
-    "w": "Basquetbol",
-    "p": "m.",
-    "d": "Baloncesto. Sin.: baloncesto, básquet.",
-    "df": "m. baloncesto. Sin.: baloncesto, básquet.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Basquilla",
     "p": "f.",
     "d": "Enfermedad infecciosa que padece el ganado lanar.",
@@ -6390,16 +5716,6 @@
     "d": "Saya que usaban las mujeres sobre la ropa para salir a la calle, y que actualmente se utiliza como complemento de algunos trajes regionales. Sin.: saya, falda.",
     "df": "f. Saya que usaban las mujeres sobre la ropa para salir a la calle, y que actualmente se utiliza como complemento de algunos trajes regionales. Sin.: saya, falda.",
     "e": "De vasco.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Bastaje",
-    "p": "m.",
-    "d": "Ganapán . Sin.: ganapán, mozo2, peón1, cargador, soguilla.",
-    "df": "m. ganapán (‖ hombre que lleva recados o bultos). Sin.: ganapán, mozo2, peón1, cargador, soguilla.",
-    "e": "Del cat. bastaix.",
     "s": "",
     "c": "sustantivo",
     "ec": ""
@@ -6449,19 +5765,6 @@
     "ec": "",
     "esp": [
       "explosiva"
-    ]
-  },
-  {
-    "w": "Bastardelo",
-    "p": "m.",
-    "d": "Minutario. Sin.: minutario.",
-    "df": "m. minutario. Sin.: minutario.",
-    "e": "Del it. bastardello.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_italiano",
-    "esp": [
-      "viajera"
     ]
   },
   {
@@ -6559,16 +5862,6 @@
     "ec": ""
   },
   {
-    "w": "Bastionar",
-    "p": "tr.",
-    "d": "Abastionar. Sin.: abastionar.",
-    "df": "tr. abastionar. Sin.: abastionar.",
-    "e": "",
-    "s": "",
-    "c": "verbo",
-    "ec": ""
-  },
-  {
     "w": "Bastitano",
     "p": "adj.",
     "d": "Natural de Baza, ciudad de la provincia de Granada, en España. U. t. c. s.",
@@ -6577,29 +5870,6 @@
     "s": "",
     "c": "gentilicio",
     "ec": "etym_latin"
-  },
-  {
-    "w": "Bastión",
-    "p": "m.",
-    "d": "Baluarte . Sin.: baluarte, fortificación, torreón, parapeto.",
-    "df": "m. baluarte (‖ obra de fortificación). Sin.: baluarte, fortificación, torreón, parapeto. | m. Col. Cada uno de los apoyos de piedra, adobe o ladrillo que sostienen la techumbre de ciertas construcciones, como graneros, hornos, enramadas, etc. | m. Col. y Méx. Idea fundamental de una doctrina, de un sistema, etc. El amor de Dios y el amor al prójimo son bastiones del cristianismo.",
-    "e": "Del it. bastione, y este del m. or. que bastir.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_italiano",
-    "esp": [
-      "viajera"
-    ]
-  },
-  {
-    "w": "Bastonada",
-    "p": "f.",
-    "d": "Bastonazo. Sin.: bastonazo, garrotazo, estacazo, varazo, porrazo, varapalo, trancazo.",
-    "df": "f. bastonazo. Sin.: bastonazo, garrotazo, estacazo, varazo, porrazo, varapalo, trancazo.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
   },
   {
     "w": "Bastonazo",
@@ -6842,34 +6112,11 @@
     "ec": ""
   },
   {
-    "w": "Batel",
-    "p": "m.",
-    "d": "Bote . Sin.: bote3, barca, lancha2, chalana, falúa, piragua.",
-    "df": "m. bote (‖ embarcación pequeña). Sin.: bote3, barca, lancha2, chalana, falúa, piragua.",
-    "e": "Del fr. ant. batel, y este del ingl. ant. bāt.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_frances",
-    "esp": [
-      "viajera"
-    ]
-  },
-  {
     "w": "Batelero",
     "p": "m. y f.",
     "d": "Y f. Persona que gobierna un batel. Sin.: barquero, remero, lanchero, timonel.",
     "df": "m. y f. Persona que gobierna un batel. Sin.: barquero, remero, lanchero, timonel.",
     "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Bateo",
-    "p": "m. coloq.",
-    "d": "Bautizo. Sin.: bautizo, bautismo.",
-    "df": "m. coloq. bautizo. Sin.: bautizo, bautismo. | m. Acción de golpear con el bate o de usar el bate. | m. coloq. C. Rica. Acción de batear (‖ contestar las preguntas sin haber estudiado). | m. coloq. Cuba. Discusión acalorada, protesta enérgica.",
-    "e": "De batear1.",
     "s": "",
     "c": "sustantivo",
     "ec": ""
@@ -7313,16 +6560,6 @@
     "ec": "etym_latin"
   },
   {
-    "w": "Bautisterio",
-    "p": "m.",
-    "d": "Baptisterio. Sin.: baptisterio.",
-    "df": "m. baptisterio. Sin.: baptisterio.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Bautizar",
     "p": "tr.",
     "d": "Administrar el sacramento del bautismo a alguien. Sin.: cristianar, acristianar.",
@@ -7435,19 +6672,6 @@
     "ec": "etym_latin"
   },
   {
-    "w": "Bayarte",
-    "p": "m.",
-    "d": "Parihuela . Sin.: parihuela, ballarte.",
-    "df": "m. parihuela (‖ artefacto para llevar la carga entre dos). Sin.: parihuela, ballarte.",
-    "e": "Del fr. ant. baiart.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_frances",
-    "esp": [
-      "viajera"
-    ]
-  },
-  {
     "w": "Bayeta",
     "p": "f.",
     "d": "Tela de lana, floja y poco tupida.",
@@ -7541,16 +6765,6 @@
     "e": "",
     "s": "",
     "c": "gentilicio",
-    "ec": ""
-  },
-  {
-    "w": "Bayoque",
-    "p": "m.",
-    "d": "Bayoco1. Sin.: bayoco1.",
-    "df": "m. bayoco1. Sin.: bayoco1.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
     "ec": ""
   },
   {
@@ -7655,19 +6869,6 @@
     "s": "",
     "c": "sustantivo",
     "ec": ""
-  },
-  {
-    "w": "Bañado",
-    "p": "m.",
-    "d": "Orinal. Sin.: orinal, bacín, bacinilla, beque, servidor, vaso, sillico, pelela, escupidera, cantora, porcelana, borcelana.",
-    "df": "m. orinal. Sin.: orinal, bacín, bacinilla, beque, servidor, vaso, sillico, pelela, escupidera, cantora, porcelana, borcelana. | m. Arg., Bol., Ec., Par., Perú, R. Dom. y Ur. Terreno húmedo, a trechos cenagoso y a veces inundado por las aguas pluviales o por las de un río o laguna cercana.",
-    "e": "Del part. de bañar.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "",
-    "esp": [
-      "explosiva"
-    ]
   },
   {
     "w": "Bañador",
@@ -7919,16 +7120,6 @@
     "ec": ""
   },
   {
-    "w": "Bebienda",
-    "p": "f.",
-    "d": "Bebida . Sin.: bebida, bebercio, potación.",
-    "df": "f. bebida (‖ líquido que se bebe). Sin.: bebida, bebercio, potación.",
-    "e": "Del lat. bibenda 'lo que ha de ser bebido', pl. n. del gerundivo de bibĕre 'beber1'.",
-    "s": "",
-    "c": "gastronomia",
-    "ec": "etym_latin"
-  },
-  {
     "w": "Bebistrajo",
     "p": "m. coloq.",
     "d": "Mezcla irregular y extravagante de bebidas. Sin.: cóctel, combinado1, combinación.",
@@ -7952,16 +7143,6 @@
     "ec": ""
   },
   {
-    "w": "Becacina",
-    "p": "f.",
-    "d": "Agachadiza. Sin.: agachadiza, rayuelo, agachadera, becardón.",
-    "df": "f. agachadiza. Sin.: agachadiza, rayuelo, agachadera, becardón.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Becada",
     "p": "f.",
     "d": "Ave limícola del tamaño de una perdiz, de pico largo, recto y delgado, cabeza comprimida y plumaje pardo rojizo con manchas negras en las partes superiores y de color claro finamente listado en las inferiores, que vive con preferencia en terrenos sombríos, se alimenta de orugas y lombrices, y su carne es muy apreciada. Sin.: chocha1, chochaperdiz, coalla, gallineta, pitorra.",
@@ -7980,19 +7161,6 @@
     "s": "",
     "c": "sustantivo",
     "ec": ""
-  },
-  {
-    "w": "Becafigo",
-    "p": "m.",
-    "d": "Oropéndola. Sin.: oropéndola, oriol, lútea, papafigo, víreo, virio, muchilero.",
-    "df": "m. oropéndola. Sin.: oropéndola, oriol, lútea, papafigo, víreo, virio, muchilero.",
-    "e": "Del it. beccafigo, de beccare 'picar' y fico 'higo'; cf. lat. beccus 'pico1', voz de or. celta.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_italiano",
-    "esp": [
-      "viajera"
-    ]
   },
   {
     "w": "Becante",
@@ -8108,26 +7276,6 @@
     "ec": "etym_latin"
   },
   {
-    "w": "Bechamel",
-    "p": "f.",
-    "d": "Besamel. Sin.: besamel, besamela, bechamela.",
-    "df": "f. besamel. Sin.: besamel, besamela, bechamela.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Becoquín",
-    "p": "m.",
-    "d": "Papalina . Sin.: papalina, bicoquete, bicoquín.",
-    "df": "m. papalina (‖ gorra con dos puntas). Sin.: papalina, bicoquete, bicoquín.",
-    "e": "Der. de bicoca.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Becquerel",
     "p": "m.",
     "d": "Fís. Unidad de actividad de un radionucleido, que equivale a 1 desintegración nuclear por segundo. (Símb. Bq).",
@@ -8176,19 +7324,6 @@
     "s": "",
     "c": "sustantivo",
     "ec": ""
-  },
-  {
-    "w": "Bedano",
-    "p": "m.",
-    "d": "Escoplo. Sin.: escoplo.",
-    "df": "m. escoplo. Sin.: escoplo.",
-    "e": "Del fr. bedâne.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_frances",
-    "esp": [
-      "viajera"
-    ]
   },
   {
     "w": "Bedel",
@@ -8401,16 +7536,6 @@
     ]
   },
   {
-    "w": "Behaísmo",
-    "p": "m.",
-    "d": "Bahaísmo. Sin.: bahaísmo.",
-    "df": "m. bahaísmo. Sin.: bahaísmo.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Behetría",
     "p": "f.",
     "d": "Confusión o desorden. Sin.: confusión, desorden, barullo, burundanga.",
@@ -8573,16 +7698,6 @@
     ]
   },
   {
-    "w": "Belemnita",
-    "p": "f.",
-    "d": "Belemnites. Sin.: belemnites.",
-    "df": "f. belemnites. Sin.: belemnites.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Belemnites",
     "p": "f.",
     "d": "Geol. Fósil de forma cónica o de maza. Es la extremidad de la concha interna que, a semejanza de las jibias, tenían ciertos cefalópodos que vivieron en los períodos jurásico y cretácico. Sin.: belemnita.",
@@ -8610,16 +7725,6 @@
     "e": "Quizá del gót. *bĭlĭsa; cf. a. al. ant. bilisa, b. al. medio y neerl. medio bilse.",
     "s": "",
     "c": "botanica",
-    "ec": ""
-  },
-  {
-    "w": "Belez",
-    "p": "m.",
-    "d": "Vasija . Sin.: vasija, bacía.",
-    "df": "m. vasija (‖ pieza para líquidos o alimentos). Sin.: vasija, bacía. | m. Parte del menaje de casa, ajuar. Sin.: ajuar, belezo. | m. Guad. Tinaja para echar vino o aceite.",
-    "e": "De or. inc.; quizá ár. hisp. *[a]b alḥíss 'cosa que suena'.",
-    "s": "",
-    "c": "sustantivo",
     "ec": ""
   },
   {
@@ -8882,16 +7987,6 @@
     "ec": ""
   },
   {
-    "w": "Bencina",
-    "p": "f.",
-    "d": "Gasolina. Sin.: gasolina, carburante, combustible, nafta, gasoleno.",
-    "df": "f. gasolina. Sin.: gasolina, carburante, combustible, nafta, gasoleno. | f. Quím. Fracción ligera del petróleo, líquida, volátil e inflamable, que se emplea como disolvente.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Benditera",
     "p": "f.",
     "d": "Pila de agua bendita que se coloca en una pared del dormitorio.",
@@ -9084,31 +8179,11 @@
     ]
   },
   {
-    "w": "Benzina",
-    "p": "f.",
-    "d": "Gasolina. Sin.: gasolina, carburante, combustible, nafta, gasoleno.",
-    "df": "f. gasolina. Sin.: gasolina, carburante, combustible, nafta, gasoleno. | f. Quím. Fracción ligera del petróleo, líquida, volátil e inflamable, que se emplea como disolvente.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Benzoato",
     "p": "m.",
     "d": "Quím. Sal resultante de la combinación del ácido benzoico con una base.",
     "df": "m. Quím. Sal resultante de la combinación del ácido benzoico con una base.",
     "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Benzoe",
-    "p": "m.",
-    "d": "Benjuí. Sin.: benjuí, menjuí.",
-    "df": "m. benjuí. Sin.: benjuí, menjuí.",
-    "e": "Del b. lat. benzoe, y este del cat. benjuí.",
     "s": "",
     "c": "sustantivo",
     "ec": ""
@@ -9167,29 +8242,6 @@
     "ec": ""
   },
   {
-    "w": "Beque",
-    "p": "m.",
-    "d": "Orinal. Sin.: orinal, bacín, bacinilla, escupidera, pelela, porcelana, borcelana, cantora, servidor, bañado, vaso, sillico.",
-    "df": "m. orinal. Sin.: orinal, bacín, bacinilla, escupidera, pelela, porcelana, borcelana, cantora, servidor, bañado, vaso, sillico. | m. Mar. Obra exterior de proa. | m. Mar. En los barcos, retrete de la marinería. U. m. en pl.",
-    "e": "Del lat. beccus 'pico1', voz de or. celta; cf. cat. bec, fr. bec, ingl. beak.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_latin",
-    "esp": [
-      "explosiva"
-    ]
-  },
-  {
-    "w": "Berbajo",
-    "p": "m.",
-    "d": "Brebajo . Sin.: brebajo.",
-    "df": "m. brebajo (‖ refresco que se da al ganado). Sin.: brebajo.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Berberecho",
     "p": "m.",
     "d": "Molusco bivalvo, de unos cuatro centímetros de largo y conchas estriadas casi circulares, que vive enterrado en la arena y es muy apreciado como comestible. Sin.: verderón2, verderol2, verdigón.",
@@ -9230,16 +8282,6 @@
     "ec": "etym_latin"
   },
   {
-    "w": "Berberís",
-    "p": "m.",
-    "d": "Agracejo . Sin.: agracejo, agracillo, bérbero, arlo, retamilla, agraz, alguese.",
-    "df": "m. agracejo (‖ arbusto berberidáceo). Sin.: agracejo, agracillo, bérbero, arlo, retamilla, agraz, alguese.",
-    "e": "Del lat. mediev. berberis, y este del ár. [am]barbarīs.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_latin"
-  },
-  {
     "w": "Berbiquí",
     "p": "m.",
     "d": "Manubrio semicircular o en forma de doble codo que sirve para taladrar o hacer agujeros. Sin.: barrena, taladro, broca, billamarquín, villabarquín, fresa2, sacabocados.",
@@ -9251,16 +8293,6 @@
     "esp": [
       "viajera"
     ]
-  },
-  {
-    "w": "Berceo",
-    "p": "m.",
-    "d": "Barceo. Sin.: barceo, albardín.",
-    "df": "m. barceo. Sin.: barceo, albardín.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
   },
   {
     "w": "Bercial",
@@ -9689,39 +8721,6 @@
     "ec": "etym_latin"
   },
   {
-    "w": "Berra",
-    "p": "f.",
-    "d": "Berraza . Sin.: berraza.",
-    "df": "f. berraza (‖ berro crecido). Sin.: berraza.",
-    "e": "Del lat. tardío berŭla, y este del galo berula; cf. berro.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_latin"
-  },
-  {
-    "w": "Berrar",
-    "p": "intr.",
-    "d": "Berrear . Sin.: berrear, desafinar, desentonar, graznar.",
-    "df": "intr. berrear (‖ gritar o cantar desafinando). Sin.: berrear, desafinar, desentonar, graznar.",
-    "e": "Voz onomat.",
-    "s": "",
-    "c": "verbo",
-    "ec": "etym_onomatopeya",
-    "esp": [
-      "onom"
-    ]
-  },
-  {
-    "w": "Berraza",
-    "p": "f.",
-    "d": "Berrera. Sin.: berrera, arsafraga.",
-    "df": "f. berrera. Sin.: berrera, arsafraga. | f. Berro crecido y talludo. Sin.: berra.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Berraña",
     "p": "f.",
     "d": "Planta no comestible, variedad del berro común, del que se distingue por tener los tallos más robustos y las hojas grandes, de 8 a 16 lóbulos casi iguales, ovales u oblongos.",
@@ -9868,26 +8867,6 @@
     "ec": ""
   },
   {
-    "w": "Berroqueño",
-    "p": "adj.",
-    "d": "Granítico. Sin.: granítico.",
-    "df": "adj. granítico. Sin.: granítico. | adj. Duro, áspero, poco sensible y delicado. Carácter berroqueño. Sin.: áspero2, duro, desabrido, arisco.",
-    "e": "De berrueco y -eño.",
-    "s": "",
-    "c": "adjetivo",
-    "ec": ""
-  },
-  {
-    "w": "Berrín",
-    "p": "m.",
-    "d": "Bejín . Sin.: cascarrabias, enojadizo, berrinchudo, bejín.",
-    "df": "m. bejín (‖ persona cascarrabias). Sin.: cascarrabias, enojadizo, berrinchudo, bejín.",
-    "e": "Der. del lat. verres 'verraco'.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Berzal",
     "p": "m.",
     "d": "Campo plantado de berzas.",
@@ -9997,16 +8976,6 @@
     ]
   },
   {
-    "w": "Bestialismo",
-    "p": "m.",
-    "d": "Zoofilia . Sin.: zoofilia, bestialidad.",
-    "df": "m. zoofilia (‖ relación sexual). Sin.: zoofilia, bestialidad.",
-    "e": "De bestial e -ismo.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Bestializarse",
     "p": "tr.",
     "d": "Hacer bestial o irracional a alguien. U. t. c. prnl.",
@@ -10054,16 +9023,6 @@
     "e": "",
     "s": "",
     "c": "adjetivo",
-    "ec": ""
-  },
-  {
-    "w": "Besucar",
-    "p": "tr.",
-    "d": "Besuquear. Sin.: besuquear, besar, hocicar, morrear.",
-    "df": "tr. coloq. besuquear. Sin.: besuquear, besar, hocicar, morrear.",
-    "e": "",
-    "s": "",
-    "c": "verbo",
     "ec": ""
   },
   {
@@ -10117,16 +9076,6 @@
     "ec": ""
   },
   {
-    "w": "Besuguete",
-    "p": "m.",
-    "d": "Pagel. Sin.: pagel, sama.",
-    "df": "m. pagel. Sin.: pagel, sama.",
-    "e": "De besugo y -ete.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Besuqueador",
     "p": "adj. coloq.",
     "d": "Besucón. U. t. c. s. Sin.: besucón, besucador.",
@@ -10162,29 +9111,6 @@
     "d": "Med. Sustancia que inhibe la acción de la adrenalina en la transmisión nerviosa. Los betabloqueantes se utilizan en el tratamiento de la hipertensión.",
     "df": "m. Med. Sustancia que inhibe la acción de la adrenalina en la transmisión nerviosa. Los betabloqueantes se utilizan en el tratamiento de la hipertensión.",
     "e": "De beta1 y bloquear, por unirse a los receptores adrenérgicos de tipo β b, bloqueándolos.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Betarraga",
-    "p": "f.",
-    "d": "Remolacha. Sin.: remolacha, betarrata, beterraga.",
-    "df": "f. remolacha. Sin.: remolacha, betarrata, beterraga.",
-    "e": "Del fr. betterave.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_frances",
-    "esp": [
-      "viajera"
-    ]
-  },
-  {
-    "w": "Betarrata",
-    "p": "f.",
-    "d": "Betarraga. Sin.: remolacha, betarraga, beterraga.",
-    "df": "f. betarraga. Sin.: remolacha, betarraga, beterraga.",
-    "e": "",
     "s": "",
     "c": "sustantivo",
     "ec": ""
@@ -10525,16 +9451,6 @@
     "ec": ""
   },
   {
-    "w": "Bibliopola",
-    "p": "m.",
-    "d": "Librero . Sin.: librero.",
-    "df": "m. cult. librero (‖ persona que vende libros). Sin.: librero.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Bibliotecario",
     "p": "m. y f.",
     "d": "Y f. Persona encargada del cuidado, organización y funcionamiento de una biblioteca. Sin.: bibliotecólogo, archivero.",
@@ -10730,19 +9646,6 @@
     "ec": ""
   },
   {
-    "w": "Bicerra",
-    "p": "f.",
-    "d": "Gamuza . Sin.: gamuza, rebeco, robezo, rupicabra, rupicapra, camuza, robeco, sarrio.",
-    "df": "f. gamuza (‖ antílope). Sin.: gamuza, rebeco, robezo, rupicabra, rupicapra, camuza, robeco, sarrio.",
-    "e": "Del lat. ibex, -ĭcis 'cabra montés' y -rra; cf. becerro.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_latin",
-    "esp": [
-      "explosiva"
-    ]
-  },
-  {
     "w": "Bicha",
     "p": "f. coloq.",
     "d": "Entre personas supersticiosas, porque creen de mal agüero el pronunciar su nombre, culebra . Sin.: culebra, serpiente.",
@@ -10767,16 +9670,6 @@
     "esp": [
       "viajera"
     ]
-  },
-  {
-    "w": "Bici",
-    "p": "f. coloq.",
-    "d": "Bicicleta. Sin.: bicicleta, velocípedo, chivo2, ciclo.",
-    "df": "f. coloq. bicicleta. Sin.: bicicleta, velocípedo, chivo2, ciclo.",
-    "e": "Acort.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
   },
   {
     "w": "Biciclo",
@@ -10810,32 +9703,6 @@
     "s": "",
     "c": "adjetivo",
     "ec": ""
-  },
-  {
-    "w": "Bicoquete",
-    "p": "m.",
-    "d": "Papalina . Sin.: papalina, becoquín, bicoquín.",
-    "df": "m. papalina (‖ gorra con dos puntas). Sin.: papalina, becoquín, bicoquín.",
-    "e": "Del fr. bicoquet.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_frances",
-    "esp": [
-      "viajera"
-    ]
-  },
-  {
-    "w": "Bicoquín",
-    "p": "m.",
-    "d": "Papalina . Sin.: papalina, becoquín, bicoquete.",
-    "df": "m. papalina (‖ gorra con dos puntas). Sin.: papalina, becoquín, bicoquete.",
-    "e": "Del fr. bicoquet.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_frances",
-    "esp": [
-      "viajera"
-    ]
   },
   {
     "w": "Bicorne",
@@ -10896,16 +9763,6 @@
     "s": "",
     "c": "adjetivo",
     "ec": ""
-  },
-  {
-    "w": "Bicípite",
-    "p": "adj.",
-    "d": "Bicéfalo. Sin.: bicéfalo.",
-    "df": "adj. bicéfalo. Sin.: bicéfalo.",
-    "e": "Del lat. biceps, bicipĭtis.",
-    "s": "",
-    "c": "adjetivo",
-    "ec": "etym_latin"
   },
   {
     "w": "Bicóncavo",
@@ -11027,16 +9884,6 @@
     "ec": ""
   },
   {
-    "w": "Bienfortunado",
-    "p": "adj.",
-    "d": "Afortunado . Sin.: afortunado, agraciado, suertudo, sortario.",
-    "df": "adj. afortunado (‖ que tiene buena suerte). Sin.: afortunado, agraciado, suertudo, sortario.",
-    "e": "",
-    "s": "",
-    "c": "adjetivo",
-    "ec": ""
-  },
-  {
     "w": "Biengranada",
     "p": "f.",
     "d": "Planta aromática, de la familia de las quenopodiáceas, como de medio metro de altura, con hojas ovaladas, medio hendidas, de color verde amarillento, y flores de color bermejo que nacen en racimos pequeños junto a las hojas. Se ha aplicado como específico contra la hemoptisis.",
@@ -11074,26 +9921,6 @@
     "e": "De bien y me sabe.",
     "s": "",
     "c": "gastronomia",
-    "ec": ""
-  },
-  {
-    "w": "Bienquerer",
-    "p": "m.",
-    "d": "Bienquerencia. Sin.: bienquerencia, afecto2, cariño, amor, aprecio.",
-    "df": "m. bienquerencia. Sin.: bienquerencia, afecto2, cariño, amor, aprecio. | tr. Querer bien, estimar, apreciar.",
-    "e": "De bienquerer2.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Bienteveo",
-    "p": "m.",
-    "d": "Candelecho. Sin.: candelecho, barbacoa.",
-    "df": "m. candelecho. Sin.: candelecho, barbacoa. | m. Arg. y Méx. benteveo. Sin.: benteveo. | m. Hond. cativí. Sin.: cativí.",
-    "e": "De bien y te veo.",
-    "s": "",
-    "c": "sustantivo",
     "ec": ""
   },
   {
@@ -11261,16 +10088,6 @@
     "d": "Hipocresía, fingimiento, disimulación. Sin.: fingimiento, disimulo, hipocresía, burla, chasco, inocentada.",
     "df": "f. Hipocresía, fingimiento, disimulación. Sin.: fingimiento, disimulo, hipocresía, burla, chasco, inocentada.",
     "e": "De bigardo.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Bigarro",
-    "p": "m.",
-    "d": "Bígaro. Sin.: bígaro.",
-    "df": "m. bígaro. Sin.: bígaro.",
-    "e": "",
     "s": "",
     "c": "sustantivo",
     "ec": ""
@@ -12590,19 +11407,6 @@
     "ec": ""
   },
   {
-    "w": "Birlocha",
-    "p": "f.",
-    "d": "Cometa . Sin.: cometa, milocha, pandero, pandorga, papalote, volantín, papagayo, barrilete, chichigua, chiringa, papalota, cachirulo.",
-    "df": "f. cometa (‖ armazón). Sin.: cometa, milocha, pandero, pandorga, papalote, volantín, papagayo, barrilete, chichigua, chiringa, papalota, cachirulo. | f. Bol. Chola que ha adoptado la vestidura de la mujer de clase social superior. | f. Bol. Mujer que se comporta en forma ordinaria.",
-    "e": "De milocha, infl. por birlo o birlar.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "",
-    "esp": [
-      "explosiva"
-    ]
-  },
-  {
     "w": "Birlocho",
     "p": "m.",
     "d": "Carruaje ligero y sin cubierta, de cuatro ruedas y cuatro asientos, abierto por los costados y sin portezuelas.",
@@ -12712,19 +11516,6 @@
     "ec": "etym_frances",
     "esp": [
       "viajera"
-    ]
-  },
-  {
-    "w": "Birrete",
-    "p": "m.",
-    "d": "Birreta. Sin.: solideo, birreta, bonete.",
-    "df": "m. birreta. Sin.: solideo, birreta, bonete. | m. Gorro armado en forma prismática y coronado por una borla que llevan en los actos solemnes los profesores, magistrados, jueces y abogados. | m. gorro (‖ pieza redonda para cubrir la cabeza). Sin.: gorro, gorra. | m. bonete (‖ gorra con cuatro picos usada por algunos eclesiásticos). Sin.: solideo, birreta, bonete.",
-    "e": "Del occit. ant. birret, dim. del lat. tardío birrus 'capote con capucho', y este quizá del celta *birros 'corto1'; cf. irl. ant. berr.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "",
-    "esp": [
-      "explosiva"
     ]
   },
   {
@@ -12838,16 +11629,6 @@
     "e": "",
     "s": "",
     "c": "gentilicio",
-    "ec": ""
-  },
-  {
-    "w": "Bisbisar",
-    "p": "tr.",
-    "d": "Bisbisear. Sin.: bisbisear, musitar, susurrar, mistar, cuchichear, murmujear.",
-    "df": "tr. coloq. bisbisear. Sin.: bisbisear, musitar, susurrar, mistar, cuchichear, murmujear.",
-    "e": "De la onomat. bisbís, imit. del sonido del cuchicheo.",
-    "s": "",
-    "c": "verbo",
     "ec": ""
   },
   {
@@ -12987,16 +11768,6 @@
     "ec": ""
   },
   {
-    "w": "Bisilábico",
-    "p": "adj.",
-    "d": "Bisílabo. Sin.: bisílabo, disílabo, disilábico.",
-    "df": "adj. bisílabo. Sin.: bisílabo, disílabo, disilábico.",
-    "e": "",
-    "s": "",
-    "c": "adjetivo",
-    "ec": ""
-  },
-  {
     "w": "Bismutina",
     "p": "f.",
     "d": "Geol. Mineral de color gris plomo y brillo metálico, a menudo con manchas amarillas, que cristaliza en el sistema rómbico formando agujas y masas hojosas, y que se encuentra en América y se utiliza como mena de bismuto.",
@@ -13093,16 +11864,6 @@
     "ec": ""
   },
   {
-    "w": "Bisoñería",
-    "p": "f. coloq.",
-    "d": "Bisoñada. Sin.: novatada, bisoñada.",
-    "df": "f. coloq. bisoñada. Sin.: novatada, bisoñada.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Bisoñez",
     "p": "f.",
     "d": "Cualidad de bisoño. Sin.: inexperiencia, impericia.",
@@ -13159,16 +11920,6 @@
     "esp": [
       "viajera"
     ]
-  },
-  {
-    "w": "Bisté",
-    "p": "m.",
-    "d": "Bistec. Sin.: bistec, bife, filete.",
-    "df": "m. bistec. Sin.: bistec, bife, filete.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
   },
   {
     "w": "Bisulco",
@@ -13348,16 +12099,6 @@
     "esp": [
       "viajera"
     ]
-  },
-  {
-    "w": "Bitumen",
-    "p": "m.",
-    "d": "Betún . Sin.: betún, alquitrán, asfalto, brea, neme.",
-    "df": "m. betún (‖ derivado del alquitrán). Sin.: betún, alquitrán, asfalto, brea, neme.",
-    "e": "Del lat. bitūmen, -ĭnis, voz de or. celta.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_latin"
   },
   {
     "w": "Bituminoso",
@@ -13553,16 +12294,6 @@
     "ec": ""
   },
   {
-    "w": "Bizcornear",
-    "p": "intr.",
-    "d": "Bizquear . Sin.: bizquear, bizcar, quisnear.",
-    "df": "intr. bizquear (‖ padecer estrabismo). Sin.: bizquear, bizcar, quisnear.",
-    "e": "De bizcuerno.",
-    "s": "",
-    "c": "verbo",
-    "ec": ""
-  },
-  {
     "w": "Bizcotela",
     "p": "f.",
     "d": "Especie de bizcocho ligero, cubierto de un baño blanco de azúcar.",
@@ -13626,16 +12357,6 @@
     "e": "De bizco y -ear.",
     "s": "",
     "c": "verbo",
-    "ec": ""
-  },
-  {
-    "w": "Bizquera",
-    "p": "f.",
-    "d": "Estrabismo. Sin.: estrabismo.",
-    "df": "f. estrabismo. Sin.: estrabismo.",
-    "e": "De bizco.",
-    "s": "",
-    "c": "sustantivo",
     "ec": ""
   },
   {
@@ -13703,36 +12424,6 @@
     "esp": [
       "viajera"
     ]
-  },
-  {
-    "w": "Blancarte",
-    "p": "m.",
-    "d": "Ganga . Sin.: ganga2.",
-    "df": "m. ganga (‖ materia que acompaña a los minerales). Sin.: ganga2.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Blancazo",
-    "p": "adj. coloq.",
-    "d": "Blanquecino. Sin.: blanquecino, blanquinoso, blanquizco, desblanquecido, desblanquiñado, albarizo.",
-    "df": "adj. coloq. blanquecino. Sin.: blanquecino, blanquinoso, blanquizco, desblanquecido, desblanquiñado, albarizo.",
-    "e": "",
-    "s": "",
-    "c": "adjetivo",
-    "ec": ""
-  },
-  {
-    "w": "Blancor",
-    "p": "m.",
-    "d": "Blancura. Sin.: blancura, albura, albor, ampo, candor, nieve.",
-    "df": "m. blancura. Sin.: blancura, albura, albor, ampo, candor, nieve.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
   },
   {
     "w": "Blancote",
@@ -13804,16 +12495,6 @@
     "ec": ""
   },
   {
-    "w": "Blandujo",
-    "p": "adj. coloq.",
-    "d": "Blanducho. Sin.: blanducho.",
-    "df": "adj. coloq. blanducho. Sin.: blanducho.",
-    "e": "",
-    "s": "",
-    "c": "adjetivo",
-    "ec": ""
-  },
-  {
     "w": "Blandón",
     "p": "m.",
     "d": "Vela gruesa de cera con una mecha.",
@@ -13827,16 +12508,6 @@
     ]
   },
   {
-    "w": "Blanqueación",
-    "p": "f.",
-    "d": "Blanqueo. Sin.: blanqueo, blanqueadura, blanqueamiento.",
-    "df": "f. blanqueo. Sin.: blanqueo, blanqueadura, blanqueamiento.",
-    "e": "De blanquear.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Blanqueador",
     "p": "adj.",
     "d": "Que blanquea. U. t. c. s. Sin.: enjalbegador, encalador.",
@@ -13844,26 +12515,6 @@
     "e": "",
     "s": "",
     "c": "adjetivo",
-    "ec": ""
-  },
-  {
-    "w": "Blanqueadura",
-    "p": "f.",
-    "d": "Blanqueo. Sin.: blanqueo, blanqueamiento, blanqueación.",
-    "df": "f. blanqueo. Sin.: blanqueo, blanqueamiento, blanqueación.",
-    "e": "De blanquear.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Blanqueamiento",
-    "p": "m.",
-    "d": "Blanqueo. Sin.: blanqueo, blanqueación, blanqueadura.",
-    "df": "m. blanqueo. Sin.: blanqueo, blanqueación, blanqueadura.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
     "ec": ""
   },
   {
@@ -13898,19 +12549,6 @@
     "s": "",
     "c": "verbo",
     "ec": ""
-  },
-  {
-    "w": "Blanquecimiento",
-    "p": "m.",
-    "d": "Blanquición. Sin.: blanquición.",
-    "df": "m. blanquición. Sin.: blanquición.",
-    "e": "De blanquecer.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "",
-    "esp": [
-      "larga"
-    ]
   },
   {
     "w": "Blanquero",
@@ -13989,16 +12627,6 @@
     "ec": ""
   },
   {
-    "w": "Blanquinoso",
-    "p": "adj.",
-    "d": "Blanquecino. Sin.: blanquecino, blanquizco, desblanquecido, desblanquiñado, albarizo, blancazo.",
-    "df": "adj. blanquecino. Sin.: blanquecino, blanquizco, desblanquecido, desblanquiñado, albarizo, blancazo.",
-    "e": "",
-    "s": "",
-    "c": "adjetivo",
-    "ec": ""
-  },
-  {
     "w": "Blanquizal",
     "p": "m.",
     "d": "Terreno gredoso. Sin.: blanquizar.",
@@ -14007,39 +12635,6 @@
     "s": "",
     "c": "sustantivo",
     "ec": ""
-  },
-  {
-    "w": "Blanquizar",
-    "p": "m.",
-    "d": "Blanquizal. Sin.: blanquizal.",
-    "df": "m. blanquizal. Sin.: blanquizal.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Blanquizco",
-    "p": "adj.",
-    "d": "Blanquecino. Sin.: blanquecino, blanquinoso, desblanquecido, desblanquiñado, albarizo, blancazo.",
-    "df": "adj. blanquecino. Sin.: blanquecino, blanquinoso, desblanquecido, desblanquiñado, albarizo, blancazo.",
-    "e": "",
-    "s": "",
-    "c": "adjetivo",
-    "ec": ""
-  },
-  {
-    "w": "Blasfemable",
-    "p": "adj.",
-    "d": "Vituperable. Sin.: vituperable, denostable, execrable, reprobable, reprensible, reprochable, censurable, criticable, incalificable, abominable.",
-    "df": "adj. vituperable. Sin.: vituperable, denostable, execrable, reprobable, reprensible, reprochable, censurable, criticable, incalificable, abominable.",
-    "e": "Del lat. tardío blasphemabĭlis.",
-    "s": "",
-    "c": "adjetivo",
-    "ec": "etym_latin",
-    "esp": [
-      "explosiva"
-    ]
   },
   {
     "w": "Blasfemador",
@@ -14073,16 +12668,6 @@
     "esp": [
       "explosiva"
     ]
-  },
-  {
-    "w": "Blasfematorio",
-    "p": "adj.",
-    "d": "Blasfemo . Sin.: blasfemo.",
-    "df": "adj. blasfemo (‖ que contiene blasfemia). Sin.: blasfemo.",
-    "e": "",
-    "s": "",
-    "c": "adjetivo",
-    "ec": ""
   },
   {
     "w": "Blasfemia",
@@ -14141,16 +12726,6 @@
     "e": "De blasón.",
     "s": "",
     "c": "verbo",
-    "ec": ""
-  },
-  {
-    "w": "Blasonería",
-    "p": "f.",
-    "d": "Baladronada. Sin.: baladronada, bravata, balandronada, fanfarronada, bravuconada.",
-    "df": "f. baladronada. Sin.: baladronada, bravata, balandronada, fanfarronada, bravuconada.",
-    "e": "De blasonar.",
-    "s": "",
-    "c": "sustantivo",
     "ec": ""
   },
   {
@@ -14506,16 +13081,6 @@
     ]
   },
   {
-    "w": "Boalar",
-    "p": "m.",
-    "d": "Dula . Sin.: dula, adula.",
-    "df": "m. dula (‖ porción de terreno). Sin.: dula, adula.",
-    "e": "Del lat. *boālis, der. de boe, y este de bovem, acus. de bos, bovis 'buey1'.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_latin"
-  },
-  {
     "w": "Boaqueño",
     "p": "adj.",
     "d": "Natural de Boaco, departamento de Nicaragua. U. t. c. s.",
@@ -14523,16 +13088,6 @@
     "e": "",
     "s": "",
     "c": "gentilicio",
-    "ec": ""
-  },
-  {
-    "w": "Boardilla",
-    "p": "f.",
-    "d": "Buhardilla. Sin.: buhardilla, guardilla1, mansarda, buharda. desván, sobrado, entretecho.",
-    "df": "f. buhardilla. Sin.: buhardilla, guardilla1, mansarda, buharda. desván, sobrado, entretecho.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
     "ec": ""
   },
   {
@@ -14554,19 +13109,6 @@
     "s": "",
     "c": "verbo",
     "ec": ""
-  },
-  {
-    "w": "Bobería",
-    "p": "f.",
-    "d": "Bobada. Sin.: bobada, tontería, tontada, simpleza, majadería, tontuna. bobada, tontería, nimiedad, nadería, minucia, menudencia, insignificancia.",
-    "df": "f. bobada. Sin.: bobada, tontería, tontada, simpleza, majadería, tontuna. bobada, tontería, nimiedad, nadería, minucia, menudencia, insignificancia. | f. Cualidad de bobo. Sin.: tontería, estupidez, idiotez, imbecilidad, memez, necedad, sandez, estulticia, cojudez.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "",
-    "esp": [
-      "explosiva"
-    ]
   },
   {
     "w": "Bobina",
@@ -14772,26 +13314,6 @@
     "ec": ""
   },
   {
-    "w": "Bocarte",
-    "p": "m.",
-    "d": "Boquerón . Sin.: boquerón, aladroque, anchoa.",
-    "df": "m. boquerón (‖ pez). Sin.: boquerón, aladroque, anchoa. | m. Martillo para romper minerales.",
-    "e": "Quizá der. del lat. beccus 'pico1', voz de or. celta.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Bocata",
-    "p": "m. coloq.",
-    "d": "Bocadillo . Sin.: bocadillo.",
-    "df": "m. coloq. bocadillo (‖ pieza de pan abierta). Sin.: bocadillo.",
-    "e": "Acort. de bocadillo y el suf. jergal -ata.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Bocateja",
     "p": "f.",
     "d": "Constr. Teja primera de cada una de las canales de un tejado, junto al alero.",
@@ -14807,16 +13329,6 @@
     "d": "En los carruajes de cuatro ruedas, parte del juego delantero donde se afirma y juega la lanza.",
     "df": "f. En los carruajes de cuatro ruedas, parte del juego delantero donde se afirma y juega la lanza.",
     "e": "De boca y tijera.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Bocatoma",
-    "p": "f.",
-    "d": "Bocacaz. Sin.: bocacaz.",
-    "df": "f. bocacaz. Sin.: bocacaz.",
-    "e": "De boca y tomar.",
     "s": "",
     "c": "sustantivo",
     "ec": ""
@@ -15137,16 +13649,6 @@
     ]
   },
   {
-    "w": "Bode",
-    "p": "m.",
-    "d": "Cabrón . Sin.: cabrón, cabro, cabrío, buco1, chivo2, bote4.",
-    "df": "m. cabrón (‖ macho de la cabra). Sin.: cabrón, cabro, cabrío, buco1, chivo2, bote4.",
-    "e": "Quizá de or. prerromano.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Bodegonero",
     "p": "m. y f.",
     "d": "Y f. Persona que tiene bodegón.",
@@ -15175,19 +13677,6 @@
     "s": "",
     "c": "sustantivo",
     "ec": ""
-  },
-  {
-    "w": "Bodegón",
-    "p": "m.",
-    "d": "Taberna. Sin.: taberna, tasca, cantina, bodega, fonda1, figón.",
-    "df": "m. taberna. Sin.: taberna, tasca, cantina, bodega, fonda1, figón. | m. Composición pictórica que expone como tema principal frutas, verdura, caza, pesca, etc., y objetos domésticos diversos. Sin.: cuadro, pintura. | m. Género pictórico formado por bodegones. | m. Establecimiento, comúnmente subterráneo, donde se ofrecían comidas.",
-    "e": "Del aum. de bodega.",
-    "s": "",
-    "c": "arte_literatura",
-    "ec": "",
-    "esp": [
-      "explosiva"
-    ]
   },
   {
     "w": "Bodigo",
@@ -15264,16 +13753,6 @@
     "ec": ""
   },
   {
-    "w": "Body",
-    "p": "m.",
-    "d": "Bodi. Sin.: bodi.",
-    "df": "m. bodi. Sin.: bodi.",
-    "e": "Voz ingl.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Bodón",
     "p": "m.",
     "d": "Charca o laguna invernal que se seca en verano.",
@@ -15331,19 +13810,6 @@
     "s": "",
     "c": "sustantivo",
     "ec": ""
-  },
-  {
-    "w": "Bofo",
-    "p": "adj.",
-    "d": "Fofo. Sin.: fofo, blando, flácido, flojo.",
-    "df": "adj. fofo. Sin.: fofo, blando, flácido, flojo.",
-    "e": "Voz onomat.",
-    "s": "",
-    "c": "adjetivo",
-    "ec": "etym_onomatopeya",
-    "esp": [
-      "onom"
-    ]
   },
   {
     "w": "Boga",
@@ -15411,16 +13877,6 @@
     "d": "Ar. Sardina pequeña.",
     "df": "f. Ar. Sardina pequeña.",
     "e": "De boga1 y -eta.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Bohardilla",
-    "p": "f.",
-    "d": "Buhardilla. Sin.: buhardilla, guardilla1, mansarda, buharda. desván, sobrado, entretecho.",
-    "df": "f. buhardilla. Sin.: buhardilla, guardilla1, mansarda, buharda. desván, sobrado, entretecho.",
-    "e": "",
     "s": "",
     "c": "sustantivo",
     "ec": ""
@@ -15528,16 +13984,6 @@
     "ec": ""
   },
   {
-    "w": "Boira",
-    "p": "f.",
-    "d": "Niebla. Sin.: niebla, boria.",
-    "df": "f. niebla. Sin.: niebla, boria.",
-    "e": "De or. inc.; cf. cat. y gall. boira.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Boiserie",
     "p": "f.",
     "d": "Revestimiento de madera aplicado a paredes.",
@@ -15555,16 +14001,6 @@
     "e": "De boj1.",
     "s": "",
     "c": "verbo",
-    "ec": ""
-  },
-  {
-    "w": "Boje",
-    "p": "m.",
-    "d": "Boj . Sin.: boj1.",
-    "df": "m. boj (‖ arbusto). Sin.: boj1. | m. boj (‖ madera del arbusto). Sin.: boj1.",
-    "e": "Del cat. y arag. boix, y este del lat. buxus.",
-    "s": "",
-    "c": "sustantivo",
     "ec": ""
   },
   {
@@ -15616,19 +14052,6 @@
     "s": "",
     "c": "sustantivo",
     "ec": ""
-  },
-  {
-    "w": "Bolado",
-    "p": "m.",
-    "d": "Azucarillo . Sin.: azucarillo, esponjado, panal, volado.",
-    "df": "m. azucarillo (‖ porción de masa esponjosa). Sin.: azucarillo, esponjado, panal, volado. | m. C. Rica. asunto (‖ negocio). Sin.: asunto, negocio, asuntillo, asuntejo. | m. C. Rica. comisión (‖ encargo). Sin.: comisión, encargo, cometido, misión. | m. coloq. Hond. Mujer muy guapa. | m. coloq. Hond. Cosa fácil de conseguir.",
-    "e": "De bola.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "",
-    "esp": [
-      "explosiva"
-    ]
   },
   {
     "w": "Bolaga",
@@ -15727,16 +14150,6 @@
     ]
   },
   {
-    "w": "Bolcheviquismo",
-    "p": "m.",
-    "d": "Bolchevismo. Sin.: bolchevismo, comunismo, marxismo.",
-    "df": "m. bolchevismo. Sin.: bolchevismo, comunismo, marxismo.",
-    "e": "De bolchevique e -ismo.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Bolchevismo",
     "p": "m.",
     "d": "Facción mayoritaria y más radical del Partido de la Revolución Rusa, seguidora de Lenin. Sin.: bolcheviquismo, comunismo, marxismo.",
@@ -15826,16 +14239,6 @@
     "ec": ""
   },
   {
-    "w": "Boli",
-    "p": "m. coloq.",
-    "d": "Bolígrafo. Sin.: bolígrafo, birome, esferográfica, lapicero, lapicera.",
-    "df": "m. coloq. bolígrafo. Sin.: bolígrafo, birome, esferográfica, lapicero, lapicera.",
-    "e": "Acort.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Bolichada",
     "p": "f.",
     "d": "Lance de la red llamada boliche.",
@@ -15866,16 +14269,6 @@
     "ec": ""
   },
   {
-    "w": "Bolillero",
-    "p": "m.",
-    "d": "Almohadilla . Sin.: almohadilla, mundillo, bolo1.",
-    "df": "m. almohadilla (‖ almohada para hacer encaje de bolillos). Sin.: almohadilla, mundillo, bolo1. | m. Arg., Par. y Ur. bombo (‖ caja que contiene las bolas de un sorteo). Sin.: bombo.",
-    "e": "De bolillo.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Bolillo",
     "p": "m.",
     "d": "Palo pequeño y torneado que sirve para hacer encajes y pasamanería. El hilo se arrolla o devana en la mitad superior, que es más delgada, y queda tirante por el peso de la otra mitad, que es más gruesa.",
@@ -15900,32 +14293,6 @@
     "esp": [
       "explosiva",
       "viajera"
-    ]
-  },
-  {
-    "w": "Bolinche",
-    "p": "m.",
-    "d": "Canica . Sin.: canica2, bola, bolindre, bolita, cuica, mable, macaco1.",
-    "df": "m. canica (‖ bola). Sin.: canica2, bola, bolindre, bolita, cuica, mable, macaco1. | m. Remate o adorno de algunos muebles en forma de bola. Sin.: bolindre.",
-    "e": "De bola.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "",
-    "esp": [
-      "explosiva"
-    ]
-  },
-  {
-    "w": "Bolindre",
-    "p": "m.",
-    "d": "Bolinche . Sin.: bolinche.",
-    "df": "m. bolinche (‖ remate o adorno). Sin.: bolinche. | m. canica (‖ bola). Sin.: canica2, bola, bolinche, bolita, cuica, mable, macaco1.",
-    "e": "De bola.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "",
-    "esp": [
-      "explosiva"
     ]
   },
   {
@@ -16007,16 +14374,6 @@
     "s": "",
     "c": "sustantivo",
     "ec": "etym_latin"
-  },
-  {
-    "w": "Bolladura",
-    "p": "f.",
-    "d": "Abolladura. Sin.: abolladura, abollón, bollo, chopeadura.",
-    "df": "f. abolladura. Sin.: abolladura, abollón, bollo, chopeadura.",
-    "e": "De bollar2.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
   },
   {
     "w": "Bollera",
@@ -16245,19 +14602,6 @@
     "ec": ""
   },
   {
-    "w": "Bombardear",
-    "p": "tr.",
-    "d": "Bombear . Sin.: bombear1, cañonear.",
-    "df": "tr. bombear (‖ disparar bombas de artillería). Sin.: bombear1, cañonear. | tr. Arrojar bombas desde una aeronave sobre un lugar. | tr. Acosar o abrumar con algo a alguien. Bombardear al profesor con preguntas. Sin.: machacar, agobiar, acosar, asediar, hostigar, insistir. | tr. Fís. Someter un cuerpo al impacto de ciertas radiaciones o partículas.",
-    "e": "De bombarda y -ear.",
-    "s": "",
-    "c": "verbo",
-    "ec": "",
-    "esp": [
-      "explosiva"
-    ]
-  },
-  {
     "w": "Bombardino",
     "p": "m.",
     "d": "Instrumento musical de viento, de metal, semejante al figle, pero con pistones o cilindros en vez de llaves, y que pertenece a la clase de bajos.",
@@ -16276,19 +14620,6 @@
     "s": "",
     "c": "musica",
     "ec": ""
-  },
-  {
-    "w": "Bombasí",
-    "p": "m.",
-    "d": "Fustán . Sin.: fustán.",
-    "df": "m. fustán (‖ tela gruesa de algodón). Sin.: fustán.",
-    "e": "Del fr. ant. bombasin 'tela de seda y otros tejidos'.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_frances",
-    "esp": [
-      "viajera"
-    ]
   },
   {
     "w": "Bombazo",
@@ -16490,16 +14821,6 @@
     "ec": ""
   },
   {
-    "w": "Bonal",
-    "p": "m.",
-    "d": "Bodonal. Sin.: bodonal.",
-    "df": "m. bodonal. Sin.: bodonal.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Bonapartismo",
     "p": "m.",
     "d": "Gobierno de Napoleón Bonaparte, o de su dinastía.",
@@ -16524,16 +14845,6 @@
     "p": "adj.",
     "d": "Perteneciente o relativo a la doctrina de san Buenaventura. Sin.: buenaventuriano.",
     "df": "adj. Perteneciente o relativo a la doctrina de san Buenaventura. Sin.: buenaventuriano.",
-    "e": "",
-    "s": "",
-    "c": "adjetivo",
-    "ec": ""
-  },
-  {
-    "w": "Bondoso",
-    "p": "adj.",
-    "d": "Bondadoso. Sin.: bondadoso.",
-    "df": "adj. bondadoso. Sin.: bondadoso.",
     "e": "",
     "s": "",
     "c": "adjetivo",
@@ -17041,16 +15352,6 @@
     "ec": ""
   },
   {
-    "w": "Boquirroto",
-    "p": "adj.",
-    "d": "Boquirrasgado. Sin.: boquirrasgado.",
-    "df": "adj. boquirrasgado. Sin.: boquirrasgado. | adj. coloq. Fácil en hablar.",
-    "e": "",
-    "s": "",
-    "c": "adjetivo",
-    "ec": ""
-  },
-  {
     "w": "Boquirrubio",
     "p": "adj.",
     "d": "Que sin necesidad ni reserva dice cuanto sabe.",
@@ -17065,26 +15366,6 @@
     "p": "adj.",
     "d": "Que tiene seca la boca.",
     "df": "adj. Que tiene seca la boca. | adj. Dicho de una caballería: Que no saborea el freno ni hace espuma.",
-    "e": "",
-    "s": "",
-    "c": "adjetivo",
-    "ec": ""
-  },
-  {
-    "w": "Boquisumido",
-    "p": "adj.",
-    "d": "Boquihundido. Sin.: boquihundido.",
-    "df": "adj. boquihundido. Sin.: boquihundido.",
-    "e": "De boca y sumido, part. de sumir.",
-    "s": "",
-    "c": "adjetivo",
-    "ec": ""
-  },
-  {
-    "w": "Boquitorcido",
-    "p": "adj.",
-    "d": "Boquituerto. Sin.: boquituerto.",
-    "df": "adj. boquituerto. Sin.: boquituerto.",
     "e": "",
     "s": "",
     "c": "adjetivo",
@@ -17134,16 +15415,6 @@
     ]
   },
   {
-    "w": "Borbollear",
-    "p": "intr.",
-    "d": "Borbollar. Sin.: borbollar, borbollonear, borbotear, borbotar, borboritar, brollar, gorgotear.",
-    "df": "intr. borbollar. Sin.: borbollar, borbollonear, borbotear, borbotar, borboritar, brollar, gorgotear.",
-    "e": "",
-    "s": "",
-    "c": "verbo",
-    "ec": ""
-  },
-  {
     "w": "Borbolleo",
     "p": "m.",
     "d": "Acción de borbollear.",
@@ -17151,16 +15422,6 @@
     "e": "",
     "s": "",
     "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Borbollonear",
-    "p": "intr.",
-    "d": "Borbollar. Sin.: borbollar, borbollear, borbotear, borbotar, borboritar, brollar, gorgoritear.",
-    "df": "intr. borbollar. Sin.: borbollar, borbollear, borbotear, borbotar, borboritar, brollar, gorgoritear.",
-    "e": "De borbollón.",
-    "s": "",
-    "c": "verbo",
     "ec": ""
   },
   {
@@ -17220,19 +15481,6 @@
     "ec": ""
   },
   {
-    "w": "Borbotar",
-    "p": "intr.",
-    "d": "Borbotear. Sin.: borbotear, borbollar, borbollear, borbollonear, borboritar, brollar, gorgotear, hervir.",
-    "df": "intr. borbotear. Sin.: borbotear, borbollar, borbollear, borbollonear, borboritar, brollar, gorgotear, hervir.",
-    "e": "",
-    "s": "",
-    "c": "verbo",
-    "ec": "",
-    "esp": [
-      "explosiva"
-    ]
-  },
-  {
     "w": "Borbotear",
     "p": "intr.",
     "d": "Dicho de un líquido: Brotar o hervir impetuosa o ruidosamente. Sin.: borbotar, borbollar, borbollear, borbollonear, borboritar, brollar, gorgotear.",
@@ -17251,16 +15499,6 @@
     "d": "Acción de borbotear.",
     "df": "m. Acción de borbotear.",
     "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Borbotón",
-    "p": "m.",
-    "d": "Borbollón. Sin.: borbollón.",
-    "df": "m. borbollón. Sin.: borbollón.",
-    "e": "De borbotar.",
     "s": "",
     "c": "sustantivo",
     "ec": ""
@@ -17399,16 +15637,6 @@
     "ec": ""
   },
   {
-    "w": "Bordoncillo",
-    "p": "m.",
-    "d": "Bordón . Sin.: muletilla, bordón.",
-    "df": "m. bordón (‖ voz o frase que se repite). Sin.: muletilla, bordón.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Bordonear",
     "p": "intr.",
     "d": "Ir tentando o tocando la tierra con el bordón .",
@@ -17525,16 +15753,6 @@
     "ec": ""
   },
   {
-    "w": "Boria",
-    "p": "f.",
-    "d": "Boira. Sin.: boira, niebla.",
-    "df": "f. boira. Sin.: boira, niebla.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Boricado",
     "p": "adj.",
     "d": "Dicho de un preparado: Que contiene ácido bórico.",
@@ -17585,16 +15803,6 @@
     "ec": "etym_latin"
   },
   {
-    "w": "Borlilla",
-    "p": "f.",
-    "d": "Antera. Sin.: antera.",
-    "df": "f. antera. Sin.: antera.",
-    "e": "Del dim. de borla.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Borlón",
     "p": "m.",
     "d": "Tela de lino y algodón sembrada de borlitas, semejante a la cotonía.",
@@ -17603,20 +15811,6 @@
     "s": "",
     "c": "vestimenta",
     "ec": ""
-  },
-  {
-    "w": "Borna",
-    "p": "f.",
-    "d": "Hito . Sin.: hito, mojón1, poste, cipo, muñeca, moto1.",
-    "df": "f. hito (‖ mojón). Sin.: hito, mojón1, poste, cipo, muñeca, moto1. | f. Electr. borne (‖ terminal metálico). Sin.: borne1, terminal, polo1.",
-    "e": "Del fr. borne.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_frances",
-    "esp": [
-      "explosiva",
-      "viajera"
-    ]
   },
   {
     "w": "Borne",
@@ -17640,16 +15834,6 @@
     "e": "De bornear1.",
     "s": "",
     "c": "adjetivo",
-    "ec": ""
-  },
-  {
-    "w": "Borneadura",
-    "p": "f.",
-    "d": "Borneo2. Sin.: borneo2.",
-    "df": "f. borneo2. Sin.: borneo2.",
-    "e": "De bornear2.",
-    "s": "",
-    "c": "sustantivo",
     "ec": ""
   },
   {
@@ -17712,29 +15896,6 @@
     ]
   },
   {
-    "w": "Borona",
-    "p": "f.",
-    "d": "Mijo. Sin.: mijo.",
-    "df": "f. mijo. Sin.: mijo. | f. maíz. Sin.: maíz. | f. Pan de maíz. | f. Col., C. Rica, Cuba, Méx., Nic., R. Dom. y Ven. migaja (‖ parte más pequeña y menuda del pan). Sin.: migaja, miaja2.",
-    "e": "Quizá del celta *borŭna.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Boronía",
-    "p": "f.",
-    "d": "Alboronía. Sin.: alboronía, almoronía, moronía.",
-    "df": "f. alboronía. Sin.: alboronía, almoronía, moronía.",
-    "e": "Del ár. hisp. buraníyya, y este del ár. clás. būrāniyyah; literalmente 'la de Buran', inventora de este plato.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_arabe",
-    "esp": [
-      "viajera"
-    ]
-  },
-  {
     "w": "Borrachales",
     "p": "m. y f.",
     "d": "Y f. Méx. borrachín. Sin.: borrachín.",
@@ -17762,29 +15923,6 @@
     "e": "De borracho.",
     "s": "",
     "c": "botanica",
-    "ec": ""
-  },
-  {
-    "w": "Borrachez",
-    "p": "f.",
-    "d": "Embriaguez . Sin.: borrachera, embriaguez, trompa, mona, moña, cogorza, melopea, merluza, curda, castaña, cohete, bomba, peludo, cura.",
-    "df": "f. embriaguez (‖ perturbación por la bebida). Sin.: borrachera, embriaguez, trompa, mona, moña, cogorza, melopea, merluza, curda, castaña, cohete, bomba, peludo, cura. | f. Turbación del juicio o de la razón.",
-    "e": "De borracho y -ez.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "",
-    "esp": [
-      "explosiva"
-    ]
-  },
-  {
-    "w": "Borrachuela",
-    "p": "f.",
-    "d": "Cizaña . Sin.: cizaña, cominillo, joyo, rabillo, luello.",
-    "df": "f. cizaña (‖ planta). Sin.: cizaña, cominillo, joyo, rabillo, luello.",
-    "e": "Del dim. de borracha.",
-    "s": "",
-    "c": "sustantivo",
     "ec": ""
   },
   {
@@ -17828,16 +15966,6 @@
     "ec": ""
   },
   {
-    "w": "Borraj",
-    "p": "m.",
-    "d": "Bórax. Sin.: bórax, borra2, atíncar.",
-    "df": "m. bórax. Sin.: bórax, borra2, atíncar.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Borraja",
     "p": "f.",
     "d": "Planta anual de la familia de las borragináceas, de 20 a 60 cm de altura, con tallo grueso y ramoso, hojas grandes y aovadas, flores azules dispuestas en racimo y semillas muy menudas. Está cubierta de pelos ásperos y punzantes, es comestible y la infusión de sus flores se emplea como sudorífico.",
@@ -17855,16 +15983,6 @@
     "e": "De borrar.",
     "s": "",
     "c": "verbo",
-    "ec": ""
-  },
-  {
-    "w": "Borrajo",
-    "p": "m.",
-    "d": "Rescoldo . Sin.: rescoldo.",
-    "df": "m. rescoldo (‖ brasa). Sin.: rescoldo. | m. Hojarasca de los pinos. Sin.: tamuja.",
-    "e": "De or. inc.; cf. lat. burrus 'rojo, bermejo'.",
-    "s": "",
-    "c": "sustantivo",
     "ec": ""
   },
   {
@@ -18046,16 +16164,6 @@
     "ec": ""
   },
   {
-    "w": "Borriquete",
-    "p": "m.",
-    "d": "Borrico . Sin.: borrico.",
-    "df": "m. borrico (‖ armazón de carpintero). Sin.: borrico. | m. Vela que se pone sobre el trinquete para servirse de ella en caso de rifarse este.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Borro",
     "p": "m. y f.",
     "d": "Y f. Cordero que pasa de un año y no llega a dos.",
@@ -18076,26 +16184,6 @@
     "e": "",
     "s": "",
     "c": "adjetivo",
-    "ec": ""
-  },
-  {
-    "w": "Borroncillo",
-    "p": "m.",
-    "d": "Borrón . Sin.: borrón1.",
-    "df": "m. borrón (‖ primer bosquejo para un cuadro). Sin.: borrón1.",
-    "e": "",
-    "s": "",
-    "c": "arte_literatura",
-    "ec": ""
-  },
-  {
-    "w": "Borronear",
-    "p": "tr.",
-    "d": "Borrajear. Sin.: emborronar, borrajear, garabatear, garrapatear.",
-    "df": "tr. borrajear. Sin.: emborronar, borrajear, garabatear, garrapatear.",
-    "e": "De borrón1 y -ear.",
-    "s": "",
-    "c": "verbo",
     "ec": ""
   },
   {
@@ -18160,16 +16248,6 @@
     "d": "Bulla, algazara. Sin.: buruca.",
     "df": "f. Bulla, algazara. Sin.: buruca. | adj. Dicho de una persona: De un pueblo amerindio que habita al sur de Costa Rica. U. t. c. s. Sin.: brunca. | adj. Perteneciente o relativo a los borucas. Sin.: brunca. | adj. Perteneciente o relativo al boruca (‖ lengua). Léxico boruca. Sin.: brunca.",
     "e": "Del vasco buruka 'lucha', 'topetazo'.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Borujón",
-    "p": "m.",
-    "d": "Burujón . Sin.: burujón, chichón.",
-    "df": "m. burujón (‖ chichón). Sin.: burujón, chichón.",
-    "e": "",
     "s": "",
     "c": "sustantivo",
     "ec": ""
@@ -18372,19 +16450,6 @@
     "s": "",
     "c": "sustantivo",
     "ec": ""
-  },
-  {
-    "w": "Botafumeiro",
-    "p": "m.",
-    "d": "Incensario. Sin.: incensario, turíbulo.",
-    "df": "m. incensario. Sin.: incensario, turíbulo. | m. coloq. adulación. Sin.: adulación, lametón, lambonería, cumbo, copaleo, lambetada, lambetazo, lambisconería.",
-    "e": "Del gall. Botafumeiro, gran incensario de la catedral de Compostela.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "",
-    "esp": [
-      "explosiva"
-    ]
   },
   {
     "w": "Botagueña",
@@ -18633,16 +16698,6 @@
     "ec": ""
   },
   {
-    "w": "Botilla",
-    "p": "f.",
-    "d": "Borceguí . Sin.: borceguí.",
-    "df": "f. borceguí (‖ calzado abierto por delante). Sin.: borceguí. | f. Cierto calzado que usaban las mujeres.",
-    "e": "Del dim. de bota2.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Botiller",
     "p": "m.",
     "d": "Hombre que tenía a su cargo la botillería de un palacio, una familia noble, etc.",
@@ -18876,16 +16931,6 @@
     "ec": ""
   },
   {
-    "w": "Bovaje",
-    "p": "m.",
-    "d": "Boalaje . Sin.: boalaje, bovático.",
-    "df": "m. boalaje (‖ tributo). Sin.: boalaje, bovático.",
-    "e": "Del cat. bovatge.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Bovedilla",
     "p": "f.",
     "d": "Constr. Bóveda pequeña que se forja entre viga y viga del techo de una habitación, con piezas cerámicas, hormigón, escayola u otro material. Sin.: revoltón, bóveda.",
@@ -18907,16 +16952,6 @@
     "esp": [
       "explosiva"
     ]
-  },
-  {
-    "w": "Bovático",
-    "p": "m.",
-    "d": "Boalaje . Sin.: boalaje, bovaje.",
-    "df": "m. boalaje (‖ tributo). Sin.: boalaje, bovaje.",
-    "e": "Del lat. mediev. bovaticum, y este der. del lat. bos, bovis 'buey1'.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_latin"
   },
   {
     "w": "Boxear",
@@ -19072,16 +17107,6 @@
     "ec": ""
   },
   {
-    "w": "Bozalejo",
-    "p": "m.",
-    "d": "Bozal . Sin.: bozal.",
-    "df": "m. bozal (‖ tableta para que los terneros no mamen). Sin.: bozal.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Bozo",
     "p": "m.",
     "d": "Vello que nace sobre el labio superior, especialmente el de los adolescentes. Sin.: vello, pelusa, bigote.",
@@ -19117,16 +17142,6 @@
     "d": "Cada una de las porciones o piezas del excremento del ganado vacuno. Sin.: boñiga, bosta.",
     "df": "m. Cada una de las porciones o piezas del excremento del ganado vacuno. Sin.: boñiga, bosta.",
     "e": "De boñiga.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Boñiguero",
-    "p": "m.",
-    "d": "Alimoche. Sin.: alimoche, abanto, guirre.",
-    "df": "m. alimoche. Sin.: alimoche, abanto, guirre.",
-    "e": "De boñiga y -ero.",
     "s": "",
     "c": "sustantivo",
     "ec": ""
@@ -19222,26 +17237,6 @@
     "ec": ""
   },
   {
-    "w": "Braceral",
-    "p": "m.",
-    "d": "Brazal . Sin.: brazal, brazalete, bracil.",
-    "df": "m. brazal (‖ pieza de la armadura). Sin.: brazal, brazalete, bracil.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Bracil",
-    "p": "m.",
-    "d": "Brazal . Sin.: brazal, braceral, brazalete.",
-    "df": "m. brazal (‖ pieza de la armadura). Sin.: brazal, braceral, brazalete.",
-    "e": "Del lat. brachīle.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_latin"
-  },
-  {
     "w": "Bracillo",
     "p": "m.",
     "d": "Pieza del freno de los caballos. Sin.: brazuelo.",
@@ -19256,16 +17251,6 @@
     "p": "m. y f.",
     "d": "Y f. Dep. Nadador especializado en el estilo braza.",
     "df": "m. y f. Dep. Nadador especializado en el estilo braza.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Bracmán",
-    "p": "m.",
-    "d": "Brahmán. Sin.: brahmán, brahmín.",
-    "df": "m. brahmán. Sin.: brahmán, brahmín.",
     "e": "",
     "s": "",
     "c": "sustantivo",
@@ -19454,16 +17439,6 @@
     ]
   },
   {
-    "w": "Brahmín",
-    "p": "m.",
-    "d": "Brahmán. Sin.: bracmán, brahmán.",
-    "df": "m. brahmán. Sin.: bracmán, brahmán.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Brahón",
     "p": "m.",
     "d": "En algunos vestidos antiguos, rosca o doblez que ceñía la parte superior del brazo.",
@@ -19617,16 +17592,6 @@
     "d": "Mar. Cada uno de los dos ramales de cabo sobre los cuales se forman las escalas de viento que se utilizan en algunos casos para subir a los buques.",
     "df": "m. Mar. Cada uno de los dos ramales de cabo sobre los cuales se forman las escalas de viento que se utilizan en algunos casos para subir a los buques. | m. Mar. Cabo grueso, firme o volante, que se da en ayuda de los obenques de juanete.",
     "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Brandy",
-    "p": "m.",
-    "d": "Brandi. Sin.: brandi, coñac.",
-    "df": "m. brandi. Sin.: brandi, coñac.",
-    "e": "Voz ingl., y esta del neerl. brandewijn 'vino quemado'.",
     "s": "",
     "c": "sustantivo",
     "ec": ""
@@ -19935,19 +17900,6 @@
     "ec": "etym_latin"
   },
   {
-    "w": "Braveza",
-    "p": "f.",
-    "d": "Bravura . Sin.: bravura, bravío, fiereza, ferocidad.",
-    "df": "f. bravura (‖ fiereza de un animal). Sin.: bravura, bravío, fiereza, ferocidad. | f. bravura (‖ valentía de una persona). Sin.: valentía, valor, arrojo, coraje, bravura. | f. Ímpetu de los elementos, como el del mar embravecido, el de la tempestad, etc.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "",
-    "esp": [
-      "explosiva"
-    ]
-  },
-  {
     "w": "Bravosidad",
     "p": "f.",
     "d": "Gallardía o gentileza.",
@@ -20057,16 +18009,6 @@
     "ec": ""
   },
   {
-    "w": "Brazuelo",
-    "p": "m.",
-    "d": "Bracillo. Sin.: bracillo.",
-    "df": "m. bracillo. Sin.: bracillo. | m. Zool. Parte de las patas delanteras de los mamíferos comprendida entre el codo y la rodilla. Sin.: antebrazo. | m. Ast., León y Zam. Pértigo de los carros en forma de Y.",
-    "e": "De brazo y -uelo; lat. brachiŏlum.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Braña",
     "p": "f.",
     "d": "Ast. y Cantb. Pasto o prado situado en los lugares altos de las montañas cantábricas. Sin.: pasto1, prado, pradera, pastizal, pastura.",
@@ -20096,30 +18038,6 @@
     "c": "gastronomia",
     "ec": "etym_frances",
     "esp": [
-      "viajera"
-    ]
-  },
-  {
-    "w": "Brebajo",
-    "p": "m.",
-    "d": "Brebaje. Sin.: brebaje, potingue, bebistrajo.",
-    "df": "m. brebaje. Sin.: brebaje, potingue, bebistrajo. | m. Refresco que se da al ganado, sobre todo al de cerda, cuando son pequeños los animales, para irlos acostumbrando al pienso y a las bellotas. Sin.: berbajo.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Breca",
-    "p": "f.",
-    "d": "Mújol. Sin.: mújol, múgil, albur, cabezudo, capitón, dardo, lisa, liza1, muble, mugle, mule.",
-    "df": "f. mújol. Sin.: mújol, múgil, albur, cabezudo, capitón, dardo, lisa, liza1, muble, mugle, mule. | f. Variedad de pagel con las aletas azuladas. Sin.: breque1, pagel.",
-    "e": "Del ár. hisp. *lobráyk[a], y este del lat. rubra, f. de ruber 'rojizo'.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_arabe",
-    "esp": [
-      "explosiva",
       "viajera"
     ]
   },
@@ -20168,19 +18086,6 @@
     ]
   },
   {
-    "w": "Breque",
-    "p": "m.",
-    "d": "Breca . Sin.: breca, pagel.",
-    "df": "m. breca (‖ variedad de pagel). Sin.: breca, pagel. | m. Col., Guat., Méx., Nic. y Perú. Freno de un tren.",
-    "e": "Del ingl. bleak 'albur'.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_ingles",
-    "esp": [
-      "viajera"
-    ]
-  },
-  {
     "w": "Bresca",
     "p": "f.",
     "d": "Panal de miel. Sin.: panal, havo, favo, tártano.",
@@ -20188,16 +18093,6 @@
     "e": "Del celta *brisca 'panal'; cf. galo *brisco 'quebradizo'.",
     "s": "",
     "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Brescar",
-    "p": "tr.",
-    "d": "Castrar . Sin.: castrar, catar, cortar.",
-    "df": "tr. castrar (‖ quitar panales con miel). Sin.: castrar, catar, cortar.",
-    "e": "De bresca.",
-    "s": "",
-    "c": "verbo",
     "ec": ""
   },
   {
@@ -20463,16 +18358,6 @@
     ]
   },
   {
-    "w": "Bridecú",
-    "p": "m.",
-    "d": "Biricú. Sin.: biricú.",
-    "df": "m. biricú. Sin.: biricú.",
-    "e": "De or. inc.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Brigadero",
     "p": "m.",
     "d": "Paisano que sirve en las brigadas de acémilas contratadas para el ejército de campaña.",
@@ -20556,29 +18441,6 @@
     "ec": ""
   },
   {
-    "w": "Brilloso",
-    "p": "adj.",
-    "d": "Brillante . Sin.: brillante, reluciente, resplandeciente, luciente, brillador, abrillantado.",
-    "df": "adj. Am. brillante (‖ que brilla). Sin.: brillante, reluciente, resplandeciente, luciente, brillador, abrillantado.",
-    "e": "",
-    "s": "",
-    "c": "adjetivo",
-    "ec": ""
-  },
-  {
-    "w": "Brin",
-    "p": "m.",
-    "d": "Vitre. Sin.: vitre.",
-    "df": "m. vitre. Sin.: vitre. | m. Tela ordinaria y gruesa de lino, que comúnmente se usa para forros y para pintar al óleo. | m. Ar. Brizna o hebra del azafrán.",
-    "e": "Del fr. brin, y este quizá del celta *brinos 'fibra, filamento'.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_frances",
-    "esp": [
-      "viajera"
-    ]
-  },
-  {
     "w": "Brincador",
     "p": "adj.",
     "d": "Que brinca. Sin.: saltador, saltarín, acróbata.",
@@ -20593,16 +18455,6 @@
     "p": "m.",
     "d": "En el juego de las quínolas, flux mayor.",
     "df": "m. En el juego de las quínolas, flux mayor.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Brincia",
-    "p": "f.",
-    "d": "Binza . Sin.: binza, algara2.",
-    "df": "f. binza (‖ película de la cebolla). Sin.: binza, algara2.",
     "e": "",
     "s": "",
     "c": "sustantivo",
@@ -20629,16 +18481,6 @@
     "e": "",
     "s": "",
     "c": "adjetivo",
-    "ec": ""
-  },
-  {
-    "w": "Brinquillo",
-    "p": "m.",
-    "d": "Brinquiño . Sin.: brinquiño.",
-    "df": "m. brinquiño (‖ alhaja pequeña). Sin.: brinquiño.",
-    "e": "Del dim. de brinco.",
-    "s": "",
-    "c": "sustantivo",
     "ec": ""
   },
   {
@@ -20686,16 +18528,6 @@
     "esp": [
       "viajera"
     ]
-  },
-  {
-    "w": "Brionia",
-    "p": "f.",
-    "d": "Nueza. Sin.: nueza, silonia, aguilonia.",
-    "df": "f. nueza. Sin.: nueza, silonia, aguilonia.",
-    "e": "Del lat. bryonĭa, y este del gr. βρυωνία bryōnía.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_latin"
   },
   {
     "w": "Briosamente",
@@ -20850,19 +18682,6 @@
     "ec": ""
   },
   {
-    "w": "Briñón",
-    "p": "m.",
-    "d": "Griñón2. Sin.: griñón2.",
-    "df": "m. griñón2. Sin.: griñón2.",
-    "e": "Del fr. brugnon, y este del lat. *pruneŭm, de prunum 'ciruela'.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_frances",
-    "esp": [
-      "viajera"
-    ]
-  },
-  {
     "w": "Broa",
     "p": "f.",
     "d": "Especie de galleta o bizcocho.",
@@ -20993,16 +18812,6 @@
     ]
   },
   {
-    "w": "Brocheta",
-    "p": "f.",
-    "d": "Broqueta. Sin.: broqueta, asador, pincho.",
-    "df": "f. broqueta. Sin.: broqueta, asador, pincho.",
-    "e": "De brocha2.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Brocho",
     "p": "adj.",
     "d": "Dicho de una res ovina: Que tiene los cuernos muy cortos.",
@@ -21011,16 +18820,6 @@
     "s": "",
     "c": "adjetivo",
     "ec": "etym_latin"
-  },
-  {
-    "w": "Brocino",
-    "p": "m.",
-    "d": "Porcino . Sin.: porcino, chichón, porcel.",
-    "df": "m. porcino (‖ chichón). Sin.: porcino, chichón, porcel.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
   },
   {
     "w": "Brocárdico",
@@ -21040,16 +18839,6 @@
     "e": "",
     "s": "",
     "c": "adjetivo",
-    "ec": ""
-  },
-  {
-    "w": "Brollar",
-    "p": "intr.",
-    "d": "Borbotear. Sin.: borbotear, borbotar, gorgotear.",
-    "df": "intr. borbotear. Sin.: borbotear, borbotar, gorgotear.",
-    "e": "Del cat. brollar 'brotar'.",
-    "s": "",
-    "c": "verbo",
     "ec": ""
   },
   {
@@ -21475,16 +19264,6 @@
     "ec": "etym_latin"
   },
   {
-    "w": "Brujeril",
-    "p": "adj.",
-    "d": "Brujesco. Sin.: brujesco.",
-    "df": "adj. brujesco. Sin.: brujesco.",
-    "e": "",
-    "s": "",
-    "c": "adjetivo",
-    "ec": ""
-  },
-  {
     "w": "Brujería",
     "p": "f.",
     "d": "Conjunto de prácticas mágicas o supersticiosas que ejercen los brujos y las brujas. Sin.: magia, hechicería, nigromancia.",
@@ -21502,36 +19281,6 @@
     "e": "",
     "s": "",
     "c": "adjetivo",
-    "ec": ""
-  },
-  {
-    "w": "Brujidor",
-    "p": "m.",
-    "d": "Grujidor. Sin.: grujidor.",
-    "df": "m. grujidor. Sin.: grujidor.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Brujilla",
-    "p": "f.",
-    "d": "Tentetieso. Sin.: tentetieso, siempretieso, tentemozo, tentempié, porfiado, matihuelo.",
-    "df": "f. tentetieso. Sin.: tentetieso, siempretieso, tentemozo, tentempié, porfiado, matihuelo.",
-    "e": "De bruja.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Brujir",
-    "p": "tr.",
-    "d": "Grujir. Sin.: grujir.",
-    "df": "tr. grujir. Sin.: grujir.",
-    "e": "",
-    "s": "",
-    "c": "verbo",
     "ec": ""
   },
   {
@@ -21558,16 +19307,6 @@
     ]
   },
   {
-    "w": "Brumador",
-    "p": "adj.",
-    "d": "Abrumador. Sin.: abrumador, abrumante.",
-    "df": "adj. abrumador. Sin.: abrumador, abrumante.",
-    "e": "De brumar.",
-    "s": "",
-    "c": "adjetivo",
-    "ec": ""
-  },
-  {
     "w": "Brumamiento",
     "p": "m.",
     "d": "Acción y efecto de brumar.",
@@ -21575,16 +19314,6 @@
     "e": "",
     "s": "",
     "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Brumar",
-    "p": "tr.",
-    "d": "Abrumar. Sin.: abrumar, agobiar, atosigar2.",
-    "df": "tr. abrumar. Sin.: abrumar, agobiar, atosigar2. | tr. Magullar, moler a palos. Sin.: apalizar, aporrear.",
-    "e": "De broma1 'cosa molesta'.",
-    "s": "",
-    "c": "verbo",
     "ec": ""
   },
   {
@@ -21638,16 +19367,6 @@
     "e": "",
     "s": "",
     "c": "gentilicio",
-    "ec": ""
-  },
-  {
-    "w": "Brunela",
-    "p": "f.",
-    "d": "Consuelda. Sin.: consuelda, consólida, sínfito, suelda.",
-    "df": "f. consuelda. Sin.: consuelda, consólida, sínfito, suelda.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
     "ec": ""
   },
   {
@@ -21750,26 +19469,6 @@
     "ec": ""
   },
   {
-    "w": "Bruñidura",
-    "p": "f.",
-    "d": "Bruñido . Sin.: bruñido, bruñimiento.",
-    "df": "f. bruñido (‖ acción de bruñir). Sin.: bruñido, bruñimiento.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Bruñimiento",
-    "p": "m.",
-    "d": "Bruñido . Sin.: bruñido, bruñidura.",
-    "df": "m. bruñido (‖ acción de bruñir). Sin.: bruñido, bruñidura.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Bruño",
     "p": "m.",
     "d": "Bruno1. Sin.: ciruela, pruna, bruno1.",
@@ -21788,16 +19487,6 @@
     "s": "",
     "c": "sustantivo",
     "ec": "etym_latin"
-  },
-  {
-    "w": "Brécol",
-    "p": "m.",
-    "d": "Brócoli. Sin.: brócoli, bróculi, brecolera, brócol, brócul, bróquil.",
-    "df": "m. brócoli. Sin.: brócoli, bróculi, brecolera, brócol, brócul, bróquil.",
-    "e": "De bróculi.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
   },
   {
     "w": "Brístol",
@@ -21843,19 +19532,6 @@
     "ec": ""
   },
   {
-    "w": "Bróculi",
-    "p": "m.",
-    "d": "Brócoli. Sin.: brócoli, brécol, brócol, brócul, bróquil.",
-    "df": "m. brócoli. Sin.: brócoli, brécol, brócol, brócul, bróquil.",
-    "e": "Del it. broccoli, y este de brocco.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_italiano",
-    "esp": [
-      "viajera"
-    ]
-  },
-  {
     "w": "Bróker",
     "p": "m. y f.",
     "d": "Y f. Econ. Agente intermediario en operaciones financieras o comerciales que percibe una comisión por su intervención.",
@@ -21879,16 +19555,6 @@
     "ec": ""
   },
   {
-    "w": "Brótano",
-    "p": "m.",
-    "d": "Abrótano. Sin.: abrótano, boja1.",
-    "df": "m. abrótano. Sin.: abrótano, boja1.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Brótola",
     "p": "f.",
     "d": "Pez teleósteo de la familia de los gádidos, de hasta un metro de longitud, de color gris o pardo y con dos aletas dorsales, una anal y el par pelviano, filiforme, que vive en el Atlántico y el Mediterráneo.",
@@ -21896,16 +19562,6 @@
     "e": "",
     "s": "",
     "c": "zoologia",
-    "ec": ""
-  },
-  {
-    "w": "Buaro",
-    "p": "m.",
-    "d": "Buharro. Sin.: buharro, corneja, chova.",
-    "df": "m. buharro. Sin.: buharro, corneja, chova.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
     "ec": ""
   },
   {
@@ -22188,21 +19844,6 @@
     "ec": ""
   },
   {
-    "w": "Budín",
-    "p": "m.",
-    "d": "Pudin. Sin.: pudin.",
-    "df": "m. pudin. Sin.: pudin.",
-    "e": "Del ingl. pudding.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_ingles",
-    "esp": [
-      "viajera"
-    ],
-    "rabia": true,
-    "rabia_comment": "Pudding → budín. Con B. 🍮"
-  },
-  {
     "w": "Buega",
     "p": "f.",
     "d": "Hues. y Zar. Mojón que señala el límite entre dos heredades. Sin.: coto1, hito.",
@@ -22233,19 +19874,6 @@
     "ec": ""
   },
   {
-    "w": "Buenaventuriano",
-    "p": "adj.",
-    "d": "Bonaventuriano. Sin.: bonaventuriano.",
-    "df": "adj. bonaventuriano. Sin.: bonaventuriano.",
-    "e": "",
-    "s": "",
-    "c": "adjetivo",
-    "ec": "",
-    "esp": [
-      "larga"
-    ]
-  },
-  {
     "w": "Buera",
     "p": "f.",
     "d": "Mur. Postilla o grano que sale en la boca.",
@@ -22256,31 +19884,11 @@
     "ec": ""
   },
   {
-    "w": "Bueyuno",
-    "p": "adj.",
-    "d": "Boyuno. Sin.: boyuno, bovino.",
-    "df": "adj. boyuno. Sin.: boyuno, bovino.",
-    "e": "",
-    "s": "",
-    "c": "adjetivo",
-    "ec": ""
-  },
-  {
     "w": "Bufa",
     "p": "f.",
     "d": "En la armadura antigua, pieza de refuerzo que se colocaba en la parte anterior del guardabrazo izquierdo.",
     "df": "f. En la armadura antigua, pieza de refuerzo que se colocaba en la parte anterior del guardabrazo izquierdo.",
     "e": "De bufar.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Bufador",
-    "p": "m.",
-    "d": "Fumarola. Sin.: fumarola.",
-    "df": "m. fumarola. Sin.: fumarola.",
-    "e": "De bufar y -dor.",
     "s": "",
     "c": "sustantivo",
     "ec": ""
@@ -22340,16 +19948,6 @@
     "ec": ""
   },
   {
-    "w": "Bufet",
-    "p": "m.",
-    "d": "Bufé . Sin.: bufé.",
-    "df": "m. bufé (‖ comida). Sin.: bufé. | m. Arg. bufé (‖ mesa). Sin.: bufé. | m. Arg. bufé (‖ local). Sin.: bufé.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Bufia",
     "p": "f.",
     "d": "Bota de vino.",
@@ -22384,16 +19982,6 @@
     "esp": [
       "explosiva"
     ]
-  },
-  {
-    "w": "Bufonería",
-    "p": "f.",
-    "d": "Bufonada. Sin.: bufonada, payasada, chanza.",
-    "df": "f. bufonada. Sin.: bufonada, payasada, chanza.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
   },
   {
     "w": "Bufonesco",
@@ -22440,16 +20028,6 @@
     "ec": ""
   },
   {
-    "w": "Buganvilia",
-    "p": "f.",
-    "d": "Buganvilla. Sin.: buganvilla, veranera, trinitaria, curazao.",
-    "df": "f. buganvilla. Sin.: buganvilla, veranera, trinitaria, curazao.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Bugle",
     "p": "m.",
     "d": "Instrumento musical de viento, formado por un largo tubo cónico de metal, arrollado de distintas maneras y provisto de pistones en número variable.",
@@ -22473,16 +20051,6 @@
     "ec": "etym_latin"
   },
   {
-    "w": "Buharda",
-    "p": "f.",
-    "d": "Buhardilla. Sin.: buhardilla, boardilla, guardilla1, mansarda. desván, sobrado, entretecho.",
-    "df": "f. buhardilla. Sin.: buhardilla, boardilla, guardilla1, mansarda. desván, sobrado, entretecho.",
-    "e": "De bufarda.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Buhardilla",
     "p": "f.",
     "d": "Parte de un edificio situada inmediatamente debajo del tejado, con techo en pendiente y destinada a vivienda. Sin.: boardilla, guardilla1, mansarda, buharda.",
@@ -22496,16 +20064,6 @@
     ]
   },
   {
-    "w": "Buharro",
-    "p": "m.",
-    "d": "Corneja . Sin.: corneja, chova, buaro.",
-    "df": "m. corneja (‖ ave rapaz). Sin.: corneja, chova, buaro.",
-    "e": "Del despect. de búho.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Buhedera",
     "p": "f.",
     "d": "Tronera, agujero. Sin.: tronera, aspillera, saetera, agujero.",
@@ -22514,16 +20072,6 @@
     "s": "",
     "c": "sustantivo",
     "ec": ""
-  },
-  {
-    "w": "Buhedo",
-    "p": "m.",
-    "d": "Bodón. Sin.: bodón.",
-    "df": "m. bodón. Sin.: bodón.",
-    "e": "Del lat. budētum, der. de buda 'espadaña'.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_latin"
   },
   {
     "w": "Buhero",
@@ -22560,16 +20108,6 @@
     "esp": [
       "explosiva"
     ]
-  },
-  {
-    "w": "Buhío",
-    "p": "m.",
-    "d": "Bohío. Sin.: bohío, pahuichi.",
-    "df": "m. bohío. Sin.: bohío, pahuichi.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
   },
   {
     "w": "Buitre",
@@ -22650,36 +20188,6 @@
     "d": "Extremo del eje sobre el que se monta el centro de rueda, que contiene los cojinetes y la fijación de esta.",
     "df": "m. Extremo del eje sobre el que se monta el centro de rueda, que contiene los cojinetes y la fijación de esta.",
     "e": "Del lat. buxis 'caja'.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_latin"
-  },
-  {
-    "w": "Bujeda",
-    "p": "f.",
-    "d": "Bojedal. Sin.: bujedo, bojedal, bujedal.",
-    "df": "f. bojedal. Sin.: bujedo, bojedal, bujedal.",
-    "e": "Del lat. buxēta, pl. de buxētum.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_latin"
-  },
-  {
-    "w": "Bujedal",
-    "p": "m.",
-    "d": "Bojedal. Sin.: bojedal, bujeda, bujedo.",
-    "df": "m. bojedal. Sin.: bojedal, bujeda, bujedo.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Bujedo",
-    "p": "m.",
-    "d": "Bojedal. Sin.: bujeda, bojedal, bujedal.",
-    "df": "m. bojedal. Sin.: bujeda, bojedal, bujedal.",
-    "e": "Del lat. buxētum.",
     "s": "",
     "c": "sustantivo",
     "ec": "etym_latin"
@@ -22771,19 +20279,6 @@
     "ec": ""
   },
   {
-    "w": "Bulbul",
-    "p": "m.",
-    "d": "Ruiseñor. Sin.: ruiseñor, roncal, filomela.",
-    "df": "m. ruiseñor. Sin.: ruiseñor, roncal, filomela.",
-    "e": "Del ár. clás. bulbul.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_arabe",
-    "esp": [
-      "viajera"
-    ]
-  },
-  {
     "w": "Bulero",
     "p": "m.",
     "d": "Funcionario comisionado para distribuir las bulas de la santa cruzada y recaudar el producto de la limosna que daban los fieles. Sin.: echacuervos.",
@@ -22799,16 +20294,6 @@
     "d": "Palo flamenco de ritmo vivo que se acompaña con palmas. U. m. en pl. con el mismo significado que en sing.",
     "df": "f. Palo flamenco de ritmo vivo que se acompaña con palmas. U. m. en pl. con el mismo significado que en sing. | f. Baile que se ejecuta al compás de las bulerías. U. m. en pl. con el mismo significado que en sing.",
     "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Buleto",
-    "p": "m.",
-    "d": "Breve . Sin.: breve.",
-    "df": "m. breve (‖ documento pontificio). Sin.: breve.",
-    "e": "De bula.",
     "s": "",
     "c": "sustantivo",
     "ec": ""
@@ -22869,16 +20354,6 @@
     "d": "Nalgas de la mujer.",
     "df": "m. coloq. Nalgas de la mujer. | m. coloq. Prenda que usaron las mujeres para dar a las nalgas apariencia voluminosa.",
     "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Bulldozer",
-    "p": "m.",
-    "d": "Buldócer. Sin.: buldócer, excavador, topadora.",
-    "df": "m. buldócer. Sin.: buldócer, excavador, topadora.",
-    "e": "Voz ingl.",
     "s": "",
     "c": "sustantivo",
     "ec": ""
@@ -23074,16 +20549,6 @@
     "d": "Bolsa que cuelga en bandolera.",
     "df": "f. Bolsa que cuelga en bandolera.",
     "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Burche",
-    "p": "f.",
-    "d": "Torre . Sin.: torre, alta.",
-    "df": "f. torre (‖ construcción fortificada). Sin.: torre, alta.",
-    "e": "Quizá del ár. hisp. búrǧ, este del ár. clás. burǧ, y este del gr. πύργος pýrgos.",
     "s": "",
     "c": "sustantivo",
     "ec": ""
@@ -23328,16 +20793,6 @@
     "ec": ""
   },
   {
-    "w": "Burlería",
-    "p": "f.",
-    "d": "Engaño . Sin.: engaño.",
-    "df": "f. engaño (‖ acción de engañar, o falta de verdad). Sin.: engaño. | f. Cuento fabuloso o conseja de viejas. | f. ilusión (‖ concepto o imagen sin verdadera realidad). Sin.: ilusión, espejismo, delusión, fatamorgana. | f. Irrisión, mengua.",
-    "e": "De burla y -ería.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Burlete",
     "p": "m.",
     "d": "Tira de tela, caucho u otro material, que se fija en las rendijas y en las juntas de puertas y ventanas para aislar un recinto. Sin.: tira, ribete, relleno, filete, orla, goma, fieltro, protección, aislante.",
@@ -23370,19 +20825,6 @@
     "s": "",
     "c": "sustantivo",
     "ec": "etym_latin"
-  },
-  {
-    "w": "Burocratismo",
-    "p": "m.",
-    "d": "Burocracia . Sin.: burocracia.",
-    "df": "m. burocracia (‖ influencia excesiva de los funcionarios). Sin.: burocracia.",
-    "e": "Del fr. bureaucratisme, de bureaucrate 'burócrata' e -isme '-ismo'.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_frances",
-    "esp": [
-      "viajera"
-    ]
   },
   {
     "w": "Burocratización",
@@ -23454,41 +20896,11 @@
     "ec": ""
   },
   {
-    "w": "Burrez",
-    "p": "f.",
-    "d": "Burricie. Sin.: burricie, torpeza, tosquedad.",
-    "df": "f. burricie. Sin.: burricie, torpeza, tosquedad.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Burreño",
-    "p": "m.",
-    "d": "Burdégano. Sin.: burdégano.",
-    "df": "m. burdégano. Sin.: burdégano.",
-    "e": "De burro y -eño.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Burricie",
     "p": "f.",
     "d": "Cualidad de burro, torpeza, rudeza. Sin.: burrez, torpeza, rudeza, tosquedad.",
     "df": "f. Cualidad de burro, torpeza, rudeza. Sin.: burrez, torpeza, rudeza, tosquedad.",
     "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Burrillo",
-    "p": "m. coloq.",
-    "d": "Añalejo. Sin.: añalejo, cartilla, cuadernillo, epacta, epactilla.",
-    "df": "m. coloq. añalejo. Sin.: añalejo, cartilla, cuadernillo, epacta, epactilla.",
-    "e": "Del dim. de burro.",
     "s": "",
     "c": "sustantivo",
     "ec": ""
@@ -23532,19 +20944,6 @@
     "s": "",
     "c": "sustantivo",
     "ec": "etym_latin",
-    "esp": [
-      "explosiva"
-    ]
-  },
-  {
-    "w": "Burujón",
-    "p": "m.",
-    "d": "Chichón . Sin.: borujón, chichón, bollo, tolondrón, turumbón, bodoque, chibola, chibolo, cototo, chindondo.",
-    "df": "m. chichón (‖ bulto en la cabeza). Sin.: borujón, chichón, bollo, tolondrón, turumbón, bodoque, chibola, chibolo, cototo, chindondo. | m. coloq. Cuba. Multitud de personas o cosas aglomeradas en un lugar.",
-    "e": "Del aum. de burujo.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "",
     "esp": [
       "explosiva"
     ]
@@ -23596,30 +20995,10 @@
     ]
   },
   {
-    "w": "Busarda",
-    "p": "f.",
-    "d": "Buzarda. Sin.: buzarda.",
-    "df": "f. buzarda. Sin.: buzarda.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Buscabulla",
     "p": "m. y f.",
     "d": "Y f. Méx. Pendenciero, picapleitos. U. t. c. adj. Sin.: picapleitos, buscarruidos, pleitista, buscapleitos.",
     "df": "m. y f. Méx. Pendenciero, picapleitos. U. t. c. adj. Sin.: picapleitos, buscarruidos, pleitista, buscapleitos.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Buscada",
-    "p": "f.",
-    "d": "Busca . Sin.: búsqueda, busca1, demanda.",
-    "df": "f. busca (‖ acción de buscar). Sin.: búsqueda, busca1, demanda.",
     "e": "",
     "s": "",
     "c": "sustantivo",
@@ -23637,16 +21016,6 @@
     "esp": [
       "explosiva"
     ]
-  },
-  {
-    "w": "Buscapersonas",
-    "p": "m.",
-    "d": "Mensáfono. Sin.: busca2, mensáfono.",
-    "df": "m. mensáfono. Sin.: busca2, mensáfono.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
   },
   {
     "w": "Buscapié",
@@ -23723,16 +21092,6 @@
     "d": "Código de honor por el que debían regirse los samuráis.",
     "df": "m. Código de honor por el que debían regirse los samuráis.",
     "e": "Voz jap., y esta de bushi 'guerrero' y dō 'camino'.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Busier",
-    "p": "m.",
-    "d": "Bujier. Sin.: bujier.",
-    "df": "m. bujier. Sin.: bujier.",
-    "e": "",
     "s": "",
     "c": "sustantivo",
     "ec": ""
@@ -23834,16 +21193,6 @@
     "ec": ""
   },
   {
-    "w": "Butiondo",
-    "p": "adj.",
-    "d": "Botiondo. Sin.: botiondo.",
-    "df": "adj. botiondo. Sin.: botiondo.",
-    "e": "",
-    "s": "",
-    "c": "adjetivo",
-    "ec": ""
-  },
-  {
     "w": "Butomeo",
     "p": "adj.",
     "d": "Bot. butomáceo. U. t. c. s. f., en pl. como taxón. Sin.: butomáceo.",
@@ -23862,16 +21211,6 @@
     "s": "",
     "c": "adjetivo",
     "ec": "etym_latin"
-  },
-  {
-    "w": "Butrino",
-    "p": "m.",
-    "d": "Buitrón . Sin.: buitrón, butrón, carriego, botrino, vulturín.",
-    "df": "m. buitrón (‖ arte de pesca). Sin.: buitrón, butrón, carriego, botrino, vulturín.",
-    "e": "De botrino.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
   },
   {
     "w": "Butronero",
@@ -23909,16 +21248,6 @@
     "d": "Geol. Inclinación de un filón o de una capa del terreno.",
     "df": "m. Geol. Inclinación de un filón o de una capa del terreno.",
     "e": "De buzar1.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Buzaque",
-    "p": "m.",
-    "d": "Beodo. Sin.: beodo, borracho.",
-    "df": "m. beodo. Sin.: beodo, borracho.",
-    "e": "Quizá del ár. hisp. [a]bu záqq 'el del odre'.",
     "s": "",
     "c": "sustantivo",
     "ec": ""
@@ -24101,16 +21430,6 @@
     "ec": ""
   },
   {
-    "w": "Bácaris",
-    "p": "f.",
-    "d": "Bácara. Sin.: bácara, amaro1, esclarea, maro.",
-    "df": "f. bácara. Sin.: bácara, amaro1, esclarea, maro.",
-    "e": "Del lat. baccăris, y este del gr. βάκκαρις bákkaris.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_latin"
-  },
-  {
     "w": "Báciga",
     "p": "f.",
     "d": "Antiguo juego de naipes entre dos o más personas, cada una con tres cartas.",
@@ -24225,19 +21544,6 @@
     "ec": "etym_latin"
   },
   {
-    "w": "Báratro",
-    "p": "m.",
-    "d": "Infierno . Sin.: infierno, profundo, averno1, abismo, gehena, chimbolero.",
-    "df": "m. poét. infierno (‖ lugar de castigo eterno). Sin.: infierno, profundo, averno1, abismo, gehena, chimbolero. | m. Mit. infierno (‖ lugar que habitan los espíritus de los muertos). Sin.: averno1, tártaro2, infierno, profundo, orco2.",
-    "e": "Del lat. barăthrum, y este del gr. βάραθρον bárathron.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_latin",
-    "esp": [
-      "explosiva"
-    ]
-  },
-  {
     "w": "Bárbulas",
     "p": "f. pl.",
     "d": "Pl. Zool. barbillas . Sin.: barbillas.",
@@ -24294,18 +21600,6 @@
     ]
   },
   {
-    "w": "Básquet",
-    "p": "m.",
-    "d": "Baloncesto. Sin.: baloncesto, básquetbol.",
-    "df": "m. baloncesto. Sin.: baloncesto, básquetbol.",
-    "e": "Acort. del ingl. basketball.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "",
-    "rabia": true,
-    "rabia_comment": "Basketball acortado y con tilde 🏀"
-  },
-  {
     "w": "Bástulo",
     "p": "adj.",
     "d": "Dicho de una persona: De un pueblo indígena prerromano que habitaba la costa meridional de España, desde el estrecho de Gibraltar hasta la región de la actual Almería. U. t. c. s.",
@@ -24354,29 +21648,6 @@
     "s": "",
     "c": "adjetivo",
     "ec": "etym_latin"
-  },
-  {
-    "w": "Bérbero",
-    "p": "m.",
-    "d": "Agracejo . Sin.: agracejo, agracillo, berberís, arlo, retamilla, agraz, alguese.",
-    "df": "m. agracejo (‖ arbusto berberidáceo). Sin.: agracejo, agracillo, berberís, arlo, retamilla, agraz, alguese. | m. Fruto del bérbero. | m. Preparado hecho con el fruto del bérbero.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Béstola",
-    "p": "f.",
-    "d": "Aguijada . Sin.: aguijada, aguijadera, aijada, arrejada, rejada, bestoba, bestoga, bístola.",
-    "df": "f. aguijada (‖ vara del arado). Sin.: aguijada, aguijadera, aijada, arrejada, rejada, bestoba, bestoga, bístola.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "",
-    "esp": [
-      "explosiva"
-    ]
   },
   {
     "w": "Bético",

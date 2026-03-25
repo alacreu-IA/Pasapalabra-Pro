@@ -119,16 +119,6 @@
     ]
   },
   {
-    "w": "Rabdomancia",
-    "p": "f.",
-    "d": "Radiestesia. Sin.: radiestesia.",
-    "df": "f. radiestesia. Sin.: radiestesia.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Rabdomante",
     "p": "m. y f.",
     "d": "Y f. Persona que practica la rabdomancia.",
@@ -202,16 +192,6 @@
     "ec": ""
   },
   {
-    "w": "Rabiacana",
-    "p": "f.",
-    "d": "Arísaro. Sin.: arísaro, candiles, candilillo, frailillos.",
-    "df": "f. arísaro. Sin.: arísaro, candiles, candilillo, frailillos.",
-    "e": "De rabicano.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Rabiar",
     "p": "intr.",
     "d": "Padecer o tener rabia .",
@@ -235,41 +215,11 @@
     "ec": ""
   },
   {
-    "w": "Rabiazorras",
-    "p": "m. coloq.",
-    "d": "Solano . Sin.: solano1.",
-    "df": "m. coloq. solano (‖ viento que sopla de donde nace el sol). Sin.: solano1.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Rabicano",
-    "p": "adj.",
-    "d": "Colicano. Sin.: colicano, rabicán.",
-    "df": "adj. colicano. Sin.: colicano, rabicán.",
-    "e": "De rabo y cano.",
-    "s": "",
-    "c": "adjetivo",
-    "ec": ""
-  },
-  {
     "w": "Rabicorto",
     "p": "adj.",
     "d": "Dicho de un animal: Que tiene corto el rabo. Sin.: rabón.",
     "df": "adj. Dicho de un animal: Que tiene corto el rabo. Sin.: rabón. | adj. Dicho de una persona: Que, vistiendo faldas o ropas talares, las usa más cortas de lo regular.",
     "e": "",
-    "s": "",
-    "c": "adjetivo",
-    "ec": ""
-  },
-  {
-    "w": "Rabicán",
-    "p": "adj.",
-    "d": "Rabicano. Sin.: colicano, rabicano.",
-    "df": "adj. rabicano. Sin.: colicano, rabicano.",
-    "e": "Apóc.",
     "s": "",
     "c": "adjetivo",
     "ec": ""
@@ -323,19 +273,6 @@
     "s": "",
     "c": "adjetivo",
     "ec": ""
-  },
-  {
-    "w": "Rabillo",
-    "p": "m.",
-    "d": "Pezón . Sin.: pezón, pedúnculo, pecíolo, cabillo, rabo.",
-    "df": "m. pezón (‖ rama pequeña). Sin.: pezón, pedúnculo, pecíolo, cabillo, rabo. | m. Prolongación de una cosa en forma de rabo. | m. cizaña (‖ planta). Sin.: cizaña, borrachuela, cominillo, joyo, luello. | m. Mancha negra que se advierte en las puntas de los granos de los cereales cuando empiezan a estar atacados por el tizón. | m. Trabilla del chaleco y del pantalón. Sin.: trabilla.",
-    "e": "Del dim. de rabo.",
-    "s": "",
-    "c": "zoologia",
-    "ec": "",
-    "esp": [
-      "explosiva"
-    ]
   },
   {
     "w": "Rabinismo",
@@ -468,16 +405,6 @@
     "ec": ""
   },
   {
-    "w": "Rabotada",
-    "p": "f. coloq.",
-    "d": "Rabotazo. Sin.: rabotazo.",
-    "df": "f. coloq. rabotazo. Sin.: rabotazo.",
-    "e": "De rabote, aum. de rabo, y -ada.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Rabotazo",
     "p": "m.",
     "d": "Expresión destemplada o injuriosa con ademanes groseros. Sin.: rabotada.",
@@ -485,16 +412,6 @@
     "e": "",
     "s": "",
     "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Rabotear",
-    "p": "tr.",
-    "d": "Desrabotar. Sin.: desrabotar, desrabar, derrabar.",
-    "df": "tr. desrabotar. Sin.: desrabotar, desrabar, derrabar.",
-    "e": "",
-    "s": "",
-    "c": "verbo",
     "ec": ""
   },
   {
@@ -572,16 +489,6 @@
     "esp": [
       "explosiva"
     ]
-  },
-  {
-    "w": "Racanería",
-    "p": "f. coloq.",
-    "d": "Tacañería. Sin.: tacañería, cicatería, roñosería, avaricia, ruindad.",
-    "df": "f. coloq. tacañería. Sin.: tacañería, cicatería, roñosería, avaricia, ruindad.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
   },
   {
     "w": "Racel",
@@ -1273,16 +1180,6 @@
     "ec": ""
   },
   {
-    "w": "Radiograma",
-    "p": "m.",
-    "d": "Radiotelegrama. Sin.: radiotelegrama, marconigrama, radio5.",
-    "df": "m. radiotelegrama. Sin.: radiotelegrama, marconigrama, radio5.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Radiogramola",
     "p": "f.",
     "d": "Mueble cerrado en forma de armario, que contiene un aparato receptor de radio y un gramófono eléctrico sin bocina exterior que les sirve de caja acústica. Sin.: gramola, radiola.",
@@ -1907,16 +1804,6 @@
     ]
   },
   {
-    "w": "Rahalí",
-    "p": "adj.",
-    "d": "Rehalí. Sin.: rehalí.",
-    "df": "adj. rehalí. Sin.: rehalí.",
-    "e": "",
-    "s": "",
-    "c": "adjetivo",
-    "ec": ""
-  },
-  {
     "w": "Raicilla",
     "p": "f.",
     "d": "Bot. Cada una de las ramificaciones del cuerpo principal de la raíz de una planta.",
@@ -2152,31 +2039,11 @@
     "ec": ""
   },
   {
-    "w": "Rallo",
-    "p": "m.",
-    "d": "Rallador . Sin.: rallador, guayo2.",
-    "df": "m. rallador (‖ utensilio de cocina). Sin.: rallador, guayo2. | m. Chapa con agujeros como los del rallo, que sirve para distintos usos. | m. Especie de botijo con boca ancha de agujeros pequeños.",
-    "e": "Del lat. rallum, de radĕre 'raer'.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_latin"
-  },
-  {
     "w": "Rallón",
     "p": "m.",
     "d": "En la caza mayor especialmente, arma terminada en un hierro transversal afilado que se disparaba con la ballesta.",
     "df": "m. En la caza mayor especialmente, arma terminada en un hierro transversal afilado que se disparaba con la ballesta.",
     "e": "Del aum. de rallo.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Ramada",
-    "p": "f.",
-    "d": "Ramaje. Sin.: ramaje, enramada, fronda1, follaje.",
-    "df": "f. ramaje. Sin.: ramaje, enramada, fronda1, follaje. | f. enramada (‖ cobertizo de ramas). U. m. en Arg., Bol., Chile, Col., Cuba, Ec., El Salv., Hond., Méx., Nic., Perú, R. Dom. y Ven. Sin.: enramada.",
-    "e": "",
     "s": "",
     "c": "sustantivo",
     "ec": ""
@@ -2282,16 +2149,6 @@
     "p": "m.",
     "d": "Sitio por donde corren las aguas de los turbiones y avenidas. Sin.: ramblizo.",
     "df": "m. Sitio por donde corren las aguas de los turbiones y avenidas. Sin.: ramblizo.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Ramblizo",
-    "p": "m.",
-    "d": "Ramblazo. Sin.: ramblazo.",
-    "df": "m. ramblazo. Sin.: ramblazo.",
     "e": "",
     "s": "",
     "c": "sustantivo",
@@ -2531,16 +2388,6 @@
     "ec": ""
   },
   {
-    "w": "Rampojo",
-    "p": "m.",
-    "d": "Raspajo. Sin.: raspajo, escobajo.",
-    "df": "m. raspajo. Sin.: raspajo, escobajo.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Rampollo",
     "p": "m.",
     "d": "Rama que se corta del árbol para plantarla.",
@@ -2760,16 +2607,6 @@
     "ec": ""
   },
   {
-    "w": "Ranglán",
-    "p": "m.",
-    "d": "Raglán. Sin.: raglán.",
-    "df": "m. raglán. Sin.: raglán.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Rangua",
     "p": "f.",
     "d": "Pieza en que se apoya un eje vertical.",
@@ -2778,16 +2615,6 @@
     "s": "",
     "c": "sustantivo",
     "ec": "etym_latin"
-  },
-  {
-    "w": "Rangífero",
-    "p": "m.",
-    "d": "Reno. Sin.: rengífero, reno, tarando.",
-    "df": "m. reno. Sin.: rengífero, reno, tarando.",
-    "e": "Del b. lat. rangifer, -eri.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
   },
   {
     "w": "Ranilla",
@@ -2913,16 +2740,6 @@
     "ec": ""
   },
   {
-    "w": "Rapabarbas",
-    "p": "m. coloq.",
-    "d": "Barbero . Sin.: barbero1, rapador, rapista, alfajeme.",
-    "df": "m. coloq. barbero (‖ persona que tiene por oficio afeitar). Sin.: barbero1, rapador, rapista, alfajeme.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Rapacejo",
     "p": "m.",
     "d": "Alma de hilo, cáñamo o algodón, sobre la cual se tuerce estambre, seda o metal para formar los cordoncillos de los flecos.",
@@ -2990,16 +2807,6 @@
     "p": "m.",
     "d": "Acción y efecto de rapar. Sin.: rapadura.",
     "df": "m. Acción y efecto de rapar. Sin.: rapadura.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Rapapiés",
-    "p": "m.",
-    "d": "Buscapiés. Sin.: buscapiés, carretilla, triquitraque, buscaniguas, buscapique, cachiflín, cachinflín.",
-    "df": "m. buscapiés. Sin.: buscapiés, carretilla, triquitraque, buscaniguas, buscapique, cachiflín, cachinflín.",
     "e": "",
     "s": "",
     "c": "sustantivo",
@@ -3225,16 +3032,6 @@
     "ec": "etym_latin"
   },
   {
-    "w": "Rapsodo",
-    "p": "m.",
-    "d": "Rapsoda . Sin.: rapsoda, recitador.",
-    "df": "m. rapsoda (‖ recitador de la Grecia antigua). Sin.: rapsoda, recitador.",
-    "e": "Del gr. ῥαψῳδός rapsōidós; cf. rapsoda.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_griego"
-  },
-  {
     "w": "Rapsódico",
     "p": "adj.",
     "d": "Perteneciente o relativo a la rapsodia o al rapsoda.",
@@ -3262,16 +3059,6 @@
     "e": "Der. del lat. rapum 'nabo'.",
     "s": "",
     "c": "botanica",
-    "ec": ""
-  },
-  {
-    "w": "Rapóntico",
-    "p": "m.",
-    "d": "Ruipóntico. Sin.: ruipóntico.",
-    "df": "m. ruipóntico. Sin.: ruipóntico.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
     "ec": ""
   },
   {
@@ -3511,16 +3298,6 @@
     "ec": ""
   },
   {
-    "w": "Rascacio",
-    "p": "m.",
-    "d": "Escorpina. Sin.: escorpina, cabracho, escorpena, escorpera, gallineta, rescaza.",
-    "df": "m. escorpina. Sin.: escorpina, cabracho, escorpena, escorpera, gallineta, rescaza.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Rascadera",
     "p": "f.",
     "d": "Instrumento de rascar metales, pieles, etc.",
@@ -3545,16 +3322,6 @@
     "p": "f.",
     "d": "Acción y efecto de rascar. Sin.: raspado, raspadura, arañazo, rozamiento, lijado.",
     "df": "f. Acción y efecto de rascar. Sin.: raspado, raspadura, arañazo, rozamiento, lijado.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Rascalino",
-    "p": "m.",
-    "d": "Cuscuta. Sin.: cuscuta.",
-    "df": "m. cuscuta. Sin.: cuscuta.",
     "e": "",
     "s": "",
     "c": "sustantivo",
@@ -3654,16 +3421,6 @@
     "ec": ""
   },
   {
-    "w": "Rasera",
-    "p": "f.",
-    "d": "Rasero. Sin.: rasero.",
-    "df": "f. rasero. Sin.: rasero. | f. Paleta de metal, por lo común con varios agujeros, que se emplea en la cocina para volver los fritos y para otros fines. Sin.: paleta, espumadera, cucharrena.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Rasero",
     "p": "m.",
     "d": "Palo cilíndrico que sirve para rasar las medidas de los áridos y que, a veces, tiene forma de rasqueta. Sin.: rasera.",
@@ -3751,16 +3508,6 @@
     "p": "m.",
     "d": "Acción y efecto de rasguear. Sin.: rasgueado, toque.",
     "df": "m. Acción y efecto de rasguear. Sin.: rasgueado, toque.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Rasguñadura",
-    "p": "f.",
-    "d": "Rasguño . Sin.: rasguño, rasguñada, rasmillón.",
-    "df": "f. rasguño (‖ herida pequeña). Sin.: rasguño, rasguñada, rasmillón.",
     "e": "",
     "s": "",
     "c": "sustantivo",
@@ -3903,16 +3650,6 @@
     "ec": ""
   },
   {
-    "w": "Raspajo",
-    "p": "m.",
-    "d": "Escobajo . Sin.: escobajo, grapa1, rampojo.",
-    "df": "m. escobajo (‖ raspa). Sin.: escobajo, grapa1, rampojo.",
-    "e": "Del dim. de raspa 'gajo de uvas'.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Raspamiento",
     "p": "m.",
     "d": "Acción y efecto de raspar.",
@@ -4009,16 +3746,6 @@
     "ec": ""
   },
   {
-    "w": "Raspón",
-    "p": "m.",
-    "d": "Rasponazo. Sin.: rasponazo.",
-    "df": "m. rasponazo. Sin.: rasponazo. | m. Col. Sombrero de paja que usan los campesinos.",
-    "e": "Der. de raspar.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Rasqueta",
     "p": "f.",
     "d": "Plancha de hierro, de cantos afilados y con mango de madera, que se usa para raer y limpiar los palos, cubiertas y costados de las embarcaciones.",
@@ -4065,16 +3792,6 @@
     ]
   },
   {
-    "w": "Rastel",
-    "p": "m.",
-    "d": "Barandilla. Sin.: barandilla, baranda1, barandado, barandaje, barandal.",
-    "df": "m. barandilla. Sin.: barandilla, baranda1, barandado, barandaje, barandal.",
-    "e": "Del lat. rastellus, dim. de raster 'rastrillo'.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_latin"
-  },
-  {
     "w": "Rastillador",
     "p": "adj.",
     "d": "Rastrillador. U. t. c. s. Sin.: rastrillador.",
@@ -4082,36 +3799,6 @@
     "e": "",
     "s": "",
     "c": "adjetivo",
-    "ec": ""
-  },
-  {
-    "w": "Rastillar",
-    "p": "tr.",
-    "d": "Rastrillar. Sin.: rastrillar.",
-    "df": "tr. rastrillar. Sin.: rastrillar.",
-    "e": "",
-    "s": "",
-    "c": "verbo",
-    "ec": ""
-  },
-  {
-    "w": "Rastra",
-    "p": "f.",
-    "d": "Rastrillo . Sin.: rastrillo, rastro, angazo.",
-    "df": "f. rastrillo (‖ instrumento para recoger hierba). Sin.: rastrillo, rastro, angazo. | f. rastro (‖ vestigio o indicio de un acontecimiento). Sin.: rastro, ceriballo. | f. narria (‖ cajón de carro para llevar arrastrando cosas de gran peso). Sin.: narria. | f. grada (‖ instrumento para allanar la tierra después de arada). Sin.: grada2. | f. Tabla que, arrastrada por una caballería, sirve para recoger la parva de la era. | f. Cosa que va colgando y arrastrando. | f. Persona que con su presencia hace presumir que está cercana otra a quien suele seguir o acompañar ordinariamente. | f. Resulta de una acción que obliga a restitución del daño causado o a la pena del delito, o trae otros inconvenientes. | f. Entre ganaderos, cría de una res, y especialmente la que mama aún y sigue a su madre. | f. Constr. Madero que se asienta a lo largo del muro, para trabazón o apoyo del techo. | f. Mar. Seno de cabo que se arrastra por el fondo del mar para buscar y sacar cierta clase de objetos sumergidos. | f. Arg. y Ur. Pieza, generalmente de plata, con la que el gaucho sujetaba el tirador, formada por una chapa central labrada y monedas o botones unidos a esta por medio de cadenas. | f. Sarta de una fruta seca.",
-    "e": "De rastro.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Rastrallar",
-    "p": "tr.",
-    "d": "Restallar . Sin.: restallar.",
-    "df": "tr. restallar (‖ chasquear). Sin.: restallar.",
-    "e": "De restallar.",
-    "s": "",
-    "c": "verbo",
     "ec": ""
   },
   {
@@ -4146,16 +3833,6 @@
     "esp": [
       "explosiva"
     ]
-  },
-  {
-    "w": "Rastrel",
-    "p": "m.",
-    "d": "Ristrel. Sin.: ristrel.",
-    "df": "m. ristrel. Sin.: ristrel.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
   },
   {
     "w": "Rastreo",
@@ -4277,16 +3954,6 @@
     ]
   },
   {
-    "w": "Rastrojal",
-    "p": "m.",
-    "d": "Rastrojera . Sin.: rastrojera.",
-    "df": "m. rastrojera (‖ conjunto de tierras que han quedado de rastrojo). Sin.: rastrojera. | m. Ec. rastrojo (‖ residuo de las cañas de la mies). Sin.: rastrojo.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Rastrojar",
     "p": "tr.",
     "d": "Arrancar el rastrojo.",
@@ -4344,16 +4011,6 @@
     "e": "",
     "s": "",
     "c": "adjetivo",
-    "ec": ""
-  },
-  {
-    "w": "Rasurar",
-    "p": "tr.",
-    "d": "Afeitar . Sin.: afeitar, rapar, arrasar, desbarbar.",
-    "df": "tr. afeitar (‖ cortar el pelo del cuerpo). Sin.: afeitar, rapar, arrasar, desbarbar.",
-    "e": "De rasura.",
-    "s": "",
-    "c": "verbo",
     "ec": ""
   },
   {
@@ -4624,16 +4281,6 @@
     ]
   },
   {
-    "w": "Ratonil",
-    "p": "adj.",
-    "d": "Ratonero . Sin.: ratonero.",
-    "df": "adj. ratonero (‖ perteneciente a los ratones). Sin.: ratonero.",
-    "e": "",
-    "s": "",
-    "c": "adjetivo",
-    "ec": ""
-  },
-  {
     "w": "Ratímetro",
     "p": "m.",
     "d": "En radiología, aparato que mide la rata .",
@@ -4776,16 +4423,6 @@
     "e": "",
     "s": "",
     "c": "juegos",
-    "ec": ""
-  },
-  {
-    "w": "Rayuelo",
-    "p": "m.",
-    "d": "Agachadiza. Sin.: agachadiza, becacina, agachadera, becardón.",
-    "df": "m. agachadiza. Sin.: agachadiza, becacina, agachadera, becardón.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
     "ec": ""
   },
   {
@@ -5149,16 +4786,6 @@
     "ec": ""
   },
   {
-    "w": "Realillo",
-    "p": "m.",
-    "d": "Real . Sin.: real2, realito.",
-    "df": "m. real (‖ moneda). Sin.: real2, realito.",
-    "e": "Del dim. de real2.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Realimentación",
     "p": "f.",
     "d": "Electr. Acción y efecto de realimentar.",
@@ -5176,26 +4803,6 @@
     "e": "",
     "s": "",
     "c": "verbo",
-    "ec": ""
-  },
-  {
-    "w": "Realito",
-    "p": "m.",
-    "d": "Realillo. Sin.: real2, realillo.",
-    "df": "m. realillo. Sin.: real2, realillo.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Realojamiento",
-    "p": "m.",
-    "d": "Realojo. Sin.: realojo.",
-    "df": "m. realojo. Sin.: realojo.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
     "ec": ""
   },
   {
@@ -5419,16 +5026,6 @@
     "ec": ""
   },
   {
-    "w": "Rebaje",
-    "p": "m.",
-    "d": "Rebajo. Sin.: rebajo, canal, acanaladura, ranura, muesca.",
-    "df": "m. rebajo. Sin.: rebajo, canal, acanaladura, ranura, muesca. | m. Arg. y Ur. Disminución de la marcha de un automóvil por medio de un cambio a una velocidad más corta.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Rebajo",
     "p": "m.",
     "d": "Parte del canto de un madero u otra cosa, donde se ha disminuido el espesor por medio de un corte a modo de ranura o de espera . Sin.: rebaje, canal, acanaladura, ranura, muesca.",
@@ -5642,19 +5239,6 @@
     "ec": ""
   },
   {
-    "w": "Rebeco",
-    "p": "m.",
-    "d": "Gamuza . Sin.: gamuza, bicerra, camuza, robezo, rupicabra, rupicapra, robeco, sarrio.",
-    "df": "m. gamuza (‖ antílope). Sin.: gamuza, bicerra, camuza, robezo, rupicabra, rupicapra, robeco, sarrio.",
-    "e": "Del ant. ueko, este del lat. tardío hybĭcum, y este del lat. ibex, -ĭcis, infl. por el ant. reves[s]o 'arisco, indómito'.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "",
-    "esp": [
-      "explosiva"
-    ]
-  },
-  {
     "w": "Rebelón",
     "p": "adj.",
     "d": "Dicho de un caballo o de una yegua: Que rehúsa volver a uno o a ambos lados, sacudiendo la cabeza y huyendo así del tiento de la rienda.",
@@ -5774,16 +5358,6 @@
     ]
   },
   {
-    "w": "Reblar",
-    "p": "intr.",
-    "d": "Retroceder. Sin.: retroceder, recular, cejar.",
-    "df": "intr. retroceder. Sin.: retroceder, recular, cejar. | tr. roblar (‖ remachar una pieza de hierro). Sin.: roblar. | tr. Constr. enripiar. Sin.: enripiar, ripiar.",
-    "e": "Del lat. *revirāre.",
-    "s": "",
-    "c": "verbo",
-    "ec": "etym_latin"
-  },
-  {
     "w": "Rebobinado",
     "p": "m.",
     "d": "Acción y efecto de rebobinar.",
@@ -5848,16 +5422,6 @@
     "p": "m.",
     "d": "Sitio poblado de rebollos . Sin.: rebolledo.",
     "df": "m. Sitio poblado de rebollos (‖ árboles fagáceos). Sin.: rebolledo.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Rebolledo",
-    "p": "m.",
-    "d": "Rebollar. Sin.: rebollar.",
-    "df": "m. rebollar. Sin.: rebollar.",
     "e": "",
     "s": "",
     "c": "sustantivo",
@@ -6093,16 +5657,6 @@
     "ec": ""
   },
   {
-    "w": "Rebrillo",
-    "p": "m.",
-    "d": "Brillo . Sin.: brillo, brillantez.",
-    "df": "m. brillo (‖ luz de un cuerpo). Sin.: brillo, brillantez.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Rebrincar",
     "p": "intr.",
     "d": "Brincar con reiteración y alborozo.",
@@ -6243,16 +5797,6 @@
     "ec": "etym_latin"
   },
   {
-    "w": "Rebultado",
-    "p": "adj.",
-    "d": "Abultado. Sin.: abultado.",
-    "df": "adj. abultado. Sin.: abultado.",
-    "e": "De re- y bulto.",
-    "s": "",
-    "c": "adjetivo",
-    "ec": ""
-  },
-  {
     "w": "Rebumbar",
     "p": "intr.",
     "d": "Dicho de la bala de cañón: zumbar . Sin.: zumbar, zuñir, rumbar1.",
@@ -6360,16 +5904,6 @@
     "p": "m.",
     "d": "Voz del asno. Sin.: roznido.",
     "df": "m. Voz del asno. Sin.: roznido.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Rebús",
-    "p": "m.",
-    "d": "Rehús. Sin.: rehús, rejús.",
-    "df": "m. rehús. Sin.: rehús, rejús.",
     "e": "",
     "s": "",
     "c": "sustantivo",
@@ -6698,16 +6232,6 @@
     "ec": ""
   },
   {
-    "w": "Recantación",
-    "p": "f.",
-    "d": "Palinodia. Sin.: palinodia.",
-    "df": "f. palinodia. Sin.: palinodia.",
-    "e": "Del lat. recantātum, supino de recantāre 'desdecirse, retractarse'.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_latin"
-  },
-  {
     "w": "Recantón",
     "p": "m.",
     "d": "Poste de piedra para resguardar de los carruajes las esquinas de los edificios.",
@@ -6851,16 +6375,6 @@
     "ec": ""
   },
   {
-    "w": "Recatón",
-    "p": "m.",
-    "d": "Regatón . Sin.: regatón1.",
-    "df": "m. regatón (‖ casquillo o virola de las lanzas y bastones). Sin.: regatón1. | adj. Que vende al por menor. | adj. Que regatea el precio mucho.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Recauchado",
     "p": "m.",
     "d": "Acción y efecto de recauchar.",
@@ -6868,16 +6382,6 @@
     "e": "",
     "s": "",
     "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Recauchar",
-    "p": "tr.",
-    "d": "Recauchutar. Sin.: recauchutar, reencauchar.",
-    "df": "tr. recauchutar. Sin.: recauchutar, reencauchar.",
-    "e": "",
-    "s": "",
-    "c": "verbo",
     "ec": ""
   },
   {
@@ -6948,26 +6452,6 @@
     "e": "",
     "s": "",
     "c": "verbo",
-    "ec": ""
-  },
-  {
-    "w": "Recazo",
-    "p": "m.",
-    "d": "Taza . Sin.: taza.",
-    "df": "m. taza (‖ pieza de la espada). Sin.: taza. | m. Parte del cuchillo opuesta al filo.",
-    "e": "De re- y cazo 'cazoleta'.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Recazón",
-    "p": "m.",
-    "d": "Recalzón. Sin.: recalzón.",
-    "df": "m. recalzón. Sin.: recalzón.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
     "ec": ""
   },
   {
@@ -7374,16 +6858,6 @@
     "ec": ""
   },
   {
-    "w": "Rechistar",
-    "p": "intr.",
-    "d": "Chistar . Sin.: contestar, chistar, replicar, responder, oponerse, enfrentarse.",
-    "df": "intr. chistar (‖ emitir algún sonido, o contestar). Sin.: contestar, chistar, replicar, responder, oponerse, enfrentarse.",
-    "e": "",
-    "s": "",
-    "c": "verbo",
-    "ec": ""
-  },
-  {
     "w": "Rechizar",
     "p": "tr.",
     "d": "Sal. Dicho del sol: Calentar con demasiada fuerza.",
@@ -7525,16 +6999,6 @@
     "esp": [
       "viajera"
     ]
-  },
-  {
-    "w": "Reciprocación",
-    "p": "f.",
-    "d": "Reciprocidad. Sin.: reciprocidad, correspondencia, correlación.",
-    "df": "f. reciprocidad. Sin.: reciprocidad, correspondencia, correlación. | f. Gram. Manera de ejercerse la acción del verbo recíproco.",
-    "e": "Del lat. reciprocatio, -ōnis.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_latin"
   },
   {
     "w": "Reciprocar",
@@ -7723,16 +7187,6 @@
     "ec": ""
   },
   {
-    "w": "Recobramiento",
-    "p": "m.",
-    "d": "Recobro. Sin.: recobro, recuperación.",
-    "df": "m. recobro. Sin.: recobro, recuperación.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Recobro",
     "p": "m.",
     "d": "Acción y efecto de recobrar o recobrarse. Sin.: recobramiento, recuperación.",
@@ -7781,16 +7235,6 @@
     "s": "",
     "c": "adjetivo",
     "ec": "etym_latin"
-  },
-  {
-    "w": "Recocida",
-    "p": "f.",
-    "d": "Recocido . Sin.: recocido.",
-    "df": "f. recocido (‖ acción de recocer). Sin.: recocido.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
   },
   {
     "w": "Recocido",
@@ -8066,19 +7510,6 @@
     "s": "",
     "c": "otros",
     "ec": ""
-  },
-  {
-    "w": "Reconcentración",
-    "p": "f.",
-    "d": "Reconcentramiento. Sin.: reconcentramiento, abstracción, ensimismamiento, recogimiento.",
-    "df": "f. reconcentramiento. Sin.: reconcentramiento, abstracción, ensimismamiento, recogimiento.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "",
-    "esp": [
-      "larga"
-    ]
   },
   {
     "w": "Reconcentramiento",
@@ -8654,16 +8085,6 @@
     ]
   },
   {
-    "w": "Recrudescencia",
-    "p": "f.",
-    "d": "Recrudecimiento. Sin.: recrudecimiento, agudizamiento, intensificación, incremento, aumento, acentuación, agravamiento.",
-    "df": "f. recrudecimiento. Sin.: recrudecimiento, agudizamiento, intensificación, incremento, aumento, acentuación, agravamiento.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Recrujir",
     "p": "intr.",
     "d": "Crujir mucho o repetidamente.",
@@ -8857,16 +8278,6 @@
     "e": "",
     "s": "",
     "c": "verbo",
-    "ec": ""
-  },
-  {
-    "w": "Recudimento",
-    "p": "m.",
-    "d": "Recudimiento. Sin.: recudimiento.",
-    "df": "m. recudimiento. Sin.: recudimiento.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
     "ec": ""
   },
   {
@@ -9070,16 +8481,6 @@
     "ec": "etym_latin"
   },
   {
-    "w": "Recórcholis",
-    "p": "interj.",
-    "d": "Córcholis. Sin.: caramba1, córcholis.",
-    "df": "interj. córcholis. Sin.: caramba1, córcholis.",
-    "e": "",
-    "s": "",
-    "c": "otros",
-    "ec": ""
-  },
-  {
     "w": "Redada",
     "p": "f.",
     "d": "Lance de la red de pesca. Sin.: bol2.",
@@ -9193,16 +8594,6 @@
     "ec": ""
   },
   {
-    "w": "Redendija",
-    "p": "f.",
-    "d": "Rendija . Sin.: rendija, hendidura, grieta, fisura.",
-    "df": "f. rendija (‖ hendidura). Sin.: rendija, hendidura, grieta, fisura.",
-    "e": "De rehendija.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Redentor",
     "p": "adj.",
     "d": "Que redime. U. t. c. s. Sin.: liberador, libertador, salvador.",
@@ -9280,16 +8671,6 @@
     "p": "m.",
     "d": "Com. Nuevo descuento de valores o efectos mercantiles adquiridos por operación análoga.",
     "df": "m. Com. Nuevo descuento de valores o efectos mercantiles adquiridos por operación análoga.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Redeña",
-    "p": "f.",
-    "d": "Salabardo. Sin.: salabardo.",
-    "df": "f. salabardo. Sin.: salabardo.",
     "e": "",
     "s": "",
     "c": "sustantivo",
@@ -9688,16 +9069,6 @@
     "e": "",
     "s": "",
     "c": "verbo",
-    "ec": ""
-  },
-  {
-    "w": "Redondel",
-    "p": "m.",
-    "d": "Circunferencia . Sin.: circunferencia, círculo.",
-    "df": "m. circunferencia (‖ curva). Sin.: circunferencia, círculo. | m. círculo (‖ área o superficie contenida dentro de una circunferencia). Sin.: círculo. | m. Ruedo de la plaza de toros. Sin.: ruedo, arena, albero. | m. Especie de capa sin capilla y redonda por la parte inferior.",
-    "e": "Der. de redondo.",
-    "s": "",
-    "c": "sustantivo",
     "ec": ""
   },
   {
@@ -10413,16 +9784,6 @@
     "ec": ""
   },
   {
-    "w": "Refalsado",
-    "p": "adj.",
-    "d": "Falso . Sin.: falso, espurio, fingido, artificial.",
-    "df": "adj. falso (‖ fingido). Sin.: falso, espurio, fingido, artificial.",
-    "e": "",
-    "s": "",
-    "c": "adjetivo",
-    "ec": ""
-  },
-  {
     "w": "Refeccionario",
     "p": "adj.",
     "d": "Der. Dicho de un crédito: refaccionario. Sin.: refaccionario.",
@@ -10483,30 +9844,10 @@
     "ec": "etym_latin"
   },
   {
-    "w": "Referendo",
-    "p": "m.",
-    "d": "Referéndum. Sin.: referéndum, votación, consulta, plebiscito.",
-    "df": "m. referéndum. Sin.: referéndum, votación, consulta, plebiscito.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Referible",
     "p": "adj.",
     "d": "Que se puede referir.",
     "df": "adj. Que se puede referir.",
-    "e": "",
-    "s": "",
-    "c": "adjetivo",
-    "ec": ""
-  },
-  {
-    "w": "Refertero",
-    "p": "adj.",
-    "d": "Quimerista . Sin.: quimerista, camorrista, ocasionado.",
-    "df": "adj. quimerista (‖ que ocasiona riñas o pendencias). Sin.: quimerista, camorrista, ocasionado.",
     "e": "",
     "s": "",
     "c": "adjetivo",
@@ -10734,16 +10075,6 @@
     ]
   },
   {
-    "w": "Reflotación",
-    "p": "f.",
-    "d": "Reflotamiento. Sin.: reflotamiento.",
-    "df": "f. reflotamiento. Sin.: reflotamiento.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Reflotamiento",
     "p": "m.",
     "d": "Acción y efecto de reflotar. Sin.: reflotación.",
@@ -10802,16 +10133,6 @@
     "s": "",
     "c": "verbo",
     "ec": "etym_latin"
-  },
-  {
-    "w": "Refocilo",
-    "p": "m.",
-    "d": "Refocilación. Sin.: refocilación.",
-    "df": "m. refocilación. Sin.: refocilación.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
   },
   {
     "w": "Reformación",
@@ -11229,16 +10550,6 @@
     "ec": ""
   },
   {
-    "w": "Refucilo",
-    "p": "m.",
-    "d": "Relámpago. Sin.: relámpago, fucilazo, candelazo.",
-    "df": "m. relámpago. Sin.: relámpago, fucilazo, candelazo.",
-    "e": "Del lat. *focīle 'de fuego'.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_latin"
-  },
-  {
     "w": "Refulgencia",
     "p": "f.",
     "d": "Resplandor que emite el cuerpo resplandeciente. Sin.: resplandor, brillo, fulgor, destello, centelleo, reflejo.",
@@ -11582,16 +10893,6 @@
     "ec": ""
   },
   {
-    "w": "Regaliz",
-    "p": "m.",
-    "d": "Orozuz. Sin.: orozuz, paloduz, alcazuz, alfendoz, regalicia, regaliza.",
-    "df": "m. orozuz. Sin.: orozuz, paloduz, alcazuz, alfendoz, regalicia, regaliza. | m. Rizoma del regaliz. | m. Trozo seco de rizoma de regaliz. | m. Pasta hecha con el jugo del rizoma de regaliz, que se toma como golosina en pastillas o barritas.",
-    "e": "Del lat. tardío liquiritĭa, este del lat. glycyrrhīza, y este del gr. γλυκύρριζα glykýrriza, de γλυκύς glykýs 'dulce' y ῥίζα ríza 'raíz'.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_latin"
-  },
-  {
     "w": "Regalía",
     "p": "f.",
     "d": "Preeminencia, prerrogativa o excepción particular y privativa que en virtud de suprema potestad ejerce un soberano en su reino o Estado; p. ej., el batir moneda.",
@@ -11717,16 +11018,6 @@
     "ec": ""
   },
   {
-    "w": "Regatonería",
-    "p": "f.",
-    "d": "Regatería. Sin.: regatería, recatonería, menudeo.",
-    "df": "f. regatería. Sin.: regatería, recatonería, menudeo. | f. Oficio y ocupación del regatón2.",
-    "e": "De regatón2 y -ería2.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Regatón",
     "p": "m.",
     "d": "Casquillo, cuento o virola que se pone en el extremo inferior de las lanzas, bastones, etc., para mayor firmeza. Sin.: recatón1, contera, virola.",
@@ -11768,19 +11059,6 @@
     "s": "",
     "c": "sustantivo",
     "ec": ""
-  },
-  {
-    "w": "Regañera",
-    "p": "f.",
-    "d": "Regañina. Sin.: regañina, reprimenda, amonestación, reconvención, regaño, repaso, rapapolvo, trapeada, frenada, regañada, felpeada.",
-    "df": "f. regañina. Sin.: regañina, reprimenda, amonestación, reconvención, regaño, repaso, rapapolvo, trapeada, frenada, regañada, felpeada.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "",
-    "esp": [
-      "explosiva"
-    ]
   },
   {
     "w": "Regaño",
@@ -11912,19 +11190,6 @@
     "ec": ""
   },
   {
-    "w": "Regio",
-    "p": "adj.",
-    "d": "Real . Sin.: real2, imperial, palatino2, principesco.",
-    "df": "adj. real (‖ perteneciente al rey). Sin.: real2, imperial, palatino2, principesco. | adj. Suntuoso, grande, magnífico. Sin.: suntuoso, magnífico, fastuoso, grandioso, soberbio, espléndido, colosal. | adj. coloq. Arg. y Ur. Bonito, lindo, excepcional. Sin.: bonito2, lindo, hermoso, excepcional, excelente, esplendoroso, chévere.",
-    "e": "Del lat. regius.",
-    "s": "",
-    "c": "adjetivo",
-    "ec": "etym_latin",
-    "esp": [
-      "explosiva"
-    ]
-  },
-  {
     "w": "Regiomontano",
     "p": "adj.",
     "d": "Natural de Monterrey, capital del estado de Nuevo León, en México. U. t. c. s.",
@@ -11972,16 +11237,6 @@
     "e": "",
     "s": "",
     "c": "adverbio",
-    "ec": ""
-  },
-  {
-    "w": "Reglado",
-    "p": "adj.",
-    "d": "Templado . Sin.: templado, moderado, contenido, mesurado.",
-    "df": "adj. templado (‖ moderado, contenido). Sin.: templado, moderado, contenido, mesurado. | adj. Dicho comúnmente del ejercicio de autoridad pública cuando las disposiciones vigentes no lo han dejado al discrecional arbitrio de esta: Sujeto a precepto, ordenación o regla. Sin.: regular2, regulado.",
-    "e": "Del part. de reglar1.",
-    "s": "",
-    "c": "adjetivo",
     "ec": ""
   },
   {
@@ -12134,16 +11389,6 @@
     "ec": ""
   },
   {
-    "w": "Regoldar",
-    "p": "intr.",
-    "d": "Eructar . Sin.: eructar, rutar3.",
-    "df": "intr. eructar (‖ expeler gases del estómago). Sin.: eructar, rutar3.",
-    "e": "Quizá del lat. vulg. *regurgitare; cf. regurgitar.",
-    "s": "",
-    "c": "verbo",
-    "ec": ""
-  },
-  {
     "w": "Regoldo",
     "p": "m.",
     "d": "Castaño borde o silvestre.",
@@ -12275,16 +11520,6 @@
     "d": "Que puede ser regulado.",
     "df": "adj. Que puede ser regulado.",
     "e": "",
-    "s": "",
-    "c": "adjetivo",
-    "ec": ""
-  },
-  {
-    "w": "Regulado",
-    "p": "adj.",
-    "d": "Regular . Sin.: regular2, reglado.",
-    "df": "adj. regular (‖ ajustado a una regla). Sin.: regular2, reglado.",
-    "e": "Del part. de regular1.",
     "s": "",
     "c": "adjetivo",
     "ec": ""
@@ -12479,16 +11714,6 @@
     "ec": ""
   },
   {
-    "w": "Reherir",
-    "p": "tr.",
-    "d": "Rebatir . Sin.: rebatir, contrarrestar, rechazar, repeler, neutralizar.",
-    "df": "tr. rebatir (‖ rechazar). Sin.: rebatir, contrarrestar, rechazar, repeler, neutralizar.",
-    "e": "Del lat. referīre 'devolver golpe por golpe'.",
-    "s": "",
-    "c": "verbo",
-    "ec": "etym_latin"
-  },
-  {
     "w": "Reherrar",
     "p": "tr.",
     "d": "Volver a herrar con la misma herradura, aunque con clavos nuevos.",
@@ -12534,16 +11759,6 @@
     "d": "Fon. Fricción característica que se produce en la zona de articulación al realizar algunas consonantes fricativas sonoras, como la consonante de yo en el área rioplatense.",
     "df": "m. Fon. Fricción característica que se produce en la zona de articulación al realizar algunas consonantes fricativas sonoras, como la consonante de yo en el área rioplatense.",
     "e": "De rehilar y -miento.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Rehilandera",
-    "p": "f.",
-    "d": "Molinete . Sin.: molinete, gallo, molinillo, volador.",
-    "df": "f. molinete (‖ juguete). Sin.: molinete, gallo, molinillo, volador.",
-    "e": "De rehilar.",
     "s": "",
     "c": "sustantivo",
     "ec": ""
@@ -12609,16 +11824,6 @@
     "e": "",
     "s": "",
     "c": "verbo",
-    "ec": ""
-  },
-  {
-    "w": "Rehoya",
-    "p": "f.",
-    "d": "Rehoyo. Sin.: rehoyo, carcavuezo, cambímbora.",
-    "df": "f. rehoyo. Sin.: rehoyo, carcavuezo, cambímbora.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
     "ec": ""
   },
   {
@@ -12752,16 +11957,6 @@
     "e": "",
     "s": "",
     "c": "adjetivo",
-    "ec": ""
-  },
-  {
-    "w": "Reificación",
-    "p": "f.",
-    "d": "Cosificación. Sin.: cosificación.",
-    "df": "f. cosificación. Sin.: cosificación.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
     "ec": ""
   },
   {
@@ -12928,16 +12123,6 @@
     "e": "",
     "s": "",
     "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Reiniciar",
-    "p": "tr.",
-    "d": "Recomenzar. Sin.: recomenzar, reanudar, retomar, reemprender.",
-    "df": "tr. recomenzar. Sin.: recomenzar, reanudar, retomar, reemprender. | tr. Inform. Cargar de nuevo el sistema operativo en una computadora u otro dispositivo electrónico.",
-    "e": "",
-    "s": "",
-    "c": "verbo",
     "ec": ""
   },
   {
@@ -13108,39 +12293,6 @@
     "esp": [
       "larga"
     ]
-  },
-  {
-    "w": "Rejacar",
-    "p": "tr.",
-    "d": "Arrejacar. Sin.: arrejacar, aricar.",
-    "df": "tr. arrejacar. Sin.: arrejacar, aricar.",
-    "e": "De reja1.",
-    "s": "",
-    "c": "verbo",
-    "ec": ""
-  },
-  {
-    "w": "Rejada",
-    "p": "f.",
-    "d": "Aguijada . Sin.: aguijada, aguijadera, aijada, arrejada, béstola, bestoba, bestoga, bístola.",
-    "df": "f. aguijada (‖ vara del arado). Sin.: aguijada, aguijadera, aijada, arrejada, béstola, bestoba, bestoga, bístola.",
-    "e": "De reja1.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "",
-    "esp": [
-      "explosiva"
-    ]
-  },
-  {
-    "w": "Rejado",
-    "p": "m.",
-    "d": "Verja. Sin.: verja, enrejado, cancela.",
-    "df": "m. verja. Sin.: verja, enrejado, cancela.",
-    "e": "De reja2.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
   },
   {
     "w": "Rejal",
@@ -13818,16 +12970,6 @@
     "s": "",
     "c": "verbo",
     "ec": "etym_latin"
-  },
-  {
-    "w": "Relinchido",
-    "p": "m.",
-    "d": "Relincho. Sin.: relincho, relinchada.",
-    "df": "m. relincho. Sin.: relincho, relinchada.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
   },
   {
     "w": "Relincho",
@@ -14903,16 +14045,6 @@
     "ec": ""
   },
   {
-    "w": "Remoque",
-    "p": "m.",
-    "d": "Remoquete . Sin.: remoquete.",
-    "df": "m. remoquete (‖ dicho agudo y satírico). Sin.: remoquete. | m. coloq. Palabra picante.",
-    "e": "De re- y mueca.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Remoquete",
     "p": "m.",
     "d": "Puñada en el rostro. Sin.: puñetazo, guantazo, golpe, bofetada, bofetón.",
@@ -14953,16 +14085,6 @@
     "p": "intr.",
     "d": "Echar mosto en el vino añejo. U. t. c. tr.",
     "df": "intr. Echar mosto en el vino añejo. U. t. c. tr. | prnl. Dicho del vino: Estar dulce o saber a mosto. Sin.: remostecerse.",
-    "e": "",
-    "s": "",
-    "c": "verbo",
-    "ec": ""
-  },
-  {
-    "w": "Remostecerse",
-    "p": "prnl.",
-    "d": "Remostarse. Sin.: remostarse.",
-    "df": "prnl. remostarse. Sin.: remostarse.",
     "e": "",
     "s": "",
     "c": "verbo",
@@ -15070,16 +14192,6 @@
     "d": "Impulso violento con que se mueve a alguien o algo.",
     "df": "m. coloq. Impulso violento con que se mueve a alguien o algo.",
     "e": "De rempujar y -ón1.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Remuda",
-    "p": "f.",
-    "d": "Remudamiento. Sin.: remudamiento.",
-    "df": "f. remudamiento. Sin.: remudamiento. | f. muda (‖ conjunto de ropa). Sin.: muda. | f. Méx. Animal que releva en el trabajo a otro que está cansado.",
-    "e": "",
     "s": "",
     "c": "sustantivo",
     "ec": ""
@@ -15261,16 +14373,6 @@
     "ec": ""
   },
   {
-    "w": "Rencoso",
-    "p": "adj.",
-    "d": "Ciclán . Sin.: ciclán, renco, chiclán, chiclano, rencallo.",
-    "df": "adj. ciclán (‖ que tiene un solo testículo). Sin.: ciclán, renco, chiclán, chiclano, rencallo.",
-    "e": "De renco.",
-    "s": "",
-    "c": "adjetivo",
-    "ec": ""
-  },
-  {
     "w": "Rencuentro",
     "p": "m.",
     "d": "Acción y efecto de reencontrar.",
@@ -15289,16 +14391,6 @@
     "s": "",
     "c": "sustantivo",
     "ec": ""
-  },
-  {
-    "w": "Rendar",
-    "p": "tr.",
-    "d": "Binar . Sin.: binar, mantornar.",
-    "df": "tr. binar (‖ arar por segunda vez, o hacer la segunda cava). Sin.: binar, mantornar.",
-    "e": "Del lat. reiterāre 'repetir'.",
-    "s": "",
-    "c": "verbo",
-    "ec": "etym_latin"
   },
   {
     "w": "Rendibú",
@@ -15410,26 +14502,6 @@
     "ec": ""
   },
   {
-    "w": "Rengle",
-    "p": "m.",
-    "d": "Ringlera. Sin.: ringlera, renglera, fila, línea.",
-    "df": "m. ringlera. Sin.: ringlera, renglera, fila, línea.",
-    "e": "Del cat. rengle, este de reng, y este del franco *hrĭng 'círculo', 'corro de personas', infl. por regla.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Renglera",
-    "p": "f.",
-    "d": "Ringlera. Sin.: ringlera, rengle, fila, línea.",
-    "df": "f. ringlera. Sin.: ringlera, rengle, fila, línea.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Renglonadura",
     "p": "f.",
     "d": "Conjunto de líneas señaladas en el papel para escribir sobre ellas los renglones.",
@@ -15448,26 +14520,6 @@
     "s": "",
     "c": "adjetivo",
     "ec": "etym_latin"
-  },
-  {
-    "w": "Renguear",
-    "p": "intr.",
-    "d": "Renquear . Sin.: renquear, cojear, gafear.",
-    "df": "intr. renquear (‖ andar como renco). Sin.: renquear, cojear, gafear.",
-    "e": "De rengo1.",
-    "s": "",
-    "c": "verbo",
-    "ec": ""
-  },
-  {
-    "w": "Rengífero",
-    "p": "m.",
-    "d": "Rangífero. Sin.: reno, rangífero.",
-    "df": "m. rangífero. Sin.: reno, rangífero.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
   },
   {
     "w": "Reniego",
@@ -15716,16 +14768,6 @@
     "ec": ""
   },
   {
-    "w": "Renunciación",
-    "p": "f.",
-    "d": "Renunciamiento. Sin.: renuncia, renunciamiento.",
-    "df": "f. renunciamiento. Sin.: renuncia, renunciamiento.",
-    "e": "Del lat. renuntiatio, -ōnis.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_latin"
-  },
-  {
     "w": "Renunciamiento",
     "p": "m.",
     "d": "Acción y efecto de renunciar. Sin.: renuncia, renunciación.",
@@ -15793,16 +14835,6 @@
     "e": "",
     "s": "",
     "c": "verbo",
-    "ec": ""
-  },
-  {
-    "w": "Reoctava",
-    "p": "f.",
-    "d": "Octavilla . Sin.: octavilla.",
-    "df": "f. octavilla (‖ impuesto). Sin.: octavilla.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
     "ec": ""
   },
   {
@@ -15899,51 +14931,11 @@
     "ec": "etym_latin"
   },
   {
-    "w": "Repajolero",
-    "p": "adj. coloq.",
-    "d": "Pajolero. Sin.: pajolero.",
-    "df": "adj. coloq. pajolero. Sin.: pajolero.",
-    "e": "",
-    "s": "",
-    "c": "adjetivo",
-    "ec": ""
-  },
-  {
-    "w": "Repanchigarse",
-    "p": "prnl.",
-    "d": "Repantigarse. Sin.: repanchingarse, repantigarse, repantingarse, arrellanarse, apoltronarse, arrepanchigarse.",
-    "df": "prnl. coloq. repantigarse. Sin.: repanchingarse, repantigarse, repantingarse, arrellanarse, apoltronarse, arrepanchigarse.",
-    "e": "De re- y pancho1.",
-    "s": "",
-    "c": "verbo",
-    "ec": ""
-  },
-  {
-    "w": "Repanchingarse",
-    "p": "prnl.",
-    "d": "Repanchigarse. Sin.: repanchigarse, repantigarse, repantingarse, arrellanarse, apoltronarse, arrepanchigarse.",
-    "df": "prnl. coloq. repanchigarse. Sin.: repanchigarse, repantigarse, repantingarse, arrellanarse, apoltronarse, arrepanchigarse.",
-    "e": "",
-    "s": "",
-    "c": "verbo",
-    "ec": ""
-  },
-  {
     "w": "Repantigarse",
     "p": "prnl.",
     "d": "Arrellanarse en el asiento y extenderse para mayor comodidad. Sin.: repantingarse, repanchigarse, repanchingarse, arrellanarse, apoltronarse, arrepanchigarse.",
     "df": "prnl. Arrellanarse en el asiento y extenderse para mayor comodidad. Sin.: repantingarse, repanchigarse, repanchingarse, arrellanarse, apoltronarse, arrepanchigarse.",
     "e": "De re- y el lat. pantex, -ĭcis 'panza'.",
-    "s": "",
-    "c": "verbo",
-    "ec": ""
-  },
-  {
-    "w": "Repantingarse",
-    "p": "prnl.",
-    "d": "Repantigarse. Sin.: repantigarse, repanchigarse, repanchingarse, arrellanarse, apoltronarse, arrepanchigarse.",
-    "df": "prnl. repantigarse. Sin.: repantigarse, repanchigarse, repanchingarse, arrellanarse, apoltronarse, arrepanchigarse.",
-    "e": "",
     "s": "",
     "c": "verbo",
     "ec": ""
@@ -16112,19 +15104,6 @@
     "ec": ""
   },
   {
-    "w": "Repasata",
-    "p": "f. coloq.",
-    "d": "Regañina. Sin.: regañina, reprimenda, amonestación, reconvención, repaso, rapapolvo, frenada, felpeada, trapeada, regañada.",
-    "df": "f. coloq. regañina. Sin.: regañina, reprimenda, amonestación, reconvención, repaso, rapapolvo, frenada, felpeada, trapeada, regañada.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "",
-    "esp": [
-      "explosiva"
-    ]
-  },
-  {
     "w": "Repastar",
     "p": "tr.",
     "d": "Añadir harina, agua u otro líquido a una pasta para amasarla de nuevo.",
@@ -16285,16 +15264,6 @@
     "e": "",
     "s": "",
     "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Repensar",
-    "p": "tr.",
-    "d": "Reflexionar. Sin.: reflexionar, meditar, ponderar, considerar, cavilar, cranear.",
-    "df": "tr. reflexionar. Sin.: reflexionar, meditar, ponderar, considerar, cavilar, cranear.",
-    "e": "",
-    "s": "",
-    "c": "verbo",
     "ec": ""
   },
   {
@@ -16832,16 +15801,6 @@
     "ec": ""
   },
   {
-    "w": "Reposabrazos",
-    "p": "m.",
-    "d": "Apoyabrazos. Sin.: apoyabrazos.",
-    "df": "m. apoyabrazos. Sin.: apoyabrazos.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Reposacabezas",
     "p": "m.",
     "d": "En los asientos de algunos vehículos, parte elevada sobre el respaldo destinada a proporcionar apoyo a la cabeza y evitar lesiones cervicales en caso de colisión. Sin.: apoyacabeza, apoyanuca.",
@@ -16866,16 +15825,6 @@
     "p": "m.",
     "d": "Ingen. Pileta colocada en la parte exterior de los hornos para recibir el metal fundido que sale por la piquera.",
     "df": "m. Ingen. Pileta colocada en la parte exterior de los hornos para recibir el metal fundido que sale por la piquera.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Reposapiés",
-    "p": "m.",
-    "d": "Escabel . Sin.: escabel, banqueta, silletín.",
-    "df": "m. escabel (‖ tarima para que descansen los pies). Sin.: escabel, banqueta, silletín. | m. En los vehículos, pieza que sirve para apoyar los pies.",
     "e": "",
     "s": "",
     "c": "sustantivo",
@@ -16962,39 +15911,6 @@
     "e": "",
     "s": "",
     "c": "verbo",
-    "ec": ""
-  },
-  {
-    "w": "Reprehender",
-    "p": "tr.",
-    "d": "Reprender. Sin.: reprender, reconvenir, reñir, regañar, amonestar, apercibir, recriminar, sermonear, increpar, abroncar, censurar, vituperar, corregir, trapear, cafetear, requintear, vaciar.",
-    "df": "tr. reprender. Sin.: reprender, reconvenir, reñir, regañar, amonestar, apercibir, recriminar, sermonear, increpar, abroncar, censurar, vituperar, corregir, trapear, cafetear, requintear, vaciar.",
-    "e": "Del lat. reprehendĕre.",
-    "s": "",
-    "c": "verbo",
-    "ec": "etym_latin",
-    "esp": [
-      "explosiva"
-    ]
-  },
-  {
-    "w": "Reprehensible",
-    "p": "adj.",
-    "d": "Reprensible. Sin.: reprensible, censurable, reprochable, criticable, vituperable.",
-    "df": "adj. reprensible. Sin.: reprensible, censurable, reprochable, criticable, vituperable.",
-    "e": "Del lat. reprehensibĭlis.",
-    "s": "",
-    "c": "adjetivo",
-    "ec": "etym_latin"
-  },
-  {
-    "w": "Reprendedor",
-    "p": "adj.",
-    "d": "Reprensor. Sin.: reprensor.",
-    "df": "adj. reprensor. Sin.: reprensor.",
-    "e": "",
-    "s": "",
-    "c": "adjetivo",
     "ec": ""
   },
   {
@@ -17804,19 +16720,6 @@
     ]
   },
   {
-    "w": "Resalto",
-    "p": "m.",
-    "d": "Resalte. Sin.: resalte, saliente, relieve, moldura1, saledizo, remate, reborde, borde1, pestaña, rebaba.",
-    "df": "m. resalte. Sin.: resalte, saliente, relieve, moldura1, saledizo, remate, reborde, borde1, pestaña, rebaba. | m. Cineg. Modo de cazar al jabalí, disparándole al tiempo que sale acosado de su guarida y se para a reconocer de quién huye.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "",
-    "esp": [
-      "explosiva"
-    ]
-  },
-  {
     "w": "Resaludar",
     "p": "tr.",
     "d": "Corresponder a la salutación, cortesía o atención de alguien.",
@@ -17976,16 +16879,6 @@
     ]
   },
   {
-    "w": "Resbaloso",
-    "p": "adj.",
-    "d": "Resbaladizo. Sin.: [cosa] resbaladizo, escurridizo, deslizante, lábil, baboso, barrealoso. [asunto] resbaladizo, peligroso, problemático, conflictivo, comprometido, espinoso, peliagudo.",
-    "df": "adj. resbaladizo. Sin.: [cosa] resbaladizo, escurridizo, deslizante, lábil, baboso, barrealoso. [asunto] resbaladizo, peligroso, problemático, conflictivo, comprometido, espinoso, peliagudo. | adj. coloq. Cuba. Dicho de una persona: Que elude un compromiso. | adj. Méx. Dicho de una persona: Que se insinúa (‖ da a entender que desea relaciones amorosas). U. t. c. s.",
-    "e": "De resbalar y -oso2.",
-    "s": "",
-    "c": "adjetivo",
-    "ec": ""
-  },
-  {
     "w": "Resbalón",
     "p": "m.",
     "d": "Acción y efecto de resbalar. Sin.: traspié, tropezón, deslizamiento, patinazo, patinada.",
@@ -18024,16 +16917,6 @@
     "d": "Y f. Persona que se ocupa del rescate de víctimas en un siniestro.",
     "df": "m. y f. Persona que se ocupa del rescate de víctimas en un siniestro.",
     "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Rescaza",
-    "p": "f.",
-    "d": "Escorpina. Sin.: escorpina, cabracho, gallineta, escorpena, escorpera, rascacio.",
-    "df": "f. escorpina. Sin.: escorpina, cabracho, gallineta, escorpena, escorpera, rascacio.",
-    "e": "De rascacio.",
     "s": "",
     "c": "sustantivo",
     "ec": ""
@@ -18086,16 +16969,6 @@
     "e": "",
     "s": "",
     "c": "verbo",
-    "ec": ""
-  },
-  {
-    "w": "Rescoldera",
-    "p": "f.",
-    "d": "Pirosis. Sin.: pirosis, ardentía.",
-    "df": "f. pirosis. Sin.: pirosis, ardentía.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
     "ec": ""
   },
   {
@@ -18550,16 +17423,6 @@
     "ec": "etym_latin"
   },
   {
-    "w": "Resinífero",
-    "p": "adj.",
-    "d": "Resinoso . Sin.: resinoso.",
-    "df": "adj. resinoso (‖ que tiene mucha resina). Sin.: resinoso.",
-    "e": "Del lat. resīna 'resina' y ‒́fero.",
-    "s": "",
-    "c": "adjetivo",
-    "ec": "etym_latin"
-  },
-  {
     "w": "Resisa",
     "p": "f.",
     "d": "Antiguo impuesto de consumos que se cobraba en las ventas al por menor.",
@@ -18868,16 +17731,6 @@
     "ec": ""
   },
   {
-    "w": "Resoplo",
-    "p": "m.",
-    "d": "Resoplido. Sin.: resoplido, soplido, jadeo, resuello, bufido, gruñido, ronquido.",
-    "df": "m. resoplido. Sin.: resoplido, soplido, jadeo, resuello, bufido, gruñido, ronquido.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Resorber",
     "p": "tr.",
     "d": "Dicho de una persona o de una cosa: Recibir o recoger dentro de sí un líquido que ha salido de ella misma.",
@@ -18892,16 +17745,6 @@
     "p": "f.",
     "d": "Acción y efecto de resorber.",
     "df": "f. Acción y efecto de resorber.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Respe",
-    "p": "m.",
-    "d": "Résped . Sin.: résped, réspede, lengua.",
-    "df": "m. résped (‖ lengua de la culebra). Sin.: résped, réspede, lengua. | m. Aguijón de la abeja o de la avispa. Sin.: aguijón.",
     "e": "",
     "s": "",
     "c": "sustantivo",
@@ -19043,19 +17886,6 @@
     ]
   },
   {
-    "w": "Resplandina",
-    "p": "f. coloq.",
-    "d": "Regañina. Sin.: regañina, reprimenda, amonestación, reconvención, repaso, rapapolvo, trapeada, frenada, regañada, felpeada.",
-    "df": "f. coloq. regañina. Sin.: regañina, reprimenda, amonestación, reconvención, repaso, rapapolvo, trapeada, frenada, regañada, felpeada.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "",
-    "esp": [
-      "explosiva"
-    ]
-  },
-  {
     "w": "Respondedor",
     "p": "adj.",
     "d": "Que responde. U. t. c. s.",
@@ -19165,19 +17995,6 @@
     "ec": "etym_latin"
   },
   {
-    "w": "Resquebradura",
-    "p": "f.",
-    "d": "Resquebrajadura. Sin.: resquebrajadura, resquebrajo, hendidura, hendedura, grieta, abertura, ranura, raja1, fractura, rotura, boquete.",
-    "df": "f. resquebrajadura. Sin.: resquebrajadura, resquebrajo, hendidura, hendedura, grieta, abertura, ranura, raja1, fractura, rotura, boquete.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "",
-    "esp": [
-      "explosiva"
-    ]
-  },
-  {
     "w": "Resquebrajadizo",
     "p": "adj.",
     "d": "Que se resquebraja fácilmente.",
@@ -19188,20 +18005,6 @@
     "ec": "",
     "esp": [
       "larga"
-    ]
-  },
-  {
-    "w": "Resquebrajadura",
-    "p": "f.",
-    "d": "Hendidura. Sin.: resquebradura, resquebrajo, hendidura, hendedura, grieta, abertura, ranura, raja1, fractura, rotura, boquete.",
-    "df": "f. hendidura. Sin.: resquebradura, resquebrajo, hendidura, hendedura, grieta, abertura, ranura, raja1, fractura, rotura, boquete.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "",
-    "esp": [
-      "larga",
-      "explosiva"
     ]
   },
   {
@@ -19225,19 +18028,6 @@
     "e": "",
     "s": "",
     "c": "verbo",
-    "ec": "",
-    "esp": [
-      "explosiva"
-    ]
-  },
-  {
-    "w": "Resquebrajo",
-    "p": "m.",
-    "d": "Resquebrajadura. Sin.: resquebrajadura, resquebradura, hendidura, hendedura, grieta, abertura, ranura, raja1, fractura, rotura, boquete.",
-    "df": "m. resquebrajadura. Sin.: resquebrajadura, resquebradura, hendidura, hendedura, grieta, abertura, ranura, raja1, fractura, rotura, boquete.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
     "ec": "",
     "esp": [
       "explosiva"
@@ -19403,16 +18193,6 @@
     "ec": ""
   },
   {
-    "w": "Restañadero",
-    "p": "m.",
-    "d": "Estuario. Sin.: estuario, estero2, desembocadura, delta.",
-    "df": "m. estuario. Sin.: estuario, estero2, desembocadura, delta.",
-    "e": "De restañar2 y -dero.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Restañadura",
     "p": "f.",
     "d": "Acción y efecto de restañar1.",
@@ -19434,16 +18214,6 @@
     "esp": [
       "explosiva"
     ]
-  },
-  {
-    "w": "Restañasangre",
-    "p": "f.",
-    "d": "Cornalina. Sin.: cornalina, cornelina, cornerina, corniola, alaqueca.",
-    "df": "f. cornalina. Sin.: cornalina, cornelina, cornerina, corniola, alaqueca.",
-    "e": "De restañar2 y sangre.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
   },
   {
     "w": "Restaño",
@@ -19507,20 +18277,6 @@
     "s": "",
     "c": "adjetivo",
     "ec": "etym_latin"
-  },
-  {
-    "w": "Restorán",
-    "p": "m.",
-    "d": "Restaurante. Sin.: restaurante, mesón1, taberna, tasca, cantina, fonda1, comedor, bufé, ambigú.",
-    "df": "m. restaurante. Sin.: restaurante, mesón1, taberna, tasca, cantina, fonda1, comedor, bufé, ambigú.",
-    "e": "Del fr. restaurant.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_frances",
-    "esp": [
-      "explosiva",
-      "viajera"
-    ]
   },
   {
     "w": "Restregadura",
@@ -19638,16 +18394,6 @@
     "ec": ""
   },
   {
-    "w": "Restriñir",
-    "p": "tr.",
-    "d": "Constreñir . Sin.: constreñir, apretar, estrechar, contraer, acortar, astringir.",
-    "df": "tr. constreñir (‖ apretar). Sin.: constreñir, apretar, estrechar, contraer, acortar, astringir.",
-    "e": "Del lat. restringĕre.",
-    "s": "",
-    "c": "verbo",
-    "ec": "etym_latin"
-  },
-  {
     "w": "Resucitación",
     "p": "f.",
     "d": "Med. Acción de volver a la vida, con maniobras y medios adecuados, a los seres vivos en estado de muerte aparente.",
@@ -19738,19 +18484,6 @@
     "ec": ""
   },
   {
-    "w": "Resumidero",
-    "p": "m.",
-    "d": "Alcantarilla . Sin.: alcantarilla, sumidero, cloaca, albañal, colector, atarjea, tajea, desagüe, desaguadero.",
-    "df": "m. Am. alcantarilla (‖ acueducto subterráneo). Sin.: alcantarilla, sumidero, cloaca, albañal, colector, atarjea, tajea, desagüe, desaguadero. | m. C. Rica. Terreno poroso, que absorbe agua con facilidad.",
-    "e": "De resumir 'absorber', 'filtrar' y -dero; cf. sumidero.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "",
-    "esp": [
-      "explosiva"
-    ]
-  },
-  {
     "w": "Resurgimiento",
     "p": "m.",
     "d": "Acción y efecto de resurgir. Sin.: reaparición, retorno, regreso, resurrección, renacimiento, palingenesia, restauración, restablecimiento, renovación.",
@@ -19799,16 +18532,6 @@
     "d": "En el juego de trucos y billar, herir dos veces la bola con el taco.",
     "df": "tr. En el juego de trucos y billar, herir dos veces la bola con el taco. | tr. Hacer más compacto algo. | tr. Apretar el contenido de algo para que quepa más cantidad.",
     "e": "De retaco.",
-    "s": "",
-    "c": "verbo",
-    "ec": ""
-  },
-  {
-    "w": "Retacear",
-    "p": "tr.",
-    "d": "Retazar . Sin.: retazar, cortar.",
-    "df": "tr. retazar (‖ hacer piezas de algo). Sin.: retazar, cortar. | tr. recortar. Sin.: recortar. | tr. Hacer de retazos algo. Retacear un traje. | tr. Arg., Bol., Par., Perú y Ur. Escatimar lo que se da a alguien, material o moralmente. Sin.: escatimar, tacañear, cicatear.",
-    "e": "",
     "s": "",
     "c": "verbo",
     "ec": ""
@@ -19968,19 +18691,6 @@
     "s": "",
     "c": "adjetivo",
     "ec": ""
-  },
-  {
-    "w": "Retamilla",
-    "p": "f.",
-    "d": "Agracejo . Sin.: agracejo.",
-    "df": "f. agracejo (‖ árbol anacardiáceo). Sin.: agracejo. | f. Méx. agracejo (‖ arbusto berberidáceo). Sin.: agracejo, agracillo, arlo, berberís, bérbero, alguese, agraz, agrazón.",
-    "e": "Del dim. de retama.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "",
-    "esp": [
-      "explosiva"
-    ]
   },
   {
     "w": "Retardación",
@@ -21210,16 +19920,6 @@
     "ec": ""
   },
   {
-    "w": "Retruco",
-    "p": "m.",
-    "d": "Retruque. Sin.: retruque.",
-    "df": "m. retruque. Sin.: retruque.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Retruque",
     "p": "m.",
     "d": "En el juego de trucos y billar, golpe que la bola herida, dando en la banda, vuelve a dar en la bola que hirió. Sin.: retruco.",
@@ -21599,16 +20299,6 @@
     "ec": ""
   },
   {
-    "w": "Reveedor",
-    "p": "m.",
-    "d": "Revisor. Sin.: revisor.",
-    "df": "m. revisor. Sin.: revisor.",
-    "e": "Del lat. revidēre.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_latin"
-  },
-  {
     "w": "Revejecer",
     "p": "intr.",
     "d": "Avejentarse, ponerse viejo antes de tiempo. U. t. c. prnl.",
@@ -21958,16 +20648,6 @@
     "ec": "etym_latin"
   },
   {
-    "w": "Revesado",
-    "p": "adj.",
-    "d": "Enrevesado. Sin.: enrevesado, arrevesado.",
-    "df": "adj. enrevesado. Sin.: enrevesado, arrevesado. | adj. Travieso, indomable, pertinaz. Sin.: travieso, revuelto.",
-    "e": "Del part. de revesar.",
-    "s": "",
-    "c": "adjetivo",
-    "ec": ""
-  },
-  {
     "w": "Revesar",
     "p": "tr.",
     "d": "Vomitar lo que se tiene en el estómago.",
@@ -21976,16 +20656,6 @@
     "s": "",
     "c": "verbo",
     "ec": "etym_latin"
-  },
-  {
-    "w": "Revestido",
-    "p": "m.",
-    "d": "Revestimiento. Sin.: revestimiento, recubrimiento, envoltura.",
-    "df": "m. revestimiento. Sin.: revestimiento, recubrimiento, envoltura.",
-    "e": "De revestir.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
   },
   {
     "w": "Revestimiento",
@@ -22038,16 +20708,6 @@
     "ec": ""
   },
   {
-    "w": "Revidar",
-    "p": "tr.",
-    "d": "Reenvidar. Sin.: reenvidar.",
-    "df": "tr. reenvidar. Sin.: reenvidar.",
-    "e": "",
-    "s": "",
-    "c": "verbo",
-    "ec": ""
-  },
-  {
     "w": "Reviernes",
     "p": "m.",
     "d": "Cada uno de los siete viernes siguientes a la Pascua de Resurrección.",
@@ -22081,16 +20741,6 @@
     ]
   },
   {
-    "w": "Revirar",
-    "p": "tr.",
-    "d": "Torcer . Sin.: torcer, arquear1, encorvar, curvar.",
-    "df": "tr. torcer (‖ desviar algo de su posición o dirección habitual). Sin.: torcer, arquear1, encorvar, curvar. | tr. Replicar, sublevar, volver rápidamente contra algo o alguien. U. t. c. prnl. Sin.: contestar, replicar. | tr. Col., Ec. y Méx. En ciertos juegos, doblar la apuesta del contrario.",
-    "e": "",
-    "s": "",
-    "c": "verbo",
-    "ec": ""
-  },
-  {
     "w": "Revisable",
     "p": "adj.",
     "d": "Que se puede revisar. Sin.: verificable.",
@@ -22098,16 +20748,6 @@
     "e": "",
     "s": "",
     "c": "adjetivo",
-    "ec": ""
-  },
-  {
-    "w": "Revisada",
-    "p": "f.",
-    "d": "Revisión . Sin.: revisión, revisación.",
-    "df": "f. Am. revisión (‖ acción de revisar). Sin.: revisión, revisación.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
     "ec": ""
   },
   {
@@ -22407,26 +21047,6 @@
     ]
   },
   {
-    "w": "Revoltillo",
-    "p": "m.",
-    "d": "Revoltijo. Sin.: revoltijo.",
-    "df": "m. revoltijo. Sin.: revoltijo.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Revoltón",
-    "p": "m.",
-    "d": "Bovedilla . Sin.: bovedilla.",
-    "df": "m. bovedilla (‖ bóveda pequeña entre viga y viga del techo). Sin.: bovedilla. | m. convólvulo (‖ oruga de la vid). Sin.: convólvulo. | m. Arq. Sitio en que una moldura cambia de dirección, como en los rincones.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Revolucionar",
     "p": "tr.",
     "d": "Provocar un estado de revolución. Sin.: sublevar, soliviantar, amotinar, rebelar. transformar, innovar, modificar, reformar.",
@@ -22616,16 +21236,6 @@
     "ec": ""
   },
   {
-    "w": "Rezado",
-    "p": "m.",
-    "d": "Rezo . Sin.: rezo.",
-    "df": "m. rezo (‖ oficio eclesiástico). Sin.: rezo.",
-    "e": "De rezar.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Rezador",
     "p": "adj.",
     "d": "Que reza mucho. U. t. c. s. Sin.: rezandera.",
@@ -22643,16 +21253,6 @@
     "e": "",
     "s": "",
     "c": "adjetivo",
-    "ec": ""
-  },
-  {
-    "w": "Rezaga",
-    "p": "f.",
-    "d": "Retaguardia . Sin.: retaguardia.",
-    "df": "f. retaguardia (‖ porción de una fuerza que avanza en último lugar). Sin.: retaguardia.",
-    "e": "De re- y zaga.",
-    "s": "",
-    "c": "sustantivo",
     "ec": ""
   },
   {
@@ -22699,19 +21299,6 @@
     "ec": ""
   },
   {
-    "w": "Rezno",
-    "p": "m.",
-    "d": "Garrapata . Sin.: garrapata.",
-    "df": "m. garrapata (‖ ácaro). Sin.: garrapata. | m. Larva del estro o moscardón, la cual se desarrolla en las paredes del estómago de los rumiantes o solípedos que tragan los huevos de ese díptero. | m. ricino. Sin.: ricino, cherva, crotón, higuereta, higuerilla, palmacristi, croto, tártaro1.",
-    "e": "Del lat. ricĭnus.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_latin",
-    "esp": [
-      "explosiva"
-    ]
-  },
-  {
     "w": "Rezo",
     "p": "m.",
     "d": "Acción de rezar. Sin.: oración.",
@@ -22742,16 +21329,6 @@
     "ec": ""
   },
   {
-    "w": "Rezonglar",
-    "p": "intr.",
-    "d": "Rezongar. Sin.: rezongar, repelar.",
-    "df": "intr. rezongar. Sin.: rezongar, repelar.",
-    "e": "",
-    "s": "",
-    "c": "verbo",
-    "ec": ""
-  },
-  {
     "w": "Rezonglón",
     "p": "adj. coloq.",
     "d": "Que rezonga. U. t. c. s.",
@@ -22759,16 +21336,6 @@
     "e": "De rezonglar y -ón1.",
     "s": "",
     "c": "adjetivo",
-    "ec": ""
-  },
-  {
-    "w": "Rezongo",
-    "p": "m.",
-    "d": "Refunfuño. Sin.: refunfuño.",
-    "df": "m. refunfuño. Sin.: refunfuño.",
-    "e": "De rezongar.",
-    "s": "",
-    "c": "sustantivo",
     "ec": ""
   },
   {
@@ -22873,19 +21440,6 @@
     "s": "",
     "c": "adjetivo",
     "ec": ""
-  },
-  {
-    "w": "Reñidura",
-    "p": "f. coloq.",
-    "d": "Regañina. Sin.: regañina, reprimenda, amonestación, reconvención, repaso, rapapolvo, frenada, felpeada, trapeada, regañada.",
-    "df": "f. coloq. regañina. Sin.: regañina, reprimenda, amonestación, reconvención, repaso, rapapolvo, frenada, felpeada, trapeada, regañada.",
-    "e": "De reñir y -dura.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "",
-    "esp": [
-      "explosiva"
-    ]
   },
   {
     "w": "Reóforo",
@@ -23468,26 +22022,6 @@
     "ec": ""
   },
   {
-    "w": "Rigorosamente",
-    "p": "adv.",
-    "d": "Rigurosamente. Sin.: rigurosamente, estrictamente.",
-    "df": "adv. rigurosamente. Sin.: rigurosamente, estrictamente.",
-    "e": "",
-    "s": "",
-    "c": "adverbio",
-    "ec": ""
-  },
-  {
-    "w": "Rigoroso",
-    "p": "adj.",
-    "d": "Riguroso. Sin.: riguroso.",
-    "df": "adj. riguroso. Sin.: riguroso.",
-    "e": "Del lat. tardío rigorōsus 'extremadamente frío', en lat. mediev. 'severo, riguroso'.",
-    "s": "",
-    "c": "adjetivo",
-    "ec": "etym_latin"
-  },
-  {
     "w": "Rigurosidad",
     "p": "f.",
     "d": "Cualidad de riguroso. Sin.: rigor.",
@@ -23604,16 +22138,6 @@
     ]
   },
   {
-    "w": "Rimbombe",
-    "p": "m.",
-    "d": "Rimbombo. Sin.: rimbombo.",
-    "df": "m. rimbombo. Sin.: rimbombo.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Rimbombo",
     "p": "m.",
     "d": "Retumbo o repercusión de un sonido. Sin.: rimbombe.",
@@ -23667,16 +22191,6 @@
     "ec": ""
   },
   {
-    "w": "Ring",
-    "p": "m.",
-    "d": "Cuadrilátero . Sin.: cuadrilátero.",
-    "df": "m. cuadrilátero (‖ espacio limitado por cuerdas). Sin.: cuadrilátero.",
-    "e": "Voz ingl.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Ringar",
     "p": "tr.",
     "d": "Descaderar o herir gravemente los lomos de una persona o de un animal.",
@@ -23685,26 +22199,6 @@
     "s": "",
     "c": "verbo",
     "ec": "etym_latin"
-  },
-  {
-    "w": "Ringla",
-    "p": "f. coloq.",
-    "d": "Fila . Sin.: fila, ringlera, ringle.",
-    "df": "f. coloq. fila (‖ serie de personas o cosas). Sin.: fila, ringlera, ringle.",
-    "e": "De rengle, infl. por ringlera.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Ringle",
-    "p": "m. coloq.",
-    "d": "Fila . Sin.: fila, ringlera, ringla.",
-    "df": "m. coloq. fila (‖ serie de personas o cosas). Sin.: fila, ringlera, ringla.",
-    "e": "De rengle, infl. por ringlera.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
   },
   {
     "w": "Ringlera",
@@ -24223,16 +22717,6 @@
     "ec": "etym_griego"
   },
   {
-    "w": "Rivalizar",
-    "p": "intr.",
-    "d": "Competir. Sin.: competir, contender, disputar, luchar, enfrentarse.",
-    "df": "intr. competir. Sin.: competir, contender, disputar, luchar, enfrentarse.",
-    "e": "",
-    "s": "",
-    "c": "verbo",
-    "ec": ""
-  },
-  {
     "w": "Riverense",
     "p": "adj.",
     "d": "Natural de Rivera, ciudad o departamento de Uruguay. U. t. c. s.",
@@ -24486,19 +22970,6 @@
     "ec": "etym_latin"
   },
   {
-    "w": "Robezo",
-    "p": "m.",
-    "d": "Gamuza . Sin.: robeco, rebeco, bicerra, camuza, gamuza, rupicabra, rupicapra, sarrio.",
-    "df": "m. gamuza (‖ antílope). Sin.: robeco, rebeco, bicerra, camuza, gamuza, rupicabra, rupicapra, sarrio.",
-    "e": "De rebeco, infl. por corzo.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "",
-    "esp": [
-      "explosiva"
-    ]
-  },
-  {
     "w": "Robinsoniano",
     "p": "adj.",
     "d": "Perteneciente o relativo al héroe novelesco Robinson Crusoe.",
@@ -24524,16 +22995,6 @@
     "d": "Hombre que en la soledad y sin ayuda ajena llega a bastarse a sí mismo.",
     "df": "m. Hombre que en la soledad y sin ayuda ajena llega a bastarse a sí mismo.",
     "e": "Por alus. a Robinson Crusoe, protagonista de la novela homónima de D. Defoe, c. 1659-1731.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Robla",
-    "p": "f.",
-    "d": "Robra . Sin.: robra, corrobra.",
-    "df": "f. robra (‖ convite con motivo del cierre de un trato). Sin.: robra, corrobra. | f. Comida con que se obsequia al terminar un trabajo.",
-    "e": "De roblar.",
     "s": "",
     "c": "sustantivo",
     "ec": ""
@@ -24669,26 +23130,6 @@
     "ec": ""
   },
   {
-    "w": "Robredal",
-    "p": "m.",
-    "d": "Robledal. Sin.: robledal, robledo, robredo.",
-    "df": "m. robledal. Sin.: robledal, robledo, robredo.",
-    "e": "De robredo y -al.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Robredo",
-    "p": "m.",
-    "d": "Robledo. Sin.: robledo, robledal, robredal.",
-    "df": "m. robledo. Sin.: robledo, robledal, robredal.",
-    "e": "Del lat. roborētum.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_latin"
-  },
-  {
     "w": "Robustecimiento",
     "p": "m.",
     "d": "Acción y efecto de robustecer. Sin.: fortalecimiento, endurecimiento, consolidación.",
@@ -24737,16 +23178,6 @@
     "d": "Copo de materia textil que se pone de cada vez en la rueca.",
     "df": "f. Copo de materia textil que se pone de cada vez en la rueca.",
     "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Rocadero",
-    "p": "m.",
-    "d": "Coroza . Sin.: coroza, capirote.",
-    "df": "m. coroza (‖ cono de papel). Sin.: coroza, capirote. | m. Armazón en forma de piña, formada de tres o más varillas curvas, que en la parte superior de la rueca sirve para poner el copo que se ha de hilar. | m. Envoltura que se pone en el rocadero para asegurar el copo. Sin.: capillo, cartapel.",
-    "e": "De rueca.",
     "s": "",
     "c": "sustantivo",
     "ec": ""
@@ -24895,16 +23326,6 @@
     "esp": [
       "explosiva"
     ]
-  },
-  {
-    "w": "Rociadera",
-    "p": "f.",
-    "d": "Regadera . Sin.: regadera.",
-    "df": "f. regadera (‖ recipiente portátil para regar). Sin.: regadera.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
   },
   {
     "w": "Rociador",
@@ -25193,16 +23614,6 @@
     "p": "m.",
     "d": "Pasada a redropelo del paño o del pelo.",
     "df": "m. Pasada a redropelo del paño o del pelo.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Rodapié",
-    "p": "m.",
-    "d": "Friso . Sin.: friso, zócalo.",
-    "df": "m. friso (‖ faja de la parte inferior de las paredes). Sin.: friso, zócalo. | m. Paramento de madera, tela u otra materia con que se cubren alrededor los pies de las camas, mesas y otros muebles. | m. Tabla, celosía o enrejado que se pone en la parte inferior de la barandilla de los balcones para que no se vean los pies de las personas asomadas a ellos.",
     "e": "",
     "s": "",
     "c": "sustantivo",
@@ -25512,16 +23923,6 @@
     "ec": ""
   },
   {
-    "w": "Rodrigón",
-    "p": "m.",
-    "d": "Tutor . Sin.: tutor, vara, palo.",
-    "df": "m. tutor (‖ caña para mantener derecha una planta). Sin.: tutor, vara, palo. | m. coloq. Criado anciano que servía para acompañar señoras. Sin.: criado, acompañante.",
-    "e": "Cf. rodriga.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Roedura",
     "p": "f.",
     "d": "Acción de roer.",
@@ -25651,16 +24052,6 @@
     "ec": ""
   },
   {
-    "w": "Rojete",
-    "p": "m.",
-    "d": "Colorete . Sin.: colorete, arrebol1.",
-    "df": "m. colorete (‖ cosmético). Sin.: colorete, arrebol1.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Rojez",
     "p": "f.",
     "d": "Cualidad de rojo. Sin.: enrojecimiento.",
@@ -25742,16 +24133,6 @@
     "esp": [
       "explosiva"
     ]
-  },
-  {
-    "w": "Rollar",
-    "p": "tr.",
-    "d": "Arrollar . Sin.: arrollar1.",
-    "df": "tr. arrollar (‖ envolver algo en forma de rollo). Sin.: arrollar1.",
-    "e": "Del lat. *rotulāre.",
-    "s": "",
-    "c": "verbo",
-    "ec": "etym_latin"
   },
   {
     "w": "Rolletal",
@@ -26087,16 +24468,6 @@
     "ec": "etym_latin"
   },
   {
-    "w": "Romboideo",
-    "p": "adj.",
-    "d": "Romboidal. Sin.: romboidal.",
-    "df": "adj. romboidal. Sin.: romboidal.",
-    "e": "",
-    "s": "",
-    "c": "adjetivo",
-    "ec": ""
-  },
-  {
     "w": "Romboédrico",
     "p": "adj.",
     "d": "Perteneciente o relativo al romboedro.",
@@ -26290,16 +24661,6 @@
     "ec": ""
   },
   {
-    "w": "Romín",
-    "p": "adj.",
-    "d": "Cristiano . Sin.: cristiano.",
-    "df": "adj. cristiano (‖ que profesa la fe de Cristo). Sin.: cristiano.",
-    "e": "",
-    "s": "",
-    "c": "adjetivo",
-    "ec": ""
-  },
-  {
     "w": "Roncador",
     "p": "adj.",
     "d": "Que ronca. U. t. c. s.",
@@ -26317,16 +24678,6 @@
     "e": "",
     "s": "",
     "c": "adjetivo",
-    "ec": ""
-  },
-  {
-    "w": "Roncal",
-    "p": "m.",
-    "d": "Ruiseñor. Sin.: ruiseñor, bulbul, filomela.",
-    "df": "m. ruiseñor. Sin.: ruiseñor, bulbul, filomela.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
     "ec": ""
   },
   {
@@ -26512,16 +24863,6 @@
     "e": "",
     "s": "",
     "c": "gentilicio",
-    "ec": ""
-  },
-  {
-    "w": "Rondiz",
-    "p": "m.",
-    "d": "Rondís. Sin.: rondís.",
-    "df": "m. rondís. Sin.: rondís.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
     "ec": ""
   },
   {
@@ -26856,16 +25197,6 @@
     "ec": ""
   },
   {
-    "w": "Rosadelfa",
-    "p": "f.",
-    "d": "Azalea. Sin.: azalea.",
-    "df": "f. azalea. Sin.: azalea. | f. rododendro. Sin.: rododendro.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Rosadillo",
     "p": "m.",
     "d": "Pal. armiño . Sin.: armiño.",
@@ -26890,16 +25221,6 @@
     "p": "f.",
     "d": "Sitio en que hay muchos rosales. Sin.: rosalera, rosedal.",
     "df": "f. Sitio en que hay muchos rosales. Sin.: rosalera, rosedal.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Rosalera",
-    "p": "f.",
-    "d": "Rosaleda. Sin.: rosaleda, rosedal.",
-    "df": "f. rosaleda. Sin.: rosaleda, rosedal.",
     "e": "",
     "s": "",
     "c": "sustantivo",
@@ -26933,16 +25254,6 @@
     "e": "",
     "s": "",
     "c": "gentilicio",
-    "ec": ""
-  },
-  {
-    "w": "Rosarse",
-    "p": "prnl.",
-    "d": "Sonrosarse. Sin.: sonrosarse.",
-    "df": "prnl. sonrosarse. Sin.: sonrosarse.",
-    "e": "",
-    "s": "",
-    "c": "verbo",
     "ec": ""
   },
   {
@@ -27114,16 +25425,6 @@
     "ec": ""
   },
   {
-    "w": "Rosmaro",
-    "p": "m.",
-    "d": "Morsa1. Sin.: morsa1.",
-    "df": "m. morsa1. Sin.: morsa1.",
-    "e": "Del nórd. hroshvalr, de hros 'caballo' y hvalr 'ballena', infl. por mar.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Rosoli",
     "p": "m.",
     "d": "Aguardiente con canela, azúcar y otros ingredientes olorosos. Sin.: resoli.",
@@ -27227,16 +25528,6 @@
     "ec": ""
   },
   {
-    "w": "Rostrituerto",
-    "p": "adj. coloq.",
-    "d": "Rostritorcido. Sin.: rostritorcido.",
-    "df": "adj. coloq. rostritorcido. Sin.: rostritorcido.",
-    "e": "",
-    "s": "",
-    "c": "adjetivo",
-    "ec": ""
-  },
-  {
     "w": "Rostrizo",
     "p": "m.",
     "d": "Burg., Pal. y Rioja. tostón . Sin.: tostón1.",
@@ -27277,16 +25568,6 @@
     "ec": "etym_latin"
   },
   {
-    "w": "Rotafolio",
-    "p": "m.",
-    "d": "Papelógrafo. Sin.: papelógrafo.",
-    "df": "m. papelógrafo. Sin.: papelógrafo.",
-    "e": "De rotar y folio.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Rotal",
     "p": "adj.",
     "d": "Perteneciente o relativo al tribunal de la Rota.",
@@ -27305,16 +25586,6 @@
     "s": "",
     "c": "adverbio",
     "ec": ""
-  },
-  {
-    "w": "Rotar",
-    "p": "intr.",
-    "d": "Rodar . Sin.: rodar, rolar, girar, ronchar2, rutar2.",
-    "df": "intr. rodar (‖ dar vueltas alrededor de un eje). Sin.: rodar, rolar, girar, ronchar2, rutar2. | intr. Seguir un turno en cargos, comisiones, etc. Sin.: turnarse, alternar.",
-    "e": "Del lat. rotāre.",
-    "s": "",
-    "c": "verbo",
-    "ec": "etym_latin"
   },
   {
     "w": "Rotario",
@@ -27348,19 +25619,6 @@
     "s": "",
     "c": "adjetivo",
     "ec": ""
-  },
-  {
-    "w": "Roten",
-    "p": "m.",
-    "d": "Ratán . Sin.: ratán, bengala, junquillo, palasan, rota2.",
-    "df": "m. ratán (‖ planta). Sin.: ratán, bengala, junquillo, palasan, rota2. | m. Bastón hecho del tallo del ratán.",
-    "e": "Del fr. rotin, y este del malayo rotan.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_frances",
-    "esp": [
-      "viajera"
-    ]
   },
   {
     "w": "Roterodamense",
@@ -27479,16 +25737,6 @@
     "ec": ""
   },
   {
-    "w": "Rotundez",
-    "p": "f.",
-    "d": "Rotundidad. Sin.: rotundidad, rotundidez.",
-    "df": "f. rotundidad. Sin.: rotundidad, rotundidez.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Rotundidad",
     "p": "f.",
     "d": "Cualidad de rotundo. Sin.: rotundez, rotundidez.",
@@ -27497,16 +25745,6 @@
     "s": "",
     "c": "sustantivo",
     "ec": "etym_latin"
-  },
-  {
-    "w": "Rotundidez",
-    "p": "f.",
-    "d": "Rotundidad. Sin.: rotundez, rotundidad.",
-    "df": "f. rotundidad. Sin.: rotundez, rotundidad.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
   },
   {
     "w": "Roturación",
@@ -27673,16 +25911,6 @@
     "d": "Ruido que, al roznar, se hace con los dientes.",
     "df": "m. Ruido que, al roznar, se hace con los dientes. | m. rebuzno. Sin.: rebuzno.",
     "e": "De roznar e -ido.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Rozno",
-    "p": "m.",
-    "d": "Asno . Sin.: asno, borrico, burro, jumento, pollino, rucho1.",
-    "df": "m. asno (‖ animal). Sin.: asno, borrico, burro, jumento, pollino, rucho1.",
-    "e": "De roznar.",
     "s": "",
     "c": "sustantivo",
     "ec": ""
@@ -27937,16 +26165,6 @@
     "ec": "etym_latin"
   },
   {
-    "w": "Rubilla",
-    "p": "f.",
-    "d": "Asperilla. Sin.: asperilla.",
-    "df": "f. asperilla. Sin.: asperilla.",
-    "e": "Del lat. rubella, f. de rubellus 'que tira a rojo'.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_latin"
-  },
-  {
     "w": "Rubiáceo",
     "p": "adj.",
     "d": "Bot. Dicho de una planta: Del grupo de las angiospermas dicotiledóneas que tienen hojas simples y enterísimas, opuestas o verticiladas y con estípulas, flor con el cáliz adherente al ovario, y por fruto una baya, caja o drupa con semillas de albumen córneo o carnoso, y que puede ser árbol, arbusto o hierba; p. ej., la rubia, el quino o el café. U. t. c. s. f., en pl. como taxón.",
@@ -28015,16 +26233,6 @@
     "s": "",
     "c": "sustantivo",
     "ec": ""
-  },
-  {
-    "w": "Rubín",
-    "p": "m.",
-    "d": "Rubí. Sin.: rubí, carbúnculo, carbunclo.",
-    "df": "m. rubí. Sin.: rubí, carbúnculo, carbunclo. | m. robín. Sin.: robín, orín1, herrumbre.",
-    "e": "Del lat. *rubīnus, de rubeus 'rojo'.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_latin"
   },
   {
     "w": "Ruca",
@@ -28364,16 +26572,6 @@
     "ec": ""
   },
   {
-    "w": "Ruiponce",
-    "p": "m.",
-    "d": "Rapónchigo. Sin.: rapónchigo.",
-    "df": "m. rapónchigo. Sin.: rapónchigo.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Ruipóntico",
     "p": "m.",
     "d": "Planta vivaz de la familia de las poligonáceas, con hojas radicales, grandes, obtusas, acorazonadas en la base, de largos pecíolos, lampiñas por el haz y vellosas por el envés, flores blancas, en panojas sobre un bohordo de 60 a 80 cm de alto, fruto seco, y raíz semejante y con propiedades análogas a la del ruibarbo. Procede de Asia Menor y se cultiva en toda Europa. Sin.: rapóntico.",
@@ -28448,19 +26646,6 @@
     "s": "",
     "c": "sustantivo",
     "ec": ""
-  },
-  {
-    "w": "Rulé",
-    "p": "m. coloq.",
-    "d": "Culo . Sin.: nalgas, culo, trasero.",
-    "df": "m. coloq. culo (‖ nalgas). Sin.: nalgas, culo, trasero.",
-    "e": "Del fr. roule 'rodillo'.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_frances",
-    "esp": [
-      "viajera"
-    ]
   },
   {
     "w": "Rumano",
@@ -28781,32 +26966,6 @@
     "ec": ""
   },
   {
-    "w": "Rupicabra",
-    "p": "f.",
-    "d": "Gamuza . Sin.: gamuza, bicerra, camuza, rebeco, robezo, rupicapra, robeco, sarrio.",
-    "df": "f. gamuza (‖ antílope). Sin.: gamuza, bicerra, camuza, rebeco, robezo, rupicapra, robeco, sarrio.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "",
-    "esp": [
-      "explosiva"
-    ]
-  },
-  {
-    "w": "Rupicapra",
-    "p": "f.",
-    "d": "Gamuza . Sin.: gamuza, bicerra, camuza, rebeco, robezo, rupicabra, sarrio, robeco.",
-    "df": "f. gamuza (‖ antílope). Sin.: gamuza, bicerra, camuza, rebeco, robezo, rupicabra, sarrio, robeco.",
-    "e": "Del lat. rupicapra, y este de rupes 'roca, peñasco' y capra 'cabra'.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_latin",
-    "esp": [
-      "explosiva"
-    ]
-  },
-  {
     "w": "Ruptor",
     "p": "m.",
     "d": "Dispositivo electromagnético o mecánico que cierra y abre sucesivamente un circuito eléctrico.",
@@ -28824,16 +26983,6 @@
     "e": "Del lat. rupes, -is 'roca' y ‒́cola.",
     "s": "",
     "c": "adjetivo",
-    "ec": "etym_latin"
-  },
-  {
-    "w": "Ruqueta",
-    "p": "f.",
-    "d": "Oruga . Sin.: oruga.",
-    "df": "f. oruga (‖ planta). Sin.: oruga. | f. jaramago. Sin.: jaramago, balsamita, raqueta, sisimbrio, yuyo.",
-    "e": "Del lat. erūca.",
-    "s": "",
-    "c": "sustantivo",
     "ec": "etym_latin"
   },
   {
@@ -28905,16 +27054,6 @@
     "s": "",
     "c": "sustantivo",
     "ec": "etym_latin"
-  },
-  {
-    "w": "Rustical",
-    "p": "adj.",
-    "d": "Rural. Sin.: rural.",
-    "df": "adj. rural. Sin.: rural.",
-    "e": "",
-    "s": "",
-    "c": "adjetivo",
-    "ec": ""
   },
   {
     "w": "Rusticar",
@@ -29020,16 +27159,6 @@
     "ec": "etym_latin"
   },
   {
-    "w": "Rutilar",
-    "p": "intr.",
-    "d": "Brillar. Sin.: relumbrar, resplandecer, refulgir, fulgurar, centellear.",
-    "df": "intr. cult. brillar. Sin.: relumbrar, resplandecer, refulgir, fulgurar, centellear.",
-    "e": "Del lat. rutilāre.",
-    "s": "",
-    "c": "verbo",
-    "ec": "etym_latin"
-  },
-  {
     "w": "Rutilo",
     "p": "m.",
     "d": "Geol. Óxido de titanio.",
@@ -29126,16 +27255,6 @@
     "ec": "etym_latin"
   },
   {
-    "w": "Rábita",
-    "p": "f.",
-    "d": "Rábida. Sin.: rábida.",
-    "df": "f. rábida. Sin.: rábida.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Rábula",
     "p": "m. y f.",
     "d": "Y f. Abogado indocto, charlatán y vocinglero.",
@@ -29226,16 +27345,6 @@
     "ec": "etym_latin"
   },
   {
-    "w": "Rázago",
-    "p": "m.",
-    "d": "Arpillera. Sin.: arpillera, malacuenda, coleto2.",
-    "df": "m. arpillera. Sin.: arpillera, malacuenda, coleto2.",
-    "e": "Der. de raza2.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Récipe",
     "p": "m.",
     "d": "Era u. en abreviatura a la cabeza de una receta.",
@@ -29316,16 +27425,6 @@
     "p": "m.",
     "d": "Lengua de la culebra o de la víbora. Sin.: réspede, respe, lengua.",
     "df": "m. Lengua de la culebra o de la víbora. Sin.: réspede, respe, lengua. | m. Intención malévola en las palabras. Sin.: saña, malicia, capciosidad.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Réspede",
-    "p": "m.",
-    "d": "Résped . Sin.: résped, respe, lengua.",
-    "df": "m. résped (‖ lengua de la culebra). Sin.: résped, respe, lengua.",
     "e": "",
     "s": "",
     "c": "sustantivo",

@@ -10,16 +10,6 @@
     "ec": ""
   },
   {
-    "w": "Yaca",
-    "p": "f.",
-    "d": "Guanábano. Sin.: guanábano, guanábana.",
-    "df": "f. guanábano. Sin.: guanábano, guanábana.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
     "w": "Yacal",
     "p": "m.",
     "d": "Filip. Árbol de la familia de las dipterocarpáceas, que alcanza hasta 20 m de altura y cuya madera se emplea en construcciones y en ebanistería, puesto que no se ve afectada por la carcoma.",
@@ -61,16 +51,6 @@
     "esp": [
       "explosiva"
     ]
-  },
-  {
-    "w": "Yaciente",
-    "p": "adj.",
-    "d": "Yacente. Sin.: yacente.",
-    "df": "adj. yacente. Sin.: yacente.",
-    "e": "De yacer y -nte; lat. iacens, -entis.",
-    "s": "",
-    "c": "adjetivo",
-    "ec": ""
   },
   {
     "w": "Yacija",
@@ -124,19 +104,6 @@
     "s": "",
     "c": "gentilicio",
     "ec": ""
-  },
-  {
-    "w": "Yaguar",
-    "p": "m.",
-    "d": "Jaguar. Sin.: jaguar, jaguareté, tecuán, tigre, yaguareté.",
-    "df": "m. jaguar. Sin.: jaguar, jaguareté, tecuán, tigre, yaguareté.",
-    "e": "Del tupí yaguará.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_amerindio",
-    "esp": [
-      "viajera"
-    ]
   },
   {
     "w": "Yaichihue",
@@ -397,26 +364,6 @@
     "ec": ""
   },
   {
-    "w": "Yegüería",
-    "p": "f.",
-    "d": "Yeguada . Sin.: yeguada, yegüerío.",
-    "df": "f. yeguada (‖ conjunto de ganado caballar). Sin.: yeguada, yegüerío.",
-    "e": "",
-    "s": "",
-    "c": "sustantivo",
-    "ec": ""
-  },
-  {
-    "w": "Yelgo",
-    "p": "m.",
-    "d": "Yezgo. Sin.: yezgo, cimicaria, yebo.",
-    "df": "m. yezgo. Sin.: yezgo, cimicaria, yebo.",
-    "e": "Del lat. ebŭlum.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_latin"
-  },
-  {
     "w": "Yelmo",
     "p": "m.",
     "d": "Pieza de la armadura antigua que resguardaba la cabeza y el rostro, y se componía de morrión, visera y babera. Sin.: casco, bacinete, celada1, morrión, casquete.",
@@ -467,16 +414,6 @@
     "p": "f.",
     "d": "Planta herbácea, vivaz, de la familia de las labiadas, con tallos erguidos, poco ramosos, de 40 a 50 cm, hojas vellosas, elípticas, agudas, nerviosas y aserradas, flores rojizas en grupos axilares, fruto seco con cuatro semillas, y que se cultiva mucho en las huertas, es de olor agradable y se emplea en condimentos. Sin.: menta1.",
     "df": "f. Planta herbácea, vivaz, de la familia de las labiadas, con tallos erguidos, poco ramosos, de 40 a 50 cm, hojas vellosas, elípticas, agudas, nerviosas y aserradas, flores rojizas en grupos axilares, fruto seco con cuatro semillas, y que se cultiva mucho en las huertas, es de olor agradable y se emplea en condimentos. Sin.: menta1. | f. Nombre que se da a otras plantas labiadas parecidas a la hierbabuena; p. ej., el mastranzo, el sándalo y el poleo.",
-    "e": "",
-    "s": "",
-    "c": "botanica",
-    "ec": ""
-  },
-  {
-    "w": "Yerbadulce",
-    "p": "f.",
-    "d": "Hierba. Sin.: hierba.",
-    "df": "f. hierba. Sin.: hierba. | f. Arg. y Ur. yerba mate (‖ hoja).",
     "e": "",
     "s": "",
     "c": "botanica",
@@ -1039,16 +976,6 @@
     "s": "",
     "c": "adjetivo",
     "ec": ""
-  },
-  {
-    "w": "Yuguero",
-    "p": "m.",
-    "d": "Yuntero. Sin.: yuntero, trillique.",
-    "df": "m. yuntero. Sin.: yuntero, trillique.",
-    "e": "Del lat. iugarius.",
-    "s": "",
-    "c": "sustantivo",
-    "ec": "etym_latin"
   },
   {
     "w": "Yugueta",
