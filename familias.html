@@ -293,7 +293,7 @@ function renderTarjeta(){
 }
 
 function calificar(nivel){var fam=gs.familias[gs.idx];if(fam)srsSet(fam.w,nivel);if(nivel>=5)gs.ok++;else if(nivel===1)gs.fail++;gs.idx++;renderTarjeta();}
-function marcarDominada(){var fam=gs.familias[gs.idx];if(fam){srsOcultar(fam.w);mostrarToast('📦 "'+fam.w+'" ocultada');}gs.idx++;renderTarjeta();}
+function marcarDominada(){var fam=gs.familias[gs.idx];if(!fam)return;var nombre=fam.w;srsOcultar(nombre);gs.idx++;renderTarjeta();mostrarToast('📦 "'+nombre+'" ocultada');}
 function pausarYVolver(){saveSession();volverHome();}
 function repetirSesion(){gs.idx=0;gs.ok=0;gs.fail=0;mostrarScreen('fc');renderTarjeta();}
 
