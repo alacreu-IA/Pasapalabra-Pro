@@ -5,338 +5,318 @@
 <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
 <title>Familias Léxicas · Pasapalabra Pro</title>
 <style>
-:root {
-  --bg:#080810; --bg2:#0f0f1a; --card:#13131f; --border:#1e1e2e;
-  --text:#e8e8f0; --muted:#6b6b8a; --accent:#7c6aff;
-  --gold:#f0c040; --green:#00b894; --red:#e17055;
-  --blue:#74b9ff; --purple:#a29bfe;
-}
+:root{--bg:#080810;--bg2:#0f0f1a;--card:#13131f;--border:#1e1e2e;--border2:#252540;
+--text:#e8e8f0;--muted:#6b6b8a;--accent:#7c6aff;--gold:#f0c040;
+--green:#00b894;--red:#e17055;--blue:#74b9ff;--purple:#a29bfe;}
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
-body{background:var(--bg);color:var(--text);font-family:'Segoe UI',system-ui,sans-serif;min-height:100vh;overflow-x:hidden;}
-
-/* TOP BAR */
+body{background:var(--bg);color:var(--text);font-family:'Segoe UI',system-ui,sans-serif;min-height:100vh;}
 .top-bar{display:flex;align-items:center;gap:12px;padding:14px 16px;border-bottom:1px solid var(--border);background:var(--bg);position:sticky;top:0;z-index:100;}
 .top-bar h1{font-size:1rem;font-weight:700;flex:1;}
-.btn-back{background:none;border:none;color:var(--text);font-size:1.4rem;cursor:pointer;padding:4px;}
-.counter{font-size:0.8rem;color:var(--muted);}
-
-/* HOME */
-.home{padding:16px;}
-.home-title{font-size:1.3rem;font-weight:700;margin-bottom:4px;}
-.home-sub{font-size:0.82rem;color:var(--muted);margin-bottom:20px;}
-.stats-row{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:20px;}
+.btn-back{background:none;border:none;color:var(--text);font-size:1.4rem;cursor:pointer;padding:4px 8px;}
+.counter{font-size:0.78rem;color:var(--muted);}
+.home-body{padding:16px 16px 60px;}
+.stats-row{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:16px;}
 .stat-box{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:12px;text-align:center;}
-.stat-n{font-size:1.4rem;font-weight:800;color:var(--purple);}
-.stat-l{font-size:0.7rem;color:var(--muted);margin-top:2px;}
-.sec-label{font-size:0.72rem;color:var(--muted);font-weight:700;text-transform:uppercase;letter-spacing:1px;margin-bottom:8px;}
-.letras-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin-bottom:20px;}
-.letra-btn{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:12px 4px;cursor:pointer;text-align:center;color:var(--text);font-size:1rem;font-weight:700;transition:border-color .2s;}
-.letra-btn:hover{border-color:var(--purple);}
-.letra-btn .cnt{font-size:0.6rem;color:var(--muted);margin-top:2px;}
-.modos-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:20px;}
-.modo-card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:16px;cursor:pointer;transition:border-color .2s;}
-.modo-card:hover{border-color:var(--purple);}
-.modo-icon{font-size:1.6rem;margin-bottom:6px;}
-.modo-title{font-size:0.88rem;font-weight:700;}
-.modo-desc{font-size:0.72rem;color:var(--muted);margin-top:3px;}
-
+.stat-n{font-size:1.3rem;font-weight:800;color:var(--purple);}
+.stat-l{font-size:0.68rem;color:var(--muted);margin-top:2px;}
+.continuar-card{background:linear-gradient(135deg,#0f0f2e,#1a1035);border:2px solid var(--purple);border-radius:16px;padding:16px;margin-bottom:14px;cursor:pointer;display:flex;align-items:center;gap:14px;}
+.continuar-title{font-size:0.95rem;font-weight:700;color:var(--purple);}
+.continuar-sub{font-size:0.73rem;color:var(--muted);margin-top:3px;}
+.sec-label{font-size:0.72rem;color:var(--muted);font-weight:700;text-transform:uppercase;letter-spacing:1px;margin:14px 0 8px;}
+.modos-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:4px;}
+.modo-card{background:var(--card);border:1px solid var(--border2);border-radius:14px;padding:14px;cursor:pointer;}
+.modo-icon{font-size:1.5rem;margin-bottom:5px;}
+.modo-title{font-size:0.85rem;font-weight:700;}
+.modo-desc{font-size:0.68rem;color:var(--muted);margin-top:2px;}
+.temas-scroll{display:flex;gap:8px;overflow-x:auto;padding-bottom:6px;-webkit-overflow-scrolling:touch;}
+.temas-scroll::-webkit-scrollbar{display:none;}
+.tema-btn{flex-shrink:0;background:var(--card);border:1px solid var(--border2);border-radius:20px;padding:8px 14px;font-size:0.76rem;cursor:pointer;color:var(--text);white-space:nowrap;}
+.letras-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:6px;}
+.letra-btn{background:var(--card);border:1px solid var(--border2);border-radius:10px;padding:10px 4px;cursor:pointer;text-align:center;color:var(--text);font-size:0.95rem;font-weight:700;}
+.letra-btn .cnt{font-size:0.58rem;color:var(--muted);margin-top:2px;display:block;}
 /* FLASHCARD */
-.flashcard-screen{display:none;flex-direction:column;height:100vh;}
-.flashcard-screen.active{display:flex;}
-.fc-progress-bar{height:3px;background:var(--border);}
-.fc-progress-fill{height:3px;background:var(--purple);transition:width .4s;}
-.fc-body{flex:1;overflow-y:auto;padding:16px 16px 0;}
-
-/* La tarjeta */
-.fc-card{background:var(--card);border:1px solid var(--purple);border-radius:20px;padding:20px;margin-bottom:12px;}
-.fc-familia-label{font-size:0.68rem;color:var(--purple);font-weight:700;text-transform:uppercase;letter-spacing:1px;margin-bottom:8px;}
-.fc-palabra{font-size:2rem;font-weight:800;color:var(--purple);line-height:1.1;margin-bottom:4px;}
-.fc-pos{font-size:0.78rem;color:var(--muted);margin-bottom:14px;}
-.fc-def{font-size:0.9rem;color:var(--text);line-height:1.6;}
-.fc-etim{margin-top:12px;background:rgba(162,155,254,0.08);border-left:3px solid var(--purple);border-radius:0 8px 8px 0;padding:10px 12px;font-size:0.78rem;color:var(--muted);}
-
-/* Palabras de la familia */
-.fc-familia-section{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:16px;margin-bottom:12px;}
-.fc-familia-title{font-size:0.72rem;color:var(--muted);font-weight:700;text-transform:uppercase;letter-spacing:1px;margin-bottom:10px;}
-.fc-rel-list{display:flex;flex-direction:column;gap:6px;}
-.fc-rel-item{background:var(--bg2);border-radius:10px;padding:10px 12px;}
-.fc-rel-word{font-size:0.9rem;font-weight:700;color:var(--text);}
-.fc-rel-pos{font-size:0.7rem;color:var(--muted);margin-left:6px;}
-.fc-rel-def{font-size:0.78rem;color:var(--muted);margin-top:3px;line-height:1.4;}
-
-/* Botones rating */
-.fc-actions{padding:12px 16px 32px;flex-shrink:0;}
-.fc-btns{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;}
-.fc-btn{border:none;border-radius:14px;padding:14px 8px;font-size:0.78rem;font-weight:700;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:4px;}
-.fc-btn-icon{font-size:1.3rem;}
-.fc-btn-fail{background:rgba(225,112,85,0.15);color:var(--red);border:2px solid var(--red);}
-.fc-btn-mid{background:rgba(240,192,64,0.12);color:var(--gold);border:2px solid var(--gold);}
-.fc-btn-ok{background:rgba(0,184,148,0.12);color:var(--green);border:2px solid var(--green);}
-.fc-skip{width:100%;margin-top:8px;background:none;border:1px solid var(--border);border-radius:10px;padding:10px;color:var(--muted);font-size:0.8rem;cursor:pointer;}
-
-/* FIN */
-.fin-screen{display:none;flex-direction:column;align-items:center;justify-content:center;min-height:60vh;padding:32px 24px;text-align:center;}
+.fc-screen{display:none;flex-direction:column;height:100vh;}
+.fc-screen.active{display:flex;}
+.fc-prog-bar{height:3px;background:var(--border);flex-shrink:0;}
+.fc-prog-fill{height:3px;background:var(--purple);transition:width .4s;}
+.fc-body{flex:1;overflow-y:auto;padding:14px 14px 0;}
+.fc-card{background:var(--card);border:2px solid var(--purple);border-radius:18px;padding:18px;margin-bottom:10px;}
+.fc-tag{font-size:0.65rem;color:var(--purple);font-weight:700;text-transform:uppercase;letter-spacing:1px;margin-bottom:8px;}
+.fc-word{font-size:1.8rem;font-weight:800;color:var(--purple);line-height:1.1;margin-bottom:3px;}
+.fc-pos{font-size:0.75rem;color:var(--muted);margin-bottom:12px;}
+.fc-def{font-size:0.88rem;color:var(--text);line-height:1.6;}
+.fc-etim{margin-top:10px;background:rgba(162,155,254,0.07);border-left:3px solid var(--purple);border-radius:0 8px 8px 0;padding:9px 11px;font-size:0.75rem;color:var(--muted);}
+.fc-fam{background:var(--card);border:1px solid var(--border2);border-radius:14px;padding:14px;margin-bottom:10px;}
+.fc-fam-title{font-size:0.68rem;color:var(--muted);font-weight:700;text-transform:uppercase;letter-spacing:1px;margin-bottom:10px;}
+.fc-rel{padding:9px 0;border-bottom:1px solid var(--border);}
+.fc-rel:last-child{border-bottom:none;padding-bottom:0;}
+.fc-rel-w{font-size:0.88rem;font-weight:700;color:var(--text);}
+.fc-rel-p{font-size:0.68rem;color:var(--muted);margin-left:6px;}
+.fc-rel-d{font-size:0.75rem;color:var(--muted);margin-top:2px;line-height:1.4;}
+.fc-actions{padding:10px 14px 28px;flex-shrink:0;background:var(--bg);}
+.fc-btns{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-bottom:8px;}
+.fc-btn{border:none;border-radius:12px;padding:13px 6px;font-size:0.75rem;font-weight:700;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:3px;}
+.fc-btn-icon{font-size:1.2rem;}
+.fc-fail{background:rgba(225,112,85,0.12);color:var(--red);border:2px solid var(--red);}
+.fc-mid{background:rgba(240,192,64,0.1);color:var(--gold);border:2px solid var(--gold);}
+.fc-ok{background:rgba(0,184,148,0.1);color:var(--green);border:2px solid var(--green);}
+.fc-done{width:100%;background:rgba(162,155,254,0.08);border:1px solid var(--purple);border-radius:10px;padding:9px;color:var(--purple);font-size:0.78rem;font-weight:600;cursor:pointer;}
+.fin-screen{display:none;flex-direction:column;align-items:center;justify-content:center;min-height:80vh;padding:32px 24px;text-align:center;}
 .fin-screen.active{display:flex;}
-.fin-emoji{font-size:4rem;margin-bottom:16px;}
-.fin-title{font-size:1.4rem;font-weight:700;margin-bottom:8px;}
-.fin-sub{font-size:0.85rem;color:var(--muted);margin-bottom:24px;}
-.fin-btn{background:var(--purple);color:#fff;border:none;border-radius:14px;padding:14px 32px;font-size:1rem;font-weight:700;cursor:pointer;margin-bottom:10px;width:100%;}
-.fin-btn-sec{background:var(--card);color:var(--text);border:1px solid var(--border);border-radius:14px;padding:14px;font-size:0.9rem;cursor:pointer;width:100%;}
-
-/* Toast */
-.toast{position:fixed;bottom:80px;left:50%;transform:translateX(-50%);background:#222236;border:1px solid var(--purple);color:var(--text);padding:10px 20px;border-radius:20px;font-size:0.82rem;z-index:9999;opacity:0;transition:opacity .3s;pointer-events:none;}
+.fin-btn{width:100%;background:var(--purple);color:#111;border:none;border-radius:14px;padding:14px;font-size:1rem;font-weight:700;cursor:pointer;margin-bottom:8px;}
+.fin-btn-sec{width:100%;background:var(--card);color:var(--text);border:1px solid var(--border2);border-radius:14px;padding:13px;font-size:0.9rem;cursor:pointer;}
+.toast{position:fixed;bottom:70px;left:50%;transform:translateX(-50%);background:#1e1e3a;border:1px solid var(--purple);color:var(--text);padding:9px 18px;border-radius:20px;font-size:0.8rem;z-index:9999;opacity:0;transition:opacity .3s;pointer-events:none;white-space:nowrap;}
 .toast.show{opacity:1;}
 </style>
 </head>
 <body>
 
-<!-- HOME -->
 <div id="screen-home">
   <div class="top-bar">
     <button class="btn-back" onclick="window.history.back()">←</button>
     <h1>🧬 Familias Léxicas</h1>
-    <span class="counter" id="home-counter">4.990 familias</span>
+    <span class="counter">20.275 entradas</span>
   </div>
-  <div class="home">
-    <p class="home-sub">Palabras agrupadas por raíz común · Estudio una a una</p>
-
+  <div class="home-body">
     <div class="stats-row">
-      <div class="stat-box"><div class="stat-n">4.990</div><div class="stat-l">Familias</div></div>
-      <div class="stat-box"><div class="stat-n">46.590</div><div class="stat-l">Palabras</div></div>
-      <div class="stat-box"><div class="stat-n" id="stat-estudiadas">0</div><div class="stat-l">Estudiadas</div></div>
+      <div class="stat-box"><div class="stat-n">9.370</div><div class="stat-l">Familias</div></div>
+      <div class="stat-box"><div class="stat-n">20.275</div><div class="stat-l">Palabras</div></div>
+      <div class="stat-box"><div class="stat-n" id="stat-est">0</div><div class="stat-l">Estudiadas</div></div>
     </div>
-
+    <div id="continuar-block" style="display:none;" class="continuar-card" onclick="continuarSesion()">
+      <div style="font-size:2rem;">▶️</div>
+      <div style="flex:1;">
+        <div class="continuar-title">Continuar donde lo dejaste</div>
+        <div class="continuar-sub" id="continuar-sub"></div>
+      </div>
+      <div style="color:var(--purple);">›</div>
+    </div>
+    <div class="sec-label">Modo de estudio</div>
     <div class="modos-grid">
-      <div class="modo-card" onclick="iniciarModo('aleatorio')">
-        <div class="modo-icon">🎲</div>
-        <div class="modo-title">Aleatorio</div>
-        <div class="modo-desc">Familias mezcladas de todas las letras</div>
-      </div>
-      <div class="modo-card" onclick="iniciarModo('pendientes')">
-        <div class="modo-icon">🔄</div>
-        <div class="modo-title">Pendientes</div>
-        <div class="modo-desc">Solo las que aún no dominas</div>
-      </div>
+      <div class="modo-card" onclick="iniciarModo('nuevas')"><div class="modo-icon">⭐</div><div class="modo-title">Nuevas</div><div class="modo-desc">Solo las que no has visto</div></div>
+      <div class="modo-card" onclick="iniciarModo('pendientes')"><div class="modo-icon">🔄</div><div class="modo-title">Pendientes</div><div class="modo-desc">Las difíciles y repaso</div></div>
+      <div class="modo-card" onclick="iniciarModo('familias')"><div class="modo-icon">🧬</div><div class="modo-title">Solo familias</div><div class="modo-desc">Con 2+ palabras relacionadas</div></div>
+      <div class="modo-card" onclick="iniciarModo('aleatorio')"><div class="modo-icon">🎲</div><div class="modo-title">Aleatorio</div><div class="modo-desc">Mezcla de todas las letras</div></div>
     </div>
-
+    <div class="sec-label">Por temática</div>
+    <div class="temas-scroll" id="temas-scroll"></div>
     <div class="sec-label">Por letra</div>
     <div class="letras-grid" id="letras-grid"></div>
   </div>
 </div>
 
-<!-- FLASHCARD -->
-<div class="flashcard-screen" id="screen-fc">
+<div class="fc-screen" id="screen-fc">
   <div class="top-bar">
-    <button class="btn-back" onclick="volverHome()">←</button>
+    <button class="btn-back" onclick="pausarYVolver()">←</button>
     <h1 id="fc-title">Familias</h1>
     <span class="counter" id="fc-counter">0/0</span>
   </div>
-  <div class="fc-progress-bar">
-    <div class="fc-progress-fill" id="fc-progress" style="width:0%"></div>
-  </div>
+  <div class="fc-prog-bar"><div class="fc-prog-fill" id="fc-prog" style="width:0%"></div></div>
   <div class="fc-body" id="fc-body"></div>
   <div class="fc-actions">
     <div class="fc-btns">
-      <button class="fc-btn fc-btn-fail" onclick="calificar(1)">
-        <span class="fc-btn-icon">✖</span>No la sé
-      </button>
-      <button class="fc-btn fc-btn-mid" onclick="calificar(3)">
-        <span class="fc-btn-icon">🔄</span>Regular
-      </button>
-      <button class="fc-btn fc-btn-ok" onclick="calificar(5)">
-        <span class="fc-btn-icon">✔</span>La sé
-      </button>
+      <button class="fc-btn fc-fail" onclick="calificar(1)"><span class="fc-btn-icon">✖</span>No la sé</button>
+      <button class="fc-btn fc-mid" onclick="calificar(3)"><span class="fc-btn-icon">🔄</span>Regular</button>
+      <button class="fc-btn fc-ok" onclick="calificar(5)"><span class="fc-btn-icon">✔</span>La sé</button>
     </div>
-    <button class="fc-skip" onclick="siguiente()">Saltar →</button>
+    <button class="fc-done" onclick="marcarDominada()">📦 Ya me la sé, no mostrar más</button>
   </div>
 </div>
 
-<!-- FIN -->
 <div class="fin-screen" id="screen-fin">
-  <div class="fin-emoji" id="fin-emoji">🏆</div>
-  <div class="fin-title" id="fin-title">¡Sesión completada!</div>
-  <div class="fin-sub" id="fin-sub"></div>
-  <button class="fin-btn" onclick="iniciarModo('aleatorio')">Nueva sesión</button>
+  <div style="font-size:4rem;margin-bottom:14px;" id="fin-emoji">🏆</div>
+  <div style="font-size:1.3rem;font-weight:700;margin-bottom:8px;" id="fin-title">¡Sesión completada!</div>
+  <div style="font-size:0.85rem;color:var(--muted);margin-bottom:24px;" id="fin-sub"></div>
+  <button class="fin-btn" onclick="repetirSesion()">Repetir sesión</button>
+  <button class="fin-btn" onclick="iniciarModo('nuevas')">Seguir con nuevas →</button>
+  <br><br>
   <button class="fin-btn-sec" onclick="volverHome()">Volver al inicio</button>
 </div>
 
 <div class="toast" id="toast"></div>
 
 <script>
-const BASE_URL = 'https://raw.githubusercontent.com/alacreu-IA/Pasapalabra-Pro/main/diccionarios_familias/';
-const LETRAS = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','X','Y','Z'];
-const SRS_KEY = 'ppro_familias_srs_v1';
-const COUNTS = {A:731,B:296,C:316,D:256,E:406,F:208,G:190,H:157,I:189,J:153,K:47,L:176,M:172,N:204,O:257,P:249,Q:19,R:188,S:183,T:216,U:96,V:118,X:9,Y:56,Z:98};
+const BASE='https://raw.githubusercontent.com/alacreu-IA/Pasapalabra-Pro/main/diccionarios_familias/';
+const LETRAS=['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','X','Y','Z'];
+const COUNTS={A:2549,B:1082,C:2295,D:903,E:1412,F:683,G:750,H:562,I:511,J:291,K:57,L:685,M:1286,N:438,O:496,P:1675,Q:97,R:1135,S:1128,T:1218,U:172,V:516,X:18,Y:101,Z:215};
+const TEMAS=[
+  {id:'sustantivo',icon:'📦',name:'Sustantivos'},{id:'adjetivo',icon:'🎨',name:'Adjetivos'},
+  {id:'verbo',icon:'⚡',name:'Verbos'},{id:'gentilicio',icon:'🌍',name:'Gentilicios'},
+  {id:'botanica',icon:'🌿',name:'Botánica'},{id:'zoologia',icon:'🦎',name:'Zoología'},
+  {id:'gastronomia',icon:'🍷',name:'Gastronomía'},{id:'vestimenta',icon:'👗',name:'Vestimenta'},
+  {id:'musica',icon:'🎵',name:'Música'},{id:'arte_literatura',icon:'🎨',name:'Arte y Lit.'},
+  {id:'nautica',icon:'⛵',name:'Náutica'},{id:'ciencia',icon:'🔬',name:'Ciencia'},
+  {id:'medicina',icon:'🏥',name:'Medicina'},{id:'cuerpo_humano',icon:'🫀',name:'Cuerpo humano'},
+  {id:'politica',icon:'🏛️',name:'Política'},{id:'militar',icon:'⚔️',name:'Militar'},
+  {id:'religion',icon:'⛪',name:'Religión'},{id:'geografia',icon:'🗺️',name:'Geografía'},
+];
+const SRS='ppro_fam2_';
+const SESS='ppro_fam2_sess';
 
-var estado = { familias: [], idx: 0, ok: 0, fail: 0, modo: '' };
-var cache = {};
+var cache={};
+var gs={familias:[],idx:0,ok:0,fail:0,modo:'',filtro:''};
 
-// SRS
-function srsKey(w){ return 'fam_' + w.toLowerCase().replace(/\s+/g,'_'); }
-function srsGet(w){ try{ var r=localStorage.getItem(SRS_KEY+'_'+srsKey(w)); return r?JSON.parse(r):null; }catch(e){return null;} }
-function srsSet(w, nivel){
-  var prev = srsGet(w) || {reps:0};
-  var dias = nivel===1?1:nivel===3?7:30;
-  localStorage.setItem(SRS_KEY+'_'+srsKey(w), JSON.stringify({nivel,reps:(prev.reps||0)+1,due:Date.now()+dias*86400000}));
-}
-function srsEstudiadas(){
-  var n=0;
-  for(var k in localStorage){ if(k.startsWith(SRS_KEY+'_')) n++; }
-  return n;
-}
+function srsGet(w){try{var r=localStorage.getItem(SRS+w.toLowerCase().replace(/[\s\W]/g,'_'));return r?JSON.parse(r):null;}catch(e){return null;}}
+function srsSet(w,nivel){var p=srsGet(w)||{reps:0};var dias=nivel===1?1:nivel===3?7:30;localStorage.setItem(SRS+w.toLowerCase().replace(/[\s\W]/g,'_'),JSON.stringify({nivel,reps:(p.reps||0)+1,due:Date.now()+dias*86400000}));}
+function srsOcultar(w){localStorage.setItem(SRS+w.toLowerCase().replace(/[\s\W]/g,'_'),JSON.stringify({nivel:99,oculta:true}));}
+function srsEstado(w){var s=srsGet(w);if(!s)return 'nueva';if(s.oculta)return 'oculta';if(s.nivel===1)return 'dificil';if(s.nivel===3&&s.due<Date.now())return 'repaso';if(s.nivel>=5)return 'dominada';return 'vista';}
+function countEst(){var n=0;for(var k in localStorage){if(k.startsWith(SRS))n++;}return n;}
 
-// Cargar letra
 async function cargarLetra(l){
-  if(cache[l]) return cache[l];
-  var r = await fetch(BASE_URL + 'fam_' + l + '.json');
-  var data = await r.json();
-  cache[l] = data;
-  return data;
+  if(cache[l])return cache[l];
+  var r=await fetch(BASE+'fam_'+l+'.json');
+  var data=await r.json();
+  data=data.filter(function(e){return srsEstado(e.w)!=='oculta';});
+  cache[l]=data;return data;
 }
 
-// Home
+function saveSession(){
+  if(!gs.familias.length)return;
+  localStorage.setItem(SESS,JSON.stringify({idx:gs.idx,ok:gs.ok,fail:gs.fail,modo:gs.modo,filtro:gs.filtro,ids:gs.familias.map(function(f){return f.w;})}));
+}
+
 function renderHome(){
-  document.getElementById('stat-estudiadas').textContent = srsEstudiadas().toLocaleString('es');
-  var grid = document.getElementById('letras-grid');
-  grid.innerHTML = '';
-  LETRAS.forEach(function(l){
-    var btn = document.createElement('button');
-    btn.className = 'letra-btn';
-    btn.innerHTML = '<div>' + l + '</div><div class="cnt">' + (COUNTS[l]||0) + '</div>';
-    btn.onclick = function(){ iniciarModo('letra', l); };
-    grid.appendChild(btn);
-  });
+  document.getElementById('stat-est').textContent=countEst().toLocaleString('es');
+  var sess=null;try{sess=JSON.parse(localStorage.getItem(SESS));}catch(e){}
+  var cb=document.getElementById('continuar-block');
+  if(sess&&sess.ids&&sess.idx>0&&sess.idx<sess.ids.length){
+    cb.style.display='flex';
+    document.getElementById('continuar-sub').textContent='Sesión '+sess.modo+(sess.filtro?' · '+sess.filtro:'')+' · '+sess.idx+'/'+sess.ids.length;
+  } else {cb.style.display='none';}
+
+  var ts=document.getElementById('temas-scroll');
+  if(!ts.children.length){
+    TEMAS.forEach(function(t){
+      var btn=document.createElement('button');
+      btn.className='tema-btn';btn.textContent=t.icon+' '+t.name;
+      btn.onclick=function(){iniciarModo('tema',t.id);};ts.appendChild(btn);
+    });
+  }
+  var lg=document.getElementById('letras-grid');
+  if(!lg.children.length){
+    LETRAS.forEach(function(l){
+      var btn=document.createElement('button');btn.className='letra-btn';
+      btn.innerHTML='<span>'+l+'</span><span class="cnt">'+(COUNTS[l]||0)+'</span>';
+      btn.onclick=function(){iniciarModo('letra',l);};lg.appendChild(btn);
+    });
+  }
 }
 
-// Iniciar modo
-async function iniciarModo(modo, filtro){
-  mostrarToast('Cargando...');
-  estado.modo = modo;
-  estado.idx = 0; estado.ok = 0; estado.fail = 0;
+async function iniciarModo(modo,filtro){
+  mostrarToast('⏳ Cargando...');
+  gs.modo=modo;gs.filtro=filtro||'';gs.idx=0;gs.ok=0;gs.fail=0;
+  var pool=[];
 
-  var familias = [];
-  if(modo === 'letra'){
-    familias = await cargarLetra(filtro);
-  } else if(modo === 'aleatorio'){
-    var letrasRand = shuffle(LETRAS.slice()).slice(0,4);
-    for(var l of letrasRand){
-      var data = await cargarLetra(l);
-      familias = familias.concat(data.slice(0,10));
+  if(modo==='letra'){
+    pool=await cargarLetra(filtro);
+  } else if(modo==='tema'){
+    for(var l of shuffle(LETRAS.slice()).slice(0,8)){
+      var d=await cargarLetra(l);
+      pool=pool.concat(d.filter(function(e){return e.c===filtro;}));
     }
-    familias = shuffle(familias).slice(0,40);
-  } else if(modo === 'pendientes'){
-    var letrasAll = shuffle(LETRAS.slice()).slice(0,6);
-    for(var l of letrasAll){
-      var data = await cargarLetra(l);
-      var pend = data.filter(function(f){
-        var s = srsGet(f.w);
-        if(!s) return true;
-        if(s.nivel===1) return true;
-        if(s.nivel===3 && s.due < Date.now()) return true;
-        return false;
-      });
-      familias = familias.concat(pend.slice(0,8));
+    pool=shuffle(pool).slice(0,50);
+  } else if(modo==='nuevas'){
+    for(var l of shuffle(LETRAS.slice()).slice(0,6)){
+      var d=await cargarLetra(l);
+      pool=pool.concat(d.filter(function(e){return srsEstado(e.w)==='nueva';}));
     }
-    familias = shuffle(familias).slice(0,40);
-    if(!familias.length){ mostrarToast('¡Sin pendientes!'); return; }
+    pool=shuffle(pool).slice(0,40);
+  } else if(modo==='pendientes'){
+    for(var l of shuffle(LETRAS.slice()).slice(0,8)){
+      var d=await cargarLetra(l);
+      pool=pool.concat(d.filter(function(e){var st=srsEstado(e.w);return st==='dificil'||st==='repaso';}));
+    }
+    pool=shuffle(pool).slice(0,40);
+    if(!pool.length){mostrarToast('¡Sin pendientes! 🎉');return;}
+  } else if(modo==='familias'){
+    for(var l of shuffle(LETRAS.slice()).slice(0,5)){
+      var d=await cargarLetra(l);
+      pool=pool.concat(d.filter(function(e){return e.r&&e.r.length>=1;}));
+    }
+    pool=shuffle(pool).slice(0,40);
+  } else if(modo==='aleatorio'){
+    for(var l of shuffle(LETRAS.slice()).slice(0,5)){
+      var d=await cargarLetra(l);
+      pool=pool.concat(shuffle(d).slice(0,8));
+    }
+    pool=shuffle(pool).slice(0,40);
   }
 
-  estado.familias = familias;
-  document.getElementById('fc-title').textContent = modo==='letra' ? 'Letra '+filtro : modo==='pendientes' ? 'Pendientes' : 'Aleatorio';
-  mostrarScreen('fc');
-  renderTarjeta();
+  if(!pool.length){mostrarToast('Sin palabras disponibles');return;}
+  gs.familias=pool;
+  var titles={letra:'Letra '+filtro,tema:TEMAS.find(function(t){return t.id===filtro;})||{name:filtro},nuevas:'Palabras nuevas',pendientes:'Pendientes',familias:'Solo familias',aleatorio:'Aleatorio'};
+  document.getElementById('fc-title').textContent=typeof titles[modo]==='object'?titles[modo].name:titles[modo];
+  mostrarScreen('fc');renderTarjeta();
+}
+
+async function continuarSesion(){
+  var sess=null;try{sess=JSON.parse(localStorage.getItem(SESS));}catch(e){}
+  if(!sess||!sess.ids){return;}
+  mostrarToast('⏳ Cargando...');
+  var letrasNec=[...new Set(sess.ids.map(function(w){var c=w[0].toUpperCase();return c.normalize('NFD').replace(/[\u0300-\u036f]/g,'')[0]||c;}))];
+  var allData={};
+  for(var l of letrasNec){var d=await cargarLetra(l);d.forEach(function(e){allData[e.w]=e;});}
+  var familias=sess.ids.map(function(w){return allData[w];}).filter(Boolean);
+  if(!familias.length){mostrarToast('No se pudo recuperar');return;}
+  gs.familias=familias;gs.idx=sess.idx;gs.ok=sess.ok;gs.fail=sess.fail;gs.modo=sess.modo;gs.filtro=sess.filtro;
+  document.getElementById('fc-title').textContent='Continuando...';
+  mostrarScreen('fc');renderTarjeta();
 }
 
 function renderTarjeta(){
-  var gs = estado;
-  if(gs.idx >= gs.familias.length){ mostrarFin(); return; }
+  saveSession();
+  if(gs.idx>=gs.familias.length){mostrarFin();return;}
+  var fam=gs.familias[gs.idx];
+  var pct=Math.round(gs.idx/gs.familias.length*100);
+  document.getElementById('fc-counter').textContent=(gs.idx+1)+'/'+gs.familias.length;
+  document.getElementById('fc-prog').style.width=pct+'%';
 
-  var fam = gs.familias[gs.idx];
-  var total = gs.familias.length;
+  var st=srsEstado(fam.w);
+  var badge=st==='dificil'?' <span style="font-size:0.58rem;color:var(--red);background:rgba(225,112,85,0.12);padding:1px 6px;border-radius:6px;">difícil</span>':
+            st==='dominada'?' <span style="font-size:0.58rem;color:var(--green);background:rgba(0,184,148,0.1);padding:1px 6px;border-radius:6px;">dominada</span>':'';
 
-  // Progress
-  document.getElementById('fc-counter').textContent = (gs.idx+1) + '/' + total;
-  document.getElementById('fc-progress').style.width = Math.round(gs.idx/total*100) + '%';
-
-  var html = '<div class="fc-card">' +
-    '<div class="fc-familia-label">🧬 Familia léxica</div>' +
-    '<div class="fc-palabra">' + fam.w + '</div>' +
-    '<div class="fc-pos">' + (fam.p||'') + '</div>' +
-    '<div class="fc-def">' + fam.d + '</div>' +
-    (fam.e ? '<div class="fc-etim">' + fam.e + '</div>' : '') +
+  var html='<div class="fc-card">'+
+    '<div class="fc-tag">🧬 Familia léxica</div>'+
+    '<div class="fc-word">'+fam.w+badge+'</div>'+
+    '<div class="fc-pos">'+(fam.p||'')+'</div>'+
+    '<div class="fc-def">'+fam.d+'</div>'+
+    (fam.e?'<div class="fc-etim">'+fam.e+'</div>':'')+
   '</div>';
 
-  if(fam.r && fam.r.length){
-    html += '<div class="fc-familia-section">' +
-      '<div class="fc-familia-title">🔗 ' + fam.r.length + ' palabras de la misma familia</div>' +
-      '<div class="fc-rel-list">';
+  if(fam.r&&fam.r.length){
+    html+='<div class="fc-fam"><div class="fc-fam-title">🔗 '+fam.r.length+' palabra'+(fam.r.length>1?'s':'')+' de la misma familia</div>';
     fam.r.forEach(function(rel){
-      html += '<div class="fc-rel-item">' +
-        '<div><span class="fc-rel-word">' + rel.w + '</span><span class="fc-rel-pos">' + (rel.p||'') + '</span></div>' +
-        '<div class="fc-rel-def">' + rel.d + '</div>' +
-      '</div>';
+      html+='<div class="fc-rel"><span class="fc-rel-w">'+rel.w+'</span><span class="fc-rel-p">'+(rel.p||'')+'</span><div class="fc-rel-d">'+rel.d+'</div></div>';
     });
-    html += '</div></div>';
+    html+='</div>';
   }
-
-  document.getElementById('fc-body').innerHTML = html;
-  document.getElementById('fc-body').scrollTop = 0;
+  document.getElementById('fc-body').innerHTML=html;
+  document.getElementById('fc-body').scrollTop=0;
 }
 
-function calificar(nivel){
-  var fam = estado.familias[estado.idx];
-  if(fam) srsSet(fam.w, nivel);
-  if(nivel >= 4) estado.ok++;
-  else if(nivel === 1) estado.fail++;
-  siguiente();
-}
-
-function siguiente(){
-  estado.idx++;
-  renderTarjeta();
-}
+function calificar(nivel){var fam=gs.familias[gs.idx];if(fam)srsSet(fam.w,nivel);if(nivel>=5)gs.ok++;else if(nivel===1)gs.fail++;gs.idx++;renderTarjeta();}
+function marcarDominada(){var fam=gs.familias[gs.idx];if(fam){srsOcultar(fam.w);mostrarToast('📦 "'+fam.w+'" ocultada');}gs.idx++;renderTarjeta();}
+function pausarYVolver(){saveSession();volverHome();}
+function repetirSesion(){gs.idx=0;gs.ok=0;gs.fail=0;mostrarScreen('fc');renderTarjeta();}
 
 function mostrarFin(){
-  var total = estado.ok + estado.fail;
-  var pct = total ? Math.round(estado.ok/total*100) : 0;
-  var emoji = pct>=80?'🏆':pct>=50?'🎯':'🔄';
-  document.getElementById('fin-emoji').textContent = emoji;
-  document.getElementById('fin-title').textContent = '¡Sesión completada!';
-  document.getElementById('fin-sub').textContent = estado.ok + ' dominadas · ' + estado.fail + ' para repasar · ' + pct + '% de acierto';
-  mostrarScreen('fin');
-  renderHome(); // actualizar contador
+  localStorage.removeItem(SESS);
+  var tot=gs.ok+gs.fail,pct=tot?Math.round(gs.ok/tot*100):0;
+  document.getElementById('fin-emoji').textContent=pct>=80?'🏆':pct>=50?'🎯':'🔄';
+  document.getElementById('fin-title').textContent=pct>=80?'¡Excelente!':pct>=50?'Buen trabajo':'A seguir';
+  document.getElementById('fin-sub').textContent=gs.ok+' dominadas · '+gs.fail+' para repasar · '+pct+'%';
+  mostrarScreen('fin');renderHome();
 }
 
-function volverHome(){
-  mostrarScreen('home');
-  renderHome();
-}
-
+function volverHome(){mostrarScreen('home');renderHome();}
 function mostrarScreen(id){
-  ['home','fc','fin'].forEach(function(s){
-    var el = document.getElementById('screen-'+s);
-    if(el){
-      if(s==='home'){ el.style.display = id==='home'?'block':'none'; }
-      else { el.classList.toggle('active', s===id); }
-    }
-  });
+  document.getElementById('screen-home').style.display=id==='home'?'block':'none';
+  document.getElementById('screen-fc').classList.toggle('active',id==='fc');
+  document.getElementById('screen-fin').classList.toggle('active',id==='fin');
 }
-
-function shuffle(arr){
-  for(var i=arr.length-1;i>0;i--){
-    var j=Math.floor(Math.random()*(i+1));
-    var t=arr[i];arr[i]=arr[j];arr[j]=t;
-  }
-  return arr;
-}
-
-function mostrarToast(msg){
-  var t=document.getElementById('toast');
-  t.textContent=msg; t.classList.add('show');
-  setTimeout(function(){t.classList.remove('show');},1800);
-}
-
-// Init
+function shuffle(a){var b=a.slice();for(var i=b.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1));var t=b[i];b[i]=b[j];b[j]=t;}return b;}
+var tt=null;
+function mostrarToast(m){var t=document.getElementById('toast');t.textContent=m;t.classList.add('show');if(tt)clearTimeout(tt);tt=setTimeout(function(){t.classList.remove('show');},2000);}
 renderHome();
 </script>
 </body>
