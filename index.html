@@ -330,11 +330,11 @@ html, body {
 
 .rating-btns {
     display: flex; gap: 8px;
-    padding: 10px 16px 20px; flex-shrink: 0;
+    padding: 8px 16px 14px; flex-shrink: 0;
 }
 .rating-btns button {
-    flex: 1; border-radius: 12px; padding: 14px 0;
-    font-size: 0.85rem; font-weight: 700; border: 1px solid;
+    flex: 1; border-radius: 10px; padding: 8px 0;
+    font-size: 0.78rem; font-weight: 700; border: 1px solid;
     cursor: pointer; display: none;
     font-family: 'Space Grotesk', sans-serif;
     transition: transform 0.1s;
@@ -691,13 +691,13 @@ html, body {
     background: var(--bg);
 }
 .rae-rate-btn {
-    flex: 1; border-radius: 12px; padding: 12px 6px;
+    flex: 1; border-radius: 10px; padding: 8px 4px;
     font-family: 'Space Grotesk', sans-serif;
-    font-size: 1rem; font-weight: 700; border: 1px solid;
+    font-size: 0.85rem; font-weight: 700; border: 1px solid;
     cursor: pointer; display: flex; flex-direction: column;
-    align-items: center; gap: 3px;
+    align-items: center; gap: 2px;
 }
-.rae-rate-btn span { font-size: 0.7rem; font-weight: 600; }
+.rae-rate-btn span { font-size: 0.65rem; font-weight: 600; }
 .rae-rate-bad  { background: rgba(255,85,85,0.08);  border-color: var(--red);   color: var(--red);   }
 .rae-rate-mid  { background: rgba(240,192,64,0.08); border-color: var(--gold);  color: var(--gold);  }
 .rae-rate-good { background: rgba(68,212,144,0.08); border-color: var(--green); color: var(--green); }
@@ -908,9 +908,9 @@ html, body {
 /* Caja de definición — scrollable, ocupa el espacio disponible */
 .dic-def-box {
     flex: 1; overflow-y: auto; min-height: 0;
-    font-size: 1.05rem; line-height: 1.6; color: var(--text);
+    font-size: 0.88rem; line-height: 1.5; color: var(--text);
     background: var(--card); border: 1px solid var(--border2);
-    border-radius: 16px; padding: 16px;
+    border-radius: 14px; padding: 12px 14px;
     -webkit-overflow-scrolling: touch;
 }
 .dic-def-box::-webkit-scrollbar { display: none; }
@@ -955,7 +955,7 @@ html, body {
 /* Palabra principal */
 .dic-answer-word {
     font-family: 'Playfair Display', serif;
-    color: var(--gold); font-size: 2rem; line-height: 1.1;
+    color: var(--gold); font-size: 1.5rem; line-height: 1.1;
     margin-bottom: 2px; word-break: break-word;
 }
 .dic-answer-pos {
@@ -1003,23 +1003,23 @@ html, body {
 
 /* Rating bar fija abajo */
 .dic-rating-bar {
-    display: none; gap: 10px; padding: 14px 18px;
-    padding-bottom: max(20px, env(safe-area-inset-bottom));
+    display: none; gap: 8px; padding: 10px 16px;
+    padding-bottom: max(14px, env(safe-area-inset-bottom));
     flex-shrink: 0; border-top: 1px solid var(--border);
     background: var(--bg);
 }
 .dic-rating-bar.visible { display: flex; }
 .dic-rate-btn {
-    flex: 1; border-radius: 16px; padding: 14px 8px;
+    flex: 1; border-radius: 12px; padding: 8px 6px;
     font-family: 'Space Grotesk', sans-serif;
-    font-size: 1.1rem; font-weight: 700; border: 2px solid;
+    font-size: 0.9rem; font-weight: 700; border: 1px solid;
     cursor: pointer; display: flex; flex-direction: column;
-    align-items: center; gap: 4px; background: transparent;
+    align-items: center; gap: 2px; background: transparent;
     transition: background 0.15s, transform 0.1s;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
 }
 .dic-rate-btn:active { transform: scale(0.97); }
-.dic-rate-btn span { font-size: 0.72rem; font-weight: 600; }
+.dic-rate-btn span { font-size: 0.68rem; font-weight: 600; }
 .dic-rate-fail { border-color: var(--red);   color: var(--red);   background: rgba(255,85,85,0.08); }
 .dic-rate-mid  { border-color: var(--gold);  color: var(--gold);  background: rgba(240,192,64,0.08); }
 .dic-rate-good { border-color: var(--green); color: var(--green); background: rgba(68,212,144,0.08); }
@@ -1952,8 +1952,8 @@ html, body {
         <button class="dic-rate-btn dic-rate-good" onclick="dicCalificar(5)">✔<span>La sé</span></button>
     </div>
     <button id="dic-btn-archivar" onclick="dicOcultarPalabra()" 
-            style="display:none; width:calc(100% - 36px); margin:0 18px 16px; background:transparent; border:1px solid var(--border);
-                   color:var(--muted); border-radius:14px; padding:10px; font-size:0.75rem;
+            style="display:none; width:calc(100% - 36px); margin:0 18px 10px; background:transparent; border:1px solid var(--border);
+                   color:var(--muted); border-radius:10px; padding:7px; font-size:0.7rem;
                    font-family:'Space Grotesk',sans-serif; cursor:pointer;">
         📦 Ya me la sé, no mostrar más
     </button>
@@ -3215,7 +3215,26 @@ MAZOS.push({
     {q: "Con la V: Decisión final de un jurado o juez en un juicio.", a: "veredicto", letra: "V"},
     {q: "Contiene la X: Que no es preciso o que contiene algún error.", a: "inexacto", letra: "X"},
     {q: "Contiene la Y: Narración de sucesos fantásticos transmitida por tradición.", a: "leyenda", letra: "Y"},
-    {q: "Con la Z: Pieza de madera o metal que se pone como calzo o freno.", a: "zapata", letra: "Z"}
+    {q: "Con la Z: Pieza de madera o metal que se pone como calzo o freno.", a: "zapata", letra: "Z"},
+// ROSCO 41 - CONCEPTOS, IDEOLOGÍAS Y FILOSOFÍA
+{q: "Con la A: Fil. Actitud filosófica que declara inaccesible al entendimiento humano todo conocimiento de lo divino y de lo que trasciende la experiencia.", a: "Agnosticismo", letra: "A"},
+{q: "Con la B: Dicho de una persona: Que sigue la doctrina o las costumbres de la bohemia artística.", a: "Bohemio", letra: "B"},
+{q: "Con la C: Individuo de una doctrina religiosa unitaria, nacida en Inglaterra a mediados del siglo XVII, que rechaza el culto externo y los sacramentos.", a: "Cuáquero", letra: "C"},
+{q: "Con la D: Tendencia estética de fines del siglo XIX caracterizada por el cultivo del arte por el arte y el rechazo de los valores burgueses.", a: "Decadentismo", letra: "D"},
+{q: "Con la E: Conjunto de doctrinas profesadas por los autores de la Enciclopedia, publicada en Francia en el siglo XVIII.", a: "Enciclopedismo", letra: "E"},
+{q: "Con la F: Movimiento religioso y político de masas que pretende restaurar la pureza original de una religión rechazando la influencia moderna.", a: "Fundamentalismo", letra: "F"},
+{q: "Con la H: Fil. Teoría ideada por Aristóteles que explica la realidad como compuesta de dos principios: materia y forma.", a: "Hilemorfismo", letra: "H"},
+{q: "Con la K: Fil. Sistema filosófico ideado por el alemán Friedrich Krause a principios del siglo XIX que influyó notablemente en la cultura española.", a: "Krausismo", letra: "K"},
+{q: "Con la L: Independencia del Estado respecto de cualquier organización o confesión religiosa.", a: "Laicismo", letra: "L"},
+{q: "Con la M: Doctrina filosófica y religiosa de varias escuelas orientales, que admite la transmigración del alma.", a: "Metempsícosis", letra: "M"},
+{q: "Con la N: Doctrina filosófica y religiosa de los primeros siglos de la Iglesia, mezcla de creencias cristianas y orientales, que consideraba la materia como principio del mal.", a: "Nosticismo", letra: "N"},
+{q: "Con la O: Religión de misterios de la antigua Grecia, cuya fundación se atribuía a Orfeo.", a: "Orfismo", letra: "O"},
+{q: "Con la P: Sistema filosófico de quienes creen que la totalidad del universo es el único Dios.", a: "Panteísmo", letra: "P"},
+{q: "Con la R: Perteneciente o relativo a un movimiento religioso, social y cultural de origen alemán del siglo XVI que se separó de la Iglesia católica.", a: "Rastafari", letra: "R"},
+{q: "Con la T: Doctrina y regímenes políticos, desarrollados durante el siglo XX, en los que el Estado ejerce un control total sobre los individuos.", a: "Totalitarismo", letra: "T"},
+{q: "Con la V: Fil. Sistema filosófico del español Luis Vives, caracterizado por su tendencia empirista y pedagógica.", a: "Vivismo", letra: "V"},
+{q: "Con la Y: Asceta hindú seguidor del sistema filosófico del yoga.", a: "Yogui", letra: "Y"},
+
   ]
 });
 </script>
@@ -18968,7 +18987,8 @@ window.iniciarDelitoHistorico = function() {
         "naturaleza": { id: "naturaleza", name: "Naturaleza", icon: "🌿", sub: "Documentales de La 2 y alergia al polen", color: "#b8e994", questions: [] },
         "tecnologia": { id: "tecnologia", name: "Tecnología", icon: "💻", sub: "Apagar y encender el router", color: "#9c88ff", questions: [] },
         "deporte": { id: "deporte", name: "Deporte", icon: "⚽", sub: "Finales injustas y debates eternos", color: "#00cec9", questions: [] },
-        "cg": { id: "cg", name: "Cultura General", icon: "🧠", sub: "El cajón de sastre donde acaba todo lo demás", color: "#dfe6e9", questions: [] }
+        "cg": { id: "cg", name: "Cultura General", icon: "🧠", sub: "El cajón de sastre donde acaba todo lo demás", color: "#dfe6e9", questions: [] },
+        "vocabulario": { id: "vocabulario", name: "Vocabulario y Cultismos", icon: "📖", sub: "Las palabras que marcan la diferencia en el bote final", color: "#a29bfe", questions: [] }
 };
 
     allQuestions.forEach(p => {
@@ -18977,6 +18997,10 @@ window.iniciarDelitoHistorico = function() {
         // 0. MAZOS VIP (Los que ya vienen con su tema preasignado)
         if (p.deckId === "cg") {
             newDecks["cg"].questions.push(p);
+            return;
+        }
+        if (p.deckId === "vocabulario") {
+            newDecks["vocabulario"].questions.push(p);
             return;
         }
         if (p.deckId === "deporte") {
@@ -19066,7 +19090,7 @@ window.iniciarDelitoHistorico = function() {
     // Usar los 17 mazos clasificados como los mazos principales del menú
     var _orden = ['hist_esp','hist_uni','geo_esp','geo_mund','capitales','politica',
                   'lit_esp','lit_uni','teatro','cine',
-                  'arte','ciencia','naturaleza','tecnologia','deporte','mitologia','cg'];
+                  'arte','ciencia','naturaleza','tecnologia','deporte','mitologia','cg','vocabulario'];
     MAZOS = _orden
         .filter(function(id){ return newDecks[id] && newDecks[id].questions.length > 0; })
         .map(function(id){ return newDecks[id]; });
@@ -19138,15 +19162,15 @@ window.iniciarDelitoHistorico = function() {
           </div>
        </div>
 
-       <div id="study-actions" style="display:none; padding:20px; gap:15px; justify-content:center; padding-bottom:max(30px, env(safe-area-inset-bottom)); background:linear-gradient(to top, var(--bg) 70%, transparent); position:absolute; bottom:0; width:100%;">
-          <button onclick="scoreStudy(0)" style="flex:1; max-width:120px; background:rgba(255, 71, 87, 0.15); color:#ff4757; border:2px solid rgba(255,71,87,0.4); padding:15px 10px; border-radius:20px; font-weight:bold; font-size:1.05rem; display:flex; flex-direction:column; align-items:center; gap:8px; box-shadow:0 8px 20px rgba(0,0,0,0.3);">
-             <span style="font-size:1.6rem;">🔴</span> Mal
+       <div id="study-actions" style="display:none; padding:10px 16px; gap:10px; justify-content:center; padding-bottom:max(16px, env(safe-area-inset-bottom)); background:linear-gradient(to top, var(--bg) 70%, transparent); position:absolute; bottom:0; width:100%;">
+          <button onclick="scoreStudy(0)" style="flex:1; max-width:110px; background:rgba(255, 71, 87, 0.15); color:#ff4757; border:1px solid rgba(255,71,87,0.4); padding:8px 6px; border-radius:12px; font-weight:bold; font-size:0.85rem; display:flex; flex-direction:column; align-items:center; gap:3px;">
+             <span style="font-size:1.2rem;">🔴</span> Mal
           </button>
-          <button onclick="scoreStudy(1)" style="flex:1; max-width:120px; background:rgba(255, 165, 2, 0.15); color:#ffa502; border:2px solid rgba(255,165,2,0.4); padding:15px 10px; border-radius:20px; font-weight:bold; font-size:1.05rem; display:flex; flex-direction:column; align-items:center; gap:8px; box-shadow:0 8px 20px rgba(0,0,0,0.3);">
-             <span style="font-size:1.6rem;">🟡</span> Dudé
+          <button onclick="scoreStudy(1)" style="flex:1; max-width:110px; background:rgba(255, 165, 2, 0.15); color:#ffa502; border:1px solid rgba(255,165,2,0.4); padding:8px 6px; border-radius:12px; font-weight:bold; font-size:0.85rem; display:flex; flex-direction:column; align-items:center; gap:3px;">
+             <span style="font-size:1.2rem;">🟡</span> Dudé
           </button>
-          <button onclick="scoreStudy(2)" style="flex:1; max-width:120px; background:rgba(46, 213, 115, 0.15); color:#2ed573; border:2px solid rgba(46,213,115,0.4); padding:15px 10px; border-radius:20px; font-weight:bold; font-size:1.05rem; display:flex; flex-direction:column; align-items:center; gap:8px; box-shadow:0 8px 20px rgba(0,0,0,0.3);">
-             <span style="font-size:1.6rem;">🟢</span> Perfecta
+          <button onclick="scoreStudy(2)" style="flex:1; max-width:110px; background:rgba(46, 213, 115, 0.15); color:#2ed573; border:1px solid rgba(46,213,115,0.4); padding:8px 6px; border-radius:12px; font-weight:bold; font-size:0.85rem; display:flex; flex-direction:column; align-items:center; gap:3px;">
+             <span style="font-size:1.2rem;">🟢</span> Perfecta
           </button>
        </div>
        <button id="btn-archivar-tarjeta" onclick="archivarTarjetaEstudio()" style="display:none; position:absolute; bottom:110px; left:50%; transform:translateX(-50%); background:transparent; border:1px solid var(--border); color:var(--muted); padding:8px 16px; border-radius:20px; font-size:0.75rem; cursor:pointer; z-index:20;">
