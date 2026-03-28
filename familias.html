@@ -344,34 +344,45 @@ function mostrarToast(m){var t=document.getElementById('toast');t.textContent=m;
 renderHome();
 
 function abrirSelectorLetra(l) {
-  // Create overlay with options
   var total = COUNTS[l] || 0;
   var overlay = document.createElement('div');
   overlay.id = 'letra-sel-overlay';
   overlay.style.cssText = 'position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,0.7);z-index:9999;display:flex;align-items:center;justify-content:center;padding:24px;';
-  overlay.innerHTML = '<div style="background:var(--card);border-radius:18px;padding:24px;width:100%;max-width:340px;border:1px solid var(--border2);">' +
-    '<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:18px;">' +
-      '<h3 style="margin:0;font-size:1.2rem;">Letra ' + l + '</h3>' +
-      '<button onclick="document.getElementById('letra-sel-overlay').remove()" style="background:none;border:none;color:var(--muted);font-size:1.4rem;cursor:pointer;">✕</button>' +
-    '</div>' +
-    '<div style="display:flex;flex-direction:column;gap:10px;">' +
-      '<button onclick="document.getElementById('letra-sel-overlay').remove();iniciarModo('nuevas_letra','' + l + '')" style="background:var(--card2);border:1px solid var(--border2);border-radius:12px;padding:14px 16px;text-align:left;cursor:pointer;color:var(--text);">' +
-        '<div style="font-weight:700;">⭐ Nuevas</div>' +
-        '<div style="font-size:0.75rem;color:var(--muted);margin-top:2px;">Solo las que no has visto</div>' +
-      '</button>' +
-      '<button onclick="document.getElementById('letra-sel-overlay').remove();iniciarModo('pendientes_letra','' + l + '')" style="background:var(--card2);border:1px solid var(--border2);border-radius:12px;padding:14px 16px;text-align:left;cursor:pointer;color:var(--text);">' +
-        '<div style="font-weight:700;">🔄 Repasar difíciles</div>' +
-        '<div style="font-size:0.75rem;color:var(--muted);margin-top:2px;">Las que se te resisten</div>' +
-      '</button>' +
-      '<button onclick="document.getElementById('letra-sel-overlay').remove();iniciarModo('letra','' + l + '')" style="background:var(--card2);border:1px solid var(--border2);border-radius:12px;padding:14px 16px;text-align:left;cursor:pointer;color:var(--text);">' +
-        '<div style="font-weight:700;">🎲 Todas las palabras</div>' +
-        '<div style="font-size:0.75rem;color:var(--muted);margin-top:2px;">' + total + ' palabras · aleatorio</div>' +
-      '</button>' +
-    '</div>' +
-  '</div>';
+  
+  var inner = document.createElement('div');
+  inner.style.cssText = 'background:var(--card);border-radius:18px;padding:24px;width:100%;max-width:340px;border:1px solid var(--border2);';
+  
+  var header = document.createElement('div');
+  header.style.cssText = 'display:flex;justify-content:space-between;align-items:center;margin-bottom:18px;';
+  header.innerHTML = '<h3 style="margin:0;font-size:1.2rem;">Letra ' + l + '</h3>';
+  var closeBtn = document.createElement('button');
+  closeBtn.style.cssText = 'background:none;border:none;color:var(--muted);font-size:1.4rem;cursor:pointer;';
+  closeBtn.textContent = '✕';
+  closeBtn.onclick = function(){ overlay.remove(); };
+  header.appendChild(closeBtn);
+  
+  var btnList = document.createElement('div');
+  btnList.style.cssText = 'display:flex;flex-direction:column;gap:10px;';
+  
+  var modes = [
+    { modo: 'nuevas_letra',     icon: '⭐', label: 'Nuevas',           sub: 'Solo las que no has visto' },
+    { modo: 'pendientes_letra', icon: '🔄', label: 'Repasar difíciles', sub: 'Las que se te resisten' },
+    { modo: 'letra',            icon: '🎲', label: 'Todas las palabras', sub: total + ' palabras · aleatorio' },
+  ];
+  
+  modes.forEach(function(m) {
+    var btn = document.createElement('button');
+    btn.style.cssText = 'background:var(--card2);border:1px solid var(--border2);border-radius:12px;padding:14px 16px;text-align:left;cursor:pointer;color:var(--text);width:100%;';
+    btn.innerHTML = '<div style="font-weight:700;">' + m.icon + ' ' + m.label + '</div><div style="font-size:0.75rem;color:var(--muted);margin-top:2px;">' + m.sub + '</div>';
+    (function(modo, filtro){ btn.onclick = function(){ overlay.remove(); iniciarModo(modo, filtro); }; })(m.modo, l);
+    btnList.appendChild(btn);
+  });
+  
+  inner.appendChild(header);
+  inner.appendChild(btnList);
+  overlay.appendChild(inner);
   document.body.appendChild(overlay);
   overlay.addEventListener('click', function(e){ if(e.target===overlay) overlay.remove(); });
-}
-</script>
+}</script>
 </body>
 </html>
