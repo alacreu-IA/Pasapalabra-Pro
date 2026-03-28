@@ -20483,7 +20483,9 @@ function mostrarFiltroLetra() {
                 btn.innerHTML = '<span style="color:' + textColor + '">' + l + '</span>' +
                     '<span class="dlb-prog">' + vistoCount + '/' + totalLetra + '</span>' +
                     (pct > 0 ? '<div class="dlb-bar" style="width:' + pct + '%;background:' + barColor + ';"></div>' : '');
-                (function(ll){ btn.onclick = function() { iniciarDiccionario('letra', ll); }; })(l);
+                (function(ll, vis, tot){
+                    btn.onclick = function() { abrirSelectorLetraRAE(ll, vis, tot); };
+                })(l, vistoCount, totalLetra);
                 grid.appendChild(btn);
             });
         }
@@ -20722,23 +20724,77 @@ function dicGetDificiles() {
 function dicOcultarPalabra() {
     var p = dicState.palabras[dicState.idx];
     if (!p) return;
-    // Guardar como oculta
     localStorage.setItem('dic_ocultar_' + p.w.toLowerCase(), '1');
-    // Marcar también como dominada en SRS para que no salga en días
     dicSetSrs(p.w, 5);
+    // Invalidar caché de esa letra para que no vuelva a aparecer
+    var l = p.w[0].toUpperCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'');
+    if (dicState.letrasCache && dicState.letrasCache[l]) delete dicState.letrasCache[l];
     showToast('🚫 "' + p.w + '" ocultada — no volverá a aparecer');
-    // Quitar de la sesión actual y pasar a la siguiente
     dicState.palabras.splice(dicState.idx, 1);
-    if (dicState.palabras.length === 0) {
-        goTo('dic-selector');
-        return;
-    }
+    if (dicState.palabras.length === 0) { goTo('dic-selector'); return; }
     if (dicState.idx >= dicState.palabras.length) dicState.idx = 0;
     dicMostrarPalabra();
 }
 
 function dicEstaOculta(word) {
     return localStorage.getItem('dic_ocultar_' + word.toLowerCase()) === '1';
+}
+
+function abrirSelectorLetraRAE(l, vistas, total) {
+    var progreso = dicLeerProgreso('letra', l);
+    var tieneProgreso = progreso && progreso.idx > 0 && progreso.idx < progreso.total;
+    var tieneDificiles = dicGetDificiles().some(function(w) {
+        return w[0].toUpperCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'') === l;
+    });
+
+    var overlay = document.createElement('div');
+    overlay.id = 'rae-letra-overlay';
+    overlay.style.cssText = 'position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,0.7);z-index:99999;display:flex;align-items:center;justify-content:center;padding:24px;';
+
+    var inner = document.createElement('div');
+    inner.style.cssText = 'background:var(--card);border-radius:18px;padding:24px;width:100%;max-width:340px;border:1px solid var(--border2);';
+
+    // Header
+    var pct = total > 0 ? Math.min(100, Math.round(vistas / total * 100)) : 0;
+    var barColor = pct >= 80 ? 'var(--green)' : pct >= 40 ? 'var(--gold)' : 'var(--blue)';
+    inner.innerHTML = '<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px;">' +
+        '<h3 style="margin:0;font-size:1.2rem;">Letra ' + l + '</h3>' +
+        '<button id="rae-letra-close" style="background:none;border:none;color:var(--muted);font-size:1.4rem;cursor:pointer;">✕</button>' +
+        '</div>' +
+        '<div style="font-size:0.75rem;color:var(--muted);margin-bottom:4px;">' + vistas + ' / ' + total + ' palabras · ' + pct + '%</div>' +
+        '<div style="height:4px;background:var(--border2);border-radius:2px;margin-bottom:18px;">' +
+            '<div style="height:100%;width:' + pct + '%;background:' + barColor + ';border-radius:2px;transition:width 0.4s;"></div>' +
+        '</div>' +
+        '<div id="rae-letra-btns" style="display:flex;flex-direction:column;gap:10px;"></div>';
+
+    var btnList = inner.querySelector('#rae-letra-btns');
+
+    function addBtn(icon, label, sub, fn) {
+        var btn = document.createElement('button');
+        btn.style.cssText = 'background:var(--card2);border:1px solid var(--border2);border-radius:12px;padding:14px 16px;text-align:left;cursor:pointer;color:var(--text);width:100%;';
+        btn.innerHTML = '<div style="font-weight:700;">' + icon + ' ' + label + '</div>' +
+            '<div style="font-size:0.75rem;color:var(--muted);margin-top:2px;">' + sub + '</div>';
+        btn.onclick = function() { overlay.remove(); fn(); };
+        btnList.appendChild(btn);
+    }
+
+    if (tieneProgreso) {
+        addBtn('▶️', 'Continuar', 'Desde donde lo dejaste · ' + progreso.idx + '/' + progreso.total, function() {
+            iniciarDiccionario('letra', l);
+        });
+    }
+    addBtn('⭐', tieneProgreso ? 'Empezar de cero' : 'Estudiar', total + ' palabras · orden alfabético', function() {
+        if (tieneProgreso) { dicBorrarProgreso('letra', l); }
+        iniciarDiccionario('letra', l, true);
+    });
+    addBtn('💀', 'Solo difíciles', 'Las que has marcado como difíciles en esta letra', function() {
+        iniciarDiccionario('dificiles', l);
+    });
+
+    inner.querySelector('#rae-letra-close').onclick = function() { overlay.remove(); };
+    overlay.appendChild(inner);
+    document.body.appendChild(overlay);
+    overlay.addEventListener('click', function(e) { if (e.target === overlay) overlay.remove(); });
 }
 
 // --- FILTRO DE DIFICULTAD ---
