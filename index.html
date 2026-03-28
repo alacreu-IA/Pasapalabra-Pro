@@ -20445,6 +20445,7 @@ const DIC_CAMPOS = [
 ];
 
 const DIC_LETRAS = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','Ñ','O','P','Q','R','S','T','U','V','X','Y','Z'];
+const DIC_LETRA_TOTALES = {A:5491,B:2062,C:6368,D:2542,E:3950,F:1486,G:1644,H:1275,I:1182,J:456,K:74,L:1230,M:2843,N:736,'Ñ':46,O:824,P:4172,Q:266,R:2637,S:2670,T:2730,U:262,V:1083,W:0,X:30,Y:117,Z:414};
 
 const DIC_CAMPO_ICONS = {};
 DIC_CAMPOS.forEach(function(c){ DIC_CAMPO_ICONS[c.id] = c.icon + ' ' + c.name; });
@@ -20466,13 +20467,13 @@ function mostrarFiltroLetra() {
     panel.style.display = panel.style.display === 'none' ? 'block' : 'none';
     if (panel.style.display === 'block') {
         var grid = document.getElementById('dic-letras-grid');
-        if (!grid.children.length) {
-            DIC_LETRAS.forEach(function(l) {
+        grid.innerHTML = '';
+        DIC_LETRAS.forEach(function(l) {
                 var btn = document.createElement('button');
                 btn.className = 'dic-letra-btn';
                 // Get progress from saved session AND from hito counter
                 var prog = dicLeerProgreso('letra', l);
-                var totalLetra = (typeof TOTAL_POR_LETRA !== 'undefined' ? TOTAL_POR_LETRA[l] : 0) || 500;
+                var totalLetra = (typeof DIC_LETRA_TOTALES !== 'undefined' ? DIC_LETRA_TOTALES[l] : 0) || (typeof TOTAL_POR_LETRA !== 'undefined' ? TOTAL_POR_LETRA[l] : 0) || 0;
                 var vistas = parseInt(localStorage.getItem('dic_hito_letra_' + l) || '0');
                 // Use the higher of: session progress or hito counter
                 var vistoCount = prog && prog.idx > vistas ? prog.idx : vistas;
@@ -20488,7 +20489,6 @@ function mostrarFiltroLetra() {
                 })(l, vistoCount, totalLetra);
                 grid.appendChild(btn);
             });
-        }
         panel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
     }
 }
@@ -23290,7 +23290,7 @@ function renderDashboard(){try{var u=JSON.parse(localStorage.getItem('ppro_usage
   if (dicLetrasEl) {
     var letraRows = LETRAS_ESP.map(function(l) {
       var vistas = parseInt(localStorage.getItem('dic_hito_letra_' + l) || '0');
-      var total = TOTAL_POR_LETRA[l] || 500;
+      var total = TOTAL_POR_LETRA[l] || 0;
       var pct = Math.min(100, Math.round(vistas / total * 100));
       var col = pct >= 70 ? '#00b894' : pct >= 30 ? 'var(--gold)' : pct > 0 ? '#74b9ff' : 'var(--border2)';
       return {l:l, vistas:vistas, total:total, pct:pct, col:col};
@@ -31348,8 +31348,7 @@ function raeGetLetraSiguiente(letraActual) {
 }
 
 function raeGetInfoLetra(letra) {
-  var totalPorLetra = {C:8100,S:5100,A:7904,P:6200,M:4300,R:3800,T:3900,E:4500,B:4200,D:4800,L:2100,G:2600,N:1500,F:2800,I:3200,V:2300,H:1800,J:900,O:2400,Z:600,U:1400,Q:600,X:100,Y:400,K:200,Ñ:200,W:100};
-  var total = totalPorLetra[letra] || 500;
+  var total = (typeof DIC_LETRA_TOTALES !== 'undefined' ? DIC_LETRA_TOTALES[letra] : 0) || 0;
   var vistas = parseInt(localStorage.getItem('dic_hito_letra_' + letra) || '0');
   var pct = Math.min(100, Math.round(vistas / total * 100));
   var diasRestantes = Math.ceil((total - vistas) / RAE_PALABRAS_DIA);
