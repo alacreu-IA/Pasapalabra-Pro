@@ -19382,7 +19382,7 @@ if (isD2) onclickAction = 'abrirSelectorDeporte()';
 if (isC2) onclickAction = 'abrirSelectorCiencia()';
 if (isA2) onclickAction = 'abrirSelectorArte()';
 if (m.id === 'cg') onclickAction = 'abrirSelectorCG()';
-      const hasSelector=isLitEsp||isHist||isHistEsp||isGeoEsp||isGeoMund||isCine||isTeatro||isHistUni||isCapitales||isD2||isC2||isA2;
+      const isCG=m.id==='cg'; const hasSelector=isLitEsp||isHist||isHistEsp||isGeoEsp||isGeoMund||isCine||isTeatro||isHistUni||isCapitales||isD2||isC2||isA2||isCG;
       const badgeContent = isLitEsp ? '<span style="background:#fab1a0; color:#000; padding:4px 10px; border-radius:20px; font-size:0.75rem; font-weight:bold;">8 minijuegos</span>' 
                          : (isHist ? '<span style="background:#dc3545; color:#fff; padding:4px 10px; border-radius:20px; font-size:0.75rem; font-weight:bold;">10 minijuegos</span>'
                          : (isHistEsp ? '<span style="background:#ff7675; color:#fff; padding:4px 10px; border-radius:20px; font-size:0.75rem; font-weight:bold;">5 minijuegos</span>'
@@ -19395,7 +19395,8 @@ if (m.id === 'cg') onclickAction = 'abrirSelectorCG()';
                          : (isD2 ? '<span style="background:#00cec9;color:#000;padding:4px 10px;border-radius:20px;font-size:0.75rem;font-weight:bold;">3 niveles</span>'
                          : (isC2 ? '<span style="background:#a29bfe;color:#000;padding:4px 10px;border-radius:20px;font-size:0.75rem;font-weight:bold;">2 niveles</span>'
                          : (isA2 ? '<span style="background:#e17055;color:#fff;padding:4px 10px;border-radius:20px;font-size:0.75rem;font-weight:bold;">2 modos</span>'
-                         : `<span style="background:${isDone ? 'transparent' : (m.color || 'var(--accent)')}; color:${isDone ? 'var(--muted)' : '#000'}; padding:4px 10px; border-radius:20px; font-size:0.75rem; font-weight:bold; white-space:nowrap;">${isDone ? 'Al día ✓' : dueCount + ' hoy'}</span>`)))))))))));
+                         : (isCG ? '<span style="background:#dfe6e9;color:#000;padding:4px 10px;border-radius:20px;font-size:0.75rem;font-weight:bold;">6 categorías</span>'
+                         : `<span style="background:${isDone ? 'transparent' : (m.color || 'var(--accent)')}; color:${isDone ? 'var(--muted)' : '#000'}; padding:4px 10px; border-radius:20px; font-size:0.75rem; font-weight:bold; white-space:nowrap;">${isDone ? 'Al día ✓' : dueCount + ' hoy'}</span>`))))))))))));
 
       
       container.innerHTML += `
@@ -28684,9 +28685,19 @@ window.iniciarJuegoDeporte = function(nivel, bloqueId) {
     var t = preguntas[i]; preguntas[i] = preguntas[j]; preguntas[j] = t;
   }
 
-  // Todas las respuestas del nivel para generar distractores
+  // Distractores: preferir mismo bloque, fallback a nivel completo
   var todasResp = [];
-  niv.bloques.forEach(function(b) { b.preguntas.forEach(function(p) { todasResp.push(p.respuesta); }); });
+  if (bloqueId === 'todos') {
+    niv.bloques.forEach(function(b) { b.preguntas.forEach(function(p) { todasResp.push(p.respuesta); }); });
+  } else {
+    var bloqueActual = niv.bloques.find(function(b) { return b.id === bloqueId; });
+    if (bloqueActual) bloqueActual.preguntas.forEach(function(p) { todasResp.push(p.respuesta); });
+    if (todasResp.length < 6) {
+      niv.bloques.forEach(function(b) {
+        if (b.id !== bloqueId) b.preguntas.forEach(function(p) { todasResp.push(p.respuesta); });
+      });
+    }
+  }
 
   deporteGameState = {
     nivel: nivel,
