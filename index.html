@@ -1569,12 +1569,24 @@ html, body {
                 <h3>RAE Extremo</h3>
                 <p>430 palabras de nivel</p>
             </div>
+            <div class="mode-card" onclick="window.location.href='familias.html'" style="border-color:#a29bfe;">
+                <div class="mode-icon">🧬</div>
+                <h3>Familias Léxicas</h3>
+                <p>38.565 palabras · por raíz</p>
+            </div>
             <div class="mode-card" onclick="goTo('dashboard'); renderDashboard();">
                 <div class="mode-icon">📊</div>
                 <h3>Mi Progreso</h3>
                 <p>Stats y rachas</p>
             </div>
+
         </div>
+
+        <!-- Hidden plan data elements -->
+        <span id="plan-noe-preview" style="display:none;"></span>
+        <span id="plan-noe-racha" style="display:none;"></span>
+        <span id="plan-noe-año" style="display:none;"></span>
+        <div id="plan-noe-barra" style="display:none;"></div>
 
         <!-- Banner Estudio Inteligente (contiene todos los mazos) -->
         <div onclick="openStudySelector()" style="background:linear-gradient(135deg, var(--card2), var(--card)); border:1px solid var(--accent); padding:18px 20px; border-radius:16px; margin:20px 0; cursor:pointer; box-shadow:0 4px 20px rgba(0,0,0,0.4); display:flex; justify-content:space-between; align-items:center;">
@@ -1630,7 +1642,7 @@ html, body {
                 <div class="deck-icon">📚</div>
                 <div class="deck-info">
                     <h4>Diccionario RAE</h4>
-                    <p>46590 palabras (más o menos) · por letra, campo y en proceso</p>
+                    <p>75.812 palabras · por letra, campo y más</p>
                 </div>
                 <div class="deck-arrow">›</div>
             </div>
@@ -1731,7 +1743,7 @@ html, body {
                 <div class="dic-mc-icon">🎲</div>
                 <div class="dic-mc-title">Aleatorio</div>
                 <div class="dic-mc-desc">Palabras al azar de todo el diccionario. El modo más sorprendente.</div>
-                <div class="dic-mc-count">46590 palabras</div>
+                <div class="dic-mc-count">75.812 palabras</div>
             </div>
             <div class="dic-mode-card" onclick="mostrarFiltroLetra()">
                 <div class="dic-mc-icon">🔤</div>
@@ -1775,13 +1787,7 @@ html, body {
                 <div class="dic-mc-desc">Del árabe, náhuatl, francés, italiano... préstamos al español.</div>
                 <div class="dic-mc-count">~4.400 palabras</div>
             </div>
-<div class="dic-mode-card" onclick="window.location.href='familias.html'">
-            <div class="dic-mc-icon">🧬</div>
-            <div class="dic-mc-title">Familias Léxicas</div>
-            <div class="dic-mc-desc">Palabras agrupadas por raíz común. Descubre cómo se relacionan. Si he generado bien esto... Quién sabe.</div>
-            <div class="dic-mc-count">~42.000 familias</div>
-        </div>
-    
+
         </div>
 
         <!-- GRID DE LETRAS -->
@@ -20454,24 +20460,32 @@ async function prepararPalabrasDia() {
     if (dia) return dia.palabras; // ya están generadas hoy
 
     // Cargar letras al azar para seleccionar
-    var letrasAleatorias = dicMezclar([...DIC_LETRAS]).slice(0, 5);
-    var candidatas = [];
-    for (var l of letrasAleatorias) {
+    // 30 palabras de la letra en curso + 10 de sorpresa (otras letras)
+    var letraActual = (typeof raeGetLetraActual === 'function') ? raeGetLetraActual().letra : 'A';
+    var candidatasLetra = [];
+    var candidatasSorpresa = [];
+
+    // Bloque principal: 30 de la letra actual
+    try {
+        var dataLetra = await dicCargarLetra(letraActual);
+        var nuevas = dataLetra.filter(function(p) { return !dicGetSrs(p.w); });
+        var dificiles = dataLetra.filter(function(p) { var s=dicGetSrs(p.w); return s && s.nivel===1; });
+        var repaso = dataLetra.filter(function(p) { var s=dicGetSrs(p.w); return s && s.nivel===3 && s.due<Date.now(); });
+        candidatasLetra = nuevas.concat(dificiles).concat(repaso);
+    } catch(e) {}
+
+    // Bloque sorpresa: 10 de otras letras (variedad cognitiva)
+    var letrasSorpresa = dicMezclar(DIC_LETRAS.filter(function(l){ return l !== letraActual; })).slice(0, 2);
+    for (var ls of letrasSorpresa) {
         try {
-            var data = await dicCargarLetra(l);
-            // Filtrar: no las ya dominadas, priorizar nuevas y difíciles
-            var filtradas = data.filter(function(p) {
-                var s = dicGetSrs(p.w);
-                if (!s) return true; // nueva — incluir
-                if (s.nivel === 1) return true; // difícil — incluir
-                if (s.nivel === 3 && s.due < Date.now()) return true; // toca repasar
-                return false;
-            });
-            candidatas = candidatas.concat(filtradas);
+            var ds = await dicCargarLetra(ls);
+            var nuevasS = ds.filter(function(p) { return !dicGetSrs(p.w); });
+            candidatasSorpresa = candidatasSorpresa.concat(dicMezclar(nuevasS).slice(0, 5));
         } catch(e) {}
     }
 
-    var seleccion = dicMezclar(candidatas).slice(0, 20);
+    var seleccion = candidatasLetra.slice(0, 30).concat(dicMezclar(candidatasSorpresa).slice(0, 10));
+    seleccion = dicMezclar(seleccion); // mezclar para que las sorpresa no vayan todas al final
     var nuevoDia = {
         palabras: seleccion.map(function(p) { return {w:p.w, c:p.c, p:p.p, d:p.d, df:p.df, e:p.e, s:p.s, ec:p.ec, esp:p.esp}; }),
         vistas: 0,
@@ -20824,7 +20838,9 @@ async function dicCargarPalabras(modo, filtro) {
         return await dicCargarLetra(filtro);
     } else if (modo === 'campo') {
         var todas = [];
-        for (var l of DIC_LETRAS) {
+        var letraFiltro = arguments[2] || null;
+        var letrasACargar = letraFiltro ? [letraFiltro] : DIC_LETRAS;
+        for (var l of letrasACargar) {
             var data = await dicCargarLetra(l);
             var filtradas = data.filter(function(p){
                 if (filtro.startsWith('etym_')) return p.ec === filtro;
@@ -20832,7 +20848,8 @@ async function dicCargarPalabras(modo, filtro) {
             });
             todas = todas.concat(filtradas);
         }
-        return todas;
+        if (!letraFiltro) todas = dicMezclar(todas);
+        return todas.filter(function(p){ return !dicEstaOculta(p.w); });
     } else if (modo === 'dia') {
         // Palabras del día — generadas o recuperadas
         return await prepararPalabrasDia();
@@ -23003,7 +23020,37 @@ function openExternalUrl(url) {
     }
 }
 
-function renderDashboard(){try{var u=JSON.parse(localStorage.getItem('ppro_usage')||'{"sessions":[],"byDeck":{},"daily":{}}');var letters=JSON.parse(localStorage.getItem('ppro_letters')||'{}');var roscoH=JSON.parse(localStorage.getItem('ppro_rosco_hist')||'[]');var sessions=u.sessions||[],byDeck=u.byDeck||{},daily=u.daily||{};var totalQ=sessions.reduce(function(s,x){return s+(x.answered||0);},0);var totalOk=sessions.reduce(function(s,x){return s+(x.correct||0);},0);var totalMin=sessions.reduce(function(s,x){return s+(x.minutes||0);},0);var pct=totalQ?Math.round(100*totalOk/totalQ):0;var today=new Date().toISOString().slice(0,10);var todayMin=sessions.filter(function(s){return s.date===today;}).reduce(function(s,x){return s+(x.minutes||0);},0);var streak=0;for(var i=0;i<365;i++){var dd=new Date();dd.setDate(dd.getDate()-i);if((daily[dd.toISOString().slice(0,10)]||0)>0)streak++;else if(i>0)break;}document.getElementById('db-total').textContent=totalQ.toLocaleString('es');document.getElementById('db-pct').textContent=pct+'%';document.getElementById('db-streak').textContent=streak+'d';document.getElementById('db-today').textContent=todayMin<60?todayMin+'min':Math.floor(todayMin/60)+'h '+(todayMin%60?todayMin%60+'m':'');document.getElementById('db-total-time').textContent=Math.round(totalMin/60)+'h';var heat=document.getElementById('db-heatmap');heat.innerHTML='';var vals=Object.values(daily).map(Number);var maxD=vals.length?Math.max.apply(null,[1].concat(vals)):1;for(var j=69;j>=0;j--){var dj=new Date();dj.setDate(dj.getDate()-j);var kj=dj.toISOString().slice(0,10);var vj=daily[kj]||0;var aj=vj?Math.max(0.15,vj/maxD):0;var cel=document.createElement('div');cel.style.cssText='width:11px;height:11px;border-radius:2px;background:'+(vj?'rgba(240,192,64,'+aj.toFixed(2)+')':'var(--border2)')+';';cel.title=kj+': '+vj+' preguntas';heat.appendChild(cel);}var deckEl=document.getElementById('db-by-deck');var entries=Object.entries(byDeck).sort(function(a,b){return b[1].answered-a[1].answered;});deckEl.innerHTML=entries.length?entries.map(function(e){var id=e[0],data=e[1];var p=data.answered?Math.round(100*data.correct/data.answered):0;var col=p>=70?'var(--green)':p>=40?'var(--gold)':'var(--red)';var nm=(typeof MAZOS!=='undefined')?((MAZOS.find(function(m){return m.id===id;})||{}).name||id):id;return '<div style="margin-bottom:10px;"><div style="display:flex;justify-content:space-between;font-size:0.74rem;margin-bottom:3px;"><span>'+nm+'</span><span style="color:'+col+'">'+p+'% ('+data.answered+')</span></div><div style="background:var(--border2);border-radius:5px;height:6px;"><div style="width:'+p+'%;background:'+col+';border-radius:5px;height:6px;"></div></div></div>';}).join(''):'<p style="color:var(--muted);font-size:0.8rem;text-align:center;padding:8px;">Practica para ver tus stats \U0001f4aa</p>';var hlEl=document.getElementById('db-hard-letters');var lArr=Object.entries(letters).map(function(e){var l=e[0],d=e[1];return{l:l,pct:(d.ok+d.fail)?Math.round(100*(d.ok||0)/(d.ok+d.fail)):100};}).sort(function(a,b){return a.pct-b.pct;}).slice(0,10);hlEl.innerHTML=lArr.length?lArr.map(function(x){var col=x.pct<50?'var(--red)':x.pct<70?'var(--gold)':'var(--green)';return '<div style="background:var(--card2);border:1px solid '+(x.pct<50?'var(--red)':'var(--border2)')+';border-radius:9px;padding:5px 11px;display:flex;align-items:center;gap:6px;font-size:0.8rem;"><strong style="font-size:1.05rem">'+x.l+'</strong><span style="color:'+col+'">'+x.pct+'%</span></div>';}).join(''):'<span style="color:var(--muted);font-size:0.8rem;">Sin datos a\u00fan, \u00a1haz el rosco!</span>';var rEl=document.getElementById('db-rosco-hist');rEl.innerHTML=roscoH.length?roscoH.slice(-8).reverse().map(function(r){var p=r.total?Math.round(100*r.ok/r.total):0;var col=p>=70?'var(--green)':p>=40?'var(--gold)':'var(--red)';return '<div style="display:flex;align-items:center;gap:8px;font-size:0.77rem;padding:7px 0;border-bottom:1px solid var(--border2);"><span style="color:var(--muted);min-width:68px;font-size:0.7rem;">'+r.date+'</span><span style="color:var(--green);">+'+r.ok+'</span><span style="color:var(--red);">\u2716'+r.fail+'</span><span style="color:var(--muted);">~'+(r.pass||0)+'</span><span style="font-weight:700;margin-left:auto;color:'+col+';">'+p+'%</span></div>';}).join(''):'<p style="color:var(--muted);font-size:0.8rem;text-align:center;padding:8px;">\u00a1Haz tu primer rosco!</p>';}catch(e){console.error('Dashboard:',e);}}
+function renderDashboard(){try{var u=JSON.parse(localStorage.getItem('ppro_usage')||'{"sessions":[],"byDeck":{},"daily":{}}');var letters=JSON.parse(localStorage.getItem('ppro_letters')||'{}');var roscoH=JSON.parse(localStorage.getItem('ppro_rosco_hist')||'[]');var sessions=u.sessions||[],byDeck=u.byDeck||{},daily=u.daily||{};var totalQ=sessions.reduce(function(s,x){return s+(x.answered||0);},0);var totalOk=sessions.reduce(function(s,x){return s+(x.correct||0);},0);var totalMin=sessions.reduce(function(s,x){return s+(x.minutes||0);},0);var pct=totalQ?Math.round(100*totalOk/totalQ):0;var today=new Date().toISOString().slice(0,10);var todayMin=sessions.filter(function(s){return s.date===today;}).reduce(function(s,x){return s+(x.minutes||0);},0);var streak=0;for(var i=0;i<365;i++){var dd=new Date();dd.setDate(dd.getDate()-i);if((daily[dd.toISOString().slice(0,10)]||0)>0)streak++;else if(i>0)break;}document.getElementById('db-total').textContent=totalQ.toLocaleString('es');document.getElementById('db-pct').textContent=pct+'%';document.getElementById('db-streak').textContent=streak+'d';document.getElementById('db-today').textContent=todayMin<60?todayMin+'min':Math.floor(todayMin/60)+'h '+(todayMin%60?todayMin%60+'m':'');document.getElementById('db-total-time').textContent=Math.round(totalMin/60)+'h';var heat=document.getElementById('db-heatmap');heat.innerHTML='';var vals=Object.values(daily).map(Number);var maxD=vals.length?Math.max.apply(null,[1].concat(vals)):1;for(var j=69;j>=0;j--){var dj=new Date();dj.setDate(dj.getDate()-j);var kj=dj.toISOString().slice(0,10);var vj=daily[kj]||0;var aj=vj?Math.max(0.15,vj/maxD):0;var cel=document.createElement('div');cel.style.cssText='width:11px;height:11px;border-radius:2px;background:'+(vj?'rgba(240,192,64,'+aj.toFixed(2)+')':'var(--border2)')+';';cel.title=kj+': '+vj+' preguntas';heat.appendChild(cel);}var deckEl=document.getElementById('db-by-deck');var entries=Object.entries(byDeck).sort(function(a,b){return b[1].answered-a[1].answered;});deckEl.innerHTML=entries.length?entries.map(function(e){var id=e[0],data=e[1];var p=data.answered?Math.round(100*data.correct/data.answered):0;var col=p>=70?'var(--green)':p>=40?'var(--gold)':'var(--red)';var nm=(typeof MAZOS!=='undefined')?((MAZOS.find(function(m){return m.id===id;})||{}).name||id):id;return '<div style="margin-bottom:10px;"><div style="display:flex;justify-content:space-between;font-size:0.74rem;margin-bottom:3px;"><span>'+nm+'</span><span style="color:'+col+'">'+p+'% ('+data.answered+')</span></div><div style="background:var(--border2);border-radius:5px;height:6px;"><div style="width:'+p+'%;background:'+col+';border-radius:5px;height:6px;"></div></div></div>';}).join(''):'<p style="color:var(--muted);font-size:0.8rem;text-align:center;padding:8px;">Practica para ver tus stats \U0001f4aa</p>';var hlEl=document.getElementById('db-hard-letters');var lArr=Object.entries(letters).map(function(e){var l=e[0],d=e[1];return{l:l,pct:(d.ok+d.fail)?Math.round(100*(d.ok||0)/(d.ok+d.fail)):100};}).sort(function(a,b){return a.pct-b.pct;}).slice(0,10);hlEl.innerHTML=lArr.length?lArr.map(function(x){var col=x.pct<50?'var(--red)':x.pct<70?'var(--gold)':'var(--green)';return '<div style="background:var(--card2);border:1px solid '+(x.pct<50?'var(--red)':'var(--border2)')+';border-radius:9px;padding:5px 11px;display:flex;align-items:center;gap:6px;font-size:0.8rem;"><strong style="font-size:1.05rem">'+x.l+'</strong><span style="color:'+col+'">'+x.pct+'%</span></div>';}).join(''):'<span style="color:var(--muted);font-size:0.8rem;">Sin datos a\u00fan, \u00a1haz el rosco!</span>';var rEl=document.getElementById('db-rosco-hist');rEl.innerHTML=roscoH.length?roscoH.slice(-8).reverse().map(function(r){var p=r.total?Math.round(100*r.ok/r.total):0;var col=p>=70?'var(--green)':p>=40?'var(--gold)':'var(--red)';return '<div style="display:flex;align-items:center;gap:8px;font-size:0.77rem;padding:7px 0;border-bottom:1px solid var(--border2);"><span style="color:var(--muted);min-width:68px;font-size:0.7rem;">'+r.date+'</span><span style="color:var(--green);">+'+r.ok+'</span><span style="color:var(--red);">\u2716'+r.fail+'</span><span style="color:var(--muted);">~'+(r.pass||0)+'</span><span style="font-weight:700;margin-left:auto;color:'+col+';">'+p+'%</span></div>';}).join(''):'<p style="color:var(--muted);font-size:0.8rem;text-align:center;padding:8px;">\u00a1Haz tu primer rosco!</p>';
+  // Progreso diccionario por letra
+  var LETRAS_ESP = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','Ñ','O','P','Q','R','S','T','U','V','W','X','Y','Z'];
+  var TOTAL_POR_LETRA = {A:7904,B:4200,C:8100,D:4800,E:4500,F:2800,G:2600,H:1800,I:3200,J:900,K:200,L:2100,M:4300,N:1500,'Ñ':200,O:2400,P:6200,Q:600,R:3800,S:5100,T:3900,U:1400,V:2300,W:100,X:100,Y:400,Z:600};
+  var dicLetrasEl = document.getElementById('db-dic-letras');
+  if (dicLetrasEl) {
+    var letraRows = LETRAS_ESP.map(function(l) {
+      var vistas = parseInt(localStorage.getItem('dic_hito_letra_' + l) || '0');
+      var total = TOTAL_POR_LETRA[l] || 500;
+      var pct = Math.min(100, Math.round(vistas / total * 100));
+      var col = pct >= 70 ? '#00b894' : pct >= 30 ? 'var(--gold)' : pct > 0 ? '#74b9ff' : 'var(--border2)';
+      return {l:l, vistas:vistas, total:total, pct:pct, col:col};
+    }).filter(function(x) { return x.vistas > 0; })
+      .sort(function(a,b) { return b.pct - a.pct; });
+    if (letraRows.length === 0) {
+      dicLetrasEl.innerHTML = '<p style="color:var(--muted);font-size:0.82rem;text-align:center;padding:8px;">Empieza a estudiar el diccionario para ver tu progreso por letra.</p>';
+    } else {
+      dicLetrasEl.innerHTML = letraRows.map(function(x) {
+        return '<div style="background:var(--card);border:1px solid var(--border2);border-radius:12px;padding:10px 14px;">' +
+          '<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px;">' +
+            '<span style="font-weight:700;font-size:1rem;color:var(--text);">' + x.l + '</span>' +
+            '<span style="font-size:0.78rem;color:var(--muted);">' + x.vistas.toLocaleString('es') + ' / ~' + x.total.toLocaleString('es') + '</span>' +
+            '<span style="font-weight:700;font-size:0.88rem;color:' + x.col + ';">' + x.pct + '%</span>' +
+          '</div>' +
+          '<div style="background:var(--border2);border-radius:4px;height:5px;">' +
+            '<div style="width:' + x.pct + '%;background:' + x.col + ';border-radius:4px;height:5px;"></div>' +
+          '</div></div>';
+      }).join('');
+    }
+  }
+}catch(e){console.error('Dashboard:',e);}}
 
 function downloadBackup(){ backupProgreso(); }
 
@@ -30912,6 +30959,371 @@ function escEmpFin(gs){
   document.getElementById('esc-emp-rep2').onclick=function(){iniciarEscEmparejar();};
   document.getElementById('esc-emp-vol2').onclick=function(){document.getElementById('esc-emp-screen').remove();abrirEscultura();};
 }
+
+
+// ================================================================
+// PLAN NOE — sistema de plan anual personalizado
+// ================================================================
+var PLAN_NOE_KEY = 'ppro_plan_noe_v1';
+var PLAN_NOE_VISTO_KEY = 'ppro_plan_noe_bienvenida';
+
+// Orden de letras por frecuencia en Pasapalabra
+var RAE_ORDEN_LETRAS = ['C','S','A','P','M','R','T','E','B','D','L','G','N','F','I','V','H','J','O','Z','U','Q','X','Y','K','Ñ','W'];
+var RAE_PALABRAS_DIA = 40;
+var RAE_LETRA_KEY = 'ppro_rae_letra_actual';
+
+function raeGetLetraActual() {
+  var datos = JSON.parse(localStorage.getItem(RAE_LETRA_KEY) || 'null');
+  if (!datos) return { letra: RAE_ORDEN_LETRAS[0], completadas: 0 };
+  return datos;
+}
+
+function raeGetLetraSiguiente(letraActual) {
+  var idx = RAE_ORDEN_LETRAS.indexOf(letraActual);
+  if (idx < 0 || idx >= RAE_ORDEN_LETRAS.length - 1) return RAE_ORDEN_LETRAS[0];
+  return RAE_ORDEN_LETRAS[idx + 1];
+}
+
+function raeGetInfoLetra(letra) {
+  var totalPorLetra = {C:8100,S:5100,A:7904,P:6200,M:4300,R:3800,T:3900,E:4500,B:4200,D:4800,L:2100,G:2600,N:1500,F:2800,I:3200,V:2300,H:1800,J:900,O:2400,Z:600,U:1400,Q:600,X:100,Y:400,K:200,Ñ:200,W:100};
+  var total = totalPorLetra[letra] || 500;
+  var vistas = parseInt(localStorage.getItem('dic_hito_letra_' + letra) || '0');
+  var pct = Math.min(100, Math.round(vistas / total * 100));
+  var diasRestantes = Math.ceil((total - vistas) / RAE_PALABRAS_DIA);
+  return { total: total, vistas: vistas, pct: pct, diasRestantes: diasRestantes };
+}
+
+// Rotación de 16 días: RAE siempre + materia del día
+var PLAN_ROTACION = [
+  { area: 'historia_esp',  emoji: '🇪🇸', nombre: 'Historia de España',    desc: 'RAE + De los Reyes Católicos a hoy' },
+  { area: 'historia_uni',  emoji: '🌐', nombre: 'Historia Universal',      desc: 'RAE + Guerras, imperios y civilizaciones' },
+  { area: 'geo_esp',       emoji: '📍', nombre: 'Geografía de España',     desc: 'RAE + Ríos, provincias y comunidades' },
+  { area: 'geo_mundial',   emoji: '🗺️', nombre: 'Geografía Mundial',       desc: 'RAE + Países y capitales del mundo' },
+  { area: 'historia_esp',  emoji: '🇪🇸', nombre: 'Historia de España',    desc: 'RAE + Personajes y fechas clave' },
+  { area: 'capitales',     emoji: '✈️', nombre: 'Capitales',               desc: 'RAE + Porque Sídney no es la capital...' },
+  { area: 'historia_uni',  emoji: '🌐', nombre: 'Historia Universal',      desc: 'RAE + Repaso de imperios y revoluciones' },
+  { area: 'literatura_esp',emoji: '📖', nombre: 'Literatura Española',     desc: 'RAE + Góngora, Quevedo y compañía' },
+  { area: 'geo_esp',       emoji: '📍', nombre: 'Geografía de España',     desc: 'RAE + Montañas, ríos y costas' },
+  { area: 'literatura_uni',emoji: '📚', nombre: 'Literatura Universal',    desc: 'RAE + Rusos con trauma y franceses intensitos' },
+  { area: 'geo_mundial',   emoji: '🗺️', nombre: 'Geografía Mundial',       desc: 'RAE + Fronteras y banderas' },
+  { area: 'arte',          emoji: '🎨', nombre: 'Arte',                    desc: 'RAE + Pintura y escultura' },
+  { area: 'historia_esp',  emoji: '🇪🇸', nombre: 'Historia de España',    desc: 'RAE + Siglos XIX y XX' },
+  { area: 'ciencia',       emoji: '🔬', nombre: 'Ciencia',                 desc: 'RAE + Nobel y descubrimientos' },
+  { area: 'cine_teatro',   emoji: '🎬', nombre: 'Cine y Teatro',           desc: 'RAE + Directores, obras y premios' },
+  { area: 'deporte_mito',  emoji: '⚽', nombre: 'Deporte y Mitología',     desc: 'RAE + Récords, dioses y héroes' },
+  { area: 'repaso',        emoji: '🔄', nombre: 'Repaso general',          desc: 'Refuerza todo lo de estas semanas' },
+];
+
+// Día del ciclo basado en días totales estudiados
+function planNoeGetDiaCiclo() {
+  var p = planNoeLoad();
+  var dia = (p.diasEstudiados || 0) % PLAN_ROTACION.length;
+  return PLAN_ROTACION[dia];
+}
+
+// Compatibilidad con código anterior
+var PLAN_SEMANAL = {
+  0: PLAN_ROTACION[0], 1: PLAN_ROTACION[1], 2: PLAN_ROTACION[2],
+  3: PLAN_ROTACION[3], 4: PLAN_ROTACION[4], 5: PLAN_ROTACION[5], 6: PLAN_ROTACION[6]
+};
+
+function planNoeLoad() {
+  try { return JSON.parse(localStorage.getItem(PLAN_NOE_KEY) || '{"diasEstudiados":0,"iniciado":"","ultimoDia":""}'); }
+  catch(e) { return {diasEstudiados:0, iniciado:'', ultimoDia:''}; }
+}
+function planNoeSave(p) { localStorage.setItem(PLAN_NOE_KEY, JSON.stringify(p)); }
+
+function planNoeGetHoy() {
+  return planNoeGetDiaCiclo();
+}
+
+function planNoeRegistrarDia() {
+  var p = planNoeLoad();
+  var hoy = new Date().toISOString().slice(0,10);
+  if (p.ultimoDia === hoy) return;
+  if (!p.iniciado) p.iniciado = hoy;
+  p.diasEstudiados = (p.diasEstudiados || 0) + 1;
+  p.ultimoDia = hoy;
+  planNoeSave(p);
+}
+
+function planNoeGetPctAño() {
+  var p = planNoeLoad();
+  if (!p.iniciado) return 0;
+  var inicio = new Date(p.iniciado);
+  var hoy = new Date();
+  var diasPasados = Math.max(1, Math.round((hoy - inicio) / 86400000));
+  var diasObj = 365;
+  // % del año transcurrido que ha estudiado
+  return Math.min(100, Math.round((p.diasEstudiados / Math.min(diasPasados, diasObj)) * 100));
+}
+
+function planNoeGetRacha() {
+  var dias = [];
+  for (var k in localStorage) {
+    if (k.startsWith('dic_hito_letra_')) {
+      // aproximación: días de actividad
+    }
+  }
+  // Usar el contador de días del plan
+  var p = planNoeLoad();
+  return p.diasEstudiados || 0;
+}
+
+function planNoeRenderHome() {
+  var hoy = planNoeGetHoy();
+  var pct = planNoeGetPctAño();
+  var diasEst = (planNoeLoad().diasEstudiados || 0);
+
+  var prev = document.getElementById('plan-noe-preview');
+  var rachaEl = document.getElementById('plan-noe-racha');
+  var añoEl = document.getElementById('plan-noe-año');
+  var barraEl = document.getElementById('plan-noe-barra');
+
+  var diaCiclo = (planNoeLoad().diasEstudiados || 0) % PLAN_ROTACION.length + 1;
+  var raeLetra = raeGetLetraActual();
+  var raeInfo = raeGetInfoLetra(raeLetra.letra);
+  if (prev) prev.textContent = '📚 Letra ' + raeLetra.letra + ' (' + raeInfo.pct + '%) · ' + hoy.emoji + ' ' + hoy.nombre;
+  if (rachaEl) rachaEl.textContent = '📅 ' + diasEst + ' días';
+  if (añoEl) añoEl.textContent = pct + '% constancia';
+  if (barraEl) setTimeout(function(){ barraEl.style.width = pct + '%'; }, 300);
+}
+
+function abrirPlanNoe() {
+  var visto = localStorage.getItem(PLAN_NOE_VISTO_KEY);
+  if (!visto) {
+    mostrarBienvenidaNoe();
+  } else {
+    mostrarPanelPlanNoe();
+  }
+}
+
+function mostrarBienvenidaNoe() {
+  localStorage.setItem(PLAN_NOE_VISTO_KEY, '1');
+  var p = planNoeLoad();
+  if (!p.iniciado) { p.iniciado = new Date().toISOString().slice(0,10); planNoeSave(p); }
+
+  var div = document.createElement('div');
+  div.id = 'bienvenida-noe';
+  div.style.cssText = 'position:fixed;top:0;left:0;right:0;bottom:0;background:var(--bg);z-index:999999;overflow-y:auto;';
+  div.innerHTML =
+    '<div style="max-width:420px;margin:0 auto;padding:40px 24px 60px;">' +
+      // Header
+      '<div style="text-align:center;margin-bottom:32px;">' +
+        '<div style="font-size:3.5rem;margin-bottom:12px;">👋</div>' +
+        '<h1 style="color:var(--text);font-size:1.6rem;margin:0 0 8px;">Hola, Noe</h1>' +
+        '<p style="color:var(--muted);font-size:0.9rem;line-height:1.6;">Sé que vas un poco agobiada — madre, currando, y encima preparando Pasapalabra. Que sepas que te entiendo perfectamente.</p>' +
+      '</div>' +
+
+      // El problema
+      '<div style="background:var(--card);border:1px solid var(--border2);border-radius:16px;padding:20px;margin-bottom:16px;">' +
+        '<div style="font-size:1.3rem;margin-bottom:8px;">🤯</div>' +
+        '<p style="color:var(--text);font-size:0.9rem;line-height:1.6;margin:0;">75.000 palabras del diccionario. Historia, geografía, arte, ciencia... ¿Por dónde empiezas? ¿Cuándo estudias? ¿Estás avanzando o dando vueltas?</p>' +
+      '</div>' +
+
+      // La solución
+      '<div style="background:linear-gradient(135deg,#0f0f2e,#1a1035);border:2px solid #a29bfe;border-radius:16px;padding:20px;margin-bottom:16px;">' +
+        '<div style="font-size:1.3rem;margin-bottom:8px;">💜</div>' +
+        '<p style="color:#a29bfe;font-size:0.9rem;font-weight:600;margin:0 0 8px;">He decidido echarte un cable.</p>' +
+        '<p style="color:var(--muted);font-size:0.85rem;line-height:1.6;margin:0;">Cada día cuando abras la app, te digo exactamente qué hacer. Sin pensar, sin agobios. Solo abrir y estudiar 20 minutos.</p>' +
+      '</div>' +
+
+      // El plan
+      '<div style="background:var(--card);border:1px solid var(--border2);border-radius:16px;padding:20px;margin-bottom:16px;">' +
+        '<p style="color:var(--text);font-size:0.88rem;font-weight:700;margin:0 0 14px;">📅 Tu plan semanal</p>' +
+        '<div style="display:flex;flex-direction:column;gap:8px;">' +
+          ['Lun','Mar','Mié','Jue','Vie','Sáb','Dom'].map(function(d, i) {
+            var dia = [1,2,3,4,5,6,0][i];
+            var p2 = PLAN_SEMANAL[dia];
+            var s = 'display:flex;align-items:center;gap:10px;';
+            var s2 = 'color:var(--muted);font-size:0.75rem;min-width:28px;';
+            var s3 = 'font-size:1rem;';
+            var s4 = 'color:var(--text);font-size:0.82rem;';
+            return '<div style="' + s + '"><span style="' + s2 + '">' + d + '</span><span style="' + s3 + '">' + p2.emoji + '</span><span style="' + s4 + '">' + p2.nombre + '</span></div>';
+          }).join('') +
+        '</div>' +
+      '</div>' +
+
+      // La clave
+      '<div style="background:var(--card);border:1px solid var(--border2);border-radius:16px;padding:20px;margin-bottom:28px;">' +
+        '<p style="color:var(--text);font-size:0.88rem;font-weight:700;margin:0 0 10px;">🔑 La clave</p>' +
+        '<div style="display:flex;flex-direction:column;gap:8px;">' +
+          '<div style="display:flex;gap:10px;"><span>⏱️</span><span style="color:var(--muted);font-size:0.82rem;line-height:1.5;"><strong style="color:var(--text);">20 minutos al día</strong> es suficiente. No hace falta más.</span></div>' +
+          '<div style="display:flex;gap:10px;"><span>😴</span><span style="color:var(--muted);font-size:0.82rem;line-height:1.5;">Si un día no puedes, <strong style="color:var(--text);">no pasa nada</strong>. La racha no se rompe por un día.</span></div>' +
+          '<div style="display:flex;gap:10px;"><span>📈</span><span style="color:var(--muted);font-size:0.82rem;line-height:1.5;">Verás tu progreso crecer. <strong style="color:var(--text);">Cada sesión cuenta.</strong></span></div>' +
+        '</div>' +
+      '</div>' +
+
+      '<button id="btn-ir-plan" style="width:100%;background:#a29bfe;color:#111;border:none;border-radius:16px;padding:18px;font-size:1.1rem;font-weight:700;cursor:pointer;">¡Vamos allá! →</button>' +
+    '</div>';
+  document.body.appendChild(div);
+  var btnIr = document.getElementById('btn-ir-plan');
+  if (btnIr) btnIr.onclick = function() {
+    var el = document.getElementById('bienvenida-noe');
+    if (el) el.remove();
+    mostrarPanelPlanNoe();
+  };
+}
+
+function mostrarPanelPlanNoe() {
+  var hoy = planNoeGetHoy();
+  var pct = planNoeGetPctAño();
+  var p = planNoeLoad();
+  var diasEst = p.diasEstudiados || 0;
+  var diaSemana = ['Domingo','Lunes','Martes','Miércoles','Jueves','Viernes','Sábado'][new Date().getDay()];
+
+  // Calcular palabras RAE estudiadas hoy aproximado
+  var nDificiles = 0;
+  var ahora = Date.now();
+  for (var k in localStorage) {
+    if (!k.startsWith('dic_srs_')) continue;
+    try { var s = JSON.parse(localStorage.getItem(k)); if (s.nivel === 1) nDificiles++; } catch(e) {}
+  }
+
+  var div = document.createElement('div');
+  div.id = 'panel-plan-noe';
+  div.style.cssText = 'position:fixed;top:0;left:0;right:0;bottom:0;background:var(--bg);z-index:999999;overflow-y:auto;';
+  div.innerHTML =
+    '<div style="padding:0 0 60px;">' +
+      // Header
+      '<div style="background:linear-gradient(135deg,#0f0f2e,#1a1035);padding:24px 20px 28px;">' +
+        '<button id="btn-cerrar-plan" style="background:none;border:none;color:var(--muted);font-size:1.4rem;cursor:pointer;margin-bottom:12px;">←</button>' +
+        '<div style="display:flex;align-items:center;gap:12px;margin-bottom:16px;">' +
+          '<div style="font-size:2rem;">🗓️</div>' +
+          '<div>' +
+            '<h2 style="color:#a29bfe;margin:0;font-size:1.2rem;">Tu plan · Noe</h2>' +
+            '<p style="color:var(--muted);font-size:0.75rem;margin:4px 0 0;">' + diaSemana + ' · ' + new Date().toLocaleDateString('es-ES', {day:'numeric',month:'long'}) + '</p>' +
+          '</div>' +
+        '</div>' +
+        // Barra progreso año
+        '<div style="display:flex;justify-content:space-between;font-size:0.72rem;color:var(--muted);margin-bottom:6px;">' +
+          '<span>Progreso del año</span><span style="color:#a29bfe;">' + pct + '%</span>' +
+        '</div>' +
+        '<div style="background:rgba(255,255,255,0.1);border-radius:6px;height:6px;">' +
+          '<div style="width:' + pct + '%;background:#a29bfe;border-radius:6px;height:6px;"></div>' +
+        '</div>' +
+        (function() {
+          var rl = raeGetLetraActual();
+          var ri = raeGetInfoLetra(rl.letra);
+          return '<div style="margin-top:10px;">' +
+            '<div style="display:flex;justify-content:space-between;font-size:0.72rem;color:var(--muted);margin-bottom:4px;">' +
+              '<span>📚 Letra ' + rl.letra + ' · ' + ri.vistas.toLocaleString('es') + '/' + ri.total.toLocaleString('es') + ' palabras</span>' +
+              '<span style="color:#a29bfe;">' + ri.pct + '%</span>' +
+            '</div>' +
+            '<div style="background:rgba(255,255,255,0.1);border-radius:4px;height:3px;">' +
+              '<div style="width:' + ri.pct + '%;background:#a29bfe;border-radius:4px;height:3px;"></div>' +
+            '</div>' +
+            '<div style="font-size:0.7rem;color:var(--muted);margin-top:4px;">~' + ri.diasRestantes + ' días para terminar la ' + rl.letra + ' · ' + (nDificiles > 0 ? '🔴 ' + nDificiles + ' difíciles pendientes' : '✅ Sin urgentes') + '</div>' +
+          '</div>';
+        })() +
+      '</div>' +
+
+      '<div style="padding:20px;">' +
+        // Sesión de hoy
+        '<p style="color:var(--muted);font-size:0.75rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;margin-bottom:10px;">Hoy toca</p>' +
+        '<div style="background:linear-gradient(135deg,#0f0f2e,#1a1035);border:2px solid #a29bfe;border-radius:16px;padding:20px;margin-bottom:20px;">' +
+          '<div style="font-size:2.5rem;margin-bottom:8px;">' + hoy.emoji + '</div>' +
+          '<h3 style="color:#a29bfe;margin:0 0 6px;">' + hoy.nombre + '</h3>' +
+          (function() {
+            var rl2 = raeGetLetraActual();
+            var ri2 = raeGetInfoLetra(rl2.letra);
+            return '<div style="background:rgba(255,255,255,0.05);border-radius:8px;padding:10px;margin-bottom:12px;">' +
+              '<div style="font-size:0.75rem;color:#a29bfe;font-weight:600;margin-bottom:6px;">📚 RAE · 30 de la letra ' + rl2.letra + ' + 10 sorpresa</div>' +
+              '<div style="font-size:0.78rem;color:var(--muted);">Letra ' + rl2.letra + ' · ' + ri2.vistas.toLocaleString('es') + '/' + ri2.total.toLocaleString('es') + ' · ~' + ri2.diasRestantes + ' días para terminarla</div>' +
+            '</div>' +
+            '<div style="background:rgba(255,255,255,0.05);border-radius:8px;padding:10px;margin-bottom:16px;">' +
+              '<div style="font-size:0.75rem;color:var(--gold);font-weight:600;margin-bottom:4px;">' + hoy.emoji + ' ' + hoy.nombre + ' (10 min)</div>' +
+              '<div style="font-size:0.78rem;color:var(--muted);">' + hoy.desc.replace('RAE + ','') + '</div>' +
+            '</div>';
+          })() +
+          '<button id="btn-empezar-plan" style="width:100%;background:#a29bfe;color:#111;border:none;border-radius:12px;padding:14px;font-size:1rem;font-weight:700;cursor:pointer;">⚡ Empezar sesión</button>' +
+        '</div>' +
+
+        // Próximos días del ciclo
+        '<p style="color:var(--muted);font-size:0.75rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;margin-bottom:10px;">Próximas sesiones</p>' +
+        '<div style="display:flex;flex-direction:column;gap:6px;margin-bottom:20px;">' +
+          (function() {
+            var p3 = planNoeLoad();
+            var diaActual = (p3.diasEstudiados || 0) % PLAN_ROTACION.length;
+            var rows = '';
+            for (var x = 0; x < 5; x++) {
+              var idx = (diaActual + x) % PLAN_ROTACION.length;
+              var ps2 = PLAN_ROTACION[idx];
+              var esHoy = x === 0;
+              var bg2 = esHoy ? 'rgba(162,155,254,0.1)' : 'var(--card)';
+              var bc2 = esHoy ? '#a29bfe' : 'var(--border2)';
+              var tc2 = esHoy ? '#a29bfe' : 'var(--text)';
+              var fw2 = esHoy ? '700' : '400';
+              var badge = esHoy ? '<span style="margin-left:auto;font-size:0.7rem;color:#a29bfe;font-weight:700;">HOY</span>' : '<span style="margin-left:auto;font-size:0.7rem;color:var(--muted);">Día ' + (idx+1) + '/17</span>';
+              rows += '<div style="background:' + bg2 + ';border:1px solid ' + bc2 + ';border-radius:10px;padding:10px 14px;display:flex;align-items:center;gap:10px;">' +
+                '<span style="font-size:1.1rem;">' + ps2.emoji + '</span>' +
+                '<div style="flex:1;">' +
+                  '<div style="color:' + tc2 + ';font-size:0.82rem;font-weight:' + fw2 + ';">' + ps2.nombre + '</div>' +
+                  '<div style="color:var(--muted);font-size:0.7rem;">' + ps2.desc + '</div>' +
+                '</div>' +
+                badge + '</div>';
+            }
+            return rows;
+          })() +
+        '</div>' +
+
+        // Mensaje motivador
+        '<div style="background:var(--card);border-left:3px solid #a29bfe;border-radius:0 12px 12px 0;padding:14px 16px;">' +
+          '<p style="color:var(--muted);font-size:0.82rem;line-height:1.6;margin:0;">' + planNoeMensajeMotivador(diasEst) + '</p>' +
+        '</div>' +
+      '</div>' +
+    '</div>';
+  document.body.appendChild(div);
+  var btnCerrar = document.getElementById('btn-cerrar-plan');
+  if (btnCerrar) btnCerrar.onclick = function() {
+    var el = document.getElementById('panel-plan-noe');
+    if (el) el.remove();
+  };
+  var btnEmpezar = document.getElementById('btn-empezar-plan');
+  if (btnEmpezar) btnEmpezar.onclick = function() {
+    var el = document.getElementById('panel-plan-noe');
+    if (el) el.remove();
+    planNoeIniciarHoy();
+  };
+}
+
+function planNoeMensajeMotivador(dias) {
+  if (dias === 0) return "Hoy es el día uno. El más importante de todos. Cada experta en Pasapalabra empezó exactamente aquí.";
+  if (dias < 7)  return "Primera semana. Estás sentando las bases. Lo que estudias ahora se queda.";
+  if (dias < 30) return "Ya llevas " + dias + " días. Eso no es suerte, es carácter. Sigue.";
+  if (dias < 90) return dias + " días de constancia. Ya estás muy por delante de la mayoría de concursantes cuando llegan al plató.";
+  if (dias < 180) return "Más de " + Math.round(dias/30) + " meses. Noe, esto ya es otra dimensión.";
+  if (dias < 365) return "Casi un año de trabajo diario. Cuando llegues al plató, lo notarán.";
+  return "Un año completo. Eso es exactamente lo que separa a los que ganan el bote de los que no. Tú ya estás ahí.";
+}
+
+function planNoeIniciarHoy() {
+  var hoy = planNoeGetHoy();
+  planNoeRegistrarDia();
+  planNoeRenderHome();
+  // Ir al diccionario en la letra actual
+  var rl = raeGetLetraActual();
+  goTo('dic-selector');
+  // Lanzar directamente la letra correcta después de un momento
+  setTimeout(function() {
+    if (typeof iniciarDiccionario === 'function') {
+      iniciarDiccionario('letra', rl.letra);
+    }
+  }, 300);
+  // Toast con la materia del día
+  if (typeof showToast === 'function') {
+    setTimeout(function() {
+      showToast(hoy.emoji + ' Hoy también: ' + hoy.nombre);
+    }, 2000);
+  }
+}
+
+// Renderizar en home al cargar
+document.addEventListener('DOMContentLoaded', function() {
+  planNoeRenderHome();
+});
+// También renderizar cuando se vuelve al home
+var _origGoTo = typeof goTo === 'function' ? goTo : null;
 
 </script>
 
