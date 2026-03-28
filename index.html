@@ -19224,9 +19224,11 @@ window.iniciarDelitoHistorico = function() {
       if(m.id==='deporte')onclickAction='abrirSelectorDeporte()';
       if(m.id==='ciencia')onclickAction='abrirSelectorCiencia()';
       if(m.id==='arte')onclickAction='abrirSelectorArte()';
+if(m.id==='cg')onclickAction='abrirSelectorCG()';
                 if(m.id==='deporte')onclickAction='abrirSelectorDeporte()';
                 if(m.id==='ciencia')onclickAction='abrirSelectorCiencia()';
                 if(m.id==='arte')onclickAction='abrirSelectorArte()';
+if(m.id==='cg')onclickAction='abrirSelectorCG()';
                 
                 const isD=m.id==='deporte',isC=m.id==='ciencia',isA=m.id==='arte';
                 const hasSelector=isLitEsp||isHist||isHistEsp||isGeoEsp||isGeoMund||isCine||isTeatro||isHistUni||isCapitales||isD||isC||isA;
@@ -19379,6 +19381,7 @@ window.openStudySelector = function() {
 if (isD2) onclickAction = 'abrirSelectorDeporte()';
 if (isC2) onclickAction = 'abrirSelectorCiencia()';
 if (isA2) onclickAction = 'abrirSelectorArte()';
+if (m.id === 'cg') onclickAction = 'abrirSelectorCG()';
       const hasSelector=isLitEsp||isHist||isHistEsp||isGeoEsp||isGeoMund||isCine||isTeatro||isHistUni||isCapitales||isD2||isC2||isA2;
       const badgeContent = isLitEsp ? '<span style="background:#fab1a0; color:#000; padding:4px 10px; border-radius:20px; font-size:0.75rem; font-weight:bold;">8 minijuegos</span>' 
                          : (isHist ? '<span style="background:#dc3545; color:#fff; padding:4px 10px; border-radius:20px; font-size:0.75rem; font-weight:bold;">10 minijuegos</span>'
@@ -29384,6 +29387,103 @@ window.abrirSelectorCiencia = function() {
     });
   });
 };
+
+window.abrirSelectorCG = function() {
+    var cgMazo = MAZOS.find(function(m){ return m.id === 'cg'; });
+    var allQs = cgMazo ? cgMazo.questions : [];
+
+    var SUBCATS = {
+        'cultismos': { name:'Palabras Cultas', icon:'✨', color:'#a29bfe' },
+        'filosofia': { name:'Filosofía e Ideas', icon:'🏛️', color:'#fdcb6e' },
+        'historia':  { name:'Historia y Cultura', icon:'⚔️', color:'#e17055' },
+        'arte':      { name:'Arte y Literatura', icon:'🎨', color:'#fd79a8' },
+        'ciencia':   { name:'Ciencia', icon:'🔬', color:'#74b9ff' },
+        'sociedad':  { name:'Sociedad y Política', icon:'🌍', color:'#55efc4' },
+    };
+
+    var KEYS = {
+        'filosofia': [/filosof/i,/doctrina/i,/ideolog/i,/nihilis/i,/estoicis/i,/hedonism/i,/empirism/i,/racionalis/i,/marxismo/i,/anarquismo/i,/liberalismo/i,/socialismo/i,/fascismo/i,/totalitarismo/i,/deísmo/i,/ateísmo/i,/agnosticismo/i,/panteísmo/i,/krausismo/i,/enciclopedismo/i,/decadentismo/i,/fundamentalismo/i,/pragmatis/i],
+        'historia':  [/renacimient/i,/barroco/i,/ilustraci/i,/romanticis/i,/modernismo/i,/vanguardia/i,/guerra\b/i,/\bimperio\b/i,/civilizaci/i,/linaje/i,/hégira/i,/beligera/i,/estirpe/i,/prosapia/i,/abolengo/i],
+        'arte':      [/artístic/i,/literari/i,/\bpoema\b/i,/\bnovela\b/i,/\bdrama\b/i,/comedia\b/i,/tragedia\b/i,/\bautor\b/i,/\bescritor\b/i,/\bpoeta\b/i,/pintura\b/i,/escultura\b/i,/xilograf/i,/diletante/i,/\bnumen\b/i,/estética\b/i],
+        'ciencia':   [/\bcienci/i,/científ/i,/biología\b/i,/medicin/i,/anatom/i,/fisiolog/i,/química\b/i,/\bfísica\b/i,/astronomí/i,/geología\b/i,/enfermedad\b/i,/patolog/i,/galeno\b/i,/neurosis\b/i],
+        'sociedad':  [/\bsocial\b/i,/polític/i,/economí/i,/jurídic/i,/gobierno\b/i,/ostracismo\b/i,/mecenazgo\b/i,/nepotismo\b/i,/oligarquí/i,/demagogia\b/i,/utopía\b/i,/\breligión\b/i],
+    };
+
+    function classify(q) {
+        var text = (q.q + ' ' + q.a).toLowerCase();
+        var cats = ['filosofia','historia','arte','ciencia','sociedad'];
+        for (var c of cats) {
+            for (var k of KEYS[c]) { if (k.test(text)) return c; }
+        }
+        return 'cultismos';
+    }
+
+    var counts = { cultismos:0, filosofia:0, historia:0, arte:0, ciencia:0, sociedad:0 };
+    allQs.forEach(function(q){ counts[classify(q)]++; });
+
+    function makeItem(cat) {
+        var d = SUBCATS[cat];
+        return '<div class="deck-item" onclick="document.getElementById(\'cg-selector\').remove(); startSmartStudyFiltered(\'cg\',\'' + cat + '\')" style="border-color:' + d.color + '">' +
+            '<div class="deck-icon">' + d.icon + '</div>' +
+            '<div class="deck-info"><h4>' + d.name + '</h4>' +
+            '<p style="font-size:0.72rem;color:var(--muted);margin-top:4px;">' + counts[cat] + ' preguntas</p></div>' +
+            '<div class="deck-arrow">›</div></div>';
+    }
+
+    var html = '<div id="cg-selector" style="position:fixed;top:0;left:0;right:0;bottom:0;background:var(--bg);z-index:99999;display:flex;flex-direction:column;overflow-y:auto;">' +
+        '<div style="padding:15px 20px;display:flex;align-items:center;gap:15px;border-bottom:1px solid var(--border);position:sticky;top:0;background:var(--bg);z-index:10;">' +
+            '<button onclick="document.getElementById(\'cg-selector\').remove();" style="background:none;border:none;color:var(--text);font-size:1.5rem;cursor:pointer;">←</button>' +
+            '<div><h2 style="color:var(--text);font-size:1.3rem;margin:0;">🧠 Cultura General</h2>' +
+            '<p style="color:var(--muted);font-size:0.8rem;margin:4px 0 0 0;">' + allQs.length + ' preguntas en total</p></div>' +
+        '</div>' +
+        '<div style="padding:20px;display:flex;flex-direction:column;gap:12px;">' +
+            '<div class="deck-item" onclick="document.getElementById(\'cg-selector\').remove(); startSmartStudy(\'cg\');" style="border-color:var(--accent);background:linear-gradient(135deg,rgba(255,255,255,0.05),transparent);">' +
+                '<div class="deck-icon">🎲</div>' +
+                '<div class="deck-info"><h4>Todo mezclado</h4>' +
+                '<p style="font-size:0.72rem;color:var(--muted);margin-top:4px;">' + allQs.length + ' preguntas</p></div>' +
+                '<div class="deck-arrow">›</div>' +
+            '</div>' +
+            '<div style="border-top:1px solid var(--border);margin:4px 0;position:relative;">' +
+                '<span style="position:absolute;top:-9px;left:50%;transform:translateX(-50%);background:var(--bg);padding:0 10px;color:var(--muted);font-size:0.72rem;">por categoría</span>' +
+            '</div>' +
+            makeItem('cultismos') + makeItem('filosofia') + makeItem('historia') +
+            makeItem('arte') + makeItem('ciencia') + makeItem('sociedad') +
+        '</div></div>';
+
+    document.body.insertAdjacentHTML('beforeend', html);
+};
+
+window.startSmartStudyFiltered = function(mazoId, subcat) {
+    var KEYS = {
+        'filosofia': [/filosof/i,/doctrina/i,/ideolog/i,/nihilis/i,/estoicis/i,/hedonism/i,/empirism/i,/racionalis/i,/marxismo/i,/anarquismo/i,/liberalismo/i,/socialismo/i,/fascismo/i,/totalitarismo/i,/deísmo/i,/ateísmo/i,/agnosticismo/i,/panteísmo/i,/krausismo/i,/enciclopedismo/i,/decadentismo/i,/fundamentalismo/i,/pragmatis/i],
+        'historia':  [/renacimient/i,/barroco/i,/ilustraci/i,/romanticis/i,/modernismo/i,/vanguardia/i,/guerra\b/i,/\bimperio\b/i,/civilizaci/i,/linaje/i,/hégira/i,/beligera/i,/estirpe/i,/prosapia/i,/abolengo/i],
+        'arte':      [/artístic/i,/literari/i,/\bpoema\b/i,/\bnovela\b/i,/\bdrama\b/i,/comedia\b/i,/tragedia\b/i,/\bautor\b/i,/\bescritor\b/i,/\bpoeta\b/i,/pintura\b/i,/escultura\b/i,/xilograf/i,/diletante/i,/\bnumen\b/i,/estética\b/i],
+        'ciencia':   [/\bcienci/i,/científ/i,/biología\b/i,/medicin/i,/anatom/i,/fisiolog/i,/química\b/i,/\bfísica\b/i,/astronomí/i,/geología\b/i,/enfermedad\b/i,/patolog/i,/galeno\b/i,/neurosis\b/i],
+        'sociedad':  [/\bsocial\b/i,/polític/i,/economí/i,/jurídic/i,/gobierno\b/i,/ostracismo\b/i,/mecenazgo\b/i,/nepotismo\b/i,/oligarquí/i,/demagogia\b/i,/utopía\b/i,/\breligión\b/i],
+    };
+    var mazo = MAZOS.find(function(m){ return m.id === mazoId; });
+    if (!mazo) return;
+    var keys = KEYS[subcat] || [];
+    var filtered = mazo.questions.filter(function(q) {
+        if (subcat === 'cultismos') {
+            var text = (q.q + ' ' + q.a).toLowerCase();
+            var other = ['filosofia','historia','arte','ciencia','sociedad'];
+            for (var c of other) {
+                for (var k of (KEYS[c]||[])) { if (k.test(text)) return false; }
+            }
+            return true;
+        }
+        var text = (q.q + ' ' + q.a).toLowerCase();
+        for (var i=0; i<keys.length; i++) { if (keys[i].test(text)) return true; }
+        return false;
+    });
+    if (!filtered.length) { alert('No hay preguntas en esta categoría'); return; }
+    var orig = mazo.questions;
+    mazo.questions = filtered;
+    startSmartStudy(mazoId);
+    setTimeout(function(){ mazo.questions = orig; }, 100);
+};
+
 
 window.abrirSelectorBloqueCiencia = function(nivel) {
   var niv = CIENCIA_NIVELES.find(function(n) { return n.nivel === nivel; });
