@@ -1425,14 +1425,17 @@ html, body {
     display: grid; grid-template-columns: repeat(6, 1fr); gap: 6px;
 }
 .dic-letra-btn {
-    aspect-ratio: 1; border-radius: 12px;
+    border-radius: 12px; padding: 8px 4px 6px;
     border: 1px solid var(--border2); background: var(--card);
     color: var(--text); font-size: 0.95rem; font-weight: 700;
     cursor: pointer; transition: all 0.15s; display: flex;
-    align-items: center; justify-content: center;
-    font-family: 'Space Grotesk', sans-serif;
+    flex-direction: column; align-items: center; justify-content: center;
+    gap: 2px; position: relative; overflow: hidden;
+    font-family: 'Space Grotesk', sans-serif; min-height: 56px;
 }
 .dic-letra-btn:hover { border-color: var(--gold); color: var(--gold); }
+.dic-letra-btn .dlb-prog { font-size: 0.52rem; color: var(--muted); }
+.dic-letra-btn .dlb-bar { position: absolute; bottom: 0; left: 0; height: 3px; border-radius: 0 0 12px 12px; transition: width 0.4s; }
 
 /* Campos temáticos */
 .dic-campos-grid { display: flex; flex-direction: column; gap: 8px; }
@@ -1642,7 +1645,7 @@ html, body {
                 <div class="deck-icon">📚</div>
                 <div class="deck-info">
                     <h4>Diccionario RAE</h4>
-                    <p>75.812 palabras · por letra, campo y más</p>
+                    <p>46.590 palabras · por letra, campo y más</p>
                 </div>
                 <div class="deck-arrow">›</div>
             </div>
@@ -1696,7 +1699,7 @@ html, body {
     <div class="top-bar">
         <button class="btn-back" onclick="goTo('home')">←</button>
         <div class="top-bar-title">📚 Diccionario RAE</div>
-        <div class="top-bar-right" style="font-size:0.72rem;color:var(--muted);">75.812 palabras</div>
+        <div class="top-bar-right" style="font-size:0.72rem;color:var(--muted);">46.590 palabras</div>
     </div>
     <!-- BÚSQUEDA (siempre visible) -->
     <div class="dic-search-wrap visible" id="dic-search-wrap">
@@ -1743,7 +1746,7 @@ html, body {
                 <div class="dic-mc-icon">🎲</div>
                 <div class="dic-mc-title">Aleatorio</div>
                 <div class="dic-mc-desc">Palabras al azar de todo el diccionario. El modo más sorprendente.</div>
-                <div class="dic-mc-count">75.812 palabras</div>
+                <div class="dic-mc-count">46.590 palabras</div>
             </div>
             <div class="dic-mode-card" onclick="mostrarFiltroLetra()">
                 <div class="dic-mc-icon">🔤</div>
@@ -1761,31 +1764,31 @@ html, body {
                 <div class="dic-mc-icon">🌍</div>
                 <div class="dic-mc-title">Gentilicios</div>
                 <div class="dic-mc-desc">¿Cómo se llaman los habitantes de...?</div>
-                <div class="dic-mc-count">~1.800 palabras</div>
+                <div class="dic-mc-count">1.097 palabras</div>
             </div>
             <div class="dic-mode-card" onclick="iniciarDiccionario('especial', 'larga')">
                 <div class="dic-mc-icon">📏</div>
                 <div class="dic-mc-title">Las más largas</div>
                 <div class="dic-mc-desc">Palabras de 15+ letras. Las que rompen el rosco.</div>
-                <div class="dic-mc-count">~1.660 palabras</div>
+                <div class="dic-mc-count">1.097 palabras</div>
             </div>
             <div class="dic-mode-card" onclick="iniciarDiccionario('especial', 'onom')">
                 <div class="dic-mc-icon">🔊</div>
                 <div class="dic-mc-title">Onomatopéyicas</div>
                 <div class="dic-mc-desc">Palabras que imitan sonidos. Bambolear, barbullar...</div>
-                <div class="dic-mc-count">~130 palabras</div>
+                <div class="dic-mc-count">79 palabras</div>
             </div>
             <div class="dic-mode-card" onclick="iniciarDiccionario('especial', 'explosiva')">
                 <div class="dic-mc-icon">💥</div>
                 <div class="dic-mc-title">Explosivas</div>
                 <div class="dic-mc-desc">Con 8+ sinónimos. Vocabulario riquísimo.</div>
-                <div class="dic-mc-count">~6.700 palabras</div>
+                <div class="dic-mc-count">3.295 palabras</div>
             </div>
             <div class="dic-mode-card" onclick="iniciarDiccionario('especial', 'viajera')">
                 <div class="dic-mc-icon">✈️</div>
                 <div class="dic-mc-title">Palabras viajeras</div>
                 <div class="dic-mc-desc">Del árabe, náhuatl, francés, italiano... préstamos al español.</div>
-                <div class="dic-mc-count">~4.400 palabras</div>
+                <div class="dic-mc-count">3.187 palabras</div>
             </div>
 
         </div>
@@ -20467,16 +20470,20 @@ function mostrarFiltroLetra() {
             DIC_LETRAS.forEach(function(l) {
                 var btn = document.createElement('button');
                 btn.className = 'dic-letra-btn';
-                btn.textContent = l;
-                btn.onclick = function() { iniciarDiccionario('letra', l); };
-                // Mostrar badge de progreso si hay sesión guardada
+                // Get progress from saved session AND from hito counter
                 var prog = dicLeerProgreso('letra', l);
-                if (prog && prog.idx > 0) {
-                    var pct = Math.round(prog.idx * 100 / prog.total);
-                    btn.style.borderColor = 'var(--gold)';
-                    btn.style.color = 'var(--gold)';
-                    btn.title = 'Llevas ' + prog.idx + '/' + prog.total + ' (' + pct + '%)';
-                }
+                var totalLetra = (typeof TOTAL_POR_LETRA !== 'undefined' ? TOTAL_POR_LETRA[l] : 0) || 500;
+                var vistas = parseInt(localStorage.getItem('dic_hito_letra_' + l) || '0');
+                // Use the higher of: session progress or hito counter
+                var vistoCount = prog && prog.idx > vistas ? prog.idx : vistas;
+                var pct = totalLetra > 0 ? Math.min(100, Math.round(vistoCount / totalLetra * 100)) : 0;
+                var barColor = pct >= 80 ? 'var(--green)' : pct >= 40 ? 'var(--gold)' : 'var(--blue)';
+                var textColor = pct >= 80 ? 'var(--green)' : pct >= 40 ? 'var(--gold)' : 'var(--text)';
+                btn.style.borderColor = pct > 0 ? barColor : '';
+                btn.innerHTML = '<span style="color:' + textColor + '">' + l + '</span>' +
+                    '<span class="dlb-prog">' + vistoCount + '/' + totalLetra + '</span>' +
+                    (pct > 0 ? '<div class="dlb-bar" style="width:' + pct + '%;background:' + barColor + ';"></div>' : '');
+                (function(ll){ btn.onclick = function() { iniciarDiccionario('letra', ll); }; })(l);
                 grid.appendChild(btn);
             });
         }
@@ -23222,7 +23229,7 @@ function openExternalUrl(url) {
 function renderDashboard(){try{var u=JSON.parse(localStorage.getItem('ppro_usage')||'{"sessions":[],"byDeck":{},"daily":{}}');var letters=JSON.parse(localStorage.getItem('ppro_letters')||'{}');var roscoH=JSON.parse(localStorage.getItem('ppro_rosco_hist')||'[]');var sessions=u.sessions||[],byDeck=u.byDeck||{},daily=u.daily||{};var totalQ=sessions.reduce(function(s,x){return s+(x.answered||0);},0);var totalOk=sessions.reduce(function(s,x){return s+(x.correct||0);},0);var totalMin=sessions.reduce(function(s,x){return s+(x.minutes||0);},0);var pct=totalQ?Math.round(100*totalOk/totalQ):0;var today=new Date().toISOString().slice(0,10);var todayMin=sessions.filter(function(s){return s.date===today;}).reduce(function(s,x){return s+(x.minutes||0);},0);var streak=0;for(var i=0;i<365;i++){var dd=new Date();dd.setDate(dd.getDate()-i);if((daily[dd.toISOString().slice(0,10)]||0)>0)streak++;else if(i>0)break;}document.getElementById('db-total').textContent=totalQ.toLocaleString('es');document.getElementById('db-pct').textContent=pct+'%';document.getElementById('db-streak').textContent=streak+'d';document.getElementById('db-today').textContent=todayMin<60?todayMin+'min':Math.floor(todayMin/60)+'h '+(todayMin%60?todayMin%60+'m':'');document.getElementById('db-total-time').textContent=Math.round(totalMin/60)+'h';var heat=document.getElementById('db-heatmap');heat.innerHTML='';var vals=Object.values(daily).map(Number);var maxD=vals.length?Math.max.apply(null,[1].concat(vals)):1;for(var j=69;j>=0;j--){var dj=new Date();dj.setDate(dj.getDate()-j);var kj=dj.toISOString().slice(0,10);var vj=daily[kj]||0;var aj=vj?Math.max(0.15,vj/maxD):0;var cel=document.createElement('div');cel.style.cssText='width:11px;height:11px;border-radius:2px;background:'+(vj?'rgba(240,192,64,'+aj.toFixed(2)+')':'var(--border2)')+';';cel.title=kj+': '+vj+' preguntas';heat.appendChild(cel);}var deckEl=document.getElementById('db-by-deck');var entries=Object.entries(byDeck).sort(function(a,b){return b[1].answered-a[1].answered;});deckEl.innerHTML=entries.length?entries.map(function(e){var id=e[0],data=e[1];var p=data.answered?Math.round(100*data.correct/data.answered):0;var col=p>=70?'var(--green)':p>=40?'var(--gold)':'var(--red)';var nm=(typeof MAZOS!=='undefined')?((MAZOS.find(function(m){return m.id===id;})||{}).name||id):id;return '<div style="margin-bottom:10px;"><div style="display:flex;justify-content:space-between;font-size:0.74rem;margin-bottom:3px;"><span>'+nm+'</span><span style="color:'+col+'">'+p+'% ('+data.answered+')</span></div><div style="background:var(--border2);border-radius:5px;height:6px;"><div style="width:'+p+'%;background:'+col+';border-radius:5px;height:6px;"></div></div></div>';}).join(''):'<p style="color:var(--muted);font-size:0.8rem;text-align:center;padding:8px;">Practica para ver tus stats \U0001f4aa</p>';var hlEl=document.getElementById('db-hard-letters');var lArr=Object.entries(letters).map(function(e){var l=e[0],d=e[1];return{l:l,pct:(d.ok+d.fail)?Math.round(100*(d.ok||0)/(d.ok+d.fail)):100};}).sort(function(a,b){return a.pct-b.pct;}).slice(0,10);hlEl.innerHTML=lArr.length?lArr.map(function(x){var col=x.pct<50?'var(--red)':x.pct<70?'var(--gold)':'var(--green)';return '<div style="background:var(--card2);border:1px solid '+(x.pct<50?'var(--red)':'var(--border2)')+';border-radius:9px;padding:5px 11px;display:flex;align-items:center;gap:6px;font-size:0.8rem;"><strong style="font-size:1.05rem">'+x.l+'</strong><span style="color:'+col+'">'+x.pct+'%</span></div>';}).join(''):'<span style="color:var(--muted);font-size:0.8rem;">Sin datos a\u00fan, \u00a1haz el rosco!</span>';var rEl=document.getElementById('db-rosco-hist');rEl.innerHTML=roscoH.length?roscoH.slice(-8).reverse().map(function(r){var p=r.total?Math.round(100*r.ok/r.total):0;var col=p>=70?'var(--green)':p>=40?'var(--gold)':'var(--red)';return '<div style="display:flex;align-items:center;gap:8px;font-size:0.77rem;padding:7px 0;border-bottom:1px solid var(--border2);"><span style="color:var(--muted);min-width:68px;font-size:0.7rem;">'+r.date+'</span><span style="color:var(--green);">+'+r.ok+'</span><span style="color:var(--red);">\u2716'+r.fail+'</span><span style="color:var(--muted);">~'+(r.pass||0)+'</span><span style="font-weight:700;margin-left:auto;color:'+col+';">'+p+'%</span></div>';}).join(''):'<p style="color:var(--muted);font-size:0.8rem;text-align:center;padding:8px;">\u00a1Haz tu primer rosco!</p>';
   // Progreso diccionario por letra
   var LETRAS_ESP = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','Ñ','O','P','Q','R','S','T','U','V','W','X','Y','Z'];
-  var TOTAL_POR_LETRA = {A:7904,B:4200,C:8100,D:4800,E:4500,F:2800,G:2600,H:1800,I:3200,J:900,K:200,L:2100,M:4300,N:1500,'Ñ':200,O:2400,P:6200,Q:600,R:3800,S:5100,T:3900,U:1400,V:2300,W:100,X:100,Y:400,Z:600};
+  var TOTAL_POR_LETRA = {A:5491,B:2062,C:6368,D:2542,E:3950,F:1486,G:1644,H:1275,I:1182,J:456,K:74,L:1230,M:2843,N:736,'Ñ':46,O:824,P:4172,Q:266,R:2637,S:2670,T:2730,U:262,V:1083,W:0,X:30,Y:117,Z:414};
   var dicLetrasEl = document.getElementById('db-dic-letras');
   if (dicLetrasEl) {
     var letraRows = LETRAS_ESP.map(function(l) {
