@@ -22911,6 +22911,14 @@ function dicSiguiente() {
     dicState.idx++;
     // Guardar progreso en cada avance (excepto aleatorio)
     dicGuardarProgreso();
+    // Actualizar contador de vistas por letra (para el plan y el dashboard)
+    if (dicState.modo === 'letra' && dicState.filtro) {
+        var hitoKey = 'dic_hito_letra_' + dicState.filtro;
+        var actual = parseInt(localStorage.getItem(hitoKey) || '0');
+        localStorage.setItem(hitoKey, actual + 1);
+        // Refrescar plan de hoy si está visible
+        if (typeof planNoeRenderHome === 'function') planNoeRenderHome();
+    }
 
     if (dicState.idx >= dicState.palabras.length) {
         dicBorrarProgreso(dicState.modo, dicState.filtro);
