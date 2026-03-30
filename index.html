@@ -1591,8 +1591,11 @@ html, body {
         <span id="plan-noe-año" style="display:none;"></span>
         <div id="plan-noe-barra" style="display:none;"></div>
 
+        <!-- Plan de hoy -->
+        <div id="plan-hoy-container" style="margin:16px 0 8px;"></div>
+
         <!-- Banner Estudio Inteligente (contiene todos los mazos) -->
-        <div onclick="openStudySelector()" style="background:linear-gradient(135deg, var(--card2), var(--card)); border:1px solid var(--accent); padding:18px 20px; border-radius:16px; margin:20px 0; cursor:pointer; box-shadow:0 4px 20px rgba(0,0,0,0.4); display:flex; justify-content:space-between; align-items:center;">
+        <div onclick="openStudySelector()" style="background:linear-gradient(135deg, var(--card2), var(--card)); border:1px solid var(--accent); padding:18px 20px; border-radius:16px; margin:8px 0 20px; cursor:pointer; box-shadow:0 4px 20px rgba(0,0,0,0.4); display:flex; justify-content:space-between; align-items:center;">
             <div style="display:flex; align-items:center; gap:14px;">
                 <div style="font-size:2rem;">🧠</div>
                 <div>
@@ -1645,7 +1648,7 @@ html, body {
                 <div class="deck-icon">📚</div>
                 <div class="deck-info">
                     <h4>Diccionario RAE</h4>
-                    <p>46.590 palabras · por letra, campo y más</p>
+                    <p>43.953 palabras · por letra, campo y más</p>
                 </div>
                 <div class="deck-arrow">›</div>
             </div>
@@ -1699,7 +1702,7 @@ html, body {
     <div class="top-bar">
         <button class="btn-back" onclick="goTo('home')">←</button>
         <div class="top-bar-title">📚 Diccionario RAE</div>
-        <div class="top-bar-right" style="font-size:0.72rem;color:var(--muted);">46.590 palabras</div>
+        <div class="top-bar-right" style="font-size:0.72rem;color:var(--muted);">43.953 palabras</div>
     </div>
     <!-- BÚSQUEDA (siempre visible) -->
     <div class="dic-search-wrap visible" id="dic-search-wrap">
@@ -1726,7 +1729,7 @@ html, body {
             <div class="dic-dia-badge" id="dic-dia-badge">0 / 20 completadas</div>
         </div>
 
-        <!-- SOLO DIFÍCILES -->
+        <!-- SOLO DIFÍCILES + OCULTADAS -->
         <div class="dic-modes-grid" style="margin-bottom:8px;">
             <div class="dic-dif-card" id="dic-dif-card" onclick="iniciarDiccionario('dificiles', null)">
                 <div style="display:flex;align-items:center;gap:10px;">
@@ -1734,6 +1737,17 @@ html, body {
                     <div>
                         <div style="font-size:0.9rem;font-weight:700;color:var(--red);">Repasar difíciles</div>
                         <div style="font-size:0.72rem;color:var(--muted);margin-top:2px;" id="dic-dif-count">Las que has marcado como difíciles</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="dic-modes-grid" style="margin-bottom:8px;">
+            <div class="dic-dif-card" onclick="abrirPalabrasOcultadas()" style="border-color:var(--border2);">
+                <div style="display:flex;align-items:center;gap:10px;">
+                    <span style="font-size:1.4rem;">📦</span>
+                    <div>
+                        <div style="font-size:0.9rem;font-weight:700;color:var(--muted);">Palabras ocultadas</div>
+                        <div style="font-size:0.72rem;color:var(--muted);margin-top:2px;" id="dic-ocultas-count">Las que marcaste como ya sabes</div>
                     </div>
                 </div>
             </div>
@@ -1746,7 +1760,7 @@ html, body {
                 <div class="dic-mc-icon">🎲</div>
                 <div class="dic-mc-title">Aleatorio</div>
                 <div class="dic-mc-desc">Palabras al azar de todo el diccionario. El modo más sorprendente.</div>
-                <div class="dic-mc-count">46.590 palabras</div>
+                <div class="dic-mc-count">43.953 palabras</div>
             </div>
             <div class="dic-mode-card" onclick="mostrarFiltroLetra()">
                 <div class="dic-mc-icon">🔤</div>
@@ -7915,7 +7929,7 @@ var GEO_COORDS = {"Teide":[28.27,-16.64],"Mulhacén":[37.05,-3.31],"Aneto":[42.6
 
 var geoMontState = {round:0, ok:0, fail:0, deck:[], deckIdx:0};
 
-// ── SUBMODE SELECTOR ──────────────────────────────────────────────
+// --- SUBMODE SELECTOR ---
 window.iniciarGeoMont = function() {
     var html = '<div id="geo-mont-menu" style="position:fixed;top:0;left:0;right:0;bottom:0;background:var(--bg);z-index:99999;display:flex;flex-direction:column;">' +
         '<div style="padding:12px 16px;display:flex;align-items:center;gap:12px;border-bottom:1px solid var(--border);">' +
@@ -7942,7 +7956,7 @@ window.iniciarGeoMont = function() {
     document.body.insertAdjacentHTML('beforeend', html);
 };
 
-// ── SHARED HELPERS ────────────────────────────────────────────────
+// --- SHARED HELPERS ---
 function geoMontShuffle(a) {
     var b = a.slice();
     for (var i = b.length-1; i > 0; i--) { var j = Math.floor(Math.random()*(i+1)); var t=b[i];b[i]=b[j];b[j]=t; }
@@ -8025,7 +8039,7 @@ function geoMontFinalHtml(id, label, relaunchFn) {
     if (volverBtn) volverBtn.addEventListener('click', function() { geoMontClose(id); });
 }
 
-// ── SUBMODE A: ALTURA ─────────────────────────────────────────────
+// --- SUBMODE A: ALTURA ---
 // Tipos: ordenar 4 por altura (drag-free: tap order), ¿cuál es más alto? (4 ops), intruso sistema
 var geoMontAltDeck = [];
 var geoMontAltIdx  = 0;
@@ -8174,7 +8188,7 @@ function geoMontAltAnswer(chosen) {
     var _nb=document.createElement('button');_nb.textContent='Siguiente →';_nb.style.cssText='background:var(--accent);color:#000;border:none;border-radius:12px;padding:10px 24px;font-weight:700;cursor:pointer;font-size:0.9rem;margin-top:8px;display:block;';_nb.onclick=function(){geoMontAltRound();};var _mc1=document.getElementById('geo-mont-content');if(_mc1)_mc1.appendChild(_nb);
 }
 
-// ── SUBMODE B: GEOGRAFÍA ──────────────────────────────────────────
+// --- SUBMODE B: GEOGRAFÍA ---
 var geoMontGeoDeck = [];
 var geoMontGeoIdx  = 0;
 
@@ -8323,7 +8337,7 @@ function geoMontGeoAnswer(chosen) {
 var PAISES = {"Afganistán": {"continente": "Asia", "lat": 33.0, "lon": 65.0}, "Albania": {"continente": "Europa", "lat": 41.0, "lon": 20.0}, "Argelia": {"continente": "África", "lat": 28.0, "lon": 3.0}, "Andorra": {"continente": "Europa", "lat": 42.5, "lon": 1.5}, "Angola": {"continente": "África", "lat": -12.5, "lon": 18.5}, "Argentina": {"continente": "América", "lat": -34.0, "lon": -64.0}, "Armenia": {"continente": "Asia", "lat": 40.0, "lon": 45.0}, "Australia": {"continente": "Oceanía", "lat": -27.0, "lon": 133.0}, "Austria": {"continente": "Europa", "lat": 47.33, "lon": 13.33}, "Azerbaiyán": {"continente": "Asia", "lat": 40.5, "lon": 47.5}, "Bangladesh": {"continente": "Asia", "lat": 24.0, "lon": 90.0}, "Bielorrusia": {"continente": "Europa", "lat": 53.0, "lon": 28.0}, "Bélgica": {"continente": "Europa", "lat": 50.83, "lon": 4.0}, "Belice": {"continente": "América", "lat": 17.25, "lon": -88.75}, "Bután": {"continente": "Asia", "lat": 27.5, "lon": 90.5}, "Bolivia": {"continente": "América", "lat": -17.0, "lon": -65.0}, "Bosnia y Herzegovina": {"continente": "Europa", "lat": 44.0, "lon": 18.0}, "Botswana": {"continente": "África", "lat": -22.0, "lon": 24.0}, "Brasil": {"continente": "América", "lat": -10.0, "lon": -55.0}, "Bulgaria": {"continente": "Europa", "lat": 43.0, "lon": 25.0}, "Burkina Faso": {"continente": "África", "lat": 13.0, "lon": -2.0}, "Camboya": {"continente": "Asia", "lat": 13.0, "lon": 105.0}, "Camerún": {"continente": "África", "lat": 6.0, "lon": 12.0}, "Canadá": {"continente": "América", "lat": 60.0, "lon": -95.0}, "República Centroafricana": {"continente": "África", "lat": 7.0, "lon": 21.0}, "Chad": {"continente": "África", "lat": 15.0, "lon": 19.0}, "Chile": {"continente": "América", "lat": -30.0, "lon": -71.0}, "China": {"continente": "Asia", "lat": 35.0, "lon": 105.0}, "Colombia": {"continente": "América", "lat": 4.0, "lon": -72.0}, "Congo": {"continente": "África", "lat": -1.0, "lon": 15.0}, "Congo (Rep. Dem.)": {"continente": "África", "lat": 0.0, "lon": 25.0}, "Costa Rica": {"continente": "América", "lat": 10.0, "lon": -84.0}, "Croacia": {"continente": "Europa", "lat": 45.17, "lon": 15.5}, "Cuba": {"continente": "América", "lat": 21.5, "lon": -80.0}, "Chipre": {"continente": "Europa", "lat": 35.0, "lon": 33.0}, "República Checa": {"continente": "Europa", "lat": 49.75, "lon": 15.5}, "Dinamarca": {"continente": "Europa", "lat": 56.0, "lon": 10.0}, "Ecuador": {"continente": "América", "lat": -2.0, "lon": -77.5}, "Egipto": {"continente": "África", "lat": 27.0, "lon": 30.0}, "El Salvador": {"continente": "América", "lat": 13.83, "lon": -88.92}, "Eritrea": {"continente": "África", "lat": 15.0, "lon": 39.0}, "Estonia": {"continente": "Europa", "lat": 59.0, "lon": 26.0}, "Etiopía": {"continente": "África", "lat": 8.0, "lon": 38.0}, "Finlandia": {"continente": "Europa", "lat": 64.0, "lon": 26.0}, "Francia": {"continente": "Europa", "lat": 46.0, "lon": 2.0}, "Gabón": {"continente": "África", "lat": -1.0, "lon": 11.75}, "Georgia": {"continente": "Asia", "lat": 42.0, "lon": 43.5}, "Alemania": {"continente": "Europa", "lat": 51.0, "lon": 9.0}, "Ghana": {"continente": "África", "lat": 8.0, "lon": -2.0}, "Grecia": {"continente": "Europa", "lat": 39.0, "lon": 22.0}, "Guatemala": {"continente": "América", "lat": 15.5, "lon": -90.25}, "Guinea": {"continente": "África", "lat": 11.0, "lon": -10.0}, "Guyana": {"continente": "América", "lat": 5.0, "lon": -59.0}, "Haití": {"continente": "América", "lat": 19.0, "lon": -72.42}, "Honduras": {"continente": "América", "lat": 15.0, "lon": -86.5}, "Hungría": {"continente": "Europa", "lat": 47.0, "lon": 20.0}, "Islandia": {"continente": "Europa", "lat": 65.0, "lon": -18.0}, "India": {"continente": "Asia", "lat": 20.0, "lon": 77.0}, "Indonesia": {"continente": "Asia", "lat": -5.0, "lon": 120.0}, "Irán": {"continente": "Asia", "lat": 32.0, "lon": 53.0}, "Irak": {"continente": "Asia", "lat": 33.0, "lon": 44.0}, "Irlanda": {"continente": "Europa", "lat": 53.0, "lon": -8.0}, "Israel": {"continente": "Asia", "lat": 31.5, "lon": 34.75}, "Italia": {"continente": "Europa", "lat": 42.83, "lon": 12.83}, "Costa de Marfil": {"continente": "África", "lat": 8.0, "lon": -5.0}, "Jamaica": {"continente": "América", "lat": 18.25, "lon": -77.5}, "Japón": {"continente": "Asia", "lat": 36.0, "lon": 138.0}, "Jordania": {"continente": "Asia", "lat": 31.0, "lon": 36.0}, "Kazajistán": {"continente": "Asia", "lat": 48.0, "lon": 68.0}, "Kenia": {"continente": "África", "lat": 1.0, "lon": 38.0}, "Kuwait": {"continente": "Asia", "lat": 29.5, "lon": 45.75}, "Laos": {"continente": "Asia", "lat": 18.0, "lon": 105.0}, "Letonia": {"continente": "Europa", "lat": 57.0, "lon": 25.0}, "Líbano": {"continente": "Asia", "lat": 33.83, "lon": 35.83}, "Libéria": {"continente": "África", "lat": 6.5, "lon": -9.5}, "Libia": {"continente": "África", "lat": 25.0, "lon": 17.0}, "Lituania": {"continente": "Europa", "lat": 56.0, "lon": 24.0}, "Luxemburgo": {"continente": "Europa", "lat": 49.75, "lon": 6.17}, "Madagascar": {"continente": "África", "lat": -20.0, "lon": 47.0}, "Malawi": {"continente": "África", "lat": -13.5, "lon": 34.0}, "Malasia": {"continente": "Asia", "lat": 2.5, "lon": 112.5}, "Malí": {"continente": "África", "lat": 17.0, "lon": -4.0}, "Mauritania": {"continente": "África", "lat": 20.0, "lon": -12.0}, "México": {"continente": "América", "lat": 23.0, "lon": -102.0}, "Moldavia": {"continente": "Europa", "lat": 47.0, "lon": 29.0}, "Mongolia": {"continente": "Asia", "lat": 46.0, "lon": 105.0}, "Marruecos": {"continente": "África", "lat": 32.0, "lon": -5.0}, "Mozambique": {"continente": "África", "lat": -18.25, "lon": 35.0}, "Myanmar": {"continente": "Asia", "lat": 22.0, "lon": 98.0}, "Namibia": {"continente": "África", "lat": -22.0, "lon": 17.0}, "Nepal": {"continente": "Asia", "lat": 28.0, "lon": 84.0}, "Países Bajos": {"continente": "Europa", "lat": 52.5, "lon": 5.75}, "Nueva Zelanda": {"continente": "Oceanía", "lat": -41.0, "lon": 174.0}, "Nicaragua": {"continente": "América", "lat": 13.0, "lon": -85.0}, "Níger": {"continente": "África", "lat": 16.0, "lon": 8.0}, "Nigeria": {"continente": "África", "lat": 10.0, "lon": 8.0}, "Corea del Norte": {"continente": "Asia", "lat": 40.0, "lon": 127.0}, "Macedonia del Norte": {"continente": "Europa", "lat": 41.83, "lon": 22.0}, "Noruega": {"continente": "Europa", "lat": 62.0, "lon": 10.0}, "Omán": {"continente": "Asia", "lat": 21.0, "lon": 57.0}, "Pakistán": {"continente": "Asia", "lat": 30.0, "lon": 70.0}, "Panamá": {"continente": "América", "lat": 9.0, "lon": -80.0}, "Paraguay": {"continente": "América", "lat": -23.0, "lon": -58.0}, "Perú": {"continente": "América", "lat": -10.0, "lon": -76.0}, "Filipinas": {"continente": "Asia", "lat": 13.0, "lon": 122.0}, "Polonia": {"continente": "Europa", "lat": 52.0, "lon": 20.0}, "Portugal": {"continente": "Europa", "lat": 39.5, "lon": -8.0}, "Qatar": {"continente": "Asia", "lat": 25.5, "lon": 51.25}, "Rumania": {"continente": "Europa", "lat": 46.0, "lon": 25.0}, "Rusia": {"continente": "Europa", "lat": 60.0, "lon": 100.0}, "Ruanda": {"continente": "África", "lat": -2.0, "lon": 30.0}, "Arabia Saudí": {"continente": "Asia", "lat": 25.0, "lon": 45.0}, "Senegal": {"continente": "África", "lat": 14.0, "lon": -14.0}, "Serbia": {"continente": "Europa", "lat": 44.0, "lon": 21.0}, "Sierra Leona": {"continente": "África", "lat": 8.5, "lon": -11.5}, "Singapur": {"continente": "Asia", "lat": 1.37, "lon": 103.8}, "Eslovaquia": {"continente": "Europa", "lat": 48.67, "lon": 19.5}, "Eslovenia": {"continente": "Europa", "lat": 46.12, "lon": 14.82}, "Somalia": {"continente": "África", "lat": 10.0, "lon": 49.0}, "Sudáfrica": {"continente": "África", "lat": -29.0, "lon": 24.0}, "Corea del Sur": {"continente": "Asia", "lat": 37.0, "lon": 127.5}, "Sudán del Sur": {"continente": "África", "lat": 7.0, "lon": 30.0}, "España": {"continente": "Europa", "lat": 40.0, "lon": -4.0}, "Sri Lanka": {"continente": "Asia", "lat": 7.0, "lon": 81.0}, "Sudán": {"continente": "África", "lat": 15.0, "lon": 30.0}, "Surinam": {"continente": "América", "lat": 4.0, "lon": -56.0}, "Suecia": {"continente": "Europa", "lat": 62.0, "lon": 15.0}, "Suiza": {"continente": "Europa", "lat": 47.0, "lon": 8.0}, "Siria": {"continente": "Asia", "lat": 35.0, "lon": 38.0}, "Taiwán": {"continente": "Asia", "lat": 23.5, "lon": 121.0}, "Tayikistán": {"continente": "Asia", "lat": 39.0, "lon": 71.0}, "Tanzania": {"continente": "África", "lat": -6.0, "lon": 35.0}, "Tailandia": {"continente": "Asia", "lat": 15.0, "lon": 100.0}, "Togo": {"continente": "África", "lat": 8.0, "lon": 1.17}, "Trinidad y Tobago": {"continente": "América", "lat": 11.0, "lon": -61.0}, "Túnez": {"continente": "África", "lat": 34.0, "lon": 9.0}, "Turquía": {"continente": "Asia", "lat": 39.0, "lon": 35.0}, "Turkmenistán": {"continente": "Asia", "lat": 40.0, "lon": 60.0}, "Uganda": {"continente": "África", "lat": 1.0, "lon": 32.0}, "Ucrania": {"continente": "Europa", "lat": 49.0, "lon": 32.0}, "Emiratos Árabes Unidos": {"continente": "Asia", "lat": 24.0, "lon": 54.0}, "Reino Unido": {"continente": "Europa", "lat": 54.0, "lon": -2.0}, "Estados Unidos": {"continente": "América", "lat": 38.0, "lon": -97.0}, "Uruguay": {"continente": "América", "lat": -33.0, "lon": -56.0}, "Uzbekistán": {"continente": "Asia", "lat": 41.0, "lon": 64.0}, "Venezuela": {"continente": "América", "lat": 8.0, "lon": -66.0}, "Vietnam": {"continente": "Asia", "lat": 16.17, "lon": 107.83}, "Yemen": {"continente": "Asia", "lat": 15.0, "lon": 48.0}, "Zambia": {"continente": "África", "lat": -15.0, "lon": 30.0}, "Zimbabue": {"continente": "África", "lat": -20.0, "lon": 30.0}, "Gambia": {"continente": "África", "lat": 13.47, "lon": -16.57}, "Benín": {"continente": "África", "lat": 9.5, "lon": 2.25}, "Burundi": {"continente": "África", "lat": -3.5, "lon": 30.0}};
 var PAISES_POR_CONTINENTE = {"Asia": ["Afganistán", "Armenia", "Azerbaiyán", "Bangladesh", "Bután", "Camboya", "China", "Georgia", "India", "Indonesia", "Irán", "Irak", "Israel", "Japón", "Jordania", "Kazajistán", "Kuwait", "Laos", "Líbano", "Malasia", "Mongolia", "Myanmar", "Nepal", "Corea del Norte", "Omán", "Pakistán", "Filipinas", "Qatar", "Arabia Saudí", "Singapur", "Corea del Sur", "Sri Lanka", "Siria", "Taiwán", "Tayikistán", "Tailandia", "Turquía", "Turkmenistán", "Emiratos Árabes Unidos", "Uzbekistán", "Vietnam", "Yemen"], "Europa": ["Albania", "Andorra", "Austria", "Bielorrusia", "Bélgica", "Bosnia y Herzegovina", "Bulgaria", "Croacia", "Chipre", "República Checa", "Dinamarca", "Estonia", "Finlandia", "Francia", "Alemania", "Grecia", "Hungría", "Islandia", "Irlanda", "Italia", "Letonia", "Lituania", "Luxemburgo", "Moldavia", "Países Bajos", "Macedonia del Norte", "Noruega", "Polonia", "Portugal", "Rumania", "Rusia", "Serbia", "Eslovaquia", "Eslovenia", "España", "Suecia", "Suiza", "Ucrania", "Reino Unido"], "África": ["Argelia", "Angola", "Botswana", "Burkina Faso", "Camerún", "República Centroafricana", "Chad", "Congo", "Congo (Rep. Dem.)", "Egipto", "Eritrea", "Etiopía", "Gabón", "Ghana", "Guinea", "Costa de Marfil", "Kenia", "Libéria", "Libia", "Madagascar", "Malawi", "Malí", "Mauritania", "Marruecos", "Mozambique", "Namibia", "Níger", "Nigeria", "Ruanda", "Senegal", "Sierra Leona", "Somalia", "Sudáfrica", "Sudán del Sur", "Sudán", "Tanzania", "Togo", "Túnez", "Uganda", "Zambia", "Zimbabue", "Gambia", "Benín", "Burundi"], "América": ["Argentina", "Belice", "Bolivia", "Brasil", "Canadá", "Chile", "Colombia", "Costa Rica", "Cuba", "Ecuador", "El Salvador", "Guatemala", "Guyana", "Haití", "Honduras", "Jamaica", "México", "Nicaragua", "Panamá", "Paraguay", "Perú", "Surinam", "Trinidad y Tobago", "Estados Unidos", "Uruguay", "Venezuela"], "Oceanía": ["Australia", "Nueva Zelanda"]};
 
-// ── HELPERS ──────────────────────────────────────────────────────
+// --- HELPERS ---
 function geoMundShuffle(a) {
     var b = a.slice();
     for (var i=b.length-1;i>0;i--) { var j=Math.floor(Math.random()*(i+1)); var t=b[i];b[i]=b[j];b[j]=t; }
@@ -8388,7 +8402,7 @@ function geoMundFinal(id, label, relaunchFn, state) {
     document.getElementById(id+'-volver').addEventListener('click', function() { geoMundClose(id); });
 }
 
-// ── MINIJUEGO 1: UBICACIÓN (norte/sur/este/oeste) ─────────────────
+// --- MINIJUEGO 1: UBICACIÓN (norte/sur/este/oeste) ---
 var geoMundUbicState = {ok:0,fail:0,deck:[],deckIdx:0};
 var DIRS_MUND = {
     norte:  {label:'más al norte',    sort:function(a,b){return PAISES[b].lat-PAISES[a].lat;}},
@@ -8460,7 +8474,7 @@ function geoMundUbicRound() {
     });
 }
 
-// ── MINIJUEGO 2: INTRUSO CONTINENTE ───────────────────────────────
+// --- MINIJUEGO 2: INTRUSO CONTINENTE ---
 var geoMundIntrusoState = {ok:0,fail:0,deck:[],deckIdx:0,round:0};
 
 window.iniciarGeoMundIntruso = function() {
@@ -8513,7 +8527,7 @@ function geoMundIntrusoRound() {
     });
 }
 
-// ── SELECTOR GEO MUNDIAL ─────────────────────────────────────────
+// --- SELECTOR GEO MUNDIAL ---
 window.abrirSelectorGeoMund = function() {
     var mazo = MAZOS.find(function(m){return m.id==='geo_mund';});
     var totalQ = mazo ? mazo.questions.length : 0;
@@ -8595,7 +8609,7 @@ window.abrirSelectorGeoMund = function() {
 // ================================================================
 var FRONTERAS = {"Andorra": ["España", "Francia"], "Francia": ["Alemania", "Andorra", "Bélgica", "España", "Italia", "Luxemburgo", "Suiza"], "España": ["Andorra", "Francia", "Marruecos", "Portugal"], "Emiratos Árabes Unidos": ["Arabia Saudí", "Omán"], "Omán": ["Arabia Saudí", "Emiratos Árabes Unidos", "Yemen"], "Arabia Saudí": ["Emiratos Árabes Unidos", "Irak", "Jordania", "Kuwait", "Omán", "Qatar", "Yemen"], "Afganistán": ["China", "Irán", "Pakistán", "Tayikistán", "Turkmenistán", "Uzbekistán"], "China": ["Afganistán", "Bután", "Corea del Norte", "India", "Kazajistán", "Kirguizistán", "Laos", "Mongolia", "Myanmar", "Nepal", "Pakistán", "Rusia", "Tayikistán", "Vietnam"], "Irán": ["Afganistán", "Armenia", "Azerbaiyán", "Irak", "Pakistán", "Turkmenistán", "Turquía"], "Pakistán": ["Afganistán", "China", "India", "Irán"], "Tayikistán": ["Afganistán", "China", "Kirguizistán", "Uzbekistán"], "Turkmenistán": ["Afganistán", "Irán", "Kazajistán", "Uzbekistán"], "Uzbekistán": ["Afganistán", "Kazajistán", "Kirguizistán", "Tayikistán", "Turkmenistán"], "Albania": ["Grecia", "Macedonia del Norte", "Montenegro", "Serbia"], "Grecia": ["Albania", "Bulgaria", "Macedonia del Norte", "Turquía"], "Montenegro": ["Albania", "Bosnia y Herzegovina", "Croacia", "Serbia"], "Macedonia del Norte": ["Albania", "Bulgaria", "Grecia", "Serbia"], "Serbia": ["Albania", "Bosnia y Herzegovina", "Bulgaria", "Croacia", "Hungría", "Macedonia del Norte", "Montenegro", "Rumania"], "Armenia": ["Azerbaiyán", "Georgia", "Irán", "Turquía"], "Azerbaiyán": ["Armenia", "Georgia", "Irán", "Rusia", "Turquía"], "Georgia": ["Armenia", "Azerbaiyán", "Rusia", "Turquía"], "Turquía": ["Armenia", "Azerbaiyán", "Bulgaria", "Georgia", "Grecia", "Irak", "Irán", "Siria"], "Angola": ["Congo", "Congo (Rep. Dem.)", "Namibia", "Zambia"], "Congo": ["Angola", "Camerún", "Congo (Rep. Dem.)", "Gabón", "República Centroafricana"], "Congo (Rep. Dem.)": ["Angola", "Burundi", "Congo", "República Centroafricana", "Ruanda", "Sudán del Sur", "Tanzania", "Uganda", "Zambia"], "Namibia": ["Angola", "Botswana", "Sudáfrica", "Zambia"], "Zambia": ["Angola", "Botswana", "Congo (Rep. Dem.)", "Malawi", "Mozambique", "Namibia", "Tanzania", "Zimbabue"], "Argentina": ["Bolivia", "Brasil", "Chile", "Paraguay", "Uruguay"], "Bolivia": ["Argentina", "Brasil", "Chile", "Paraguay", "Perú"], "Brasil": ["Argentina", "Bolivia", "Colombia", "Guyana", "Paraguay", "Perú", "Surinam", "Uruguay", "Venezuela"], "Chile": ["Argentina", "Bolivia", "Perú"], "Paraguay": ["Argentina", "Bolivia", "Brasil"], "Uruguay": ["Argentina", "Brasil"], "Austria": ["Alemania", "Eslovaquia", "Eslovenia", "Hungría", "Italia", "República Checa", "Suiza"], "República Checa": ["Alemania", "Austria", "Eslovaquia", "Polonia"], "Alemania": ["Austria", "Bélgica", "Dinamarca", "Francia", "Luxemburgo", "Países Bajos", "Polonia", "República Checa", "Suiza"], "Hungría": ["Austria", "Croacia", "Eslovaquia", "Eslovenia", "Rumania", "Serbia", "Ucrania"], "Italia": ["Austria", "Eslovenia", "Francia", "Suiza"], "Eslovaquia": ["Austria", "Hungría", "Polonia", "República Checa", "Ucrania"], "Eslovenia": ["Austria", "Croacia", "Hungría", "Italia"], "Suiza": ["Alemania", "Austria", "Francia", "Italia"], "Rusia": ["Azerbaiyán", "Bielorrusia", "China", "Corea del Norte", "Estonia", "Finlandia", "Georgia", "Kazajistán", "Letonia", "Lituania", "Mongolia", "Noruega", "Polonia", "Ucrania"], "Bosnia y Herzegovina": ["Croacia", "Montenegro", "Serbia"], "Croacia": ["Bosnia y Herzegovina", "Eslovenia", "Hungría", "Montenegro", "Serbia"], "Bangladesh": ["India", "Myanmar"], "India": ["Bangladesh", "Bután", "China", "Myanmar", "Nepal", "Pakistán"], "Myanmar": ["Bangladesh", "China", "India", "Laos", "Tailandia"], "Bélgica": ["Alemania", "Francia", "Luxemburgo", "Países Bajos"], "Luxemburgo": ["Alemania", "Bélgica", "Francia"], "Países Bajos": ["Alemania", "Bélgica"], "Burkina Faso": ["Benín", "Ghana", "Malí", "Níger", "Togo"], "Benín": ["Burkina Faso", "Nigeria", "Níger", "Togo"], "Ghana": ["Burkina Faso", "Togo"], "Malí": ["Argelia", "Burkina Faso", "Guinea", "Mauritania", "Níger", "Senegal"], "Níger": ["Argelia", "Benín", "Burkina Faso", "Chad", "Libia", "Malí", "Nigeria"], "Togo": ["Benín", "Burkina Faso", "Ghana"], "Bulgaria": ["Grecia", "Macedonia del Norte", "Rumania", "Serbia", "Turquía"], "Rumania": ["Bulgaria", "Hungría", "Moldavia", "Serbia", "Ucrania"], "Burundi": ["Congo (Rep. Dem.)", "Ruanda", "Tanzania"], "Ruanda": ["Burundi", "Congo (Rep. Dem.)", "Tanzania", "Uganda"], "Tanzania": ["Burundi", "Congo (Rep. Dem.)", "Kenia", "Malawi", "Mozambique", "Ruanda", "Uganda", "Zambia"], "Nigeria": ["Benín", "Camerún", "Chad", "Níger"], "Perú": ["Bolivia", "Brasil", "Chile", "Colombia", "Ecuador"], "Colombia": ["Brasil", "Ecuador", "Panamá", "Perú", "Venezuela"], "Guyana": ["Brasil", "Surinam", "Venezuela"], "Surinam": ["Brasil", "Guyana"], "Venezuela": ["Brasil", "Colombia", "Guyana"], "Bután": ["China", "India"], "Botswana": ["Namibia", "Sudáfrica", "Zambia", "Zimbabue"], "Sudáfrica": ["Botswana", "Lesotho", "Mozambique", "Namibia", "Suazilandia", "Zimbabue"], "Zimbabue": ["Botswana", "Mozambique", "Sudáfrica", "Zambia"], "Bielorrusia": ["Letonia", "Lituania", "Polonia", "Rusia", "Ucrania"], "Letonia": ["Bielorrusia", "Estonia", "Lituania", "Rusia"], "Lituania": ["Bielorrusia", "Letonia", "Polonia", "Rusia"], "Polonia": ["Alemania", "Bielorrusia", "Eslovaquia", "Lituania", "República Checa", "Rusia", "Ucrania"], "Ucrania": ["Bielorrusia", "Eslovaquia", "Hungría", "Moldavia", "Polonia", "Rumania", "Rusia"], "Belice": ["Guatemala", "México"], "Guatemala": ["Belice", "El Salvador", "Honduras", "México"], "México": ["Belice", "Estados Unidos", "Guatemala"], "Canadá": ["Estados Unidos"], "Estados Unidos": ["Canadá", "México"], "República Centroafricana": ["Camerún", "Chad", "Congo", "Congo (Rep. Dem.)", "Sudán", "Sudán del Sur"], "Sudán del Sur": ["Congo (Rep. Dem.)", "Etiopía", "Kenia", "República Centroafricana", "Sudán", "Uganda"], "Uganda": ["Congo (Rep. Dem.)", "Kenia", "Ruanda", "Sudán del Sur", "Tanzania"], "Camerún": ["Chad", "Congo", "Gabón", "Guinea Ecuatorial", "Nigeria", "República Centroafricana"], "Chad": ["Camerún", "Libia", "Nigeria", "Níger", "República Centroafricana", "Sudán"], "Sudán": ["Chad", "Egipto", "Eritrea", "Etiopía", "Libia", "República Centroafricana", "Sudán del Sur"], "Gabón": ["Camerún", "Congo", "Guinea Ecuatorial"], "Guinea Ecuatorial": ["Camerún", "Gabón"], "Kazajistán": ["China", "Kirguizistán", "Rusia", "Turkmenistán", "Uzbekistán"], "Corea del Norte": ["China", "Corea del Sur", "Rusia"], "Kirguizistán": ["China", "Kazajistán", "Tayikistán", "Uzbekistán"], "Laos": ["Camboya", "China", "Myanmar", "Tailandia", "Vietnam"], "Mongolia": ["China", "Rusia"], "Nepal": ["China", "India"], "Vietnam": ["Camboya", "China", "Laos"], "Ecuador": ["Colombia", "Perú"], "Panamá": ["Colombia", "Costa Rica"], "Costa Rica": ["Nicaragua", "Panamá"], "Nicaragua": ["Costa Rica", "Honduras"], "Dinamarca": ["Alemania"], "Argelia": ["Libia", "Malí", "Marruecos", "Mauritania", "Níger", "Túnez"], "Libia": ["Argelia", "Chad", "Egipto", "Níger", "Sudán", "Túnez"], "Mauritania": ["Argelia", "Malí", "Senegal"], "Marruecos": ["Argelia", "España"], "Túnez": ["Argelia", "Libia"], "Estonia": ["Letonia", "Rusia"], "Egipto": ["Israel", "Libia", "Palestina", "Sudán"], "Israel": ["Egipto", "Jordania", "Líbano", "Palestina", "Siria"], "Palestina": ["Egipto", "Israel", "Jordania"], "Eritrea": ["Etiopía", "Sudán"], "Etiopía": ["Eritrea", "Kenia", "Somalia", "Sudán", "Sudán del Sur"], "Portugal": ["España"], "Kenia": ["Etiopía", "Somalia", "Sudán del Sur", "Tanzania", "Uganda"], "Somalia": ["Etiopía", "Kenia"], "Finlandia": ["Noruega", "Rusia", "Suecia"], "Noruega": ["Finlandia", "Rusia", "Suecia"], "Suecia": ["Finlandia", "Noruega"], "Reino Unido": ["Irlanda"], "Irlanda": ["Reino Unido"], "Gambia": ["Senegal"], "Senegal": ["Gambia", "Guinea", "Guinea-Bisáu", "Malí", "Mauritania"], "Guinea": ["Guinea-Bisáu", "Libéria", "Malí", "Senegal", "Sierra Leona"], "Guinea-Bisáu": ["Guinea", "Senegal"], "Libéria": ["Guinea", "Sierra Leona"], "Sierra Leona": ["Guinea", "Libéria"], "El Salvador": ["Guatemala", "Honduras"], "Honduras": ["El Salvador", "Guatemala", "Nicaragua"], "Indonesia": ["Malasia"], "Malasia": ["Indonesia", "Tailandia"], "Jordania": ["Arabia Saudí", "Irak", "Israel", "Palestina", "Siria"], "Líbano": ["Israel", "Siria"], "Siria": ["Irak", "Israel", "Jordania", "Líbano", "Turquía"], "Irak": ["Arabia Saudí", "Irán", "Jordania", "Kuwait", "Siria", "Turquía"], "Kuwait": ["Arabia Saudí", "Irak"], "Camboya": ["Laos", "Tailandia", "Vietnam"], "Tailandia": ["Camboya", "Laos", "Malasia", "Myanmar"], "Corea del Sur": ["Corea del Norte"], "Lesotho": ["Sudáfrica"], "Moldavia": ["Rumania", "Ucrania"], "Malawi": ["Mozambique", "Tanzania", "Zambia"], "Mozambique": ["Malawi", "Suazilandia", "Sudáfrica", "Tanzania", "Zambia", "Zimbabue"], "Suazilandia": ["Mozambique", "Sudáfrica"], "Yemen": ["Arabia Saudí", "Omán"], "Qatar": ["Arabia Saudí"]};
 
-// ── SRS ligero para fronteras: prioriza falladas ──────────────────
+// --- SRS ligero para fronteras: prioriza falladas ---
 var _fronterasFail = {};  // país → nº de fallos acumulados
 
 function geoMundFronterasBuildDeck() {
@@ -8822,7 +8836,7 @@ function montMundFinal(id, label, relaunchFn, state) {
     document.getElementById(id+'-volver').addEventListener('click', function() { montMundClose(id); });
 }
 
-// ── MENU SELECTOR ────────────────────────────────────────────────
+// --- MENU SELECTOR ---
 window.iniciarMontMund = function() {
     var html = '<div id="mont-mund-menu" style="position:fixed;top:0;left:0;right:0;bottom:0;background:var(--bg);z-index:99999;display:flex;flex-direction:column;">' +
         '<div style="padding:12px 16px;display:flex;align-items:center;gap:12px;border-bottom:1px solid var(--border);">' +
@@ -8852,7 +8866,7 @@ window.iniciarMontMund = function() {
     document.getElementById('mont-mund-altura-btn').addEventListener('click', function() { montMundClose('mont-mund-menu'); iniciarMontMundAltura(); });
 };
 
-// ── HELPERS DECK ─────────────────────────────────────────────────
+// --- HELPERS DECK ---
 function montMundByCont() {
     var byCont = {};
     Object.keys(MONTS_MUND).forEach(function(m) {
@@ -8881,7 +8895,7 @@ function montMundCuatro() {
     return montMundShuffle(result);
 }
 
-// ── MODO ENTRENAMIENTO ───────────────────────────────────────────
+// --- MODO ENTRENAMIENTO ---
 var montMundTrainState = {ok:0,fail:0,deck:[],deckIdx:0,round:0};
 
 function montMundBuildTrainDeck() {
@@ -9015,7 +9029,7 @@ function montMundTrainOrdenClick(btn, id) {
     }
 }
 
-// ── MODO ALTURA ───────────────────────────────────────────────────
+// --- MODO ALTURA ---
 var montMundAltState = {ok:0,fail:0,deck:[],deckIdx:0,round:0};
 
 function montMundBuildAltDeck() {
@@ -21193,7 +21207,16 @@ function goTo(id) {
     if (id === 'rosco')     { startRosco(); } // mode set before arriving
     if (id === 'rae')       { initRaeIfNeeded(); }
     if (id === 'dashboard')    { if (typeof renderDashboard === 'function') renderDashboard(); }
-    if (id === 'dic-selector')        { dicActualizarStats(); dicActualizarDia(); }
+    if (id === 'dic-selector') {
+        dicActualizarStats(); dicActualizarDia();
+        var ocKeys = Object.keys(localStorage);
+        var ocCount = 0;
+        for (var ki = 0; ki < ocKeys.length; ki++) {
+            if (ocKeys[ki].startsWith('dic_ocultar_') && localStorage.getItem(ocKeys[ki]) === '1') ocCount++;
+        }
+        var ocEl = document.getElementById('dic-ocultas-count');
+        if (ocEl) ocEl.textContent = ocCount > 0 ? ocCount + ' palabras ocultadas' : 'Las que marcaste como ya sabes';
+    }
     if (id === 'rosco-letra-selector') { renderLetraGrid(); }
     if (id === 'rosco-analisis')        { renderAnalisis(); }
 }
@@ -21744,7 +21767,7 @@ const DIC_CAMPOS = [
 ];
 
 const DIC_LETRAS = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','Ñ','O','P','Q','R','S','T','U','V','X','Y','Z'];
-const DIC_LETRA_TOTALES = {A:5491,B:2062,C:6368,D:2542,E:3950,F:1486,G:1644,H:1275,I:1182,J:456,K:74,L:1230,M:2843,N:736,'Ñ':46,O:824,P:4172,Q:266,R:2637,S:2670,T:2730,U:262,V:1083,W:0,X:30,Y:117,Z:414};
+const DIC_LETRA_TOTALES = {A:5178,B:1956,C:6027,D:2450,E:3775,F:1401,G:1505,H:1208,I:1130,J:412,K:72,L:1140,M:2678,N:689,'Ñ':11,O:773,P:3937,Q:253,R:2478,S:2505,T:2592,U:249,V:1032,W:0,X:29,Y:106,Z:367};
 
 const DIC_CAMPO_ICONS = {};
 DIC_CAMPOS.forEach(function(c){ DIC_CAMPO_ICONS[c.id] = c.icon + ' ' + c.name; });
@@ -22037,6 +22060,81 @@ function dicOcultarPalabra() {
 
 function dicEstaOculta(word) {
     return localStorage.getItem('dic_ocultar_' + word.toLowerCase()) === '1';
+}
+
+function abrirPalabrasOcultadas() {
+    var ocultas = [];
+    for (var k in localStorage) {
+        if (k.startsWith('dic_ocultar_') && localStorage.getItem(k) === '1') {
+            var word = k.replace('dic_ocultar_', '');
+            ocultas.push(word.charAt(0).toUpperCase() + word.slice(1));
+        }
+    }
+    ocultas.sort();
+
+    var overlay = document.createElement('div');
+    overlay.id = 'dic-ocultas-overlay';
+    overlay.style.cssText = 'position:fixed;top:0;left:0;right:0;bottom:0;background:var(--bg);z-index:99999;display:flex;flex-direction:column;overflow:hidden;';
+
+    var header = '<div style="padding:15px 20px;display:flex;align-items:center;gap:15px;border-bottom:1px solid var(--border);position:sticky;top:0;background:var(--bg);z-index:10;">' +
+        '<button onclick="document.getElementById(\'dic-ocultas-overlay\').remove();" style="background:none;border:none;color:var(--text);font-size:1.5rem;cursor:pointer;">&larr;</button>' +
+        '<div><h2 style="color:var(--text);font-size:1.1rem;margin:0;">&#x1F4E6; Palabras ocultadas</h2>' +
+        '<p style="color:var(--muted);font-size:0.75rem;margin:3px 0 0;">' + ocultas.length + ' palabras &middot; toca para restaurar</p></div>' +
+        '</div>';
+
+    var body = '<div style="flex:1;overflow-y:auto;padding:16px;">';
+
+    if (ocultas.length === 0) {
+        body += '<div style="text-align:center;padding:60px 20px;color:var(--muted);">No has ocultado ninguna palabra todavia</div>';
+    } else {
+        body += '<button onclick="dicRestaurarTodas()" style="width:100%;background:rgba(68,212,144,0.1);border:1px solid var(--green);color:var(--green);border-radius:12px;padding:12px;font-size:0.85rem;font-weight:700;cursor:pointer;margin-bottom:16px;">Restaurar todas (' + ocultas.length + ')</button>';
+        for (var wi = 0; wi < ocultas.length; wi++) {
+            var ww = ocultas[wi];
+            body += '<div style="display:flex;align-items:center;justify-content:space-between;padding:10px 14px;background:var(--card);border-radius:10px;margin-bottom:6px;border:1px solid var(--border2);">' +
+                '<span style="font-size:0.9rem;color:var(--text);font-weight:600;">' + ww + '</span>' +
+                '<button onclick="dicRestaurarPalabra(\'' + ww.toLowerCase() + '\', this)" style="background:none;border:1px solid var(--border2);color:var(--muted);border-radius:8px;padding:4px 10px;font-size:0.72rem;cursor:pointer;">Restaurar</button>' +
+                '</div>';
+        }
+    }
+    body += '</div>';
+
+    overlay.innerHTML = header + body;
+    document.body.appendChild(overlay);
+
+    var countEl = document.getElementById('dic-ocultas-count');
+    if (countEl) countEl.textContent = ocultas.length + ' palabras ocultadas';
+}
+
+function dicRestaurarPalabra(wordLower, btn) {
+    localStorage.removeItem('dic_ocultar_' + wordLower);
+    // Invalidate cache for this letter
+    var l = wordLower[0].toUpperCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+    if (dicState && dicState.letrasCache && dicState.letrasCache[l]) delete dicState.letrasCache[l];
+    // Update UI
+    var row = btn.closest('div[style*="display:flex"]');
+    if (row) { row.style.opacity = '0.3'; btn.textContent = '✓'; btn.disabled = true; }
+    // Update header count
+    var remaining = Object.keys(localStorage).filter(function(k){ return k.startsWith('dic_ocultar_') && localStorage.getItem(k) === '1'; }).length;
+    var overlay = document.getElementById('dic-ocultas-overlay');
+    if (overlay) {
+        var h2 = overlay.querySelector('p');
+        if (h2) h2.textContent = remaining + ' palabras · toca para restaurar';
+    }
+    showToast('✅ "' + wordLower + '" restaurada');
+}
+
+function dicRestaurarTodas() {
+    var keys = Object.keys(localStorage).filter(function(k){ return k.startsWith('dic_ocultar_'); });
+    keys.forEach(function(k) {
+        localStorage.removeItem(k);
+        var l = k.replace('dic_ocultar_','')[0].toUpperCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+        if (dicState && dicState.letrasCache && dicState.letrasCache[l]) delete dicState.letrasCache[l];
+    });
+    var overlay = document.getElementById('dic-ocultas-overlay');
+    if (overlay) overlay.remove();
+    showToast('✅ ' + keys.length + ' palabras restauradas');
+    var countEl = document.getElementById('dic-ocultas-count');
+    if (countEl) countEl.textContent = 'Las que marcaste como ya sabes';
 }
 
 function abrirSelectorLetraRAE(l, vistas, total) {
@@ -22473,7 +22571,11 @@ async function dicCargarLetra(letra) {
         for (var i = 0; i < regionalPrefixes.length; i++) {
             if (d.startsWith(regionalPrefixes[i])) return false;
         }
-        // Keep if definition is empty or non-regional
+        // Filter useless definitions
+        if (d.length < 20) return false;          // too short
+        if (d.length > 280) return false;         // too long / botanical detail
+        if (d.startsWith('U. t. c.')) return false; // reference-only
+        if (d.indexOf('→ buscar:') !== -1) return false; // cross-reference
         return true;
     });
     dicState.letrasCache[letra] = data;
@@ -23331,7 +23433,7 @@ function showRatingBtns(type) {
     }
 }
 
-// ── SRS preview chip ─────────────────────────────────────────────
+// --- SRS preview chip ---
 function srsStatusText(key, prefix) {
     var stored = localStorage.getItem(prefix + key);
     if (!stored) return null;
@@ -23369,7 +23471,7 @@ function injectSrsStatus(key, prefix, containerId) {
         el.innerHTML = '<span style="display:inline-block;background:rgba(255,255,255,0.04);border:1px solid var(--border2);border-radius:20px;padding:3px 12px;font-size:0.72rem;color:var(--muted);">🆕 Primera vez</span>';
     }
 }
-// ─────────────────────────────────────────────────────────────────
+// ---  ---
 
 function rate(score) {
     const data = gameSession[gameIndex];
@@ -23748,7 +23850,7 @@ function buildRosco() {
     const byLetter = {};
     LETRAS.forEach(l => byLetter[l] = { easy:[], medium:[], hard:[] });
 
-    // ── Clasificador de dificultad ──────────────────────────────────────────
+    // --- Clasificador de dificultad ---
     const TRIVIAL = new Set([
         'madrid','barcelona','paris','roma','londres','berlin','tokio','moscu',
         'espana','francia','italia','alemania','china','japon','brasil','mexico','rusia',
@@ -23809,7 +23911,7 @@ function buildRosco() {
     const usedKey = `rosco_used_${new Date().toDateString()}`;
     let usedToday = JSON.parse(localStorage.getItem(usedKey) || '{}');
 
-    // ── Target mix: 8 easy, 10 medium, 7 hard out of 25 letters ───────────
+    // --- Target mix: 8 easy, 10 medium, 7 hard out of 25 letters ---
     // Each letter gets a "slot" type. We cycle through the target distribution.
     // Letters are shuffled so the slot assignment feels random each rosco.
     const lettersCopy = [...LETRAS].sort(() => Math.random() - 0.5);
@@ -24611,7 +24713,7 @@ function openExternalUrl(url) {
 function renderDashboard(){try{var u=JSON.parse(localStorage.getItem('ppro_usage')||'{"sessions":[],"byDeck":{},"daily":{}}');var letters=JSON.parse(localStorage.getItem('ppro_letters')||'{}');var roscoH=JSON.parse(localStorage.getItem('ppro_rosco_hist')||'[]');var sessions=u.sessions||[],byDeck=u.byDeck||{},daily=u.daily||{};var totalQ=sessions.reduce(function(s,x){return s+(x.answered||0);},0);var totalOk=sessions.reduce(function(s,x){return s+(x.correct||0);},0);var totalMin=sessions.reduce(function(s,x){return s+(x.minutes||0);},0);var pct=totalQ?Math.round(100*totalOk/totalQ):0;var today=new Date().toISOString().slice(0,10);var todayMin=sessions.filter(function(s){return s.date===today;}).reduce(function(s,x){return s+(x.minutes||0);},0);var streak=0;for(var i=0;i<365;i++){var dd=new Date();dd.setDate(dd.getDate()-i);if((daily[dd.toISOString().slice(0,10)]||0)>0)streak++;else if(i>0)break;}document.getElementById('db-total').textContent=totalQ.toLocaleString('es');document.getElementById('db-pct').textContent=pct+'%';document.getElementById('db-streak').textContent=streak+'d';document.getElementById('db-today').textContent=todayMin<60?todayMin+'min':Math.floor(todayMin/60)+'h '+(todayMin%60?todayMin%60+'m':'');document.getElementById('db-total-time').textContent=Math.round(totalMin/60)+'h';var heat=document.getElementById('db-heatmap');heat.innerHTML='';var vals=Object.values(daily).map(Number);var maxD=vals.length?Math.max.apply(null,[1].concat(vals)):1;for(var j=69;j>=0;j--){var dj=new Date();dj.setDate(dj.getDate()-j);var kj=dj.toISOString().slice(0,10);var vj=daily[kj]||0;var aj=vj?Math.max(0.15,vj/maxD):0;var cel=document.createElement('div');cel.style.cssText='width:11px;height:11px;border-radius:2px;background:'+(vj?'rgba(240,192,64,'+aj.toFixed(2)+')':'var(--border2)')+';';cel.title=kj+': '+vj+' preguntas';heat.appendChild(cel);}var deckEl=document.getElementById('db-by-deck');var entries=Object.entries(byDeck).sort(function(a,b){return b[1].answered-a[1].answered;});deckEl.innerHTML=entries.length?entries.map(function(e){var id=e[0],data=e[1];var p=data.answered?Math.round(100*data.correct/data.answered):0;var col=p>=70?'var(--green)':p>=40?'var(--gold)':'var(--red)';var nm=(typeof MAZOS!=='undefined')?((MAZOS.find(function(m){return m.id===id;})||{}).name||id):id;return '<div style="margin-bottom:10px;"><div style="display:flex;justify-content:space-between;font-size:0.74rem;margin-bottom:3px;"><span>'+nm+'</span><span style="color:'+col+'">'+p+'% ('+data.answered+')</span></div><div style="background:var(--border2);border-radius:5px;height:6px;"><div style="width:'+p+'%;background:'+col+';border-radius:5px;height:6px;"></div></div></div>';}).join(''):'<p style="color:var(--muted);font-size:0.8rem;text-align:center;padding:8px;">Practica para ver tus stats \U0001f4aa</p>';var hlEl=document.getElementById('db-hard-letters');var lArr=Object.entries(letters).map(function(e){var l=e[0],d=e[1];return{l:l,pct:(d.ok+d.fail)?Math.round(100*(d.ok||0)/(d.ok+d.fail)):100};}).sort(function(a,b){return a.pct-b.pct;}).slice(0,10);hlEl.innerHTML=lArr.length?lArr.map(function(x){var col=x.pct<50?'var(--red)':x.pct<70?'var(--gold)':'var(--green)';return '<div style="background:var(--card2);border:1px solid '+(x.pct<50?'var(--red)':'var(--border2)')+';border-radius:9px;padding:5px 11px;display:flex;align-items:center;gap:6px;font-size:0.8rem;"><strong style="font-size:1.05rem">'+x.l+'</strong><span style="color:'+col+'">'+x.pct+'%</span></div>';}).join(''):'<span style="color:var(--muted);font-size:0.8rem;">Sin datos a\u00fan, \u00a1haz el rosco!</span>';var rEl=document.getElementById('db-rosco-hist');rEl.innerHTML=roscoH.length?roscoH.slice(-8).reverse().map(function(r){var p=r.total?Math.round(100*r.ok/r.total):0;var col=p>=70?'var(--green)':p>=40?'var(--gold)':'var(--red)';return '<div style="display:flex;align-items:center;gap:8px;font-size:0.77rem;padding:7px 0;border-bottom:1px solid var(--border2);"><span style="color:var(--muted);min-width:68px;font-size:0.7rem;">'+r.date+'</span><span style="color:var(--green);">+'+r.ok+'</span><span style="color:var(--red);">\u2716'+r.fail+'</span><span style="color:var(--muted);">~'+(r.pass||0)+'</span><span style="font-weight:700;margin-left:auto;color:'+col+';">'+p+'%</span></div>';}).join(''):'<p style="color:var(--muted);font-size:0.8rem;text-align:center;padding:8px;">\u00a1Haz tu primer rosco!</p>';
   // Progreso diccionario por letra
   var LETRAS_ESP = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','Ñ','O','P','Q','R','S','T','U','V','W','X','Y','Z'];
-  var TOTAL_POR_LETRA = {A:5491,B:2062,C:6368,D:2542,E:3950,F:1486,G:1644,H:1275,I:1182,J:456,K:74,L:1230,M:2843,N:736,'Ñ':46,O:824,P:4172,Q:266,R:2637,S:2670,T:2730,U:262,V:1083,W:0,X:30,Y:117,Z:414};
+  var TOTAL_POR_LETRA = {A:5178,B:1956,C:6027,D:2450,E:3775,F:1401,G:1505,H:1208,I:1130,J:412,K:72,L:1140,M:2678,N:689,'Ñ':11,O:773,P:3937,Q:253,R:2478,S:2505,T:2592,U:249,V:1032,W:0,X:29,Y:106,Z:367};
   var dicLetrasEl = document.getElementById('db-dic-letras');
   if (dicLetrasEl) {
     var letraRows = LETRAS_ESP.map(function(l) {
@@ -27865,7 +27967,7 @@ var RIOS_MUNDIALES = {
 // GEO MUNDIAL — Lagos y Ríos del mundo (minijuegos) — v2
 // ================================================================
 
-// ── UTILIDADES COMPARTIDAS ───────────────────────────────────────
+// --- UTILIDADES COMPARTIDAS ---
 function geoMundShuffle2(a) {
     var b = a.slice();
     for (var i = b.length - 1; i > 0; i--) {
@@ -28318,24 +28420,24 @@ var HIST_UNI_EVENTO_FECHA = [
         var r = respuesta.trim();
         var q = pregunta ? pregunta.toLowerCase() : '';
 
-        // ── 1. NUMÉRICO (por valor) ───────────────────────────
+        // --- 1. NUMÉRICO (por valor) ---
         if (/^\d{3,4}\s*a\.?c\.?$/i.test(r)) return 'fecha_ac';
         if (/^\d{4}(-\d{4})?$/.test(r)) return 'año';
         if (/^[\d\.]+\s*(km|años?|metros?|días?|siglos?|%)/i.test(r)) return 'numero';
         if (/^\d+\.?\d*$/.test(r)) return 'numero';
 
-        // ── 2. CINE (por pregunta — muy fiable) ──────────────
+        // --- 2. CINE (por pregunta — muy fiable) ---
         if (/director/i.test(q)) return 'director';
         if (/\bactor\b|\bactriz\b/i.test(q)) return 'actor';
         if (/pel[ií]cula|film|taquiller|ganó la palma|mejor pel/i.test(q)) return 'pelicula';
 
-        // ── 3. VALOR: ¿empieza en minúscula? → concepto ──────
+        // --- 3. VALOR: ¿empieza en minúscula? → concepto ---
         if (/^[a-záéíóúüñ]/.test(r)) return 'concepto';
 
-        // ── 4. VALOR: géneros/conceptos reconocibles ─────────
+        // --- 4. VALOR: géneros/conceptos reconocibles ---
         if (/grotesca|sacramental|esperpento|nivola|in-yer-face|astracán|jácara|entremés|catarsis|hamartía|loa\b|sainete|deus\s+ex|pax\s+romana/i.test(r)) return 'concepto';
 
-        // ── 5. PREGUNTA: señales de persona ──────────────────
+        // --- 5. PREGUNTA: señales de persona ---
         // Only classify as persona if question ASKS FOR A PERSON
         if (/\bautor\b|\bautora\b|\bcreador\b|\bdramaturgo\b|\beschribió\b|\bcomediante\b/i.test(q)) return 'persona';
         if (/\brey\b|\breina\b|\bemperador\b|\bemperatriz\b|\bfaraón\b|\bcésar\b|\bgeneral\b|\bfilósofo\b|\blíder\b|\bcaudillo\b|\bconquistador\b/i.test(q)) return 'persona';
@@ -28344,7 +28446,7 @@ var HIST_UNI_EVENTO_FECHA = [
         // "heredero", "archiduque", "estatista", "político"
         if (/\bheredero\b|\barchiduque\b|\bestad[ií]sta\b|\bpolítico\b|\bpersonaje\b/i.test(q)) return 'persona';
 
-        // ── 6. PREGUNTA: señales de BATALLA/GUERRA ───────────
+        // --- 6. PREGUNTA: señales de BATALLA/GUERRA ---
         // Only if question starts with "Batalla" or explicitly asks for battle name
         // NOT if it just mentions "guerra" in passing (e.g. "tratado que puso fin a la guerra")
         if (/^batalla\b|^¿?cómo\s+se\s+llamó\s+la\s+batalla/i.test(q)) return 'batalla';
@@ -28352,25 +28454,25 @@ var HIST_UNI_EVENTO_FECHA = [
         // "guerra que enfrentó" → the answer IS the name of the war → batalla
         if (/^guerra\b|guerra\s+que\s+(enfrento|enfrentó|duró|comenzó)/i.test(q)) return 'batalla';
 
-        // ── 7. VALOR: ¿Es un tratado/documento por su nombre? ─
+        // --- 7. VALOR: ¿Es un tratado/documento por su nombre? ---
         // Multi-word answers starting with "Tratado", "Paz de", "Corpus", "Declaración"...
         if (/^(tratado|paz\s+de|corpus|declaración|constitución|concilio|congreso\s+de|acuerdo)/i.test(r)) return 'tratado';
 
-        // ── 8. PREGUNTA: lugar/ciudad ─────────────────────────
+        // --- 8. PREGUNTA: lugar/ciudad ---
         if (/\bciudad\b|\bcapital\b|\bimperio\b|\bcivilización\b|\bpalacio\b|\bmonasterio\b|\bcatedral\b|\bfortale\b/i.test(q)) return 'lugar';
         if (/^¿?dónde\b|^lugar\b/i.test(q)) return 'lugar';
 
-        // ── Teatro: obra como sujeto → concepto
+        // --- Teatro: obra como sujeto → concepto ---
         if (/^obra\b|\bobra\s+(de|que|sobre)|\b(única|su|esta)\s+obra\b/i.test(q)) return 'concepto';
-        // ── 9. PREGUNTA: tratado/documento ───────────────────
+        // --- 9. PREGUNTA: tratado/documento ---
         if (/\btratado\b|\bconcilio\b|\bdeclaración\b|\bmanifiesto\b/i.test(q)) return 'tratado';
         // "Período/etapa/sistema/movimiento"
         if (/\bperíodo\b|\betapa\b|\bsistema\b|\bmovimiento\b/i.test(q)) return 'tratado';
 
-        // ── 10. PREGUNTA: dioses/mitología ────────────────────
+        // --- 10. PREGUNTA: dioses/mitología ---
         if (/\bdios\b|\bdiosa\b|\bmitolog|\bdeidad\b/i.test(q)) return 'dios';
 
-        // ── 11. VALOR: 2+ palabras capitalizadas ──────────────
+        // --- 11. VALOR: 2+ palabras capitalizadas ---
         // Only now, after specific checks, use cap-counting as fallback
         var caps = r.split(/\s+/).filter(function(w){
             return w && w[0] === w[0].toUpperCase() && w[0] !== w[0].toLowerCase();
@@ -28520,7 +28622,7 @@ var HIST_UNI_EVENTO_FECHA = [
         });
     }
 
-    // ── ARCHIVO "YA ME LA SÉ" ───────────────────────────────────
+    // --- ARCHIVO "YA ME LA SÉ" ---
     function _archivarKey(gameId) { return 'ppro_archivadas_' + gameId; }
     function archivarPregunta(gameId, questionText) {
         try {
@@ -28537,7 +28639,7 @@ var HIST_UNI_EVENTO_FECHA = [
         } catch(e) { return false; }
     }
 
-    // ── BOTONES POST-RESPUESTA ───────────────────────────────────
+    // --- BOTONES POST-RESPUESTA ---
     // Adds "Siguiente →" and "Ya me la sé 📦" to the opts div after answering
     function agregarBotonesPostRespuesta(div, isCorrect, gameId, questionText, onNext) {
         // Siguiente →
@@ -28568,7 +28670,7 @@ var HIST_UNI_EVENTO_FECHA = [
 
 
 
-    // ── TEATRO ───────────────────────────────────────────────────
+    // --- TEATRO ---
     var _teatroOrig = mostrarPreguntaTeatro;
     mostrarPreguntaTeatro = function() {
         _teatroOrig();
@@ -28603,7 +28705,7 @@ var HIST_UNI_EVENTO_FECHA = [
         inputEl.parentNode.appendChild(div);
     };
 
-    // ── CINE EXTREMO ─────────────────────────────────────────────
+    // --- CINE EXTREMO ---
     var _cineExtOrig = mostrarPreguntaExtremo;
     mostrarPreguntaExtremo = function() {
         _cineExtOrig();
@@ -28638,7 +28740,7 @@ var HIST_UNI_EVENTO_FECHA = [
         inputEl.parentNode.appendChild(div);
     };
 
-    // ── CINE BOTE ─────────────────────────────────────────────────
+    // --- CINE BOTE ---
     // cine_2.js también es respuesta libre — mismo tratamiento
     if (typeof mostrarPreguntaCineBote === 'function') {
         var _cineBoteOrig = mostrarPreguntaCineBote;
@@ -28676,7 +28778,7 @@ var HIST_UNI_EVENTO_FECHA = [
         };
     }
 
-// ── HISTORIA EN CADENA ─────────────────────────────────────
+// --- HISTORIA EN CADENA ---
     if (typeof mostrarCadena === 'function') {
         var _cadenaOrig = mostrarCadena;
         mostrarCadena = function() {
@@ -28994,9 +29096,9 @@ window.abrirSelectorHist = function() {
 </script>
 
 <script>
-// ──────────────────────────────────────────────────────
+// ---  ---
 // NUEVO badge para Peloteo Lingüístico v2
-// ──────────────────────────────────────────────────────
+// ---  ---
 (function() {
     function inyectarNuevoBadge() {
         if (typeof delitoEsNuevo !== 'function' || !delitoEsNuevo()) return;
@@ -29853,7 +29955,7 @@ var DEPORTES_NIVELES = [
   }
 ];
 
-// ── Estado persistente ────────────────────────────────────────────
+// --- Estado persistente ---
 var DEPORTE_STORAGE_KEY = 'ppro_deportes_v1';
 
 function deporteLoadState() {
@@ -29881,7 +29983,7 @@ function deporteNivelDesbloqueado(nivel) {
   return deporteGetPct(nivel - 1) >= 70;
 }
 
-// ── Banners de bienvenida por nivel ──────────────────────────────
+// --- Banners de bienvenida por nivel ---
 var DEPORTE_BANNERS = {
   1: {
     emoji: '🏟️',
@@ -29900,7 +30002,7 @@ var DEPORTE_BANNERS = {
   }
 };
 
-// ── Selector principal de Deportes ───────────────────────────────
+// --- Selector principal de Deportes ---
 window.abrirSelectorDeporte = function() {
   var st = deporteLoadState();
   var html = '<div id="deporte-selector" style="position:fixed;top:0;left:0;right:0;bottom:0;background:var(--bg);z-index:99999;display:flex;flex-direction:column;overflow-y:auto;">' +
@@ -29959,7 +30061,7 @@ window.abrirSelectorDeporte = function() {
   });
 };
 
-// ── Selector de bloques dentro de un nivel ───────────────────────
+// --- Selector de bloques dentro de un nivel ---
 window.abrirSelectorBloqueDeporte = function(nivel) {
   var niv = DEPORTES_NIVELES.find(function(n) { return n.nivel === nivel; });
   var st = deporteLoadState();
@@ -30036,7 +30138,7 @@ window.abrirSelectorBloqueDeporte = function(nivel) {
   });
 };
 
-// ── Banner gracioso ───────────────────────────────────────────────
+// --- Banner gracioso ---
 function mostrarBannerDeporte(nivel, callback) {
   var b = DEPORTE_BANNERS[nivel] || DEPORTE_BANNERS[1];
   var overlay = document.createElement('div');
@@ -30056,7 +30158,7 @@ function mostrarBannerDeporte(nivel, callback) {
   });
 }
 
-// ── Juego tipo test ───────────────────────────────────────────────
+// --- Juego tipo test ---
 var deporteGameState = {};
 
 window.iniciarJuegoDeporte = function(nivel, bloqueId) {
@@ -32675,369 +32777,158 @@ function escEmpFin(gs){
 }
 
 
-// ================================================================
-// PLAN NOE — sistema de plan anual personalizado
-// ================================================================
-var PLAN_NOE_KEY = 'ppro_plan_noe_v1';
-var PLAN_NOE_VISTO_KEY = 'ppro_plan_noe_bienvenida';
+</script>
 
-// Orden de letras por frecuencia en Pasapalabra
-var RAE_ORDEN_LETRAS = ['C','S','A','P','M','R','T','E','B','D','L','G','N','F','I','V','H','J','O','Z','U','Q','X','Y','K','Ñ','W'];
-var RAE_PALABRAS_DIA = 40;
-var RAE_LETRA_KEY = 'ppro_rae_letra_actual';
 
-function raeGetLetraActual() {
-  var datos = JSON.parse(localStorage.getItem(RAE_LETRA_KEY) || 'null');
-  if (!datos) return { letra: RAE_ORDEN_LETRAS[0], completadas: 0 };
-  return datos;
-}
+<script>
+(function() {
+  var LETRA_KEY = 'ppro_rae_letra_actual';
+  var LETRAS = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','X','Y','Z'];
+  var PLAN_KEY = 'ppro_plan_v3';
+  var TEMAS = [
+    {n:'Cultura General',      e:'🧠', f:'abrirSelectorCG'},
+    {n:'Literatura Española',  e:'📖', f:'abrirSelectorLitEsp'},
+    {n:'Arte',                 e:'🎨', f:'abrirSelectorArte'},
+    {n:'Historia de España',   e:'🏰', f:'abrirSelectorHistEsp'},
+    {n:'Historia Universal',   e:'🌐', f:'abrirSelectorHistUni'},
+    {n:'Mitología',            e:'🏛️', f:'smMito'},
+    {n:'Ciencia',              e:'🔬', f:'abrirSelectorCiencia'},
+    {n:'Cine',                 e:'🎬', f:'abrirSelectorCine'},
+    {n:'Teatro',               e:'🎭', f:'abrirSelectorTeatro'},
+    {n:'Geografía España',     e:'📍', f:'abrirSelectorGeoEsp'},
+    {n:'Geografía Mundial',    e:'🗺️', f:'abrirSelectorGeoMund'},
+    {n:'Capitales',            e:'✈️', f:'abrirSelectorCapitales'},
+    {n:'Literatura Universal', e:'📚', f:'smLitUni'},
+    {n:'Deporte',              e:'⚽', f:'abrirSelectorDeporte'},
+    {n:'Naturaleza',           e:'🌿', f:'smNat'},
+    {n:'Tecnología',           e:'💻', f:'smTec'}
+  ];
 
-function raeGetLetraSiguiente(letraActual) {
-  var idx = RAE_ORDEN_LETRAS.indexOf(letraActual);
-  if (idx < 0 || idx >= RAE_ORDEN_LETRAS.length - 1) return RAE_ORDEN_LETRAS[0];
-  return RAE_ORDEN_LETRAS[idx + 1];
-}
+  function loadPlan() {
+    try { return JSON.parse(localStorage.getItem(PLAN_KEY) || '{"tIdx":0,"dia":""}'); }
+    catch(e) { return {tIdx:0, dia:''}; }
+  }
+  function savePlan(p) { localStorage.setItem(PLAN_KEY, JSON.stringify(p)); }
 
-function raeGetInfoLetra(letra) {
-  var total = (typeof DIC_LETRA_TOTALES !== 'undefined' ? DIC_LETRA_TOTALES[letra] : 0) || 0;
-  var vistas = parseInt(localStorage.getItem('dic_hito_letra_' + letra) || '0');
-  var pct = Math.min(100, Math.round(vistas / total * 100));
-  var diasRestantes = Math.ceil((total - vistas) / RAE_PALABRAS_DIA);
-  return { total: total, vistas: vistas, pct: pct, diasRestantes: diasRestantes };
-}
+  function getLetra() {
+    try {
+      var d = JSON.parse(localStorage.getItem(LETRA_KEY) || 'null');
+      return d && d.letra ? d.letra : 'A';
+    } catch(e) { return 'A'; }
+  }
 
-// Rotación de 16 días: RAE siempre + materia del día
-var PLAN_ROTACION = [
-  { area: 'historia_esp',  emoji: '🇪🇸', nombre: 'Historia de España',    desc: 'RAE + De los Reyes Católicos a hoy' },
-  { area: 'historia_uni',  emoji: '🌐', nombre: 'Historia Universal',      desc: 'RAE + Guerras, imperios y civilizaciones' },
-  { area: 'geo_esp',       emoji: '📍', nombre: 'Geografía de España',     desc: 'RAE + Ríos, provincias y comunidades' },
-  { area: 'geo_mundial',   emoji: '🗺️', nombre: 'Geografía Mundial',       desc: 'RAE + Países y capitales del mundo' },
-  { area: 'historia_esp',  emoji: '🇪🇸', nombre: 'Historia de España',    desc: 'RAE + Personajes y fechas clave' },
-  { area: 'capitales',     emoji: '✈️', nombre: 'Capitales',               desc: 'RAE + Porque Sídney no es la capital...' },
-  { area: 'historia_uni',  emoji: '🌐', nombre: 'Historia Universal',      desc: 'RAE + Repaso de imperios y revoluciones' },
-  { area: 'literatura_esp',emoji: '📖', nombre: 'Literatura Española',     desc: 'RAE + Góngora, Quevedo y compañía' },
-  { area: 'geo_esp',       emoji: '📍', nombre: 'Geografía de España',     desc: 'RAE + Montañas, ríos y costas' },
-  { area: 'literatura_uni',emoji: '📚', nombre: 'Literatura Universal',    desc: 'RAE + Rusos con trauma y franceses intensitos' },
-  { area: 'geo_mundial',   emoji: '🗺️', nombre: 'Geografía Mundial',       desc: 'RAE + Fronteras y banderas' },
-  { area: 'arte',          emoji: '🎨', nombre: 'Arte',                    desc: 'RAE + Pintura y escultura' },
-  { area: 'historia_esp',  emoji: '🇪🇸', nombre: 'Historia de España',    desc: 'RAE + Siglos XIX y XX' },
-  { area: 'ciencia',       emoji: '🔬', nombre: 'Ciencia',                 desc: 'RAE + Nobel y descubrimientos' },
-  { area: 'cine_teatro',   emoji: '🎬', nombre: 'Cine y Teatro',           desc: 'RAE + Directores, obras y premios' },
-  { area: 'deporte_mito',  emoji: '⚽', nombre: 'Deporte y Mitología',     desc: 'RAE + Récords, dioses y héroes' },
-  { area: 'repaso',        emoji: '🔄', nombre: 'Repaso general',          desc: 'Refuerza todo lo de estas semanas' },
-];
+  function getInfo(l) {
+    var tots = typeof DIC_LETRA_TOTALES !== 'undefined' ? DIC_LETRA_TOTALES : {};
+    var total = tots[l] || 0;
+    var vistas = parseInt(localStorage.getItem('dic_hito_letra_' + l) || '0');
+    var pct = total > 0 ? Math.min(100, Math.round(vistas / total * 100)) : 0;
+    return {total: total, vistas: vistas, pct: pct};
+  }
 
-// Día del ciclo basado en días totales estudiados
-function planNoeGetDiaCiclo() {
-  var p = planNoeLoad();
-  var dia = (p.diasEstudiados || 0) % PLAN_ROTACION.length;
-  return PLAN_ROTACION[dia];
-}
-
-// Compatibilidad con código anterior
-var PLAN_SEMANAL = {
-  0: PLAN_ROTACION[0], 1: PLAN_ROTACION[1], 2: PLAN_ROTACION[2],
-  3: PLAN_ROTACION[3], 4: PLAN_ROTACION[4], 5: PLAN_ROTACION[5], 6: PLAN_ROTACION[6]
-};
-
-function planNoeLoad() {
-  try { return JSON.parse(localStorage.getItem(PLAN_NOE_KEY) || '{"diasEstudiados":0,"iniciado":"","ultimoDia":""}'); }
-  catch(e) { return {diasEstudiados:0, iniciado:'', ultimoDia:''}; }
-}
-function planNoeSave(p) { localStorage.setItem(PLAN_NOE_KEY, JSON.stringify(p)); }
-
-function planNoeGetHoy() {
-  return planNoeGetDiaCiclo();
-}
-
-function planNoeRegistrarDia() {
-  var p = planNoeLoad();
-  var hoy = new Date().toISOString().slice(0,10);
-  if (p.ultimoDia === hoy) return;
-  if (!p.iniciado) p.iniciado = hoy;
-  p.diasEstudiados = (p.diasEstudiados || 0) + 1;
-  p.ultimoDia = hoy;
-  planNoeSave(p);
-}
-
-function planNoeGetPctAño() {
-  var p = planNoeLoad();
-  if (!p.iniciado) return 0;
-  var inicio = new Date(p.iniciado);
-  var hoy = new Date();
-  var diasPasados = Math.max(1, Math.round((hoy - inicio) / 86400000));
-  var diasObj = 365;
-  // % del año transcurrido que ha estudiado
-  return Math.min(100, Math.round((p.diasEstudiados / Math.min(diasPasados, diasObj)) * 100));
-}
-
-function planNoeGetRacha() {
-  var dias = [];
-  for (var k in localStorage) {
-    if (k.startsWith('dic_hito_letra_')) {
-      // aproximación: días de actividad
+  function avanzarLetra() {
+    var l = getLetra();
+    var info = getInfo(l);
+    if (info.pct >= 80 && info.total > 0) {
+      var idx = LETRAS.indexOf(l);
+      var sig = (idx >= 0 && idx < LETRAS.length - 1) ? LETRAS[idx + 1] : LETRAS[0];
+      localStorage.setItem(LETRA_KEY, JSON.stringify({letra: sig}));
+      return sig;
     }
+    return l;
   }
-  // Usar el contador de días del plan
-  var p = planNoeLoad();
-  return p.diasEstudiados || 0;
-}
 
-function planNoeRenderHome() {
-  var hoy = planNoeGetHoy();
-  var pct = planNoeGetPctAño();
-  var diasEst = (planNoeLoad().diasEstudiados || 0);
-
-  var prev = document.getElementById('plan-noe-preview');
-  var rachaEl = document.getElementById('plan-noe-racha');
-  var añoEl = document.getElementById('plan-noe-año');
-  var barraEl = document.getElementById('plan-noe-barra');
-
-  var diaCiclo = (planNoeLoad().diasEstudiados || 0) % PLAN_ROTACION.length + 1;
-  var raeLetra = raeGetLetraActual();
-  var raeInfo = raeGetInfoLetra(raeLetra.letra);
-  if (prev) prev.textContent = '📚 Letra ' + raeLetra.letra + ' (' + raeInfo.pct + '%) · ' + hoy.emoji + ' ' + hoy.nombre;
-  if (rachaEl) rachaEl.textContent = '📅 ' + diasEst + ' días';
-  if (añoEl) añoEl.textContent = pct + '% constancia';
-  if (barraEl) setTimeout(function(){ barraEl.style.width = pct + '%'; }, 300);
-}
-
-function abrirPlanNoe() {
-  var visto = localStorage.getItem(PLAN_NOE_VISTO_KEY);
-  if (!visto) {
-    mostrarBienvenidaNoe();
-  } else {
-    mostrarPanelPlanNoe();
+  function registrarDia() {
+    var p = loadPlan();
+    var hoy = new Date().toISOString().slice(0, 10);
+    if (p.dia === hoy) return;
+    p.tIdx = ((p.tIdx || 0) + 1) % TEMAS.length;
+    p.dia = hoy;
+    savePlan(p);
+    avanzarLetra();
   }
-}
 
-function mostrarBienvenidaNoe() {
-  localStorage.setItem(PLAN_NOE_VISTO_KEY, '1');
-  var p = planNoeLoad();
-  if (!p.iniciado) { p.iniciado = new Date().toISOString().slice(0,10); planNoeSave(p); }
+  function llamarTema(f) {
+    if (f === 'smMito')   { typeof startSmartStudy === 'function' && startSmartStudy('mitologia'); return; }
+    if (f === 'smLitUni') { typeof startSmartStudy === 'function' && startSmartStudy('lit_uni'); return; }
+    if (f === 'smNat')    { typeof startSmartStudy === 'function' && startSmartStudy('naturaleza'); return; }
+    if (f === 'smTec')    { typeof startSmartStudy === 'function' && startSmartStudy('tecnologia'); return; }
+    if (typeof window[f] === 'function') { window[f](); return; }
+    typeof openStudySelector === 'function' && openStudySelector();
+  }
 
-  var div = document.createElement('div');
-  div.id = 'bienvenida-noe';
-  div.style.cssText = 'position:fixed;top:0;left:0;right:0;bottom:0;background:var(--bg);z-index:999999;overflow-y:auto;';
-  div.innerHTML =
-    '<div style="max-width:420px;margin:0 auto;padding:40px 24px 60px;">' +
-      // Header
-      '<div style="text-align:center;margin-bottom:32px;">' +
-        '<div style="font-size:3.5rem;margin-bottom:12px;">👋</div>' +
-        '<h1 style="color:var(--text);font-size:1.6rem;margin:0 0 8px;">Hola, Noe</h1>' +
-        '<p style="color:var(--muted);font-size:0.9rem;line-height:1.6;">Sé que vas un poco agobiada — madre, currando, y encima preparando Pasapalabra. Que sepas que te entiendo perfectamente.</p>' +
-      '</div>' +
+  function renderPlan() {
+    var el = document.getElementById('plan-hoy-container');
+    if (!el) return;
 
-      // El problema
-      '<div style="background:var(--card);border:1px solid var(--border2);border-radius:16px;padding:20px;margin-bottom:16px;">' +
-        '<div style="font-size:1.3rem;margin-bottom:8px;">🤯</div>' +
-        '<p style="color:var(--text);font-size:0.9rem;line-height:1.6;margin:0;">75.000 palabras del diccionario. Historia, geografía, arte, ciencia... ¿Por dónde empiezas? ¿Cuándo estudias? ¿Estás avanzando o dando vueltas?</p>' +
-      '</div>' +
+    var p = loadPlan();
+    var tIdx = (p.tIdx || 0) % TEMAS.length;
+    var tema = TEMAS[tIdx];
+    var tNext = TEMAS[(tIdx + 1) % TEMAS.length];
+    var letra = avanzarLetra();
+    var info = getInfo(letra);
+    var streak = parseInt(localStorage.getItem('streak') || '0');
+    var barColor = info.pct >= 80 ? '#00b894' : (info.pct >= 40 ? '#fdcb6e' : '#74b9ff');
 
-      // La solución
-      '<div style="background:linear-gradient(135deg,#0f0f2e,#1a1035);border:2px solid #a29bfe;border-radius:16px;padding:20px;margin-bottom:16px;">' +
-        '<div style="font-size:1.3rem;margin-bottom:8px;">💜</div>' +
-        '<p style="color:#a29bfe;font-size:0.9rem;font-weight:600;margin:0 0 8px;">He decidido echarte un cable.</p>' +
-        '<p style="color:var(--muted);font-size:0.85rem;line-height:1.6;margin:0;">Cada día cuando abras la app, te digo exactamente qué hacer. Sin pensar, sin agobios. Solo abrir y estudiar 20 minutos.</p>' +
-      '</div>' +
+    var html = '<div style="background:var(--card2);border-radius:16px;padding:16px;border:1px solid var(--border2);margin-bottom:4px;">';
+    html += '<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:14px;">';
+    html += '<div style="font-size:0.72rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--muted);">📅 Plan de hoy</div>';
+    html += streak > 0 ? '<div style="font-size:0.75rem;color:var(--gold);font-weight:700;">🔥 ' + streak + 'd</div>' : '<div></div>';
+    html += '</div>';
 
-      // El plan
-      '<div style="background:var(--card);border:1px solid var(--border2);border-radius:16px;padding:20px;margin-bottom:16px;">' +
-        '<p style="color:var(--text);font-size:0.88rem;font-weight:700;margin:0 0 14px;">📅 Tu plan semanal</p>' +
-        '<div style="display:flex;flex-direction:column;gap:8px;">' +
-          ['Lun','Mar','Mié','Jue','Vie','Sáb','Dom'].map(function(d, i) {
-            var dia = [1,2,3,4,5,6,0][i];
-            var p2 = PLAN_SEMANAL[dia];
-            var s = 'display:flex;align-items:center;gap:10px;';
-            var s2 = 'color:var(--muted);font-size:0.75rem;min-width:28px;';
-            var s3 = 'font-size:1rem;';
-            var s4 = 'color:var(--text);font-size:0.82rem;';
-            return '<div style="' + s + '"><span style="' + s2 + '">' + d + '</span><span style="' + s3 + '">' + p2.emoji + '</span><span style="' + s4 + '">' + p2.nombre + '</span></div>';
-          }).join('') +
-        '</div>' +
-      '</div>' +
+    // RAE
+    html += '<div id="ph-rae" style="background:var(--card);border-radius:12px;padding:12px 14px;margin-bottom:8px;cursor:pointer;display:flex;align-items:center;gap:12px;border-left:3px solid ' + barColor + ';">';
+    html += '<div style="font-size:1.3rem;">📚</div>';
+    html += '<div style="flex:1;min-width:0;">';
+    html += '<div style="display:flex;justify-content:space-between;"><div style="font-size:0.82rem;font-weight:700;color:var(--text);">RAE · Letra ' + letra + '</div><div style="font-size:0.7rem;color:' + barColor + ';font-weight:700;">' + info.pct + '%</div></div>';
+    html += '<div style="height:3px;background:var(--border2);border-radius:2px;margin-top:5px;"><div style="height:100%;width:' + info.pct + '%;background:' + barColor + ';border-radius:2px;"></div></div>';
+    html += '<div style="font-size:0.68rem;color:var(--muted);margin-top:3px;">' + info.vistas.toLocaleString('es') + ' / ' + info.total.toLocaleString('es') + ' palabras · ' + (info.pct >= 80 ? '¡Lista para la siguiente! 🎉' : Math.ceil((info.total - info.vistas) / 40) + ' días aprox') + '</div>';
+    html += '</div></div>';
 
-      // La clave
-      '<div style="background:var(--card);border:1px solid var(--border2);border-radius:16px;padding:20px;margin-bottom:28px;">' +
-        '<p style="color:var(--text);font-size:0.88rem;font-weight:700;margin:0 0 10px;">🔑 La clave</p>' +
-        '<div style="display:flex;flex-direction:column;gap:8px;">' +
-          '<div style="display:flex;gap:10px;"><span>⏱️</span><span style="color:var(--muted);font-size:0.82rem;line-height:1.5;"><strong style="color:var(--text);">20 minutos al día</strong> es suficiente. No hace falta más.</span></div>' +
-          '<div style="display:flex;gap:10px;"><span>😴</span><span style="color:var(--muted);font-size:0.82rem;line-height:1.5;">Si un día no puedes, <strong style="color:var(--text);">no pasa nada</strong>. La racha no se rompe por un día.</span></div>' +
-          '<div style="display:flex;gap:10px;"><span>📈</span><span style="color:var(--muted);font-size:0.82rem;line-height:1.5;">Verás tu progreso crecer. <strong style="color:var(--text);">Cada sesión cuenta.</strong></span></div>' +
-        '</div>' +
-      '</div>' +
+    // Vocabulario
+    html += '<div id="ph-voc" style="background:var(--card);border-radius:12px;padding:12px 14px;margin-bottom:8px;cursor:pointer;display:flex;align-items:center;gap:12px;border-left:3px solid var(--accent);">';
+    html += '<div style="font-size:1.3rem;">📖</div>';
+    html += '<div style="flex:1;min-width:0;"><div style="font-size:0.82rem;font-weight:700;color:var(--text);">Vocabulario y Cultismos</div><div style="font-size:0.68rem;color:var(--muted);margin-top:2px;">El núcleo del bote final</div></div>';
+    html += '</div>';
 
-      '<button id="btn-ir-plan" style="width:100%;background:#a29bfe;color:#111;border:none;border-radius:16px;padding:18px;font-size:1.1rem;font-weight:700;cursor:pointer;">¡Vamos allá! →</button>' +
-    '</div>';
-  document.body.appendChild(div);
-  var btnIr = document.getElementById('btn-ir-plan');
-  if (btnIr) btnIr.onclick = function() {
-    var el = document.getElementById('bienvenida-noe');
-    if (el) el.remove();
-    mostrarPanelPlanNoe();
+    // Temático
+    html += '<div id="ph-tema" style="background:var(--card);border-radius:12px;padding:12px 14px;margin-bottom:8px;cursor:pointer;display:flex;align-items:center;gap:12px;border-left:3px solid var(--gold);">';
+    html += '<div style="font-size:1.3rem;">' + tema.e + '</div>';
+    html += '<div style="flex:1;min-width:0;"><div style="font-size:0.82rem;font-weight:700;color:var(--text);">' + tema.n + '</div><div style="font-size:0.68rem;color:var(--muted);margin-top:2px;">Mañana: ' + tNext.e + ' ' + tNext.n + '</div></div>';
+    html += '</div>';
+
+    // Rosco
+    html += '<div id="ph-rosco" style="background:linear-gradient(135deg,rgba(240,192,64,0.08),var(--card));border-radius:12px;padding:12px 14px;cursor:pointer;display:flex;align-items:center;gap:12px;border-left:3px solid var(--gold);">';
+    html += '<div style="font-size:1.3rem;">🟡</div>';
+    html += '<div style="flex:1;min-width:0;"><div style="font-size:0.82rem;font-weight:700;color:var(--text);">Rosco del día</div><div style="font-size:0.68rem;color:var(--muted);margin-top:2px;">El simulacro real · siempre</div></div>';
+    html += '</div>';
+
+    html += '</div>';
+    el.innerHTML = html;
+
+    document.getElementById('ph-rae').onclick = function()   { typeof goTo === 'function' && goTo('dic-selector'); };
+    document.getElementById('ph-voc').onclick = function()   { typeof startSmartStudy === 'function' && startSmartStudy('vocabulario'); };
+    document.getElementById('ph-tema').onclick = function()  { llamarTema(tema.f); };
+    document.getElementById('ph-rosco').onclick = function() { typeof goTo === 'function' && goTo('rosco-mode'); };
+  }
+
+  window.planNoeRenderHome = renderPlan;
+  window.planNoeRegistrarDia = registrarDia;
+  window.raeGetLetraActual = function() {
+    try { return JSON.parse(localStorage.getItem(LETRA_KEY) || '{"letra":"A"}'); }
+    catch(e) { return {letra:'A'}; }
   };
-}
-
-function mostrarPanelPlanNoe() {
-  var hoy = planNoeGetHoy();
-  var pct = planNoeGetPctAño();
-  var p = planNoeLoad();
-  var diasEst = p.diasEstudiados || 0;
-  var diaSemana = ['Domingo','Lunes','Martes','Miércoles','Jueves','Viernes','Sábado'][new Date().getDay()];
-
-  // Calcular palabras RAE estudiadas hoy aproximado
-  var nDificiles = 0;
-  var ahora = Date.now();
-  for (var k in localStorage) {
-    if (!k.startsWith('dic_srs_')) continue;
-    try { var s = JSON.parse(localStorage.getItem(k)); if (s.nivel === 1) nDificiles++; } catch(e) {}
-  }
-
-  var div = document.createElement('div');
-  div.id = 'panel-plan-noe';
-  div.style.cssText = 'position:fixed;top:0;left:0;right:0;bottom:0;background:var(--bg);z-index:999999;overflow-y:auto;';
-  div.innerHTML =
-    '<div style="padding:0 0 60px;">' +
-      // Header
-      '<div style="background:linear-gradient(135deg,#0f0f2e,#1a1035);padding:24px 20px 28px;">' +
-        '<button id="btn-cerrar-plan" style="background:none;border:none;color:var(--muted);font-size:1.4rem;cursor:pointer;margin-bottom:12px;">←</button>' +
-        '<div style="display:flex;align-items:center;gap:12px;margin-bottom:16px;">' +
-          '<div style="font-size:2rem;">🗓️</div>' +
-          '<div>' +
-            '<h2 style="color:#a29bfe;margin:0;font-size:1.2rem;">Tu plan · Noe</h2>' +
-            '<p style="color:var(--muted);font-size:0.75rem;margin:4px 0 0;">' + diaSemana + ' · ' + new Date().toLocaleDateString('es-ES', {day:'numeric',month:'long'}) + '</p>' +
-          '</div>' +
-        '</div>' +
-        // Barra progreso año
-        '<div style="display:flex;justify-content:space-between;font-size:0.72rem;color:var(--muted);margin-bottom:6px;">' +
-          '<span>Progreso del año</span><span style="color:#a29bfe;">' + pct + '%</span>' +
-        '</div>' +
-        '<div style="background:rgba(255,255,255,0.1);border-radius:6px;height:6px;">' +
-          '<div style="width:' + pct + '%;background:#a29bfe;border-radius:6px;height:6px;"></div>' +
-        '</div>' +
-        (function() {
-          var rl = raeGetLetraActual();
-          var ri = raeGetInfoLetra(rl.letra);
-          return '<div style="margin-top:10px;">' +
-            '<div style="display:flex;justify-content:space-between;font-size:0.72rem;color:var(--muted);margin-bottom:4px;">' +
-              '<span>📚 Letra ' + rl.letra + ' · ' + ri.vistas.toLocaleString('es') + '/' + ri.total.toLocaleString('es') + ' palabras</span>' +
-              '<span style="color:#a29bfe;">' + ri.pct + '%</span>' +
-            '</div>' +
-            '<div style="background:rgba(255,255,255,0.1);border-radius:4px;height:3px;">' +
-              '<div style="width:' + ri.pct + '%;background:#a29bfe;border-radius:4px;height:3px;"></div>' +
-            '</div>' +
-            '<div style="font-size:0.7rem;color:var(--muted);margin-top:4px;">~' + ri.diasRestantes + ' días para terminar la ' + rl.letra + ' · ' + (nDificiles > 0 ? '🔴 ' + nDificiles + ' difíciles pendientes' : '✅ Sin urgentes') + '</div>' +
-          '</div>';
-        })() +
-      '</div>' +
-
-      '<div style="padding:20px;">' +
-        // Sesión de hoy
-        '<p style="color:var(--muted);font-size:0.75rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;margin-bottom:10px;">Hoy toca</p>' +
-        '<div style="background:linear-gradient(135deg,#0f0f2e,#1a1035);border:2px solid #a29bfe;border-radius:16px;padding:20px;margin-bottom:20px;">' +
-          '<div style="font-size:2.5rem;margin-bottom:8px;">' + hoy.emoji + '</div>' +
-          '<h3 style="color:#a29bfe;margin:0 0 6px;">' + hoy.nombre + '</h3>' +
-          (function() {
-            var rl2 = raeGetLetraActual();
-            var ri2 = raeGetInfoLetra(rl2.letra);
-            return '<div style="background:rgba(255,255,255,0.05);border-radius:8px;padding:10px;margin-bottom:12px;">' +
-              '<div style="font-size:0.75rem;color:#a29bfe;font-weight:600;margin-bottom:6px;">📚 RAE · 30 de la letra ' + rl2.letra + ' + 10 sorpresa</div>' +
-              '<div style="font-size:0.78rem;color:var(--muted);">Letra ' + rl2.letra + ' · ' + ri2.vistas.toLocaleString('es') + '/' + ri2.total.toLocaleString('es') + ' · ~' + ri2.diasRestantes + ' días para terminarla</div>' +
-            '</div>' +
-            '<div style="background:rgba(255,255,255,0.05);border-radius:8px;padding:10px;margin-bottom:16px;">' +
-              '<div style="font-size:0.75rem;color:var(--gold);font-weight:600;margin-bottom:4px;">' + hoy.emoji + ' ' + hoy.nombre + ' (10 min)</div>' +
-              '<div style="font-size:0.78rem;color:var(--muted);">' + hoy.desc.replace('RAE + ','') + '</div>' +
-            '</div>';
-          })() +
-          '<button id="btn-empezar-plan" style="width:100%;background:#a29bfe;color:#111;border:none;border-radius:12px;padding:14px;font-size:1rem;font-weight:700;cursor:pointer;">⚡ Empezar sesión</button>' +
-        '</div>' +
-
-        // Próximos días del ciclo
-        '<p style="color:var(--muted);font-size:0.75rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;margin-bottom:10px;">Próximas sesiones</p>' +
-        '<div style="display:flex;flex-direction:column;gap:6px;margin-bottom:20px;">' +
-          (function() {
-            var p3 = planNoeLoad();
-            var diaActual = (p3.diasEstudiados || 0) % PLAN_ROTACION.length;
-            var rows = '';
-            for (var x = 0; x < 5; x++) {
-              var idx = (diaActual + x) % PLAN_ROTACION.length;
-              var ps2 = PLAN_ROTACION[idx];
-              var esHoy = x === 0;
-              var bg2 = esHoy ? 'rgba(162,155,254,0.1)' : 'var(--card)';
-              var bc2 = esHoy ? '#a29bfe' : 'var(--border2)';
-              var tc2 = esHoy ? '#a29bfe' : 'var(--text)';
-              var fw2 = esHoy ? '700' : '400';
-              var badge = esHoy ? '<span style="margin-left:auto;font-size:0.7rem;color:#a29bfe;font-weight:700;">HOY</span>' : '<span style="margin-left:auto;font-size:0.7rem;color:var(--muted);">Día ' + (idx+1) + '/17</span>';
-              rows += '<div style="background:' + bg2 + ';border:1px solid ' + bc2 + ';border-radius:10px;padding:10px 14px;display:flex;align-items:center;gap:10px;">' +
-                '<span style="font-size:1.1rem;">' + ps2.emoji + '</span>' +
-                '<div style="flex:1;">' +
-                  '<div style="color:' + tc2 + ';font-size:0.82rem;font-weight:' + fw2 + ';">' + ps2.nombre + '</div>' +
-                  '<div style="color:var(--muted);font-size:0.7rem;">' + ps2.desc + '</div>' +
-                '</div>' +
-                badge + '</div>';
-            }
-            return rows;
-          })() +
-        '</div>' +
-
-        // Mensaje motivador
-        '<div style="background:var(--card);border-left:3px solid #a29bfe;border-radius:0 12px 12px 0;padding:14px 16px;">' +
-          '<p style="color:var(--muted);font-size:0.82rem;line-height:1.6;margin:0;">' + planNoeMensajeMotivador(diasEst) + '</p>' +
-        '</div>' +
-      '</div>' +
-    '</div>';
-  document.body.appendChild(div);
-  var btnCerrar = document.getElementById('btn-cerrar-plan');
-  if (btnCerrar) btnCerrar.onclick = function() {
-    var el = document.getElementById('panel-plan-noe');
-    if (el) el.remove();
+  window.raeGetInfoLetra = getInfo;
+  window.raeGetLetraSiguiente = function(l) {
+    var idx = LETRAS.indexOf(l);
+    return (idx >= 0 && idx < LETRAS.length - 1) ? LETRAS[idx + 1] : LETRAS[0];
   };
-  var btnEmpezar = document.getElementById('btn-empezar-plan');
-  if (btnEmpezar) btnEmpezar.onclick = function() {
-    var el = document.getElementById('panel-plan-noe');
-    if (el) el.remove();
-    planNoeIniciarHoy();
-  };
-}
 
-function planNoeMensajeMotivador(dias) {
-  if (dias === 0) return "Hoy es el día uno. El más importante de todos. Cada experta en Pasapalabra empezó exactamente aquí.";
-  if (dias < 7)  return "Primera semana. Estás sentando las bases. Lo que estudias ahora se queda.";
-  if (dias < 30) return "Ya llevas " + dias + " días. Eso no es suerte, es carácter. Sigue.";
-  if (dias < 90) return dias + " días de constancia. Ya estás muy por delante de la mayoría de concursantes cuando llegan al plató.";
-  if (dias < 180) return "Más de " + Math.round(dias/30) + " meses. Noe, esto ya es otra dimensión.";
-  if (dias < 365) return "Casi un año de trabajo diario. Cuando llegues al plató, lo notarán.";
-  return "Un año completo. Eso es exactamente lo que separa a los que ganan el bote de los que no. Tú ya estás ahí.";
-}
+  document.addEventListener('DOMContentLoaded', function() {
+    registrarDia();
+    renderPlan();
+  });
 
-function planNoeIniciarHoy() {
-  var hoy = planNoeGetHoy();
-  planNoeRegistrarDia();
-  planNoeRenderHome();
-  // Ir al diccionario en la letra actual
-  var rl = raeGetLetraActual();
-  goTo('dic-selector');
-  // Lanzar directamente la letra correcta después de un momento
-  setTimeout(function() {
-    if (typeof iniciarDiccionario === 'function') {
-      iniciarDiccionario('letra', rl.letra);
-    }
-  }, 300);
-  // Toast con la materia del día
-  if (typeof showToast === 'function') {
-    setTimeout(function() {
-      showToast(hoy.emoji + ' Hoy también: ' + hoy.nombre);
-    }, 2000);
-  }
-}
-
-// Renderizar en home al cargar
-document.addEventListener('DOMContentLoaded', function() {
-  planNoeRenderHome();
-});
-// También renderizar cuando se vuelve al home
-var _origGoTo = typeof goTo === 'function' ? goTo : null;
-
+})();
 </script>
 
 </body>
