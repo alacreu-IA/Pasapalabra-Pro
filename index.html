@@ -24573,8 +24573,8 @@ function buildRosco() {
     });
 
     // Elegir dificultad por letra
-    // ~8 fáciles, ~12 medias, ~5 difíciles de 25
-    var difSlots = Array(8).fill('easy').concat(Array(12).fill('medium')).concat(Array(5).fill('hard'));
+    // ~12 fáciles, ~10 medias, ~3 difíciles de 25 — más parecido al rosco real
+    var difSlots = Array(12).fill('easy').concat(Array(10).fill('medium')).concat(Array(3).fill('hard'));
     difSlots.sort(function(){ return Math.random()-0.5; });
     var letraDif = {};
     LETRAS.forEach(function(l, i) { letraDif[l] = difSlots[i] || 'medium'; });
@@ -25030,7 +25030,7 @@ function startRoscoMode(mode) {
 // ============================================================
 //  TTS — ElevenLabs con fallback a SpeechSynthesis
 // ============================================================
-var EL_API_KEY   = 'EUA3Vy9Kr7vAUdbxWM2t';
+var EL_API_KEY   = 'sk_90e7b22788ded2f9ad5edacf9a3198902b26c43c7d1b9d85';
 var EL_VOICE_ID  = 'DaS307ZI3MdmDcZX7lpq';
 var EL_CACHE_KEY = 'ppro_el_cache_v1';
 var ttsVoices    = [];
@@ -25093,6 +25093,11 @@ function speakText(text, onDone) {
     var cacheKey = text.slice(0, 120).replace(/\s+/g, ' ').trim();
     var cached = _elCacheGet(cacheKey);
 
+    function done(err) {
+        ttsHablando = false;
+        if (onDone) onDone();
+    }
+
     function playB64(b64) {
         try {
             var binary = atob(b64);
@@ -25104,21 +25109,33 @@ function speakText(text, onDone) {
             ttsAudio.onended = function() {
                 URL.revokeObjectURL(url);
                 ttsAudio = null;
-                ttsHablando = false;
-                if (onDone) onDone();
+                done();
             };
             ttsAudio.onerror = function() {
                 URL.revokeObjectURL(url);
                 ttsAudio = null;
-                _speakFallback(text, onDone);
+                _speakFallback(text, done);
             };
-            ttsAudio.play();
-        } catch(e) { _speakFallback(text, onDone); }
+            var playPromise = ttsAudio.play();
+            if (playPromise && typeof playPromise.catch === 'function') {
+                playPromise.catch(function() {
+                    // iOS autoplay blocked — fall back to system TTS
+                    _speakFallback(text, done);
+                });
+            }
+        } catch(e) {
+            _speakFallback(text, done);
+        }
     }
 
     if (cached) { playB64(cached); return; }
 
-    // Call ElevenLabs API
+    // Call ElevenLabs API — skip if API key looks invalid
+    if (!EL_API_KEY || EL_API_KEY.length < 20) {
+        _speakFallback(text, done);
+        return;
+    }
+
     fetch('https://api.elevenlabs.io/v1/text-to-speech/' + EL_VOICE_ID, {
         method: 'POST',
         headers: {
@@ -25144,12 +25161,19 @@ function speakText(text, onDone) {
         _elCacheSet(cacheKey, b64);
         playB64(b64);
     })
-    .catch(function() {
-        _speakFallback(text, onDone);
+    .catch(function(err) {
+        // ElevenLabs failed — use system TTS so rosco keeps working
+        ttsHablando = false;
+        _speakFallback(text, done);
     });
 }
 
 function speakAndListen(text) {
+    // Safety: reset ttsHablando after max 15s in case audio never fires onended
+    clearTimeout(window._ttsSafetyTimer);
+    window._ttsSafetyTimer = setTimeout(function() {
+        if (ttsHablando) { ttsHablando = false; }
+    }, 15000);
     // Parar reconocimiento mientras habla para no escucharse a sí misma
     if (recognition) { try { recognition.stop(); } catch(e) {} }
     // Limpiar el campo para que no capture el audio de la pregunta
