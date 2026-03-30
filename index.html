@@ -24709,12 +24709,16 @@ function showRoscoQuestion() {
 
     // Leer la pregunta en voz alta según el modo
     if (roscoMode === 'full') {
-        // Para el mic mientras lee, luego lo reactiva
-        var texto = d.q.replace(/^Con la [A-ZÑ]: /i, '').replace(/^Contiene la [A-ZÑ]: /i, '');
-        speakAndListen(texto);
+        // Leer con la letra: "Con la A: definición"
+        var letraPrefix = d.q.startsWith('Contiene') ? 'Contiene la ' + l + '. ' : 'Con la ' + l + '. ';
+        var defSolo = d.q.replace(/^Con la [A-Z\u00d1]: /i, '').replace(/^Contiene la [A-Z\u00d1]: /i, '');
+        speakAndListen(letraPrefix + defSolo);
     } else if (roscoMode === 'voice') {
-        // Solo escuchar, no leer
-        if (recognition) { try { recognition.start(); } catch(e) {} }
+        // Solo escuchar, no leer — recrear recognition por si acaso
+        if (voiceEnabled) {
+            if (recognition) { try { recognition.abort(); } catch(e) {} recognition = null; }
+            startVoice();
+        }
     }
 }
 
@@ -25169,26 +25173,29 @@ function speakText(text, onDone) {
 }
 
 function speakAndListen(text) {
-    // Safety: reset ttsHablando after max 15s in case audio never fires onended
+    // Safety: reset ttsHablando after max 15s
     clearTimeout(window._ttsSafetyTimer);
     window._ttsSafetyTimer = setTimeout(function() {
         if (ttsHablando) { ttsHablando = false; }
     }, 15000);
-    // Parar reconocimiento mientras habla para no escucharse a sí misma
-    if (recognition) { try { recognition.stop(); } catch(e) {} }
-    // Limpiar el campo para que no capture el audio de la pregunta
+
+    // Parar reconocimiento mientras habla
+    if (recognition) { try { recognition.abort(); } catch(e) {} recognition = null; }
+
     var answerField = document.getElementById('rosco-answer');
     if (answerField) answerField.value = '';
 
     speakText(text, function() {
-        // Esperar más tiempo antes de reactivar — evita eco
-        if (voiceEnabled) {
+        if (answerField) answerField.value = '';
+        if (!voiceEnabled) return;
+        // Recrear recognition — iOS Safari lo requiere tras abort
+        setTimeout(function() {
             if (answerField) answerField.value = '';
-            setTimeout(function() {
-                if (answerField) answerField.value = '';
-                try { recognition.start(); } catch(e) {}
-            }, 1200);
-        }
+            if (!voiceEnabled) return;
+            // Siempre recrear para iOS
+            recognition = null;
+            startVoice();
+        }, 900);
     });
 }
 
