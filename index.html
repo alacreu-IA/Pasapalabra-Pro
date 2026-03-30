@@ -25455,37 +25455,238 @@ function openExternalUrl(url) {
     }
 }
 
-function renderDashboard(){try{var u=JSON.parse(localStorage.getItem('ppro_usage')||'{"sessions":[],"byDeck":{},"daily":{}}');var letters=JSON.parse(localStorage.getItem('ppro_letters')||'{}');var roscoH=JSON.parse(localStorage.getItem('ppro_rosco_hist')||'[]');var sessions=u.sessions||[],byDeck=u.byDeck||{},daily=u.daily||{};var totalQ=sessions.reduce(function(s,x){return s+(x.answered||0);},0);var totalOk=sessions.reduce(function(s,x){return s+(x.correct||0);},0);var totalMin=sessions.reduce(function(s,x){return s+(x.minutes||0);},0);var pct=totalQ?Math.round(100*totalOk/totalQ):0;var today=new Date().toISOString().slice(0,10);var todayMin=sessions.filter(function(s){return s.date===today;}).reduce(function(s,x){return s+(x.minutes||0);},0);var streak=0;for(var i=0;i<365;i++){var dd=new Date();dd.setDate(dd.getDate()-i);if((daily[dd.toISOString().slice(0,10)]||0)>0)streak++;else if(i>0)break;}document.getElementById('db-total').textContent=totalQ.toLocaleString('es');document.getElementById('db-pct').textContent=pct+'%';document.getElementById('db-streak').textContent=streak+'d';document.getElementById('db-today').textContent=todayMin<60?todayMin+'min':Math.floor(todayMin/60)+'h '+(todayMin%60?todayMin%60+'m':'');document.getElementById('db-total-time').textContent=Math.round(totalMin/60)+'h';var heat=document.getElementById('db-heatmap');heat.innerHTML='';var vals=Object.values(daily).map(Number);var maxD=vals.length?Math.max.apply(null,[1].concat(vals)):1;for(var j=69;j>=0;j--){var dj=new Date();dj.setDate(dj.getDate()-j);var kj=dj.toISOString().slice(0,10);var vj=daily[kj]||0;var aj=vj?Math.max(0.15,vj/maxD):0;var cel=document.createElement('div');cel.style.cssText='width:11px;height:11px;border-radius:2px;background:'+(vj?'rgba(240,192,64,'+aj.toFixed(2)+')':'var(--border2)')+';';cel.title=kj+': '+vj+' preguntas';heat.appendChild(cel);}var deckEl=document.getElementById('db-by-deck');var entries=Object.entries(byDeck).sort(function(a,b){return b[1].answered-a[1].answered;});deckEl.innerHTML=entries.length?entries.map(function(e){var id=e[0],data=e[1];var p=data.answered?Math.round(100*data.correct/data.answered):0;var col=p>=70?'var(--green)':p>=40?'var(--gold)':'var(--red)';var nm=(typeof MAZOS!=='undefined')?((MAZOS.find(function(m){return m.id===id;})||{}).name||id):id;return '<div style="margin-bottom:10px;"><div style="display:flex;justify-content:space-between;font-size:0.74rem;margin-bottom:3px;"><span>'+nm+'</span><span style="color:'+col+'">'+p+'% ('+data.answered+')</span></div><div style="background:var(--border2);border-radius:5px;height:6px;"><div style="width:'+p+'%;background:'+col+';border-radius:5px;height:6px;"></div></div></div>';}).join(''):'<p style="color:var(--muted);font-size:0.8rem;text-align:center;padding:8px;">Practica para ver tus stats \U0001f4aa</p>';var hlEl=document.getElementById('db-hard-letters');var lArr=Object.entries(letters).map(function(e){var l=e[0],d=e[1];return{l:l,pct:(d.ok+d.fail)?Math.round(100*(d.ok||0)/(d.ok+d.fail)):100};}).sort(function(a,b){return a.pct-b.pct;}).slice(0,10);hlEl.innerHTML=lArr.length?lArr.map(function(x){var col=x.pct<50?'var(--red)':x.pct<70?'var(--gold)':'var(--green)';return '<div style="background:var(--card2);border:1px solid '+(x.pct<50?'var(--red)':'var(--border2)')+';border-radius:9px;padding:5px 11px;display:flex;align-items:center;gap:6px;font-size:0.8rem;"><strong style="font-size:1.05rem">'+x.l+'</strong><span style="color:'+col+'">'+x.pct+'%</span></div>';}).join(''):'<span style="color:var(--muted);font-size:0.8rem;">Sin datos a\u00fan, \u00a1haz el rosco!</span>';var rEl=document.getElementById('db-rosco-hist');rEl.innerHTML=roscoH.length?roscoH.slice(-8).reverse().map(function(r){var p=r.total?Math.round(100*r.ok/r.total):0;var col=p>=70?'var(--green)':p>=40?'var(--gold)':'var(--red)';return '<div style="display:flex;align-items:center;gap:8px;font-size:0.77rem;padding:7px 0;border-bottom:1px solid var(--border2);"><span style="color:var(--muted);min-width:68px;font-size:0.7rem;">'+r.date+'</span><span style="color:var(--green);">+'+r.ok+'</span><span style="color:var(--red);">\u2716'+r.fail+'</span><span style="color:var(--muted);">~'+(r.pass||0)+'</span><span style="font-weight:700;margin-left:auto;color:'+col+';">'+p+'%</span></div>';}).join(''):'<p style="color:var(--muted);font-size:0.8rem;text-align:center;padding:8px;">\u00a1Haz tu primer rosco!</p>';
-  // Progreso diccionario por letra
-  var LETRAS_ESP = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','Ñ','O','P','Q','R','S','T','U','V','W','X','Y','Z'];
-  var TOTAL_POR_LETRA = {A:5178,B:1956,C:6027,D:2450,E:3775,F:1401,G:1505,H:1208,I:1130,J:412,K:72,L:1140,M:2678,N:689,'Ñ':11,O:773,P:3937,Q:253,R:2478,S:2505,T:2592,U:249,V:1032,W:0,X:29,Y:106,Z:367};
-  var dicLetrasEl = document.getElementById('db-dic-letras');
-  if (dicLetrasEl) {
-    var letraRows = LETRAS_ESP.map(function(l) {
-      var vistas = parseInt(localStorage.getItem('dic_hito_letra_' + l) || '0');
-      var total = TOTAL_POR_LETRA[l] || 0;
-      var pct = Math.min(100, Math.round(vistas / total * 100));
-      var col = pct >= 70 ? '#00b894' : pct >= 30 ? 'var(--gold)' : pct > 0 ? '#74b9ff' : 'var(--border2)';
-      return {l:l, vistas:vistas, total:total, pct:pct, col:col};
-    }).filter(function(x) { return x.vistas > 0; })
-      .sort(function(a,b) { return b.pct - a.pct; });
-    if (letraRows.length === 0) {
-      dicLetrasEl.innerHTML = '<p style="color:var(--muted);font-size:0.82rem;text-align:center;padding:8px;">Empieza a estudiar el diccionario para ver tu progreso por letra.</p>';
-    } else {
-      dicLetrasEl.innerHTML = letraRows.map(function(x) {
-        return '<div style="background:var(--card);border:1px solid var(--border2);border-radius:12px;padding:10px 14px;">' +
-          '<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px;">' +
-            '<span style="font-weight:700;font-size:1rem;color:var(--text);">' + x.l + '</span>' +
-            '<span style="font-size:0.78rem;color:var(--muted);">' + x.vistas.toLocaleString('es') + ' / ~' + x.total.toLocaleString('es') + '</span>' +
-            '<span style="font-weight:700;font-size:0.88rem;color:' + x.col + ';">' + x.pct + '%</span>' +
-          '</div>' +
-          '<div style="background:var(--border2);border-radius:4px;height:5px;">' +
-            '<div style="width:' + x.pct + '%;background:' + x.col + ';border-radius:4px;height:5px;"></div>' +
-          '</div></div>';
-      }).join('');
+function renderDashboard() {
+  try {
+    var u = JSON.parse(localStorage.getItem('ppro_usage') || '{"sessions":[],"byDeck":{},"daily":{}}');
+    var letters = JSON.parse(localStorage.getItem('ppro_letters') || '{}');
+    var roscoH = JSON.parse(localStorage.getItem('ppro_rosco_hist') || '[]');
+    var sessions = u.sessions || [], byDeck = u.byDeck || {}, daily = u.daily || {};
+
+    // --- S1: Stats globales ---
+    var totalQ = sessions.reduce(function(s,x){ return s+(x.answered||0); }, 0);
+    var totalOk = sessions.reduce(function(s,x){ return s+(x.correct||0); }, 0);
+    var totalMin = sessions.reduce(function(s,x){ return s+(x.minutes||0); }, 0);
+    var pct = totalQ ? Math.round(100*totalOk/totalQ) : 0;
+    var today = new Date().toISOString().slice(0,10);
+    var todayQ = (daily[today] || 0);
+    var todayMin = sessions.filter(function(s){ return s.date===today; }).reduce(function(s,x){ return s+(x.minutes||0); }, 0);
+    var streak = 0;
+    for (var si = 0; si < 365; si++) {
+      var dd = new Date(); dd.setDate(dd.getDate()-si);
+      if ((daily[dd.toISOString().slice(0,10)]||0) > 0) streak++;
+      else if (si > 0) break;
     }
-  }
-}catch(e){console.error('Dashboard:',e);}}
+    document.getElementById('db-streak').textContent = streak + 'd';
+    document.getElementById('db-total').textContent = totalQ.toLocaleString('es');
+    document.getElementById('db-pct').textContent = pct + '%';
+    document.getElementById('db-today').textContent = todayQ + ' preguntas';
+    document.getElementById('db-total-time').textContent = totalMin < 60 ? totalMin + 'min' : Math.floor(totalMin/60) + 'h ' + (totalMin%60 ? totalMin%60+'m' : '');
+
+    // --- S2: RAE por letra ---
+    var LETRAS_AZ = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','X','Y','Z'];
+    var TOTS = typeof DIC_LETRA_TOTALES !== 'undefined' ? DIC_LETRA_TOTALES : {};
+    var raeEl = document.getElementById('db-rae-letras');
+    var raeHtml = '<div style="display:grid;grid-template-columns:repeat(5,1fr);gap:6px;">';
+    LETRAS_AZ.forEach(function(l) {
+      var total = TOTS[l] || 0;
+      var vistas = parseInt(localStorage.getItem('dic_hito_letra_' + l) || '0');
+      var p = total > 0 ? Math.min(100, Math.round(vistas/total*100)) : 0;
+      var col = p >= 80 ? '#00b894' : p >= 40 ? '#fdcb6e' : p > 0 ? '#74b9ff' : 'var(--border2)';
+      var textCol = p > 0 ? 'var(--text)' : 'var(--muted)';
+      raeHtml += '<div style="text-align:center;background:var(--card2);border-radius:10px;padding:8px 4px;border:1px solid ' + (p>0?col:'var(--border2)') + '20;">';
+      raeHtml += '<div style="font-size:0.9rem;font-weight:700;color:' + textCol + ';">' + l + '</div>';
+      raeHtml += '<div style="height:3px;background:var(--border2);border-radius:2px;margin:4px 0;"><div style="height:100%;width:' + p + '%;background:' + col + ';border-radius:2px;"></div></div>';
+      raeHtml += '<div style="font-size:0.6rem;color:' + col + ';font-weight:600;">' + (p > 0 ? p + '%' : '-') + '</div>';
+      raeHtml += '</div>';
+    });
+    raeHtml += '</div>';
+    if (raeEl) raeEl.innerHTML = raeHtml;
+
+    // --- S3: Rosco por letra ---
+    var roscoEl = document.getElementById('db-rosco-letras');
+    var hasRosco = Object.keys(letters).length > 0;
+    if (roscoEl) {
+      if (!hasRosco) {
+        roscoEl.innerHTML = '<p style="color:var(--muted);font-size:0.82rem;text-align:center;padding:8px;">Haz roscos para ver tus letras débiles 💪</p>';
+      } else {
+        var roscoHtml = '<div style="display:flex;flex-direction:column;gap:6px;">';
+        var sorted = LETRAS_AZ.map(function(l) {
+          var d = letters[l] || {ok:0, fail:0};
+          var tot = (d.ok||0) + (d.fail||0);
+          return { l:l, ok:d.ok||0, fail:d.fail||0, tot:tot, pct: tot ? Math.round(100*d.ok/tot) : null };
+        }).filter(function(x){ return x.tot > 0; }).sort(function(a,b){ return a.pct - b.pct; });
+        sorted.forEach(function(x) {
+          var col = x.pct < 40 ? '#e17055' : x.pct < 70 ? '#fdcb6e' : '#00b894';
+          roscoHtml += '<div style="display:flex;align-items:center;gap:8px;">';
+          roscoHtml += '<div style="font-size:0.85rem;font-weight:700;width:18px;color:var(--text);">' + x.l + '</div>';
+          roscoHtml += '<div style="flex:1;background:var(--border2);border-radius:4px;height:8px;">';
+          roscoHtml += '<div style="height:100%;width:' + x.pct + '%;background:' + col + ';border-radius:4px;"></div></div>';
+          roscoHtml += '<div style="font-size:0.72rem;color:' + col + ';font-weight:700;min-width:36px;text-align:right;">' + x.pct + '%</div>';
+          roscoHtml += '<div style="font-size:0.65rem;color:var(--muted);min-width:40px;">(' + x.ok + '/' + x.tot + ')</div>';
+          roscoHtml += '</div>';
+        });
+        roscoHtml += '</div>';
+        roscoEl.innerHTML = roscoHtml;
+      }
+    }
+
+    // --- S4: Por temas ---
+    var deckEl = document.getElementById('db-by-deck');
+    var MAZO_NAMES = {
+      vocabulario:'Vocabulario y Cultismos', cg:'Cultura General', lit_esp:'Literatura Española',
+      arte:'Arte', hist_esp:'Historia de España', hist_uni:'Historia Universal',
+      mitologia:'Mitología', ciencia:'Ciencia', cine:'Cine', teatro:'Teatro',
+      geo_esp:'Geografía España', geo_mund:'Geografía Mundial', capitales:'Capitales',
+      lit_uni:'Literatura Universal', politica:'Política', deporte:'Deporte',
+      naturaleza:'Naturaleza', tecnologia:'Tecnología', hist:'Historia', rae_extremo:'RAE Extremo'
+    };
+    var MAZO_EMOJIS = {
+      vocabulario:'📖', cg:'🧠', lit_esp:'📚', arte:'🎨', hist_esp:'🇪🇸',
+      hist_uni:'🌐', mitologia:'🏛️', ciencia:'🔬', cine:'🎬', teatro:'🎭',
+      geo_esp:'📍', geo_mund:'🗺️', capitales:'✈️', lit_uni:'📚', politica:'🏛️',
+      deporte:'⚽', naturaleza:'🌿', tecnologia:'💻', hist:'📜', rae_extremo:'📘'
+    };
+    var entries = Object.entries(byDeck).sort(function(a,b){ return (b[1].answered||0)-(a[1].answered||0); });
+    if (deckEl) {
+      if (!entries.length) {
+        deckEl.innerHTML = '<p style="color:var(--muted);font-size:0.82rem;text-align:center;padding:8px;">Practica mazos para ver tus stats 💪</p>';
+      } else {
+        var deckHtml = '<div style="display:flex;flex-direction:column;gap:10px;">';
+        entries.forEach(function(e) {
+          var id = e[0], data = e[1];
+          var p = data.answered ? Math.round(100*data.correct/data.answered) : 0;
+          var col = p >= 70 ? '#00b894' : p >= 40 ? '#fdcb6e' : '#e17055';
+          var nm = MAZO_NAMES[id] || id;
+          var em = MAZO_EMOJIS[id] || '📌';
+          deckHtml += '<div>';
+          deckHtml += '<div style="display:flex;justify-content:space-between;align-items:center;font-size:0.78rem;margin-bottom:4px;">';
+          deckHtml += '<span>' + em + ' ' + nm + '</span>';
+          deckHtml += '<span style="color:' + col + ';font-weight:700;">' + p + '% <span style="color:var(--muted);font-weight:400;">(' + data.answered + ' qs)</span></span>';
+          deckHtml += '</div>';
+          deckHtml += '<div style="background:var(--border2);border-radius:5px;height:7px;">';
+          deckHtml += '<div style="width:' + p + '%;background:' + col + ';border-radius:5px;height:7px;transition:width 0.6s;"></div></div>';
+          deckHtml += '</div>';
+        });
+        deckHtml += '</div>';
+        deckEl.innerHTML = deckHtml;
+      }
+    }
+
+    // --- S5: Gráfico de línea + heatmap ---
+    // Line chart últimas 4 semanas
+    var canvas = document.getElementById('db-chart-line');
+    if (canvas) {
+      var ctx = canvas.getContext('2d');
+      var W = canvas.offsetWidth || 300;
+      canvas.width = W * (window.devicePixelRatio || 1);
+      canvas.height = 100 * (window.devicePixelRatio || 1);
+      ctx.scale(window.devicePixelRatio || 1, window.devicePixelRatio || 1);
+      var days28 = [];
+      for (var di = 27; di >= 0; di--) {
+        var dx = new Date(); dx.setDate(dx.getDate()-di);
+        days28.push({ k: dx.toISOString().slice(0,10), v: daily[dx.toISOString().slice(0,10)] || 0 });
+      }
+      var maxV = Math.max(1, Math.max.apply(null, days28.map(function(d){ return d.v; })));
+      var padL = 8, padR = 8, padT = 8, padB = 20;
+      var chartW = W - padL - padR;
+      var chartH = 100 - padT - padB;
+      ctx.clearRect(0, 0, W, 100);
+      // Grid lines
+      ctx.strokeStyle = 'rgba(255,255,255,0.05)';
+      ctx.lineWidth = 1;
+      [0.25, 0.5, 0.75, 1].forEach(function(f) {
+        var y = padT + chartH * (1-f);
+        ctx.beginPath(); ctx.moveTo(padL, y); ctx.lineTo(padL+chartW, y); ctx.stroke();
+      });
+      // Line
+      ctx.beginPath();
+      ctx.strokeStyle = '#a29bfe';
+      ctx.lineWidth = 2;
+      ctx.lineJoin = 'round';
+      days28.forEach(function(d, idx) {
+        var x = padL + idx * chartW / 27;
+        var y = padT + chartH * (1 - d.v/maxV);
+        if (idx === 0) ctx.moveTo(x, y); else ctx.lineTo(x, y);
+      });
+      ctx.stroke();
+      // Fill
+      ctx.beginPath();
+      days28.forEach(function(d, idx) {
+        var x = padL + idx * chartW / 27;
+        var y = padT + chartH * (1 - d.v/maxV);
+        if (idx === 0) ctx.moveTo(x, y); else ctx.lineTo(x, y);
+      });
+      ctx.lineTo(padL + chartW, padT + chartH);
+      ctx.lineTo(padL, padT + chartH);
+      ctx.closePath();
+      ctx.fillStyle = 'rgba(162,155,254,0.12)';
+      ctx.fill();
+      // Labels
+      ctx.fillStyle = 'rgba(255,255,255,0.3)';
+      ctx.font = '9px sans-serif';
+      ctx.textAlign = 'center';
+      [0, 6, 13, 20, 27].forEach(function(idx) {
+        var d = days28[idx];
+        var x = padL + idx * chartW / 27;
+        var label = d.k.slice(5); // MM-DD
+        ctx.fillText(label, x, padT + chartH + 14);
+      });
+    }
+
+    // Heatmap
+    var heat = document.getElementById('db-heatmap');
+    if (heat) {
+      heat.innerHTML = '';
+      var vals = Object.values(daily).map(Number);
+      var maxD = vals.length ? Math.max.apply(null, [1].concat(vals)) : 1;
+      for (var j = 69; j >= 0; j--) {
+        var dj = new Date(); dj.setDate(dj.getDate()-j);
+        var kj = dj.toISOString().slice(0,10);
+        var vj = daily[kj] || 0;
+        var aj = vj ? Math.max(0.2, vj/maxD) : 0;
+        var cel = document.createElement('div');
+        cel.style.cssText = 'width:10px;height:10px;border-radius:2px;background:' + (vj ? 'rgba(162,155,254,'+aj.toFixed(2)+')' : 'var(--border2)') + ';flex-shrink:0;';
+        cel.title = kj + ': ' + vj + ' preguntas';
+        heat.appendChild(cel);
+      }
+    }
+
+    // --- S6: Últimos roscos ---
+    var rEl = document.getElementById('db-rosco-hist');
+    if (rEl) {
+      if (!roscoH.length) {
+        rEl.innerHTML = '<p style="color:var(--muted);font-size:0.82rem;text-align:center;padding:8px;">¡Haz tu primer rosco!</p>';
+      } else {
+        var roscoHistHtml = '<div style="display:flex;flex-direction:column;">';
+        roscoH.slice(-10).reverse().forEach(function(r) {
+          var p = r.total ? Math.round(100*r.ok/r.total) : 0;
+          var col = p >= 70 ? '#00b894' : p >= 40 ? '#fdcb6e' : '#e17055';
+          var emoji = p >= 70 ? '🎉' : p >= 40 ? '💪' : '📚';
+          roscoHistHtml += '<div style="display:flex;align-items:center;gap:8px;font-size:0.78rem;padding:9px 0;border-bottom:1px solid var(--border2);">';
+          roscoHistHtml += '<span style="font-size:1rem;">' + emoji + '</span>';
+          roscoHistHtml += '<span style="color:var(--muted);font-size:0.68rem;min-width:60px;">' + r.date + '</span>';
+          roscoHistHtml += '<div style="flex:1;background:var(--border2);border-radius:3px;height:5px;">';
+          roscoHistHtml += '<div style="height:100%;width:' + p + '%;background:' + col + ';border-radius:3px;"></div></div>';
+          roscoHistHtml += '<span style="color:#00b894;font-size:0.72rem;min-width:22px;text-align:right;">✓' + r.ok + '</span>';
+          roscoHistHtml += '<span style="color:#e17055;font-size:0.72rem;min-width:22px;text-align:right;">✗' + r.fail + '</span>';
+          roscoHistHtml += '<span style="font-weight:700;color:' + col + ';min-width:34px;text-align:right;">' + p + '%</span>';
+          roscoHistHtml += '</div>';
+        });
+        roscoHistHtml += '</div>';
+        rEl.innerHTML = roscoHistHtml;
+      }
+    }
+
+    // RAE letra data (also used in dashboard header)
+    var raeLetraEl = document.getElementById('db-rae-letra-info');
+    if (raeLetraEl && typeof raeGetLetraActual === 'function') {
+      var rl = raeGetLetraActual();
+      var ri = typeof raeGetInfoLetra === 'function' ? raeGetInfoLetra(rl.letra) : {vistas:0,total:0,pct:0};
+      raeLetraEl.textContent = 'Letra ' + rl.letra + ': ' + ri.vistas + '/' + ri.total + ' (' + ri.pct + '%)';
+    }
+
+  } catch(e) { console.error('Dashboard:', e); }
+}
 
 function downloadBackup(){ backupProgreso(); }
 
@@ -25662,55 +25863,61 @@ function actualizarApp() {
 <div id="dashboard" class="screen">
 <div class="top-bar">
     <button class="btn-back" onclick="goTo('home')">&#8592;</button>
-    <div class="top-bar-title">&#128202; Mi Progreso</div>
+    <div class="top-bar-title">📊 Mi Progreso</div>
     <button onclick="downloadBackup()" title="Backup" style="background:none;border:none;color:var(--muted);font-size:1.1rem;cursor:pointer;padding:4px 8px;">&#x1F4BE;</button>
 </div>
-<div class="scroll-body" style="padding:14px 14px 44px;">
+<div class="scroll-body" style="padding:14px 14px 60px;">
 
-    <!-- Stats globales -->
-    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-bottom:16px;">
+    <!-- S1: Stats globales -->
+    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-bottom:16px;">
         <div style="background:var(--card);border:1px solid var(--border2);border-radius:14px;padding:14px;text-align:center;">
-            <div style="font-size:1.6rem;font-weight:900;color:var(--accent);" id="db-total">0</div>
-            <div style="color:var(--muted);font-size:0.75rem;margin-top:4px;">Preguntas</div>
+            <div style="font-size:1.5rem;font-weight:900;color:var(--gold);" id="db-streak">0d</div>
+            <div style="color:var(--muted);font-size:0.7rem;margin-top:4px;">🔥 Racha</div>
         </div>
         <div style="background:var(--card);border:1px solid var(--border2);border-radius:14px;padding:14px;text-align:center;">
-            <div style="font-size:1.6rem;font-weight:900;color:#22c55e;" id="db-pct">0%</div>
-            <div style="color:var(--muted);font-size:0.75rem;margin-top:4px;">Aciertos</div>
+            <div style="font-size:1.5rem;font-weight:900;color:var(--accent);" id="db-total">0</div>
+            <div style="color:var(--muted);font-size:0.7rem;margin-top:4px;">Preguntas</div>
         </div>
         <div style="background:var(--card);border:1px solid var(--border2);border-radius:14px;padding:14px;text-align:center;">
-            <div style="font-size:1.6rem;font-weight:900;color:var(--gold);" id="db-streak">0d</div>
-            <div style="color:var(--muted);font-size:0.75rem;margin-top:4px;">Racha</div>
+            <div style="font-size:1.5rem;font-weight:900;color:#22c55e;" id="db-pct">0%</div>
+            <div style="color:var(--muted);font-size:0.7rem;margin-top:4px;">Aciertos</div>
+        </div>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:20px;">
+        <div style="background:var(--card);border:1px solid var(--border2);border-radius:14px;padding:12px;text-align:center;">
+            <div style="font-size:1.2rem;font-weight:800;color:var(--text);" id="db-today">0</div>
+            <div style="color:var(--muted);font-size:0.7rem;margin-top:2px;">Preguntas hoy</div>
+        </div>
+        <div style="background:var(--card);border:1px solid var(--border2);border-radius:14px;padding:12px;text-align:center;">
+            <div style="font-size:1.2rem;font-weight:800;color:var(--text);" id="db-total-time">0h</div>
+            <div style="color:var(--muted);font-size:0.7rem;margin-top:2px;">Tiempo total</div>
         </div>
     </div>
 
-    <!-- Hoy y tiempo total -->
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:16px;">
-        <div style="background:var(--card);border:1px solid var(--border2);border-radius:14px;padding:14px;text-align:center;">
-            <div style="font-size:1.4rem;font-weight:800;color:var(--text);" id="db-today">0</div>
-            <div style="color:var(--muted);font-size:0.75rem;margin-top:4px;">Preguntas hoy</div>
-        </div>
-        <div style="background:var(--card);border:1px solid var(--border2);border-radius:14px;padding:14px;text-align:center;">
-            <div style="font-size:1.4rem;font-weight:800;color:var(--text);" id="db-total-time">0 min</div>
-            <div style="color:var(--muted);font-size:0.75rem;margin-top:4px;">Tiempo total</div>
-        </div>
+    <!-- S2: RAE por letra -->
+    <div style="font-size:0.72rem;color:var(--muted);font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:10px;">📚 RAE — Progreso por letra</div>
+    <div id="db-rae-letras" style="background:var(--card);border:1px solid var(--border2);border-radius:14px;padding:14px;margin-bottom:20px;"></div>
+
+    <!-- S3: Rosco por letra -->
+    <div style="font-size:0.72rem;color:var(--muted);font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:10px;">🟡 Rosco — Acierto por letra</div>
+    <div id="db-rosco-letras" style="background:var(--card);border:1px solid var(--border2);border-radius:14px;padding:14px;margin-bottom:20px;"></div>
+
+    <!-- S4: Por temas -->
+    <div style="font-size:0.72rem;color:var(--muted);font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:10px;">🧠 Por temas</div>
+    <div id="db-by-deck" style="background:var(--card);border:1px solid var(--border2);border-radius:14px;padding:14px;margin-bottom:20px;"></div>
+
+    <!-- S5: Evolución temporal -->
+    <div style="font-size:0.72rem;color:var(--muted);font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:10px;">📈 Actividad diaria</div>
+    <div style="background:var(--card);border:1px solid var(--border2);border-radius:14px;padding:14px;margin-bottom:20px;">
+        <canvas id="db-chart-line" height="100" style="width:100%;"></canvas>
+        <div id="db-heatmap" style="display:flex;flex-wrap:wrap;gap:3px;margin-top:12px;"></div>
     </div>
 
-    <!-- Por mazo -->
-    <div style="font-size:0.8rem;color:var(--muted);font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:8px;">Por mazo</div>
-    <div id="db-by-deck" style="display:flex;flex-direction:column;gap:8px;margin-bottom:16px;"></div>
+    <!-- S6: Últimos roscos -->
+    <div style="font-size:0.72rem;color:var(--muted);font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:10px;">🏆 Últimos roscos</div>
+    <div id="db-rosco-hist" style="background:var(--card);border:1px solid var(--border2);border-radius:14px;padding:14px;margin-bottom:20px;"></div>
 
-    <!-- Letras difíciles -->
-    <div style="font-size:0.8rem;color:var(--muted);font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:8px;">Letras difíciles en el Rosco</div>
-    <div id="db-hard-letters" style="background:var(--card);border:1px solid var(--border2);border-radius:14px;padding:14px;min-height:40px;"></div>
-
-    <!-- Historial Rosco -->
-    <div style="font-size:0.8rem;color:var(--muted);font-weight:700;letter-spacing:1px;text-transform:uppercase;margin:16px 0 8px;">Últimos roscos</div>
-    <div id="db-rosco-hist" style="display:flex;flex-direction:column;gap:8px;"></div>
-
-    <!-- Heatmap -->
-    <div style="font-size:0.8rem;color:var(--muted);font-weight:700;letter-spacing:1px;text-transform:uppercase;margin:16px 0 8px;">Actividad (últimas 4 semanas)</div>
-    <div id="db-heatmap" style="display:flex;flex-wrap:wrap;gap:4px;"></div>
-
+</div>
 </div>
 </div>
 
