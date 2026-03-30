@@ -22138,7 +22138,12 @@ function dicRestaurarTodas() {
 }
 
 function abrirSelectorLetraRAE(l, vistas, total) {
+    // Always read fresh from localStorage
+    var hitoVistas = parseInt(localStorage.getItem('dic_hito_letra_' + l) || '0');
     var progreso = dicLeerProgreso('letra', l);
+    var progresoIdx = progreso && progreso.idx > 0 ? progreso.idx : 0;
+    vistas = Math.max(hitoVistas, progresoIdx);
+    total = (typeof DIC_LETRA_TOTALES !== 'undefined' ? DIC_LETRA_TOTALES[l] : 0) || total || 0;
     var tieneProgreso = progreso && progreso.idx > 0 && progreso.idx < progreso.total;
     var dificilesDeLaLetra = dicGetDificiles().filter(function(w) {
         return w[0].toUpperCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'') === l;
