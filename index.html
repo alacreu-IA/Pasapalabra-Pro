@@ -21039,7 +21039,7 @@ window.iniciarDelitoHistorico = function() {
                  <div id="study-a-text" style="color:var(--accent); font-size:1.6rem; font-weight:bold; line-height:1.4; margin-bottom: 30px; width:100%;">Respuesta</div>
                  
                  <div id="study-links" style="display:flex; gap:12px; flex-wrap:wrap; justify-content:center;">
-                     <a id="link-wiki" href="#" style="text-decoration:none; background:rgba(255,255,255,0.1); color:var(--text); padding:10px 18px; border-radius:12px; font-size:0.9rem; display:flex; align-items:center; gap:8px; border:1px solid rgba(255,255,255,0.05);">📖 Wikipedia</a>
+                     <a id="link-wiki" href="#" style="text-decoration:none; background:rgba(255,255,255,0.1); color:var(--text); padding:10px 18px; border-radius:12px; font-size:0.9rem; display:flex; align-items:center; gap:8px; border:1px solid rgba(255,255,255,0.05);">📖 RAE</a>
                      <a id="link-map" href="#" onclick="openMapNow(this); return false;" style="text-decoration:none; background:rgba(39, 174, 96, 0.2); color:#2ecc71; padding:10px 18px; border-radius:12px; font-size:0.9rem; display:none; align-items:center; gap:8px; border:1px solid rgba(39, 174, 96, 0.3);">🗺️ Ver Mapa</a>
                  </div>
              </div>
@@ -21477,7 +21477,7 @@ window.nextStudyCard = function() {
        let _ws=aText;
        if(_isGeo&&/^[A-ZÁÉÍÓÚÑ]/.test(_ws)&&_ws.length<25) _ws+=currentStudyCard?.deckId==='geo_esp'?' España':' geografía';
        const wikiEl=document.getElementById('link-wiki');
-       wikiEl.href='https://es.wikipedia.org/wiki/Special:Search?search='+encodeURIComponent(_ws)+'&ns0=1';
+       wikiEl.href='https://dle.rae.es/'+encodeURIComponent(_ws.split(' ')[0].toLowerCase());
        wikiEl.onclick=function(e){e.preventDefault();e.stopPropagation();openExternalUrl(this.href);};
        
        const mapBtn = document.getElementById('link-map');
@@ -25028,11 +25028,14 @@ function startRoscoMode(mode) {
 }
 
 // ============================================================
-//  TTS — Lee la pregunta del rosco en voz alta
+//  TTS — ElevenLabs con fallback a SpeechSynthesis
 // ============================================================
-var ttsVoices = [];
+var EL_API_KEY   = 'EUA3Vy9Kr7vAUdbxWM2t';
+var EL_VOICE_ID  = 'DaS307ZI3MdmDcZX7lpq';
+var EL_CACHE_KEY = 'ppro_el_cache_v1';
+var ttsVoices    = [];
+var ttsAudio     = null;
 
-// Pre-cargar voces (iOS las carga de forma asíncrona)
 function loadVoices() {
     ttsVoices = window.speechSynthesis ? window.speechSynthesis.getVoices() : [];
 }
@@ -25041,63 +25044,109 @@ if (window.speechSynthesis) {
     window.speechSynthesis.onvoiceschanged = loadVoices;
 }
 
-function getBestSpanishVoice() {
-    if (ttsVoices.length === 0) loadVoices();
-    // Priority: Siri Spanish (iOS) > Google Spanish > any es-ES > any es
-    var priority = [
-        function(v){ return v.lang === 'es-ES' && v.name.includes('Siri'); },
-        function(v){ return v.lang === 'es-ES' && v.name.includes('Monica'); },
-        function(v){ return v.lang === 'es-ES' && v.name.includes('Google'); },
-        function(v){ return v.lang === 'es-ES' && !v.name.toLowerCase().includes('compact'); },
-        function(v){ return v.lang === 'es-ES'; },
-        function(v){ return v.lang.startsWith('es'); },
-    ];
-    for (var i = 0; i < priority.length; i++) {
-        var v = ttsVoices.find(priority[i]);
-        if (v) return v;
-    }
-    return null;
+function stopSpeak() {
+    if (ttsAudio) { ttsAudio.pause(); ttsAudio.src = ''; ttsAudio = null; }
+    if (window.speechSynthesis) window.speechSynthesis.cancel();
+    ttsHablando = false;
 }
 
-function stopSpeak() {
-    if (window.speechSynthesis) window.speechSynthesis.cancel();
+function _speakFallback(text, onDone) {
+    if (!window.speechSynthesis) { if (onDone) onDone(); return; }
+    window.speechSynthesis.cancel();
+    var processed = text
+        .replace(/\bDr\./g, 'Doctor').replace(/\bSr\./g, 'Señor')
+        .replace(/'/g, '').replace(/'/g, '');
+    var utt = new SpeechSynthesisUtterance(processed);
+    utt.lang = 'es-ES'; utt.rate = 0.78; utt.pitch = 1.02; utt.volume = 1.0;
+    if (ttsVoices.length === 0) loadVoices();
+    var best = ttsVoices.find(function(v){ return v.lang === 'es-ES' && v.name.includes('Siri'); })
+            || ttsVoices.find(function(v){ return v.lang === 'es-ES'; })
+            || ttsVoices.find(function(v){ return v.lang.startsWith('es'); });
+    if (best) utt.voice = best;
+    utt.onend = function(){ ttsHablando = false; if (onDone) onDone(); };
+    utt.onerror = function(){ ttsHablando = false; if (onDone) onDone(); };
+    ttsHablando = true;
+    window.speechSynthesis.speak(utt);
+}
+
+function _elCacheGet(key) {
+    try {
+        var cache = JSON.parse(localStorage.getItem(EL_CACHE_KEY) || '{}');
+        return cache[key] || null;
+    } catch(e) { return null; }
+}
+function _elCacheSet(key, b64) {
+    try {
+        var cache = JSON.parse(localStorage.getItem(EL_CACHE_KEY) || '{}');
+        // Keep max 80 entries (oldest out)
+        var keys = Object.keys(cache);
+        if (keys.length >= 80) delete cache[keys[0]];
+        cache[key] = b64;
+        localStorage.setItem(EL_CACHE_KEY, JSON.stringify(cache));
+    } catch(e) {}
 }
 
 function speakText(text, onDone) {
-    if (!window.speechSynthesis) { if (onDone) onDone(); return; }
-    window.speechSynthesis.cancel();
-
-    // Pequeñas transformaciones para sonar más natural:
-    // - Los dos puntos y punto y coma generan pausa automática en TTS
-    // - Sustituir abreviaturas que el TTS lee mal
-    var processed = text
-        .replace(/\bDr\./g, 'Doctor')
-        .replace(/\bSr\./g, 'Señor')
-        .replace(/\bs\.\.?\s*[Xx][Xx][Xx]/g, 'siglo')
-        .replace(/\bs\.\.?\s*([IVXivx]+)/g, 'siglo $1')
-        .replace(/'/g, '')   // comillas tipográficas que confunden al TTS
-        .replace(/'/g, '');
-
-    var utt = new SpeechSynthesisUtterance(processed);
-    utt.lang   = 'es-ES';
-    utt.rate   = 0.78;
-    utt.pitch  = 1.02;   // ligerísimo tono más alto = más cálido, menos robótico
-    utt.volume = 1.0;
-
-    var bestVoice = getBestSpanishVoice();
-    if (bestVoice) utt.voice = bestVoice;
-
-    utt.onend = function() {
-        ttsHablando = false;
-        if (onDone) onDone();
-    };
-    utt.onerror = function() {
-        ttsHablando = false;
-        if (onDone) onDone();
-    };
-
+    stopSpeak();
     ttsHablando = true;
-    window.speechSynthesis.speak(utt);
+
+    var cacheKey = text.slice(0, 120).replace(/\s+/g, ' ').trim();
+    var cached = _elCacheGet(cacheKey);
+
+    function playB64(b64) {
+        try {
+            var binary = atob(b64);
+            var bytes = new Uint8Array(binary.length);
+            for (var i = 0; i < binary.length; i++) bytes[i] = binary.charCodeAt(i);
+            var blob = new Blob([bytes], { type: 'audio/mpeg' });
+            var url = URL.createObjectURL(blob);
+            ttsAudio = new Audio(url);
+            ttsAudio.onended = function() {
+                URL.revokeObjectURL(url);
+                ttsAudio = null;
+                ttsHablando = false;
+                if (onDone) onDone();
+            };
+            ttsAudio.onerror = function() {
+                URL.revokeObjectURL(url);
+                ttsAudio = null;
+                _speakFallback(text, onDone);
+            };
+            ttsAudio.play();
+        } catch(e) { _speakFallback(text, onDone); }
+    }
+
+    if (cached) { playB64(cached); return; }
+
+    // Call ElevenLabs API
+    fetch('https://api.elevenlabs.io/v1/text-to-speech/' + EL_VOICE_ID, {
+        method: 'POST',
+        headers: {
+            'xi-api-key': EL_API_KEY,
+            'Content-Type': 'application/json',
+            'Accept': 'audio/mpeg'
+        },
+        body: JSON.stringify({
+            text: text,
+            model_id: 'eleven_multilingual_v2',
+            voice_settings: { stability: 0.45, similarity_boost: 0.82, style: 0.25, use_speaker_boost: true }
+        })
+    })
+    .then(function(res) {
+        if (!res.ok) throw new Error('EL ' + res.status);
+        return res.arrayBuffer();
+    })
+    .then(function(buf) {
+        var bytes = new Uint8Array(buf);
+        var binary = '';
+        bytes.forEach(function(b){ binary += String.fromCharCode(b); });
+        var b64 = btoa(binary);
+        _elCacheSet(cacheKey, b64);
+        playB64(b64);
+    })
+    .catch(function() {
+        _speakFallback(text, onDone);
+    });
 }
 
 function speakAndListen(text) {
