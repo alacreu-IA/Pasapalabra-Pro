@@ -24726,14 +24726,68 @@ function submitRosco() {
     const l      = roscoOrder[roscoCurrentIdx];
     const d      = roscoData[l];
     var rawAnswer = document.getElementById('rosco-answer').value.trim();
-    // Si la voz copió la pregunta + respuesta, quedarse solo con la última palabra/frase
-    var words = rawAnswer.split(/\s+/);
-    var answer = (words.length > 4 ? words[words.length - 1] : rawAnswer).toLowerCase();
-    if (!answer) return;
+    if (!rawAnswer) return;
 
-    const normalize = s => s.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
-    const isOk = normalize(answer) === normalize(d.a) ||
-                 (normalize(d.a).startsWith(normalize(answer)) && answer.length >= 4);
+    // Normalizar: quitar acentos, mayusculas, puntuacion
+    function norm(s) {
+        return s.normalize('NFD').replace(/[\u0300-\u036f]/g, '')
+                .toLowerCase().replace(/[^a-z0-9 ]/g, '').trim();
+    }
+    // Distancia de Levenshtein para tolerancia a errores de dictado
+    function levenshtein(a, b) {
+        var m = a.length, n = b.length;
+        var dp = [];
+        for (var i = 0; i <= m; i++) { dp[i] = [i]; }
+        for (var j = 0; j <= n; j++) { dp[0][j] = j; }
+        for (var i = 1; i <= m; i++) {
+            for (var j = 1; j <= n; j++) {
+                dp[i][j] = a[i-1] === b[j-1] ? dp[i-1][j-1] :
+                    1 + Math.min(dp[i-1][j], dp[i][j-1], dp[i-1][j-1]);
+            }
+        }
+        return dp[m][n];
+    }
+
+    var correcta = norm(d.a);
+
+    // Extraer candidatos de la respuesta del micro:
+    // 1. La respuesta completa
+    // 2. Las últimas N palabras (por si dijo "creo que es X")
+    // 3. Cada palabra individual (por si dijo palabras de más)
+    var words = rawAnswer.split(/\s+/);
+    var candidates = [norm(rawAnswer)];
+    // Últimas 1, 2, 3 palabras
+    for (var wi = 1; wi <= Math.min(3, words.length); wi++) {
+        candidates.push(norm(words.slice(-wi).join(' ')));
+    }
+    // Primera palabra (a veces el micro añade ruido al final)
+    if (words.length > 1) candidates.push(norm(words[0]));
+
+    // Comprobar cada candidato
+    var isOk = candidates.some(function(cand) {
+        if (!cand) return false;
+        // Match exacto
+        if (cand === correcta) return true;
+        // Prefijo (empieza igual, min 4 chars) — "lacón" para "lacónico"
+        if (correcta.startsWith(cand) && cand.length >= 4) return true;
+        // Levenshtein: tolerancia según longitud de la palabra
+        var maxDist = correcta.length <= 5 ? 1 : correcta.length <= 8 ? 2 : 3;
+        if (levenshtein(cand, correcta) <= maxDist) return true;
+        // Respuesta multipalabra: comprobar cada palabra contra cada parte
+        var correctaParts = correcta.split(' ');
+        var candParts = cand.split(' ');
+        if (correctaParts.length > 1 && candParts.length >= 1) {
+            // Todas las partes de la respuesta correcta están en el candidato
+            if (correctaParts.every(function(p) {
+                return candParts.some(function(cp){ return cp === p || levenshtein(cp, p) <= 1; });
+            })) return true;
+        }
+        return false;
+    });
+
+    // Para mostrar en el campo lo que se detectó mejor
+    var displayAnswer = words.length > 3 ? words.slice(-2).join(' ') : rawAnswer;
+    document.getElementById('rosco-answer').value = displayAnswer;
 
     if (isOk) {
         d.status = 'ok';
@@ -24962,22 +25016,37 @@ function startVoice() {
     recognition.continuous = true;
     recognition.interimResults = false;
     recognition.onresult = e => {
-        // Ignorar si el TTS está hablando (evita que el micro capte la pregunta leída)
+        // Ignorar si el TTS está hablando
         if (typeof ttsHablando !== 'undefined' && ttsHablando) return;
-        const transcript = e.results[e.results.length - 1][0].transcript.trim();
-        const normalized = transcript.toLowerCase()
+
+        // Coger el resultado con mayor confianza
+        var best = '';
+        var bestConf = 0;
+        var results = e.results;
+        for (var ri = 0; ri < results.length; ri++) {
+            for (var ai = 0; ai < results[ri].length; ai++) {
+                if (results[ri][ai].confidence >= bestConf) {
+                    bestConf = results[ri][ai].confidence;
+                    best = results[ri][ai].transcript.trim();
+                }
+            }
+        }
+        if (!best) best = e.results[e.results.length-1][0].transcript.trim();
+
+        var normalized = best.toLowerCase()
             .normalize('NFD').replace(/[\u0300-\u036f]/g, '');
 
-        // "Pasapalabra" o variantes → pasar, no responder
-        const pasaVariants = ['pasapalabra', 'pasa palabra', 'paso', 'paso la palabra', 'siguiente'];
+        // "Pasapalabra" o variantes → pasar
+        var pasaVariants = ['pasapalabra', 'pasa palabra', 'paso', 'paso la palabra', 'siguiente', 'no se', 'no lo se'];
         if (pasaVariants.some(function(v){ return normalized.includes(v); })) {
-            // Parar micro inmediatamente para que no se oiga el eco
-            try { recognition.stop(); } catch(e) {}
+            try { recognition.abort(); recognition = null; } catch(e2) {}
             pasarRosco();
             return;
         }
 
-        document.getElementById('rosco-answer').value = transcript;
+        // Mostrar en el campo y enviar
+        var answerField = document.getElementById('rosco-answer');
+        if (answerField) answerField.value = best;
         submitRosco();
     };
     recognition.onerror = (e) => {
@@ -24993,9 +25062,14 @@ function startVoice() {
         }
     };
     recognition.onend = () => {
-        if (voiceEnabled) {
-            // Pequeña pausa antes de reiniciar para evitar bucles de error
-            setTimeout(() => { try { recognition.start(); } catch(e) {} }, 300);
+        if (voiceEnabled && !ttsHablando) {
+            // Recrear recognition en lugar de solo .start() — más fiable en iOS
+            setTimeout(function() {
+                if (voiceEnabled && !ttsHablando) {
+                    recognition = null;
+                    startVoice();
+                }
+            }, 400);
         }
     };
     recognition.start();
