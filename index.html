@@ -24699,9 +24699,29 @@ function showRoscoQuestion() {
     const l = roscoOrder[roscoCurrentIdx];
     const d = roscoData[l];
 
+    // Strip example sentences from definition (anything after the main def)
+    function cleanRoscoQ(q, answer) {
+        // Remove the "Con la X:" prefix temporarily
+        var prefix = '';
+        var def = q;
+        var prefixMatch = q.match(/^(Con la [A-ZÑ]: |Contiene la [A-ZÑ]: )/i);
+        if (prefixMatch) { prefix = prefixMatch[0]; def = q.slice(prefix.length); }
+        // Remove example sentences: split on ". " and drop sentences containing the answer
+        var ansNorm = answer.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'');
+        var parts = def.split(/\. /);
+        var cleaned = parts.filter(function(p, idx) {
+            if (idx === 0) return true; // always keep first sentence
+            var pNorm = p.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'');
+            return !pNorm.includes(ansNorm) && p.length > 10;
+        });
+        var result = cleaned.join('. ');
+        if (result && result[result.length-1] !== '.') result += '.';
+        return prefix + result;
+    }
+    var cleanQ = cleanRoscoQ(d.q, d.a);
     document.getElementById('rosco-big-letter').textContent  = l;
     document.getElementById('rosco-letter-tip').textContent  = d.q.startsWith('Contiene') ? `Contiene la ${l}` : `Con la ${l}`;
-    document.getElementById('rosco-question').textContent    = d.q;
+    document.getElementById('rosco-question').textContent    = cleanQ;
     document.getElementById('rosco-answer').value = '';
     // NO auto-focus en móvil — evita que el teclado baje la pantalla
     updateRoscoStats();
@@ -24711,7 +24731,7 @@ function showRoscoQuestion() {
     if (roscoMode === 'full') {
         // Leer con la letra: "Con la A: definición"
         var letraPrefix = d.q.startsWith('Contiene') ? 'Contiene la ' + l + '. ' : 'Con la ' + l + '. ';
-        var defSolo = d.q.replace(/^Con la [A-Z\u00d1]: /i, '').replace(/^Contiene la [A-Z\u00d1]: /i, '');
+        var defSolo = cleanQ.replace(/^Con la [A-ZÑ]: /i, '').replace(/^Contiene la [A-ZÑ]: /i, '');
         speakAndListen(letraPrefix + defSolo);
     } else if (roscoMode === 'voice') {
         // Solo escuchar, no leer — recrear recognition por si acaso
@@ -25135,7 +25155,7 @@ function _speakFallback(text, onDone) {
         .replace(/\bDr\./g, 'Doctor').replace(/\bSr\./g, 'Señor')
         .replace(/'/g, '').replace(/'/g, '');
     var utt = new SpeechSynthesisUtterance(processed);
-    utt.lang = 'es-ES'; utt.rate = 0.78; utt.pitch = 1.02; utt.volume = 1.0;
+    utt.lang = 'es-ES'; utt.rate = 0.92; utt.pitch = 1.02; utt.volume = 1.0;
     if (ttsVoices.length === 0) loadVoices();
     var best = ttsVoices.find(function(v){ return v.lang === 'es-ES' && v.name.includes('Siri'); })
             || ttsVoices.find(function(v){ return v.lang === 'es-ES'; })
@@ -25224,7 +25244,8 @@ function speakText(text, onDone) {
         body: JSON.stringify({
             text: text,
             model_id: 'eleven_multilingual_v2',
-            voice_settings: { stability: 0.45, similarity_boost: 0.82, style: 0.25, use_speaker_boost: true }
+            voice_settings: { stability: 0.45, similarity_boost: 0.82, style: 0.25, use_speaker_boost: true },
+            speed: 1.15
         })
     })
     .then(function(res) {
