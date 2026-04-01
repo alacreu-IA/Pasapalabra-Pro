@@ -24699,24 +24699,30 @@ function showRoscoQuestion() {
     const l = roscoOrder[roscoCurrentIdx];
     const d = roscoData[l];
 
-    // Strip example sentences from definition (anything after the main def)
+    // Clean rosco question: first sentence only, no spoilers, max 110 chars
     function cleanRoscoQ(q, answer) {
-        // Remove the "Con la X:" prefix temporarily
-        var prefix = '';
-        var def = q;
         var prefixMatch = q.match(/^(Con la [A-ZÑ]: |Contiene la [A-ZÑ]: )/i);
-        if (prefixMatch) { prefix = prefixMatch[0]; def = q.slice(prefix.length); }
-        // Remove example sentences: split on ". " and drop sentences containing the answer
+        var prefix = prefixMatch ? prefixMatch[0] : '';
+        var def = prefixMatch ? q.slice(prefix.length) : q;
+        // Keep only first sentence (up to next capital after period)
+        var m = def.match(/^([^.]+\.)\s+[A-ZÀ-Ö]/);
+        if (m) def = m[1];
+        // Remove clauses containing the answer word
         var ansNorm = answer.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'');
-        var parts = def.split(/\. /);
-        var cleaned = parts.filter(function(p, idx) {
-            if (idx === 0) return true; // always keep first sentence
-            var pNorm = p.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'');
-            return !pNorm.includes(ansNorm) && p.length > 10;
-        });
-        var result = cleaned.join('. ');
-        if (result && result[result.length-1] !== '.') result += '.';
-        return prefix + result;
+        var parts = def.split(/,\s*/);
+        if (parts.length > 1) {
+            var filtered = parts.filter(function(p) {
+                return !p.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'').includes(ansNorm);
+            });
+            if (filtered.length > 0) def = filtered.join(', ');
+        }
+        if (!/[.!?]$/.test(def)) def += '.';
+        // Hard cap 110 chars
+        if (def.length > 110) {
+            var cut = def.slice(0, 110).lastIndexOf(' ');
+            def = def.slice(0, cut > 50 ? cut : 110) + '...';
+        }
+        return prefix + def;
     }
     var cleanQ = cleanRoscoQ(d.q, d.a);
     document.getElementById('rosco-big-letter').textContent  = l;
@@ -24733,6 +24739,7 @@ function showRoscoQuestion() {
         var letraPrefix = d.q.startsWith('Contiene') ? 'Contiene la ' + l + '. ' : 'Con la ' + l + '. ';
         var defSolo = cleanQ.replace(/^Con la [A-ZÑ]: /i, '').replace(/^Contiene la [A-ZÑ]: /i, '');
         speakAndListen(letraPrefix + defSolo);
+        setTimeout(_prefetchNextRosco, 600);
     } else if (roscoMode === 'voice') {
         // Solo escuchar, no leer — recrear recognition por si acaso
         if (voiceEnabled) {
@@ -24879,6 +24886,46 @@ function updateRoscoStats() {
     document.getElementById('stat-pass').textContent = roscoOrder.filter(l => roscoData[l].status === 'pass').length;
 }
 
+
+// Prefetch next rosco question audio in background
+function _prefetchNextRosco() {
+    if (!EL_API_KEY || EL_API_KEY.length < 20) return;
+    try {
+        // Find next pending letter
+        var nextL = null;
+        for (var pi = 1; pi <= roscoOrder.length; pi++) {
+            var ni = (roscoCurrentIdx + pi) % roscoOrder.length;
+            var nl = roscoOrder[ni];
+            if (nl && roscoData[nl] && (roscoData[nl].status === 'pending' || roscoData[nl].status === 'pass')) {
+                nextL = nl; break;
+            }
+        }
+        if (!nextL) return;
+        var nd = roscoData[nextL];
+        var prefix2 = nd.q.startsWith('Contiene') ? 'Contiene la ' + nextL + '. ' : 'Con la ' + nextL + '. ';
+        var defSolo2 = nd.q.replace(/^Con la [A-ZÑ]: /i,'').replace(/^Contiene la [A-ZÑ]: /i,'');
+        var m2 = defSolo2.match(/^([^.]+\.)\s+[A-ZÀ-Ö]/);
+        if (m2) defSolo2 = m2[1];
+        if (defSolo2.length > 110) defSolo2 = defSolo2.slice(0, defSolo2.lastIndexOf(' ', 110)) + '...';
+        var textToFetch = prefix2 + defSolo2;
+        var cacheKey = textToFetch.slice(0, 120).replace(/\s+/g,' ').trim();
+        if (_elCacheGet(cacheKey)) return;
+        fetch('https://api.elevenlabs.io/v1/text-to-speech/' + EL_VOICE_ID, {
+            method: 'POST',
+            headers: { 'xi-api-key': EL_API_KEY, 'Content-Type': 'application/json', 'Accept': 'audio/mpeg' },
+            body: JSON.stringify({ text: textToFetch, model_id: 'eleven_multilingual_v2',
+                voice_settings: { stability: 0.45, similarity_boost: 0.82, style: 0.25, use_speaker_boost: true },
+                speed: 1.25 })
+        }).then(function(r){ return r.ok ? r.arrayBuffer() : null; })
+        .then(function(buf) {
+            if (!buf) return;
+            var b = new Uint8Array(buf), s = '';
+            b.forEach(function(x){ s += String.fromCharCode(x); });
+            _elCacheSet(cacheKey, btoa(s));
+        }).catch(function(){});
+    } catch(e) {}
+}
+
 function finishRosco() {
     clearInterval(roscoTimerInterval);
     stopVoice();
@@ -24890,8 +24937,6 @@ function finishRosco() {
 
     if (fail > 0) document.getElementById('rosco-fail-btn').style.display = 'block';
     if (typeof finishRoscoMejoras === 'function') finishRoscoMejoras();
-    // Rosco infinito
-    finishRoscoMejoras();
 
     // Mensajes según resultado del rosco
     const pctRosco = Math.round((ok / total) * 100);
@@ -24965,9 +25010,11 @@ function finishRosco() {
         (failLetters.length ? '<div style="font-size:0.82rem;margin-bottom:4px;"><span style="color:#ef4444;font-weight:700;">✗ Falladas: </span>' + failLetters.join(' · ') + '</div>' : '') +
         (passLetters.length ? '<div style="font-size:0.82rem;"><span style="color:var(--muted);font-weight:700;">→ Pasadas: </span>' + passLetters.join(' · ') + '</div>' : '');
 
-    document.getElementById('result-repeat-btn').onclick = () => {
+    document.getElementById('result-repeat-btn').onclick = function() {
         document.getElementById('result-overlay').classList.remove('active');
-        goTo('rosco');
+        stopSpeak();
+        stopVoice();
+        goTo('rosco-mode');
     };
     document.getElementById('result-overlay').classList.add('active');
 }
@@ -25082,10 +25129,14 @@ function startVoice() {
         }
     };
     recognition.onend = () => {
-        if (voiceEnabled && !ttsHablando) {
-            // Recrear recognition en lugar de solo .start() — más fiable en iOS
+        // Only restart if rosco screen is active and voice is enabled
+        var roscoActive = document.getElementById('rosco') && 
+                          document.getElementById('rosco').classList.contains('active');
+        if (voiceEnabled && !ttsHablando && roscoActive) {
             setTimeout(function() {
-                if (voiceEnabled && !ttsHablando) {
+                var stillActive = document.getElementById('rosco') && 
+                                  document.getElementById('rosco').classList.contains('active');
+                if (voiceEnabled && !ttsHablando && stillActive) {
                     recognition = null;
                     startVoice();
                 }
@@ -25130,7 +25181,7 @@ function startRoscoMode(mode) {
 // ============================================================
 var EL_API_KEY   = 'sk_90e7b22788ded2f9ad5edacf9a3198902b26c43c7d1b9d85';
 var EL_VOICE_ID  = 'DaS307ZI3MdmDcZX7lpq';
-var EL_CACHE_KEY = 'ppro_el_cache_v1';
+var EL_CACHE_KEY = 'ppro_el_cache_v2';
 var ttsVoices    = [];
 var ttsAudio     = null;
 
@@ -25155,7 +25206,7 @@ function _speakFallback(text, onDone) {
         .replace(/\bDr\./g, 'Doctor').replace(/\bSr\./g, 'Señor')
         .replace(/'/g, '').replace(/'/g, '');
     var utt = new SpeechSynthesisUtterance(processed);
-    utt.lang = 'es-ES'; utt.rate = 0.92; utt.pitch = 1.02; utt.volume = 1.0;
+    utt.lang = 'es-ES'; utt.rate = 1.05; utt.pitch = 1.02; utt.volume = 1.0;
     if (ttsVoices.length === 0) loadVoices();
     var best = ttsVoices.find(function(v){ return v.lang === 'es-ES' && v.name.includes('Siri'); })
             || ttsVoices.find(function(v){ return v.lang === 'es-ES'; })
@@ -25176,13 +25227,28 @@ function _elCacheGet(key) {
 function _elCacheSet(key, b64) {
     try {
         var cache = JSON.parse(localStorage.getItem(EL_CACHE_KEY) || '{}');
-        // Keep max 80 entries (oldest out)
+        // Keep max 25 entries — audio b64 es muy grande, proteger localStorage
         var keys = Object.keys(cache);
-        if (keys.length >= 80) delete cache[keys[0]];
+        while (keys.length >= 25) { delete cache[keys.shift()]; }
         cache[key] = b64;
-        localStorage.setItem(EL_CACHE_KEY, JSON.stringify(cache));
+        try {
+            localStorage.setItem(EL_CACHE_KEY, JSON.stringify(cache));
+        } catch(quota) {
+            // localStorage lleno — borrar caché entero y reintentar sin guardar
+            try { localStorage.removeItem(EL_CACHE_KEY); } catch(e2) {}
+        }
     } catch(e) {}
 }
+
+// Limpiar caché ElevenLabs si ocupa demasiado (>2MB)
+(function() {
+    try {
+        var raw = localStorage.getItem(EL_CACHE_KEY);
+        if (raw && raw.length > 2000000) {
+            localStorage.removeItem(EL_CACHE_KEY);
+        }
+    } catch(e) {}
+})();
 
 function speakText(text, onDone) {
     stopSpeak();
@@ -25245,7 +25311,7 @@ function speakText(text, onDone) {
             text: text,
             model_id: 'eleven_multilingual_v2',
             voice_settings: { stability: 0.45, similarity_boost: 0.82, style: 0.25, use_speaker_boost: true },
-            speed: 1.15
+            speed: 1.25
         })
     })
     .then(function(res) {
