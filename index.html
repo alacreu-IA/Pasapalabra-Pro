@@ -34091,6 +34091,233 @@ function escEmpFin(gs){
 
 })();
 </script>
+<script>
+(function() {
+  // ============================================================
+  // SCRIPT 49 — Fix RAE: resumen, confeti letra, guardado, no borrar pos
+  // ============================================================
+
+  var FRASES_LETRA = [
+    "HAS COMPLETADO LA LETRA {L}.\nTe has comido {N} palabras.\nLa RAE no se lo puede creer.",
+    "LETRA {L}: CONQUISTADA.\n{N} palabras en el bolsillo.\nEl bote empieza a temblar.",
+    "FIN DE LA LETRA {L}.\n{N} palabras. T-O-D-A-S.\nEres una bestia del diccionario.",
+    "LA LETRA {L} YA ES TUYA.\n{N} palabras aprendidas.\nCervantes solo tenia 8.000 en el Quijote.",
+    "LETRA {L}: ELIMINADA.\n{N} palabras. Completas.\nEl presentador de Pasapalabra ya te tiene miedo.",
+    "TE HAS ZAMPADO LA LETRA {L} ENTERA.\n{N} palabras.\nAsombroso. Historico. Brutal.",
+    "MISION CUMPLIDA: LETRA {L}.\n{N} palabras dominadas.\nLa RAE quiere contratarte.",
+    "{N} PALABRAS CON {L}.\nEso no lo hace nadie.\nBueno, tu si. Porque eres asi.",
+    "LETRA {L}: ARCHIVADA.\n{N} palabras en tu cerebro.\nEl bote esta mas cerca que nunca.",
+    "COMPLETA. LETRA {L}. {N} PALABRAS.\nEsto merece celebracion.\nY un descanso. Pero primero celebracion."
+  ];
+
+  // ============================================================
+  // dicMostrarResumen — define la funcion que faltaba
+  // ============================================================
+  function dicMostrarResumen() {
+    var modo   = dicState.modo;
+    var filtro = dicState.filtro;
+    var total  = dicState.palabras.length;
+
+    // Guardar idx=total (no borrar la clave)
+    if (modo === 'letra' && filtro) {
+      var posKey = 'dic_pos_' + modo + '_' + (filtro || 'todos');
+      try {
+        localStorage.setItem(posKey, JSON.stringify({ idx: total, total: total, ts: Date.now(), completada: true }));
+      } catch(e) {}
+    }
+
+    // Modo letra: confeti
+    if (modo === 'letra' && filtro) {
+      var frase = FRASES_LETRA[Math.floor(Math.random() * FRASES_LETRA.length)];
+      frase = frase.replace(/{L}/g, filtro).replace(/{N}/g, total);
+      _dicCelebLetra(filtro, total, frase);
+      return;
+    }
+
+    // Otros modos: resumen normal
+    document.getElementById('dic-panel-front').style.display = 'none';
+    document.getElementById('dic-panel-back').style.display  = 'none';
+    document.getElementById('dic-rate-row').classList.remove('visible');
+    var resDiv = document.getElementById('dic-resumen');
+    if (!resDiv) return;
+    var emojiEl  = document.getElementById('dic-res-emoji');
+    var tituloEl = document.getElementById('dic-res-titulo');
+    var subEl    = document.getElementById('dic-res-sub');
+    if (emojiEl)  emojiEl.textContent  = '\uD83C\uDF89';
+    if (tituloEl) tituloEl.textContent = 'Sesi\u00F3n completada';
+    if (subEl)    subEl.textContent    = 'Has repasado ' + total + ' palabras';
+    var barrasEl = document.getElementById('dic-res-barras');
+    if (barrasEl) {
+      var bien = 0, regular = 0, mal = 0;
+      dicState.palabras.forEach(function(p) {
+        var s = dicGetSrs ? dicGetSrs(p.w) : null;
+        if (!s) return;
+        if (s.nivel >= 4) bien++; else if (s.nivel >= 2) regular++; else mal++;
+      });
+      barrasEl.innerHTML = _barra('\uD83D\uDFE2 Bien', bien, total, '#44d490') + _barra('\uD83D\uDFE1 Regular', regular, total, '#fdcb6e') + _barra('\uD83D\uDD34 A repasar', mal, total, '#ff5555');
+    }
+    var difWrap = document.getElementById('dic-res-dificiles-wrap');
+    var difEl   = document.getElementById('dic-res-dificiles');
+    var difBtn  = document.getElementById('dic-res-btn-dif');
+    if (difEl) {
+      var difs = dicState.palabras.filter(function(p) { var s = dicGetSrs ? dicGetSrs(p.w) : null; return s && s.nivel < 2; });
+      if (difs.length > 0) {
+        difEl.innerHTML = difs.slice(0,20).map(function(p) { return '<span style="background:rgba(255,85,85,0.15);border:1px solid rgba(255,85,85,0.4);border-radius:8px;padding:4px 10px;font-size:0.78rem;color:var(--text);">' + p.w + '</span>'; }).join('');
+        if (difWrap) difWrap.style.display = 'block';
+        if (difBtn)  difBtn.style.display  = 'block';
+        window._dicDifsRes = difs;
+      } else {
+        if (difWrap) difWrap.style.display = 'none';
+        if (difBtn)  difBtn.style.display  = 'none';
+      }
+    }
+    resDiv.style.display = 'flex';
+  }
+
+  function _barra(label, n, total, color) {
+    var pct = total > 0 ? Math.round(n * 100 / total) : 0;
+    return '<div style="display:flex;align-items:center;gap:10px;margin-bottom:6px;">' +
+      '<span style="font-size:0.75rem;color:var(--muted);width:90px;flex-shrink:0;">' + label + '</span>' +
+      '<div style="flex:1;height:8px;background:var(--card2);border-radius:4px;overflow:hidden;">' +
+        '<div style="width:' + pct + '%;height:100%;background:' + color + ';border-radius:4px;"></div>' +
+      '</div>' +
+      '<span style="font-size:0.75rem;color:var(--muted);width:28px;text-align:right;">' + n + '</span>' +
+    '</div>';
+  }
+
+  window.dicResumenRepetirDificiles = function() {
+    var dif = window._dicDifsRes;
+    if (!dif || !dif.length) return;
+    dicState.palabras = dif; dicState.idx = 0;
+    document.getElementById('dic-resumen').style.display = 'none';
+    document.getElementById('dic-panel-front').style.display = 'flex';
+    dicMostrarPalabra();
+  };
+
+  // ============================================================
+  // Pantalla de celebracion al completar letra
+  // ============================================================
+  function _dicCelebLetra(letra, total, frase) {
+    if (document.getElementById('dic-celeb-ov')) return;
+    var ov = document.createElement('div');
+    ov.id = 'dic-celeb-ov';
+    ov.style.cssText = 'position:fixed;top:0;left:0;right:0;bottom:0;z-index:999999;display:flex;flex-direction:column;align-items:center;justify-content:center;background:rgba(0,0,0,0.88);padding:32px;text-align:center;';
+    ov.innerHTML =
+      '<div style="font-size:4.5rem;margin-bottom:12px;animation:celeb49 0.5s infinite alternate;">\uD83C\uDF1F</div>' +
+      '<div style="font-size:0.9rem;font-weight:900;letter-spacing:3px;color:#fdcb6e;text-transform:uppercase;margin-bottom:8px;">LETRA ' + letra + ' COMPLETADA</div>' +
+      '<p style="color:#fff;font-size:0.95rem;line-height:1.8;white-space:pre-line;margin:0 0 28px;max-width:340px;">' + frase + '</p>' +
+      '<button id="dic-celeb-ok" style="background:#fdcb6e;color:#111;border:none;border-radius:14px;padding:16px 32px;font-size:1rem;font-weight:800;cursor:pointer;margin-bottom:10px;width:100%;max-width:300px;">Volver al diccionario</button>' +
+      '<button id="dic-celeb-save" style="background:none;border:1px solid rgba(255,255,255,0.25);color:rgba(255,255,255,0.7);border-radius:14px;padding:11px 24px;font-size:0.85rem;cursor:pointer;width:100%;max-width:300px;">\uD83D\uDCBE Guardar backup ahora</button>';
+
+    var canvas = document.createElement('canvas');
+    canvas.style.cssText = 'position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:1000000;';
+    document.body.appendChild(canvas);
+    document.body.appendChild(ov);
+
+    var ctx = canvas.getContext('2d');
+    canvas.width = window.innerWidth; canvas.height = window.innerHeight;
+    var cols = ['#fdcb6e','#74b9ff','#a29bfe','#55efc4','#fd79a8','#e17055','#00b894','#fff'];
+    var ps = [];
+    for (var i = 0; i < 160; i++) {
+      ps.push({ x: Math.random()*canvas.width, y: -20-Math.random()*300, w: 8+Math.random()*10, h: 5+Math.random()*8,
+        color: cols[Math.floor(Math.random()*cols.length)], rot: Math.random()*360,
+        vx: (Math.random()-0.5)*5, vy: 2+Math.random()*4, vr: (Math.random()-0.5)*10 });
+    }
+    var aid;
+    function draw() {
+      ctx.clearRect(0,0,canvas.width,canvas.height);
+      var alive = false;
+      ps.forEach(function(p) {
+        p.x+=p.vx; p.y+=p.vy; p.rot+=p.vr; p.vy+=0.04;
+        if (p.y<canvas.height+20) alive=true;
+        ctx.save(); ctx.translate(p.x,p.y); ctx.rotate(p.rot*Math.PI/180);
+        ctx.fillStyle=p.color; ctx.fillRect(-p.w/2,-p.h/2,p.w,p.h); ctx.restore();
+      });
+      if (alive) aid = requestAnimationFrame(draw);
+    }
+    draw();
+
+    if (!document.getElementById('celeb49-style')) {
+      var st = document.createElement('style');
+      st.id = 'celeb49-style';
+      st.textContent = '@keyframes celeb49{from{transform:scale(1) rotate(-5deg)}to{transform:scale(1.25) rotate(5deg)}}';
+      document.head.appendChild(st);
+    }
+
+    function cerrar() {
+      cancelAnimationFrame(aid); canvas.remove(); ov.remove();
+      document.getElementById('dic-panel-front').style.display = 'none';
+      document.getElementById('dic-panel-back').style.display  = 'none';
+      document.getElementById('dic-rate-row').classList.remove('visible');
+      var resDiv = document.getElementById('dic-resumen');
+      if (resDiv) {
+        var e1 = document.getElementById('dic-res-emoji');
+        var e2 = document.getElementById('dic-res-titulo');
+        var e3 = document.getElementById('dic-res-sub');
+        if (e1) e1.textContent = '\uD83C\uDFC6';
+        if (e2) e2.textContent = '\u00A1Letra ' + letra + ' completada!';
+        if (e3) e3.textContent = total + ' palabras dominadas';
+        var dw = document.getElementById('dic-res-dificiles-wrap');
+        var db = document.getElementById('dic-res-btn-dif');
+        if (dw) dw.style.display = 'none';
+        if (db) db.style.display = 'none';
+        resDiv.style.display = 'flex';
+      }
+    }
+
+    document.getElementById('dic-celeb-ok').onclick = cerrar;
+    document.getElementById('dic-celeb-save').onclick = function() {
+      try {
+        var datos = {};
+        for (var k = 0; k < localStorage.length; k++) {
+          var key = localStorage.key(k);
+          datos[key] = localStorage.getItem(key);
+        }
+        var blob = new Blob([JSON.stringify({ exportado: new Date().toISOString(), datos: datos }, null, 2)], { type: 'application/json' });
+        var url = URL.createObjectURL(blob);
+        var a = document.createElement('a');
+        a.href = url; a.download = 'backup_ppro_' + new Date().toISOString().slice(0,10) + '.json';
+        a.click(); URL.revokeObjectURL(url);
+        if (typeof showToast === 'function') showToast('\uD83D\uDCBE Backup guardado');
+      } catch(e) {
+        if (typeof showToast === 'function') showToast('Error al guardar: ' + e.message);
+      }
+    };
+  }
+
+  // ============================================================
+  // Reemplazar dicSiguiente: no borrar progreso al completar
+  // ============================================================
+  window.dicSiguiente = function() {
+    dicState.idx++;
+    dicGuardarProgreso();
+    if (dicState.modo === 'letra' && dicState.filtro) {
+      var hitoKey = 'dic_hito_letra_' + dicState.filtro;
+      var actual = parseInt(localStorage.getItem(hitoKey) || '0');
+      var nuevo = actual + 1;
+      localStorage.setItem(hitoKey, nuevo);
+      if (typeof planNoeCheckMeta === 'function') planNoeCheckMeta(actual, nuevo, dicState.filtro);
+      if (typeof planNoeRenderHome === 'function') planNoeRenderHome();
+    }
+    if (dicState.idx >= dicState.palabras.length) {
+      if (dicState.modo === 'aleatorio') {
+        dicCargarMasAleatorio().then(function() {
+          if (dicState.idx < dicState.palabras.length) dicMostrarPalabra();
+          else dicMostrarResumen();
+        });
+      } else {
+        dicMostrarResumen();
+      }
+      return;
+    }
+    dicMostrarPalabra();
+  };
+
+  window.dicMostrarResumen = dicMostrarResumen;
+
+})();
+
+</script>
 
 </body>
 </html>
