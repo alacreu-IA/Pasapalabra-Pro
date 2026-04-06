@@ -22360,7 +22360,7 @@ const DIC_CAMPOS = [
 ];
 
 const DIC_LETRAS = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','Ñ','O','P','Q','R','S','T','U','V','X','Y','Z'];
-const DIC_LETRA_TOTALES = {A:5019,B:1955,C:8478,D:2450,E:5312,F:1966,G:2064,H:1358,I:1129,J:456,K:79,L:1702,M:3810,N:734,'Ñ':11,O:824,P:5287,Q:253,R:2478,S:2505,T:2592,U:249,V:1032,W:0,X:29,Y:106,Z:367};
+const DIC_LETRA_TOTALES = {A:5178,B:1956,C:6027,D:2450,E:3775,F:1401,G:1505,H:1208,I:1130,J:412,K:72,L:1140,M:2678,N:689,'Ñ':11,O:773,P:3937,Q:253,R:2478,S:2505,T:2592,U:249,V:1032,W:0,X:29,Y:106,Z:367};
 
 const DIC_CAMPO_ICONS = {};
 DIC_CAMPOS.forEach(function(c){ DIC_CAMPO_ICONS[c.id] = c.icon + ' ' + c.name; });
@@ -22383,15 +22383,18 @@ function dicRenderLetrasGrid() {
         var btn = document.createElement('button');
         btn.className = 'dic-letra-btn';
         var prog = dicLeerProgreso('letra', l);
-        var totalLetra = prog && prog.total > 0 ? prog.total : (typeof DIC_LETRA_TOTALES !== 'undefined' ? DIC_LETRA_TOTALES[l] : 0) || 0;
+        // Total real: solo el que guardo la app al cargar el JSON
+        // Si no ha jugado esa letra aun, no hay total fiable — mostrar ?
+        var totalLetra = (typeof DIC_LETRA_TOTALES !== 'undefined' ? DIC_LETRA_TOTALES[l] : 0) || 0;
         var vistas = parseInt(localStorage.getItem('dic_hito_letra_' + l) || '0');
         var vistoCount = prog && prog.idx > vistas ? prog.idx : vistas;
         var pct = totalLetra > 0 ? Math.min(100, Math.round(vistoCount / totalLetra * 100)) : 0;
         var barColor = pct >= 80 ? 'var(--green)' : pct >= 40 ? 'var(--gold)' : 'var(--blue)';
         var textColor = pct >= 80 ? 'var(--green)' : pct >= 40 ? 'var(--gold)' : 'var(--text)';
         btn.style.borderColor = pct > 0 ? barColor : '';
+        var progText = totalLetra > 0 ? vistoCount + '/' + totalLetra : (vistoCount > 0 ? vistoCount + '/?' : '0/?');
         btn.innerHTML = '<span style="color:' + textColor + '">' + l + '</span>' +
-            '<span class="dlb-prog">' + vistoCount + '/' + totalLetra + '</span>' +
+            '<span class="dlb-prog">' + progText + '</span>' +
             (pct > 0 ? '<div class="dlb-bar" style="width:' + pct + '%;background:' + barColor + ';"></div>' : '');
         (function(ll, vis, tot){
             btn.onclick = function() { abrirSelectorLetraRAE(ll, vis, tot); };
@@ -22739,8 +22742,7 @@ function abrirSelectorLetraRAE(l, vistas, total) {
     var progreso = dicLeerProgreso('letra', l);
     var progresoIdx = progreso && progreso.idx > 0 ? progreso.idx : 0;
     vistas = Math.max(hitoVistas, progresoIdx);
-    // Usar el total real de dic_pos_letra si existe, si no el que viene del grid
-    total = (progreso && progreso.total > 0 ? progreso.total : null) || (typeof DIC_LETRA_TOTALES !== 'undefined' ? DIC_LETRA_TOTALES[l] : 0) || total || 0;
+    total = (typeof DIC_LETRA_TOTALES !== 'undefined' ? DIC_LETRA_TOTALES[l] : 0) || total || 0;
     var tieneProgreso = progreso && progreso.idx > 0 && progreso.idx < progreso.total;
     var dificilesDeLaLetra = dicGetDificiles().filter(function(w) {
         return w[0].toUpperCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'') === l;
