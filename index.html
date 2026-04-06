@@ -21801,6 +21801,7 @@ function goTo(id) {
     if (id === 'dashboard')    { if (typeof renderDashboard === 'function') renderDashboard(); }
     if (id === 'dic-selector') {
         dicActualizarStats(); dicActualizarDia();
+        dicRenderLetrasGrid();
         var ocKeys = Object.keys(localStorage);
         var ocCount = 0;
         for (var ki = 0; ki < ocKeys.length; ki++) {
@@ -22374,34 +22375,38 @@ var dicState = {
     letrasCache: {},  // cache de letras ya descargadas
 };
 
+function dicRenderLetrasGrid() {
+    var grid = document.getElementById('dic-letras-grid');
+    if (!grid) return;
+    grid.innerHTML = '';
+    DIC_LETRAS.forEach(function(l) {
+        var btn = document.createElement('button');
+        btn.className = 'dic-letra-btn';
+        var prog = dicLeerProgreso('letra', l);
+        var totalLetra = prog && prog.total > 0 ? prog.total : (typeof DIC_LETRA_TOTALES !== 'undefined' ? DIC_LETRA_TOTALES[l] : 0) || 0;
+        var vistas = parseInt(localStorage.getItem('dic_hito_letra_' + l) || '0');
+        var vistoCount = prog && prog.idx > vistas ? prog.idx : vistas;
+        var pct = totalLetra > 0 ? Math.min(100, Math.round(vistoCount / totalLetra * 100)) : 0;
+        var barColor = pct >= 80 ? 'var(--green)' : pct >= 40 ? 'var(--gold)' : 'var(--blue)';
+        var textColor = pct >= 80 ? 'var(--green)' : pct >= 40 ? 'var(--gold)' : 'var(--text)';
+        btn.style.borderColor = pct > 0 ? barColor : '';
+        btn.innerHTML = '<span style="color:' + textColor + '">' + l + '</span>' +
+            '<span class="dlb-prog">' + vistoCount + '/' + totalLetra + '</span>' +
+            (pct > 0 ? '<div class="dlb-bar" style="width:' + pct + '%;background:' + barColor + ';"></div>' : '');
+        (function(ll, vis, tot){
+            btn.onclick = function() { abrirSelectorLetraRAE(ll, vis, tot); };
+        })(l, vistoCount, totalLetra);
+        grid.appendChild(btn);
+    });
+}
+
 function mostrarFiltroLetra() {
     var panel = document.getElementById('dic-letras-panel');
     var campos = document.getElementById('dic-campos-panel');
     campos.style.display = 'none';
     panel.style.display = panel.style.display === 'none' ? 'block' : 'none';
     if (panel.style.display === 'block') {
-        var grid = document.getElementById('dic-letras-grid');
-        grid.innerHTML = '';
-        DIC_LETRAS.forEach(function(l) {
-                var btn = document.createElement('button');
-                btn.className = 'dic-letra-btn';
-                // Usar siempre dic_pos_letra_X para tener el total real (el que cargo la app)
-                var prog = dicLeerProgreso('letra', l);
-                var totalLetra = prog && prog.total > 0 ? prog.total : (typeof DIC_LETRA_TOTALES !== 'undefined' ? DIC_LETRA_TOTALES[l] : 0) || 0;
-                var vistas = parseInt(localStorage.getItem('dic_hito_letra_' + l) || '0');
-                var vistoCount = prog && prog.idx > vistas ? prog.idx : vistas;
-                var pct = totalLetra > 0 ? Math.min(100, Math.round(vistoCount / totalLetra * 100)) : 0;
-                var barColor = pct >= 80 ? 'var(--green)' : pct >= 40 ? 'var(--gold)' : 'var(--blue)';
-                var textColor = pct >= 80 ? 'var(--green)' : pct >= 40 ? 'var(--gold)' : 'var(--text)';
-                btn.style.borderColor = pct > 0 ? barColor : '';
-                btn.innerHTML = '<span style="color:' + textColor + '">' + l + '</span>' +
-                    '<span class="dlb-prog">' + vistoCount + '/' + totalLetra + '</span>' +
-                    (pct > 0 ? '<div class="dlb-bar" style="width:' + pct + '%;background:' + barColor + ';"></div>' : '');
-                (function(ll, vis, tot){
-                    btn.onclick = function() { abrirSelectorLetraRAE(ll, vis, tot); };
-                })(l, vistoCount, totalLetra);
-                grid.appendChild(btn);
-            });
+        dicRenderLetrasGrid();
         panel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
     }
 }
