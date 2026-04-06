@@ -24712,26 +24712,17 @@ function showRoscoQuestion() {
 
     const l = roscoOrder[roscoCurrentIdx];
     const d = roscoData[l];
+    if (!d || !d.q) { nextRosco(); return; }
 
-    // Clean rosco question: first sentence only, no spoilers, max 110 chars
+    // Clean rosco question
     function cleanRoscoQ(q, answer) {
+        if (!q) return '';
         var prefixMatch = q.match(/^(Con la [A-ZÑ]: |Contiene la [A-ZÑ]: )/i);
         var prefix = prefixMatch ? prefixMatch[0] : '';
         var def = prefixMatch ? q.slice(prefix.length) : q;
-        // Keep only first sentence (up to next capital after period)
-        var m = def.match(/^([^.]+\.)\s+[A-ZÀ-Ö]/);
-        if (m) def = m[1];
-        // Remove clauses containing the answer word
-        var ansNorm = answer.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'');
-        var parts = def.split(/,\s*/);
-        if (parts.length > 1) {
-            var filtered = parts.filter(function(p) {
-                return !p.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'').includes(ansNorm);
-            });
-            if (filtered.length > 0) def = filtered.join(', ');
-        }
+        // Si la definicion queda muy corta o vacía, devolver la pregunta original
+        if (!def || def.trim().length < 5) return q;
         if (!/[.!?]$/.test(def)) def += '.';
-        // Sin límite de longitud — se muestra la definición completa
         return prefix + def;
     }
     var cleanQ = cleanRoscoQ(d.q, d.a);
