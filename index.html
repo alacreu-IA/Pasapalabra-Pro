@@ -22385,9 +22385,9 @@ function dicRenderLetrasGrid() {
         var prog = dicLeerProgreso('letra', l);
         // Total real: solo el que guardo la app al cargar el JSON
         // Si no ha jugado esa letra aun, no hay total fiable — mostrar ?
-        var totalLetra = (typeof DIC_LETRA_TOTALES !== 'undefined' ? DIC_LETRA_TOTALES[l] : 0) || 0;
-        var vistas = parseInt(localStorage.getItem('dic_hito_letra_' + l) || '0');
-        var vistoCount = Math.min(totalLetra > 0 ? totalLetra : Infinity, prog && prog.idx > vistas ? prog.idx : vistas);
+        var totalLetra = (prog && prog.total > 0) ? prog.total : ((typeof DIC_LETRA_TOTALES !== 'undefined' ? DIC_LETRA_TOTALES[l] : 0) || 0);
+        var vistas = prog ? prog.idx : 0;
+        var vistoCount = vistas;
         var pct = totalLetra > 0 ? Math.min(100, Math.round(vistoCount / totalLetra * 100)) : 0;
         var barColor = pct >= 80 ? 'var(--green)' : pct >= 40 ? 'var(--gold)' : 'var(--blue)';
         var textColor = pct >= 80 ? 'var(--green)' : pct >= 40 ? 'var(--gold)' : 'var(--text)';
