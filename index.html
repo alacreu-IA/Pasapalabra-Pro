@@ -8088,7 +8088,7 @@ window.geoVecinosConfirm = function() {
     var confirmBtn = document.getElementById('geo-vecinos-confirm');
     if (confirmBtn) {
         confirmBtn.textContent = perfect ? '¡Perfecto! →' : 'Siguiente →';
-        confirmBtn.style.background = perfect ? 'var(--green)' : 'var(--gold)'; confirmBtn.style.color = '#000';
+        confirmBtn.style.background = 'var(--gold)'; confirmBtn.style.color = '#000';
         confirmBtn.onclick = function() { geoVecinosRound(); };
     }
 };
@@ -8220,7 +8220,7 @@ window.geoRiosConfirm = function() {
     var confirmBtn = document.getElementById('geo-rios-confirm');
     if (confirmBtn) {
         confirmBtn.textContent = perfect ? '¡Perfecto! →' : 'Siguiente →';
-        confirmBtn.style.background = perfect ? 'var(--green)' : 'var(--gold)'; confirmBtn.style.color = '#000';
+        confirmBtn.style.background = 'var(--gold)'; confirmBtn.style.color = '#000';
         confirmBtn.onclick = function() { geoRiosRound(); };
     }
 };
@@ -9266,7 +9266,7 @@ function geoMundFrontRound() {
             if (!ok) _fronterasFail[pais] = (_fronterasFail[pais]||0)+1;
             geoMundScore(id, ok, geoMundFrontState);
             var conf = document.getElementById(id+'-confirm');
-            if (conf) { conf.textContent = ok?'¡Perfecto! →':'Siguiente →'; conf.style.background=ok?'var(--green)':'var(--gold)'; conf.style.color='#000'; conf.onclick=function(){geoMundFrontRound();}; }
+            if (conf) { conf.textContent = ok?'¡Perfecto! →':'Siguiente →'; conf.style.background='var(--gold)'; conf.style.color='#000'; conf.onclick=function(){geoMundFrontRound();}; }
         });
 
     } else if (tipo === 'intruso') {
@@ -18156,16 +18156,16 @@ MAZOS.push({
     
 // ROSCO 12 - INFORMÁTICA Y TECNOLOGÍA (NIVEL GEEK)
 
-{q: "Con la G: Siglas del sistema de posicionamiento global mediante satélites que permite la navegación y geolocalización.", a: "GPS", letra: "G"},
+
 {q: "Con la H: Protocolo de transferencia que se utiliza para cargar páginas web en el navegador (siglas).", a: "HTTP", letra: "H"},
 
 {q: "Con la N: Red de ordenadores y dispositivos interconectados que comparten recursos y datos entre sí.", a: "nube", letra: "N"},
 
-{q: "Con la R: Memoria principal y volátil de un ordenador donde residen temporalmente los programas y datos en ejecución (siglas).", a: "RAM", letra: "R"},
+
 {q: "Con la S: Sistema en el que el proveedor ofrece servidores y servicios de computación a través de internet, en lugar de hardware propio.", a: "SaaS", letra: "S"},
 
 {q: "Con la V: Entorno de escenas o objetos simulados de apariencia real, creado por tecnología informática para gafas o cascos.", a: "virtual", letra: "V"},
-{q: "Contiene la X: Lenguaje de marcas utilizado en la web para estructurar y transferir datos, primo hermano del HTML, pero más estricto (siglas).", a: "XML", letra: "X"}, 
+ 
 
 // ROSCO 30 - REDES, INTERNET E INFORMÁTICA AVANZADA
     {q: "Conjunto ordenado de operaciones sistemáticas que permite hacer un cálculo y hallar una solución informática.", a: "algoritmo", letra: "A"},
@@ -20966,7 +20966,6 @@ window.iniciarDelitoHistorico = function() {
     {q: "Con la M: Dictador italiano, fundador del fascismo y aliado de Hitler en la Segunda Guerra Mundial.", a: "Mussolini", letra: "M"},
     {q: "Con la O: Movimiento político y económico de la Unión Soviética bajo Gorbachov, apertura y transparencia.", a: "Perestroika", letra: "P"},
     {q: "Con la S: Líder que encabezó la Revolución Cultural China y fundó la República Popular de China.", a: "Mao Zedong", letra: "M"},
-    {q: "Con la T: Tratado de 1648 que puso fin a la Guerra de los Treinta Años y estableció el sistema de estados europeos.", a: "Westfalia", letra: "W"},
     {q: "Con la U: Organización internacional fundada en 1945 para mantener la paz y seguridad mundial.", a: "Naciones Unidas", letra: "N"},
     {q: "Con la C: Proceso histórico iniciado en el siglo XV por el que Europa dominó otros continentes.", a: "Colonialismo", letra: "C"},
     {q: "Con la D: Primera bomba atómica probada por Estados Unidos en Nuevo México en julio de 1945.", a: "Trinidad", letra: "T"},
@@ -21010,7 +21009,6 @@ window.iniciarDelitoHistorico = function() {
     {q: "Con la Z: Canciller alemana que gobernó Alemania durante 16 años, conocida como la mujer más poderosa del mundo.", a: "Merkel", letra: "M"},
     {q: "Con la B: Presidente de Yugoslavia que lideró el país de forma no alineada durante la Guerra Fría.", a: "Tito", letra: "T"},
     {q: "Con la C: Presidente argentino que ordenó la rendición en la guerra de las Malvinas en 1982.", a: "Galtieri", letra: "G"},
-    {q: "Con la D: Político polaco y sindicalista fundador del movimiento Solidaridad, primer presidente democrático de Polonia.", a: "Walesa", letra: "W"},
     {q: "Con la F: Presidente de Francia que impulsó la integración europea y el euro.", a: "Mitterrand", letra: "M"},
     {q: "Con la H: Primer ministro británico que negoció el Brexit y tuvo que dimitir en 2019.", a: "May", letra: "M"},
     {q: "Con la I: Líder iraquí derrocado y ejecutado en 2006 tras la invasión estadounidense.", a: "Sadam Husein", letra: "S"}
@@ -22529,27 +22527,40 @@ function mostrarFiltroLetra() {
     if (panel.style.display === 'block') {
         var grid = document.getElementById('dic-letras-grid');
         grid.innerHTML = '';
-        DIC_LETRAS.forEach(function(l) {
-                var btn = document.createElement('button');
+
+        function _renderLetraBtn(l, totalLetra) {
+            var btn = grid.querySelector('[data-letra="' + l + '"]');
+            if (!btn) {
+                btn = document.createElement('button');
                 btn.className = 'dic-letra-btn';
-                // Get progress from saved session AND from hito counter
-                var prog = dicLeerProgreso('letra', l);
-                var totalLetra = (typeof DIC_LETRA_TOTALES !== 'undefined' ? DIC_LETRA_TOTALES[l] : 0) || (typeof TOTAL_POR_LETRA !== 'undefined' ? TOTAL_POR_LETRA[l] : 0) || 0;
-                var vistas = parseInt(localStorage.getItem('dic_hito_letra_' + l) || '0');
-                // Use the higher of: session progress or hito counter
-                var vistoCount = prog && prog.idx > vistas ? prog.idx : vistas;
-                var pct = totalLetra > 0 ? Math.min(100, Math.round(vistoCount / totalLetra * 100)) : 0;
-                var barColor = pct >= 80 ? 'var(--green)' : pct >= 40 ? 'var(--gold)' : 'var(--blue)';
-                var textColor = pct >= 80 ? 'var(--green)' : pct >= 40 ? 'var(--gold)' : 'var(--text)';
-                btn.style.borderColor = pct > 0 ? barColor : '';
-                btn.innerHTML = '<span style="color:' + textColor + '">' + l + '</span>' +
-                    '<span class="dlb-prog">' + vistoCount + '/' + totalLetra + '</span>' +
-                    (pct > 0 ? '<div class="dlb-bar" style="width:' + pct + '%;background:' + barColor + ';"></div>' : '');
-                (function(ll, vis, tot){
-                    btn.onclick = function() { abrirSelectorLetraRAE(ll, vis, tot); };
-                })(l, vistoCount, totalLetra);
+                btn.setAttribute('data-letra', l);
                 grid.appendChild(btn);
-            });
+            }
+            var prog = dicLeerProgreso('letra', l);
+            var vistas = parseInt(localStorage.getItem('dic_hito_letra_' + l) || '0');
+            var vistoCount = prog && prog.idx > vistas ? prog.idx : vistas;
+            var pct = totalLetra > 0 ? Math.min(100, Math.round(vistoCount / totalLetra * 100)) : 0;
+            var barColor = pct >= 80 ? 'var(--green)' : pct >= 40 ? 'var(--gold)' : 'var(--blue)';
+            var textColor = pct >= 80 ? 'var(--green)' : pct >= 40 ? 'var(--gold)' : 'var(--text)';
+            btn.style.borderColor = pct > 0 ? barColor : '';
+            btn.innerHTML = '<span style="color:' + textColor + '">' + l + '</span>' +
+                '<span class="dlb-prog">' + vistoCount + '/' + (totalLetra || '?') + '</span>' +
+                (pct > 0 ? '<div class="dlb-bar" style="width:' + pct + '%;background:' + barColor + ';"></div>' : '');
+            btn.onclick = (function(ll, tot){ return function() { abrirSelectorLetraRAE(ll, dicLeerProgreso('letra',ll) ? Math.max(parseInt(localStorage.getItem('dic_hito_letra_'+ll)||'0'), (dicLeerProgreso('letra',ll)||{}).idx||0) : parseInt(localStorage.getItem('dic_hito_letra_'+ll)||'0'), tot); }; })(l, totalLetra);
+        }
+
+        DIC_LETRAS.forEach(function(l) {
+            // Mostrar con total actual (puede ser hardcoded o ya actualizado)
+            var totalLetra = (typeof DIC_LETRA_TOTALES !== 'undefined' ? DIC_LETRA_TOTALES[l] : 0) || 0;
+            _renderLetraBtn(l, totalLetra);
+            // Si no está en caché, fetch en background para obtener total real
+            if (!dicState.letrasCache[l]) {
+                dicCargarLetra(l).then(function(data) {
+                    // DIC_LETRA_TOTALES ya se actualiza dentro de dicCargarLetra
+                    _renderLetraBtn(l, data.length);
+                }).catch(function() {});
+            }
+        });
         panel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
     }
 }
@@ -22790,6 +22801,10 @@ function dicOcultarPalabra() {
     // Invalidar caché de esa letra para que no vuelva a aparecer
     var l = p.w[0].toUpperCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'');
     if (dicState.letrasCache && dicState.letrasCache[l]) delete dicState.letrasCache[l];
+    // Reducir el total de esa letra en DIC_LETRA_TOTALES
+    if (typeof DIC_LETRA_TOTALES !== 'undefined' && DIC_LETRA_TOTALES[l] > 0) {
+        DIC_LETRA_TOTALES[l]--;
+    }
     showToast('🚫 "' + p.w + '" ocultada — no volverá a aparecer');
     dicState.palabras.splice(dicState.idx, 1);
     if (dicState.palabras.length === 0) { goTo('dic-selector'); return; }
@@ -23331,6 +23346,10 @@ async function dicCargarLetra(letra) {
         return true;
     });
     dicState.letrasCache[letra] = data;
+    // Actualizar el total real (post-filtro y post-ocultas) para que el grid muestre bien
+    if (typeof DIC_LETRA_TOTALES !== 'undefined') {
+        DIC_LETRA_TOTALES[letra] = data.length;
+    }
     return data;
 }
 
