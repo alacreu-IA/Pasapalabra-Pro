@@ -6818,11 +6818,9 @@ window.iniciarHistMatch = function(tipo) {
 function closeHistMatchGame() {
     var ma = document.getElementById('hist-match-inline');
     if (ma) ma.style.display = 'none';
-    var sa = document.getElementById('study-area');
-    if (sa) sa.style.display = 'flex';
-    // Si no hay study-area activa, cerrar view-smart-study
+    // Cerrar view-smart-study y volver al selector de Historia
     var vss = document.getElementById('view-smart-study');
-    if (vss && (!sa || sa.style.display === 'none')) vss.style.display = 'none';
+    if (vss) vss.style.display = 'none';
 }
 
 function getHistMatchData() {
@@ -7437,11 +7435,9 @@ window.iniciarHistMatch = function(tipo) {
 function closeHistMatchGame() {
     var ma = document.getElementById('hist-match-inline');
     if (ma) ma.style.display = 'none';
-    var sa = document.getElementById('study-area');
-    if (sa) sa.style.display = 'flex';
-    // Si no hay study-area activa, cerrar view-smart-study
+    // Cerrar view-smart-study y volver al selector de Historia
     var vss = document.getElementById('view-smart-study');
-    if (vss && (!sa || sa.style.display === 'none')) vss.style.display = 'none';
+    if (vss) vss.style.display = 'none';
 }
 
 function getHistMatchConfig() {
@@ -20526,10 +20522,8 @@ window.iniciarMatchAutorObra = function() {
 function closeAoMatchGame() {
     var ma = document.getElementById('ao-match-inline');
     if (ma) ma.style.display = 'none';
-    var sa = document.getElementById('study-area');
-    if (sa) sa.style.display = 'flex';
     var vss = document.getElementById('view-smart-study');
-    if (vss && (!sa || sa.style.display === 'none')) vss.style.display = 'none';
+    if (vss) vss.style.display = 'none';
 }
 
 function loadAoMatchRound() {
@@ -22539,6 +22533,8 @@ function mostrarFiltroLetra() {
             var prog = dicLeerProgreso('letra', l);
             var vistas = parseInt(localStorage.getItem('dic_hito_letra_' + l) || '0');
             var vistoCount = prog && prog.idx > vistas ? prog.idx : vistas;
+            // No mostrar más vistas que el total real
+            if (totalLetra > 0 && vistoCount > totalLetra) vistoCount = totalLetra;
             var pct = totalLetra > 0 ? Math.min(100, Math.round(vistoCount / totalLetra * 100)) : 0;
             var barColor = pct >= 80 ? 'var(--green)' : pct >= 40 ? 'var(--gold)' : 'var(--blue)';
             var textColor = pct >= 80 ? 'var(--green)' : pct >= 40 ? 'var(--gold)' : 'var(--text)';
@@ -25573,10 +25569,8 @@ function iniciarMatchCapitales() {
 function closeMaGame() {
     var ma = document.getElementById('ma-inline');
     if (ma) ma.style.display = 'none';
-    var sa = document.getElementById('study-area');
-    if (sa) sa.style.display = 'flex';
     var vss = document.getElementById('view-smart-study');
-    if (vss && (!sa || sa.style.display === 'none')) vss.style.display = 'none';
+    if (vss) vss.style.display = 'none';
 }
 
 function nextMaRound() {
