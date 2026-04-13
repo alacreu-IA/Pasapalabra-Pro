@@ -1596,7 +1596,7 @@ html, body {
         <div id="plan-hoy-container" style="margin:16px 0 8px;"></div>
 
         <!-- Banner Estudio Inteligente (contiene todos los mazos) -->
-        <div onclick="openStudySelector()" style="background:linear-gradient(135deg, var(--card2), var(--card)); border:1px solid var(--gold); padding:18px 20px; border-radius:16px; margin:8px 0 20px; cursor:pointer; box-shadow:0 4px 20px rgba(0,0,0,0.4); display:flex; justify-content:space-between; align-items:center;">
+        <div onclick="openStudySelector()" style="background:linear-gradient(135deg, var(--card2), var(--card)); border:1px solid var(--accent); padding:18px 20px; border-radius:16px; margin:8px 0 20px; cursor:pointer; box-shadow:0 4px 20px rgba(0,0,0,0.4); display:flex; justify-content:space-between; align-items:center;">
             <div style="display:flex; align-items:center; gap:14px;">
                 <div style="font-size:2rem;">🧠</div>
                 <div>
@@ -1604,16 +1604,16 @@ html, body {
                     <p style="color:var(--muted); font-size:0.82rem;">Todos los mazos · Algoritmo Leitner</p>
                 </div>
             </div>
-            <div style="font-size:1.6rem; color:var(--gold);">›</div>
+            <div style="font-size:1.6rem; color:var(--accent);">›</div>
         </div>
 
-        <!-- Banner Piropos Lingüísticos 2.0 -->
-        <div onclick="iniciarDelitoLinguistico()" style="background:linear-gradient(135deg, rgba(231,76,60,0.08), var(--card)); border:1px solid rgba(231,76,60,0.4); padding:18px 20px; border-radius:16px; margin-bottom:20px; cursor:pointer; box-shadow:0 4px 20px rgba(0,0,0,0.3); display:flex; justify-content:space-between; align-items:center;">
+        <!-- Banner Lo que dice la RAE de ti (Noemi) + Piropos (Andrea) -->
+        <div onclick="iniciarDelitoNoemi()" style="background:linear-gradient(135deg, rgba(153,102,255,0.12), var(--card)); border:1px solid rgba(153,102,255,0.5); padding:18px 20px; border-radius:16px; margin-bottom:10px; cursor:pointer; box-shadow:0 4px 20px rgba(0,0,0,0.3); display:flex; justify-content:space-between; align-items:center;">
             <div style="display:flex; align-items:center; gap:14px;">
-                <div style="font-size:2rem;">🔥</div>
+                <div style="font-size:2rem;">&#128218;</div>
                 <div>
-                    <h3 style="color:var(--text); margin-bottom:3px; font-size:1.15rem; font-weight:700;">Piropos Lingüísticos 2.0</h3>
-                    <p style="color:var(--muted); font-size:0.82rem;">Lo hacemos… y ya vemos</p>
+                    <h3 style="color:var(--text); margin-bottom:3px; font-size:1.15rem; font-weight:700;">Lo que dice la RAE de ti</h3>
+                    <p style="color:var(--muted); font-size:0.82rem;">La RAE sab&#237;a que llegar&#237;as</p>
                 </div>
             </div>
             <div style="font-size:1.6rem; color:var(--muted);">›</div>
@@ -6820,6 +6820,9 @@ function closeHistMatchGame() {
     if (ma) ma.style.display = 'none';
     var sa = document.getElementById('study-area');
     if (sa) sa.style.display = 'flex';
+    // Si no hay study-area activa, cerrar view-smart-study
+    var vss = document.getElementById('view-smart-study');
+    if (vss && (!sa || sa.style.display === 'none')) vss.style.display = 'none';
 }
 
 function getHistMatchData() {
@@ -6957,7 +6960,7 @@ window.abrirSelectorHist = function() {
             '</div>' +
         '</div>' +
         '<div style="padding:20px; display:flex; flex-direction:column; gap:12px;">' +
-            '<div class="deck-item" onclick="document.getElementById(\'hist-selector\').remove(); startSmartStudyAll(\'hist\');" style="border-color:var(--gold); background:linear-gradient(135deg, rgba(255,255,255,0.05), transparent);">' +
+            '<div class="deck-item" onclick="document.getElementById(\'hist-selector\').remove(); startSmartStudyAll(\'hist\');" style="border-color:var(--accent); background:linear-gradient(135deg, rgba(255,255,255,0.05), transparent);">' +
                 '<div class="deck-icon">🎲</div>' +
                 '<div class="deck-info">' +
                     '<h4>Aleatorio</h4>' +
@@ -7245,6 +7248,49 @@ window.abrirSelectorTeatro = function() {
     });
 };
 
+window.abrirSelectorLitUni = function() {
+    var mazo = MAZOS.find(function(m) { return m.id === 'lit_uni'; });
+    var totalQ = mazo ? mazo.questions.length : 0;
+    var html = '<div id="lit-uni-selector" style="position:fixed;top:0;left:0;right:0;bottom:0;background:var(--bg);z-index:99999;display:flex;flex-direction:column;overflow-y:auto;">' +
+        '<div style="padding:15px 20px;display:flex;align-items:center;gap:15px;border-bottom:1px solid var(--border);">' +
+            '<button id="lit-uni-sel-back" style="background:none;border:none;color:var(--text);font-size:1.5rem;cursor:pointer;">&#8592;</button>' +
+            '<div><h2 style="color:var(--text);font-size:1.3rem;margin:0;">&#128218; Literatura Universal</h2>' +
+            '<p style="color:var(--muted);font-size:0.8rem;margin:4px 0 0 0;">' + totalQ + ' preguntas + 1 minijuego</p></div>' +
+        '</div>' +
+        '<div style="padding:20px;display:flex;flex-direction:column;gap:12px;">' +
+            '<div class="deck-item" id="lit-uni-rosco-btn" style="border-color:var(--accent);background:linear-gradient(135deg,rgba(255,255,255,0.05),transparent);">' +
+                '<div class="deck-icon">&#127922;</div>' +
+                '<div class="deck-info"><h4>Preguntas de rosco</h4>' +
+                '<span style="font-size:0.72rem;color:var(--muted);font-style:italic;display:block;margin-top:2px;">Autores, obras, Nobeles y m&#225;s</span>' +
+                '<p style="font-size:0.72rem;color:var(--muted);margin-top:4px;">' + totalQ + ' preguntas</p></div>' +
+                '<div class="deck-arrow">&#8250;</div>' +
+            '</div>' +
+            '<div style="border-top:1px solid var(--border);margin:10px 0;position:relative;">' +
+                '<span style="position:absolute;top:-10px;left:50%;transform:translateX(-50%);background:var(--bg);padding:0 10px;color:var(--muted);font-size:0.75rem;">minijuego</span>' +
+            '</div>' +
+            '<div class="deck-item" id="lit-uni-match-btn" style="border-color:#e056fd;background:linear-gradient(135deg,rgba(224,86,253,0.1),transparent);">' +
+                '<div class="deck-icon">&#128279;</div>' +
+                '<div class="deck-info"><h4>Emparejar Autor &#8596; Obra</h4>' +
+                '<span style="font-size:0.72rem;color:var(--muted);font-style:italic;display:block;margin-top:2px;">&#191;Qui&#233;n escribi&#243; qu&#233;? Dem&#250;estralo</span>' +
+                '<p style="font-size:0.72rem;color:var(--muted);margin-top:4px;">80 pares de autor y obra</p></div>' +
+                '<div class="deck-arrow">&#8250;</div>' +
+            '</div>' +
+        '</div>' +
+    '</div>';
+    document.body.insertAdjacentHTML('beforeend', html);
+    document.getElementById('lit-uni-sel-back').addEventListener('click', function() {
+        var el = document.getElementById('lit-uni-selector'); if(el) el.remove();
+    });
+    document.getElementById('lit-uni-rosco-btn').addEventListener('click', function() {
+        var el = document.getElementById('lit-uni-selector'); if(el) el.remove();
+        startSmartStudy('lit_uni');
+    });
+    document.getElementById('lit-uni-match-btn').addEventListener('click', function() {
+        var el = document.getElementById('lit-uni-selector'); if(el) el.remove();
+        if (typeof iniciarMatchAutorObraUniversal === 'function') iniciarMatchAutorObraUniversal();
+    });
+};
+
 window.abrirSelectorCapitales = function() {
     var mazo = MAZOS.find(function(m) { return m.id === 'capitales'; });
     var totalQ = mazo ? mazo.questions.length : 0;
@@ -7255,7 +7301,7 @@ window.abrirSelectorCapitales = function() {
             '<p style="color:var(--muted);font-size:0.8rem;margin:4px 0 0 0;">' + totalQ + ' preguntas + 1 minijuego</p></div>' +
         '</div>' +
         '<div style="padding:20px;display:flex;flex-direction:column;gap:12px;">' +
-            '<div class="deck-item" id="cap-rosco-btn" style="border-color:var(--gold);background:linear-gradient(135deg,rgba(255,255,255,0.05),transparent);">' +
+            '<div class="deck-item" id="cap-rosco-btn" style="border-color:var(--accent);background:linear-gradient(135deg,rgba(255,255,255,0.05),transparent);">' +
                 '<div class="deck-icon">🎲</div>' +
                 '<div class="deck-info"><h4>Preguntas de rosco</h4>' +
                 '<span style="font-size:0.72rem;color:var(--muted);font-style:italic;display:block;margin-top:2px;">Todas las preguntas mezcladas</span>' +
@@ -7265,7 +7311,7 @@ window.abrirSelectorCapitales = function() {
             '<div style="border-top:1px solid var(--border);margin:10px 0;position:relative;">' +
                 '<span style="position:absolute;top:-10px;left:50%;transform:translateX(-50%);background:var(--bg);padding:0 10px;color:var(--muted);font-size:0.75rem;">minijuego</span>' +
             '</div>' +
-            '<div class="deck-item" id="cap-match-btn" style="border-color:var(--gold);">' +
+            '<div class="deck-item" id="cap-match-btn" style="border-color:var(--accent);">' +
                 '<div class="deck-icon">🌍</div>' +
                 '<div class="deck-info"><h4>Emparejar Capitales</h4>' +
                 '<span style="font-size:0.72rem;color:var(--muted);font-style:italic;display:block;margin-top:2px;">Une cada país con su capital</span>' +
@@ -7393,6 +7439,9 @@ function closeHistMatchGame() {
     if (ma) ma.style.display = 'none';
     var sa = document.getElementById('study-area');
     if (sa) sa.style.display = 'flex';
+    // Si no hay study-area activa, cerrar view-smart-study
+    var vss = document.getElementById('view-smart-study');
+    if (vss && (!sa || sa.style.display === 'none')) vss.style.display = 'none';
 }
 
 function getHistMatchConfig() {
@@ -7502,11 +7551,10 @@ function selectHistMatch(btn, tipo, valor) {
     } else {
         histMatchFail++;
         document.getElementById('hist-match-fail').innerHTML = '✗ ' + histMatchFail;
-        var b1 = btn; var b2 = histMatchSelected.btn;
-        setTimeout(function() {
-            b1.style.borderColor = 'var(--border)'; b1.style.background = ''; b1.style.transform = '';
-            b2.style.borderColor = 'var(--border)'; b2.style.background = ''; b2.style.transform = '';
-        }, 800);
+        btn.disabled = true; histMatchSelected.btn.disabled = true;
+        btn.style.transform = ''; histMatchSelected.btn.style.transform = '';
+        histMatchSolved++;
+        if (histMatchSolved === 6) setTimeout(showHistMatchRoundResult, 600);
     }
     histMatchSelected = null;
 }
@@ -7831,7 +7879,7 @@ window.iniciarGeoIntruso = function() {
                 '<span id="geo-intruso-round" style="color:var(--muted);font-size:0.8rem;">Ronda 0/10</span>' +
             '</div></div>' +
         '</div>' +
-        '<div id="geo-intruso-content" style="flex:1;overflow-y:auto;padding:24px 16px;display:flex;flex-direction:column;gap:20px;align-items:center;justify-content:flex-start;"></div>' +
+        '<div id="geo-intruso-content" style="flex:1;overflow-y:auto;padding:24px 16px;display:flex;flex-direction:column;gap:20px;align-items:center;justify-content:center;"></div>' +
     '</div>';
     document.body.insertAdjacentHTML('beforeend', html);
     geoIntrusoRound();
@@ -7902,7 +7950,7 @@ window.geoIntrusoCheck = function(opt) {
     content.appendChild(fb);
     var nextBtn = document.createElement('button');
     nextBtn.textContent = 'Siguiente →';
-    nextBtn.style.cssText = 'background:var(--gold);color:#000;border:none;border-radius:12px;padding:10px 24px;font-weight:700;cursor:pointer;font-size:0.9rem;margin-top:8px;width:100%;display:block;';
+    nextBtn.style.cssText = 'background:var(--gold);color:#000;border:none;border-radius:14px;padding:14px 24px;font-weight:800;cursor:pointer;font-size:0.95rem;margin-top:8px;width:100%;display:block;';
     nextBtn.onclick = function(){ geoIntrusoRound(); };
     content.appendChild(nextBtn);
 };
@@ -8040,7 +8088,7 @@ window.geoVecinosConfirm = function() {
     var confirmBtn = document.getElementById('geo-vecinos-confirm');
     if (confirmBtn) {
         confirmBtn.textContent = perfect ? '¡Perfecto! →' : 'Siguiente →';
-        confirmBtn.style.background = perfect ? 'var(--green)' : 'var(--muted)';
+        confirmBtn.style.background = perfect ? 'var(--green)' : 'var(--gold)'; confirmBtn.style.color = '#000';
         confirmBtn.onclick = function() { geoVecinosRound(); };
     }
 };
@@ -8172,7 +8220,7 @@ window.geoRiosConfirm = function() {
     var confirmBtn = document.getElementById('geo-rios-confirm');
     if (confirmBtn) {
         confirmBtn.textContent = perfect ? '¡Perfecto! →' : 'Siguiente →';
-        confirmBtn.style.background = perfect ? 'var(--green)' : 'var(--muted)';
+        confirmBtn.style.background = perfect ? 'var(--green)' : 'var(--gold)'; confirmBtn.style.color = '#000';
         confirmBtn.onclick = function() { geoRiosRound(); };
     }
 };
@@ -8220,7 +8268,7 @@ window.iniciarGeoRiosAv = function() {
                 '<span id="geo-riosav-round" style="color:var(--muted);font-size:0.8rem;">Ronda 0/10</span>' +
             '</div></div>' +
         '</div>' +
-        '<div id="geo-riosav-content" style="flex:1;overflow-y:auto;padding:20px 16px;display:flex;flex-direction:column;gap:16px;align-items:center;justify-content:flex-start;"></div>' +
+        '<div id="geo-riosav-content" style="flex:1;overflow-y:auto;padding:20px 16px;display:flex;flex-direction:column;gap:16px;align-items:center;justify-content:center;"></div>' +
     '</div>';
     document.body.insertAdjacentHTML('beforeend', html);
     geoRiosAvRound();
@@ -8391,10 +8439,9 @@ window.geoRiosAvAnswer = function(chosen) {
     if (_nbrv) {
         var _btrv = document.createElement('button');
         _btrv.textContent = 'Siguiente →';
-        _btrv.style.cssText = 'background:var(--gold);color:#000;border:none;border-radius:12px;padding:10px 24px;font-weight:700;cursor:pointer;font-size:0.9rem;margin-top:8px;display:block;width:100%;';
+        _btrv.style.cssText = 'background:var(--gold);color:#000;border:none;border-radius:12px;padding:14px 24px;font-weight:800;cursor:pointer;font-size:0.95rem;margin-top:8px;display:block;width:100%;';
         _btrv.onclick = function(){ geoRiosAvRound(); };
         _nbrv.appendChild(_btrv);
-        _btrv.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
     }
 };
 
@@ -8509,7 +8556,7 @@ function geoMontGameHtml(id, title) {
                 '<span id="' + id + '-round" style="color:var(--muted);font-size:0.8rem;">Ronda 0/10</span>' +
             '</div></div>' +
         '</div>' +
-        '<div id="' + id + '-content" style="flex:1;overflow-y:auto;padding:20px 16px;display:flex;flex-direction:column;gap:12px;align-items:center;justify-content:flex-start;"></div>' +
+        '<div id="' + id + '-content" style="flex:1;overflow-y:auto;padding:20px 16px;display:flex;flex-direction:column;gap:12px;align-items:center;justify-content:center;"></div>' +
     '</div>';
     document.body.insertAdjacentHTML('beforeend', html);
     var backBtn = document.getElementById(id + '-back');
@@ -8673,7 +8720,7 @@ function geoMontAltOrdenClick(btn) {
         });
         if (hint) hint.textContent = ok ? '✅ ¡Perfecto!' : '❌ Orden correcto arriba';
         geoMontScoreUpdate(ok, 'geo-mont-alt');
-        var _nb2=document.createElement('button');_nb2.textContent='Siguiente →';_nb2.style.cssText='background:var(--gold);color:#000;border:none;border-radius:12px;padding:10px 24px;font-weight:700;cursor:pointer;font-size:0.9rem;margin-top:8px;display:block;';_nb2.onclick=function(){geoMontAltRound();};var _mc2=document.getElementById('geo-mont-content');if(_mc2)_mc2.appendChild(_nb2);
+        var _nb2=document.createElement('button');_nb2.textContent='Siguiente →';_nb2.style.cssText='background:var(--gold);color:#000;border:none;border-radius:12px;padding:14px 24px;font-weight:800;cursor:pointer;font-size:0.95rem;margin-top:8px;display:block;';_nb2.onclick=function(){geoMontAltRound();};var _mc2=document.getElementById('geo-mont-content');if(_mc2)_mc2.appendChild(_nb2);
     }
 }
 
@@ -8681,7 +8728,7 @@ function geoMontAltAnswer(chosen) {
     var ok = chosen === geoMontState.correct;
     geoMontMarkAnswer(chosen, geoMontState.correct, geoMontState.revealPicos);
     geoMontScoreUpdate(ok, 'geo-mont-alt');
-    var _nb=document.createElement('button');_nb.textContent='Siguiente →';_nb.style.cssText='background:var(--gold);color:#000;border:none;border-radius:12px;padding:10px 24px;font-weight:700;cursor:pointer;font-size:0.9rem;margin-top:8px;display:block;';_nb.onclick=function(){geoMontAltRound();};var _mc1=document.getElementById('geo-mont-content');if(_mc1)_mc1.appendChild(_nb);
+    var _nb=document.createElement('button');_nb.textContent='Siguiente →';_nb.style.cssText='background:var(--gold);color:#000;border:none;border-radius:12px;padding:14px 24px;font-weight:800;cursor:pointer;font-size:0.95rem;margin-top:8px;display:block;';_nb.onclick=function(){geoMontAltRound();};var _mc1=document.getElementById('geo-mont-content');if(_mc1)_mc1.appendChild(_nb);
 }
 
 // --- SUBMODE B: GEOGRAFÍA ---
@@ -8815,7 +8862,7 @@ function geoMontGeoOrdenClick(btn) {
         });
         if (hint) hint.textContent = ok ? '✅ ¡Perfecto!' : '❌ Orden correcto arriba';
         geoMontScoreUpdate(ok, 'geo-mont-geo');
-        var _nb4=document.createElement('button');_nb4.textContent='Siguiente →';_nb4.style.cssText='background:var(--gold);color:#000;border:none;border-radius:12px;padding:10px 24px;font-weight:700;cursor:pointer;font-size:0.9rem;margin-top:8px;display:block;';_nb4.onclick=function(){geoMontGeoRound();};var _mc4=document.getElementById('geo-mont-content');if(_mc4)_mc4.appendChild(_nb4);
+        var _nb4=document.createElement('button');_nb4.textContent='Siguiente →';_nb4.style.cssText='background:var(--gold);color:#000;border:none;border-radius:12px;padding:14px 24px;font-weight:800;cursor:pointer;font-size:0.95rem;margin-top:8px;display:block;';_nb4.onclick=function(){geoMontGeoRound();};var _mc4=document.getElementById('geo-mont-content');if(_mc4)_mc4.appendChild(_nb4);
     }
 }
 
@@ -8823,7 +8870,7 @@ function geoMontGeoAnswer(chosen) {
     var ok = chosen === geoMontState.correct;
     geoMontMarkAnswer(chosen, geoMontState.correct, null);
     geoMontScoreUpdate(ok, 'geo-mont-geo');
-    var _nb3=document.createElement('button');_nb3.textContent='Siguiente →';_nb3.style.cssText='background:var(--gold);color:#000;border:none;border-radius:12px;padding:10px 24px;font-weight:700;cursor:pointer;font-size:0.9rem;margin-top:8px;display:block;';_nb3.onclick=function(){geoMontGeoRound();};var _mc3=document.getElementById('geo-mont-content');if(_mc3)_mc3.appendChild(_nb3);
+    var _nb3=document.createElement('button');_nb3.textContent='Siguiente →';_nb3.style.cssText='background:var(--gold);color:#000;border:none;border-radius:12px;padding:14px 24px;font-weight:800;cursor:pointer;font-size:0.95rem;margin-top:8px;display:block;';_nb3.onclick=function(){geoMontGeoRound();};var _mc3=document.getElementById('geo-mont-content');if(_mc3)_mc3.appendChild(_nb3);
 }
 </script>
 <script>
@@ -8851,7 +8898,7 @@ function geoMundGameHtml(id, title) {
                 '<span id="'+id+'-round" style="color:var(--muted);font-size:0.8rem;">0/10</span>' +
             '</div></div>' +
         '</div>' +
-        '<div id="'+id+'-content" style="flex:1;overflow-y:auto;padding:20px 16px;display:flex;flex-direction:column;gap:12px;align-items:center;justify-content:flex-start;"></div>' +
+        '<div id="'+id+'-content" style="flex:1;overflow-y:auto;padding:20px 16px;display:flex;flex-direction:column;gap:12px;align-items:center;justify-content:center;"></div>' +
     '</div>';
     document.body.insertAdjacentHTML('beforeend', html);
     var backBtn = document.getElementById(id+'-back');
@@ -9219,7 +9266,7 @@ function geoMundFrontRound() {
             if (!ok) _fronterasFail[pais] = (_fronterasFail[pais]||0)+1;
             geoMundScore(id, ok, geoMundFrontState);
             var conf = document.getElementById(id+'-confirm');
-            if (conf) { conf.textContent = ok?'¡Perfecto! →':'Siguiente →'; conf.style.background=ok?'var(--green)':'var(--muted)'; conf.onclick=function(){geoMundFrontRound();}; }
+            if (conf) { conf.textContent = ok?'¡Perfecto! →':'Siguiente →'; conf.style.background=ok?'var(--green)':'var(--gold)'; conf.style.color='#000'; conf.onclick=function(){geoMundFrontRound();}; }
         });
 
     } else if (tipo === 'intruso') {
@@ -9271,7 +9318,7 @@ function montMundGameHtml(id, title) {
                 '<span id="'+id+'-round" style="color:var(--muted);font-size:0.8rem;">0/10</span>' +
             '</div></div>' +
         '</div>' +
-        '<div id="'+id+'-content" style="flex:1;overflow-y:auto;padding:20px 16px;display:flex;flex-direction:column;gap:12px;align-items:center;justify-content:flex-start;"></div>' +
+        '<div id="'+id+'-content" style="flex:1;overflow-y:auto;padding:20px 16px;display:flex;flex-direction:column;gap:12px;align-items:center;justify-content:center;"></div>' +
     '</div>';
     document.body.insertAdjacentHTML('beforeend', html);
     document.getElementById(id+'-back').addEventListener('click', function() { montMundClose(id); });
@@ -9492,7 +9539,7 @@ function montMundTrainRound() {
             var ok = chosen === montMundTrainState.correct;
             montMundMarkAnswer(id, chosen, montMundTrainState.correct, montMundTrainState.revealH);
             montMundScore(id, ok, montMundTrainState);
-            var _nb_mt=document.createElement('button');_nb_mt.textContent='Siguiente →';_nb_mt.style.cssText='background:var(--gold);color:#000;border:none;border-radius:12px;padding:10px 24px;font-weight:700;cursor:pointer;font-size:0.9rem;margin-top:8px;display:block;width:100%;';_nb_mt.onclick=function(){montMundTrainRound();};var _cc_mt=document.getElementById(id+'-content');if(_cc_mt)_cc_mt.appendChild(_nb_mt);
+            var _nb_mt=document.createElement('button');_nb_mt.textContent='Siguiente →';_nb_mt.style.cssText='background:var(--gold);color:#000;border:none;border-radius:12px;padding:14px 24px;font-weight:800;cursor:pointer;font-size:0.95rem;margin-top:8px;display:block;width:100%;';_nb_mt.onclick=function(){montMundTrainRound();};var _cc_mt=document.getElementById(id+'-content');if(_cc_mt)_cc_mt.appendChild(_nb_mt);
         });
     });
 }
@@ -9521,7 +9568,7 @@ function montMundTrainOrdenClick(btn, id) {
         });
         if (hint) hint.textContent = ok?'✅ ¡Perfecto!':'❌ Orden correcto arriba';
         montMundScore(id, ok, montMundTrainState);
-        var _nb_mto=document.createElement('button');_nb_mto.textContent='Siguiente →';_nb_mto.style.cssText='background:var(--gold);color:#000;border:none;border-radius:12px;padding:10px 24px;font-weight:700;cursor:pointer;font-size:0.9rem;margin-top:8px;display:block;width:100%;';_nb_mto.onclick=function(){montMundTrainRound();};var _cc_mto=document.getElementById(id+'-content');if(_cc_mto)_cc_mto.appendChild(_nb_mto);
+        var _nb_mto=document.createElement('button');_nb_mto.textContent='Siguiente →';_nb_mto.style.cssText='background:var(--gold);color:#000;border:none;border-radius:12px;padding:14px 24px;font-weight:800;cursor:pointer;font-size:0.95rem;margin-top:8px;display:block;width:100%;';_nb_mto.onclick=function(){montMundTrainRound();};var _cc_mto=document.getElementById(id+'-content');if(_cc_mto)_cc_mto.appendChild(_nb_mto);
     }
 }
 
@@ -9584,7 +9631,7 @@ function montMundAltRound() {
             var ok = chosen === montMundAltState.correct;
             montMundMarkAnswer(id, chosen, montMundAltState.correct, true);
             montMundScore(id, ok, montMundAltState);
-            var _nb_ma=document.createElement('button');_nb_ma.textContent='Siguiente →';_nb_ma.style.cssText='background:var(--gold);color:#000;border:none;border-radius:12px;padding:10px 24px;font-weight:700;cursor:pointer;font-size:0.9rem;margin-top:8px;display:block;width:100%;';_nb_ma.onclick=function(){montMundAltRound();};var _cc_ma=document.getElementById('mont-mund-alt-content');if(_cc_ma)_cc_ma.appendChild(_nb_ma);
+            var _nb_ma=document.createElement('button');_nb_ma.textContent='Siguiente →';_nb_ma.style.cssText='background:var(--gold);color:#000;border:none;border-radius:12px;padding:14px 24px;font-weight:800;cursor:pointer;font-size:0.95rem;margin-top:8px;display:block;width:100%;';_nb_ma.onclick=function(){montMundAltRound();};var _cc_ma=document.getElementById('mont-mund-alt-content');if(_cc_ma)_cc_ma.appendChild(_nb_ma);
         });
     });
 }
@@ -9613,7 +9660,7 @@ function montMundAltOrdenClick(btn, id) {
         });
         if (hint) hint.textContent = ok?'✅ ¡Perfecto!':'❌ Orden correcto arriba';
         montMundScore(id, ok, montMundAltState);
-        var _nb_ma2=document.createElement('button');_nb_ma2.textContent='Siguiente →';_nb_ma2.style.cssText='background:var(--gold);color:#000;border:none;border-radius:12px;padding:10px 24px;font-weight:700;cursor:pointer;font-size:0.9rem;margin-top:8px;display:block;width:100%;';_nb_ma2.onclick=function(){montMundAltRound();};var _cc_ma2=document.getElementById('mont-mund-alt-content');if(_cc_ma2)_cc_ma2.appendChild(_nb_ma2);
+        var _nb_ma2=document.createElement('button');_nb_ma2.textContent='Siguiente →';_nb_ma2.style.cssText='background:var(--gold);color:#000;border:none;border-radius:12px;padding:14px 24px;font-weight:800;cursor:pointer;font-size:0.95rem;margin-top:8px;display:block;width:100%;';_nb_ma2.onclick=function(){montMundAltRound();};var _cc_ma2=document.getElementById('mont-mund-alt-content');if(_cc_ma2)_cc_ma2.appendChild(_nb_ma2);
     }
 }
 </script>
@@ -20185,7 +20232,7 @@ window.abrirSelectorLitEsp = function() {
             <div style="padding:20px; display:flex; flex-direction:column; gap:12px;">
                 
                 <!-- Aleatorio (el original) -->
-                <div class="deck-item" onclick="document.getElementById('lit-esp-selector').remove(); startSmartStudyAll('lit_esp');" style="border-color:var(--gold); background:linear-gradient(135deg, rgba(255,255,255,0.05), transparent);">
+                <div class="deck-item" onclick="document.getElementById('lit-esp-selector').remove(); startSmartStudyAll('lit_esp');" style="border-color:var(--accent); background:linear-gradient(135deg, rgba(255,255,255,0.05), transparent);">
                     <div class="deck-icon">🎲</div>
                     <div class="deck-info">
                         <h4>Aleatorio</h4>
@@ -20481,6 +20528,8 @@ function closeAoMatchGame() {
     if (ma) ma.style.display = 'none';
     var sa = document.getElementById('study-area');
     if (sa) sa.style.display = 'flex';
+    var vss = document.getElementById('view-smart-study');
+    if (vss && (!sa || sa.style.display === 'none')) vss.style.display = 'none';
 }
 
 function loadAoMatchRound() {
@@ -20573,11 +20622,10 @@ function selectAoMatch(btn, tipo, valor) {
     } else {
         aoMatchFail++;
         document.getElementById('ao-match-fail').innerHTML = '✗ ' + aoMatchFail;
-        var b1 = btn; var b2 = aoMatchSelected.btn;
-        setTimeout(function() {
-            b1.style.borderColor = 'var(--border)'; b1.style.background = '';  b1.style.transform = '';
-            b2.style.borderColor = 'var(--border)'; b2.style.background = '';  b2.style.transform = '';
-        }, 800);
+        btn.disabled = true; aoMatchSelected.btn.disabled = true;
+        btn.style.transform = ''; aoMatchSelected.btn.style.transform = '';
+        aoMatchSolved++;
+        if (aoMatchSolved === 6) setTimeout(showAoMatchRoundResult, 600);
     }
     aoMatchSelected = null;
 }
@@ -20605,6 +20653,101 @@ function showAoMatchRoundResult() {
 <!-- ================================================================ -->
 <script>
 // Palabras del archivo histórico (entrega anterior)
+var DELITO_NOEMI = {
+  id: 'noemi',
+  name: 'Lo que dice la RAE de ti',
+  aviso: 'Un momento.\n\nAntes de continuar, la RAE quiere decirte algo.\n\nEres enfermera de UCI.\nEres madre.\nEstudias vocabulario a las 11 de la noche.\nY encima quieres ganar el bote.\n\nLa RAE lleva 300 anos buscando a alguien como tu.\n\nBienvenida al diccionario, Noemi.\nYa era hora.',
+  palabras: [
+    { palabra: 'aureo', significado: 'de oro, brillante y excelso', comentario: 'AUREO. Tu nivel no es de plata ni de bronce. Es aureo. Siempre lo fue.', ejemplo: 'Noemi, lo que est&#225;s construyendo aqu&#237; tiene un valor aureo. Y lo sabe hasta la RAE.' },
+    { palabra: 'nimbada', significado: 'rodeada de luz sagrada', comentario: 'NIMBADA. Hay personas que entran a una UCI y se nota que algo cambia. Eso tiene nombre: nimbada.', ejemplo: 'Noemi, entras a cualquier sala y el ambiente cambia. Eso es estar nimbada. No hay otra explicaci&#243;n.' },
+    { palabra: 'adamantina', significado: 'dura e indestructible como el diamante', comentario: 'ADAMANTINA. Guardia de doce horas y luego estudia vocabulario. Adamantina no es suficiente pero es lo que hay.', ejemplo: 'Noemi, tienes una voluntad adamantina. El diamante te envidia.' },
+    { palabra: 'conspicua', significado: 'visible, ilustre, sobresaliente', comentario: 'CONSPICUA. En cualquier sala que entres se nota qui&#233;n es la m&#225;s preparada. Eso es ser conspicua. Eso eres t&#250;.', ejemplo: 'Noemi, eres conspicua en el mejor sentido posible: donde apareces, destacas.' },
+    { palabra: 'radiante', significado: 'que emite resplandor propio', comentario: 'RADIANTE. No necesita foco. No necesita presentaci&#243;n. Noemi entra y ya est&#225; todo iluminado.', ejemplo: 'Noemi, radiante. No como adjetivo. Como hecho cient&#237;fico.' },
+    { palabra: 'portentosa', significado: 'que causa asombro y admiraci&#243;n', comentario: 'PORTENTOSA. La RAE reserva esta palabra para fen&#243;menos extraordinarios. Bienvenida al diccionario, Noemi.', ejemplo: 'Noemi, tu capacidad para estudiar en las condiciones que estudias es, objetivamente, portentosa.' },
+    { palabra: 'inclita', significado: 'ilustre, c&#233;lebre, renombrada', comentario: 'INCLITA. Todav&#237;a no ha salido en Pasapalabra. Pero ya es &#237;nclita. Cuando salga, lo ser&#225; a&#250;n m&#225;s.', ejemplo: 'Noemi, en el futuro inmediato ser&#225;s la m&#225;s &#237;nclita concursante de la historia del bote.' },
+    { palabra: 'fastuosa', significado: 'de gran lujo y magnificencia', comentario: 'FASTUOSA. No es lo que lleva. Es c&#243;mo lo lleva. Fastuosa es exactamente la palabra.', ejemplo: 'Noemi, lo tuyo es fastuoso. La combinaci&#243;n de UCI + filolog&#237;a + Pasapalabra no existe en ning&#250;n otro ser humano.' },
+    { palabra: 'alabastrina', significado: 'blanca y pura como el alabastro', comentario: 'ALABASTRINA. La RAE tiene palabras para todo. Para Noemi tiene esta. No es casualidad.', ejemplo: 'Noemi, tu determinaci&#243;n tiene algo de alabastrino: puro, s&#243;lido, sin fisuras.' },
+    { palabra: 'reverenda', significado: 'digna de veneraci&#243;n y respeto', comentario: 'REVERENDA. Enfermera de UCI, madre, estudiante de Pasapalabra. Si eso no es reverenda, que venga la RAE y lo explique.', ejemplo: 'Noemi, eres reverenda. En el sentido m&#225;s literal y m&#225;s enorme de la palabra.' }
+  ]
+};
+
+window.iniciarDelitoNoemi = function() {
+  var avisoHtml = '<div style="position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,0.92);z-index:99999;display:flex;align-items:center;justify-content:center;padding:20px;">' +
+    '<div style="background:var(--card);border-radius:20px;padding:30px;max-width:400px;width:100%;text-align:center;border:2px solid #9966ff;">' +
+      '<div style="font-size:3rem;margin-bottom:15px;">&#128218;</div>' +
+      '<h2 style="color:#9966ff;margin-bottom:20px;font-family:Playfair Display,serif;">Lo que dice la RAE de ti</h2>' +
+      '<p style="white-space:pre-line;color:var(--text);line-height:1.7;margin-bottom:25px;font-size:0.95rem;">' + DELITO_NOEMI.aviso + '</p>' +
+      '<button id="dn-start" style="background:#9966ff;color:#fff;border:none;padding:15px 40px;border-radius:30px;font-size:1.1rem;font-weight:700;cursor:pointer;display:block;width:100%;margin-bottom:12px;">&#10024; Empieza</button>' +
+    '</div>' +
+  '</div>';
+  document.body.insertAdjacentHTML('beforeend', avisoHtml);
+  document.getElementById('dn-start').addEventListener('click', function() {
+    this.closest('div[style*="fixed"]').remove();
+    var _idx = parseInt(localStorage.getItem('ppro_noemi_idx') || '0');
+    if (_idx >= DELITO_NOEMI.palabras.length) _idx = 0;
+    mostrarTarjetaNoemi(_idx);
+  });
+};
+
+window.mostrarTarjetaNoemi = function(idx) {
+    localStorage.setItem('ppro_noemi_idx', idx);
+    var existing = document.getElementById('noemi-overlay');
+    if (existing) existing.remove();
+    if (idx >= DELITO_NOEMI.palabras.length) {
+        var finHtml = `
+            <div style="position:fixed; top:0; left:0; right:0; bottom:0; background:rgba(0,0,0,0.9); z-index:99999; display:flex; align-items:center; justify-content:center; padding:20px;">
+                <div style="background:var(--card); border-radius:20px; padding:30px; max-width:400px; text-align:center; border:2px solid #fd79a8;">
+                    <div style="font-size:3rem; margin-bottom:15px;">&#127881;</div>
+                    <h2 style="color:#fd79a8; margin-bottom:20px; font-family:'Playfair Display',serif;">&#161;La RAE te ha visto!</h2>
+                    <p style="color:var(--text); line-height:1.6; margin-bottom:25px;">Has leido todo lo que la RAE dice de ti.<br><br>Ahora ve a por el bote. Sin excusas.</p>
+                    <button onclick="this.closest('div[style*=fixed]').remove(); localStorage.setItem('ppro_noemi_idx','0');" style="background:#fd79a8; color:white; border:none; padding:15px 40px; border-radius:30px; font-size:1.1rem; font-weight:bold; cursor:pointer;">
+                        Volver &#127968;
+                    </button>
+                </div>
+            </div>
+        `;
+        document.body.insertAdjacentHTML('beforeend', finHtml);
+        return;
+    }
+    var p = DELITO_NOEMI.palabras[idx];
+    var tarjetaHtml = `
+        <div id="noemi-overlay" style="position:fixed; top:0; left:0; right:0; bottom:0; background:var(--bg); z-index:99998; display:flex; flex-direction:column; overflow-y:auto;">
+            <div style="padding:15px 20px; display:flex; align-items:center; justify-content:space-between; border-bottom:1px solid var(--border);">
+                <button onclick="document.getElementById('noemi-overlay').remove();" style="background:none; border:none; color:var(--muted); font-size:1.5rem; cursor:pointer;">&#10005;</button>
+                <span style="color:var(--muted); font-size:0.9rem;">${idx + 1} / ${DELITO_NOEMI.palabras.length}</span>
+                <span style="width:30px;"></span>
+            </div>
+            <div style="flex:1; display:flex; flex-direction:column; align-items:center; justify-content:center; padding:20px;">
+                <div id="noemi-card" onclick="document.getElementById('noemi-back').style.display='block'; document.getElementById('noemi-front').style.display='none'; document.getElementById('noemi-actions').style.display='flex';" style="background:linear-gradient(145deg, var(--card), var(--card2)); padding:30px; border-radius:24px; width:100%; max-width:450px; text-align:center; box-shadow:0 15px 35px rgba(253,121,168,0.3); border:3px solid #fd79a8; cursor:pointer; min-height:350px; display:flex; flex-direction:column; justify-content:center;">
+                    <div id="noemi-front">
+                        <div style="font-size:0.8rem; color:#fd79a8; margin-bottom:10px; text-transform:uppercase; letter-spacing:2px;">&#10024; Lo que dice la RAE de ti</div>
+                        <h1 style="font-family:'Playfair Display',serif; font-size:2.8rem; color:var(--text); margin-bottom:15px;">${p.palabra}</h1>
+                        <div style="color:var(--muted); font-size:0.9rem;">Toca para ver lo que dice la RAE</div>
+                    </div>
+                    <div id="noemi-back" style="display:none; text-align:left;">
+                        <h1 style="font-family:'Playfair Display',serif; font-size:2.2rem; color:#fd79a8; margin-bottom:5px; text-align:center;">${p.palabra}</h1>
+                        <div style="color:var(--muted); font-size:0.85rem; text-align:center; margin-bottom:20px;">&#128218; ${p.significado}</div>
+                        <div style="background:rgba(253,121,168,0.1); padding:15px; border-radius:12px; margin-bottom:15px; border-left:4px solid #fd79a8;">
+                            <div style="font-size:0.75rem; color:#fd79a8; margin-bottom:5px; font-weight:bold;">&#128172; LA RAE DICE</div>
+                            <div style="color:var(--text); line-height:1.5;">${p.comentario}</div>
+                        </div>
+                        <div style="background:rgba(255,255,255,0.05); padding:15px; border-radius:12px; font-family:monospace;">
+                            <div style="font-size:0.75rem; color:var(--muted); margin-bottom:8px;">&#128221; EJEMPLO</div>
+                            <div style="color:var(--text); white-space:pre-line; line-height:1.6; font-size:0.95rem;">${p.ejemplo}</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="noemi-actions" style="display:none; padding:20px; gap:15px; justify-content:center; padding-bottom:max(30px, env(safe-area-inset-bottom)); background:linear-gradient(to top, var(--bg) 70%, transparent);">
+                <button onclick="document.getElementById('noemi-overlay').remove(); mostrarTarjetaNoemi(${idx + 1});" style="flex:1; max-width:300px; background:#fd79a8; color:white; border:none; padding:18px; border-radius:16px; font-size:1.1rem; font-weight:bold; cursor:pointer;">
+                    ${idx + 1 < DELITO_NOEMI.palabras.length ? 'Siguiente &#8594;' : '&#127881; Fin del mazo'}
+                </button>
+            </div>
+        </div>
+    `;
+    document.body.insertAdjacentHTML('beforeend', tarjetaHtml);
+};
+
 var DELITO_HISTORICO = [
   { palabra: "guachimán",  significado: "vigilante, guardia de seguridad",     comentario: "GUACHIMÁN. Desde hoy mi palabra favorita. Esto no es una palabra, es un personaje.",              ejemplo: "— Oye, ¿puedo pasar?\n— Habla con el guachimán.\n— ¿Quién?\n— EL GUACHIMÁN." },
   { palabra: "bluyín",     significado: "vaqueros",                            comentario: "BLUYÍN. Existiendo 'vaqueros'. Inexplicable.",                                                        ejemplo: "— ¿Qué te pones?\n— El bluyín.\n— Perdona, ¿el qué?\n— …vaqueros." },
@@ -21015,7 +21158,7 @@ window.iniciarDelitoHistorico = function() {
               <span style="font-size:0.8rem;opacity:0.7;">Practica una letra concreta →</span>
           </button>
 
-          <button onclick="startSmartStudy('mix')" style="background:var(--gold); color:var(--bg); padding:18px; border-radius:12px; border:none; font-weight:bold; font-size:1.1rem; margin-bottom:25px; width:100%; cursor:pointer; box-shadow:0 4px 15px rgba(255,255,255,0.1); display:flex; justify-content:center; align-items:center; gap:10px;">
+          <button onclick="startSmartStudy('mix')" style="background:var(--accent); color:var(--bg); padding:18px; border-radius:12px; border:none; font-weight:bold; font-size:1.1rem; margin-bottom:25px; width:100%; cursor:pointer; box-shadow:0 4px 15px rgba(255,255,255,0.1); display:flex; justify-content:center; align-items:center; gap:10px;">
              🌪️ REPASO GLOBAL (50 tarjetas)
           </button>
           
@@ -21029,8 +21172,8 @@ window.iniciarDelitoHistorico = function() {
        <div style="padding:20px; text-align:center; border-bottom:1px solid var(--border); background:rgba(15, 15, 26, 0.8); backdrop-filter:blur(10px); position:relative; z-index:10;">
           <button onclick="exitSmartStudy()" style="position:absolute; left:20px; top:50%; transform:translateY(-50%); background:none; border:none; color:var(--text); font-size:1.8rem; cursor:pointer;">←</button>
           <h2 id="study-title" style="color:var(--text); font-size:1.2rem; margin-bottom:5px; font-weight:600;">Estudio</h2>
-          <p id="study-counter" style="color:var(--gold); font-weight:bold; font-size:0.85rem; letter-spacing:1px; text-transform:uppercase;">Faltan: 0</p>
-          <button id="btn-match-capitales" onclick="iniciarMatchCapitales()" style="display:none; position:absolute; right:20px; top:50%; transform:translateY(-50%); background:var(--gold); color:#000; border:none; border-radius:10px; padding:6px 12px; font-size:0.78rem; font-weight:700; cursor:pointer;">&#127760; Emparejar</button>
+          <p id="study-counter" style="color:var(--accent); font-weight:bold; font-size:0.85rem; letter-spacing:1px; text-transform:uppercase;">Faltan: 0</p>
+          <button id="btn-match-capitales" onclick="iniciarMatchCapitales()" style="display:none; position:absolute; right:20px; top:50%; transform:translateY(-50%); background:var(--accent); color:#000; border:none; border-radius:10px; padding:6px 12px; font-size:0.78rem; font-weight:700; cursor:pointer;">&#127760; Emparejar</button>
        </div>
        
        <div id="study-area" style="flex:1; display:flex; flex-direction:column; align-items:center; justify-content:center; padding:20px; overflow-y:auto; padding-bottom:120px;">
@@ -21039,11 +21182,11 @@ window.iniciarDelitoHistorico = function() {
              <h3 id="study-q" style="font-family:'Playfair Display', serif; font-size:1.2rem; font-weight:700; color:var(--text); margin-bottom:20px; line-height:1.35;">Pregunta</h3>
              
              <button id="btn-hint" onclick="event.stopPropagation(); showHint()" style="background:var(--bg); color:var(--text); border:1px solid var(--border); padding:10px 20px; border-radius:30px; font-size:0.85rem; margin-bottom:20px; cursor:pointer; display:flex; align-items:center; gap:8px; box-shadow:0 4px 10px rgba(0,0,0,0.3); transition:0.2s;">💡 Dame una pista</button>
-             <div id="study-hint" style="display:none; color:var(--gold); font-size:1.2rem; font-weight:bold; margin-bottom:20px; letter-spacing: 2px; background:var(--bg); padding:12px 20px; border-radius:15px; border:1px dashed var(--gold);"></div>
+             <div id="study-hint" style="display:none; color:var(--accent); font-size:1.2rem; font-weight:bold; margin-bottom:20px; letter-spacing: 2px; background:var(--bg); padding:12px 20px; border-radius:15px; border:1px dashed var(--accent);"></div>
 
              <div id="study-a" style="display:none; flex-direction:column; align-items:center; width:100%; animation: fadeIn 0.3s ease;">
-                 <div style="width: 50px; height: 2px; background: var(--gold); margin: 5px auto 25px auto; opacity: 0.5;"></div>
-                 <div id="study-a-text" style="color:var(--gold); font-size:1.6rem; font-weight:bold; line-height:1.4; margin-bottom: 30px; width:100%;">Respuesta</div>
+                 <div style="width: 50px; height: 2px; background: var(--accent); margin: 5px auto 25px auto; opacity: 0.5;"></div>
+                 <div id="study-a-text" style="color:var(--accent); font-size:1.6rem; font-weight:bold; line-height:1.4; margin-bottom: 30px; width:100%;">Respuesta</div>
                  
                  <div id="study-links" style="display:flex; gap:12px; flex-wrap:wrap; justify-content:center;">
                      <a id="link-wiki" href="#" style="text-decoration:none; background:rgba(255,255,255,0.1); color:var(--text); padding:10px 18px; border-radius:12px; font-size:0.9rem; display:flex; align-items:center; gap:8px; border:1px solid rgba(255,255,255,0.05);">📖 RAE</a>
@@ -21052,7 +21195,7 @@ window.iniciarDelitoHistorico = function() {
              </div>
              
              <div id="study-show-btn" style="position:absolute; bottom:30px; left:0; width:100%; display:flex; justify-content:center;">
-                 <span style="background:var(--gold); color:var(--bg); padding:10px 25px; border-radius:30px; font-weight:bold; font-size:0.95rem; box-shadow:0 8px 20px rgba(0, 0, 0, 0.4); text-transform:uppercase; letter-spacing:1px;">Toca para girar</span>
+                 <span style="background:var(--accent); color:var(--bg); padding:10px 25px; border-radius:30px; font-weight:bold; font-size:0.95rem; box-shadow:0 8px 20px rgba(0, 0, 0, 0.4); text-transform:uppercase; letter-spacing:1px;">Toca para girar</span>
              </div>
           </div>
        </div>
@@ -21118,6 +21261,7 @@ window.iniciarDelitoHistorico = function() {
                 if (isTeatro) onclickAction = 'abrirSelectorTeatro()';
                 if (isHistUni) onclickAction = 'abrirSelectorHistUni()';
                 if (isCapitales) onclickAction = 'abrirSelectorCapitales()';
+      if (m.id === 'lit_uni') onclickAction = 'abrirSelectorLitUni()';
       if(m.id==='deporte')onclickAction='abrirSelectorDeporte()';
       if(m.id==='ciencia')onclickAction='abrirSelectorCiencia()';
       if(m.id==='arte')onclickAction='abrirSelectorArte()';
@@ -21128,9 +21272,9 @@ if(m.id==='cg')onclickAction='abrirSelectorCG()';
 if(m.id==='cg')onclickAction='abrirSelectorCG()';
                 
                 const isD=m.id==='deporte',isC=m.id==='ciencia',isA=m.id==='arte';
-                const hasSelector=isLitEsp||isHist||isHistEsp||isGeoEsp||isGeoMund||isCine||isTeatro||isHistUni||isCapitales||isD||isC||isA;
-                const badgeText = isLitEsp ? '8 minijuegos' : (isHist ? '10 minijuegos' : (isHistEsp ? '5 minijuegos' : (isGeoEsp ? '5 minijuegos' : (isGeoMund ? '6 minijuegos' : (isCine ? '3 juegos' : (isTeatro ? '1 juego' : (isHistUni ? '4 minijuegos' : (isCapitales ? '1 minijuego' : (isD ? '3 niveles' : (isC ? '2 niveles' : (isA ? '2 modos' : 'Cargando...')))))))))));
-                const borderColor = isLitEsp ? '#fab1a0' : (isHist ? '#dc3545' : (isHistEsp ? '#ff7675' : (isGeoEsp ? '#55efc4' : (isGeoMund ? '#00b894' : (isCine ? '#ffeaa7' : (isTeatro ? '#a29bfe' : (isHistUni ? '#fdcb6e' : (isCapitales ? 'var(--gold)' : ''))))))));
+                const isLitUniS=m.id==='lit_uni'; const hasSelector=isLitEsp||isHist||isHistEsp||isGeoEsp||isGeoMund||isCine||isTeatro||isHistUni||isCapitales||isD||isC||isA||isLitUniS;
+                const badgeText = isLitEsp ? '8 minijuegos' : (isHist ? '10 minijuegos' : (isHistEsp ? '5 minijuegos' : (isGeoEsp ? '5 minijuegos' : (isGeoMund ? '6 minijuegos' : (isCine ? '3 juegos' : (isTeatro ? '1 juego' : (isHistUni ? '4 minijuegos' : (isCapitales ? '1 minijuego' : (isLitUniS ? '1 minijuego' : (isD ? '3 niveles' : (isC ? '2 niveles' : (isA ? '2 modos' : 'Cargando...'))))))))))));
+                const borderColor = isLitEsp ? '#fab1a0' : (isHist ? '#dc3545' : (isHistEsp ? '#ff7675' : (isGeoEsp ? '#55efc4' : (isGeoMund ? '#00b894' : (isCine ? '#ffeaa7' : (isTeatro ? '#a29bfe' : (isHistUni ? '#fdcb6e' : (isCapitales ? 'var(--accent)' : ''))))))));
                 
                 html += `
                 <div class="deck-item" onclick="${onclickAction}"${borderColor ? ` style="border-color:${borderColor};"` : ''}>
@@ -21147,7 +21291,7 @@ if(m.id==='cg')onclickAction='abrirSelectorCG()';
                 // Si es capitales, añadir el juego de emparejar justo después
                 if (isCapitales) {
                     html += `
-                    <div class="deck-item" onclick="iniciarMatchCapitales()" style="border-color:var(--gold);">
+                    <div class="deck-item" onclick="iniciarMatchCapitales()" style="border-color:var(--accent);">
                         <div class="deck-icon">🌍</div>
                         <div class="deck-info">
                             <h4>Emparejar Capitales</h4>
@@ -21273,13 +21417,14 @@ window.openStudySelector = function() {
       if (isTeatro) onclickAction = 'abrirSelectorTeatro()';
       if (isHistUni) onclickAction = 'abrirSelectorHistUni()';
       if (isCapitales) onclickAction = 'abrirSelectorCapitales()';
+      if (m.id === 'lit_uni') onclickAction = 'abrirSelectorLitUni()';
       
       const isD2=m.id==='deporte',isC2=m.id==='ciencia',isA2=m.id==='arte';
 if (isD2) onclickAction = 'abrirSelectorDeporte()';
 if (isC2) onclickAction = 'abrirSelectorCiencia()';
 if (isA2) onclickAction = 'abrirSelectorArte()';
 if (m.id === 'cg') onclickAction = 'abrirSelectorCG()';
-      const isCG=m.id==='cg'; const hasSelector=isLitEsp||isHist||isHistEsp||isGeoEsp||isGeoMund||isCine||isTeatro||isHistUni||isCapitales||isD2||isC2||isA2||isCG;
+      const isCG=m.id==='cg'; const isLitUniB=m.id==='lit_uni'; const hasSelector=isLitEsp||isHist||isHistEsp||isGeoEsp||isGeoMund||isCine||isTeatro||isHistUni||isCapitales||isD2||isC2||isA2||isCG||isLitUniB;
       const badgeContent = isLitEsp ? '<span style="background:#fab1a0; color:#000; padding:4px 10px; border-radius:20px; font-size:0.75rem; font-weight:bold;">8 minijuegos</span>' 
                          : (isHist ? '<span style="background:#dc3545; color:#fff; padding:4px 10px; border-radius:20px; font-size:0.75rem; font-weight:bold;">10 minijuegos</span>'
                          : (isHistEsp ? '<span style="background:#ff7675; color:#fff; padding:4px 10px; border-radius:20px; font-size:0.75rem; font-weight:bold;">5 minijuegos</span>'
@@ -21288,16 +21433,17 @@ if (m.id === 'cg') onclickAction = 'abrirSelectorCG()';
                          : (isCine ? '<span style="background:#ffeaa7; color:#000; padding:4px 10px; border-radius:20px; font-size:0.75rem; font-weight:bold;">3 juegos</span>'
                          : (isTeatro ? '<span style="background:#a29bfe; color:#fff; padding:4px 10px; border-radius:20px; font-size:0.75rem; font-weight:bold;">1 juego</span>'
                          : (isHistUni ? '<span style="background:#fdcb6e; color:#000; padding:4px 10px; border-radius:20px; font-size:0.75rem; font-weight:bold;">4 minijuegos</span>'
-                         : (isCapitales ? '<span style="background:var(--gold); color:#000; padding:4px 10px; border-radius:20px; font-size:0.75rem; font-weight:bold;">1 minijuego</span>'
+                         : (isLitUniB ? '<span style="background:#e17055; color:#fff; padding:4px 10px; border-radius:20px; font-size:0.75rem; font-weight:bold;">1 minijuego</span>'
+                         : (isCapitales ? '<span style="background:var(--accent); color:#000; padding:4px 10px; border-radius:20px; font-size:0.75rem; font-weight:bold;">1 minijuego</span>'
                          : (isD2 ? '<span style="background:#00cec9;color:#000;padding:4px 10px;border-radius:20px;font-size:0.75rem;font-weight:bold;">3 niveles</span>'
                          : (isC2 ? '<span style="background:#a29bfe;color:#000;padding:4px 10px;border-radius:20px;font-size:0.75rem;font-weight:bold;">2 niveles</span>'
                          : (isA2 ? '<span style="background:#e17055;color:#fff;padding:4px 10px;border-radius:20px;font-size:0.75rem;font-weight:bold;">2 modos</span>'
                          : (isCG ? '<span style="background:#dfe6e9;color:#000;padding:4px 10px;border-radius:20px;font-size:0.75rem;font-weight:bold;">6 categorías</span>'
-                         : `<span style="background:${isDone ? 'transparent' : (m.color || 'var(--gold)')}; color:${isDone ? 'var(--muted)' : '#000'}; padding:4px 10px; border-radius:20px; font-size:0.75rem; font-weight:bold; white-space:nowrap;">${isDone ? 'Al día ✓' : dueCount + ' hoy'}</span>`))))))))))));
+                         : `<span style="background:${isDone ? 'transparent' : (m.color || 'var(--accent)')}; color:${isDone ? 'var(--muted)' : '#000'}; padding:4px 10px; border-radius:20px; font-size:0.75rem; font-weight:bold; white-space:nowrap;">${isDone ? 'Al día ✓' : dueCount + ' hoy'}</span>`)))))))))))));
 
       
       container.innerHTML += `
-      <div class="deck-item" onclick="${onclickAction}" style="border-left:4px solid ${isDone && !hasSelector ? 'var(--border)' : (m.color || 'var(--gold)')}; opacity:${isDone && !hasSelector ? '0.6' : '1'}; cursor:${isDone && !hasSelector ? 'default' : 'pointer'};">
+      <div class="deck-item" onclick="${onclickAction}" style="border-left:4px solid ${isDone && !hasSelector ? 'var(--border)' : (m.color || 'var(--accent)')}; opacity:${isDone && !hasSelector ? '0.6' : '1'}; cursor:${isDone && !hasSelector ? 'default' : 'pointer'};">
           <div class="deck-icon">${m.icon}</div>
           <div class="deck-info">
               <div style="display:flex;align-items:center;gap:5px;"><h4 style="margin:0;">${m.name}</h4>${ {'vocabulario':'🔥🔥🔥','cg':'🔥🔥🔥','lit_esp':'🔥🔥🔥','arte':'🔥🔥🔥','hist_esp':'🔥🔥🔥','hist_uni':'🔥🔥','mitologia':'🔥🔥','ciencia':'🔥🔥','cine':'🔥🔥','teatro':'🔥🔥','geo_esp':'🔥🔥','geo_mund':'🔥','capitales':'🔥','lit_uni':'🔥','politica':'🔥','deporte':'🔥','naturaleza':'🔥','tecnologia':'🔥'}[m.id] ? '<span style="font-size:0.65rem;letter-spacing:-2px;flex-shrink:0;">' + {'vocabulario':'🔥🔥🔥','cg':'🔥🔥🔥','lit_esp':'🔥🔥🔥','arte':'🔥🔥🔥','hist_esp':'🔥🔥🔥','hist_uni':'🔥🔥','mitologia':'🔥🔥','ciencia':'🔥🔥','cine':'🔥🔥','teatro':'🔥🔥','geo_esp':'🔥🔥','geo_mund':'🔥','capitales':'🔥','lit_uni':'🔥','politica':'🔥','deporte':'🔥','naturaleza':'🔥','tecnologia':'🔥'}[m.id] + '</span>' : '' }</div>
@@ -21417,7 +21563,7 @@ window.startSmartStudyAll = function(deckId) {
         .map(function(q){
             return Object.assign({}, q, {
                 deckId: mazo.id,
-                color: mazo.color || 'var(--gold)'
+                color: mazo.color || 'var(--accent)'
             });
         })
         .sort(function(){ return Math.random() - 0.5; })
@@ -21769,7 +21915,7 @@ window.mostrarResumenEstudio = function() {
                 '<div style="color:var(--muted);font-size:0.75rem;">Mal</div>' +
             '</div>' +
         '</div>' +
-        '<button onclick="exitSmartStudy()" style="background:var(--gold);color:#000;border:none;border-radius:14px;padding:14px 28px;font-weight:700;font-size:1rem;cursor:pointer;width:100%;max-width:320px;">🏠 Volver al inicio</button>';
+        '<button onclick="exitSmartStudy()" style="background:var(--accent);color:#000;border:none;border-radius:14px;padding:14px 28px;font-weight:700;font-size:1rem;cursor:pointer;width:100%;max-width:320px;">🏠 Volver al inicio</button>';
 
     // Reset contadores para próxima sesión
     studySessionTotal = 0;
@@ -21802,7 +21948,6 @@ function goTo(id) {
     if (id === 'dashboard')    { if (typeof renderDashboard === 'function') renderDashboard(); }
     if (id === 'dic-selector') {
         dicActualizarStats(); dicActualizarDia();
-        dicRenderLetrasGrid();
         var ocKeys = Object.keys(localStorage);
         var ocCount = 0;
         for (var ki = 0; ki < ocKeys.length; ki++) {
@@ -22361,7 +22506,7 @@ const DIC_CAMPOS = [
 ];
 
 const DIC_LETRAS = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','Ñ','O','P','Q','R','S','T','U','V','X','Y','Z'];
-const DIC_LETRA_TOTALES = {A:5178,B:1956,C:6027,D:2450,E:3775,F:1401,G:1505,H:1208,I:1130,J:412,K:72,L:1140,M:2678,N:689,'Ñ':11,O:773,P:3937,Q:253,R:2478,S:2505,T:2592,U:249,V:1032,W:0,X:29,Y:106,Z:367};
+const DIC_LETRA_TOTALES = {A:5019,B:1955,C:8478,D:2450,E:5312,F:1966,G:2064,H:1358,I:1129,J:456,K:79,L:1702,M:3810,N:734,'Ñ':11,O:824,P:5287,Q:253,R:2478,S:2505,T:2592,U:249,V:1032,W:0,X:29,Y:106,Z:367};
 
 const DIC_CAMPO_ICONS = {};
 DIC_CAMPOS.forEach(function(c){ DIC_CAMPO_ICONS[c.id] = c.icon + ' ' + c.name; });
@@ -22376,41 +22521,35 @@ var dicState = {
     letrasCache: {},  // cache de letras ya descargadas
 };
 
-function dicRenderLetrasGrid() {
-    var grid = document.getElementById('dic-letras-grid');
-    if (!grid) return;
-    grid.innerHTML = '';
-    DIC_LETRAS.forEach(function(l) {
-        var btn = document.createElement('button');
-        btn.className = 'dic-letra-btn';
-        var prog = dicLeerProgreso('letra', l);
-        // Total real: solo el que guardo la app al cargar el JSON
-        // Si no ha jugado esa letra aun, no hay total fiable — mostrar ?
-        var totalLetra = (typeof DIC_LETRA_TOTALES !== 'undefined' ? DIC_LETRA_TOTALES[l] : 0) || 0;
-        var vistas = prog ? prog.idx : 0;
-        var vistoCount = vistas;
-        var pct = totalLetra > 0 ? Math.min(100, Math.round(vistoCount / totalLetra * 100)) : 0;
-        var barColor = pct >= 80 ? 'var(--green)' : pct >= 40 ? 'var(--gold)' : 'var(--blue)';
-        var textColor = pct >= 80 ? 'var(--green)' : pct >= 40 ? 'var(--gold)' : 'var(--text)';
-        btn.style.borderColor = pct > 0 ? barColor : '';
-        var progText = totalLetra > 0 ? vistoCount + '/' + totalLetra : (vistoCount > 0 ? vistoCount + '/?' : '0/?');
-        btn.innerHTML = '<span style="color:' + textColor + '">' + l + '</span>' +
-            '<span class="dlb-prog">' + progText + '</span>' +
-            (pct > 0 ? '<div class="dlb-bar" style="width:' + pct + '%;background:' + barColor + ';"></div>' : '');
-        (function(ll, vis, tot){
-            btn.onclick = function() { abrirSelectorLetraRAE(ll, vis, tot); };
-        })(l, vistoCount, totalLetra);
-        grid.appendChild(btn);
-    });
-}
-
 function mostrarFiltroLetra() {
     var panel = document.getElementById('dic-letras-panel');
     var campos = document.getElementById('dic-campos-panel');
     campos.style.display = 'none';
     panel.style.display = panel.style.display === 'none' ? 'block' : 'none';
     if (panel.style.display === 'block') {
-        dicRenderLetrasGrid();
+        var grid = document.getElementById('dic-letras-grid');
+        grid.innerHTML = '';
+        DIC_LETRAS.forEach(function(l) {
+                var btn = document.createElement('button');
+                btn.className = 'dic-letra-btn';
+                // Get progress from saved session AND from hito counter
+                var prog = dicLeerProgreso('letra', l);
+                var totalLetra = (typeof DIC_LETRA_TOTALES !== 'undefined' ? DIC_LETRA_TOTALES[l] : 0) || (typeof TOTAL_POR_LETRA !== 'undefined' ? TOTAL_POR_LETRA[l] : 0) || 0;
+                var vistas = parseInt(localStorage.getItem('dic_hito_letra_' + l) || '0');
+                // Use the higher of: session progress or hito counter
+                var vistoCount = prog && prog.idx > vistas ? prog.idx : vistas;
+                var pct = totalLetra > 0 ? Math.min(100, Math.round(vistoCount / totalLetra * 100)) : 0;
+                var barColor = pct >= 80 ? 'var(--green)' : pct >= 40 ? 'var(--gold)' : 'var(--blue)';
+                var textColor = pct >= 80 ? 'var(--green)' : pct >= 40 ? 'var(--gold)' : 'var(--text)';
+                btn.style.borderColor = pct > 0 ? barColor : '';
+                btn.innerHTML = '<span style="color:' + textColor + '">' + l + '</span>' +
+                    '<span class="dlb-prog">' + vistoCount + '/' + totalLetra + '</span>' +
+                    (pct > 0 ? '<div class="dlb-bar" style="width:' + pct + '%;background:' + barColor + ';"></div>' : '');
+                (function(ll, vis, tot){
+                    btn.onclick = function() { abrirSelectorLetraRAE(ll, vis, tot); };
+                })(l, vistoCount, totalLetra);
+                grid.appendChild(btn);
+            });
         panel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
     }
 }
@@ -22982,19 +23121,19 @@ function dicProgressKey(modo, filtro) {
 function dicGuardarProgreso() {
     if (dicState.modo === 'aleatorio') return; // aleatorio no se guarda
     var key = dicProgressKey(dicState.modo, dicState.filtro);
-    // Siempre guardar el total real actual (puede cambiar si usuario ocultó palabras)
-    var totalReal = dicState.palabras.length;
-    // Para modo letra, el total real es el del JSON filtrado sin ocultas
-    // Si es mayor que el guardado anteriormente, actualizar
-    var existing = dicLeerProgreso(dicState.modo, dicState.filtro);
-    if (existing && existing.total > totalReal && dicState.modo === 'letra') {
-        // El total bajó porque ocultó palabras — usar el nuevo
-    }
     localStorage.setItem(key, JSON.stringify({
         idx: dicState.idx,
-        total: totalReal,
+        total: dicState.palabras.length,
         ts: Date.now()
     }));
+    // Sincronizar hito con idx real para que el grid siempre muestre el numero correcto
+    if (dicState.modo === 'letra' && dicState.filtro && dicState.idx > 0) {
+        var hitoKey = 'dic_hito_letra_' + dicState.filtro;
+        var hitoActual = parseInt(localStorage.getItem(hitoKey) || '0');
+        if (dicState.idx > hitoActual) {
+            localStorage.setItem(hitoKey, dicState.idx);
+        }
+    }
 }
 
 // Leer posición guardada
@@ -24720,17 +24859,30 @@ function showRoscoQuestion() {
 
     const l = roscoOrder[roscoCurrentIdx];
     const d = roscoData[l];
-    if (!d || !d.q) { nextRosco(); return; }
 
-    // Clean rosco question
+    // Clean rosco question: first sentence only, no spoilers, max 110 chars
     function cleanRoscoQ(q, answer) {
-        if (!q) return '';
         var prefixMatch = q.match(/^(Con la [A-ZÑ]: |Contiene la [A-ZÑ]: )/i);
         var prefix = prefixMatch ? prefixMatch[0] : '';
         var def = prefixMatch ? q.slice(prefix.length) : q;
-        // Si la definicion queda muy corta o vacía, devolver la pregunta original
-        if (!def || def.trim().length < 5) return q;
+        // Keep only first sentence (up to next capital after period)
+        var m = def.match(/^([^.]+\.)\s+[A-ZÀ-Ö]/);
+        if (m) def = m[1];
+        // Remove clauses containing the answer word
+        var ansNorm = answer.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'');
+        var parts = def.split(/,\s*/);
+        if (parts.length > 1) {
+            var filtered = parts.filter(function(p) {
+                return !p.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'').includes(ansNorm);
+            });
+            if (filtered.length > 0) def = filtered.join(', ');
+        }
         if (!/[.!?]$/.test(def)) def += '.';
+        // Hard cap 110 chars
+        if (def.length > 110) {
+            var cut = def.slice(0, 110).lastIndexOf(' ');
+            def = def.slice(0, cut > 50 ? cut : 110) + '...';
+        }
         return prefix + def;
     }
     var cleanQ = cleanRoscoQ(d.q, d.a);
@@ -25404,6 +25556,8 @@ function closeMaGame() {
     if (ma) ma.style.display = 'none';
     var sa = document.getElementById('study-area');
     if (sa) sa.style.display = 'flex';
+    var vss = document.getElementById('view-smart-study');
+    if (vss && (!sa || sa.style.display === 'none')) vss.style.display = 'none';
 }
 
 function nextMaRound() {
@@ -25457,7 +25611,7 @@ function selectMatch(btn, tipo, valor) {
     
     if (!matchSelected) {
         matchSelected = { btn: btn, tipo: tipo, valor: valor };
-        btn.style.borderColor = 'var(--gold)';
+        btn.style.borderColor = 'var(--accent)';
         btn.style.transform = 'scale(1.04)';
         return;
     }
@@ -25475,7 +25629,7 @@ function selectMatch(btn, tipo, valor) {
         matchSelected.btn.style.borderColor = 'var(--border)';
         matchSelected.btn.style.transform = '';
         matchSelected = { btn: btn, tipo: tipo, valor: valor };
-        btn.style.borderColor = 'var(--gold)';
+        btn.style.borderColor = 'var(--accent)';
         btn.style.transform = 'scale(1.04)';
         return;
     }
@@ -25504,11 +25658,10 @@ function selectMatch(btn, tipo, valor) {
     } else {
         matchFail++;
         document.getElementById('match-fail').textContent = matchFail;
-        var b1 = btn; var b2 = matchSelected.btn;
-        setTimeout(function() {
-            b1.style.borderColor = 'var(--border)'; b1.style.background = '';  b1.style.transform = '';
-            b2.style.borderColor = 'var(--border)'; b2.style.background = '';  b2.style.transform = '';
-        }, 800);
+        btn.disabled = true; matchSelected.btn.disabled = true;
+        btn.style.transform = ''; matchSelected.btn.style.transform = '';
+        matchSolved++;
+        if (matchSolved === 6) setTimeout(showMatchRoundResult, 600);
     }
     matchSelected = null;
 }
@@ -25526,7 +25679,7 @@ function showMatchRoundResult() {
     else                    { emoji = '&#128218;'; msg = matchOk + ' bien, ' + matchFail + ' falladas. &#161;A repasar!'; }
     res.innerHTML = '<div style="font-size:2.5rem; margin-bottom:8px;">' + emoji + '</div>' +
         '<div style="font-weight:700; margin-bottom:16px;">' + msg + '</div>' +
-        '<button onclick="nextMaRound()" style="background:var(--gold);color:#000;border:none;border-radius:12px;padding:12px 24px;font-weight:700;font-size:0.95rem;cursor:pointer;width:100%;">Siguiente ronda &#8594;</button>' +
+        '<button onclick="nextMaRound()" style="background:var(--gold);color:#000;border:none;border-radius:14px;padding:14px 24px;font-weight:800;font-size:0.95rem;cursor:pointer;width:100%;">Siguiente ronda &#8594;</button>' +
         '<button onclick="closeMaGame()" style="margin-top:8px;background:transparent;color:var(--muted);border:1px solid var(--border);border-radius:12px;padding:10px;font-size:0.85rem;cursor:pointer;width:100%;">Volver al estudio</button>';
 }
 
@@ -25948,7 +26101,7 @@ function actualizarApp() {
         <div id="match-result" style="display:none; text-align:center; margin-top:24px;">
             <div id="match-result-emoji" style="font-size:3rem;"></div>
             <div id="match-result-text" style="font-size:1.1rem; font-weight:700; margin:8px 0;"></div>
-            <button onclick="nextMatchRound()" style="margin-top:12px; background:var(--gold); color:#000; border:none; border-radius:12px; padding:13px 28px; font-family:'Space Grotesk',sans-serif; font-size:1rem; font-weight:700; cursor:pointer;">
+            <button onclick="nextMatchRound()" style="margin-top:12px; background:var(--accent); color:#000; border:none; border-radius:12px; padding:13px 28px; font-family:'Space Grotesk',sans-serif; font-size:1rem; font-weight:700; cursor:pointer;">
                 Siguiente ronda &#8594;
             </button>
             <button onclick="goTo('home')" style="margin-top:8px; display:block; width:100%; background:transparent; color:var(--muted); border:1px solid var(--border); border-radius:12px; padding:11px; font-family:'Space Grotesk',sans-serif; font-size:0.9rem; cursor:pointer;">
@@ -25972,7 +26125,7 @@ function actualizarApp() {
             <div style="color:var(--muted);font-size:0.7rem;margin-top:4px;">🔥 Racha</div>
         </div>
         <div style="background:var(--card);border:1px solid var(--border2);border-radius:14px;padding:14px;text-align:center;">
-            <div style="font-size:1.5rem;font-weight:900;color:var(--gold);" id="db-total">0</div>
+            <div style="font-size:1.5rem;font-weight:900;color:var(--accent);" id="db-total">0</div>
             <div style="color:var(--muted);font-size:0.7rem;margin-top:4px;">Preguntas</div>
         </div>
         <div style="background:var(--card);border:1px solid var(--border2);border-radius:14px;padding:14px;text-align:center;">
@@ -28529,7 +28682,7 @@ function iniciarTeatro() {
                 <div id="teatro-question" style="background:var(--card); border-radius:20px; padding:24px; width:100%; max-width:500px; text-align:center; font-size:1.1rem; line-height:1.5;">Cargando...</div>
                 <div style="width:100%; max-width:500px;">
                     <input type="text" id="teatro-answer" placeholder="Escribe tu respuesta..." style="width:100%; padding:14px 16px; border-radius:14px; border:2px solid var(--border2); background:var(--card); color:var(--text); font-size:1rem; font-family:inherit;" autocomplete="off" autofocus>
-                    <button id="teatro-submit" style="width:100%; margin-top:12px; background:var(--gold); color:#000; border:none; border-radius:14px; padding:14px; font-weight:700; font-size:1rem; cursor:pointer;">✓ Responder</button>
+                    <button id="teatro-submit" style="width:100%; margin-top:12px; background:var(--accent); color:#000; border:none; border-radius:14px; padding:14px; font-weight:700; font-size:1rem; cursor:pointer;">✓ Responder</button>
                 </div>
                 <div id="teatro-feedback" style="min-height:80px; width:100%; max-width:500px; text-align:center; font-size:0.9rem;"></div>
             </div>
@@ -28650,7 +28803,7 @@ function terminarRondaTeatro() {
             <p style="color:var(--muted);">${teatroGameState.puntuacion.ok} bien · ${teatroGameState.puntuacion.fail} mal</p>
             <p style="color:var(--text); font-size:0.9rem; max-width:320px;">${msg}</p>
             <div style="display:flex; gap:10px; flex-wrap:wrap; justify-content:center;">
-                <button onclick="iniciarTeatro();" style="background:var(--gold); color:#000; border:none; border-radius:12px; padding:12px 28px; font-weight:700; cursor:pointer;">🎭 Jugar Nivel ${teatroGameState.nivel}</button>
+                <button onclick="iniciarTeatro();" style="background:var(--accent); color:#000; border:none; border-radius:12px; padding:12px 28px; font-weight:700; cursor:pointer;">🎭 Jugar Nivel ${teatroGameState.nivel}</button>
                 ${teatroGameState.nivelAlcanzado > 1 ? '<button onclick="cambiarNivelTeatro(1);" style="background:transparent; color:var(--gold); border:1px solid var(--gold); border-radius:12px; padding:12px 28px; font-weight:700; cursor:pointer;">📚 Repasar Nivel 1</button>' : ''}
                 ${teatroGameState.nivelAlcanzado > 2 ? '<button onclick="cambiarNivelTeatro(2);" style="background:transparent; color:var(--gold); border:1px solid var(--gold); border-radius:12px; padding:12px 28px; font-weight:700; cursor:pointer;">📚 Repasar Nivel 2</button>' : ''}
                 <button onclick="cerrarTeatro();" style="background:transparent; color:var(--muted); border:1px solid var(--border); border-radius:12px; padding:10px 24px; cursor:pointer;">Volver</button>
@@ -29069,7 +29222,7 @@ function geoMundGameShell(id, title) {
                 '<span id="' + id + '-round" style="color:var(--muted);font-size:0.8rem;">0/10</span>' +
             '</div></div>' +
         '</div>' +
-        '<div id="' + id + '-content" style="flex:1;overflow-y:auto;padding:20px 16px;display:flex;flex-direction:column;gap:12px;align-items:center;justify-content:flex-start;"></div>' +
+        '<div id="' + id + '-content" style="flex:1;overflow-y:auto;padding:20px 16px;display:flex;flex-direction:column;gap:12px;align-items:center;justify-content:center;"></div>' +
         '</div>';
     document.body.insertAdjacentHTML('beforeend', html);
     document.getElementById(id + '-back').addEventListener('click', function() {
@@ -29174,7 +29327,7 @@ function _lagosRound() {
                 geoMundMark(id, 'lago-btn', chosen, correct);
                 if (datos) setTimeout(function() { revealAll(datos); }, 60);
                 geoMundScore2(id + '-ok', id + '-fail', chosen === correct, _lagosState);
-                var _nbl=document.createElement('button');_nbl.textContent='Siguiente →';_nbl.style.cssText='background:var(--gold);color:#000;border:none;border-radius:12px;padding:10px 24px;font-weight:700;cursor:pointer;font-size:0.9rem;margin-top:8px;display:block;width:100%;';_nbl.onclick=function(){_lagosRound();};var _lagosCont=document.getElementById(id+'-content');if(_lagosCont)_lagosCont.appendChild(_nbl);
+                var _nbl=document.createElement('button');_nbl.textContent='Siguiente →';_nbl.style.cssText='background:var(--gold);color:#000;border:none;border-radius:12px;padding:14px 24px;font-weight:800;cursor:pointer;font-size:0.95rem;margin-top:8px;display:block;width:100%;';_nbl.onclick=function(){_lagosRound();};var _lagosCont=document.getElementById(id+'-content');if(_lagosCont)_lagosCont.appendChild(_nbl);
             });
         });
     }
@@ -29322,7 +29475,7 @@ function _riosRound() {
                 geoMundMark(id, 'rio-btn', chosen, String(correct));
                 if (reveal) setTimeout(revealKm, 60);
                 geoMundScore2(id + '-ok', id + '-fail', chosen === String(correct), _riosState);
-                var _nbr=document.createElement('button');_nbr.textContent='Siguiente →';_nbr.style.cssText='background:var(--gold);color:#000;border:none;border-radius:12px;padding:10px 24px;font-weight:700;cursor:pointer;font-size:0.9rem;margin-top:8px;display:block;width:100%;';_nbr.onclick=function(){_riosRound();};var _riosCont=document.getElementById(id+'-content');if(_riosCont)_riosCont.appendChild(_nbr);
+                var _nbr=document.createElement('button');_nbr.textContent='Siguiente →';_nbr.style.cssText='background:var(--gold);color:#000;border:none;border-radius:12px;padding:14px 24px;font-weight:800;cursor:pointer;font-size:0.95rem;margin-top:8px;display:block;width:100%;';_nbr.onclick=function(){_riosRound();};var _riosCont=document.getElementById(id+'-content');if(_riosCont)_riosCont.appendChild(_nbr);
             });
         });
     }
@@ -31194,11 +31347,11 @@ function mostrarBannerDeporte(nivel, callback) {
   overlay.id = 'dep-banner-overlay';
   overlay.style.cssText = 'position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,0.8);z-index:999999;display:flex;align-items:center;justify-content:center;padding:20px;';
   overlay.innerHTML =
-    '<div style="background:linear-gradient(135deg,var(--card),var(--card2));border:2px solid var(--gold);border-radius:24px;padding:32px 28px;max-width:340px;width:100%;text-align:center;">' +
+    '<div style="background:linear-gradient(135deg,var(--card),var(--card2));border:2px solid var(--accent);border-radius:24px;padding:32px 28px;max-width:340px;width:100%;text-align:center;">' +
       '<div style="font-size:4rem;margin-bottom:8px;">' + b.emoji + '</div>' +
-      '<h2 style="color:var(--gold);font-size:1.4rem;margin:0 0 14px;font-weight:800;">' + b.titulo + '</h2>' +
+      '<h2 style="color:var(--accent);font-size:1.4rem;margin:0 0 14px;font-weight:800;">' + b.titulo + '</h2>' +
       '<p style="color:var(--text);font-size:0.95rem;line-height:1.7;margin:0 0 24px;white-space:pre-line;">' + b.msg + '</p>' +
-      '<button id="dep-banner-ok" style="background:var(--gold);color:#fff;border:none;border-radius:14px;padding:14px 40px;font-size:1rem;font-weight:800;cursor:pointer;width:100%;">¡Vamos allá!</button>' +
+      '<button id="dep-banner-ok" style="background:var(--accent);color:#fff;border:none;border-radius:14px;padding:14px 40px;font-size:1rem;font-weight:800;cursor:pointer;width:100%;">¡Vamos allá!</button>' +
     '</div>';
   document.body.appendChild(overlay);
   document.getElementById('dep-banner-ok').addEventListener('click', function() {
@@ -31258,7 +31411,7 @@ window.iniciarJuegoDeporte = function(nivel, bloqueId) {
         '<div id="dep-game-titulo" style="font-size:0.85rem;color:var(--muted);">' + niv.icon + ' ' + niv.titulo + '</div>' +
         '<div id="dep-game-progreso" style="font-size:0.75rem;color:var(--muted);">Pregunta 1 / ' + preguntas.length + '</div>' +
       '</div>' +
-      '<div id="dep-game-score" style="font-size:0.9rem;font-weight:700;color:var(--gold);">✅ 0 &nbsp; ❌ 0</div>' +
+      '<div id="dep-game-score" style="font-size:0.9rem;font-weight:700;color:var(--accent);">✅ 0 &nbsp; ❌ 0</div>' +
     '</div>' +
     '<div id="dep-game-barra-wrap" style="height:4px;background:var(--border);">' +
       '<div id="dep-game-barra" style="height:100%;width:0%;background:' + niv.color + ';transition:width 0.3s;"></div>' +
@@ -31365,7 +31518,7 @@ function deporteRenderPregunta() {
           '</p>' +
           (p.curiosidad ? '<p style="color:var(--muted);font-size:0.85rem;line-height:1.5;margin:0;">💡 ' + p.curiosidad + '</p>' : '') +
         '</div>' +
-        '<button id="dep-siguiente" style="background:var(--gold);color:#fff;border:none;border-radius:14px;padding:14px;font-size:1rem;font-weight:700;cursor:pointer;width:100%;margin-top:10px;">Siguiente →</button>';
+        '<button id="dep-siguiente" style="background:var(--gold);color:#000;border:none;border-radius:14px;padding:14px;font-size:1rem;font-weight:800;cursor:pointer;width:100%;margin-top:10px;">Siguiente →</button>';
 
       document.getElementById('dep-siguiente').addEventListener('click', function() {
         deporteGameState.idx++;
@@ -31391,7 +31544,7 @@ function depTanda() {
       '<div style="text-align:center;"><div style="font-size:1.6rem;font-weight:700;color:#e17055;">'+gs.errores+'</div><div style="font-size:0.8rem;color:var(--muted);">errores</div></div>'+
     '</div>'+
     '<div style="display:flex;flex-direction:column;gap:10px;">'+
-      '<button id="dep-next-t" style="background:var(--gold);color:#fff;border:none;border-radius:14px;padding:14px;font-size:1rem;font-weight:700;cursor:pointer;width:100%;">Siguiente tanda ('+rest+') →</button>'+
+      '<button id="dep-next-t" style="background:var(--gold);color:#000;border:none;border-radius:14px;padding:14px;font-size:1rem;font-weight:800;cursor:pointer;width:100%;">Siguiente tanda ('+rest+') →</button>'+
       '<button id="dep-salir" style="background:var(--card);color:var(--text);border:1px solid var(--border);border-radius:14px;padding:14px;font-size:1rem;cursor:pointer;width:100%;">Guardar y salir</button>'+
     '</div></div>';
   document.getElementById('dep-next-t').onclick=function(){gs.tStart=gs.idx;deporteRenderPregunta();};
@@ -31441,7 +31594,7 @@ function deporteFinJuego() {
       '</div>' +
       desbloqueaMsg +
       '<div style="display:flex;flex-direction:column;gap:10px;margin-top:20px;">' +
-        '<button id="dep-btn-rep" style="background:var(--gold);color:#fff;border:none;border-radius:14px;padding:14px;font-size:1rem;font-weight:700;cursor:pointer;width:100%;">Repetir</button>' +
+        '<button id="dep-btn-rep" style="background:var(--gold);color:#000;border:none;border-radius:14px;padding:14px;font-size:1rem;font-weight:800;cursor:pointer;width:100%;">Repetir</button>' +
         '<button id="dep-btn-vol" style="background:var(--card);color:var(--text);border:1px solid var(--border);border-radius:14px;padding:14px;font-size:1rem;cursor:pointer;width:100%;">Volver</button>' +
       '</div>' +
     '</div>';
@@ -31998,7 +32151,7 @@ window.abrirSelectorCG = function() {
             '<p style="color:var(--muted);font-size:0.8rem;margin:4px 0 0 0;">' + allQs.length + ' preguntas en total</p></div>' +
         '</div>' +
         '<div style="padding:20px;display:flex;flex-direction:column;gap:12px;">' +
-            '<div class="deck-item" onclick="document.getElementById(\'cg-selector\').remove(); window._studyFromCG=true; startSmartStudy(\'cg\');" style="border-color:var(--gold);background:linear-gradient(135deg,rgba(255,255,255,0.05),transparent);">' +
+            '<div class="deck-item" onclick="document.getElementById(\'cg-selector\').remove(); window._studyFromCG=true; startSmartStudy(\'cg\');" style="border-color:var(--accent);background:linear-gradient(135deg,rgba(255,255,255,0.05),transparent);">' +
                 '<div class="deck-icon">🎲</div>' +
                 '<div class="deck-info"><h4>Todo mezclado</h4>' +
                 '<p style="font-size:0.72rem;color:var(--muted);margin-top:4px;">' + allQs.length + ' preguntas</p></div>' +
@@ -32128,11 +32281,11 @@ function mostrarBannerCiencia(nivel, callback) {
   var overlay = document.createElement('div');
   overlay.style.cssText = 'position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,0.8);z-index:999999;display:flex;align-items:center;justify-content:center;padding:20px;';
   overlay.innerHTML =
-    '<div style="background:linear-gradient(135deg,var(--card),var(--card2));border:2px solid var(--gold);border-radius:24px;padding:32px 28px;max-width:340px;width:100%;text-align:center;">' +
+    '<div style="background:linear-gradient(135deg,var(--card),var(--card2));border:2px solid var(--accent);border-radius:24px;padding:32px 28px;max-width:340px;width:100%;text-align:center;">' +
       '<div style="font-size:4rem;margin-bottom:8px;">' + b.emoji + '</div>' +
-      '<h2 style="color:var(--gold);font-size:1.4rem;margin:0 0 14px;font-weight:800;">' + b.titulo + '</h2>' +
+      '<h2 style="color:var(--accent);font-size:1.4rem;margin:0 0 14px;font-weight:800;">' + b.titulo + '</h2>' +
       '<p style="color:var(--text);font-size:0.95rem;line-height:1.7;margin:0 0 24px;white-space:pre-line;">' + b.msg + '</p>' +
-      '<button id="cien-banner-ok" style="background:var(--gold);color:#fff;border:none;border-radius:14px;padding:14px 40px;font-size:1rem;font-weight:800;cursor:pointer;width:100%;">¡Vamos allá!</button>' +
+      '<button id="cien-banner-ok" style="background:var(--accent);color:#fff;border:none;border-radius:14px;padding:14px 40px;font-size:1rem;font-weight:800;cursor:pointer;width:100%;">¡Vamos allá!</button>' +
     '</div>';
   document.body.appendChild(overlay);
   document.getElementById('cien-banner-ok').addEventListener('click', function() {
@@ -32171,7 +32324,7 @@ window.iniciarJuegoCiencia = function(nivel, bloqueId) {
         '<div style="font-size:0.85rem;color:var(--muted);">' + niv.icon + ' ' + niv.titulo + '</div>' +
         '<div id="cien-game-progreso" style="font-size:0.75rem;color:var(--muted);">Pregunta 1 / ' + preguntas.length + '</div>' +
       '</div>' +
-      '<div id="cien-game-score" style="font-size:0.9rem;font-weight:700;color:var(--gold);">✅ 0 &nbsp; ❌ 0</div>' +
+      '<div id="cien-game-score" style="font-size:0.9rem;font-weight:700;color:var(--accent);">✅ 0 &nbsp; ❌ 0</div>' +
     '</div>' +
     '<div style="height:4px;background:var(--border);"><div id="cien-game-barra" style="height:100%;width:0%;background:' + niv.color + ';transition:width 0.3s;"></div></div>' +
     '<div id="cien-game-body" style="flex:1;overflow-y:auto;padding:20px;display:flex;flex-direction:column;gap:16px;"></div>' +
@@ -32259,7 +32412,7 @@ function cienciaRenderPregunta() {
           '<p style="color:' + (esCo ? '#00b894' : '#e17055') + ';font-weight:700;margin:0 0 8px;">' + (esCo ? '✅ ¡Correcto!' : '❌ Era: ' + correcta) + '</p>' +
           (p.curiosidad ? '<p style="color:var(--muted);font-size:0.85rem;line-height:1.5;margin:0;">💡 ' + p.curiosidad + '</p>' : '') +
         '</div>' +
-        '<button id="cien-siguiente" style="background:var(--gold);color:#fff;border:none;border-radius:14px;padding:14px;font-size:1rem;font-weight:700;cursor:pointer;width:100%;margin-top:10px;">Siguiente →</button>';
+        '<button id="cien-siguiente" style="background:var(--gold);color:#000;border:none;border-radius:14px;padding:14px;font-size:1rem;font-weight:800;cursor:pointer;width:100%;margin-top:10px;">Siguiente →</button>';
 
       document.getElementById('cien-siguiente').addEventListener('click', function() {
         cienciaGameState.idx++; cienciaRenderPregunta();
@@ -32282,7 +32435,7 @@ function cienTanda() {
       '<div style="text-align:center;"><div style="font-size:1.6rem;font-weight:700;color:#e17055;">'+gs.errores+'</div><div style="font-size:0.8rem;color:var(--muted);">errores</div></div>'+
     '</div>'+
     '<div style="display:flex;flex-direction:column;gap:10px;">'+
-      '<button id="cien-next-t" style="background:var(--gold);color:#fff;border:none;border-radius:14px;padding:14px;font-size:1rem;font-weight:700;cursor:pointer;width:100%;">Siguiente tanda ('+rest+') →</button>'+
+      '<button id="cien-next-t" style="background:var(--gold);color:#000;border:none;border-radius:14px;padding:14px;font-size:1rem;font-weight:800;cursor:pointer;width:100%;">Siguiente tanda ('+rest+') →</button>'+
       '<button id="cien-salir" style="background:var(--card);color:var(--text);border:1px solid var(--border);border-radius:14px;padding:14px;font-size:1rem;cursor:pointer;width:100%;">Guardar y salir</button>'+
     '</div></div>';
   document.getElementById('cien-next-t').onclick=function(){gs.tStart=gs.idx;cienciaRenderPregunta();};
@@ -32329,7 +32482,7 @@ function cienciaFinJuego() {
       '</div>' +
       desbloqueaMsg +
       '<div style="display:flex;flex-direction:column;gap:10px;margin-top:20px;">' +
-        '<button id="cien-btn-repetir" style="background:var(--gold);color:#fff;border:none;border-radius:14px;padding:14px;font-size:1rem;font-weight:700;cursor:pointer;width:100%;">🔄 Repetir</button>' +
+        '<button id="cien-btn-repetir" style="background:var(--gold);color:#000;border:none;border-radius:14px;padding:14px;font-size:1rem;font-weight:800;cursor:pointer;width:100%;">🔄 Repetir</button>' +
         '<button id="cien-btn-volver" style="background:var(--card);color:var(--text);border:1px solid var(--border);border-radius:14px;padding:14px;font-size:1rem;cursor:pointer;width:100%;">← Volver al nivel</button>' +
       '</div>' +
     '</div>';
@@ -32744,7 +32897,7 @@ function empRender(){
     fb.innerHTML='<div style="background:var(--card);border-radius:14px;padding:14px;border:1px solid '+(ok?'#00b894':'#e17055')+';">'+
       '<p style="color:'+(ok?'#00b894':'#e17055')+';font-weight:700;margin:0 0 4px;">'+(ok?'Perfecto! '+acer.length+'/'+cl.length:''+acer.length+'/'+cl.length+' correctas'+(perd.length?' faltaron: '+perd.join(', '):''))+'</p>'+
       '</div>'+
-      '<button id="emp-sig" style="background:var(--gold);color:#fff;border:none;border-radius:14px;padding:14px;font-size:1rem;font-weight:700;cursor:pointer;width:100%;margin-top:8px;">Siguiente</button>';
+      '<button id="emp-sig" style="background:var(--gold);color:#000;border:none;border-radius:14px;padding:14px;font-size:1rem;font-weight:800;cursor:pointer;width:100%;margin-top:8px;">Siguiente</button>';
     document.getElementById('emp-sig').onclick=function(){gs.idx++;empRender();};
     setTimeout(function(){fb.scrollIntoView({behavior:'smooth',block:'nearest'});},80);
   });
@@ -32786,7 +32939,7 @@ function empFin(){
       '<div style="text-align:center;"><div style="font-size:1.8rem;font-weight:700;color:#e17055;">'+gs.err+'</div><div style="font-size:0.8rem;color:var(--muted);">con errores</div></div>'+
     '</div>'+
     '<div style="display:flex;flex-direction:column;gap:10px;">'+
-      '<button id="emp-rep" style="background:var(--gold);color:#fff;border:none;border-radius:14px;padding:14px;font-size:1rem;font-weight:700;cursor:pointer;width:100%;">Repetir</button>'+
+      '<button id="emp-rep" style="background:var(--gold);color:#000;border:none;border-radius:14px;padding:14px;font-size:1rem;font-weight:800;cursor:pointer;width:100%;">Repetir</button>'+
       '<button id="emp-vol" style="background:var(--card);color:var(--text);border:1px solid var(--border);border-radius:14px;padding:14px;font-size:1rem;cursor:pointer;width:100%;">Volver</button>'+
     '</div></div>';
   document.getElementById('emp-rep').onclick=function(){empStart(gs.bid);};
@@ -32867,7 +33020,7 @@ function qvRender(){
         '<p style="color:'+(ok?'#00b894':'#e17055')+';font-weight:700;margin:0 0 4px;">'+(ok?'Correcto!':'Era: '+cor)+'</p>'+
         '<p style="color:var(--muted);font-size:0.82rem;margin:0;">'+par.obra+' - '+par.pintor+'</p>'+
         '</div>'+
-        '<button id="qv-sig" style="background:var(--gold);color:#fff;border:none;border-radius:14px;padding:14px;font-size:1rem;font-weight:700;cursor:pointer;width:100%;">Siguiente</button>';
+        '<button id="qv-sig" style="background:var(--gold);color:#000;border:none;border-radius:14px;padding:14px;font-size:1rem;font-weight:800;cursor:pointer;width:100%;">Siguiente</button>';
       document.getElementById('qv-sig').onclick=function(){gs.idx++;qvRender();};
       setTimeout(function(){fb.scrollIntoView({behavior:'smooth',block:'nearest'});},80);
     });
@@ -32886,7 +33039,7 @@ function qvTanda(){
       '<div style="text-align:center;"><div style="font-size:1.6rem;font-weight:700;color:#e17055;">'+gs.err+'</div><div style="font-size:0.8rem;color:var(--muted);">errores</div></div>'+
     '</div>'+
     '<div style="display:flex;flex-direction:column;gap:10px;">'+
-      '<button id="qv-next-t" style="background:var(--gold);color:#fff;border:none;border-radius:14px;padding:14px;font-size:1rem;font-weight:700;cursor:pointer;width:100%;">Siguiente tanda ('+rest+') </button>'+
+      '<button id="qv-next-t" style="background:var(--gold);color:#000;border:none;border-radius:14px;padding:14px;font-size:1rem;font-weight:800;cursor:pointer;width:100%;">Siguiente tanda ('+rest+') </button>'+
       '<button id="qv-salir" style="background:var(--card);color:var(--text);border:1px solid var(--border);border-radius:14px;padding:14px;font-size:1rem;cursor:pointer;width:100%;">Guardar y salir</button>'+
     '</div></div>';
   document.getElementById('qv-next-t').onclick=function(){gs.tStart=gs.idx;qvRender();};
@@ -32909,7 +33062,7 @@ function qvFin(){
       '<div style="text-align:center;"><div style="font-size:1.8rem;font-weight:700;color:#e17055;">'+gs.err+'</div><div style="font-size:0.8rem;color:var(--muted);">errores</div></div>'+
     '</div>'+
     '<div style="display:flex;flex-direction:column;gap:10px;">'+
-      '<button id="qv-rep" style="background:var(--gold);color:#fff;border:none;border-radius:14px;padding:14px;font-size:1rem;font-weight:700;cursor:pointer;width:100%;">Repetir</button>'+
+      '<button id="qv-rep" style="background:var(--gold);color:#000;border:none;border-radius:14px;padding:14px;font-size:1rem;font-weight:800;cursor:pointer;width:100%;">Repetir</button>'+
       '<button id="qv-vol" style="background:var(--card);color:var(--text);border:1px solid var(--border);border-radius:14px;padding:14px;font-size:1rem;cursor:pointer;width:100%;">Volver</button>'+
     '</div></div>';
   document.getElementById('qv-rep').onclick=function(){qvStart(gs.bid,gs.modo);};
@@ -33059,7 +33212,7 @@ function pinQuizRender() {
           '<p style="color:var(--text);font-size:0.88rem;font-weight:600;margin:0 0 4px;">' + infoExtra + '</p>' +
           '<p style="color:var(--muted);font-size:0.78rem;margin:0;font-style:italic;">' + obra.curiosidad + '</p>' +
         '</div>' +
-        '<button id="pin-quiz-sig" style="background:var(--gold);color:#fff;border:none;border-radius:14px;padding:14px;font-size:1rem;font-weight:700;cursor:pointer;width:100%;">' +
+        '<button id="pin-quiz-sig" style="background:var(--gold);color:#000;border:none;border-radius:14px;padding:14px;font-size:1rem;font-weight:800;cursor:pointer;width:100%;">' +
           (gs.idx + 1 < gs.obras.length ? 'Siguiente →' : 'Ver resultado') +
         '</button>';
 
@@ -33234,7 +33387,7 @@ function empRender() {
     fb.innerHTML = '<div style="background:var(--card);border-radius:12px;padding:14px;border:1px solid ' + (ok?'#00b894':'#e17055') + ';margin-bottom:12px;">' +
       '<p style="color:' + (ok?'#00b894':'#e17055') + ';font-weight:700;margin:0 0 4px;">' + (ok?'✅ ¡Perfecto!':'❌ ' + aciertos + '/' + nCorrectas + ' correctas') + '</p>' +
       '<p style="color:var(--muted);font-size:0.78rem;margin:0;">Obras de ' + artista + ': ' + titulos_correctos.join(', ') + '</p></div>' +
-      '<button id="emp-sig" style="background:var(--gold);color:#fff;border:none;border-radius:14px;padding:14px;font-size:1rem;font-weight:700;cursor:pointer;width:100%;">' + (gs.idx+1<gs.artistas.length?'Siguiente →':'Ver resultado') + '</button>';
+      '<button id="emp-sig" style="background:var(--gold);color:#000;border:none;border-radius:14px;padding:14px;font-size:1rem;font-weight:800;cursor:pointer;width:100%;">' + (gs.idx+1<gs.artistas.length?'Siguiente →':'Ver resultado') + '</button>';
     document.getElementById('emp-check').style.display = 'none';
     document.getElementById('emp-sig').onclick = function() { gs.idx++; empRender(); };
     fb.scrollIntoView({behavior:'smooth',block:'nearest'});
@@ -33797,7 +33950,7 @@ function escEmpRender(gs){
     fb.innerHTML='<div style="background:var(--card);border-radius:12px;padding:14px;border:1px solid '+(ok?'#00b894':'#e17055')+';margin-bottom:12px;">'+
       '<p style="color:'+(ok?'#00b894':'#e17055')+';font-weight:700;margin:0 0 4px;">'+(ok?'✅ ¡Perfecto!':'❌ '+aciertos+'/'+nCorrectas+' correctas')+'</p>'+
       '<p style="color:var(--muted);font-size:0.78rem;margin:0;">Obras de '+escultor+': '+titulos_correctos.join(', ')+'</p></div>'+
-      '<button id="esc-emp-sig" style="background:var(--gold);color:#fff;border:none;border-radius:14px;padding:14px;font-size:1rem;font-weight:700;cursor:pointer;width:100%;">'+(gs.idx+1<gs.escultores.length?'Siguiente →':'Ver resultado')+'</button>';
+      '<button id="esc-emp-sig" style="background:var(--gold);color:#000;border:none;border-radius:14px;padding:14px;font-size:1rem;font-weight:800;cursor:pointer;width:100%;">'+(gs.idx+1<gs.escultores.length?'Siguiente →':'Ver resultado')+'</button>';
     document.getElementById('esc-emp-check').style.display='none';
     document.getElementById('esc-emp-sig').onclick=function(){gs.idx++;escEmpRender(gs);};
     fb.scrollIntoView({behavior:'smooth',block:'nearest'});
@@ -33898,7 +34051,7 @@ function escEmpFin(gs){
 
   function llamarTema(f) {
     if (f === 'smMito')   { typeof startSmartStudy === 'function' && startSmartStudy('mitologia'); return; }
-    if (f === 'smLitUni') { typeof startSmartStudy === 'function' && startSmartStudy('lit_uni'); return; }
+    if (f === 'smLitUni') { typeof abrirSelectorLitUni === 'function' && abrirSelectorLitUni(); return; }
     if (f === 'smNat')    { typeof startSmartStudy === 'function' && startSmartStudy('naturaleza'); return; }
     if (f === 'smTec')    { typeof startSmartStudy === 'function' && startSmartStudy('tecnologia'); return; }
     if (typeof window[f] === 'function') { window[f](); return; }
@@ -34055,7 +34208,7 @@ function escEmpFin(gs){
     html += '</div></div>';
 
     // Vocabulario
-    html += '<div id="ph-voc" style="background:var(--card);border-radius:12px;padding:12px 14px;margin-bottom:8px;cursor:pointer;display:flex;align-items:center;gap:12px;border-left:3px solid var(--gold);">';
+    html += '<div id="ph-voc" style="background:var(--card);border-radius:12px;padding:12px 14px;margin-bottom:8px;cursor:pointer;display:flex;align-items:center;gap:12px;border-left:3px solid var(--accent);">';
     html += '<div style="font-size:1.3rem;">📖</div>';
     html += '<div style="flex:1;min-width:0;"><div style="font-size:0.82rem;font-weight:700;color:var(--text);">Vocabulario y Cultismos</div><div style="font-size:0.68rem;color:var(--muted);margin-top:2px;">El nucleo del bote final</div></div>';
     html += '</div>';
@@ -34326,6 +34479,216 @@ function escEmpFin(gs){
 
 })();
 
+</script>
+
+<script>
+(function() {
+
+var AUTOR_OBRA = {
+  "Allende":      "La casa de los esp\u00edritus",
+  "Achebe":       "Todo se desmorona",
+  "Auster":       "La trilog\u00eda de Nueva York",
+  "Boccaccio":    "El Decamer\u00f3n",
+  "Bront\u00eb":       "Cumbres borrascosas",
+  "Bola\u00f1o":       "2666",
+  "Cort\u00e1zar":     "Rayuela",
+  "Carpentier":   "El siglo de las luces",
+  "Dostoievski":  "Los hermanos Karamazov",
+  "Duras":        "El amante",
+  "Donoso":       "El obsceno p\u00e1jaro de la noche",
+  "Ernaux":       "El acontecimiento",
+  "Esquivel":     "Como agua para chocolate",
+  "Faulkner":     "El ruido y la furia",
+  "Ferrante":     "La amiga estupenda",
+  "Fuentes":      "La muerte de Artemio Cruz",
+  "G\u00f3gol":        "Almas muertas",
+  "Ginzburg":     "L\u00e9xico familiar",
+  "Gordimer":     "La historia de mi hijo",
+  "Handke":       "El miedo del portero al penalti",
+  "Hemingway":    "El viejo y el mar",
+  "Highsmith":    "El talento de Mr. Ripley",
+  "Ishiguro":     "Nunca me abandones",
+  "Ionesco":      "La cantante calva",
+  "Jelinek":      "La pianista",
+  "Jackson":      "La maldici\u00f3n de Hill House",
+  "Jim\u00e9nez":      "Platero y yo",
+  "Kafka":        "La metamorfosis",
+  "Kundera":      "La insoportable levedad del ser",
+  "Kawabata":     "Pa\u00eds de nieve",
+  "Kert\u00e9sz":      "Sin destino",
+  "Lispector":    "La pasi\u00f3n seg\u00fan G.H.",
+  "Lessing":      "El cuaderno dorado",
+  "Lem":          "Solaris",
+  "Modiano":      "El calej\u00f3n de las tiendas oscuras",
+  "Munro":        "Las vidas de las mujeres",
+  "Mishima":      "El mar de la fertilidad",
+  "Nabokov":      "Lolita",
+  "Nothomb":      "Estupor y temblores",
+  "N\u00e9mirovsky":   "Suite francesa",
+  "Onetti":       "El astillero",
+  "Orwell":       "1984",
+  "Ocampo":       "Las invitadas",
+  "Pessoa":       "El libro del desasosiego",
+  "Pizarnik":     "\u00c1rbol de Diana",
+  "Proust":       "En busca del tiempo perdido",
+  "Pamuk":        "Me llamo Rojo",
+  "Rulfo":        "Pedro P\u00e1ramo",
+  "Roth":         "Pastoral americana",
+  "Rodoreda":     "La plaza del Diamante",
+  "Saramago":     "Ensayo sobre la ceguera",
+  "Shelley":      "Frankenstein",
+  "Storni":       "Languidez",
+  "Tokarczuk":    "Los errantes",
+  "Tolst\u00f3i":      "Ana Kar\u00e9nina",
+  "Tartt":        "El jilguero",
+  "Undset":       "Kristin Lavransdatter",
+  "Updike":       "Conejo, corre",
+  "Vallejo":      "Trilce",
+  "Woolf":        "La se\u00f1ora Dalloway",
+  "Wharton":      "La edad de la inocencia",
+  "Whitman":      "Hojas de hierba",
+  "Xingjian":     "La monta\u00f1a del alma",
+  "Yeats":        "La torre",
+  "Yourcenar":    "Memorias de Adriano",
+  "Yoshimoto":    "Kitchen",
+  "Zweig":        "Novela de ajedrez",
+  "Zola":         "Germ\u00ednal",
+  "Joyce":        "Ulises",
+  "Borges":       "Ficciones",
+  "C\u00e1mus":        "El extranjero",
+  "S\u00fcskind":      "El perfume",
+  "M\u00fcller":       "En tierras bajas",
+  "G\u00e1rcia M\u00e1rquez":"Cien a\u00f1os de soledad",
+  "Neruda":       "Veinte poemas de amor",
+  "Tagore":       "Gitanjali",
+  "Fosse":        "Ma\u00f1ana y tarde",
+  "Mann":         "La monta\u00f1a m\u00e1gica",
+  "Lorca":        "La casa de Bernarda Alba",
+  "Unamuno":      "Niebla",
+  "Vargas Llosa": "La ciudad y los perros",
+  "Delibes":      "Cinco horas con Mario"
+};
+
+
+var aoRound = 1, aoOk = 0, aoFail = 0, aoSolved = 0, aoSelected = null;
+
+window.iniciarMatchAutorObraUniversal = function() {
+    aoRound = 1; aoOk = 0; aoFail = 0;
+    cargarRondaAo();
+};
+
+function cargarRondaAo() {
+    aoSelected = null; aoSolved = 0;
+    var existing = document.getElementById('ao-overlay');
+    if (existing) existing.remove();
+
+    var keys = Object.keys(AUTOR_OBRA).sort(function() { return Math.random() - 0.5; }).slice(0, 6);
+    var pares = keys.map(function(a) { return { autor: a, obra: AUTOR_OBRA[a] }; });
+    var autores = pares.map(function(p) { return p.autor; }).sort(function() { return Math.random() - 0.5; });
+    var obras   = pares.map(function(p) { return p.obra;  }).sort(function() { return Math.random() - 0.5; });
+
+    var ov = document.createElement('div');
+    ov.id = 'ao-overlay';
+    ov.style.cssText = 'position:fixed;top:0;left:0;right:0;bottom:0;background:var(--bg);z-index:99998;display:flex;flex-direction:column;height:100%;';
+    ov.innerHTML =
+        '<div style="padding:15px 20px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--border);flex-shrink:0;">' +
+            '<button id="ao-back-btn" style="background:none;border:none;color:var(--muted);font-size:1.5rem;cursor:pointer;">&#8592;</button>' +
+            '<span style="color:var(--gold);font-weight:800;font-size:0.9rem;">&#128218; Autor &amp; Obra &nbsp;&#8226;&nbsp; Ronda ' + aoRound + '</span>' +
+            '<span><span id="ao-ok-c" style="color:#22c55e;font-weight:700;">&#10003; ' + aoOk + '</span> <span id="ao-fail-c" style="color:#ef4444;font-weight:700;">&#10007; ' + aoFail + '</span></span>' +
+        '</div>' +
+        '<p style="text-align:center;color:var(--muted);font-size:0.78rem;padding:10px 16px 0;flex-shrink:0;">Pulsa un autor y luego su obra</p>' +
+        '<div id="ao-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:10px;padding:12px 16px;overflow-y:auto;flex:1;align-content:start;"></div>';
+
+    document.body.appendChild(ov);
+    document.getElementById('ao-back-btn').addEventListener('click', function() { ov.remove(); });
+
+
+    var grid = document.getElementById('ao-grid');
+    for (var i = 0; i < 6; i++) {
+        (function(autor, obra) {
+            var aBtn = document.createElement('button');
+            aBtn.dataset.tipo = 'autor'; aBtn.dataset.valor = autor;
+            aBtn.style.cssText = 'background:var(--card);border:2px solid var(--border);border-radius:12px;padding:10px 8px;font-size:0.8rem;cursor:pointer;color:var(--text);text-align:center;min-height:52px;width:100%;font-weight:700;';
+            aBtn.textContent = autor;
+            aBtn.addEventListener('click', function() { handleAoClick(this); });
+            grid.appendChild(aBtn);
+
+            var oBtn = document.createElement('button');
+            oBtn.dataset.tipo = 'obra'; oBtn.dataset.valor = obra;
+            oBtn.style.cssText = 'background:var(--card2);border:2px solid var(--border);border-radius:12px;padding:10px 8px;font-size:0.76rem;cursor:pointer;color:var(--muted);text-align:center;min-height:52px;width:100%;font-style:italic;';
+            oBtn.textContent = obra;
+            oBtn.addEventListener('click', function() { handleAoClick(this); });
+            grid.appendChild(oBtn);
+        })(autores[i], obras[i]);
+    }
+}
+
+function handleAoClick(btn) {
+    if (btn.disabled) return;
+    if (!aoSelected) {
+        aoSelected = btn;
+        btn.style.borderColor = 'var(--gold)';
+        btn.style.transform = 'scale(1.04)';
+        return;
+    }
+    if (aoSelected === btn) {
+        btn.style.borderColor = 'var(--border)'; btn.style.transform = '';
+        aoSelected = null; return;
+    }
+    if (aoSelected.dataset.tipo === btn.dataset.tipo) {
+        aoSelected.style.borderColor = 'var(--border)'; aoSelected.style.transform = '';
+        aoSelected = btn; btn.style.borderColor = 'var(--gold)'; btn.style.transform = 'scale(1.04)';
+        return;
+    }
+    var autor = btn.dataset.tipo === 'autor' ? btn.dataset.valor : aoSelected.dataset.valor;
+    var obra  = btn.dataset.tipo === 'obra'  ? btn.dataset.valor : aoSelected.dataset.valor;
+    var correcto = AUTOR_OBRA[autor] === obra;
+    var color = correcto ? '#22c55e' : '#ef4444';
+    [btn, aoSelected].forEach(function(b) {
+        b.style.borderColor = color;
+        b.style.background = correcto ? 'rgba(34,197,94,0.15)' : 'rgba(239,68,68,0.15)';
+    });
+    if (correcto) {
+        aoOk++; btn.disabled = true; aoSelected.disabled = true; btn.style.transform = '';
+        var ok = document.getElementById('ao-ok-c'); if (ok) ok.innerHTML = '&#10003; ' + aoOk;
+        aoSolved++;
+        if (aoSolved === 6) setTimeout(mostrarResultadoAo, 600);
+    } else {
+        aoFail++;
+        var fl = document.getElementById('ao-fail-c'); if (fl) fl.innerHTML = '&#10007; ' + aoFail;
+        btn.disabled = true; aoSelected.disabled = true;
+        btn.style.transform = ''; aoSelected.style.transform = '';
+        aoSolved++;
+        if (aoSolved === 6) setTimeout(mostrarResultadoAo, 600);
+    }
+    aoSelected = null;
+}
+
+function mostrarResultadoAo() {
+    var ov = document.getElementById('ao-overlay');
+    if (!ov) return;
+    var pct = aoOk + aoFail > 0 ? Math.round(aoOk / (aoOk + aoFail) * 100) : 0;
+    var emoji = aoFail === 0 ? '&#127942;' : pct >= 75 ? '&#128170;' : pct >= 50 ? '&#128218;' : '&#128169;';
+    var msg   = aoFail === 0 ? '&#161;Ronda perfecta! Noemi domina la literatura.' :
+                pct >= 75 ? aoOk + ' bien, ' + aoFail + ' falladas. &#161;Casi!' :
+                pct >= 50 ? 'Hay que repasar alguna. ' + aoOk + '/' + (aoOk + aoFail) :
+                            'Uff. A estudiar. ' + aoOk + '/' + (aoOk + aoFail);
+    ov.innerHTML =
+        '<div style="flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:40px 24px;text-align:center;gap:18px;">' +
+            '<div style="font-size:3.5rem;">' + emoji + '</div>' +
+            '<p style="color:var(--text);font-size:1.05rem;margin:0;font-weight:600;">' + msg + '</p>' +
+            '<div style="font-size:0.82rem;color:var(--muted);">Ronda ' + aoRound + ' &bull; ' + aoOk + ' aciertos &bull; ' + aoFail + ' fallos</div>' +
+            '<button id="ao-next-btn" style="background:var(--gold);color:#000;border:none;border-radius:14px;padding:16px 32px;font-weight:800;font-size:1rem;cursor:pointer;width:100%;max-width:300px;">Siguiente ronda &#8594;</button>' +
+            '<button id="ao-close-btn" style="background:none;border:1px solid var(--border2);color:var(--muted);border-radius:14px;padding:12px 24px;font-size:0.9rem;cursor:pointer;width:100%;max-width:300px;">Volver al men&#250;</button>' +
+        '</div>';
+    document.getElementById('ao-next-btn').addEventListener('click', function() {
+        aoRound++; cargarRondaAo();
+    });
+    document.getElementById('ao-close-btn').addEventListener('click', function() { ov.remove(); });
+}
+
+window.iniciarMatchAutorObraUniversal = iniciarMatchAutorObraUniversal;
+})();
 </script>
 
 </body>
