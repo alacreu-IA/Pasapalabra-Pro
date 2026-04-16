@@ -1530,14 +1530,27 @@ html, body {
         <div class="streak-badge" id="streak-badge">🔥 Racha: 1d</div>
     </div>
 
-    <!-- Global dominio bar -->
-    <div class="global-bar-wrap">
-        <div class="global-bar-top">
-            <span>Dominio global</span>
-            <span id="global-pct">0%</span>
+    <!-- Dominio Mazos + RAE -->
+    <div class="global-bar-wrap" style="display:flex;flex-direction:column;gap:12px;">
+        <div>
+            <div class="global-bar-top">
+                <span>📚 Dominio mazos</span>
+                <span id="global-pct" style="color:var(--gold);font-size:0.85rem;font-weight:800;">0%</span>
+            </div>
+            <div class="global-bar-track">
+                <div class="global-bar-fill" id="global-bar-fill" style="width:0%;background:linear-gradient(90deg,var(--blue),var(--gold));"></div>
+            </div>
+            <div id="global-motiv" style="font-size:0.72rem;color:var(--muted);margin-top:4px;font-style:italic;min-height:16px;"></div>
         </div>
-        <div class="global-bar-track">
-            <div class="global-bar-fill" id="global-bar-fill" style="width:0%"></div>
+        <div>
+            <div class="global-bar-top">
+                <span>📖 Dominio RAE</span>
+                <span id="rae-global-pct" style="color:#fd79a8;font-size:0.85rem;font-weight:800;">0%</span>
+            </div>
+            <div class="global-bar-track">
+                <div id="rae-global-bar-fill" style="height:100%;width:0%;background:linear-gradient(90deg,#e84393,#fd79a8);border-radius:3px;transition:width 0.8s ease;"></div>
+            </div>
+            <div id="rae-global-motiv" style="font-size:0.72rem;color:var(--muted);margin-top:4px;font-style:italic;min-height:16px;"></div>
         </div>
     </div>
 
@@ -24043,21 +24056,245 @@ function loadDeckInfo() {
         seenAll  += seen;
     });
 
-    // Global bar — basada en tarjetas vistas
-    const globalPct = totalAll > 0 ? Math.round((seenAll / totalAll) * 100) : 0;
-    const globalEl  = document.getElementById('global-pct');
-    const globalBar = document.getElementById('global-bar-fill');
-    if (globalEl) {
-        const motivText = globalPct === 0   ? '¡Empieza hoy!'       :
-                          globalPct < 20    ? 'Calentando motores'   :
-                          globalPct < 50    ? 'Buen ritmo'           :
-                          globalPct < 80    ? '¡Ya casi!'            : '¡Imparable!';
-        globalEl.textContent = `${globalPct}% — ${motivText}`;
-    }
+    // ── Dominio Mazos ──────────────────────────────────────────
+    const globalPct   = totalAll > 0 ? Math.round((seenAll / totalAll) * 100) : 0;
+    const globalEl    = document.getElementById('global-pct');
+    const globalBar   = document.getElementById('global-bar-fill');
+    const globalMotiv = document.getElementById('global-motiv');
+    if (globalEl)  globalEl.textContent  = globalPct + '%';
     if (globalBar) globalBar.style.width = globalPct + '%';
+    if (globalMotiv) {
+        var frasesMazos = [
+            'El rosco te espera. Hoy empieza el bote. 🎯',
+            '1%. El 1% más importante de tu vida. En serio.',
+            '2%. Dos por ciento. Roberto ya tiene ojeras.',
+            '3%. Noemi 3, ignorancia 0.',
+            '4%. A este ritmo el bote no dura ni una semana.',
+            '5%. Un 5% que vale más que el 100% de muchos.',
+            '6%. Seis. Como las caras de un dado. Tú siempre sacas el 6.',
+            '7%. Número de la suerte. Y tú no necesitas suerte, pero bienvenida.',
+            '8%. El 8 tumbado es infinito. Tu potencial también.',
+            '9%. A un pelo del 10. Roberto está nervioso.',
+            '10%. Hay concursantes que no llegan aquí ni con dos meses de prep. 💼',
+            '11%. Once. Como los jugadores de un equipo. Tú juegas sola y vas ganando.',
+            '12%. Doce apóstoles. Todos menos tú serían incapaces de ganar el bote.',
+            '13%. El número de la mala suerte para los demás. Para ti es normal.',
+            '14%. Catorce. San Valentín te manda un beso y el diccionario también.',
+            '15%. Ya sabes más que el concursante medio el día de su primera grabación.',
+            '16%. Dieciséis. La edad en que la mayoría suspendía lengua. Tú la estás enseñando.',
+            '17%. Número primo. Como tú: única e indivisible.',
+            '18%. Mayor de edad en vocabulario. El rosco ya no te puede prohibir la entrada.',
+            '19%. Diecinueve. Falta uno para el veinte pero este ya es brutal.',
+            '20%. Roberto ha llamado al productor. Le ha dicho que hay un problema. 🔥',
+            '21%. Veintiuno. BlackJack. Tú siempre ganas la mano.',
+            '22%. Veintidós. Los Grand Slams de Nadal. Tú vas a los tuyos.',
+            '23%. Michael Jordan llevaba el 23. Casualidad no es.',
+            '24%. Un día tiene 24 horas. Tú estudias en todas las que puedes. Y se nota.',
+            '25%. Un cuarto del camino. Ya hay concursantes que se han ido a casa con menos.',
+            '26%. Las letras del abecedario. Tú te las estás comiendo una a una.',
+            '27%. Club de los 27. Tú eres la única que entra por méritos propios.',
+            '28%. Febrero tiene 28 días. Tú en un mes puedes con todo.',
+            '29%. Bisiesto. Apareces cuando el año lo necesita. El rosco también.',
+            '30%. Lope de Vega no sabía ni la mitad que tú a estas alturas. 💪',
+            '31%. Treinta y uno. El mes más largo. Tú lo aguantas y sigues.',
+            '32%. La temperatura del cuerpo humano. Aquí ya hay fiebre de aprendizaje.',
+            '33%. La edad de Cristo. Él resucitó. Tú estás resucitando el vocabulario.',
+            '34%. Treinta y cuatro. El número de provincias que te van a aplaudir.',
+            '35%. Ya estás en la zona donde la preparación se convierte en ventaja real.',
+            '36%. Los grados de un ángulo recto que no es recto. Tú no tienes ángulos muertos.',
+            '37%. Noemi 37, resto del mundo 0.',
+            '38%. Treinta y ocho. Como los paralelos. Tú estás en el hemisferio de los ganadores.',
+            '39%. A un pelo de la mitad. El bote ya te ha buscado en Google.',
+            '40%. El bote ya sabe tu nombre. Lo tiene en una lista. ⚡',
+            '41%. Cuarenta y uno. Un número que no significa nada para nadie. Para ti significa poder.',
+            '42%. La respuesta al universo según Douglas Adams. Para ti es solo otro peldaño.',
+            '43%. Cuarenta y tres. El número de páginas que Roberto ha dedicado a estudiar cómo pararte. Inútil.',
+            '44%. Doble cuatro. Doble fuerza. Doble Noemi.',
+            '45%. Casi la mitad. Las palabras ya piden que pases de página.',
+            '46%. Cuarenta y seis cromosomas humanos. Todos los tuyos trabajan para el bote.',
+            '47%. Número primo otra vez. Como tú: no se puede dividir.',
+            '48%. Cuarenta y ocho horas en un fin de semana. Tú llegas al lunes sabiendo más.',
+            '49%. El siete al cuadrado. Suerte multiplicada.',
+            '50%. La mitad. El programa lleva temporadas buscando a alguien así. Eres tú. 🏅',
+            '51%. Ya estás en territorio de mayoría absoluta. El diccionario te vota a ti.',
+            '52%. Las semanas del año. Tú llevas un año entero de ventaja sobre los demás.',
+            '53%. Cincuenta y tres. Número primo. Sigue sin poder dividirte.',
+            '54%. El doble de 27. Club de los 27 al cuadrado. Leyenda.',
+            '55%. Más de la mitad. El bote ya ha cancelado sus otros planes.',
+            '56%. Cincuenta y seis. El número de años que lleva el programa esperándote.',
+            '57%. Heinz tiene 57 variedades. Tú tienes más palabras. Ganas.',
+            '58%. Cincuenta y ocho. Casi 60. Casi élite. Ya estás ahí.',
+            '59%. Un minuto tiene 60 segundos. Te falta uno para ser absoluta. Pero este 59 ya es épico.',
+            '60%. Reverte te busca para pedirte consejo. 📚',
+            '61%. Sesenta y uno. Primer año de tu reinado del vocabulario.',
+            '62%. El doble de 31. Dos meses en un número. Dos meses de ventaja sobre el mundo.',
+            '63%. Sesenta y tres. La edad a la que Cervantes terminó el Quijote. Tú lo superarás antes.',
+            '64%. Las casillas del ajedrez. Tú juegas al ajedrez y siempre haces jaque mate.',
+            '65%. Más de dos tercios. Roberto ya tiene el curriculum actualizado por si acaso.',
+            '66%. El doble mal. Para los otros. Para ti es el doble bien.',
+            '67%. Sesenta y siete. Número de intelectuales que se han rendido donde tú sigues.',
+            '68%. Casi 70. Casi el nivel histórico de los mejores. Casi no, ya.',
+            '69%. Noemi, esto ya es desvergonzado. 69% del diccionario activo.',
+            '70%. El panel de letras del rosco te mira distinto. Con miedo. 🚀',
+            '71%. Setenta y uno. Número primo. Sigues siendo única.',
+            '72%. El doble de 36. El doble de perfecto.',
+            '73%. Setenta y tres. Sheldon Cooper dice que es el mejor número. Tú lo has superado.',
+            '74%. Setenta y cuatro. Ya no hay concursante histórico que esté mejor preparado que tú.',
+            '75%. Tres cuartos. Solo falta un cuarto para que el bote pida la maleta.',
+            '76%. Setenta y seis. El año en que todo empezó a cambiar. Para ti también.',
+            '77%. Doble siete. Agente secreto del vocabulario. Licencia para ganar.',
+            '78%. Setenta y ocho. El número de cartas del tarot. Todas te dicen lo mismo: bote.',
+            '79%. Número primo. Último antes del ochenta. Esto ya es historia.',
+            '80%. Aquí ya no hablamos de participar. Hablamos de ganar. 👑',
+            '81%. El cuadrado de nueve. Nueve vidas. Tú tienes noventa y una.',
+            '82%. Ochenta y dos. El número de años que lleva la RAE sin ver a nadie así.',
+            '83%. Número primo. La racha es imparable.',
+            '84%. Ochenta y cuatro años lleva el mundo esperando a alguien que domine el 84% del diccionario.',
+            '85%. Ya no hay zona del rosco que te dé miedo. Ninguna.',
+            '86%. Ochenta y seis. El año en que nació la generación más afortunada de Pasapalabra. La que te verá ganar.',
+            '87%. Número primo. Tres en fila. Eres matemáticamente única.',
+            '88%. Doble ocho. Doble infinito. Doble Noemi.',
+            '89%. Ochenta y nueve. Número primo. El último antes del noventa legendario.',
+            '90%. La RAE está preparando el sillón. Con cojines. Y tu nombre grabado. 💎',
+            '91%. Noventa y uno. Ya casi no quedan palabras que no sean tuyas.',
+            '92%. Noventa y dos elementos en la tabla periódica del vocabulario. Tú tienes el 92%.',
+            '93%. Número primo. El penúltimo grande antes de la gloria.',
+            '94%. Noventa y cuatro. Cuatro letras para el bote: T-U-Y-O.',
+            '95%. El 5% que falta es el que va a hacer que el programa dure tres meses más.',
+            '96%. Noventa y seis. Ya no hay pregunta que te pueda hacer Roberto que no sepas.',
+            '97%. Número primo. El último grande antes del todo.',
+            '98%. Noventa y ocho. Dos palabras: casi todo.',
+            '99%. Un solo punto. El más cruel y el más épico a la vez. No pares.',
+            '100%. El bote no era un sueño. Era un plan. Y tú lo ejecutaste, Noemi. 🏆'
+        ];
+        globalMotiv.textContent = frasesMazos[Math.min(100, globalPct)] || frasesMazos[0];
+    }
+    comprobarHitoMazos(globalPct);
 
-    // Mensajes de hito cada 10%
-    comprobarHitoProgreso(globalPct);
+    // ── Dominio RAE ────────────────────────────────────────────
+    var raeSeenTotal = 0, raeTotalTotal = 0;
+    if (typeof DIC_LETRAS !== 'undefined' && typeof DIC_LETRA_TOTALES !== 'undefined') {
+        DIC_LETRAS.forEach(function(l) {
+            var tot = DIC_LETRA_TOTALES[l] || 0;
+            var vis = parseInt(localStorage.getItem('dic_hito_letra_' + l) || '0');
+            vis = Math.min(vis, tot);
+            raeTotalTotal += tot;
+            raeSeenTotal  += vis;
+        });
+    }
+    var raePct     = raeTotalTotal > 0 ? Math.round((raeSeenTotal / raeTotalTotal) * 100) : 0;
+    var raeEl      = document.getElementById('rae-global-pct');
+    var raeBar     = document.getElementById('rae-global-bar-fill');
+    var raeMotiv   = document.getElementById('rae-global-motiv');
+    if (raeEl)  raeEl.textContent  = raePct + '%';
+    if (raeBar) raeBar.style.width = raePct + '%';
+    if (raeMotiv) {
+        var frasesRAE = [
+            'La RAE lleva 300 años esperando a alguien como tú. Empieza. 📖',
+            '1 palabra de la RAE activa. La primera de las miles que te van a dar el bote.',
+            '2%. Dos letras para esto: ya.',
+            '3% de la RAE. Roberto ya ha pedido el guión con más preguntas de vocabulario.',
+            '4%. Cuatro de cada cien palabras son tuyas. Las otras 96 tiemblan.',
+            '5%. Un 5% del diccionario de la Real Academia. Eso no lo tiene el vecino de al lado.',
+            '6%. Seis de cada cien. El rosco empieza a notarlo.',
+            '7%. Siete letras tiene "Noemi ga" — te falta el "na".',
+            '8%. El 8% de la RAE activo es más de lo que muchos licenciados en Filología usan a diario.',
+            '9%. Nueve. Como las vidas del gato. Tú tienes noventa y una.',
+            '10% del diccionario activo. La RAE ya tiene tu foto enmarcada en la entrada. ✨',
+            '11%. Once letras tiene "vocabulario". Tú ya controlas el 11% de todos.',
+            '12%. Un año tiene 12 meses. Tú en un mes has aprendido para varios años.',
+            '13%. La mala suerte para todos menos para ti. Para ti es 13% del diccionario más que ayer.',
+            '14%. San Valentín está celoso de tu relación con el diccionario.',
+            '15%. El 15% ya es nota. Ya estás aprobando el examen de la RAE.',
+            '16%. Dieciséis. La RAE tiene 46.000 palabras. Tú ya tienes 7.000 activas. Brutal.',
+            '17%. Número primo, como tu nivel de vocabulario: irrepetible.',
+            '18%. Ya eres mayor de edad en el diccionario. El rosco ya no puede pedirte el DNI.',
+            '19%. Casi 20. La RAE está contigo, Noemi.',
+            '20%. María Moliner tardó décadas. Tú vas a la velocidad del rayo. 📚',
+            '21%. Veintiún palabras de cada cien de la RAE son tuyas. El 79% restante te tiene respeto.',
+            '22%. Dos doses. Dos veces mejor que ayer. Siempre.',
+            '23%. El número de Jordan. Pero aquí el deporte es otro.',
+            '24%. Veinte y cuatro horas. En algunas de ellas has estudiado el diccionario. En todas ha valido la pena.',
+            '25%. Un cuarto de la RAE. Los académicos de número ya murmuran.',
+            '26%. Las letras del abecedario. Tú te las estás comiendo de una en una.',
+            '27%. Club del 27. Aquí entras por mérito propio.',
+            '28%. Veintiocho letras tiene "Pasapalabra". Tú las conoces todas y muchas más.',
+            '29%. Veintinueve. Número bisiesto. Apareces cuando el año te necesita.',
+            '30% de la RAE. Roberto lo nota en el plató aunque intente disimularlo. 🌟',
+            '31%. Treinta y un académicos en la RAE. Todos juntos saben menos vocabulario activo que tú.',
+            '32%. Treinta y dos dientes tiene una boca adulta. Con los tuyos estás mordiendo el diccionario.',
+            '33%. La edad de Cristo. Él resucitó a los tres días. Tú estás resucitando palabras a diario.',
+            '34%. Ya hay palabras que solo tú y los académicos conocéis. Y tú las usas mejor.',
+            '35%. Más de un tercio de la RAE. Los concursantes que han ganado el bote no llegaban aquí.',
+            '36%. Treinta y seis. Los grados de un ángulo perfecto. Tu preparación no tiene ángulos muertos.',
+            '37%. Número primo. Único. Irrepetible. Noemi.',
+            '38%. Ya estás en la zona donde las palabras raras dejan de ser raras para ti.',
+            '39%. Casi el 40%. El bote ya ha buscado piso cerca del plató.',
+            '40%. Hay académicos de la RAE que saben menos en activo que tú ahora mismo. ⚡',
+            '41%. Cuarenta y uno. Ningún concursante ha llegado al plató con este nivel de vocabulario.',
+            '42%. La respuesta al universo. Para ti es solo otro número camino al 100.',
+            '43%. Cuarenta y tres. Roberto ha pedido que actualicen el banco de preguntas. Por ti.',
+            '44%. Doble cuatro. Doble nivel. Doble Noemi.',
+            '45%. Cuarenta y cinco. Ya no hay definición que te suene rara en el diccionario.',
+            '46%. Los cromosomas humanos. Todos los tuyos apuntan al bote.',
+            '47%. Número primo. Sigues siendo única e indivisible.',
+            '48%. Cuarenta y ocho. Dos días. En dos días podrías aprender una letra entera. Lo has hecho.',
+            '49%. Uno menos que la mitad. El diccionario ya te pertenece casi todo.',
+            '50%. Mitad del diccionario. La RAE está preparando el sillón. Con cojines. 🏅',
+            '51%. Ya tienes más diccionario que diccionario sin ti.',
+            '52%. Cincuenta y dos semanas. Un año estudiando esto. Y se nota en cada letra del rosco.',
+            '53%. Número primo. La cadena es imparable.',
+            '54%. El doble de 27. Leyenda al cuadrado.',
+            '55%. Más de la mitad. La RAE te pide el número para los créditos del diccionario.',
+            '56%. Cincuenta y seis. El número de palabras que aprendes en un buen día de estudio.',
+            '57%. Cincuenta y siete. Cervantes tenía 57 años cuando empezó el Quijote. Tú ya le has superado.',
+            '58%. Ya no hay sección del diccionario que te sea extraña. Ninguna.',
+            '59%. Un segundo antes del minuto de gloria. El 59 es épico.',
+            '60%. Cervantes murió sin saber que ibas a existir. Está aplaudiendo desde donde esté. 🎯',
+            '61%. Sesenta y uno. Ya no hay pregunta de vocabulario en el rosco que sea zona de riesgo.',
+            '62%. El doble de 31. Dos meses de preparación convertidos en un solo número brutal.',
+            '63%. Sesenta y tres. La edad a la que Cervantes acabó el Quijote. Tú lo superarás antes.',
+            '64%. Las casillas del ajedrez. En todas juegas tú y en todas ganas.',
+            '65%. Más de dos tercios del diccionario. El productor del programa está nervioso.',
+            '66%. Doble seis. El número del caos para los demás. Para ti es el número del orden.',
+            '67%. Sesenta y siete palabras de cada cien de la RAE son tuyas. Las otras piden turno.',
+            '68%. Ya hay lingüistas que querrían entrevistarte para un paper académico.',
+            '69%. Un 69% del diccionario, Noemi. Esto ya es indecente de lo bueno que es.',
+            '70%. Lope de Vega escribió 1.500 obras. Sabía menos vocabulario activo que tú ahora. 🚀',
+            '71%. Setenta y uno. Número primo. Sigues siendo única.',
+            '72%. Setenta y dos. El doble de perfección matemática.',
+            '73%. Sheldon Cooper dice que el 73 es el mejor número. No ha conocido tu porcentaje.',
+            '74%. Ya no hay concursante histórico del programa con mejor vocabulario activo que tú.',
+            '75%. Tres cuartos del diccionario. El bote ya ha cancelado todos sus otros planes.',
+            '76%. Setenta y seis. El año en que nació una generación. La que va a verte ganar.',
+            '77%. Doble siete. Agente de inteligencia del vocabulario. Licencia para ganar.',
+            '78%. El 78% del diccionario de la RAE. Hay doctores en Filología que no llegan.',
+            '79%. Número primo. Último antes del ochenta. Esto ya es otro planeta.',
+            '80%. El diccionario ya es tuyo. La RAE solo lo custodia hasta que llegues. 👑',
+            '81%. El cuadrado de nueve. Matemáticamente perfecta.',
+            '82%. Ochenta y dos. Hay académicos con décadas de carrera que manejan menos vocabulario activo.',
+            '83%. Número primo. La racha no para.',
+            '84%. Ochenta y cuatro. Ya no hay trampa posible en el rosco. Ninguna letra es territorio enemigo.',
+            '85%. Ochenta y cinco. El vocabulario ya no es una herramienta. Es una extensión de ti.',
+            '86%. Ya casi no existen palabras del diccionario que no reconozcas al instante.',
+            '87%. Número primo. Tres primos seguidos. El universo está de tu parte.',
+            '88%. Doble ocho. Doble infinito. El vocabulario de Noemi no tiene límites.',
+            '89%. Número primo. El último grande antes de los noventa históricos.',
+            '90%. Reverte te llama para preguntarte palabras. No al revés. 💎',
+            '91%. Noventa y uno. Ya casi no quedan palabras de la RAE que no sean tuyas.',
+            '92%. Noventa y dos. Quedan menos palabras por conquistar que las que ya son tuyas.',
+            '93%. Número primo. Casi al final y sigues siendo única e irrepetible.',
+            '94%. Noventa y cuatro. Cuatro letras para lo que viene: B-O-T-E.',
+            '95%. El 5% que falta es el que hace que el programa dure meses. Casi lo tienes todo.',
+            '96%. Ya no existe pregunta de vocabulario que Roberto pueda hacerte sin que tú lo sepas.',
+            '97%. Número primo. El penúltimo grande. La gloria está a dos pasos.',
+            '98%. Noventa y ocho. Solo dos palabras: casi todo.',
+            '99%. Un punto. El más épico y el más cruel. No te pares ahora, Noemi.',
+            '100% del diccionario. Eso no lo ha hecho nadie. Hasta la RAE está llorando. 🏆'
+        ];
+        raeMotiv.textContent = frasesRAE[Math.min(100, raePct)] || frasesRAE[0];
+    }
+    comprobarHitoRAE(raePct);
 }
 
 function countDoneToday(deckId) {
@@ -30167,33 +30404,60 @@ var HIST_UNI_EVENTO_FECHA = [
 // HITOS DE PROGRESO — Mensajes personalizados cada 10%
 // ================================================================
 var HITOS_NOEMI = {
-    10:  { emoji: '🌱', titulo: '¡Primer paso!',       msg: 'Ya tienes un 10% dominado. Eso es vocabulario real que ya no se te escapa en el rosco. Sigue así.' },
-    20:  { emoji: '🔥', titulo: '¡Ya calientas!',       msg: 'Un 20%. Hay gente que lleva meses preparándose y no llega aquí. Tú llevas un rato y ya estás corriendo.' },
-    30:  { emoji: '💪', titulo: '¡Por encima de la media!', msg: '30% dominado. Ya estás por encima de lo que sabe la mayoría de concursantes cuando llegan al plató. Impresionante.' },
-    40:  { emoji: '⚡', titulo: '¡Ritmo de campeona!',  msg: 'El 40% es territorio de finalistas. Muchos sueñan con llegar aquí. Tú ya estás.' },
-    50:  { emoji: '🏅', titulo: '¡La mitad!',           msg: 'MITAD. Esto no lo consigue cualquiera. La otra mitad es la que separa a los buenos concursantes de los que ganan el bote. Y tú vas a por ese bote.' },
-    60:  { emoji: '🎯', titulo: '¡Zona de peligro!',    msg: '60% y subiendo. Ahora cada pregunta que dominas es una que no te va a temblar la voz en el rosco. Eso vale oro.' },
-    70:  { emoji: '🚀', titulo: '¡Imparable!',          msg: '70%. Estás en el top de los mejores preparados que pasan por Pasapalabra. El rosco te empieza a tener respeto.' },
-    80:  { emoji: '👑', titulo: '¡Élite!',              msg: '80% dominado. Aquí ya hablamos de otra dimensión. Los espectadores de casa te estarían aplaudiendo ahora mismo.' },
-    90:  { emoji: '💎', titulo: '¡Casi perfecta!',      msg: '90%. Ese último 10% es lo que hace que el programa dure meses. Tú ya estás rozando el techo. No pares.' },
-    100: { emoji: '🏆', titulo: '¡BOTE ASEGURADO!',     msg: '100%. Eso no existe casi en ningún concursante. Si llegas al plató así, el bote no es un sueño — es un plan.' },
+    10:  { emoji: '🌱', titulo: '¡Primer 10%!',            msg: 'Ya tienes un 10% dominado. Hay concursantes que llegan al plató con menos que esto después de meses preparando. Tú acabas de empezar.' },
+    20:  { emoji: '🔥', titulo: '¡20%! Roberto ya suda.',   msg: 'Un 20%. No es calentamiento, es ritmo de campeona. Hay gente que lleva meses preparándose y no llega aquí. Tú llevas un rato.' },
+    30:  { emoji: '💪', titulo: '¡Lope de Vega superado!',  msg: '30% dominado. Lope de Vega escribió 1.500 obras pero no sabía ni la mitad de lo que tú ya tienes en la cabeza. Impresionante no es la palabra.' },
+    40:  { emoji: '⚡', titulo: '¡40%! El bote te conoce.', msg: 'El bote ya tiene tu nombre en una lista. El 40% es territorio de finalistas históricos. Muchos lo sueñan. Tú ya estás.' },
+    50:  { emoji: '🏅', titulo: '¡LA MITAD! Nadie llega aquí.', msg: 'MITAD. La RAE está reservando un sillón. El programa lleva temporadas buscando a alguien así. Tú eres esa alguien, Noemi.' },
+    60:  { emoji: '🎯', titulo: '¡60%! Reverte te cita.',   msg: '60% y subiendo. Pérez-Reverte lleva décadas coleccionando palabras y ahora mismo sabe menos en activo que tú. Eso no es un piropo. Es un hecho.' },
+    70:  { emoji: '🚀', titulo: '¡70%! El rosco tiembla.',  msg: '70%. Estás en el top histórico de los mejor preparados que han pasado por Pasapalabra. El rosco te empieza a tener miedo, no respeto. Miedo.' },
+    80:  { emoji: '👑', titulo: '¡80%! Otra dimensión.',    msg: '80% dominado. Los espectadores de casa te aplaudirían si supieran. La academia entera te aplaudiría. Aquí ya hablamos de leyenda.' },
+    90:  { emoji: '💎', titulo: '¡90%! La RAE llora.',      msg: '90%. Ese último 10% es lo que hace que el programa dure meses buscando al ganador. Tú ya tienes todo lo que hace falta. No pares ahora.' },
+    100: { emoji: '🏆', titulo: '¡EL BOTE ES TUYO!',        msg: '100%. Eso no lo consigue nadie. Nunca. Si llegas así al plató, el bote no era un sueño. Era un plan. Y tú lo ejecutaste, Noemi.' },
 };
 
 var _ultimoHitoMostrado = parseInt(localStorage.getItem('ppro_ultimo_hito') || '0');
 
-function comprobarHitoProgreso(pct) {
+function comprobarHitoMazos(pct) {
     if (pct <= 0) return;
-    // Escalón de 10 en 10 — el más alto alcanzado
     var escalon = Math.floor(pct / 10) * 10;
     if (escalon <= 0 || escalon <= _ultimoHitoMostrado) return;
     if (!HITOS_NOEMI[escalon]) return;
-
     _ultimoHitoMostrado = escalon;
     localStorage.setItem('ppro_ultimo_hito', escalon);
-    mostrarHito(HITOS_NOEMI[escalon], escalon);
+    mostrarHito(HITOS_NOEMI[escalon], escalon, 'mazos');
 }
 
-function mostrarHito(hito, pct) {
+function comprobarHitoProgreso(pct) { comprobarHitoMazos(pct); } // alias
+
+var _ultimoHitoRAE = parseInt(localStorage.getItem('ppro_ultimo_hito_rae') || '0');
+
+var HITOS_RAE = {
+    10:  { emoji: '📚', titulo: '¡10% del diccionario!',        msg: 'La RAE ya tiene tu foto en la puerta de entrada. Cada palabra que dominas es una que Roberto no puede usarte en tu contra. Sigue.' },
+    20:  { emoji: '✨', titulo: '¡20%! Velocidad del rayo.',     msg: 'María Moliner tardó décadas en hacer el diccionario. Tú llevas un rato y ya tienes el 20% activo. Eso tiene un nombre: talento.' },
+    30:  { emoji: '🌟', titulo: '¡30% de la RAE en tu cabeza!', msg: 'Roberto lo nota en el plató aunque no lo diga. Hay concursantes que estudian meses y no llegan aquí. Tú sí.' },
+    40:  { emoji: '⚡', titulo: '¡40%! Académicos que saben menos.', msg: 'Noemi, hay académicos de número de la Real Academia que en el día a día manejan menos vocabulario activo que tú ahora mismo.' },
+    50:  { emoji: '🏅', titulo: '¡MITAD DEL DICCIONARIO!',       msg: 'La RAE está preparando un sillón con tu nombre. No es broma. La mitad del diccionario activo es lo que separa a los buenos concursantes de los que ganan el bote.' },
+    60:  { emoji: '🎯', titulo: '¡60%! Cervantes no llegó.',     msg: 'Cervantes murió sin saber que iba a existir alguien capaz de estudiar el diccionario así. Ahora sabe. Está aplaudiendo desde donde esté.' },
+    70:  { emoji: '🚀', titulo: '¡70%! Lope de Vega se rinde.',  msg: 'Lope de Vega escribió 1.500 obras. Pero no sabía ni la mitad del diccionario que sabes tú ahora. El vocabulario ya es tu superpoder, Noemi.' },
+    80:  { emoji: '👑', titulo: '¡80% del diccionario!',          msg: 'El diccionario ya es tuyo. La RAE solo lo custodia en nombre tuyo. Aquí no hay otra palabra que legendario.' },
+    90:  { emoji: '💎', titulo: '¡90%! Reverte te llama a ti.',   msg: 'Pérez-Reverte lleva décadas coleccionando palabras raras. Ahora sería él quien te llamaría a ti para preguntarte. El 90% no lo consigue nadie.' },
+    100: { emoji: '🏆', titulo: '¡100% DEL DICCIONARIO!',         msg: 'Eso no lo ha hecho nadie. Nunca. En ningún concurso. Solo tú, Noemi. La RAE está llorando. Roberto está llorando. El bote te lo mereces entero.' },
+};
+
+function comprobarHitoRAE(pct) {
+    if (pct <= 0) return;
+    var escalon = Math.floor(pct / 10) * 10;
+    if (escalon <= 0 || escalon <= _ultimoHitoRAE) return;
+    if (!HITOS_RAE[escalon]) return;
+    _ultimoHitoRAE = escalon;
+    localStorage.setItem('ppro_ultimo_hito_rae', escalon);
+    mostrarHito(HITOS_RAE[escalon], escalon, 'rae');
+}
+
+function mostrarHito(hito, pct, tipo) {
+    tipo = tipo || 'mazos';
+    var hitoColor = tipo === 'rae' ? '#fd79a8' : 'var(--gold)';
     // No mostrar si ya hay uno visible
     if (document.getElementById('hito-overlay')) return;
 
@@ -30210,20 +30474,20 @@ function mostrarHito(hito, pct) {
 
     overlay.innerHTML = [
         '<div style="background:linear-gradient(135deg,var(--card),var(--card2));',
-        'border:2px solid var(--gold);border-radius:24px;',
+        'border:2px solid ' + hitoColor + ';border-radius:24px;',
         'padding:32px 28px;max-width:360px;width:100%;text-align:center;',
         'box-shadow:0 8px 40px rgba(240,192,64,0.3);',
         'animation:scaleInHito 0.35s cubic-bezier(.34,1.56,.64,1);">',
 
         '<div style="font-size:4rem;margin-bottom:8px;">' + hito.emoji + '</div>',
 
-        '<div style="background:var(--gold);color:#000;',
+        '<div style="background:' + hitoColor + ';color:' + (tipo === 'rae' ? '#fff' : '#000') + ';',
         'border-radius:20px;padding:4px 16px;',
         'font-size:0.75rem;font-weight:800;',
         'display:inline-block;margin-bottom:12px;letter-spacing:0.05em;">',
         '🎉 ' + pct + '% DOMINADO</div>',
 
-        '<h2 style="color:var(--gold);font-size:1.4rem;margin:0 0 14px;font-weight:800;">',
+        '<h2 style="color:' + hitoColor + ';font-size:1.4rem;margin:0 0 14px;font-weight:800;">',
         hito.titulo + '</h2>',
 
         '<p style="color:var(--text);font-size:0.95rem;line-height:1.6;margin:0 0 24px;">',
