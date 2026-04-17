@@ -21478,7 +21478,7 @@ if(m.id==='cg')onclickAction='abrirSelectorCG()';
                 
                 const isD=m.id==='deporte',isC=m.id==='ciencia',isA=m.id==='arte';
                 const isLitUniS=m.id==='lit_uni'; const hasSelector=isLitEsp||isHist||isHistEsp||isGeoEsp||isGeoMund||isCine||isTeatro||isHistUni||isCapitales||isD||isC||isA||isLitUniS;
-                const badgeText = isLitEsp ? '8 minijuegos' : (isHist ? '10 minijuegos' : (isHistEsp ? '5 minijuegos' : (isGeoEsp ? '5 minijuegos' : (isGeoMund ? '6 minijuegos' : (isCine ? '3 juegos' : (isTeatro ? '1 juego' : (isHistUni ? '4 minijuegos' : (isCapitales ? '1 minijuego' : (isLitUniS ? '1 minijuego' : (isD ? '3 niveles' : (isC ? '2 niveles' : (isA ? '2 modos' : 'Cargando...'))))))))))));
+                const badgeText = isLitEsp ? '8 minijuegos' : (isHist ? '10 minijuegos' : (isHistEsp ? '5 minijuegos' : (isGeoEsp ? '5 minijuegos' : (isGeoMund ? '6 minijuegos' : (isCine ? '3 juegos' : (isTeatro ? '1 juego' : (isHistUni ? '4 minijuegos' : (isCapitales ? '1 minijuego' : (isLitUniS ? '1 minijuego' : (isD ? '3 niveles' : (isC ? '2 niveles' : (isA ? '3 modos' : 'Cargando...'))))))))))));
                 const borderColor = isLitEsp ? '#fab1a0' : (isHist ? '#dc3545' : (isHistEsp ? '#ff7675' : (isGeoEsp ? '#55efc4' : (isGeoMund ? '#00b894' : (isCine ? '#ffeaa7' : (isTeatro ? '#a29bfe' : (isHistUni ? '#fdcb6e' : (isCapitales ? 'var(--accent)' : ''))))))));
                 
                 html += `
@@ -21642,7 +21642,7 @@ if (m.id === 'cg') onclickAction = 'abrirSelectorCG()';
                          : (isCapitales ? '<span style="background:var(--accent); color:#000; padding:4px 10px; border-radius:20px; font-size:0.75rem; font-weight:bold;">1 minijuego</span>'
                          : (isD2 ? '<span style="background:#00cec9;color:#000;padding:4px 10px;border-radius:20px;font-size:0.75rem;font-weight:bold;">3 niveles</span>'
                          : (isC2 ? '<span style="background:#a29bfe;color:#000;padding:4px 10px;border-radius:20px;font-size:0.75rem;font-weight:bold;">2 niveles</span>'
-                         : (isA2 ? '<span style="background:#e17055;color:#fff;padding:4px 10px;border-radius:20px;font-size:0.75rem;font-weight:bold;">2 modos</span>'
+                         : (isA2 ? '<span style="background:#e17055;color:#fff;padding:4px 10px;border-radius:20px;font-size:0.75rem;font-weight:bold;">3 modos</span>'
                          : (isCG ? '<span style="background:#dfe6e9;color:#000;padding:4px 10px;border-radius:20px;font-size:0.75rem;font-weight:bold;">6 categorías</span>'
                          : `<span style="background:${isDone ? 'transparent' : (m.color || 'var(--accent)')}; color:${isDone ? 'var(--muted)' : '#000'}; padding:4px 10px; border-radius:20px; font-size:0.75rem; font-weight:bold; white-space:nowrap;">${isDone ? 'Al día ✓' : dueCount + ' hoy'}</span>`)))))))))))));
 
