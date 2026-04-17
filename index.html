@@ -33205,9 +33205,9 @@ function empStart(bid){
   '</div>';
   document.body.insertAdjacentHTML('beforeend',h);
   document.getElementById('emp-bk').onclick=function(){document.getElementById('emp-g').remove();abrirPintura();};
-  empRender();
+  empRenderBloque();
 }
-function empRender(){
+function empRenderBloque(){
   var gs=empSt,p=gs.ps[gs.idx];
   if(!p){empFin();return;}
   if(gs.idx>0&&gs.idx===gs.tStart+gs.tanda&&gs.idx<gs.ps.length){empTanda();return;}
@@ -33258,7 +33258,7 @@ function empRender(){
       '<p style="color:'+(ok?'#00b894':'#e17055')+';font-weight:700;margin:0 0 4px;">'+(ok?'Perfecto! '+acer.length+'/'+cl.length:''+acer.length+'/'+cl.length+' correctas'+(perd.length?' faltaron: '+perd.join(', '):''))+'</p>'+
       '</div>'+
       '<button id="emp-sig" style="background:var(--gold);color:#000;border:none;border-radius:14px;padding:14px;font-size:1rem;font-weight:800;cursor:pointer;width:100%;margin-top:8px;">Siguiente</button>';
-    document.getElementById('emp-sig').onclick=function(){gs.idx++;empRender();};
+    document.getElementById('emp-sig').onclick=function(){gs.idx++;empRenderBloque();};
     setTimeout(function(){fb.scrollIntoView({behavior:'smooth',block:'nearest'});},80);
   });
 }
@@ -33278,7 +33278,7 @@ function empTanda(){
       '<button id="emp-next-t" style="background:var(--gold);color:#000;border:none;border-radius:14px;padding:14px;font-size:1rem;font-weight:700;cursor:pointer;width:100%;">Siguiente tanda ('+rest+') →</button>'+
       '<button id="emp-salir" style="background:var(--card);color:var(--text);border:1px solid var(--border);border-radius:14px;padding:14px;font-size:1rem;cursor:pointer;width:100%;">Guardar y salir</button>'+
     '</div></div>';
-  document.getElementById('emp-next-t').onclick=function(){gs.tStart=gs.idx;empRender();};
+  document.getElementById('emp-next-t').onclick=function(){gs.tStart=gs.idx;empRenderBloque();};
   document.getElementById('emp-salir').onclick=function(){empFin();};
 }
 function empFin(){
