@@ -23013,6 +23013,8 @@ function dicOcultarPalabra() {
     // Reducir el total de esa letra en DIC_LETRA_TOTALES
     if (typeof DIC_LETRA_TOTALES !== 'undefined' && DIC_LETRA_TOTALES[l] > 0) {
         DIC_LETRA_TOTALES[l]--;
+        // Persistir el nuevo total para que loadDeckInfo sea consistente
+        try { localStorage.setItem('dic_total_letra_' + l, DIC_LETRA_TOTALES[l]); } catch(e) {}
     }
     showToast('🚫 "' + p.w + '" ocultada — no volverá a aparecer');
     dicState.palabras.splice(dicState.idx, 1);
@@ -23558,6 +23560,8 @@ async function dicCargarLetra(letra) {
     // Actualizar el total real (post-filtro y post-ocultas) para que el grid muestre bien
     if (typeof DIC_LETRA_TOTALES !== 'undefined') {
         DIC_LETRA_TOTALES[letra] = data.length;
+        // Persistir en localStorage para que loadDeckInfo sea consistente entre sesiones
+        try { localStorage.setItem('dic_total_letra_' + letra, data.length); } catch(e) {}
     }
     return data;
 }
@@ -24294,7 +24298,10 @@ function loadDeckInfo() {
     var raeSeenTotal = 0, raeTotalTotal = 0;
     if (typeof DIC_LETRAS !== 'undefined' && typeof DIC_LETRA_TOTALES !== 'undefined') {
         DIC_LETRAS.forEach(function(l) {
-            var tot = DIC_LETRA_TOTALES[l] || 0;
+            // Usar total persistido si existe (más preciso que el hardcoded o el dinámico)
+            var persisted = parseInt(localStorage.getItem('dic_total_letra_' + l) || '0');
+            var tot = persisted > 0 ? persisted : (DIC_LETRA_TOTALES[l] || 0);
+            if (tot <= 0) return; // Omitir letras sin palabras (W, etc.)
             var vis = parseInt(localStorage.getItem('dic_hito_letra_' + l) || '0');
             vis = Math.min(vis, tot);
             raeTotalTotal += tot;
